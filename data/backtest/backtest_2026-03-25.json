@@ -1,0 +1,399 @@
+{
+  "date": "2026-03-25",
+  "summary": {
+    "ud": {
+      "total": 18,
+      "hit": 2,
+      "over": 5,
+      "under": 11,
+      "hit_rate": 11.1
+    },
+    "pp": {
+      "total": 18,
+      "hit": 3,
+      "over": 5,
+      "under": 10,
+      "hit_rate": 16.7
+    }
+  },
+  "players": [
+    {
+      "player_id": 650333,
+      "name": "Luis Arraez",
+      "team": "San Francisco Giants",
+      "projected_ud": 5.4,
+      "actual_ud": 6,
+      "result_ud": "hit",
+      "projected_pp": 5.18,
+      "actual_pp": 5,
+      "result_pp": "hit",
+      "signals": {
+        "xwoba": null,
+        "barrel_pct": 0.0,
+        "opp_era": 3.21,
+        "park_hr": 0.8,
+        "platoon_edge": "No",
+        "order": 1,
+        "wx_temp": 68.8
+      },
+      "player_type": "leadoff"
+    },
+    {
+      "player_id": 656305,
+      "name": "Matt Chapman",
+      "team": "San Francisco Giants",
+      "projected_ud": 4.81,
+      "actual_ud": 3,
+      "result_ud": "under",
+      "projected_pp": 4.49,
+      "actual_pp": 2,
+      "result_pp": "under",
+      "signals": {
+        "xwoba": null,
+        "barrel_pct": 17.4,
+        "opp_era": 3.21,
+        "park_hr": 0.8,
+        "platoon_edge": "Yes",
+        "order": 2,
+        "wx_temp": 68.8
+      },
+      "player_type": "leadoff"
+    },
+    {
+      "player_id": 646240,
+      "name": "Rafael Devers",
+      "team": "San Francisco Giants",
+      "projected_ud": 4.51,
+      "actual_ud": 3,
+      "result_ud": "under",
+      "projected_pp": 4.24,
+      "actual_pp": 3,
+      "result_pp": "under",
+      "signals": {
+        "xwoba": null,
+        "barrel_pct": 13.0,
+        "opp_era": 3.21,
+        "park_hr": 0.8,
+        "platoon_edge": "No",
+        "order": 3,
+        "wx_temp": 68.8
+      },
+      "player_type": "contact"
+    },
+    {
+      "player_id": 642715,
+      "name": "Willy Adames",
+      "team": "San Francisco Giants",
+      "projected_ud": 4.22,
+      "actual_ud": 0,
+      "result_ud": "under",
+      "projected_pp": 3.98,
+      "actual_pp": 0,
+      "result_pp": "under",
+      "signals": {
+        "xwoba": null,
+        "barrel_pct": 4.0,
+        "opp_era": 3.21,
+        "park_hr": 0.8,
+        "platoon_edge": "Yes",
+        "order": 4,
+        "wx_temp": 68.8
+      },
+      "player_type": "power"
+    },
+    {
+      "player_id": 808982,
+      "name": "Jung Hoo Lee",
+      "team": "San Francisco Giants",
+      "projected_ud": 5.1,
+      "actual_ud": 0,
+      "result_ud": "under",
+      "projected_pp": 4.88,
+      "actual_pp": 0,
+      "result_pp": "under",
+      "signals": {
+        "xwoba": null,
+        "barrel_pct": 9.1,
+        "opp_era": 3.21,
+        "park_hr": 0.8,
+        "platoon_edge": "No",
+        "order": 5,
+        "wx_temp": 68.8
+      },
+      "player_type": "contact"
+    },
+    {
+      "player_id": 671218,
+      "name": "Heliot Ramos",
+      "team": "San Francisco Giants",
+      "projected_ud": 3.85,
+      "actual_ud": 3,
+      "result_ud": "under",
+      "projected_pp": 3.63,
+      "actual_pp": 3,
+      "result_pp": "hit",
+      "signals": {
+        "xwoba": null,
+        "barrel_pct": 0.0,
+        "opp_era": 3.21,
+        "park_hr": 0.8,
+        "platoon_edge": "Yes",
+        "order": 6,
+        "wx_temp": 68.8
+      },
+      "player_type": "contact"
+    },
+    {
+      "player_id": 669477,
+      "name": "Casey Schmitt",
+      "team": "San Francisco Giants",
+      "projected_ud": 5.69,
+      "actual_ud": 3,
+      "result_ud": "under",
+      "projected_pp": 5.47,
+      "actual_pp": 2,
+      "result_pp": "under",
+      "signals": {
+        "xwoba": null,
+        "barrel_pct": 0.0,
+        "opp_era": 3.21,
+        "park_hr": 0.8,
+        "platoon_edge": "Yes",
+        "order": 7,
+        "wx_temp": 68.8
+      },
+      "player_type": "power"
+    },
+    {
+      "player_id": 672275,
+      "name": "Patrick Bailey",
+      "team": "San Francisco Giants",
+      "projected_ud": 1.5,
+      "actual_ud": 0,
+      "result_ud": "under",
+      "projected_pp": 1.43,
+      "actual_pp": 0,
+      "result_pp": "under",
+      "signals": {
+        "xwoba": null,
+        "barrel_pct": 4.0,
+        "opp_era": 3.21,
+        "park_hr": 0.8,
+        "platoon_edge": "Yes",
+        "order": 8,
+        "wx_temp": 68.8
+      },
+      "player_type": "other"
+    },
+    {
+      "player_id": 664056,
+      "name": "Harrison Bader",
+      "team": "San Francisco Giants",
+      "projected_ud": 2.09,
+      "actual_ud": 0,
+      "result_ud": "under",
+      "projected_pp": 1.99,
+      "actual_pp": 0,
+      "result_pp": "under",
+      "signals": {
+        "xwoba": null,
+        "barrel_pct": 0.0,
+        "opp_era": 3.21,
+        "park_hr": 0.8,
+        "platoon_edge": "Yes",
+        "order": 9,
+        "wx_temp": 68.8
+      },
+      "player_type": "power"
+    },
+    {
+      "player_id": 663757,
+      "name": "Trent Grisham",
+      "team": "New York Yankees",
+      "projected_ud": 7.15,
+      "actual_ud": 12,
+      "result_ud": "over",
+      "projected_pp": 6.76,
+      "actual_pp": 12,
+      "result_pp": "over",
+      "signals": {
+        "xwoba": null,
+        "barrel_pct": 0.0,
+        "opp_era": 3.88,
+        "park_hr": 0.8,
+        "platoon_edge": "Yes",
+        "order": 1,
+        "wx_temp": 68.8
+      },
+      "player_type": "speed"
+    },
+    {
+      "player_id": 592450,
+      "name": "Aaron Judge",
+      "team": "New York Yankees",
+      "projected_ud": 10.13,
+      "actual_ud": 0,
+      "result_ud": "under",
+      "projected_pp": 9.52,
+      "actual_pp": 0,
+      "result_pp": "under",
+      "signals": {
+        "xwoba": null,
+        "barrel_pct": 14.3,
+        "opp_era": 3.88,
+        "park_hr": 0.8,
+        "platoon_edge": "No",
+        "order": 2,
+        "wx_temp": 68.8
+      },
+      "player_type": "power"
+    },
+    {
+      "player_id": 641355,
+      "name": "Cody Bellinger",
+      "team": "New York Yankees",
+      "projected_ud": 8.75,
+      "actual_ud": 5,
+      "result_ud": "under",
+      "projected_pp": 8.27,
+      "actual_pp": 5,
+      "result_pp": "under",
+      "signals": {
+        "xwoba": null,
+        "barrel_pct": 0.0,
+        "opp_era": 3.88,
+        "park_hr": 0.8,
+        "platoon_edge": "Yes",
+        "order": 3,
+        "wx_temp": 68.8
+      },
+      "player_type": "speed"
+    },
+    {
+      "player_id": 700250,
+      "name": "Ben Rice",
+      "team": "New York Yankees",
+      "projected_ud": 11.5,
+      "actual_ud": 8,
+      "result_ud": "under",
+      "projected_pp": 10.85,
+      "actual_pp": 7,
+      "result_pp": "under",
+      "signals": {
+        "xwoba": null,
+        "barrel_pct": 6.2,
+        "opp_era": 3.88,
+        "park_hr": 0.8,
+        "platoon_edge": "Yes",
+        "order": 4,
+        "wx_temp": 68.8
+      },
+      "player_type": "power"
+    },
+    {
+      "player_id": 519317,
+      "name": "Giancarlo Stanton",
+      "team": "New York Yankees",
+      "projected_ud": 5.99,
+      "actual_ud": 10,
+      "result_ud": "over",
+      "projected_pp": 5.67,
+      "actual_pp": 10,
+      "result_pp": "over",
+      "signals": {
+        "xwoba": null,
+        "barrel_pct": 29.6,
+        "opp_era": 3.88,
+        "park_hr": 0.8,
+        "platoon_edge": "No",
+        "order": 5,
+        "wx_temp": 68.8
+      },
+      "player_type": "contact"
+    },
+    {
+      "player_id": 665862,
+      "name": "Jazz Chisholm Jr.",
+      "team": "New York Yankees",
+      "projected_ud": 7.74,
+      "actual_ud": 12,
+      "result_ud": "over",
+      "projected_pp": 7.53,
+      "actual_pp": 12,
+      "result_pp": "over",
+      "signals": {
+        "xwoba": null,
+        "barrel_pct": 0.0,
+        "opp_era": 3.88,
+        "park_hr": 0.8,
+        "platoon_edge": "Yes",
+        "order": 6,
+        "wx_temp": 68.8
+      },
+      "player_type": "speed"
+    },
+    {
+      "player_id": 676609,
+      "name": "Jos\u00e9 Caballero",
+      "team": "New York Yankees",
+      "projected_ud": 6.56,
+      "actual_ud": 7,
+      "result_ud": "hit",
+      "projected_pp": 6.41,
+      "actual_pp": 7,
+      "result_pp": "hit",
+      "signals": {
+        "xwoba": null,
+        "barrel_pct": 7.7,
+        "opp_era": 3.88,
+        "park_hr": 0.8,
+        "platoon_edge": "No",
+        "order": 7,
+        "wx_temp": 68.8
+      },
+      "player_type": "speed"
+    },
+    {
+      "player_id": 641857,
+      "name": "Ryan McMahon",
+      "team": "New York Yankees",
+      "projected_ud": 2.68,
+      "actual_ud": 12,
+      "result_ud": "over",
+      "projected_pp": 2.57,
+      "actual_pp": 11,
+      "result_pp": "over",
+      "signals": {
+        "xwoba": null,
+        "barrel_pct": 9.8,
+        "opp_era": 3.88,
+        "park_hr": 0.8,
+        "platoon_edge": "Yes",
+        "order": 8,
+        "wx_temp": 68.8
+      },
+      "player_type": "contact"
+    },
+    {
+      "player_id": 669224,
+      "name": "Austin Wells",
+      "team": "New York Yankees",
+      "projected_ud": 3.26,
+      "actual_ud": 11,
+      "result_ud": "over",
+      "projected_pp": 3.02,
+      "actual_pp": 10,
+      "result_pp": "over",
+      "signals": {
+        "xwoba": null,
+        "barrel_pct": 10.0,
+        "opp_era": 3.88,
+        "park_hr": 0.8,
+        "platoon_edge": "Yes",
+        "order": 9,
+        "wx_temp": 68.8
+      },
+      "player_type": "contact"
+    }
+  ]
+}

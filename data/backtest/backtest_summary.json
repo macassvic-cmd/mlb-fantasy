@@ -1,0 +1,252 @@
+{
+  "generated": "2026-06-12 12:37",
+  "date_range": [
+    "2026-03-25",
+    "2026-06-08"
+  ],
+  "dates_graded": 17,
+  "overall_hit_rate": 12.2,
+  "total_player_games": 3503,
+  "global_scale": {
+    "ud": 1.2903,
+    "pp": 1.2563,
+    "avg_projected_ud": 5.555,
+    "avg_actual_ud": 7.167,
+    "avg_projected_pp": 5.283,
+    "avg_actual_pp": 6.637,
+    "n_games": 3503
+  },
+  "monthly_hit_rate": {
+    "2026-03": {
+      "hit_rate": 11.8,
+      "n": 1368
+    },
+    "2026-04": {
+      "hit_rate": 12.4,
+      "n": 1991
+    },
+    "2026-06": {
+      "hit_rate": 13.9,
+      "n": 144
+    }
+  },
+  "player_type_hit_rate": {
+    "power": {
+      "hit_rate": 12.6,
+      "n": 911
+    },
+    "speed": {
+      "hit_rate": 12.0,
+      "n": 861
+    },
+    "leadoff": {
+      "hit_rate": 14.3,
+      "n": 251
+    },
+    "contact": {
+      "hit_rate": 12.4,
+      "n": 1245
+    },
+    "other": {
+      "hit_rate": 8.1,
+      "n": 235
+    }
+  },
+  "signal_correlation": {
+    "xwoba": {
+      "correlation": 0.03,
+      "n": 3149
+    },
+    "barrel_pct": {
+      "correlation": 0.048,
+      "n": 3333
+    },
+    "opp_era": {
+      "correlation": 0.054,
+      "n": 3502
+    },
+    "park_hr": {
+      "correlation": -0.005,
+      "n": 3503
+    },
+    "order": {
+      "correlation": -0.04,
+      "n": 3503
+    },
+    "wx_temp": {
+      "correlation": 0.004,
+      "n": 3503
+    }
+  },
+  "signal_buckets": {
+    "xwoba": {
+      "low": {
+        "hit_rate": 11.5,
+        "n": 1049
+      },
+      "medium": {
+        "hit_rate": 10.5,
+        "n": 1050
+      },
+      "high": {
+        "hit_rate": 14.8,
+        "n": 1050
+      }
+    },
+    "barrel_pct": {
+      "low": {
+        "hit_rate": 10.6,
+        "n": 1111
+      },
+      "medium": {
+        "hit_rate": 12.5,
+        "n": 1111
+      },
+      "high": {
+        "hit_rate": 13.2,
+        "n": 1111
+      }
+    }
+  },
+  "platoon_hit_rate": {
+    "Yes": {
+      "hit_rate": 11.9,
+      "n": 2114
+    },
+    "No": {
+      "hit_rate": 12.7,
+      "n": 1389
+    },
+    "N/A": {
+      "hit_rate": null,
+      "n": 0
+    }
+  },
+  "top10_best": [
+    {
+      "name": "Trea Turner",
+      "team": "Philadelphia Phillies",
+      "hit_rate": 38.5,
+      "games": 13
+    },
+    {
+      "name": "Jake Meyers",
+      "team": "Houston Astros",
+      "hit_rate": 36.4,
+      "games": 11
+    },
+    {
+      "name": "TJ Friedl",
+      "team": "Cincinnati Reds",
+      "hit_rate": 33.3,
+      "games": 12
+    },
+    {
+      "name": "Kevin McGonigle",
+      "team": "Detroit Tigers",
+      "hit_rate": 33.3,
+      "games": 12
+    },
+    {
+      "name": "Iv\u00e1n Herrera",
+      "team": "St. Louis Cardinals",
+      "hit_rate": 33.3,
+      "games": 12
+    },
+    {
+      "name": "Mauricio Dub\u00f3n",
+      "team": "Atlanta Braves",
+      "hit_rate": 33.3,
+      "games": 12
+    },
+    {
+      "name": "Maikel Garcia",
+      "team": "Kansas City Royals",
+      "hit_rate": 33.3,
+      "games": 12
+    },
+    {
+      "name": "Willson Contreras",
+      "team": "Boston Red Sox",
+      "hit_rate": 30.8,
+      "games": 13
+    },
+    {
+      "name": "Mike Trout",
+      "team": "Los Angeles Angels",
+      "hit_rate": 30.8,
+      "games": 13
+    },
+    {
+      "name": "Matt Wallner",
+      "team": "Minnesota Twins",
+      "hit_rate": 30.8,
+      "games": 13
+    }
+  ],
+  "top10_worst": [
+    {
+      "name": "Jac Caglianone",
+      "team": "Kansas City Royals",
+      "hit_rate": 0.0,
+      "games": 10
+    },
+    {
+      "name": "Leo Rivas",
+      "team": "Seattle Mariners",
+      "hit_rate": 0.0,
+      "games": 10
+    },
+    {
+      "name": "Masyn Winn",
+      "team": "St. Louis Cardinals",
+      "hit_rate": 0.0,
+      "games": 10
+    },
+    {
+      "name": "Yainer Diaz",
+      "team": "Houston Astros",
+      "hit_rate": 0.0,
+      "games": 10
+    },
+    {
+      "name": "Carson Benge",
+      "team": "New York Mets",
+      "hit_rate": 0.0,
+      "games": 10
+    },
+    {
+      "name": "Bryson Stott",
+      "team": "Philadelphia Phillies",
+      "hit_rate": 0.0,
+      "games": 10
+    },
+    {
+      "name": "Ben Williamson",
+      "team": "Tampa Bay Rays",
+      "hit_rate": 0.0,
+      "games": 10
+    },
+    {
+      "name": "Colton Cowser",
+      "team": "Baltimore Orioles",
+      "hit_rate": 0.0,
+      "games": 10
+    },
+    {
+      "name": "Troy Johnston",
+      "team": "Colorado Rockies",
+      "hit_rate": 0.0,
+      "games": 11
+    },
+    {
+      "name": "Brendan Donovan",
+      "team": "Seattle Mariners",
+      "hit_rate": 0.0,
+      "games": 11
+    }
+  ],
+  "correction_count": 197,
+  "market_correction_count": 0,
+  "market_lines_player_games": 0
+}

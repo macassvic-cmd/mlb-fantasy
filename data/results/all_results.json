@@ -1,0 +1,6060 @@
+{
+  "dates": {
+    "2026-06-10": {
+      "ud": {
+        "total": 215,
+        "hit": 26,
+        "over": 111,
+        "under": 78,
+        "hit_rate": 12.1
+      },
+      "pp": {
+        "total": 215,
+        "hit": 21,
+        "over": 110,
+        "under": 84,
+        "hit_rate": 9.8
+      },
+      "player_count": 215
+    },
+    "2026-06-11": {
+      "ud": {
+        "total": 126,
+        "hit": 13,
+        "over": 48,
+        "under": 65,
+        "hit_rate": 10.3
+      },
+      "pp": {
+        "total": 126,
+        "hit": 12,
+        "over": 46,
+        "under": 68,
+        "hit_rate": 9.5
+      },
+      "player_count": 126
+    }
+  },
+  "players": {
+    "650490": {
+      "name": "Yandy D\u00edaz",
+      "team": "Tampa Bay Rays",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 10.09,
+          "actual_ud": 15,
+          "result_ud": "over",
+          "projected_pp": 9.43,
+          "actual_pp": 15,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "596103": {
+      "name": "Austin Slater",
+      "team": "Tampa Bay Rays",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.01,
+          "actual_ud": 8,
+          "result_ud": "over",
+          "projected_pp": 3.76,
+          "actual_pp": 7,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "691406": {
+      "name": "Junior Caminero",
+      "team": "Tampa Bay Rays",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 9.22,
+          "actual_ud": 6,
+          "result_ud": "under",
+          "projected_pp": 7.99,
+          "actual_pp": 5,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "668723": {
+      "name": "Ryan Vilade",
+      "team": "Tampa Bay Rays",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 7.13,
+          "actual_ud": 2,
+          "result_ud": "under",
+          "projected_pp": 6.82,
+          "actual_pp": 2,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "666018": {
+      "name": "Jonathan Aranda",
+      "team": "Tampa Bay Rays",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 7.64,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 6.76,
+          "actual_pp": 3,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "810938": {
+      "name": "Ben Williamson",
+      "team": "Tampa Bay Rays",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.4,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 5.06,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "663743": {
+      "name": "Nick Fortes",
+      "team": "Tampa Bay Rays",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.68,
+          "actual_ud": 24,
+          "result_ud": "over",
+          "projected_pp": 4.13,
+          "actual_pp": 22,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "656775": {
+      "name": "Cedric Mullins",
+      "team": "Tampa Bay Rays",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 6.76,
+          "actual_ud": 16,
+          "result_ud": "over",
+          "projected_pp": 5.89,
+          "actual_pp": 16,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "670764": {
+      "name": "Taylor Walls",
+      "team": "Tampa Bay Rays",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.63,
+          "actual_ud": 14,
+          "result_ud": "over",
+          "projected_pp": 4.39,
+          "actual_pp": 15,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "680776": {
+      "name": "Jarren Duran",
+      "team": "Boston Red Sox",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.77,
+          "actual_ud": 5,
+          "result_ud": "hit",
+          "projected_pp": 4.73,
+          "actual_pp": 5,
+          "result_pp": "hit"
+        }
+      ]
+    },
+    "678882": {
+      "name": "Ceddanne Rafaela",
+      "team": "Boston Red Sox",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.28,
+          "actual_ud": 18,
+          "result_ud": "over",
+          "projected_pp": 4.18,
+          "actual_pp": 18,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "677800": {
+      "name": "Wilyer Abreu",
+      "team": "Boston Red Sox",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.26,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 4.01,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "575929": {
+      "name": "Willson Contreras",
+      "team": "Boston Red Sox",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.61,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 4.14,
+          "actual_pp": 2,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "681508": {
+      "name": "Mickey Gasper",
+      "team": "Boston Red Sox",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 3.78,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 3.51,
+          "actual_pp": 2,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "807799": {
+      "name": "Masataka Yoshida",
+      "team": "Boston Red Sox",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 2.62,
+          "actual_ud": 3,
+          "result_ud": "hit",
+          "projected_pp": 2.4,
+          "actual_pp": 3,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "702332": {
+      "name": "Caleb Durbin",
+      "team": "Boston Red Sox",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.33,
+          "actual_ud": 31,
+          "result_ud": "over",
+          "projected_pp": 4.08,
+          "actual_pp": 31,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "643396": {
+      "name": "Isiah Kiner-Falefa",
+      "team": "Boston Red Sox",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 3.08,
+          "actual_ud": 12,
+          "result_ud": "over",
+          "projected_pp": 2.9,
+          "actual_pp": 11,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "655316": {
+      "name": "Andruw Monasterio",
+      "team": "Boston Red Sox",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 2.76,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 2.58,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "682657": {
+      "name": "Angel Mart\u00ednez",
+      "team": "Cleveland Guardians",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.08,
+          "actual_ud": 17,
+          "result_ud": "over",
+          "projected_pp": 3.94,
+          "actual_pp": 17,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "608070": {
+      "name": "Jos\u00e9 Ram\u00edrez",
+      "team": "Cleveland Guardians",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 6.62,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 6.37,
+          "actual_pp": 3,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "656555": {
+      "name": "Rhys Hoskins",
+      "team": "Cleveland Guardians",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.91,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 4.26,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "681807": {
+      "name": "David Fry",
+      "team": "Cleveland Guardians",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 3.13,
+          "actual_ud": 3,
+          "result_ud": "hit",
+          "projected_pp": 2.69,
+          "actual_pp": 2,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "683953": {
+      "name": "Travis Bazzana",
+      "team": "Cleveland Guardians",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.87,
+          "actual_ud": 12,
+          "result_ud": "over",
+          "projected_pp": 4.54,
+          "actual_pp": 12,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "656413": {
+      "name": "Stuart Fairchild",
+      "team": "Cleveland Guardians",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 1.83,
+          "actual_ud": 10,
+          "result_ud": "over",
+          "projected_pp": 1.43,
+          "actual_pp": 8,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "682177": {
+      "name": "Daniel Schneemann",
+      "team": "Cleveland Guardians",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 2.06,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 2.06,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "595978": {
+      "name": "Austin Hedges",
+      "team": "Cleveland Guardians",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 3.83,
+          "actual_ud": 16,
+          "result_ud": "over",
+          "projected_pp": 3.59,
+          "actual_pp": 14,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "677587": {
+      "name": "Brayan Rocchio",
+      "team": "Cleveland Guardians",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.24,
+          "actual_ud": 2,
+          "result_ud": "under",
+          "projected_pp": 3.94,
+          "actual_pp": 2,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "502671": {
+      "name": "Paul Goldschmidt",
+      "team": "New York Yankees",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.82,
+          "actual_ud": 11,
+          "result_ud": "over",
+          "projected_pp": 5.64,
+          "actual_pp": 10,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "700250": {
+      "name": "Ben Rice",
+      "team": "New York Yankees",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 6.57,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 6.03,
+          "actual_pp": 3,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "641355": {
+      "name": "Cody Bellinger",
+      "team": "New York Yankees",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.42,
+          "actual_ud": 15,
+          "result_ud": "over",
+          "projected_pp": 4.22,
+          "actual_pp": 14,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "642708": {
+      "name": "Amed Rosario",
+      "team": "New York Yankees",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 1.69,
+          "actual_ud": 3,
+          "result_ud": "over",
+          "projected_pp": 1.69,
+          "actual_pp": 3,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "663757": {
+      "name": "Trent Grisham",
+      "team": "New York Yankees",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.19,
+          "actual_ud": 24,
+          "result_ud": "over",
+          "projected_pp": 4.9,
+          "actual_pp": 24,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "676609": {
+      "name": "Jos\u00e9 Caballero",
+      "team": "New York Yankees",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.05,
+          "actual_ud": 12,
+          "result_ud": "over",
+          "projected_pp": 3.87,
+          "actual_pp": 12,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "665862": {
+      "name": "Jazz Chisholm Jr.",
+      "team": "New York Yankees",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.05,
+          "actual_ud": 25,
+          "result_ud": "over",
+          "projected_pp": 5.05,
+          "actual_pp": 25,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "683011": {
+      "name": "Anthony Volpe",
+      "team": "New York Yankees",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 2.1,
+          "actual_ud": 13,
+          "result_ud": "over",
+          "projected_pp": 2.16,
+          "actual_pp": 11,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "645305": {
+      "name": "Ali S\u00e1nchez",
+      "team": "New York Yankees",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 1.59,
+          "actual_ud": 3,
+          "result_ud": "over",
+          "projected_pp": 1.59,
+          "actual_pp": 2,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "669477": {
+      "name": "Casey Schmitt",
+      "team": "San Francisco Giants",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.01,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 5.01,
+          "actual_pp": 3,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "650333": {
+      "name": "Luis Arraez",
+      "team": "San Francisco Giants",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.87,
+          "actual_ud": 11,
+          "result_ud": "over",
+          "projected_pp": 5.63,
+          "actual_pp": 10,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "656305": {
+      "name": "Matt Chapman",
+      "team": "San Francisco Giants",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 6.66,
+          "actual_ud": 41,
+          "result_ud": "over",
+          "projected_pp": 6.14,
+          "actual_pp": 40,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "646240": {
+      "name": "Rafael Devers",
+      "team": "San Francisco Giants",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.38,
+          "actual_ud": 19,
+          "result_ud": "over",
+          "projected_pp": 4.72,
+          "actual_pp": 18,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "808982": {
+      "name": "Jung Hoo Lee",
+      "team": "San Francisco Giants",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 7.87,
+          "actual_ud": 17,
+          "result_ud": "over",
+          "projected_pp": 7.68,
+          "actual_pp": 17,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "805811": {
+      "name": "Bryce Eldridge",
+      "team": "San Francisco Giants",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 7.03,
+          "actual_ud": 25,
+          "result_ud": "over",
+          "projected_pp": 6.33,
+          "actual_pp": 24,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "691740": {
+      "name": "Daniel Susac",
+      "team": "San Francisco Giants",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 3.59,
+          "actual_ud": 13,
+          "result_ud": "over",
+          "projected_pp": 3.18,
+          "actual_pp": 12,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "682674": {
+      "name": "Victor Bericoto",
+      "team": "San Francisco Giants",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 1.73,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 1.73,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "813841": {
+      "name": "Jonah Cox",
+      "team": "San Francisco Giants",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 3.03,
+          "actual_ud": 3,
+          "result_ud": "hit",
+          "projected_pp": 3.04,
+          "actual_pp": 3,
+          "result_pp": "hit"
+        }
+      ]
+    },
+    "695578": {
+      "name": "James Wood",
+      "team": "Washington Nationals",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 7.08,
+          "actual_ud": 21,
+          "result_ud": "over",
+          "projected_pp": 6.65,
+          "actual_pp": 20,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "678554": {
+      "name": "Curtis Mead",
+      "team": "Washington Nationals",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.8,
+          "actual_ud": 19,
+          "result_ud": "over",
+          "projected_pp": 5.35,
+          "actual_pp": 19,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "665953": {
+      "name": "Andr\u00e9s Chaparro",
+      "team": "Washington Nationals",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 2.01,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 1.53,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "686611": {
+      "name": "Dylan Crews",
+      "team": "Washington Nationals",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.22,
+          "actual_ud": 11,
+          "result_ud": "over",
+          "projected_pp": 3.86,
+          "actual_pp": 12,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "695734": {
+      "name": "Daylen Lile",
+      "team": "Washington Nationals",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.28,
+          "actual_ud": 26,
+          "result_ud": "over",
+          "projected_pp": 5.02,
+          "actual_pp": 28,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "696285": {
+      "name": "Jacob Young",
+      "team": "Washington Nationals",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.54,
+          "actual_ud": 9,
+          "result_ud": "over",
+          "projected_pp": 4.54,
+          "actual_pp": 10,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "683083": {
+      "name": "Nasim Nu\u00f1ez",
+      "team": "Washington Nationals",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 3.5,
+          "actual_ud": 13,
+          "result_ud": "over",
+          "projected_pp": 3.6,
+          "actual_pp": 14,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "678391": {
+      "name": "Jorbit Vivas",
+      "team": "Washington Nationals",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 2.9,
+          "actual_ud": 8,
+          "result_ud": "over",
+          "projected_pp": 2.53,
+          "actual_pp": 8,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "660688": {
+      "name": "Keibert Ruiz",
+      "team": "Washington Nationals",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.35,
+          "actual_ud": 5,
+          "result_ud": "hit",
+          "projected_pp": 4.97,
+          "actual_pp": 5,
+          "result_pp": "hit"
+        }
+      ]
+    },
+    "665487": {
+      "name": "Fernando Tatis Jr.",
+      "team": "San Diego Padres",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 8.68,
+          "actual_ud": 19,
+          "result_ud": "over",
+          "projected_pp": 8.43,
+          "actual_pp": 19,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "701538": {
+      "name": "Jackson Merrill",
+      "team": "San Diego Padres",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 7.17,
+          "actual_ud": 13,
+          "result_ud": "over",
+          "projected_pp": 6.75,
+          "actual_pp": 12,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "592518": {
+      "name": "Manny Machado",
+      "team": "San Diego Padres",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.56,
+          "actual_ud": 8,
+          "result_ud": "over",
+          "projected_pp": 5.29,
+          "actual_pp": 7,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "657757": {
+      "name": "Gavin Sheets",
+      "team": "San Diego Padres",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.75,
+          "actual_ud": 8,
+          "result_ud": "over",
+          "projected_pp": 4.95,
+          "actual_pp": 7,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "695238": {
+      "name": "Will Wagner",
+      "team": "San Diego Padres",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.08,
+          "actual_ud": 12,
+          "result_ud": "over",
+          "projected_pp": 4.23,
+          "actual_pp": 10,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "669392": {
+      "name": "Samad Taylor",
+      "team": "San Diego Padres",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 8.79,
+          "actual_ud": 5,
+          "result_ud": "under",
+          "projected_pp": 8.4,
+          "actual_pp": 5,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "669369": {
+      "name": "Bryce Johnson",
+      "team": "San Diego Padres",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 2.2,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 2.43,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "660710": {
+      "name": "Rodolfo Dur\u00e1n",
+      "team": "San Diego Padres",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 2.24,
+          "actual_ud": 8,
+          "result_ud": "over",
+          "projected_pp": 1.49,
+          "actual_pp": 7,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "823550": {
+      "name": "Sung-Mun Song",
+      "team": "San Diego Padres",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.59,
+          "actual_ud": 7,
+          "result_ud": "over",
+          "projected_pp": 4.38,
+          "actual_pp": 8,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "680574": {
+      "name": "Matt McLain",
+      "team": "Cincinnati Reds",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.98,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 5.68,
+          "actual_pp": 3,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "668709": {
+      "name": "JJ Bleday",
+      "team": "Cincinnati Reds",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.33,
+          "actual_ud": 22,
+          "result_ud": "over",
+          "projected_pp": 5.02,
+          "actual_pp": 20,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "701398": {
+      "name": "Sal Stewart",
+      "team": "Cincinnati Reds",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.89,
+          "actual_ud": 6,
+          "result_ud": "over",
+          "projected_pp": 4.29,
+          "actual_pp": 5,
+          "result_pp": "hit"
+        }
+      ]
+    },
+    "668715": {
+      "name": "Spencer Steer",
+      "team": "Cincinnati Reds",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.82,
+          "actual_ud": 16,
+          "result_ud": "over",
+          "projected_pp": 4.32,
+          "actual_pp": 16,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "663993": {
+      "name": "Nathaniel Lowe",
+      "team": "Cincinnati Reds",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 2.38,
+          "actual_ud": 6,
+          "result_ud": "over",
+          "projected_pp": 2.09,
+          "actual_pp": 5,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "553993": {
+      "name": "Eugenio Su\u00e1rez",
+      "team": "Cincinnati Reds",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 2.48,
+          "actual_ud": 17,
+          "result_ud": "over",
+          "projected_pp": 2.19,
+          "actual_pp": 17,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "667472": {
+      "name": "Dane Myers",
+      "team": "Cincinnati Reds",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 2.52,
+          "actual_ud": 3,
+          "result_ud": "hit",
+          "projected_pp": 2.62,
+          "actual_pp": 3,
+          "result_pp": "hit"
+        }
+      ]
+    },
+    "682622": {
+      "name": "Noelvi Marte",
+      "team": "Cincinnati Reds",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 3.92,
+          "actual_ud": 13,
+          "result_ud": "over",
+          "projected_pp": 3.92,
+          "actual_pp": 13,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "664731": {
+      "name": "P.J. Higgins",
+      "team": "Cincinnati Reds",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 1.97,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 1.81,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "621493": {
+      "name": "Taylor Ward",
+      "team": "Baltimore Orioles",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 6.8,
+          "actual_ud": 11,
+          "result_ud": "over",
+          "projected_pp": 6.18,
+          "actual_pp": 9,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 6.49,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 5.83,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "683002": {
+      "name": "Gunnar Henderson",
+      "team": "Baltimore Orioles",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 6.38,
+          "actual_ud": 6,
+          "result_ud": "hit",
+          "projected_pp": 5.75,
+          "actual_pp": 5,
+          "result_pp": "hit"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 4.71,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 4.05,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "624413": {
+      "name": "Pete Alonso",
+      "team": "Baltimore Orioles",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 6.52,
+          "actual_ud": 19,
+          "result_ud": "over",
+          "projected_pp": 6.24,
+          "actual_pp": 19,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 7.26,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 6.99,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "681297": {
+      "name": "Colton Cowser",
+      "team": "Baltimore Orioles",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 6.06,
+          "actual_ud": 9,
+          "result_ud": "over",
+          "projected_pp": 5.76,
+          "actual_pp": 9,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 5.72,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 5.46,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "665750": {
+      "name": "Leody Taveras",
+      "team": "Baltimore Orioles",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.7,
+          "actual_ud": 22,
+          "result_ud": "over",
+          "projected_pp": 4.7,
+          "actual_pp": 21,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 4.53,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 4.41,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "702616": {
+      "name": "Jackson Holliday",
+      "team": "Baltimore Orioles",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.17,
+          "actual_ud": 20,
+          "result_ud": "over",
+          "projected_pp": 4.77,
+          "actual_pp": 20,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 5.62,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 5.28,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "641933": {
+      "name": "Tyler O'Neill",
+      "team": "Baltimore Orioles",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 3.17,
+          "actual_ud": 12,
+          "result_ud": "over",
+          "projected_pp": 2.96,
+          "actual_pp": 10,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "677942": {
+      "name": "Blaze Alexander",
+      "team": "Baltimore Orioles",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 7.41,
+          "actual_ud": 8,
+          "result_ud": "hit",
+          "projected_pp": 6.94,
+          "actual_pp": 7,
+          "result_pp": "hit"
+        }
+      ]
+    },
+    "669087": {
+      "name": "Sam Huff",
+      "team": "Baltimore Orioles",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 1.87,
+          "actual_ud": 3,
+          "result_ud": "over",
+          "projected_pp": 1.56,
+          "actual_pp": 3,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "702284": {
+      "name": "Cole Young",
+      "team": "Seattle Mariners",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.75,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 4.57,
+          "actual_pp": 3,
+          "result_pp": "under"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 4.32,
+          "actual_ud": 14,
+          "result_ud": "over",
+          "projected_pp": 4.19,
+          "actual_pp": 14,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "677594": {
+      "name": "Julio Rodr\u00edguez",
+      "team": "Seattle Mariners",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 7.27,
+          "actual_ud": 2,
+          "result_ud": "under",
+          "projected_pp": 7.1,
+          "actual_pp": 2,
+          "result_pp": "under"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 7.54,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 7.35,
+          "actual_pp": 3,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "647304": {
+      "name": "Josh Naylor",
+      "team": "Seattle Mariners",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.94,
+          "actual_ud": 9,
+          "result_ud": "over",
+          "projected_pp": 5.58,
+          "actual_pp": 10,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 6.42,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 6.11,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "668227": {
+      "name": "Randy Arozarena",
+      "team": "Seattle Mariners",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 6.71,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 6.44,
+          "actual_pp": 0,
+          "result_pp": "under"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 7.68,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 7.36,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "670042": {
+      "name": "Luke Raley",
+      "team": "Seattle Mariners",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.12,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 3.84,
+          "actual_pp": 2,
+          "result_pp": "under"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 4.25,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 3.91,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "686527": {
+      "name": "Dominic Canzone",
+      "team": "Seattle Mariners",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.89,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 5.59,
+          "actual_pp": 3,
+          "result_pp": "under"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 6.07,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 5.78,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "641598": {
+      "name": "Mitch Garver",
+      "team": "Seattle Mariners",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 3.69,
+          "actual_ud": 3,
+          "result_ud": "hit",
+          "projected_pp": 3.69,
+          "actual_pp": 2,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "670156": {
+      "name": "Miles Mastrobuoni",
+      "team": "Seattle Mariners",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 1.5,
+          "actual_ud": 5,
+          "result_ud": "over",
+          "projected_pp": 1.4,
+          "actual_pp": 5,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 3.95,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 3.95,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "621550": {
+      "name": "Patrick Wisdom",
+      "team": "Seattle Mariners",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 3.22,
+          "actual_ud": 5,
+          "result_ud": "over",
+          "projected_pp": 3.03,
+          "actual_pp": 4,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "660271": {
+      "name": "Shohei Ohtani",
+      "team": "Los Angeles Dodgers",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 10.2,
+          "actual_ud": 16,
+          "result_ud": "over",
+          "projected_pp": 9.64,
+          "actual_pp": 16,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 10.85,
+          "actual_ud": 22,
+          "result_ud": "over",
+          "projected_pp": 10.26,
+          "actual_pp": 21,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "681624": {
+      "name": "Andy Pages",
+      "team": "Los Angeles Dodgers",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 7.83,
+          "actual_ud": 8,
+          "result_ud": "hit",
+          "projected_pp": 7.42,
+          "actual_pp": 7,
+          "result_pp": "hit"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 7.12,
+          "actual_ud": 8,
+          "result_ud": "hit",
+          "projected_pp": 6.63,
+          "actual_pp": 8,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "518692": {
+      "name": "Freddie Freeman",
+      "team": "Los Angeles Dodgers",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 9.11,
+          "actual_ud": 13,
+          "result_ud": "over",
+          "projected_pp": 8.9,
+          "actual_pp": 11,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 9.71,
+          "actual_ud": 13,
+          "result_ud": "over",
+          "projected_pp": 9.31,
+          "actual_pp": 11,
+          "result_pp": "hit"
+        }
+      ]
+    },
+    "605141": {
+      "name": "Mookie Betts",
+      "team": "Los Angeles Dodgers",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.15,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 4.54,
+          "actual_pp": 0,
+          "result_pp": "under"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 4.88,
+          "actual_ud": 6,
+          "result_ud": "over",
+          "projected_pp": 4.3,
+          "actual_pp": 5,
+          "result_pp": "hit"
+        }
+      ]
+    },
+    "571970": {
+      "name": "Max Muncy",
+      "team": "Los Angeles Dodgers",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.96,
+          "actual_ud": 15,
+          "result_ud": "over",
+          "projected_pp": 5.73,
+          "actual_pp": 13,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 6.77,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 6.41,
+          "actual_pp": 2,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "663656": {
+      "name": "Kyle Tucker",
+      "team": "Los Angeles Dodgers",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.61,
+          "actual_ud": 11,
+          "result_ud": "over",
+          "projected_pp": 5.06,
+          "actual_pp": 10,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 5.76,
+          "actual_ud": 11,
+          "result_ud": "over",
+          "projected_pp": 5.19,
+          "actual_pp": 12,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "669899": {
+      "name": "Ryan Ward",
+      "team": "Los Angeles Dodgers",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 8.9,
+          "actual_ud": 20,
+          "result_ud": "over",
+          "projected_pp": 8.46,
+          "actual_pp": 20,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 10.19,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 9.81,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "687221": {
+      "name": "Dalton Rushing",
+      "team": "Los Angeles Dodgers",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 7.97,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 7.47,
+          "actual_pp": 0,
+          "result_pp": "under"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 7.19,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 6.74,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "690976": {
+      "name": "Alex Freeland",
+      "team": "Los Angeles Dodgers",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 6.43,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 5.95,
+          "actual_pp": 2,
+          "result_pp": "under"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 6.35,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 5.81,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "805808": {
+      "name": "Kevin McGonigle",
+      "team": "Detroit Tigers",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 7.45,
+          "actual_ud": 13,
+          "result_ud": "over",
+          "projected_pp": 6.81,
+          "actual_pp": 10,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 8.24,
+          "actual_ud": 8,
+          "result_ud": "hit",
+          "projected_pp": 7.34,
+          "actual_pp": 7,
+          "result_pp": "hit"
+        }
+      ]
+    },
+    "650402": {
+      "name": "Gleyber Torres",
+      "team": "Detroit Tigers",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 9.44,
+          "actual_ud": 17,
+          "result_ud": "over",
+          "projected_pp": 8.85,
+          "actual_pp": 15,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 10.52,
+          "actual_ud": 14,
+          "result_ud": "over",
+          "projected_pp": 9.75,
+          "actual_pp": 14,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "681481": {
+      "name": "Kerry Carpenter",
+      "team": "Detroit Tigers",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 8.46,
+          "actual_ud": 10,
+          "result_ud": "hit",
+          "projected_pp": 8.21,
+          "actual_pp": 9,
+          "result_pp": "hit"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 10.03,
+          "actual_ud": 8,
+          "result_ud": "under",
+          "projected_pp": 9.64,
+          "actual_pp": 7,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "693307": {
+      "name": "Dillon Dingler",
+      "team": "Detroit Tigers",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 10.41,
+          "actual_ud": 5,
+          "result_ud": "under",
+          "projected_pp": 9.9,
+          "actual_pp": 5,
+          "result_pp": "under"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 11.01,
+          "actual_ud": 14,
+          "result_ud": "over",
+          "projected_pp": 10.58,
+          "actual_pp": 13,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "682985": {
+      "name": "Riley Greene",
+      "team": "Detroit Tigers",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 7.78,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 7.32,
+          "actual_pp": 2,
+          "result_pp": "under"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 8.4,
+          "actual_ud": 16,
+          "result_ud": "over",
+          "projected_pp": 7.82,
+          "actual_pp": 16,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "679529": {
+      "name": "Spencer Torkelson",
+      "team": "Detroit Tigers",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 6.99,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 6.41,
+          "actual_pp": 2,
+          "result_pp": "under"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 5.69,
+          "actual_ud": 16,
+          "result_ud": "over",
+          "projected_pp": 5.14,
+          "actual_pp": 16,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "690993": {
+      "name": "Colt Keith",
+      "team": "Detroit Tigers",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 3.31,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 3.12,
+          "actual_pp": 0,
+          "result_pp": "under"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 2.48,
+          "actual_ud": 27,
+          "result_ud": "over",
+          "projected_pp": 2.28,
+          "actual_pp": 28,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "656716": {
+      "name": "Zach McKinstry",
+      "team": "Detroit Tigers",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.24,
+          "actual_ud": 5,
+          "result_ud": "hit",
+          "projected_pp": 4.37,
+          "actual_pp": 5,
+          "result_pp": "hit"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 5.41,
+          "actual_ud": 20,
+          "result_ud": "over",
+          "projected_pp": 4.64,
+          "actual_pp": 19,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "670097": {
+      "name": "Zack Short",
+      "team": "Detroit Tigers",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 3.45,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 3.05,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "668885": {
+      "name": "Austin Martin",
+      "team": "Minnesota Twins",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 3.55,
+          "actual_ud": 13,
+          "result_ud": "over",
+          "projected_pp": 3.16,
+          "actual_pp": 11,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 3.25,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 2.86,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "621439": {
+      "name": "Byron Buxton",
+      "team": "Minnesota Twins",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 6.01,
+          "actual_ud": 28,
+          "result_ud": "over",
+          "projected_pp": 5.85,
+          "actual_pp": 28,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 5.9,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 5.77,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "686797": {
+      "name": "Brooks Lee",
+      "team": "Minnesota Twins",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.42,
+          "actual_ud": 11,
+          "result_ud": "over",
+          "projected_pp": 5.24,
+          "actual_pp": 9,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 5.09,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 4.83,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "606115": {
+      "name": "Orlando Arcia",
+      "team": "Minnesota Twins",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 3.87,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 3.65,
+          "actual_pp": 3,
+          "result_pp": "hit"
+        }
+      ]
+    },
+    "605137": {
+      "name": "Josh Bell",
+      "team": "Minnesota Twins",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 6.15,
+          "actual_ud": 5,
+          "result_ud": "hit",
+          "projected_pp": 5.8,
+          "actual_pp": 5,
+          "result_pp": "hit"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 5.48,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 5.18,
+          "actual_pp": 3,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "668904": {
+      "name": "Royce Lewis",
+      "team": "Minnesota Twins",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.96,
+          "actual_ud": 17,
+          "result_ud": "over",
+          "projected_pp": 4.55,
+          "actual_pp": 16,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 4.29,
+          "actual_ud": 6,
+          "result_ud": "over",
+          "projected_pp": 3.95,
+          "actual_pp": 6,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "807712": {
+      "name": "Luke Keaschall",
+      "team": "Minnesota Twins",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.94,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 4.51,
+          "actual_pp": 3,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "668952": {
+      "name": "Ryan Kreidler",
+      "team": "Minnesota Twins",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 1.92,
+          "actual_ud": 3,
+          "result_ud": "over",
+          "projected_pp": 1.69,
+          "actual_pp": 3,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "656577": {
+      "name": "Alex Jackson",
+      "team": "Minnesota Twins",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 2.43,
+          "actual_ud": 11,
+          "result_ud": "over",
+          "projected_pp": 2.43,
+          "actual_pp": 10,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "689414": {
+      "name": "Liam Hicks",
+      "team": "Miami Marlins",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 6.24,
+          "actual_ud": 18,
+          "result_ud": "over",
+          "projected_pp": 5.47,
+          "actual_pp": 17,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 9.22,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 8.25,
+          "actual_pp": 3,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "672640": {
+      "name": "Otto Lopez",
+      "team": "Miami Marlins",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 9.33,
+          "actual_ud": 12,
+          "result_ud": "over",
+          "projected_pp": 9.11,
+          "actual_pp": 12,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 10.36,
+          "actual_ud": 16,
+          "result_ud": "over",
+          "projected_pp": 9.91,
+          "actual_pp": 18,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "669065": {
+      "name": "Kyle Stowers",
+      "team": "Miami Marlins",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 6.1,
+          "actual_ud": 21,
+          "result_ud": "over",
+          "projected_pp": 5.63,
+          "actual_pp": 20,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 9.05,
+          "actual_ud": 8,
+          "result_ud": "hit",
+          "projected_pp": 8.39,
+          "actual_pp": 6,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "669364": {
+      "name": "Xavier Edwards",
+      "team": "Miami Marlins",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 7.55,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 7.24,
+          "actual_pp": 2,
+          "result_pp": "under"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 7.33,
+          "actual_ud": 5,
+          "result_ud": "under",
+          "projected_pp": 6.86,
+          "actual_pp": 5,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "681715": {
+      "name": "Heriberto Hern\u00e1ndez",
+      "team": "Miami Marlins",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 7.92,
+          "actual_ud": 10,
+          "result_ud": "over",
+          "projected_pp": 7.92,
+          "actual_pp": 10,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "805300": {
+      "name": "Jakob Marsee",
+      "team": "Miami Marlins",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.66,
+          "actual_ud": 9,
+          "result_ud": "over",
+          "projected_pp": 5.01,
+          "actual_pp": 7,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 7.05,
+          "actual_ud": 12,
+          "result_ud": "over",
+          "projected_pp": 6.23,
+          "actual_pp": 12,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "666624": {
+      "name": "Christopher Morel",
+      "team": "Miami Marlins",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 2.71,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 2.32,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "683357": {
+      "name": "Owen Caissie",
+      "team": "Miami Marlins",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.73,
+          "actual_ud": 18,
+          "result_ud": "over",
+          "projected_pp": 4.25,
+          "actual_pp": 18,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 6.28,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 5.81,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "691594": {
+      "name": "Javier Sanoja",
+      "team": "Miami Marlins",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.17,
+          "actual_ud": 5,
+          "result_ud": "hit",
+          "projected_pp": 4.06,
+          "actual_pp": 5,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 4.81,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 4.69,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "606466": {
+      "name": "Ketel Marte",
+      "team": "Arizona Diamondbacks",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 10.31,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 9.58,
+          "actual_pp": 0,
+          "result_pp": "under"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 2.2,
+          "actual_ud": 6,
+          "result_ud": "over",
+          "projected_pp": 2.03,
+          "actual_pp": 5,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "682998": {
+      "name": "Corbin Carroll",
+      "team": "Arizona Diamondbacks",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 11.28,
+          "actual_ud": 6,
+          "result_ud": "under",
+          "projected_pp": 10.72,
+          "actual_pp": 5,
+          "result_pp": "under"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 2.9,
+          "actual_ud": 3,
+          "result_ud": "hit",
+          "projected_pp": 2.73,
+          "actual_pp": 2,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "672515": {
+      "name": "Gabriel Moreno",
+      "team": "Arizona Diamondbacks",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 11.39,
+          "actual_ud": 9,
+          "result_ud": "under",
+          "projected_pp": 10.24,
+          "actual_pp": 8,
+          "result_pp": "under"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 2.97,
+          "actual_ud": 3,
+          "result_ud": "hit",
+          "projected_pp": 2.67,
+          "actual_pp": 2,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "571448": {
+      "name": "Nolan Arenado",
+      "team": "Arizona Diamondbacks",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 9.55,
+          "actual_ud": 6,
+          "result_ud": "under",
+          "projected_pp": 8.62,
+          "actual_pp": 5,
+          "result_pp": "under"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 1.99,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 1.78,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "656976": {
+      "name": "Pavin Smith",
+      "team": "Arizona Diamondbacks",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.47,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 4.69,
+          "actual_pp": 2,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "672695": {
+      "name": "Geraldo Perdomo",
+      "team": "Arizona Diamondbacks",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 10.74,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 9.97,
+          "actual_pp": 3,
+          "result_pp": "under"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 2.41,
+          "actual_ud": 3,
+          "result_ud": "over",
+          "projected_pp": 2.26,
+          "actual_pp": 2,
+          "result_pp": "hit"
+        }
+      ]
+    },
+    "545121": {
+      "name": "Ildemaro Vargas",
+      "team": "Arizona Diamondbacks",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.8,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 4.4,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "814439": {
+      "name": "Ryan Waldschmidt",
+      "team": "Arizona Diamondbacks",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 6.94,
+          "actual_ud": 6,
+          "result_ud": "hit",
+          "projected_pp": 6.12,
+          "actual_pp": 5,
+          "result_pp": "hit"
+        }
+      ]
+    },
+    "694371": {
+      "name": "Tommy Troy",
+      "team": "Arizona Diamondbacks",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 9.66,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 8.73,
+          "actual_pp": 0,
+          "result_pp": "under"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 1.92,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 1.72,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "543807": {
+      "name": "George Springer",
+      "team": "Toronto Blue Jays",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.4,
+          "actual_ud": 11,
+          "result_ud": "over",
+          "projected_pp": 3.72,
+          "actual_pp": 9,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "665489": {
+      "name": "Vladimir Guerrero Jr.",
+      "team": "Toronto Blue Jays",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.73,
+          "actual_ud": 11,
+          "result_ud": "over",
+          "projected_pp": 5.26,
+          "actual_pp": 9,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "676391": {
+      "name": "Ernie Clement",
+      "team": "Toronto Blue Jays",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 6.9,
+          "actual_ud": 10,
+          "result_ud": "over",
+          "projected_pp": 6.77,
+          "actual_pp": 9,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "672960": {
+      "name": "Kazuma Okamoto",
+      "team": "Toronto Blue Jays",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 7.59,
+          "actual_ud": 5,
+          "result_ud": "under",
+          "projected_pp": 7.14,
+          "actual_pp": 4,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "682818": {
+      "name": "Yohendrick Pi\u00f1ango",
+      "team": "Toronto Blue Jays",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.91,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 5.68,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "678218": {
+      "name": "Brandon Valenzuela",
+      "team": "Toronto Blue Jays",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 7.5,
+          "actual_ud": 5,
+          "result_ud": "under",
+          "projected_pp": 6.91,
+          "actual_pp": 5,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "807727": {
+      "name": "Charles McAdoo",
+      "team": "Toronto Blue Jays",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.31,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 5.31,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "664702": {
+      "name": "Myles Straw",
+      "team": "Toronto Blue Jays",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 2.57,
+          "actual_ud": 11,
+          "result_ud": "over",
+          "projected_pp": 2.34,
+          "actual_pp": 11,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "664770": {
+      "name": "Nathan Lukes",
+      "team": "Toronto Blue Jays",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 6.29,
+          "actual_ud": 8,
+          "result_ud": "over",
+          "projected_pp": 5.9,
+          "actual_pp": 7,
+          "result_pp": "hit"
+        }
+      ]
+    },
+    "656941": {
+      "name": "Kyle Schwarber",
+      "team": "Philadelphia Phillies",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 10.52,
+          "actual_ud": 24,
+          "result_ud": "over",
+          "projected_pp": 9.49,
+          "actual_pp": 23,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "607208": {
+      "name": "Trea Turner",
+      "team": "Philadelphia Phillies",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 10.85,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 10.74,
+          "actual_pp": 3,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "547180": {
+      "name": "Bryce Harper",
+      "team": "Philadelphia Phillies",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 10.96,
+          "actual_ud": 27,
+          "result_ud": "over",
+          "projected_pp": 9.72,
+          "actual_pp": 25,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "669016": {
+      "name": "Brandon Marsh",
+      "team": "Philadelphia Phillies",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 11.5,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 10.98,
+          "actual_pp": 2,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "664761": {
+      "name": "Alec Bohm",
+      "team": "Philadelphia Phillies",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 10.63,
+          "actual_ud": 21,
+          "result_ud": "over",
+          "projected_pp": 10.16,
+          "actual_pp": 21,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "681082": {
+      "name": "Bryson Stott",
+      "team": "Philadelphia Phillies",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 9.98,
+          "actual_ud": 15,
+          "result_ud": "over",
+          "projected_pp": 9.15,
+          "actual_pp": 15,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "592663": {
+      "name": "J.T. Realmuto",
+      "team": "Philadelphia Phillies",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 8.03,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 7.32,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "666969": {
+      "name": "Adolis Garc\u00eda",
+      "team": "Philadelphia Phillies",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 9.87,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 9.87,
+          "actual_pp": 2,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "702222": {
+      "name": "Justin Crawford",
+      "team": "Philadelphia Phillies",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 7.31,
+          "actual_ud": 5,
+          "result_ud": "under",
+          "projected_pp": 7.0,
+          "actual_pp": 5,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "701807": {
+      "name": "Carson Benge",
+      "team": "New York Mets",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 8.57,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 8.32,
+          "actual_pp": 0,
+          "result_pp": "under"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 7.61,
+          "actual_ud": 5,
+          "result_ud": "under",
+          "projected_pp": 7.37,
+          "actual_pp": 5,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "666182": {
+      "name": "Bo Bichette",
+      "team": "New York Mets",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.26,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 4.77,
+          "actual_pp": 0,
+          "result_pp": "under"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 4.57,
+          "actual_ud": 16,
+          "result_ud": "over",
+          "projected_pp": 4.19,
+          "actual_pp": 16,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "665742": {
+      "name": "Juan Soto",
+      "team": "New York Mets",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.68,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 5.41,
+          "actual_pp": 2,
+          "result_pp": "under"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 4.39,
+          "actual_ud": 22,
+          "result_ud": "over",
+          "projected_pp": 4.07,
+          "actual_pp": 21,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "676724": {
+      "name": "Jared Young",
+      "team": "New York Mets",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.84,
+          "actual_ud": 6,
+          "result_ud": "hit",
+          "projected_pp": 5.44,
+          "actual_pp": 5,
+          "result_pp": "hit"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 5.34,
+          "actual_ud": 19,
+          "result_ud": "over",
+          "projected_pp": 4.92,
+          "actual_pp": 19,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "543760": {
+      "name": "Marcus Semien",
+      "team": "New York Mets",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 6.34,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 6.01,
+          "actual_pp": 0,
+          "result_pp": "under"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 5.79,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 5.54,
+          "actual_pp": 3,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "805999": {
+      "name": "A.J. Ewing",
+      "team": "New York Mets",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.52,
+          "actual_ud": 5,
+          "result_ud": "hit",
+          "projected_pp": 5.45,
+          "actual_pp": 4,
+          "result_pp": "under"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 5.23,
+          "actual_ud": 6,
+          "result_ud": "hit",
+          "projected_pp": 5.11,
+          "actual_pp": 5,
+          "result_pp": "hit"
+        }
+      ]
+    },
+    "682626": {
+      "name": "Francisco Alvarez",
+      "team": "New York Mets",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.56,
+          "actual_ud": 16,
+          "result_ud": "over",
+          "projected_pp": 4.16,
+          "actual_pp": 16,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 3.6,
+          "actual_ud": 3,
+          "result_ud": "hit",
+          "projected_pp": 3.31,
+          "actual_pp": 3,
+          "result_pp": "hit"
+        }
+      ]
+    },
+    "683146": {
+      "name": "Brett Baty",
+      "team": "New York Mets",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.1,
+          "actual_ud": 7,
+          "result_ud": "over",
+          "projected_pp": 3.93,
+          "actual_pp": 8,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 3.11,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 3.04,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "620443": {
+      "name": "Luis Torrens",
+      "team": "New York Mets",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.84,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 4.58,
+          "actual_pp": 2,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "802139": {
+      "name": "JJ Wetherholt",
+      "team": "St. Louis Cardinals",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 3.41,
+          "actual_ud": 13,
+          "result_ud": "over",
+          "projected_pp": 3.2,
+          "actual_pp": 13,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 5.02,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 4.81,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "671056": {
+      "name": "Iv\u00e1n Herrera",
+      "team": "St. Louis Cardinals",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 3.64,
+          "actual_ud": 13,
+          "result_ud": "over",
+          "projected_pp": 3.27,
+          "actual_pp": 11,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 5.16,
+          "actual_ud": 6,
+          "result_ud": "hit",
+          "projected_pp": 4.63,
+          "actual_pp": 4,
+          "result_pp": "hit"
+        }
+      ]
+    },
+    "676475": {
+      "name": "Alec Burleson",
+      "team": "St. Louis Cardinals",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.49,
+          "actual_ud": 14,
+          "result_ud": "over",
+          "projected_pp": 4.19,
+          "actual_pp": 14,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 6.63,
+          "actual_ud": 14,
+          "result_ud": "over",
+          "projected_pp": 6.23,
+          "actual_pp": 14,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "691023": {
+      "name": "Jordan Walker",
+      "team": "St. Louis Cardinals",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.19,
+          "actual_ud": 23,
+          "result_ud": "over",
+          "projected_pp": 4.11,
+          "actual_pp": 23,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 6.0,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 5.91,
+          "actual_pp": 3,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "663457": {
+      "name": "Lars Nootbaar",
+      "team": "St. Louis Cardinals",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 7.69,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 6.92,
+          "actual_pp": 2,
+          "result_pp": "under"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 4.99,
+          "actual_ud": 20,
+          "result_ud": "over",
+          "projected_pp": 4.41,
+          "actual_pp": 19,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "691026": {
+      "name": "Masyn Winn",
+      "team": "St. Louis Cardinals",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 2.85,
+          "actual_ud": 14,
+          "result_ud": "over",
+          "projected_pp": 2.68,
+          "actual_pp": 14,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 4.5,
+          "actual_ud": 8,
+          "result_ud": "over",
+          "projected_pp": 4.21,
+          "actual_pp": 7,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "676369": {
+      "name": "Nelson Vel\u00e1zquez",
+      "team": "St. Louis Cardinals",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 3.27,
+          "actual_ud": 16,
+          "result_ud": "over",
+          "projected_pp": 3.07,
+          "actual_pp": 16,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "701675": {
+      "name": "Nathan Church",
+      "team": "St. Louis Cardinals",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.12,
+          "actual_ud": 2,
+          "result_ud": "under",
+          "projected_pp": 4.93,
+          "actual_pp": 2,
+          "result_pp": "under"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 2.83,
+          "actual_ud": 6,
+          "result_ud": "over",
+          "projected_pp": 2.73,
+          "actual_pp": 5,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "665877": {
+      "name": "Jos\u00e9 Ferm\u00edn",
+      "team": "St. Louis Cardinals",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 2.66,
+          "actual_ud": 8,
+          "result_ud": "over",
+          "projected_pp": 2.61,
+          "actual_pp": 8,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "657041": {
+      "name": "Lane Thomas",
+      "team": "Kansas City Royals",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.66,
+          "actual_ud": 11,
+          "result_ud": "over",
+          "projected_pp": 4.33,
+          "actual_pp": 10,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 3.81,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 3.53,
+          "actual_pp": 2,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "677951": {
+      "name": "Bobby Witt Jr.",
+      "team": "Kansas City Royals",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 6.85,
+          "actual_ud": 10,
+          "result_ud": "over",
+          "projected_pp": 6.53,
+          "actual_pp": 11,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 5.97,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 5.77,
+          "actual_pp": 3,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "672580": {
+      "name": "Maikel Garcia",
+      "team": "Kansas City Royals",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.54,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 5.14,
+          "actual_pp": 2,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "521692": {
+      "name": "Salvador Perez",
+      "team": "Kansas City Royals",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 2.99,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 2.6,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "686469": {
+      "name": "Vinnie Pasquantino",
+      "team": "Kansas City Royals",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 6.48,
+          "actual_ud": 12,
+          "result_ud": "over",
+          "projected_pp": 5.84,
+          "actual_pp": 12,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 5.83,
+          "actual_ud": 8,
+          "result_ud": "over",
+          "projected_pp": 5.31,
+          "actual_pp": 7,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "516782": {
+      "name": "Starling Marte",
+      "team": "Kansas City Royals",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.15,
+          "actual_ud": 6,
+          "result_ud": "over",
+          "projected_pp": 3.98,
+          "actual_pp": 5,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "695506": {
+      "name": "Jac Caglianone",
+      "team": "Kansas City Royals",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 8.14,
+          "actual_ud": 21,
+          "result_ud": "over",
+          "projected_pp": 7.72,
+          "actual_pp": 20,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 7.89,
+          "actual_ud": 8,
+          "result_ud": "hit",
+          "projected_pp": 7.48,
+          "actual_pp": 8,
+          "result_pp": "hit"
+        }
+      ]
+    },
+    "679845": {
+      "name": "Nick Loftin",
+      "team": "Kansas City Royals",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.7,
+          "actual_ud": 13,
+          "result_ud": "over",
+          "projected_pp": 5.17,
+          "actual_pp": 12,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 4.85,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 4.4,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "686555": {
+      "name": "Isaac Collins",
+      "team": "Kansas City Royals",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.47,
+          "actual_ud": 13,
+          "result_ud": "over",
+          "projected_pp": 3.75,
+          "actual_pp": 12,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 4.04,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 3.46,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "592626": {
+      "name": "Joc Pederson",
+      "team": "Texas Rangers",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 7.36,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 6.95,
+          "actual_pp": 2,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "608369": {
+      "name": "Corey Seager",
+      "team": "Texas Rangers",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.59,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 5.1,
+          "actual_pp": 2,
+          "result_pp": "under"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 5.13,
+          "actual_ud": 19,
+          "result_ud": "over",
+          "projected_pp": 4.69,
+          "actual_pp": 19,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "673962": {
+      "name": "Josh Jung",
+      "team": "Texas Rangers",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 7.22,
+          "actual_ud": 8,
+          "result_ud": "hit",
+          "projected_pp": 6.88,
+          "actual_pp": 7,
+          "result_pp": "hit"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 7.4,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 6.99,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "607043": {
+      "name": "Brandon Nimmo",
+      "team": "Texas Rangers",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.52,
+          "actual_ud": 8,
+          "result_ud": "over",
+          "projected_pp": 4.24,
+          "actual_pp": 8,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 3.67,
+          "actual_ud": 14,
+          "result_ud": "over",
+          "projected_pp": 3.45,
+          "actual_pp": 12,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "694671": {
+      "name": "Wyatt Langford",
+      "team": "Texas Rangers",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.22,
+          "actual_ud": 5,
+          "result_ud": "hit",
+          "projected_pp": 4.99,
+          "actual_pp": 5,
+          "result_pp": "hit"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 4.78,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 4.36,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "677649": {
+      "name": "Ezequiel Duran",
+      "team": "Texas Rangers",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.77,
+          "actual_ud": 8,
+          "result_ud": "over",
+          "projected_pp": 5.47,
+          "actual_pp": 7,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 5.65,
+          "actual_ud": 10,
+          "result_ud": "over",
+          "projected_pp": 5.32,
+          "actual_pp": 10,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "694497": {
+      "name": "Evan Carter",
+      "team": "Texas Rangers",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.03,
+          "actual_ud": 13,
+          "result_ud": "over",
+          "projected_pp": 3.76,
+          "actual_pp": 11,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 3.32,
+          "actual_ud": 5,
+          "result_ud": "over",
+          "projected_pp": 2.99,
+          "actual_pp": 5,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "543309": {
+      "name": "Kyle Higashioka",
+      "team": "Texas Rangers",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 6.2,
+          "actual_ud": 6,
+          "result_ud": "hit",
+          "projected_pp": 5.68,
+          "actual_pp": 4,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "670032": {
+      "name": "Nicky Lopez",
+      "team": "Texas Rangers",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.35,
+          "actual_ud": 17,
+          "result_ud": "over",
+          "projected_pp": 4.27,
+          "actual_pp": 14,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 4.92,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 4.61,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "805367": {
+      "name": "Chase Meidroth",
+      "team": "Chicago White Sox",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.38,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 4.06,
+          "actual_pp": 3,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "545341": {
+      "name": "Randal Grichuk",
+      "team": "Chicago White Sox",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 3.97,
+          "actual_ud": 6,
+          "result_ud": "over",
+          "projected_pp": 3.8,
+          "actual_pp": 5,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "678246": {
+      "name": "Miguel Vargas",
+      "team": "Chicago White Sox",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.63,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 5.25,
+          "actual_pp": 3,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "700337": {
+      "name": "Edgar Quero",
+      "team": "Chicago White Sox",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 2.29,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 2.24,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "695731": {
+      "name": "Braden Montgomery",
+      "team": "Chicago White Sox",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 11.17,
+          "actual_ud": 14,
+          "result_ud": "over",
+          "projected_pp": 11.17,
+          "actual_pp": 12,
+          "result_pp": "hit"
+        }
+      ]
+    },
+    "656537": {
+      "name": "Derek Hill",
+      "team": "Chicago White Sox",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 1.64,
+          "actual_ud": 11,
+          "result_ud": "over",
+          "projected_pp": 1.55,
+          "actual_pp": 12,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "694378": {
+      "name": "Jacob Gonzalez",
+      "team": "Chicago White Sox",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 3.73,
+          "actual_ud": 3,
+          "result_ud": "hit",
+          "projected_pp": 3.49,
+          "actual_pp": 2,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "682668": {
+      "name": "Luisangel Acu\u00f1a",
+      "team": "Chicago White Sox",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 2.15,
+          "actual_ud": 12,
+          "result_ud": "over",
+          "projected_pp": 2.19,
+          "actual_pp": 13,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "671976": {
+      "name": "Tristan Peters",
+      "team": "Chicago White Sox",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.31,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 3.87,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "671739": {
+      "name": "Michael Harris II",
+      "team": "Atlanta Braves",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.98,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 4.64,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "645277": {
+      "name": "Ozzie Albies",
+      "team": "Atlanta Braves",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.45,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 5.06,
+          "actual_pp": 3,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "621566": {
+      "name": "Matt Olson",
+      "team": "Atlanta Braves",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.49,
+          "actual_ud": 6,
+          "result_ud": "hit",
+          "projected_pp": 5.32,
+          "actual_pp": 5,
+          "result_pp": "hit"
+        }
+      ]
+    },
+    "642086": {
+      "name": "Dominic Smith",
+      "team": "Atlanta Braves",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 3.36,
+          "actual_ud": 3,
+          "result_ud": "hit",
+          "projected_pp": 3.09,
+          "actual_pp": 3,
+          "result_pp": "hit"
+        }
+      ]
+    },
+    "643289": {
+      "name": "Mauricio Dub\u00f3n",
+      "team": "Atlanta Braves",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.03,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 4.78,
+          "actual_pp": 3,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "663586": {
+      "name": "Austin Riley",
+      "team": "Atlanta Braves",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 2.34,
+          "actual_ud": 3,
+          "result_ud": "over",
+          "projected_pp": 2.04,
+          "actual_pp": 2,
+          "result_pp": "hit"
+        }
+      ]
+    },
+    "573262": {
+      "name": "Mike Yastrzemski",
+      "team": "Atlanta Braves",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 2.8,
+          "actual_ud": 3,
+          "result_ud": "hit",
+          "projected_pp": 2.36,
+          "actual_pp": 3,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "622761": {
+      "name": "Jorge Mateo",
+      "team": "Atlanta Braves",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 4.45,
+          "actual_ud": 11,
+          "result_ud": "over",
+          "projected_pp": 4.32,
+          "actual_pp": 10,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "642851": {
+      "name": "Austin Wynns",
+      "team": "Atlanta Braves",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 1.55,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 1.37,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "650489": {
+      "name": "Willi Castro",
+      "team": "Colorado Rockies",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 9.0,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 8.2,
+          "actual_pp": 0,
+          "result_pp": "under"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 9.87,
+          "actual_ud": 10,
+          "result_ud": "hit",
+          "projected_pp": 8.96,
+          "actual_pp": 11,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "691720": {
+      "name": "Kyle Karros",
+      "team": "Colorado Rockies",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 7.73,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 6.9,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "681198": {
+      "name": "TJ Rumfield",
+      "team": "Colorado Rockies",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 5.1,
+          "actual_ud": 19,
+          "result_ud": "over",
+          "projected_pp": 4.32,
+          "actual_pp": 19,
+          "result_pp": "over"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 5.86,
+          "actual_ud": 12,
+          "result_ud": "over",
+          "projected_pp": 5.32,
+          "actual_pp": 9,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "696100": {
+      "name": "Hunter Goodman",
+      "team": "Colorado Rockies",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 11.07,
+          "actual_ud": 9,
+          "result_ud": "hit",
+          "projected_pp": 10.38,
+          "actual_pp": 8,
+          "result_pp": "under"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 11.5,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 10.8,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "678662": {
+      "name": "Ezequiel Tovar",
+      "team": "Colorado Rockies",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 8.24,
+          "actual_ud": 6,
+          "result_ud": "under",
+          "projected_pp": 7.88,
+          "actual_pp": 6,
+          "result_pp": "under"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 9.38,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 9.08,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "694249": {
+      "name": "Cole Carrigg",
+      "team": "Colorado Rockies",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 8.35,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 7.59,
+          "actual_pp": 0,
+          "result_pp": "under"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 4.43,
+          "actual_ud": 17,
+          "result_ud": "over",
+          "projected_pp": 4.03,
+          "actual_pp": 17,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "690924": {
+      "name": "Braxton Fulford",
+      "team": "Colorado Rockies",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 2.94,
+          "actual_ud": 3,
+          "result_ud": "hit",
+          "projected_pp": 2.76,
+          "actual_pp": 2,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "677060": {
+      "name": "Chad Stevens",
+      "team": "Colorado Rockies",
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 1.78,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 1.36,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "669004": {
+      "name": "MJ Melendez",
+      "team": "New York Mets",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 4.15,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 3.89,
+          "actual_pp": 3,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "699625": {
+      "name": "Jimmy Crooks",
+      "team": "St. Louis Cardinals",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 2.27,
+          "actual_ud": 16,
+          "result_ud": "over",
+          "projected_pp": 1.96,
+          "actual_pp": 16,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "669357": {
+      "name": "Nolan Gorman",
+      "team": "St. Louis Cardinals",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 1.85,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 1.62,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "668670": {
+      "name": "Jake Rogers",
+      "team": "Detroit Tigers",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 4.08,
+          "actual_ud": 5,
+          "result_ud": "over",
+          "projected_pp": 3.72,
+          "actual_pp": 4,
+          "result_pp": "hit"
+        }
+      ]
+    },
+    "663616": {
+      "name": "Trevor Larnach",
+      "team": "Minnesota Twins",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 4.18,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 3.75,
+          "actual_pp": 3,
+          "result_pp": "hit"
+        }
+      ]
+    },
+    "665019": {
+      "name": "Kody Clemens",
+      "team": "Minnesota Twins",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 6.56,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 6.36,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "605170": {
+      "name": "Victor Caratini",
+      "team": "Minnesota Twins",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 5.37,
+          "actual_ud": 6,
+          "result_ud": "hit",
+          "projected_pp": 4.86,
+          "actual_pp": 5,
+          "result_pp": "hit"
+        }
+      ]
+    },
+    "656484": {
+      "name": "Tristan Gray",
+      "team": "Minnesota Twins",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 4.95,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 4.91,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "691788": {
+      "name": "Joe Mack",
+      "team": "Miami Marlins",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 7.47,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 7.25,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "665923": {
+      "name": "Esteury Ruiz",
+      "team": "Miami Marlins",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 8.07,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 7.42,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "694410": {
+      "name": "LuJames Groover",
+      "team": "Arizona Diamondbacks",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 2.34,
+          "actual_ud": 3,
+          "result_ud": "over",
+          "projected_pp": 2.34,
+          "actual_pp": 3,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "605244": {
+      "name": "Aramis Garcia",
+      "team": "Arizona Diamondbacks",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 5.44,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 5.44,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "678489": {
+      "name": "Jorge Barrosa",
+      "team": "Arizona Diamondbacks",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 1.71,
+          "actual_ud": 3,
+          "result_ud": "over",
+          "projected_pp": 1.71,
+          "actual_pp": 3,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "695600": {
+      "name": "Carter Jensen",
+      "team": "Kansas City Royals",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 4.67,
+          "actual_ud": 6,
+          "result_ud": "over",
+          "projected_pp": 4.48,
+          "actual_pp": 5,
+          "result_pp": "hit"
+        }
+      ]
+    },
+    "686681": {
+      "name": "Michael Massey",
+      "team": "Kansas City Royals",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 5.55,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 5.42,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "670224": {
+      "name": "Kameron Misner",
+      "team": "Kansas City Royals",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 1.5,
+          "actual_ud": 8,
+          "result_ud": "over",
+          "projected_pp": 1.4,
+          "actual_pp": 7,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "669394": {
+      "name": "Jake Burger",
+      "team": "Texas Rangers",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 5.27,
+          "actual_ud": 9,
+          "result_ud": "over",
+          "projected_pp": 4.71,
+          "actual_pp": 8,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "553869": {
+      "name": "Elias D\u00edaz",
+      "team": "Texas Rangers",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 3.53,
+          "actual_ud": 8,
+          "result_ud": "over",
+          "projected_pp": 3.34,
+          "actual_pp": 8,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "666397": {
+      "name": "Edouard Julien",
+      "team": "Colorado Rockies",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 6.21,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 5.73,
+          "actual_pp": 3,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "687859": {
+      "name": "Troy Johnston",
+      "team": "Colorado Rockies",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 8.56,
+          "actual_ud": 12,
+          "result_ud": "over",
+          "projected_pp": 8.0,
+          "actual_pp": 11,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "694514": {
+      "name": "Sterlin Thompson",
+      "team": "Colorado Rockies",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 5.06,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 4.59,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "664954": {
+      "name": "Brett Sullivan",
+      "team": "Colorado Rockies",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 2.06,
+          "actual_ud": 31,
+          "result_ud": "over",
+          "projected_pp": 2.06,
+          "actual_pp": 31,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "691718": {
+      "name": "Pete Crow-Armstrong",
+      "team": "Chicago Cubs",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 11.34,
+          "actual_ud": 17,
+          "result_ud": "over",
+          "projected_pp": 10.99,
+          "actual_pp": 17,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "608324": {
+      "name": "Alex Bregman",
+      "team": "Chicago Cubs",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 6.14,
+          "actual_ud": 21,
+          "result_ud": "over",
+          "projected_pp": 5.52,
+          "actual_pp": 20,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "683737": {
+      "name": "Michael Busch",
+      "team": "Chicago Cubs",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 8.73,
+          "actual_ud": 13,
+          "result_ud": "over",
+          "projected_pp": 8.13,
+          "actual_pp": 12,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "664023": {
+      "name": "Ian Happ",
+      "team": "Chicago Cubs",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 10.68,
+          "actual_ud": 14,
+          "result_ud": "over",
+          "projected_pp": 9.98,
+          "actual_pp": 14,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "673548": {
+      "name": "Seiya Suzuki",
+      "team": "Chicago Cubs",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 7.82,
+          "actual_ud": 20,
+          "result_ud": "over",
+          "projected_pp": 7.49,
+          "actual_pp": 20,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "663538": {
+      "name": "Nico Hoerner",
+      "team": "Chicago Cubs",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 5.3,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 4.96,
+          "actual_pp": 3,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "694208": {
+      "name": "Mois\u00e9s Ballesteros",
+      "team": "Chicago Cubs",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 3.04,
+          "actual_ud": 7,
+          "result_ud": "over",
+          "projected_pp": 2.92,
+          "actual_pp": 8,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "608348": {
+      "name": "Carson Kelly",
+      "team": "Chicago Cubs",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 2.55,
+          "actual_ud": 14,
+          "result_ud": "over",
+          "projected_pp": 2.43,
+          "actual_pp": 14,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "621020": {
+      "name": "Dansby Swanson",
+      "team": "Chicago Cubs",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 4.46,
+          "actual_ud": 9,
+          "result_ud": "over",
+          "projected_pp": 3.9,
+          "actual_pp": 9,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "693304": {
+      "name": "Nick Gonzales",
+      "team": "Pittsburgh Pirates",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 4.6,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 4.4,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "664040": {
+      "name": "Brandon Lowe",
+      "team": "Pittsburgh Pirates",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 3.39,
+          "actual_ud": 3,
+          "result_ud": "hit",
+          "projected_pp": 3.03,
+          "actual_pp": 2,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "668804": {
+      "name": "Bryan Reynolds",
+      "team": "Pittsburgh Pirates",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 5.51,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 4.94,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "542303": {
+      "name": "Marcell Ozuna",
+      "team": "Pittsburgh Pirates",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 2.62,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 2.43,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "687462": {
+      "name": "Spencer Horwitz",
+      "team": "Pittsburgh Pirates",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 4.64,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 4.27,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "699013": {
+      "name": "Esmerlyn Valdez",
+      "team": "Pittsburgh Pirates",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 1.57,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 1.46,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "663968": {
+      "name": "Jake Mangum",
+      "team": "Pittsburgh Pirates",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 4.22,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 4.32,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "804668": {
+      "name": "Rafael Flores Jr.",
+      "team": "Pittsburgh Pirates",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 3.88,
+          "actual_ud": 3,
+          "result_ud": "under",
+          "projected_pp": 3.1,
+          "actual_pp": 2,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "669707": {
+      "name": "Jared Triolo",
+      "team": "Pittsburgh Pirates",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 2.76,
+          "actual_ud": 3,
+          "result_ud": "hit",
+          "projected_pp": 2.48,
+          "actual_pp": 3,
+          "result_pp": "over"
+        }
+      ]
+    },
+    "668939": {
+      "name": "Adley Rutschman",
+      "team": "Baltimore Orioles",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 6.98,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 6.42,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "694212": {
+      "name": "Samuel Basallo",
+      "team": "Baltimore Orioles",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 4.11,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 3.7,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "640902": {
+      "name": "Jhonny Pereda",
+      "team": "Seattle Mariners",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 5.58,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 5.48,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "691723": {
+      "name": "Coby Mayo",
+      "team": "Baltimore Orioles",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 6.7,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 6.5,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    },
+    "806068": {
+      "name": "Colt Emerson",
+      "team": "Seattle Mariners",
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 5.93,
+          "actual_ud": 0,
+          "result_ud": "under",
+          "projected_pp": 5.61,
+          "actual_pp": 0,
+          "result_pp": "under"
+        }
+      ]
+    }
+  },
+  "backtest_corrections": {
+    "621493": {
+      "name": "Taylor Ward",
+      "team": "Baltimore Orioles",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "683002": {
+      "name": "Gunnar Henderson",
+      "team": "Baltimore Orioles",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "624413": {
+      "name": "Pete Alonso",
+      "team": "Baltimore Orioles",
+      "ud": 0.946,
+      "pp": 0.897,
+      "games": 13
+    },
+    "681297": {
+      "name": "Colton Cowser",
+      "team": "Baltimore Orioles",
+      "ud": 0.8,
+      "pp": 0.8,
+      "games": 10
+    },
+    "691723": {
+      "name": "Coby Mayo",
+      "team": "Baltimore Orioles",
+      "ud": 0.947,
+      "pp": 0.848,
+      "games": 10
+    },
+    "702284": {
+      "name": "Cole Young",
+      "team": "Seattle Mariners",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 14
+    },
+    "677594": {
+      "name": "Julio Rodr\u00edguez",
+      "team": "Seattle Mariners",
+      "ud": 0.8,
+      "pp": 0.8,
+      "games": 14
+    },
+    "647304": {
+      "name": "Josh Naylor",
+      "team": "Seattle Mariners",
+      "ud": 0.901,
+      "pp": 0.878,
+      "games": 13
+    },
+    "668227": {
+      "name": "Randy Arozarena",
+      "team": "Seattle Mariners",
+      "ud": 1.193,
+      "pp": 1.148,
+      "games": 14
+    },
+    "650490": {
+      "name": "Yandy D\u00edaz",
+      "team": "Tampa Bay Rays",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "691406": {
+      "name": "Junior Caminero",
+      "team": "Tampa Bay Rays",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "666018": {
+      "name": "Jonathan Aranda",
+      "team": "Tampa Bay Rays",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "810938": {
+      "name": "Ben Williamson",
+      "team": "Tampa Bay Rays",
+      "ud": 0.977,
+      "pp": 0.972,
+      "games": 10
+    },
+    "656775": {
+      "name": "Cedric Mullins",
+      "team": "Tampa Bay Rays",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 11
+    },
+    "680776": {
+      "name": "Jarren Duran",
+      "team": "Boston Red Sox",
+      "ud": 0.981,
+      "pp": 0.925,
+      "games": 10
+    },
+    "678882": {
+      "name": "Ceddanne Rafaela",
+      "team": "Boston Red Sox",
+      "ud": 1.198,
+      "pp": 1.194,
+      "games": 11
+    },
+    "677800": {
+      "name": "Wilyer Abreu",
+      "team": "Boston Red Sox",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "575929": {
+      "name": "Willson Contreras",
+      "team": "Boston Red Sox",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "702332": {
+      "name": "Caleb Durbin",
+      "team": "Boston Red Sox",
+      "ud": 0.8,
+      "pp": 0.8,
+      "games": 11
+    },
+    "691785": {
+      "name": "Marcelo Mayer",
+      "team": "Boston Red Sox",
+      "ud": 1.172,
+      "pp": 1.151,
+      "games": 10
+    },
+    "608070": {
+      "name": "Jos\u00e9 Ram\u00edrez",
+      "team": "Cleveland Guardians",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "800050": {
+      "name": "Chase DeLauter",
+      "team": "Cleveland Guardians",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 11
+    },
+    "700932": {
+      "name": "Kyle Manzardo",
+      "team": "Cleveland Guardians",
+      "ud": 0.812,
+      "pp": 0.8,
+      "games": 11
+    },
+    "680757": {
+      "name": "Steven Kwan",
+      "team": "Cleveland Guardians",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "672275": {
+      "name": "Patrick Bailey",
+      "team": "San Francisco Giants",
+      "ud": 1.183,
+      "pp": 1.166,
+      "games": 12
+    },
+    "677587": {
+      "name": "Brayan Rocchio",
+      "team": "Cleveland Guardians",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "663757": {
+      "name": "Trent Grisham",
+      "team": "New York Yankees",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 11
+    },
+    "700250": {
+      "name": "Ben Rice",
+      "team": "New York Yankees",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 12
+    },
+    "641355": {
+      "name": "Cody Bellinger",
+      "team": "New York Yankees",
+      "ud": 1.185,
+      "pp": 1.149,
+      "games": 13
+    },
+    "665862": {
+      "name": "Jazz Chisholm Jr.",
+      "team": "New York Yankees",
+      "ud": 0.982,
+      "pp": 0.949,
+      "games": 12
+    },
+    "676609": {
+      "name": "Jos\u00e9 Caballero",
+      "team": "New York Yankees",
+      "ud": 0.918,
+      "pp": 0.934,
+      "games": 12
+    },
+    "641857": {
+      "name": "Ryan McMahon",
+      "team": "New York Yankees",
+      "ud": 1.173,
+      "pp": 1.075,
+      "games": 10
+    },
+    "543807": {
+      "name": "George Springer",
+      "team": "Toronto Blue Jays",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "665489": {
+      "name": "Vladimir Guerrero Jr.",
+      "team": "Toronto Blue Jays",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "672960": {
+      "name": "Kazuma Okamoto",
+      "team": "Toronto Blue Jays",
+      "ud": 1.177,
+      "pp": 1.144,
+      "games": 13
+    },
+    "676391": {
+      "name": "Ernie Clement",
+      "team": "Toronto Blue Jays",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "665926": {
+      "name": "Andr\u00e9s Gim\u00e9nez",
+      "team": "Toronto Blue Jays",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "656941": {
+      "name": "Kyle Schwarber",
+      "team": "Philadelphia Phillies",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "607208": {
+      "name": "Trea Turner",
+      "team": "Philadelphia Phillies",
+      "ud": 1.16,
+      "pp": 1.117,
+      "games": 13
+    },
+    "547180": {
+      "name": "Bryce Harper",
+      "team": "Philadelphia Phillies",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "669016": {
+      "name": "Brandon Marsh",
+      "team": "Philadelphia Phillies",
+      "ud": 1.074,
+      "pp": 1.061,
+      "games": 11
+    },
+    "664761": {
+      "name": "Alec Bohm",
+      "team": "Philadelphia Phillies",
+      "ud": 1.133,
+      "pp": 1.093,
+      "games": 12
+    },
+    "592663": {
+      "name": "J.T. Realmuto",
+      "team": "Philadelphia Phillies",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 10
+    },
+    "681082": {
+      "name": "Bryson Stott",
+      "team": "Philadelphia Phillies",
+      "ud": 0.937,
+      "pp": 0.907,
+      "games": 10
+    },
+    "666969": {
+      "name": "Adolis Garc\u00eda",
+      "team": "Philadelphia Phillies",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "687263": {
+      "name": "Zach Neto",
+      "team": "Los Angeles Angels",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 14
+    },
+    "545361": {
+      "name": "Mike Trout",
+      "team": "Los Angeles Angels",
+      "ud": 1.2,
+      "pp": 1.136,
+      "games": 13
+    },
+    "666176": {
+      "name": "Jo Adell",
+      "team": "Los Angeles Angels",
+      "ud": 1.18,
+      "pp": 1.2,
+      "games": 14
+    },
+    "681351": {
+      "name": "Logan O'Hoppe",
+      "team": "Los Angeles Angels",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 11
+    },
+    "670541": {
+      "name": "Yordan Alvarez",
+      "team": "Houston Astros",
+      "ud": 1.2,
+      "pp": 1.139,
+      "games": 14
+    },
+    "572233": {
+      "name": "Christian Walker",
+      "team": "Houston Astros",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 14
+    },
+    "514888": {
+      "name": "Jose Altuve",
+      "team": "Houston Astros",
+      "ud": 1.192,
+      "pp": 1.119,
+      "games": 14
+    },
+    "701358": {
+      "name": "Cam Smith",
+      "team": "Houston Astros",
+      "ud": 1.2,
+      "pp": 1.194,
+      "games": 13
+    },
+    "665487": {
+      "name": "Fernando Tatis Jr.",
+      "team": "San Diego Padres",
+      "ud": 1.183,
+      "pp": 1.129,
+      "games": 14
+    },
+    "701538": {
+      "name": "Jackson Merrill",
+      "team": "San Diego Padres",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "592518": {
+      "name": "Manny Machado",
+      "team": "San Diego Padres",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "593428": {
+      "name": "Xander Bogaerts",
+      "team": "San Diego Padres",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 14
+    },
+    "657757": {
+      "name": "Gavin Sheets",
+      "team": "San Diego Padres",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 11
+    },
+    "701398": {
+      "name": "Sal Stewart",
+      "team": "Cincinnati Reds",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 14
+    },
+    "553993": {
+      "name": "Eugenio Su\u00e1rez",
+      "team": "Cincinnati Reds",
+      "ud": 0.974,
+      "pp": 0.946,
+      "games": 13
+    },
+    "680574": {
+      "name": "Matt McLain",
+      "team": "Cincinnati Reds",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 14
+    },
+    "663886": {
+      "name": "Tyler Stephenson",
+      "team": "Cincinnati Reds",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 10
+    },
+    "646240": {
+      "name": "Rafael Devers",
+      "team": "San Francisco Giants",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 14
+    },
+    "650333": {
+      "name": "Luis Arraez",
+      "team": "San Francisco Giants",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 14
+    },
+    "642715": {
+      "name": "Willy Adames",
+      "team": "San Francisco Giants",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 14
+    },
+    "808982": {
+      "name": "Jung Hoo Lee",
+      "team": "San Francisco Giants",
+      "ud": 0.991,
+      "pp": 0.939,
+      "games": 13
+    },
+    "656305": {
+      "name": "Matt Chapman",
+      "team": "San Francisco Giants",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 14
+    },
+    "695578": {
+      "name": "James Wood",
+      "team": "Washington Nationals",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "682928": {
+      "name": "CJ Abrams",
+      "team": "Washington Nationals",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 12
+    },
+    "695734": {
+      "name": "Daylen Lile",
+      "team": "Washington Nationals",
+      "ud": 1.135,
+      "pp": 1.103,
+      "games": 13
+    },
+    "683083": {
+      "name": "Nasim Nu\u00f1ez",
+      "team": "Washington Nationals",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 11
+    },
+    "669127": {
+      "name": "Shea Langeliers",
+      "team": "Athletics",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 12
+    },
+    "701762": {
+      "name": "Nick Kurtz",
+      "team": "Athletics",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 12
+    },
+    "667670": {
+      "name": "Brent Rooker",
+      "team": "Athletics",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "691777": {
+      "name": "Max Muncy",
+      "team": "Athletics",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "691016": {
+      "name": "Tyler Soderstrom",
+      "team": "Athletics",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "592885": {
+      "name": "Christian Yelich",
+      "team": "Milwaukee Brewers",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 10
+    },
+    "668930": {
+      "name": "Brice Turang",
+      "team": "Milwaukee Brewers",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 10
+    },
+    "661388": {
+      "name": "William Contreras",
+      "team": "Milwaukee Brewers",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 11
+    },
+    "687401": {
+      "name": "Joey Ortiz",
+      "team": "Milwaukee Brewers",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 10
+    },
+    "671218": {
+      "name": "Heliot Ramos",
+      "team": "San Francisco Giants",
+      "ud": 0.935,
+      "pp": 0.937,
+      "games": 12
+    },
+    "664056": {
+      "name": "Harrison Bader",
+      "team": "San Francisco Giants",
+      "ud": 0.896,
+      "pp": 0.882,
+      "games": 12
+    },
+    "592450": {
+      "name": "Aaron Judge",
+      "team": "New York Yankees",
+      "ud": 1.153,
+      "pp": 1.138,
+      "games": 12
+    },
+    "519317": {
+      "name": "Giancarlo Stanton",
+      "team": "New York Yankees",
+      "ud": 1.123,
+      "pp": 1.119,
+      "games": 11
+    },
+    "669224": {
+      "name": "Austin Wells",
+      "team": "New York Yankees",
+      "ud": 0.859,
+      "pp": 0.8,
+      "games": 10
+    },
+    "596019": {
+      "name": "Francisco Lindor",
+      "team": "New York Mets",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "666182": {
+      "name": "Bo Bichette",
+      "team": "New York Mets",
+      "ud": 1.2,
+      "pp": 1.184,
+      "games": 13
+    },
+    "593871": {
+      "name": "Jorge Polanco",
+      "team": "New York Mets",
+      "ud": 1.178,
+      "pp": 1.098,
+      "games": 10
+    },
+    "673357": {
+      "name": "Luis Robert Jr.",
+      "team": "New York Mets",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 11
+    },
+    "543760": {
+      "name": "Marcus Semien",
+      "team": "New York Mets",
+      "ud": 1.2,
+      "pp": 1.189,
+      "games": 13
+    },
+    "701807": {
+      "name": "Carson Benge",
+      "team": "New York Mets",
+      "ud": 1.114,
+      "pp": 1.122,
+      "games": 10
+    },
+    "682626": {
+      "name": "Francisco Alvarez",
+      "team": "New York Mets",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 10
+    },
+    "665833": {
+      "name": "Oneil Cruz",
+      "team": "Pittsburgh Pirates",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 11
+    },
+    "664040": {
+      "name": "Brandon Lowe",
+      "team": "Pittsburgh Pirates",
+      "ud": 1.161,
+      "pp": 1.115,
+      "games": 11
+    },
+    "668804": {
+      "name": "Bryan Reynolds",
+      "team": "Pittsburgh Pirates",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 12
+    },
+    "656811": {
+      "name": "Ryan O'Hearn",
+      "team": "Pittsburgh Pirates",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 11
+    },
+    "687462": {
+      "name": "Spencer Horwitz",
+      "team": "Pittsburgh Pirates",
+      "ud": 1.2,
+      "pp": 1.159,
+      "games": 10
+    },
+    "693304": {
+      "name": "Nick Gonzales",
+      "team": "Pittsburgh Pirates",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 10
+    },
+    "686217": {
+      "name": "Sal Frelick",
+      "team": "Milwaukee Brewers",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 10
+    },
+    "805367": {
+      "name": "Chase Meidroth",
+      "team": "Chicago White Sox",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 12
+    },
+    "695657": {
+      "name": "Colson Montgomery",
+      "team": "Chicago White Sox",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 12
+    },
+    "678246": {
+      "name": "Miguel Vargas",
+      "team": "Chicago White Sox",
+      "ud": 1.2,
+      "pp": 1.181,
+      "games": 12
+    },
+    "643217": {
+      "name": "Andrew Benintendi",
+      "team": "Chicago White Sox",
+      "ud": 0.927,
+      "pp": 0.917,
+      "games": 10
+    },
+    "808959": {
+      "name": "Munetaka Murakami",
+      "team": "Chicago White Sox",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 12
+    },
+    "682668": {
+      "name": "Luisangel Acu\u00f1a",
+      "team": "Chicago White Sox",
+      "ud": 1.019,
+      "pp": 1.059,
+      "games": 12
+    },
+    "683737": {
+      "name": "Michael Busch",
+      "team": "Chicago Cubs",
+      "ud": 0.887,
+      "pp": 0.825,
+      "games": 11
+    },
+    "608324": {
+      "name": "Alex Bregman",
+      "team": "Chicago Cubs",
+      "ud": 1.159,
+      "pp": 1.127,
+      "games": 11
+    },
+    "691718": {
+      "name": "Pete Crow-Armstrong",
+      "team": "Chicago Cubs",
+      "ud": 1.16,
+      "pp": 1.196,
+      "games": 11
+    },
+    "663538": {
+      "name": "Nico Hoerner",
+      "team": "Chicago Cubs",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 11
+    },
+    "621020": {
+      "name": "Dansby Swanson",
+      "team": "Chicago Cubs",
+      "ud": 1.052,
+      "pp": 0.987,
+      "games": 11
+    },
+    "691781": {
+      "name": "Brady House",
+      "team": "Washington Nationals",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 10
+    },
+    "621439": {
+      "name": "Byron Buxton",
+      "team": "Minnesota Twins",
+      "ud": 1.147,
+      "pp": 1.065,
+      "games": 12
+    },
+    "807712": {
+      "name": "Luke Keaschall",
+      "team": "Minnesota Twins",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 12
+    },
+    "670242": {
+      "name": "Matt Wallner",
+      "team": "Minnesota Twins",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "605137": {
+      "name": "Josh Bell",
+      "team": "Minnesota Twins",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 12
+    },
+    "605170": {
+      "name": "Victor Caratini",
+      "team": "Minnesota Twins",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 10
+    },
+    "668904": {
+      "name": "Royce Lewis",
+      "team": "Minnesota Twins",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 12
+    },
+    "670770": {
+      "name": "TJ Friedl",
+      "team": "Cincinnati Reds",
+      "ud": 1.2,
+      "pp": 1.156,
+      "games": 12
+    },
+    "682829": {
+      "name": "Elly De La Cruz",
+      "team": "Cincinnati Reds",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "668715": {
+      "name": "Spencer Steer",
+      "team": "Cincinnati Reds",
+      "ud": 1.112,
+      "pp": 1.078,
+      "games": 11
+    },
+    "663647": {
+      "name": "Ke'Bryan Hayes",
+      "team": "Cincinnati Reds",
+      "ud": 0.8,
+      "pp": 0.8,
+      "games": 10
+    },
+    "701350": {
+      "name": "Roman Anthony",
+      "team": "Boston Red Sox",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 11
+    },
+    "596115": {
+      "name": "Trevor Story",
+      "team": "Boston Red Sox",
+      "ud": 1.013,
+      "pp": 1.021,
+      "games": 12
+    },
+    "621043": {
+      "name": "Carlos Correa",
+      "team": "Houston Astros",
+      "ud": 1.165,
+      "pp": 1.145,
+      "games": 11
+    },
+    "673237": {
+      "name": "Yainer Diaz",
+      "team": "Houston Astros",
+      "ud": 0.863,
+      "pp": 0.845,
+      "games": 10
+    },
+    "676694": {
+      "name": "Jake Meyers",
+      "team": "Houston Astros",
+      "ud": 0.994,
+      "pp": 0.956,
+      "games": 11
+    },
+    "694384": {
+      "name": "Nolan Schanuel",
+      "team": "Los Angeles Angels",
+      "ud": 1.169,
+      "pp": 1.132,
+      "games": 11
+    },
+    "624585": {
+      "name": "Jorge Soler",
+      "team": "Los Angeles Angels",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "660162": {
+      "name": "Yo\u00e1n Moncada",
+      "team": "Los Angeles Angels",
+      "ud": 1.037,
+      "pp": 0.928,
+      "games": 11
+    },
+    "666139": {
+      "name": "Josh Lowe",
+      "team": "Los Angeles Angels",
+      "ud": 0.936,
+      "pp": 0.882,
+      "games": 11
+    },
+    "672724": {
+      "name": "Oswald Peraza",
+      "team": "Los Angeles Angels",
+      "ud": 0.904,
+      "pp": 0.885,
+      "games": 11
+    },
+    "657656": {
+      "name": "Ram\u00f3n Laureano",
+      "team": "San Diego Padres",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 11
+    },
+    "630105": {
+      "name": "Jake Cronenworth",
+      "team": "San Diego Padres",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "681481": {
+      "name": "Kerry Carpenter",
+      "team": "Detroit Tigers",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 11
+    },
+    "650402": {
+      "name": "Gleyber Torres",
+      "team": "Detroit Tigers",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "690993": {
+      "name": "Colt Keith",
+      "team": "Detroit Tigers",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 11
+    },
+    "682985": {
+      "name": "Riley Greene",
+      "team": "Detroit Tigers",
+      "ud": 1.148,
+      "pp": 1.077,
+      "games": 13
+    },
+    "679529": {
+      "name": "Spencer Torkelson",
+      "team": "Detroit Tigers",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 11
+    },
+    "805808": {
+      "name": "Kevin McGonigle",
+      "team": "Detroit Tigers",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 12
+    },
+    "678009": {
+      "name": "Parker Meadows",
+      "team": "Detroit Tigers",
+      "ud": 1.166,
+      "pp": 1.168,
+      "games": 11
+    },
+    "802139": {
+      "name": "JJ Wetherholt",
+      "team": "St. Louis Cardinals",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 11
+    },
+    "671056": {
+      "name": "Iv\u00e1n Herrera",
+      "team": "St. Louis Cardinals",
+      "ud": 1.2,
+      "pp": 1.095,
+      "games": 12
+    },
+    "676475": {
+      "name": "Alec Burleson",
+      "team": "St. Louis Cardinals",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 12
+    },
+    "691026": {
+      "name": "Masyn Winn",
+      "team": "St. Louis Cardinals",
+      "ud": 1.055,
+      "pp": 1.005,
+      "games": 10
+    },
+    "669357": {
+      "name": "Nolan Gorman",
+      "team": "St. Louis Cardinals",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 10
+    },
+    "691023": {
+      "name": "Jordan Walker",
+      "team": "St. Louis Cardinals",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 11
+    },
+    "687363": {
+      "name": "Victor Scott II",
+      "team": "St. Louis Cardinals",
+      "ud": 0.85,
+      "pp": 0.882,
+      "games": 11
+    },
+    "702222": {
+      "name": "Justin Crawford",
+      "team": "Philadelphia Phillies",
+      "ud": 1.025,
+      "pp": 1.014,
+      "games": 11
+    },
+    "607043": {
+      "name": "Brandon Nimmo",
+      "team": "Texas Rangers",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 12
+    },
+    "694671": {
+      "name": "Wyatt Langford",
+      "team": "Texas Rangers",
+      "ud": 1.016,
+      "pp": 1.02,
+      "games": 12
+    },
+    "608369": {
+      "name": "Corey Seager",
+      "team": "Texas Rangers",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 12
+    },
+    "669394": {
+      "name": "Jake Burger",
+      "team": "Texas Rangers",
+      "ud": 1.127,
+      "pp": 1.105,
+      "games": 12
+    },
+    "669701": {
+      "name": "Josh Smith",
+      "team": "Texas Rangers",
+      "ud": 0.936,
+      "pp": 0.884,
+      "games": 10
+    },
+    "660271": {
+      "name": "Shohei Ohtani",
+      "team": "Los Angeles Dodgers",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 12
+    },
+    "663656": {
+      "name": "Kyle Tucker",
+      "team": "Los Angeles Dodgers",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 11
+    },
+    "518692": {
+      "name": "Freddie Freeman",
+      "team": "Los Angeles Dodgers",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 12
+    },
+    "571970": {
+      "name": "Max Muncy",
+      "team": "Los Angeles Dodgers",
+      "ud": 1.051,
+      "pp": 1.005,
+      "games": 10
+    },
+    "606192": {
+      "name": "Teoscar Hern\u00e1ndez",
+      "team": "Los Angeles Dodgers",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 11
+    },
+    "681624": {
+      "name": "Andy Pages",
+      "team": "Los Angeles Dodgers",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 12
+    },
+    "606466": {
+      "name": "Ketel Marte",
+      "team": "Arizona Diamondbacks",
+      "ud": 1.14,
+      "pp": 1.108,
+      "games": 13
+    },
+    "682998": {
+      "name": "Corbin Carroll",
+      "team": "Arizona Diamondbacks",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 12
+    },
+    "672695": {
+      "name": "Geraldo Perdomo",
+      "team": "Arizona Diamondbacks",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "672515": {
+      "name": "Gabriel Moreno",
+      "team": "Arizona Diamondbacks",
+      "ud": 1.2,
+      "pp": 1.147,
+      "games": 10
+    },
+    "571448": {
+      "name": "Nolan Arenado",
+      "team": "Arizona Diamondbacks",
+      "ud": 0.879,
+      "pp": 0.877,
+      "games": 11
+    },
+    "677950": {
+      "name": "Alek Thomas",
+      "team": "Arizona Diamondbacks",
+      "ud": 0.964,
+      "pp": 0.941,
+      "games": 10
+    },
+    "680977": {
+      "name": "Brendan Donovan",
+      "team": "Seattle Mariners",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 11
+    },
+    "663728": {
+      "name": "Cal Raleigh",
+      "team": "Seattle Mariners",
+      "ud": 1.09,
+      "pp": 1.028,
+      "games": 12
+    },
+    "660844": {
+      "name": "Leo Rivas",
+      "team": "Seattle Mariners",
+      "ud": 1.13,
+      "pp": 1.069,
+      "games": 10
+    },
+    "662139": {
+      "name": "Daulton Varsho",
+      "team": "Toronto Blue Jays",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 11
+    },
+    "805779": {
+      "name": "Jacob Wilson",
+      "team": "Athletics",
+      "ud": 0.8,
+      "pp": 0.8,
+      "games": 12
+    },
+    "682663": {
+      "name": "Agust\u00edn Ram\u00edrez",
+      "team": "Miami Marlins",
+      "ud": 1.2,
+      "pp": 1.174,
+      "games": 12
+    },
+    "805300": {
+      "name": "Jakob Marsee",
+      "team": "Miami Marlins",
+      "ud": 1.188,
+      "pp": 1.198,
+      "games": 13
+    },
+    "672640": {
+      "name": "Otto Lopez",
+      "team": "Miami Marlins",
+      "ud": 1.166,
+      "pp": 1.146,
+      "games": 12
+    },
+    "681393": {
+      "name": "Connor Norby",
+      "team": "Miami Marlins",
+      "ud": 1.099,
+      "pp": 1.003,
+      "games": 11
+    },
+    "669364": {
+      "name": "Xavier Edwards",
+      "team": "Miami Marlins",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "696100": {
+      "name": "Hunter Goodman",
+      "team": "Colorado Rockies",
+      "ud": 1.09,
+      "pp": 1.07,
+      "games": 12
+    },
+    "650489": {
+      "name": "Willi Castro",
+      "team": "Colorado Rockies",
+      "ud": 1.157,
+      "pp": 1.13,
+      "games": 12
+    },
+    "678662": {
+      "name": "Ezequiel Tovar",
+      "team": "Colorado Rockies",
+      "ud": 1.045,
+      "pp": 1.011,
+      "games": 12
+    },
+    "681198": {
+      "name": "TJ Rumfield",
+      "team": "Colorado Rockies",
+      "ud": 1.179,
+      "pp": 1.17,
+      "games": 12
+    },
+    "686668": {
+      "name": "Brenton Doyle",
+      "team": "Colorado Rockies",
+      "ud": 0.899,
+      "pp": 0.894,
+      "games": 10
+    },
+    "691720": {
+      "name": "Kyle Karros",
+      "team": "Colorado Rockies",
+      "ud": 0.916,
+      "pp": 0.874,
+      "games": 11
+    },
+    "660670": {
+      "name": "Ronald Acu\u00f1a Jr.",
+      "team": "Atlanta Braves",
+      "ud": 1.103,
+      "pp": 1.027,
+      "games": 13
+    },
+    "686948": {
+      "name": "Drake Baldwin",
+      "team": "Atlanta Braves",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "645277": {
+      "name": "Ozzie Albies",
+      "team": "Atlanta Braves",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "621566": {
+      "name": "Matt Olson",
+      "team": "Atlanta Braves",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 13
+    },
+    "663586": {
+      "name": "Austin Riley",
+      "team": "Atlanta Braves",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 12
+    },
+    "643289": {
+      "name": "Mauricio Dub\u00f3n",
+      "team": "Atlanta Braves",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 12
+    },
+    "671739": {
+      "name": "Michael Harris II",
+      "team": "Atlanta Braves",
+      "ud": 0.972,
+      "pp": 0.975,
+      "games": 12
+    },
+    "672580": {
+      "name": "Maikel Garcia",
+      "team": "Kansas City Royals",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 12
+    },
+    "677951": {
+      "name": "Bobby Witt Jr.",
+      "team": "Kansas City Royals",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 12
+    },
+    "521692": {
+      "name": "Salvador Perez",
+      "team": "Kansas City Royals",
+      "ud": 0.946,
+      "pp": 0.893,
+      "games": 12
+    },
+    "686469": {
+      "name": "Vinnie Pasquantino",
+      "team": "Kansas City Royals",
+      "ud": 1.178,
+      "pp": 1.123,
+      "games": 12
+    },
+    "663697": {
+      "name": "Jonathan India",
+      "team": "Kansas City Royals",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 11
+    },
+    "802415": {
+      "name": "Chandler Simpson",
+      "team": "Tampa Bay Rays",
+      "ud": 1.2,
+      "pp": 1.2,
+      "games": 11
+    },
+    "687859": {
+      "name": "Troy Johnston",
+      "team": "Colorado Rockies",
+      "ud": 1.135,
+      "pp": 1.113,
+      "games": 11
+    },
+    "671976": {
+      "name": "Tristan Peters",
+      "team": "Chicago White Sox",
+      "ud": 0.956,
+      "pp": 0.934,
+      "games": 10
+    },
+    "695506": {
+      "name": "Jac Caglianone",
+      "team": "Kansas City Royals",
+      "ud": 1.103,
+      "pp": 1.024,
+      "games": 10
+    }
+  },
+  "global_scale": {
+    "ud": 1.2903,
+    "pp": 1.2563,
+    "avg_projected_ud": 5.555,
+    "avg_actual_ud": 7.167,
+    "avg_projected_pp": 5.283,
+    "avg_actual_pp": 6.637,
+    "n_games": 3503
+  },
+  "market_corrections": {}
+}

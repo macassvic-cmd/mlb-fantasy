@@ -1,0 +1,1658 @@
+{
+  "dates": {
+    "2026-06-10": {
+      "top25": [
+        {
+          "player_id": 669016,
+          "name": "Brandon Marsh",
+          "team": "Philadelphia Phillies",
+          "order": 4,
+          "ud": 11.5,
+          "pp": 11.0,
+          "xwoba": 0.392,
+          "barrel": "N/A",
+          "era": 9.64,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 1.05,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 11.5,
+          "actual_ud": 3,
+          "grade": "red"
+        },
+        {
+          "player_id": 672515,
+          "name": "Gabriel Moreno",
+          "team": "Arizona Diamondbacks",
+          "order": 3,
+          "ud": 11.4,
+          "pp": 10.2,
+          "xwoba": 0.448,
+          "barrel": "N/A",
+          "era": 10.8,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 0.96,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 11.39,
+          "actual_ud": 9,
+          "grade": "red"
+        },
+        {
+          "player_id": 682998,
+          "name": "Corbin Carroll",
+          "team": "Arizona Diamondbacks",
+          "order": 2,
+          "ud": 11.3,
+          "pp": 10.7,
+          "xwoba": 0.312,
+          "barrel": "N/A",
+          "era": 10.8,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 0.96,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 11.28,
+          "actual_ud": 6,
+          "grade": "red"
+        },
+        {
+          "player_id": 695731,
+          "name": "Braden Montgomery",
+          "team": "Chicago White Sox",
+          "order": 5,
+          "ud": 11.2,
+          "pp": 11.2,
+          "xwoba": 0.312,
+          "barrel": "N/A",
+          "era": 2.23,
+          "wxIcon": "\ud83c\udf27\ufe0f",
+          "wxText": "72\u00b0F 10mph SW",
+          "park": 1.08,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 11.17,
+          "actual_ud": 14,
+          "grade": "green"
+        },
+        {
+          "player_id": 696100,
+          "name": "Hunter Goodman",
+          "team": "Colorado Rockies",
+          "order": 4,
+          "ud": 11.1,
+          "pp": 10.4,
+          "xwoba": 0.459,
+          "barrel": "N/A",
+          "era": 4.74,
+          "wxIcon": "\u2600\ufe0f",
+          "wxText": "87\u00b0F 9mph W",
+          "park": 1.2,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 11.07,
+          "actual_ud": 9,
+          "grade": "yellow"
+        },
+        {
+          "player_id": 547180,
+          "name": "Bryce Harper",
+          "team": "Philadelphia Phillies",
+          "order": 3,
+          "ud": 11.0,
+          "pp": 9.7,
+          "xwoba": 0.402,
+          "barrel": "N/A",
+          "era": 9.64,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 1.05,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 10.96,
+          "actual_ud": 27,
+          "grade": "green"
+        },
+        {
+          "player_id": 607208,
+          "name": "Trea Turner",
+          "team": "Philadelphia Phillies",
+          "order": 2,
+          "ud": 10.8,
+          "pp": 10.7,
+          "xwoba": 0.291,
+          "barrel": "N/A",
+          "era": 9.64,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 1.05,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 10.85,
+          "actual_ud": 3,
+          "grade": "red"
+        },
+        {
+          "player_id": 672695,
+          "name": "Geraldo Perdomo",
+          "team": "Arizona Diamondbacks",
+          "order": 6,
+          "ud": 10.7,
+          "pp": 10.0,
+          "xwoba": 0.375,
+          "barrel": "N/A",
+          "era": 10.8,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 0.96,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 10.74,
+          "actual_ud": 3,
+          "grade": "red"
+        },
+        {
+          "player_id": 664761,
+          "name": "Alec Bohm",
+          "team": "Philadelphia Phillies",
+          "order": 5,
+          "ud": 10.6,
+          "pp": 10.2,
+          "xwoba": 0.307,
+          "barrel": "N/A",
+          "era": 9.64,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 1.05,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 10.63,
+          "actual_ud": 21,
+          "grade": "green"
+        },
+        {
+          "player_id": 656941,
+          "name": "Kyle Schwarber",
+          "team": "Philadelphia Phillies",
+          "order": 1,
+          "ud": 10.5,
+          "pp": 9.5,
+          "xwoba": 0.302,
+          "barrel": "N/A",
+          "era": 9.64,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 1.05,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 10.52,
+          "actual_ud": 24,
+          "grade": "green"
+        },
+        {
+          "player_id": 693307,
+          "name": "Dillon Dingler",
+          "team": "Detroit Tigers",
+          "order": 4,
+          "ud": 10.4,
+          "pp": 9.9,
+          "xwoba": "N/A",
+          "barrel": "N/A",
+          "era": 4.91,
+          "wxIcon": "\ud83c\udf27\ufe0f",
+          "wxText": "88\u00b0F 5mph SSW",
+          "park": 0.93,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 10.41,
+          "actual_ud": 5,
+          "grade": "red"
+        },
+        {
+          "player_id": 606466,
+          "name": "Ketel Marte",
+          "team": "Arizona Diamondbacks",
+          "order": 1,
+          "ud": 10.3,
+          "pp": 9.6,
+          "xwoba": 0.315,
+          "barrel": "N/A",
+          "era": 10.8,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 0.96,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 10.31,
+          "actual_ud": 0,
+          "grade": "red"
+        },
+        {
+          "player_id": 660271,
+          "name": "Shohei Ohtani",
+          "team": "Los Angeles Dodgers",
+          "order": 1,
+          "ud": 10.2,
+          "pp": 9.6,
+          "xwoba": 0.424,
+          "barrel": "N/A",
+          "era": 4.82,
+          "wxIcon": "\ud83c\udf27\ufe0f",
+          "wxText": "88\u00b0F 9mph WSW",
+          "park": 0.97,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 10.2,
+          "actual_ud": 16,
+          "grade": "green"
+        },
+        {
+          "player_id": 650490,
+          "name": "Yandy D\u00edaz",
+          "team": "Tampa Bay Rays",
+          "order": 1,
+          "ud": 10.1,
+          "pp": 9.4,
+          "xwoba": 0.429,
+          "barrel": "N/A",
+          "era": 5.28,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 0.92,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 10.09,
+          "actual_ud": 15,
+          "grade": "green"
+        },
+        {
+          "player_id": 681082,
+          "name": "Bryson Stott",
+          "team": "Philadelphia Phillies",
+          "order": 6,
+          "ud": 10.0,
+          "pp": 9.2,
+          "xwoba": 0.325,
+          "barrel": "N/A",
+          "era": 9.64,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 1.05,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 9.98,
+          "actual_ud": 15,
+          "grade": "green"
+        },
+        {
+          "player_id": 666969,
+          "name": "Adolis Garc\u00eda",
+          "team": "Philadelphia Phillies",
+          "order": 8,
+          "ud": 9.9,
+          "pp": 9.9,
+          "xwoba": 0.255,
+          "barrel": "N/A",
+          "era": 9.64,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 1.05,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 9.87,
+          "actual_ud": 3,
+          "grade": "red"
+        },
+        {
+          "player_id": 664983,
+          "name": "Jake McCarthy",
+          "team": "Colorado Rockies",
+          "order": 6,
+          "ud": 9.8,
+          "pp": 9.3,
+          "xwoba": 0.31,
+          "barrel": "N/A",
+          "era": 4.74,
+          "wxIcon": "\u2600\ufe0f",
+          "wxText": "87\u00b0F 9mph W",
+          "park": 1.2,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 9.76,
+          "actual_ud": null,
+          "grade": null
+        },
+        {
+          "player_id": 694371,
+          "name": "Tommy Troy",
+          "team": "Arizona Diamondbacks",
+          "order": 9,
+          "ud": 9.7,
+          "pp": 8.7,
+          "xwoba": 0.334,
+          "barrel": "N/A",
+          "era": 10.8,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 0.96,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 9.66,
+          "actual_ud": 0,
+          "grade": "red"
+        },
+        {
+          "player_id": 571448,
+          "name": "Nolan Arenado",
+          "team": "Arizona Diamondbacks",
+          "order": 4,
+          "ud": 9.6,
+          "pp": 8.6,
+          "xwoba": 0.258,
+          "barrel": "N/A",
+          "era": 10.8,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 0.96,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 9.55,
+          "actual_ud": 6,
+          "grade": "red"
+        },
+        {
+          "player_id": 650402,
+          "name": "Gleyber Torres",
+          "team": "Detroit Tigers",
+          "order": 2,
+          "ud": 9.4,
+          "pp": 8.8,
+          "xwoba": 0.244,
+          "barrel": "N/A",
+          "era": 4.91,
+          "wxIcon": "\ud83c\udf27\ufe0f",
+          "wxText": "88\u00b0F 5mph SSW",
+          "park": 0.93,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 9.44,
+          "actual_ud": 17,
+          "grade": "green"
+        },
+        {
+          "player_id": 672640,
+          "name": "Otto Lopez",
+          "team": "Miami Marlins",
+          "order": 2,
+          "ud": 9.3,
+          "pp": 9.1,
+          "xwoba": 0.372,
+          "barrel": "N/A",
+          "era": 4.6,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 0.96,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 9.33,
+          "actual_ud": 12,
+          "grade": "green"
+        },
+        {
+          "player_id": 691406,
+          "name": "Junior Caminero",
+          "team": "Tampa Bay Rays",
+          "order": 3,
+          "ud": 9.2,
+          "pp": 8.0,
+          "xwoba": 0.357,
+          "barrel": "N/A",
+          "era": 5.28,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 0.92,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 9.22,
+          "actual_ud": 6,
+          "grade": "red"
+        },
+        {
+          "player_id": 518692,
+          "name": "Freddie Freeman",
+          "team": "Los Angeles Dodgers",
+          "order": 3,
+          "ud": 9.1,
+          "pp": 8.9,
+          "xwoba": 0.308,
+          "barrel": "N/A",
+          "era": 4.82,
+          "wxIcon": "\ud83c\udf27\ufe0f",
+          "wxText": "88\u00b0F 9mph WSW",
+          "park": 0.97,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 9.11,
+          "actual_ud": 13,
+          "grade": "green"
+        },
+        {
+          "player_id": 650489,
+          "name": "Willi Castro",
+          "team": "Colorado Rockies",
+          "order": 1,
+          "ud": 9.0,
+          "pp": 8.2,
+          "xwoba": 0.337,
+          "barrel": "N/A",
+          "era": 4.74,
+          "wxIcon": "\u2600\ufe0f",
+          "wxText": "87\u00b0F 9mph W",
+          "park": 1.2,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 9.0,
+          "actual_ud": 0,
+          "grade": "red"
+        },
+        {
+          "player_id": 669899,
+          "name": "Ryan Ward",
+          "team": "Los Angeles Dodgers",
+          "order": 7,
+          "ud": 8.9,
+          "pp": 8.5,
+          "xwoba": 0.338,
+          "barrel": "N/A",
+          "era": 4.82,
+          "wxIcon": "\ud83c\udf27\ufe0f",
+          "wxText": "88\u00b0F 9mph WSW",
+          "park": 0.97,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 8.9,
+          "actual_ud": 20,
+          "grade": "green"
+        }
+      ]
+    },
+    "2026-06-11": {
+      "top25": [
+        {
+          "player_id": 696100,
+          "name": "Hunter Goodman",
+          "team": "Colorado Rockies",
+          "order": 4,
+          "ud": 11.5,
+          "pp": 10.8,
+          "xwoba": 0.486,
+          "barrel": 13.5,
+          "era": 4.86,
+          "wxIcon": "\ud83d\udca8",
+          "wxText": "80\u00b0F 13mph ESE",
+          "park": 1.2,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 11.5,
+          "actual_ud": 0,
+          "grade": "red"
+        },
+        {
+          "player_id": 691718,
+          "name": "Pete Crow-Armstrong",
+          "team": "Chicago Cubs",
+          "order": 1,
+          "ud": 11.3,
+          "pp": 11.0,
+          "xwoba": 0.445,
+          "barrel": 11.4,
+          "era": 5.2,
+          "wxIcon": "\ud83d\udca8",
+          "wxText": "80\u00b0F 13mph ESE",
+          "park": 1.2,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 11.34,
+          "actual_ud": 17,
+          "grade": "green"
+        },
+        {
+          "player_id": 695731,
+          "name": "Braden Montgomery",
+          "team": "Chicago White Sox",
+          "order": 6,
+          "ud": 11.2,
+          "pp": 10.5,
+          "xwoba": 0.484,
+          "barrel": 22.2,
+          "era": 3.02,
+          "wxIcon": "\ud83c\udf27\ufe0f",
+          "wxText": "76\u00b0F 18mph SW",
+          "park": 1.08,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 11.17,
+          "actual_ud": null,
+          "grade": null
+        },
+        {
+          "player_id": 693307,
+          "name": "Dillon Dingler",
+          "team": "Detroit Tigers",
+          "order": 4,
+          "ud": 11.0,
+          "pp": 10.6,
+          "xwoba": 0.448,
+          "barrel": 7.9,
+          "era": 5.2,
+          "wxIcon": "\u2600\ufe0f",
+          "wxText": "87\u00b0F 7mph SSW",
+          "park": 0.93,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 11.01,
+          "actual_ud": 14,
+          "grade": "green"
+        },
+        {
+          "player_id": 660271,
+          "name": "Shohei Ohtani",
+          "team": "Los Angeles Dodgers",
+          "order": 1,
+          "ud": 10.8,
+          "pp": 10.3,
+          "xwoba": 0.432,
+          "barrel": 7.8,
+          "era": 4.81,
+          "wxIcon": "\ud83c\udf27\ufe0f",
+          "wxText": "76\u00b0F 6mph W",
+          "park": 0.97,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 10.85,
+          "actual_ud": 22,
+          "grade": "green"
+        },
+        {
+          "player_id": 664023,
+          "name": "Ian Happ",
+          "team": "Chicago Cubs",
+          "order": 4,
+          "ud": 10.7,
+          "pp": 10.0,
+          "xwoba": 0.351,
+          "barrel": 5.9,
+          "era": 5.2,
+          "wxIcon": "\ud83d\udca8",
+          "wxText": "80\u00b0F 13mph ESE",
+          "park": 1.2,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 10.68,
+          "actual_ud": 14,
+          "grade": "green"
+        },
+        {
+          "player_id": 650402,
+          "name": "Gleyber Torres",
+          "team": "Detroit Tigers",
+          "order": 2,
+          "ud": 10.5,
+          "pp": 9.8,
+          "xwoba": 0.291,
+          "barrel": 2.3,
+          "era": 5.2,
+          "wxIcon": "\u2600\ufe0f",
+          "wxText": "87\u00b0F 7mph SSW",
+          "park": 0.93,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 10.52,
+          "actual_ud": 14,
+          "grade": "green"
+        },
+        {
+          "player_id": 672640,
+          "name": "Otto Lopez",
+          "team": "Miami Marlins",
+          "order": 2,
+          "ud": 10.4,
+          "pp": 9.9,
+          "xwoba": 0.356,
+          "barrel": 4.8,
+          "era": 5.46,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 0.96,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 10.36,
+          "actual_ud": 16,
+          "grade": "green"
+        },
+        {
+          "player_id": 669899,
+          "name": "Ryan Ward",
+          "team": "Los Angeles Dodgers",
+          "order": 7,
+          "ud": 10.2,
+          "pp": 9.8,
+          "xwoba": 0.377,
+          "barrel": 7.5,
+          "era": 4.81,
+          "wxIcon": "\ud83c\udf27\ufe0f",
+          "wxText": "76\u00b0F 6mph W",
+          "park": 0.97,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 10.19,
+          "actual_ud": 0,
+          "grade": "red"
+        },
+        {
+          "player_id": 681481,
+          "name": "Kerry Carpenter",
+          "team": "Detroit Tigers",
+          "order": 5,
+          "ud": 10.0,
+          "pp": 9.6,
+          "xwoba": 0.243,
+          "barrel": 4.0,
+          "era": 5.2,
+          "wxIcon": "\u2600\ufe0f",
+          "wxText": "87\u00b0F 7mph SSW",
+          "park": 0.93,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 10.03,
+          "actual_ud": 8,
+          "grade": "red"
+        },
+        {
+          "player_id": 650489,
+          "name": "Willi Castro",
+          "team": "Colorado Rockies",
+          "order": 2,
+          "ud": 9.9,
+          "pp": 9.0,
+          "xwoba": 0.335,
+          "barrel": 1.5,
+          "era": 4.86,
+          "wxIcon": "\ud83d\udca8",
+          "wxText": "80\u00b0F 13mph ESE",
+          "park": 1.2,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 9.87,
+          "actual_ud": 10,
+          "grade": "green"
+        },
+        {
+          "player_id": 518692,
+          "name": "Freddie Freeman",
+          "team": "Los Angeles Dodgers",
+          "order": 3,
+          "ud": 9.7,
+          "pp": 9.3,
+          "xwoba": 0.311,
+          "barrel": 5.3,
+          "era": 4.81,
+          "wxIcon": "\ud83c\udf27\ufe0f",
+          "wxText": "76\u00b0F 6mph W",
+          "park": 0.97,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 9.71,
+          "actual_ud": 13,
+          "grade": "green"
+        },
+        {
+          "player_id": 621566,
+          "name": "Matt Olson",
+          "team": "Atlanta Braves",
+          "order": 3,
+          "ud": 9.5,
+          "pp": 9.2,
+          "xwoba": 0.359,
+          "barrel": 4.2,
+          "era": 4.4,
+          "wxIcon": "\ud83c\udf27\ufe0f",
+          "wxText": "76\u00b0F 18mph SW",
+          "park": 1.08,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 9.54,
+          "actual_ud": null,
+          "grade": null
+        },
+        {
+          "player_id": 678662,
+          "name": "Ezequiel Tovar",
+          "team": "Colorado Rockies",
+          "order": 8,
+          "ud": 9.4,
+          "pp": 9.1,
+          "xwoba": 0.325,
+          "barrel": 7.8,
+          "era": 4.86,
+          "wxIcon": "\ud83d\udca8",
+          "wxText": "80\u00b0F 13mph ESE",
+          "park": 1.2,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 9.38,
+          "actual_ud": 0,
+          "grade": "red"
+        },
+        {
+          "player_id": 689414,
+          "name": "Liam Hicks",
+          "team": "Miami Marlins",
+          "order": 1,
+          "ud": 9.2,
+          "pp": 8.2,
+          "xwoba": 0.309,
+          "barrel": 1.9,
+          "era": 5.46,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 0.96,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 9.22,
+          "actual_ud": 3,
+          "grade": "red"
+        },
+        {
+          "player_id": 669065,
+          "name": "Kyle Stowers",
+          "team": "Miami Marlins",
+          "order": 3,
+          "ud": 9.1,
+          "pp": 8.4,
+          "xwoba": 0.321,
+          "barrel": 7.1,
+          "era": 5.46,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 0.96,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 9.05,
+          "actual_ud": 8,
+          "grade": "yellow"
+        },
+        {
+          "player_id": 645277,
+          "name": "Ozzie Albies",
+          "team": "Atlanta Braves",
+          "order": 4,
+          "ud": 8.9,
+          "pp": 8.3,
+          "xwoba": 0.346,
+          "barrel": 4.3,
+          "era": 4.4,
+          "wxIcon": "\ud83c\udf27\ufe0f",
+          "wxText": "76\u00b0F 18mph SW",
+          "park": 1.08,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 8.89,
+          "actual_ud": null,
+          "grade": null
+        },
+        {
+          "player_id": 683737,
+          "name": "Michael Busch",
+          "team": "Chicago Cubs",
+          "order": 3,
+          "ud": 8.7,
+          "pp": 8.1,
+          "xwoba": 0.295,
+          "barrel": 1.6,
+          "era": 5.2,
+          "wxIcon": "\ud83d\udca8",
+          "wxText": "80\u00b0F 13mph ESE",
+          "park": 1.2,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 8.73,
+          "actual_ud": 13,
+          "grade": "green"
+        },
+        {
+          "player_id": 687859,
+          "name": "Troy Johnston",
+          "team": "Colorado Rockies",
+          "order": 5,
+          "ud": 8.6,
+          "pp": 8.0,
+          "xwoba": 0.319,
+          "barrel": 4.2,
+          "era": 4.86,
+          "wxIcon": "\ud83d\udca8",
+          "wxText": "80\u00b0F 13mph ESE",
+          "park": 1.2,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 8.56,
+          "actual_ud": 12,
+          "grade": "green"
+        },
+        {
+          "player_id": 682985,
+          "name": "Riley Greene",
+          "team": "Detroit Tigers",
+          "order": 3,
+          "ud": 8.4,
+          "pp": 7.8,
+          "xwoba": 0.354,
+          "barrel": 7.4,
+          "era": 5.2,
+          "wxIcon": "\u2600\ufe0f",
+          "wxText": "87\u00b0F 7mph SSW",
+          "park": 0.93,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 8.4,
+          "actual_ud": 16,
+          "grade": "green"
+        },
+        {
+          "player_id": 805808,
+          "name": "Kevin McGonigle",
+          "team": "Detroit Tigers",
+          "order": 1,
+          "ud": 8.2,
+          "pp": 7.3,
+          "xwoba": 0.356,
+          "barrel": 3.1,
+          "era": 5.2,
+          "wxIcon": "\u2600\ufe0f",
+          "wxText": "87\u00b0F 7mph SSW",
+          "park": 0.93,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 8.24,
+          "actual_ud": 8,
+          "grade": "green"
+        },
+        {
+          "player_id": 665923,
+          "name": "Esteury Ruiz",
+          "team": "Miami Marlins",
+          "order": 9,
+          "ud": 8.1,
+          "pp": 7.4,
+          "xwoba": 0.482,
+          "barrel": 5.9,
+          "era": 5.46,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 0.96,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "projected_ud": 8.07,
+          "actual_ud": 0,
+          "grade": "red"
+        },
+        {
+          "player_id": 643289,
+          "name": "Mauricio Dub\u00f3n",
+          "team": "Atlanta Braves",
+          "order": 1,
+          "ud": 8.0,
+          "pp": 7.6,
+          "xwoba": 0.375,
+          "barrel": 5.7,
+          "era": 4.4,
+          "wxIcon": "\ud83c\udf27\ufe0f",
+          "wxText": "76\u00b0F 18mph SW",
+          "park": 1.08,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "yellow",
+          "projected_ud": 7.96,
+          "actual_ud": null,
+          "grade": null
+        },
+        {
+          "player_id": 695506,
+          "name": "Jac Caglianone",
+          "team": "Kansas City Royals",
+          "order": 4,
+          "ud": 7.9,
+          "pp": 7.5,
+          "xwoba": 0.501,
+          "barrel": 7.6,
+          "era": 3.38,
+          "wxIcon": "\ud83c\udf27\ufe0f",
+          "wxText": "80\u00b0F 10mph N",
+          "park": 0.95,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "yellow",
+          "projected_ud": 7.89,
+          "actual_ud": 8,
+          "grade": "green"
+        },
+        {
+          "player_id": 673548,
+          "name": "Seiya Suzuki",
+          "team": "Chicago Cubs",
+          "order": 5,
+          "ud": 7.8,
+          "pp": 7.5,
+          "xwoba": 0.365,
+          "barrel": 6.5,
+          "era": 5.2,
+          "wxIcon": "\ud83d\udca8",
+          "wxText": "80\u00b0F 13mph ESE",
+          "park": 1.2,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "yellow",
+          "projected_ud": 7.82,
+          "actual_ud": 20,
+          "grade": "green"
+        }
+      ]
+    }
+  },
+  "players": {
+    "669016": {
+      "name": "Brandon Marsh",
+      "team": "Philadelphia Phillies",
+      "dates_seen": [
+        "2026-06-10"
+      ],
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 11.5,
+          "actual_ud": 3,
+          "grade": "red"
+        }
+      ]
+    },
+    "672515": {
+      "name": "Gabriel Moreno",
+      "team": "Arizona Diamondbacks",
+      "dates_seen": [
+        "2026-06-10"
+      ],
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 11.39,
+          "actual_ud": 9,
+          "grade": "red"
+        }
+      ]
+    },
+    "682998": {
+      "name": "Corbin Carroll",
+      "team": "Arizona Diamondbacks",
+      "dates_seen": [
+        "2026-06-10"
+      ],
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 11.28,
+          "actual_ud": 6,
+          "grade": "red"
+        }
+      ]
+    },
+    "695731": {
+      "name": "Braden Montgomery",
+      "team": "Chicago White Sox",
+      "dates_seen": [
+        "2026-06-10",
+        "2026-06-11"
+      ],
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 11.17,
+          "actual_ud": 14,
+          "grade": "green"
+        }
+      ]
+    },
+    "696100": {
+      "name": "Hunter Goodman",
+      "team": "Colorado Rockies",
+      "dates_seen": [
+        "2026-06-10",
+        "2026-06-11"
+      ],
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 11.07,
+          "actual_ud": 9,
+          "grade": "yellow"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 11.5,
+          "actual_ud": 0,
+          "grade": "red"
+        }
+      ]
+    },
+    "547180": {
+      "name": "Bryce Harper",
+      "team": "Philadelphia Phillies",
+      "dates_seen": [
+        "2026-06-10"
+      ],
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 10.96,
+          "actual_ud": 27,
+          "grade": "green"
+        }
+      ]
+    },
+    "607208": {
+      "name": "Trea Turner",
+      "team": "Philadelphia Phillies",
+      "dates_seen": [
+        "2026-06-10"
+      ],
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 10.85,
+          "actual_ud": 3,
+          "grade": "red"
+        }
+      ]
+    },
+    "672695": {
+      "name": "Geraldo Perdomo",
+      "team": "Arizona Diamondbacks",
+      "dates_seen": [
+        "2026-06-10"
+      ],
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 10.74,
+          "actual_ud": 3,
+          "grade": "red"
+        }
+      ]
+    },
+    "664761": {
+      "name": "Alec Bohm",
+      "team": "Philadelphia Phillies",
+      "dates_seen": [
+        "2026-06-10"
+      ],
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 10.63,
+          "actual_ud": 21,
+          "grade": "green"
+        }
+      ]
+    },
+    "656941": {
+      "name": "Kyle Schwarber",
+      "team": "Philadelphia Phillies",
+      "dates_seen": [
+        "2026-06-10"
+      ],
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 10.52,
+          "actual_ud": 24,
+          "grade": "green"
+        }
+      ]
+    },
+    "693307": {
+      "name": "Dillon Dingler",
+      "team": "Detroit Tigers",
+      "dates_seen": [
+        "2026-06-10",
+        "2026-06-11"
+      ],
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 10.41,
+          "actual_ud": 5,
+          "grade": "red"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 11.01,
+          "actual_ud": 14,
+          "grade": "green"
+        }
+      ]
+    },
+    "606466": {
+      "name": "Ketel Marte",
+      "team": "Arizona Diamondbacks",
+      "dates_seen": [
+        "2026-06-10"
+      ],
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 10.31,
+          "actual_ud": 0,
+          "grade": "red"
+        }
+      ]
+    },
+    "660271": {
+      "name": "Shohei Ohtani",
+      "team": "Los Angeles Dodgers",
+      "dates_seen": [
+        "2026-06-10",
+        "2026-06-11"
+      ],
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 10.2,
+          "actual_ud": 16,
+          "grade": "green"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 10.85,
+          "actual_ud": 22,
+          "grade": "green"
+        }
+      ]
+    },
+    "650490": {
+      "name": "Yandy D\u00edaz",
+      "team": "Tampa Bay Rays",
+      "dates_seen": [
+        "2026-06-10"
+      ],
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 10.09,
+          "actual_ud": 15,
+          "grade": "green"
+        }
+      ]
+    },
+    "681082": {
+      "name": "Bryson Stott",
+      "team": "Philadelphia Phillies",
+      "dates_seen": [
+        "2026-06-10"
+      ],
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 9.98,
+          "actual_ud": 15,
+          "grade": "green"
+        }
+      ]
+    },
+    "666969": {
+      "name": "Adolis Garc\u00eda",
+      "team": "Philadelphia Phillies",
+      "dates_seen": [
+        "2026-06-10"
+      ],
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 9.87,
+          "actual_ud": 3,
+          "grade": "red"
+        }
+      ]
+    },
+    "664983": {
+      "name": "Jake McCarthy",
+      "team": "Colorado Rockies",
+      "dates_seen": [
+        "2026-06-10"
+      ],
+      "history": []
+    },
+    "694371": {
+      "name": "Tommy Troy",
+      "team": "Arizona Diamondbacks",
+      "dates_seen": [
+        "2026-06-10"
+      ],
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 9.66,
+          "actual_ud": 0,
+          "grade": "red"
+        }
+      ]
+    },
+    "571448": {
+      "name": "Nolan Arenado",
+      "team": "Arizona Diamondbacks",
+      "dates_seen": [
+        "2026-06-10"
+      ],
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 9.55,
+          "actual_ud": 6,
+          "grade": "red"
+        }
+      ]
+    },
+    "650402": {
+      "name": "Gleyber Torres",
+      "team": "Detroit Tigers",
+      "dates_seen": [
+        "2026-06-10",
+        "2026-06-11"
+      ],
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 9.44,
+          "actual_ud": 17,
+          "grade": "green"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 10.52,
+          "actual_ud": 14,
+          "grade": "green"
+        }
+      ]
+    },
+    "672640": {
+      "name": "Otto Lopez",
+      "team": "Miami Marlins",
+      "dates_seen": [
+        "2026-06-10",
+        "2026-06-11"
+      ],
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 9.33,
+          "actual_ud": 12,
+          "grade": "green"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 10.36,
+          "actual_ud": 16,
+          "grade": "green"
+        }
+      ]
+    },
+    "691406": {
+      "name": "Junior Caminero",
+      "team": "Tampa Bay Rays",
+      "dates_seen": [
+        "2026-06-10"
+      ],
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 9.22,
+          "actual_ud": 6,
+          "grade": "red"
+        }
+      ]
+    },
+    "518692": {
+      "name": "Freddie Freeman",
+      "team": "Los Angeles Dodgers",
+      "dates_seen": [
+        "2026-06-10",
+        "2026-06-11"
+      ],
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 9.11,
+          "actual_ud": 13,
+          "grade": "green"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 9.71,
+          "actual_ud": 13,
+          "grade": "green"
+        }
+      ]
+    },
+    "650489": {
+      "name": "Willi Castro",
+      "team": "Colorado Rockies",
+      "dates_seen": [
+        "2026-06-10",
+        "2026-06-11"
+      ],
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 9.0,
+          "actual_ud": 0,
+          "grade": "red"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 9.87,
+          "actual_ud": 10,
+          "grade": "green"
+        }
+      ]
+    },
+    "669899": {
+      "name": "Ryan Ward",
+      "team": "Los Angeles Dodgers",
+      "dates_seen": [
+        "2026-06-10",
+        "2026-06-11"
+      ],
+      "history": [
+        {
+          "date": "2026-06-10",
+          "projected_ud": 8.9,
+          "actual_ud": 20,
+          "grade": "green"
+        },
+        {
+          "date": "2026-06-11",
+          "projected_ud": 10.19,
+          "actual_ud": 0,
+          "grade": "red"
+        }
+      ]
+    },
+    "691718": {
+      "name": "Pete Crow-Armstrong",
+      "team": "Chicago Cubs",
+      "dates_seen": [
+        "2026-06-11"
+      ],
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 11.34,
+          "actual_ud": 17,
+          "grade": "green"
+        }
+      ]
+    },
+    "664023": {
+      "name": "Ian Happ",
+      "team": "Chicago Cubs",
+      "dates_seen": [
+        "2026-06-11"
+      ],
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 10.68,
+          "actual_ud": 14,
+          "grade": "green"
+        }
+      ]
+    },
+    "681481": {
+      "name": "Kerry Carpenter",
+      "team": "Detroit Tigers",
+      "dates_seen": [
+        "2026-06-11"
+      ],
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 10.03,
+          "actual_ud": 8,
+          "grade": "red"
+        }
+      ]
+    },
+    "621566": {
+      "name": "Matt Olson",
+      "team": "Atlanta Braves",
+      "dates_seen": [
+        "2026-06-11"
+      ],
+      "history": []
+    },
+    "678662": {
+      "name": "Ezequiel Tovar",
+      "team": "Colorado Rockies",
+      "dates_seen": [
+        "2026-06-11"
+      ],
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 9.38,
+          "actual_ud": 0,
+          "grade": "red"
+        }
+      ]
+    },
+    "689414": {
+      "name": "Liam Hicks",
+      "team": "Miami Marlins",
+      "dates_seen": [
+        "2026-06-11"
+      ],
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 9.22,
+          "actual_ud": 3,
+          "grade": "red"
+        }
+      ]
+    },
+    "669065": {
+      "name": "Kyle Stowers",
+      "team": "Miami Marlins",
+      "dates_seen": [
+        "2026-06-11"
+      ],
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 9.05,
+          "actual_ud": 8,
+          "grade": "yellow"
+        }
+      ]
+    },
+    "645277": {
+      "name": "Ozzie Albies",
+      "team": "Atlanta Braves",
+      "dates_seen": [
+        "2026-06-11"
+      ],
+      "history": []
+    },
+    "683737": {
+      "name": "Michael Busch",
+      "team": "Chicago Cubs",
+      "dates_seen": [
+        "2026-06-11"
+      ],
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 8.73,
+          "actual_ud": 13,
+          "grade": "green"
+        }
+      ]
+    },
+    "687859": {
+      "name": "Troy Johnston",
+      "team": "Colorado Rockies",
+      "dates_seen": [
+        "2026-06-11"
+      ],
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 8.56,
+          "actual_ud": 12,
+          "grade": "green"
+        }
+      ]
+    },
+    "682985": {
+      "name": "Riley Greene",
+      "team": "Detroit Tigers",
+      "dates_seen": [
+        "2026-06-11"
+      ],
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 8.4,
+          "actual_ud": 16,
+          "grade": "green"
+        }
+      ]
+    },
+    "805808": {
+      "name": "Kevin McGonigle",
+      "team": "Detroit Tigers",
+      "dates_seen": [
+        "2026-06-11"
+      ],
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 8.24,
+          "actual_ud": 8,
+          "grade": "green"
+        }
+      ]
+    },
+    "665923": {
+      "name": "Esteury Ruiz",
+      "team": "Miami Marlins",
+      "dates_seen": [
+        "2026-06-11"
+      ],
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 8.07,
+          "actual_ud": 0,
+          "grade": "red"
+        }
+      ]
+    },
+    "643289": {
+      "name": "Mauricio Dub\u00f3n",
+      "team": "Atlanta Braves",
+      "dates_seen": [
+        "2026-06-11"
+      ],
+      "history": []
+    },
+    "695506": {
+      "name": "Jac Caglianone",
+      "team": "Kansas City Royals",
+      "dates_seen": [
+        "2026-06-11"
+      ],
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 7.89,
+          "actual_ud": 8,
+          "grade": "green"
+        }
+      ]
+    },
+    "673548": {
+      "name": "Seiya Suzuki",
+      "team": "Chicago Cubs",
+      "dates_seen": [
+        "2026-06-11"
+      ],
+      "history": [
+        {
+          "date": "2026-06-11",
+          "projected_ud": 7.82,
+          "actual_ud": 20,
+          "grade": "green"
+        }
+      ]
+    }
+  }
+}
