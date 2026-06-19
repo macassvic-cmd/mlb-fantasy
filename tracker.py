@@ -88,23 +88,6 @@ def summarize_vs_line(players):
     return summary
 
 
-def grade_top25(projected, actual):
-    """Grade a Top-25 pick for the dashboard overlay/record table.
-    Going over a projection is good for fantasy, so "exceeded or hit" is
-    green, "close" is yellow, and "fell well short" is red.
-      green  = actual >= 90% of projected (hit or exceeded)
-      yellow = actual within 80-90% of projected (close)
-      red    = actual < 80% of projected (significant miss)
-    """
-    if projected <= 0:
-        return "green" if actual >= 0 else "red"
-    ratio = actual / projected
-    if ratio >= 0.9:
-        return "green"
-    if ratio >= 0.8:
-        return "yellow"
-    return "red"
-
 
 def summarize(players):
     summary = {}
@@ -342,7 +325,8 @@ def update_all_results(date_str, summary, results):
 
 def track_top25(date_str, rows, results_by_pid):
     """Record the top-25 players from this date's dashboard, with their
-    hit/miss outcome, and keep a per-player running history of Top-25
+    win/loss outcome vs the UD line (same directional grade as the rest of
+    the dashboard), and keep a per-player running history of Top-25
     appearances."""
     top25 = sorted(rows, key=lambda r: r["ud_pts"], reverse=True)[:25]
 
@@ -351,7 +335,7 @@ def track_top25(date_str, rows, results_by_pid):
         pid = row["player_id"]
         res = results_by_pid.get(pid)
         actual_ud = res["actual_ud"] if res else None
-        grade = grade_top25(row["ud_pts"], actual_ud) if res else None
+        grade = res["result_ud"] if res else None
         entries.append({
             "player_id": pid,
             "name": row["name"],
@@ -391,23 +375,26 @@ def track_top25(date_str, rows, results_by_pid):
             p["dates_seen"].append(date_str)
             p["dates_seen"].sort()
 
+        # Always purge any stale entry for this date first - a day with no
+        # market-line coverage (grade is None for everyone) must not leave a
+        # leftover graded entry from a previous run sitting in history.
+        p["history"] = [h for h in p.get("history", []) if h["date"] != date_str]
         if entry["grade"] is not None:
-            p["history"] = [h for h in p.get("history", []) if h["date"] != date_str]
             p["history"].append({
                 "date": date_str,
                 "projected_ud": entry["projected_ud"],
                 "actual_ud": entry["actual_ud"],
                 "grade": entry["grade"],
             })
-            p["history"].sort(key=lambda h: h["date"])
+        p["history"].sort(key=lambda h: h["date"])
 
     with open(TOP25_RESULTS_PATH, "w", encoding="utf-8") as f:
         json.dump(top25_data, f, indent=2)
 
-    graded = sum(1 for e in entries if e["grade"] is not None)
-    hits = sum(1 for e in entries if e["grade"] == "green")
-    if graded:
-        print(f"Top 25: {hits}/{graded} green ({round(100*hits/graded,1)}%)")
+    decided = [e for e in entries if e["grade"] in ("win", "loss")]
+    hits = sum(1 for e in decided if e["grade"] == "win")
+    if decided:
+        print(f"Top 25: {hits}/{len(decided)} win ({round(100*hits/len(decided),1)}%)")
     print(f"Updated -> {TOP25_RESULTS_PATH}")
 
 

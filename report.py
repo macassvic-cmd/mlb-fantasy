@@ -741,39 +741,40 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     if t25_dates:
         daily_date = t25_dates[-1]
         yesterday_cards = top25_data["dates"][daily_date]["top25"]
-        graded = [e for e in yesterday_cards if e["grade"] is not None]
-        if graded:
-            hits = sum(1 for e in graded if e["grade"] == "green")
-            daily_hit_rate = round(100 * hits / len(graded), 1)
+        decided = [e for e in yesterday_cards if e["grade"] in ("win", "loss")]
+        if decided:
+            hits = sum(1 for e in decided if e["grade"] == "win")
+            daily_hit_rate = round(100 * hits / len(decided), 1)
     yesterday_cards_js = json.dumps(yesterday_cards)
 
-    rolling_hits = rolling_graded = 0
+    rolling_hits = rolling_decided = 0
     for d in last7_dates:
         for e in top25_data["dates"][d]["top25"]:
-            if e["grade"] is not None:
-                rolling_graded += 1
-                if e["grade"] == "green":
+            if e["grade"] in ("win", "loss"):
+                rolling_decided += 1
+                if e["grade"] == "win":
                     rolling_hits += 1
-    rolling_hit_rate = round(100 * rolling_hits / rolling_graded, 1) if rolling_graded else None
+    rolling_hit_rate = round(100 * rolling_hits / rolling_decided, 1) if rolling_decided else None
 
     record_rows = []
     weekly = []
+    trend_symbols = {"win": "✓", "loss": "✗", "push": "~"}
     for pid, p in top25_data.get("players", {}).items():
         history = p.get("history", [])
-        graded = len(history)
-        if graded == 0:
+        appearances = len(history)
+        if appearances == 0:
             continue
-        hits = sum(1 for h in history if h["grade"] == "green")
-        losses = sum(1 for h in history if h["grade"] == "red")
-        hit_rate = round(100 * hits / graded, 1)
-        avg_proj = round(sum(h["projected_ud"] for h in history) / graded, 2)
-        avg_actual = round(sum(h["actual_ud"] for h in history) / graded, 2)
-        trend_symbols = {"green": "✓", "yellow": "~", "red": "✗"}
+        hits = sum(1 for h in history if h["grade"] == "win")
+        losses = sum(1 for h in history if h["grade"] == "loss")
+        decided = hits + losses
+        hit_rate = round(100 * hits / decided, 1) if decided else 0.0
+        avg_proj = round(sum(h["projected_ud"] for h in history) / appearances, 2)
+        avg_actual = round(sum(h["actual_ud"] for h in history) / appearances, 2)
         trend = "".join(trend_symbols[h["grade"]] for h in history[-5:])
         record_rows.append({
             "name": p.get("name", ""),
             "team": p.get("team", ""),
-            "times": len(p.get("dates_seen", [])) or graded,
+            "times": len(p.get("dates_seen", [])) or appearances,
             "record": f"{hits}-{losses}",
             "hit_rate": hit_rate,
             "avg_proj": avg_proj,
@@ -781,13 +782,13 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
             "trend": trend,
         })
 
-        recent = [h for h in history if h["date"] in last7_dates]
-        if len(recent) >= 2:
-            r_hits = sum(1 for h in recent if h["grade"] == "green")
+        recent_decided = [h for h in history if h["date"] in last7_dates and h["grade"] in ("win", "loss")]
+        if len(recent_decided) >= 2:
+            r_hits = sum(1 for h in recent_decided if h["grade"] == "win")
             weekly.append({
                 "name": p.get("name", ""),
-                "rate": round(100 * r_hits / len(recent), 1),
-                "n": len(recent),
+                "rate": round(100 * r_hits / len(recent_decided), 1),
+                "n": len(recent_decided),
             })
 
     record_rows.sort(key=lambda r: r["hit_rate"], reverse=True)
@@ -942,14 +943,14 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   /* Top 25 Results tab */
   .summary-card.best  {{ border-color: #4ade80; }}
   .summary-card.worst {{ border-color: #f87171; }}
-  .t25-card.hit    {{ border-color: #4ade80; }}
-  .t25-card.close  {{ border-color: #fbbf24; }}
-  .t25-card.miss   {{ border-color: #f87171; }}
+  .t25-card.win    {{ border-color: #4ade80; }}
+  .t25-card.push   {{ border-color: #fbbf24; }}
+  .t25-card.loss   {{ border-color: #f87171; }}
   .t25-card.nodata {{ border-color: #555; }}
   .t25-overlay {{ position: absolute; top: 6px; right: 10px; font-size: 30px; font-weight: 900; }}
-  .t25-overlay.hit   {{ color: #4ade80; }}
-  .t25-overlay.close {{ color: #fbbf24; }}
-  .t25-overlay.miss  {{ color: #f87171; }}
+  .t25-overlay.win  {{ color: #4ade80; }}
+  .t25-overlay.push {{ color: #fbbf24; }}
+  .t25-overlay.loss {{ color: #f87171; }}
   .section-title {{ margin: 22px 0 12px; color: #fff; font-size: 16px; }}
   #t25Tbl tbody tr.row-green  td {{ background: #15351f; }}
   #t25Tbl tbody tr.row-yellow td {{ background: #3a3315; }}
@@ -1079,9 +1080,9 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
 <div class="panel hidden" id="panel-top25results">
   <div class="results-summary" id="t25Summary"></div>
   <div class="legend">
-    <span class="green">Green ✓ = hit or exceeded projection (90%+)</span>
-    <span class="yellow">Yellow ~ = close (80-90% of projection)</span>
-    <span class="red">Red ✗ = significant miss (under 80%)</span>
+    <span class="green">Green ✓ = won the call (right side of the UD line)</span>
+    <span class="red">Red ✗ = lost the call (wrong side of the UD line)</span>
+    <span class="yellow">Yellow ~ = push (landed exactly on the line)</span>
     <span style="background:#1c2944;color:#9fb0cc;border:1px solid #555;">Gray = no result yet</span>
   </div>
   <div class="card-grid" id="t25CardGrid"></div>
@@ -1284,10 +1285,10 @@ const t25Summary = document.getElementById('t25Summary');
 {{
   let html = '';
   if (T25_DAILY_DATE) {{
-    const gradedCount = T25_CARDS.filter(c => c.result_ud !== null).length;
-    const hitCount = T25_CARDS.filter(c => c.result_ud === 'hit').length;
-    html += `<div class="summary-card"><div class="summary-value">${{hitCount}}/${{gradedCount}}</div>
-             <div class="summary-label">${{T25_DAILY_DATE}}: hits (${{T25_DAILY_RATE !== null ? T25_DAILY_RATE : 'N/A'}}%)</div></div>`;
+    const decidedCount = T25_CARDS.filter(c => c.grade === 'win' || c.grade === 'loss').length;
+    const hitCount = T25_CARDS.filter(c => c.grade === 'win').length;
+    html += `<div class="summary-card"><div class="summary-value">${{hitCount}}/${{decidedCount}}</div>
+             <div class="summary-label">${{T25_DAILY_DATE}}: wins (${{T25_DAILY_RATE !== null ? T25_DAILY_RATE : 'N/A'}}%)</div></div>`;
   }} else {{
     html += `<div class="summary-card"><div class="summary-value">N/A</div>
              <div class="summary-label">No Top 25 results yet</div></div>`;
@@ -1310,15 +1311,15 @@ for (const c of T25_CARDS) {{
   const card = document.createElement('div');
   let borderClass = 'nodata';
   let overlay = '';
-  if (c.grade === 'green') {{
-    borderClass = 'hit';
-    overlay = '<div class="t25-overlay hit">&#10003;</div>';
-  }} else if (c.grade === 'yellow') {{
-    borderClass = 'close';
-    overlay = '<div class="t25-overlay close">~</div>';
-  }} else if (c.grade === 'red') {{
-    borderClass = 'miss';
-    overlay = '<div class="t25-overlay miss">&#10007;</div>';
+  if (c.grade === 'win') {{
+    borderClass = 'win';
+    overlay = '<div class="t25-overlay win">&#10003;</div>';
+  }} else if (c.grade === 'push') {{
+    borderClass = 'push';
+    overlay = '<div class="t25-overlay push">~</div>';
+  }} else if (c.grade === 'loss') {{
+    borderClass = 'loss';
+    overlay = '<div class="t25-overlay loss">&#10007;</div>';
   }}
   card.className = 'card t25-card ' + borderClass;
   card.innerHTML = `
