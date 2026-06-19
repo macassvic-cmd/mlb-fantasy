@@ -37,6 +37,57 @@ def classify(projected, actual):
     return "over" if diff > 0 else "under"
 
 
+def call_direction(projected, line):
+    """OVER/UNDER call implied by our projection relative to the posted
+    UD/PP line. None if there's no line to call against."""
+    if line is None:
+        return None
+    if projected > line:
+        return "over"
+    if projected < line:
+        return "under"
+    return "push"
+
+
+def grade_vs_line(call, actual, line):
+    """Win/loss for a directional call against the posted line: a hit means
+    our OVER/UNDER call matched which side of the line the actual result
+    landed on, regardless of how close our exact point projection was.
+    A push (call or outcome landed exactly on the line) is excluded from
+    win/loss - there was no real over/under to be right or wrong about."""
+    if call is None or line is None:
+        return None
+    if actual > line:
+        outcome = "over"
+    elif actual < line:
+        outcome = "under"
+    else:
+        outcome = "push"
+    if call == "push" or outcome == "push":
+        return "push"
+    return "win" if call == outcome else "loss"
+
+
+def summarize_vs_line(players):
+    """Directional hit rate vs the UD/PP line, across every graded player
+    (not just Value Plays) - this is what's shown as the dashboard's overall
+    hit rate."""
+    summary = {}
+    for key in ("ud", "pp"):
+        win = sum(1 for p in players if p[f"result_{key}"] == "win")
+        loss = sum(1 for p in players if p[f"result_{key}"] == "loss")
+        push = sum(1 for p in players if p[f"result_{key}"] == "push")
+        total = win + loss
+        summary[key] = {
+            "total": total,
+            "win": win,
+            "loss": loss,
+            "push": push,
+            "hit_rate": round(100 * win / total, 1) if total else 0.0,
+        }
+    return summary
+
+
 def grade_top25(projected, actual):
     """Grade a Top-25 pick for the dashboard overlay/record table.
     Going over a projection is good for fantasy, so "exceeded or hit" is
@@ -97,7 +148,15 @@ def track_date(date_str):
 
     rows = [report.build_row(p) for p in raw_players]
     report.recalibrate_points(rows)
-    report.apply_corrections(rows, corrections)
+
+    # Anchor to the day's posted UD/PP lines *before* grading - this is the
+    # same projection the live dashboard showed that day. Grading the
+    # unanchored percentile-curve value (as before) compared the wrong
+    # number against actual results.
+    market_lines = load_cached_market_lines(date_str)
+    market_corrections = existing_all.get("market_corrections", {})
+    anchored_ids = report.apply_market_anchor(rows, market_lines, market_corrections)
+    report.apply_corrections(rows, corrections, skip=anchored_ids)
 
     results = []
     for row in rows:
@@ -119,21 +178,28 @@ def track_date(date_str):
         proj_ud = row["ud_pts"]
         proj_pp = row["pp_pts"]
 
+        ud_line = row.get("ud_line")
+        pp_line = row.get("pp_line")
+        ud_call = call_direction(proj_ud, ud_line)
+        pp_call = call_direction(proj_pp, pp_line)
+
         results.append({
             "player_id": player_id,
             "name": row["name"],
             "team": row["team"],
             "projected_ud": proj_ud,
+            "ud_line": ud_line,
             "actual_ud": actual_ud,
-            "result_ud": classify(proj_ud, actual_ud),
+            "result_ud": grade_vs_line(ud_call, actual_ud, ud_line),
             "projected_pp": proj_pp,
+            "pp_line": pp_line,
             "actual_pp": actual_pp,
-            "result_pp": classify(proj_pp, actual_pp),
+            "result_pp": grade_vs_line(pp_call, actual_pp, pp_line),
             "actual_line": {k: line[k] for k in
                             ("singles", "doubles", "triples", "hr", "bb", "hbp", "rbi", "runs", "sb")},
         })
 
-    summary = summarize(results)
+    summary = summarize_vs_line(results)
 
     os.makedirs(RESULTS_DIR, exist_ok=True)
     out_path = os.path.join(RESULTS_DIR, f"results_{date_str}.json")
@@ -142,16 +208,24 @@ def track_date(date_str):
         json.dump(payload, f, indent=2)
 
     print(f"Saved {len(results)} results -> {out_path}")
-    print(f"UD: {summary['ud']['hit_rate']}% hit "
-          f"({summary['ud']['hit']} hit / {summary['ud']['over']} over / {summary['ud']['under']} under)")
-    print(f"PP: {summary['pp']['hit_rate']}% hit "
-          f"({summary['pp']['hit']} hit / {summary['pp']['over']} over / {summary['pp']['under']} under)")
+    print(f"UD: {summary['ud']['hit_rate']}% directional hit rate "
+          f"({summary['ud']['win']} win / {summary['ud']['loss']} loss / {summary['ud']['push']} push)")
+    print(f"PP: {summary['pp']['hit_rate']}% directional hit rate "
+          f"({summary['pp']['win']} win / {summary['pp']['loss']} loss / {summary['pp']['push']} push)")
 
     update_all_results(date_str, summary, results)
 
     results_by_pid = {r["player_id"]: r for r in results}
     track_top25(date_str, rows, results_by_pid)
     grade_value_plays(date_str, results_by_pid)
+
+    # Regenerate the dashboard with the freshly-updated Results / Player
+    # History / Value Plays data and push it to GitHub Pages, so the site
+    # picks up overnight grading without waiting for the next pipeline run.
+    try:
+        report.regenerate_dashboard()
+    except Exception as e:
+        print(f"Dashboard regeneration/deploy failed (non-fatal): {e}")
 
     return payload
 
@@ -249,9 +323,11 @@ def update_all_results(date_str, summary, results):
         entry["history"].append({
             "date": date_str,
             "projected_ud": r["projected_ud"],
+            "ud_line": r.get("ud_line"),
             "actual_ud": r["actual_ud"],
             "result_ud": r["result_ud"],
             "projected_pp": r["projected_pp"],
+            "pp_line": r.get("pp_line"),
             "actual_pp": r["actual_pp"],
             "result_pp": r["result_pp"],
         })

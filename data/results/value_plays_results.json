@@ -1,0 +1,388 @@
+{
+  "dates": {
+    "2026-06-12": {
+      "summary": {
+        "total": 8,
+        "correct": 3,
+        "accuracy": 37.5,
+        "over_total": 4,
+        "over_correct": 1,
+        "under_total": 4,
+        "under_correct": 2
+      },
+      "plays": [
+        {
+          "player_id": 608070,
+          "name": "Jos\u00e9 Ram\u00edrez",
+          "team": "Cleveland Guardians",
+          "call": "over",
+          "edge": 1.5,
+          "ud_line": 7.5,
+          "actual_ud": 0,
+          "correct": false
+        },
+        {
+          "player_id": 518692,
+          "name": "Freddie Freeman",
+          "team": "Los Angeles Dodgers",
+          "call": "over",
+          "edge": 1.5,
+          "ud_line": 7.5,
+          "actual_ud": 0,
+          "correct": false
+        },
+        {
+          "player_id": 808982,
+          "name": "Jung Hoo Lee",
+          "team": "San Francisco Giants",
+          "call": "over",
+          "edge": 1.5,
+          "ud_line": 7.5,
+          "actual_ud": 0,
+          "correct": false
+        },
+        {
+          "player_id": 647304,
+          "name": "Josh Naylor",
+          "team": "Seattle Mariners",
+          "call": "over",
+          "edge": 1.5,
+          "ud_line": 6.5,
+          "actual_ud": 14,
+          "correct": true
+        },
+        {
+          "player_id": 669127,
+          "name": "Shea Langeliers",
+          "team": "Athletics",
+          "call": "under",
+          "edge": -1.5,
+          "ud_line": 9.90266331433039,
+          "actual_ud": 14,
+          "correct": false
+        },
+        {
+          "player_id": 650490,
+          "name": "Yandy D\u00edaz",
+          "team": "Tampa Bay Rays",
+          "call": "under",
+          "edge": -1.5,
+          "ud_line": 9.5,
+          "actual_ud": 6,
+          "correct": true
+        },
+        {
+          "player_id": 802415,
+          "name": "Chandler Simpson",
+          "team": "Tampa Bay Rays",
+          "call": "under",
+          "edge": -1.5,
+          "ud_line": 8.737644100879756,
+          "actual_ud": 5,
+          "correct": true
+        },
+        {
+          "player_id": 665742,
+          "name": "Juan Soto",
+          "team": "New York Mets",
+          "call": "under",
+          "edge": -1.5,
+          "ud_line": 8.5,
+          "actual_ud": 20,
+          "correct": false
+        }
+      ]
+    },
+    "2026-06-13": {
+      "summary": {
+        "total": 0,
+        "correct": 0,
+        "accuracy": 0.0,
+        "over_total": 0,
+        "over_correct": 0,
+        "under_total": 0,
+        "under_correct": 0
+      },
+      "plays": []
+    },
+    "2026-06-14": {
+      "summary": {
+        "total": 8,
+        "correct": 4,
+        "accuracy": 50.0,
+        "over_total": 4,
+        "over_correct": 2,
+        "under_total": 4,
+        "under_correct": 2
+      },
+      "plays": [
+        {
+          "player_id": 624413,
+          "name": "Pete Alonso",
+          "team": "Baltimore Orioles",
+          "call": "over",
+          "edge": 1.5,
+          "ud_line": 7.5,
+          "actual_ud": 6,
+          "correct": false
+        },
+        {
+          "player_id": 676475,
+          "name": "Alec Burleson",
+          "team": "St. Louis Cardinals",
+          "call": "over",
+          "edge": 1.5,
+          "ud_line": 7.5,
+          "actual_ud": 14,
+          "correct": true
+        },
+        {
+          "player_id": 668939,
+          "name": "Adley Rutschman",
+          "team": "Baltimore Orioles",
+          "call": "over",
+          "edge": 1.5,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "correct": false
+        },
+        {
+          "player_id": 701538,
+          "name": "Jackson Merrill",
+          "team": "San Diego Padres",
+          "call": "over",
+          "edge": 1.5,
+          "ud_line": 6.5,
+          "actual_ud": 10,
+          "correct": true
+        },
+        {
+          "player_id": 701762,
+          "name": "Nick Kurtz",
+          "team": "Athletics",
+          "call": "under",
+          "edge": -1.5,
+          "ud_line": 11.5,
+          "actual_ud": 15,
+          "correct": false
+        },
+        {
+          "player_id": 660271,
+          "name": "Shohei Ohtani",
+          "team": "Los Angeles Dodgers",
+          "call": "under",
+          "edge": -1.5,
+          "ud_line": 10.5,
+          "actual_ud": 6,
+          "correct": true
+        },
+        {
+          "player_id": 677594,
+          "name": "Julio Rodr\u00edguez",
+          "team": "Seattle Mariners",
+          "call": "under",
+          "edge": -1.5,
+          "ud_line": 8.5,
+          "actual_ud": 0,
+          "correct": true
+        },
+        {
+          "player_id": 677951,
+          "name": "Bobby Witt Jr.",
+          "team": "Kansas City Royals",
+          "call": "under",
+          "edge": -1.5,
+          "ud_line": 8.5,
+          "actual_ud": 16,
+          "correct": false
+        }
+      ]
+    },
+    "2026-06-15": {
+      "summary": {
+        "total": 8,
+        "correct": 5,
+        "accuracy": 62.5,
+        "over_total": 4,
+        "over_correct": 2,
+        "under_total": 4,
+        "under_correct": 3
+      },
+      "plays": [
+        {
+          "player_id": 695578,
+          "name": "James Wood",
+          "team": "Washington Nationals",
+          "call": "over",
+          "edge": 1.5,
+          "ud_line": 7.5,
+          "actual_ud": 13,
+          "correct": true
+        },
+        {
+          "player_id": 683737,
+          "name": "Michael Busch",
+          "team": "Chicago Cubs",
+          "call": "over",
+          "edge": 1.5,
+          "ud_line": 7.5,
+          "actual_ud": 9,
+          "correct": true
+        },
+        {
+          "player_id": 664023,
+          "name": "Ian Happ",
+          "team": "Chicago Cubs",
+          "call": "over",
+          "edge": 1.5,
+          "ud_line": 7.5,
+          "actual_ud": 2,
+          "correct": false
+        },
+        {
+          "player_id": 691016,
+          "name": "Tyler Soderstrom",
+          "team": "Athletics",
+          "call": "over",
+          "edge": 1.5,
+          "ud_line": 7.5,
+          "actual_ud": 5,
+          "correct": false
+        },
+        {
+          "player_id": 701762,
+          "name": "Nick Kurtz",
+          "team": "Athletics",
+          "call": "under",
+          "edge": -1.5,
+          "ud_line": 12.5,
+          "actual_ud": 40,
+          "correct": false
+        },
+        {
+          "player_id": 665742,
+          "name": "Juan Soto",
+          "team": "New York Mets",
+          "call": "under",
+          "edge": -1.5,
+          "ud_line": 9.5,
+          "actual_ud": 6,
+          "correct": true
+        },
+        {
+          "player_id": 660271,
+          "name": "Shohei Ohtani",
+          "team": "Los Angeles Dodgers",
+          "call": "under",
+          "edge": -1.5,
+          "ud_line": 9.5,
+          "actual_ud": 0,
+          "correct": true
+        },
+        {
+          "player_id": 677951,
+          "name": "Bobby Witt Jr.",
+          "team": "Kansas City Royals",
+          "call": "under",
+          "edge": -1.5,
+          "ud_line": 8.5,
+          "actual_ud": 5,
+          "correct": true
+        }
+      ]
+    },
+    "2026-06-17": {
+      "summary": {
+        "total": 8,
+        "correct": 4,
+        "accuracy": 50.0,
+        "over_total": 4,
+        "over_correct": 2,
+        "under_total": 4,
+        "under_correct": 2
+      },
+      "plays": [
+        {
+          "player_id": 672640,
+          "name": "Otto Lopez",
+          "team": "Miami Marlins",
+          "call": "over",
+          "edge": 1.5,
+          "ud_line": 7.5,
+          "actual_ud": 10,
+          "correct": true
+        },
+        {
+          "player_id": 695734,
+          "name": "Daylen Lile",
+          "team": "Washington Nationals",
+          "call": "over",
+          "edge": 1.5,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "correct": false
+        },
+        {
+          "player_id": 695506,
+          "name": "Jac Caglianone",
+          "team": "Kansas City Royals",
+          "call": "over",
+          "edge": 1.5,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "correct": false
+        },
+        {
+          "player_id": 689414,
+          "name": "Liam Hicks",
+          "team": "Miami Marlins",
+          "call": "over",
+          "edge": 1.5,
+          "ud_line": 6.5,
+          "actual_ud": 10,
+          "correct": true
+        },
+        {
+          "player_id": 606466,
+          "name": "Ketel Marte",
+          "team": "Arizona Diamondbacks",
+          "call": "under",
+          "edge": -1.5,
+          "ud_line": 8.5,
+          "actual_ud": 18,
+          "correct": false
+        },
+        {
+          "player_id": 670541,
+          "name": "Yordan Alvarez",
+          "team": "Houston Astros",
+          "call": "under",
+          "edge": -1.5,
+          "ud_line": 7.5,
+          "actual_ud": 10,
+          "correct": false
+        },
+        {
+          "player_id": 676475,
+          "name": "Alec Burleson",
+          "team": "St. Louis Cardinals",
+          "call": "under",
+          "edge": -1.5,
+          "ud_line": 7.5,
+          "actual_ud": 5,
+          "correct": true
+        },
+        {
+          "player_id": 691023,
+          "name": "Jordan Walker",
+          "team": "St. Louis Cardinals",
+          "call": "under",
+          "edge": -1.5,
+          "ud_line": 7.5,
+          "actual_ud": 0,
+          "correct": true
+        }
+      ]
+    }
+  }
+}

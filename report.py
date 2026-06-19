@@ -11,6 +11,8 @@ Usage:
 
 import json
 import os
+import shutil
+import subprocess
 import sys
 import webbrowser
 from collections import defaultdict
@@ -131,6 +133,7 @@ def build_card(row):
         "platoon": row["platoon_edge"] == "Yes",
         "adjusted": row.get("adjusted", False),
         "anchored": row.get("market_anchored", False),
+        "projectedLineup": row.get("lineup_status") == "projected",
         "tier":   card_tier(row["ud_pts"]),
         "edge":   row.get("edge"),
         "udLine": row.get("ud_line"),
@@ -196,6 +199,7 @@ def build_row(p):
         "game_pk":      p.get("game_pk"),
         "home_away":    p.get("home_away"),
         "venue":        p.get("venue_name", ""),
+        "lineup_status": p.get("lineup_status", "confirmed"),
     }
 
 
@@ -272,7 +276,7 @@ def recalibrate_points(rows):
 # as a small "edge" (clamped) on top of that line.
 # ---------------------------------------------------------------------------
 
-MARKET_EDGE_CLAMP = 1.5
+MARKET_EDGE_CLAMP = 1.0
 
 
 def apply_market_anchor(rows, market_lines, market_corrections=None):
@@ -694,13 +698,15 @@ DASHBOARD_COLS = [
 ]
 
 
-def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None, backtest_data=None):
+def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None):
     games_count = len({r["game_pk"] for r in rows})
-    last_updated = datetime.now().strftime("%Y-%m-%d %I:%M %p")
+    generated_dt = datetime.now()
+    last_updated = generated_dt.strftime("%Y-%m-%d %I:%M %p")
+    generated_at_iso = generated_dt.isoformat()
+    player_count = len(rows)
 
     results_data = results_data or {"dates": {}, "players": {}}
     top25_data = top25_data or {"dates": {}, "players": {}}
-    backtest_js = json.dumps(backtest_data)
 
     # --- Results: last 30 days calendar heatmap ------------------------
     result_dates = sorted(results_data.get("dates", {}).keys())[-30:]
@@ -714,9 +720,9 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
             "pp_hit_rate": s["pp"]["hit_rate"],
             "player_count": s["player_count"],
         })
-        total_ud_hit += s["ud"]["hit"]
+        total_ud_hit += s["ud"]["win"]
         total_ud += s["ud"]["total"]
-        total_pp_hit += s["pp"]["hit"]
+        total_pp_hit += s["pp"]["win"]
         total_pp += s["pp"]["total"]
     calendar_js = json.dumps(calendar_cells)
     overall_ud_rate = round(100 * total_ud_hit / total_ud, 1) if total_ud else 0.0
@@ -812,12 +818,20 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     unanchored_cards_js = json.dumps(unanchored_cards)
 
     # --- Full leaderboard table ---------------------------------------
+    # Color tiers are relative to today's own distribution (top 25% green,
+    # next down to the 40th percentile yellow, rest red) rather than fixed
+    # point thresholds - ud_pts now lives on the recalibrated/anchored
+    # 3.5-9.5 scale, not the old raw model scale those fixed cutoffs were
+    # tuned for, so an absolute "8+" cutoff left almost nothing green.
     cols_js = json.dumps([{"key": k, "label": label} for k, label, _ in DASHBOARD_COLS])
+    ud_values = [r.get("ud_pts") or 0 for r in rows]
+    full_thresholds = (percentile(ud_values, 75), percentile(ud_values, 40))
     table_rows = []
     for rank, row in enumerate(rows, 1):
         cells = [fmt_value(rank if key == "rank" else row[key], kind)
                  for key, _, kind in DASHBOARD_COLS]
-        table_rows.append({"team": row["team"], "cells": cells})
+        color = "row-" + tier(row.get("ud_pts") or 0, full_thresholds)
+        table_rows.append({"team": row["team"], "cells": cells, "color": color})
     rows_js = json.dumps(table_rows)
 
     teams = sorted({r["team"] for r in rows})
@@ -878,6 +892,7 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
                   font-weight: 700; color: #0d1626; background: #4ade80; border-radius: 10px; }}
   .card .badge-adjusted {{ background: #60a5fa; margin-left: 6px; }}
   .card .badge-anchored {{ background: #f0abfc; margin-left: 6px; }}
+  .card .badge-projected {{ background: #fbbf24; color: #3a2a00; margin-left: 6px; }}
 
   /* Full leaderboard table */
   .controls {{ display: flex; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }}
@@ -919,10 +934,10 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   .ph-table th, .ph-table td {{ padding: 6px 10px; font-size: 13px; text-align: left; white-space: nowrap; }}
   .ph-table th {{ color: #9fb0cc; border-bottom: 1px solid #2a3a5c; position: static; cursor: default; }}
   .ph-table td {{ color: #d6deef; border-bottom: 1px solid #1f2c46; }}
-  .res-hit   {{ color: #4ade80; font-weight: 700; }}
-  .res-over  {{ color: #60a5fa; font-weight: 700; }}
-  .res-under {{ color: #f87171; font-weight: 700; }}
+  .res-win   {{ color: #4ade80; font-weight: 700; }}
+  .res-loss  {{ color: #f87171; font-weight: 700; }}
   .res-push  {{ color: #9fb0cc; font-weight: 700; }}
+  .res-none  {{ color: #6c7da0; font-weight: 700; }}
 
   /* Top 25 Results tab */
   .summary-card.best  {{ border-color: #4ade80; }}
@@ -939,8 +954,13 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   #t25Tbl tbody tr.row-green  td {{ background: #15351f; }}
   #t25Tbl tbody tr.row-yellow td {{ background: #3a3315; }}
   #t25Tbl tbody tr.row-red    td {{ background: #3a1818; }}
-
-  /* Backtest tab */
+  /* Full Leaderboard color rows */
+  #tbl tbody tr.row-green  td {{ background: #0d2418; }}
+  #tbl tbody tr.row-yellow td {{ background: #2a240e; }}
+  #tbl tbody tr.row-red    td {{ background: #2a1010; }}
+  #tbl tbody tr.row-green:hover td  {{ background: #15351f; }}
+  #tbl tbody tr.row-yellow:hover td {{ background: #3a3315; }}
+  #tbl tbody tr.row-red:hover td    {{ background: #3a1818; }}
   .bt-bar-row {{ display: flex; align-items: center; gap: 10px; margin: 6px 0; }}
   .bt-bar-label {{ width: 160px; font-size: 13px; color: #c4cee0; flex-shrink: 0; }}
   .bt-bar {{ flex: 1; height: 14px; background: #16213a; border: 1px solid #2a3a5c; border-radius: 4px; overflow: hidden; }}
@@ -969,14 +989,22 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   .unanchored-section h2 {{ margin: 0 0 4px; color: #9fb0cc; font-size: 18px; }}
   .unanchored-section .vp-sub {{ color: #7a8aab; font-size: 13px; margin-bottom: 12px; }}
   .unanchored-empty {{ color: #9fb0cc; font-size: 13px; }}
+
+  /* Freshness banner */
+  .freshness-banner {{ padding: 10px 24px; font-size: 14px; font-weight: 700; text-align: center; }}
+  .freshness-banner.fresh {{ background: #15351f; color: #4ade80; }}
+  .freshness-banner.stale {{ background: #3a1818; color: #f87171; }}
+  .card .game-date {{ color: #6c7da0; }}
 </style>
 </head>
 <body>
 <header>
   <div class="logo">⚾ MLB FANTASY PRO</div>
   <div class="header-mid">{date_str} &mdash; <span class="games">{games_count} games today</span></div>
-  <div class="header-right">Last updated: {last_updated}</div>
+  <div class="header-right" id="lastUpdated">Last Updated: {last_updated}</div>
 </header>
+
+<div id="freshnessBanner" class="freshness-banner"></div>
 
 <div class="value-plays">
   <h2>🎯 Value Plays</h2>
@@ -996,7 +1024,6 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   <button class="tab-btn" id="tab-results" data-tab="results">Results</button>
   <button class="tab-btn" id="tab-history" data-tab="history">Player History</button>
   <button class="tab-btn" id="tab-top25results" data-tab="top25results">Top 25 Results</button>
-  <button class="tab-btn" id="tab-backtest" data-tab="backtest">Backtest</button>
 </div>
 
 <div class="panel" id="panel-top25">
@@ -1067,9 +1094,7 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   </div>
 </div>
 
-<div class="panel hidden" id="panel-backtest">
-  <div id="btContent"></div>
-</div>
+
 
 <script>
 const CARDS = {cards_js};
@@ -1087,7 +1112,41 @@ const T25_ROLLING_RATE = {json.dumps(rolling_hit_rate)};
 const T25_BEST = {json.dumps(best_performer)};
 const T25_WORST = {json.dumps(worst_performer)};
 const T25_RECORDS = {record_rows_js};
-const BT_SUMMARY = {backtest_js};
+const GENERATED_AT = {json.dumps(generated_at_iso)};
+const GAME_DATE = {json.dumps(date_str)};
+const PLAYER_COUNT = {player_count};
+const GAMES_COUNT = {games_count};
+
+// --- Freshness indicator ---
+function updateFreshness() {{
+  const generated = new Date(GENERATED_AT);
+  const now = new Date();
+  const ageHours = (now - generated) / 3600000;
+
+  const timeStr = generated.toLocaleString('en-US', {{
+    month: 'long', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true,
+  }});
+  const lastUpdatedEl = document.getElementById('lastUpdated');
+  if (ageHours > 4) {{
+    lastUpdatedEl.innerHTML = `Last Updated: ${{timeStr}} PT &mdash; <span style="color:#f87171">&#9888; Data may be stale - pipeline may not have run</span>`;
+  }} else {{
+    lastUpdatedEl.innerHTML = `Last Updated: ${{timeStr}} PT &mdash; <span style="color:#4ade80">&#10003; Fresh</span>`;
+  }}
+
+  const banner = document.getElementById('freshnessBanner');
+  const todayStr = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+  const updatedTime = generated.toLocaleTimeString('en-US', {{ hour: 'numeric', minute: '2-digit', hour12: true }});
+  if (GAME_DATE === todayStr) {{
+    banner.className = 'freshness-banner fresh';
+    banner.innerHTML = `&#10003; Today's data &mdash; ${{GAME_DATE}} &mdash; ${{PLAYER_COUNT}} players &mdash; ${{GAMES_COUNT}} games &mdash; Updated ${{updatedTime}}`;
+  }} else {{
+    banner.className = 'freshness-banner stale';
+    banner.innerHTML = `&#9888; Showing data from ${{GAME_DATE}} &mdash; pipeline may not have run today`;
+  }}
+}}
+updateFreshness();
+setInterval(updateFreshness, 60000);
+setInterval(() => location.reload(), 1800000);
 
 // --- Top 25 / Value Play cards ---
 function edgeRowHtml(c) {{
@@ -1107,7 +1166,7 @@ function renderCard(c) {{
   card.className = 'card ' + c.tier;
   card.innerHTML = `
     <div class="name">${{c.name}}</div>
-    <div class="meta">${{c.team}} &middot; Batting ${{c.order}}</div>
+    <div class="meta">${{c.team}} &middot; Batting ${{c.order}} &middot; <span class="game-date">${{GAME_DATE}}</span></div>
     <div class="pts-row">
       <div><span class="ud-pts">${{c.ud}}</span><span class="pts-label">UD PTS</span></div>
       <div><span class="pp-pts">${{c.pp}}</span><span class="pts-label">PP PTS</span></div>
@@ -1118,6 +1177,7 @@ function renderCard(c) {{
     ${{c.platoon ? '<div class="badge">Platoon Edge</div>' : ''}}
     ${{c.adjusted ? '<div class="badge badge-adjusted">Model adjusted</div>' : ''}}
     ${{c.anchored ? '<div class="badge badge-anchored">Live line</div>' : ''}}
+    ${{c.projectedLineup ? '<div class="badge badge-projected">&#9888; Projected Lineup</div>' : ''}}
   `;
   return card;
 }}
@@ -1148,7 +1208,7 @@ if (UNANCHORED_CARDS.length === 0) {{
 }}
 
 // --- Tabs ---
-const PANELS = ['top25', 'full', 'results', 'history', 'top25results', 'backtest'];
+const PANELS = ['top25', 'full', 'results', 'history', 'top25results'];
 document.querySelectorAll('.tab-btn').forEach(btn => {{
   btn.addEventListener('click', () => {{
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -1198,17 +1258,19 @@ function renderHistory() {{
     const rowsHtml = p.history.slice().reverse().map(h => `
       <tr>
         <td>${{h.date}}</td>
-        <td>${{h.projected_ud}}</td>
+        <td>${{h.projected_ud != null ? h.projected_ud.toFixed(1) : 'N/A'}}</td>
+        <td>${{h.ud_line != null ? h.ud_line.toFixed(1) : '—'}}</td>
         <td>${{h.actual_ud}}</td>
-        <td class="res-${{h.result_ud}}">${{h.result_ud}}</td>
-        <td>${{h.projected_pp}}</td>
+        <td class="res-${{h.result_ud || 'none'}}">${{h.result_ud || '—'}}</td>
+        <td>${{h.projected_pp != null ? h.projected_pp.toFixed(1) : 'N/A'}}</td>
+        <td>${{h.pp_line != null ? h.pp_line.toFixed(1) : '—'}}</td>
         <td>${{h.actual_pp}}</td>
-        <td class="res-${{h.result_pp}}">${{h.result_pp}}</td>
+        <td class="res-${{h.result_pp || 'none'}}">${{h.result_pp || '—'}}</td>
       </tr>`).join('');
     div.innerHTML = `
       <h3>${{p.name}} <span class="meta">${{p.team}}</span></h3>
       <table class="ph-table">
-        <thead><tr><th>Date</th><th>Proj UD</th><th>Actual UD</th><th>UD</th><th>Proj PP</th><th>Actual PP</th><th>PP</th></tr></thead>
+        <thead><tr><th>Date</th><th>Proj UD</th><th>UD Line</th><th>Actual UD</th><th>UD Result</th><th>Proj PP</th><th>PP Line</th><th>Actual PP</th><th>PP Result</th></tr></thead>
         <tbody>${{rowsHtml}}</tbody>
       </table>`;
     phResults.appendChild(div);
@@ -1262,7 +1324,7 @@ for (const c of T25_CARDS) {{
   card.innerHTML = `
     ${{overlay}}
     <div class="name">${{c.name}}</div>
-    <div class="meta">${{c.team}} &middot; Batting ${{c.order}}</div>
+    <div class="meta">${{c.team}} &middot; Batting ${{c.order}} &middot; <span class="game-date">${{GAME_DATE}}</span></div>
     <div class="pts-row">
       <div><span class="ud-pts">${{c.ud}}</span><span class="pts-label">PROJ UD</span></div>
       <div><span class="pp-pts">${{c.actual_ud !== null ? c.actual_ud : 'N/A'}}</span><span class="pts-label">ACTUAL UD</span></div>
@@ -1351,103 +1413,6 @@ function renderT25() {{
 
 renderT25();
 
-// --- Backtest ---
-function btTable(headers, rows) {{
-  const thead = '<tr>' + headers.map(h => `<th>${{h}}</th>`).join('') + '</tr>';
-  const tbody = rows.map(r => '<tr>' + r.map(c => `<td>${{c}}</td>`).join('') + '</tr>').join('');
-  return `<table class="ph-table"><thead>${{thead}}</thead><tbody>${{tbody}}</tbody></table>`;
-}}
-
-function btBar(label, value, n) {{
-  const pct = value === null || value === undefined ? 0 : Math.max(0, Math.min(100, value));
-  const text = value === null || value === undefined ? 'N/A' : `${{value}}% (n=${{n}})`;
-  return `
-    <div class="bt-bar-row">
-      <div class="bt-bar-label">${{label}}</div>
-      <div class="bt-bar"><div class="bt-bar-fill" style="width:${{pct}}%"></div></div>
-      <div class="bt-bar-value">${{text}}</div>
-    </div>`;
-}}
-
-function btCorrBar(label, corr, n) {{
-  if (corr === null || corr === undefined) {{
-    return `
-      <div class="bt-bar-row">
-        <div class="bt-bar-label">${{label}}</div>
-        <div class="bt-bar"></div>
-        <div class="bt-bar-value">N/A</div>
-      </div>`;
-  }}
-  const pct = Math.min(100, Math.abs(corr) * 100);
-  const color = corr >= 0 ? '#4ade80' : '#f87171';
-  return `
-    <div class="bt-bar-row">
-      <div class="bt-bar-label">${{label}}</div>
-      <div class="bt-bar"><div class="bt-bar-fill" style="width:${{pct}}%;background:${{color}}"></div></div>
-      <div class="bt-bar-value">${{corr}} (n=${{n}})</div>
-    </div>`;
-}}
-
-function renderBacktest() {{
-  const el = document.getElementById('btContent');
-  if (!BT_SUMMARY) {{
-    el.innerHTML = '<div class="empty-msg">No backtest data yet — run backtest.py to generate season calibration data.</div>';
-    return;
-  }}
-  const s = BT_SUMMARY;
-  let html = '';
-
-  html += '<div class="results-summary">';
-  html += `<div class="summary-card"><div class="summary-value">${{s.overall_hit_rate}}%</div><div class="summary-label">Overall UD Hit Rate</div></div>`;
-  html += `<div class="summary-card"><div class="summary-value">${{s.total_player_games}}</div><div class="summary-label">Player-Games Graded</div></div>`;
-  html += `<div class="summary-card"><div class="summary-value">${{s.dates_graded}}</div><div class="summary-label">Dates Graded</div></div>`;
-  html += `<div class="summary-card"><div class="summary-value">${{s.correction_count}}</div><div class="summary-label">Players w/ Correction Factor</div></div>`;
-  html += '</div>';
-  html += `<div class="empty-msg">Range: ${{s.date_range[0]}} to ${{s.date_range[1]}} &middot; generated ${{s.generated}}</div>`;
-
-  html += '<h3 class="section-title">Hit Rate by Month</h3>';
-  for (const [month, v] of Object.entries(s.monthly_hit_rate)) {{
-    html += btBar(month, v.hit_rate, v.n);
-  }}
-
-  html += '<h3 class="section-title">Hit Rate by Player Type</h3>';
-  for (const [ptype, v] of Object.entries(s.player_type_hit_rate)) {{
-    html += btBar(ptype, v.hit_rate, v.n);
-  }}
-
-  html += '<h3 class="section-title">Signal Correlation with Hit Rate</h3>';
-  for (const [sig, v] of Object.entries(s.signal_correlation)) {{
-    html += btCorrBar(sig, v.correlation, v.n);
-  }}
-
-  html += '<h3 class="section-title">Hit Rate by Signal Strength</h3>';
-  for (const [sig, buckets] of Object.entries(s.signal_buckets)) {{
-    html += `<div class="empty-msg" style="margin-top:10px;">${{sig}}</div>`;
-    for (const tier of ['low', 'medium', 'high']) {{
-      const b = buckets[tier];
-      if (b) html += btBar(`${{sig}} (${{tier}})`, b.hit_rate, b.n);
-    }}
-  }}
-
-  html += '<h3 class="section-title">Platoon Edge Hit Rate</h3>';
-  for (const [cat, v] of Object.entries(s.platoon_hit_rate)) {{
-    html += btBar(`Platoon edge: ${{cat}}`, v.hit_rate, v.n);
-  }}
-
-  html += '<div class="bt-grid-2">';
-  html += '<div><h3 class="section-title">Top 10 Most Accurate</h3>' +
-    btTable(['Player', 'Team', 'Hit Rate', 'Games'],
-      s.top10_best.map(p => [p.name, p.team, p.hit_rate + '%', p.games])) + '</div>';
-  html += '<div><h3 class="section-title">Top 10 Least Accurate (Fade)</h3>' +
-    btTable(['Player', 'Team', 'Hit Rate', 'Games'],
-      s.top10_worst.map(p => [p.name, p.team, p.hit_rate + '%', p.games])) + '</div>';
-  html += '</div>';
-
-  el.innerHTML = html;
-}}
-
-renderBacktest();
-
 // --- Full leaderboard table ---
 const hdr = document.getElementById('hdr');
 COLS.forEach((c, i) => {{
@@ -1506,6 +1471,7 @@ function render() {{
   body.innerHTML = '';
   for (const r of rows) {{
     const tr = document.createElement('tr');
+    if (r.color) tr.classList.add(r.color);
     for (const c of r.cells) {{
       const td = document.createElement('td');
       td.textContent = c;
@@ -1532,8 +1498,10 @@ render();
 # Main
 # ---------------------------------------------------------------------------
 
-def main():
-    date_arg = sys.argv[1] if len(sys.argv) > 1 else None
+def prepare_dashboard_context(date_arg=None):
+    """Load and process the latest projection data, returning everything
+    needed to render the dashboard: rows, the date they're for, and the
+    results/top25 history used by the Results / Player History tabs."""
     players, date_str = proj.load_data(date_arg)
 
     results_path = os.path.join("data", "results", "all_results.json")
@@ -1552,6 +1520,33 @@ def main():
     corrections = build_corrections(results_data)
     apply_corrections(rows, corrections, skip=anchored_ids)
     rows.sort(key=lambda r: r["ud_pts"], reverse=True)
+
+    top25_path = os.path.join("data", "results", "top25_results.json")
+    top25_data = None
+    if os.path.exists(top25_path):
+        with open(top25_path, encoding="utf-8") as f:
+            top25_data = json.load(f)
+
+    return rows, date_str, results_data, top25_data
+
+
+def regenerate_dashboard(date_arg=None):
+    """Rebuild output/dashboard.html from the latest projection + results
+    data and push it to GitHub Pages. Used by tracker.py after nightly
+    grading so the Results and Player History tabs update without a full
+    pipeline run."""
+    rows, date_str, results_data, top25_data = prepare_dashboard_context(date_arg)
+    html_path = os.path.join("output", "dashboard.html")
+    write_dashboard(rows, date_str, html_path, results_data, top25_data)
+    print(f"Dashboard saved -> {os.path.abspath(html_path)}")
+    deploy_to_github_pages(html_path, date_str)
+    return html_path
+
+
+def main():
+    date_arg = sys.argv[1] if len(sys.argv) > 1 else None
+    rows, date_str, results_data, top25_data = prepare_dashboard_context(date_arg)
+    players, _ = proj.load_data(date_arg)
 
     ud_values = [r["ud_pts"] for r in rows]
     ud_thresholds = (percentile(ud_values, 75), percentile(ud_values, 40))
@@ -1585,25 +1580,53 @@ def main():
     wb.save(xlsx_path)
     print(f"Excel report saved -> {os.path.abspath(xlsx_path)}")
 
-    top25_path = os.path.join("data", "results", "top25_results.json")
-    top25_data = None
-    if os.path.exists(top25_path):
-        with open(top25_path, encoding="utf-8") as f:
-            top25_data = json.load(f)
-
-    backtest_path = os.path.join("data", "backtest", "backtest_summary.json")
-    backtest_data = None
-    if os.path.exists(backtest_path):
-        with open(backtest_path, encoding="utf-8") as f:
-            backtest_data = json.load(f)
-
     html_path = os.path.join("output", "dashboard.html")
-    write_dashboard(rows, date_str, html_path, results_data, top25_data, backtest_data)
+    write_dashboard(rows, date_str, html_path, results_data, top25_data)
     print(f"Dashboard saved -> {os.path.abspath(html_path)}")
 
-    # Auto-open
-    os.startfile(os.path.abspath(xlsx_path))
-    webbrowser.open(f"file:///{os.path.abspath(html_path)}")
+    deploy_to_github_pages(html_path, date_str)
+
+    # Auto-open (skipped for unattended/scheduled runs)
+    if not os.environ.get("MLB_HEADLESS"):
+        os.startfile(os.path.abspath(xlsx_path))
+        webbrowser.open(f"file:///{os.path.abspath(html_path)}")
+
+
+# ---------------------------------------------------------------------------
+# GitHub Pages auto-deploy
+#
+# Copies the freshly generated dashboard to docs/index.html and pushes it to
+# the mlb-fantasy repo so https://macassvic-cmd.github.io/mlb-fantasy/ stays
+# in sync with the latest run. Best-effort: any failure (no network, no git,
+# merge conflicts, etc.) is logged and swallowed so it never breaks the
+# pipeline.
+# ---------------------------------------------------------------------------
+
+DOCS_DASHBOARD_PATH = os.path.join("docs", "index.html")
+
+
+def deploy_to_github_pages(html_path, date_str):
+    try:
+        os.makedirs("docs", exist_ok=True)
+        shutil.copyfile(html_path, DOCS_DASHBOARD_PATH)
+
+        repo_root = os.path.dirname(os.path.abspath(__file__))
+        subprocess.run(["git", "add", "docs/index.html"], cwd=repo_root, check=True,
+                        capture_output=True, text=True)
+
+        status = subprocess.run(["git", "status", "--porcelain", "docs/index.html"],
+                                 cwd=repo_root, check=True, capture_output=True, text=True)
+        if not status.stdout.strip():
+            print("GitHub Pages: no dashboard changes to deploy.")
+            return
+
+        subprocess.run(["git", "commit", "-q", "-m", f"Update dashboard for {date_str}"],
+                        cwd=repo_root, check=True, capture_output=True, text=True)
+        subprocess.run(["git", "push"], cwd=repo_root, check=True, capture_output=True, text=True)
+        print("GitHub Pages: dashboard deployed -> https://macassvic-cmd.github.io/mlb-fantasy/")
+    except Exception as e:
+        detail = e.stderr if isinstance(e, subprocess.CalledProcessError) else str(e)
+        print(f"GitHub Pages deploy skipped (non-fatal): {detail}")
 
 
 if __name__ == "__main__":
