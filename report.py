@@ -287,12 +287,16 @@ def recalibrate_points(rows):
 #
 # Underdog and PrizePicks post their own "Fantasy Points" lines for today's
 # games. Those lines are the real benchmark - our projection should land
-# within ~1.5 pts of them, not float off on its own percentile-based scale.
-# For any player with a posted line, we keep our raw recalibrated value only
-# as a small "edge" (clamped) on top of that line.
+# close to them, not float off on its own percentile-based scale. For any
+# player with a posted line, we keep our raw recalibrated value only as an
+# "edge" (clamped) on top of that line. The clamp must stay above the
+# Value Plays threshold (1.5 pts, see VALUE_PLAY_EDGE below) or no edge can
+# ever qualify as a Value Play.
 # ---------------------------------------------------------------------------
 
-MARKET_EDGE_CLAMP = 1.0
+MARKET_EDGE_CLAMP = 2.0
+VALUE_PLAY_EDGE = 1.5  # must stay below MARKET_EDGE_CLAMP or no edge can ever qualify
+assert VALUE_PLAY_EDGE < MARKET_EDGE_CLAMP, "Value Plays threshold must be below the market edge clamp"
 
 
 def apply_market_anchor(rows, market_lines, market_corrections=None):
@@ -817,11 +821,11 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     cards = [build_card(row) for row in rows[:25]]
     cards_js = json.dumps(cards)
 
-    # --- Value Plays: model vs. market disagreement of 1.5+ pts -----------
+    # --- Value Plays: model vs. market disagreement of VALUE_PLAY_EDGE+ pts -
     # Only players with a posted UD/PP line count - no line means no market
     # to disagree with. Capped at top 4 OVER + top 4 UNDER by edge size.
-    over_rows = [r for r in rows if r.get("market_anchored") and (r.get("edge") or 0) >= 1.5]
-    under_rows = [r for r in rows if r.get("market_anchored") and (r.get("edge") or 0) <= -1.5]
+    over_rows = [r for r in rows if r.get("market_anchored") and (r.get("edge") or 0) >= VALUE_PLAY_EDGE]
+    under_rows = [r for r in rows if r.get("market_anchored") and (r.get("edge") or 0) <= -VALUE_PLAY_EDGE]
     over_rows.sort(key=lambda r: r["edge"], reverse=True)
     under_rows.sort(key=lambda r: r["edge"])
     value_rows = over_rows[:4] + under_rows[:4]
