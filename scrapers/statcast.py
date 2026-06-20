@@ -8,6 +8,8 @@ import warnings
 import pandas as pd
 from datetime import datetime, timedelta
 
+from scrapers._timeout import call_with_timeout
+
 warnings.filterwarnings("ignore")
 logger = logging.getLogger(__name__)
 
@@ -23,12 +25,11 @@ except ImportError:
 def _fetch(player_id, start_dt, end_dt):
     if statcast_batter is None:
         return pd.DataFrame()
-    try:
-        df = statcast_batter(start_dt, end_dt, player_id)
-        return df if df is not None and not df.empty else pd.DataFrame()
-    except Exception as e:
-        logger.warning(f"statcast_batter({player_id}) failed: {e}")
-        return pd.DataFrame()
+    df = call_with_timeout(
+        statcast_batter, start_dt, end_dt, player_id,
+        timeout_s=60, label=f"statcast_batter({player_id})",
+    )
+    return df if df is not None and not df.empty else pd.DataFrame()
 
 
 def _ev_stats(df, suffix=""):

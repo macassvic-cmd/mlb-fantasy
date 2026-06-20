@@ -8,6 +8,8 @@ import logging
 import requests
 from dotenv import load_dotenv
 
+from scrapers._timeout import call_with_timeout
+
 load_dotenv()
 logger = logging.getLogger(__name__)
 
@@ -96,11 +98,16 @@ def get_stadium_weather(venue_name):
         return _default(venue_name)
 
     lat, lon = coords
+    r = call_with_timeout(
+        requests.get, OWM_URL,
+        params={"lat": lat, "lon": lon, "appid": API_KEY, "units": "imperial", "cnt": 4},
+        timeout=10,  # requests' own HTTP-level timeout
+        timeout_s=60,  # hard wall-clock backstop in case that doesn't fire
+        label=f"OWM request({venue_name})",
+    )
+    if r is None:
+        return _default(venue_name)
     try:
-        r = requests.get(OWM_URL, params={
-            "lat": lat, "lon": lon,
-            "appid": API_KEY, "units": "imperial", "cnt": 4,
-        }, timeout=10)
         r.raise_for_status()
         forecasts = r.json().get("list", [])
         f = forecasts[0] if forecasts else {}

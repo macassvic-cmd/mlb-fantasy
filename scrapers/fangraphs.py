@@ -8,6 +8,8 @@ import logging
 import warnings
 from datetime import datetime
 
+from scrapers._timeout import call_with_timeout
+
 warnings.filterwarnings("ignore")
 logger = logging.getLogger(__name__)
 
@@ -17,30 +19,36 @@ _cache = {}
 def _batting_df(season):
     key = f"bat_{season}"
     if key not in _cache:
-        try:
-            from pybaseball import batting_stats
-            df = batting_stats(season, qual=20)
-            _cache[key] = df
+        import pandas as pd
+        from pybaseball import batting_stats
+        df = call_with_timeout(
+            batting_stats, season, qual=20,
+            timeout_s=60, label="FanGraphs batting_stats",
+        )
+        if df is None:
+            logger.warning("FanGraphs batting fetch failed or timed out")
+            df = pd.DataFrame()
+        else:
             logger.info(f"FanGraphs batting: {len(df)} players loaded")
-        except Exception as e:
-            logger.warning(f"FanGraphs batting fetch failed: {e}")
-            import pandas as pd
-            _cache[key] = pd.DataFrame()
+        _cache[key] = df
     return _cache[key]
 
 
 def _pitching_df(season):
     key = f"pit_{season}"
     if key not in _cache:
-        try:
-            from pybaseball import pitching_stats
-            df = pitching_stats(season, qual=10)
-            _cache[key] = df
+        import pandas as pd
+        from pybaseball import pitching_stats
+        df = call_with_timeout(
+            pitching_stats, season, qual=10,
+            timeout_s=60, label="FanGraphs pitching_stats",
+        )
+        if df is None:
+            logger.warning("FanGraphs pitching fetch failed or timed out")
+            df = pd.DataFrame()
+        else:
             logger.info(f"FanGraphs pitching: {len(df)} pitchers loaded")
-        except Exception as e:
-            logger.warning(f"FanGraphs pitching fetch failed: {e}")
-            import pandas as pd
-            _cache[key] = pd.DataFrame()
+        _cache[key] = df
     return _cache[key]
 
 
