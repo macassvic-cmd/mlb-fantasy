@@ -8,6 +8,8 @@ import re
 import requests
 from bs4 import BeautifulSoup
 
+from scrapers._timeout import call_with_timeout
+
 logger = logging.getLogger(__name__)
 
 URL = "https://www.rotowire.com/baseball/daily-lineups.php"
@@ -26,8 +28,13 @@ def get_rotowire_lineups():
     Returns {player_name: {team, batting_order, position, confirmed: True}}
     Returns empty dict on any failure — the pipeline continues without it.
     """
+    resp = call_with_timeout(
+        requests.get, URL, headers=HEADERS, timeout=15,
+        timeout_s=60, label="RotoWire fetch",
+    )
+    if resp is None:
+        return {}
     try:
-        resp = requests.get(URL, headers=HEADERS, timeout=15)
         resp.raise_for_status()
     except Exception as e:
         logger.warning(f"RotoWire fetch failed: {e}")

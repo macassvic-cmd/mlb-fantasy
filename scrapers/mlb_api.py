@@ -7,12 +7,22 @@ import requests
 import logging
 from datetime import datetime, timedelta
 
+from scrapers._timeout import call_with_timeout
+
 BASE = "https://statsapi.mlb.com/api/v1"
 logger = logging.getLogger(__name__)
 
 
 def _get(path, params=None, timeout=20):
-    resp = requests.get(f"{BASE}{path}", params=params, timeout=timeout)
+    # requests' own `timeout` only bounds connect/read after DNS resolves -
+    # it doesn't always bound a hung DNS lookup. Wrap with a hard wall-clock
+    # backstop so a single stuck call can never block the whole pipeline.
+    resp = call_with_timeout(
+        requests.get, f"{BASE}{path}", params=params, timeout=timeout,
+        timeout_s=60, label=f"MLB API {path}",
+    )
+    if resp is None:
+        raise RuntimeError(f"MLB API request timed out or failed: {path}")
     resp.raise_for_status()
     return resp.json()
 
@@ -35,6 +45,37 @@ def get_games(date_str):
     for d in data.get("dates", []):
         games.extend(d.get("games", []))
     return games
+
+
+def get_recent_team_lineup(team_id, before_date, max_lookback=10):
+    """Return the batting order (list of player_ids, in order) from the most
+    recent game `team_id` played with a posted lineup before `before_date`.
+    Used to project a lineup when today's hasn't been confirmed yet."""
+    d = datetime.strptime(before_date, "%Y-%m-%d")
+    for i in range(1, max_lookback + 1):
+        check_date = (d - timedelta(days=i)).strftime("%Y-%m-%d")
+        try:
+            data = _get("/schedule", {
+                "date": check_date, "sportId": 1, "teamId": team_id, "hydrate": "lineups",
+            })
+        except Exception as e:
+            logger.debug(f"get_recent_team_lineup {team_id} {check_date}: {e}")
+            continue
+
+        for sd in data.get("dates", []):
+            for game in sd.get("games", []):
+                home = game["teams"]["home"]
+                away = game["teams"]["away"]
+                lineups_data = game.get("lineups", {})
+                if home["team"]["id"] == team_id:
+                    players = lineups_data.get("homePlayers", [])
+                elif away["team"]["id"] == team_id:
+                    players = lineups_data.get("awayPlayers", [])
+                else:
+                    continue
+                if players:
+                    return [p["id"] for p in players]
+    return []
 
 
 def get_lineups(date_str):
