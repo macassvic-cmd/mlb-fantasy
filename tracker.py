@@ -338,6 +338,7 @@ def track_top25(date_str, rows, results_by_pid):
         grade = res["result_ud"] if res else None
         entries.append({
             "player_id": pid,
+            "date": date_str,
             "name": row["name"],
             "team": row["team"],
             "order": row["order"] or "-",
@@ -353,6 +354,7 @@ def track_top25(date_str, rows, results_by_pid):
             "adjusted": row.get("adjusted", False),
             "tier": report.card_tier(row["ud_pts"]),
             "projected_ud": row["ud_pts"],
+            "ud_line": row.get("ud_line"),
             "actual_ud": actual_ud,
             "grade": grade,
         })

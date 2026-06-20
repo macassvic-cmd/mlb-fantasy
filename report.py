@@ -887,7 +887,12 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   .card .pts-row {{ margin-top: 10px; display: flex; gap: 18px; align-items: baseline; }}
   .card .ud-pts {{ font-size: 26px; font-weight: 800; color: #4ade80; }}
   .card .pp-pts {{ font-size: 18px; font-weight: 700; color: #60a5fa; }}
+  .card .line-pts {{ font-size: 18px; font-weight: 700; color: #9fb0cc; }}
   .card .pts-label {{ font-size: 10px; color: #6c7da0; display: block; }}
+  .t25-call {{ display: inline-flex; align-items: center; gap: 4px; margin-top: 8px; padding: 2px 8px;
+               border-radius: 10px; font-weight: 800; font-size: 12px; }}
+  .t25-call.over  {{ background: rgba(96,165,250,0.15); color: #60a5fa; }}
+  .t25-call.under {{ background: rgba(251,146,60,0.15); color: #fb923c; }}
   .card .stat-line {{ font-size: 12px; color: #c4cee0; margin-top: 8px; }}
   .card .badge {{ display: inline-block; margin-top: 8px; padding: 2px 8px; font-size: 11px;
                   font-weight: 700; color: #0d1626; background: #4ade80; border-radius: 10px; }}
@@ -1321,15 +1326,25 @@ for (const c of T25_CARDS) {{
     borderClass = 'loss';
     overlay = '<div class="t25-overlay loss">&#10007;</div>';
   }}
+  let callBadge = '';
+  if (c.ud_line != null && c.projected_ud != null) {{
+    if (c.projected_ud > c.ud_line) {{
+      callBadge = '<div class="t25-call over">&#8593; OVER</div>';
+    }} else if (c.projected_ud < c.ud_line) {{
+      callBadge = '<div class="t25-call under">&#8595; UNDER</div>';
+    }}
+  }}
   card.className = 'card t25-card ' + borderClass;
   card.innerHTML = `
     ${{overlay}}
     <div class="name">${{c.name}}</div>
-    <div class="meta">${{c.team}} &middot; Batting ${{c.order}} &middot; <span class="game-date">${{GAME_DATE}}</span></div>
+    <div class="meta">${{c.team}} &middot; Batting ${{c.order}} &middot; <span class="game-date">${{c.date}}</span></div>
     <div class="pts-row">
       <div><span class="ud-pts">${{c.ud}}</span><span class="pts-label">PROJ UD</span></div>
+      <div><span class="line-pts">${{c.ud_line != null ? c.ud_line.toFixed(1) : 'N/A'}}</span><span class="pts-label">UD LINE</span></div>
       <div><span class="pp-pts">${{c.actual_ud !== null ? c.actual_ud : 'N/A'}}</span><span class="pts-label">ACTUAL UD</span></div>
     </div>
+    ${{callBadge}}
     <div class="stat-line">xwOBA ${{c.xwoba}} &nbsp;|&nbsp; Barrel% ${{c.barrel}} &nbsp;|&nbsp; Opp ERA ${{c.era}}</div>
     <div class="stat-line">${{c.wxIcon}} ${{c.wxText}} &nbsp;|&nbsp; Park ${{c.park}}</div>
     ${{c.platoon ? '<div class="badge">Platoon Edge</div>' : ''}}
