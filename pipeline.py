@@ -167,7 +167,7 @@ def process_player(player_id, player_info, lineup_data, date_str):
         get_pitcher_season_stats, get_player_info, get_days_rest,
     )
     from scrapers.statcast import get_batter_statcast_summary
-    from scrapers.fangraphs import get_batter_fg_stats, get_pitcher_fg_stats, get_platoon_splits
+    from scrapers.fangraphs import get_batter_fg_stats, get_pitcher_fg_stats, match_platoon_matchup
     from scrapers.weather import get_stadium_weather
 
     pos = player_info.get("position", "")
@@ -247,15 +247,19 @@ def process_player(player_id, player_info, lineup_data, date_str):
     matchup["pitcher_name"] = opp_pitcher_name
     record["matchup"] = matchup
 
-    # Platoon splits
+    # Platoon splits - real vs-LHP/vs-RHP (batter) and vs-LHB/vs-RHB
+    # (pitcher) splits matched against today's actual matchup handedness.
     try:
-        record["platoon"] = get_platoon_splits(
-            name,
+        record["platoon"] = match_platoon_matchup(
+            player_id,
             player_info.get("bat_side", "R"),
+            opp_pitcher_id,
             matchup.get("pitcher_hand", "R"),
         )
-    except Exception:
+    except Exception as e:
+        logger.debug(f"platoon matchup {player_id}: {e}")
         record["platoon"] = {}
+    time.sleep(0.5)  # be polite to Baseball-Reference - no caching on their split pages
 
     # Park factor
     record["park_factor"] = park_factor(record["venue_name"])
@@ -283,6 +287,44 @@ def process_player(player_id, player_info, lineup_data, date_str):
 # Pipeline orchestration
 # ---------------------------------------------------------------------------
 
+def build_projected_lineups(games, date_str):
+    """Fallback for when today's lineups aren't posted yet: project each
+    team's lineup as the batting order from their most recent confirmed
+    game. Matchup/venue/pitcher info still comes from today's schedule."""
+    from scrapers.mlb_api import get_recent_team_lineup
+
+    lineups = {}
+    for game in games:
+        game_pk = game["gamePk"]
+        home = game["teams"]["home"]
+        away = game["teams"]["away"]
+        venue = game.get("venue", {})
+        home_pitcher = home.get("probablePitcher", {})
+        away_pitcher = away.get("probablePitcher", {})
+
+        def register(team, opp_team, opp_pitcher, side):
+            team_id = team["team"]["id"]
+            player_ids = get_recent_team_lineup(team_id, date_str)
+            for i, pid in enumerate(player_ids):
+                lineups[pid] = {
+                    "game_pk": game_pk,
+                    "team_id": team_id,
+                    "team_name": team["team"]["name"],
+                    "opp_team_id": opp_team["team"]["id"],
+                    "opp_team_name": opp_team["team"]["name"],
+                    "opponent_pitcher": opp_pitcher,
+                    "batting_order": i + 1,
+                    "home_away": side,
+                    "venue_id": venue.get("id"),
+                    "venue_name": venue.get("name", ""),
+                }
+
+        register(home, away, away_pitcher, "home")
+        register(away, home, home_pitcher, "away")
+
+    return lineups
+
+
 def run_pipeline(date_str):
     from scrapers.mlb_api import get_lineups, get_games, get_player_info
     from scrapers.lineups import get_rotowire_lineups
@@ -301,6 +343,7 @@ def run_pipeline(date_str):
         logger.error(f"get_lineups failed: {e}")
         mlb_lineups = {}
 
+    lineup_status = "confirmed"
     if not mlb_lineups:
         games = get_games(date_str)
         if not games:
@@ -308,9 +351,14 @@ def run_pipeline(date_str):
             return []
         logger.warning(
             f"{len(games)} games found but lineups not yet posted. "
-            "Re-run closer to game time (lineups typically post 2–3 hrs before first pitch)."
+            "Falling back to each team's most recent confirmed lineup."
         )
-        return []
+        mlb_lineups = build_projected_lineups(games, date_str)
+        if not mlb_lineups:
+            logger.warning("Could not build projected lineups either - skipping.")
+            return []
+        lineup_status = "projected"
+        logger.info(f"Projected {len(mlb_lineups)} batters from recent lineups")
 
     logger.info(f"Found {len(mlb_lineups)} batters in MLB lineups")
 
@@ -332,8 +380,25 @@ def run_pipeline(date_str):
         try:
             pinfo = get_player_info(pid)
         except Exception as e:
-            logger.debug(f"player_info {pid}: {e}")
-            pinfo = {"name": f"Player_{pid}", "position": "?", "bat_side": "R"}
+            logger.warning(f"player_info {pid} failed ({e}), retrying without hydration")
+            try:
+                from scrapers.mlb_api import _get
+                data = _get(f"/people/{pid}", {})
+                people = data.get("people", [])
+                if people:
+                    p = people[0]
+                    pinfo = {
+                        "name": p.get("fullName", f"Player_{pid}"),
+                        "bat_side": p.get("batSide", {}).get("code", "R"),
+                        "pitch_hand": p.get("pitchHand", {}).get("code", "R"),
+                        "position": p.get("primaryPosition", {}).get("abbreviation", "?"),
+                        "team_id": None,
+                    }
+                else:
+                    pinfo = {"name": f"Player_{pid}", "position": "?", "bat_side": "R"}
+            except Exception as e2:
+                logger.debug(f"player_info fallback {pid}: {e2}")
+                pinfo = {"name": f"Player_{pid}", "position": "?", "bat_side": "R"}
 
         name = pinfo.get("name", "")
         logger.info(f"[{i}/{len(ids)}] {name}")
@@ -342,6 +407,7 @@ def run_pipeline(date_str):
             rec = process_player(pid, pinfo, lineup_data, date_str)
             if rec is not None:
                 rec["lineup_confirmed"] = name in rw
+                rec["lineup_status"] = lineup_status
                 all_players.append(rec)
         except Exception as e:
             logger.error(f"process_player failed for {name} ({pid}): {e}")

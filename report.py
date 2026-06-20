@@ -77,10 +77,14 @@ def confidence_score(p):
 
 
 def platoon_edge(p):
+    """Yes/No/N/A based on the real wOBA-vs-wOBA-against matchup, not just
+    handedness - falls back to N/A when either side's split sample is too
+    small to trust (see fangraphs.match_platoon_matchup)."""
     pl = p.get("platoon") or {}
-    if "platoon_same_hand" not in pl:
+    adv = pl.get("advantage")
+    if adv is None:
         return "N/A"
-    return "Yes" if not pl["platoon_same_hand"] else "No"
+    return "Yes" if adv == "batter" else "No"
 
 
 def weather_icon(row):
@@ -131,6 +135,13 @@ def build_card(row):
         "wxText": row["weather"],
         "park":   fmt_value(row["park_hr"], "2f"),
         "platoon": row["platoon_edge"] == "Yes",
+        "platoonMatchup": {
+            "batterWoba":    row.get("platoon_batter_woba"),
+            "batterLabel":   row.get("platoon_batter_label"),
+            "pitcherWoba":   row.get("platoon_pitcher_woba"),
+            "pitcherLabel":  row.get("platoon_pitcher_label"),
+            "advantage":     row.get("platoon_advantage"),
+        } if row.get("platoon_advantage") else None,
         "adjusted": row.get("adjusted", False),
         "anchored": row.get("market_anchored", False),
         "projectedLineup": row.get("lineup_status") == "projected",
@@ -195,6 +206,11 @@ def build_row(p):
         "park_hr":      pf.get("hr"),
         "days_rest":    p.get("days_rest"),
         "platoon_edge": platoon_edge(p),
+        "platoon_batter_woba":    (p.get("platoon") or {}).get("batter_woba"),
+        "platoon_batter_label":   (p.get("platoon") or {}).get("batter_split_label"),
+        "platoon_pitcher_woba":   (p.get("platoon") or {}).get("pitcher_woba_against"),
+        "platoon_pitcher_label":  (p.get("platoon") or {}).get("pitcher_split_label"),
+        "platoon_advantage":      (p.get("platoon") or {}).get("advantage"),
         "comp":         proj.composite_score(p, "ud"),
         "game_pk":      p.get("game_pk"),
         "home_away":    p.get("home_away"),
@@ -983,6 +999,15 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   .edge-tag.under   {{ background: rgba(248,113,113,0.15); color: #f87171; }}
   .edge-tag.neutral {{ background: rgba(159,176,204,0.15); color: #9fb0cc; }}
 
+  /* Platoon Matchup */
+  .platoon-matchup {{ margin-top: 8px; padding: 8px 10px; border-radius: 8px; font-size: 11px;
+                       border-left: 3px solid #9fb0cc; }}
+  .platoon-matchup.edge-batter  {{ background: rgba(74,222,128,0.10); border-left-color: #4ade80; }}
+  .platoon-matchup.edge-pitcher {{ background: rgba(248,113,113,0.10); border-left-color: #f87171; }}
+  .platoon-matchup.edge-neutral {{ background: rgba(159,176,204,0.10); border-left-color: #9fb0cc; }}
+  .platoon-title {{ font-weight: 800; margin-bottom: 4px; color: #cbd5e1; }}
+  .platoon-row {{ display: flex; flex-direction: column; gap: 2px; color: #9fb0cc; }}
+
   .value-plays {{ margin: 16px 0 28px; padding: 16px; border: 2px solid #fbbf24;
                    border-radius: 12px; background: linear-gradient(180deg, rgba(251,191,36,0.08), transparent); }}
   .value-plays h2 {{ margin: 0 0 4px; color: #fbbf24; font-size: 20px; }}
@@ -1167,6 +1192,23 @@ function edgeRowHtml(c) {{
   return `<div class="edge-row"><span class="edge-tag neutral">NEUTRAL</span> ${{sign}}${{c.edge.toFixed(1)}} vs line ${{c.udLine.toFixed(1)}}</div>`;
 }}
 
+function platoonMatchupHtml(c) {{
+  const pm = c.platoonMatchup;
+  if (!pm) return '';
+  const cls = pm.advantage === 'batter' ? 'edge-batter' : (pm.advantage === 'pitcher' ? 'edge-pitcher' : 'edge-neutral');
+  const arrow = pm.advantage === 'batter' ? '&#9650; Batter edge' : (pm.advantage === 'pitcher' ? '&#9660; Pitcher edge' : '&#9644; Neutral');
+  const bWoba = pm.batterWoba != null ? pm.batterWoba.toFixed(3) : 'N/A';
+  const pWoba = pm.pitcherWoba != null ? pm.pitcherWoba.toFixed(3) : 'N/A';
+  return `
+    <div class="platoon-matchup ${{cls}}">
+      <div class="platoon-title">Platoon Matchup &middot; ${{arrow}}</div>
+      <div class="platoon-row">
+        <span>Batter ${{pm.batterLabel || ''}}: <b>${{bWoba}}</b> wOBA</span>
+        <span>Pitcher ${{pm.pitcherLabel || ''}}: <b>${{pWoba}}</b> wOBA-against</span>
+      </div>
+    </div>`;
+}}
+
 function renderCard(c) {{
   const card = document.createElement('div');
   card.className = 'card ' + c.tier;
@@ -1180,6 +1222,7 @@ function renderCard(c) {{
     <div class="stat-line">xwOBA ${{c.xwoba}} &nbsp;|&nbsp; Barrel% ${{c.barrel}} &nbsp;|&nbsp; Opp ERA ${{c.era}}</div>
     <div class="stat-line">${{c.wxIcon}} ${{c.wxText}} &nbsp;|&nbsp; Park ${{c.park}}</div>
     ${{edgeRowHtml(c)}}
+    ${{platoonMatchupHtml(c)}}
     ${{c.platoon ? '<div class="badge">Platoon Edge</div>' : ''}}
     ${{c.adjusted ? '<div class="badge badge-adjusted">Model adjusted</div>' : ''}}
     ${{c.anchored ? '<div class="badge badge-anchored">Live line</div>' : ''}}

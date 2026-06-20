@@ -74,9 +74,15 @@ def composite_score(player, scoring="ud"):
     era = min(float(era), 9.99)
     matchup_bonus = (float(era) - 4.20) * 0.10 - (float(k_pct) - 0.23) * 2.0
 
-    # Platoon advantage
-    platoon = player.get("platoon", {})
-    platoon_bonus = 0.20 if not platoon.get("platoon_same_hand", True) else -0.10
+    # Platoon advantage - real wOBA-vs-wOBA-against edge when we have enough
+    # split sample to trust (see fangraphs.match_platoon_matchup); falls back
+    # to the cruder same-hand/opposite-hand heuristic otherwise.
+    platoon = player.get("platoon", {}) or {}
+    edge_woba = platoon.get("edge_woba")
+    if edge_woba is not None:
+        platoon_bonus = max(-0.25, min(0.25, edge_woba * 4))
+    else:
+        platoon_bonus = 0.20 if not platoon.get("platoon_same_hand", True) else -0.10
 
     # Weather bonus (outdoor only, hot / windy)
     wx = player.get("weather", {})
@@ -266,7 +272,12 @@ def build_rows(players, scoring="ud"):
             "opp_k_pct":         mt.get("k_pct", ""),
             # platoon
             "platoon_same_hand": pl.get("platoon_same_hand", ""),
-            "woba_vs_pitcher":   pl.get("woba_vs_pitcher", ""),
+            "platoon_advantage": pl.get("advantage", ""),
+            "platoon_batter_woba":    pl.get("batter_woba", ""),
+            "platoon_batter_split":   pl.get("batter_split_label", ""),
+            "platoon_pitcher_woba_against": pl.get("pitcher_woba_against", ""),
+            "platoon_pitcher_split":  pl.get("pitcher_split_label", ""),
+            "platoon_edge_woba":      pl.get("edge_woba", ""),
             # park
             "park_hr_factor":    pf.get("hr", ""),
             "park_runs_factor":  pf.get("runs", ""),
@@ -306,7 +317,7 @@ def save_csv(players, csv_path, scoring="ud"):
 
 def load_data(date_str=None):
     if date_str is None:
-        files = sorted(glob.glob(os.path.join("data", "*.json")))
+        files = sorted(glob.glob(os.path.join("data", "????-??-??.json")))
         if not files:
             print("ERROR: No data files found in data/. Run pipeline.py first.")
             sys.exit(1)
