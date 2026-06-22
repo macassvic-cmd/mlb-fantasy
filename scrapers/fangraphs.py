@@ -5,6 +5,7 @@ Data is fetched once per session and cached in memory.
 """
 
 import logging
+import threading
 import warnings
 from datetime import datetime
 
@@ -14,6 +15,23 @@ warnings.filterwarnings("ignore")
 logger = logging.getLogger(__name__)
 
 _cache = {}
+
+# Per-cache-key locks so concurrent threads (e.g. the platoon-split thread
+# pool in pipeline.py) never redundantly fetch the same key: the first
+# thread to ask for a given key fetches and populates the cache while every
+# other thread asking for that same key blocks on the lock, then gets the
+# now-cached result instead of also hitting the network.
+_lock_registry_guard = threading.Lock()
+_cache_key_locks = {}
+
+
+def _lock_for(key):
+    with _lock_registry_guard:
+        lock = _cache_key_locks.get(key)
+        if lock is None:
+            lock = threading.Lock()
+            _cache_key_locks[key] = lock
+        return lock
 
 
 def _batting_df(season):
@@ -175,15 +193,16 @@ def _split_summary(row):
 
 def _bbref_id_map():
     """MLB-id -> Baseball-Reference-id for every player, loaded once."""
-    if "bbref_map" not in _cache:
-        from pybaseball import chadwick_register
-        df = call_with_timeout(chadwick_register, timeout_s=90, label="chadwick_register")
-        if df is None or df.empty:
-            logger.warning("chadwick_register fetch failed or timed out - no platoon splits available")
-            _cache["bbref_map"] = {}
-        else:
-            _cache["bbref_map"] = dict(zip(df["key_mlbam"], df["key_bbref"]))
-    return _cache["bbref_map"]
+    with _lock_for("bbref_map"):
+        if "bbref_map" not in _cache:
+            from pybaseball import chadwick_register
+            df = call_with_timeout(chadwick_register, timeout_s=90, label="chadwick_register")
+            if df is None or df.empty:
+                logger.warning("chadwick_register fetch failed or timed out - no platoon splits available")
+                _cache["bbref_map"] = {}
+            else:
+                _cache["bbref_map"] = dict(zip(df["key_mlbam"], df["key_bbref"]))
+        return _cache["bbref_map"]
 
 
 def _bbref_id_for(mlbam_id):
@@ -195,32 +214,34 @@ def get_batter_platoon_splits(mlbam_id, season=None):
     from Baseball-Reference. Returns {} if unmatched or no data yet."""
     season = season or datetime.now().year
     key = f"bat_split_{mlbam_id}_{season}"
-    if key in _cache:
-        return _cache[key]
 
-    bbref_id = _bbref_id_for(mlbam_id)
-    if not bbref_id:
-        _cache[key] = {}
-        return {}
+    with _lock_for(key):
+        if key in _cache:
+            return _cache[key]
 
-    from pybaseball import get_splits
-    df = call_with_timeout(
-        get_splits, bbref_id, season,
-        timeout_s=60, label=f"get_splits(batter {mlbam_id})",
-    )
-    result = {}
-    if df is not None and not df.empty:
-        try:
-            if ("Platoon Splits", "vs RHP") in df.index:
-                result["vs_rhp"] = _split_summary(df.loc[("Platoon Splits", "vs RHP")])
-            if ("Platoon Splits", "vs LHP") in df.index:
-                result["vs_lhp"] = _split_summary(df.loc[("Platoon Splits", "vs LHP")])
-        except Exception as e:
-            logger.warning(f"platoon split parse failed for batter {mlbam_id}: {e}")
-            result = {}
+        bbref_id = _bbref_id_for(mlbam_id)
+        if not bbref_id:
+            _cache[key] = {}
+            return {}
 
-    _cache[key] = result
-    return result
+        from pybaseball import get_splits
+        df = call_with_timeout(
+            get_splits, bbref_id, season,
+            timeout_s=60, label=f"get_splits(batter {mlbam_id})",
+        )
+        result = {}
+        if df is not None and not df.empty:
+            try:
+                if ("Platoon Splits", "vs RHP") in df.index:
+                    result["vs_rhp"] = _split_summary(df.loc[("Platoon Splits", "vs RHP")])
+                if ("Platoon Splits", "vs LHP") in df.index:
+                    result["vs_lhp"] = _split_summary(df.loc[("Platoon Splits", "vs LHP")])
+            except Exception as e:
+                logger.warning(f"platoon split parse failed for batter {mlbam_id}: {e}")
+                result = {}
+
+        _cache[key] = result
+        return result
 
 
 def get_pitcher_platoon_splits(mlbam_id, season=None):
@@ -228,33 +249,35 @@ def get_pitcher_platoon_splits(mlbam_id, season=None):
     OPS-against, K%, BB%, PA) for this season from Baseball-Reference."""
     season = season or datetime.now().year
     key = f"pit_split_{mlbam_id}_{season}"
-    if key in _cache:
-        return _cache[key]
 
-    bbref_id = _bbref_id_for(mlbam_id)
-    if not bbref_id:
-        _cache[key] = {}
-        return {}
+    with _lock_for(key):
+        if key in _cache:
+            return _cache[key]
 
-    from pybaseball import get_splits
-    res = call_with_timeout(
-        get_splits, bbref_id, season, pitching_splits=True,
-        timeout_s=60, label=f"get_splits(pitcher {mlbam_id})",
-    )
-    df = res[0] if isinstance(res, tuple) else res  # batting-against table
-    result = {}
-    if df is not None and not df.empty:
-        try:
-            if ("Platoon Splits", "vs RHB") in df.index:
-                result["vs_rhb"] = _split_summary(df.loc[("Platoon Splits", "vs RHB")])
-            if ("Platoon Splits", "vs LHB") in df.index:
-                result["vs_lhb"] = _split_summary(df.loc[("Platoon Splits", "vs LHB")])
-        except Exception as e:
-            logger.warning(f"platoon split parse failed for pitcher {mlbam_id}: {e}")
-            result = {}
+        bbref_id = _bbref_id_for(mlbam_id)
+        if not bbref_id:
+            _cache[key] = {}
+            return {}
 
-    _cache[key] = result
-    return result
+        from pybaseball import get_splits
+        res = call_with_timeout(
+            get_splits, bbref_id, season, pitching_splits=True,
+            timeout_s=60, label=f"get_splits(pitcher {mlbam_id})",
+        )
+        df = res[0] if isinstance(res, tuple) else res  # batting-against table
+        result = {}
+        if df is not None and not df.empty:
+            try:
+                if ("Platoon Splits", "vs RHB") in df.index:
+                    result["vs_rhb"] = _split_summary(df.loc[("Platoon Splits", "vs RHB")])
+                if ("Platoon Splits", "vs LHB") in df.index:
+                    result["vs_lhb"] = _split_summary(df.loc[("Platoon Splits", "vs LHB")])
+            except Exception as e:
+                logger.warning(f"platoon split parse failed for pitcher {mlbam_id}: {e}")
+                result = {}
+
+        _cache[key] = result
+        return result
 
 
 def match_platoon_matchup(batter_mlbam_id, bat_side, pitcher_mlbam_id, pitcher_hand, season=None):
