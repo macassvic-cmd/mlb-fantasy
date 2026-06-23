@@ -108,6 +108,7 @@ def get_lineups(date_str):
                     "home_away": side,
                     "venue_id": venue.get("id"),
                     "venue_name": venue.get("name", ""),
+                    "game_date_utc": game.get("gameDate"),
                 }
 
         register(lineups_data.get("homePlayers", []), home, away, away_pitcher, "home")

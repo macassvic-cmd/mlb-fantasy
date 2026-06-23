@@ -12,6 +12,7 @@ import logging
 import os
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta
 
 logging.basicConfig(
@@ -161,7 +162,7 @@ def calculate_projection(record):
 # Single-player processing
 # ---------------------------------------------------------------------------
 
-def process_player(player_id, player_info, lineup_data, date_str):
+def process_player(player_id, player_info, lineup_data, date_str, platoon_data=None):
     from scrapers.mlb_api import (
         get_player_season_stats, get_player_rolling_stats,
         get_pitcher_season_stats, get_player_info, get_days_rest,
@@ -192,6 +193,7 @@ def process_player(player_id, player_info, lineup_data, date_str):
         "venue_id": lineup_data.get("venue_id"),
         "venue_name": lineup_data.get("venue_name", ""),
         "game_pk": lineup_data.get("game_pk"),
+        "game_date_utc": lineup_data.get("game_date_utc"),
         "date": date_str,
         "opp_pitcher_name": opp_pitcher_name,
     }
@@ -249,17 +251,23 @@ def process_player(player_id, player_info, lineup_data, date_str):
 
     # Platoon splits - real vs-LHP/vs-RHP (batter) and vs-LHB/vs-RHB
     # (pitcher) splits matched against today's actual matchup handedness.
-    try:
-        record["platoon"] = match_platoon_matchup(
-            player_id,
-            player_info.get("bat_side", "R"),
-            opp_pitcher_id,
-            matchup.get("pitcher_hand", "R"),
-        )
-    except Exception as e:
-        logger.debug(f"platoon matchup {player_id}: {e}")
-        record["platoon"] = {}
-    time.sleep(0.5)  # be polite to Baseball-Reference - no caching on their split pages
+    # Normally precomputed in parallel by run_pipeline() (see
+    # _fetch_platoon_map) and passed in via platoon_data; only falls back to
+    # a synchronous fetch here when process_player() is called standalone.
+    if platoon_data is not None:
+        record["platoon"] = platoon_data
+    else:
+        try:
+            record["platoon"] = match_platoon_matchup(
+                player_id,
+                player_info.get("bat_side", "R"),
+                opp_pitcher_id,
+                matchup.get("pitcher_hand", "R"),
+            )
+        except Exception as e:
+            logger.debug(f"platoon matchup {player_id}: {e}")
+            record["platoon"] = {}
+        time.sleep(0.5)  # be polite to Baseball-Reference - no caching on their split pages
 
     # Park factor
     record["park_factor"] = park_factor(record["venue_name"])
@@ -287,13 +295,23 @@ def process_player(player_id, player_info, lineup_data, date_str):
 # Pipeline orchestration
 # ---------------------------------------------------------------------------
 
-def build_projected_lineups(games, date_str):
-    """Fallback for when today's lineups aren't posted yet: project each
-    team's lineup as the batting order from their most recent confirmed
-    game. Matchup/venue/pitcher info still comes from today's schedule."""
+def _fill_missing_lineups(mlb_lineups, games, date_str):
+    """Ensure every team in today's full schedule has at least a lineup
+    entry, confirmed where MLB has posted one, otherwise projected from
+    that team's most recent confirmed batting order. Early used to skip a
+    game ENTIRELY if its lineup wasn't posted by 9am - since MLB posts
+    lineups per-team (often hours apart, sometimes only one side of a
+    game by the time Early runs), that silently dropped every late-posting
+    game and lost the CLV window on it. This fills in only what's actually
+    missing, per team, so Early always captures the full slate; whichever
+    side already has a confirmed lineup is left untouched."""
     from scrapers.mlb_api import get_recent_team_lineup
 
-    lineups = {}
+    for v in mlb_lineups.values():
+        v.setdefault("lineup_status", "confirmed")
+
+    covered_teams = {(v["game_pk"], v["team_id"]) for v in mlb_lineups.values()}
+
     for game in games:
         game_pk = game["gamePk"]
         home = game["teams"]["home"]
@@ -302,11 +320,19 @@ def build_projected_lineups(games, date_str):
         home_pitcher = home.get("probablePitcher", {})
         away_pitcher = away.get("probablePitcher", {})
 
-        def register(team, opp_team, opp_pitcher, side):
+        def fallback(team, opp_team, opp_pitcher, side):
             team_id = team["team"]["id"]
+            if (game_pk, team_id) in covered_teams:
+                return
             player_ids = get_recent_team_lineup(team_id, date_str)
+            if not player_ids:
+                logger.warning(
+                    f"No recent lineup available to project for "
+                    f"{team['team']['name']} (game {game_pk}) - skipping that side"
+                )
+                return
             for i, pid in enumerate(player_ids):
-                lineups[pid] = {
+                mlb_lineups[pid] = {
                     "game_pk": game_pk,
                     "team_id": team_id,
                     "team_name": team["team"]["name"],
@@ -317,12 +343,51 @@ def build_projected_lineups(games, date_str):
                     "home_away": side,
                     "venue_id": venue.get("id"),
                     "venue_name": venue.get("name", ""),
+                    "game_date_utc": game.get("gameDate"),
+                    "lineup_status": "projected",
                 }
 
-        register(home, away, away_pitcher, "home")
-        register(away, home, home_pitcher, "away")
+        fallback(home, away, away_pitcher, "home")
+        fallback(away, home, home_pitcher, "away")
 
-    return lineups
+    return mlb_lineups
+
+
+def _fetch_platoon_map(mlb_lineups, pinfo_map, pitcher_hand_map, max_workers=8):
+    """Pull every batter's Baseball-Reference platoon-split matchup
+    concurrently instead of one at a time - each lookup is an independent
+    network call (and request volume is the bottleneck, not CPU), so a
+    small thread pool cuts wall-clock time roughly proportional to worker
+    count without changing what data each player ends up with."""
+    from scrapers.fangraphs import match_platoon_matchup
+
+    args_by_pid = {}
+    for pid, ldata in mlb_lineups.items():
+        pinfo = pinfo_map.get(pid) or {}
+        opp_pitcher = ldata.get("opponent_pitcher") or {}
+        opp_pitcher_id = opp_pitcher.get("id")
+        args_by_pid[pid] = (
+            pid,
+            pinfo.get("bat_side", "R"),
+            opp_pitcher_id,
+            pitcher_hand_map.get(opp_pitcher_id, "R"),
+        )
+
+    platoon_map = {}
+    with ThreadPoolExecutor(max_workers=max_workers) as pool:
+        future_to_pid = {
+            pool.submit(match_platoon_matchup, *args): pid
+            for pid, args in args_by_pid.items()
+        }
+        for future in as_completed(future_to_pid):
+            pid = future_to_pid[future]
+            try:
+                platoon_map[pid] = future.result()
+            except Exception as e:
+                logger.debug(f"platoon matchup {pid}: {e}")
+                platoon_map[pid] = {}
+
+    return platoon_map
 
 
 def run_pipeline(date_str):
@@ -337,30 +402,35 @@ def run_pipeline(date_str):
 
     # MLB API lineups
     logger.info("Fetching MLB schedule...")
+    games = get_games(date_str)
+    if not games:
+        logger.warning(f"No games found for {date_str}")
+        return []
+
     try:
         mlb_lineups = get_lineups(date_str)
     except Exception as e:
         logger.error(f"get_lineups failed: {e}")
         mlb_lineups = {}
 
-    lineup_status = "confirmed"
-    if not mlb_lineups:
-        games = get_games(date_str)
-        if not games:
-            logger.warning(f"No games found for {date_str}")
-            return []
-        logger.warning(
-            f"{len(games)} games found but lineups not yet posted. "
-            "Falling back to each team's most recent confirmed lineup."
-        )
-        mlb_lineups = build_projected_lineups(games, date_str)
-        if not mlb_lineups:
-            logger.warning("Could not build projected lineups either - skipping.")
-            return []
-        lineup_status = "projected"
-        logger.info(f"Projected {len(mlb_lineups)} batters from recent lineups")
+    confirmed_count = len(mlb_lineups)
+    mlb_lineups = _fill_missing_lineups(mlb_lineups, games, date_str)
+    projected_count = len(mlb_lineups) - confirmed_count
 
-    logger.info(f"Found {len(mlb_lineups)} batters in MLB lineups")
+    if not mlb_lineups:
+        logger.warning("Could not build any lineups (confirmed or projected) - skipping.")
+        return []
+
+    if projected_count:
+        logger.warning(
+            f"{projected_count} batters had no posted lineup yet - "
+            f"projected from each team's most recent confirmed batting order "
+            f"so no game in today's {len(games)}-game slate gets dropped."
+        )
+    logger.info(
+        f"Found {len(mlb_lineups)} batters across {len(games)} games "
+        f"({confirmed_count} confirmed, {projected_count} projected)"
+    )
 
     # RotoWire confirmation
     logger.info("Fetching RotoWire lineups...")
@@ -370,15 +440,9 @@ def run_pipeline(date_str):
         logger.warning(f"RotoWire failed: {e}")
         rw = {}
 
-    # Process each player
-    all_players = []
-    ids = list(mlb_lineups.keys())
-    logger.info(f"Processing {len(ids)} players...")
-
-    for i, pid in enumerate(ids, 1):
-        lineup_data = mlb_lineups[pid]
+    def _resolve_player_info(pid):
         try:
-            pinfo = get_player_info(pid)
+            return get_player_info(pid)
         except Exception as e:
             logger.warning(f"player_info {pid} failed ({e}), retrying without hydration")
             try:
@@ -387,27 +451,58 @@ def run_pipeline(date_str):
                 people = data.get("people", [])
                 if people:
                     p = people[0]
-                    pinfo = {
+                    return {
                         "name": p.get("fullName", f"Player_{pid}"),
                         "bat_side": p.get("batSide", {}).get("code", "R"),
                         "pitch_hand": p.get("pitchHand", {}).get("code", "R"),
                         "position": p.get("primaryPosition", {}).get("abbreviation", "?"),
                         "team_id": None,
                     }
-                else:
-                    pinfo = {"name": f"Player_{pid}", "position": "?", "bat_side": "R"}
+                return {"name": f"Player_{pid}", "position": "?", "bat_side": "R"}
             except Exception as e2:
                 logger.debug(f"player_info fallback {pid}: {e2}")
-                pinfo = {"name": f"Player_{pid}", "position": "?", "bat_side": "R"}
+                return {"name": f"Player_{pid}", "position": "?", "bat_side": "R"}
 
+    # Process each player
+    all_players = []
+    ids = list(mlb_lineups.keys())
+    logger.info(f"Processing {len(ids)} players...")
+
+    # Resolve every batter's info up front so the platoon-split lookups
+    # below have what they need (bat_side, opposing pitcher hand) to run
+    # as a single parallel batch instead of being interleaved one-by-one
+    # inside the per-player loop.
+    pinfo_map = {pid: _resolve_player_info(pid) for pid in ids}
+
+    pitcher_hand_map = {}
+    distinct_pitcher_ids = {
+        (mlb_lineups[pid].get("opponent_pitcher") or {}).get("id") for pid in ids
+    }
+    distinct_pitcher_ids.discard(None)
+    for opp_pid in distinct_pitcher_ids:
+        try:
+            pitcher_hand_map[opp_pid] = get_player_info(opp_pid).get("pitch_hand", "R")
+        except Exception as e:
+            logger.debug(f"pitcher_hand {opp_pid}: {e}")
+            pitcher_hand_map[opp_pid] = "R"
+
+    logger.info(
+        f"Fetching platoon splits for {len(ids)} batters "
+        f"({len(distinct_pitcher_ids)} opposing pitchers) in parallel..."
+    )
+    platoon_map = _fetch_platoon_map(mlb_lineups, pinfo_map, pitcher_hand_map)
+
+    for i, pid in enumerate(ids, 1):
+        lineup_data = mlb_lineups[pid]
+        pinfo = pinfo_map[pid]
         name = pinfo.get("name", "")
         logger.info(f"[{i}/{len(ids)}] {name}")
 
         try:
-            rec = process_player(pid, pinfo, lineup_data, date_str)
+            rec = process_player(pid, pinfo, lineup_data, date_str, platoon_data=platoon_map.get(pid))
             if rec is not None:
                 rec["lineup_confirmed"] = name in rw
-                rec["lineup_status"] = lineup_status
+                rec["lineup_status"] = lineup_data.get("lineup_status", "confirmed")
                 all_players.append(rec)
         except Exception as e:
             logger.error(f"process_player failed for {name} ({pid}): {e}")

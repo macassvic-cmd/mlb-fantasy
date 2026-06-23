@@ -17,6 +17,7 @@ import sys
 import webbrowser
 from collections import defaultdict
 from datetime import datetime
+from zoneinfo import ZoneInfo
 
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
@@ -110,6 +111,22 @@ def card_tier(ud_pts):
     return "red"
 
 
+_PACIFIC = ZoneInfo("America/Los_Angeles")
+
+
+def game_time_pt(game_date_utc):
+    """Format an MLB API 'gameDate' UTC ISO timestamp as e.g. '7:05 PM PT'.
+    Returns None if missing/unparseable so callers can skip it cleanly."""
+    if not game_date_utc:
+        return None
+    try:
+        dt_utc = datetime.fromisoformat(game_date_utc.replace("Z", "+00:00"))
+        dt_pt = dt_utc.astimezone(_PACIFIC)
+        return dt_pt.strftime("%-I:%M %p PT") if os.name != "nt" else dt_pt.strftime("%#I:%M %p PT")
+    except (ValueError, TypeError):
+        return None
+
+
 def edge_label(edge):
     """Classify our projection vs. the posted UD line into OVER/UNDER/NEUTRAL."""
     if edge is None:
@@ -149,6 +166,8 @@ def build_card(row):
         "edge":   row.get("edge"),
         "udLine": row.get("ud_line"),
         "edgeLabel": edge_label(row.get("edge")),
+        "gameTimePt":  row.get("game_time_pt"),
+        "gameDateUtc": row.get("game_date_utc"),
     }
 
 
@@ -216,6 +235,8 @@ def build_row(p):
         "home_away":    p.get("home_away"),
         "venue":        p.get("venue_name", ""),
         "lineup_status": p.get("lineup_status", "confirmed"),
+        "game_date_utc": p.get("game_date_utc"),
+        "game_time_pt":  game_time_pt(p.get("game_date_utc")),
     }
 
 
@@ -703,6 +724,7 @@ DASHBOARD_COLS = [
     ("rank",        "Rank",         "i"),
     ("name",        "Player",       "s"),
     ("team",        "Team",         "s"),
+    ("game_time_pt","Game Time",    "s"),
     ("order",       "Order",        "i"),
     ("ud_pts",      "UD Pts",       "1f"),
     ("pp_pts",      "PP Pts",       "1f"),
@@ -817,8 +839,15 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     best_performer = max(weekly, key=lambda x: x["rate"]) if weekly else None
     worst_performer = min(weekly, key=lambda x: x["rate"]) if weekly else None
 
+    # Default display order for every card grid is "soonest game first",
+    # which is independent of (and applied after) whatever scoring/edge
+    # logic decided which players make a given section - missing game
+    # times sort last rather than first.
+    def _by_game_time(row_list):
+        return sorted(row_list, key=lambda r: r.get("game_date_utc") or "9999")
+
     # --- Top 25 cards -------------------------------------------------
-    cards = [build_card(row) for row in rows[:25]]
+    cards = [build_card(row) for row in _by_game_time(rows[:25])]
     cards_js = json.dumps(cards)
 
     # --- Value Plays: model vs. market disagreement of VALUE_PLAY_EDGE+ pts -
@@ -829,12 +858,12 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     over_rows.sort(key=lambda r: r["edge"], reverse=True)
     under_rows.sort(key=lambda r: r["edge"])
     value_rows = over_rows[:4] + under_rows[:4]
-    value_cards = [build_card(row) for row in value_rows]
-    value_cards_js = json.dumps(value_cards)
     save_value_plays(date_str, value_rows)
+    value_cards = [build_card(row) for row in _by_game_time(value_rows)]
+    value_cards_js = json.dumps(value_cards)
 
     # --- Unanchored: no posted UD/PP line, model-only projection ----------
-    unanchored_rows = [r for r in rows[:25] if not r.get("market_anchored")]
+    unanchored_rows = _by_game_time([r for r in rows[:25] if not r.get("market_anchored")])
     unanchored_cards = [build_card(row) for row in unanchored_rows]
     unanchored_cards_js = json.dumps(unanchored_cards)
 
@@ -852,7 +881,14 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
         cells = [fmt_value(rank if key == "rank" else row[key], kind)
                  for key, _, kind in DASHBOARD_COLS]
         color = "row-" + tier(row.get("ud_pts") or 0, full_thresholds)
-        table_rows.append({"team": row["team"], "cells": cells, "color": color})
+        table_rows.append({
+            "team": row["team"],
+            "cells": cells,
+            "color": color,
+            "gameDateUtc": row.get("game_date_utc"),
+        })
+    # Default table order is soonest game first, independent of rank.
+    table_rows.sort(key=lambda r: r["gameDateUtc"] or "9999")
     rows_js = json.dumps(table_rows)
 
     teams = sorted({r["team"] for r in rows})
@@ -874,6 +910,11 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   .header-mid {{ font-size: 14px; color: #9fb0cc; text-align: center; }}
   .header-mid .games {{ font-weight: 700; color: #fff; }}
   .header-right {{ font-size: 12px; color: #6c7da0; text-align: right; }}
+
+  .filter-bar {{ padding: 14px 24px 0; display: flex; justify-content: flex-end; }}
+  .filter-toggle {{ font-size: 13px; color: #c4cee0; display: flex; align-items: center; gap: 6px; cursor: pointer; }}
+  .filter-toggle input {{ width: 15px; height: 15px; cursor: pointer; }}
+  .game-time {{ color: #fbbf24; }}
 
   .tabs {{ padding: 14px 24px 0; display: flex; gap: 8px; }}
   .tab-btn {{ padding: 9px 20px; font-size: 14px; border: 1px solid #2a3a5c; background: #16213a;
@@ -1040,6 +1081,13 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
 </header>
 
 <div id="freshnessBanner" class="freshness-banner"></div>
+
+<div class="filter-bar">
+  <label class="filter-toggle">
+    <input type="checkbox" id="hideStartedToggle">
+    Hide games already started
+  </label>
+</div>
 
 <div class="value-plays">
   <h2>🎯 Value Plays</h2>
@@ -1216,9 +1264,10 @@ function platoonMatchupHtml(c) {{
 function renderCard(c) {{
   const card = document.createElement('div');
   card.className = 'card ' + c.tier;
+  if (c.gameDateUtc) card.dataset.gameTimeUtc = c.gameDateUtc;
   card.innerHTML = `
     <div class="name">${{c.name}}</div>
-    <div class="meta">${{c.team}} &middot; Batting ${{c.order}} &middot; <span class="game-date">${{GAME_DATE}}</span></div>
+    <div class="meta">${{c.team}} &middot; Batting ${{c.order}} &middot; <span class="game-date">${{GAME_DATE}}</span>${{c.gameTimePt ? ` &middot; <span class="game-time">${{c.gameTimePt}}</span>` : ''}}</div>
     <div class="pts-row">
       <div><span class="ud-pts">${{c.ud}}</span><span class="pts-label">UD PTS</span></div>
       <div><span class="pp-pts">${{c.pp}}</span><span class="pts-label">PP PTS</span></div>
@@ -1259,6 +1308,32 @@ if (UNANCHORED_CARDS.length === 0) {{
     unanchoredGrid.appendChild(renderCard(c));
   }}
 }}
+
+// --- Hide-started-games filter (applies to Top 25, Full Leaderboard,
+// Value Plays, Unanchored - NOT Results/Player History, which are
+// historical). Single shared toggle so state stays consistent across tabs.
+let hideStarted = false;
+
+function gameHasStarted(iso) {{
+  if (!iso) return false;
+  return new Date(iso).getTime() <= Date.now();
+}}
+
+function applyHideStartedFilter() {{
+  document.querySelectorAll('[data-game-time-utc]').forEach(el => {{
+    el.style.display = (hideStarted && gameHasStarted(el.dataset.gameTimeUtc)) ? 'none' : '';
+  }});
+}}
+
+const hideStartedToggle = document.getElementById('hideStartedToggle');
+hideStartedToggle.addEventListener('change', () => {{
+  hideStarted = hideStartedToggle.checked;
+  applyHideStartedFilter();
+  render(); // re-apply to the Full Leaderboard table too
+}});
+
+applyHideStartedFilter();
+setInterval(applyHideStartedFilter, 30000); // live re-check as games start, no reload needed
 
 // --- Tabs ---
 const PANELS = ['top25', 'full', 'results', 'history', 'top25results'];
@@ -1310,7 +1385,7 @@ function renderHistory() {{
     div.className = 'ph-player';
     const rowsHtml = p.history.slice().reverse().map(h => `
       <tr>
-        <td>${{h.date}}</td>
+        <td>${{h.date}}${{h.game_time_pt ? ` <span class="meta">${{h.game_time_pt}}</span>` : ''}}</td>
         <td>${{h.projected_ud != null ? h.projected_ud.toFixed(1) : 'N/A'}}</td>
         <td>${{h.ud_line != null ? h.ud_line.toFixed(1) : '—'}}</td>
         <td>${{h.actual_ud}}</td>
@@ -1385,7 +1460,7 @@ for (const c of T25_CARDS) {{
   card.innerHTML = `
     ${{overlay}}
     <div class="name">${{c.name}}</div>
-    <div class="meta">${{c.team}} &middot; Batting ${{c.order}} &middot; <span class="game-date">${{c.date}}</span></div>
+    <div class="meta">${{c.team}} &middot; Batting ${{c.order}} &middot; <span class="game-date">${{c.date}}</span>${{c.gameTimePt ? ` &middot; <span class="game-time">${{c.gameTimePt}}</span>` : ''}}</div>
     <div class="pts-row">
       <div><span class="ud-pts">${{c.ud}}</span><span class="pts-label">PROJ UD</span></div>
       <div><span class="line-pts">${{c.ud_line != null ? c.ud_line.toFixed(1) : 'N/A'}}</span><span class="pts-label">UD LINE</span></div>
@@ -1494,15 +1569,16 @@ for (const t of TEAMS) {{
   teamFilter.appendChild(opt);
 }}
 
-let sortCol = 4; // UD Pts
-let sortDir = -1; // descending
+const GAME_TIME_COL_IDX = COLS.findIndex(c => c.key === 'game_time_pt');
+let sortCol = GAME_TIME_COL_IDX >= 0 ? GAME_TIME_COL_IDX : 4;
+let sortDir = 1; // ascending = soonest game first, by default
 
 function sortBy(i) {{
   if (sortCol === i) {{
     sortDir *= -1;
   }} else {{
     sortCol = i;
-    sortDir = -1;
+    sortDir = i === GAME_TIME_COL_IDX ? 1 : -1;
   }}
   render();
 }}
@@ -1512,8 +1588,12 @@ function render() {{
   const team = teamFilter.value;
   let rows = ROWS.filter(r => String(r.cells[1]).toLowerCase().includes(filter));
   if (team) rows = rows.filter(r => r.team === team);
+  if (hideStarted) rows = rows.filter(r => !gameHasStarted(r.gameDateUtc));
 
   rows = rows.slice().sort((a, b) => {{
+    if (sortCol === GAME_TIME_COL_IDX) {{
+      return ((a.gameDateUtc || '9999').localeCompare(b.gameDateUtc || '9999')) * sortDir;
+    }}
     const av = a.cells[sortCol], bv = b.cells[sortCol];
     const an = parseFloat(av), bn = parseFloat(bv);
     let cmp;

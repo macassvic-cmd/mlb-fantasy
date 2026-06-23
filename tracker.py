@@ -180,6 +180,7 @@ def track_date(date_str):
             "result_pp": grade_vs_line(pp_call, actual_pp, pp_line),
             "actual_line": {k: line[k] for k in
                             ("singles", "doubles", "triples", "hr", "bb", "hbp", "rbi", "runs", "sb")},
+            "game_time_pt": row.get("game_time_pt"),
         })
 
     summary = summarize_vs_line(results)
@@ -313,6 +314,7 @@ def update_all_results(date_str, summary, results):
             "pp_line": r.get("pp_line"),
             "actual_pp": r["actual_pp"],
             "result_pp": r["result_pp"],
+            "game_time_pt": r.get("game_time_pt"),
         })
         entry["history"].sort(key=lambda h: h["date"])
 
@@ -353,6 +355,7 @@ def track_top25(date_str, rows, results_by_pid):
             "platoon": row["platoon_edge"] == "Yes",
             "adjusted": row.get("adjusted", False),
             "tier": report.card_tier(row["ud_pts"]),
+            "gameTimePt": row.get("game_time_pt"),
             "projected_ud": row["ud_pts"],
             "ud_line": row.get("ud_line"),
             "actual_ud": actual_ud,
