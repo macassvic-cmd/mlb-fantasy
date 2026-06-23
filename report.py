@@ -1748,6 +1748,12 @@ def main():
 DOCS_DASHBOARD_PATH = os.path.join("docs", "index.html")
 
 
+GIT_SUBPROCESS_TIMEOUT = 60  # seconds - git push has hung indefinitely under
+# the S4U scheduled-task context (no interactive desktop to satisfy a
+# credential prompt), blocking the whole tracker.py/pipeline.py process for
+# hours with nothing to time it out. Every git call here is now bounded.
+
+
 def deploy_to_github_pages(html_path, date_str):
     try:
         os.makedirs("docs", exist_ok=True)
@@ -1755,20 +1761,28 @@ def deploy_to_github_pages(html_path, date_str):
 
         repo_root = os.path.dirname(os.path.abspath(__file__))
         subprocess.run(["git", "add", "docs/index.html"], cwd=repo_root, check=True,
-                        capture_output=True, text=True)
+                        capture_output=True, text=True, timeout=GIT_SUBPROCESS_TIMEOUT)
 
         status = subprocess.run(["git", "status", "--porcelain", "docs/index.html"],
-                                 cwd=repo_root, check=True, capture_output=True, text=True)
+                                 cwd=repo_root, check=True, capture_output=True, text=True,
+                                 timeout=GIT_SUBPROCESS_TIMEOUT)
         if not status.stdout.strip():
             print("GitHub Pages: no dashboard changes to deploy.")
             return
 
         subprocess.run(["git", "commit", "-q", "-m", f"Update dashboard for {date_str}"],
-                        cwd=repo_root, check=True, capture_output=True, text=True)
-        subprocess.run(["git", "push"], cwd=repo_root, check=True, capture_output=True, text=True)
+                        cwd=repo_root, check=True, capture_output=True, text=True,
+                        timeout=GIT_SUBPROCESS_TIMEOUT)
+        subprocess.run(["git", "push"], cwd=repo_root, check=True, capture_output=True, text=True,
+                        timeout=GIT_SUBPROCESS_TIMEOUT)
         print("GitHub Pages: dashboard deployed -> https://macassvic-cmd.github.io/mlb-fantasy/")
     except Exception as e:
-        detail = e.stderr if isinstance(e, subprocess.CalledProcessError) else str(e)
+        if isinstance(e, subprocess.TimeoutExpired):
+            detail = f"timed out after {GIT_SUBPROCESS_TIMEOUT}s"
+        elif isinstance(e, subprocess.CalledProcessError):
+            detail = e.stderr
+        else:
+            detail = str(e)
         print(f"GitHub Pages deploy skipped (non-fatal): {detail}")
 
 
