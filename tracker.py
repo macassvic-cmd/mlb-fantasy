@@ -428,7 +428,11 @@ def main():
     if len(sys.argv) > 1:
         date_str = sys.argv[1]
     else:
-        date_str = (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d")
+        # The tracker runs at 11 PM PT. All MLB games — including West Coast
+        # late starts — finish by 10 PM PT at the latest, so grading "today"
+        # at 11 PM is always safe. The old timedelta(days=1) caused the 11 PM
+        # run to grade yesterday's games instead of today's.
+        date_str = datetime.now().strftime("%Y-%m-%d")
 
     print(f"=== Tracking results for {date_str} ===")
     track_date(date_str)
