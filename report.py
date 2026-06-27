@@ -127,6 +127,18 @@ def game_time_pt(game_date_utc):
         return None
 
 
+def _is_early_game(game_date_utc):
+    """Returns True if the game starts before 18:00 UTC (= 11:00 AM PT in
+    summer), the window where getaway-day morning games cluster."""
+    if not game_date_utc:
+        return False
+    try:
+        dt = datetime.fromisoformat(game_date_utc.replace("Z", "+00:00"))
+        return dt.hour < 18
+    except (ValueError, TypeError):
+        return False
+
+
 def edge_label(edge):
     """Classify our projection vs. the posted UD line into OVER/UNDER/NEUTRAL."""
     if edge is None:
@@ -161,6 +173,8 @@ def build_card(row):
         } if row.get("platoon_advantage") else None,
         "adjusted": row.get("adjusted", False),
         "anchored": row.get("market_anchored", False),
+        "noLinePenalty": row.get("no_line_penalty", False),
+        "getawayDayRisk": row.get("getaway_day_risk", False),
         "projectedLineup": row.get("lineup_status") == "projected",
         "tier":   card_tier(row["ud_pts"]),
         "edge":   row.get("edge"),
@@ -234,9 +248,10 @@ def build_row(p):
         "game_pk":      p.get("game_pk"),
         "home_away":    p.get("home_away"),
         "venue":        p.get("venue_name", ""),
-        "lineup_status": p.get("lineup_status", "confirmed"),
-        "game_date_utc": p.get("game_date_utc"),
-        "game_time_pt":  game_time_pt(p.get("game_date_utc")),
+        "lineup_status":    p.get("lineup_status", "confirmed"),
+        "lineup_confirmed": bool(p.get("lineup_confirmed", True)),
+        "game_date_utc":    p.get("game_date_utc"),
+        "game_time_pt":     game_time_pt(p.get("game_date_utc")),
     }
 
 
@@ -318,6 +333,19 @@ def recalibrate_points(rows):
 MARKET_EDGE_CLAMP = 2.0
 VALUE_PLAY_EDGE = 1.5  # must stay below MARKET_EDGE_CLAMP or no edge can ever qualify
 assert VALUE_PLAY_EDGE < MARKET_EDGE_CLAMP, "Value Plays threshold must be below the market edge clamp"
+
+# Players without a posted UD/PP line are systematically more volatile than
+# the market suggests — UD withholds lines when lineup status is uncertain.
+# Discount their projection to reflect this hidden risk and make it harder
+# for them to crack the Top 25 on model strength alone.
+NO_LINE_PENALTY = 0.20
+
+# Applied on top of NO_LINE_PENALTY when BOTH lineup_confirmed=False AND the
+# game is an early start (before 18:00 UTC / 11 AM PT). These two signals
+# compound each other: the market's silence + an unconfirmed lineup on a
+# getaway-day morning game is the highest-risk profile we've identified.
+# Combined total: ×0.80 × ×0.75 = ×0.60 (40% reduction from base).
+GETAWAY_DAY_PENALTY = 0.25
 
 
 def apply_market_anchor(rows, market_lines, market_corrections=None):
@@ -449,6 +477,42 @@ def apply_corrections(rows, corrections, skip=None):
         row["ud_pts"] = round(row["ud_pts"] * c["ud"], 2)
         row["pp_pts"] = round(row["pp_pts"] * c["pp"], 2)
         row["adjusted"] = True
+
+
+def apply_no_line_penalty(rows, anchored_ids=None):
+    """Apply a flat projection discount to every player without a posted
+    UD/PP market line. The absence of a line is itself a signal — UD
+    withholds lines when a player's lineup status is uncertain — so we
+    reduce their projection by NO_LINE_PENALTY to make it harder for them
+    to crowd out market-confirmed players in the Top 25.
+
+    An additional GETAWAY_DAY_PENALTY is layered on top when the player
+    also has lineup_confirmed=False AND an early game start (before 18:00
+    UTC / 11 AM PT). These two signals compounding each other represents
+    the highest-risk profile — market silence + unconfirmed lineup on a
+    morning getaway game.
+
+    Sets row['no_line_penalty'] and row['getaway_day_risk'] flags so the
+    dashboard can badge them appropriately."""
+    anchored_ids = anchored_ids or set()
+    for row in rows:
+        if str(row.get("player_id")) in anchored_ids or row.get("market_anchored"):
+            row["no_line_penalty"] = False
+            row["getaway_day_risk"] = False
+            continue
+
+        row["ud_pts"] = round(row["ud_pts"] * (1 - NO_LINE_PENALTY), 2)
+        row["pp_pts"] = round(row["pp_pts"] * (1 - NO_LINE_PENALTY), 2)
+        row["no_line_penalty"] = True
+
+        unconfirmed = not row.get("lineup_confirmed", True)
+        early = _is_early_game(row.get("game_date_utc"))
+        if unconfirmed and early:
+            row["ud_pts"] = round(row["ud_pts"] * (1 - GETAWAY_DAY_PENALTY), 2)
+            row["pp_pts"] = round(row["pp_pts"] * (1 - GETAWAY_DAY_PENALTY), 2)
+            row["getaway_day_risk"] = True
+        else:
+            row["getaway_day_risk"] = False
 
 
 # ---------------------------------------------------------------------------
@@ -960,6 +1024,8 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   .card .badge-adjusted {{ background: #60a5fa; margin-left: 6px; }}
   .card .badge-anchored {{ background: #f0abfc; margin-left: 6px; }}
   .card .badge-projected {{ background: #fbbf24; color: #3a2a00; margin-left: 6px; }}
+  .card .badge-no-line {{ background: #fb923c; color: #1a0800; margin-left: 6px; }}
+  .card .badge-getaway {{ background: #f87171; color: #1a0000; margin-left: 6px; }}
 
   /* Full leaderboard table */
   .controls {{ display: flex; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }}
@@ -1279,7 +1345,9 @@ function renderCard(c) {{
     ${{c.platoon ? '<div class="badge">Platoon Edge</div>' : ''}}
     ${{c.adjusted ? '<div class="badge badge-adjusted">Model adjusted</div>' : ''}}
     ${{c.anchored ? '<div class="badge badge-anchored">Live line</div>' : ''}}
-    ${{c.projectedLineup ? '<div class="badge badge-projected">&#9888; Projected Lineup</div>' : ''}}
+    ${{c.projectedLineup && !c.getawayDayRisk ? '<div class="badge badge-projected">&#9888; Projected Lineup</div>' : ''}}
+    ${{c.noLinePenalty ? '<div class="badge badge-no-line">&#9888; No Line &ndash; Lower Confidence</div>' : ''}}
+    ${{c.getawayDayRisk ? '<div class="badge badge-getaway">&#9888; Projected Lineup &ndash; Getaway Day Risk</div>' : ''}}
   `;
   return card;
 }}
@@ -1471,6 +1539,8 @@ for (const c of T25_CARDS) {{
     <div class="stat-line">${{c.wxIcon}} ${{c.wxText}} &nbsp;|&nbsp; Park ${{c.park}}</div>
     ${{c.platoon ? '<div class="badge">Platoon Edge</div>' : ''}}
     ${{c.adjusted ? '<div class="badge badge-adjusted">Model adjusted</div>' : ''}}
+    ${{c.noLinePenalty ? '<div class="badge badge-no-line">&#9888; No Line &ndash; Lower Confidence</div>' : ''}}
+    ${{c.getawayDayRisk ? '<div class="badge badge-getaway">&#9888; Projected Lineup &ndash; Getaway Day Risk</div>' : ''}}
   `;
   t25Grid.appendChild(card);
 }}
@@ -1662,6 +1732,7 @@ def prepare_dashboard_context(date_arg=None):
 
     corrections = build_corrections(results_data)
     apply_corrections(rows, corrections, skip=anchored_ids)
+    apply_no_line_penalty(rows, anchored_ids)
     rows.sort(key=lambda r: r["ud_pts"], reverse=True)
 
     top25_path = os.path.join("data", "results", "top25_results.json")

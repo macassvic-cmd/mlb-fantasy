@@ -140,6 +140,7 @@ def track_date(date_str):
     market_corrections = existing_all.get("market_corrections", {})
     anchored_ids = report.apply_market_anchor(rows, market_lines, market_corrections)
     report.apply_corrections(rows, corrections, skip=anchored_ids)
+    report.apply_no_line_penalty(rows, anchored_ids)
 
     results = []
     for row in rows:
@@ -338,6 +339,21 @@ def track_top25(date_str, rows, results_by_pid):
         res = results_by_pid.get(pid)
         actual_ud = res["actual_ud"] if res else None
         grade = res["result_ud"] if res else None
+        proj_ud_val = row["ud_pts"]
+        ud_line = row.get("ud_line")
+        graded_vs_proj = False
+
+        # Fallback: when no UD market line is posted, grade against our own
+        # projection as the benchmark so the player isn't silently excluded.
+        if grade is None and actual_ud is not None:
+            graded_vs_proj = True
+            if actual_ud > proj_ud_val:
+                grade = "win"
+            elif actual_ud < proj_ud_val:
+                grade = "loss"
+            else:
+                grade = "push"
+
         entries.append({
             "player_id": pid,
             "date": date_str,
@@ -356,10 +372,12 @@ def track_top25(date_str, rows, results_by_pid):
             "adjusted": row.get("adjusted", False),
             "tier": report.card_tier(row["ud_pts"]),
             "gameTimePt": row.get("game_time_pt"),
-            "projected_ud": row["ud_pts"],
-            "ud_line": row.get("ud_line"),
+            "projected_ud": proj_ud_val,
+            "ud_line": ud_line,
             "actual_ud": actual_ud,
             "grade": grade,
+            "graded_vs_proj": graded_vs_proj,
+            "getaway_day_risk": row.get("getaway_day_risk", False),
         })
 
     top25_data = load_json(TOP25_RESULTS_PATH, {"dates": {}, "players": {}})
@@ -385,12 +403,15 @@ def track_top25(date_str, rows, results_by_pid):
         # leftover graded entry from a previous run sitting in history.
         p["history"] = [h for h in p.get("history", []) if h["date"] != date_str]
         if entry["grade"] is not None:
-            p["history"].append({
+            hist_entry = {
                 "date": date_str,
                 "projected_ud": entry["projected_ud"],
                 "actual_ud": entry["actual_ud"],
                 "grade": entry["grade"],
-            })
+            }
+            if entry.get("graded_vs_proj"):
+                hist_entry["graded_vs_proj"] = True
+            p["history"].append(hist_entry)
         p["history"].sort(key=lambda h: h["date"])
 
     with open(TOP25_RESULTS_PATH, "w", encoding="utf-8") as f:
