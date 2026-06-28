@@ -1,8 +1,7 @@
 """
 MLB Fantasy Report Generator
-Builds an Excel workbook (output\\MLB_Projections_<date>.xlsx) and an HTML
-dashboard (output\\dashboard.html) from the most recent pipeline data, then
-opens both.
+Builds an HTML dashboard (output/dashboard.html) from the most recent
+pipeline data and deploys it to GitHub Pages.
 
 Usage:
   python report.py              # most recent data file
@@ -15,30 +14,11 @@ import shutil
 import subprocess
 import sys
 import webbrowser
-from collections import defaultdict
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
-from openpyxl import Workbook
-from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
-from openpyxl.utils import get_column_letter
-
 import projections as proj
 from scrapers.market_lines import get_market_lines, compute_pp_ud_ratio, match_lines
-
-# ---------------------------------------------------------------------------
-# Styling constants
-# ---------------------------------------------------------------------------
-
-FILL_GREEN  = PatternFill("solid", fgColor="C6EFCE")
-FILL_YELLOW = PatternFill("solid", fgColor="FFEB9C")
-FILL_RED    = PatternFill("solid", fgColor="FFC7CE")
-FILL_HEADER = PatternFill("solid", fgColor="305496")
-FONT_HEADER = Font(bold=True, color="FFFFFF")
-FONT_BOLD   = Font(bold=True)
-THIN = Side(style="thin", color="D9D9D9")
-BORDER = Border(left=THIN, right=THIN, top=THIN, bottom=THIN)
-CENTER = Alignment(horizontal="center")
 
 
 # ---------------------------------------------------------------------------
@@ -515,31 +495,6 @@ def apply_no_line_penalty(rows, anchored_ids=None):
             row["getaway_day_risk"] = False
 
 
-# ---------------------------------------------------------------------------
-# Excel: Tab 1 + Tab 2 - leaderboards
-# ---------------------------------------------------------------------------
-
-LEADER_COLS = [
-    ("name",         "Player",       28, "s"),
-    ("team",         "Team",         22, "s"),
-    ("order",        "Bat Order",    9,  "i"),
-    ("ud_pts",       "Proj UD Pts",  11, "1f"),
-    ("pp_pts",       "Proj PP Pts",  11, "1f"),
-    ("confidence",   "Confidence",   10, "i"),
-    ("xwoba",        "xwOBA",        8,  "3f"),
-    ("barrel_pct",   "Barrel%",      8,  "1f"),
-    ("hard_hit_pct", "HardHit%",     9,  "1f"),
-    ("ev",           "EV",           7,  "1f"),
-    ("r7",           "7d Fpts",      8,  "1f"),
-    ("r14",          "14d Fpts",     8,  "1f"),
-    ("opp_sp",       "Opp SP",       20, "s"),
-    ("opp_era",      "Opp SP ERA",   10, "2f"),
-    ("opp_fip",      "Opp SP FIP",   10, "2f"),
-    ("weather",      "Weather",      16, "s"),
-    ("park_hr",      "Park HR Fctr", 11, "2f"),
-    ("days_rest",    "Days Rest",    9,  "i"),
-    ("platoon_edge", "Platoon Edge", 12, "s"),
-]
 
 
 def fmt_value(val, kind):
@@ -556,228 +511,6 @@ def fmt_value(val, kind):
     return val
 
 
-def write_leaderboard_sheet(wb, title, rows, ud_thresholds, color_rows=True, autofilter=False):
-    ws = wb.create_sheet(title)
-
-    for c, (_, header, width, _) in enumerate(LEADER_COLS, 1):
-        cell = ws.cell(row=1, column=c, value=header)
-        cell.font = FONT_HEADER
-        cell.fill = FILL_HEADER
-        cell.alignment = CENTER
-        ws.column_dimensions[get_column_letter(c)].width = width
-    ws.freeze_panes = "A2"
-
-    for r, row in enumerate(rows, 2):
-        t = tier(row["ud_pts"], ud_thresholds)
-        fill = {"green": FILL_GREEN, "yellow": FILL_YELLOW, "red": FILL_RED}[t]
-        for c, (key, _, _, kind) in enumerate(LEADER_COLS, 1):
-            cell = ws.cell(row=r, column=c, value=fmt_value(row[key], kind))
-            cell.border = BORDER
-            if color_rows:
-                cell.fill = fill
-
-    if autofilter:
-        last_col = get_column_letter(len(LEADER_COLS))
-        ws.auto_filter.ref = f"A1:{last_col}{len(rows) + 1}"
-
-    return ws
-
-
-# ---------------------------------------------------------------------------
-# Excel: Tab 3 - Matchup Report
-# ---------------------------------------------------------------------------
-
-def write_matchup_sheet(wb, players_by_game):
-    ws = wb.create_sheet("Matchup Report")
-    ws.column_dimensions["A"].width = 4
-    for col, w in zip("BCDE", (24, 9, 11, 11)):
-        ws.column_dimensions[col].width = w
-    ws.column_dimensions["F"].width = 3
-    for col, w in zip("GHIJ", (24, 9, 11, 11)):
-        ws.column_dimensions[col].width = w
-
-    r = 1
-    for game_pk, players in players_by_game.items():
-        away = [p for p in players if p["home_away"] == "away"]
-        home = [p for p in players if p["home_away"] == "home"]
-        away.sort(key=lambda p: p["order"] or 99)
-        home.sort(key=lambda p: p["order"] or 99)
-
-        away_team = away[0]["team"] if away else (home[0]["opp_team"] if home else "Away")
-        home_team = home[0]["team"] if home else (away[0]["opp_team"] if away else "Home")
-        venue = home[0]["venue"] if home else (away[0]["venue"] if away else "")
-        wx = home[0]["weather"] if home else (away[0]["weather"] if away else "")
-
-        title_cell = ws.cell(row=r, column=1, value=f"{away_team} @ {home_team}  |  {venue}  |  {wx}")
-        title_cell.font = FONT_BOLD
-        ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=10)
-        r += 1
-
-        for col, header in zip("BCDE", ("Away Lineup", "Order", "UD Pts", "PP Pts")):
-            cell = ws[f"{col}{r}"]
-            cell.value = header
-            cell.font = FONT_HEADER
-            cell.fill = FILL_HEADER
-            cell.alignment = CENTER
-        for col, header in zip("GHIJ", ("Home Lineup", "Order", "UD Pts", "PP Pts")):
-            cell = ws[f"{col}{r}"]
-            cell.value = header
-            cell.font = FONT_HEADER
-            cell.fill = FILL_HEADER
-            cell.alignment = CENTER
-        r += 1
-
-        n = max(len(away), len(home))
-        for i in range(n):
-            if i < len(away):
-                p = away[i]
-                ws.cell(row=r, column=2, value=p["name"])
-                ws.cell(row=r, column=3, value=p["order"] or "").alignment = CENTER
-                ws.cell(row=r, column=4, value=round(p["ud_pts"], 1))
-                ws.cell(row=r, column=5, value=round(p["pp_pts"], 1))
-            if i < len(home):
-                p = home[i]
-                ws.cell(row=r, column=7, value=p["name"])
-                ws.cell(row=r, column=8, value=p["order"] or "").alignment = CENTER
-                ws.cell(row=r, column=9, value=round(p["ud_pts"], 1))
-                ws.cell(row=r, column=10, value=round(p["pp_pts"], 1))
-            r += 1
-
-        r += 2  # blank rows between games
-
-    return ws
-
-
-# ---------------------------------------------------------------------------
-# Excel: Tab 4 - SP Report
-# ---------------------------------------------------------------------------
-
-SP_COLS = [
-    ("name",   "Pitcher",       24, "s"),
-    ("team",   "Faces Team",    22, "s"),
-    ("era",    "ERA",           8,  "2f"),
-    ("fip",    "FIP",           8,  "2f"),
-    ("whip",   "WHIP",          8,  "2f"),
-    ("k_pct",  "K%",            8,  "1pct"),
-    ("hh_pct", "HardHit% Allowed", 16, "s"),
-    ("hittable", "Hittable Score", 14, "1f"),
-]
-
-
-def write_sp_sheet(wb, raw_players):
-    ws = wb.create_sheet("SP Report")
-
-    pitchers = {}
-    for p in raw_players:
-        mt = p.get("matchup") or {}
-        name = mt.get("pitcher_name")
-        if not name or name in pitchers:
-            continue
-        whip = mt.get("whip") if mt.get("whip") is not None else mt.get("whip_fg")
-        pitchers[name] = {
-            "name": name,
-            "team": p.get("opp_team_name", ""),
-            "era": mt.get("era") if mt.get("era") is not None else mt.get("era_fg"),
-            "fip": mt.get("fip"),
-            "whip": whip,
-            "k_pct": mt.get("k_pct"),
-            "hh_pct": "N/A",
-        }
-
-    rows = list(pitchers.values())
-    for row in rows:
-        era = row["era"] if row["era"] is not None else 4.20
-        fip = row["fip"] if row["fip"] is not None else 4.20
-        whip = row["whip"] if row["whip"] is not None else 1.30
-        k_pct = row["k_pct"] if row["k_pct"] is not None else 0.23
-        row["hittable"] = round(float(era) + float(fip) + float(whip) * 3 - float(k_pct) * 15, 2)
-
-    rows.sort(key=lambda r: r["hittable"], reverse=True)
-
-    for c, (_, header, width, _) in enumerate(SP_COLS, 1):
-        cell = ws.cell(row=1, column=c, value=header)
-        cell.font = FONT_HEADER
-        cell.fill = FILL_HEADER
-        cell.alignment = CENTER
-        ws.column_dimensions[get_column_letter(c)].width = width
-    ws.freeze_panes = "A2"
-
-    for r, row in enumerate(rows, 2):
-        for c, (key, _, _, kind) in enumerate(SP_COLS, 1):
-            val = row.get(key)
-            if kind == "1pct" and val is not None:
-                val = round(float(val) * 100, 1)
-            elif kind in ("1f", "2f") and val is not None:
-                val = round(float(val), 2 if kind == "2f" else 1)
-            elif val is None:
-                val = "N/A"
-            cell = ws.cell(row=r, column=c, value=val)
-            cell.border = BORDER
-
-    last_col = get_column_letter(len(SP_COLS))
-    ws.auto_filter.ref = f"A1:{last_col}{len(rows) + 1}"
-    return ws, pitchers
-
-
-# ---------------------------------------------------------------------------
-# Excel: Tab 5 - Stack Targets
-# ---------------------------------------------------------------------------
-
-STACK_COLS = [
-    ("team",     "Team",        22, "s"),
-    ("size",     "Stack Size",  10, "i"),
-    ("players",  "Players (Bat Order)", 45, "s"),
-    ("combined", "Combined UD Pts", 14, "1f"),
-    ("opp_sp",   "Opp SP",      20, "s"),
-]
-
-
-def write_stack_sheet(wb, players_by_team):
-    ws = wb.create_sheet("Stack Targets")
-
-    stacks = []
-    for team, players in players_by_team.items():
-        ordered = sorted(
-            (p for p in players if p["order"] and 1 <= p["order"] <= 9),
-            key=lambda p: p["order"],
-        )
-        by_order = {p["order"]: p for p in ordered}
-
-        for size in (2, 3):
-            for start in range(1, 10):
-                slots = [((start - 1 + i) % 9) + 1 for i in range(size)]  # wraps 9 -> 1
-                if not all(s in by_order for s in slots):
-                    continue
-                grp = [by_order[s] for s in slots]
-                combined = sum(p["ud_pts"] for p in grp)
-                stacks.append({
-                    "team": team,
-                    "size": size,
-                    "players": ", ".join(f"{p['name']} ({p['order']})" for p in grp),
-                    "combined": combined,
-                    "opp_sp": grp[0]["opp_sp"],
-                })
-
-    stacks.sort(key=lambda s: s["combined"], reverse=True)
-    top_stacks = stacks[:15]
-
-    for c, (_, header, width, _) in enumerate(STACK_COLS, 1):
-        cell = ws.cell(row=1, column=c, value=header)
-        cell.font = FONT_HEADER
-        cell.fill = FILL_HEADER
-        cell.alignment = CENTER
-        ws.column_dimensions[get_column_letter(c)].width = width
-    ws.freeze_panes = "A2"
-
-    for r, row in enumerate(top_stacks, 2):
-        for c, (key, _, _, kind) in enumerate(STACK_COLS, 1):
-            val = row[key]
-            if kind == "1f":
-                val = round(val, 1)
-            cell = ws.cell(row=r, column=c, value=val)
-            cell.border = BORDER
-
-    return ws
 
 
 # ---------------------------------------------------------------------------
@@ -1760,49 +1493,15 @@ def regenerate_dashboard(date_arg=None):
 def main():
     date_arg = sys.argv[1] if len(sys.argv) > 1 else None
     rows, date_str, results_data, top25_data = prepare_dashboard_context(date_arg)
-    players, _ = proj.load_data(date_arg)
-
-    ud_values = [r["ud_pts"] for r in rows]
-    ud_thresholds = (percentile(ud_values, 75), percentile(ud_values, 40))
-
-    wb = Workbook()
-    wb.remove(wb.active)
-
-    # Tab 1: Top Plays
-    write_leaderboard_sheet(wb, "Top Plays", rows[:25], ud_thresholds, color_rows=True)
-
-    # Tab 2: Full Leaderboard
-    write_leaderboard_sheet(wb, "Full Leaderboard", rows, ud_thresholds, color_rows=True, autofilter=True)
-
-    # Tab 3: Matchup Report
-    players_by_game = defaultdict(list)
-    for r in rows:
-        players_by_game[r["game_pk"]].append(r)
-    write_matchup_sheet(wb, players_by_game)
-
-    # Tab 4: SP Report
-    write_sp_sheet(wb, players)
-
-    # Tab 5: Stack Targets
-    players_by_team = defaultdict(list)
-    for r in rows:
-        players_by_team[r["team"]].append(r)
-    write_stack_sheet(wb, players_by_team)
 
     os.makedirs("output", exist_ok=True)
-    xlsx_path = os.path.join("output", f"MLB_Projections_{date_str}.xlsx")
-    wb.save(xlsx_path)
-    print(f"Excel report saved -> {os.path.abspath(xlsx_path)}")
-
     html_path = os.path.join("output", "dashboard.html")
     write_dashboard(rows, date_str, html_path, results_data, top25_data)
     print(f"Dashboard saved -> {os.path.abspath(html_path)}")
 
     deploy_to_github_pages(html_path, date_str)
 
-    # Auto-open (skipped for unattended/scheduled runs)
     if not os.environ.get("MLB_HEADLESS"):
-        os.startfile(os.path.abspath(xlsx_path))
         webbrowser.open(f"file:///{os.path.abspath(html_path)}")
 
 
