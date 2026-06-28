@@ -1,0 +1,101 @@
+name: MLB Fantasy Pipeline
+
+# All cron times are UTC. The MLB season runs in PDT (UTC-7) Apr–Oct.
+#   9:00 AM PDT  = 16:00 UTC  →  cron '0 16 * * *'
+#   2:00 PM PDT  = 21:00 UTC  →  cron '0 21 * * *'
+#  11:00 PM PDT  = 06:00 UTC (next day) → cron '0 6 * * *'
+# During PST (UTC-8, Nov–Mar off-season) each run fires 1 hr earlier PT.
+
+on:
+  schedule:
+    - cron: '0 16 * * *'   # Morning pipeline  — 9:00 AM PDT
+    - cron: '0 21 * * *'   # Afternoon pipeline — 2:00 PM PDT
+    - cron: '0 6  * * *'   # Nightly tracker    — 11:00 PM PDT
+  workflow_dispatch:
+    inputs:
+      run_type:
+        description: 'pipeline = morning/afternoon run | tracker = nightly grading'
+        required: true
+        default: 'pipeline'
+        type: choice
+        options:
+          - pipeline
+          - tracker
+
+env:
+  OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
+  MLB_HEADLESS: '1'
+  PYTHONUNBUFFERED: '1'
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120   # pipeline takes up to 90 min on slow API days; hard-kill at 2 h
+
+    # Required for the git push step to write back to the repo
+    permissions:
+      contents: write
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+        with:
+          # GITHUB_TOKEN is auto-provided; no PAT needed for same-repo pushes
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0   # full history so git push never fails on diverged refs
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # ── Pipeline steps (9 AM + 2 PM scheduled runs, or manual 'pipeline') ──
+
+      - name: Pipeline — fetch data
+        if: >-
+          github.event.schedule == '0 16 * * *' ||
+          github.event.schedule == '0 21 * * *' ||
+          github.event.inputs.run_type == 'pipeline'
+        run: python pipeline.py
+
+      - name: Pipeline — generate projections
+        if: >-
+          github.event.schedule == '0 16 * * *' ||
+          github.event.schedule == '0 21 * * *' ||
+          github.event.inputs.run_type == 'pipeline'
+        run: python projections.py
+
+      - name: Pipeline — build dashboard
+        if: >-
+          github.event.schedule == '0 16 * * *' ||
+          github.event.schedule == '0 21 * * *' ||
+          github.event.inputs.run_type == 'pipeline'
+        run: python report.py
+
+      # ── Tracker step (11 PM scheduled run, or manual 'tracker') ─────────
+
+      - name: Tracker — grade today's results
+        if: >-
+          github.event.schedule == '0 6 * * *' ||
+          github.event.inputs.run_type == 'tracker'
+        run: python tracker.py
+
+      # ── Commit everything produced this run back to the repo ─────────────
+      # report.py/tracker.py skip their internal git push when GITHUB_ACTIONS=true,
+      # so this single step handles all files: data/, output/, docs/, results.
+
+      - name: Commit and push all changes
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nothing changed — no commit needed."
+          else
+            git commit -m "Pipeline run $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi

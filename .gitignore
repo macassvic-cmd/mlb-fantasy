@@ -5,3 +5,19 @@ pipeline.log
 pp.json
 ud.json
 .claude/
+
+# Windows Task Scheduler helper scripts — not needed in Actions
+add_afternoon_task.bat
+add_afternoon_task.ps1
+fix_tasks_admin.bat
+fix_tasks_admin.ps1
+
+# Old log files — pipeline.log is already ignored above
+*_final.log
+
+# Excel reports are large binary files regenerated on every run;
+# historical data is preserved in the JSON files instead.
+output/*.xlsx
+
+# Per-day backtest snapshots — only the cumulative all_backtest.json matters
+data/backtest/backtest_*.json

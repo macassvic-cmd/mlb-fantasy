@@ -1830,6 +1830,13 @@ def deploy_to_github_pages(html_path, date_str):
         os.makedirs("docs", exist_ok=True)
         shutil.copyfile(html_path, DOCS_DASHBOARD_PATH)
 
+        # In GitHub Actions the workflow's commit step handles all git
+        # operations for every file at once. Doing a partial commit here
+        # would race with that step and leave data files uncommitted.
+        if os.environ.get("GITHUB_ACTIONS"):
+            print("GitHub Pages: dashboard copied to docs/ (workflow will commit).")
+            return
+
         repo_root = os.path.dirname(os.path.abspath(__file__))
         subprocess.run(["git", "add", "docs/index.html"], cwd=repo_root, check=True,
                         capture_output=True, text=True, timeout=GIT_SUBPROCESS_TIMEOUT)
