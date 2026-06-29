@@ -1026,6 +1026,204 @@
           "correct": true
         }
       ]
+    },
+    "2026-06-27": {
+      "summary": {
+        "total": 8,
+        "correct": 4,
+        "accuracy": 50.0,
+        "over_total": 4,
+        "over_correct": 3,
+        "under_total": 4,
+        "under_correct": 1
+      },
+      "plays": [
+        {
+          "player_id": 694192,
+          "name": "Jackson Chourio",
+          "team": "Milwaukee Brewers",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 18,
+          "correct": true
+        },
+        {
+          "player_id": 606466,
+          "name": "Ketel Marte",
+          "team": "Arizona Diamondbacks",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 14,
+          "correct": true
+        },
+        {
+          "player_id": 663616,
+          "name": "Trevor Larnach",
+          "team": "Minnesota Twins",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 20,
+          "correct": true
+        },
+        {
+          "player_id": 665019,
+          "name": "Kody Clemens",
+          "team": "Minnesota Twins",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 5,
+          "correct": false
+        },
+        {
+          "player_id": 660271,
+          "name": "Shohei Ohtani",
+          "team": "Los Angeles Dodgers",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 9.5,
+          "actual_ud": 10,
+          "correct": false
+        },
+        {
+          "player_id": 665742,
+          "name": "Juan Soto",
+          "team": "New York Mets",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 20,
+          "correct": false
+        },
+        {
+          "player_id": 695578,
+          "name": "James Wood",
+          "team": "Washington Nationals",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 3,
+          "correct": true
+        },
+        {
+          "player_id": 596019,
+          "name": "Francisco Lindor",
+          "team": "New York Mets",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 17,
+          "correct": false
+        }
+      ]
+    },
+    "2026-06-29": {
+      "summary": {
+        "total": 0,
+        "correct": 0,
+        "accuracy": 0.0,
+        "over_total": 0,
+        "over_correct": 0,
+        "under_total": 0,
+        "under_correct": 0
+      },
+      "plays": []
+    },
+    "2026-06-28": {
+      "summary": {
+        "total": 8,
+        "correct": 5,
+        "accuracy": 62.5,
+        "over_total": 4,
+        "over_correct": 3,
+        "under_total": 4,
+        "under_correct": 2
+      },
+      "plays": [
+        {
+          "player_id": 668804,
+          "name": "Bryan Reynolds",
+          "team": "Pittsburgh Pirates",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.395348837209302,
+          "actual_ud": 8,
+          "correct": true
+        },
+        {
+          "player_id": 607043,
+          "name": "Brandon Nimmo",
+          "team": "Texas Rangers",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.395348837209302,
+          "actual_ud": 8,
+          "correct": true
+        },
+        {
+          "player_id": 664040,
+          "name": "Brandon Lowe",
+          "team": "Pittsburgh Pirates",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 5.813953488372093,
+          "actual_ud": 3,
+          "correct": false
+        },
+        {
+          "player_id": 656811,
+          "name": "Ryan O'Hearn",
+          "team": "Pittsburgh Pirates",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 5.813953488372093,
+          "actual_ud": 37,
+          "correct": true
+        },
+        {
+          "player_id": 805808,
+          "name": "Kevin McGonigle",
+          "team": "Detroit Tigers",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.395348837209302,
+          "actual_ud": 11,
+          "correct": false
+        },
+        {
+          "player_id": 693307,
+          "name": "Dillon Dingler",
+          "team": "Detroit Tigers",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.395348837209302,
+          "actual_ud": 0,
+          "correct": true
+        },
+        {
+          "player_id": 682985,
+          "name": "Riley Greene",
+          "team": "Detroit Tigers",
+          "call": "under",
+          "edge": -1.81,
+          "ud_line": 5.232558139534884,
+          "actual_ud": 2,
+          "correct": true
+        },
+        {
+          "player_id": 681481,
+          "name": "Kerry Carpenter",
+          "team": "Detroit Tigers",
+          "call": "under",
+          "edge": -1.68,
+          "ud_line": 5.232558139534884,
+          "actual_ud": 8,
+          "correct": false
+        }
+      ]
     }
   }
 }
