@@ -14,7 +14,7 @@ import shutil
 import subprocess
 import sys
 import webbrowser
-from datetime import datetime
+from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
 
 import projections as proj
@@ -539,8 +539,8 @@ DASHBOARD_COLS = [
 
 def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None):
     games_count = len({r["game_pk"] for r in rows})
-    generated_dt = datetime.now()
-    last_updated = generated_dt.strftime("%Y-%m-%d %I:%M %p")
+    generated_dt = datetime.now(timezone.utc).astimezone(_PACIFIC)
+    last_updated = generated_dt.strftime("%Y-%m-%d %I:%M %p PT")
     generated_at_iso = generated_dt.isoformat()
     player_count = len(rows)
 

@@ -10,7 +10,7 @@ on:
   schedule:
     - cron: '0 16 * * *'   # Morning pipeline  — 9:00 AM PDT
     - cron: '0 21 * * *'   # Afternoon pipeline — 2:00 PM PDT
-    - cron: '0 6  * * *'   # Nightly tracker    — 11:00 PM PDT
+    - cron: '0 6 * * *'    # Nightly tracker    — 11:00 PM PDT
   workflow_dispatch:
     inputs:
       run_type:
