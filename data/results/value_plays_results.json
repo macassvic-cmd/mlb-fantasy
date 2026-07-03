@@ -1584,6 +1584,39 @@
           "correct": true
         }
       ]
+    },
+    "2026-07-03": {
+      "summary": {
+        "total": 2,
+        "correct": 0,
+        "accuracy": 0.0,
+        "over_total": 2,
+        "over_correct": 0,
+        "under_total": 0,
+        "under_correct": 0
+      },
+      "plays": [
+        {
+          "player_id": 673548,
+          "name": "Seiya Suzuki",
+          "team": "Chicago Cubs",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "correct": false
+        },
+        {
+          "player_id": 802139,
+          "name": "JJ Wetherholt",
+          "team": "St. Louis Cardinals",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "correct": false
+        }
+      ]
     }
   }
 }
