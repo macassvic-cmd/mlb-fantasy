@@ -2,11 +2,11 @@
   "date": "2026-06-29",
   "summary": {
     "ud": {
-      "total": 190,
-      "win": 103,
-      "loss": 87,
-      "push": 3,
-      "hit_rate": 54.2
+      "total": 193,
+      "win": 105,
+      "loss": 88,
+      "push": 0,
+      "hit_rate": 54.4
     },
     "pp": {
       "total": 189,
@@ -174,7 +174,7 @@
       "projected_ud": 5.14,
       "ud_line": 5.14,
       "actual_ud": 10,
-      "result_ud": "push",
+      "result_ud": "win",
       "projected_pp": 4.98,
       "pp_line": 4.5,
       "actual_pp": 9,
@@ -3674,7 +3674,7 @@
       "projected_ud": 5.5,
       "ud_line": 5.5,
       "actual_ud": 2,
-      "result_ud": "push",
+      "result_ud": "loss",
       "projected_pp": 5.23,
       "pp_line": 5.0,
       "actual_pp": 2,
@@ -5599,7 +5599,7 @@
       "projected_ud": 4.0,
       "ud_line": 4.0,
       "actual_ud": 11,
-      "result_ud": "push",
+      "result_ud": "win",
       "projected_pp": 3.84,
       "pp_line": 3.5,
       "actual_pp": 10,

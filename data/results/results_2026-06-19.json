@@ -2,18 +2,18 @@
   "date": "2026-06-19",
   "summary": {
     "ud": {
-      "total": 201,
-      "win": 119,
-      "loss": 82,
-      "push": 1,
-      "hit_rate": 59.2
+      "total": 202,
+      "win": 118,
+      "loss": 84,
+      "push": 0,
+      "hit_rate": 58.4
     },
     "pp": {
       "total": 199,
-      "win": 121,
-      "loss": 78,
+      "win": 122,
+      "loss": 77,
       "push": 3,
-      "hit_rate": 60.8
+      "hit_rate": 61.3
     }
   },
   "players": [
@@ -21,11 +21,11 @@
       "player_id": 691718,
       "name": "Pete Crow-Armstrong",
       "team": "Chicago Cubs",
-      "projected_ud": 11.02,
+      "projected_ud": 9.12,
       "ud_line": null,
       "actual_ud": 27,
       "result_ud": null,
-      "projected_pp": 11.1,
+      "projected_pp": 8.91,
       "pp_line": null,
       "actual_pp": 27,
       "result_pp": null,
@@ -39,17 +39,18 @@
         "rbi": 1,
         "runs": 1,
         "sb": 2
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 608324,
       "name": "Alex Bregman",
       "team": "Chicago Cubs",
-      "projected_ud": 7.14,
+      "projected_ud": 5.91,
       "ud_line": null,
       "actual_ud": 12,
       "result_ud": null,
-      "projected_pp": 6.38,
+      "projected_pp": 5.43,
       "pp_line": null,
       "actual_pp": 11,
       "result_pp": null,
@@ -63,17 +64,18 @@
         "rbi": 2,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 683737,
       "name": "Michael Busch",
       "team": "Chicago Cubs",
-      "projected_ud": 6.18,
+      "projected_ud": 6.69,
       "ud_line": null,
       "actual_ud": 6,
       "result_ud": null,
-      "projected_pp": 5.38,
+      "projected_pp": 6.26,
       "pp_line": null,
       "actual_pp": 5,
       "result_pp": null,
@@ -87,17 +89,18 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 673548,
       "name": "Seiya Suzuki",
       "team": "Chicago Cubs",
-      "projected_ud": 8.21,
+      "projected_ud": 7.88,
       "ud_line": null,
       "actual_ud": 23,
       "result_ud": null,
-      "projected_pp": 7.64,
+      "projected_pp": 7.34,
       "pp_line": null,
       "actual_pp": 21,
       "result_pp": null,
@@ -111,17 +114,18 @@
         "rbi": 2,
         "runs": 2,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 664023,
       "name": "Ian Happ",
       "team": "Chicago Cubs",
-      "projected_ud": 6.01,
+      "projected_ud": 5.17,
       "ud_line": null,
       "actual_ud": 15,
       "result_ud": null,
-      "projected_pp": 5.84,
+      "projected_pp": 5.16,
       "pp_line": null,
       "actual_pp": 14,
       "result_pp": null,
@@ -135,17 +139,18 @@
         "rbi": 0,
         "runs": 3,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 807713,
       "name": "Matt Shaw",
       "team": "Chicago Cubs",
-      "projected_ud": 6.18,
+      "projected_ud": 4.94,
       "ud_line": null,
       "actual_ud": 7,
       "result_ud": null,
-      "projected_pp": 5.92,
+      "projected_pp": 4.74,
       "pp_line": null,
       "actual_pp": 6,
       "result_pp": null,
@@ -159,17 +164,18 @@
         "rbi": 0,
         "runs": 2,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 663538,
       "name": "Nico Hoerner",
       "team": "Chicago Cubs",
-      "projected_ud": 5.03,
+      "projected_ud": 3.38,
       "ud_line": null,
       "actual_ud": 14,
       "result_ud": null,
-      "projected_pp": 4.73,
+      "projected_pp": 3.14,
       "pp_line": null,
       "actual_pp": 13,
       "result_pp": null,
@@ -183,17 +189,18 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 608348,
       "name": "Carson Kelly",
       "team": "Chicago Cubs",
-      "projected_ud": 5.32,
+      "projected_ud": 4.26,
       "ud_line": null,
       "actual_ud": 37,
       "result_ud": null,
-      "projected_pp": 5.08,
+      "projected_pp": 4.06,
       "pp_line": null,
       "actual_pp": 35,
       "result_pp": null,
@@ -207,17 +214,18 @@
         "rbi": 6,
         "runs": 3,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 621020,
       "name": "Dansby Swanson",
       "team": "Chicago Cubs",
-      "projected_ud": 5.87,
+      "projected_ud": 5.36,
       "ud_line": null,
       "actual_ud": 23,
       "result_ud": null,
-      "projected_pp": 5.31,
+      "projected_pp": 5.17,
       "pp_line": null,
       "actual_pp": 23,
       "result_pp": null,
@@ -231,17 +239,18 @@
         "rbi": 1,
         "runs": 2,
         "sb": 2
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 543807,
       "name": "George Springer",
       "team": "Toronto Blue Jays",
-      "projected_ud": 4.96,
+      "projected_ud": 3.97,
       "ud_line": null,
       "actual_ud": 19,
       "result_ud": null,
-      "projected_pp": 4.76,
+      "projected_pp": 3.81,
       "pp_line": null,
       "actual_pp": 19,
       "result_pp": null,
@@ -255,17 +264,18 @@
         "rbi": 2,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 665489,
       "name": "Vladimir Guerrero Jr.",
       "team": "Toronto Blue Jays",
-      "projected_ud": 4.38,
+      "projected_ud": 2.91,
       "ud_line": null,
       "actual_ud": 0,
       "result_ud": null,
-      "projected_pp": 4.16,
+      "projected_pp": 2.71,
       "pp_line": null,
       "actual_pp": 0,
       "result_pp": null,
@@ -279,17 +289,18 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 660821,
       "name": "Jes\u00fas S\u00e1nchez",
       "team": "Toronto Blue Jays",
-      "projected_ud": 3.99,
+      "projected_ud": 3.19,
       "ud_line": null,
       "actual_ud": 0,
       "result_ud": null,
-      "projected_pp": 3.76,
+      "projected_pp": 3.01,
       "pp_line": null,
       "actual_pp": 0,
       "result_pp": null,
@@ -303,17 +314,18 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 682818,
       "name": "Yohendrick Pi\u00f1ango",
       "team": "Toronto Blue Jays",
-      "projected_ud": 4.01,
+      "projected_ud": 3.21,
       "ud_line": null,
       "actual_ud": 0,
       "result_ud": null,
-      "projected_pp": 3.78,
+      "projected_pp": 3.02,
       "pp_line": null,
       "actual_pp": 0,
       "result_pp": null,
@@ -327,17 +339,18 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 672386,
       "name": "Alejandro Kirk",
       "team": "Toronto Blue Jays",
-      "projected_ud": 3.67,
+      "projected_ud": 3.52,
       "ud_line": null,
       "actual_ud": 0,
       "result_ud": null,
-      "projected_pp": 3.49,
+      "projected_pp": 3.35,
       "pp_line": null,
       "actual_pp": 0,
       "result_pp": null,
@@ -351,17 +364,18 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 664770,
       "name": "Nathan Lukes",
       "team": "Toronto Blue Jays",
-      "projected_ud": 3.57,
+      "projected_ud": 3.42,
       "ud_line": null,
       "actual_ud": 6,
       "result_ud": null,
-      "projected_pp": 3.39,
+      "projected_pp": 3.26,
       "pp_line": null,
       "actual_pp": 5,
       "result_pp": null,
@@ -375,17 +389,18 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 672960,
       "name": "Kazuma Okamoto",
       "team": "Toronto Blue Jays",
-      "projected_ud": 4.46,
+      "projected_ud": 3.64,
       "ud_line": null,
       "actual_ud": 0,
       "result_ud": null,
-      "projected_pp": 4.11,
+      "projected_pp": 3.45,
       "pp_line": null,
       "actual_pp": 0,
       "result_pp": null,
@@ -399,17 +414,18 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 676914,
       "name": "Davis Schneider",
       "team": "Toronto Blue Jays",
-      "projected_ud": 4.29,
+      "projected_ud": 3.43,
       "ud_line": null,
       "actual_ud": 3,
       "result_ud": null,
-      "projected_pp": 4.07,
+      "projected_pp": 3.26,
       "pp_line": null,
       "actual_pp": 3,
       "result_pp": null,
@@ -423,17 +439,18 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 665926,
       "name": "Andr\u00e9s Gim\u00e9nez",
       "team": "Toronto Blue Jays",
-      "projected_ud": 5.0,
+      "projected_ud": 3.32,
       "ud_line": null,
       "actual_ud": 8,
       "result_ud": null,
-      "projected_pp": 4.81,
+      "projected_pp": 3.16,
       "pp_line": null,
       "actual_pp": 7,
       "result_pp": null,
@@ -447,7 +464,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 805808,
@@ -471,7 +489,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 693307,
@@ -495,7 +514,8 @@
         "rbi": 0,
         "runs": 2,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 663837,
@@ -519,7 +539,8 @@
         "rbi": 2,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 682985,
@@ -543,7 +564,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 679529,
@@ -567,7 +589,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 681481,
@@ -591,17 +614,18 @@
         "rbi": 2,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 701678,
       "name": "Hao-Yu  Lee",
       "team": "Detroit Tigers",
-      "projected_ud": 6.39,
+      "projected_ud": 6.14,
       "ud_line": null,
       "actual_ud": 3,
       "result_ud": null,
-      "projected_pp": 6.16,
+      "projected_pp": 5.91,
       "pp_line": null,
       "actual_pp": 3,
       "result_pp": null,
@@ -615,7 +639,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 690993,
@@ -639,17 +664,18 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 669360,
       "name": "Trei Cruz",
       "team": "Detroit Tigers",
-      "projected_ud": 3.25,
+      "projected_ud": 2.6,
       "ud_line": null,
       "actual_ud": 0,
       "result_ud": null,
-      "projected_pp": 3.02,
+      "projected_pp": 2.42,
       "pp_line": null,
       "actual_pp": 0,
       "result_pp": null,
@@ -663,7 +689,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 678246,
@@ -687,7 +714,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 545341,
@@ -711,7 +739,8 @@
         "rbi": 1,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 805367,
@@ -735,7 +764,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 695657,
@@ -759,7 +789,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 700337,
@@ -783,7 +814,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 678577,
@@ -807,17 +839,18 @@
         "rbi": 1,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 803011,
       "name": "Sam Antonacci",
       "team": "Chicago White Sox",
-      "projected_ud": 4.94,
+      "projected_ud": 4.74,
       "ud_line": null,
       "actual_ud": 11,
       "result_ud": null,
-      "projected_pp": 4.71,
+      "projected_pp": 4.52,
       "pp_line": null,
       "actual_pp": 10,
       "result_pp": null,
@@ -831,7 +864,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 682668,
@@ -855,7 +889,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 671976,
@@ -879,7 +914,8 @@
         "rbi": 1,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 700250,
@@ -903,7 +939,8 @@
         "rbi": 3,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 691176,
@@ -927,7 +964,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 641355,
@@ -951,7 +989,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 502671,
@@ -975,7 +1014,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 665862,
@@ -999,7 +1039,8 @@
         "rbi": 1,
         "runs": 2,
         "sb": 1
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 682987,
@@ -1023,7 +1064,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 683011,
@@ -1047,7 +1089,8 @@
         "rbi": 1,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 641857,
@@ -1071,7 +1114,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 641555,
@@ -1095,7 +1139,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 694362,
@@ -1119,7 +1164,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 668709,
@@ -1143,7 +1189,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 701398,
@@ -1167,7 +1214,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 663993,
@@ -1191,7 +1239,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 668715,
@@ -1215,7 +1264,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 553993,
@@ -1239,17 +1289,18 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 663886,
       "name": "Tyler Stephenson",
       "team": "Cincinnati Reds",
-      "projected_ud": 4.0,
+      "projected_ud": 3.2,
       "ud_line": null,
       "actual_ud": 0,
       "result_ud": null,
-      "projected_pp": 3.8,
+      "projected_pp": 3.04,
       "pp_line": null,
       "actual_pp": 0,
       "result_pp": null,
@@ -1263,17 +1314,18 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 680574,
       "name": "Matt McLain",
       "team": "Cincinnati Reds",
-      "projected_ud": 5.17,
+      "projected_ud": 2.76,
       "ud_line": null,
       "actual_ud": 0,
       "result_ud": null,
-      "projected_pp": 4.99,
+      "projected_pp": 2.66,
       "pp_line": null,
       "actual_pp": 0,
       "result_pp": null,
@@ -1287,7 +1339,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 695490,
@@ -1311,7 +1364,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 650490,
@@ -1335,7 +1389,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 666018,
@@ -1359,17 +1414,18 @@
         "rbi": 3,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 676356,
       "name": "Jonny DeLuca",
       "team": "Tampa Bay Rays",
-      "projected_ud": 4.58,
+      "projected_ud": 3.66,
       "ud_line": null,
       "actual_ud": 14,
       "result_ud": null,
-      "projected_pp": 4.39,
+      "projected_pp": 3.51,
       "pp_line": null,
       "actual_pp": 14,
       "result_pp": null,
@@ -1383,7 +1439,8 @@
         "rbi": 1,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 691406,
@@ -1407,7 +1464,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 656775,
@@ -1431,7 +1489,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 802415,
@@ -1455,7 +1514,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 680700,
@@ -1479,7 +1539,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 670764,
@@ -1503,7 +1564,8 @@
         "rbi": 1,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 676439,
@@ -1527,7 +1589,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 695578,
@@ -1551,7 +1614,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 671277,
@@ -1575,17 +1639,18 @@
         "rbi": 1,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 677588,
       "name": "Jos\u00e9 Tena",
       "team": "Washington Nationals",
-      "projected_ud": 4.33,
+      "projected_ud": 3.46,
       "ud_line": null,
       "actual_ud": 0,
       "result_ud": null,
-      "projected_pp": 4.24,
+      "projected_pp": 3.39,
       "pp_line": null,
       "actual_pp": 0,
       "result_pp": null,
@@ -1599,7 +1664,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 682928,
@@ -1623,17 +1689,18 @@
         "rbi": 1,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 660688,
       "name": "Keibert Ruiz",
       "team": "Washington Nationals",
-      "projected_ud": 5.84,
+      "projected_ud": 5.61,
       "ud_line": null,
       "actual_ud": 3,
       "result_ud": null,
-      "projected_pp": 5.56,
+      "projected_pp": 5.34,
       "pp_line": null,
       "actual_pp": 3,
       "result_pp": null,
@@ -1647,7 +1714,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 695734,
@@ -1671,7 +1739,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 683083,
@@ -1695,17 +1764,18 @@
         "rbi": 0,
         "runs": 0,
         "sb": 1
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 678391,
       "name": "Jorbit Vivas",
       "team": "Washington Nationals",
-      "projected_ud": 5.34,
+      "projected_ud": 5.13,
       "ud_line": null,
       "actual_ud": 3,
       "result_ud": null,
-      "projected_pp": 5.08,
+      "projected_pp": 4.88,
       "pp_line": null,
       "actual_pp": 3,
       "result_pp": null,
@@ -1719,7 +1789,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 696285,
@@ -1743,7 +1814,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 689414,
@@ -1767,7 +1839,8 @@
         "rbi": 1,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 683357,
@@ -1791,7 +1864,8 @@
         "rbi": 3,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 681715,
@@ -1815,7 +1889,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 669065,
@@ -1839,7 +1914,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 672640,
@@ -1863,7 +1939,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 1
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 805300,
@@ -1887,17 +1964,18 @@
         "rbi": 0,
         "runs": 0,
         "sb": 1
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 681393,
       "name": "Connor Norby",
       "team": "Miami Marlins",
-      "projected_ud": 5.34,
+      "projected_ud": 4.27,
       "ud_line": null,
       "actual_ud": 3,
       "result_ud": null,
-      "projected_pp": 4.35,
+      "projected_pp": 3.48,
       "pp_line": null,
       "actual_pp": 3,
       "result_pp": null,
@@ -1911,7 +1989,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 691788,
@@ -1935,17 +2014,18 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 691594,
       "name": "Javier Sanoja",
       "team": "Miami Marlins",
-      "projected_ud": 4.77,
+      "projected_ud": 4.58,
       "ud_line": null,
       "actual_ud": 13,
       "result_ud": null,
-      "projected_pp": 4.58,
+      "projected_pp": 4.4,
       "pp_line": null,
       "actual_pp": 12,
       "result_pp": null,
@@ -1959,7 +2039,8 @@
         "rbi": 0,
         "runs": 2,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 650333,
@@ -1983,7 +2064,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 805811,
@@ -2007,7 +2089,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 656305,
@@ -2031,7 +2114,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 646240,
@@ -2055,7 +2139,8 @@
         "rbi": 1,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 808982,
@@ -2079,7 +2164,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 1
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 642715,
@@ -2103,7 +2189,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 669477,
@@ -2127,7 +2214,8 @@
         "rbi": 1,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 687551,
@@ -2151,7 +2239,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 691740,
@@ -2175,7 +2264,8 @@
         "rbi": 1,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 686948,
@@ -2199,7 +2289,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 645277,
@@ -2223,7 +2314,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 621566,
@@ -2247,7 +2339,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 642086,
@@ -2271,7 +2364,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 643289,
@@ -2295,7 +2389,8 @@
         "rbi": 2,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 663586,
@@ -2319,7 +2414,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 573262,
@@ -2343,17 +2439,18 @@
         "rbi": 1,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 642201,
       "name": "Eli White",
       "team": "Atlanta Braves",
-      "projected_ud": 3.41,
+      "projected_ud": 2.73,
       "ud_line": null,
       "actual_ud": 0,
       "result_ud": null,
-      "projected_pp": 3.24,
+      "projected_pp": 2.59,
       "pp_line": null,
       "actual_pp": 0,
       "result_pp": null,
@@ -2367,17 +2464,18 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 622761,
       "name": "Jorge Mateo",
       "team": "Atlanta Braves",
-      "projected_ud": 3.43,
+      "projected_ud": 2.74,
       "ud_line": null,
       "actual_ud": 5,
       "result_ud": null,
-      "projected_pp": 3.26,
+      "projected_pp": 2.61,
       "pp_line": null,
       "actual_pp": 5,
       "result_pp": null,
@@ -2391,7 +2489,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 592885,
@@ -2415,7 +2514,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 694192,
@@ -2439,7 +2539,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 668930,
@@ -2463,7 +2564,8 @@
         "rbi": 2,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 661388,
@@ -2487,7 +2589,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 669003,
@@ -2511,7 +2614,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 683734,
@@ -2535,17 +2639,18 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 663368,
       "name": "Blake Perkins",
       "team": "Milwaukee Brewers",
-      "projected_ud": 4.47,
+      "projected_ud": 3.58,
       "ud_line": null,
       "actual_ud": 5,
       "result_ud": null,
-      "projected_pp": 4.28,
+      "projected_pp": 3.42,
       "pp_line": null,
       "actual_pp": 5,
       "result_pp": null,
@@ -2559,7 +2664,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 806198,
@@ -2583,7 +2689,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 1
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 687401,
@@ -2592,7 +2699,7 @@
       "projected_ud": 4.05,
       "ud_line": 4.05,
       "actual_ud": 3,
-      "result_ud": "push",
+      "result_ud": "loss",
       "projected_pp": 3.86,
       "pp_line": 3.5,
       "actual_pp": 3,
@@ -2607,7 +2714,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 592626,
@@ -2631,7 +2739,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 673962,
@@ -2655,7 +2764,8 @@
         "rbi": 0,
         "runs": 3,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 694671,
@@ -2679,7 +2789,8 @@
         "rbi": 2,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 607043,
@@ -2703,7 +2814,8 @@
         "rbi": 1,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 677649,
@@ -2727,7 +2839,8 @@
         "rbi": 1,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 696030,
@@ -2751,7 +2864,8 @@
         "rbi": 2,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 669394,
@@ -2775,17 +2889,18 @@
         "rbi": 2,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 670032,
       "name": "Nicky Lopez",
       "team": "Texas Rangers",
-      "projected_ud": 5.94,
+      "projected_ud": 5.7,
       "ud_line": null,
       "actual_ud": 3,
       "result_ud": null,
-      "projected_pp": 5.81,
+      "projected_pp": 5.58,
       "pp_line": null,
       "actual_pp": 3,
       "result_pp": null,
@@ -2799,7 +2914,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 553869,
@@ -2823,7 +2939,8 @@
         "rbi": 1,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 665487,
@@ -2847,7 +2964,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 669392,
@@ -2871,7 +2989,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 701538,
@@ -2895,7 +3014,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 592518,
@@ -2919,7 +3039,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 657757,
@@ -2943,7 +3064,8 @@
         "rbi": 2,
         "runs": 2,
         "sb": 1
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 593428,
@@ -2967,7 +3089,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 664034,
@@ -2991,7 +3114,8 @@
         "rbi": 5,
         "runs": 2,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 695238,
@@ -3015,7 +3139,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 660710,
@@ -3039,7 +3164,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 665161,
@@ -3063,7 +3189,8 @@
         "rbi": 3,
         "runs": 2,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 670541,
@@ -3087,7 +3214,8 @@
         "rbi": 0,
         "runs": 2,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 572233,
@@ -3111,7 +3239,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 670623,
@@ -3135,7 +3264,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 514888,
@@ -3159,17 +3289,18 @@
         "rbi": 4,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 673237,
       "name": "Yainer Diaz",
       "team": "Houston Astros",
-      "projected_ud": 5.08,
+      "projected_ud": 4.06,
       "ud_line": null,
       "actual_ud": 6,
       "result_ud": null,
-      "projected_pp": 4.73,
+      "projected_pp": 3.78,
       "pp_line": null,
       "actual_pp": 5,
       "result_pp": null,
@@ -3183,7 +3314,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 701358,
@@ -3207,7 +3339,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 694388,
@@ -3231,7 +3364,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 676694,
@@ -3255,7 +3389,8 @@
         "rbi": 1,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 683953,
@@ -3279,7 +3414,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 700932,
@@ -3303,7 +3439,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 677587,
@@ -3327,7 +3464,8 @@
         "rbi": 1,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 656555,
@@ -3351,7 +3489,8 @@
         "rbi": 2,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 682177,
@@ -3375,17 +3514,18 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 672356,
       "name": "Gabriel Arias",
       "team": "Cleveland Guardians",
-      "projected_ud": 7.85,
+      "projected_ud": 6.28,
       "ud_line": null,
       "actual_ud": 6,
       "result_ud": null,
-      "projected_pp": 7.46,
+      "projected_pp": 5.97,
       "pp_line": null,
       "actual_pp": 5,
       "result_pp": null,
@@ -3399,17 +3539,18 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 696135,
       "name": "Kahlil Watson",
       "team": "Cleveland Guardians",
-      "projected_ud": 3.29,
+      "projected_ud": 3.16,
       "ud_line": null,
       "actual_ud": 0,
       "result_ud": null,
-      "projected_pp": 3.06,
+      "projected_pp": 2.94,
       "pp_line": null,
       "actual_pp": 0,
       "result_pp": null,
@@ -3423,7 +3564,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 672275,
@@ -3447,7 +3589,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 680757,
@@ -3471,7 +3614,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 695600,
@@ -3495,7 +3639,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 657041,
@@ -3519,7 +3664,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 695506,
@@ -3543,7 +3689,8 @@
         "rbi": 2,
         "runs": 2,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 521692,
@@ -3567,7 +3714,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 686681,
@@ -3591,17 +3739,18 @@
         "rbi": 1,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 679845,
       "name": "Nick Loftin",
       "team": "Kansas City Royals",
-      "projected_ud": 5.15,
+      "projected_ud": 4.38,
       "ud_line": null,
       "actual_ud": 5,
       "result_ud": null,
-      "projected_pp": 4.72,
+      "projected_pp": 4.03,
       "pp_line": null,
       "actual_pp": 4,
       "result_pp": null,
@@ -3615,7 +3764,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 670231,
@@ -3639,7 +3789,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 686555,
@@ -3663,17 +3814,18 @@
         "rbi": 2,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 686475,
       "name": "Tyler Tolbert",
       "team": "Kansas City Royals",
-      "projected_ud": 4.45,
+      "projected_ud": 3.56,
       "ud_line": null,
       "actual_ud": 2,
       "result_ud": null,
-      "projected_pp": 4.47,
+      "projected_pp": 3.58,
       "pp_line": null,
       "actual_pp": 2,
       "result_pp": null,
@@ -3687,7 +3839,8 @@
         "rbi": 1,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 802139,
@@ -3711,7 +3864,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 671056,
@@ -3735,7 +3889,8 @@
         "rbi": 1,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 676475,
@@ -3759,7 +3914,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 691023,
@@ -3783,7 +3939,8 @@
         "rbi": 1,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 663457,
@@ -3807,7 +3964,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 691026,
@@ -3831,7 +3989,8 @@
         "rbi": 1,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 699625,
@@ -3855,7 +4014,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 691458,
@@ -3879,7 +4039,8 @@
         "rbi": 2,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 701675,
@@ -3903,7 +4064,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 664983,
@@ -3927,7 +4089,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 650489,
@@ -3951,7 +4114,8 @@
         "rbi": 1,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 696100,
@@ -3975,7 +4139,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 681198,
@@ -3999,7 +4164,8 @@
         "rbi": 1,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 671289,
@@ -4023,7 +4189,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 694249,
@@ -4047,17 +4214,18 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 694514,
       "name": "Sterlin Thompson",
       "team": "Colorado Rockies",
-      "projected_ud": 7.89,
+      "projected_ud": 6.31,
       "ud_line": null,
       "actual_ud": 3,
       "result_ud": null,
-      "projected_pp": 7.54,
+      "projected_pp": 6.03,
       "pp_line": null,
       "actual_pp": 2,
       "result_pp": null,
@@ -4071,7 +4239,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 678662,
@@ -4095,7 +4264,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 691720,
@@ -4119,7 +4289,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 687462,
@@ -4143,7 +4314,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 693304,
@@ -4167,17 +4339,18 @@
         "rbi": 1,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 656811,
       "name": "Ryan O'Hearn",
       "team": "Pittsburgh Pirates",
-      "projected_ud": 11.4,
+      "projected_ud": 9.12,
       "ud_line": null,
       "actual_ud": 0,
       "result_ud": null,
-      "projected_pp": 10.93,
+      "projected_pp": 8.74,
       "pp_line": null,
       "actual_pp": 0,
       "result_pp": null,
@@ -4191,7 +4364,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 542303,
@@ -4215,7 +4389,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 664040,
@@ -4239,17 +4414,18 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 682848,
       "name": "Endy Rodr\u00edguez",
       "team": "Pittsburgh Pirates",
-      "projected_ud": 9.36,
+      "projected_ud": 8.98,
       "ud_line": null,
       "actual_ud": 3,
       "result_ud": null,
-      "projected_pp": 8.88,
+      "projected_pp": 8.53,
       "pp_line": null,
       "actual_pp": 2,
       "result_pp": null,
@@ -4263,7 +4439,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 699013,
@@ -4287,7 +4464,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 669707,
@@ -4311,7 +4489,8 @@
         "rbi": 1,
         "runs": 1,
         "sb": 1
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 695257,
@@ -4335,7 +4514,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 680869,
@@ -4359,7 +4539,8 @@
         "rbi": 1,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 701762,
@@ -4383,7 +4564,8 @@
         "rbi": 1,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 669127,
@@ -4407,7 +4589,8 @@
         "rbi": 1,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 691016,
@@ -4431,7 +4614,8 @@
         "rbi": 0,
         "runs": 3,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 805779,
@@ -4455,7 +4639,8 @@
         "rbi": 3,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 666126,
@@ -4479,7 +4664,8 @@
         "rbi": 1,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 671732,
@@ -4503,7 +4689,8 @@
         "rbi": 1,
         "runs": 4,
         "sb": 1
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 703607,
@@ -4527,7 +4714,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 1
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 643446,
@@ -4551,7 +4739,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 687263,
@@ -4575,17 +4764,18 @@
         "rbi": 1,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 694384,
       "name": "Nolan Schanuel",
       "team": "Los Angeles Angels",
-      "projected_ud": 7.42,
+      "projected_ud": 6.1,
       "ud_line": null,
       "actual_ud": 19,
       "result_ud": null,
-      "projected_pp": 6.64,
+      "projected_pp": 5.63,
       "pp_line": null,
       "actual_pp": 18,
       "result_pp": null,
@@ -4599,7 +4789,8 @@
         "rbi": 1,
         "runs": 2,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 666176,
@@ -4623,7 +4814,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 672724,
@@ -4647,7 +4839,8 @@
         "rbi": 0,
         "runs": 2,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 695681,
@@ -4671,7 +4864,8 @@
         "rbi": 1,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 694203,
@@ -4695,7 +4889,8 @@
         "rbi": 2,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 681351,
@@ -4719,7 +4914,8 @@
         "rbi": 3,
         "runs": 2,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 685133,
@@ -4743,7 +4939,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 642350,
@@ -4767,7 +4964,8 @@
         "rbi": 3,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 606466,
@@ -4791,7 +4989,8 @@
         "rbi": 1,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 672695,
@@ -4815,7 +5014,8 @@
         "rbi": 0,
         "runs": 2,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 682998,
@@ -4839,7 +5039,8 @@
         "rbi": 4,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 672515,
@@ -4863,7 +5064,8 @@
         "rbi": 1,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 666971,
@@ -4887,7 +5089,8 @@
         "rbi": 1,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 571448,
@@ -4911,7 +5114,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 545121,
@@ -4935,7 +5139,8 @@
         "rbi": 2,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 691783,
@@ -4959,7 +5164,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 694410,
@@ -4983,7 +5189,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 663616,
@@ -5007,7 +5214,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 621439,
@@ -5031,7 +5239,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 665019,
@@ -5039,23 +5248,24 @@
       "team": "Minnesota Twins",
       "projected_ud": 6.37,
       "ud_line": 6.5,
-      "actual_ud": 3,
-      "result_ud": "win",
+      "actual_ud": 11,
+      "result_ud": "loss",
       "projected_pp": 6.11,
       "pp_line": 5.5,
-      "actual_pp": 3,
-      "result_pp": "loss",
+      "actual_pp": 10,
+      "result_pp": "win",
       "actual_line": {
         "singles": 1,
-        "doubles": 0,
+        "doubles": 1,
         "triples": 0,
         "hr": 0,
         "bb": 0,
         "hbp": 0,
-        "rbi": 0,
+        "rbi": 1,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 605137,
@@ -5079,7 +5289,8 @@
         "rbi": 1,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 668904,
@@ -5103,7 +5314,8 @@
         "rbi": 1,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 686797,
@@ -5127,7 +5339,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 605170,
@@ -5151,7 +5364,8 @@
         "rbi": 1,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 656484,
@@ -5175,7 +5389,8 @@
         "rbi": 1,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 807712,
@@ -5199,7 +5414,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 663656,
@@ -5223,7 +5439,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 681624,
@@ -5247,7 +5464,8 @@
         "rbi": 1,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 518692,
@@ -5271,7 +5489,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 605141,
@@ -5295,7 +5514,8 @@
         "rbi": 1,
         "runs": 2,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 571970,
@@ -5319,17 +5539,18 @@
         "rbi": 2,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 669242,
       "name": "Tommy Edman",
       "team": "Los Angeles Dodgers",
-      "projected_ud": 6.49,
+      "projected_ud": 5.19,
       "ud_line": null,
       "actual_ud": 12,
       "result_ud": null,
-      "projected_pp": 4.33,
+      "projected_pp": 3.46,
       "pp_line": null,
       "actual_pp": 11,
       "result_pp": null,
@@ -5343,7 +5564,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 669899,
@@ -5367,7 +5589,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 687221,
@@ -5391,7 +5614,8 @@
         "rbi": 1,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 690976,
@@ -5415,7 +5639,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 621493,
@@ -5439,7 +5664,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 683002,
@@ -5463,7 +5689,8 @@
         "rbi": 2,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 624413,
@@ -5487,7 +5714,8 @@
         "rbi": 1,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 694212,
@@ -5511,7 +5739,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 665750,
@@ -5535,7 +5764,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 681297,
@@ -5559,17 +5789,18 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 691723,
       "name": "Coby Mayo",
       "team": "Baltimore Orioles",
-      "projected_ud": 6.31,
+      "projected_ud": 4.66,
       "ud_line": null,
       "actual_ud": 5,
       "result_ud": null,
-      "projected_pp": 5.4,
+      "projected_pp": 4.51,
       "pp_line": null,
       "actual_pp": 5,
       "result_pp": null,
@@ -5583,7 +5814,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 702616,
@@ -5607,17 +5839,18 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 669236,
       "name": "Jeremiah Jackson",
       "team": "Baltimore Orioles",
-      "projected_ud": 6.85,
+      "projected_ud": 5.48,
       "ud_line": null,
       "actual_ud": 7,
       "result_ud": null,
-      "projected_pp": 6.65,
+      "projected_pp": 5.32,
       "pp_line": null,
       "actual_pp": 7,
       "result_pp": null,
@@ -5631,7 +5864,8 @@
         "rbi": 2,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 608701,
@@ -5655,7 +5889,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 663728,
@@ -5679,7 +5914,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 677594,
@@ -5703,7 +5939,8 @@
         "rbi": 2,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 647304,
@@ -5727,17 +5964,18 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 686527,
       "name": "Dominic Canzone",
       "team": "Seattle Mariners",
-      "projected_ud": 5.39,
+      "projected_ud": 5.18,
       "ud_line": null,
       "actual_ud": 0,
       "result_ud": null,
-      "projected_pp": 5.13,
+      "projected_pp": 4.93,
       "pp_line": null,
       "actual_pp": 0,
       "result_pp": null,
@@ -5751,7 +5989,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 702284,
@@ -5775,7 +6014,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 645302,
@@ -5799,17 +6039,18 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 806068,
       "name": "Colt Emerson",
       "team": "Seattle Mariners",
-      "projected_ud": 5.22,
+      "projected_ud": 5.01,
       "ud_line": null,
       "actual_ud": 0,
       "result_ud": null,
-      "projected_pp": 5.05,
+      "projected_pp": 4.85,
       "pp_line": null,
       "actual_pp": 0,
       "result_pp": null,
@@ -5823,17 +6064,18 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 642215,
       "name": "Weston Wilson",
       "team": "Seattle Mariners",
-      "projected_ud": 3.85,
+      "projected_ud": 3.08,
       "ud_line": null,
       "actual_ud": 0,
       "result_ud": null,
-      "projected_pp": 3.67,
+      "projected_pp": 2.94,
       "pp_line": null,
       "actual_pp": 0,
       "result_pp": null,
@@ -5847,7 +6089,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 681508,
@@ -5871,7 +6114,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 678882,
@@ -5895,7 +6139,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 677800,
@@ -5919,7 +6164,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 575929,
@@ -5943,7 +6189,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 680776,
@@ -5967,7 +6214,8 @@
         "rbi": 0,
         "runs": 1,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 702332,
@@ -5991,7 +6239,8 @@
         "rbi": 1,
         "runs": 3,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 691785,
@@ -6015,17 +6264,18 @@
         "rbi": 3,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 665966,
       "name": "Carlos Narv\u00e1ez",
       "team": "Boston Red Sox",
-      "projected_ud": 3.53,
+      "projected_ud": 2.82,
       "ud_line": null,
       "actual_ud": 2,
       "result_ud": null,
-      "projected_pp": 3.35,
+      "projected_pp": 2.68,
       "pp_line": null,
       "actual_pp": 2,
       "result_pp": null,
@@ -6039,17 +6289,18 @@
         "rbi": 1,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     },
     {
       "player_id": 655316,
       "name": "Andruw Monasterio",
       "team": "Boston Red Sox",
-      "projected_ud": 3.55,
+      "projected_ud": 2.84,
       "ud_line": null,
       "actual_ud": 3,
       "result_ud": null,
-      "projected_pp": 3.37,
+      "projected_pp": 2.7,
       "pp_line": null,
       "actual_pp": 3,
       "result_pp": null,
@@ -6063,7 +6314,8 @@
         "rbi": 0,
         "runs": 0,
         "sb": 0
-      }
+      },
+      "game_time_pt": null
     }
   ]
 }

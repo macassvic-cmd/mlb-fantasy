@@ -39,14 +39,17 @@ def classify(projected, actual):
 
 def call_direction(projected, line):
     """OVER/UNDER call implied by our projection relative to the posted
-    UD/PP line. None if there's no line to call against."""
+    UD/PP line. None if there's no line to call against.
+
+    When projected == line (exact tie), the call is OVER — the projection
+    agrees with the market's number and the natural side is that the player
+    reaches it. The only true push is when actual == line (graded in
+    grade_vs_line), not when our projection happens to match the line."""
     if line is None:
         return None
-    if projected > line:
+    if projected >= line:
         return "over"
-    if projected < line:
-        return "under"
-    return "push"
+    return "under"
 
 
 def grade_vs_line(call, actual, line):
@@ -131,6 +134,7 @@ def track_date(date_str):
 
     rows = [report.build_row(p) for p in raw_players]
     report.recalibrate_points(rows)
+    report.apply_venue_penalty(rows)
 
     # Anchor to the day's posted UD/PP lines *before* grading - this is the
     # same projection the live dashboard showed that day. Grading the

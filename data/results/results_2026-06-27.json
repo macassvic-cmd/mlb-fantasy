@@ -2,11 +2,11 @@
   "date": "2026-06-27",
   "summary": {
     "ud": {
-      "total": 200,
+      "total": 201,
       "win": 97,
-      "loss": 103,
-      "push": 1,
-      "hit_rate": 48.5
+      "loss": 104,
+      "push": 0,
+      "hit_rate": 48.3
     },
     "pp": {
       "total": 195,
@@ -4099,7 +4099,7 @@
       "projected_ud": 9.5,
       "ud_line": 9.5,
       "actual_ud": 3,
-      "result_ud": "push",
+      "result_ud": "loss",
       "projected_pp": 8.0,
       "pp_line": 6.0,
       "actual_pp": 2,

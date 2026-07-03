@@ -2,18 +2,18 @@
   "date": "2026-06-30",
   "summary": {
     "ud": {
-      "total": 201,
-      "win": 102,
-      "loss": 99,
-      "push": 2,
+      "total": 203,
+      "win": 103,
+      "loss": 100,
+      "push": 0,
       "hit_rate": 50.7
     },
     "pp": {
-      "total": 198,
-      "win": 114,
+      "total": 199,
+      "win": 115,
       "loss": 84,
-      "push": 5,
-      "hit_rate": 57.6
+      "push": 4,
+      "hit_rate": 57.8
     }
   },
   "players": [
@@ -5278,7 +5278,7 @@
       "projected_pp": 5.36,
       "pp_line": 5.36,
       "actual_pp": 16,
-      "result_pp": "push",
+      "result_pp": "win",
       "actual_line": {
         "singles": 2,
         "doubles": 0,
@@ -5299,7 +5299,7 @@
       "projected_ud": 5.5,
       "ud_line": 5.5,
       "actual_ud": 24,
-      "result_ud": "push",
+      "result_ud": "win",
       "projected_pp": 5.08,
       "pp_line": 4.54,
       "actual_pp": 23,
@@ -5999,7 +5999,7 @@
       "projected_ud": 9.5,
       "ud_line": 9.5,
       "actual_ud": 6,
-      "result_ud": "push",
+      "result_ud": "loss",
       "projected_pp": 9.19,
       "pp_line": 8.5,
       "actual_pp": 5,

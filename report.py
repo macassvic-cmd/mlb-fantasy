@@ -311,8 +311,12 @@ def recalibrate_points(rows):
 # ---------------------------------------------------------------------------
 
 MARKET_EDGE_CLAMP = 2.0
-VALUE_PLAY_EDGE = 1.5  # must stay below MARKET_EDGE_CLAMP or no edge can ever qualify
-assert VALUE_PLAY_EDGE < MARKET_EDGE_CLAMP, "Value Plays threshold must be below the market edge clamp"
+VALUE_PLAY_OVER_EDGE = 1.5   # OVER value plays: keep at 1.5 pts (1-2 pt OVERs win 55.5%)
+VALUE_PLAY_UNDER_EDGE = 2.0  # UNDER value plays: require max clamp (2.0 pts) — UNDERs at 1.5-1.99 barely break even
+# Legacy alias used in save_value_plays description string
+VALUE_PLAY_EDGE = VALUE_PLAY_OVER_EDGE
+assert VALUE_PLAY_OVER_EDGE < MARKET_EDGE_CLAMP, "OVER threshold must be below the market edge clamp"
+assert VALUE_PLAY_UNDER_EDGE <= MARKET_EDGE_CLAMP, "UNDER threshold must not exceed the market edge clamp"
 
 # Players without a posted UD/PP line are systematically more volatile than
 # the market suggests — UD withholds lines when lineup status is uncertain.
@@ -326,6 +330,22 @@ NO_LINE_PENALTY = 0.20
 # getaway-day morning game is the highest-risk profile we've identified.
 # Combined total: ×0.80 × ×0.75 = ×0.60 (40% reduction from base).
 GETAWAY_DAY_PENALTY = 0.25
+
+# Venues where the model's raw projections have systematically over-estimated
+# performance relative to the market line (based on 18 dates, ~100 plays each).
+# Applied as a fractional reduction to ud_pts/pp_pts BEFORE market anchoring,
+# compressing the edge at those parks so the model calls fewer high-confidence
+# OVERs where it has historically been wrong.
+#   Oracle Park:   40.4% win rate (n=99),  −11.8% vs 52.2% baseline
+#   Citi Field:    46.8% win rate (n=96),  −5.4%
+#   Comerica Park: 48.2% win rate (n=110), −4.1%
+#   PNC Park:      48.0% win rate (n=102), −4.2%
+VENUE_PROJECTION_PENALTIES = {
+    "Oracle Park":    0.07,
+    "Citi Field":     0.04,
+    "Comerica Park":  0.03,
+    "PNC Park":       0.03,
+}
 
 
 def apply_market_anchor(rows, market_lines, market_corrections=None):
@@ -495,6 +515,17 @@ def apply_no_line_penalty(rows, anchored_ids=None):
             row["getaway_day_risk"] = False
 
 
+def apply_venue_penalty(rows):
+    """Reduce raw projections for venues where the model has historically
+    over-estimated performance vs. posted market lines. Applied BEFORE
+    market anchoring so the adjustment compresses the edge (reducing OVER
+    confidence or flipping marginal calls to UNDER) rather than shifting the
+    displayed projection post-anchor."""
+    for row in rows:
+        penalty = VENUE_PROJECTION_PENALTIES.get(row.get("venue", ""))
+        if penalty:
+            row["ud_pts"] = round(row["ud_pts"] * (1 - penalty), 2)
+            row["pp_pts"] = round(row["pp_pts"] * (1 - penalty), 2)
 
 
 def fmt_value(val, kind):
@@ -647,11 +678,13 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     cards = [build_card(row) for row in _by_game_time(rows[:25])]
     cards_js = json.dumps(cards)
 
-    # --- Value Plays: model vs. market disagreement of VALUE_PLAY_EDGE+ pts -
-    # Only players with a posted UD/PP line count - no line means no market
-    # to disagree with. Capped at top 4 OVER + top 4 UNDER by edge size.
-    over_rows = [r for r in rows if r.get("market_anchored") and (r.get("edge") or 0) >= VALUE_PLAY_EDGE]
-    under_rows = [r for r in rows if r.get("market_anchored") and (r.get("edge") or 0) <= -VALUE_PLAY_EDGE]
+    # --- Value Plays: model vs. market disagreement above threshold ---------
+    # Asymmetric thresholds: OVERs at ≥1.5 pts (1-2 pt OVERs win 55.5%),
+    # UNDERs at ≥2.0 pts (max clamp conviction — marginal UNDERs barely break
+    # even vs. the 53.2% win rate at max UNDER clamp).
+    # Only players with a posted UD/PP line count. Capped at top 4 each.
+    over_rows = [r for r in rows if r.get("market_anchored") and (r.get("edge") or 0) >= VALUE_PLAY_OVER_EDGE]
+    under_rows = [r for r in rows if r.get("market_anchored") and (r.get("edge") or 0) <= -VALUE_PLAY_UNDER_EDGE]
     over_rows.sort(key=lambda r: r["edge"], reverse=True)
     under_rows.sort(key=lambda r: r["edge"])
     value_rows = over_rows[:4] + under_rows[:4]
@@ -890,7 +923,7 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
 
 <div class="value-plays">
   <h2>🎯 Value Plays</h2>
-  <div class="vp-sub">Top 4 OVER + top 4 UNDER calls where our model disagrees with the posted UD/PP line by 1.5+ pts &mdash; highest conviction plays.</div>
+  <div class="vp-sub">Top 4 OVER calls (model disagrees by 1.5+ pts) + top 4 UNDER calls (2.0+ pts required &mdash; UNDERs need higher conviction) &mdash; highest conviction plays.</div>
   <div class="card-grid" id="valueGrid"></div>
 </div>
 
@@ -1458,6 +1491,7 @@ def prepare_dashboard_context(date_arg=None):
 
     rows = [build_row(p) for p in players]
     recalibrate_points(rows)
+    apply_venue_penalty(rows)
 
     market_lines = get_market_lines(date_str)
     market_corrections = (results_data or {}).get("market_corrections", {})
