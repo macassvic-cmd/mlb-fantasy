@@ -311,11 +311,19 @@ def recalibrate_points(rows):
 # ---------------------------------------------------------------------------
 
 MARKET_EDGE_CLAMP = 2.0
-VALUE_PLAY_OVER_EDGE = 1.5   # OVER value plays: keep at 1.5 pts (1-2 pt OVERs win 55.5%)
-VALUE_PLAY_UNDER_EDGE = 2.0  # UNDER value plays: require max clamp (2.0 pts) — UNDERs at 1.5-1.99 barely break even
-# Legacy alias used in save_value_plays description string
-VALUE_PLAY_EDGE = VALUE_PLAY_OVER_EDGE
-assert VALUE_PLAY_OVER_EDGE < MARKET_EDGE_CLAMP, "OVER threshold must be below the market edge clamp"
+# Calibrated from 2940 graded plays (22 dates):
+#   OVER  1.0-1.5 pt: 56.8% win (+4.7% ROI) — the single best OVER bucket
+#   OVER  1.5-2.0 pt: 52.5% win (+0.4% ROI) — surprisingly weak; raises the bar
+#   UNDER 1.5-2.0 pt: 59.3% win (+7.3% ROI) — the single best UNDER bucket
+#   UNDER 2.0+  pt:   53.3% win (+1.3% ROI) — max clamp is good but not best
+#
+# Lowering OVER threshold to 1.0 captures the 56.8% bucket without raising noise
+# (0.5-1.0 pt OVERs still lose at 49.2% but those won't displace top-edge plays).
+# UNDER stays at 1.5 — the 1.5-2.0 range is the sweet spot, not 2.0+.
+VALUE_PLAY_OVER_EDGE  = 1.0   # OVER  value plays: 1.0 pt minimum (1.0-1.5 wins 56.8%)
+VALUE_PLAY_UNDER_EDGE = 1.5   # UNDER value plays: 1.5 pt minimum (1.5-2.0 wins 59.3%)
+VALUE_PLAY_EDGE = VALUE_PLAY_OVER_EDGE  # legacy alias
+assert VALUE_PLAY_OVER_EDGE  < MARKET_EDGE_CLAMP, "OVER threshold must be below the market edge clamp"
 assert VALUE_PLAY_UNDER_EDGE <= MARKET_EDGE_CLAMP, "UNDER threshold must not exceed the market edge clamp"
 
 # Players without a posted UD/PP line are systematically more volatile than
@@ -332,19 +340,25 @@ NO_LINE_PENALTY = 0.20
 GETAWAY_DAY_PENALTY = 0.25
 
 # Venues where the model's raw projections have systematically over-estimated
-# performance relative to the market line (based on 18 dates, ~100 plays each).
+# performance relative to the market line (based on 22 dates, ~80-145 plays each).
 # Applied as a fractional reduction to ud_pts/pp_pts BEFORE market anchoring,
 # compressing the edge at those parks so the model calls fewer high-confidence
 # OVERs where it has historically been wrong.
-#   Oracle Park:   40.4% win rate (n=99),  −11.8% vs 52.2% baseline
-#   Citi Field:    46.8% win rate (n=96),  −5.4%
-#   Comerica Park: 48.2% win rate (n=110), −4.1%
-#   PNC Park:      48.0% win rate (n=102), −4.2%
+#   Oracle Park:    40.0% win rate (n=100), -12.1% vs 52.1% baseline
+#   Citi Field:     46.9% win rate (n=96),  -5.2%
+#   Chase Field:    47.4% win rate (n=95),  -4.7%  (new)
+#   PNC Park:       48.0% win rate (n=102), -4.0%
+#   Comerica Park:  48.2% win rate (n=110), -3.9%
+#   Rogers Centre:  48.3% win rate (n=145), -3.8%  (new)
+#   Fenway Park:    48.4% win rate (n=93),  -3.7%  (new)
 VENUE_PROJECTION_PENALTIES = {
     "Oracle Park":    0.07,
     "Citi Field":     0.04,
-    "Comerica Park":  0.03,
+    "Chase Field":    0.03,
     "PNC Park":       0.03,
+    "Comerica Park":  0.03,
+    "Rogers Centre":  0.03,
+    "Fenway Park":    0.03,
 }
 
 
@@ -923,7 +937,7 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
 
 <div class="value-plays">
   <h2>🎯 Value Plays</h2>
-  <div class="vp-sub">Top 4 OVER calls (model disagrees by 1.5+ pts) + top 4 UNDER calls (2.0+ pts required &mdash; UNDERs need higher conviction) &mdash; highest conviction plays.</div>
+  <div class="vp-sub">Top 4 OVER calls (model disagrees by 1.0+ pts) + top 4 UNDER calls (1.5+ pts) &mdash; calibrated thresholds based on 2940 graded plays.</div>
   <div class="card-grid" id="valueGrid"></div>
 </div>
 
