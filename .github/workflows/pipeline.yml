@@ -1,15 +1,21 @@
 name: MLB Fantasy Pipeline
 
 # All cron times are UTC. The MLB season runs in PDT (UTC-7) Apr–Oct.
-#   9:00 AM PDT  = 16:00 UTC  →  cron '0 16 * * *'
-#   2:00 PM PDT  = 21:00 UTC  →  cron '0 21 * * *'
-#  11:00 PM PDT  = 06:00 UTC (next day) → cron '0 6 * * *'
+# GitHub Actions crons are consistently delayed 3-7 hours under load.
+# Crons are scheduled 2-3 hours BEFORE the target delivery time so data
+# reliably arrives by the target even with observed maximum delays.
+#
+#  Target 9:00 AM PDT  → schedule 6:30 AM PDT = 13:30 UTC  cron '30 13 * * *'
+#  Target 2:00 PM PDT  → schedule 11:00 AM PDT = 18:00 UTC  cron '0 18 * * *'
+#  Target 11:00 PM PDT → schedule 11:00 PM PDT = 06:00 UTC  cron '0 6 * * *'
+#                         backup   6:00 AM PDT  = 13:00 UTC  cron '0 13 * * *'
+#
 # During PST (UTC-8, Nov–Mar off-season) each run fires 1 hr earlier PT.
 
 on:
   schedule:
-    - cron: '0 16 * * *'   # Morning pipeline   —  9:00 AM PDT
-    - cron: '0 21 * * *'   # Afternoon pipeline —  2:00 PM PDT
+    - cron: '30 13 * * *'  # Morning pipeline   — target  9:00 AM PDT, scheduled 6:30 AM PDT
+    - cron: '0 18 * * *'   # Afternoon pipeline — target  2:00 PM PDT, scheduled 11:00 AM PDT
     - cron: '0 6 * * *'    # Nightly tracker    — 11:00 PM PDT (primary)
     - cron: '0 13 * * *'   # Backup tracker     —  6:00 AM PDT (catches delayed/missed primary)
   workflow_dispatch:
@@ -54,26 +60,26 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      # ── Pipeline steps (9 AM + 2 PM scheduled runs, or manual 'pipeline') ──
+      # ── Pipeline steps (target 9 AM + 2 PM PDT, scheduled 2-3h early for delay buffer) ──
 
       - name: Pipeline — fetch data
         if: >-
-          github.event.schedule == '0 16 * * *' ||
-          github.event.schedule == '0 21 * * *' ||
+          github.event.schedule == '30 13 * * *' ||
+          github.event.schedule == '0 18 * * *' ||
           github.event.inputs.run_type == 'pipeline'
         run: python pipeline.py
 
       - name: Pipeline — generate projections
         if: >-
-          github.event.schedule == '0 16 * * *' ||
-          github.event.schedule == '0 21 * * *' ||
+          github.event.schedule == '30 13 * * *' ||
+          github.event.schedule == '0 18 * * *' ||
           github.event.inputs.run_type == 'pipeline'
         run: python projections.py
 
       - name: Pipeline — build dashboard
         if: >-
-          github.event.schedule == '0 16 * * *' ||
-          github.event.schedule == '0 21 * * *' ||
+          github.event.schedule == '30 13 * * *' ||
+          github.event.schedule == '0 18 * * *' ||
           github.event.inputs.run_type == 'pipeline'
         run: python report.py
 
