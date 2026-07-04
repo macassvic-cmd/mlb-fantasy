@@ -432,12 +432,21 @@ def main():
     if len(sys.argv) > 1:
         date_str = sys.argv[1]
     else:
-        # The cron fires at 06:00 UTC = 11 PM PDT (UTC-7). On the GitHub
-        # Actions runner datetime.now() is UTC, so "now" is already the next
-        # calendar day. Subtracting 7 h converts UTC → PDT and gives the
-        # correct game date regardless of whether the cron fires on time or
-        # runs a few hours late due to GitHub queue delays.
-        date_str = (datetime.now(timezone.utc) - timedelta(hours=7)).strftime("%Y-%m-%d")
+        # The cron fires at 06:00 UTC = 11 PM PDT (UTC-7). GitHub Actions
+        # runners can delay crons by up to 6+ hours under load — observed
+        # pattern is ~12:30 UTC (6.5 h late). Subtracting only 7 h would
+        # give the *current* calendar day in PDT (5:30 AM PDT at 12:30 UTC),
+        # causing the tracker to look for games that haven't been played yet.
+        #
+        # Subtracting 13 h instead anchors to the correct game date across
+        # the full observed delay window:
+        #   On time  (06:00 UTC): 06:00 - 13h = 17:00 PDT previous day ✓
+        #   6.5h late (12:30 UTC): 12:30 - 13h = 23:30 PDT previous day ✓
+        #   Up to 13h late (19:00 UTC): 19:00 - 13h = 06:00 PDT same day ✓
+        # Beyond 13 h of delay the date would be wrong, but that has never
+        # been observed — the pipeline's 2pm cron (21:00 UTC) would fire
+        # first and the tracker skips dates with no new game data.
+        date_str = (datetime.now(timezone.utc) - timedelta(hours=13)).strftime("%Y-%m-%d")
 
     print(f"=== Tracking results for {date_str} ===")
     track_date(date_str)

@@ -1587,15 +1587,35 @@
     },
     "2026-07-03": {
       "summary": {
-        "total": 2,
-        "correct": 0,
-        "accuracy": 0.0,
-        "over_total": 2,
-        "over_correct": 0,
-        "under_total": 0,
-        "under_correct": 0
+        "total": 8,
+        "correct": 2,
+        "accuracy": 25.0,
+        "over_total": 4,
+        "over_correct": 1,
+        "under_total": 4,
+        "under_correct": 1
       },
       "plays": [
+        {
+          "player_id": 624413,
+          "name": "Pete Alonso",
+          "team": "Baltimore Orioles",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 3,
+          "correct": false
+        },
+        {
+          "player_id": 672640,
+          "name": "Otto Lopez",
+          "team": "Miami Marlins",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 12,
+          "correct": true
+        },
         {
           "player_id": 673548,
           "name": "Seiya Suzuki",
@@ -1613,8 +1633,48 @@
           "call": "over",
           "edge": 2.0,
           "ud_line": 6.5,
-          "actual_ud": 3,
+          "actual_ud": 6,
           "correct": false
+        },
+        {
+          "player_id": 700250,
+          "name": "Ben Rice",
+          "team": "New York Yankees",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 9.5,
+          "actual_ud": 19,
+          "correct": false
+        },
+        {
+          "player_id": 665742,
+          "name": "Juan Soto",
+          "team": "New York Mets",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 9.5,
+          "actual_ud": 22,
+          "correct": false
+        },
+        {
+          "player_id": 701762,
+          "name": "Nick Kurtz",
+          "team": "Athletics",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 9.5,
+          "actual_ud": 22,
+          "correct": false
+        },
+        {
+          "player_id": 660271,
+          "name": "Shohei Ohtani",
+          "team": "Los Angeles Dodgers",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 9.5,
+          "actual_ud": 0,
+          "correct": true
         }
       ]
     }
