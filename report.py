@@ -361,6 +361,16 @@ VENUE_PROJECTION_PENALTIES = {
     "Fenway Park":    0.03,
 }
 
+# Teams with systematic model underperformance not fully explained by their home
+# venue (applies to ALL games, home and away). Giants are already penalized at
+# Oracle Park; only teams without a matching home-venue penalty are listed here.
+#   Milwaukee Brewers:    41.7% win rate (n=103), -10.3% vs 52.1% baseline
+#   Washington Nationals: 45.9% win rate (n=111), -6.1%
+TEAM_PROJECTION_PENALTIES = {
+    "Milwaukee Brewers":    0.05,
+    "Washington Nationals": 0.03,
+}
+
 
 def apply_market_anchor(rows, market_lines, market_corrections=None):
     """Anchor row['ud_pts'] / row['pp_pts'] to today's posted UD/PP lines
@@ -530,16 +540,19 @@ def apply_no_line_penalty(rows, anchored_ids=None):
 
 
 def apply_venue_penalty(rows):
-    """Reduce raw projections for venues where the model has historically
-    over-estimated performance vs. posted market lines. Applied BEFORE
-    market anchoring so the adjustment compresses the edge (reducing OVER
-    confidence or flipping marginal calls to UNDER) rather than shifting the
-    displayed projection post-anchor."""
+    """Reduce raw projections for venues and teams where the model has
+    historically over-estimated performance vs. posted market lines.
+    Applied BEFORE market anchoring so the adjustment compresses the edge
+    (reducing OVER confidence or flipping marginal calls to UNDER) rather
+    than shifting the displayed projection post-anchor."""
     for row in rows:
-        penalty = VENUE_PROJECTION_PENALTIES.get(row.get("venue", ""))
-        if penalty:
-            row["ud_pts"] = round(row["ud_pts"] * (1 - penalty), 2)
-            row["pp_pts"] = round(row["pp_pts"] * (1 - penalty), 2)
+        venue_pen = VENUE_PROJECTION_PENALTIES.get(row.get("venue", ""), 0)
+        team_pen  = TEAM_PROJECTION_PENALTIES.get(row.get("team", ""), 0)
+        # Stack penalties multiplicatively so neither alone is outsized
+        combined = 1 - (1 - venue_pen) * (1 - team_pen)
+        if combined:
+            row["ud_pts"] = round(row["ud_pts"] * (1 - combined), 2)
+            row["pp_pts"] = round(row["pp_pts"] * (1 - combined), 2)
 
 
 def fmt_value(val, kind):
@@ -693,12 +706,20 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     cards_js = json.dumps(cards)
 
     # --- Value Plays: model vs. market disagreement above threshold ---------
-    # Asymmetric thresholds: OVERs at ≥1.5 pts (1-2 pt OVERs win 55.5%),
-    # UNDERs at ≥2.0 pts (max clamp conviction — marginal UNDERs barely break
-    # even vs. the 53.2% win rate at max UNDER clamp).
+    # Calibrated thresholds from 2940-play analysis (22 dates):
+    #   OVERs  >= 1.0 pt: 56.8% win on the 1.0-1.5 bucket (+4.7% ROI)
+    #   UNDERs >= 1.5 pt: 59.3% win on the 1.5-2.0 bucket (+7.3% ROI)
+    # UNDER suppression: opp SP ERA 4.5-5.5 = 32.9% win rate (-19.2% ROI, n=70).
+    # Bad pitchers give up points — UNDER calls vs their opponents are unsound.
     # Only players with a posted UD/PP line count. Capped at top 4 each.
+    def _bad_era_for_under(row):
+        era = row.get("opp_era")
+        return era is not None and 4.5 <= era < 5.5
+
     over_rows = [r for r in rows if r.get("market_anchored") and (r.get("edge") or 0) >= VALUE_PLAY_OVER_EDGE]
-    under_rows = [r for r in rows if r.get("market_anchored") and (r.get("edge") or 0) <= -VALUE_PLAY_UNDER_EDGE]
+    under_rows = [r for r in rows if r.get("market_anchored")
+                  and (r.get("edge") or 0) <= -VALUE_PLAY_UNDER_EDGE
+                  and not _bad_era_for_under(r)]
     over_rows.sort(key=lambda r: r["edge"], reverse=True)
     under_rows.sort(key=lambda r: r["edge"])
     value_rows = over_rows[:4] + under_rows[:4]
