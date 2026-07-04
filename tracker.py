@@ -9,6 +9,7 @@ Usage:
   python tracker.py 2026-06-10   # grades a specific date
 """
 
+import glob
 import json
 import os
 import sys
@@ -428,25 +429,59 @@ def track_top25(date_str, rows, results_by_pid):
     print(f"Updated -> {TOP25_RESULTS_PATH}")
 
 
+def find_ungraded_date():
+    """Return the most recent past date that has projection data but no graded
+    results yet, using the UTC calendar date as the 'today' boundary.
+
+    This is immune to GitHub Actions cron delay: instead of deriving the target
+    date from the current clock (fragile — breaks if the cron fires 7+ hours
+    late), we scan what's actually ungraded. Games finish by ~5 AM UTC, so any
+    date strictly before today's UTC date is guaranteed to have complete results.
+
+    Returns None if the most recent past date is already fully graded (> 0
+    players with results), which means nothing needs to be done.
+    """
+    today_utc = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+    # Collect only top-level dated projection files (ignore subdirectories)
+    data_files = sorted(
+        [f for f in glob.glob(os.path.join("data", "2026-*.json"))
+         if os.path.isfile(f)],
+        reverse=True,
+    )
+
+    for fpath in data_files:
+        date = os.path.basename(fpath).replace(".json", "")
+
+        # Only grade completed days — any date still in UTC today has games
+        # that may not have finished yet
+        if date >= today_utc:
+            continue
+
+        results_path = os.path.join(RESULTS_DIR, f"results_{date}.json")
+        if os.path.exists(results_path):
+            try:
+                with open(results_path, encoding="utf-8") as f:
+                    rdata = json.load(f)
+                if len(rdata.get("players", [])) > 0:
+                    # Most recent past date is already graded — nothing to do
+                    return None
+            except Exception:
+                pass  # treat a corrupt file as ungraded
+
+        return date  # this is the date that needs grading
+
+    return None
+
+
 def main():
     if len(sys.argv) > 1:
         date_str = sys.argv[1]
     else:
-        # The cron fires at 06:00 UTC = 11 PM PDT (UTC-7). GitHub Actions
-        # runners can delay crons by up to 6+ hours under load — observed
-        # pattern is ~12:30 UTC (6.5 h late). Subtracting only 7 h would
-        # give the *current* calendar day in PDT (5:30 AM PDT at 12:30 UTC),
-        # causing the tracker to look for games that haven't been played yet.
-        #
-        # Subtracting 13 h instead anchors to the correct game date across
-        # the full observed delay window:
-        #   On time  (06:00 UTC): 06:00 - 13h = 17:00 PDT previous day ✓
-        #   6.5h late (12:30 UTC): 12:30 - 13h = 23:30 PDT previous day ✓
-        #   Up to 13h late (19:00 UTC): 19:00 - 13h = 06:00 PDT same day ✓
-        # Beyond 13 h of delay the date would be wrong, but that has never
-        # been observed — the pipeline's 2pm cron (21:00 UTC) would fire
-        # first and the tracker skips dates with no new game data.
-        date_str = (datetime.now(timezone.utc) - timedelta(hours=13)).strftime("%Y-%m-%d")
+        date_str = find_ungraded_date()
+        if date_str is None:
+            print("All recent dates already graded — nothing to do.")
+            return
 
     print(f"=== Tracking results for {date_str} ===")
     track_date(date_str)

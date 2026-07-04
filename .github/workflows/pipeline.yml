@@ -8,9 +8,10 @@ name: MLB Fantasy Pipeline
 
 on:
   schedule:
-    - cron: '0 16 * * *'   # Morning pipeline  — 9:00 AM PDT
-    - cron: '0 21 * * *'   # Afternoon pipeline — 2:00 PM PDT
-    - cron: '0 6 * * *'    # Nightly tracker    — 11:00 PM PDT
+    - cron: '0 16 * * *'   # Morning pipeline   —  9:00 AM PDT
+    - cron: '0 21 * * *'   # Afternoon pipeline —  2:00 PM PDT
+    - cron: '0 6 * * *'    # Nightly tracker    — 11:00 PM PDT (primary)
+    - cron: '0 13 * * *'   # Backup tracker     —  6:00 AM PDT (catches delayed/missed primary)
   workflow_dispatch:
     inputs:
       run_type:
@@ -81,6 +82,7 @@ jobs:
       - name: Tracker — grade today's results
         if: >-
           github.event.schedule == '0 6 * * *' ||
+          github.event.schedule == '0 13 * * *' ||
           github.event.inputs.run_type == 'tracker'
         run: python tracker.py
 
