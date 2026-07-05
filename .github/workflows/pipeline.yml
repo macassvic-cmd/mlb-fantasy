@@ -104,6 +104,10 @@ jobs:
             echo "Nothing changed — no commit needed."
           else
             git commit -m "Pipeline run $(date -u +'%Y-%m-%d %H:%M UTC')"
-            git pull --rebase origin main
+            git pull --rebase origin main || (
+              git checkout --theirs output/dashboard.html &&
+              git add output/dashboard.html &&
+              git rebase --continue
+            )
             git push
           fi
