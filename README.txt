@@ -1,120 +1,110 @@
 =====================================================================
-  MLB FANTASY BASEBALL DATA PIPELINE — BEGINNER GUIDE
+  MLB FANTASY PROJECTIONS - SYSTEM GUIDE
 =====================================================================
 
-WHAT THIS DOES
+YOUR DASHBOARD
 --------------
-Every day before MLB games start, run this pipeline and it will:
-  1. Pull today's confirmed lineups from the MLB Stats API
-  2. Cross-check them with RotoWire
-  3. Grab each batter's stats from Baseball Savant (Statcast) and FanGraphs
-  4. Get weather forecasts for each stadium
-  5. Save everything to a JSON file in the "data" folder
-  6. Print a ranked leaderboard for both Underdog and PrizePicks
+https://macassvic-cmd.github.io/mlb-fantasy/
 
-FIRST-TIME SETUP
-----------------
-1. Make sure Python 3.9+ is installed.
-   Download from https://www.python.org/downloads/ if needed.
+Bookmark this on your phone. It updates automatically (see schedule
+below) and shows:
+  - Value Plays (top OVER/UNDER calls vs. UD/PP market lines)
+  - Top 25 projections
+  - Full leaderboard
+  - Results (last 30 days hit rate)
+  - Player History (projected vs. actual, updated daily)
+  - Top 25 Results / running record
+  - Backtest summary
 
-2. Open a Command Prompt in this folder (Shift+Right-click → Open PowerShell/CMD here)
+A banner at the top of the page tells you if the data is fresh
+(green, "Today's data...") or stale (red, "pipeline may not have run
+today"). The header also shows "Last Updated" with a green Fresh /
+red stale warning based on a 4-hour threshold.
 
-3. Install all required packages by running:
-      pip install -r requirements.txt
+WHAT RUNS AUTOMATICALLY
+------------------------
+Three Windows Scheduled Tasks run on this PC every day:
 
-4. (Optional but recommended) Get a free OpenWeatherMap API key:
-   - Go to https://openweathermap.org/api and sign up for free
-   - Copy your API key
-   - Open the ".env" file in this folder with Notepad
-   - Replace "your_key_here" with your actual key
-   - Save the file
-   Without this key, weather data will show as N/A (everything else still works).
+  1. "MLB Fantasy Early"   - 9:00 AM Pacific  -> run_early.bat
+     Runs the pipeline using projected lineups (today's lineups may
+     not be posted yet). Generates an early dashboard and pushes it
+     to GitHub Pages so there's something useful first thing.
 
-HOW TO RUN
-----------
-Easiest: double-click "run_daily.bat"
-  This runs the pipeline AND prints the leaderboard automatically.
+  2. "MLB Fantasy Noon"    - 12:00 PM Pacific -> run_daily.bat
+     Re-runs the pipeline with confirmed lineups, rebuilds the Excel
+     report + dashboard, and pushes to GitHub Pages. This is the
+     "real" daily dashboard for the day's games.
 
-Or run manually in Command Prompt:
+  3. "MLB Fantasy Tracker" - 11:00 PM Pacific -> run_tracker.bat
+     Grades yesterday's Value Plays and Top 25 picks against actual
+     box scores, updates the Results / Player History / running
+     record, regenerates the dashboard, and pushes to GitHub Pages
+     again.
 
-  Step 1 — Download today's data:
-    python pipeline.py
+So the live site updates roughly 3x/day: ~9am, ~12pm, and ~11pm
+Pacific. Every step has a built-in retry: if a script fails, the
+batch file waits 60 seconds and tries once more before giving up.
 
-  Step 2 — See the rankings:
-    python projections.py
+IF SOMETHING BREAKS WHILE YOU'RE AWAY
+---------------------------------------
+1. Check data\status.json on this PC. It records the last result of
+   each scheduled run, e.g.:
+     {"noon": {"status": "OK", "timestamp": "2026-06-13T12:05:00"}}
+   "FAILED" means a step failed twice in a row - the "step" field
+   names the script that failed (pipeline.py / projections.py /
+   report.py / tracker.py).
 
-Other useful commands:
-  # Run for a specific past date
-  python pipeline.py --date 2025-06-01
+2. Check the dashboard's freshness banner/header. If it's red/stale,
+   the most recent run didn't finish - but the site still shows the
+   last successful day's data, so nothing is broken or lost.
 
-  # Backfill the last 7 days (useful for tracking history)
-  python pipeline.py --backfill 7
+3. Check pipeline.log in this folder for the detailed error.
 
-  # See rankings for a specific date
-  python projections.py 2025-06-01
+4. Common, harmless warning: FanGraphs occasionally returns a 403.
+   This is already handled as a non-fatal warning and does not stop
+   the pipeline.
 
-WHEN TO RUN
------------
-Run the pipeline about 2-3 hours before first pitch.
-MLB lineups are usually posted by noon ET on game days.
-If you run too early, you'll see a message: "lineups not yet posted."
+5. If a run looks "stuck" (no new lines in pipeline.log for 10+
+   minutes), the process may be hung on a slow API call. Open Task
+   Manager, end the stuck python.exe process, then re-run the
+   relevant .bat file manually (see below).
 
-WHERE IS MY DATA?
------------------
-All daily data is saved in the "data" folder as JSON files.
-Example: data/2025-06-05.json
-You can open these in any text editor to see the raw numbers.
+HOW TO MANUALLY TRIGGER A RUN FROM YOUR PHONE
+------------------------------------------------
+This PC needs to stay on and connected to the internet (check
+Settings > Power & sleep so it doesn't sleep).
 
-UNDERSTANDING THE LEADERBOARD
-------------------------------
-Two leaderboards are printed: one for Underdog, one for PrizePicks.
+Easiest option: Remote Desktop
+  1. On this PC: Settings > System > Remote Desktop > turn ON.
+  2. On your phone: install "Microsoft Remote Desktop" (iOS/Android).
+  3. Connect to this PC using its name or IP, sign in with your
+     Windows account.
+  4. Open File Explorer to C:\Users\vmora\Desktop\mlb-fantasy
+  5. Double-click run_early.bat / run_daily.bat / run_tracker.bat as
+     needed. A console window shows progress and closes when done.
+     The dashboard updates on GitHub Pages within ~25 minutes.
 
-Columns explained:
-  Score    — Composite ranking score (higher = better play)
-  7d/g     — Average fantasy points per game over last 7 days
-  14d/g    — Average fantasy points per game over last 14 days
-  30d/g    — Average fantasy points per game over last 30 days
-  OppERA   — Today's opposing pitcher's ERA (lower = tougher matchup)
-  wOBA     — Weighted On-Base Average (season, from FanGraphs)
-  xwOBA    — Expected wOBA based on Statcast exit velocity data
-  Park     — HR park factor (1.20 = 20% more HRs than average, like Coors Field)
-  Weather  — Temperature and wind (outdoor parks only)
+Alternative: install "Chrome Remote Desktop" on this PC's Chrome
+browser and the matching app on your phone - works the same way
+without turning on Windows' built-in RDP.
 
-SCORING SYSTEMS
----------------
-Underdog:    1B=+3  2B=+6  3B=+8  HR=+10  BB=+3  HBP=+3  RBI=+2  R=+2  SB=+4
-PrizePicks:  1B=+3  2B=+5  3B=+8  HR=+10  BB=+2  HBP=+2  RBI=+2  R=+2  SB=+5
+FILES THAT MATTER
+------------------
+  run_early.bat    - 9am run (projected lineups)
+  run_daily.bat    - noon run (confirmed lineups, main daily run)
+  run_tracker.bat  - 11pm run (grades results, updates dashboard)
+  write_status.py  - writes data\status.json after each run
+  data\status.json - last result (OK/FAILED) of each scheduled run
+  pipeline.log     - detailed log of the most recent pipeline run
+  docs\index.html  - file GitHub Pages serves (auto-generated by
+                     report.py / tracker.py - don't edit by hand)
 
-TROUBLESHOOTING
----------------
-"No games found for this date"
-  → Either there are no MLB games today, or you ran it too early (before schedules post).
+VERIFY THE SCHEDULED TASKS ARE STILL THERE
+-----------------------------------------------
+Open Command Prompt and run:
+  schtasks /query /fo LIST /v | findstr /i "mlb"
 
-"Lineups not yet posted"
-  → Re-run the pipeline closer to game time (noon-3pm ET on game days).
-
-"pybaseball errors"
-  → Statcast data can occasionally time out. The pipeline will skip that player
-    and continue. Re-run later if you want the missing data.
-
-"pip install fails"
-  → Make sure Python was installed with "Add Python to PATH" checked.
-    Try: python -m pip install -r requirements.txt
-
-FILES IN THIS FOLDER
---------------------
-  pipeline.py       — Main data collector (run this first)
-  projections.py    — Leaderboard printer (run this after pipeline)
-  scrapers/         — Individual data source modules
-    mlb_api.py      — MLB Stats API (lineups, stats, pitcher data)
-    statcast.py     — Statcast data via pybaseball
-    fangraphs.py    — FanGraphs data via pybaseball
-    weather.py      — OpenWeatherMap weather forecast
-    lineups.py      — RotoWire lineup confirmation scraper
-  requirements.txt  — Python packages needed
-  .env              — Your API key goes here
-  run_daily.bat     — Double-click to run everything at once
-  data/             — Output folder (JSON files saved here)
-  pipeline.log      — Log file if something goes wrong
+You should see "MLB Fantasy Early", "MLB Fantasy Noon", and
+"MLB Fantasy Tracker", each with "Scheduled Task State: Enabled".
 
 =====================================================================
