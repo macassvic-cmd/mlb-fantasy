@@ -1677,6 +1677,99 @@
           "correct": true
         }
       ]
+    },
+    "2026-07-04": {
+      "summary": {
+        "total": 8,
+        "correct": 6,
+        "accuracy": 75.0,
+        "over_total": 4,
+        "over_correct": 4,
+        "under_total": 4,
+        "under_correct": 2
+      },
+      "plays": [
+        {
+          "player_id": 656811,
+          "name": "Ryan O'Hearn",
+          "team": "Pittsburgh Pirates",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "correct": true
+        },
+        {
+          "player_id": 693304,
+          "name": "Nick Gonzales",
+          "team": "Pittsburgh Pirates",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 13,
+          "correct": true
+        },
+        {
+          "player_id": 665019,
+          "name": "Kody Clemens",
+          "team": "Minnesota Twins",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 26,
+          "correct": true
+        },
+        {
+          "player_id": 605137,
+          "name": "Josh Bell",
+          "team": "Minnesota Twins",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 36,
+          "correct": true
+        },
+        {
+          "player_id": 701762,
+          "name": "Nick Kurtz",
+          "team": "Athletics",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 10.5,
+          "actual_ud": 0,
+          "correct": true
+        },
+        {
+          "player_id": 700250,
+          "name": "Ben Rice",
+          "team": "New York Yankees",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 9.5,
+          "actual_ud": 6,
+          "correct": true
+        },
+        {
+          "player_id": 656941,
+          "name": "Kyle Schwarber",
+          "team": "Philadelphia Phillies",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 9.5,
+          "actual_ud": 12,
+          "correct": false
+        },
+        {
+          "player_id": 695578,
+          "name": "James Wood",
+          "team": "Washington Nationals",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 20,
+          "correct": false
+        }
+      ]
     }
   }
 }
