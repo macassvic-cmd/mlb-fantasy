@@ -22,11 +22,14 @@ from scrapers.mlb_api import get_player_game_log
 
 HIT_TOLERANCE = 0.20  # within 20% of projection counts as a "hit"
 
+import slips as slips_mod
+
 RESULTS_DIR = os.path.join("data", "results")
 ALL_RESULTS_PATH = os.path.join(RESULTS_DIR, "all_results.json")
 TOP25_RESULTS_PATH = os.path.join(RESULTS_DIR, "top25_results.json")
 VALUE_PLAYS_DIR = os.path.join("data", "value_plays")
 VALUE_PLAYS_RESULTS_PATH = os.path.join(RESULTS_DIR, "value_plays_results.json")
+SLIPS_RESULTS_PATH = os.path.join(RESULTS_DIR, "slips_results.json")
 
 
 def classify(projected, actual):
@@ -208,6 +211,7 @@ def track_date(date_str):
     results_by_pid = {r["player_id"]: r for r in results}
     track_top25(date_str, rows, results_by_pid)
     grade_value_plays(date_str, results_by_pid)
+    grade_slips(date_str, results_by_pid)
 
     # Regenerate the dashboard with the freshly-updated Results / Player
     # History / Value Plays data and push it to GitHub Pages, so the site
@@ -291,6 +295,74 @@ def grade_value_plays(date_str, results_by_pid):
         json.dump(vp_results, f, indent=2)
 
     print(f"Value Plays: {hits}/{total} correct ({summary['accuracy']}%) -> {VALUE_PLAYS_RESULTS_PATH}")
+
+
+def grade_slips(date_str, results_by_pid):
+    """Grade each saved slip's legs and record full-slip win/loss."""
+    slips_path = os.path.join(slips_mod.SLIPS_DIR, f"{date_str}.json")
+    if not os.path.exists(slips_path):
+        print(f"No slips recorded for {date_str}. Skipping.")
+        return
+
+    with open(slips_path, encoding="utf-8") as f:
+        slips_data = json.load(f)
+
+    all_sr = load_json(SLIPS_RESULTS_PATH, {"dates": {}, "records": {}})
+    all_sr.setdefault("dates", {})
+    all_sr.setdefault("records", {})
+
+    date_results = {}
+    for slip_key, slip in slips_data.get("slips", {}).items():
+        if not slip:
+            continue
+        platform = slip_key.split("_")[0]  # "ud" or "pp"
+        graded_legs = []
+        for leg in slip.get("legs", []):
+            pid = leg["player_id"]
+            res = results_by_pid.get(pid)
+            if not res:
+                continue
+            actual = res["actual_pp"] if platform == "pp" else res["actual_ud"]
+            if actual is None:
+                continue
+            line = leg["line"]
+            call = leg["call"]
+            if actual > line:
+                result = "win" if call == "over" else "loss"
+            elif actual < line:
+                result = "win" if call == "under" else "loss"
+            else:
+                result = "push"
+            graded_legs.append({**leg, "actual": round(actual, 2), "result": result})
+
+        decided = [l for l in graded_legs if l["result"] != "push"]
+        legs_win = sum(1 for l in decided if l["result"] == "win")
+        slip_win = bool(decided) and legs_win == len(slip["legs"])
+
+        date_results[slip_key] = {
+            "legs": graded_legs,
+            "legs_correct": legs_win,
+            "legs_graded": len(decided),
+            "slip_win": slip_win,
+        }
+
+        rec = all_sr["records"].setdefault(
+            slip_key, {"wins": 0, "losses": 0, "legs_win": 0, "legs_total": 0}
+        )
+        rec["legs_win"] += legs_win
+        rec["legs_total"] += len(decided)
+        if slip_win:
+            rec["wins"] += 1
+        elif decided:
+            rec["losses"] += 1
+
+        icon = "WIN" if slip_win else "LOSS"
+        print(f"  Slip {slip_key}: {legs_win}/{len(decided)} legs [{icon}]")
+
+    all_sr["dates"][date_str] = date_results
+    os.makedirs(RESULTS_DIR, exist_ok=True)
+    with open(SLIPS_RESULTS_PATH, "w", encoding="utf-8") as f:
+        json.dump(all_sr, f, indent=2)
 
 
 def update_all_results(date_str, summary, results):

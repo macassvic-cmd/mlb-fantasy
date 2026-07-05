@@ -18,6 +18,7 @@ from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
 
 import projections as proj
+import slips as slips_mod
 from scrapers.market_lines import get_market_lines, compute_pp_ud_ratio, match_lines
 
 
@@ -595,7 +596,7 @@ DASHBOARD_COLS = [
 ]
 
 
-def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None):
+def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None, slips_results=None):
     games_count = len({r["game_pk"] for r in rows})
     generated_dt = datetime.now(timezone.utc).astimezone(_PACIFIC)
     last_updated = generated_dt.strftime("%Y-%m-%d %I:%M %p PT")
@@ -732,6 +733,17 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     unanchored_cards = [build_card(row) for row in unanchored_rows]
     unanchored_cards_js = json.dumps(unanchored_cards)
 
+    # --- Optimized Slips ---------------------------------------------------
+    all_slips = slips_mod.build_all_slips(rows)
+    slips_mod.save_slips(date_str, all_slips)
+    # Sort each slip's legs by game time for display
+    for slip in all_slips.values():
+        if slip:
+            slip["legs"].sort(key=lambda l: l.get("game_date_utc") or "9999")
+    slips_js = json.dumps(all_slips)
+    slips_results = slips_results or {}
+    slips_records_js = json.dumps(slips_results.get("records", {}))
+
     # --- Full leaderboard table ---------------------------------------
     # Color tiers are relative to today's own distribution (top 25% green,
     # next down to the 40th percentile yellow, rest red) rather than fixed
@@ -844,6 +856,49 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   tbody tr:nth-child(even) {{ background: #182241; }}
   tbody tr:hover {{ background: #25355a; }}
   td {{ border-bottom: 1px solid #1f2c46; color: #d6deef; }}
+
+  /* Slips tab */
+  .slips-grid {{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 28px; }}
+  @media (max-width: 1100px) {{ .slips-grid {{ grid-template-columns: 1fr; }} }}
+  .slip-card {{ background: #16213a; border-radius: 12px; border: 2px solid #2a3a5c; overflow: hidden; }}
+  .slip-card.ud-slip {{ border-color: #4ade80; }}
+  .slip-card.pp-slip {{ border-color: #60a5fa; }}
+  .slip-header {{ padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; }}
+  .slip-card.ud-slip .slip-header {{ background: rgba(74,222,128,0.1); }}
+  .slip-card.pp-slip .slip-header {{ background: rgba(96,165,250,0.1); }}
+  .slip-title {{ font-size: 18px; font-weight: 800; color: #fff; }}
+  .slip-card.ud-slip .slip-title {{ color: #4ade80; }}
+  .slip-card.pp-slip .slip-title {{ color: #60a5fa; }}
+  .slip-prob {{ text-align: right; }}
+  .slip-prob-val {{ font-size: 22px; font-weight: 800; color: #fff; }}
+  .slip-prob-lbl {{ font-size: 11px; color: #9fb0cc; display: block; }}
+  .slip-legs {{ padding: 0 18px 14px; }}
+  .slip-leg {{ display: flex; align-items: center; gap: 10px; padding: 9px 0;
+               border-bottom: 1px solid #1f2c46; }}
+  .slip-leg:last-child {{ border-bottom: none; }}
+  .slip-leg-call {{ width: 28px; height: 28px; border-radius: 50%; display: flex;
+                    align-items: center; justify-content: center; font-weight: 800;
+                    font-size: 13px; flex-shrink: 0; }}
+  .slip-leg-call.over  {{ background: rgba(74,222,128,0.2); color: #4ade80; }}
+  .slip-leg-call.under {{ background: rgba(251,146,60,0.2); color: #fb923c; }}
+  .slip-leg-body {{ flex: 1; min-width: 0; }}
+  .slip-leg-name {{ font-size: 14px; font-weight: 700; color: #fff; white-space: nowrap;
+                    overflow: hidden; text-overflow: ellipsis; }}
+  .slip-leg-meta {{ font-size: 11px; color: #9fb0cc; margin-top: 1px; }}
+  .slip-leg-right {{ text-align: right; flex-shrink: 0; }}
+  .slip-leg-line {{ font-size: 14px; font-weight: 700; color: #fff; }}
+  .slip-leg-prob {{ font-size: 12px; color: #9fb0cc; }}
+  .slip-empty {{ background: #16213a; border: 2px dashed #2a3a5c; border-radius: 12px;
+                 padding: 32px; text-align: center; color: #6c7da0; font-size: 14px; }}
+  .slips-records-section {{ margin-top: 8px; }}
+  .slips-records-section h3 {{ font-size: 16px; color: #c4cee0; margin-bottom: 12px; }}
+  .slips-record-grid {{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }}
+  @media (max-width: 800px) {{ .slips-record-grid {{ grid-template-columns: repeat(2, 1fr); }} }}
+  .slip-rec-card {{ background: #16213a; border: 1px solid #2a3a5c; border-radius: 10px;
+                    padding: 14px 16px; text-align: center; }}
+  .slip-rec-type {{ font-size: 13px; font-weight: 700; color: #9fb0cc; margin-bottom: 6px; }}
+  .slip-rec-record {{ font-size: 22px; font-weight: 800; color: #fff; }}
+  .slip-rec-legs {{ font-size: 12px; color: #9fb0cc; margin-top: 4px; }}
 
   /* Results tab */
   .results-summary {{ display: flex; gap: 14px; margin-bottom: 16px; }}
@@ -971,6 +1026,7 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
 <div class="tabs">
   <button class="tab-btn active" id="tab-top25" data-tab="top25">Top 25</button>
   <button class="tab-btn" id="tab-full" data-tab="full">Full Leaderboard</button>
+  <button class="tab-btn" id="tab-slips" data-tab="slips">Slips</button>
   <button class="tab-btn" id="tab-results" data-tab="results">Results</button>
   <button class="tab-btn" id="tab-history" data-tab="history">Player History</button>
   <button class="tab-btn" id="tab-top25results" data-tab="top25results">Top 25 Results</button>
@@ -998,6 +1054,10 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
       <tbody id="body"></tbody>
     </table>
   </div>
+</div>
+
+<div class="panel hidden" id="panel-slips">
+  <div id="slipsPanelContent"></div>
 </div>
 
 <div class="panel hidden" id="panel-results">
@@ -1062,6 +1122,8 @@ const T25_ROLLING_RATE = {json.dumps(rolling_hit_rate)};
 const T25_BEST = {json.dumps(best_performer)};
 const T25_WORST = {json.dumps(worst_performer)};
 const T25_RECORDS = {record_rows_js};
+const SLIPS = {slips_js};
+const SLIPS_RECORDS = {slips_records_js};
 const GENERATED_AT = {json.dumps(generated_at_iso)};
 const GAME_DATE = {json.dumps(date_str)};
 const PLAYER_COUNT = {player_count};
@@ -1204,8 +1266,75 @@ hideStartedToggle.addEventListener('change', () => {{
 applyHideStartedFilter();
 setInterval(applyHideStartedFilter, 30000); // live re-check as games start, no reload needed
 
+// --- Slips tab ---
+(function renderSlips() {{
+  const SLIP_LABELS = {{ud_8:'UD 8-Pick',ud_6:'UD 6-Pick',pp_6:'PP 6-Pick',pp_4:'PP 4-Pick'}};
+  const SLIP_ORDER  = ['ud_8','ud_6','pp_6','pp_4'];
+
+  function pct(p) {{ return (p * 100).toFixed(1) + '%'; }}
+
+  function legHtml(leg) {{
+    const callIcon = leg.call === 'over' ? '&#8593;' : '&#8595;';
+    const lineStr = leg.line != null ? (leg.call.toUpperCase() + ' ' + leg.line.toFixed(1)) : '—';
+    const eraStr  = leg.opp_era != null ? ` &middot; ERA ${{leg.opp_era.toFixed(2)}}` : '';
+    const time    = leg.game_time_pt || '';
+    return `<div class="slip-leg">
+      <div class="slip-leg-call ${{leg.call}}">${{callIcon}}</div>
+      <div class="slip-leg-body">
+        <div class="slip-leg-name">${{leg.name}}</div>
+        <div class="slip-leg-meta">${{leg.team}}${{eraStr}}${{time ? ' &middot; <span class="game-time">' + time + '</span>' : ''}}</div>
+      </div>
+      <div class="slip-leg-right">
+        <div class="slip-leg-line">${{lineStr}}</div>
+        <div class="slip-leg-prob">${{pct(leg.win_prob)}} win</div>
+      </div>
+    </div>`;
+  }}
+
+  function slipCardHtml(key, slip) {{
+    const platform = key.startsWith('ud') ? 'ud' : 'pp';
+    if (!slip) {{
+      return `<div class="slip-empty"><strong>${{SLIP_LABELS[key]}}</strong><br>Not enough qualifying legs today.</div>`;
+    }}
+    const legsHtml = slip.legs.map(legHtml).join('');
+    return `<div class="slip-card ${{platform}}-slip">
+      <div class="slip-header">
+        <div class="slip-title">${{SLIP_LABELS[key]}}</div>
+        <div class="slip-prob">
+          <div class="slip-prob-val">${{pct(slip.combined_prob)}}</div>
+          <div class="slip-prob-lbl">Combined Prob</div>
+        </div>
+      </div>
+      <div class="slip-legs">${{legsHtml}}</div>
+    </div>`;
+  }}
+
+  function recordCardHtml(key, rec) {{
+    const wins   = rec ? rec.wins : 0;
+    const losses = rec ? rec.losses : 0;
+    const lw     = rec ? rec.legs_win : 0;
+    const lt     = rec ? rec.legs_total : 0;
+    const legRate = lt > 0 ? (lw / lt * 100).toFixed(1) + '%' : '—';
+    return `<div class="slip-rec-card">
+      <div class="slip-rec-type">${{SLIP_LABELS[key]}}</div>
+      <div class="slip-rec-record">${{wins}}–${{losses}}</div>
+      <div class="slip-rec-legs">Legs: ${{lw}}/${{lt}} (${{legRate}})</div>
+    </div>`;
+  }}
+
+  const gridHtml = SLIP_ORDER.map(k => slipCardHtml(k, SLIPS[k])).join('');
+  const recHtml  = SLIP_ORDER.map(k => recordCardHtml(k, SLIPS_RECORDS[k] || null)).join('');
+
+  document.getElementById('slipsPanelContent').innerHTML = `
+    <div class="slips-grid">${{gridHtml}}</div>
+    <div class="slips-records-section">
+      <h3>Running Record</h3>
+      <div class="slips-record-grid">${{recHtml}}</div>
+    </div>`;
+}})();
+
 // --- Tabs ---
-const PANELS = ['top25', 'full', 'results', 'history', 'top25results'];
+const PANELS = ['top25', 'full', 'slips', 'results', 'history', 'top25results'];
 document.querySelectorAll('.tab-btn').forEach(btn => {{
   btn.addEventListener('click', () => {{
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -1546,6 +1675,14 @@ def prepare_dashboard_context(date_arg=None):
     return rows, date_str, results_data, top25_data
 
 
+def _load_slips_results():
+    path = os.path.join("data", "results", "slips_results.json")
+    if os.path.exists(path):
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    return {}
+
+
 def regenerate_dashboard(date_arg=None):
     """Rebuild output/dashboard.html from the latest projection + results
     data and push it to GitHub Pages. Used by tracker.py after nightly
@@ -1553,7 +1690,7 @@ def regenerate_dashboard(date_arg=None):
     pipeline run."""
     rows, date_str, results_data, top25_data = prepare_dashboard_context(date_arg)
     html_path = os.path.join("output", "dashboard.html")
-    write_dashboard(rows, date_str, html_path, results_data, top25_data)
+    write_dashboard(rows, date_str, html_path, results_data, top25_data, _load_slips_results())
     print(f"Dashboard saved -> {os.path.abspath(html_path)}")
     deploy_to_github_pages(html_path, date_str)
     return html_path
@@ -1565,7 +1702,7 @@ def main():
 
     os.makedirs("output", exist_ok=True)
     html_path = os.path.join("output", "dashboard.html")
-    write_dashboard(rows, date_str, html_path, results_data, top25_data)
+    write_dashboard(rows, date_str, html_path, results_data, top25_data, _load_slips_results())
     print(f"Dashboard saved -> {os.path.abspath(html_path)}")
 
     deploy_to_github_pages(html_path, date_str)
