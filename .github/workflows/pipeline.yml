@@ -96,6 +96,8 @@ jobs:
       # so this single step handles all files: data/, output/, docs/, results.
 
       - name: Commit and push all changes
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -110,4 +112,5 @@ jobs:
               git rebase --continue
             )
             git push
+            gh workflow run pages.yml
           fi
