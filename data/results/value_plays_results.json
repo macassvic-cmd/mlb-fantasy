@@ -1770,6 +1770,99 @@
           "correct": false
         }
       ]
+    },
+    "2026-07-05": {
+      "summary": {
+        "total": 8,
+        "correct": 2,
+        "accuracy": 25.0,
+        "over_total": 4,
+        "over_correct": 0,
+        "under_total": 4,
+        "under_correct": 2
+      },
+      "plays": [
+        {
+          "player_id": 681624,
+          "name": "Andy Pages",
+          "team": "Los Angeles Dodgers",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 6,
+          "correct": false
+        },
+        {
+          "player_id": 605141,
+          "name": "Mookie Betts",
+          "team": "Los Angeles Dodgers",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 3,
+          "correct": false
+        },
+        {
+          "player_id": 673548,
+          "name": "Seiya Suzuki",
+          "team": "Chicago Cubs",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "correct": false
+        },
+        {
+          "player_id": 695506,
+          "name": "Jac Caglianone",
+          "team": "Kansas City Royals",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 2,
+          "correct": false
+        },
+        {
+          "player_id": 669477,
+          "name": "Casey Schmitt",
+          "team": "San Francisco Giants",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 9.5,
+          "actual_ud": 17,
+          "correct": false
+        },
+        {
+          "player_id": 701762,
+          "name": "Nick Kurtz",
+          "team": "Athletics",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 9.5,
+          "actual_ud": 0,
+          "correct": true
+        },
+        {
+          "player_id": 665742,
+          "name": "Juan Soto",
+          "team": "New York Mets",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 15,
+          "correct": false
+        },
+        {
+          "player_id": 650490,
+          "name": "Yandy D\u00edaz",
+          "team": "Tampa Bay Rays",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 0,
+          "correct": true
+        }
+      ]
     }
   }
 }
