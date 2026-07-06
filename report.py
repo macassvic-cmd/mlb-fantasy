@@ -737,8 +737,8 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     all_slips = slips_mod.build_all_slips(rows)
     slips_mod.save_slips(date_str, all_slips)
     # Sort each slip's legs by game time for display
-    for slip in all_slips.values():
-        if slip:
+    for slip_list in all_slips.values():
+        for slip in slip_list:
             slip["legs"].sort(key=lambda l: l.get("game_date_utc") or "9999")
     slips_js = json.dumps(all_slips)
     slips_results = slips_results or {}
@@ -858,47 +858,62 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   td {{ border-bottom: 1px solid #1f2c46; color: #d6deef; }}
 
   /* Slips tab */
-  .slips-grid {{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 28px; }}
-  @media (max-width: 1100px) {{ .slips-grid {{ grid-template-columns: 1fr; }} }}
+  .slips-section {{ margin-bottom: 28px; }}
+  .slips-section-header {{ font-size: 19px; font-weight: 800; padding: 8px 0 10px;
+                            border-bottom: 2px solid; margin-bottom: 14px; }}
+  .ud-header {{ color: #4ade80; border-color: #4ade80; }}
+  .pp-header {{ color: #60a5fa; border-color: #60a5fa; }}
+  .slips-sub-label {{ font-size: 12px; font-weight: 700; color: #9fb0cc; text-transform: uppercase;
+                      letter-spacing: 0.06em; margin: 14px 0 8px; }}
+  .slips-row {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 14px; margin-bottom: 4px; }}
   .slip-card {{ background: #16213a; border-radius: 12px; border: 2px solid #2a3a5c; overflow: hidden; }}
   .slip-card.ud-slip {{ border-color: #4ade80; }}
   .slip-card.pp-slip {{ border-color: #60a5fa; }}
-  .slip-header {{ padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; }}
-  .slip-card.ud-slip .slip-header {{ background: rgba(74,222,128,0.1); }}
-  .slip-card.pp-slip .slip-header {{ background: rgba(96,165,250,0.1); }}
-  .slip-title {{ font-size: 18px; font-weight: 800; color: #fff; }}
-  .slip-card.ud-slip .slip-title {{ color: #4ade80; }}
-  .slip-card.pp-slip .slip-title {{ color: #60a5fa; }}
+  .slip-header {{ padding: 12px 16px; display: flex; justify-content: space-between; align-items: flex-start; }}
+  .slip-card.ud-slip .slip-header {{ background: rgba(74,222,128,0.08); }}
+  .slip-card.pp-slip .slip-header {{ background: rgba(96,165,250,0.08); }}
+  .slip-header-left {{ display: flex; flex-direction: column; gap: 2px; }}
+  .slip-rank-badge {{ font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; }}
+  .slip-title {{ font-size: 15px; font-weight: 800; color: #fff; }}
+  .slip-lock {{ font-size: 11px; color: #9fb0cc; margin-top: 3px; }}
   .slip-prob {{ text-align: right; }}
-  .slip-prob-val {{ font-size: 22px; font-weight: 800; color: #fff; }}
+  .slip-prob-val {{ font-size: 20px; font-weight: 800; color: #fff; }}
   .slip-prob-lbl {{ font-size: 11px; color: #9fb0cc; display: block; }}
-  .slip-legs {{ padding: 0 18px 14px; }}
-  .slip-leg {{ display: flex; align-items: center; gap: 10px; padding: 9px 0;
+  .slip-legs {{ padding: 0 16px 12px; }}
+  .slip-leg {{ display: flex; align-items: center; gap: 10px; padding: 8px 0;
                border-bottom: 1px solid #1f2c46; }}
   .slip-leg:last-child {{ border-bottom: none; }}
-  .slip-leg-call {{ width: 28px; height: 28px; border-radius: 50%; display: flex;
+  .slip-leg-call {{ width: 26px; height: 26px; border-radius: 50%; display: flex;
                     align-items: center; justify-content: center; font-weight: 800;
-                    font-size: 13px; flex-shrink: 0; }}
+                    font-size: 12px; flex-shrink: 0; }}
   .slip-leg-call.over  {{ background: rgba(74,222,128,0.2); color: #4ade80; }}
   .slip-leg-call.under {{ background: rgba(251,146,60,0.2); color: #fb923c; }}
   .slip-leg-body {{ flex: 1; min-width: 0; }}
-  .slip-leg-name {{ font-size: 14px; font-weight: 700; color: #fff; white-space: nowrap;
+  .slip-leg-name {{ font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap;
                     overflow: hidden; text-overflow: ellipsis; }}
   .slip-leg-meta {{ font-size: 11px; color: #9fb0cc; margin-top: 1px; }}
   .slip-leg-right {{ text-align: right; flex-shrink: 0; }}
-  .slip-leg-line {{ font-size: 14px; font-weight: 700; color: #fff; }}
-  .slip-leg-prob {{ font-size: 12px; color: #9fb0cc; }}
+  .slip-leg-line {{ font-size: 13px; font-weight: 700; color: #fff; }}
+  .slip-leg-prob {{ font-size: 11px; color: #9fb0cc; }}
   .slip-empty {{ background: #16213a; border: 2px dashed #2a3a5c; border-radius: 12px;
-                 padding: 32px; text-align: center; color: #6c7da0; font-size: 14px; }}
-  .slips-records-section {{ margin-top: 8px; }}
-  .slips-records-section h3 {{ font-size: 16px; color: #c4cee0; margin-bottom: 12px; }}
-  .slips-record-grid {{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }}
-  @media (max-width: 800px) {{ .slips-record-grid {{ grid-template-columns: repeat(2, 1fr); }} }}
-  .slip-rec-card {{ background: #16213a; border: 1px solid #2a3a5c; border-radius: 10px;
-                    padding: 14px 16px; text-align: center; }}
-  .slip-rec-type {{ font-size: 13px; font-weight: 700; color: #9fb0cc; margin-bottom: 6px; }}
-  .slip-rec-record {{ font-size: 22px; font-weight: 800; color: #fff; }}
+                 padding: 24px; text-align: center; color: #6c7da0; font-size: 13px; }}
+  .slips-records-section {{ margin-top: 24px; padding-top: 20px;
+                             border-top: 1px solid #2a3a5c; }}
+  .slips-records-section h3 {{ font-size: 15px; font-weight: 700; color: #c4cee0;
+                                margin-bottom: 10px; margin-top: 20px; }}
+  .slips-records-section h3:first-child {{ margin-top: 0; }}
+  .slips-rank-grid {{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }}
+  @media (max-width: 700px) {{ .slips-rank-grid {{ grid-template-columns: 1fr; }} }}
+  .slip-rank-card {{ background: #16213a; border: 2px solid #2a3a5c; border-radius: 10px;
+                     padding: 14px 16px; text-align: center; }}
+  .slip-rec-type {{ font-size: 12px; font-weight: 700; color: #9fb0cc; margin-bottom: 6px; text-transform: uppercase; }}
+  .slip-rec-record {{ font-size: 24px; font-weight: 800; color: #fff; }}
   .slip-rec-legs {{ font-size: 12px; color: #9fb0cc; margin-top: 4px; }}
+  .slips-rec-table {{ width: 100%; border-collapse: collapse; font-size: 13px; }}
+  .slips-rec-table th {{ background: #1a2844; color: #9fb0cc; padding: 8px 12px;
+                          text-align: left; font-weight: 700; border-bottom: 1px solid #2a3a5c; }}
+  .slips-rec-table td {{ padding: 8px 12px; border-bottom: 1px solid #1f2c46; color: #d6deef; }}
 
   /* Results tab */
   .results-summary {{ display: flex; gap: 14px; margin-bottom: 16px; }}
@@ -1268,69 +1283,116 @@ setInterval(applyHideStartedFilter, 30000); // live re-check as games start, no 
 
 // --- Slips tab ---
 (function renderSlips() {{
-  const SLIP_LABELS = {{ud_8:'UD 8-Pick',ud_6:'UD 6-Pick',pp_6:'PP 6-Pick',pp_4:'PP 4-Pick'}};
-  const SLIP_ORDER  = ['ud_8','ud_6','pp_6','pp_4'];
+  const SLIP_CONFIGS = [
+    {{key:'ud_8', label:'UD 8-Pick', platform:'ud', sub:'8-Man Slips', section:'Underdog'}},
+    {{key:'ud_6', label:'UD 6-Pick', platform:'ud', sub:'6-Man Slips', section:'Underdog'}},
+    {{key:'pp_6', label:'PP 6-Pick', platform:'pp', sub:'6-Man Slips', section:'PrizePicks'}},
+  ];
+  const RANK_COLORS = ['', '#ffd700', '#c0c0c0', '#cd7f32', '#9fb0cc', '#9fb0cc'];
+  const SLIP_KEYS   = ['ud_8','ud_6','pp_6'];
+  const TYPE_LABELS = {{ud_8:'UD 8-Pick', ud_6:'UD 6-Pick', pp_6:'PP 6-Pick'}};
 
   function pct(p) {{ return (p * 100).toFixed(1) + '%'; }}
 
   function legHtml(leg) {{
-    const callIcon = leg.call === 'over' ? '&#8593;' : '&#8595;';
-    const lineStr = leg.line != null ? (leg.call.toUpperCase() + ' ' + leg.line.toFixed(1)) : '—';
-    const eraStr  = leg.opp_era != null ? ` &middot; ERA ${{leg.opp_era.toFixed(2)}}` : '';
-    const time    = leg.game_time_pt || '';
-    return `<div class="slip-leg">
-      <div class="slip-leg-call ${{leg.call}}">${{callIcon}}</div>
-      <div class="slip-leg-body">
-        <div class="slip-leg-name">${{leg.name}}</div>
-        <div class="slip-leg-meta">${{leg.team}}${{eraStr}}${{time ? ' &middot; <span class="game-time">' + time + '</span>' : ''}}</div>
-      </div>
-      <div class="slip-leg-right">
-        <div class="slip-leg-line">${{lineStr}}</div>
-        <div class="slip-leg-prob">${{pct(leg.win_prob)}} win</div>
-      </div>
-    </div>`;
+    var callIcon = leg.call === 'over' ? '&#8593;' : '&#8595;';
+    var lineStr  = leg.line != null ? (leg.call.toUpperCase() + ' ' + leg.line.toFixed(1)) : '—';
+    var eraStr   = leg.opp_era != null ? ' &middot; ERA ' + leg.opp_era.toFixed(2) : '';
+    var timeStr  = leg.game_time_pt ? ' &middot; <span class="game-time">' + leg.game_time_pt + '</span>' : '';
+    return '<div class="slip-leg">'
+      + '<div class="slip-leg-call ' + leg.call + '">' + callIcon + '</div>'
+      + '<div class="slip-leg-body">'
+      +   '<div class="slip-leg-name">' + leg.name + '</div>'
+      +   '<div class="slip-leg-meta">' + leg.team + eraStr + timeStr + '</div>'
+      + '</div>'
+      + '<div class="slip-leg-right">'
+      +   '<div class="slip-leg-line">' + lineStr + '</div>'
+      +   '<div class="slip-leg-prob">' + pct(leg.win_prob) + '</div>'
+      + '</div>'
+      + '</div>';
   }}
 
-  function slipCardHtml(key, slip) {{
-    const platform = key.startsWith('ud') ? 'ud' : 'pp';
+  function slipCardHtml(cfg, slip, rank) {{
     if (!slip) {{
-      return `<div class="slip-empty"><strong>${{SLIP_LABELS[key]}}</strong><br>Not enough qualifying legs today.</div>`;
+      return '<div class="slip-empty">Not enough qualifying legs for ' + cfg.label + ' #' + rank + '.</div>';
     }}
-    const legsHtml = slip.legs.map(legHtml).join('');
-    return `<div class="slip-card ${{platform}}-slip">
-      <div class="slip-header">
-        <div class="slip-title">${{SLIP_LABELS[key]}}</div>
-        <div class="slip-prob">
-          <div class="slip-prob-val">${{pct(slip.combined_prob)}}</div>
-          <div class="slip-prob-lbl">Combined Prob</div>
-        </div>
-      </div>
-      <div class="slip-legs">${{legsHtml}}</div>
-    </div>`;
+    var recKey  = cfg.key + '_' + rank;
+    var rec     = SLIPS_RECORDS[recKey] || {{wins:0,losses:0,legs_win:0,legs_total:0}};
+    var recStr  = rec.wins + '–' + rec.losses;
+    var legRate = rec.legs_total > 0 ? (rec.legs_win / rec.legs_total * 100).toFixed(0) + '% legs' : '';
+    var lockHtml = slip.lock_pt ? '<div class="slip-lock">&#128274; ' + slip.lock_pt + '</div>' : '';
+    return '<div class="slip-card ' + cfg.platform + '-slip">'
+      + '<div class="slip-header">'
+      +   '<div class="slip-header-left">'
+      +     '<span class="slip-rank-badge" style="color:' + RANK_COLORS[rank] + '">Slip #' + rank + '</span>'
+      +     '<div class="slip-title">' + cfg.label + '</div>'
+      +     lockHtml
+      +   '</div>'
+      +   '<div class="slip-prob">'
+      +     '<div class="slip-prob-val">' + pct(slip.combined_prob) + '</div>'
+      +     '<div class="slip-prob-lbl">' + recStr + (legRate ? ' &middot; ' + legRate : '') + '</div>'
+      +   '</div>'
+      + '</div>'
+      + '<div class="slip-legs">' + slip.legs.map(legHtml).join('') + '</div>'
+      + '</div>';
   }}
 
-  function recordCardHtml(key, rec) {{
-    const wins   = rec ? rec.wins : 0;
-    const losses = rec ? rec.losses : 0;
-    const lw     = rec ? rec.legs_win : 0;
-    const lt     = rec ? rec.legs_total : 0;
-    const legRate = lt > 0 ? (lw / lt * 100).toFixed(1) + '%' : '—';
-    return `<div class="slip-rec-card">
-      <div class="slip-rec-type">${{SLIP_LABELS[key]}}</div>
-      <div class="slip-rec-record">${{wins}}–${{losses}}</div>
-      <div class="slip-rec-legs">Legs: ${{lw}}/${{lt}} (${{legRate}})</div>
-    </div>`;
-  }}
+  var html = '';
+  var sections = [
+    {{id:'ud', label:'Underdog',   configs: SLIP_CONFIGS.filter(function(c){{return c.platform==='ud';}})}},
+    {{id:'pp', label:'PrizePicks', configs: SLIP_CONFIGS.filter(function(c){{return c.platform==='pp';}})}},
+  ];
+  sections.forEach(function(sec) {{
+    html += '<div class="slips-section">';
+    html += '<div class="slips-section-header ' + sec.id + '-header">' + sec.label + '</div>';
+    sec.configs.forEach(function(cfg) {{
+      var slipList = SLIPS[cfg.key] || [];
+      html += '<div class="slips-sub-label">' + cfg.sub + '</div>';
+      html += '<div class="slips-row">';
+      var count = Math.max(slipList.length, 1);
+      for (var i = 0; i < count; i++) {{
+        html += slipCardHtml(cfg, slipList[i] || null, i + 1);
+      }}
+      html += '</div>';
+    }});
+    html += '</div>';
+  }});
 
-  const gridHtml = SLIP_ORDER.map(k => slipCardHtml(k, SLIPS[k])).join('');
-  const recHtml  = SLIP_ORDER.map(k => recordCardHtml(k, SLIPS_RECORDS[k] || null)).join('');
+  // --- Rank comparison section ---
+  html += '<div class="slips-records-section">';
+  html += '<h3>Performance by Slip Rank (all types combined)</h3>';
+  html += '<div class="slips-rank-grid">';
+  [1,2,3].forEach(function(r) {{
+    var w  = SLIP_KEYS.reduce(function(a,k){{return a+((SLIPS_RECORDS[k+'_'+r]||{{}}).wins||0);}},0);
+    var l  = SLIP_KEYS.reduce(function(a,k){{return a+((SLIPS_RECORDS[k+'_'+r]||{{}}).losses||0);}},0);
+    var lw = SLIP_KEYS.reduce(function(a,k){{return a+((SLIPS_RECORDS[k+'_'+r]||{{}}).legs_win||0);}},0);
+    var lt = SLIP_KEYS.reduce(function(a,k){{return a+((SLIPS_RECORDS[k+'_'+r]||{{}}).legs_total||0);}},0);
+    var lr = lt > 0 ? (lw/lt*100).toFixed(1)+'%' : '—';
+    html += '<div class="slip-rank-card" style="border-color:' + RANK_COLORS[r] + '">'
+      + '<div class="slip-rec-type">All Slip #' + r + 's</div>'
+      + '<div class="slip-rec-record">' + w + '–' + l + '</div>'
+      + '<div class="slip-rec-legs">Leg win rate: ' + lr + '</div>'
+      + '</div>';
+  }});
+  html += '</div>';
 
-  document.getElementById('slipsPanelContent').innerHTML = `
-    <div class="slips-grid">${{gridHtml}}</div>
-    <div class="slips-records-section">
-      <h3>Running Record</h3>
-      <div class="slips-record-grid">${{recHtml}}</div>
-    </div>`;
+  html += '<h3>Record by Type &amp; Rank</h3>';
+  html += '<div class="table-wrap"><table class="slips-rec-table">';
+  html += '<thead><tr><th>Slip Type</th><th style="color:#ffd700">Slip #1</th>'
+        + '<th style="color:#c0c0c0">Slip #2</th><th style="color:#cd7f32">Slip #3</th></tr></thead><tbody>';
+  SLIP_KEYS.forEach(function(k) {{
+    html += '<tr><td><strong>' + TYPE_LABELS[k] + '</strong></td>';
+    for (var r = 1; r <= 3; r++) {{
+      var rec = SLIPS_RECORDS[k+'_'+r] || {{wins:0,losses:0,legs_win:0,legs_total:0}};
+      var lr  = rec.legs_total > 0 ? ' (' + (rec.legs_win/rec.legs_total*100).toFixed(0) + '% legs)' : '';
+      html += '<td>' + rec.wins + '–' + rec.losses + lr + '</td>';
+    }}
+    html += '</tr>';
+  }});
+  html += '</tbody></table></div>';
+  html += '</div>';
+
+  document.getElementById('slipsPanelContent').innerHTML = html;
 }})();
 
 // --- Tabs ---

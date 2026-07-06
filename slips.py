@@ -1,24 +1,31 @@
 """
 Optimized Slip Builder
 Constructs ready-to-play parlay slips by scoring each leg with empirical
-win rates from the 2940-play analysis, then greedily selecting the
-combination that maximizes combined win probability.
+win rates from the 2940-play analysis, then building diverse sets of slips.
 
 Slip types:
-  ud_8  — Underdog 8-pick  (UD lines)
-  ud_6  — Underdog 6-pick  (UD lines, no player reuse from ud_8)
-  pp_6  — PrizePicks 6-pick (PP lines)
-  pp_4  — PrizePicks 4-pick (PP lines, no player reuse from pp_6)
+  ud_8  — Underdog 8-pick  ×3 diverse slips
+  ud_6  — Underdog 6-pick  ×3 diverse slips
+  pp_6  — PrizePicks 6-pick ×3-5 diverse slips (as many as pool supports)
+
+Diversification: each slip must share ≤ floor(size/2) legs with every other
+slip of the same type. A greedy constrained builder with feasibility lookahead
+selects the highest-probability valid combination at each step.
 """
 import json
 import os
 
 SLIPS_DIR = os.path.join("data", "slips")
 
+SLIP_TYPES = {
+    "ud_8": {"platform": "ud", "size": 8, "max_count": 3},
+    "ud_6": {"platform": "ud", "size": 6, "max_count": 3},
+    "pp_6": {"platform": "pp", "size": 6, "max_count": 5},
+}
+
 # ---------------------------------------------------------------------------
 # Empirical per-edge-bucket win rates — 2940 plays / 22 dates
 # ---------------------------------------------------------------------------
-# Edge abs bucket -> win rate for OVER calls
 OVER_EDGE_WIN_RATES = [
     (2.0, 0.542),  # 2.0+ (max clamp)
     (1.5, 0.525),  # 1.5-2.0
@@ -26,24 +33,17 @@ OVER_EDGE_WIN_RATES = [
     (0.5, 0.492),  # 0.5-1.0
     (0.0, 0.505),  # 0-0.5
 ]
-# Edge abs bucket -> win rate for UNDER calls
 UNDER_EDGE_WIN_RATES = [
     (2.0, 0.533),  # 2.0+ (max clamp)
     (1.5, 0.593),  # 1.5-2.0  ← best UNDER bucket
-    (1.0, 0.470),  # 1.0-1.5  (historically bad, excluded by MIN_EDGE_UNDER)
+    (1.0, 0.470),  # 1.0-1.5  (historically bad)
     (0.0, 0.490),  # 0-1.0
 ]
 
-MIN_EDGE_OVER  = 1.0   # mirrors VALUE_PLAY_OVER_EDGE
-MIN_EDGE_UNDER = 1.5   # mirrors VALUE_PLAY_UNDER_EDGE
-MIN_LEG_PROB   = 0.53  # minimum per-leg probability to be included in any slip
+MIN_EDGE_OVER  = 1.0
+MIN_EDGE_UNDER = 1.5
+MIN_LEG_PROB   = 0.53
 
-# ---------------------------------------------------------------------------
-# Venue win-rate adjustments  (delta from 52.1% baseline)
-# Best venues from the analysis: Dodger Stadium 70.8%, Kauffman 63.6%,
-#   Sutter Health 62.4%, Guaranteed Rate (CWS) ~62%
-# Worst: Oracle Park 40.0%, Citi Field 46.9%, Chase Field 47.4%
-# ---------------------------------------------------------------------------
 VENUE_WIN_ADJ = {
     "UNIQLO Field at Dodger Stadium": +0.04,
     "Kauffman Stadium":               +0.03,
@@ -61,9 +61,6 @@ VENUE_WIN_ADJ = {
     "Fenway Park":                    -0.02,
 }
 
-# Team win-rate adjustments (applies to all games, home and away)
-# Best: White Sox 62.7%, Rockies 61.0%, Mariners 60.3%, Braves/Rays 60.0%
-# Worst: Giants 35.8%, Brewers 41.7%, Guardians 43.2%, Mets 44.0%, Nationals 45.9%
 TEAM_WIN_ADJ = {
     "Chicago White Sox":    +0.03,
     "Colorado Rockies":     +0.025,
@@ -75,13 +72,6 @@ TEAM_WIN_ADJ = {
     "Cleveland Guardians":  -0.02,
     "New York Mets":        -0.02,
     "Washington Nationals": -0.02,
-}
-
-SLIP_LABELS = {
-    "ud_8": "UD 8-Pick",
-    "ud_6": "UD 6-Pick",
-    "pp_6": "PP 6-Pick",
-    "pp_4": "PP 4-Pick",
 }
 
 
@@ -98,14 +88,11 @@ def _edge_base_prob(edge_abs, call):
 
 
 def leg_win_prob(row, call, edge_abs):
-    """Empirical per-leg win probability with venue / team / situation boosts."""
     base = _edge_base_prob(edge_abs, call)
     base += VENUE_WIN_ADJ.get(row.get("venue", ""), 0)
     base += TEAM_WIN_ADJ.get(row.get("team", ""), 0)
-    # Batting order 7-9: lower UD/PP lines → easier for projection to clear
     if call == "over" and (row.get("order") or 0) >= 7:
         base += 0.015
-    # Platoon advantage adds confidence on OVER calls
     if row.get("platoon_advantage") == "batter" and call == "over":
         base += 0.015
     return round(min(0.95, max(0.50, base)), 4)
@@ -117,22 +104,39 @@ def _bad_era_for_under(row):
 
 
 # ---------------------------------------------------------------------------
-# Candidate generation per platform
+# Candidate generation
 # ---------------------------------------------------------------------------
 
+def _leg_dict(row, platform, call, line, edge, win_prob):
+    return {
+        "player_id":     row["player_id"],
+        "name":          row["name"],
+        "team":          row["team"],
+        "venue":         row.get("venue", ""),
+        "platform":      platform,
+        "call":          call,
+        "line":          round(line, 1) if line is not None else None,
+        "edge":          round(edge, 2),
+        "win_prob":      win_prob,
+        "game_time_pt":  row.get("game_time_pt"),
+        "game_date_utc": row.get("game_date_utc"),
+        "opp_sp":        row.get("opp_sp", ""),
+        "opp_era":       row.get("opp_era"),
+    }
+
+
 def _ud_candidates(rows):
-    """All eligible UD legs scored and sorted by win probability desc."""
     out = []
     for row in rows:
         if not row.get("market_anchored"):
             continue
         edge = row.get("edge") or 0
         if edge >= MIN_EDGE_OVER:
-            call, edge_abs = "over", edge
+            call, edge_abs = "over", min(edge, 2.0)
         elif edge <= -MIN_EDGE_UNDER:
             if _bad_era_for_under(row):
                 continue
-            call, edge_abs = "under", abs(edge)
+            call, edge_abs = "under", min(abs(edge), 2.0)
         else:
             continue
         prob = leg_win_prob(row, call, edge_abs)
@@ -143,14 +147,13 @@ def _ud_candidates(rows):
 
 
 def _pp_candidates(rows):
-    """All eligible PP legs scored and sorted by win probability desc."""
     out = []
     for row in rows:
         pp_line = row.get("pp_line")
         pp_pts  = row.get("pp_pts")
         if pp_line is None or pp_pts is None:
             continue
-        pp_edge = pp_pts - pp_line
+        pp_edge  = pp_pts - pp_line
         edge_abs = min(abs(pp_edge), 2.0)
         if pp_edge >= MIN_EDGE_OVER:
             call = "over"
@@ -167,43 +170,70 @@ def _pp_candidates(rows):
     return sorted(out, key=lambda x: x["win_prob"], reverse=True)
 
 
-def _leg_dict(row, platform, call, line, edge, win_prob):
-    return {
-        "player_id":    row["player_id"],
-        "name":         row["name"],
-        "team":         row["team"],
-        "venue":        row.get("venue", ""),
-        "platform":     platform,
-        "call":         call,
-        "line":         round(line, 1) if line is not None else None,
-        "edge":         round(edge, 2),
-        "win_prob":     win_prob,
-        "game_time_pt": row.get("game_time_pt"),
-        "game_date_utc": row.get("game_date_utc"),
-        "opp_sp":       row.get("opp_sp", ""),
-        "opp_era":      row.get("opp_era"),
-    }
-
-
 # ---------------------------------------------------------------------------
-# Slip assembly
+# Diversified slip builder
 # ---------------------------------------------------------------------------
 
-def _build_one_slip(candidates, size, used_ids):
-    """Greedy selection of `size` legs, max 3 per team, no reuse of used_ids.
-    Returns slip dict or None if insufficient qualifying candidates."""
+def _reorder_for_diversity(candidates, existing_slips):
+    """Put candidates not in any existing slip first, preserving win_prob order within each group."""
+    if not existing_slips:
+        return candidates
+    all_existing_ids = set()
+    for s in existing_slips:
+        all_existing_ids.update(l["player_id"] for l in s["legs"])
+    fresh = [c for c in candidates if c["player_id"] not in all_existing_ids]
+    shared = [c for c in candidates if c["player_id"] in all_existing_ids]
+    return fresh + shared
+
+
+def _build_constrained(candidates, size, existing_slips, rank):
+    """Greedy slip with max floor(size/2) overlap with each existing slip.
+    Feasibility lookahead prevents greedy from painting itself into a corner."""
+    max_overlap = size // 2
+    existing_id_sets = [set(l["player_id"] for l in s["legs"]) for s in existing_slips]
+    ordered = _reorder_for_diversity(candidates, existing_slips)
+
     legs = []
+    picked_ids = set()
     team_count = {}
-    for c in candidates:
+    overlaps = [0] * len(existing_id_sets)
+
+    for idx, c in enumerate(ordered):
         if len(legs) >= size:
             break
-        if c["player_id"] in used_ids:
+        pid = c["player_id"]
+        if pid in picked_ids:
             continue
         if team_count.get(c["team"], 0) >= 3:
             continue
+
+        new_overlaps = [ov + (1 if pid in ids else 0)
+                        for ov, ids in zip(overlaps, existing_id_sets)]
+        if any(ov > max_overlap for ov in new_overlaps):
+            continue
+
+        # Feasibility: can the remaining pool still satisfy min non-overlap from each existing slip?
+        remaining = [
+            c2 for c2 in ordered[idx + 1:]
+            if c2["player_id"] not in picked_ids
+            and team_count.get(c2["team"], 0) < 3
+        ]
+        feasible = True
+        for i, ids in enumerate(existing_id_sets):
+            non_ov_so_far = len(legs) + 1 - new_overlaps[i]
+            still_need = max(0, (size - max_overlap) - non_ov_so_far)
+            if still_need > 0:
+                avail = sum(1 for c2 in remaining if c2["player_id"] not in ids)
+                if avail < still_need:
+                    feasible = False
+                    break
+        if not feasible:
+            continue
+
         legs.append(c)
-        used_ids.add(c["player_id"])
+        picked_ids.add(pid)
         team_count[c["team"]] = team_count.get(c["team"], 0) + 1
+        overlaps = new_overlaps
 
     if len(legs) < size:
         return None
@@ -211,20 +241,40 @@ def _build_one_slip(candidates, size, used_ids):
     combined = 1.0
     for leg in legs:
         combined *= leg["win_prob"]
-    return {"legs": legs, "combined_prob": round(combined, 6), "size": size}
+
+    timed = [(l["game_date_utc"], l.get("game_time_pt")) for l in legs if l.get("game_date_utc")]
+    timed.sort()
+    lock_utc, lock_pt = timed[0] if timed else (None, None)
+
+    return {
+        "legs":          legs,
+        "combined_prob": round(combined, 6),
+        "size":          size,
+        "rank":          rank,
+        "lock_utc":      lock_utc,
+        "lock_pt":       lock_pt,
+    }
+
+
+def build_diverse_slips(candidates, size, max_count):
+    """Build up to max_count diverse slips of given size."""
+    slips = []
+    for i in range(max_count):
+        slip = _build_constrained(candidates, size, slips, rank=i + 1)
+        if slip is None:
+            break
+        slips.append(slip)
+    return slips
 
 
 def build_all_slips(rows):
-    """Build all 4 slip types. Returns dict with keys ud_8, ud_6, pp_6, pp_4."""
+    """Build all slip types. Returns {ud_8: [...], ud_6: [...], pp_6: [...]}."""
     ud_cands = _ud_candidates(rows)
     pp_cands = _pp_candidates(rows)
-
-    ud_used, pp_used = set(), set()
     return {
-        "ud_8": _build_one_slip(ud_cands, 8, ud_used),
-        "ud_6": _build_one_slip(ud_cands, 6, ud_used),
-        "pp_6": _build_one_slip(pp_cands, 6, pp_used),
-        "pp_4": _build_one_slip(pp_cands, 4, pp_used),
+        "ud_8": build_diverse_slips(ud_cands, 8, 3),
+        "ud_6": build_diverse_slips(ud_cands, 6, 3),
+        "pp_6": build_diverse_slips(pp_cands, 6, 5),
     }
 
 

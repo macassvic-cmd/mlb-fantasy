@@ -297,8 +297,41 @@ def grade_value_plays(date_str, results_by_pid):
     print(f"Value Plays: {hits}/{total} correct ({summary['accuracy']}%) -> {VALUE_PLAYS_RESULTS_PATH}")
 
 
+def _grade_single_slip(slip, platform, results_by_pid):
+    """Grade one slip dict, return graded dict with leg results."""
+    graded_legs = []
+    for leg in slip.get("legs", []):
+        pid = leg["player_id"]
+        res = results_by_pid.get(pid)
+        if not res:
+            continue
+        actual = res["actual_pp"] if platform == "pp" else res["actual_ud"]
+        if actual is None:
+            continue
+        line = leg["line"]
+        call = leg["call"]
+        if actual > line:
+            result = "win" if call == "over" else "loss"
+        elif actual < line:
+            result = "win" if call == "under" else "loss"
+        else:
+            result = "push"
+        graded_legs.append({**leg, "actual": round(actual, 2), "result": result})
+
+    decided  = [l for l in graded_legs if l["result"] != "push"]
+    legs_win = sum(1 for l in decided if l["result"] == "win")
+    slip_win = bool(decided) and legs_win == len(slip["legs"])
+    return {
+        "rank":         slip.get("rank", 1),
+        "legs":         graded_legs,
+        "legs_correct": legs_win,
+        "legs_graded":  len(decided),
+        "slip_win":     slip_win,
+    }
+
+
 def grade_slips(date_str, results_by_pid):
-    """Grade each saved slip's legs and record full-slip win/loss."""
+    """Grade each saved slip's legs; record per-rank win/loss for cross-date comparison."""
     slips_path = os.path.join(slips_mod.SLIPS_DIR, f"{date_str}.json")
     if not os.path.exists(slips_path):
         print(f"No slips recorded for {date_str}. Skipping.")
@@ -312,52 +345,37 @@ def grade_slips(date_str, results_by_pid):
     all_sr.setdefault("records", {})
 
     date_results = {}
-    for slip_key, slip in slips_data.get("slips", {}).items():
-        if not slip:
+    for slip_key, slip_list in slips_data.get("slips", {}).items():
+        platform = slip_key.split("_")[0]
+        # Tolerate old single-slip format (dict) gracefully
+        if isinstance(slip_list, dict):
+            slip_list = [slip_list] if slip_list else []
+        if not slip_list:
             continue
-        platform = slip_key.split("_")[0]  # "ud" or "pp"
-        graded_legs = []
-        for leg in slip.get("legs", []):
-            pid = leg["player_id"]
-            res = results_by_pid.get(pid)
-            if not res:
+
+        graded_list = []
+        for slip in slip_list:
+            if not slip:
                 continue
-            actual = res["actual_pp"] if platform == "pp" else res["actual_ud"]
-            if actual is None:
-                continue
-            line = leg["line"]
-            call = leg["call"]
-            if actual > line:
-                result = "win" if call == "over" else "loss"
-            elif actual < line:
-                result = "win" if call == "under" else "loss"
-            else:
-                result = "push"
-            graded_legs.append({**leg, "actual": round(actual, 2), "result": result})
+            graded = _grade_single_slip(slip, platform, results_by_pid)
+            graded_list.append(graded)
 
-        decided = [l for l in graded_legs if l["result"] != "push"]
-        legs_win = sum(1 for l in decided if l["result"] == "win")
-        slip_win = bool(decided) and legs_win == len(slip["legs"])
+            rank    = graded["rank"]
+            rec_key = f"{slip_key}_{rank}"
+            rec = all_sr["records"].setdefault(
+                rec_key, {"wins": 0, "losses": 0, "legs_win": 0, "legs_total": 0}
+            )
+            rec["legs_win"]   += graded["legs_correct"]
+            rec["legs_total"] += graded["legs_graded"]
+            if graded["slip_win"]:
+                rec["wins"] += 1
+            elif graded["legs_graded"] > 0:
+                rec["losses"] += 1
 
-        date_results[slip_key] = {
-            "legs": graded_legs,
-            "legs_correct": legs_win,
-            "legs_graded": len(decided),
-            "slip_win": slip_win,
-        }
+            icon = "WIN" if graded["slip_win"] else "LOSS"
+            print(f"  Slip {rec_key}: {graded['legs_correct']}/{graded['legs_graded']} legs [{icon}]")
 
-        rec = all_sr["records"].setdefault(
-            slip_key, {"wins": 0, "losses": 0, "legs_win": 0, "legs_total": 0}
-        )
-        rec["legs_win"] += legs_win
-        rec["legs_total"] += len(decided)
-        if slip_win:
-            rec["wins"] += 1
-        elif decided:
-            rec["losses"] += 1
-
-        icon = "WIN" if slip_win else "LOSS"
-        print(f"  Slip {slip_key}: {legs_win}/{len(decided)} legs [{icon}]")
+        date_results[slip_key] = graded_list
 
     all_sr["dates"][date_str] = date_results
     os.makedirs(RESULTS_DIR, exist_ok=True)
