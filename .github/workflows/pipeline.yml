@@ -1,22 +1,31 @@
 name: MLB Fantasy Pipeline
 
 # All cron times are UTC. The MLB season runs in PDT (UTC-7) Apr–Oct.
-# GitHub Actions crons are consistently delayed 3-7 hours under load.
-# Pipeline crons are kept at original registered values (GitHub takes 24-48h to
-# register new cron schedules after workflow changes; old values are already queued).
-# Use manual workflow_dispatch if a scheduled run is missed.
 #
-#   9:00 AM PDT  = 16:00 UTC  →  cron '0 16 * * *'
-#   2:00 PM PDT  = 21:00 UTC  →  cron '0 21 * * *'
-#  11:00 PM PDT  = 06:00 UTC (next day) → cron '0 6 * * *'
-# During PST (UTC-8, Nov–Mar off-season) each run fires 1 hr earlier PT.
+# CRON STRATEGY (updated 2026-07-06):
+# ─────────────────────────────────────────────────────────────────────────────
+# GitHub crons are delayed 0.2–6.8h (avg 3.4h, measured over 21 fires).
+# The every-2h pipeline cron covers the full AM–PM PDT window with smart-skip
+# so only the first successful run per day does real work.
+#
+# NEW: '0 13,15,17,19,21 * * *'  — 5 pipeline attempts, 6 AM–2 PM PDT
+#   Smart-skip: if today's data file exists and is <3h old, exits cleanly.
+#   24-48h to register; kept '0 16' + '0 21' during transition (they fire
+#   immediately from the old schedule). Both sets can coexist indefinitely.
+#
+# EXISTING (keep — already registered, zero transition gap):
+#   '0 16 * * *'  — Morning pipeline  9:00 AM PDT
+#   '0 21 * * *'  — Afternoon pipeline 2:00 PM PDT
+#   '0 6  * * *'  — Nightly tracker  11:00 PM PDT
+#   '0 13 * * *'  — Backup tracker    6:00 AM PDT
 
 on:
   schedule:
-    - cron: '0 16 * * *'   # Morning pipeline   —  9:00 AM PDT
-    - cron: '0 21 * * *'   # Afternoon pipeline —  2:00 PM PDT
-    - cron: '0 6 * * *'    # Nightly tracker    — 11:00 PM PDT (primary)
-    - cron: '0 13 * * *'   # Backup tracker     —  6:00 AM PDT (catches delayed/missed primary)
+    - cron: '0 13,15,17,19,21 * * *'  # Pipeline: 5 attempts 6 AM–2 PM PDT (smart-skip handles dedup)
+    - cron: '0 16 * * *'              # Keep: already-registered morning pipeline backup
+    - cron: '0 21 * * *'              # Keep: already-registered afternoon pipeline backup
+    - cron: '0 6 * * *'               # Nightly tracker  — 11:00 PM PDT (primary)
+    - cron: '0 13 * * *'              # Backup tracker   —  6:00 AM PDT
   workflow_dispatch:
     inputs:
       run_type:
@@ -38,17 +47,16 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 120   # pipeline takes up to 90 min on slow API days; hard-kill at 2 h
 
-    # Required for the git push step to write back to the repo
     permissions:
       contents: write
+      actions: write    # required for gh workflow run pages.yml (workflow dispatch)
 
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
         with:
-          # GITHUB_TOKEN is auto-provided; no PAT needed for same-repo pushes
           token: ${{ secrets.GITHUB_TOKEN }}
-          fetch-depth: 0   # full history so git push never fails on diverged refs
+          fetch-depth: 0
 
       - name: Set up Python 3.11
         uses: actions/setup-python@v5
@@ -59,30 +67,67 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      # ── Pipeline steps (target 9 AM + 2 PM PDT, scheduled 2-3h early for delay buffer) ──
+      # ── Fresh-data check (pipeline crons only) ───────────────────────────
+      # Sets skip=true if today's data file is <3h old. All pipeline steps
+      # gate on this output so every-2h fires are free if data already exists.
 
-      - name: Pipeline — fetch data
+      - name: Check for fresh pipeline data
+        id: freshness
         if: >-
+          github.event.schedule == '0 13,15,17,19,21 * * *' ||
           github.event.schedule == '0 16 * * *' ||
           github.event.schedule == '0 21 * * *' ||
           github.event.inputs.run_type == 'pipeline'
+        run: |
+          TODAY=$(date -u +%Y-%m-%d)
+          DATA="data/${TODAY}.json"
+          if [ -f "$DATA" ]; then
+            AGE=$(( $(date +%s) - $(date -r "$DATA" +%s 2>/dev/null || stat -c %Y "$DATA") ))
+            if [ "$AGE" -lt 10800 ]; then
+              echo "skip=true"  >> "$GITHUB_OUTPUT"
+              echo "Data for ${TODAY} is ${AGE}s old (<3h) — skipping this fire."
+            else
+              echo "skip=false" >> "$GITHUB_OUTPUT"
+              echo "Data for ${TODAY} is ${AGE}s old (>=3h) — running pipeline."
+            fi
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+            echo "No data for ${TODAY} yet — running pipeline."
+          fi
+
+      # ── Pipeline steps ───────────────────────────────────────────────────
+
+      - name: Pipeline — fetch data
+        if: >-
+          steps.freshness.outputs.skip != 'true' && (
+            github.event.schedule == '0 13,15,17,19,21 * * *' ||
+            github.event.schedule == '0 16 * * *' ||
+            github.event.schedule == '0 21 * * *' ||
+            github.event.inputs.run_type == 'pipeline'
+          )
         run: python pipeline.py
 
       - name: Pipeline — generate projections
         if: >-
-          github.event.schedule == '0 16 * * *' ||
-          github.event.schedule == '0 21 * * *' ||
-          github.event.inputs.run_type == 'pipeline'
+          steps.freshness.outputs.skip != 'true' && (
+            github.event.schedule == '0 13,15,17,19,21 * * *' ||
+            github.event.schedule == '0 16 * * *' ||
+            github.event.schedule == '0 21 * * *' ||
+            github.event.inputs.run_type == 'pipeline'
+          )
         run: python projections.py
 
       - name: Pipeline — build dashboard
         if: >-
-          github.event.schedule == '0 16 * * *' ||
-          github.event.schedule == '0 21 * * *' ||
-          github.event.inputs.run_type == 'pipeline'
+          steps.freshness.outputs.skip != 'true' && (
+            github.event.schedule == '0 13,15,17,19,21 * * *' ||
+            github.event.schedule == '0 16 * * *' ||
+            github.event.schedule == '0 21 * * *' ||
+            github.event.inputs.run_type == 'pipeline'
+          )
         run: python report.py
 
-      # ── Tracker step (11 PM scheduled run, or manual 'tracker') ─────────
+      # ── Tracker step ─────────────────────────────────────────────────────
 
       - name: Tracker — grade today's results
         if: >-
@@ -91,9 +136,9 @@ jobs:
           github.event.inputs.run_type == 'tracker'
         run: python tracker.py
 
-      # ── Commit everything produced this run back to the repo ─────────────
-      # report.py/tracker.py skip their internal git push when GITHUB_ACTIONS=true,
-      # so this single step handles all files: data/, output/, docs/, results.
+      # ── Commit and push ──────────────────────────────────────────────────
+      # gh workflow run pages.yml triggers the Pages deploy after every push.
+      # '|| true' prevents a Pages-trigger failure from failing the whole job.
 
       - name: Commit and push all changes
         env:
@@ -112,5 +157,5 @@ jobs:
               git rebase --continue
             )
             git push
-            gh workflow run pages.yml
+            gh workflow run pages.yml || true
           fi
