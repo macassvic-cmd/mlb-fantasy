@@ -146,16 +146,37 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # ── Race check ──────────────────────────────────────────────────
+          # Pipeline steps can take up to 90 min. If this run started when
+          # today's data was stale/missing (skip=false) but another fire
+          # finished and pushed today's data while we were working, our
+          # regenerated files are redundant. Drop them and exit clean
+          # instead of racing at push time below.
+          if [ "${{ steps.freshness.outputs.skip }}" = "false" ]; then
+            TODAY=$(date -u +%Y-%m-%d)
+            git fetch origin main
+            if git cat-file -e "origin/main:data/${TODAY}.json" 2>/dev/null; then
+              echo "origin/main already has data/${TODAY}.json — another run finished first. Discarding local changes, no push needed."
+              git checkout -- .
+              git clean -fd
+              exit 0
+            fi
+          fi
+
           git add -A
           if git diff --cached --quiet; then
             echo "Nothing changed — no commit needed."
           else
             git commit -m "Pipeline run $(date -u +'%Y-%m-%d %H:%M UTC')"
-            git pull --rebase origin main || (
-              git checkout --theirs output/dashboard.html &&
-              git add output/dashboard.html &&
+            if ! git pull --rebase origin main; then
+              echo "Rebase conflict — resolving by taking this run's generated version of every conflicting file."
+              conflicts=$(git diff --name-only --diff-filter=U)
+              for f in $conflicts; do
+                git checkout --theirs -- "$f" 2>/dev/null && git add -- "$f" || git rm -f -- "$f"
+              done
               git rebase --continue
-            )
+            fi
             git push
             gh workflow run pages.yml || true
           fi
