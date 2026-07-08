@@ -1851,6 +1851,89 @@
           "correct": false
         }
       ]
+    },
+    "2026-07-07": {
+      "summary": {
+        "total": 7,
+        "correct": 4,
+        "accuracy": 57.1,
+        "over_total": 3,
+        "over_correct": 3,
+        "under_total": 4,
+        "under_correct": 1
+      },
+      "plays": [
+        {
+          "player_id": 575929,
+          "name": "Willson Contreras",
+          "team": "Boston Red Sox",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 18,
+          "correct": true
+        },
+        {
+          "player_id": 665487,
+          "name": "Fernando Tatis Jr.",
+          "team": "San Diego Padres",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 8,
+          "correct": true
+        },
+        {
+          "player_id": 606466,
+          "name": "Ketel Marte",
+          "team": "Arizona Diamondbacks",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 9,
+          "correct": true
+        },
+        {
+          "player_id": 656941,
+          "name": "Kyle Schwarber",
+          "team": "Philadelphia Phillies",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 9.5,
+          "actual_ud": 19,
+          "correct": false
+        },
+        {
+          "player_id": 592885,
+          "name": "Christian Yelich",
+          "team": "Milwaukee Brewers",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 19,
+          "correct": false
+        },
+        {
+          "player_id": 805808,
+          "name": "Kevin McGonigle",
+          "team": "Detroit Tigers",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 13,
+          "correct": false
+        },
+        {
+          "player_id": 691777,
+          "name": "Max Muncy",
+          "team": "Athletics",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 3,
+          "correct": true
+        }
+      ]
     }
   }
 }

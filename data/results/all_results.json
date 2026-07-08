@@ -356,6 +356,23 @@
         "hit_rate": 58.9
       },
       "player_count": 124
+    },
+    "2026-07-07": {
+      "ud": {
+        "total": 200,
+        "win": 95,
+        "loss": 105,
+        "push": 0,
+        "hit_rate": 47.5
+      },
+      "pp": {
+        "total": 194,
+        "win": 99,
+        "loss": 95,
+        "push": 6,
+        "hit_rate": 51.0
+      },
+      "player_count": 231
     }
   },
   "players": {
@@ -589,6 +606,18 @@
           "pp_line": 5.5,
           "actual_pp": 0,
           "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.52,
+          "ud_line": 6.5,
+          "actual_ud": 19,
+          "result_ud": "loss",
+          "projected_pp": 5.16,
+          "pp_line": 6.5,
+          "actual_pp": 19,
+          "result_pp": "loss",
           "game_time_pt": "3:40 PM PT"
         }
       ]
@@ -835,6 +864,18 @@
           "pp_line": 5.5,
           "actual_pp": 0,
           "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "result_ud": "loss",
+          "projected_pp": 7.5,
+          "pp_line": 5.5,
+          "actual_pp": 0,
+          "result_pp": "loss",
           "game_time_pt": "3:40 PM PT"
         }
       ]
@@ -1135,6 +1176,18 @@
           "pp_line": 5.0,
           "actual_pp": 0,
           "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.52,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "result_ud": "loss",
+          "projected_pp": 6.13,
+          "pp_line": 5.5,
+          "actual_pp": 2,
+          "result_pp": "loss",
           "game_time_pt": "3:40 PM PT"
         }
       ]
@@ -1514,6 +1567,18 @@
           "actual_pp": 0,
           "result_pp": "win",
           "game_time_pt": "3:40 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.08,
+          "ud_line": 5.5,
+          "actual_ud": 3,
+          "result_ud": "loss",
+          "projected_pp": 6.95,
+          "pp_line": 5.5,
+          "actual_pp": 2,
+          "result_pp": "loss",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -1712,6 +1777,18 @@
           "actual_pp": 0,
           "result_pp": null,
           "game_time_pt": "3:40 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.77,
+          "ud_line": 4.39,
+          "actual_ud": 5,
+          "result_ud": "win",
+          "projected_pp": 5.42,
+          "pp_line": 3.5,
+          "actual_pp": 5,
+          "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -1862,6 +1939,18 @@
           "actual_pp": 21,
           "result_pp": "win",
           "game_time_pt": "6:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
+          "actual_ud": 13,
+          "result_ud": "win",
+          "projected_pp": 6.5,
+          "pp_line": 4.5,
+          "actual_pp": 12,
+          "result_pp": "win",
+          "game_time_pt": "4:40 PM PT"
         }
       ]
     },
@@ -2060,6 +2149,18 @@
           "actual_pp": 10,
           "result_pp": "win",
           "game_time_pt": "6:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 19,
+          "result_ud": "win",
+          "projected_pp": 7.0,
+          "pp_line": 5.0,
+          "actual_pp": 19,
+          "result_pp": "win",
+          "game_time_pt": "4:40 PM PT"
         }
       ]
     },
@@ -2246,6 +2347,18 @@
           "actual_pp": 4,
           "result_pp": "loss",
           "game_time_pt": "6:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "result_ud": "win",
+          "projected_pp": 7.0,
+          "pp_line": 5.0,
+          "actual_pp": 6,
+          "result_pp": "win",
+          "game_time_pt": "4:40 PM PT"
         }
       ]
     },
@@ -2444,6 +2557,18 @@
           "actual_pp": 20,
           "result_pp": "win",
           "game_time_pt": "6:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 9.5,
+          "ud_line": 7.5,
+          "actual_ud": 18,
+          "result_ud": "win",
+          "projected_pp": 7.0,
+          "pp_line": 5.0,
+          "actual_pp": 16,
+          "result_pp": "win",
+          "game_time_pt": "4:40 PM PT"
         }
       ]
     },
@@ -2750,6 +2875,18 @@
           "actual_pp": 4,
           "result_pp": "loss",
           "game_time_pt": "6:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "result_ud": "loss",
+          "projected_pp": 7.0,
+          "pp_line": 5.0,
+          "actual_pp": 2,
+          "result_pp": "loss",
+          "game_time_pt": "4:40 PM PT"
         }
       ]
     },
@@ -3200,6 +3337,18 @@
           "actual_pp": 7,
           "result_pp": "loss",
           "game_time_pt": "11:00 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "result_ud": "win",
+          "projected_pp": 3.86,
+          "pp_line": 5.0,
+          "actual_pp": 0,
+          "result_pp": "win",
+          "game_time_pt": "4:40 PM PT"
         }
       ]
     },
@@ -3320,6 +3469,18 @@
           "actual_pp": 8,
           "result_pp": null,
           "game_time_pt": "11:00 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 2.91,
+          "ud_line": null,
+          "actual_ud": 0,
+          "result_ud": null,
+          "projected_pp": 2.81,
+          "pp_line": null,
+          "actual_pp": 0,
+          "result_pp": null,
+          "game_time_pt": "4:40 PM PT"
         }
       ]
     },
@@ -3722,6 +3883,18 @@
           "actual_pp": 0,
           "result_pp": "win",
           "game_time_pt": "4:05 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "result_ud": "win",
+          "projected_pp": 3.9,
+          "pp_line": 5.0,
+          "actual_pp": 0,
+          "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -3930,6 +4103,18 @@
           "projected_pp": 3.5,
           "pp_line": 5.5,
           "actual_pp": 14,
+          "result_pp": "loss",
+          "game_time_pt": "3:40 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "actual_ud": 24,
+          "result_ud": "loss",
+          "projected_pp": 4.09,
+          "pp_line": 5.5,
+          "actual_pp": 24,
           "result_pp": "loss",
           "game_time_pt": "3:40 PM PT"
         }
@@ -4142,6 +4327,18 @@
           "actual_pp": 0,
           "result_pp": "win",
           "game_time_pt": "3:40 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 3.77,
+          "ud_line": 5.5,
+          "actual_ud": 3,
+          "result_ud": "win",
+          "projected_pp": 3.5,
+          "pp_line": 5.5,
+          "actual_pp": 3,
+          "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -4308,6 +4505,18 @@
           "projected_pp": 5.33,
           "pp_line": 5.5,
           "actual_pp": 0,
+          "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.59,
+          "ud_line": 6.89,
+          "actual_ud": 8,
+          "result_ud": "loss",
+          "projected_pp": 6.26,
+          "pp_line": 5.5,
+          "actual_pp": 7,
           "result_pp": "win",
           "game_time_pt": "3:40 PM PT"
         }
@@ -4508,6 +4717,18 @@
           "actual_pp": 32,
           "result_pp": "win",
           "game_time_pt": "3:40 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.08,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "result_ud": "loss",
+          "projected_pp": 6.0,
+          "pp_line": 4.0,
+          "actual_pp": 0,
+          "result_pp": "loss",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -4692,6 +4913,18 @@
           "projected_pp": 4.29,
           "pp_line": 4.5,
           "actual_pp": 4,
+          "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.74,
+          "ud_line": 5.64,
+          "actual_ud": 5,
+          "result_ud": "win",
+          "projected_pp": 4.68,
+          "pp_line": 4.5,
+          "actual_pp": 5,
           "result_pp": "win",
           "game_time_pt": "3:40 PM PT"
         }
@@ -5156,6 +5389,18 @@
           "actual_pp": 0,
           "result_pp": "win",
           "game_time_pt": "6:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 3.77,
+          "ud_line": 5.5,
+          "actual_ud": 3,
+          "result_ud": "win",
+          "projected_pp": 3.59,
+          "pp_line": 5.0,
+          "actual_pp": 3,
+          "result_pp": "win",
+          "game_time_pt": "6:45 PM PT"
         }
       ]
     },
@@ -5339,6 +5584,18 @@
           "result_ud": "loss",
           "projected_pp": 5.7,
           "pp_line": 5.5,
+          "actual_pp": 10,
+          "result_pp": "win",
+          "game_time_pt": "6:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.3,
+          "ud_line": 6.5,
+          "actual_ud": 11,
+          "result_ud": "loss",
+          "projected_pp": 6.02,
+          "pp_line": 5.0,
           "actual_pp": 10,
           "result_pp": "win",
           "game_time_pt": "6:45 PM PT"
@@ -5726,6 +5983,18 @@
           "actual_pp": 8,
           "result_pp": "win",
           "game_time_pt": "6:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.29,
+          "ud_line": 6.5,
+          "actual_ud": 5,
+          "result_ud": "loss",
+          "projected_pp": 7.0,
+          "pp_line": 5.0,
+          "actual_pp": 5,
+          "result_pp": "push",
+          "game_time_pt": "6:45 PM PT"
         }
       ]
     },
@@ -5936,6 +6205,18 @@
           "actual_pp": 7,
           "result_pp": "win",
           "game_time_pt": "6:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.91,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "result_ud": "loss",
+          "projected_pp": 5.78,
+          "pp_line": 5.0,
+          "actual_pp": 0,
+          "result_pp": "loss",
+          "game_time_pt": "6:45 PM PT"
         }
       ]
     },
@@ -6134,6 +6415,18 @@
           "actual_pp": 5,
           "result_pp": "win",
           "game_time_pt": "6:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.95,
+          "ud_line": 5.5,
+          "actual_ud": 3,
+          "result_ud": "win",
+          "projected_pp": 4.58,
+          "pp_line": 4.0,
+          "actual_pp": 3,
+          "result_pp": "loss",
+          "game_time_pt": "6:45 PM PT"
         }
       ]
     },
@@ -6290,6 +6583,18 @@
           "actual_pp": 10,
           "result_pp": "win",
           "game_time_pt": "5:10 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.39,
+          "ud_line": 4.39,
+          "actual_ud": 5,
+          "result_ud": "win",
+          "projected_pp": 5.5,
+          "pp_line": 3.5,
+          "actual_pp": 5,
+          "result_pp": "win",
+          "game_time_pt": "6:45 PM PT"
         }
       ]
     },
@@ -6590,6 +6895,18 @@
           "actual_pp": 35,
           "result_pp": "win",
           "game_time_pt": "3:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 9.21,
+          "ud_line": 10.5,
+          "actual_ud": 22,
+          "result_ud": "loss",
+          "projected_pp": 7.5,
+          "pp_line": 5.5,
+          "actual_pp": 21,
+          "result_pp": "win",
+          "game_time_pt": "3:45 PM PT"
         }
       ]
     },
@@ -6774,6 +7091,18 @@
           "projected_pp": 7.0,
           "pp_line": 5.0,
           "actual_pp": 28,
+          "result_pp": "win",
+          "game_time_pt": "3:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 9,
+          "result_ud": "win",
+          "projected_pp": 7.0,
+          "pp_line": 5.0,
+          "actual_pp": 8,
           "result_pp": "win",
           "game_time_pt": "3:45 PM PT"
         }
@@ -7100,6 +7429,18 @@
           "actual_pp": 2,
           "result_pp": "loss",
           "game_time_pt": "3:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "result_ud": "loss",
+          "projected_pp": 6.5,
+          "pp_line": 4.5,
+          "actual_pp": 0,
+          "result_pp": "loss",
+          "game_time_pt": "3:45 PM PT"
         }
       ]
     },
@@ -7310,6 +7651,18 @@
           "actual_pp": 0,
           "result_pp": "loss",
           "game_time_pt": "3:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "result_ud": "loss",
+          "projected_pp": 7.0,
+          "pp_line": 5.0,
+          "actual_pp": 0,
+          "result_pp": "loss",
+          "game_time_pt": "3:45 PM PT"
         }
       ]
     },
@@ -7460,6 +7813,18 @@
           "actual_pp": 18,
           "result_pp": "loss",
           "game_time_pt": "10:35 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.31,
+          "ud_line": null,
+          "actual_ud": 3,
+          "result_ud": null,
+          "projected_pp": 5.62,
+          "pp_line": null,
+          "actual_pp": 2,
+          "result_pp": null,
+          "game_time_pt": "3:45 PM PT"
         }
       ]
     },
@@ -7670,6 +8035,18 @@
           "actual_pp": 2,
           "result_pp": null,
           "game_time_pt": "8:05 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
+          "actual_ud": 6,
+          "result_ud": "win",
+          "projected_pp": 6.5,
+          "pp_line": 4.5,
+          "actual_pp": 6,
+          "result_pp": "win",
+          "game_time_pt": "3:45 PM PT"
         }
       ]
     },
@@ -8204,6 +8581,18 @@
           "actual_pp": 0,
           "result_pp": "loss",
           "game_time_pt": "6:40 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 9.5,
+          "ud_line": 7.5,
+          "actual_ud": 8,
+          "result_ud": "win",
+          "projected_pp": 7.5,
+          "pp_line": 5.5,
+          "actual_pp": 7,
+          "result_pp": "win",
+          "game_time_pt": "6:40 PM PT"
         }
       ]
     },
@@ -8448,6 +8837,18 @@
           "projected_pp": 6.8,
           "pp_line": 5.0,
           "actual_pp": 6,
+          "result_pp": "win",
+          "game_time_pt": "6:40 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 11,
+          "result_ud": "win",
+          "projected_pp": 7.0,
+          "pp_line": 5.0,
+          "actual_pp": 12,
           "result_pp": "win",
           "game_time_pt": "6:40 PM PT"
         }
@@ -8696,6 +9097,18 @@
           "actual_pp": 3,
           "result_pp": "loss",
           "game_time_pt": "6:40 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "result_ud": "loss",
+          "projected_pp": 7.0,
+          "pp_line": 5.0,
+          "actual_pp": 2,
+          "result_pp": "loss",
+          "game_time_pt": "6:40 PM PT"
         }
       ]
     },
@@ -8880,6 +9293,18 @@
           "projected_pp": 6.34,
           "pp_line": 5.0,
           "actual_pp": 3,
+          "result_pp": "loss",
+          "game_time_pt": "6:40 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
+          "actual_ud": 5,
+          "result_ud": "loss",
+          "projected_pp": 7.5,
+          "pp_line": 5.5,
+          "actual_pp": 4,
           "result_pp": "loss",
           "game_time_pt": "6:40 PM PT"
         }
@@ -9134,6 +9559,18 @@
           "actual_pp": 0,
           "result_pp": "win",
           "game_time_pt": "7:10 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.22,
+          "ud_line": null,
+          "actual_ud": 3,
+          "result_ud": null,
+          "projected_pp": 5.32,
+          "pp_line": null,
+          "actual_pp": 3,
+          "result_pp": null,
+          "game_time_pt": "6:40 PM PT"
         }
       ]
     },
@@ -9331,6 +9768,18 @@
           "date": "2026-07-06",
           "projected_ud": 6.37,
           "ud_line": 4.37,
+          "actual_ud": 0,
+          "result_ud": "loss",
+          "projected_pp": 5.5,
+          "pp_line": 3.5,
+          "actual_pp": 0,
+          "result_pp": "loss",
+          "game_time_pt": "6:40 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
           "actual_ud": 0,
           "result_ud": "loss",
           "projected_pp": 5.5,
@@ -9698,6 +10147,18 @@
           "actual_pp": 0,
           "result_pp": null,
           "game_time_pt": "10:05 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.63,
+          "ud_line": 6.5,
+          "actual_ud": 6,
+          "result_ud": "win",
+          "projected_pp": 4.3,
+          "pp_line": 5.19,
+          "actual_pp": 5,
+          "result_pp": "win",
+          "game_time_pt": "4:10 PM PT"
         }
       ]
     },
@@ -9932,6 +10393,18 @@
           "actual_pp": 7,
           "result_pp": null,
           "game_time_pt": "10:05 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 8.1,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "result_ud": "loss",
+          "projected_pp": 7.19,
+          "pp_line": 5.19,
+          "actual_pp": 3,
+          "result_pp": "loss",
+          "game_time_pt": "4:10 PM PT"
         }
       ]
     },
@@ -10094,6 +10567,18 @@
           "actual_pp": 16,
           "result_pp": null,
           "game_time_pt": "10:05 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.61,
+          "ud_line": 5.5,
+          "actual_ud": 3,
+          "result_ud": "loss",
+          "projected_pp": 6.36,
+          "pp_line": 4.39,
+          "actual_pp": 3,
+          "result_pp": "loss",
+          "game_time_pt": "4:10 PM PT"
         }
       ]
     },
@@ -10442,6 +10927,18 @@
           "actual_pp": 4,
           "result_pp": null,
           "game_time_pt": "10:05 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.7,
+          "ud_line": 5.5,
+          "actual_ud": 14,
+          "result_ud": "win",
+          "projected_pp": 6.14,
+          "pp_line": 4.39,
+          "actual_pp": 14,
+          "result_pp": "win",
+          "game_time_pt": "4:10 PM PT"
         }
       ]
     },
@@ -10868,6 +11365,18 @@
           "actual_pp": 10,
           "result_pp": null,
           "game_time_pt": "10:05 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.84,
+          "ud_line": 6.5,
+          "actual_ud": 6,
+          "result_ud": "loss",
+          "projected_pp": 6.52,
+          "pp_line": 5.5,
+          "actual_pp": 4,
+          "result_pp": "loss",
+          "game_time_pt": "3:35 PM PT"
         }
       ]
     },
@@ -11054,6 +11563,18 @@
           "actual_pp": 2,
           "result_pp": null,
           "game_time_pt": "10:05 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.58,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "result_ud": "loss",
+          "projected_pp": 7.16,
+          "pp_line": 5.5,
+          "actual_pp": 3,
+          "result_pp": "loss",
+          "game_time_pt": "3:35 PM PT"
         }
       ]
     },
@@ -11240,6 +11761,18 @@
           "actual_pp": 0,
           "result_pp": null,
           "game_time_pt": "10:05 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "result_ud": "loss",
+          "projected_pp": 7.5,
+          "pp_line": 5.5,
+          "actual_pp": 3,
+          "result_pp": "loss",
+          "game_time_pt": "3:35 PM PT"
         }
       ]
     },
@@ -11492,6 +12025,18 @@
           "actual_pp": 2,
           "result_pp": null,
           "game_time_pt": "10:05 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.46,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "result_ud": "loss",
+          "projected_pp": 6.12,
+          "pp_line": 4.5,
+          "actual_pp": 0,
+          "result_pp": "loss",
+          "game_time_pt": "3:35 PM PT"
         }
       ]
     },
@@ -11672,6 +12217,18 @@
           "actual_pp": 2,
           "result_pp": null,
           "game_time_pt": "10:05 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.57,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "result_ud": "loss",
+          "projected_pp": 5.5,
+          "pp_line": 3.5,
+          "actual_pp": 0,
+          "result_pp": "loss",
+          "game_time_pt": "3:35 PM PT"
         }
       ]
     },
@@ -11822,6 +12379,18 @@
           "actual_pp": 9,
           "result_pp": null,
           "game_time_pt": "10:05 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
+          "actual_ud": 5,
+          "result_ud": "loss",
+          "projected_pp": 6.5,
+          "pp_line": 4.5,
+          "actual_pp": 5,
+          "result_pp": "win",
+          "game_time_pt": "3:35 PM PT"
         }
       ]
     },
@@ -12026,6 +12595,18 @@
           "actual_pp": 2,
           "result_pp": "loss",
           "game_time_pt": "2:00 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 3.88,
+          "ud_line": 5.5,
+          "actual_ud": 17,
+          "result_ud": "loss",
+          "projected_pp": 3.71,
+          "pp_line": 3.5,
+          "actual_pp": 16,
+          "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -12362,6 +12943,18 @@
           "actual_pp": 5,
           "result_pp": "loss",
           "game_time_pt": "2:00 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "actual_ud": 7,
+          "result_ud": "loss",
+          "projected_pp": 3.54,
+          "pp_line": 4.5,
+          "actual_pp": 7,
+          "result_pp": "loss",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -12512,6 +13105,18 @@
           "actual_pp": 5,
           "result_pp": "win",
           "game_time_pt": "2:00 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "actual_ud": 14,
+          "result_ud": "loss",
+          "projected_pp": 3.75,
+          "pp_line": 4.5,
+          "actual_pp": 12,
+          "result_pp": "loss",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -12614,6 +13219,18 @@
           "actual_pp": 5,
           "result_pp": "loss",
           "game_time_pt": "2:00 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 3.42,
+          "ud_line": 3.76,
+          "actual_ud": 8,
+          "result_ud": "loss",
+          "projected_pp": 3.2,
+          "pp_line": 3.0,
+          "actual_pp": 7,
+          "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -12746,6 +13363,18 @@
           "actual_pp": 7,
           "result_pp": null,
           "game_time_pt": "10:40 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 2.69,
+          "ud_line": null,
+          "actual_ud": 0,
+          "result_ud": null,
+          "projected_pp": 2.53,
+          "pp_line": null,
+          "actual_pp": 0,
+          "result_pp": null,
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -12949,6 +13578,18 @@
           "pp_line": 8.5,
           "actual_pp": 28,
           "result_pp": "win",
+          "game_time_pt": "7:10 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 9.5,
+          "ud_line": 10.5,
+          "actual_ud": 17,
+          "result_ud": "loss",
+          "projected_pp": 9.11,
+          "pp_line": 9.5,
+          "actual_pp": 16,
+          "result_pp": "loss",
           "game_time_pt": "7:10 PM PT"
         }
       ]
@@ -13184,6 +13825,18 @@
           "actual_pp": 2,
           "result_pp": "loss",
           "game_time_pt": "7:10 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "result_ud": "win",
+          "projected_pp": 9.0,
+          "pp_line": 7.0,
+          "actual_pp": 7,
+          "result_pp": "push",
+          "game_time_pt": "7:10 PM PT"
         }
       ]
     },
@@ -13416,6 +14069,18 @@
           "projected_pp": 7.5,
           "pp_line": 5.5,
           "actual_pp": 3,
+          "result_pp": "loss",
+          "game_time_pt": "7:10 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 9.5,
+          "ud_line": 9.5,
+          "actual_ud": 6,
+          "result_ud": "loss",
+          "projected_pp": 8.5,
+          "pp_line": 6.5,
+          "actual_pp": 6,
           "result_pp": "loss",
           "game_time_pt": "7:10 PM PT"
         }
@@ -13814,6 +14479,18 @@
           "actual_pp": 0,
           "result_pp": "loss",
           "game_time_pt": "4:20 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 9.5,
+          "ud_line": 7.5,
+          "actual_ud": 0,
+          "result_ud": "loss",
+          "projected_pp": 8.5,
+          "pp_line": 6.5,
+          "actual_pp": 0,
+          "result_pp": "loss",
+          "game_time_pt": "7:10 PM PT"
         }
       ]
     },
@@ -14000,6 +14677,18 @@
           "actual_pp": 5,
           "result_pp": "win",
           "game_time_pt": "4:20 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "result_ud": "loss",
+          "projected_pp": 7.5,
+          "pp_line": 5.5,
+          "actual_pp": 0,
+          "result_pp": "loss",
+          "game_time_pt": "7:10 PM PT"
         }
       ]
     },
@@ -14240,6 +14929,18 @@
           "actual_pp": 0,
           "result_pp": "loss",
           "game_time_pt": "4:20 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
+          "actual_ud": 3,
+          "result_ud": "loss",
+          "projected_pp": 6.5,
+          "pp_line": 4.5,
+          "actual_pp": 2,
+          "result_pp": "loss",
+          "game_time_pt": "7:10 PM PT"
         }
       ]
     },
@@ -14624,6 +15325,18 @@
           "actual_pp": 10,
           "result_pp": "loss",
           "game_time_pt": "12:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.5,
+          "ud_line": 7.5,
+          "actual_ud": 13,
+          "result_ud": "loss",
+          "projected_pp": 4.75,
+          "pp_line": 6.5,
+          "actual_pp": 12,
+          "result_pp": "loss",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -14816,6 +15529,18 @@
           "actual_pp": 7,
           "result_pp": "win",
           "game_time_pt": "12:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.07,
+          "ud_line": 5.5,
+          "actual_ud": 3,
+          "result_ud": "win",
+          "projected_pp": 3.93,
+          "pp_line": 5.0,
+          "actual_pp": 2,
+          "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -15026,6 +15751,18 @@
           "actual_pp": 7,
           "result_pp": "win",
           "game_time_pt": "12:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "result_ud": "win",
+          "projected_pp": 4.0,
+          "pp_line": 5.5,
+          "actual_pp": 0,
+          "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -15236,6 +15973,18 @@
           "actual_pp": 33,
           "result_pp": "win",
           "game_time_pt": "12:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.68,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "result_ud": "win",
+          "projected_pp": 5.48,
+          "pp_line": 5.5,
+          "actual_pp": 0,
+          "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -15446,6 +16195,18 @@
           "actual_pp": 5,
           "result_pp": "win",
           "game_time_pt": "12:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.22,
+          "ud_line": 5.5,
+          "actual_ud": 5,
+          "result_ud": "win",
+          "projected_pp": 3.95,
+          "pp_line": 4.5,
+          "actual_pp": 5,
+          "result_pp": "loss",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -15608,6 +16369,18 @@
           "actual_pp": 2,
           "result_pp": "loss",
           "game_time_pt": "12:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 3.46,
+          "ud_line": 5.01,
+          "actual_ud": 19,
+          "result_ud": "loss",
+          "projected_pp": 3.31,
+          "pp_line": 4.0,
+          "actual_pp": 18,
+          "result_pp": "loss",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -15794,6 +16567,18 @@
           "actual_pp": 0,
           "result_pp": "loss",
           "game_time_pt": "12:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 3.91,
+          "ud_line": 5.01,
+          "actual_ud": 11,
+          "result_ud": "loss",
+          "projected_pp": 3.73,
+          "pp_line": 4.0,
+          "actual_pp": 10,
+          "result_pp": "loss",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -15866,6 +16651,18 @@
           "actual_pp": 18,
           "result_pp": "loss",
           "game_time_pt": "10:35 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.89,
+          "ud_line": 6.89,
+          "actual_ud": 8,
+          "result_ud": "loss",
+          "projected_pp": 4.63,
+          "pp_line": 5.5,
+          "actual_pp": 7,
+          "result_pp": "loss",
+          "game_time_pt": "4:40 PM PT"
         }
       ]
     },
@@ -16214,6 +17011,18 @@
           "actual_pp": 15,
           "result_pp": "win",
           "game_time_pt": "10:35 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.3,
+          "ud_line": 5.5,
+          "actual_ud": 5,
+          "result_ud": "loss",
+          "projected_pp": 5.5,
+          "pp_line": 3.5,
+          "actual_pp": 5,
+          "result_pp": "win",
+          "game_time_pt": "4:40 PM PT"
         }
       ]
     },
@@ -16388,6 +17197,18 @@
           "actual_pp": 7,
           "result_pp": "win",
           "game_time_pt": "10:35 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.42,
+          "ud_line": 6.5,
+          "actual_ud": 11,
+          "result_ud": "win",
+          "projected_pp": 6.5,
+          "pp_line": 4.5,
+          "actual_pp": 10,
+          "result_pp": "win",
+          "game_time_pt": "4:40 PM PT"
         }
       ]
     },
@@ -16586,6 +17407,18 @@
           "actual_pp": 16,
           "result_pp": "win",
           "game_time_pt": "10:35 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.19,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "result_ud": "win",
+          "projected_pp": 5.86,
+          "pp_line": 4.5,
+          "actual_pp": 2,
+          "result_pp": "loss",
+          "game_time_pt": "4:40 PM PT"
         }
       ]
     },
@@ -16760,6 +17593,18 @@
           "actual_pp": 7,
           "result_pp": "win",
           "game_time_pt": "10:35 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.57,
+          "ud_line": 5.5,
+          "actual_ud": 6,
+          "result_ud": "win",
+          "projected_pp": 5.3,
+          "pp_line": 4.5,
+          "actual_pp": 6,
+          "result_pp": "win",
+          "game_time_pt": "4:40 PM PT"
         }
       ]
     },
@@ -16898,6 +17743,18 @@
           "actual_pp": 5,
           "result_pp": "win",
           "game_time_pt": "10:35 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.16,
+          "ud_line": 4.39,
+          "actual_ud": 8,
+          "result_ud": "loss",
+          "projected_pp": 4.01,
+          "pp_line": 3.5,
+          "actual_pp": 7,
+          "result_pp": "win",
+          "game_time_pt": "4:40 PM PT"
         }
       ]
     },
@@ -17054,6 +17911,18 @@
           "actual_pp": 10,
           "result_pp": "loss",
           "game_time_pt": "1:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
+          "actual_ud": 14,
+          "result_ud": "win",
+          "projected_pp": 6.39,
+          "pp_line": 4.39,
+          "actual_pp": 13,
+          "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -17264,6 +18133,18 @@
           "actual_pp": 30,
           "result_pp": "loss",
           "game_time_pt": "1:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 9.22,
+          "ud_line": 7.5,
+          "actual_ud": 3,
+          "result_ud": "loss",
+          "projected_pp": 7.98,
+          "pp_line": 5.98,
+          "actual_pp": 3,
+          "result_pp": "loss",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -17708,6 +18589,18 @@
           "actual_pp": 10,
           "result_pp": "loss",
           "game_time_pt": "1:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 8.25,
+          "ud_line": 6.5,
+          "actual_ud": 5,
+          "result_ud": "loss",
+          "projected_pp": 7.19,
+          "pp_line": 5.19,
+          "actual_pp": 5,
+          "result_pp": "loss",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -17846,6 +18739,18 @@
           "actual_pp": 2,
           "result_pp": "loss",
           "game_time_pt": "6:40 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.6,
+          "ud_line": null,
+          "actual_ud": 14,
+          "result_ud": null,
+          "projected_pp": 7.04,
+          "pp_line": null,
+          "actual_pp": 14,
+          "result_pp": null,
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -18068,6 +18973,18 @@
           "actual_pp": 9,
           "result_pp": "loss",
           "game_time_pt": "1:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.21,
+          "ud_line": null,
+          "actual_ud": 10,
+          "result_ud": null,
+          "projected_pp": 3.74,
+          "pp_line": null,
+          "actual_pp": 10,
+          "result_pp": null,
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -18392,6 +19309,18 @@
           "actual_pp": 5,
           "result_pp": "win",
           "game_time_pt": "1:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 8.21,
+          "ud_line": null,
+          "actual_ud": 5,
+          "result_ud": null,
+          "projected_pp": 7.93,
+          "pp_line": null,
+          "actual_pp": 5,
+          "result_pp": null,
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -18612,6 +19541,18 @@
           "projected_pp": 8.5,
           "pp_line": 6.5,
           "actual_pp": 10,
+          "result_pp": "win",
+          "game_time_pt": "6:40 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 9.5,
+          "ud_line": 7.5,
+          "actual_ud": 9,
+          "result_ud": "win",
+          "projected_pp": 8.5,
+          "pp_line": 6.5,
+          "actual_pp": 7,
           "result_pp": "win",
           "game_time_pt": "6:40 PM PT"
         }
@@ -18836,6 +19777,18 @@
           "actual_pp": 7,
           "result_pp": "loss",
           "game_time_pt": "6:40 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.75,
+          "ud_line": 7.5,
+          "actual_ud": 3,
+          "result_ud": "win",
+          "projected_pp": 6.22,
+          "pp_line": 5.5,
+          "actual_pp": 2,
+          "result_pp": "loss",
+          "game_time_pt": "6:40 PM PT"
         }
       ]
     },
@@ -19020,6 +19973,18 @@
           "projected_pp": 6.21,
           "pp_line": 5.5,
           "actual_pp": 10,
+          "result_pp": "win",
+          "game_time_pt": "6:40 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 8.14,
+          "ud_line": 6.5,
+          "actual_ud": 6,
+          "result_ud": "loss",
+          "projected_pp": 7.5,
+          "pp_line": 5.5,
+          "actual_pp": 6,
           "result_pp": "win",
           "game_time_pt": "6:40 PM PT"
         }
@@ -19219,6 +20184,18 @@
           "pp_line": 4.5,
           "actual_pp": 0,
           "result_pp": "win",
+          "game_time_pt": "6:40 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.01,
+          "ud_line": 5.01,
+          "actual_ud": 0,
+          "result_ud": "loss",
+          "projected_pp": 6.0,
+          "pp_line": 4.0,
+          "actual_pp": 0,
+          "result_pp": "loss",
           "game_time_pt": "6:40 PM PT"
         }
       ]
@@ -19554,6 +20531,18 @@
           "projected_pp": 6.41,
           "pp_line": 6.5,
           "actual_pp": 26,
+          "result_pp": "loss",
+          "game_time_pt": "6:40 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 2,
+          "result_ud": "loss",
+          "projected_pp": 7.5,
+          "pp_line": 5.5,
+          "actual_pp": 2,
           "result_pp": "loss",
           "game_time_pt": "6:40 PM PT"
         }
@@ -20204,6 +21193,18 @@
           "actual_pp": 2,
           "result_pp": "win",
           "game_time_pt": "6:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.59,
+          "ud_line": 6.5,
+          "actual_ud": 5,
+          "result_ud": "win",
+          "projected_pp": 4.5,
+          "pp_line": 6.5,
+          "actual_pp": 5,
+          "result_pp": "win",
+          "game_time_pt": "6:45 PM PT"
         }
       ]
     },
@@ -20364,6 +21365,18 @@
           "projected_pp": 4.8,
           "pp_line": 4.5,
           "actual_pp": 3,
+          "result_pp": "loss",
+          "game_time_pt": "6:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.51,
+          "ud_line": 5.5,
+          "actual_ud": 16,
+          "result_ud": "loss",
+          "projected_pp": 4.28,
+          "pp_line": 5.0,
+          "actual_pp": 15,
           "result_pp": "loss",
           "game_time_pt": "6:45 PM PT"
         }
@@ -20563,6 +21576,18 @@
           "pp_line": 4.5,
           "actual_pp": 14,
           "result_pp": "win",
+          "game_time_pt": "6:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.42,
+          "ud_line": 5.5,
+          "actual_ud": 5,
+          "result_ud": "loss",
+          "projected_pp": 6.15,
+          "pp_line": 5.0,
+          "actual_pp": 5,
+          "result_pp": "push",
           "game_time_pt": "6:45 PM PT"
         }
       ]
@@ -20828,6 +21853,18 @@
           "actual_pp": 2,
           "result_pp": "loss",
           "game_time_pt": "4:07 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 2.15,
+          "ud_line": null,
+          "actual_ud": 0,
+          "result_ud": null,
+          "projected_pp": 2.05,
+          "pp_line": null,
+          "actual_pp": 0,
+          "result_pp": null,
+          "game_time_pt": "6:45 PM PT"
         }
       ]
     },
@@ -21026,6 +22063,18 @@
           "actual_pp": 3,
           "result_pp": "win",
           "game_time_pt": "6:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.24,
+          "ud_line": 5.5,
+          "actual_ud": 9,
+          "result_ud": "loss",
+          "projected_pp": 4.05,
+          "pp_line": 5.5,
+          "actual_pp": 7,
+          "result_pp": "loss",
+          "game_time_pt": "6:45 PM PT"
         }
       ]
     },
@@ -21212,6 +22261,18 @@
           "actual_pp": 2,
           "result_pp": "loss",
           "game_time_pt": "11:10 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.5,
+          "ud_line": 9.5,
+          "actual_ud": 19,
+          "result_ud": "loss",
+          "projected_pp": 5.31,
+          "pp_line": 5.0,
+          "actual_pp": 19,
+          "result_pp": "win",
+          "game_time_pt": "4:10 PM PT"
         }
       ]
     },
@@ -21422,6 +22483,18 @@
           "actual_pp": 13,
           "result_pp": "win",
           "game_time_pt": "11:10 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 8.85,
+          "ud_line": 8.5,
+          "actual_ud": 7,
+          "result_ud": "loss",
+          "projected_pp": 8.58,
+          "pp_line": 7.5,
+          "actual_pp": 7,
+          "result_pp": "loss",
+          "game_time_pt": "4:10 PM PT"
         }
       ]
     },
@@ -21632,6 +22705,18 @@
           "actual_pp": 6,
           "result_pp": "win",
           "game_time_pt": "11:10 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.51,
+          "ud_line": 8.5,
+          "actual_ud": 0,
+          "result_ud": "win",
+          "projected_pp": 7.05,
+          "pp_line": 5.5,
+          "actual_pp": 0,
+          "result_pp": "loss",
+          "game_time_pt": "4:10 PM PT"
         }
       ]
     },
@@ -21842,6 +22927,18 @@
           "actual_pp": 2,
           "result_pp": "loss",
           "game_time_pt": "11:10 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 8.22,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "result_ud": "loss",
+          "projected_pp": 7.0,
+          "pp_line": 5.0,
+          "actual_pp": 0,
+          "result_pp": "loss",
+          "game_time_pt": "4:10 PM PT"
         }
       ]
     },
@@ -22040,6 +23137,18 @@
           "actual_pp": 7,
           "result_pp": "win",
           "game_time_pt": "11:10 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.55,
+          "ud_line": 7.5,
+          "actual_ud": 3,
+          "result_ud": "win",
+          "projected_pp": 6.09,
+          "pp_line": 5.5,
+          "actual_pp": 2,
+          "result_pp": "loss",
+          "game_time_pt": "4:10 PM PT"
         }
       ]
     },
@@ -22250,6 +23359,18 @@
           "actual_pp": 8,
           "result_pp": "win",
           "game_time_pt": "11:10 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.66,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "result_ud": "loss",
+          "projected_pp": 6.5,
+          "pp_line": 4.5,
+          "actual_pp": 0,
+          "result_pp": "loss",
+          "game_time_pt": "4:10 PM PT"
         }
       ]
     },
@@ -22364,6 +23485,18 @@
           "actual_pp": 3,
           "result_pp": "loss",
           "game_time_pt": "11:10 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.39,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "result_ud": "win",
+          "projected_pp": 5.95,
+          "pp_line": 4.5,
+          "actual_pp": 0,
+          "result_pp": "loss",
+          "game_time_pt": "4:10 PM PT"
         }
       ]
     },
@@ -22712,6 +23845,18 @@
           "actual_pp": 23,
           "result_pp": "loss",
           "game_time_pt": "4:15 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.17,
+          "ud_line": 6.5,
+          "actual_ud": 22,
+          "result_ud": "loss",
+          "projected_pp": 5.86,
+          "pp_line": 5.5,
+          "actual_pp": 21,
+          "result_pp": "win",
+          "game_time_pt": "4:10 PM PT"
         }
       ]
     },
@@ -22910,6 +24055,18 @@
           "actual_pp": 8,
           "result_pp": "win",
           "game_time_pt": "4:15 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.16,
+          "ud_line": 6.5,
+          "actual_ud": 5,
+          "result_ud": "loss",
+          "projected_pp": 6.8,
+          "pp_line": 5.5,
+          "actual_pp": 5,
+          "result_pp": "loss",
+          "game_time_pt": "4:10 PM PT"
         }
       ]
     },
@@ -23084,6 +24241,18 @@
           "actual_pp": 29,
           "result_pp": "loss",
           "game_time_pt": "4:15 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.99,
+          "ud_line": 8.5,
+          "actual_ud": 18,
+          "result_ud": "loss",
+          "projected_pp": 6.62,
+          "pp_line": 6.5,
+          "actual_pp": 18,
+          "result_pp": "win",
+          "game_time_pt": "4:10 PM PT"
         }
       ]
     },
@@ -23234,6 +24403,18 @@
           "actual_pp": 0,
           "result_pp": null,
           "game_time_pt": "5:08 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.2,
+          "ud_line": 5.5,
+          "actual_ud": 6,
+          "result_ud": "loss",
+          "projected_pp": 3.99,
+          "pp_line": 3.5,
+          "actual_pp": 6,
+          "result_pp": "win",
+          "game_time_pt": "4:10 PM PT"
         }
       ]
     },
@@ -23486,6 +24667,18 @@
           "actual_pp": 2,
           "result_pp": "loss",
           "game_time_pt": "4:15 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.03,
+          "ud_line": 6.5,
+          "actual_ud": 40,
+          "result_ud": "loss",
+          "projected_pp": 5.73,
+          "pp_line": 5.0,
+          "actual_pp": 40,
+          "result_pp": "win",
+          "game_time_pt": "4:10 PM PT"
         }
       ]
     },
@@ -23810,6 +25003,18 @@
           "actual_pp": 3,
           "result_pp": "loss",
           "game_time_pt": "4:15 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.83,
+          "ud_line": 4.39,
+          "actual_ud": 10,
+          "result_ud": "win",
+          "projected_pp": 4.44,
+          "pp_line": 3.5,
+          "actual_pp": 9,
+          "result_pp": "win",
+          "game_time_pt": "4:10 PM PT"
         }
       ]
     },
@@ -24146,6 +25351,18 @@
           "actual_pp": 2,
           "result_pp": "win",
           "game_time_pt": "4:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.79,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "result_ud": "loss",
+          "projected_pp": 5.56,
+          "pp_line": 4.5,
+          "actual_pp": 7,
+          "result_pp": "win",
+          "game_time_pt": "4:45 PM PT"
         }
       ]
     },
@@ -24367,6 +25584,18 @@
           "pp_line": 5.5,
           "actual_pp": 0,
           "result_pp": "win",
+          "game_time_pt": "4:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "actual_ud": 17,
+          "result_ud": "loss",
+          "projected_pp": 4.18,
+          "pp_line": 4.5,
+          "actual_pp": 17,
+          "result_pp": "loss",
           "game_time_pt": "4:45 PM PT"
         }
       ]
@@ -24764,6 +25993,18 @@
           "actual_pp": 4,
           "result_pp": "loss",
           "game_time_pt": "4:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 8.36,
+          "ud_line": 6.5,
+          "actual_ud": 16,
+          "result_ud": "win",
+          "projected_pp": 6.5,
+          "pp_line": 4.5,
+          "actual_pp": 16,
+          "result_pp": "win",
+          "game_time_pt": "4:45 PM PT"
         }
       ]
     },
@@ -25136,6 +26377,18 @@
           "actual_pp": 8,
           "result_pp": "loss",
           "game_time_pt": "4:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.95,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "result_ud": "loss",
+          "projected_pp": 5.5,
+          "pp_line": 3.5,
+          "actual_pp": 0,
+          "result_pp": "loss",
+          "game_time_pt": "4:45 PM PT"
         }
       ]
     },
@@ -25190,6 +26443,18 @@
           "actual_pp": 10,
           "result_pp": "win",
           "game_time_pt": "1:05 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.36,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "result_ud": "win",
+          "projected_pp": 5.02,
+          "pp_line": 4.39,
+          "actual_pp": 0,
+          "result_pp": "loss",
+          "game_time_pt": "4:45 PM PT"
         }
       ]
     },
@@ -25388,6 +26653,18 @@
           "actual_pp": 3,
           "result_pp": "loss",
           "game_time_pt": "4:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.41,
+          "ud_line": 3.76,
+          "actual_ud": 0,
+          "result_ud": "loss",
+          "projected_pp": 5.0,
+          "pp_line": 3.0,
+          "actual_pp": 0,
+          "result_pp": "loss",
+          "game_time_pt": "4:45 PM PT"
         }
       ]
     },
@@ -25501,6 +26778,18 @@
           "pp_line": 4.5,
           "actual_pp": 10,
           "result_pp": "win",
+          "game_time_pt": "4:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.13,
+          "ud_line": null,
+          "actual_ud": 0,
+          "result_ud": null,
+          "projected_pp": 4.85,
+          "pp_line": null,
+          "actual_pp": 0,
+          "result_pp": null,
           "game_time_pt": "4:45 PM PT"
         }
       ]
@@ -25712,6 +27001,18 @@
           "actual_pp": 19,
           "result_pp": "loss",
           "game_time_pt": "11:10 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.21,
+          "ud_line": 5.5,
+          "actual_ud": 31,
+          "result_ud": "loss",
+          "projected_pp": 4.89,
+          "pp_line": 4.5,
+          "actual_pp": 27,
+          "result_pp": "win",
+          "game_time_pt": "4:10 PM PT"
         }
       ]
     },
@@ -25862,6 +27163,18 @@
           "actual_pp": 10,
           "result_pp": "loss",
           "game_time_pt": "11:10 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.56,
+          "ud_line": 7.5,
+          "actual_ud": 12,
+          "result_ud": "win",
+          "projected_pp": 7.42,
+          "pp_line": 5.5,
+          "actual_pp": 11,
+          "result_pp": "win",
+          "game_time_pt": "4:10 PM PT"
         }
       ]
     },
@@ -26114,6 +27427,18 @@
           "actual_pp": 24,
           "result_pp": null,
           "game_time_pt": "11:10 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.37,
+          "ud_line": 5.64,
+          "actual_ud": 18,
+          "result_ud": "loss",
+          "projected_pp": 4.97,
+          "pp_line": 4.5,
+          "actual_pp": 16,
+          "result_pp": "win",
+          "game_time_pt": "4:10 PM PT"
         }
       ]
     },
@@ -26414,6 +27739,18 @@
           "actual_pp": 12,
           "result_pp": "loss",
           "game_time_pt": "11:10 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.47,
+          "ud_line": 5.5,
+          "actual_ud": 8,
+          "result_ud": "loss",
+          "projected_pp": 5.32,
+          "pp_line": 5.5,
+          "actual_pp": 7,
+          "result_pp": "loss",
+          "game_time_pt": "4:10 PM PT"
         }
       ]
     },
@@ -26588,6 +27925,18 @@
           "actual_pp": 19,
           "result_pp": "loss",
           "game_time_pt": "11:10 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.23,
+          "ud_line": null,
+          "actual_ud": 33,
+          "result_ud": null,
+          "projected_pp": 4.96,
+          "pp_line": null,
+          "actual_pp": 30,
+          "result_pp": null,
+          "game_time_pt": "4:10 PM PT"
         }
       ]
     },
@@ -26924,6 +28273,18 @@
           "actual_pp": 5,
           "result_pp": "win",
           "game_time_pt": "12:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.04,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "result_ud": "loss",
+          "projected_pp": 6.5,
+          "pp_line": 4.5,
+          "actual_pp": 0,
+          "result_pp": "loss",
+          "game_time_pt": "5:05 PM PT"
         }
       ]
     },
@@ -27326,6 +28687,18 @@
           "actual_pp": 5,
           "result_pp": "push",
           "game_time_pt": "12:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.9,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "result_ud": "win",
+          "projected_pp": 4.62,
+          "pp_line": 5.5,
+          "actual_pp": 0,
+          "result_pp": "win",
+          "game_time_pt": "5:05 PM PT"
         }
       ]
     },
@@ -27626,6 +28999,18 @@
           "actual_pp": 14,
           "result_pp": "loss",
           "game_time_pt": "12:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.61,
+          "ud_line": 5.5,
+          "actual_ud": 7,
+          "result_ud": "loss",
+          "projected_pp": 4.49,
+          "pp_line": 4.5,
+          "actual_pp": 7,
+          "result_pp": "loss",
+          "game_time_pt": "5:05 PM PT"
         }
       ]
     },
@@ -27692,6 +29077,18 @@
           "actual_pp": 0,
           "result_pp": "loss",
           "game_time_pt": "12:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.12,
+          "ud_line": 6.27,
+          "actual_ud": 5,
+          "result_ud": "win",
+          "projected_pp": 4.92,
+          "pp_line": 5.0,
+          "actual_pp": 4,
+          "result_pp": "win",
+          "game_time_pt": "5:05 PM PT"
         }
       ]
     },
@@ -27992,6 +29389,18 @@
           "actual_pp": 5,
           "result_pp": "win",
           "game_time_pt": "12:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.3,
+          "ud_line": 3.76,
+          "actual_ud": 7,
+          "result_ud": "win",
+          "projected_pp": 5.0,
+          "pp_line": 3.0,
+          "actual_pp": 7,
+          "result_pp": "win",
+          "game_time_pt": "5:05 PM PT"
         }
       ]
     },
@@ -28190,6 +29599,18 @@
           "actual_pp": 5,
           "result_pp": "win",
           "game_time_pt": "11:00 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.05,
+          "ud_line": 5.5,
+          "actual_ud": 5,
+          "result_ud": "win",
+          "projected_pp": 4.75,
+          "pp_line": 5.0,
+          "actual_pp": 4,
+          "result_pp": "win",
+          "game_time_pt": "4:40 PM PT"
         }
       ]
     },
@@ -28442,6 +29863,18 @@
           "actual_pp": 15,
           "result_pp": "win",
           "game_time_pt": "11:00 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.99,
+          "ud_line": 7.5,
+          "actual_ud": 3,
+          "result_ud": "loss",
+          "projected_pp": 7.5,
+          "pp_line": 5.5,
+          "actual_pp": 2,
+          "result_pp": "loss",
+          "game_time_pt": "4:40 PM PT"
         }
       ]
     },
@@ -28748,6 +30181,18 @@
           "actual_pp": 3,
           "result_pp": null,
           "game_time_pt": "11:10 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 3.97,
+          "ud_line": null,
+          "actual_ud": 14,
+          "result_ud": null,
+          "projected_pp": 3.85,
+          "pp_line": null,
+          "actual_pp": 12,
+          "result_pp": null,
+          "game_time_pt": "4:10 PM PT"
         }
       ]
     },
@@ -28910,6 +30355,18 @@
           "actual_pp": 0,
           "result_pp": "loss",
           "game_time_pt": "11:00 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.95,
+          "ud_line": null,
+          "actual_ud": 0,
+          "result_ud": null,
+          "projected_pp": 6.59,
+          "pp_line": null,
+          "actual_pp": 0,
+          "result_pp": null,
+          "game_time_pt": "4:40 PM PT"
         }
       ]
     },
@@ -29174,6 +30631,18 @@
           "actual_pp": 17,
           "result_pp": "win",
           "game_time_pt": "11:00 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.39,
+          "ud_line": 4.39,
+          "actual_ud": 0,
+          "result_ud": "loss",
+          "projected_pp": 5.5,
+          "pp_line": 3.5,
+          "actual_pp": 0,
+          "result_pp": "loss",
+          "game_time_pt": "4:40 PM PT"
         }
       ]
     },
@@ -29372,6 +30841,18 @@
           "actual_pp": 15,
           "result_pp": "win",
           "game_time_pt": "4:15 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.11,
+          "ud_line": 6.5,
+          "actual_ud": 11,
+          "result_ud": "win",
+          "projected_pp": 6.84,
+          "pp_line": 5.0,
+          "actual_pp": 10,
+          "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -29594,6 +31075,18 @@
           "actual_pp": 12,
           "result_pp": "win",
           "game_time_pt": "4:15 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.72,
+          "ud_line": 5.5,
+          "actual_ud": 5,
+          "result_ud": "loss",
+          "projected_pp": 5.34,
+          "pp_line": 5.0,
+          "actual_pp": 5,
+          "result_pp": "push",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -29816,6 +31309,18 @@
           "actual_pp": 32,
           "result_pp": "win",
           "game_time_pt": "4:15 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.78,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "result_ud": "win",
+          "projected_pp": 6.39,
+          "pp_line": 5.0,
+          "actual_pp": 7,
+          "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -29966,6 +31471,18 @@
           "actual_pp": 5,
           "result_pp": "win",
           "game_time_pt": "4:15 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 3.74,
+          "ud_line": 5.01,
+          "actual_ud": 2,
+          "result_ud": "win",
+          "projected_pp": 3.58,
+          "pp_line": 4.0,
+          "actual_pp": 2,
+          "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -30188,6 +31705,18 @@
           "actual_pp": 5,
           "result_pp": "win",
           "game_time_pt": "4:15 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.26,
+          "ud_line": 5.64,
+          "actual_ud": 11,
+          "result_ud": "win",
+          "projected_pp": 6.5,
+          "pp_line": 4.5,
+          "actual_pp": 10,
+          "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -30410,6 +31939,18 @@
           "actual_pp": 7,
           "result_pp": "win",
           "game_time_pt": "4:15 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.18,
+          "ud_line": 5.64,
+          "actual_ud": 11,
+          "result_ud": "loss",
+          "projected_pp": 3.97,
+          "pp_line": 4.5,
+          "actual_pp": 10,
+          "result_pp": "loss",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -30560,6 +32101,18 @@
           "actual_pp": 5,
           "result_pp": "win",
           "game_time_pt": "4:15 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 3.64,
+          "ud_line": 4.39,
+          "actual_ud": 7,
+          "result_ud": "loss",
+          "projected_pp": 3.4,
+          "pp_line": 3.5,
+          "actual_pp": 7,
+          "result_pp": "loss",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -30812,6 +32365,18 @@
           "actual_pp": 11,
           "result_pp": null,
           "game_time_pt": "12:10 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 3.94,
+          "ud_line": 5.5,
+          "actual_ud": 6,
+          "result_ud": "loss",
+          "projected_pp": 3.79,
+          "pp_line": 5.5,
+          "actual_pp": 5,
+          "result_pp": "win",
+          "game_time_pt": "7:10 PM PT"
         }
       ]
     },
@@ -31009,6 +32574,18 @@
           "pp_line": null,
           "actual_pp": 11,
           "result_pp": null,
+          "game_time_pt": "7:10 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.06,
+          "ud_line": 5.5,
+          "actual_ud": 5,
+          "result_ud": "loss",
+          "projected_pp": 5.66,
+          "pp_line": 4.5,
+          "actual_pp": 4,
+          "result_pp": "loss",
           "game_time_pt": "7:10 PM PT"
         }
       ]
@@ -31231,6 +32808,18 @@
           "pp_line": 4.5,
           "actual_pp": 0,
           "result_pp": "loss",
+          "game_time_pt": "7:10 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.92,
+          "ud_line": 5.5,
+          "actual_ud": 6,
+          "result_ud": "loss",
+          "projected_pp": 4.58,
+          "pp_line": 4.5,
+          "actual_pp": 5,
+          "result_pp": "win",
           "game_time_pt": "7:10 PM PT"
         }
       ]
@@ -31616,6 +33205,18 @@
           "actual_pp": 20,
           "result_pp": "win",
           "game_time_pt": "7:10 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.14,
+          "ud_line": 4.39,
+          "actual_ud": 0,
+          "result_ud": "win",
+          "projected_pp": 3.99,
+          "pp_line": 3.5,
+          "actual_pp": 0,
+          "result_pp": "loss",
+          "game_time_pt": "7:10 PM PT"
         }
       ]
     },
@@ -31778,6 +33379,18 @@
           "actual_pp": 23,
           "result_pp": "win",
           "game_time_pt": "5:10 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.97,
+          "ud_line": 5.5,
+          "actual_ud": 13,
+          "result_ud": "win",
+          "projected_pp": 5.74,
+          "pp_line": 4.5,
+          "actual_pp": 12,
+          "result_pp": "win",
+          "game_time_pt": "7:10 PM PT"
         }
       ]
     },
@@ -32426,6 +34039,18 @@
           "actual_pp": 2,
           "result_pp": null,
           "game_time_pt": "10:35 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 15,
+          "result_ud": "win",
+          "projected_pp": 7.0,
+          "pp_line": 5.0,
+          "actual_pp": 15,
+          "result_pp": "win",
+          "game_time_pt": "4:40 PM PT"
         }
       ]
     },
@@ -32576,6 +34201,18 @@
           "actual_pp": 5,
           "result_pp": "win",
           "game_time_pt": "10:35 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.99,
+          "ud_line": 5.5,
+          "actual_ud": 3,
+          "result_ud": "loss",
+          "projected_pp": 5.62,
+          "pp_line": 4.5,
+          "actual_pp": 3,
+          "result_pp": "loss",
+          "game_time_pt": "4:40 PM PT"
         }
       ]
     },
@@ -32954,6 +34591,18 @@
           "actual_pp": 0,
           "result_pp": "loss",
           "game_time_pt": "5:40 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.06,
+          "ud_line": null,
+          "actual_ud": 10,
+          "result_ud": null,
+          "projected_pp": 4.04,
+          "pp_line": null,
+          "actual_pp": 9,
+          "result_pp": null,
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -33746,6 +35395,18 @@
           "actual_pp": 14,
           "result_pp": "loss",
           "game_time_pt": "12:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.61,
+          "ud_line": 5.5,
+          "actual_ud": 8,
+          "result_ud": "win",
+          "projected_pp": 5.43,
+          "pp_line": 5.0,
+          "actual_pp": 7,
+          "result_pp": "win",
+          "game_time_pt": "5:05 PM PT"
         }
       ]
     },
@@ -33872,6 +35533,18 @@
           "actual_pp": 0,
           "result_pp": "win",
           "game_time_pt": "12:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.52,
+          "ud_line": 4.39,
+          "actual_ud": 6,
+          "result_ud": "win",
+          "projected_pp": 4.29,
+          "pp_line": 3.5,
+          "actual_pp": 6,
+          "result_pp": "win",
+          "game_time_pt": "5:05 PM PT"
         }
       ]
     },
@@ -34418,6 +36091,18 @@
           "actual_pp": 20,
           "result_pp": "win",
           "game_time_pt": "11:30 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 9.11,
+          "ud_line": 9.5,
+          "actual_ud": 8,
+          "result_ud": "win",
+          "projected_pp": 8.83,
+          "pp_line": 8.5,
+          "actual_pp": 8,
+          "result_pp": "loss",
+          "game_time_pt": "3:35 PM PT"
         }
       ]
     },
@@ -34604,6 +36289,18 @@
           "actual_pp": 9,
           "result_pp": "win",
           "game_time_pt": "11:30 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.06,
+          "ud_line": 6.5,
+          "actual_ud": 13,
+          "result_ud": "win",
+          "projected_pp": 6.46,
+          "pp_line": 5.5,
+          "actual_pp": 12,
+          "result_pp": "win",
+          "game_time_pt": "3:35 PM PT"
         }
       ]
     },
@@ -34802,6 +36499,18 @@
           "actual_pp": 9,
           "result_pp": "win",
           "game_time_pt": "11:30 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.37,
+          "ud_line": 7.5,
+          "actual_ud": 8,
+          "result_ud": "loss",
+          "projected_pp": 5.91,
+          "pp_line": 6.5,
+          "actual_pp": 6,
+          "result_pp": "win",
+          "game_time_pt": "3:35 PM PT"
         }
       ]
     },
@@ -35000,6 +36709,18 @@
           "actual_pp": 2,
           "result_pp": "loss",
           "game_time_pt": "11:30 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.48,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "result_ud": "win",
+          "projected_pp": 5.09,
+          "pp_line": 5.5,
+          "actual_pp": 0,
+          "result_pp": "win",
+          "game_time_pt": "3:35 PM PT"
         }
       ]
     },
@@ -35162,6 +36883,18 @@
           "actual_pp": 0,
           "result_pp": "loss",
           "game_time_pt": "11:30 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 8.29,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "result_ud": "loss",
+          "projected_pp": 7.5,
+          "pp_line": 5.5,
+          "actual_pp": 0,
+          "result_pp": "loss",
+          "game_time_pt": "3:35 PM PT"
         }
       ]
     },
@@ -35336,6 +37069,18 @@
           "actual_pp": 9,
           "result_pp": "win",
           "game_time_pt": "11:30 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.5,
+          "ud_line": 6.5,
+          "actual_ud": 9,
+          "result_ud": "win",
+          "projected_pp": 6.04,
+          "pp_line": 5.5,
+          "actual_pp": 10,
+          "result_pp": "win",
+          "game_time_pt": "3:35 PM PT"
         }
       ]
     },
@@ -35678,6 +37423,18 @@
           "actual_pp": 5,
           "result_pp": "win",
           "game_time_pt": "11:30 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
+          "actual_ud": 10,
+          "result_ud": "win",
+          "projected_pp": 6.5,
+          "pp_line": 4.5,
+          "actual_pp": 10,
+          "result_pp": "win",
+          "game_time_pt": "3:35 PM PT"
         }
       ]
     },
@@ -35864,6 +37621,18 @@
           "actual_pp": 17,
           "result_pp": null,
           "game_time_pt": "10:00 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.72,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "result_ud": "win",
+          "projected_pp": 6.32,
+          "pp_line": 4.5,
+          "actual_pp": 8,
+          "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -36062,6 +37831,18 @@
           "actual_pp": 18,
           "result_pp": null,
           "game_time_pt": "10:00 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.13,
+          "ud_line": 6.5,
+          "actual_ud": 15,
+          "result_ud": "win",
+          "projected_pp": 6.5,
+          "pp_line": 4.5,
+          "actual_pp": 15,
+          "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -36260,6 +38041,18 @@
           "actual_pp": 14,
           "result_pp": null,
           "game_time_pt": "10:00 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.61,
+          "ud_line": 7.5,
+          "actual_ud": 13,
+          "result_ud": "loss",
+          "projected_pp": 6.22,
+          "pp_line": 5.0,
+          "actual_pp": 10,
+          "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -36554,6 +38347,18 @@
           "actual_pp": 0,
           "result_pp": null,
           "game_time_pt": "10:00 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
+          "actual_ud": 13,
+          "result_ud": "win",
+          "projected_pp": 6.0,
+          "pp_line": 4.0,
+          "actual_pp": 11,
+          "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -36740,6 +38545,18 @@
           "actual_pp": 9,
           "result_pp": null,
           "game_time_pt": "10:00 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.65,
+          "ud_line": 5.5,
+          "actual_ud": 10,
+          "result_ud": "win",
+          "projected_pp": 5.5,
+          "pp_line": 3.5,
+          "actual_pp": 9,
+          "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -36980,6 +38797,18 @@
           "actual_pp": 3,
           "result_pp": null,
           "game_time_pt": "10:05 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 8.07,
+          "ud_line": 6.5,
+          "actual_ud": 10,
+          "result_ud": "win",
+          "projected_pp": 7.64,
+          "pp_line": 6.5,
+          "actual_pp": 10,
+          "result_pp": "win",
+          "game_time_pt": "3:35 PM PT"
         }
       ]
     },
@@ -37250,6 +39079,18 @@
           "actual_pp": 5,
           "result_pp": null,
           "game_time_pt": "10:05 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.74,
+          "ud_line": 5.5,
+          "actual_ud": 6,
+          "result_ud": "win",
+          "projected_pp": 5.3,
+          "pp_line": 4.5,
+          "actual_pp": 4,
+          "result_pp": "loss",
+          "game_time_pt": "3:35 PM PT"
         }
       ]
     },
@@ -37424,6 +39265,18 @@
           "actual_pp": 0,
           "result_pp": "loss",
           "game_time_pt": "2:00 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 3.32,
+          "ud_line": 3.76,
+          "actual_ud": 3,
+          "result_ud": "win",
+          "projected_pp": 3.17,
+          "pp_line": 3.0,
+          "actual_pp": 2,
+          "result_pp": "loss",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -37622,6 +39475,18 @@
           "actual_pp": 13,
           "result_pp": null,
           "game_time_pt": "10:00 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.39,
+          "ud_line": 6.5,
+          "actual_ud": 59,
+          "result_ud": "win",
+          "projected_pp": 7.0,
+          "pp_line": 5.0,
+          "actual_pp": 59,
+          "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -37760,6 +39625,18 @@
           "actual_pp": 9,
           "result_pp": null,
           "game_time_pt": "10:00 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.84,
+          "ud_line": 3.76,
+          "actual_ud": 8,
+          "result_ud": "win",
+          "projected_pp": 4.67,
+          "pp_line": 3.0,
+          "actual_pp": 8,
+          "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -38048,6 +39925,18 @@
           "actual_pp": 9,
           "result_pp": "win",
           "game_time_pt": "3:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 9.21,
+          "ud_line": 7.5,
+          "actual_ud": 6,
+          "result_ud": "loss",
+          "projected_pp": 7.5,
+          "pp_line": 5.5,
+          "actual_pp": 6,
+          "result_pp": "win",
+          "game_time_pt": "3:45 PM PT"
         }
       ]
     },
@@ -38244,6 +40133,18 @@
           "projected_pp": 6.31,
           "pp_line": 5.0,
           "actual_pp": 31,
+          "result_pp": "win",
+          "game_time_pt": "3:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 8.73,
+          "ud_line": 7.5,
+          "actual_ud": 11,
+          "result_ud": "win",
+          "projected_pp": 7.5,
+          "pp_line": 5.5,
+          "actual_pp": 9,
           "result_pp": "win",
           "game_time_pt": "3:45 PM PT"
         }
@@ -38822,6 +40723,18 @@
           "actual_pp": 21,
           "result_pp": "win",
           "game_time_pt": "11:00 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 8.03,
+          "ud_line": 7.5,
+          "actual_ud": 12,
+          "result_ud": "win",
+          "projected_pp": 7.5,
+          "pp_line": 5.5,
+          "actual_pp": 10,
+          "result_pp": "win",
+          "game_time_pt": "4:40 PM PT"
         }
       ]
     },
@@ -38996,6 +40909,18 @@
           "actual_pp": 6,
           "result_pp": "loss",
           "game_time_pt": "11:00 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.18,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "result_ud": "win",
+          "projected_pp": 3.92,
+          "pp_line": 4.5,
+          "actual_pp": 0,
+          "result_pp": "win",
+          "game_time_pt": "4:40 PM PT"
         }
       ]
     },
@@ -39158,6 +41083,18 @@
           "actual_pp": 10,
           "result_pp": "loss",
           "game_time_pt": "11:00 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.5,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "result_ud": "win",
+          "projected_pp": 4.31,
+          "pp_line": 4.0,
+          "actual_pp": 0,
+          "result_pp": "loss",
+          "game_time_pt": "4:40 PM PT"
         }
       ]
     },
@@ -39260,6 +41197,18 @@
           "actual_pp": 3,
           "result_pp": "win",
           "game_time_pt": "11:00 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 3.47,
+          "ud_line": 4.39,
+          "actual_ud": 0,
+          "result_ud": "win",
+          "projected_pp": 3.26,
+          "pp_line": 3.5,
+          "actual_pp": 0,
+          "result_pp": "win",
+          "game_time_pt": "4:40 PM PT"
         }
       ]
     },
@@ -39410,6 +41359,18 @@
           "actual_pp": 5,
           "result_pp": "win",
           "game_time_pt": "12:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 3.7,
+          "ud_line": 4.39,
+          "actual_ud": 0,
+          "result_ud": "win",
+          "projected_pp": 3.53,
+          "pp_line": 3.5,
+          "actual_pp": 0,
+          "result_pp": "loss",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -39770,6 +41731,18 @@
           "actual_pp": 6,
           "result_pp": null,
           "game_time_pt": "10:05 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.22,
+          "ud_line": 5.5,
+          "actual_ud": 3,
+          "result_ud": "loss",
+          "projected_pp": 6.39,
+          "pp_line": 4.39,
+          "actual_pp": 3,
+          "result_pp": "loss",
+          "game_time_pt": "4:10 PM PT"
         }
       ]
     },
@@ -40244,6 +42217,18 @@
           "actual_pp": 0,
           "result_pp": "loss",
           "game_time_pt": "1:10 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 3.8,
+          "ud_line": 4.39,
+          "actual_ud": 5,
+          "result_ud": "loss",
+          "projected_pp": 3.49,
+          "pp_line": 3.5,
+          "actual_pp": 5,
+          "result_pp": "loss",
+          "game_time_pt": "6:45 PM PT"
         }
       ]
     },
@@ -40388,6 +42373,18 @@
           "actual_pp": 4,
           "result_pp": "loss",
           "game_time_pt": "10:35 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 3.92,
+          "ud_line": 4.39,
+          "actual_ud": 3,
+          "result_ud": "win",
+          "projected_pp": 3.69,
+          "pp_line": 3.5,
+          "actual_pp": 3,
+          "result_pp": "loss",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -40604,6 +42601,18 @@
           "actual_pp": 2,
           "result_pp": "loss",
           "game_time_pt": "11:00 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.23,
+          "ud_line": null,
+          "actual_ud": 13,
+          "result_ud": null,
+          "projected_pp": 4.96,
+          "pp_line": null,
+          "actual_pp": 14,
+          "result_pp": null,
+          "game_time_pt": "4:40 PM PT"
         }
       ]
     },
@@ -40766,6 +42775,18 @@
           "actual_pp": 9,
           "result_pp": "loss",
           "game_time_pt": "11:00 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.13,
+          "ud_line": null,
+          "actual_ud": 0,
+          "result_ud": null,
+          "projected_pp": 3.83,
+          "pp_line": null,
+          "actual_pp": 0,
+          "result_pp": null,
+          "game_time_pt": "4:40 PM PT"
         }
       ]
     },
@@ -40964,6 +42985,18 @@
           "actual_pp": 19,
           "result_pp": "win",
           "game_time_pt": "11:00 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.14,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "result_ud": "loss",
+          "projected_pp": 5.88,
+          "pp_line": 4.5,
+          "actual_pp": 0,
+          "result_pp": "loss",
+          "game_time_pt": "4:40 PM PT"
         }
       ]
     },
@@ -41136,6 +43169,18 @@
           "projected_pp": 5.01,
           "pp_line": null,
           "actual_pp": 2,
+          "result_pp": null,
+          "game_time_pt": "7:10 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.38,
+          "ud_line": null,
+          "actual_ud": 0,
+          "result_ud": null,
+          "projected_pp": 5.12,
+          "pp_line": null,
+          "actual_pp": 0,
           "result_pp": null,
           "game_time_pt": "7:10 PM PT"
         }
@@ -41354,6 +43399,18 @@
           "actual_pp": 4,
           "result_pp": "loss",
           "game_time_pt": "4:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.5,
+          "ud_line": 7.5,
+          "actual_ud": 19,
+          "result_ud": "loss",
+          "projected_pp": 4.75,
+          "pp_line": 5.5,
+          "actual_pp": 17,
+          "result_pp": "loss",
+          "game_time_pt": "4:45 PM PT"
         }
       ]
     },
@@ -41562,6 +43619,18 @@
           "projected_pp": 7.22,
           "pp_line": 5.5,
           "actual_pp": 2,
+          "result_pp": "loss",
+          "game_time_pt": "4:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.07,
+          "ud_line": 7.5,
+          "actual_ud": 0,
+          "result_ud": "win",
+          "projected_pp": 6.71,
+          "pp_line": 5.5,
+          "actual_pp": 0,
           "result_pp": "loss",
           "game_time_pt": "4:45 PM PT"
         }
@@ -41774,6 +43843,18 @@
           "actual_pp": 7,
           "result_pp": "win",
           "game_time_pt": "4:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.77,
+          "ud_line": 7.5,
+          "actual_ud": 7,
+          "result_ud": "win",
+          "projected_pp": 6.51,
+          "pp_line": 6.5,
+          "actual_pp": 7,
+          "result_pp": "win",
+          "game_time_pt": "4:45 PM PT"
         }
       ]
     },
@@ -41948,6 +44029,18 @@
           "actual_pp": 6,
           "result_pp": "win",
           "game_time_pt": "6:40 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.54,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "result_ud": "win",
+          "projected_pp": 5.27,
+          "pp_line": 5.0,
+          "actual_pp": 2,
+          "result_pp": "loss",
+          "game_time_pt": "4:45 PM PT"
         }
       ]
     },
@@ -42133,6 +44226,18 @@
           "pp_line": 5.0,
           "actual_pp": 3,
           "result_pp": "loss",
+          "game_time_pt": "4:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.45,
+          "ud_line": 6.5,
+          "actual_ud": 14,
+          "result_ud": "loss",
+          "projected_pp": 6.19,
+          "pp_line": 5.5,
+          "actual_pp": 12,
+          "result_pp": "win",
           "game_time_pt": "4:45 PM PT"
         }
       ]
@@ -42444,6 +44549,18 @@
           "projected_pp": 6.91,
           "pp_line": 5.0,
           "actual_pp": 10,
+          "result_pp": "win",
+          "game_time_pt": "4:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.9,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "result_ud": "win",
+          "projected_pp": 6.53,
+          "pp_line": 5.0,
+          "actual_pp": 8,
           "result_pp": "win",
           "game_time_pt": "4:45 PM PT"
         }
@@ -43208,6 +45325,18 @@
           "actual_pp": 3,
           "result_pp": "loss",
           "game_time_pt": "3:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.88,
+          "ud_line": 7.5,
+          "actual_ud": 0,
+          "result_ud": "win",
+          "projected_pp": 5.59,
+          "pp_line": 6.5,
+          "actual_pp": 0,
+          "result_pp": "win",
+          "game_time_pt": "3:45 PM PT"
         }
       ]
     },
@@ -43417,6 +45546,18 @@
           "pp_line": 5.5,
           "actual_pp": 10,
           "result_pp": "win",
+          "game_time_pt": "3:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "actual_ud": 16,
+          "result_ud": "loss",
+          "projected_pp": 3.99,
+          "pp_line": 5.5,
+          "actual_pp": 13,
+          "result_pp": "loss",
           "game_time_pt": "3:45 PM PT"
         }
       ]
@@ -43628,6 +45769,18 @@
           "actual_pp": 4,
           "result_pp": "loss",
           "game_time_pt": "3:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.78,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "result_ud": "win",
+          "projected_pp": 4.57,
+          "pp_line": 5.5,
+          "actual_pp": 3,
+          "result_pp": "win",
+          "game_time_pt": "3:45 PM PT"
         }
       ]
     },
@@ -43825,6 +45978,18 @@
           "pp_line": 5.5,
           "actual_pp": 18,
           "result_pp": "win",
+          "game_time_pt": "3:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.5,
+          "ud_line": 7.5,
+          "actual_ud": 14,
+          "result_ud": "loss",
+          "projected_pp": 4.53,
+          "pp_line": 5.5,
+          "actual_pp": 14,
+          "result_pp": "loss",
           "game_time_pt": "3:45 PM PT"
         }
       ]
@@ -44172,6 +46337,18 @@
           "projected_pp": 7.0,
           "pp_line": 5.0,
           "actual_pp": 12,
+          "result_pp": "win",
+          "game_time_pt": "3:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "actual_ud": 6,
+          "result_ud": "win",
+          "projected_pp": 4.35,
+          "pp_line": 4.5,
+          "actual_pp": 4,
           "result_pp": "win",
           "game_time_pt": "3:45 PM PT"
         }
@@ -44528,6 +46705,18 @@
           "actual_pp": 15,
           "result_pp": "win",
           "game_time_pt": "1:05 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.42,
+          "ud_line": 3.76,
+          "actual_ud": 0,
+          "result_ud": "loss",
+          "projected_pp": 4.2,
+          "pp_line": 3.0,
+          "actual_pp": 0,
+          "result_pp": "loss",
+          "game_time_pt": "4:45 PM PT"
         }
       ]
     },
@@ -44726,6 +46915,18 @@
           "actual_pp": 26,
           "result_pp": "loss",
           "game_time_pt": "6:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.03,
+          "ud_line": 5.5,
+          "actual_ud": 3,
+          "result_ud": "loss",
+          "projected_pp": 5.75,
+          "pp_line": 4.39,
+          "actual_pp": 2,
+          "result_pp": "loss",
+          "game_time_pt": "5:05 PM PT"
         }
       ]
     },
@@ -44966,6 +47167,18 @@
           "actual_pp": 13,
           "result_pp": "loss",
           "game_time_pt": "6:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 2.84,
+          "ud_line": null,
+          "actual_ud": 6,
+          "result_ud": null,
+          "projected_pp": 2.72,
+          "pp_line": null,
+          "actual_pp": 6,
+          "result_pp": null,
+          "game_time_pt": "5:05 PM PT"
         }
       ]
     },
@@ -45032,6 +47245,18 @@
           "actual_pp": 0,
           "result_pp": null,
           "game_time_pt": "6:40 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 1.76,
+          "ud_line": null,
+          "actual_ud": 9,
+          "result_ud": null,
+          "projected_pp": 1.64,
+          "pp_line": null,
+          "actual_pp": 10,
+          "result_pp": null,
+          "game_time_pt": "5:05 PM PT"
         }
       ]
     },
@@ -45206,6 +47431,18 @@
           "actual_pp": 7,
           "result_pp": "win",
           "game_time_pt": "6:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 2.66,
+          "ud_line": null,
+          "actual_ud": 3,
+          "result_ud": null,
+          "projected_pp": 2.56,
+          "pp_line": null,
+          "actual_pp": 3,
+          "result_pp": null,
+          "game_time_pt": "5:05 PM PT"
         }
       ]
     },
@@ -45338,6 +47575,18 @@
           "actual_pp": 0,
           "result_pp": "loss",
           "game_time_pt": "6:38 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 2.51,
+          "ud_line": null,
+          "actual_ud": 3,
+          "result_ud": null,
+          "projected_pp": 2.41,
+          "pp_line": null,
+          "actual_pp": 3,
+          "result_pp": null,
+          "game_time_pt": "5:05 PM PT"
         }
       ]
     },
@@ -45416,6 +47665,18 @@
           "actual_pp": 0,
           "result_pp": null,
           "game_time_pt": "6:38 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 2.11,
+          "ud_line": null,
+          "actual_ud": 0,
+          "result_ud": null,
+          "projected_pp": 2.02,
+          "pp_line": null,
+          "actual_pp": 0,
+          "result_pp": null,
+          "game_time_pt": "5:05 PM PT"
         }
       ]
     },
@@ -45625,6 +47886,18 @@
           "pp_line": 5.5,
           "actual_pp": 5,
           "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.64,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "result_ud": "loss",
+          "projected_pp": 6.47,
+          "pp_line": 5.5,
+          "actual_pp": 0,
+          "result_pp": "loss",
           "game_time_pt": "3:40 PM PT"
         }
       ]
@@ -45938,6 +48211,18 @@
           "actual_pp": 0,
           "result_pp": "loss",
           "game_time_pt": "1:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 3.68,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "result_ud": "win",
+          "projected_pp": 3.49,
+          "pp_line": 4.5,
+          "actual_pp": 0,
+          "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -46334,6 +48619,18 @@
           "actual_pp": 27,
           "result_pp": null,
           "game_time_pt": "1:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.05,
+          "ud_line": 4.39,
+          "actual_ud": 6,
+          "result_ud": "win",
+          "projected_pp": 4.88,
+          "pp_line": 3.5,
+          "actual_pp": 5,
+          "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -46412,6 +48709,18 @@
           "actual_pp": 5,
           "result_pp": "loss",
           "game_time_pt": "1:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.76,
+          "ud_line": 5.5,
+          "actual_ud": 3,
+          "result_ud": "loss",
+          "projected_pp": 5.5,
+          "pp_line": 3.5,
+          "actual_pp": 3,
+          "result_pp": "loss",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -46538,6 +48847,18 @@
           "actual_pp": 5,
           "result_pp": "loss",
           "game_time_pt": "6:40 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.5,
+          "ud_line": 7.5,
+          "actual_ud": 3,
+          "result_ud": "win",
+          "projected_pp": 4.5,
+          "pp_line": 6.5,
+          "actual_pp": 2,
+          "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -46712,6 +49033,18 @@
           "actual_pp": 0,
           "result_pp": "loss",
           "game_time_pt": "1:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.14,
+          "ud_line": 5.01,
+          "actual_ud": 19,
+          "result_ud": "loss",
+          "projected_pp": 4.05,
+          "pp_line": 4.0,
+          "actual_pp": 18,
+          "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -46886,6 +49219,18 @@
           "actual_pp": 6,
           "result_pp": "win",
           "game_time_pt": "6:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.65,
+          "ud_line": 5.5,
+          "actual_ud": 3,
+          "result_ud": "loss",
+          "projected_pp": 6.23,
+          "pp_line": 4.5,
+          "actual_pp": 3,
+          "result_pp": "loss",
+          "game_time_pt": "6:45 PM PT"
         }
       ]
     },
@@ -47042,6 +49387,18 @@
           "actual_pp": 3,
           "result_pp": null,
           "game_time_pt": "11:15 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 2.72,
+          "ud_line": null,
+          "actual_ud": 0,
+          "result_ud": null,
+          "projected_pp": 2.58,
+          "pp_line": null,
+          "actual_pp": 0,
+          "result_pp": null,
+          "game_time_pt": "4:45 PM PT"
         }
       ]
     },
@@ -47328,6 +49685,18 @@
           "projected_pp": 4.35,
           "pp_line": 5.5,
           "actual_pp": 4,
+          "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.28,
+          "ud_line": 5.5,
+          "actual_ud": 3,
+          "result_ud": "win",
+          "projected_pp": 5.07,
+          "pp_line": 5.5,
+          "actual_pp": 3,
           "result_pp": "win",
           "game_time_pt": "3:40 PM PT"
         }
@@ -47678,6 +50047,18 @@
           "actual_pp": 5,
           "result_pp": "win",
           "game_time_pt": "2:00 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 3.73,
+          "ud_line": 4.39,
+          "actual_ud": 0,
+          "result_ud": "win",
+          "projected_pp": 3.7,
+          "pp_line": 3.5,
+          "actual_pp": 0,
+          "result_pp": "loss",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -48854,6 +51235,18 @@
           "actual_pp": 0,
           "result_pp": null,
           "game_time_pt": "10:10 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 3.38,
+          "ud_line": 3.76,
+          "actual_ud": 12,
+          "result_ud": "loss",
+          "projected_pp": 3.23,
+          "pp_line": 3.0,
+          "actual_pp": 12,
+          "result_pp": "win",
+          "game_time_pt": "3:45 PM PT"
         }
       ]
     },
@@ -48980,6 +51373,18 @@
           "actual_pp": 2,
           "result_pp": "win",
           "game_time_pt": "1:00 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.12,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "result_ud": "win",
+          "projected_pp": 4.81,
+          "pp_line": 4.5,
+          "actual_pp": 0,
+          "result_pp": "loss",
+          "game_time_pt": "4:45 PM PT"
         }
       ]
     },
@@ -49070,6 +51475,18 @@
           "actual_pp": 2,
           "result_pp": null,
           "game_time_pt": "11:10 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.17,
+          "ud_line": 5.5,
+          "actual_ud": 9,
+          "result_ud": "win",
+          "projected_pp": 5.5,
+          "pp_line": 3.5,
+          "actual_pp": 10,
+          "result_pp": "win",
+          "game_time_pt": "4:10 PM PT"
         }
       ]
     },
@@ -49262,6 +51679,18 @@
           "actual_pp": 0,
           "result_pp": null,
           "game_time_pt": "10:05 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.98,
+          "ud_line": null,
+          "actual_ud": 0,
+          "result_ud": null,
+          "projected_pp": 4.87,
+          "pp_line": null,
+          "actual_pp": 0,
+          "result_pp": null,
+          "game_time_pt": "3:35 PM PT"
         }
       ]
     },
@@ -50024,6 +52453,18 @@
           "actual_pp": 11,
           "result_pp": "loss",
           "game_time_pt": "1:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 3.89,
+          "ud_line": 4.39,
+          "actual_ud": 0,
+          "result_ud": "win",
+          "projected_pp": 3.61,
+          "pp_line": 3.5,
+          "actual_pp": 0,
+          "result_pp": "loss",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -50480,6 +52921,18 @@
           "actual_pp": 4,
           "result_pp": null,
           "game_time_pt": "5:10 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 3.53,
+          "ud_line": 5.5,
+          "actual_ud": 5,
+          "result_ud": "win",
+          "projected_pp": 3.5,
+          "pp_line": 5.5,
+          "actual_pp": 5,
+          "result_pp": "win",
+          "game_time_pt": "7:10 PM PT"
         }
       ]
     },
@@ -51338,6 +53791,18 @@
           "actual_pp": 8,
           "result_pp": "loss",
           "game_time_pt": "3:40 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.37,
+          "ud_line": 5.01,
+          "actual_ud": 15,
+          "result_ud": "loss",
+          "projected_pp": 4.23,
+          "pp_line": 4.0,
+          "actual_pp": 14,
+          "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -52118,6 +54583,18 @@
           "actual_pp": 8,
           "result_pp": "win",
           "game_time_pt": "4:15 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.16,
+          "ud_line": 5.5,
+          "actual_ud": 3,
+          "result_ud": "win",
+          "projected_pp": 3.93,
+          "pp_line": 5.0,
+          "actual_pp": 2,
+          "result_pp": "win",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -52700,6 +55177,18 @@
           "actual_pp": 5,
           "result_pp": "win",
           "game_time_pt": "6:40 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.59,
+          "ud_line": 5.5,
+          "actual_ud": 10,
+          "result_ud": "loss",
+          "projected_pp": 4.38,
+          "pp_line": 3.5,
+          "actual_pp": 8,
+          "result_pp": "win",
+          "game_time_pt": "4:45 PM PT"
         }
       ]
     },
@@ -52988,6 +55477,18 @@
           "actual_pp": 21,
           "result_pp": "loss",
           "game_time_pt": "11:00 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.25,
+          "ud_line": 4.39,
+          "actual_ud": 0,
+          "result_ud": "loss",
+          "projected_pp": 5.07,
+          "pp_line": 3.5,
+          "actual_pp": 0,
+          "result_pp": "loss",
+          "game_time_pt": "4:40 PM PT"
         }
       ]
     },
@@ -53138,6 +55639,18 @@
           "actual_pp": 13,
           "result_pp": "win",
           "game_time_pt": "11:00 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.72,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "result_ud": "loss",
+          "projected_pp": 6.5,
+          "pp_line": 4.5,
+          "actual_pp": 0,
+          "result_pp": "loss",
+          "game_time_pt": "4:40 PM PT"
         }
       ]
     },
@@ -53228,6 +55741,18 @@
           "actual_pp": 34,
           "result_pp": "win",
           "game_time_pt": "11:10 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.0,
+          "ud_line": null,
+          "actual_ud": 38,
+          "result_ud": null,
+          "projected_pp": 6.03,
+          "pp_line": null,
+          "actual_pp": 39,
+          "result_pp": null,
+          "game_time_pt": "4:10 PM PT"
         }
       ]
     },
@@ -53412,6 +55937,18 @@
           "projected_pp": 7.5,
           "pp_line": 5.5,
           "actual_pp": 9,
+          "result_pp": "win",
+          "game_time_pt": "7:10 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.01,
+          "ud_line": 5.5,
+          "actual_ud": 7,
+          "result_ud": "win",
+          "projected_pp": 6.87,
+          "pp_line": 5.0,
+          "actual_pp": 6,
           "result_pp": "win",
           "game_time_pt": "7:10 PM PT"
         }
@@ -53636,6 +56173,18 @@
           "actual_pp": 7,
           "result_pp": "win",
           "game_time_pt": "6:40 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
+          "actual_ud": 3,
+          "result_ud": "loss",
+          "projected_pp": 6.5,
+          "pp_line": 4.5,
+          "actual_pp": 3,
+          "result_pp": "loss",
+          "game_time_pt": "6:40 PM PT"
         }
       ]
     },
@@ -53852,6 +56401,18 @@
           "actual_pp": 5,
           "result_pp": "loss",
           "game_time_pt": "2:00 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 3.66,
+          "ud_line": 5.5,
+          "actual_ud": 16,
+          "result_ud": "loss",
+          "projected_pp": 3.45,
+          "pp_line": 4.5,
+          "actual_pp": 14,
+          "result_pp": "loss",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -54143,6 +56704,18 @@
           "result_ud": "win",
           "projected_pp": 5.25,
           "pp_line": 5.5,
+          "actual_pp": 0,
+          "result_pp": "win",
+          "game_time_pt": "6:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.13,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "result_ud": "win",
+          "projected_pp": 3.93,
+          "pp_line": 5.0,
           "actual_pp": 0,
           "result_pp": "win",
           "game_time_pt": "6:45 PM PT"
@@ -54890,6 +57463,18 @@
           "actual_pp": 4,
           "result_pp": "win",
           "game_time_pt": "2:00 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 3.5,
+          "ud_line": 5.5,
+          "actual_ud": 8,
+          "result_ud": "loss",
+          "projected_pp": 3.17,
+          "pp_line": 4.5,
+          "actual_pp": 7,
+          "result_pp": "loss",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -55040,6 +57625,18 @@
           "actual_pp": 10,
           "result_pp": "win",
           "game_time_pt": "6:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "result_ud": "loss",
+          "projected_pp": 7.0,
+          "pp_line": 5.0,
+          "actual_pp": 3,
+          "result_pp": "loss",
+          "game_time_pt": "4:40 PM PT"
         }
       ]
     },
@@ -55232,6 +57829,18 @@
           "actual_pp": 16,
           "result_pp": "win",
           "game_time_pt": "11:00 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.77,
+          "ud_line": null,
+          "actual_ud": 2,
+          "result_ud": null,
+          "projected_pp": 5.47,
+          "pp_line": null,
+          "actual_pp": 2,
+          "result_pp": null,
+          "game_time_pt": "4:40 PM PT"
         }
       ]
     },
@@ -55376,6 +57985,18 @@
           "actual_pp": 2,
           "result_pp": "win",
           "game_time_pt": "6:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 3.06,
+          "ud_line": null,
+          "actual_ud": 10,
+          "result_ud": null,
+          "projected_pp": 2.83,
+          "pp_line": null,
+          "actual_pp": 9,
+          "result_pp": null,
+          "game_time_pt": "5:05 PM PT"
         }
       ]
     },
@@ -55646,6 +58267,18 @@
           "actual_pp": 0,
           "result_pp": null,
           "game_time_pt": "10:05 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.88,
+          "ud_line": 7.5,
+          "actual_ud": 3,
+          "result_ud": "win",
+          "projected_pp": 6.65,
+          "pp_line": 5.98,
+          "actual_pp": 2,
+          "result_pp": "loss",
+          "game_time_pt": "4:10 PM PT"
         }
       ]
     },
@@ -55940,6 +58573,18 @@
           "actual_pp": 7,
           "result_pp": "win",
           "game_time_pt": "6:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.54,
+          "ud_line": null,
+          "actual_ud": 5,
+          "result_ud": null,
+          "projected_pp": 4.46,
+          "pp_line": null,
+          "actual_pp": 5,
+          "result_pp": null,
+          "game_time_pt": "5:05 PM PT"
         }
       ]
     },
@@ -56336,6 +58981,18 @@
           "actual_pp": 0,
           "result_pp": "loss",
           "game_time_pt": "1:00 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.26,
+          "ud_line": 5.01,
+          "actual_ud": 5,
+          "result_ud": "loss",
+          "projected_pp": 5.97,
+          "pp_line": 4.0,
+          "actual_pp": 4,
+          "result_pp": "push",
+          "game_time_pt": "6:40 PM PT"
         }
       ]
     },
@@ -56450,6 +59107,18 @@
           "actual_pp": 0,
           "result_pp": "win",
           "game_time_pt": "4:15 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 6.22,
+          "ud_line": 7.5,
+          "actual_ud": 3,
+          "result_ud": "win",
+          "projected_pp": 5.94,
+          "pp_line": 5.5,
+          "actual_pp": 2,
+          "result_pp": "loss",
+          "game_time_pt": "4:10 PM PT"
         }
       ]
     },
@@ -56642,6 +59311,18 @@
           "actual_pp": 0,
           "result_pp": "loss",
           "game_time_pt": "6:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.34,
+          "ud_line": 4.39,
+          "actual_ud": 14,
+          "result_ud": "loss",
+          "projected_pp": 4.15,
+          "pp_line": 3.5,
+          "actual_pp": 14,
+          "result_pp": "win",
+          "game_time_pt": "6:45 PM PT"
         }
       ]
     },
@@ -56822,6 +59503,18 @@
           "actual_pp": 0,
           "result_pp": null,
           "game_time_pt": "10:05 AM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.53,
+          "ud_line": null,
+          "actual_ud": 0,
+          "result_ud": null,
+          "projected_pp": 4.15,
+          "pp_line": null,
+          "actual_pp": 0,
+          "result_pp": null,
+          "game_time_pt": "4:10 PM PT"
         }
       ]
     },
@@ -56978,6 +59671,18 @@
           "actual_pp": 44,
           "result_pp": "win",
           "game_time_pt": "6:45 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
+          "actual_ud": 10,
+          "result_ud": "win",
+          "projected_pp": 7.5,
+          "pp_line": 5.5,
+          "actual_pp": 10,
+          "result_pp": "win",
+          "game_time_pt": "6:45 PM PT"
         }
       ]
     },
@@ -57128,6 +59833,18 @@
           "actual_pp": 2,
           "result_pp": null,
           "game_time_pt": "12:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 2.21,
+          "ud_line": null,
+          "actual_ud": 3,
+          "result_ud": null,
+          "projected_pp": 2.08,
+          "pp_line": null,
+          "actual_pp": 3,
+          "result_pp": null,
+          "game_time_pt": "5:05 PM PT"
         }
       ]
     },
@@ -57216,6 +59933,18 @@
           "projected_pp": 6.15,
           "pp_line": 5.0,
           "actual_pp": 6,
+          "result_pp": "win",
+          "game_time_pt": "6:40 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 7.55,
+          "ud_line": 6.5,
+          "actual_ud": 18,
+          "result_ud": "win",
+          "projected_pp": 7.27,
+          "pp_line": 5.5,
+          "actual_pp": 18,
           "result_pp": "win",
           "game_time_pt": "6:40 PM PT"
         }
@@ -57362,6 +60091,18 @@
           "actual_pp": 5,
           "result_pp": "push",
           "game_time_pt": "1:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 4.38,
+          "ud_line": null,
+          "actual_ud": 12,
+          "result_ud": null,
+          "projected_pp": 4.14,
+          "pp_line": null,
+          "actual_pp": 11,
+          "result_pp": null,
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -57458,6 +60199,18 @@
           "actual_pp": 7,
           "result_pp": "win",
           "game_time_pt": "7:10 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "result_ud": "loss",
+          "projected_pp": 7.0,
+          "pp_line": 5.0,
+          "actual_pp": 2,
+          "result_pp": "loss",
+          "game_time_pt": "7:10 PM PT"
         }
       ]
     },
@@ -57518,6 +60271,18 @@
           "actual_pp": 7,
           "result_pp": "loss",
           "game_time_pt": "4:15 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 5.76,
+          "ud_line": 3.76,
+          "actual_ud": 3,
+          "result_ud": "loss",
+          "projected_pp": 5.0,
+          "pp_line": 3.0,
+          "actual_pp": 3,
+          "result_pp": "push",
+          "game_time_pt": "3:40 PM PT"
         }
       ]
     },
@@ -57566,6 +60331,18 @@
           "actual_pp": 8,
           "result_pp": null,
           "game_time_pt": "12:30 PM PT"
+        },
+        {
+          "date": "2026-07-07",
+          "projected_ud": 3.9,
+          "ud_line": 5.64,
+          "actual_ud": 5,
+          "result_ud": "win",
+          "projected_pp": 3.69,
+          "pp_line": 4.5,
+          "actual_pp": 5,
+          "result_pp": "loss",
+          "game_time_pt": "5:05 PM PT"
         }
       ]
     },
@@ -57644,6 +60421,24 @@
           "actual_pp": 22,
           "result_pp": null,
           "game_time_pt": "11:10 AM PT"
+        }
+      ]
+    },
+    "669699": {
+      "name": "Braden Shewmake",
+      "team": "Houston Astros",
+      "history": [
+        {
+          "date": "2026-07-07",
+          "projected_ud": 2.84,
+          "ud_line": null,
+          "actual_ud": 0,
+          "result_ud": null,
+          "projected_pp": 2.7,
+          "pp_line": null,
+          "actual_pp": 0,
+          "result_pp": null,
+          "game_time_pt": "3:45 PM PT"
         }
       ]
     }
