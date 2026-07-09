@@ -1934,6 +1934,69 @@
           "correct": true
         }
       ]
+    },
+    "2026-07-08": {
+      "summary": {
+        "total": 5,
+        "correct": 4,
+        "accuracy": 80.0,
+        "over_total": 2,
+        "over_correct": 2,
+        "under_total": 3,
+        "under_correct": 2
+      },
+      "plays": [
+        {
+          "player_id": 691720,
+          "name": "Kyle Karros",
+          "team": "Colorado Rockies",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 20,
+          "correct": true
+        },
+        {
+          "player_id": 669242,
+          "name": "Tommy Edman",
+          "team": "Los Angeles Dodgers",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 5.5,
+          "actual_ud": 10,
+          "correct": true
+        },
+        {
+          "player_id": 682998,
+          "name": "Corbin Carroll",
+          "team": "Arizona Diamondbacks",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 5,
+          "correct": true
+        },
+        {
+          "player_id": 665489,
+          "name": "Vladimir Guerrero Jr.",
+          "team": "Toronto Blue Jays",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 16,
+          "correct": false
+        },
+        {
+          "player_id": 669477,
+          "name": "Casey Schmitt",
+          "team": "San Francisco Giants",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "correct": true
+        }
+      ]
     }
   }
 }
