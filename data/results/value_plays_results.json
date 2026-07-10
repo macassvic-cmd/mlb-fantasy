@@ -1997,6 +1997,89 @@
           "correct": true
         }
       ]
+    },
+    "2026-07-09": {
+      "summary": {
+        "total": 7,
+        "correct": 2,
+        "accuracy": 28.6,
+        "over_total": 4,
+        "over_correct": 2,
+        "under_total": 3,
+        "under_correct": 0
+      },
+      "plays": [
+        {
+          "player_id": 624413,
+          "name": "Pete Alonso",
+          "team": "Baltimore Orioles",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 11,
+          "correct": true
+        },
+        {
+          "player_id": 691718,
+          "name": "Pete Crow-Armstrong",
+          "team": "Chicago Cubs",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 11,
+          "correct": true
+        },
+        {
+          "player_id": 665487,
+          "name": "Fernando Tatis Jr.",
+          "team": "San Diego Padres",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 3,
+          "correct": false
+        },
+        {
+          "player_id": 656811,
+          "name": "Ryan O'Hearn",
+          "team": "Pittsburgh Pirates",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "correct": false
+        },
+        {
+          "player_id": 665742,
+          "name": "Juan Soto",
+          "team": "New York Mets",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 9.5,
+          "actual_ud": 22,
+          "correct": false
+        },
+        {
+          "player_id": 694192,
+          "name": "Jackson Chourio",
+          "team": "Milwaukee Brewers",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 13,
+          "correct": false
+        },
+        {
+          "player_id": 641343,
+          "name": "Jake Bauers",
+          "team": "Milwaukee Brewers",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 26,
+          "correct": false
+        }
+      ]
     }
   }
 }
