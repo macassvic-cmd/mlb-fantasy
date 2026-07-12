@@ -105,7 +105,16 @@ jobs:
             github.event.schedule == '0 21 * * *' ||
             github.event.inputs.run_type == 'pipeline'
           )
-        run: python pipeline.py
+        run: |
+          if ! python pipeline.py; then
+            ec=$?
+            if [ "$ec" -eq 139 ]; then
+              echo "::warning::pipeline.py segfaulted (exit 139) - retrying once"
+              python pipeline.py
+            else
+              exit $ec
+            fi
+          fi
 
       - name: Pipeline — generate projections
         if: >-

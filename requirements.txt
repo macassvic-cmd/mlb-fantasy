@@ -1,7 +1,12 @@
 requests>=2.31.0
 pybaseball>=2.2.7
-pandas>=2.0.0
-numpy>=1.24.0
+# pybaseball 2.2.7 declares no upper bound on pandas ("pandas>=1.0.3") and was
+# never tested against pandas 3.x. On 2026-07-12 pip resolved pandas 3.0.3
+# with no code changes on our end and pipeline.py started segfaulting deep in
+# native code on every run. Pin majors to the versions known to work.
+pandas>=2.0,<3.0
+numpy>=2.0,<3.0
+pyarrow>=25.0,<26.0
 python-dotenv>=1.0.0
 beautifulsoup4>=4.12.0
 lxml>=4.9.0
