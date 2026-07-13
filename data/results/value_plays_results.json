@@ -2236,6 +2236,99 @@
           "correct": true
         }
       ]
+    },
+    "2026-07-12": {
+      "summary": {
+        "total": 8,
+        "correct": 5,
+        "accuracy": 62.5,
+        "over_total": 4,
+        "over_correct": 2,
+        "under_total": 4,
+        "under_correct": 3
+      },
+      "plays": [
+        {
+          "player_id": 621020,
+          "name": "Dansby Swanson",
+          "team": "Chicago Cubs",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "correct": true
+        },
+        {
+          "player_id": 621566,
+          "name": "Matt Olson",
+          "team": "Atlanta Braves",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "correct": false
+        },
+        {
+          "player_id": 694671,
+          "name": "Wyatt Langford",
+          "team": "Texas Rangers",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 5,
+          "correct": false
+        },
+        {
+          "player_id": 673962,
+          "name": "Josh Jung",
+          "team": "Texas Rangers",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 19,
+          "correct": true
+        },
+        {
+          "player_id": 660271,
+          "name": "Shohei Ohtani",
+          "team": "Los Angeles Dodgers",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 10.5,
+          "actual_ud": 22,
+          "correct": false
+        },
+        {
+          "player_id": 808959,
+          "name": "Munetaka Murakami",
+          "team": "Chicago White Sox",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 5,
+          "correct": true
+        },
+        {
+          "player_id": 518692,
+          "name": "Freddie Freeman",
+          "team": "Los Angeles Dodgers",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 0,
+          "correct": true
+        },
+        {
+          "player_id": 663538,
+          "name": "Nico Hoerner",
+          "team": "Chicago Cubs",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 0,
+          "correct": true
+        }
+      ]
     }
   }
 }
