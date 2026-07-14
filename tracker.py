@@ -30,6 +30,7 @@ TOP25_RESULTS_PATH = os.path.join(RESULTS_DIR, "top25_results.json")
 VALUE_PLAYS_DIR = os.path.join("data", "value_plays")
 VALUE_PLAYS_RESULTS_PATH = os.path.join(RESULTS_DIR, "value_plays_results.json")
 SLIPS_RESULTS_PATH = os.path.join(RESULTS_DIR, "slips_results.json")
+PREMIUM_RESULTS_PATH = os.path.join(RESULTS_DIR, "premium_results.json")
 
 
 def classify(projected, actual):
@@ -211,7 +212,16 @@ def track_date(date_str):
     results_by_pid = {r["player_id"]: r for r in results}
     track_top25(date_str, rows, results_by_pid)
     grade_value_plays(date_str, results_by_pid)
+    grade_premium_plays(date_str, results_by_pid)
     grade_slips(date_str, results_by_pid)
+
+    # Weekly refresh of the edge-bucket win-rate table slips.py scores legs
+    # with (see EDGE_BUCKET_REFRESH_DAYS) — keeps it from ever going stale
+    # again without a manual update.
+    try:
+        slips_mod.refresh_edge_bucket_rates(load_json(ALL_RESULTS_PATH, {"dates": {}, "players": {}}))
+    except Exception as e:
+        print(f"Edge-bucket rate refresh failed (non-fatal): {e}")
 
     # Regenerate the dashboard with the freshly-updated Results / Player
     # History / Value Plays data and push it to GitHub Pages, so the site
@@ -295,6 +305,83 @@ def grade_value_plays(date_str, results_by_pid):
         json.dump(vp_results, f, indent=2)
 
     print(f"Value Plays: {hits}/{total} correct ({summary['accuracy']}%) -> {VALUE_PLAYS_RESULTS_PATH}")
+
+
+def grade_premium_plays(date_str, results_by_pid):
+    """Grade each of the day's Premium (Tier A) / Strong (Tier B) calls
+    against actual results and roll them into a running win/loss record
+    per tier, tracked separately from Value Plays. This running record is
+    the number that confirms (or fails to confirm) the 67.8% / 64.1%
+    backtested rates hold out of sample — see slips.premium_tier."""
+    plays_path = os.path.join(report.PREMIUM_PLAYS_DIR, f"{date_str}.json")
+    if not os.path.exists(plays_path):
+        print(f"No Premium plays recorded for {date_str} ({plays_path} not found). Skipping.")
+        return
+
+    with open(plays_path, encoding="utf-8") as f:
+        plays_data = json.load(f)
+
+    market_lines = load_cached_market_lines(date_str)
+    pp_ud_ratio = compute_pp_ud_ratio(market_lines) if market_lines else None
+
+    graded = []
+    for play in plays_data.get("plays", []):
+        res = results_by_pid.get(play["player_id"])
+        if not res:
+            continue
+
+        ud_line = play.get("ud_line")
+        if market_lines:
+            line, _ = match_lines(play["name"], market_lines, pp_ud_ratio)
+            if line is not None:
+                ud_line = line
+
+        actual_ud = res["actual_ud"]
+        correct = (actual_ud > ud_line) if play["call"] == "over" else (actual_ud < ud_line)
+
+        graded.append({
+            "player_id": play["player_id"],
+            "name": play["name"],
+            "team": play["team"],
+            "call": play["call"],
+            "edge": play["edge"],
+            "ud_line": ud_line,
+            "actual_ud": actual_ud,
+            "tier": play["tier"],
+            "correct": correct,
+        })
+
+    all_pr = load_json(PREMIUM_RESULTS_PATH, {"dates": {}, "record": {}})
+    all_pr.setdefault("dates", {})
+    all_pr.setdefault("record", {})
+
+    summary_by_tier = {}
+    for tier in ("premium", "strong"):
+        tier_graded = [g for g in graded if g["tier"] == tier]
+        total = len(tier_graded)
+        hits = sum(1 for g in tier_graded if g["correct"])
+        summary_by_tier[tier] = {
+            "total": total,
+            "correct": hits,
+            "win_rate": round(100 * hits / total, 1) if total else 0.0,
+        }
+        rec = all_pr["record"].setdefault(tier, {"wins": 0, "losses": 0})
+        rec["wins"] += hits
+        rec["losses"] += (total - hits)
+
+    all_pr["dates"][date_str] = {"summary": summary_by_tier, "plays": graded}
+
+    os.makedirs(RESULTS_DIR, exist_ok=True)
+    with open(PREMIUM_RESULTS_PATH, "w", encoding="utf-8") as f:
+        json.dump(all_pr, f, indent=2)
+
+    for tier in ("premium", "strong"):
+        s = summary_by_tier[tier]
+        rec = all_pr["record"][tier]
+        rec_total = rec["wins"] + rec["losses"]
+        rec_rate = round(100 * rec["wins"] / rec_total, 1) if rec_total else 0.0
+        print(f"  {tier.capitalize()}: {s['correct']}/{s['total']} today ({s['win_rate']}%) "
+              f"-> running record {rec['wins']}-{rec['losses']} ({rec_rate}%)")
 
 
 def _grade_single_slip(slip, platform, results_by_pid):

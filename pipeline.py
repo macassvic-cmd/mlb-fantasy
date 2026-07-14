@@ -392,7 +392,6 @@ def _fetch_platoon_map(mlb_lineups, pinfo_map, pitcher_hand_map, max_workers=8):
 
 def run_pipeline(date_str):
     from scrapers.mlb_api import get_lineups, get_games, get_player_info
-    from scrapers.lineups import get_rotowire_lineups
 
     logger.info(f"=== Pipeline start: {date_str} ===")
     os.makedirs("data", exist_ok=True)
@@ -431,14 +430,6 @@ def run_pipeline(date_str):
         f"Found {len(mlb_lineups)} batters across {len(games)} games "
         f"({confirmed_count} confirmed, {projected_count} projected)"
     )
-
-    # RotoWire confirmation
-    logger.info("Fetching RotoWire lineups...")
-    try:
-        rw = get_rotowire_lineups()
-    except Exception as e:
-        logger.warning(f"RotoWire failed: {e}")
-        rw = {}
 
     def _resolve_player_info(pid):
         try:
@@ -501,8 +492,9 @@ def run_pipeline(date_str):
         try:
             rec = process_player(pid, pinfo, lineup_data, date_str, platoon_data=platoon_map.get(pid))
             if rec is not None:
-                rec["lineup_confirmed"] = name in rw
-                rec["lineup_status"] = lineup_data.get("lineup_status", "confirmed")
+                lineup_status = lineup_data.get("lineup_status", "confirmed")
+                rec["lineup_status"] = lineup_status
+                rec["lineup_confirmed"] = lineup_status == "confirmed"
                 all_players.append(rec)
         except Exception as e:
             logger.error(f"process_player failed for {name} ({pid}): {e}")

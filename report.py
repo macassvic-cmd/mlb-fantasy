@@ -312,17 +312,21 @@ def recalibrate_points(rows):
 # ---------------------------------------------------------------------------
 
 MARKET_EDGE_CLAMP = 2.0
-# Calibrated from 2940 graded plays (22 dates):
-#   OVER  1.0-1.5 pt: 56.8% win (+4.7% ROI) — the single best OVER bucket
-#   OVER  1.5-2.0 pt: 52.5% win (+0.4% ROI) — surprisingly weak; raises the bar
-#   UNDER 1.5-2.0 pt: 59.3% win (+7.3% ROI) — the single best UNDER bucket
-#   UNDER 2.0+  pt:   53.3% win (+1.3% ROI) — max clamp is good but not best
+# Bucket rates below are a point-in-time snapshot (see slips.py's
+# refresh_edge_bucket_rates() for the live, self-updating numbers these
+# thresholds are based on). Last refreshed 2026-07-13 from the clean
+# 6/14+ dataset (post 6/10-6/13 tracker-bug exclusion):
+#   OVER  1.0-1.5 pt: 54.3% win — the single best OVER bucket
+#   OVER  1.5-2.0 pt: 49.0% win — weak; raises the bar
+#   UNDER 1.5-2.0 pt: 59.4% win — the single best UNDER bucket
+#   UNDER 2.0+  pt:   52.6% win — max clamp is good but not best
 #
-# Lowering OVER threshold to 1.0 captures the 56.8% bucket without raising noise
-# (0.5-1.0 pt OVERs still lose at 49.2% but those won't displace top-edge plays).
-# UNDER stays at 1.5 — the 1.5-2.0 range is the sweet spot, not 2.0+.
-VALUE_PLAY_OVER_EDGE  = 1.0   # OVER  value plays: 1.0 pt minimum (1.0-1.5 wins 56.8%)
-VALUE_PLAY_UNDER_EDGE = 1.5   # UNDER value plays: 1.5 pt minimum (1.5-2.0 wins 59.3%)
+# OVER threshold stays at 1.0 to capture the best OVER bucket without
+# raising noise (0.5-1.0 pt OVERs lose at 49.5%, so they won't displace
+# top-edge plays). UNDER stays at 1.5 — the 1.5-2.0 range is the sweet
+# spot, not 2.0+.
+VALUE_PLAY_OVER_EDGE  = 1.0   # OVER  value plays: 1.0 pt minimum (1.0-1.5 wins 54.3%)
+VALUE_PLAY_UNDER_EDGE = 1.5   # UNDER value plays: 1.5 pt minimum (1.5-2.0 wins 59.4%)
 VALUE_PLAY_EDGE = VALUE_PLAY_OVER_EDGE  # legacy alias
 assert VALUE_PLAY_OVER_EDGE  < MARKET_EDGE_CLAMP, "OVER threshold must be below the market edge clamp"
 assert VALUE_PLAY_UNDER_EDGE <= MARKET_EDGE_CLAMP, "UNDER threshold must not exceed the market edge clamp"
@@ -431,6 +435,32 @@ def save_value_plays(date_str, value_rows):
 
     os.makedirs(VALUE_PLAYS_DIR, exist_ok=True)
     out_path = os.path.join(VALUE_PLAYS_DIR, f"{date_str}.json")
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump({"date": date_str, "plays": plays}, f, indent=2)
+
+
+PREMIUM_PLAYS_DIR = os.path.join("data", "premium_plays")
+
+
+def save_premium_plays(date_str, premium_rows, strong_rows):
+    """Persist today's Premium/Strong tier calls so tracker.py can grade
+    them separately once actual results are in (see
+    tracker.grade_premium_plays)."""
+    def _play(row, tier):
+        return {
+            "player_id": row.get("player_id"),
+            "name": row["name"],
+            "team": row["team"],
+            "call": "over" if row["edge"] > 0 else "under",
+            "edge": row["edge"],
+            "ud_line": row.get("ud_line"),
+            "tier": tier,
+        }
+
+    plays = [_play(r, "premium") for r in premium_rows] + [_play(r, "strong") for r in strong_rows]
+
+    os.makedirs(PREMIUM_PLAYS_DIR, exist_ok=True)
+    out_path = os.path.join(PREMIUM_PLAYS_DIR, f"{date_str}.json")
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump({"date": date_str, "plays": plays}, f, indent=2)
 
@@ -596,7 +626,8 @@ DASHBOARD_COLS = [
 ]
 
 
-def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None, slips_results=None):
+def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None, slips_results=None,
+                     premium_results=None):
     games_count = len({r["game_pk"] for r in rows})
     generated_dt = datetime.now(timezone.utc).astimezone(_PACIFIC)
     last_updated = generated_dt.strftime("%Y-%m-%d %I:%M %p PT")
@@ -706,10 +737,47 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     cards = [build_card(row) for row in _by_game_time(rows[:25])]
     cards_js = json.dumps(cards)
 
+    # --- Premium: backtested high-win-rate subsets, see slips.premium_tier ---
+    # Tier A ("Premium"): UNDER + edge 1.5-1.99 + batting order 3-4, 67.8%
+    # backtested win rate. Tier B ("Strong"): broader union, 64.1%
+    # backtested. Both from the 2026-07-13 subset-mining analysis over
+    # 4,071 graded plays (2026-06-14 to 2026-07-11); tracker.py grades
+    # these separately each night (see grade_premium_plays) so out-of-
+    # sample performance is visible against the backtested rate.
+    premium_rows, strong_rows = [], []
+    for r in rows:
+        if not r.get("market_anchored"):
+            continue
+        t = slips_mod.premium_tier(r)
+        if t == "premium":
+            premium_rows.append(r)
+        elif t == "strong":
+            strong_rows.append(r)
+    premium_rows = _by_game_time(premium_rows)
+    strong_rows = _by_game_time(strong_rows)
+    save_premium_plays(date_str, premium_rows, strong_rows)
+    premium_cards = [dict(build_card(row), premiumTier="premium") for row in premium_rows]
+    strong_cards = [dict(build_card(row), premiumTier="strong") for row in strong_rows]
+    premium_cards_js = json.dumps(premium_cards)
+    strong_cards_js = json.dumps(strong_cards)
+
+    def _tier_record_str(tier):
+        rec = (premium_results or {}).get("record", {}).get(tier, {"wins": 0, "losses": 0})
+        total = rec["wins"] + rec["losses"]
+        if total == 0:
+            return "Live record: no graded plays yet."
+        rate = round(100 * rec["wins"] / total, 1)
+        return f"Live record: {rec['wins']}-{rec['losses']} ({rate}%) since tracking began."
+
+    premium_record_str = _tier_record_str("premium")
+    strong_record_str = _tier_record_str("strong")
+
     # --- Value Plays: model vs. market disagreement above threshold ---------
-    # Calibrated thresholds from 2940-play analysis (22 dates):
-    #   OVERs  >= 1.0 pt: 56.8% win on the 1.0-1.5 bucket (+4.7% ROI)
-    #   UNDERs >= 1.5 pt: 59.3% win on the 1.5-2.0 bucket (+7.3% ROI)
+    # Live thresholds tracked in data/results/edge_bucket_rates.json
+    # (refreshed weekly by tracker.py from clean graded data — see
+    # slips.refresh_edge_bucket_rates). Snapshot as of 2026-07-13:
+    #   OVERs  >= 1.0 pt: 54.3% win on the 1.0-1.5 bucket
+    #   UNDERs >= 1.5 pt: 59.4% win on the 1.5-2.0 bucket
     # UNDER suppression: opp SP ERA 4.5-5.5 = 32.9% win rate (-19.2% ROI, n=70).
     # Bad pitchers give up points — UNDER calls vs their opponents are unsound.
     # Only players with a posted UD/PP line count. Capped at top 4 each.
@@ -839,6 +907,8 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   .card .badge-projected {{ background: #fbbf24; color: #3a2a00; margin-left: 6px; }}
   .card .badge-no-line {{ background: #fb923c; color: #1a0800; margin-left: 6px; }}
   .card .badge-getaway {{ background: #f87171; color: #1a0000; margin-left: 6px; }}
+  .card .badge-premium {{ background: #a78bfa; margin-left: 6px; }}
+  .card .badge-strong {{ background: #60a5fa; margin-left: 6px; }}
 
   /* Full leaderboard table */
   .controls {{ display: flex; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }}
@@ -990,6 +1060,15 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   .platoon-title {{ font-weight: 800; margin-bottom: 4px; color: #cbd5e1; }}
   .platoon-row {{ display: flex; flex-direction: column; gap: 2px; color: #9fb0cc; }}
 
+  .premium-plays {{ margin: 16px 0 28px; padding: 16px; border: 2px solid #a78bfa;
+                     border-radius: 12px; background: linear-gradient(180deg, rgba(167,139,250,0.10), transparent); }}
+  .premium-plays h2 {{ margin: 0 0 4px; color: #a78bfa; font-size: 22px; }}
+  .premium-plays .vp-sub {{ color: #c4cee0; font-size: 13px; margin-bottom: 4px; }}
+  .premium-plays .tier-rate {{ font-weight: 800; }}
+  .premium-plays .card {{ border-width: 2px; }}
+  .premium-plays-empty {{ color: #9fb0cc; font-size: 13px; margin: 4px 0 12px; }}
+  .strong-tier-heading {{ margin: 18px 0 4px; color: #60a5fa; font-size: 16px; }}
+
   .value-plays {{ margin: 16px 0 28px; padding: 16px; border: 2px solid #fbbf24;
                    border-radius: 12px; background: linear-gradient(180deg, rgba(251,191,36,0.08), transparent); }}
   .value-plays h2 {{ margin: 0 0 4px; color: #fbbf24; font-size: 20px; }}
@@ -1026,9 +1105,20 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   </label>
 </div>
 
+<div class="premium-plays">
+  <h2>★ Premium</h2>
+  <div class="vp-sub">UNDER + edge 1.5-1.99 + batting order 3-4 &mdash; <span class="tier-rate">67.8% backtested win rate</span> (87 plays / 23 of 26 dates, stable both halves of the sample).</div>
+  <div class="vp-sub">{premium_record_str}</div>
+  <div class="card-grid" id="premiumGrid"></div>
+  <h3 class="strong-tier-heading">STRONG</h3>
+  <div class="vp-sub">Broader tier: top teams batting 3rd/4th + Citizens Bank Park &mdash; <span class="tier-rate">64.1% backtested win rate</span> (373 plays / 26 dates).</div>
+  <div class="vp-sub">{strong_record_str}</div>
+  <div class="card-grid" id="strongGrid"></div>
+</div>
+
 <div class="value-plays">
   <h2>🎯 Value Plays</h2>
-  <div class="vp-sub">Top 4 OVER calls (model disagrees by 1.0+ pts) + top 4 UNDER calls (1.5+ pts) &mdash; calibrated thresholds based on 2940 graded plays.</div>
+  <div class="vp-sub">Top 4 OVER calls (model disagrees by 1.0+ pts) + top 4 UNDER calls (1.5+ pts) &mdash; thresholds calibrated from live, weekly-refreshed edge-bucket win rates.</div>
   <div class="card-grid" id="valueGrid"></div>
 </div>
 
@@ -1123,6 +1213,8 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
 
 <script>
 const CARDS = {cards_js};
+const PREMIUM_CARDS = {premium_cards_js};
+const STRONG_CARDS = {strong_cards_js};
 const VALUE_CARDS = {value_cards_js};
 const UNANCHORED_CARDS = {unanchored_cards_js};
 const COLS = {cols_js};
@@ -1226,6 +1318,8 @@ function renderCard(c) {{
     ${{c.projectedLineup && !c.getawayDayRisk ? '<div class="badge badge-projected">&#9888; Projected Lineup</div>' : ''}}
     ${{c.noLinePenalty ? '<div class="badge badge-no-line">&#9888; No Line &ndash; Lower Confidence</div>' : ''}}
     ${{c.getawayDayRisk ? '<div class="badge badge-getaway">&#9888; Projected Lineup &ndash; Getaway Day Risk</div>' : ''}}
+    ${{c.premiumTier === 'premium' ? '<div class="badge badge-premium">&#9733; PREMIUM</div>' : ''}}
+    ${{c.premiumTier === 'strong' ? '<div class="badge badge-strong">STRONG</div>' : ''}}
   `;
   return card;
 }}
@@ -1233,6 +1327,24 @@ function renderCard(c) {{
 const grid = document.getElementById('cardGrid');
 for (const c of CARDS) {{
   grid.appendChild(renderCard(c));
+}}
+
+// --- Premium / Strong ---
+const premiumGrid = document.getElementById('premiumGrid');
+if (PREMIUM_CARDS.length === 0) {{
+  premiumGrid.outerHTML = '<div class="premium-plays-empty">No Tier A plays on the current slate.</div>';
+}} else {{
+  for (const c of PREMIUM_CARDS) {{
+    premiumGrid.appendChild(renderCard(c));
+  }}
+}}
+const strongGrid = document.getElementById('strongGrid');
+if (STRONG_CARDS.length === 0) {{
+  strongGrid.outerHTML = '<div class="premium-plays-empty">No Tier B plays on the current slate.</div>';
+}} else {{
+  for (const c of STRONG_CARDS) {{
+    strongGrid.appendChild(renderCard(c));
+  }}
 }}
 
 // --- Value Plays ---
@@ -1745,6 +1857,14 @@ def _load_slips_results():
     return {}
 
 
+def _load_premium_results():
+    path = os.path.join("data", "results", "premium_results.json")
+    if os.path.exists(path):
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    return {}
+
+
 def regenerate_dashboard(date_arg=None):
     """Rebuild output/dashboard.html from the latest projection + results
     data and push it to GitHub Pages. Used by tracker.py after nightly
@@ -1752,7 +1872,8 @@ def regenerate_dashboard(date_arg=None):
     pipeline run."""
     rows, date_str, results_data, top25_data = prepare_dashboard_context(date_arg)
     html_path = os.path.join("output", "dashboard.html")
-    write_dashboard(rows, date_str, html_path, results_data, top25_data, _load_slips_results())
+    write_dashboard(rows, date_str, html_path, results_data, top25_data, _load_slips_results(),
+                     _load_premium_results())
     print(f"Dashboard saved -> {os.path.abspath(html_path)}")
     deploy_to_github_pages(html_path, date_str)
     return html_path
@@ -1764,7 +1885,8 @@ def main():
 
     os.makedirs("output", exist_ok=True)
     html_path = os.path.join("output", "dashboard.html")
-    write_dashboard(rows, date_str, html_path, results_data, top25_data, _load_slips_results())
+    write_dashboard(rows, date_str, html_path, results_data, top25_data, _load_slips_results(),
+                     _load_premium_results())
     print(f"Dashboard saved -> {os.path.abspath(html_path)}")
 
     deploy_to_github_pages(html_path, date_str)

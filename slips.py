@@ -14,6 +14,7 @@ selects the highest-probability valid combination at each step.
 """
 import json
 import os
+from datetime import datetime, timezone
 
 SLIPS_DIR = os.path.join("data", "slips")
 
@@ -24,21 +25,143 @@ SLIP_TYPES = {
 }
 
 # ---------------------------------------------------------------------------
-# Empirical per-edge-bucket win rates — 2940 plays / 22 dates
+# Empirical per-edge-bucket win rates
+#
+# These are no longer hand-maintained. tracker.py calls
+# refresh_edge_bucket_rates() nightly (see that function's docstring for the
+# staleness gate) to recompute every bucket from ALL graded UD plays in
+# data/results/all_results.json and persist it to EDGE_BUCKET_RATES_PATH.
+# The constants below are only the cold-start fallback — used for any
+# bucket the generated file doesn't have yet, or hasn't accumulated
+# MIN_BUCKET_N graded plays for. Last hand-computed 2026-07-13 from the
+# clean 6/14+ dataset (4,071 plays / 26 dates, post 6/10-6/13 exclusion).
 # ---------------------------------------------------------------------------
-OVER_EDGE_WIN_RATES = [
-    (2.0, 0.542),  # 2.0+ (max clamp)
-    (1.5, 0.525),  # 1.5-2.0
-    (1.0, 0.568),  # 1.0-1.5  ← best OVER bucket
-    (0.5, 0.492),  # 0.5-1.0
-    (0.0, 0.505),  # 0-0.5
+EDGE_BUCKET_RATES_PATH = os.path.join("data", "results", "edge_bucket_rates.json")
+EDGE_BUCKET_REFRESH_DAYS = 7
+MIN_BUCKET_N = 20  # below this, a bucket is too noisy to trust — keep the fallback
+
+_DEFAULT_OVER_EDGE_WIN_RATES = [
+    (2.0, 0.505),  # 2.0+ (max clamp)
+    (1.5, 0.495),  # 1.5-2.0
+    (1.0, 0.543),  # 1.0-1.5  ← best OVER bucket
+    (0.5, 0.495),  # 0.5-1.0
+    (0.0, 0.494),  # 0-0.5
 ]
-UNDER_EDGE_WIN_RATES = [
-    (2.0, 0.533),  # 2.0+ (max clamp)
-    (1.5, 0.593),  # 1.5-2.0  ← best UNDER bucket
-    (1.0, 0.470),  # 1.0-1.5  (historically bad)
-    (0.0, 0.490),  # 0-1.0
+_DEFAULT_UNDER_EDGE_WIN_RATES = [
+    (2.0, 0.526),  # 2.0+ (max clamp)
+    (1.5, 0.594),  # 1.5-2.0  ← best UNDER bucket
+    (1.0, 0.516),  # 1.0-1.5
+    (0.0, 0.513),  # 0-1.0
 ]
+
+
+def _merge_with_fallback(defaults, fresh_buckets):
+    """fresh_buckets is a list of [min_edge, rate, n] from the generated
+    file. Use the fresh rate only where n >= MIN_BUCKET_N; otherwise fall
+    back to the hand-computed default for that bucket."""
+    fresh_by_min = {b[0]: (b[1], b[2]) for b in fresh_buckets}
+    out = []
+    for min_edge, default_rate in defaults:
+        rate, n = fresh_by_min.get(min_edge, (None, 0))
+        out.append((min_edge, rate if (rate is not None and n >= MIN_BUCKET_N) else default_rate))
+    return out
+
+
+def _load_edge_bucket_rates():
+    if os.path.exists(EDGE_BUCKET_RATES_PATH):
+        try:
+            with open(EDGE_BUCKET_RATES_PATH, encoding="utf-8") as f:
+                data = json.load(f)
+            over = _merge_with_fallback(_DEFAULT_OVER_EDGE_WIN_RATES, data.get("over", []))
+            under = _merge_with_fallback(_DEFAULT_UNDER_EDGE_WIN_RATES, data.get("under", []))
+            return over, under
+        except Exception:
+            pass
+    return list(_DEFAULT_OVER_EDGE_WIN_RATES), list(_DEFAULT_UNDER_EDGE_WIN_RATES)
+
+
+OVER_EDGE_WIN_RATES, UNDER_EDGE_WIN_RATES = _load_edge_bucket_rates()
+
+
+def _edge_bucket_stats(results_data):
+    """Compute fresh win rates per (direction, edge-bucket) from every
+    graded UD play in results_data (data/results/all_results.json), using
+    the same bucket boundaries as the *_EDGE_WIN_RATES tables. Returns
+    (over_buckets, under_buckets), each a list of [min_edge, rate_or_None, n]."""
+    over_bounds = [b[0] for b in _DEFAULT_OVER_EDGE_WIN_RATES]
+    under_bounds = [b[0] for b in _DEFAULT_UNDER_EDGE_WIN_RATES]
+
+    def bucket_for(edge_abs, bounds):
+        for b in bounds:
+            if edge_abs >= b:
+                return b
+        return bounds[-1]
+
+    over_counts = {b: [0, 0] for b in over_bounds}   # min_edge -> [wins, total]
+    under_counts = {b: [0, 0] for b in under_bounds}
+
+    for p in results_data.get("players", {}).values():
+        for h in p.get("history", []):
+            if h.get("result_ud") not in ("win", "loss"):
+                continue
+            line = h.get("ud_line")
+            proj = h.get("projected_ud")
+            if line is None or proj is None:
+                continue
+            edge = proj - line
+            if edge == 0:
+                continue
+            call = "over" if edge > 0 else "under"
+            edge_abs = abs(edge)
+            counts = over_counts if call == "over" else under_counts
+            bounds = over_bounds if call == "over" else under_bounds
+            b = bucket_for(edge_abs, bounds)
+            counts[b][1] += 1
+            if h["result_ud"] == "win":
+                counts[b][0] += 1
+
+    def to_list(counts, bounds):
+        out = []
+        for b in bounds:
+            wins, total = counts[b]
+            rate = round(wins / total, 4) if total else None
+            out.append([b, rate, total])
+        return out
+
+    return to_list(over_counts, over_bounds), to_list(under_counts, under_bounds)
+
+
+def refresh_edge_bucket_rates(results_data, force=False):
+    """Recompute OVER/UNDER edge-bucket win rates from all graded UD plays
+    and persist to EDGE_BUCKET_RATES_PATH, at most once every
+    EDGE_BUCKET_REFRESH_DAYS days unless force=True. Called nightly by
+    tracker.py; this keeps the table from ever going stale again without a
+    manual update. Buckets below MIN_BUCKET_N graded plays fall back to the
+    hand-computed defaults at load time (see _merge_with_fallback) rather
+    than let noise drive slip construction."""
+    if not force and os.path.exists(EDGE_BUCKET_RATES_PATH):
+        try:
+            with open(EDGE_BUCKET_RATES_PATH, encoding="utf-8") as f:
+                existing = json.load(f)
+            last = existing.get("computed_at")
+            if last:
+                age_days = (datetime.now(timezone.utc) - datetime.fromisoformat(last)).days
+                if age_days < EDGE_BUCKET_REFRESH_DAYS:
+                    return existing
+        except Exception:
+            pass
+
+    over, under = _edge_bucket_stats(results_data)
+    payload = {
+        "computed_at": datetime.now(timezone.utc).isoformat(),
+        "over": over,
+        "under": under,
+    }
+    os.makedirs(os.path.dirname(EDGE_BUCKET_RATES_PATH), exist_ok=True)
+    with open(EDGE_BUCKET_RATES_PATH, "w", encoding="utf-8") as f:
+        json.dump(payload, f, indent=2)
+    return payload
+
 
 MIN_EDGE_OVER  = 1.0
 MIN_EDGE_UNDER = 1.5
@@ -76,6 +199,62 @@ TEAM_WIN_ADJ = {
 
 
 # ---------------------------------------------------------------------------
+# Premium tier — subset-mining results from the 2026-07-13 All-Star-break
+# analysis (4,071 graded UD plays, 2026-06-14 to 2026-07-11). Overall model
+# accuracy was flat at 51-53%, so instead of chasing broad accuracy this
+# isolates the specific subsets that already win big, for a dashboard
+# "Premium" section (see report.py) surfaced above Value Plays.
+# ---------------------------------------------------------------------------
+
+# Tier B's team list — top single-dimension team subsets from the mining
+# pass (57.6-60.0% each alone), used below only in combination with
+# batting order 3-4.
+PREMIUM_TOP_TEAMS = {
+    "St. Louis Cardinals", "Tampa Bay Rays", "Colorado Rockies",
+    "Pittsburgh Pirates", "Atlanta Braves", "Boston Red Sox",
+}
+PREMIUM_VENUE = "Citizens Bank Park"
+
+
+def _premium_tier_a(row, call, edge_abs):
+    """UNDER call + edge 1.5-1.99 + batting order 3-4. The single best
+    combo found: 67.8% win rate (87 plays / 23 of 26 dates), stable across
+    both halves of the sample (H1 74.4% / H2 61.4%). order_bucket 3-4 is
+    weak alone (53.3%) but replicated as a multiplier across five
+    independent team subsets in the same analysis."""
+    return call == "under" and 1.5 <= edge_abs < 2.0 and (row.get("order") or 0) in (3, 4)
+
+
+def _premium_tier_b(row, call, edge_abs):
+    """Tier A broadened with two more validated subsets: PREMIUM_TOP_TEAMS
+    batting 3rd/4th, and any play at Citizens Bank Park (60.2% alone, n=88).
+    Backtested 64.1% union win rate (373 plays / 26 dates), stable both
+    halves (H1 66.5% / H2 62.2%). Checked independently of Tier A — callers
+    should check Tier A first so a play is only ever badged once."""
+    if row.get("team") in PREMIUM_TOP_TEAMS and (row.get("order") or 0) in (3, 4):
+        return True
+    if row.get("venue") == PREMIUM_VENUE:
+        return True
+    return False
+
+
+def premium_tier(row):
+    """Classify a market-anchored dashboard row as 'premium', 'strong', or
+    None. Expects the report.py row shape (edge/order/team/venue keys).
+    Returns None for rows without a resolved non-zero edge."""
+    edge = row.get("edge")
+    if not edge:
+        return None
+    call = "over" if edge > 0 else "under"
+    edge_abs = abs(edge)
+    if _premium_tier_a(row, call, edge_abs):
+        return "premium"
+    if _premium_tier_b(row, call, edge_abs):
+        return "strong"
+    return None
+
+
+# ---------------------------------------------------------------------------
 # Per-leg scoring
 # ---------------------------------------------------------------------------
 
@@ -87,6 +266,28 @@ def _edge_base_prob(edge_abs, call):
     return 0.50
 
 
+# Reliability check (2026-07-13, 4,071 graded plays / 26 dates) found
+# leg_win_prob() well calibrated at the extremes but overconfident in the
+# middle of its range:
+#   predicted 50-53%: actual 49.7% (-0.9 pt — within noise)
+#   predicted 53-55%: actual 50.7% (-3.2 pt)
+#   predicted 55-58%: actual 53.9% (-2.5 pt)
+#   predicted 58%+:   actual 58.4% (-1.5 pt — essentially honest)
+# Shrink the two overconfident mid-bands by their measured gap so slips and
+# Value Plays stop quietly including inflated middle-band plays.
+_CALIBRATION_CORRECTION = [
+    (0.53, 0.55, 0.032),
+    (0.55, 0.58, 0.025),
+]
+
+
+def _apply_calibration_correction(prob):
+    for lo, hi, shrink in _CALIBRATION_CORRECTION:
+        if lo <= prob < hi:
+            return prob - shrink
+    return prob
+
+
 def leg_win_prob(row, call, edge_abs):
     base = _edge_base_prob(edge_abs, call)
     base += VENUE_WIN_ADJ.get(row.get("venue", ""), 0)
@@ -95,6 +296,8 @@ def leg_win_prob(row, call, edge_abs):
         base += 0.015
     if row.get("platoon_advantage") == "batter" and call == "over":
         base += 0.015
+    base = min(0.95, max(0.50, base))
+    base = _apply_calibration_correction(base)
     return round(min(0.95, max(0.50, base)), 4)
 
 
