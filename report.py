@@ -19,6 +19,7 @@ from zoneinfo import ZoneInfo
 
 import projections as proj
 import slips as slips_mod
+import stacks as stacks_mod
 from scrapers.market_lines import get_market_lines, compute_pp_ud_ratio, match_lines
 
 
@@ -627,7 +628,7 @@ DASHBOARD_COLS = [
 
 
 def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None, slips_results=None,
-                     premium_results=None):
+                     premium_results=None, stacks_results=None):
     games_count = len({r["game_pk"] for r in rows})
     generated_dt = datetime.now(timezone.utc).astimezone(_PACIFIC)
     last_updated = generated_dt.strftime("%Y-%m-%d %I:%M %p PT")
@@ -771,6 +772,29 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
 
     premium_record_str = _tier_record_str("premium")
     strong_record_str = _tier_record_str("strong")
+
+    # --- Stacks: correlated 3+3 trio pairings for the 30x payout bet type ---
+    # Built entirely on the empirical order x opponent-ERA backtest (see
+    # stacks.py module docstring) after a Monte Carlo simulator failed its
+    # own out-of-sample joint-probability validation. Every probability is
+    # shown as a conservative-to-optimistic range; only pairings whose
+    # CONSERVATIVE combined probability clears stacks.PLAYABLE_MIN_CONSERVATIVE
+    # (4.5%) are surfaced. tracker.py grades legs/trios/full-6-man nightly.
+    stack_pairings = stacks_mod.build_pairings(rows)
+    stacks_mod.save_stacks(date_str, stack_pairings)
+    stack_pairings_js = json.dumps(stack_pairings)
+
+    stacks_record = (stacks_results or {}).get("record", {})
+
+    def _stacks_record_str(level):
+        rec = stacks_record.get(level, {"wins": 0, "losses": 0})
+        total = rec["wins"] + rec["losses"]
+        if total == 0:
+            return f"{level}: no graded results yet."
+        rate = round(100 * rec["wins"] / total, 1)
+        return f"{level}: {rec['wins']}-{rec['losses']} ({rate}%)"
+
+    stacks_record_str = "  |  ".join(_stacks_record_str(lvl) for lvl in ("legs", "trios", "full6"))
 
     # --- Value Plays: model vs. market disagreement above threshold ---------
     # Live thresholds tracked in data/results/edge_bucket_rates.json
@@ -985,6 +1009,37 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
                           text-align: left; font-weight: 700; border-bottom: 1px solid #2a3a5c; }}
   .slips-rec-table td {{ padding: 8px 12px; border-bottom: 1px solid #1f2c46; color: #d6deef; }}
 
+  /* Stacks tab */
+  .stacks-intro {{ color: #9fb0cc; font-size: 13px; margin-bottom: 16px; }}
+  .stacks-record-bar {{ background: #16213a; border: 1px solid #2a3a5c; border-radius: 8px;
+                         padding: 10px 16px; font-size: 12px; color: #c4cee0; margin-bottom: 20px; }}
+  .stack-pairing {{ background: #16213a; border: 2px solid #a78bfa; border-radius: 12px;
+                     margin-bottom: 20px; overflow: hidden; }}
+  .stack-pairing-header {{ padding: 14px 18px; background: rgba(167,139,250,0.10);
+                            display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; }}
+  .stack-pairing-title {{ font-size: 16px; font-weight: 800; color: #fff; }}
+  .stack-pairing-badge {{ display: inline-block; font-size: 11px; font-weight: 800; text-transform: uppercase;
+                           letter-spacing: 0.06em; padding: 3px 10px; border-radius: 10px; margin-left: 8px;
+                           background: #4ade80; color: #0d1626; }}
+  .stack-range {{ text-align: right; }}
+  .stack-range-val {{ font-size: 18px; font-weight: 800; color: #fff; }}
+  .stack-range-lbl {{ font-size: 11px; color: #9fb0cc; }}
+  .stack-ev {{ font-size: 12px; color: #4ade80; margin-top: 2px; }}
+  .stack-trios {{ display: grid; grid-template-columns: 1fr 1fr; gap: 0; }}
+  @media (max-width: 700px) {{ .stack-trios {{ grid-template-columns: 1fr; }} }}
+  .stack-trio {{ padding: 14px 18px; border-top: 1px solid #2a3a5c; }}
+  .stack-trio:first-child {{ border-right: 1px solid #2a3a5c; }}
+  @media (max-width: 700px) {{ .stack-trio:first-child {{ border-right: none; }} }}
+  .stack-trio-header {{ font-size: 13px; font-weight: 700; color: #d6deef; margin-bottom: 2px; }}
+  .stack-trio-meta {{ font-size: 11px; color: #9fb0cc; margin-bottom: 10px; }}
+  .stack-leg {{ display: flex; justify-content: space-between; align-items: center;
+                padding: 6px 0; border-bottom: 1px solid #1f2c46; }}
+  .stack-leg:last-child {{ border-bottom: none; }}
+  .stack-leg-name {{ font-size: 13px; font-weight: 700; color: #fff; }}
+  .stack-leg-order {{ font-size: 11px; color: #9fb0cc; margin-left: 6px; }}
+  .stack-leg-prob {{ font-size: 13px; font-weight: 700; color: #c4cee0; }}
+  .stacks-empty {{ color: #9fb0cc; font-size: 13px; padding: 20px 0; }}
+
   /* Results tab */
   .results-summary {{ display: flex; gap: 14px; margin-bottom: 16px; }}
   .summary-card {{ background: #16213a; border: 1px solid #2a3a5c; border-radius: 10px;
@@ -1132,6 +1187,7 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   <button class="tab-btn active" id="tab-top25" data-tab="top25">Top 25</button>
   <button class="tab-btn" id="tab-full" data-tab="full">Full Leaderboard</button>
   <button class="tab-btn" id="tab-slips" data-tab="slips">Slips</button>
+  <button class="tab-btn" id="tab-stacks" data-tab="stacks">Stacks</button>
   <button class="tab-btn" id="tab-results" data-tab="results">Results</button>
   <button class="tab-btn" id="tab-history" data-tab="history">Player History</button>
   <button class="tab-btn" id="tab-top25results" data-tab="top25results">Top 25 Results</button>
@@ -1163,6 +1219,10 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
 
 <div class="panel hidden" id="panel-slips">
   <div id="slipsPanelContent"></div>
+</div>
+
+<div class="panel hidden" id="panel-stacks">
+  <div id="stacksPanelContent"></div>
 </div>
 
 <div class="panel hidden" id="panel-results">
@@ -1215,6 +1275,8 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
 const CARDS = {cards_js};
 const PREMIUM_CARDS = {premium_cards_js};
 const STRONG_CARDS = {strong_cards_js};
+const STACK_PAIRINGS = {stack_pairings_js};
+const STACKS_RECORD_STR = {json.dumps(stacks_record_str)};
 const VALUE_CARDS = {value_cards_js};
 const UNANCHORED_CARDS = {unanchored_cards_js};
 const COLS = {cols_js};
@@ -1507,8 +1569,62 @@ setInterval(applyHideStartedFilter, 30000); // live re-check as games start, no 
   document.getElementById('slipsPanelContent').innerHTML = html;
 }})();
 
+// --- Stacks tab ---
+(function renderStacks() {{
+  function pct(p) {{ return (p * 100).toFixed(2) + '%'; }}
+  function evStr(ev) {{ return (ev >= 0 ? '+' : '') + (ev * 100).toFixed(0) + '%'; }}
+
+  function legHtml(leg) {{
+    var timeStr = leg.game_time_pt ? ' &middot; <span class="game-time">' + leg.game_time_pt + '</span>' : '';
+    return '<div class="stack-leg">'
+      + '<div><span class="stack-leg-name">' + leg.name + '</span>'
+      +   '<span class="stack-leg-order">#' + leg.order + timeStr + '</span></div>'
+      + '<div class="stack-leg-prob">' + pct(leg.leg_prob) + '</div>'
+      + '</div>';
+  }}
+
+  function trioHtml(trio) {{
+    return '<div class="stack-trio">'
+      + '<div class="stack-trio-header">' + trio.team + ' (' + trio.trio_type + ')</div>'
+      + '<div class="stack-trio-meta">vs ' + trio.opp_team + ' &middot; opp ERA ' + trio.opp_era.toFixed(2)
+      +   ' &middot; trio ' + pct(trio.conservative_prob) + '&ndash;' + pct(trio.optimistic_prob) + '</div>'
+      + trio.legs.map(legHtml).join('')
+      + '</div>';
+  }}
+
+  function pairingHtml(p) {{
+    return '<div class="stack-pairing">'
+      + '<div class="stack-pairing-header">'
+      +   '<div><span class="stack-pairing-title">6-Leg Stack</span>'
+      +     (p.playable ? '<span class="stack-pairing-badge">Playable</span>' : '') + '</div>'
+      +   '<div class="stack-range">'
+      +     '<div class="stack-range-val">' + pct(p.combined_conservative) + '&ndash;' + pct(p.combined_optimistic) + '</div>'
+      +     '<div class="stack-range-lbl">joint probability (breakeven 3.33%)</div>'
+      +     '<div class="stack-ev">EV ' + evStr(p.ev_conservative) + ' to ' + evStr(p.ev_optimistic) + ' at 30x</div>'
+      +   '</div>'
+      + '</div>'
+      + '<div class="stack-trios">' + p.trios.map(trioHtml).join('') + '</div>'
+      + '</div>';
+  }}
+
+  var html = '<div class="stacks-intro">Two 3-man same-team trios (consecutive top-of-order batters vs. a soft-ERA '
+    + 'opponent, ERA 4.50+) from different games, each player needing 2+ combined hits+runs+RBI. Probability shown as '
+    + 'a conservative&ndash;optimistic range based on how much of the adjacent-lineup correlation is genuine signal '
+    + 'vs. general team-day variance. Only pairings whose CONSERVATIVE estimate clears breakeven with margin (4.5%+) '
+    + 'are shown.</div>';
+  html += '<div class="stacks-record-bar">Running record &mdash; ' + STACKS_RECORD_STR + '</div>';
+
+  if (STACK_PAIRINGS.length === 0) {{
+    html += '<div class="stacks-empty">No pairings clear the conservative breakeven bar on today’s slate.</div>';
+  }} else {{
+    html += STACK_PAIRINGS.map(pairingHtml).join('');
+  }}
+
+  document.getElementById('stacksPanelContent').innerHTML = html;
+}})();
+
 // --- Tabs ---
-const PANELS = ['top25', 'full', 'slips', 'results', 'history', 'top25results'];
+const PANELS = ['top25', 'full', 'slips', 'stacks', 'results', 'history', 'top25results'];
 document.querySelectorAll('.tab-btn').forEach(btn => {{
   btn.addEventListener('click', () => {{
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -1865,6 +1981,14 @@ def _load_premium_results():
     return {}
 
 
+def _load_stacks_results():
+    path = os.path.join("data", "results", "stacks_results.json")
+    if os.path.exists(path):
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    return {}
+
+
 def regenerate_dashboard(date_arg=None):
     """Rebuild output/dashboard.html from the latest projection + results
     data and push it to GitHub Pages. Used by tracker.py after nightly
@@ -1873,7 +1997,7 @@ def regenerate_dashboard(date_arg=None):
     rows, date_str, results_data, top25_data = prepare_dashboard_context(date_arg)
     html_path = os.path.join("output", "dashboard.html")
     write_dashboard(rows, date_str, html_path, results_data, top25_data, _load_slips_results(),
-                     _load_premium_results())
+                     _load_premium_results(), _load_stacks_results())
     print(f"Dashboard saved -> {os.path.abspath(html_path)}")
     deploy_to_github_pages(html_path, date_str)
     return html_path
@@ -1886,7 +2010,7 @@ def main():
     os.makedirs("output", exist_ok=True)
     html_path = os.path.join("output", "dashboard.html")
     write_dashboard(rows, date_str, html_path, results_data, top25_data, _load_slips_results(),
-                     _load_premium_results())
+                     _load_premium_results(), _load_stacks_results())
     print(f"Dashboard saved -> {os.path.abspath(html_path)}")
 
     deploy_to_github_pages(html_path, date_str)

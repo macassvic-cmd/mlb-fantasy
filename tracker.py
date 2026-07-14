@@ -23,6 +23,7 @@ from scrapers.mlb_api import get_player_game_log
 HIT_TOLERANCE = 0.20  # within 20% of projection counts as a "hit"
 
 import slips as slips_mod
+import stacks as stacks_mod
 
 RESULTS_DIR = os.path.join("data", "results")
 ALL_RESULTS_PATH = os.path.join(RESULTS_DIR, "all_results.json")
@@ -31,6 +32,7 @@ VALUE_PLAYS_DIR = os.path.join("data", "value_plays")
 VALUE_PLAYS_RESULTS_PATH = os.path.join(RESULTS_DIR, "value_plays_results.json")
 SLIPS_RESULTS_PATH = os.path.join(RESULTS_DIR, "slips_results.json")
 PREMIUM_RESULTS_PATH = os.path.join(RESULTS_DIR, "premium_results.json")
+STACKS_RESULTS_PATH = os.path.join(RESULTS_DIR, "stacks_results.json")
 
 
 def classify(projected, actual):
@@ -214,6 +216,7 @@ def track_date(date_str):
     grade_value_plays(date_str, results_by_pid)
     grade_premium_plays(date_str, results_by_pid)
     grade_slips(date_str, results_by_pid)
+    grade_stacks(date_str, results)
 
     # Weekly refresh of the edge-bucket win-rate table slips.py scores legs
     # with (see EDGE_BUCKET_REFRESH_DAYS) — keeps it from ever going stale
@@ -222,6 +225,13 @@ def track_date(date_str):
         slips_mod.refresh_edge_bucket_rates(load_json(ALL_RESULTS_PATH, {"dates": {}, "players": {}}))
     except Exception as e:
         print(f"Edge-bucket rate refresh failed (non-fatal): {e}")
+
+    # Weekly refresh of the stack optimizer's order x ERA cross-table and
+    # adjacency correlation stats (see stacks.RATES_REFRESH_DAYS).
+    try:
+        stacks_mod.refresh_hrrbi_rates()
+    except Exception as e:
+        print(f"H+R+RBI rate refresh failed (non-fatal): {e}")
 
     # Regenerate the dashboard with the freshly-updated Results / Player
     # History / Value Plays data and push it to GitHub Pages, so the site
@@ -382,6 +392,88 @@ def grade_premium_plays(date_str, results_by_pid):
         rec_rate = round(100 * rec["wins"] / rec_total, 1) if rec_total else 0.0
         print(f"  {tier.capitalize()}: {s['correct']}/{s['total']} today ({s['win_rate']}%) "
               f"-> running record {rec['wins']}-{rec['losses']} ({rec_rate}%)")
+
+
+def grade_stacks(date_str, results):
+    """Grade each of the day's recommended stack pairings: per-leg
+    H+R+RBI>=2 outcome, per-trio (all 3 legs hit), and the full 6-man
+    (both trios hit). Rolls into a running record per level so actual
+    out-of-sample performance can be compared against the predicted
+    conservative-to-optimistic probability range."""
+    plays_path = os.path.join(stacks_mod.STACKS_DIR, f"{date_str}.json")
+    if not os.path.exists(plays_path):
+        print(f"No stack pairings recorded for {date_str} ({plays_path} not found). Skipping.")
+        return
+
+    with open(plays_path, encoding="utf-8") as f:
+        stacks_data = json.load(f)
+
+    hit2plus_by_pid = {}
+    for r in results:
+        al = r.get("actual_line") or {}
+        hits = (al.get("singles") or 0) + (al.get("doubles") or 0) + (al.get("triples") or 0) + (al.get("hr") or 0)
+        hit2plus_by_pid[r["player_id"]] = (hits + (al.get("runs") or 0) + (al.get("rbi") or 0)) >= 2
+
+    default_record = {"legs": {"wins": 0, "losses": 0}, "trios": {"wins": 0, "losses": 0}, "full6": {"wins": 0, "losses": 0}}
+    all_sr = load_json(STACKS_RESULTS_PATH, {"dates": {}, "record": default_record})
+    all_sr.setdefault("dates", {})
+    all_sr.setdefault("record", default_record)
+    for level in ("legs", "trios", "full6"):
+        all_sr["record"].setdefault(level, {"wins": 0, "losses": 0})
+
+    graded_pairings = []
+    for pairing in stacks_data.get("pairings", []):
+        graded_trios = []
+        all_trios_hit = True
+        for trio in pairing["trios"]:
+            graded_legs = []
+            trio_hit = True
+            trio_fully_graded = True
+            for leg in trio["legs"]:
+                pid = leg["player_id"]
+                if pid not in hit2plus_by_pid:
+                    trio_fully_graded = False
+                    graded_legs.append({**leg, "actual_hit": None})
+                    continue
+                hit = hit2plus_by_pid[pid]
+                graded_legs.append({**leg, "actual_hit": hit})
+                trio_hit = trio_hit and hit
+                rec = all_sr["record"]["legs"]
+                rec["wins" if hit else "losses"] += 1
+
+            if trio_fully_graded:
+                rec = all_sr["record"]["trios"]
+                rec["wins" if trio_hit else "losses"] += 1
+            else:
+                trio_hit = False  # can't count as a hit if a leg didn't play
+            all_trios_hit = all_trios_hit and trio_hit
+            graded_trios.append({**trio, "legs": graded_legs, "trio_hit": trio_hit, "fully_graded": trio_fully_graded})
+
+        pairing_fully_graded = all(t["fully_graded"] for t in graded_trios)
+        if pairing_fully_graded:
+            rec = all_sr["record"]["full6"]
+            rec["wins" if all_trios_hit else "losses"] += 1
+
+        graded_pairings.append({
+            **{k: v for k, v in pairing.items() if k != "trios"},
+            "trios": graded_trios,
+            "full6_hit": all_trios_hit if pairing_fully_graded else False,
+            "fully_graded": pairing_fully_graded,
+        })
+
+    all_sr["dates"][date_str] = {"pairings": graded_pairings}
+    os.makedirs(RESULTS_DIR, exist_ok=True)
+    with open(STACKS_RESULTS_PATH, "w", encoding="utf-8") as f:
+        json.dump(all_sr, f, indent=2)
+
+    def _rate(r):
+        t = r["wins"] + r["losses"]
+        return round(100 * r["wins"] / t, 1) if t else 0.0
+
+    rec = all_sr["record"]
+    print(f"  Stacks: legs {rec['legs']['wins']}-{rec['legs']['losses']} ({_rate(rec['legs'])}%)  "
+          f"trios {rec['trios']['wins']}-{rec['trios']['losses']} ({_rate(rec['trios'])}%)  "
+          f"full6 {rec['full6']['wins']}-{rec['full6']['losses']} ({_rate(rec['full6'])}%)")
 
 
 def _grade_single_slip(slip, platform, results_by_pid):
