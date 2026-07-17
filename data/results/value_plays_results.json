@@ -2341,6 +2341,79 @@
         "under_correct": 0
       },
       "plays": []
+    },
+    "2026-07-16": {
+      "summary": {
+        "total": 6,
+        "correct": 3,
+        "accuracy": 50.0,
+        "over_total": 3,
+        "over_correct": 2,
+        "under_total": 3,
+        "under_correct": 1
+      },
+      "plays": [
+        {
+          "player_id": 805999,
+          "name": "A.J. Ewing",
+          "team": "New York Mets",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "correct": true
+        },
+        {
+          "player_id": 701807,
+          "name": "Carson Benge",
+          "team": "New York Mets",
+          "call": "over",
+          "edge": 1.74,
+          "ud_line": 6.5,
+          "actual_ud": 7,
+          "correct": true
+        },
+        {
+          "player_id": 592663,
+          "name": "J.T. Realmuto",
+          "team": "Philadelphia Phillies",
+          "call": "over",
+          "edge": 1.03,
+          "ud_line": 5.5,
+          "actual_ud": 3,
+          "correct": false
+        },
+        {
+          "player_id": 547180,
+          "name": "Bryce Harper",
+          "team": "Philadelphia Phillies",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 9,
+          "correct": false
+        },
+        {
+          "player_id": 607208,
+          "name": "Trea Turner",
+          "team": "Philadelphia Phillies",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 14,
+          "correct": false
+        },
+        {
+          "player_id": 669016,
+          "name": "Brandon Marsh",
+          "team": "Philadelphia Phillies",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "correct": true
+        }
+      ]
     }
   }
 }

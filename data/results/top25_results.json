@@ -17436,12 +17436,466 @@
           "getaway_day_risk": false
         }
       ]
+    },
+    "2026-07-16": {
+      "top25": [
+        {
+          "player_id": 665742,
+          "date": "2026-07-16",
+          "name": "Juan Soto",
+          "team": "New York Mets",
+          "order": 2,
+          "ud": 9.4,
+          "pp": 9.1,
+          "xwoba": 0.476,
+          "barrel": 9.1,
+          "era": 5.75,
+          "wxIcon": "\u2600\ufe0f",
+          "wxText": "88\u00b0F 11mph W",
+          "park": 1.08,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "green",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 9.41,
+          "ud_line": 8.5,
+          "actual_ud": 12,
+          "grade": "win",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false
+        },
+        {
+          "player_id": 805999,
+          "date": "2026-07-16",
+          "name": "A.J. Ewing",
+          "team": "New York Mets",
+          "order": 1,
+          "ud": 8.5,
+          "pp": 7.6,
+          "xwoba": 0.32,
+          "barrel": 7.3,
+          "era": 5.75,
+          "wxIcon": "\u2600\ufe0f",
+          "wxText": "88\u00b0F 11mph W",
+          "park": 1.08,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "grade": "win",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false
+        },
+        {
+          "player_id": 683146,
+          "date": "2026-07-16",
+          "name": "Brett Baty",
+          "team": "New York Mets",
+          "order": 8,
+          "ud": 8.5,
+          "pp": 8.2,
+          "xwoba": 0.375,
+          "barrel": 6.8,
+          "era": 5.75,
+          "wxIcon": "\u2600\ufe0f",
+          "wxText": "88\u00b0F 11mph W",
+          "park": 1.08,
+          "platoon": false,
+          "adjusted": true,
+          "tier": "green",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 8.46,
+          "ud_line": null,
+          "actual_ud": 17,
+          "grade": "win",
+          "graded_vs_proj": true,
+          "getaway_day_risk": false
+        },
+        {
+          "player_id": 701807,
+          "date": "2026-07-16",
+          "name": "Carson Benge",
+          "team": "New York Mets",
+          "order": 5,
+          "ud": 8.2,
+          "pp": 7.6,
+          "xwoba": 0.374,
+          "barrel": 1.9,
+          "era": 5.75,
+          "wxIcon": "\u2600\ufe0f",
+          "wxText": "88\u00b0F 11mph W",
+          "park": 1.08,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 8.24,
+          "ud_line": 6.5,
+          "actual_ud": 7,
+          "grade": "win",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false
+        },
+        {
+          "player_id": 596019,
+          "date": "2026-07-16",
+          "name": "Francisco Lindor",
+          "team": "New York Mets",
+          "order": 3,
+          "ud": 7.2,
+          "pp": 6.8,
+          "xwoba": 0.326,
+          "barrel": 3.5,
+          "era": 5.75,
+          "wxIcon": "\u2600\ufe0f",
+          "wxText": "88\u00b0F 11mph W",
+          "park": 1.08,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "yellow",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 7.24,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "grade": "loss",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false
+        },
+        {
+          "player_id": 620443,
+          "date": "2026-07-16",
+          "name": "Luis Torrens",
+          "team": "New York Mets",
+          "order": 7,
+          "ud": 6.6,
+          "pp": 6.2,
+          "xwoba": 0.23,
+          "barrel": 0.0,
+          "era": 5.75,
+          "wxIcon": "\u2600\ufe0f",
+          "wxText": "88\u00b0F 11mph W",
+          "park": 1.08,
+          "platoon": false,
+          "adjusted": true,
+          "tier": "yellow",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 6.61,
+          "ud_line": null,
+          "actual_ud": null,
+          "grade": null,
+          "graded_vs_proj": false,
+          "getaway_day_risk": false
+        },
+        {
+          "player_id": 592663,
+          "date": "2026-07-16",
+          "name": "J.T. Realmuto",
+          "team": "Philadelphia Phillies",
+          "order": 8,
+          "ud": 6.5,
+          "pp": 6.2,
+          "xwoba": 0.29,
+          "barrel": 3.2,
+          "era": 3.17,
+          "wxIcon": "\u2600\ufe0f",
+          "wxText": "88\u00b0F 11mph W",
+          "park": 1.08,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "yellow",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 6.53,
+          "ud_line": 5.5,
+          "actual_ud": 3,
+          "grade": "loss",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false
+        },
+        {
+          "player_id": 621438,
+          "date": "2026-07-16",
+          "name": "Tyrone Taylor",
+          "team": "New York Mets",
+          "order": 6,
+          "ud": 6.1,
+          "pp": 5.8,
+          "xwoba": 0.414,
+          "barrel": 16.7,
+          "era": 5.75,
+          "wxIcon": "\u2600\ufe0f",
+          "wxText": "88\u00b0F 11mph W",
+          "park": 1.08,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "yellow",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 6.12,
+          "ud_line": null,
+          "actual_ud": 0,
+          "grade": "loss",
+          "graded_vs_proj": true,
+          "getaway_day_risk": false
+        },
+        {
+          "player_id": 547180,
+          "date": "2026-07-16",
+          "name": "Bryce Harper",
+          "team": "Philadelphia Phillies",
+          "order": 3,
+          "ud": 5.5,
+          "pp": 4.5,
+          "xwoba": 0.24,
+          "barrel": 0.0,
+          "era": 3.17,
+          "wxIcon": "\u2600\ufe0f",
+          "wxText": "88\u00b0F 11mph W",
+          "park": 1.08,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "yellow",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 5.5,
+          "ud_line": 7.5,
+          "actual_ud": 9,
+          "grade": "loss",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false
+        },
+        {
+          "player_id": 656941,
+          "date": "2026-07-16",
+          "name": "Kyle Schwarber",
+          "team": "Philadelphia Phillies",
+          "order": 2,
+          "ud": 5.1,
+          "pp": 4.8,
+          "xwoba": 0.333,
+          "barrel": 7.5,
+          "era": 3.17,
+          "wxIcon": "\u2600\ufe0f",
+          "wxText": "88\u00b0F 11mph W",
+          "park": 1.08,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "yellow",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 5.12,
+          "ud_line": 6.5,
+          "actual_ud": 6,
+          "grade": "win",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false
+        },
+        {
+          "player_id": 656537,
+          "date": "2026-07-16",
+          "name": "Derek Hill",
+          "team": "Philadelphia Phillies",
+          "order": 7,
+          "ud": 4.9,
+          "pp": 4.9,
+          "xwoba": 0.352,
+          "barrel": 3.8,
+          "era": 3.17,
+          "wxIcon": "\u2600\ufe0f",
+          "wxText": "88\u00b0F 11mph W",
+          "park": 1.08,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "red",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 4.94,
+          "ud_line": null,
+          "actual_ud": null,
+          "grade": null,
+          "graded_vs_proj": false,
+          "getaway_day_risk": false
+        },
+        {
+          "player_id": 681082,
+          "date": "2026-07-16",
+          "name": "Bryson Stott",
+          "team": "Philadelphia Phillies",
+          "order": 9,
+          "ud": 4.8,
+          "pp": 4.6,
+          "xwoba": 0.308,
+          "barrel": 3.7,
+          "era": 3.17,
+          "wxIcon": "\u2600\ufe0f",
+          "wxText": "88\u00b0F 11mph W",
+          "park": 1.08,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "red",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 4.76,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "grade": "win",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false
+        },
+        {
+          "player_id": 676572,
+          "date": "2026-07-16",
+          "name": "Eric Wagaman",
+          "team": "New York Mets",
+          "order": 4,
+          "ud": 4.7,
+          "pp": 4.4,
+          "xwoba": 0.265,
+          "barrel": 0.0,
+          "era": 5.75,
+          "wxIcon": "\u2600\ufe0f",
+          "wxText": "88\u00b0F 11mph W",
+          "park": 1.08,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "red",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 4.66,
+          "ud_line": null,
+          "actual_ud": null,
+          "grade": null,
+          "graded_vs_proj": false,
+          "getaway_day_risk": false
+        },
+        {
+          "player_id": 607208,
+          "date": "2026-07-16",
+          "name": "Trea Turner",
+          "team": "Philadelphia Phillies",
+          "order": 1,
+          "ud": 4.5,
+          "pp": 3.6,
+          "xwoba": 0.321,
+          "barrel": 6.8,
+          "era": 3.17,
+          "wxIcon": "\u2600\ufe0f",
+          "wxText": "88\u00b0F 11mph W",
+          "park": 1.08,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "red",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "actual_ud": 14,
+          "grade": "loss",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false
+        },
+        {
+          "player_id": 669016,
+          "date": "2026-07-16",
+          "name": "Brandon Marsh",
+          "team": "Philadelphia Phillies",
+          "order": 6,
+          "ud": 4.5,
+          "pp": 3.6,
+          "xwoba": 0.244,
+          "barrel": 2.1,
+          "era": 3.17,
+          "wxIcon": "\u2600\ufe0f",
+          "wxText": "88\u00b0F 11mph W",
+          "park": 1.08,
+          "platoon": true,
+          "adjusted": false,
+          "tier": "red",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "grade": "win",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false
+        },
+        {
+          "player_id": 664761,
+          "date": "2026-07-16",
+          "name": "Alec Bohm",
+          "team": "Philadelphia Phillies",
+          "order": 4,
+          "ud": 4.4,
+          "pp": 4.1,
+          "xwoba": 0.342,
+          "barrel": 4.7,
+          "era": 3.17,
+          "wxIcon": "\u2600\ufe0f",
+          "wxText": "88\u00b0F 11mph W",
+          "park": 1.08,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "red",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 4.43,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "grade": "win",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false
+        },
+        {
+          "player_id": 670097,
+          "date": "2026-07-16",
+          "name": "Zack Short",
+          "team": "New York Mets",
+          "order": 9,
+          "ud": 4.4,
+          "pp": 4.1,
+          "xwoba": 0.215,
+          "barrel": 0.0,
+          "era": 5.75,
+          "wxIcon": "\u2600\ufe0f",
+          "wxText": "88\u00b0F 11mph W",
+          "park": 1.08,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "red",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 4.38,
+          "ud_line": null,
+          "actual_ud": null,
+          "grade": null,
+          "graded_vs_proj": false,
+          "getaway_day_risk": false
+        },
+        {
+          "player_id": 624641,
+          "date": "2026-07-16",
+          "name": "Edmundo Sosa",
+          "team": "Philadelphia Phillies",
+          "order": 5,
+          "ud": 2.6,
+          "pp": 2.5,
+          "xwoba": 0.331,
+          "barrel": 3.6,
+          "era": 3.17,
+          "wxIcon": "\u2600\ufe0f",
+          "wxText": "88\u00b0F 11mph W",
+          "park": 1.08,
+          "platoon": false,
+          "adjusted": true,
+          "tier": "red",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 2.64,
+          "ud_line": null,
+          "actual_ud": null,
+          "grade": null,
+          "graded_vs_proj": false,
+          "getaway_day_risk": false
+        }
+      ]
     }
   },
   "players": {
     "669016": {
       "name": "Brandon Marsh",
-      "team": "National League All-Stars",
+      "team": "Philadelphia Phillies",
       "dates_seen": [
         "2026-06-15",
         "2026-06-17",
@@ -17450,7 +17904,8 @@
         "2026-07-02",
         "2026-07-05",
         "2026-07-06",
-        "2026-07-14"
+        "2026-07-14",
+        "2026-07-16"
       ],
       "history": [
         {
@@ -17494,6 +17949,12 @@
           "projected_ud": 8.5,
           "actual_ud": 3,
           "grade": "loss"
+        },
+        {
+          "date": "2026-07-16",
+          "projected_ud": 4.5,
+          "actual_ud": 0,
+          "grade": "win"
         }
       ]
     },
@@ -17620,7 +18081,8 @@
         "2026-07-02",
         "2026-07-05",
         "2026-07-06",
-        "2026-07-09"
+        "2026-07-09",
+        "2026-07-16"
       ],
       "history": [
         {
@@ -17664,6 +18126,12 @@
           "projected_ud": 9.01,
           "actual_ud": 0,
           "grade": "win"
+        },
+        {
+          "date": "2026-07-16",
+          "projected_ud": 5.5,
+          "actual_ud": 9,
+          "grade": "loss"
         }
       ]
     },
@@ -17677,7 +18145,8 @@
         "2026-07-02",
         "2026-07-05",
         "2026-07-06",
-        "2026-07-07"
+        "2026-07-07",
+        "2026-07-16"
       ],
       "history": [
         {
@@ -17721,6 +18190,12 @@
           "projected_ud": 8.85,
           "actual_ud": 7,
           "grade": "loss"
+        },
+        {
+          "date": "2026-07-16",
+          "projected_ud": 4.5,
+          "actual_ud": 14,
+          "grade": "loss"
         }
       ]
     },
@@ -17753,7 +18228,8 @@
       "dates_seen": [
         "2026-06-15",
         "2026-06-26",
-        "2026-07-02"
+        "2026-07-02",
+        "2026-07-16"
       ],
       "history": [
         {
@@ -17767,12 +18243,18 @@
           "projected_ud": 8.5,
           "actual_ud": 0,
           "grade": "loss"
+        },
+        {
+          "date": "2026-07-16",
+          "projected_ud": 4.43,
+          "actual_ud": 0,
+          "grade": "win"
         }
       ]
     },
     "656941": {
       "name": "Kyle Schwarber",
-      "team": "National League All-Stars",
+      "team": "Philadelphia Phillies",
       "dates_seen": [
         "2026-06-15",
         "2026-06-25",
@@ -17780,7 +18262,8 @@
         "2026-06-30",
         "2026-07-02",
         "2026-07-09",
-        "2026-07-14"
+        "2026-07-14",
+        "2026-07-16"
       ],
       "history": [
         {
@@ -17817,6 +18300,12 @@
           "date": "2026-07-09",
           "projected_ud": 8.5,
           "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "date": "2026-07-16",
+          "projected_ud": 5.12,
+          "actual_ud": 6,
           "grade": "win"
         }
       ]
@@ -18085,7 +18574,8 @@
         "2026-06-24",
         "2026-06-25",
         "2026-07-02",
-        "2026-07-06"
+        "2026-07-06",
+        "2026-07-16"
       ],
       "history": [
         {
@@ -18110,6 +18600,12 @@
           "date": "2026-07-06",
           "projected_ud": 8.18,
           "actual_ud": 9,
+          "grade": "win"
+        },
+        {
+          "date": "2026-07-16",
+          "projected_ud": 4.76,
+          "actual_ud": 0,
           "grade": "win"
         }
       ]
@@ -20996,14 +21492,15 @@
     },
     "665742": {
       "name": "Juan Soto",
-      "team": "National League All-Stars",
+      "team": "New York Mets",
       "dates_seen": [
         "2026-06-15",
         "2026-06-17",
         "2026-06-22",
         "2026-06-23",
         "2026-06-24",
-        "2026-07-14"
+        "2026-07-14",
+        "2026-07-16"
       ],
       "history": [
         {
@@ -21023,6 +21520,12 @@
           "projected_ud": 8.77,
           "actual_ud": 0,
           "grade": "loss"
+        },
+        {
+          "date": "2026-07-16",
+          "projected_ud": 9.41,
+          "actual_ud": 12,
+          "grade": "win"
         }
       ]
     },
@@ -23483,13 +23986,20 @@
       "name": "A.J. Ewing",
       "team": "New York Mets",
       "dates_seen": [
-        "2026-06-17"
+        "2026-06-17",
+        "2026-07-16"
       ],
       "history": [
         {
           "date": "2026-06-17",
           "projected_ud": 7.5,
           "actual_ud": 13,
+          "grade": "win"
+        },
+        {
+          "date": "2026-07-16",
+          "projected_ud": 8.5,
+          "actual_ud": 8,
           "grade": "win"
         }
       ]
@@ -23979,6 +24489,123 @@
       "team": "American League All-Stars",
       "dates_seen": [
         "2026-07-14"
+      ],
+      "history": []
+    },
+    "683146": {
+      "name": "Brett Baty",
+      "team": "New York Mets",
+      "dates_seen": [
+        "2026-07-16"
+      ],
+      "history": [
+        {
+          "date": "2026-07-16",
+          "projected_ud": 8.46,
+          "actual_ud": 17,
+          "grade": "win",
+          "graded_vs_proj": true
+        }
+      ]
+    },
+    "701807": {
+      "name": "Carson Benge",
+      "team": "New York Mets",
+      "dates_seen": [
+        "2026-07-16"
+      ],
+      "history": [
+        {
+          "date": "2026-07-16",
+          "projected_ud": 8.24,
+          "actual_ud": 7,
+          "grade": "win"
+        }
+      ]
+    },
+    "596019": {
+      "name": "Francisco Lindor",
+      "team": "New York Mets",
+      "dates_seen": [
+        "2026-07-16"
+      ],
+      "history": [
+        {
+          "date": "2026-07-16",
+          "projected_ud": 7.24,
+          "actual_ud": 0,
+          "grade": "loss"
+        }
+      ]
+    },
+    "620443": {
+      "name": "Luis Torrens",
+      "team": "New York Mets",
+      "dates_seen": [
+        "2026-07-16"
+      ],
+      "history": []
+    },
+    "592663": {
+      "name": "J.T. Realmuto",
+      "team": "Philadelphia Phillies",
+      "dates_seen": [
+        "2026-07-16"
+      ],
+      "history": [
+        {
+          "date": "2026-07-16",
+          "projected_ud": 6.53,
+          "actual_ud": 3,
+          "grade": "loss"
+        }
+      ]
+    },
+    "621438": {
+      "name": "Tyrone Taylor",
+      "team": "New York Mets",
+      "dates_seen": [
+        "2026-07-16"
+      ],
+      "history": [
+        {
+          "date": "2026-07-16",
+          "projected_ud": 6.12,
+          "actual_ud": 0,
+          "grade": "loss",
+          "graded_vs_proj": true
+        }
+      ]
+    },
+    "656537": {
+      "name": "Derek Hill",
+      "team": "Philadelphia Phillies",
+      "dates_seen": [
+        "2026-07-16"
+      ],
+      "history": []
+    },
+    "676572": {
+      "name": "Eric Wagaman",
+      "team": "New York Mets",
+      "dates_seen": [
+        "2026-07-16"
+      ],
+      "history": []
+    },
+    "670097": {
+      "name": "Zack Short",
+      "team": "New York Mets",
+      "dates_seen": [
+        "2026-07-16"
+      ],
+      "history": []
+    },
+    "624641": {
+      "name": "Edmundo Sosa",
+      "team": "Philadelphia Phillies",
+      "dates_seen": [
+        "2026-07-16"
       ],
       "history": []
     }
