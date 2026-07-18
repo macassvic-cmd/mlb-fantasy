@@ -8,7 +8,7 @@ import warnings
 import pandas as pd
 from datetime import datetime, timedelta
 
-from scrapers._timeout import call_with_timeout
+from scrapers._subprocess_call import call_in_subprocess
 
 warnings.filterwarnings("ignore")
 logger = logging.getLogger(__name__)
@@ -25,9 +25,14 @@ except ImportError:
 def _fetch(player_id, start_dt, end_dt):
     if statcast_batter is None:
         return pd.DataFrame()
-    df = call_with_timeout(
+    # Runs in a child process, not just a timed thread: statcast_batter has
+    # segfaulted in native code (pandas/pyarrow) on 2026-07-18 mid-fetch, and
+    # a segfault kills every thread in the process it happens in. Isolating
+    # it in a subprocess means a crash here costs one player's Statcast data,
+    # not the whole pipeline run.
+    df = call_in_subprocess(
         statcast_batter, start_dt, end_dt, player_id,
-        timeout_s=60, label=f"statcast_batter({player_id})",
+        timeout_s=60, retries=1, label=f"statcast_batter({player_id})",
     )
     return df if df is not None and not df.empty else pd.DataFrame()
 
