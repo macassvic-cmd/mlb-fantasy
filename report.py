@@ -1308,14 +1308,20 @@ function updateFreshness() {{
     month: 'long', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true,
   }});
   const lastUpdatedEl = document.getElementById('lastUpdated');
+  const todayStr = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+  // A recent rebuild timestamp does not imply fresh game data — the pipeline
+  // can regenerate the dashboard from yesterday's data file if today's fetch
+  // failed silently. "Fresh" requires BOTH a recent rebuild AND GAME_DATE
+  // matching today, not just ageHours.
   if (ageHours > 4) {{
     lastUpdatedEl.innerHTML = `Last Updated: ${{timeStr}} PT &mdash; <span style="color:#f87171">&#9888; Data may be stale - pipeline may not have run</span>`;
+  }} else if (GAME_DATE !== todayStr) {{
+    lastUpdatedEl.innerHTML = `Last Updated: ${{timeStr}} PT &mdash; <span style="color:#f87171">&#9888; Rebuilt recently but showing ${{GAME_DATE}}'s data, not today's</span>`;
   }} else {{
     lastUpdatedEl.innerHTML = `Last Updated: ${{timeStr}} PT &mdash; <span style="color:#4ade80">&#10003; Fresh</span>`;
   }}
 
   const banner = document.getElementById('freshnessBanner');
-  const todayStr = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
   const updatedTime = generated.toLocaleTimeString('en-US', {{ hour: 'numeric', minute: '2-digit', hour12: true }});
   if (GAME_DATE === todayStr) {{
     banner.className = 'freshness-banner fresh';

@@ -106,14 +106,23 @@ jobs:
             github.event.inputs.run_type == 'pipeline'
           )
         run: |
-          if ! python pipeline.py; then
+          # NOTE: capture $? from a plain invocation, not from `if ! cmd`.
+          # `$?` after `if ! cmd; then` reflects the negated/inverted status
+          # (always 0 in this branch), not cmd's real exit code — that bug
+          # let every pipeline.py crash (segfault or otherwise) get swallowed
+          # as ec=0, so the step "succeeded" and downstream steps silently
+          # rendered whatever stale data file was already on disk.
+          python pipeline.py
+          ec=$?
+          if [ "$ec" -eq 139 ]; then
+            echo "::warning::pipeline.py segfaulted (exit 139) - retrying once"
+            python pipeline.py
             ec=$?
-            if [ "$ec" -eq 139 ]; then
-              echo "::warning::pipeline.py segfaulted (exit 139) - retrying once"
-              python pipeline.py
-            else
-              exit $ec
-            fi
+          fi
+          TODAY=$(date -u +%Y-%m-%d)
+          if [ "$ec" -ne 0 ] || [ ! -f "data/${TODAY}.json" ]; then
+            echo "::error::pipeline.py did not produce data/${TODAY}.json (exit $ec) — failing so we don't rebuild the dashboard from yesterday's data."
+            exit 1
           fi
 
       - name: Pipeline — generate projections
@@ -124,7 +133,7 @@ jobs:
             github.event.schedule == '0 21 * * *' ||
             github.event.inputs.run_type == 'pipeline'
           )
-        run: python projections.py
+        run: python projections.py "$(date -u +%Y-%m-%d)"
 
       - name: Pipeline — build dashboard
         if: >-
@@ -134,7 +143,7 @@ jobs:
             github.event.schedule == '0 21 * * *' ||
             github.event.inputs.run_type == 'pipeline'
           )
-        run: python report.py
+        run: python report.py "$(date -u +%Y-%m-%d)"
 
       # ── Tracker step ─────────────────────────────────────────────────────
 
