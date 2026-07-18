@@ -1,0 +1,86 @@
+{
+  "date": "2026-07-18",
+  "pairings": [
+    {
+      "trios": [
+        {
+          "game_pk": 824008,
+          "team": "Detroit Tigers",
+          "opp_team": "Los Angeles Angels",
+          "venue": "Angel Stadium",
+          "opp_era": 7.55,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 805808,
+              "name": "Kevin McGonigle",
+              "order": 2,
+              "leg_prob": 0.5914,
+              "game_time_pt": "7:07 PM PT",
+              "game_date_utc": "2026-07-19T02:07:00Z"
+            },
+            {
+              "player_id": 693307,
+              "name": "Dillon Dingler",
+              "order": 3,
+              "leg_prob": 0.5608,
+              "game_time_pt": "7:07 PM PT",
+              "game_date_utc": "2026-07-19T02:07:00Z"
+            },
+            {
+              "player_id": 679529,
+              "name": "Spencer Torkelson",
+              "order": 4,
+              "leg_prob": 0.5608,
+              "game_time_pt": "7:07 PM PT",
+              "game_date_utc": "2026-07-19T02:07:00Z"
+            }
+          ],
+          "conservative_prob": 0.2162,
+          "optimistic_prob": 0.2537
+        },
+        {
+          "game_pk": 824088,
+          "team": "Kansas City Royals",
+          "opp_team": "San Diego Padres",
+          "venue": "Kauffman Stadium",
+          "opp_era": 6.47,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 677951,
+              "name": "Bobby Witt Jr.",
+              "order": 2,
+              "leg_prob": 0.5914,
+              "game_time_pt": "1:10 PM PT",
+              "game_date_utc": "2026-07-18T20:10:00Z"
+            },
+            {
+              "player_id": 695506,
+              "name": "Jac Caglianone",
+              "order": 3,
+              "leg_prob": 0.5608,
+              "game_time_pt": "1:10 PM PT",
+              "game_date_utc": "2026-07-18T20:10:00Z"
+            },
+            {
+              "player_id": 657041,
+              "name": "Lane Thomas",
+              "order": 4,
+              "leg_prob": 0.5608,
+              "game_time_pt": "1:10 PM PT",
+              "game_date_utc": "2026-07-18T20:10:00Z"
+            }
+          ],
+          "conservative_prob": 0.2162,
+          "optimistic_prob": 0.2537
+        }
+      ],
+      "combined_conservative": 0.04674,
+      "combined_optimistic": 0.06436,
+      "ev_conservative": 0.402,
+      "ev_optimistic": 0.931,
+      "playable": true
+    }
+  ]
+}
