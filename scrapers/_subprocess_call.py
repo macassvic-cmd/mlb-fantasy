@@ -1,9 +1,13 @@
 """Process-isolated wrapper for third-party calls that can segfault (native
 code in pandas/pyarrow/pybaseball). A thread-based timeout (see _timeout.py)
 cannot help here - a SIGSEGV kills the whole process, every thread with it.
-Running the call in a child process means a crash only takes down that
-child; the parent sees a non-zero/negative exitcode and treats it exactly
-like a timed-out call: skip and move on.
+
+WorkerPool keeps ONE persistent child process alive across many calls,
+rather than spawning a fresh interpreter per call. A crash or hang in the
+child only costs that one call (skip, same contract as a timed-out fetch);
+the pool respawns a replacement worker and keeps going. This matters
+because "spawn" (required - see below) costs 1-2s of interpreter startup
+each time, which is fine paid once but not 273 times over a per-player loop.
 """
 
 import logging
@@ -17,67 +21,83 @@ logger = logging.getLogger(__name__)
 # background threads before we get here (call_with_timeout spawns one per
 # call and *abandons* it on timeout per its own docstring; ThreadPoolExecutor
 # runs 8 workers for platoon splits). If fork() lands while one of those
-# threads holds a native lock (requests/urllib3/SSL), the child inherits it
-# already locked forever and hangs on its first request - which is exactly
-# what turned "one call segfaults" into "every call times out" once this
-# wrapper went live. spawn starts a fresh interpreter with no inherited
-# threads or locks, so this whole hazard class doesn't apply.
+# threads holds a native lock (requests/urllib3/SSL), the forked child
+# inherits it already locked forever and hangs on its first request - which
+# is exactly what turned "one call segfaults" into "every call times out"
+# when a fresh fork-per-call wrapper first went live. spawn starts a fresh
+# interpreter with no inherited threads or locks, so that hazard doesn't
+# apply - but its startup cost must be paid once per pool, not once per call.
 _ctx = mp.get_context("spawn")
 
 
-def _run(fn, args, kwargs, queue):
-    try:
-        queue.put(("ok", fn(*args, **kwargs)))
-    except Exception as e:
-        queue.put(("error", e))
-
-
-def call_in_subprocess(fn, *args, timeout_s=60, retries=1, default=None, label="", **kwargs):
-    """Run fn(*args, **kwargs) in a child process.
-
-    Returns fn's result, or `default` if the call times out, crashes
-    (segfault or otherwise), or raises - after `retries` extra attempts.
-    """
-    name = label or getattr(fn, "__name__", "call")
-    attempts = retries + 1
-    for attempt in range(1, attempts + 1):
-        queue = _ctx.Queue()
-        proc = _ctx.Process(target=_run, args=(fn, args, kwargs, queue), daemon=True)
-        proc.start()
-        proc.join(timeout_s)
-
-        if proc.is_alive():
-            proc.terminate()
-            proc.join(5)
-            logger.warning(
-                f"{name} exceeded {timeout_s}s (attempt {attempt}/{attempts}) - "
-                f"{'retrying' if attempt < attempts else 'skipping'}"
-            )
-            continue
-
-        if proc.exitcode != 0:
-            logger.warning(
-                f"{name} crashed with exit code {proc.exitcode} "
-                f"(attempt {attempt}/{attempts}) - "
-                f"{'retrying' if attempt < attempts else 'skipping'}"
-            )
-            continue
-
+def _worker_loop(fn, task_q, result_q):
+    while True:
+        item = task_q.get()
+        if item is None:
+            return
+        args, kwargs = item
         try:
-            status, payload = queue.get_nowait()
-        except Exception:
-            logger.warning(
-                f"{name} exited cleanly but returned no result "
-                f"(attempt {attempt}/{attempts}) - "
-                f"{'retrying' if attempt < attempts else 'skipping'}"
-            )
-            continue
+            result_q.put(("ok", fn(*args, **kwargs)))
+        except Exception as e:
+            result_q.put(("error", e))
 
-        if status == "error":
-            logger.warning(f"{name} raised: {payload}")
-            return default
 
-        return payload
+class WorkerPool:
+    """Runs `fn` in one persistent child process, reused across calls.
 
-    logger.warning(f"{name} failed after {attempts} attempt(s) - skipping")
-    return default
+    Restarts the child only when it actually dies (crash or a call that
+    exceeded timeout_s and had to be killed) - not on every call.
+    """
+
+    def __init__(self, fn, timeout_s=60, retries=1, default=None, label=""):
+        self.fn = fn
+        self.timeout_s = timeout_s
+        self.retries = retries
+        self.default = default
+        self.label = label or getattr(fn, "__name__", "call")
+        self.task_q = None
+        self.result_q = None
+        self.proc = None
+
+    def _ensure_worker(self):
+        if self.proc is not None and self.proc.is_alive():
+            return
+        self.task_q = _ctx.Queue()
+        self.result_q = _ctx.Queue()
+        self.proc = _ctx.Process(
+            target=_worker_loop, args=(self.fn, self.task_q, self.result_q), daemon=True,
+        )
+        self.proc.start()
+
+    def _kill_worker(self):
+        if self.proc is not None:
+            if self.proc.is_alive():
+                self.proc.terminate()
+                self.proc.join(5)
+            self.proc = None
+
+    def call(self, *args, **kwargs):
+        attempts = self.retries + 1
+        for attempt in range(1, attempts + 1):
+            self._ensure_worker()
+            self.task_q.put((args, kwargs))
+            try:
+                status, payload = self.result_q.get(timeout=self.timeout_s)
+            except Exception:
+                alive = self.proc.is_alive()
+                self._kill_worker()
+                reason = "hung" if alive else "crashed"
+                logger.warning(
+                    f"{self.label} {reason} (attempt {attempt}/{attempts}) - "
+                    f"{'retrying on a fresh worker' if attempt < attempts else 'skipping'}"
+                )
+                continue
+
+            if status == "error":
+                logger.warning(f"{self.label} raised: {payload}")
+                return self.default
+
+            return payload
+
+        logger.warning(f"{self.label} failed after {attempts} attempt(s) - skipping")
+        return self.default

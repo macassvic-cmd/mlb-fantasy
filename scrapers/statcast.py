@@ -8,7 +8,7 @@ import warnings
 import pandas as pd
 from datetime import datetime, timedelta
 
-from scrapers._subprocess_call import call_in_subprocess
+from scrapers._subprocess_call import WorkerPool
 
 warnings.filterwarnings("ignore")
 logger = logging.getLogger(__name__)
@@ -21,19 +21,20 @@ except ImportError:
     logger.warning("pybaseball not installed; Statcast data unavailable")
     statcast_batter = None
 
+# statcast_batter has segfaulted in native code (pandas/pyarrow) mid-fetch,
+# and a segfault kills every thread in the process it happens in - a plain
+# timeout thread offers no protection. One persistent worker process runs
+# every player's fetch; a crash there only costs that call (skip, like a
+# timed-out fetch) and the pool respawns a replacement for the next player,
+# instead of paying a fresh-interpreter spawn cost per player (273x over).
+_statcast_pool = WorkerPool(statcast_batter, timeout_s=60, retries=1, label="statcast_batter") \
+    if statcast_batter is not None else None
+
 
 def _fetch(player_id, start_dt, end_dt):
-    if statcast_batter is None:
+    if _statcast_pool is None:
         return pd.DataFrame()
-    # Runs in a child process, not just a timed thread: statcast_batter has
-    # segfaulted in native code (pandas/pyarrow) on 2026-07-18 mid-fetch, and
-    # a segfault kills every thread in the process it happens in. Isolating
-    # it in a subprocess means a crash here costs one player's Statcast data,
-    # not the whole pipeline run.
-    df = call_in_subprocess(
-        statcast_batter, start_dt, end_dt, player_id,
-        timeout_s=60, retries=1, label=f"statcast_batter({player_id})",
-    )
+    df = _statcast_pool.call(start_dt, end_dt, player_id)
     return df if df is not None and not df.empty else pd.DataFrame()
 
 
