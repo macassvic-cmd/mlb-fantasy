@@ -11,6 +11,19 @@ import multiprocessing as mp
 
 logger = logging.getLogger(__name__)
 
+# Force "spawn" rather than the platform default. On Linux, mp's default is
+# "fork", which clones the parent's entire memory image - including any
+# lock currently held by another thread. This pipeline runs dozens of
+# background threads before we get here (call_with_timeout spawns one per
+# call and *abandons* it on timeout per its own docstring; ThreadPoolExecutor
+# runs 8 workers for platoon splits). If fork() lands while one of those
+# threads holds a native lock (requests/urllib3/SSL), the child inherits it
+# already locked forever and hangs on its first request - which is exactly
+# what turned "one call segfaults" into "every call times out" once this
+# wrapper went live. spawn starts a fresh interpreter with no inherited
+# threads or locks, so this whole hazard class doesn't apply.
+_ctx = mp.get_context("spawn")
+
 
 def _run(fn, args, kwargs, queue):
     try:
@@ -28,8 +41,8 @@ def call_in_subprocess(fn, *args, timeout_s=60, retries=1, default=None, label="
     name = label or getattr(fn, "__name__", "call")
     attempts = retries + 1
     for attempt in range(1, attempts + 1):
-        queue = mp.Queue()
-        proc = mp.Process(target=_run, args=(fn, args, kwargs, queue), daemon=True)
+        queue = _ctx.Queue()
+        proc = _ctx.Process(target=_run, args=(fn, args, kwargs, queue), daemon=True)
         proc.start()
         proc.join(timeout_s)
 
