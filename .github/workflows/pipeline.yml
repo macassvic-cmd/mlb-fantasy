@@ -112,11 +112,42 @@ jobs:
           # let every pipeline.py crash (segfault or otherwise) get swallowed
           # as ec=0, so the step "succeeded" and downstream steps silently
           # rendered whatever stale data file was already on disk.
-          python pipeline.py
+          #
+          # Runtime canary: healthy baseline is ~17 min (confirmed 2026-07-19).
+          # Warn past 45 min, kill and fail past 60 - grinding all the way to
+          # GitHub's 2-hour job timeout (which happened twice on 2026-07-19,
+          # once for real segfaults and once from a since-fixed subprocess
+          # bug) wastes an hour-plus discovering what a fast failure would
+          # have caught immediately. Past 60 min is structural breakage, not
+          # normal slowness, and should fail loud rather than grind silently.
+          run_with_canary() {
+            python pipeline.py &
+            local pid=$!
+            local start=$(date +%s)
+            local warned=false
+            while kill -0 "$pid" 2>/dev/null; do
+              sleep 30
+              elapsed=$(( $(date +%s) - start ))
+              if [ "$elapsed" -gt 3600 ]; then
+                echo "::error::pipeline.py exceeded 60 min (healthy baseline ~17 min) - killing before GitHub's 2h hard timeout. This is structural breakage, not normal slowness."
+                kill -9 "$pid" 2>/dev/null
+                wait "$pid" 2>/dev/null
+                return 124
+              fi
+              if [ "$elapsed" -gt 2700 ] && [ "$warned" = false ]; then
+                echo "::warning::pipeline.py has been running $(( elapsed / 60 ))min (healthy baseline ~17 min) - past 45 min may indicate a stuck fetch."
+                warned=true
+              fi
+            done
+            wait "$pid"
+            return $?
+          }
+
+          run_with_canary
           ec=$?
           if [ "$ec" -eq 139 ]; then
             echo "::warning::pipeline.py segfaulted (exit 139) - retrying once"
-            python pipeline.py
+            run_with_canary
             ec=$?
           fi
           TODAY=$(date -u +%Y-%m-%d)

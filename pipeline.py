@@ -26,6 +26,45 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # ---------------------------------------------------------------------------
+# Dependency version guard
+# ---------------------------------------------------------------------------
+# pandas 3.0.3 is a confirmed segfault trigger deep in native code (see the
+# pin comment in requirements.txt, and the 2026-07-18/19 pipeline incidents).
+# CI installs from requirements.txt fresh every run and can't drift, but a
+# local machine's globally-installed packages can silently be on an
+# untested version - this refuses to run instead of segfaulting mid-slate.
+_VERSION_PINS = {
+    "pandas": ((2, 0), (3, 0)),
+    "numpy": ((2, 0), (3, 0)),
+    "pyarrow": ((25, 0), (26, 0)),
+}
+
+
+def _check_pinned_versions():
+    problems = []
+    for name, (lo, hi) in _VERSION_PINS.items():
+        try:
+            mod = __import__(name)
+            ver = tuple(int(p) for p in mod.__version__.split(".")[:2])
+        except Exception:
+            continue  # not installed - let the real import below fail with a clearer error
+        if not (lo <= ver < hi):
+            problems.append((name, mod.__version__, lo, hi))
+
+    if problems:
+        print("ERROR: installed package versions fall outside the pins in requirements.txt.")
+        print("pandas 3.0.3 in particular is a confirmed segfault trigger - refusing to run.")
+        for name, ver, lo, hi in problems:
+            print(f"  {name} {ver} installed, need >={lo[0]}.{lo[1]},<{hi[0]}.{hi[1]}")
+        print()
+        print("Fix:")
+        print('  python -m pip install "pandas>=2.0,<3.0" "numpy>=2.0,<3.0" "pyarrow>=25.0,<26.0"')
+        sys.exit(1)
+
+
+_check_pinned_versions()
+
+# ---------------------------------------------------------------------------
 # Park factors: (HR index, runs index, hits index) relative to neutral = 1.00
 # ---------------------------------------------------------------------------
 PARK_FACTORS = {
