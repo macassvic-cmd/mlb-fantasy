@@ -2600,6 +2600,99 @@
           "correct": true
         }
       ]
+    },
+    "2026-07-19": {
+      "summary": {
+        "total": 8,
+        "correct": 2,
+        "accuracy": 25.0,
+        "over_total": 4,
+        "over_correct": 0,
+        "under_total": 4,
+        "under_correct": 2
+      },
+      "plays": [
+        {
+          "player_id": 664983,
+          "name": "Jake McCarthy",
+          "team": "Colorado Rockies",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 5,
+          "correct": false
+        },
+        {
+          "player_id": 700250,
+          "name": "Ben Rice",
+          "team": "New York Yankees",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 6,
+          "correct": false
+        },
+        {
+          "player_id": 691720,
+          "name": "Kyle Karros",
+          "team": "Colorado Rockies",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "correct": false
+        },
+        {
+          "player_id": 679529,
+          "name": "Spencer Torkelson",
+          "team": "Detroit Tigers",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "correct": false
+        },
+        {
+          "player_id": 682998,
+          "name": "Corbin Carroll",
+          "team": "Arizona Diamondbacks",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 6,
+          "correct": true
+        },
+        {
+          "player_id": 669127,
+          "name": "Shea Langeliers",
+          "team": "Athletics",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 9,
+          "correct": false
+        },
+        {
+          "player_id": 668227,
+          "name": "Randy Arozarena",
+          "team": "Seattle Mariners",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 5,
+          "correct": true
+        },
+        {
+          "player_id": 691023,
+          "name": "Jordan Walker",
+          "team": "St. Louis Cardinals",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 13,
+          "correct": false
+        }
+      ]
     }
   }
 }
