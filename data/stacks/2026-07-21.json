@@ -1,0 +1,248 @@
+{
+  "date": "2026-07-21",
+  "pairings": [
+    {
+      "trios": [
+        {
+          "game_pk": 824329,
+          "team": "Colorado Rockies",
+          "opp_team": "Washington Nationals",
+          "venue": "Coors Field",
+          "opp_era": 5.53,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 691720,
+              "name": "Kyle Karros",
+              "order": 2,
+              "leg_prob": 0.5842,
+              "game_time_pt": "5:40 PM PT",
+              "game_date_utc": "2026-07-22T00:40:00Z"
+            },
+            {
+              "player_id": 694249,
+              "name": "Cole Carrigg",
+              "order": 3,
+              "leg_prob": 0.5665,
+              "game_time_pt": "5:40 PM PT",
+              "game_date_utc": "2026-07-22T00:40:00Z"
+            },
+            {
+              "player_id": 696100,
+              "name": "Hunter Goodman",
+              "order": 4,
+              "leg_prob": 0.5665,
+              "game_time_pt": "5:40 PM PT",
+              "game_date_utc": "2026-07-22T00:40:00Z"
+            }
+          ],
+          "conservative_prob": 0.2258,
+          "optimistic_prob": 0.2649
+        },
+        {
+          "game_pk": 824652,
+          "team": "Detroit Tigers",
+          "opp_team": "Chicago Cubs",
+          "venue": "Wrigley Field",
+          "opp_era": 6.45,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 650402,
+              "name": "Gleyber Torres",
+              "order": 2,
+              "leg_prob": 0.5842,
+              "game_time_pt": "5:05 PM PT",
+              "game_date_utc": "2026-07-22T00:05:00Z"
+            },
+            {
+              "player_id": 690993,
+              "name": "Colt Keith",
+              "order": 3,
+              "leg_prob": 0.5665,
+              "game_time_pt": "5:05 PM PT",
+              "game_date_utc": "2026-07-22T00:05:00Z"
+            },
+            {
+              "player_id": 682985,
+              "name": "Riley Greene",
+              "order": 4,
+              "leg_prob": 0.5665,
+              "game_time_pt": "5:05 PM PT",
+              "game_date_utc": "2026-07-22T00:05:00Z"
+            }
+          ],
+          "conservative_prob": 0.2258,
+          "optimistic_prob": 0.2649
+        }
+      ],
+      "combined_conservative": 0.05099,
+      "combined_optimistic": 0.07017,
+      "ev_conservative": 0.53,
+      "ev_optimistic": 1.105,
+      "playable": true
+    },
+    {
+      "trios": [
+        {
+          "game_pk": 824329,
+          "team": "Washington Nationals",
+          "opp_team": "Colorado Rockies",
+          "venue": "Coors Field",
+          "opp_era": 6.22,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 678554,
+              "name": "Curtis Mead",
+              "order": 2,
+              "leg_prob": 0.5842,
+              "game_time_pt": "5:40 PM PT",
+              "game_date_utc": "2026-07-22T00:40:00Z"
+            },
+            {
+              "player_id": 665953,
+              "name": "Andr\u00e9s Chaparro",
+              "order": 3,
+              "leg_prob": 0.5665,
+              "game_time_pt": "5:40 PM PT",
+              "game_date_utc": "2026-07-22T00:40:00Z"
+            },
+            {
+              "player_id": 682928,
+              "name": "CJ Abrams",
+              "order": 4,
+              "leg_prob": 0.5665,
+              "game_time_pt": "5:40 PM PT",
+              "game_date_utc": "2026-07-22T00:40:00Z"
+            }
+          ],
+          "conservative_prob": 0.2258,
+          "optimistic_prob": 0.2649
+        },
+        {
+          "game_pk": 822871,
+          "team": "Texas Rangers",
+          "opp_team": "Chicago White Sox",
+          "venue": "Globe Life Field",
+          "opp_era": 5.6,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 694671,
+              "name": "Wyatt Langford",
+              "order": 2,
+              "leg_prob": 0.5842,
+              "game_time_pt": "5:05 PM PT",
+              "game_date_utc": "2026-07-22T00:05:00Z"
+            },
+            {
+              "player_id": 673962,
+              "name": "Josh Jung",
+              "order": 3,
+              "leg_prob": 0.5665,
+              "game_time_pt": "5:05 PM PT",
+              "game_date_utc": "2026-07-22T00:05:00Z"
+            },
+            {
+              "player_id": 607043,
+              "name": "Brandon Nimmo",
+              "order": 4,
+              "leg_prob": 0.5665,
+              "game_time_pt": "5:05 PM PT",
+              "game_date_utc": "2026-07-22T00:05:00Z"
+            }
+          ],
+          "conservative_prob": 0.2258,
+          "optimistic_prob": 0.2649
+        }
+      ],
+      "combined_conservative": 0.05099,
+      "combined_optimistic": 0.07017,
+      "ev_conservative": 0.53,
+      "ev_optimistic": 1.105,
+      "playable": true
+    },
+    {
+      "trios": [
+        {
+          "game_pk": 824165,
+          "team": "Miami Marlins",
+          "opp_team": "Houston Astros",
+          "venue": "Daikin Park",
+          "opp_era": 6.06,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 681715,
+              "name": "Heriberto Hern\u00e1ndez",
+              "order": 2,
+              "leg_prob": 0.5842,
+              "game_time_pt": "5:10 PM PT",
+              "game_date_utc": "2026-07-22T00:10:00Z"
+            },
+            {
+              "player_id": 669364,
+              "name": "Xavier Edwards",
+              "order": 3,
+              "leg_prob": 0.5665,
+              "game_time_pt": "5:10 PM PT",
+              "game_date_utc": "2026-07-22T00:10:00Z"
+            },
+            {
+              "player_id": 689414,
+              "name": "Liam Hicks",
+              "order": 4,
+              "leg_prob": 0.5665,
+              "game_time_pt": "5:10 PM PT",
+              "game_date_utc": "2026-07-22T00:10:00Z"
+            }
+          ],
+          "conservative_prob": 0.2258,
+          "optimistic_prob": 0.2649
+        },
+        {
+          "game_pk": 825056,
+          "team": "Arizona Diamondbacks",
+          "opp_team": "Athletics",
+          "venue": "Chase Field",
+          "opp_era": 6.87,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 672695,
+              "name": "Geraldo Perdomo",
+              "order": 2,
+              "leg_prob": 0.5842,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-07-22T01:40:00Z"
+            },
+            {
+              "player_id": 694374,
+              "name": "Tim Tawa",
+              "order": 3,
+              "leg_prob": 0.5665,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-07-22T01:40:00Z"
+            },
+            {
+              "player_id": 672515,
+              "name": "Gabriel Moreno",
+              "order": 4,
+              "leg_prob": 0.5665,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-07-22T01:40:00Z"
+            }
+          ],
+          "conservative_prob": 0.2258,
+          "optimistic_prob": 0.2649
+        }
+      ],
+      "combined_conservative": 0.05099,
+      "combined_optimistic": 0.07017,
+      "ev_conservative": 0.53,
+      "ev_optimistic": 1.105,
+      "playable": true
+    }
+  ]
+}
