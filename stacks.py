@@ -41,7 +41,20 @@ ORDER_BUCKET_OF_SLOT = {1: "1-2", 2: "1-2", 3: "3-4", 4: "3-4",
                          5: "5-6", 6: "5-6", 7: "7-9", 8: "7-9", 9: "7-9"}
 
 # ---------------------------------------------------------------------------
-# Defaults — hand-computed 2026-07-14 from 5,918 player-games / 27 dates.
+# Defaults — cross-table recomputed 2026-07-21 from 32 dates (2026-06-14 to
+# 2026-07-19) with fine-grained ERA buckets (see era_bucket). The coarse
+# 3.50-4.49 bucket was blending a genuinely weaker 3.50-3.99 tier with a
+# 4.00-4.49 tier that performs close to 4.50+ - splitting it recovers real
+# volume. The top end matters just as much: an initial 6-bucket version
+# that merged 5.00-5.49 back in with 5.50+ diluted the rate for exactly the
+# highest-ERA, highest-probability trios (the ones that actually clear the
+# pairing bar) and REGRESSED live-code volume to 18 pairings/32 dates -
+# worse than the original coarse table (59). Keeping 5.00-5.49 and 5.50+
+# separate (8 buckets total) is what actually produced the verified
+# 59->71 pairing gain through the real find_trio_candidates/build_pairings
+# code path (not a standalone simulation harness) over the same 32 dates.
+# Marginal order rates and adjacency are unchanged (hand-computed 2026-07-14
+# from 27 dates) - this refresh only touched ERA-bucket granularity.
 # refresh_hrrbi_rates() (called nightly by tracker.py, rate-limited weekly)
 # recomputes these from every data/results/results_*.json snapshot; any
 # cross-table cell below MIN_CELL_N graded plays falls back to these.
@@ -51,14 +64,22 @@ _DEFAULT_MARGINAL_ORDER_RATES = {
 }
 _DEFAULT_CROSS_TABLE = {
     # "order_bucket|era_bucket" -> [rate, n]
-    "1-2|<3.50":       [0.481, 493], "1-2|3.50-4.49":   [0.543, 398],
-    "1-2|4.50-5.49":   [0.537, 244], "1-2|5.50+":       [0.591, 186],
-    "3-4|<3.50":       [0.456, 487], "3-4|3.50-4.49":   [0.470, 400],
-    "3-4|4.50-5.49":   [0.542, 238], "3-4|5.50+":       [0.561, 189],
-    "5-6|<3.50":       [0.402, 475], "5-6|3.50-4.49":   [0.449, 390],
-    "5-6|4.50-5.49":   [0.462, 234], "5-6|5.50+":       [0.435, 184],
-    "7-9|<3.50":       [0.350, 685], "7-9|3.50-4.49":   [0.374, 553],
-    "7-9|4.50-5.49":   [0.426, 333], "7-9|5.50+":       [0.464, 248],
+    "1-2|<3.50":       [0.495, 552], "1-2|3.50-3.99":   [0.493, 207],
+    "1-2|4.00-4.24":   [0.560, 141], "1-2|4.25-4.49":   [0.576, 92],
+    "1-2|4.50-4.74":   [0.529, 87],  "1-2|4.75-4.99":   [0.557, 97],
+    "1-2|5.00-5.49":   [0.540, 100], "1-2|5.50+":       [0.584, 202],
+    "3-4|<3.50":       [0.452, 547], "3-4|3.50-3.99":   [0.406, 212],
+    "3-4|4.00-4.24":   [0.489, 137], "3-4|4.25-4.49":   [0.500, 92],
+    "3-4|4.50-4.74":   [0.529, 85],  "3-4|4.75-4.99":   [0.564, 94],
+    "3-4|5.00-5.49":   [0.510, 98],  "3-4|5.50+":       [0.567, 203],
+    "5-6|<3.50":       [0.407, 535], "5-6|3.50-3.99":   [0.443, 203],
+    "5-6|4.00-4.24":   [0.410, 134], "5-6|4.25-4.49":   [0.457, 94],
+    "5-6|4.50-4.74":   [0.523, 86],  "5-6|4.75-4.99":   [0.478, 92],
+    "5-6|5.00-5.49":   [0.383, 94],  "5-6|5.50+":       [0.424, 198],
+    "7-9|<3.50":       [0.349, 771], "7-9|3.50-3.99":   [0.334, 296],
+    "7-9|4.00-4.24":   [0.450, 191], "7-9|4.25-4.49":   [0.360, 125],
+    "7-9|4.50-4.74":   [0.434, 122], "7-9|4.75-4.99":   [0.450, 131],
+    "7-9|5.00-5.49":   [0.397, 136], "7-9|5.50+":       [0.455, 268],
 }
 # Adjacency: baseline = spot B's own unconditional rate; raw = observed
 # P(B hits 2+ | teammate A, one spot up, also hit 2+); "n" = games with
@@ -77,10 +98,18 @@ def era_bucket(era):
         return None
     if era < 3.5:
         return "<3.50"
+    if era < 4.0:
+        return "3.50-3.99"
+    if era < 4.25:
+        return "4.00-4.24"
     if era < 4.5:
-        return "3.50-4.49"
+        return "4.25-4.49"
+    if era < 4.75:
+        return "4.50-4.74"
+    if era < 5.0:
+        return "4.75-4.99"
     if era < 5.5:
-        return "4.50-5.49"
+        return "5.00-5.49"
     return "5.50+"
 
 
