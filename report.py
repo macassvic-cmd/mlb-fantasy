@@ -992,6 +992,9 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   .slip-leg-prob {{ font-size: 11px; color: #9fb0cc; }}
   .slip-empty {{ background: #16213a; border: 2px dashed #2a3a5c; border-radius: 12px;
                  padding: 24px; text-align: center; color: #6c7da0; font-size: 13px; }}
+  .slips-expected-banner {{ background: #16213a; border: 1px solid #2a3a5c; border-radius: 10px;
+                 padding: 12px 18px; margin-bottom: 18px; font-size: 13px; color: #c4cee0; }}
+  .slips-expected-banner strong {{ color: #fff; }}
   .slips-records-section {{ margin-top: 24px; padding-top: 20px;
                              border-top: 1px solid #2a3a5c; }}
   .slips-records-section h3 {{ font-size: 15px; font-weight: 700; color: #c4cee0;
@@ -1497,8 +1500,10 @@ setInterval(applyHideStartedFilter, 30000); // live re-check as games start, no 
       return '<div class="slip-empty">Not enough qualifying legs for ' + cfg.label + ' #' + rank + '.</div>';
     }}
     var recKey  = cfg.key + '_' + rank;
-    var rec     = SLIPS_RECORDS[recKey] || {{wins:0,losses:0,legs_win:0,legs_total:0}};
-    var recStr  = rec.wins + '–' + rec.losses;
+    var rec     = SLIPS_RECORDS[recKey] || {{wins:0,losses:0,legs_win:0,legs_total:0,expected_wins:0}};
+    var recTotal = (rec.wins||0) + (rec.losses||0);
+    var recStr  = rec.wins + '–' + rec.losses
+      + (recTotal > 0 ? ' (exp ~' + (rec.expected_wins||0).toFixed(1) + ')' : '');
     var legRate = rec.legs_total > 0 ? (rec.legs_win / rec.legs_total * 100).toFixed(0) + '% legs' : '';
     var lockHtml = slip.lock_pt ? '<div class="slip-lock">&#128274; ' + slip.lock_pt + '</div>' : '';
     return '<div class="slip-card ' + cfg.platform + '-slip">'
@@ -1517,7 +1522,30 @@ setInterval(applyHideStartedFilter, 30000); // live re-check as games start, no 
       + '</div>';
   }}
 
-  var html = '';
+  // --- Overall expected-vs-actual banner ---
+  // A 0-N record with no context reads as total failure even when N is
+  // small enough that a handful of losses is normal variance around what
+  // the model itself expected - show the number it was actually supposed
+  // to beat.
+  var overallWins = 0, overallLosses = 0, overallExpected = 0;
+  Object.keys(SLIPS_RECORDS).forEach(function(k) {{
+    var rec = SLIPS_RECORDS[k];
+    overallWins     += rec.wins || 0;
+    overallLosses   += rec.losses || 0;
+    overallExpected += rec.expected_wins || 0;
+  }});
+  var overallTotal = overallWins + overallLosses;
+  var expectedHtml = '';
+  if (overallTotal > 0) {{
+    expectedHtml = '<div class="slips-expected-banner">'
+      + 'Overall record: <strong>' + overallWins + '-' + overallLosses + '</strong>'
+      + ' from ' + overallTotal + ' graded slips &mdash; model expected <strong>~'
+      + overallExpected.toFixed(1) + ' win' + (overallExpected.toFixed(1) === '1.0' ? '' : 's')
+      + '</strong> at the probabilities recorded when each slip was published.'
+      + '</div>';
+  }}
+
+  var html = expectedHtml;
   var sections = [
     {{id:'ud', label:'Underdog',   configs: SLIP_CONFIGS.filter(function(c){{return c.platform==='ud';}})}},
     {{id:'pp', label:'PrizePicks', configs: SLIP_CONFIGS.filter(function(c){{return c.platform==='pp';}})}},
@@ -1563,9 +1591,11 @@ setInterval(applyHideStartedFilter, 30000); // live re-check as games start, no 
   SLIP_KEYS.forEach(function(k) {{
     html += '<tr><td><strong>' + TYPE_LABELS[k] + '</strong></td>';
     for (var r = 1; r <= 3; r++) {{
-      var rec = SLIPS_RECORDS[k+'_'+r] || {{wins:0,losses:0,legs_win:0,legs_total:0}};
+      var rec = SLIPS_RECORDS[k+'_'+r] || {{wins:0,losses:0,legs_win:0,legs_total:0,expected_wins:0}};
+      var recTot = (rec.wins||0) + (rec.losses||0);
       var lr  = rec.legs_total > 0 ? ' (' + (rec.legs_win/rec.legs_total*100).toFixed(0) + '% legs)' : '';
-      html += '<td>' + rec.wins + '–' + rec.losses + lr + '</td>';
+      var exp = recTot > 0 ? ' [exp ~' + (rec.expected_wins||0).toFixed(1) + ']' : '';
+      html += '<td>' + rec.wins + '–' + rec.losses + lr + exp + '</td>';
     }}
     html += '</tr>';
   }});

@@ -1,5 +1,1319 @@
 {
   "dates": {
+    "2026-07-03": {
+      "ud_8": [
+        {
+          "rank": 1,
+          "legs": [
+            {
+              "player_id": 668227,
+              "name": "Randy Arozarena",
+              "team": "Seattle Mariners",
+              "venue": "T-Mobile Park",
+              "platform": "ud",
+              "call": "under",
+              "line": 5.7,
+              "edge": -1.55,
+              "win_prob": 0.633,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-04T02:10:00Z",
+              "opp_sp": "Dylan Cease",
+              "opp_era": 3.02,
+              "actual": 0,
+              "result": "win"
+            },
+            {
+              "player_id": 665487,
+              "name": "Fernando Tatis Jr.",
+              "team": "San Diego Padres",
+              "venue": "UNIQLO Field at Dodger Stadium",
+              "platform": "ud",
+              "call": "under",
+              "line": 5.5,
+              "edge": -1.84,
+              "win_prob": 0.633,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-04T02:10:00Z",
+              "opp_sp": "Shohei Ohtani",
+              "opp_era": 1.58,
+              "actual": 5,
+              "result": "win"
+            },
+            {
+              "player_id": 701538,
+              "name": "Jackson Merrill",
+              "team": "San Diego Padres",
+              "venue": "UNIQLO Field at Dodger Stadium",
+              "platform": "ud",
+              "call": "under",
+              "line": 5.2,
+              "edge": -1.55,
+              "win_prob": 0.633,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-04T02:10:00Z",
+              "opp_sp": "Shohei Ohtani",
+              "opp_era": 1.58,
+              "actual": 19,
+              "result": "loss"
+            },
+            {
+              "player_id": 641487,
+              "name": "J.P. Crawford",
+              "team": "Seattle Mariners",
+              "venue": "T-Mobile Park",
+              "platform": "ud",
+              "call": "under",
+              "line": 5.5,
+              "edge": -1.91,
+              "win_prob": 0.633,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-04T02:10:00Z",
+              "opp_sp": "Dylan Cease",
+              "opp_era": 3.02,
+              "actual": 9,
+              "result": "loss"
+            },
+            {
+              "player_id": 593428,
+              "name": "Xander Bogaerts",
+              "team": "San Diego Padres",
+              "venue": "UNIQLO Field at Dodger Stadium",
+              "platform": "ud",
+              "call": "under",
+              "line": 5.2,
+              "edge": -1.82,
+              "win_prob": 0.633,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-04T02:10:00Z",
+              "opp_sp": "Shohei Ohtani",
+              "opp_era": 1.58,
+              "actual": 8,
+              "result": "loss"
+            },
+            {
+              "player_id": 687221,
+              "name": "Dalton Rushing",
+              "team": "Los Angeles Dodgers",
+              "venue": "UNIQLO Field at Dodger Stadium",
+              "platform": "ud",
+              "call": "over",
+              "line": 4.0,
+              "edge": 1.19,
+              "win_prob": 0.623,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-04T02:10:00Z",
+              "opp_sp": "Michael King",
+              "opp_era": 3.55,
+              "actual": 3,
+              "result": "loss"
+            },
+            {
+              "player_id": 696100,
+              "name": "Hunter Goodman",
+              "team": "Colorado Rockies",
+              "venue": "Coors Field",
+              "platform": "ud",
+              "call": "over",
+              "line": 6.5,
+              "edge": 1.14,
+              "win_prob": 0.613,
+              "game_time_pt": "5:10 PM PT",
+              "game_date_utc": "2026-07-04T00:10:00Z",
+              "opp_sp": "",
+              "opp_era": null,
+              "actual": 13,
+              "result": "win"
+            },
+            {
+              "player_id": 703607,
+              "name": "Henry Bolte",
+              "team": "Athletics",
+              "venue": "Sutter Health Park",
+              "platform": "ud",
+              "call": "under",
+              "line": 6.5,
+              "edge": -1.52,
+              "win_prob": 0.613,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-07-04T01:40:00Z",
+              "opp_sp": "Tyler Phillips",
+              "opp_era": 3.02,
+              "actual": 8,
+              "result": "loss"
+            }
+          ],
+          "legs_correct": 3,
+          "legs_graded": 8,
+          "slip_win": false,
+          "combined_prob": 0.023792
+        },
+        {
+          "rank": 2,
+          "legs": [
+            {
+              "player_id": 657757,
+              "name": "Gavin Sheets",
+              "team": "San Diego Padres",
+              "venue": "UNIQLO Field at Dodger Stadium",
+              "platform": "ud",
+              "call": "under",
+              "line": 5.2,
+              "edge": -1.85,
+              "win_prob": 0.633,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-04T02:10:00Z",
+              "opp_sp": "Shohei Ohtani",
+              "opp_era": 1.58,
+              "actual": 5,
+              "result": "win"
+            },
+            {
+              "player_id": 671739,
+              "name": "Michael Harris II",
+              "team": "Atlanta Braves",
+              "venue": "Truist Park",
+              "platform": "ud",
+              "call": "under",
+              "line": 6.5,
+              "edge": -1.93,
+              "win_prob": 0.613,
+              "game_time_pt": "4:15 PM PT",
+              "game_date_utc": "2026-07-03T23:15:00Z",
+              "opp_sp": "Christian Scott",
+              "opp_era": 3.2,
+              "actual": 19,
+              "result": "loss"
+            },
+            {
+              "player_id": 642086,
+              "name": "Dominic Smith",
+              "team": "Atlanta Braves",
+              "venue": "Truist Park",
+              "platform": "ud",
+              "call": "under",
+              "line": 5.5,
+              "edge": -1.67,
+              "win_prob": 0.613,
+              "game_time_pt": "4:15 PM PT",
+              "game_date_utc": "2026-07-03T23:15:00Z",
+              "opp_sp": "Christian Scott",
+              "opp_era": 3.2,
+              "actual": 0,
+              "result": "win"
+            },
+            {
+              "player_id": 663586,
+              "name": "Austin Riley",
+              "team": "Atlanta Braves",
+              "venue": "Truist Park",
+              "platform": "ud",
+              "call": "under",
+              "line": 5.5,
+              "edge": -1.82,
+              "win_prob": 0.613,
+              "game_time_pt": "4:15 PM PT",
+              "game_date_utc": "2026-07-03T23:15:00Z",
+              "opp_sp": "Christian Scott",
+              "opp_era": 3.2,
+              "actual": 3,
+              "result": "win"
+            },
+            {
+              "player_id": 643446,
+              "name": "Jeff McNeil",
+              "team": "Athletics",
+              "venue": "Sutter Health Park",
+              "platform": "ud",
+              "call": "under",
+              "line": 5.5,
+              "edge": -1.97,
+              "win_prob": 0.613,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-07-04T01:40:00Z",
+              "opp_sp": "Tyler Phillips",
+              "opp_era": 3.02,
+              "actual": 12,
+              "result": "loss"
+            },
+            {
+              "player_id": 605141,
+              "name": "Mookie Betts",
+              "team": "Los Angeles Dodgers",
+              "venue": "UNIQLO Field at Dodger Stadium",
+              "platform": "ud",
+              "call": "over",
+              "line": 6.5,
+              "edge": 1.48,
+              "win_prob": 0.608,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-04T02:10:00Z",
+              "opp_sp": "Michael King",
+              "opp_era": 3.55,
+              "actual": 5,
+              "result": "loss"
+            },
+            {
+              "player_id": 681624,
+              "name": "Andy Pages",
+              "team": "Los Angeles Dodgers",
+              "venue": "UNIQLO Field at Dodger Stadium",
+              "platform": "ud",
+              "call": "over",
+              "line": 5.5,
+              "edge": 1.18,
+              "win_prob": 0.608,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-04T02:10:00Z",
+              "opp_sp": "Michael King",
+              "opp_era": 3.55,
+              "actual": 6,
+              "result": "win"
+            },
+            {
+              "player_id": 805300,
+              "name": "Jakob Marsee",
+              "team": "Miami Marlins",
+              "venue": "Sutter Health Park",
+              "platform": "ud",
+              "call": "over",
+              "line": 5.5,
+              "edge": 1.23,
+              "win_prob": 0.603,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-07-04T01:40:00Z",
+              "opp_sp": "Jack Perkins",
+              "opp_era": 6.0,
+              "actual": 20,
+              "result": "win"
+            }
+          ],
+          "legs_correct": 5,
+          "legs_graded": 8,
+          "slip_win": false,
+          "combined_prob": 0.019924
+        },
+        {
+          "rank": 3,
+          "legs": [
+            {
+              "player_id": 676391,
+              "name": "Ernie Clement",
+              "team": "Toronto Blue Jays",
+              "venue": "T-Mobile Park",
+              "platform": "ud",
+              "call": "over",
+              "line": 5.2,
+              "edge": 1.37,
+              "win_prob": 0.603,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-04T02:10:00Z",
+              "opp_sp": "Luis Castillo",
+              "opp_era": 4.93,
+              "actual": 0,
+              "result": "loss"
+            },
+            {
+              "player_id": 665926,
+              "name": "Andr\u00e9s Gim\u00e9nez",
+              "team": "Toronto Blue Jays",
+              "venue": "T-Mobile Park",
+              "platform": "ud",
+              "call": "over",
+              "line": 4.0,
+              "edge": 1.4,
+              "win_prob": 0.603,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-04T02:10:00Z",
+              "opp_sp": "Luis Castillo",
+              "opp_era": 4.93,
+              "actual": 13,
+              "result": "win"
+            },
+            {
+              "player_id": 678246,
+              "name": "Miguel Vargas",
+              "team": "Chicago White Sox",
+              "venue": "Progressive Field",
+              "platform": "ud",
+              "call": "over",
+              "line": 5.5,
+              "edge": 1.31,
+              "win_prob": 0.598,
+              "game_time_pt": "4:10 PM PT",
+              "game_date_utc": "2026-07-03T23:10:00Z",
+              "opp_sp": "Gavin Williams",
+              "opp_era": 3.81,
+              "actual": 24,
+              "result": "win"
+            },
+            {
+              "player_id": 683737,
+              "name": "Michael Busch",
+              "team": "Chicago Cubs",
+              "venue": "Wrigley Field",
+              "platform": "ud",
+              "call": "under",
+              "line": 7.5,
+              "edge": -1.59,
+              "win_prob": 0.593,
+              "game_time_pt": "1:05 PM PT",
+              "game_date_utc": "2026-07-03T20:05:00Z",
+              "opp_sp": "Andre Pallante",
+              "opp_era": 3.83,
+              "actual": 3,
+              "result": "win"
+            },
+            {
+              "player_id": 668804,
+              "name": "Bryan Reynolds",
+              "team": "Pittsburgh Pirates",
+              "venue": "Nationals Park",
+              "platform": "ud",
+              "call": "under",
+              "line": 6.5,
+              "edge": -1.59,
+              "win_prob": 0.593,
+              "game_time_pt": "3:45 PM PT",
+              "game_date_utc": "2026-07-03T22:45:00Z",
+              "opp_sp": "Foster Griffin",
+              "opp_era": 2.93,
+              "actual": 24,
+              "result": "loss"
+            },
+            {
+              "player_id": 663853,
+              "name": "Romy Gonzalez",
+              "team": "Boston Red Sox",
+              "venue": "Angel Stadium",
+              "platform": "ud",
+              "call": "under",
+              "line": 5.5,
+              "edge": -1.54,
+              "win_prob": 0.593,
+              "game_time_pt": "6:38 PM PT",
+              "game_date_utc": "2026-07-04T01:38:00Z",
+              "opp_sp": "Reid Detmers",
+              "opp_era": 3.88,
+              "actual": 20,
+              "result": "loss"
+            },
+            {
+              "player_id": 673237,
+              "name": "Yainer Diaz",
+              "team": "Houston Astros",
+              "venue": "Daikin Park",
+              "platform": "ud",
+              "call": "under",
+              "line": 5.5,
+              "edge": -1.8,
+              "win_prob": 0.593,
+              "game_time_pt": "5:15 PM PT",
+              "game_date_utc": "2026-07-04T00:15:00Z",
+              "opp_sp": "Nick Martinez",
+              "opp_era": 2.66,
+              "actual": 0,
+              "result": "win"
+            }
+          ],
+          "legs_correct": 4,
+          "legs_graded": 7,
+          "slip_win": false,
+          "combined_prob": 0.015944
+        }
+      ],
+      "ud_6": [
+        {
+          "rank": 1,
+          "legs": [
+            {
+              "player_id": 668227,
+              "name": "Randy Arozarena",
+              "team": "Seattle Mariners",
+              "venue": "T-Mobile Park",
+              "platform": "ud",
+              "call": "under",
+              "line": 5.7,
+              "edge": -1.55,
+              "win_prob": 0.633,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-04T02:10:00Z",
+              "opp_sp": "Dylan Cease",
+              "opp_era": 3.02,
+              "actual": 0,
+              "result": "win"
+            },
+            {
+              "player_id": 665487,
+              "name": "Fernando Tatis Jr.",
+              "team": "San Diego Padres",
+              "venue": "UNIQLO Field at Dodger Stadium",
+              "platform": "ud",
+              "call": "under",
+              "line": 5.5,
+              "edge": -1.84,
+              "win_prob": 0.633,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-04T02:10:00Z",
+              "opp_sp": "Shohei Ohtani",
+              "opp_era": 1.58,
+              "actual": 5,
+              "result": "win"
+            },
+            {
+              "player_id": 701538,
+              "name": "Jackson Merrill",
+              "team": "San Diego Padres",
+              "venue": "UNIQLO Field at Dodger Stadium",
+              "platform": "ud",
+              "call": "under",
+              "line": 5.2,
+              "edge": -1.55,
+              "win_prob": 0.633,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-04T02:10:00Z",
+              "opp_sp": "Shohei Ohtani",
+              "opp_era": 1.58,
+              "actual": 19,
+              "result": "loss"
+            },
+            {
+              "player_id": 641487,
+              "name": "J.P. Crawford",
+              "team": "Seattle Mariners",
+              "venue": "T-Mobile Park",
+              "platform": "ud",
+              "call": "under",
+              "line": 5.5,
+              "edge": -1.91,
+              "win_prob": 0.633,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-04T02:10:00Z",
+              "opp_sp": "Dylan Cease",
+              "opp_era": 3.02,
+              "actual": 9,
+              "result": "loss"
+            },
+            {
+              "player_id": 593428,
+              "name": "Xander Bogaerts",
+              "team": "San Diego Padres",
+              "venue": "UNIQLO Field at Dodger Stadium",
+              "platform": "ud",
+              "call": "under",
+              "line": 5.2,
+              "edge": -1.82,
+              "win_prob": 0.633,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-04T02:10:00Z",
+              "opp_sp": "Shohei Ohtani",
+              "opp_era": 1.58,
+              "actual": 8,
+              "result": "loss"
+            },
+            {
+              "player_id": 687221,
+              "name": "Dalton Rushing",
+              "team": "Los Angeles Dodgers",
+              "venue": "UNIQLO Field at Dodger Stadium",
+              "platform": "ud",
+              "call": "over",
+              "line": 4.0,
+              "edge": 1.19,
+              "win_prob": 0.623,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-04T02:10:00Z",
+              "opp_sp": "Michael King",
+              "opp_era": 3.55,
+              "actual": 3,
+              "result": "loss"
+            }
+          ],
+          "legs_correct": 2,
+          "legs_graded": 6,
+          "slip_win": false,
+          "combined_prob": 0.063315
+        },
+        {
+          "rank": 2,
+          "legs": [
+            {
+              "player_id": 657757,
+              "name": "Gavin Sheets",
+              "team": "San Diego Padres",
+              "venue": "UNIQLO Field at Dodger Stadium",
+              "platform": "ud",
+              "call": "under",
+              "line": 5.2,
+              "edge": -1.85,
+              "win_prob": 0.633,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-04T02:10:00Z",
+              "opp_sp": "Shohei Ohtani",
+              "opp_era": 1.58,
+              "actual": 5,
+              "result": "win"
+            },
+            {
+              "player_id": 696100,
+              "name": "Hunter Goodman",
+              "team": "Colorado Rockies",
+              "venue": "Coors Field",
+              "platform": "ud",
+              "call": "over",
+              "line": 6.5,
+              "edge": 1.14,
+              "win_prob": 0.613,
+              "game_time_pt": "5:10 PM PT",
+              "game_date_utc": "2026-07-04T00:10:00Z",
+              "opp_sp": "",
+              "opp_era": null,
+              "actual": 13,
+              "result": "win"
+            },
+            {
+              "player_id": 703607,
+              "name": "Henry Bolte",
+              "team": "Athletics",
+              "venue": "Sutter Health Park",
+              "platform": "ud",
+              "call": "under",
+              "line": 6.5,
+              "edge": -1.52,
+              "win_prob": 0.613,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-07-04T01:40:00Z",
+              "opp_sp": "Tyler Phillips",
+              "opp_era": 3.02,
+              "actual": 8,
+              "result": "loss"
+            },
+            {
+              "player_id": 671739,
+              "name": "Michael Harris II",
+              "team": "Atlanta Braves",
+              "venue": "Truist Park",
+              "platform": "ud",
+              "call": "under",
+              "line": 6.5,
+              "edge": -1.93,
+              "win_prob": 0.613,
+              "game_time_pt": "4:15 PM PT",
+              "game_date_utc": "2026-07-03T23:15:00Z",
+              "opp_sp": "Christian Scott",
+              "opp_era": 3.2,
+              "actual": 19,
+              "result": "loss"
+            },
+            {
+              "player_id": 642086,
+              "name": "Dominic Smith",
+              "team": "Atlanta Braves",
+              "venue": "Truist Park",
+              "platform": "ud",
+              "call": "under",
+              "line": 5.5,
+              "edge": -1.67,
+              "win_prob": 0.613,
+              "game_time_pt": "4:15 PM PT",
+              "game_date_utc": "2026-07-03T23:15:00Z",
+              "opp_sp": "Christian Scott",
+              "opp_era": 3.2,
+              "actual": 0,
+              "result": "win"
+            },
+            {
+              "player_id": 663586,
+              "name": "Austin Riley",
+              "team": "Atlanta Braves",
+              "venue": "Truist Park",
+              "platform": "ud",
+              "call": "under",
+              "line": 5.5,
+              "edge": -1.82,
+              "win_prob": 0.613,
+              "game_time_pt": "4:15 PM PT",
+              "game_date_utc": "2026-07-03T23:15:00Z",
+              "opp_sp": "Christian Scott",
+              "opp_era": 3.2,
+              "actual": 3,
+              "result": "win"
+            }
+          ],
+          "legs_correct": 4,
+          "legs_graded": 6,
+          "slip_win": false,
+          "combined_prob": 0.054791
+        },
+        {
+          "rank": 3,
+          "legs": [
+            {
+              "player_id": 643446,
+              "name": "Jeff McNeil",
+              "team": "Athletics",
+              "venue": "Sutter Health Park",
+              "platform": "ud",
+              "call": "under",
+              "line": 5.5,
+              "edge": -1.97,
+              "win_prob": 0.613,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-07-04T01:40:00Z",
+              "opp_sp": "Tyler Phillips",
+              "opp_era": 3.02,
+              "actual": 12,
+              "result": "loss"
+            },
+            {
+              "player_id": 605141,
+              "name": "Mookie Betts",
+              "team": "Los Angeles Dodgers",
+              "venue": "UNIQLO Field at Dodger Stadium",
+              "platform": "ud",
+              "call": "over",
+              "line": 6.5,
+              "edge": 1.48,
+              "win_prob": 0.608,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-04T02:10:00Z",
+              "opp_sp": "Michael King",
+              "opp_era": 3.55,
+              "actual": 5,
+              "result": "loss"
+            },
+            {
+              "player_id": 681624,
+              "name": "Andy Pages",
+              "team": "Los Angeles Dodgers",
+              "venue": "UNIQLO Field at Dodger Stadium",
+              "platform": "ud",
+              "call": "over",
+              "line": 5.5,
+              "edge": 1.18,
+              "win_prob": 0.608,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-04T02:10:00Z",
+              "opp_sp": "Michael King",
+              "opp_era": 3.55,
+              "actual": 6,
+              "result": "win"
+            },
+            {
+              "player_id": 805300,
+              "name": "Jakob Marsee",
+              "team": "Miami Marlins",
+              "venue": "Sutter Health Park",
+              "platform": "ud",
+              "call": "over",
+              "line": 5.5,
+              "edge": 1.23,
+              "win_prob": 0.603,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-07-04T01:40:00Z",
+              "opp_sp": "Jack Perkins",
+              "opp_era": 6.0,
+              "actual": 20,
+              "result": "win"
+            },
+            {
+              "player_id": 676391,
+              "name": "Ernie Clement",
+              "team": "Toronto Blue Jays",
+              "venue": "T-Mobile Park",
+              "platform": "ud",
+              "call": "over",
+              "line": 5.2,
+              "edge": 1.37,
+              "win_prob": 0.603,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-04T02:10:00Z",
+              "opp_sp": "Luis Castillo",
+              "opp_era": 4.93,
+              "actual": 0,
+              "result": "loss"
+            },
+            {
+              "player_id": 665926,
+              "name": "Andr\u00e9s Gim\u00e9nez",
+              "team": "Toronto Blue Jays",
+              "venue": "T-Mobile Park",
+              "platform": "ud",
+              "call": "over",
+              "line": 4.0,
+              "edge": 1.4,
+              "win_prob": 0.603,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-04T02:10:00Z",
+              "opp_sp": "Luis Castillo",
+              "opp_era": 4.93,
+              "actual": 13,
+              "result": "win"
+            }
+          ],
+          "legs_correct": 3,
+          "legs_graded": 6,
+          "slip_win": false,
+          "combined_prob": 0.049684
+        }
+      ],
+      "pp_6": [
+        {
+          "rank": 1,
+          "legs": [
+            {
+              "player_id": 671289,
+              "name": "Tyler Freeman",
+              "team": "Colorado Rockies",
+              "venue": "Coors Field",
+              "platform": "pp",
+              "call": "under",
+              "line": 7.5,
+              "edge": -1.81,
+              "win_prob": 0.638,
+              "game_time_pt": "5:10 PM PT",
+              "game_date_utc": "2026-07-04T00:10:00Z",
+              "opp_sp": "",
+              "opp_era": null,
+              "actual": 5,
+              "result": "win"
+            },
+            {
+              "player_id": 641487,
+              "name": "J.P. Crawford",
+              "team": "Seattle Mariners",
+              "venue": "T-Mobile Park",
+              "platform": "pp",
+              "call": "under",
+              "line": 5.0,
+              "edge": -1.57,
+              "win_prob": 0.633,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-04T02:10:00Z",
+              "opp_sp": "Dylan Cease",
+              "opp_era": 3.02,
+              "actual": 7,
+              "result": "loss"
+            },
+            {
+              "player_id": 691720,
+              "name": "Kyle Karros",
+              "team": "Colorado Rockies",
+              "venue": "Coors Field",
+              "platform": "pp",
+              "call": "over",
+              "line": 5.5,
+              "edge": 1.39,
+              "win_prob": 0.628,
+              "game_time_pt": "5:10 PM PT",
+              "game_date_utc": "2026-07-04T00:10:00Z",
+              "opp_sp": "",
+              "opp_era": null,
+              "actual": 27,
+              "result": "win"
+            },
+            {
+              "player_id": 686948,
+              "name": "Drake Baldwin",
+              "team": "Atlanta Braves",
+              "venue": "Truist Park",
+              "platform": "pp",
+              "call": "under",
+              "line": 5.0,
+              "edge": -1.76,
+              "win_prob": 0.613,
+              "game_time_pt": "4:15 PM PT",
+              "game_date_utc": "2026-07-03T23:15:00Z",
+              "opp_sp": "Christian Scott",
+              "opp_era": 3.2,
+              "actual": 0,
+              "result": "win"
+            },
+            {
+              "player_id": 703607,
+              "name": "Henry Bolte",
+              "team": "Athletics",
+              "venue": "Sutter Health Park",
+              "platform": "pp",
+              "call": "under",
+              "line": 6.5,
+              "edge": -1.6,
+              "win_prob": 0.613,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-07-04T01:40:00Z",
+              "opp_sp": "Tyler Phillips",
+              "opp_era": 3.02,
+              "actual": 7,
+              "result": "loss"
+            },
+            {
+              "player_id": 518692,
+              "name": "Freddie Freeman",
+              "team": "Los Angeles Dodgers",
+              "venue": "UNIQLO Field at Dodger Stadium",
+              "platform": "pp",
+              "call": "over",
+              "line": 5.5,
+              "edge": 1.32,
+              "win_prob": 0.608,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-04T02:10:00Z",
+              "opp_sp": "Michael King",
+              "opp_era": 3.55,
+              "actual": 3,
+              "result": "loss"
+            }
+          ],
+          "legs_correct": 3,
+          "legs_graded": 6,
+          "slip_win": false,
+          "combined_prob": 0.057944
+        },
+        {
+          "rank": 2,
+          "legs": [
+            {
+              "player_id": 571970,
+              "name": "Max Muncy",
+              "team": "Los Angeles Dodgers",
+              "venue": "UNIQLO Field at Dodger Stadium",
+              "platform": "pp",
+              "call": "over",
+              "line": 5.0,
+              "edge": 1.18,
+              "win_prob": 0.608,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-04T02:10:00Z",
+              "opp_sp": "Michael King",
+              "opp_era": 3.55,
+              "actual": 7,
+              "result": "win"
+            },
+            {
+              "player_id": 678246,
+              "name": "Miguel Vargas",
+              "team": "Chicago White Sox",
+              "venue": "Progressive Field",
+              "platform": "pp",
+              "call": "over",
+              "line": 5.0,
+              "edge": 1.44,
+              "win_prob": 0.598,
+              "game_time_pt": "4:10 PM PT",
+              "game_date_utc": "2026-07-03T23:10:00Z",
+              "opp_sp": "Gavin Williams",
+              "opp_era": 3.81,
+              "actual": 23,
+              "result": "win"
+            },
+            {
+              "player_id": 668804,
+              "name": "Bryan Reynolds",
+              "team": "Pittsburgh Pirates",
+              "venue": "Nationals Park",
+              "platform": "pp",
+              "call": "under",
+              "line": 6.5,
+              "edge": -1.92,
+              "win_prob": 0.593,
+              "game_time_pt": "3:45 PM PT",
+              "game_date_utc": "2026-07-03T22:45:00Z",
+              "opp_sp": "Foster Griffin",
+              "opp_era": 2.93,
+              "actual": 23,
+              "result": "loss"
+            },
+            {
+              "player_id": 572233,
+              "name": "Christian Walker",
+              "team": "Houston Astros",
+              "venue": "Daikin Park",
+              "platform": "pp",
+              "call": "under",
+              "line": 5.0,
+              "edge": -1.71,
+              "win_prob": 0.593,
+              "game_time_pt": "5:15 PM PT",
+              "game_date_utc": "2026-07-04T00:15:00Z",
+              "opp_sp": "Nick Martinez",
+              "opp_era": 2.66,
+              "actual": 2,
+              "result": "win"
+            },
+            {
+              "player_id": 682818,
+              "name": "Yohendrick Pi\u00f1ango",
+              "team": "Toronto Blue Jays",
+              "venue": "T-Mobile Park",
+              "platform": "pp",
+              "call": "over",
+              "line": 3.0,
+              "edge": 1.49,
+              "win_prob": 0.588,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-04T02:10:00Z",
+              "opp_sp": "Luis Castillo",
+              "opp_era": 4.93,
+              "actual": 3,
+              "result": "push"
+            },
+            {
+              "player_id": 681198,
+              "name": "TJ Rumfield",
+              "team": "Colorado Rockies",
+              "venue": "Coors Field",
+              "platform": "pp",
+              "call": "over",
+              "line": 6.5,
+              "edge": 2.0,
+              "win_prob": 0.587,
+              "game_time_pt": "5:10 PM PT",
+              "game_date_utc": "2026-07-04T00:10:00Z",
+              "opp_sp": "",
+              "opp_era": null,
+              "actual": 7,
+              "result": "win"
+            }
+          ],
+          "legs_correct": 4,
+          "legs_graded": 5,
+          "slip_win": false,
+          "combined_prob": 0.04413
+        },
+        {
+          "rank": 3,
+          "legs": [
+            {
+              "player_id": 694249,
+              "name": "Cole Carrigg",
+              "team": "Colorado Rockies",
+              "venue": "Coors Field",
+              "platform": "pp",
+              "call": "over",
+              "line": 4.8,
+              "edge": 2.0,
+              "win_prob": 0.587,
+              "game_time_pt": "5:10 PM PT",
+              "game_date_utc": "2026-07-04T00:10:00Z",
+              "opp_sp": "",
+              "opp_era": null,
+              "actual": 28,
+              "result": "win"
+            },
+            {
+              "player_id": 671976,
+              "name": "Tristan Peters",
+              "team": "Chicago White Sox",
+              "venue": "Progressive Field",
+              "platform": "pp",
+              "call": "over",
+              "line": 3.5,
+              "edge": 2.0,
+              "win_prob": 0.587,
+              "game_time_pt": "4:10 PM PT",
+              "game_date_utc": "2026-07-03T23:10:00Z",
+              "opp_sp": "Gavin Williams",
+              "opp_era": 3.81,
+              "actual": 5,
+              "result": "win"
+            },
+            {
+              "player_id": 694378,
+              "name": "Jacob Gonzalez",
+              "team": "Chicago White Sox",
+              "venue": "Progressive Field",
+              "platform": "pp",
+              "call": "over",
+              "line": 3.5,
+              "edge": 2.0,
+              "win_prob": 0.587,
+              "game_time_pt": "4:10 PM PT",
+              "game_date_utc": "2026-07-03T23:10:00Z",
+              "opp_sp": "Gavin Williams",
+              "opp_era": 3.81,
+              "actual": 3,
+              "result": "loss"
+            },
+            {
+              "player_id": 666397,
+              "name": "Edouard Julien",
+              "team": "Colorado Rockies",
+              "venue": "Coors Field",
+              "platform": "pp",
+              "call": "over",
+              "line": 4.5,
+              "edge": 1.9,
+              "win_prob": 0.585,
+              "game_time_pt": "5:10 PM PT",
+              "game_date_utc": "2026-07-04T00:10:00Z",
+              "opp_sp": "",
+              "opp_era": null,
+              "actual": 8,
+              "result": "win"
+            },
+            {
+              "player_id": 681987,
+              "name": "Nate Eaton",
+              "team": "Boston Red Sox",
+              "venue": "Angel Stadium",
+              "platform": "pp",
+              "call": "over",
+              "line": 4.5,
+              "edge": 1.37,
+              "win_prob": 0.583,
+              "game_time_pt": "6:38 PM PT",
+              "game_date_utc": "2026-07-04T01:38:00Z",
+              "opp_sp": "Reid Detmers",
+              "opp_era": 3.88,
+              "actual": 0,
+              "result": "loss"
+            },
+            {
+              "player_id": 807712,
+              "name": "Luke Keaschall",
+              "team": "Minnesota Twins",
+              "venue": "Yankee Stadium",
+              "platform": "pp",
+              "call": "over",
+              "line": 4.5,
+              "edge": 1.3,
+              "win_prob": 0.583,
+              "game_time_pt": "4:05 PM PT",
+              "game_date_utc": "2026-07-03T23:05:00Z",
+              "opp_sp": "Gerrit Cole",
+              "opp_era": 4.06,
+              "actual": 8,
+              "result": "win"
+            }
+          ],
+          "legs_correct": 4,
+          "legs_graded": 6,
+          "slip_win": false,
+          "combined_prob": 0.040217
+        },
+        {
+          "rank": 4,
+          "legs": [
+            {
+              "player_id": 605141,
+              "name": "Mookie Betts",
+              "team": "Los Angeles Dodgers",
+              "venue": "UNIQLO Field at Dodger Stadium",
+              "platform": "pp",
+              "call": "over",
+              "line": 5.5,
+              "edge": 2.0,
+              "win_prob": 0.582,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-04T02:10:00Z",
+              "opp_sp": "Michael King",
+              "opp_era": 3.55,
+              "actual": 4,
+              "result": "loss"
+            },
+            {
+              "player_id": 669242,
+              "name": "Tommy Edman",
+              "team": "Los Angeles Dodgers",
+              "venue": "UNIQLO Field at Dodger Stadium",
+              "platform": "pp",
+              "call": "over",
+              "line": 4.5,
+              "edge": 1.95,
+              "win_prob": 0.58,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-04T02:10:00Z",
+              "opp_sp": "Michael King",
+              "opp_era": 3.55,
+              "actual": 2,
+              "result": "loss"
+            },
+            {
+              "player_id": 687221,
+              "name": "Dalton Rushing",
+              "team": "Los Angeles Dodgers",
+              "venue": "UNIQLO Field at Dodger Stadium",
+              "platform": "pp",
+              "call": "over",
+              "line": 3.5,
+              "edge": 1.53,
+              "win_prob": 0.58,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-04T02:10:00Z",
+              "opp_sp": "Michael King",
+              "opp_era": 3.55,
+              "actual": 3,
+              "result": "loss"
+            },
+            {
+              "player_id": 691594,
+              "name": "Javier Sanoja",
+              "team": "Miami Marlins",
+              "venue": "Sutter Health Park",
+              "platform": "pp",
+              "call": "over",
+              "line": 4.8,
+              "edge": 2.0,
+              "win_prob": 0.577,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-07-04T01:40:00Z",
+              "opp_sp": "Jack Perkins",
+              "opp_era": 6.0,
+              "actual": 2,
+              "result": "loss"
+            },
+            {
+              "player_id": 670764,
+              "name": "Taylor Walls",
+              "team": "Tampa Bay Rays",
+              "venue": "Daikin Park",
+              "platform": "pp",
+              "call": "over",
+              "line": 3.5,
+              "edge": 2.0,
+              "win_prob": 0.577,
+              "game_time_pt": "5:15 PM PT",
+              "game_date_utc": "2026-07-04T00:15:00Z",
+              "opp_sp": "Spencer Arrighetti",
+              "opp_era": 4.0,
+              "actual": 7,
+              "result": "win"
+            },
+            {
+              "player_id": 665487,
+              "name": "Fernando Tatis Jr.",
+              "team": "San Diego Padres",
+              "venue": "UNIQLO Field at Dodger Stadium",
+              "platform": "pp",
+              "call": "under",
+              "line": 5.5,
+              "edge": -2.0,
+              "win_prob": 0.573,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-04T02:10:00Z",
+              "opp_sp": "Shohei Ohtani",
+              "opp_era": 1.58,
+              "actual": 4,
+              "result": "win"
+            }
+          ],
+          "legs_correct": 2,
+          "legs_graded": 6,
+          "slip_win": false,
+          "combined_prob": 0.03735
+        },
+        {
+          "rank": 5,
+          "legs": [
+            {
+              "player_id": 621020,
+              "name": "Dansby Swanson",
+              "team": "Chicago Cubs",
+              "venue": "Wrigley Field",
+              "platform": "pp",
+              "call": "over",
+              "line": 3.5,
+              "edge": 2.0,
+              "win_prob": 0.572,
+              "game_time_pt": "1:05 PM PT",
+              "game_date_utc": "2026-07-03T20:05:00Z",
+              "opp_sp": "Andre Pallante",
+              "opp_era": 3.83,
+              "actual": 0,
+              "result": "loss"
+            },
+            {
+              "player_id": 803011,
+              "name": "Sam Antonacci",
+              "team": "Chicago White Sox",
+              "venue": "Progressive Field",
+              "platform": "pp",
+              "call": "over",
+              "line": 5.5,
+              "edge": 2.0,
+              "win_prob": 0.572,
+              "game_time_pt": "4:10 PM PT",
+              "game_date_utc": "2026-07-03T23:10:00Z",
+              "opp_sp": "Gavin Williams",
+              "opp_era": 3.81,
+              "actual": 2,
+              "result": "loss"
+            },
+            {
+              "player_id": 624424,
+              "name": "Michael Conforto",
+              "team": "Chicago Cubs",
+              "venue": "Wrigley Field",
+              "platform": "pp",
+              "call": "over",
+              "line": 4.5,
+              "edge": 2.0,
+              "win_prob": 0.572,
+              "game_time_pt": "1:05 PM PT",
+              "game_date_utc": "2026-07-03T20:05:00Z",
+              "opp_sp": "Andre Pallante",
+              "opp_era": 3.83,
+              "actual": 0,
+              "result": "loss"
+            },
+            {
+              "player_id": 695731,
+              "name": "Braden Montgomery",
+              "team": "Chicago White Sox",
+              "venue": "Progressive Field",
+              "platform": "pp",
+              "call": "over",
+              "line": 3.5,
+              "edge": 2.0,
+              "win_prob": 0.572,
+              "game_time_pt": "4:10 PM PT",
+              "game_date_utc": "2026-07-03T23:10:00Z",
+              "opp_sp": "Gavin Williams",
+              "opp_era": 3.81,
+              "actual": 3,
+              "result": "loss"
+            },
+            {
+              "player_id": 683002,
+              "name": "Gunnar Henderson",
+              "team": "Baltimore Orioles",
+              "venue": "Great American Ball Park",
+              "platform": "pp",
+              "call": "over",
+              "line": 7.5,
+              "edge": 1.05,
+              "win_prob": 0.568,
+              "game_time_pt": "4:10 PM PT",
+              "game_date_utc": "2026-07-03T23:10:00Z",
+              "opp_sp": "Brady Singer",
+              "opp_era": 5.12,
+              "actual": 11,
+              "result": "win"
+            },
+            {
+              "player_id": 694212,
+              "name": "Samuel Basallo",
+              "team": "Baltimore Orioles",
+              "venue": "Great American Ball Park",
+              "platform": "pp",
+              "call": "over",
+              "line": 5.7,
+              "edge": 1.45,
+              "win_prob": 0.568,
+              "game_time_pt": "4:10 PM PT",
+              "game_date_utc": "2026-07-03T23:10:00Z",
+              "opp_sp": "Brady Singer",
+              "opp_era": 5.12,
+              "actual": 18,
+              "result": "win"
+            }
+          ],
+          "legs_correct": 2,
+          "legs_graded": 6,
+          "slip_win": false,
+          "combined_prob": 0.034537
+        }
+      ]
+    },
     "2026-07-06": {
       "ud_8": [
         {
@@ -127,7 +1441,8 @@
           ],
           "legs_correct": 5,
           "legs_graded": 7,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.019472
         },
         {
           "rank": 2,
@@ -254,7 +1569,8 @@
           ],
           "legs_correct": 3,
           "legs_graded": 7,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.015006
         },
         {
           "rank": 3,
@@ -398,7 +1714,8 @@
           ],
           "legs_correct": 3,
           "legs_graded": 8,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.011596
         }
       ],
       "ud_6": [
@@ -493,7 +1810,8 @@
           ],
           "legs_correct": 3,
           "legs_graded": 5,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.053376
         },
         {
           "rank": 2,
@@ -586,7 +1904,8 @@
           ],
           "legs_correct": 5,
           "legs_graded": 5,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.045799
         },
         {
           "rank": 3,
@@ -696,7 +2015,8 @@
           ],
           "legs_correct": 0,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.040488
         }
       ],
       "pp_6": [
@@ -808,7 +2128,8 @@
           ],
           "legs_correct": 4,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.050245
         },
         {
           "rank": 2,
@@ -901,7 +2222,8 @@
           ],
           "legs_correct": 4,
           "legs_graded": 5,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.045022
         },
         {
           "rank": 3,
@@ -1011,7 +2333,8 @@
           ],
           "legs_correct": 0,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.038657
         },
         {
           "rank": 4,
@@ -1121,7 +2444,8 @@
           ],
           "legs_correct": 4,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.03514
         },
         {
           "rank": 5,
@@ -1214,7 +2538,8 @@
           ],
           "legs_correct": 5,
           "legs_graded": 5,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.031784
         }
       ]
     },
@@ -1362,7 +2687,8 @@
           ],
           "legs_correct": 4,
           "legs_graded": 8,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.02208
         },
         {
           "rank": 2,
@@ -1489,7 +2815,8 @@
           ],
           "legs_correct": 5,
           "legs_graded": 7,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.015238
         },
         {
           "rank": 3,
@@ -1616,7 +2943,8 @@
           ],
           "legs_correct": 2,
           "legs_graded": 7,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.012694
         }
       ],
       "ud_6": [
@@ -1728,7 +3056,8 @@
           ],
           "legs_correct": 3,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.061131
         },
         {
           "rank": 2,
@@ -1821,7 +3150,8 @@
           ],
           "legs_correct": 3,
           "legs_graded": 5,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.044964
         },
         {
           "rank": 3,
@@ -1931,7 +3261,8 @@
           ],
           "legs_correct": 3,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.041604
         }
       ],
       "pp_6": [
@@ -2043,7 +3374,8 @@
           ],
           "legs_correct": 2,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.056758
         },
         {
           "rank": 2,
@@ -2153,7 +3485,8 @@
           ],
           "legs_correct": 2,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.043832
         },
         {
           "rank": 3,
@@ -2246,7 +3579,8 @@
           ],
           "legs_correct": 0,
           "legs_graded": 4,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.038662
         },
         {
           "rank": 4,
@@ -2356,7 +3690,8 @@
           ],
           "legs_correct": 2,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.036578
         },
         {
           "rank": 5,
@@ -2466,7 +3801,8 @@
           ],
           "legs_correct": 3,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.034055
         }
       ]
     },
@@ -2580,7 +3916,8 @@
           ],
           "legs_correct": 3,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.01504
         },
         {
           "rank": 2,
@@ -2707,7 +4044,8 @@
           ],
           "legs_correct": 5,
           "legs_graded": 7,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.014472
         }
       ],
       "ud_6": [
@@ -2802,7 +4140,8 @@
           ],
           "legs_correct": 2,
           "legs_graded": 5,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.051386
         },
         {
           "rank": 2,
@@ -2895,7 +4234,8 @@
           ],
           "legs_correct": 4,
           "legs_graded": 5,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.033452
         },
         {
           "rank": 3,
@@ -3005,7 +4345,8 @@
           ],
           "legs_correct": 4,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.050095
         }
       ],
       "pp_6": [
@@ -3100,7 +4441,8 @@
           ],
           "legs_correct": 2,
           "legs_graded": 5,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.047246
         },
         {
           "rank": 2,
@@ -3193,7 +4535,8 @@
           ],
           "legs_correct": 2,
           "legs_graded": 5,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.038148
         },
         {
           "rank": 3,
@@ -3286,7 +4629,8 @@
           ],
           "legs_correct": 4,
           "legs_graded": 5,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.029959
         },
         {
           "rank": 4,
@@ -3379,7 +4723,8 @@
           ],
           "legs_correct": 1,
           "legs_graded": 5,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.04387
         },
         {
           "rank": 5,
@@ -3489,7 +4834,8 @@
           ],
           "legs_correct": 3,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.043638
         }
       ]
     },
@@ -3620,7 +4966,8 @@
           ],
           "legs_correct": 3,
           "legs_graded": 7,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.016751
         },
         {
           "rank": 2,
@@ -3764,7 +5111,8 @@
           ],
           "legs_correct": 1,
           "legs_graded": 8,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.010738
         },
         {
           "rank": 3,
@@ -3908,7 +5256,8 @@
           ],
           "legs_correct": 3,
           "legs_graded": 8,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.009164
         }
       ],
       "ud_6": [
@@ -4003,7 +5352,8 @@
           ],
           "legs_correct": 3,
           "legs_graded": 5,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.047636
         },
         {
           "rank": 2,
@@ -4113,7 +5463,8 @@
           ],
           "legs_correct": 1,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.036924
         },
         {
           "rank": 3,
@@ -4223,7 +5574,8 @@
           ],
           "legs_correct": 1,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.032011
         }
       ],
       "pp_6": [
@@ -4335,7 +5687,8 @@
           ],
           "legs_correct": 2,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.04532
         },
         {
           "rank": 2,
@@ -4445,7 +5798,8 @@
           ],
           "legs_correct": 0,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.03471
         },
         {
           "rank": 3,
@@ -4555,7 +5909,8 @@
           ],
           "legs_correct": 1,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.032992
         },
         {
           "rank": 4,
@@ -4665,7 +6020,8 @@
           ],
           "legs_correct": 3,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.030456
         },
         {
           "rank": 5,
@@ -4775,7 +6131,8 @@
           ],
           "legs_correct": 1,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.028078
         }
       ]
     },
@@ -4906,7 +6263,8 @@
           ],
           "legs_correct": 5,
           "legs_graded": 7,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.021043
         },
         {
           "rank": 2,
@@ -5050,7 +6408,8 @@
           ],
           "legs_correct": 4,
           "legs_graded": 8,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.015384
         },
         {
           "rank": 3,
@@ -5194,7 +6553,8 @@
           ],
           "legs_correct": 6,
           "legs_graded": 8,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.011601
         }
       ],
       "ud_6": [
@@ -5289,7 +6649,8 @@
           ],
           "legs_correct": 3,
           "legs_graded": 5,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.059842
         },
         {
           "rank": 2,
@@ -5399,7 +6760,8 @@
           ],
           "legs_correct": 4,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.04605
         },
         {
           "rank": 3,
@@ -5509,7 +6871,8 @@
           ],
           "legs_correct": 4,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.038569
         }
       ],
       "pp_6": [
@@ -5621,7 +6984,8 @@
           ],
           "legs_correct": 4,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.058889
         },
         {
           "rank": 2,
@@ -5731,7 +7095,8 @@
           ],
           "legs_correct": 4,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.039556
         },
         {
           "rank": 3,
@@ -5841,7 +7206,8 @@
           ],
           "legs_correct": 4,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.034597
         },
         {
           "rank": 4,
@@ -5951,7 +7317,8 @@
           ],
           "legs_correct": 4,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.032295
         },
         {
           "rank": 5,
@@ -6061,7 +7428,8 @@
           ],
           "legs_correct": 2,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.028802
         }
       ]
     },
@@ -6192,7 +7560,8 @@
           ],
           "legs_correct": 5,
           "legs_graded": 7,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.018448
         },
         {
           "rank": 2,
@@ -6319,7 +7688,8 @@
           ],
           "legs_correct": 3,
           "legs_graded": 7,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.013288
         },
         {
           "rank": 3,
@@ -6463,7 +7833,8 @@
           ],
           "legs_correct": 5,
           "legs_graded": 8,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.01122
         }
       ],
       "ud_6": [
@@ -6558,7 +7929,8 @@
           ],
           "legs_correct": 3,
           "legs_graded": 5,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.052462
         },
         {
           "rank": 2,
@@ -6651,7 +8023,8 @@
           ],
           "legs_correct": 2,
           "legs_graded": 5,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.042677
         },
         {
           "rank": 3,
@@ -6761,7 +8134,8 @@
           ],
           "legs_correct": 5,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.03595
         }
       ],
       "pp_6": [
@@ -6873,7 +8247,8 @@
           ],
           "legs_correct": 2,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.050043
         },
         {
           "rank": 2,
@@ -6966,7 +8341,8 @@
           ],
           "legs_correct": 2,
           "legs_graded": 5,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.044146
         },
         {
           "rank": 3,
@@ -7076,7 +8452,8 @@
           ],
           "legs_correct": 2,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.040143
         },
         {
           "rank": 4,
@@ -7186,7 +8563,8 @@
           ],
           "legs_correct": 3,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.033876
         },
         {
           "rank": 5,
@@ -7296,7 +8674,8 @@
           ],
           "legs_correct": 3,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.032876
         }
       ]
     },
@@ -7444,7 +8823,8 @@
           ],
           "legs_correct": 4,
           "legs_graded": 8,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.017285
         },
         {
           "rank": 2,
@@ -7588,7 +8968,8 @@
           ],
           "legs_correct": 3,
           "legs_graded": 8,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.011989
         },
         {
           "rank": 3,
@@ -7732,7 +9113,8 @@
           ],
           "legs_correct": 4,
           "legs_graded": 8,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.011026
         }
       ],
       "ud_6": [
@@ -7844,7 +9226,8 @@
           ],
           "legs_correct": 3,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.050423
         },
         {
           "rank": 2,
@@ -7954,7 +9337,8 @@
           ],
           "legs_correct": 2,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.038124
         },
         {
           "rank": 3,
@@ -8064,7 +9448,8 @@
           ],
           "legs_correct": 4,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.035394
         }
       ],
       "pp_6": [
@@ -8176,7 +9561,8 @@
           ],
           "legs_correct": 4,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.056057
         },
         {
           "rank": 2,
@@ -8286,7 +9672,8 @@
           ],
           "legs_correct": 3,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.038124
         },
         {
           "rank": 3,
@@ -8396,7 +9783,8 @@
           ],
           "legs_correct": 3,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.034175
         },
         {
           "rank": 4,
@@ -8506,7 +9894,8 @@
           ],
           "legs_correct": 4,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.033581
         },
         {
           "rank": 5,
@@ -8616,7 +10005,8 @@
           ],
           "legs_correct": 5,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.031447
         }
       ]
     },
@@ -8766,7 +10156,8 @@
           ],
           "legs_correct": 5,
           "legs_graded": 8,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.015981
         },
         {
           "rank": 2,
@@ -8910,7 +10301,8 @@
           ],
           "legs_correct": 3,
           "legs_graded": 8,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.011373
         },
         {
           "rank": 3,
@@ -9054,7 +10446,8 @@
           ],
           "legs_correct": 5,
           "legs_graded": 8,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.013382
         }
       ],
       "ud_6": [
@@ -9166,7 +10559,8 @@
           ],
           "legs_correct": 4,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.046284
         },
         {
           "rank": 2,
@@ -9276,7 +10670,8 @@
           ],
           "legs_correct": 3,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.040533
         },
         {
           "rank": 3,
@@ -9386,7 +10781,8 @@
           ],
           "legs_correct": 2,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.02801
         }
       ],
       "pp_6": [
@@ -9498,7 +10894,8 @@
           ],
           "legs_correct": 2,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.043674
         },
         {
           "rank": 2,
@@ -9608,7 +11005,8 @@
           ],
           "legs_correct": 2,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.0251
         },
         {
           "rank": 3,
@@ -9718,7 +11116,8 @@
           ],
           "legs_correct": 2,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.034738
         },
         {
           "rank": 4,
@@ -9828,7 +11227,8 @@
           ],
           "legs_correct": 2,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.033718
         }
       ]
     },
@@ -9942,7 +11342,8 @@
           ],
           "legs_correct": 4,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.0157
         },
         {
           "rank": 2,
@@ -10069,7 +11470,8 @@
           ],
           "legs_correct": 4,
           "legs_graded": 7,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.007181
         },
         {
           "rank": 3,
@@ -10179,7 +11581,8 @@
           ],
           "legs_correct": 4,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.010251
         }
       ],
       "ud_6": [
@@ -10257,7 +11660,8 @@
           ],
           "legs_correct": 2,
           "legs_graded": 4,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.045472
         },
         {
           "rank": 2,
@@ -10367,7 +11771,8 @@
           ],
           "legs_correct": 4,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.030232
         },
         {
           "rank": 3,
@@ -10460,7 +11865,8 @@
           ],
           "legs_correct": 4,
           "legs_graded": 5,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.025912
         }
       ],
       "pp_6": [
@@ -10555,7 +11961,8 @@
           ],
           "legs_correct": 1,
           "legs_graded": 5,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.035454
         },
         {
           "rank": 2,
@@ -10665,7 +12072,8 @@
           ],
           "legs_correct": 3,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.023509
         },
         {
           "rank": 3,
@@ -10758,7 +12166,8 @@
           ],
           "legs_correct": 3,
           "legs_graded": 5,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.03154
         },
         {
           "rank": 4,
@@ -10851,7 +12260,8 @@
           ],
           "legs_correct": 1,
           "legs_graded": 5,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.030974
         }
       ]
     },
@@ -10999,7 +12409,8 @@
           ],
           "legs_correct": 4,
           "legs_graded": 8,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.013346
         }
       ],
       "ud_6": [
@@ -11111,7 +12522,8 @@
           ],
           "legs_correct": 3,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.04496
         },
         {
           "rank": 2,
@@ -11221,7 +12633,8 @@
           ],
           "legs_correct": 1,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.032442
         }
       ],
       "pp_6": [
@@ -11333,7 +12746,8 @@
           ],
           "legs_correct": 2,
           "legs_graded": 6,
-          "slip_win": false
+          "slip_win": false,
+          "combined_prob": 0.028406
         }
       ]
     }
@@ -11341,69 +12755,80 @@
   "records": {
     "ud_8_1": {
       "wins": 0,
-      "losses": 10,
-      "legs_win": 42,
-      "legs_total": 72
+      "losses": 11,
+      "legs_win": 45,
+      "legs_total": 80,
+      "expected_wins": 0.19893799999999998
     },
     "ud_8_2": {
       "wins": 0,
-      "losses": 9,
-      "legs_win": 31,
-      "legs_total": 67
+      "losses": 10,
+      "legs_win": 36,
+      "legs_total": 75,
+      "expected_wins": 0.134593
     },
     "ud_8_3": {
       "wins": 0,
-      "losses": 8,
-      "legs_win": 32,
-      "legs_total": 61
+      "losses": 9,
+      "legs_win": 36,
+      "legs_total": 68,
+      "expected_wins": 0.106878
     },
     "ud_6_1": {
       "wins": 0,
-      "losses": 10,
-      "legs_win": 29,
-      "legs_total": 53
+      "losses": 11,
+      "legs_win": 31,
+      "legs_total": 59,
+      "expected_wins": 0.576287
     },
     "ud_6_2": {
       "wins": 0,
-      "losses": 10,
-      "legs_win": 29,
-      "legs_total": 56
+      "losses": 11,
+      "legs_win": 33,
+      "legs_total": 62,
+      "expected_wins": 0.44598799999999994
     },
     "ud_6_3": {
       "wins": 0,
-      "losses": 9,
-      "legs_win": 27,
-      "legs_total": 53
+      "losses": 10,
+      "legs_win": 30,
+      "legs_total": 59,
+      "expected_wins": 0.37771699999999997
     },
     "pp_6_1": {
       "wins": 0,
-      "losses": 10,
-      "legs_win": 25,
-      "legs_total": 58
+      "losses": 11,
+      "legs_win": 28,
+      "legs_total": 64,
+      "expected_wins": 0.5300360000000001
     },
     "pp_6_2": {
       "wins": 0,
-      "losses": 9,
-      "legs_win": 22,
-      "legs_total": 51
+      "losses": 10,
+      "legs_win": 26,
+      "legs_total": 56,
+      "expected_wins": 0.37627700000000003
     },
     "pp_6_3": {
       "wins": 0,
-      "losses": 9,
-      "legs_win": 19,
-      "legs_total": 50
+      "losses": 10,
+      "legs_win": 23,
+      "legs_total": 56,
+      "expected_wins": 0.35568
     },
     "pp_6_4": {
       "wins": 0,
-      "losses": 9,
-      "legs_win": 24,
-      "legs_total": 52
+      "losses": 10,
+      "legs_win": 26,
+      "legs_total": 58,
+      "expected_wins": 0.34783800000000004
     },
     "pp_6_5": {
       "wins": 0,
-      "losses": 7,
-      "legs_win": 22,
-      "legs_total": 41
+      "losses": 8,
+      "legs_win": 24,
+      "legs_total": 47,
+      "expected_wins": 0.265217
     }
   }
 }

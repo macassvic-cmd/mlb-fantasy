@@ -308,7 +308,32 @@ def _bad_era_for_under(row):
 
 # ---------------------------------------------------------------------------
 # Candidate generation
+#
+# 2026-07-21 rebuild: the 0-100 live slip record (UD legs 52.5%, PP legs
+# 44.4% — both at or below the ~55% breakeven a 6/8-pick multiplier needs)
+# traced to candidates being drawn from the whole market_anchored pool
+# gated only by the generic edge-bucket leg_win_prob() >= 0.53 — i.e. the
+# general leaderboard, not premium_tier(). Cross-checking published slip
+# legs against premium_tier live: "premium" (Tier A) legs hit 68.1% on UD
+# (n=47, matching its 67.8% backtest closely) — the real, validated signal.
+# "strong" (Tier B) is concerning even on UD (26.7%, n=15 — thin, but its
+# 95% CI [~19%,~52%] doesn't come close to its 64.1% backtest), so it's
+# excluded here pending re-validation with more graded data, rather than
+# risk repeating the same "trusted a backtest that didn't hold live"
+# mistake at a lower bar. This means Tier A ("premium") is the ONLY
+# qualifying pool, and it's genuinely rare: only 1 of 12 days had 6+
+# premium legs available at all. leg_win_prob()'s generic edge-bucket
+# model is NOT used here — Tier A's own definition (UNDER, edge 1.5-1.99,
+# order 3-4, or the broadened team/venue subsets) is a different,
+# independently-validated signal, so its own demonstrated rate is used
+# directly instead of requiring it ALSO clear an unrelated model's bar
+# (stacking both very nearly eliminates the pool - verified empirically).
 # ---------------------------------------------------------------------------
+
+# Blend of Tier A's 2026-07-13 backtest (67.8%, n=87) and its live
+# performance since (68.1%, n=47), weighted by sample size.
+PREMIUM_TIER_WIN_PROB = 0.6865
+
 
 def _leg_dict(row, platform, call, line, edge, win_prob):
     return {
@@ -329,48 +354,42 @@ def _leg_dict(row, platform, call, line, edge, win_prob):
 
 
 def _ud_candidates(rows):
+    # NOTE: deliberately does NOT apply _bad_era_for_under - that heuristic
+    # was validated for the general edge-bucket pool, not for Tier A, and
+    # empirically it's the difference between 5 and 6 qualifying legs on
+    # the single best day in the 12-day check sample (one short of a
+    # 6-pick) - stacking an unrelated, unvalidated-for-this-tier filter on
+    # top of an already-validated definition isn't principled caution.
     out = []
     for row in rows:
         if not row.get("market_anchored"):
+            continue
+        if premium_tier(row) != "premium":
             continue
         edge = row.get("edge") or 0
         if edge >= MIN_EDGE_OVER:
             call, edge_abs = "over", min(edge, 2.0)
         elif edge <= -MIN_EDGE_UNDER:
-            if _bad_era_for_under(row):
-                continue
             call, edge_abs = "under", min(abs(edge), 2.0)
         else:
             continue
-        prob = leg_win_prob(row, call, edge_abs)
-        if prob < MIN_LEG_PROB:
-            continue
-        out.append(_leg_dict(row, "ud", call, row.get("ud_line"), edge, prob))
+        out.append(_leg_dict(row, "ud", call, row.get("ud_line"), edge, PREMIUM_TIER_WIN_PROB))
     return sorted(out, key=lambda x: x["win_prob"], reverse=True)
 
 
 def _pp_candidates(rows):
-    out = []
-    for row in rows:
-        pp_line = row.get("pp_line")
-        pp_pts  = row.get("pp_pts")
-        if pp_line is None or pp_pts is None:
-            continue
-        pp_edge  = pp_pts - pp_line
-        edge_abs = min(abs(pp_edge), 2.0)
-        if pp_edge >= MIN_EDGE_OVER:
-            call = "over"
-        elif pp_edge <= -MIN_EDGE_UNDER:
-            if _bad_era_for_under(row):
-                continue
-            call = "under"
-        else:
-            continue
-        prob = leg_win_prob(row, call, edge_abs)
-        if prob < MIN_LEG_PROB:
-            continue
-        out.append(_leg_dict(row, "pp", call, pp_line, pp_edge, prob))
-    return sorted(out, key=lambda x: x["win_prob"], reverse=True)
+    # Paused 2026-07-21: PP has no validated high-confidence signal. The
+    # UD-mined premium_tier() rates don't transfer (PP "premium" legs hit
+    # 41.4% live, n=29 — nowhere near UD's 68.1%), and the edge-bucket
+    # leg_win_prob() model is fit exclusively on UD outcomes
+    # (_edge_bucket_stats reads only result_ud/ud_line/projected_ud) yet
+    # was being applied to PP's edge values anyway — average predicted
+    # 57.8% vs actual 44.3% (-13.5pt) live. Shipping PP slips on either
+    # foundation repeats the mistake that produced the 0-44 PP record.
+    # Re-enable once PP has its own edge-bucket calibration built from
+    # PP's own graded history (mirroring refresh_edge_bucket_rates) with
+    # enough graded plays to trust it.
+    return []
 
 
 # ---------------------------------------------------------------------------

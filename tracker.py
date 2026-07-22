@@ -501,11 +501,12 @@ def _grade_single_slip(slip, platform, results_by_pid):
     legs_win = sum(1 for l in decided if l["result"] == "win")
     slip_win = bool(decided) and legs_win == len(slip["legs"])
     return {
-        "rank":         slip.get("rank", 1),
-        "legs":         graded_legs,
-        "legs_correct": legs_win,
-        "legs_graded":  len(decided),
-        "slip_win":     slip_win,
+        "rank":          slip.get("rank", 1),
+        "legs":          graded_legs,
+        "legs_correct":  legs_win,
+        "legs_graded":   len(decided),
+        "slip_win":      slip_win,
+        "combined_prob": slip.get("combined_prob"),
     }
 
 
@@ -542,14 +543,22 @@ def grade_slips(date_str, results_by_pid):
             rank    = graded["rank"]
             rec_key = f"{slip_key}_{rank}"
             rec = all_sr["records"].setdefault(
-                rec_key, {"wins": 0, "losses": 0, "legs_win": 0, "legs_total": 0}
+                rec_key, {"wins": 0, "losses": 0, "legs_win": 0, "legs_total": 0, "expected_wins": 0.0}
             )
+            rec.setdefault("expected_wins", 0.0)
             rec["legs_win"]   += graded["legs_correct"]
             rec["legs_total"] += graded["legs_graded"]
             if graded["slip_win"]:
                 rec["wins"] += 1
             elif graded["legs_graded"] > 0:
                 rec["losses"] += 1
+            # expected_wins accumulates the slip's own recorded combined_prob
+            # (from its legs' win_prob at publish time) for every slip that
+            # was actually decided - so a 0-X record reads against what the
+            # model itself expected, not against an implicit 50/50 or 100%
+            # assumption. Only counted once legs are graded, matching wins/losses.
+            if graded["legs_graded"] > 0 and graded.get("combined_prob") is not None:
+                rec["expected_wins"] += graded["combined_prob"]
 
             icon = "WIN" if graded["slip_win"] else "LOSS"
             print(f"  Slip {rec_key}: {graded['legs_correct']}/{graded['legs_graded']} legs [{icon}]")
