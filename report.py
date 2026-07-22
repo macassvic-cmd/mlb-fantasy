@@ -1477,14 +1477,20 @@ setInterval(applyHideStartedFilter, 30000); // live re-check as games start, no 
 
 // --- Slips tab ---
 (function renderSlips() {{
+  // PrizePicks retired 2026-07-22: scraping is comprehensively blocked by
+  // DataDome (confirmed across multiple UA/header profiles, subdomains,
+  // and request timing - not a wrong-endpoint or rate issue, and not
+  // something to evade). data/results/pp_edge_bucket_rates.json and
+  // slips.refresh_pp_edge_bucket_rates() are preserved as-is for instant
+  // re-enablement if PrizePicks access ever becomes available again -
+  // this only removes the perpetually-empty dashboard section.
   const SLIP_CONFIGS = [
     {{key:'ud_8', label:'UD 8-Pick', platform:'ud', sub:'8-Man Slips', section:'Underdog', size:8}},
     {{key:'ud_6', label:'UD 6-Pick', platform:'ud', sub:'6-Man Slips', section:'Underdog', size:6}},
-    {{key:'pp_6', label:'PP 6-Pick', platform:'pp', sub:'6-Man Slips', section:'PrizePicks', size:6}},
   ];
   const RANK_COLORS = ['', '#ffd700', '#c0c0c0', '#cd7f32', '#9fb0cc', '#9fb0cc'];
-  const SLIP_KEYS   = ['ud_8','ud_6','pp_6'];
-  const TYPE_LABELS = {{ud_8:'UD 8-Pick', ud_6:'UD 6-Pick', pp_6:'PP 6-Pick'}};
+  const SLIP_KEYS   = ['ud_8','ud_6'];
+  const TYPE_LABELS = {{ud_8:'UD 8-Pick', ud_6:'UD 6-Pick'}};
 
   function pct(p) {{ return (p * 100).toFixed(1) + '%'; }}
 
@@ -1507,14 +1513,6 @@ setInterval(applyHideStartedFilter, 30000); // live re-check as games start, no 
   }}
 
   function emptyStateHtml(cfg, rank) {{
-    if (cfg.platform === 'pp') {{
-      return '<div class="slip-empty slip-empty-discipline">'
-        + '<strong>PP slips paused.</strong> No validated PrizePicks-specific calibration exists '
-        + 'yet - the prior model borrowed Underdog\\'s edge-bucket win rates, which don\\'t transfer '
-        + '(PP legs hit 44.4% live, well below the ~55% breakeven). Will re-enable once PP has its '
-        + 'own fitted calibration from real PrizePicks lines.'
-        + '</div>';
-    }}
     if (rank === 1) {{
       return '<div class="slip-empty slip-empty-discipline">'
         + '<strong>No slip published.</strong> Only ' + PREMIUM_LEG_COUNT + ' Premium-tier leg'
@@ -1579,7 +1577,6 @@ setInterval(applyHideStartedFilter, 30000); // live re-check as games start, no 
   var html = expectedHtml;
   var sections = [
     {{id:'ud', label:'Underdog',   configs: SLIP_CONFIGS.filter(function(c){{return c.platform==='ud';}})}},
-    {{id:'pp', label:'PrizePicks', configs: SLIP_CONFIGS.filter(function(c){{return c.platform==='pp';}})}},
   ];
   sections.forEach(function(sec) {{
     html += '<div class="slips-section">';
