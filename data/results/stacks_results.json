@@ -295,15 +295,112 @@
           "fully_graded": false
         }
       ]
+    },
+    "2026-07-20": {
+      "pairings": [
+        {
+          "combined_conservative": 0.04674,
+          "combined_optimistic": 0.06436,
+          "ev_conservative": 0.402,
+          "ev_optimistic": 0.931,
+          "playable": true,
+          "trios": [
+            {
+              "game_pk": 824328,
+              "team": "Washington Nationals",
+              "opp_team": "Colorado Rockies",
+              "venue": "Coors Field",
+              "opp_era": 7.36,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 678554,
+                  "name": "Curtis Mead",
+                  "order": 2,
+                  "leg_prob": 0.5914,
+                  "game_time_pt": "5:40 PM PT",
+                  "game_date_utc": "2026-07-21T00:40:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 665953,
+                  "name": "Andr\u00e9s Chaparro",
+                  "order": 3,
+                  "leg_prob": 0.5608,
+                  "game_time_pt": "5:40 PM PT",
+                  "game_date_utc": "2026-07-21T00:40:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 682928,
+                  "name": "CJ Abrams",
+                  "order": 4,
+                  "leg_prob": 0.5608,
+                  "game_time_pt": "5:40 PM PT",
+                  "game_date_utc": "2026-07-21T00:40:00Z",
+                  "actual_hit": true
+                }
+              ],
+              "conservative_prob": 0.2162,
+              "optimistic_prob": 0.2537,
+              "trio_hit": true,
+              "fully_graded": true
+            },
+            {
+              "game_pk": 825058,
+              "team": "Arizona Diamondbacks",
+              "opp_team": "Athletics",
+              "venue": "Chase Field",
+              "opp_era": 6.08,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 672695,
+                  "name": "Geraldo Perdomo",
+                  "order": 2,
+                  "leg_prob": 0.5914,
+                  "game_time_pt": "6:40 PM PT",
+                  "game_date_utc": "2026-07-21T01:40:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 682998,
+                  "name": "Corbin Carroll",
+                  "order": 3,
+                  "leg_prob": 0.5608,
+                  "game_time_pt": "6:40 PM PT",
+                  "game_date_utc": "2026-07-21T01:40:00Z",
+                  "actual_hit": null
+                },
+                {
+                  "player_id": 672515,
+                  "name": "Gabriel Moreno",
+                  "order": 4,
+                  "leg_prob": 0.5608,
+                  "game_time_pt": "6:40 PM PT",
+                  "game_date_utc": "2026-07-21T01:40:00Z",
+                  "actual_hit": false
+                }
+              ],
+              "conservative_prob": 0.2162,
+              "optimistic_prob": 0.2537,
+              "trio_hit": false,
+              "fully_graded": false
+            }
+          ],
+          "full6_hit": false,
+          "fully_graded": false
+        }
+      ]
     }
   },
   "record": {
     "legs": {
-      "wins": 12,
-      "losses": 5
+      "wins": 16,
+      "losses": 6
     },
     "trios": {
-      "wins": 2,
+      "wins": 3,
       "losses": 3
     },
     "full6": {
