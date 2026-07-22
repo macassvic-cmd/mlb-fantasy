@@ -897,16 +897,241 @@
           "correct": true
         }
       ]
+    },
+    "2026-07-21": {
+      "summary": {
+        "premium": {
+          "total": 3,
+          "correct": 0,
+          "win_rate": 0.0
+        },
+        "strong": {
+          "total": 16,
+          "correct": 10,
+          "win_rate": 62.5
+        }
+      },
+      "plays": [
+        {
+          "player_id": 677587,
+          "name": "Brayan Rocchio",
+          "team": "Cleveland Guardians",
+          "call": "under",
+          "edge": -1.8,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "tier": "premium",
+          "correct": false
+        },
+        {
+          "player_id": 676475,
+          "name": "Alec Burleson",
+          "team": "St. Louis Cardinals",
+          "call": "under",
+          "edge": -1.98,
+          "ud_line": 6.5,
+          "actual_ud": 9,
+          "tier": "premium",
+          "correct": false
+        },
+        {
+          "player_id": 663728,
+          "name": "Cal Raleigh",
+          "team": "Seattle Mariners",
+          "call": "under",
+          "edge": -1.75,
+          "ud_line": 5.5,
+          "actual_ud": 6,
+          "tier": "premium",
+          "correct": false
+        },
+        {
+          "player_id": 607208,
+          "name": "Trea Turner",
+          "team": "Philadelphia Phillies",
+          "call": "under",
+          "edge": -0.78,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 660271,
+          "name": "Shohei Ohtani",
+          "team": "Los Angeles Dodgers",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 3,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 656941,
+          "name": "Kyle Schwarber",
+          "team": "Philadelphia Phillies",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 547180,
+          "name": "Bryce Harper",
+          "team": "Philadelphia Phillies",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 664761,
+          "name": "Alec Bohm",
+          "team": "Philadelphia Phillies",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 14,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 518692,
+          "name": "Freddie Freeman",
+          "team": "Los Angeles Dodgers",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 592663,
+          "name": "J.T. Realmuto",
+          "team": "Philadelphia Phillies",
+          "call": "under",
+          "edge": -1.02,
+          "ud_line": 5.5,
+          "actual_ud": 6,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 605141,
+          "name": "Mookie Betts",
+          "team": "Los Angeles Dodgers",
+          "call": "under",
+          "edge": -1.73,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 681624,
+          "name": "Andy Pages",
+          "team": "Los Angeles Dodgers",
+          "call": "under",
+          "edge": -1.84,
+          "ud_line": 5.5,
+          "actual_ud": 5,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 691406,
+          "name": "Junior Caminero",
+          "team": "Tampa Bay Rays",
+          "call": "over",
+          "edge": 0.97,
+          "ud_line": 6.5,
+          "actual_ud": 17,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 656775,
+          "name": "Cedric Mullins",
+          "team": "Tampa Bay Rays",
+          "call": "under",
+          "edge": -0.86,
+          "ud_line": 5.5,
+          "actual_ud": 17,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 663586,
+          "name": "Austin Riley",
+          "team": "Atlanta Braves",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 621566,
+          "name": "Matt Olson",
+          "team": "Atlanta Braves",
+          "call": "over",
+          "edge": 1.34,
+          "ud_line": 6.5,
+          "actual_ud": 6,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 696100,
+          "name": "Hunter Goodman",
+          "team": "Colorado Rockies",
+          "call": "over",
+          "edge": 0.38,
+          "ud_line": 8.5,
+          "actual_ud": 22,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 694249,
+          "name": "Cole Carrigg",
+          "team": "Colorado Rockies",
+          "call": "over",
+          "edge": 1.05,
+          "ud_line": 6.5,
+          "actual_ud": 15,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 691023,
+          "name": "Jordan Walker",
+          "team": "St. Louis Cardinals",
+          "call": "under",
+          "edge": -0.53,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "tier": "strong",
+          "correct": true
+        }
+      ]
     }
   },
   "record": {
     "premium": {
       "wins": 3,
-      "losses": 3
+      "losses": 6
     },
     "strong": {
-      "wins": 36,
-      "losses": 31
+      "wins": 46,
+      "losses": 37
     }
   }
 }
