@@ -289,7 +289,7 @@
 <header>
   <div class="logo">⚾ MLB FANTASY PRO</div>
   <div class="header-mid">2026-07-21 &mdash; <span class="games">15 games today</span></div>
-  <div class="header-right" id="lastUpdated">Last Updated: 2026-07-21 08:47 PM PT</div>
+  <div class="header-right" id="lastUpdated">Last Updated: 2026-07-21 08:54 PM PT</div>
 </header>
 
 <div id="freshnessBanner" class="freshness-banner"></div>
@@ -435,7 +435,7 @@ const T25_RECORDS = [{"name": "Dillon Dingler", "team": "Detroit Tigers", "times
 const SLIPS = {"ud_8": [], "ud_6": [], "pp_6": []};
 const SLIPS_RECORDS = {"ud_8_1": {"wins": 0, "losses": 12, "legs_win": 50, "legs_total": 88, "expected_wins": 0.20809499999999997}, "ud_8_2": {"wins": 0, "losses": 10, "legs_win": 36, "legs_total": 75, "expected_wins": 0.134593}, "ud_8_3": {"wins": 0, "losses": 9, "legs_win": 36, "legs_total": 68, "expected_wins": 0.106878}, "ud_6_1": {"wins": 0, "losses": 12, "legs_win": 35, "legs_total": 65, "expected_wins": 0.608507}, "ud_6_2": {"wins": 0, "losses": 11, "legs_win": 33, "legs_total": 62, "expected_wins": 0.44598799999999994}, "ud_6_3": {"wins": 0, "losses": 10, "legs_win": 30, "legs_total": 59, "expected_wins": 0.37771699999999997}, "pp_6_1": {"wins": 0, "losses": 12, "legs_win": 31, "legs_total": 70, "expected_wins": 0.5711970000000001}, "pp_6_2": {"wins": 0, "losses": 11, "legs_win": 28, "legs_total": 62, "expected_wins": 0.408389}, "pp_6_3": {"wins": 0, "losses": 10, "legs_win": 23, "legs_total": 56, "expected_wins": 0.35568}, "pp_6_4": {"wins": 0, "losses": 10, "legs_win": 26, "legs_total": 58, "expected_wins": 0.34783800000000004}, "pp_6_5": {"wins": 0, "losses": 8, "legs_win": 24, "legs_total": 47, "expected_wins": 0.265217}};
 const PREMIUM_LEG_COUNT = 3;
-const GENERATED_AT = "2026-07-21T20:47:30.469694-07:00";
+const GENERATED_AT = "2026-07-21T20:54:12.748670-07:00";
 const GAME_DATE = "2026-07-21";
 const PLAYER_COUNT = 270;
 const GAMES_COUNT = 15;
@@ -605,14 +605,20 @@ setInterval(applyHideStartedFilter, 30000); // live re-check as games start, no 
 
 // --- Slips tab ---
 (function renderSlips() {
+  // PrizePicks retired 2026-07-22: scraping is comprehensively blocked by
+  // DataDome (confirmed across multiple UA/header profiles, subdomains,
+  // and request timing - not a wrong-endpoint or rate issue, and not
+  // something to evade). data/results/pp_edge_bucket_rates.json and
+  // slips.refresh_pp_edge_bucket_rates() are preserved as-is for instant
+  // re-enablement if PrizePicks access ever becomes available again -
+  // this only removes the perpetually-empty dashboard section.
   const SLIP_CONFIGS = [
     {key:'ud_8', label:'UD 8-Pick', platform:'ud', sub:'8-Man Slips', section:'Underdog', size:8},
     {key:'ud_6', label:'UD 6-Pick', platform:'ud', sub:'6-Man Slips', section:'Underdog', size:6},
-    {key:'pp_6', label:'PP 6-Pick', platform:'pp', sub:'6-Man Slips', section:'PrizePicks', size:6},
   ];
   const RANK_COLORS = ['', '#ffd700', '#c0c0c0', '#cd7f32', '#9fb0cc', '#9fb0cc'];
-  const SLIP_KEYS   = ['ud_8','ud_6','pp_6'];
-  const TYPE_LABELS = {ud_8:'UD 8-Pick', ud_6:'UD 6-Pick', pp_6:'PP 6-Pick'};
+  const SLIP_KEYS   = ['ud_8','ud_6'];
+  const TYPE_LABELS = {ud_8:'UD 8-Pick', ud_6:'UD 6-Pick'};
 
   function pct(p) { return (p * 100).toFixed(1) + '%'; }
 
@@ -635,14 +641,6 @@ setInterval(applyHideStartedFilter, 30000); // live re-check as games start, no 
   }
 
   function emptyStateHtml(cfg, rank) {
-    if (cfg.platform === 'pp') {
-      return '<div class="slip-empty slip-empty-discipline">'
-        + '<strong>PP slips paused.</strong> No validated PrizePicks-specific calibration exists '
-        + 'yet - the prior model borrowed Underdog\'s edge-bucket win rates, which don\'t transfer '
-        + '(PP legs hit 44.4% live, well below the ~55% breakeven). Will re-enable once PP has its '
-        + 'own fitted calibration from real PrizePicks lines.'
-        + '</div>';
-    }
     if (rank === 1) {
       return '<div class="slip-empty slip-empty-discipline">'
         + '<strong>No slip published.</strong> Only ' + PREMIUM_LEG_COUNT + ' Premium-tier leg'
@@ -707,7 +705,6 @@ setInterval(applyHideStartedFilter, 30000); // live re-check as games start, no 
   var html = expectedHtml;
   var sections = [
     {id:'ud', label:'Underdog',   configs: SLIP_CONFIGS.filter(function(c){return c.platform==='ud';})},
-    {id:'pp', label:'PrizePicks', configs: SLIP_CONFIGS.filter(function(c){return c.platform==='pp';})},
   ];
   sections.forEach(function(sec) {
     html += '<div class="slips-section">';
