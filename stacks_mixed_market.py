@@ -68,6 +68,7 @@ era leg calibration + adjacency) plus Betr's real market inventory
   is wired into a day-to-day cache, the same way premium_tier needed
   real out-of-sample tracking before being trusted.
 """
+import json
 import os
 import re
 import unicodedata
@@ -75,6 +76,7 @@ from collections import defaultdict
 
 SOFT_ERA_MIN = 4.50
 PLAYABLE_MIN_CONSERVATIVE = 0.045
+SHADOW_DIR = os.path.join("data", "stacks_shadow")
 ORDER_BUCKET_OF_SLOT = {1: "1-2", 2: "1-2", 3: "3-4", 4: "3-4",
                          5: "5-6", 6: "5-6", 7: "7-9", 8: "7-9", 9: "7-9"}
 TRIO_SLOT_SETS = {"1-2-3": (1, 2, 3), "2-3-4": (2, 3, 4)}
@@ -129,6 +131,28 @@ PAIRWISE_LIFT_PT = {
     ("HRRBI", "RUNS"): 1.3, ("HRRBI", "RBI"): 4.9, ("HRRBI", "HRRBI"): 2.1, ("HRRBI", "FPTS"): 2.4,
     ("FPTS", "RUNS"): 0.7, ("FPTS", "RBI"): 5.0, ("FPTS", "HRRBI"): 1.5, ("FPTS", "FPTS"): 2.5,
 }
+
+
+def _stat_threshold(stat):
+    """The 'hit' condition per stat, matching the calibration in
+    CROSS_TABLE/MARGINAL above (RUNS>=1, RBI>=1, H+R+RBI>=2, FPTS>=6.5)."""
+    return {"RUNS": 1, "RBI": 1, "HRRBI": 2, "FPTS": 6.5}[stat]
+
+
+def stat_hit(stat, actual_line, actual_pp):
+    """Grades one leg's actual outcome for the given stat."""
+    if stat == "RUNS":
+        return (actual_line.get("runs") or 0) >= 1
+    if stat == "RBI":
+        return (actual_line.get("rbi") or 0) >= 1
+    if stat == "HRRBI":
+        hits = ((actual_line.get("singles") or 0) + (actual_line.get("doubles") or 0)
+                + (actual_line.get("triples") or 0) + (actual_line.get("hr") or 0))
+        combined = hits + (actual_line.get("runs") or 0) + (actual_line.get("rbi") or 0)
+        return combined >= 2
+    if stat == "FPTS":
+        return actual_pp is not None and actual_pp >= 6.5
+    raise ValueError(f"unknown stat: {stat}")
 
 
 def _era_bucket(era):
@@ -220,6 +244,7 @@ def find_mixed_market_trio_candidates(raw_players, availability):
     candidates picking, per adjacent pair, whichever available stat combo
     maximizes the deconfounded joint probability."""
     rows_by_team_game = _build_rows_by_team_game(raw_players)
+    pid_to_name = {r.get("player_id"): r.get("name", "") for r in raw_players}
     candidates = []
     for (game_pk, team), lineup in rows_by_team_game.items():
         if 1 not in lineup:
@@ -252,10 +277,153 @@ def find_mixed_market_trio_candidates(raw_players, availability):
                 p2_cond = min(1.0, leg_probability(stat2a, slots[1], era)
                                * _adjacency_ratio(best_leg1_stat, stat2a, leg_probability(stat2a, slots[1], era)))
                 joint = p1 * p2_cond * p3_cond
+            stats_used = (best_leg1_stat, stat2a, stat3)
+            pids = (pid1, pid2, pid3)
+            legs = [
+                {"player_id": pid, "name": pid_to_name.get(pid, ""), "slot": slot,
+                 "stat": stat, "threshold": _stat_threshold(stat)}
+                for pid, slot, stat in zip(pids, slots, stats_used)
+            ]
             candidates.append({
                 "game_pk": game_pk, "team": team, "trio_type": label,
                 "conservative_prob": round(joint, 4),
-                "stats_used": (best_leg1_stat, stat2a, stat3),
+                "stats_used": stats_used,
+                "legs": legs,
             })
     candidates.sort(key=lambda c: c["conservative_prob"], reverse=True)
     return candidates
+
+
+def build_pairings(trios, max_pairings=3):
+    """Same greedy non-overlapping-game selection as stacks.build_pairings,
+    reimplemented here so this module has no import dependency on the live
+    stacks.py (keeps the two paths fully independent, as intended for
+    shadow mode)."""
+    all_pairs = []
+    for i in range(len(trios)):
+        for j in range(i + 1, len(trios)):
+            a, b = trios[i], trios[j]
+            if a["game_pk"] == b["game_pk"]:
+                continue
+            cons = a["conservative_prob"] * b["conservative_prob"]
+            if cons >= PLAYABLE_MIN_CONSERVATIVE:
+                all_pairs.append((cons, a, b))
+    all_pairs.sort(key=lambda p: p[0], reverse=True)
+
+    selected = []
+    used_keys = set()
+    for cons, a, b in all_pairs:
+        keys = [(a["game_pk"], a["team"], a["trio_type"]), (b["game_pk"], b["team"], b["trio_type"])]
+        if any(k in used_keys for k in keys):
+            continue
+        selected.append({"trios": [a, b], "combined_conservative": round(cons, 5)})
+        used_keys.update(keys)
+        if len(selected) >= max_pairings:
+            break
+    return selected
+
+
+# ---------------------------------------------------------------------------
+# Narrow gap-filling test: does a RUNS fallback rescue trios that would be
+# dropped when a player's H+R+RBI line isn't posted? This is the ONE piece
+# the analysis says is this module's actual value (H+R+RBI wins the
+# selection whenever it's available - see module docstring) - isolating
+# it from the general "pick whatever correlates best" mixed-market logic
+# so its rescue rate can be measured directly, in shadow mode only.
+# ---------------------------------------------------------------------------
+
+def build_hrrbi_gated_availability(raw_players, betr_lines, allow_runs_fallback):
+    """HRRBI-only availability, gated on a REAL posted Betr H+R+RBI line
+    (unlike live stacks.py, which isn't gated on any market's real
+    presence at all). If allow_runs_fallback, players missing an HRRBI
+    line but WITH a posted RUNS line get {"RUNS"} instead of an empty set,
+    so the trio isn't dropped outright."""
+    name_to_pid = {_normalize_name(r["name"]): r["player_id"] for r in raw_players}
+    hrrbi_lines = betr_lines.get("HITS_RUNS_RUNS_BATTED_IN", {})
+    runs_lines = betr_lines.get("RUNS", {})
+
+    availability = defaultdict(set)
+    for name_key, threshold in hrrbi_lines.items():
+        if threshold != BETR_DOMINANT_THRESHOLD["HITS_RUNS_RUNS_BATTED_IN"]:
+            continue
+        pid = name_to_pid.get(name_key)
+        if pid is not None:
+            availability[pid].add("HRRBI")
+
+    if allow_runs_fallback:
+        for name_key, threshold in runs_lines.items():
+            if threshold != BETR_DOMINANT_THRESHOLD["RUNS"]:
+                continue
+            pid = name_to_pid.get(name_key)
+            if pid is not None and "HRRBI" not in availability[pid]:
+                availability[pid].add("RUNS")
+
+    return availability
+
+
+def run_gap_filling_shadow(date_str, raw_players, betr_lines):
+    """Compares HRRBI-only-gated-on-real-Betr-lines (baseline) against
+    HRRBI-with-RUNS-fallback (only substituting RUNS where HRRBI is
+    missing for that specific player), reporting the pairing-count delta
+    and exactly which trios were only possible because of the fallback."""
+    baseline_avail = build_hrrbi_gated_availability(raw_players, betr_lines, allow_runs_fallback=False)
+    fallback_avail = build_hrrbi_gated_availability(raw_players, betr_lines, allow_runs_fallback=True)
+
+    baseline_trios = find_mixed_market_trio_candidates(raw_players, baseline_avail)
+    fallback_trios = find_mixed_market_trio_candidates(raw_players, fallback_avail)
+
+    baseline_pairings = build_pairings(baseline_trios)
+    fallback_pairings = build_pairings(fallback_trios)
+
+    baseline_keys = {(t["game_pk"], t["team"], t["trio_type"]) for t in baseline_trios}
+    rescued_trios = [t for t in fallback_trios
+                     if "RUNS" in t["stats_used"] and (t["game_pk"], t["team"], t["trio_type"]) not in baseline_keys]
+
+    return {
+        "date": date_str,
+        "baseline_trio_count": len(baseline_trios),
+        "fallback_trio_count": len(fallback_trios),
+        "baseline_pairing_count": len(baseline_pairings),
+        "fallback_pairing_count": len(fallback_pairings),
+        "rescued_trio_count": len(rescued_trios),
+        "rescued_trios": rescued_trios,
+        "fallback_pairings": fallback_pairings,
+    }
+
+
+def run_shadow_mode(date_str, raw_players, betr_lines):
+    """Computes everything shadow-mode needs for one day: the general
+    mixed-market pairings (all 4 stats, gated on real Betr postings) AND
+    the narrow HRRBI+RUNS-fallback gap-filling comparison. No dashboard
+    output, no bets - meant to be saved to data/stacks_shadow/<date>.json
+    and graded nightly (see tracker.run_stacks_shadow_grading) against a
+    running record kept fully separate from the live stacks results."""
+    availability = build_availability(raw_players, betr_lines)
+    mixed_trios = find_mixed_market_trio_candidates(raw_players, availability)
+    mixed_pairings = build_pairings(mixed_trios)
+    gap_filling = run_gap_filling_shadow(date_str, raw_players, betr_lines)
+
+    return {
+        "date": date_str,
+        "mixed_market": {
+            "trio_count": len(mixed_trios),
+            "pairings": mixed_pairings,
+        },
+        "gap_filling": gap_filling,
+    }
+
+
+def save_shadow(date_str, shadow_data):
+    os.makedirs(SHADOW_DIR, exist_ok=True)
+    out_path = os.path.join(SHADOW_DIR, f"{date_str}.json")
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(shadow_data, f, indent=2)
+    return out_path
+
+
+def load_shadow(date_str):
+    path = os.path.join(SHADOW_DIR, f"{date_str}.json")
+    if not os.path.exists(path):
+        return None
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)

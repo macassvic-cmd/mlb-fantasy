@@ -11,15 +11,24 @@ flat {name: value} map.
 """
 
 import json
+import logging
 import os
 import re
 import unicodedata
 import urllib.request
 
+logger = logging.getLogger(__name__)
+
 CACHE_DIR = os.path.join("data", "market_lines")
 
 GRAPHQL_URL = "https://api.fantasy.betr.app/graphql"
 HEADERS = {"Content-Type": "application/json", "User-Agent": "Mozilla/5.0"}
+
+# H+R+RBI is Betr's most reliable market (100-157 players/day observed);
+# below this on a normal slate suggests the fetch degraded silently -
+# PrizePicks' scraper went to zero lines for 14 days undetected before
+# this same pattern was added to market_lines.py; same intent here.
+MIN_EXPECTED_HRRBI_LINES = 40
 
 # Stat keys observed on Betr's board as of 2026-07-20 (15 MLB events, 287
 # player-market entries). "H+R+RBI" is the only multi-stat combo offered -
@@ -139,8 +148,16 @@ def get_betr_lines(date_str, use_cache=True):
 
     try:
         result = fetch_betr_mlb_lines()
-    except Exception:
+    except Exception as e:
+        logger.warning(f"Betr line fetch failed: {e}")
         result = {key: {} for key in STAT_KEYS}
+
+    n_hrrbi = len(result.get("HITS_RUNS_RUNS_BATTED_IN", {}))
+    if n_hrrbi < MIN_EXPECTED_HRRBI_LINES:
+        logger.warning(
+            f"Betr H+R+RBI returned only {n_hrrbi} lines for {date_str} "
+            f"(expected {MIN_EXPECTED_HRRBI_LINES}+) - fetch may be degraded."
+        )
 
     os.makedirs(CACHE_DIR, exist_ok=True)
     with open(cache_path, "w", encoding="utf-8") as f:

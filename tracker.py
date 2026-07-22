@@ -24,6 +24,7 @@ HIT_TOLERANCE = 0.20  # within 20% of projection counts as a "hit"
 
 import slips as slips_mod
 import stacks as stacks_mod
+import stacks_mixed_market as stacks_mixed_mod
 
 RESULTS_DIR = os.path.join("data", "results")
 ALL_RESULTS_PATH = os.path.join(RESULTS_DIR, "all_results.json")
@@ -33,6 +34,7 @@ VALUE_PLAYS_RESULTS_PATH = os.path.join(RESULTS_DIR, "value_plays_results.json")
 SLIPS_RESULTS_PATH = os.path.join(RESULTS_DIR, "slips_results.json")
 PREMIUM_RESULTS_PATH = os.path.join(RESULTS_DIR, "premium_results.json")
 STACKS_RESULTS_PATH = os.path.join(RESULTS_DIR, "stacks_results.json")
+STACKS_SHADOW_RESULTS_PATH = os.path.join(RESULTS_DIR, "stacks_shadow_results.json")
 
 
 def classify(projected, actual):
@@ -217,6 +219,10 @@ def track_date(date_str):
     grade_premium_plays(date_str, results_by_pid)
     grade_slips(date_str, results_by_pid)
     grade_stacks(date_str, results)
+    try:
+        grade_stacks_shadow(date_str, results)
+    except Exception as e:
+        print(f"Stacks shadow-mode grading failed (non-fatal): {e}")
 
     # Weekly refresh of the edge-bucket win-rate table slips.py scores legs
     # with (see EDGE_BUCKET_REFRESH_DAYS) — keeps it from ever going stale
@@ -481,6 +487,103 @@ def grade_stacks(date_str, results):
     print(f"  Stacks: legs {rec['legs']['wins']}-{rec['legs']['losses']} ({_rate(rec['legs'])}%)  "
           f"trios {rec['trios']['wins']}-{rec['trios']['losses']} ({_rate(rec['trios'])}%)  "
           f"full6 {rec['full6']['wins']}-{rec['full6']['losses']} ({_rate(rec['full6'])}%)")
+
+
+def grade_stacks_shadow(date_str, results):
+    """Grades the day's shadow-mode mixed-market output (see
+    stacks_mixed_market.run_shadow_mode, computed daily in report.py) -
+    fully separate running record from grade_stacks' live one. Tracks the
+    general mixed-market legs/trios/full6 record AND the narrow
+    gap-filling stat specifically: how many times the RUNS fallback fired
+    (rescued a trio that had no H+R+RBI-only candidate), and whether
+    those rescued RUNS legs actually hit. No dashboard output, no bets -
+    this is purely to accumulate a real record before any live decision."""
+    shadow = stacks_mixed_mod.load_shadow(date_str)
+    if shadow is None:
+        print(f"No shadow-mode data for {date_str}. Skipping shadow grading.")
+        return
+
+    actual_by_pid = {r["player_id"]: (r.get("actual_line") or {}, r.get("actual_pp")) for r in results}
+
+    def grade_leg(leg):
+        if leg["player_id"] not in actual_by_pid:
+            return None
+        al, actual_pp = actual_by_pid[leg["player_id"]]
+        return stacks_mixed_mod.stat_hit(leg["stat"], al, actual_pp)
+
+    default_record = {"legs": {"wins": 0, "losses": 0}, "trios": {"wins": 0, "losses": 0}, "full6": {"wins": 0, "losses": 0}}
+    default_gap = {"rescue_fire_count": 0, "days_tracked": 0, "rescued_trio_legs_graded": 0, "rescued_trio_legs_hit": 0}
+    all_ssr = load_json(STACKS_SHADOW_RESULTS_PATH, {"dates": {}, "record": default_record, "gap_filling_record": default_gap})
+    all_ssr.setdefault("dates", {})
+    all_ssr.setdefault("record", default_record)
+    all_ssr.setdefault("gap_filling_record", default_gap)
+    for level in ("legs", "trios", "full6"):
+        all_ssr["record"].setdefault(level, {"wins": 0, "losses": 0})
+
+    graded_pairings = []
+    for pairing in shadow.get("mixed_market", {}).get("pairings", []):
+        graded_trios = []
+        all_hit = True
+        for trio in pairing["trios"]:
+            graded_legs = []
+            trio_hit = True
+            fully_graded = True
+            for leg in trio["legs"]:
+                hit = grade_leg(leg)
+                if hit is None:
+                    fully_graded = False
+                    graded_legs.append({**leg, "actual_hit": None})
+                    continue
+                graded_legs.append({**leg, "actual_hit": hit})
+                trio_hit = trio_hit and hit
+                rec = all_ssr["record"]["legs"]
+                rec["wins" if hit else "losses"] += 1
+            if fully_graded:
+                rec = all_ssr["record"]["trios"]
+                rec["wins" if trio_hit else "losses"] += 1
+            else:
+                trio_hit = False
+            all_hit = all_hit and trio_hit
+            graded_trios.append({**trio, "legs": graded_legs, "trio_hit": trio_hit, "fully_graded": fully_graded})
+
+        pairing_fully_graded = all(t["fully_graded"] for t in graded_trios)
+        if pairing_fully_graded:
+            rec = all_ssr["record"]["full6"]
+            rec["wins" if all_hit else "losses"] += 1
+        graded_pairings.append({"trios": graded_trios, "full6_hit": all_hit if pairing_fully_graded else False,
+                                 "fully_graded": pairing_fully_graded})
+
+    gap = shadow.get("gap_filling", {})
+    gap_rec = all_ssr["gap_filling_record"]
+    gap_rec["rescue_fire_count"] += gap.get("rescued_trio_count", 0)
+    gap_rec["days_tracked"] += 1
+    graded_rescued = []
+    for trio in gap.get("rescued_trios", []):
+        graded_legs = []
+        for leg in trio["legs"]:
+            hit = grade_leg(leg)
+            graded_legs.append({**leg, "actual_hit": hit})
+            if leg["stat"] == "RUNS" and hit is not None:
+                gap_rec["rescued_trio_legs_graded"] += 1
+                if hit:
+                    gap_rec["rescued_trio_legs_hit"] += 1
+        graded_rescued.append({**trio, "legs": graded_legs})
+
+    all_ssr["dates"][date_str] = {"mixed_market_pairings": graded_pairings, "gap_filling_rescued_trios": graded_rescued}
+    os.makedirs(RESULTS_DIR, exist_ok=True)
+    with open(STACKS_SHADOW_RESULTS_PATH, "w", encoding="utf-8") as f:
+        json.dump(all_ssr, f, indent=2)
+
+    def _rate(r):
+        t = r["wins"] + r["losses"]
+        return round(100 * r["wins"] / t, 1) if t else 0.0
+
+    rec = all_ssr["record"]
+    print(f"  [SHADOW] Mixed-market: legs {rec['legs']['wins']}-{rec['legs']['losses']} ({_rate(rec['legs'])}%)  "
+          f"trios {rec['trios']['wins']}-{rec['trios']['losses']} ({_rate(rec['trios'])}%)  "
+          f"full6 {rec['full6']['wins']}-{rec['full6']['losses']} ({_rate(rec['full6'])}%)")
+    print(f"  [SHADOW] Gap-filling: fired {gap_rec['rescue_fire_count']}x over {gap_rec['days_tracked']} day(s) tracked; "
+          f"rescued-trio RUNS legs {gap_rec['rescued_trio_legs_hit']}/{gap_rec['rescued_trio_legs_graded']} hit")
 
 
 def _grade_single_slip(slip, platform, results_by_pid):

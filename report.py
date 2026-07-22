@@ -20,7 +20,9 @@ from zoneinfo import ZoneInfo
 import projections as proj
 import slips as slips_mod
 import stacks as stacks_mod
+import stacks_mixed_market as stacks_mixed_mod
 from scrapers.market_lines import get_market_lines, compute_pp_ud_ratio, match_lines
+from scrapers.betr import get_betr_lines
 
 
 # ---------------------------------------------------------------------------
@@ -2014,6 +2016,21 @@ def prepare_dashboard_context(date_arg=None):
     market_lines = get_market_lines(date_str)
     market_corrections = (results_data or {}).get("market_corrections", {})
     anchored_ids = apply_market_anchor(rows, market_lines, market_corrections)
+
+    # Daily Betr snapshot + shadow-mode mixed-market computation - NOT used
+    # for live anchoring/construction (the live Stacks tab is still
+    # stacks.build_pairings(rows), H+R+RBI/UD/PP only). This starts
+    # accumulating real day-by-day Betr coverage history (the blocker on
+    # every mixed-market volume question) and logs what mixed-market
+    # construction would have published, for nightly shadow grading - see
+    # stacks_mixed_market.py and tracker.grade_stacks_shadow. Best-effort,
+    # never blocks the real dashboard build.
+    try:
+        betr_lines = get_betr_lines(date_str)
+        shadow = stacks_mixed_mod.run_shadow_mode(date_str, players, betr_lines)
+        stacks_mixed_mod.save_shadow(date_str, shadow)
+    except Exception as e:
+        print(f"Betr snapshot / shadow-mode computation failed (non-fatal): {e}")
 
     corrections = build_corrections(results_data)
     apply_corrections(rows, corrections, skip=anchored_ids)

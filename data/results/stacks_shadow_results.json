@@ -1,0 +1,214 @@
+{
+  "dates": {
+    "2026-07-20": {
+      "mixed_market_pairings": [],
+      "gap_filling_rescued_trios": [
+        {
+          "game_pk": 825058,
+          "team": 109,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1791,
+          "stats_used": [
+            "RUNS",
+            "RUNS",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 672695,
+              "name": "Geraldo Perdomo",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 682998,
+              "name": "Corbin Carroll",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": null
+            },
+            {
+              "player_id": 672515,
+              "name": "Gabriel Moreno",
+              "slot": 4,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            }
+          ]
+        },
+        {
+          "game_pk": 823762,
+          "team": 158,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1681,
+          "stats_used": [
+            "RUNS",
+            "HRRBI",
+            "HRRBI"
+          ],
+          "legs": [
+            {
+              "player_id": 694192,
+              "name": "Jackson Chourio",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 668930,
+              "name": "Brice Turang",
+              "slot": 3,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": true
+            },
+            {
+              "player_id": 683734,
+              "name": "Andrew Vaughn",
+              "slot": 4,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": true
+            }
+          ]
+        },
+        {
+          "game_pk": 823762,
+          "team": 158,
+          "trio_type": "1-2-3",
+          "conservative_prob": 0.1656,
+          "stats_used": [
+            "HRRBI",
+            "RUNS",
+            "HRRBI"
+          ],
+          "legs": [
+            {
+              "player_id": 592885,
+              "name": "Christian Yelich",
+              "slot": 1,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            },
+            {
+              "player_id": 694192,
+              "name": "Jackson Chourio",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 668930,
+              "name": "Brice Turang",
+              "slot": 3,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": true
+            }
+          ]
+        },
+        {
+          "game_pk": 824898,
+          "team": 144,
+          "trio_type": "1-2-3",
+          "conservative_prob": 0.1363,
+          "stats_used": [
+            "RUNS",
+            "RUNS",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 686948,
+              "name": "Drake Baldwin",
+              "slot": 1,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 645277,
+              "name": "Ozzie Albies",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 621566,
+              "name": "Matt Olson",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            }
+          ]
+        },
+        {
+          "game_pk": 824898,
+          "team": 144,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1271,
+          "stats_used": [
+            "RUNS",
+            "RUNS",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 645277,
+              "name": "Ozzie Albies",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 621566,
+              "name": "Matt Olson",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 671739,
+              "name": "Michael Harris II",
+              "slot": 4,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "record": {
+    "legs": {
+      "wins": 0,
+      "losses": 0
+    },
+    "trios": {
+      "wins": 0,
+      "losses": 0
+    },
+    "full6": {
+      "wins": 0,
+      "losses": 0
+    }
+  },
+  "gap_filling_record": {
+    "rescue_fire_count": 5,
+    "days_tracked": 1,
+    "rescued_trio_legs_graded": 10,
+    "rescued_trio_legs_hit": 5
+  }
+}

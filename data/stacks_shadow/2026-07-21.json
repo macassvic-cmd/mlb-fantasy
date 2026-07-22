@@ -1,0 +1,86 @@
+{
+  "date": "2026-07-21",
+  "mixed_market": {
+    "trio_count": 5,
+    "pairings": []
+  },
+  "gap_filling": {
+    "date": "2026-07-21",
+    "baseline_trio_count": 2,
+    "fallback_trio_count": 4,
+    "baseline_pairing_count": 0,
+    "fallback_pairing_count": 0,
+    "rescued_trio_count": 2,
+    "rescued_trios": [
+      {
+        "game_pk": 824085,
+        "team": 137,
+        "trio_type": "1-2-3",
+        "conservative_prob": 0.1363,
+        "stats_used": [
+          "RUNS",
+          "RUNS",
+          "RUNS"
+        ],
+        "legs": [
+          {
+            "player_id": 650333,
+            "name": "Luis Arraez",
+            "slot": 1,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 805811,
+            "name": "Bryce Eldridge",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 669477,
+            "name": "Casey Schmitt",
+            "slot": 3,
+            "stat": "RUNS",
+            "threshold": 1
+          }
+        ]
+      },
+      {
+        "game_pk": 824085,
+        "team": 137,
+        "trio_type": "2-3-4",
+        "conservative_prob": 0.1271,
+        "stats_used": [
+          "RUNS",
+          "RUNS",
+          "RUNS"
+        ],
+        "legs": [
+          {
+            "player_id": 805811,
+            "name": "Bryce Eldridge",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 669477,
+            "name": "Casey Schmitt",
+            "slot": 3,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 646240,
+            "name": "Rafael Devers",
+            "slot": 4,
+            "stat": "RUNS",
+            "threshold": 1
+          }
+        ]
+      }
+    ],
+    "fallback_pairings": []
+  }
+}

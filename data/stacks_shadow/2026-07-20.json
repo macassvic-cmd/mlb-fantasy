@@ -1,0 +1,188 @@
+{
+  "date": "2026-07-20",
+  "mixed_market": {
+    "trio_count": 11,
+    "pairings": []
+  },
+  "gap_filling": {
+    "date": "2026-07-20",
+    "baseline_trio_count": 0,
+    "fallback_trio_count": 5,
+    "baseline_pairing_count": 0,
+    "fallback_pairing_count": 0,
+    "rescued_trio_count": 5,
+    "rescued_trios": [
+      {
+        "game_pk": 825058,
+        "team": 109,
+        "trio_type": "2-3-4",
+        "conservative_prob": 0.1791,
+        "stats_used": [
+          "RUNS",
+          "RUNS",
+          "RUNS"
+        ],
+        "legs": [
+          {
+            "player_id": 672695,
+            "name": "Geraldo Perdomo",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 682998,
+            "name": "Corbin Carroll",
+            "slot": 3,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 672515,
+            "name": "Gabriel Moreno",
+            "slot": 4,
+            "stat": "RUNS",
+            "threshold": 1
+          }
+        ]
+      },
+      {
+        "game_pk": 823762,
+        "team": 158,
+        "trio_type": "2-3-4",
+        "conservative_prob": 0.1681,
+        "stats_used": [
+          "RUNS",
+          "HRRBI",
+          "HRRBI"
+        ],
+        "legs": [
+          {
+            "player_id": 694192,
+            "name": "Jackson Chourio",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 668930,
+            "name": "Brice Turang",
+            "slot": 3,
+            "stat": "HRRBI",
+            "threshold": 2
+          },
+          {
+            "player_id": 683734,
+            "name": "Andrew Vaughn",
+            "slot": 4,
+            "stat": "HRRBI",
+            "threshold": 2
+          }
+        ]
+      },
+      {
+        "game_pk": 823762,
+        "team": 158,
+        "trio_type": "1-2-3",
+        "conservative_prob": 0.1656,
+        "stats_used": [
+          "HRRBI",
+          "RUNS",
+          "HRRBI"
+        ],
+        "legs": [
+          {
+            "player_id": 592885,
+            "name": "Christian Yelich",
+            "slot": 1,
+            "stat": "HRRBI",
+            "threshold": 2
+          },
+          {
+            "player_id": 694192,
+            "name": "Jackson Chourio",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 668930,
+            "name": "Brice Turang",
+            "slot": 3,
+            "stat": "HRRBI",
+            "threshold": 2
+          }
+        ]
+      },
+      {
+        "game_pk": 824898,
+        "team": 144,
+        "trio_type": "1-2-3",
+        "conservative_prob": 0.1363,
+        "stats_used": [
+          "RUNS",
+          "RUNS",
+          "RUNS"
+        ],
+        "legs": [
+          {
+            "player_id": 686948,
+            "name": "Drake Baldwin",
+            "slot": 1,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 645277,
+            "name": "Ozzie Albies",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 621566,
+            "name": "Matt Olson",
+            "slot": 3,
+            "stat": "RUNS",
+            "threshold": 1
+          }
+        ]
+      },
+      {
+        "game_pk": 824898,
+        "team": 144,
+        "trio_type": "2-3-4",
+        "conservative_prob": 0.1271,
+        "stats_used": [
+          "RUNS",
+          "RUNS",
+          "RUNS"
+        ],
+        "legs": [
+          {
+            "player_id": 645277,
+            "name": "Ozzie Albies",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 621566,
+            "name": "Matt Olson",
+            "slot": 3,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 671739,
+            "name": "Michael Harris II",
+            "slot": 4,
+            "stat": "RUNS",
+            "threshold": 1
+          }
+        ]
+      }
+    ],
+    "fallback_pairings": []
+  }
+}
