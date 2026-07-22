@@ -163,6 +163,139 @@ def refresh_edge_bucket_rates(results_data, force=False):
     return payload
 
 
+# ---------------------------------------------------------------------------
+# PP-specific edge-bucket calibration
+#
+# 2026-07-21: built after confirming _edge_bucket_stats() above is UD-only
+# (reads result_ud/ud_line/projected_ud) yet was being applied to PP edges
+# anyway - live gap was -13.5pt (predicted 57.8%, actual 44.3%). PP's own
+# real-line calibration is genuinely different in shape, not just worse:
+# e.g. UNDER 1.5-2.0 is UD's *best* bucket (59.4%) but PP's *weakest*
+# (48.2%). Fit from 2026-06-12 to 2026-07-07 (21 dates with real PrizePicks
+# lines - see MIN_EXPECTED_LINES in scrapers/market_lines.py); PrizePicks
+# has returned zero lines every day since 2026-07-08 (DataDome bot
+# protection - see market_lines.get_market_lines), so this can't be
+# refreshed with live data until that's resolved. NOT wired into
+# _pp_candidates() yet - PP stays paused regardless of calibration quality
+# until there's a live source of real PP lines again; this exists so
+# re-enabling PP is a calibration swap, not a re-investigation.
+# ---------------------------------------------------------------------------
+PP_EDGE_BUCKET_RATES_PATH = os.path.join("data", "results", "pp_edge_bucket_rates.json")
+
+_DEFAULT_PP_OVER_EDGE_WIN_RATES = [
+    (2.0, 0.560),
+    (1.5, 0.570),
+    (1.0, 0.516),
+    (0.5, 0.547),
+    (0.0, 0.524),
+]
+_DEFAULT_PP_UNDER_EDGE_WIN_RATES = [
+    (2.0, 0.589),
+    (1.5, 0.482),
+    (1.0, 0.486),
+    (0.0, 0.507),
+]
+
+
+def _is_real_pp_line_date(date_str):
+    """True if data/market_lines/<date>.json shows a real (non-broken) PP
+    fetch that day - i.e. enough posted lines that they weren't all derived
+    from the UD line via the fallback ratio (see match_lines)."""
+    path = os.path.join("data", "market_lines", f"{date_str}.json")
+    if not os.path.exists(path):
+        return False
+    try:
+        with open(path, encoding="utf-8") as f:
+            data = json.load(f)
+        return len(data.get("pp", {})) >= 50
+    except Exception:
+        return False
+
+
+def _pp_edge_bucket_stats(results_data):
+    """Same as _edge_bucket_stats but for PP (result_pp/pp_line/
+    projected_pp), restricted to dates with a real PP line fetch that day -
+    see _is_real_pp_line_date. Returns (over_buckets, under_buckets), each
+    a list of [min_edge, rate_or_None, n]."""
+    over_bounds = [b[0] for b in _DEFAULT_PP_OVER_EDGE_WIN_RATES]
+    under_bounds = [b[0] for b in _DEFAULT_PP_UNDER_EDGE_WIN_RATES]
+
+    def bucket_for(edge_abs, bounds):
+        for b in bounds:
+            if edge_abs >= b:
+                return b
+        return bounds[-1]
+
+    over_counts = {b: [0, 0] for b in over_bounds}
+    under_counts = {b: [0, 0] for b in under_bounds}
+    date_cache = {}
+
+    for p in results_data.get("players", {}).values():
+        for h in p.get("history", []):
+            if h.get("result_pp") not in ("win", "loss"):
+                continue
+            date = h.get("date")
+            if date not in date_cache:
+                date_cache[date] = _is_real_pp_line_date(date)
+            if not date_cache[date]:
+                continue
+            line = h.get("pp_line")
+            proj = h.get("projected_pp")
+            if line is None or proj is None:
+                continue
+            edge = proj - line
+            if edge == 0:
+                continue
+            call = "over" if edge > 0 else "under"
+            edge_abs = min(abs(edge), 2.0)
+            counts = over_counts if call == "over" else under_counts
+            bounds = over_bounds if call == "over" else under_bounds
+            b = bucket_for(edge_abs, bounds)
+            counts[b][1] += 1
+            if h["result_pp"] == "win":
+                counts[b][0] += 1
+
+    def to_list(counts, bounds):
+        out = []
+        for b in bounds:
+            wins, total = counts[b]
+            rate = round(wins / total, 4) if total else None
+            out.append([b, rate, total])
+        return out
+
+    return to_list(over_counts, over_bounds), to_list(under_counts, under_bounds)
+
+
+def refresh_pp_edge_bucket_rates(results_data, force=False):
+    """Recompute PP-specific OVER/UNDER edge-bucket win rates and persist
+    to PP_EDGE_BUCKET_RATES_PATH. Mirrors refresh_edge_bucket_rates()'s
+    staleness gate, but in practice this will keep returning the same
+    2026-06-12/2026-07-07 fit until PrizePicks scraping is restored, since
+    _is_real_pp_line_date() excludes every date after that."""
+    if not force and os.path.exists(PP_EDGE_BUCKET_RATES_PATH):
+        try:
+            with open(PP_EDGE_BUCKET_RATES_PATH, encoding="utf-8") as f:
+                existing = json.load(f)
+            last = existing.get("computed_at")
+            if last:
+                age_days = (datetime.now(timezone.utc) - datetime.fromisoformat(last)).days
+                if age_days < EDGE_BUCKET_REFRESH_DAYS:
+                    return existing
+        except Exception:
+            pass
+
+    over, under = _pp_edge_bucket_stats(results_data)
+    payload = {
+        "computed_at": datetime.now(timezone.utc).isoformat(),
+        "over": over,
+        "under": under,
+    }
+    os.makedirs(os.path.dirname(PP_EDGE_BUCKET_RATES_PATH), exist_ok=True)
+    with open(PP_EDGE_BUCKET_RATES_PATH, "w", encoding="utf-8") as f:
+        json.dump(payload, f, indent=2)
+    return payload
+
+
 MIN_EDGE_OVER  = 1.0
 MIN_EDGE_UNDER = 1.5
 MIN_LEG_PROB   = 0.53
@@ -252,6 +385,39 @@ def premium_tier(row):
     if _premium_tier_b(row, call, edge_abs):
         return "strong"
     return None
+
+
+# ---------------------------------------------------------------------------
+# Strong tier (Tier B) reinclusion gate
+#
+# 2026-07-21: excluded from slip construction after its slip-subset showed
+# 35.5% live (n=31) vs a 64.1% backtest. The broader dashboard-wide record
+# (grade_premium_plays, all Strong-tier calls not just the slip subset) is
+# 53.7% (n=67) as of the same date - still below both the backtest and the
+# ~55% breakeven a slip needs, but not as dire as the narrower slip subset
+# suggested. Track it here explicitly rather than leaving the "does it earn
+# back in" decision as something that has to be recomputed by hand.
+# ---------------------------------------------------------------------------
+STRONG_TIER_REINCLUSION_MIN_N = 50
+STRONG_TIER_REINCLUSION_MIN_RATE = 0.58
+
+
+def strong_tier_reinclusion_status(record):
+    """record: {"wins": int, "losses": int} from premium_results.json's
+    record["strong"]. Returns (eligible: bool, status_str)."""
+    wins, losses = record.get("wins", 0), record.get("losses", 0)
+    n = wins + losses
+    rate = wins / n if n else 0.0
+    if n < STRONG_TIER_REINCLUSION_MIN_N:
+        return False, (f"Strong tier: {wins}-{losses} ({rate*100:.1f}%, n={n}) - "
+                        f"needs {STRONG_TIER_REINCLUSION_MIN_N}+ plays before reconsidering "
+                        f"({STRONG_TIER_REINCLUSION_MIN_N - n} more needed)")
+    if rate >= STRONG_TIER_REINCLUSION_MIN_RATE:
+        return True, (f"Strong tier: {wins}-{losses} ({rate*100:.1f}%, n={n}) - "
+                       f"clears the {STRONG_TIER_REINCLUSION_MIN_RATE*100:.0f}% reinclusion bar, "
+                       f"eligible to revisit at a discount")
+    return False, (f"Strong tier: {wins}-{losses} ({rate*100:.1f}%, n={n}) - "
+                    f"below the {STRONG_TIER_REINCLUSION_MIN_RATE*100:.0f}% reinclusion bar, stays out")
 
 
 # ---------------------------------------------------------------------------

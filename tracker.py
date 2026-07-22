@@ -225,6 +225,10 @@ def track_date(date_str):
         slips_mod.refresh_edge_bucket_rates(load_json(ALL_RESULTS_PATH, {"dates": {}, "players": {}}))
     except Exception as e:
         print(f"Edge-bucket rate refresh failed (non-fatal): {e}")
+    try:
+        slips_mod.refresh_pp_edge_bucket_rates(load_json(ALL_RESULTS_PATH, {"dates": {}, "players": {}}))
+    except Exception as e:
+        print(f"PP edge-bucket rate refresh failed (non-fatal): {e}")
 
     # Weekly refresh of the stack optimizer's order x ERA cross-table and
     # adjacency correlation stats (see stacks.RATES_REFRESH_DAYS).
@@ -392,6 +396,9 @@ def grade_premium_plays(date_str, results_by_pid):
         rec_rate = round(100 * rec["wins"] / rec_total, 1) if rec_total else 0.0
         print(f"  {tier.capitalize()}: {s['correct']}/{s['total']} today ({s['win_rate']}%) "
               f"-> running record {rec['wins']}-{rec['losses']} ({rec_rate}%)")
+
+    eligible, status = slips_mod.strong_tier_reinclusion_status(all_pr["record"]["strong"])
+    print(f"  {'[ELIGIBLE]' if eligible else '[excluded]'} {status}")
 
 
 def grade_stacks(date_str, results):

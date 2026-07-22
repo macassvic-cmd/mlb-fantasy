@@ -6,10 +6,13 @@ on a percentile-based curve.
 """
 
 import json
+import logging
 import os
 import re
 import unicodedata
 import urllib.request
+
+logger = logging.getLogger(__name__)
 
 CACHE_DIR = os.path.join("data", "market_lines")
 
@@ -17,6 +20,13 @@ UD_URL = "https://api.underdogfantasy.com/v1/over_under_lines"
 PP_URL = "https://api.prizepicks.com/projections?league_id=2"
 
 HEADERS = {"User-Agent": "Mozilla/5.0"}
+
+# Below this many lines on a normal game day, something's wrong upstream
+# (blocked, rate-limited, API shape changed) - worth a loud warning rather
+# than silently degrading. PrizePicks lines went to zero for 14 straight
+# days (2026-07-08 onward, DataDome bot-protection) with zero visibility
+# until it was found by hand - this is meant to make that impossible again.
+MIN_EXPECTED_LINES = 20
 
 
 def normalize_name(name):
@@ -140,12 +150,20 @@ def get_market_lines(date_str, use_cache=True):
     result = {"ud": {}, "pp": {}}
     try:
         result["ud"] = fetch_underdog_mlb_lines()
-    except Exception:
-        pass
+    except Exception as e:
+        logger.warning(f"Underdog line fetch failed: {e}")
     try:
         result["pp"] = fetch_prizepicks_mlb_lines()
-    except Exception:
-        pass
+    except Exception as e:
+        logger.warning(f"PrizePicks line fetch failed: {e}")
+
+    for platform in ("ud", "pp"):
+        if len(result[platform]) < MIN_EXPECTED_LINES:
+            logger.warning(
+                f"{platform.upper()} returned only {len(result[platform])} lines for {date_str} "
+                f"(expected {MIN_EXPECTED_LINES}+) - market anchoring and slip construction for "
+                f"this platform will be degraded or empty today."
+            )
 
     os.makedirs(CACHE_DIR, exist_ok=True)
     with open(cache_path, "w", encoding="utf-8") as f:

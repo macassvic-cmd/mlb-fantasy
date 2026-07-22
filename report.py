@@ -771,7 +771,9 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
         return f"Live record: {rec['wins']}-{rec['losses']} ({rate}%) since tracking began."
 
     premium_record_str = _tier_record_str("premium")
-    strong_record_str = _tier_record_str("strong")
+    strong_rec = (premium_results or {}).get("record", {}).get("strong", {"wins": 0, "losses": 0})
+    _, strong_reincl_status = slips_mod.strong_tier_reinclusion_status(strong_rec)
+    strong_record_str = _tier_record_str("strong") + " Excluded from slips - " + strong_reincl_status + "."
 
     # --- Stacks: correlated 3+3 trio pairings for the 30x payout bet type ---
     # Built entirely on the empirical order x opponent-ERA backtest (see
@@ -833,6 +835,11 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
         for slip in slip_list:
             slip["legs"].sort(key=lambda l: l.get("game_date_utc") or "9999")
     slips_js = json.dumps(all_slips)
+    # premium_rows is already filtered to market_anchored + premium_tier()=="premium"
+    # (see the Premium section above) - reused here so the empty-slip state can
+    # show real inventory instead of looking broken when the bar is legitimately
+    # not met that day.
+    premium_leg_count_js = json.dumps(len(premium_rows))
     slips_results = slips_results or {}
     slips_records_js = json.dumps(slips_results.get("records", {}))
 
@@ -992,6 +999,9 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   .slip-leg-prob {{ font-size: 11px; color: #9fb0cc; }}
   .slip-empty {{ background: #16213a; border: 2px dashed #2a3a5c; border-radius: 12px;
                  padding: 24px; text-align: center; color: #6c7da0; font-size: 13px; }}
+  .slip-empty-discipline {{ border-style: solid; border-color: #2a4a3a; color: #9fb0cc;
+                             text-align: left; line-height: 1.5; }}
+  .slip-empty-discipline strong {{ color: #4ade80; }}
   .slips-expected-banner {{ background: #16213a; border: 1px solid #2a3a5c; border-radius: 10px;
                  padding: 12px 18px; margin-bottom: 18px; font-size: 13px; color: #c4cee0; }}
   .slips-expected-banner strong {{ color: #fff; }}
@@ -1296,6 +1306,7 @@ const T25_WORST = {json.dumps(worst_performer)};
 const T25_RECORDS = {record_rows_js};
 const SLIPS = {slips_js};
 const SLIPS_RECORDS = {slips_records_js};
+const PREMIUM_LEG_COUNT = {premium_leg_count_js};
 const GENERATED_AT = {json.dumps(generated_at_iso)};
 const GAME_DATE = {json.dumps(date_str)};
 const PLAYER_COUNT = {player_count};
@@ -1467,9 +1478,9 @@ setInterval(applyHideStartedFilter, 30000); // live re-check as games start, no 
 // --- Slips tab ---
 (function renderSlips() {{
   const SLIP_CONFIGS = [
-    {{key:'ud_8', label:'UD 8-Pick', platform:'ud', sub:'8-Man Slips', section:'Underdog'}},
-    {{key:'ud_6', label:'UD 6-Pick', platform:'ud', sub:'6-Man Slips', section:'Underdog'}},
-    {{key:'pp_6', label:'PP 6-Pick', platform:'pp', sub:'6-Man Slips', section:'PrizePicks'}},
+    {{key:'ud_8', label:'UD 8-Pick', platform:'ud', sub:'8-Man Slips', section:'Underdog', size:8}},
+    {{key:'ud_6', label:'UD 6-Pick', platform:'ud', sub:'6-Man Slips', section:'Underdog', size:6}},
+    {{key:'pp_6', label:'PP 6-Pick', platform:'pp', sub:'6-Man Slips', section:'PrizePicks', size:6}},
   ];
   const RANK_COLORS = ['', '#ffd700', '#c0c0c0', '#cd7f32', '#9fb0cc', '#9fb0cc'];
   const SLIP_KEYS   = ['ud_8','ud_6','pp_6'];
@@ -1495,9 +1506,29 @@ setInterval(applyHideStartedFilter, 30000); // live re-check as games start, no 
       + '</div>';
   }}
 
+  function emptyStateHtml(cfg, rank) {{
+    if (cfg.platform === 'pp') {{
+      return '<div class="slip-empty slip-empty-discipline">'
+        + '<strong>PP slips paused.</strong> No validated PrizePicks-specific calibration exists '
+        + 'yet - the prior model borrowed Underdog\\'s edge-bucket win rates, which don\\'t transfer '
+        + '(PP legs hit 44.4% live, well below the ~55% breakeven). Will re-enable once PP has its '
+        + 'own fitted calibration from real PrizePicks lines.'
+        + '</div>';
+    }}
+    if (rank === 1) {{
+      return '<div class="slip-empty slip-empty-discipline">'
+        + '<strong>No slip published.</strong> Only ' + PREMIUM_LEG_COUNT + ' Premium-tier leg'
+        + (PREMIUM_LEG_COUNT === 1 ? '' : 's') + ' available today, ' + cfg.size + ' required. '
+        + 'Publishing below Premium tier is -EV at our breakeven of ~55% - see the general pool\\'s '
+        + 'real 52.5% leg rate. Zero slips is the correct call, not a bug.'
+        + '</div>';
+    }}
+    return '<div class="slip-empty">No additional qualifying ' + cfg.label + ' today.</div>';
+  }}
+
   function slipCardHtml(cfg, slip, rank) {{
     if (!slip) {{
-      return '<div class="slip-empty">Not enough qualifying legs for ' + cfg.label + ' #' + rank + '.</div>';
+      return emptyStateHtml(cfg, rank);
     }}
     var recKey  = cfg.key + '_' + rank;
     var rec     = SLIPS_RECORDS[recKey] || {{wins:0,losses:0,legs_win:0,legs_total:0,expected_wins:0}};
