@@ -675,20 +675,117 @@
           "fully_graded": true
         }
       ]
+    },
+    "2026-07-22": {
+      "pairings": [
+        {
+          "combined_conservative": 0.04812,
+          "combined_optimistic": 0.06625,
+          "ev_conservative": 0.444,
+          "ev_optimistic": 0.988,
+          "playable": true,
+          "trios": [
+            {
+              "game_pk": 823438,
+              "team": "Los Angeles Dodgers",
+              "opp_team": "Philadelphia Phillies",
+              "venue": "Citizens Bank Park",
+              "opp_era": 5.68,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 681624,
+                  "name": "Andy Pages",
+                  "order": 2,
+                  "leg_prob": 0.5842,
+                  "game_time_pt": "3:40 PM PT",
+                  "game_date_utc": "2026-07-22T22:40:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 518692,
+                  "name": "Freddie Freeman",
+                  "order": 3,
+                  "leg_prob": 0.5665,
+                  "game_time_pt": "3:40 PM PT",
+                  "game_date_utc": "2026-07-22T22:40:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 571970,
+                  "name": "Max Muncy",
+                  "order": 4,
+                  "leg_prob": 0.5665,
+                  "game_time_pt": "3:40 PM PT",
+                  "game_date_utc": "2026-07-22T22:40:00Z",
+                  "actual_hit": true
+                }
+              ],
+              "conservative_prob": 0.2258,
+              "optimistic_prob": 0.2649,
+              "trio_hit": true,
+              "fully_graded": true
+            },
+            {
+              "game_pk": 823519,
+              "team": "New York Yankees",
+              "opp_team": "Pittsburgh Pirates",
+              "venue": "Yankee Stadium",
+              "opp_era": 4.77,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 700250,
+                  "name": "Ben Rice",
+                  "order": 2,
+                  "leg_prob": 0.5567,
+                  "game_time_pt": "4:05 PM PT",
+                  "game_date_utc": "2026-07-22T23:05:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 502671,
+                  "name": "Paul Goldschmidt",
+                  "order": 3,
+                  "leg_prob": 0.5638,
+                  "game_time_pt": "4:05 PM PT",
+                  "game_date_utc": "2026-07-22T23:05:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 641355,
+                  "name": "Cody Bellinger",
+                  "order": 4,
+                  "leg_prob": 0.5638,
+                  "game_time_pt": "4:05 PM PT",
+                  "game_date_utc": "2026-07-22T23:05:00Z",
+                  "actual_hit": false
+                }
+              ],
+              "conservative_prob": 0.2131,
+              "optimistic_prob": 0.2501,
+              "trio_hit": false,
+              "fully_graded": true
+            }
+          ],
+          "full6_hit": false,
+          "fully_graded": true
+        }
+      ]
     }
   },
   "record": {
     "legs": {
-      "wins": 25,
-      "losses": 15
+      "wins": 29,
+      "losses": 17
     },
     "trios": {
-      "wins": 5,
-      "losses": 7
+      "wins": 6,
+      "losses": 8
     },
     "full6": {
       "wins": 0,
-      "losses": 5
+      "losses": 6
     }
   }
 }

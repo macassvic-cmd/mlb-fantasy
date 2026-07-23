@@ -2859,6 +2859,99 @@
           "correct": true
         }
       ]
+    },
+    "2026-07-22": {
+      "summary": {
+        "total": 8,
+        "correct": 2,
+        "accuracy": 25.0,
+        "over_total": 4,
+        "over_correct": 2,
+        "under_total": 4,
+        "under_correct": 0
+      },
+      "plays": [
+        {
+          "player_id": 694671,
+          "name": "Wyatt Langford",
+          "team": "Texas Rangers",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 3,
+          "correct": false
+        },
+        {
+          "player_id": 624413,
+          "name": "Pete Alonso",
+          "team": "Baltimore Orioles",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 11,
+          "correct": true
+        },
+        {
+          "player_id": 805779,
+          "name": "Jacob Wilson",
+          "team": "Athletics",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 7,
+          "correct": true
+        },
+        {
+          "player_id": 691016,
+          "name": "Tyler Soderstrom",
+          "team": "Athletics",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 5,
+          "correct": false
+        },
+        {
+          "player_id": 671277,
+          "name": "Luis Garc\u00eda Jr.",
+          "team": "Washington Nationals",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 16,
+          "correct": false
+        },
+        {
+          "player_id": 518692,
+          "name": "Freddie Freeman",
+          "team": "Los Angeles Dodgers",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 26,
+          "correct": false
+        },
+        {
+          "player_id": 695734,
+          "name": "Daylen Lile",
+          "team": "Washington Nationals",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 9,
+          "correct": false
+        },
+        {
+          "player_id": 606466,
+          "name": "Ketel Marte",
+          "team": "Arizona Diamondbacks",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 11,
+          "correct": false
+        }
+      ]
     }
   }
 }
