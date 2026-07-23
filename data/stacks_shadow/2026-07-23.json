@@ -1,0 +1,154 @@
+{
+  "date": "2026-07-23",
+  "mixed_market": {
+    "trio_count": 5,
+    "pairings": []
+  },
+  "gap_filling": {
+    "date": "2026-07-23",
+    "baseline_trio_count": 1,
+    "fallback_trio_count": 5,
+    "baseline_pairing_count": 0,
+    "fallback_pairing_count": 0,
+    "rescued_trio_count": 4,
+    "rescued_trios": [
+      {
+        "game_pk": 822785,
+        "team": 139,
+        "trio_type": "2-3-4",
+        "conservative_prob": 0.199,
+        "stats_used": [
+          "RUNS",
+          "RUNS",
+          "HRRBI"
+        ],
+        "legs": [
+          {
+            "player_id": 666018,
+            "name": "Jonathan Aranda",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 691406,
+            "name": "Junior Caminero",
+            "slot": 3,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 656775,
+            "name": "Cedric Mullins",
+            "slot": 4,
+            "stat": "HRRBI",
+            "threshold": 2
+          }
+        ]
+      },
+      {
+        "game_pk": 824893,
+        "team": 144,
+        "trio_type": "1-2-3",
+        "conservative_prob": 0.1878,
+        "stats_used": [
+          "RUNS",
+          "RUNS",
+          "RUNS"
+        ],
+        "legs": [
+          {
+            "player_id": 686948,
+            "name": "Drake Baldwin",
+            "slot": 1,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 645277,
+            "name": "Ozzie Albies",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 621566,
+            "name": "Matt Olson",
+            "slot": 3,
+            "stat": "RUNS",
+            "threshold": 1
+          }
+        ]
+      },
+      {
+        "game_pk": 822785,
+        "team": 139,
+        "trio_type": "1-2-3",
+        "conservative_prob": 0.1878,
+        "stats_used": [
+          "RUNS",
+          "RUNS",
+          "RUNS"
+        ],
+        "legs": [
+          {
+            "player_id": 650490,
+            "name": "Yandy D\u00edaz",
+            "slot": 1,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 666018,
+            "name": "Jonathan Aranda",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 691406,
+            "name": "Junior Caminero",
+            "slot": 3,
+            "stat": "RUNS",
+            "threshold": 1
+          }
+        ]
+      },
+      {
+        "game_pk": 823042,
+        "team": 138,
+        "trio_type": "2-3-4",
+        "conservative_prob": 0.1401,
+        "stats_used": [
+          "HRRBI",
+          "HRRBI",
+          "RUNS"
+        ],
+        "legs": [
+          {
+            "player_id": 671056,
+            "name": "Iv\u00e1n Herrera",
+            "slot": 2,
+            "stat": "HRRBI",
+            "threshold": 2
+          },
+          {
+            "player_id": 691023,
+            "name": "Jordan Walker",
+            "slot": 3,
+            "stat": "HRRBI",
+            "threshold": 2
+          },
+          {
+            "player_id": 676475,
+            "name": "Alec Burleson",
+            "slot": 4,
+            "stat": "RUNS",
+            "threshold": 1
+          }
+        ]
+      }
+    ],
+    "fallback_pairings": []
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "date": "2026-07-23",
+  "pairings": [
+    {
+      "trios": [
+        {
+          "game_pk": 824893,
+          "team": "Atlanta Braves",
+          "opp_team": "San Diego Padres",
+          "venue": "Truist Park",
+          "opp_era": 5.66,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 645277,
+              "name": "Ozzie Albies",
+              "order": 2,
+              "leg_prob": 0.5842,
+              "game_time_pt": "9:15 AM PT",
+              "game_date_utc": "2026-07-23T16:15:00Z"
+            },
+            {
+              "player_id": 621566,
+              "name": "Matt Olson",
+              "order": 3,
+              "leg_prob": 0.5665,
+              "game_time_pt": "9:15 AM PT",
+              "game_date_utc": "2026-07-23T16:15:00Z"
+            },
+            {
+              "player_id": 671739,
+              "name": "Michael Harris II",
+              "order": 4,
+              "leg_prob": 0.5665,
+              "game_time_pt": "9:15 AM PT",
+              "game_date_utc": "2026-07-23T16:15:00Z"
+            }
+          ],
+          "conservative_prob": 0.2258,
+          "optimistic_prob": 0.2649
+        },
+        {
+          "game_pk": 822785,
+          "team": "Tampa Bay Rays",
+          "opp_team": "Toronto Blue Jays",
+          "venue": "Rogers Centre",
+          "opp_era": 5.7,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 666018,
+              "name": "Jonathan Aranda",
+              "order": 2,
+              "leg_prob": 0.5842,
+              "game_time_pt": "12:07 PM PT",
+              "game_date_utc": "2026-07-23T19:07:00Z"
+            },
+            {
+              "player_id": 691406,
+              "name": "Junior Caminero",
+              "order": 3,
+              "leg_prob": 0.5665,
+              "game_time_pt": "12:07 PM PT",
+              "game_date_utc": "2026-07-23T19:07:00Z"
+            },
+            {
+              "player_id": 656775,
+              "name": "Cedric Mullins",
+              "order": 4,
+              "leg_prob": 0.5665,
+              "game_time_pt": "12:07 PM PT",
+              "game_date_utc": "2026-07-23T19:07:00Z"
+            }
+          ],
+          "conservative_prob": 0.2258,
+          "optimistic_prob": 0.2649
+        }
+      ],
+      "combined_conservative": 0.05099,
+      "combined_optimistic": 0.07017,
+      "ev_conservative": 0.53,
+      "ev_optimistic": 1.105,
+      "playable": true
+    }
+  ]
+}
