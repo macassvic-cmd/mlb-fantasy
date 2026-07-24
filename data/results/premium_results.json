@@ -1457,6 +1457,77 @@
           "correct": false
         }
       ]
+    },
+    "2026-07-23": {
+      "summary": {
+        "premium": {
+          "total": 0,
+          "correct": 0,
+          "win_rate": 0.0
+        },
+        "strong": {
+          "total": 5,
+          "correct": 3,
+          "win_rate": 60.0
+        }
+      },
+      "plays": [
+        {
+          "player_id": 671739,
+          "name": "Michael Harris II",
+          "team": "Atlanta Braves",
+          "call": "over",
+          "edge": 1.83,
+          "ud_line": 7.5,
+          "actual_ud": 19,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 621566,
+          "name": "Matt Olson",
+          "team": "Atlanta Braves",
+          "call": "over",
+          "edge": 1.6,
+          "ud_line": 7.5,
+          "actual_ud": 0,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 691406,
+          "name": "Junior Caminero",
+          "team": "Tampa Bay Rays",
+          "call": "over",
+          "edge": 0.71,
+          "ud_line": 8.5,
+          "actual_ud": 0,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 691023,
+          "name": "Jordan Walker",
+          "team": "St. Louis Cardinals",
+          "call": "over",
+          "edge": 1.93,
+          "ud_line": 6.5,
+          "actual_ud": 13,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 676475,
+          "name": "Alec Burleson",
+          "team": "St. Louis Cardinals",
+          "call": "over",
+          "edge": 0.61,
+          "ud_line": 6.5,
+          "actual_ud": 17,
+          "tier": "strong",
+          "correct": true
+        }
+      ]
     }
   },
   "record": {
@@ -1465,8 +1536,8 @@
       "losses": 8
     },
     "strong": {
-      "wins": 55,
-      "losses": 52
+      "wins": 58,
+      "losses": 54
     }
   }
 }

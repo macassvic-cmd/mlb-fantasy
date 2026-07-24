@@ -2952,6 +2952,99 @@
           "correct": false
         }
       ]
+    },
+    "2026-07-23": {
+      "summary": {
+        "total": 8,
+        "correct": 3,
+        "accuracy": 37.5,
+        "over_total": 4,
+        "over_correct": 1,
+        "under_total": 4,
+        "under_correct": 2
+      },
+      "plays": [
+        {
+          "player_id": 645277,
+          "name": "Ozzie Albies",
+          "team": "Atlanta Braves",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 17,
+          "correct": true
+        },
+        {
+          "player_id": 663586,
+          "name": "Austin Riley",
+          "team": "Atlanta Braves",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "correct": false
+        },
+        {
+          "player_id": 650490,
+          "name": "Yandy D\u00edaz",
+          "team": "Tampa Bay Rays",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 5,
+          "correct": false
+        },
+        {
+          "player_id": 666018,
+          "name": "Jonathan Aranda",
+          "team": "Tampa Bay Rays",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "correct": false
+        },
+        {
+          "player_id": 805808,
+          "name": "Kevin McGonigle",
+          "team": "Detroit Tigers",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 3,
+          "correct": true
+        },
+        {
+          "player_id": 682998,
+          "name": "Corbin Carroll",
+          "team": "Arizona Diamondbacks",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 12,
+          "correct": false
+        },
+        {
+          "player_id": 682985,
+          "name": "Riley Greene",
+          "team": "Detroit Tigers",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 3,
+          "correct": true
+        },
+        {
+          "player_id": 693307,
+          "name": "Dillon Dingler",
+          "team": "Detroit Tigers",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 16,
+          "correct": false
+        }
+      ]
     }
   }
 }
