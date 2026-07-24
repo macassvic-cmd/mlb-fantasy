@@ -1,0 +1,248 @@
+{
+  "date": "2026-07-24",
+  "pairings": [
+    {
+      "trios": [
+        {
+          "game_pk": 822707,
+          "team": "Arizona Diamondbacks",
+          "opp_team": "Washington Nationals",
+          "venue": "Nationals Park",
+          "opp_era": 8.74,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 672695,
+              "name": "Geraldo Perdomo",
+              "order": 2,
+              "leg_prob": 0.5842,
+              "game_time_pt": "3:45 PM PT",
+              "game_date_utc": "2026-07-24T22:45:00Z"
+            },
+            {
+              "player_id": 672515,
+              "name": "Gabriel Moreno",
+              "order": 3,
+              "leg_prob": 0.5665,
+              "game_time_pt": "3:45 PM PT",
+              "game_date_utc": "2026-07-24T22:45:00Z"
+            },
+            {
+              "player_id": 596146,
+              "name": "Max Kepler",
+              "order": 4,
+              "leg_prob": 0.5665,
+              "game_time_pt": "3:45 PM PT",
+              "game_date_utc": "2026-07-24T22:45:00Z"
+            }
+          ],
+          "conservative_prob": 0.2258,
+          "optimistic_prob": 0.2649
+        },
+        {
+          "game_pk": 823680,
+          "team": "Minnesota Twins",
+          "opp_team": "Athletics",
+          "venue": "Target Field",
+          "opp_era": 6.64,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 621439,
+              "name": "Byron Buxton",
+              "order": 2,
+              "leg_prob": 0.5842,
+              "game_time_pt": "5:10 PM PT",
+              "game_date_utc": "2026-07-25T00:10:00Z"
+            },
+            {
+              "player_id": 680777,
+              "name": "Ryan Jeffers",
+              "order": 3,
+              "leg_prob": 0.5665,
+              "game_time_pt": "5:10 PM PT",
+              "game_date_utc": "2026-07-25T00:10:00Z"
+            },
+            {
+              "player_id": 605137,
+              "name": "Josh Bell",
+              "order": 4,
+              "leg_prob": 0.5665,
+              "game_time_pt": "5:10 PM PT",
+              "game_date_utc": "2026-07-25T00:10:00Z"
+            }
+          ],
+          "conservative_prob": 0.2258,
+          "optimistic_prob": 0.2649
+        }
+      ],
+      "combined_conservative": 0.05099,
+      "combined_optimistic": 0.07017,
+      "ev_conservative": 0.53,
+      "ev_optimistic": 1.105,
+      "playable": true
+    },
+    {
+      "trios": [
+        {
+          "game_pk": 823031,
+          "team": "St. Louis Cardinals",
+          "opp_team": "Cincinnati Reds",
+          "venue": "Busch Stadium",
+          "opp_era": 5.75,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 691023,
+              "name": "Jordan Walker",
+              "order": 2,
+              "leg_prob": 0.5842,
+              "game_time_pt": "5:15 PM PT",
+              "game_date_utc": "2026-07-25T00:15:00Z"
+            },
+            {
+              "player_id": 676475,
+              "name": "Alec Burleson",
+              "order": 3,
+              "leg_prob": 0.5665,
+              "game_time_pt": "5:15 PM PT",
+              "game_date_utc": "2026-07-25T00:15:00Z"
+            },
+            {
+              "player_id": 663457,
+              "name": "Lars Nootbaar",
+              "order": 4,
+              "leg_prob": 0.5665,
+              "game_time_pt": "5:15 PM PT",
+              "game_date_utc": "2026-07-25T00:15:00Z"
+            }
+          ],
+          "conservative_prob": 0.2258,
+          "optimistic_prob": 0.2649
+        },
+        {
+          "game_pk": 823196,
+          "team": "San Francisco Giants",
+          "opp_team": "Los Angeles Angels",
+          "venue": "Oracle Park",
+          "opp_era": 8.23,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 805811,
+              "name": "Bryce Eldridge",
+              "order": 2,
+              "leg_prob": 0.5842,
+              "game_time_pt": "7:15 PM PT",
+              "game_date_utc": "2026-07-25T02:15:00Z"
+            },
+            {
+              "player_id": 671218,
+              "name": "Heliot Ramos",
+              "order": 3,
+              "leg_prob": 0.5665,
+              "game_time_pt": "7:15 PM PT",
+              "game_date_utc": "2026-07-25T02:15:00Z"
+            },
+            {
+              "player_id": 646240,
+              "name": "Rafael Devers",
+              "order": 4,
+              "leg_prob": 0.5665,
+              "game_time_pt": "7:15 PM PT",
+              "game_date_utc": "2026-07-25T02:15:00Z"
+            }
+          ],
+          "conservative_prob": 0.2258,
+          "optimistic_prob": 0.2649
+        }
+      ],
+      "combined_conservative": 0.05099,
+      "combined_optimistic": 0.07017,
+      "ev_conservative": 0.53,
+      "ev_optimistic": 1.105,
+      "playable": true
+    },
+    {
+      "trios": [
+        {
+          "game_pk": 823031,
+          "team": "Cincinnati Reds",
+          "opp_team": "St. Louis Cardinals",
+          "venue": "Busch Stadium",
+          "opp_era": 4.78,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 701398,
+              "name": "Sal Stewart",
+              "order": 2,
+              "leg_prob": 0.5567,
+              "game_time_pt": "5:15 PM PT",
+              "game_date_utc": "2026-07-25T00:15:00Z"
+            },
+            {
+              "player_id": 668709,
+              "name": "JJ Bleday",
+              "order": 3,
+              "leg_prob": 0.5638,
+              "game_time_pt": "5:15 PM PT",
+              "game_date_utc": "2026-07-25T00:15:00Z"
+            },
+            {
+              "player_id": 668715,
+              "name": "Spencer Steer",
+              "order": 4,
+              "leg_prob": 0.5638,
+              "game_time_pt": "5:15 PM PT",
+              "game_date_utc": "2026-07-25T00:15:00Z"
+            }
+          ],
+          "conservative_prob": 0.2131,
+          "optimistic_prob": 0.2501
+        },
+        {
+          "game_pk": 823759,
+          "team": "Milwaukee Brewers",
+          "opp_team": "Colorado Rockies",
+          "venue": "American Family Field",
+          "opp_era": 4.76,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 694192,
+              "name": "Jackson Chourio",
+              "order": 2,
+              "leg_prob": 0.5567,
+              "game_time_pt": "1:10 PM PT",
+              "game_date_utc": "2026-07-24T20:10:00Z"
+            },
+            {
+              "player_id": 668930,
+              "name": "Brice Turang",
+              "order": 3,
+              "leg_prob": 0.5638,
+              "game_time_pt": "1:10 PM PT",
+              "game_date_utc": "2026-07-24T20:10:00Z"
+            },
+            {
+              "player_id": 661388,
+              "name": "William Contreras",
+              "order": 4,
+              "leg_prob": 0.5638,
+              "game_time_pt": "1:10 PM PT",
+              "game_date_utc": "2026-07-24T20:10:00Z"
+            }
+          ],
+          "conservative_prob": 0.2131,
+          "optimistic_prob": 0.2501
+        }
+      ],
+      "combined_conservative": 0.04541,
+      "combined_optimistic": 0.06255,
+      "ev_conservative": 0.362,
+      "ev_optimistic": 0.877,
+      "playable": true
+    }
+  ]
+}
