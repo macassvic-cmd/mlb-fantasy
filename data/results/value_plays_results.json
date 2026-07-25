@@ -3045,6 +3045,79 @@
           "correct": false
         }
       ]
+    },
+    "2026-07-24": {
+      "summary": {
+        "total": 6,
+        "correct": 4,
+        "accuracy": 66.7,
+        "over_total": 4,
+        "over_correct": 3,
+        "under_total": 2,
+        "under_correct": 1
+      },
+      "plays": [
+        {
+          "player_id": 672695,
+          "name": "Geraldo Perdomo",
+          "team": "Arizona Diamondbacks",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 10,
+          "correct": true
+        },
+        {
+          "player_id": 672515,
+          "name": "Gabriel Moreno",
+          "team": "Arizona Diamondbacks",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 8,
+          "correct": true
+        },
+        {
+          "player_id": 699013,
+          "name": "Esmerlyn Valdez",
+          "team": "Pittsburgh Pirates",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "correct": false
+        },
+        {
+          "player_id": 686948,
+          "name": "Drake Baldwin",
+          "team": "Atlanta Braves",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 14,
+          "correct": true
+        },
+        {
+          "player_id": 695578,
+          "name": "James Wood",
+          "team": "Washington Nationals",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 3,
+          "correct": true
+        },
+        {
+          "player_id": 686611,
+          "name": "Dylan Crews",
+          "team": "Washington Nationals",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 19,
+          "correct": false
+        }
+      ]
     }
   }
 }
