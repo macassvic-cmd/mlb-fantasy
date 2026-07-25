@@ -1,0 +1,302 @@
+{
+  "date": "2026-07-25",
+  "mixed_market": {
+    "trio_count": 9,
+    "pairings": [
+      {
+        "trios": [
+          {
+            "game_pk": 823027,
+            "team": 138,
+            "trio_type": "1-2-3",
+            "conservative_prob": 0.2162,
+            "stats_used": [
+              "HRRBI",
+              "HRRBI",
+              "HRRBI"
+            ],
+            "legs": [
+              {
+                "player_id": 802139,
+                "name": "JJ Wetherholt",
+                "slot": 1,
+                "stat": "HRRBI",
+                "threshold": 2
+              },
+              {
+                "player_id": 691023,
+                "name": "Jordan Walker",
+                "slot": 2,
+                "stat": "HRRBI",
+                "threshold": 2
+              },
+              {
+                "player_id": 676475,
+                "name": "Alec Burleson",
+                "slot": 3,
+                "stat": "HRRBI",
+                "threshold": 2
+              }
+            ]
+          },
+          {
+            "game_pk": 823197,
+            "team": 137,
+            "trio_type": "1-2-3",
+            "conservative_prob": 0.2086,
+            "stats_used": [
+              "RUNS",
+              "RUNS",
+              "HRRBI"
+            ],
+            "legs": [
+              {
+                "player_id": 650333,
+                "name": "Luis Arraez",
+                "slot": 1,
+                "stat": "RUNS",
+                "threshold": 1
+              },
+              {
+                "player_id": 671218,
+                "name": "Heliot Ramos",
+                "slot": 2,
+                "stat": "RUNS",
+                "threshold": 1
+              },
+              {
+                "player_id": 805811,
+                "name": "Bryce Eldridge",
+                "slot": 3,
+                "stat": "HRRBI",
+                "threshold": 2
+              }
+            ]
+          }
+        ],
+        "combined_conservative": 0.0451
+      }
+    ]
+  },
+  "gap_filling": {
+    "date": "2026-07-25",
+    "baseline_trio_count": 4,
+    "fallback_trio_count": 8,
+    "baseline_pairing_count": 0,
+    "fallback_pairing_count": 1,
+    "rescued_trio_count": 4,
+    "rescued_trios": [
+      {
+        "game_pk": 823197,
+        "team": 137,
+        "trio_type": "1-2-3",
+        "conservative_prob": 0.2086,
+        "stats_used": [
+          "RUNS",
+          "RUNS",
+          "HRRBI"
+        ],
+        "legs": [
+          {
+            "player_id": 650333,
+            "name": "Luis Arraez",
+            "slot": 1,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 671218,
+            "name": "Heliot Ramos",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 805811,
+            "name": "Bryce Eldridge",
+            "slot": 3,
+            "stat": "HRRBI",
+            "threshold": 2
+          }
+        ]
+      },
+      {
+        "game_pk": 823197,
+        "team": 137,
+        "trio_type": "2-3-4",
+        "conservative_prob": 0.2028,
+        "stats_used": [
+          "RUNS",
+          "HRRBI",
+          "HRRBI"
+        ],
+        "legs": [
+          {
+            "player_id": 671218,
+            "name": "Heliot Ramos",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 805811,
+            "name": "Bryce Eldridge",
+            "slot": 3,
+            "stat": "HRRBI",
+            "threshold": 2
+          },
+          {
+            "player_id": 646240,
+            "name": "Rafael Devers",
+            "slot": 4,
+            "stat": "HRRBI",
+            "threshold": 2
+          }
+        ]
+      },
+      {
+        "game_pk": 822704,
+        "team": 120,
+        "trio_type": "2-3-4",
+        "conservative_prob": 0.1681,
+        "stats_used": [
+          "RUNS",
+          "HRRBI",
+          "HRRBI"
+        ],
+        "legs": [
+          {
+            "player_id": 678554,
+            "name": "Curtis Mead",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 665953,
+            "name": "Andr\u00e9s Chaparro",
+            "slot": 3,
+            "stat": "HRRBI",
+            "threshold": 2
+          },
+          {
+            "player_id": 682928,
+            "name": "CJ Abrams",
+            "slot": 4,
+            "stat": "HRRBI",
+            "threshold": 2
+          }
+        ]
+      },
+      {
+        "game_pk": 823758,
+        "team": 158,
+        "trio_type": "2-3-4",
+        "conservative_prob": 0.1271,
+        "stats_used": [
+          "RUNS",
+          "RUNS",
+          "RUNS"
+        ],
+        "legs": [
+          {
+            "player_id": 694192,
+            "name": "Jackson Chourio",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 668930,
+            "name": "Brice Turang",
+            "slot": 3,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 661388,
+            "name": "William Contreras",
+            "slot": 4,
+            "stat": "RUNS",
+            "threshold": 1
+          }
+        ]
+      }
+    ],
+    "fallback_pairings": [
+      {
+        "trios": [
+          {
+            "game_pk": 823027,
+            "team": 138,
+            "trio_type": "1-2-3",
+            "conservative_prob": 0.2162,
+            "stats_used": [
+              "HRRBI",
+              "HRRBI",
+              "HRRBI"
+            ],
+            "legs": [
+              {
+                "player_id": 802139,
+                "name": "JJ Wetherholt",
+                "slot": 1,
+                "stat": "HRRBI",
+                "threshold": 2
+              },
+              {
+                "player_id": 691023,
+                "name": "Jordan Walker",
+                "slot": 2,
+                "stat": "HRRBI",
+                "threshold": 2
+              },
+              {
+                "player_id": 676475,
+                "name": "Alec Burleson",
+                "slot": 3,
+                "stat": "HRRBI",
+                "threshold": 2
+              }
+            ]
+          },
+          {
+            "game_pk": 823197,
+            "team": 137,
+            "trio_type": "1-2-3",
+            "conservative_prob": 0.2086,
+            "stats_used": [
+              "RUNS",
+              "RUNS",
+              "HRRBI"
+            ],
+            "legs": [
+              {
+                "player_id": 650333,
+                "name": "Luis Arraez",
+                "slot": 1,
+                "stat": "RUNS",
+                "threshold": 1
+              },
+              {
+                "player_id": 671218,
+                "name": "Heliot Ramos",
+                "slot": 2,
+                "stat": "RUNS",
+                "threshold": 1
+              },
+              {
+                "player_id": 805811,
+                "name": "Bryce Eldridge",
+                "slot": 3,
+                "stat": "HRRBI",
+                "threshold": 2
+              }
+            ]
+          }
+        ],
+        "combined_conservative": 0.0451
+      }
+    ]
+  }
+}
