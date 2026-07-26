@@ -1764,6 +1764,275 @@
           "correct": false
         }
       ]
+    },
+    "2026-07-25": {
+      "summary": {
+        "premium": {
+          "total": 0,
+          "correct": 0,
+          "win_rate": 0.0
+        },
+        "strong": {
+          "total": 23,
+          "correct": 16,
+          "win_rate": 69.6
+        }
+      },
+      "plays": [
+        {
+          "player_id": 575929,
+          "name": "Willson Contreras",
+          "team": "Boston Red Sox",
+          "call": "over",
+          "edge": 0.68,
+          "ud_line": 5.5,
+          "actual_ud": 3,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 677800,
+          "name": "Wilyer Abreu",
+          "team": "Boston Red Sox",
+          "call": "under",
+          "edge": -1.38,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 607208,
+          "name": "Trea Turner",
+          "team": "Philadelphia Phillies",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 592663,
+          "name": "J.T. Realmuto",
+          "team": "Philadelphia Phillies",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 5.5,
+          "actual_ud": 9,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 664761,
+          "name": "Alec Bohm",
+          "team": "Philadelphia Phillies",
+          "call": "over",
+          "edge": 0.94,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 641355,
+          "name": "Cody Bellinger",
+          "team": "New York Yankees",
+          "call": "over",
+          "edge": 0.89,
+          "ud_line": 6.5,
+          "actual_ud": 11,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 547180,
+          "name": "Bryce Harper",
+          "team": "Philadelphia Phillies",
+          "call": "over",
+          "edge": 0.38,
+          "ud_line": 6.5,
+          "actual_ud": 2,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 700250,
+          "name": "Ben Rice",
+          "team": "New York Yankees",
+          "call": "under",
+          "edge": -0.71,
+          "ud_line": 7.5,
+          "actual_ud": 0,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 656941,
+          "name": "Kyle Schwarber",
+          "team": "Philadelphia Phillies",
+          "call": "over",
+          "edge": 0.16,
+          "ud_line": 6.5,
+          "actual_ud": 9,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 502671,
+          "name": "Paul Goldschmidt",
+          "team": "New York Yankees",
+          "call": "over",
+          "edge": 0.56,
+          "ud_line": 5.5,
+          "actual_ud": 6,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 663757,
+          "name": "Trent Grisham",
+          "team": "New York Yankees",
+          "call": "under",
+          "edge": -0.76,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 691176,
+          "name": "Jasson Dom\u00ednguez",
+          "team": "New York Yankees",
+          "call": "under",
+          "edge": -1.16,
+          "ud_line": 6.5,
+          "actual_ud": 14,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 676609,
+          "name": "Jos\u00e9 Caballero",
+          "team": "New York Yankees",
+          "call": "under",
+          "edge": -0.56,
+          "ud_line": 5.5,
+          "actual_ud": 3,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 691406,
+          "name": "Junior Caminero",
+          "team": "Tampa Bay Rays",
+          "call": "over",
+          "edge": 0.47,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 656775,
+          "name": "Cedric Mullins",
+          "team": "Tampa Bay Rays",
+          "call": "over",
+          "edge": 0.89,
+          "ud_line": 5.5,
+          "actual_ud": 2,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 699013,
+          "name": "Esmerlyn Valdez",
+          "team": "Pittsburgh Pirates",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 5.5,
+          "actual_ud": 6,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 668804,
+          "name": "Bryan Reynolds",
+          "team": "Pittsburgh Pirates",
+          "call": "over",
+          "edge": 0.16,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 671739,
+          "name": "Michael Harris II",
+          "team": "Atlanta Braves",
+          "call": "over",
+          "edge": 0.78,
+          "ud_line": 6.5,
+          "actual_ud": 6,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 621566,
+          "name": "Matt Olson",
+          "team": "Atlanta Braves",
+          "call": "under",
+          "edge": -0.4,
+          "ud_line": 6.5,
+          "actual_ud": 5,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 696100,
+          "name": "Hunter Goodman",
+          "team": "Colorado Rockies",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 7,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 694249,
+          "name": "Cole Carrigg",
+          "team": "Colorado Rockies",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 5.5,
+          "actual_ud": 11,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 676475,
+          "name": "Alec Burleson",
+          "team": "St. Louis Cardinals",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 13,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 671056,
+          "name": "Iv\u00e1n Herrera",
+          "team": "St. Louis Cardinals",
+          "call": "over",
+          "edge": 1.92,
+          "ud_line": 5.5,
+          "actual_ud": 15,
+          "tier": "strong",
+          "correct": true
+        }
+      ]
     }
   },
   "record": {
@@ -1772,8 +2041,8 @@
       "losses": 9
     },
     "strong": {
-      "wins": 69,
-      "losses": 61
+      "wins": 85,
+      "losses": 68
     }
   }
 }

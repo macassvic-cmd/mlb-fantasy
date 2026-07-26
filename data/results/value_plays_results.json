@@ -3118,6 +3118,99 @@
           "correct": false
         }
       ]
+    },
+    "2026-07-25": {
+      "summary": {
+        "total": 8,
+        "correct": 7,
+        "accuracy": 87.5,
+        "over_total": 4,
+        "over_correct": 3,
+        "under_total": 4,
+        "under_correct": 4
+      },
+      "plays": [
+        {
+          "player_id": 678554,
+          "name": "Curtis Mead",
+          "team": "Washington Nationals",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "correct": true
+        },
+        {
+          "player_id": 682928,
+          "name": "CJ Abrams",
+          "team": "Washington Nationals",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 31,
+          "correct": true
+        },
+        {
+          "player_id": 686611,
+          "name": "Dylan Crews",
+          "team": "Washington Nationals",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 11,
+          "correct": true
+        },
+        {
+          "player_id": 683083,
+          "name": "Nasim Nu\u00f1ez",
+          "team": "Washington Nationals",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 6,
+          "correct": false
+        },
+        {
+          "player_id": 805808,
+          "name": "Kevin McGonigle",
+          "team": "Detroit Tigers",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 0,
+          "correct": true
+        },
+        {
+          "player_id": 606466,
+          "name": "Ketel Marte",
+          "team": "Arizona Diamondbacks",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 0,
+          "correct": true
+        },
+        {
+          "player_id": 682998,
+          "name": "Corbin Carroll",
+          "team": "Arizona Diamondbacks",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 5,
+          "correct": true
+        },
+        {
+          "player_id": 687263,
+          "name": "Zach Neto",
+          "team": "Los Angeles Angels",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 3,
+          "correct": true
+        }
+      ]
     }
   }
 }

@@ -1152,20 +1152,117 @@
           "fully_graded": true
         }
       ]
+    },
+    "2026-07-25": {
+      "pairings": [
+        {
+          "combined_conservative": 0.05099,
+          "combined_optimistic": 0.07017,
+          "ev_conservative": 0.53,
+          "ev_optimistic": 1.105,
+          "playable": true,
+          "trios": [
+            {
+              "game_pk": 823197,
+              "team": "San Francisco Giants",
+              "opp_team": "Los Angeles Angels",
+              "venue": "Oracle Park",
+              "opp_era": 6.1,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 671218,
+                  "name": "Heliot Ramos",
+                  "order": 2,
+                  "leg_prob": 0.5842,
+                  "game_time_pt": "1:05 PM PT",
+                  "game_date_utc": "2026-07-25T20:05:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 805811,
+                  "name": "Bryce Eldridge",
+                  "order": 3,
+                  "leg_prob": 0.5665,
+                  "game_time_pt": "1:05 PM PT",
+                  "game_date_utc": "2026-07-25T20:05:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 646240,
+                  "name": "Rafael Devers",
+                  "order": 4,
+                  "leg_prob": 0.5665,
+                  "game_time_pt": "1:05 PM PT",
+                  "game_date_utc": "2026-07-25T20:05:00Z",
+                  "actual_hit": true
+                }
+              ],
+              "conservative_prob": 0.2258,
+              "optimistic_prob": 0.2649,
+              "trio_hit": false,
+              "fully_graded": true
+            },
+            {
+              "game_pk": 823027,
+              "team": "St. Louis Cardinals",
+              "opp_team": "Cincinnati Reds",
+              "venue": "Busch Stadium",
+              "opp_era": 6.06,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 691023,
+                  "name": "Jordan Walker",
+                  "order": 2,
+                  "leg_prob": 0.5842,
+                  "game_time_pt": "4:15 PM PT",
+                  "game_date_utc": "2026-07-25T23:15:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 676475,
+                  "name": "Alec Burleson",
+                  "order": 3,
+                  "leg_prob": 0.5665,
+                  "game_time_pt": "4:15 PM PT",
+                  "game_date_utc": "2026-07-25T23:15:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 671056,
+                  "name": "Iv\u00e1n Herrera",
+                  "order": 4,
+                  "leg_prob": 0.5665,
+                  "game_time_pt": "4:15 PM PT",
+                  "game_date_utc": "2026-07-25T23:15:00Z",
+                  "actual_hit": true
+                }
+              ],
+              "conservative_prob": 0.2258,
+              "optimistic_prob": 0.2649,
+              "trio_hit": true,
+              "fully_graded": true
+            }
+          ],
+          "full6_hit": false,
+          "fully_graded": true
+        }
+      ]
     }
   },
   "record": {
     "legs": {
-      "wins": 39,
-      "losses": 30
+      "wins": 44,
+      "losses": 31
     },
     "trios": {
-      "wins": 6,
-      "losses": 15
+      "wins": 7,
+      "losses": 16
     },
     "full6": {
       "wins": 0,
-      "losses": 9
+      "losses": 10
     }
   }
 }
