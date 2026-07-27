@@ -1,0 +1,248 @@
+{
+  "date": "2026-07-27",
+  "pairings": [
+    {
+      "trios": [
+        {
+          "game_pk": 824977,
+          "team": "Boston Red Sox",
+          "opp_team": "Athletics",
+          "venue": "Sutter Health Park",
+          "opp_era": 6.75,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 678882,
+              "name": "Ceddanne Rafaela",
+              "order": 2,
+              "leg_prob": 0.5842,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-07-28T01:40:00Z"
+            },
+            {
+              "player_id": 677800,
+              "name": "Wilyer Abreu",
+              "order": 3,
+              "leg_prob": 0.5665,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-07-28T01:40:00Z"
+            },
+            {
+              "player_id": 575929,
+              "name": "Willson Contreras",
+              "order": 4,
+              "leg_prob": 0.5665,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-07-28T01:40:00Z"
+            }
+          ],
+          "conservative_prob": 0.2258,
+          "optimistic_prob": 0.2649
+        },
+        {
+          "game_pk": 822705,
+          "team": "Washington Nationals",
+          "opp_team": "Toronto Blue Jays",
+          "venue": "Nationals Park",
+          "opp_era": 10.23,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 665953,
+              "name": "Andr\u00e9s Chaparro",
+              "order": 2,
+              "leg_prob": 0.5842,
+              "game_time_pt": "3:45 PM PT",
+              "game_date_utc": "2026-07-27T22:45:00Z"
+            },
+            {
+              "player_id": 686611,
+              "name": "Dylan Crews",
+              "order": 3,
+              "leg_prob": 0.5665,
+              "game_time_pt": "3:45 PM PT",
+              "game_date_utc": "2026-07-27T22:45:00Z"
+            },
+            {
+              "player_id": 682928,
+              "name": "CJ Abrams",
+              "order": 4,
+              "leg_prob": 0.5665,
+              "game_time_pt": "3:45 PM PT",
+              "game_date_utc": "2026-07-27T22:45:00Z"
+            }
+          ],
+          "conservative_prob": 0.2258,
+          "optimistic_prob": 0.2649
+        }
+      ],
+      "combined_conservative": 0.05099,
+      "combined_optimistic": 0.07017,
+      "ev_conservative": 0.53,
+      "ev_optimistic": 1.105,
+      "playable": true
+    },
+    {
+      "trios": [
+        {
+          "game_pk": 824570,
+          "team": "New York Yankees",
+          "opp_team": "Chicago White Sox",
+          "venue": "Rate Field",
+          "opp_era": 6.04,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 700250,
+              "name": "Ben Rice",
+              "order": 2,
+              "leg_prob": 0.5842,
+              "game_time_pt": "4:40 PM PT",
+              "game_date_utc": "2026-07-27T23:40:00Z"
+            },
+            {
+              "player_id": 642708,
+              "name": "Amed Rosario",
+              "order": 3,
+              "leg_prob": 0.5665,
+              "game_time_pt": "4:40 PM PT",
+              "game_date_utc": "2026-07-27T23:40:00Z"
+            },
+            {
+              "player_id": 691176,
+              "name": "Jasson Dom\u00ednguez",
+              "order": 4,
+              "leg_prob": 0.5665,
+              "game_time_pt": "4:40 PM PT",
+              "game_date_utc": "2026-07-27T23:40:00Z"
+            }
+          ],
+          "conservative_prob": 0.2258,
+          "optimistic_prob": 0.2649
+        },
+        {
+          "game_pk": 823025,
+          "team": "St. Louis Cardinals",
+          "opp_team": "Chicago Cubs",
+          "venue": "Busch Stadium",
+          "opp_era": 5.97,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 691023,
+              "name": "Jordan Walker",
+              "order": 2,
+              "leg_prob": 0.5842,
+              "game_time_pt": "4:45 PM PT",
+              "game_date_utc": "2026-07-27T23:45:00Z"
+            },
+            {
+              "player_id": 671056,
+              "name": "Iv\u00e1n Herrera",
+              "order": 3,
+              "leg_prob": 0.5665,
+              "game_time_pt": "4:45 PM PT",
+              "game_date_utc": "2026-07-27T23:45:00Z"
+            },
+            {
+              "player_id": 676475,
+              "name": "Alec Burleson",
+              "order": 4,
+              "leg_prob": 0.5665,
+              "game_time_pt": "4:45 PM PT",
+              "game_date_utc": "2026-07-27T23:45:00Z"
+            }
+          ],
+          "conservative_prob": 0.2258,
+          "optimistic_prob": 0.2649
+        }
+      ],
+      "combined_conservative": 0.05099,
+      "combined_optimistic": 0.07017,
+      "ev_conservative": 0.53,
+      "ev_optimistic": 1.105,
+      "playable": true
+    },
+    {
+      "trios": [
+        {
+          "game_pk": 824001,
+          "team": "Los Angeles Angels",
+          "opp_team": "Houston Astros",
+          "venue": "Angel Stadium",
+          "opp_era": 5.59,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 545361,
+              "name": "Mike Trout",
+              "order": 2,
+              "leg_prob": 0.5842,
+              "game_time_pt": "6:38 PM PT",
+              "game_date_utc": "2026-07-28T01:38:00Z"
+            },
+            {
+              "player_id": 687093,
+              "name": "Vaughn Grissom",
+              "order": 3,
+              "leg_prob": 0.5665,
+              "game_time_pt": "6:38 PM PT",
+              "game_date_utc": "2026-07-28T01:38:00Z"
+            },
+            {
+              "player_id": 624585,
+              "name": "Jorge Soler",
+              "order": 4,
+              "leg_prob": 0.5665,
+              "game_time_pt": "6:38 PM PT",
+              "game_date_utc": "2026-07-28T01:38:00Z"
+            }
+          ],
+          "conservative_prob": 0.2258,
+          "optimistic_prob": 0.2649
+        },
+        {
+          "game_pk": 823353,
+          "team": "Arizona Diamondbacks",
+          "opp_team": "Pittsburgh Pirates",
+          "venue": "PNC Park",
+          "opp_era": 4.9,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 672695,
+              "name": "Geraldo Perdomo",
+              "order": 2,
+              "leg_prob": 0.5567,
+              "game_time_pt": "3:40 PM PT",
+              "game_date_utc": "2026-07-27T22:40:00Z"
+            },
+            {
+              "player_id": 672515,
+              "name": "Gabriel Moreno",
+              "order": 3,
+              "leg_prob": 0.5638,
+              "game_time_pt": "3:40 PM PT",
+              "game_date_utc": "2026-07-27T22:40:00Z"
+            },
+            {
+              "player_id": 606466,
+              "name": "Ketel Marte",
+              "order": 4,
+              "leg_prob": 0.5638,
+              "game_time_pt": "3:40 PM PT",
+              "game_date_utc": "2026-07-27T22:40:00Z"
+            }
+          ],
+          "conservative_prob": 0.2131,
+          "optimistic_prob": 0.2501
+        }
+      ],
+      "combined_conservative": 0.04812,
+      "combined_optimistic": 0.06625,
+      "ev_conservative": 0.444,
+      "ev_optimistic": 0.988,
+      "playable": true
+    }
+  ]
+}
