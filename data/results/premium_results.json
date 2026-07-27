@@ -2033,16 +2033,263 @@
           "correct": true
         }
       ]
+    },
+    "2026-07-26": {
+      "summary": {
+        "premium": {
+          "total": 4,
+          "correct": 2,
+          "win_rate": 50.0
+        },
+        "strong": {
+          "total": 17,
+          "correct": 8,
+          "win_rate": 47.1
+        }
+      },
+      "plays": [
+        {
+          "player_id": 672960,
+          "name": "Kazuma Okamoto",
+          "team": "Toronto Blue Jays",
+          "call": "under",
+          "edge": -1.72,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "tier": "premium",
+          "correct": true
+        },
+        {
+          "player_id": 671056,
+          "name": "Iv\u00e1n Herrera",
+          "team": "St. Louis Cardinals",
+          "call": "under",
+          "edge": -1.63,
+          "ud_line": 6.5,
+          "actual_ud": 17,
+          "tier": "premium",
+          "correct": false
+        },
+        {
+          "player_id": 805811,
+          "name": "Bryce Eldridge",
+          "team": "San Francisco Giants",
+          "call": "under",
+          "edge": -1.74,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "tier": "premium",
+          "correct": true
+        },
+        {
+          "player_id": 502671,
+          "name": "Paul Goldschmidt",
+          "team": "New York Yankees",
+          "call": "under",
+          "edge": -1.97,
+          "ud_line": 5.5,
+          "actual_ud": 6,
+          "tier": "premium",
+          "correct": false
+        },
+        {
+          "player_id": 676356,
+          "name": "Jonny DeLuca",
+          "team": "Tampa Bay Rays",
+          "call": "over",
+          "edge": 0.47,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 691406,
+          "name": "Junior Caminero",
+          "team": "Tampa Bay Rays",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 575929,
+          "name": "Willson Contreras",
+          "team": "Boston Red Sox",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 5,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 671739,
+          "name": "Michael Harris II",
+          "team": "Atlanta Braves",
+          "call": "over",
+          "edge": 1.38,
+          "ud_line": 6.5,
+          "actual_ud": 5,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 699013,
+          "name": "Esmerlyn Valdez",
+          "team": "Pittsburgh Pirates",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 5.5,
+          "actual_ud": 24,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 677800,
+          "name": "Wilyer Abreu",
+          "team": "Boston Red Sox",
+          "call": "over",
+          "edge": 0.82,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 621566,
+          "name": "Matt Olson",
+          "team": "Atlanta Braves",
+          "call": "over",
+          "edge": 0.6,
+          "ud_line": 6.5,
+          "actual_ud": 11,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 668804,
+          "name": "Bryan Reynolds",
+          "team": "Pittsburgh Pirates",
+          "call": "under",
+          "edge": -0.39,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 676475,
+          "name": "Alec Burleson",
+          "team": "St. Louis Cardinals",
+          "call": "over",
+          "edge": 0.29,
+          "ud_line": 6.5,
+          "actual_ud": 16,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 607208,
+          "name": "Trea Turner",
+          "team": "Philadelphia Phillies",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 17,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 592663,
+          "name": "J.T. Realmuto",
+          "team": "Philadelphia Phillies",
+          "call": "over",
+          "edge": 1.14,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 656941,
+          "name": "Kyle Schwarber",
+          "team": "Philadelphia Phillies",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 15,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 664761,
+          "name": "Alec Bohm",
+          "team": "Philadelphia Phillies",
+          "call": "over",
+          "edge": 0.87,
+          "ud_line": 5.5,
+          "actual_ud": 21,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 547180,
+          "name": "Bryce Harper",
+          "team": "Philadelphia Phillies",
+          "call": "under",
+          "edge": -1.14,
+          "ud_line": 6.5,
+          "actual_ud": 15,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 681082,
+          "name": "Bryson Stott",
+          "team": "Philadelphia Phillies",
+          "call": "under",
+          "edge": -0.25,
+          "ud_line": 5.5,
+          "actual_ud": 31,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 700250,
+          "name": "Ben Rice",
+          "team": "New York Yankees",
+          "call": "under",
+          "edge": -1.51,
+          "ud_line": 5.5,
+          "actual_ud": 22,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 676609,
+          "name": "Jos\u00e9 Caballero",
+          "team": "New York Yankees",
+          "call": "under",
+          "edge": -1.88,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "tier": "strong",
+          "correct": true
+        }
+      ]
     }
   },
   "record": {
     "premium": {
-      "wins": 7,
-      "losses": 9
+      "wins": 9,
+      "losses": 11
     },
     "strong": {
-      "wins": 85,
-      "losses": 68
+      "wins": 93,
+      "losses": 77
     }
   }
 }

@@ -1249,15 +1249,205 @@
           "fully_graded": true
         }
       ]
+    },
+    "2026-07-26": {
+      "pairings": [
+        {
+          "combined_conservative": 0.05099,
+          "combined_optimistic": 0.07017,
+          "ev_conservative": 0.53,
+          "ev_optimistic": 1.105,
+          "playable": true,
+          "trios": [
+            {
+              "game_pk": 822706,
+              "team": "Arizona Diamondbacks",
+              "opp_team": "Washington Nationals",
+              "venue": "Nationals Park",
+              "opp_era": 5.6,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 672695,
+                  "name": "Geraldo Perdomo",
+                  "order": 2,
+                  "leg_prob": 0.5842,
+                  "game_time_pt": "10:35 AM PT",
+                  "game_date_utc": "2026-07-26T17:35:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 672515,
+                  "name": "Gabriel Moreno",
+                  "order": 3,
+                  "leg_prob": 0.5665,
+                  "game_time_pt": "10:35 AM PT",
+                  "game_date_utc": "2026-07-26T17:35:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 606466,
+                  "name": "Ketel Marte",
+                  "order": 4,
+                  "leg_prob": 0.5665,
+                  "game_time_pt": "10:35 AM PT",
+                  "game_date_utc": "2026-07-26T17:35:00Z",
+                  "actual_hit": true
+                }
+              ],
+              "conservative_prob": 0.2258,
+              "optimistic_prob": 0.2649,
+              "trio_hit": true,
+              "fully_graded": true
+            },
+            {
+              "game_pk": 823678,
+              "team": "Minnesota Twins",
+              "opp_team": "Athletics",
+              "venue": "Target Field",
+              "opp_era": 5.96,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 621439,
+                  "name": "Byron Buxton",
+                  "order": 2,
+                  "leg_prob": 0.5842,
+                  "game_time_pt": "11:10 AM PT",
+                  "game_date_utc": "2026-07-26T18:10:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 665019,
+                  "name": "Kody Clemens",
+                  "order": 3,
+                  "leg_prob": 0.5665,
+                  "game_time_pt": "11:10 AM PT",
+                  "game_date_utc": "2026-07-26T18:10:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 605137,
+                  "name": "Josh Bell",
+                  "order": 4,
+                  "leg_prob": 0.5665,
+                  "game_time_pt": "11:10 AM PT",
+                  "game_date_utc": "2026-07-26T18:10:00Z",
+                  "actual_hit": null
+                }
+              ],
+              "conservative_prob": 0.2258,
+              "optimistic_prob": 0.2649,
+              "trio_hit": false,
+              "fully_graded": false
+            }
+          ],
+          "full6_hit": false,
+          "fully_graded": false
+        },
+        {
+          "combined_conservative": 0.05099,
+          "combined_optimistic": 0.07017,
+          "ev_conservative": 0.53,
+          "ev_optimistic": 1.105,
+          "playable": true,
+          "trios": [
+            {
+              "game_pk": 823755,
+              "team": "Milwaukee Brewers",
+              "opp_team": "Colorado Rockies",
+              "venue": "American Family Field",
+              "opp_era": 7.28,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 694192,
+                  "name": "Jackson Chourio",
+                  "order": 2,
+                  "leg_prob": 0.5842,
+                  "game_time_pt": "11:10 AM PT",
+                  "game_date_utc": "2026-07-26T18:10:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 668930,
+                  "name": "Brice Turang",
+                  "order": 3,
+                  "leg_prob": 0.5665,
+                  "game_time_pt": "11:10 AM PT",
+                  "game_date_utc": "2026-07-26T18:10:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 661388,
+                  "name": "William Contreras",
+                  "order": 4,
+                  "leg_prob": 0.5665,
+                  "game_time_pt": "11:10 AM PT",
+                  "game_date_utc": "2026-07-26T18:10:00Z",
+                  "actual_hit": true
+                }
+              ],
+              "conservative_prob": 0.2258,
+              "optimistic_prob": 0.2649,
+              "trio_hit": true,
+              "fully_graded": true
+            },
+            {
+              "game_pk": 824572,
+              "team": "Chicago White Sox",
+              "opp_team": "Houston Astros",
+              "venue": "Rate Field",
+              "opp_era": 7.71,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 808959,
+                  "name": "Munetaka Murakami",
+                  "order": 2,
+                  "leg_prob": 0.5842,
+                  "game_time_pt": "11:10 AM PT",
+                  "game_date_utc": "2026-07-26T18:10:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 678246,
+                  "name": "Miguel Vargas",
+                  "order": 3,
+                  "leg_prob": 0.5665,
+                  "game_time_pt": "11:10 AM PT",
+                  "game_date_utc": "2026-07-26T18:10:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 695657,
+                  "name": "Colson Montgomery",
+                  "order": 4,
+                  "leg_prob": 0.5665,
+                  "game_time_pt": "11:10 AM PT",
+                  "game_date_utc": "2026-07-26T18:10:00Z",
+                  "actual_hit": null
+                }
+              ],
+              "conservative_prob": 0.2258,
+              "optimistic_prob": 0.2649,
+              "trio_hit": false,
+              "fully_graded": false
+            }
+          ],
+          "full6_hit": false,
+          "fully_graded": false
+        }
+      ]
     }
   },
   "record": {
     "legs": {
-      "wins": 44,
-      "losses": 31
+      "wins": 53,
+      "losses": 32
     },
     "trios": {
-      "wins": 7,
+      "wins": 9,
       "losses": 16
     },
     "full6": {
