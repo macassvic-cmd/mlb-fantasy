@@ -13242,7 +13242,88 @@
     "2026-07-23": {},
     "2026-07-24": {},
     "2026-07-25": {},
-    "2026-07-26": {}
+    "2026-07-26": {},
+    "2026-07-27": {
+      "ud_6": [
+        {
+          "rank": 1,
+          "legs": [
+            {
+              "player_id": 547180,
+              "name": "Bryce Harper",
+              "team": "Philadelphia Phillies",
+              "venue": "loanDepot park",
+              "platform": "ud",
+              "call": "under",
+              "line": 7.5,
+              "edge": -1.93,
+              "win_prob": 0.6865,
+              "game_time_pt": "3:40 PM PT",
+              "game_date_utc": "2026-07-27T22:40:00Z",
+              "opp_sp": "Tyler Phillips",
+              "opp_era": 3.52,
+              "actual": 24,
+              "result": "loss"
+            },
+            {
+              "player_id": 666182,
+              "name": "Bo Bichette",
+              "team": "New York Mets",
+              "venue": "Citi Field",
+              "platform": "ud",
+              "call": "under",
+              "line": 6.5,
+              "edge": -1.69,
+              "win_prob": 0.6865,
+              "game_time_pt": "4:10 PM PT",
+              "game_date_utc": "2026-07-27T23:10:00Z",
+              "opp_sp": "Mart\u00edn P\u00e9rez",
+              "opp_era": 3.38,
+              "actual": 11,
+              "result": "loss"
+            },
+            {
+              "player_id": 669364,
+              "name": "Xavier Edwards",
+              "team": "Miami Marlins",
+              "venue": "loanDepot park",
+              "platform": "ud",
+              "call": "under",
+              "line": 5.5,
+              "edge": -1.88,
+              "win_prob": 0.6865,
+              "game_time_pt": "3:40 PM PT",
+              "game_date_utc": "2026-07-27T22:40:00Z",
+              "opp_sp": "Zack Wheeler",
+              "opp_era": 2.16,
+              "actual": 6,
+              "result": "loss"
+            },
+            {
+              "player_id": 621566,
+              "name": "Matt Olson",
+              "team": "Atlanta Braves",
+              "venue": "Citi Field",
+              "platform": "ud",
+              "call": "under",
+              "line": 5.5,
+              "edge": -1.91,
+              "win_prob": 0.6865,
+              "game_time_pt": "4:10 PM PT",
+              "game_date_utc": "2026-07-27T23:10:00Z",
+              "opp_sp": "Zac Thornton",
+              "opp_era": 1.93,
+              "actual": 5,
+              "result": "win"
+            }
+          ],
+          "legs_correct": 1,
+          "legs_graded": 4,
+          "slip_win": false,
+          "combined_prob": 0.104675
+        }
+      ]
+    }
   },
   "records": {
     "ud_8_1": {
@@ -13268,10 +13349,10 @@
     },
     "ud_6_1": {
       "wins": 0,
-      "losses": 12,
-      "legs_win": 35,
-      "legs_total": 65,
-      "expected_wins": 0.608507
+      "losses": 13,
+      "legs_win": 36,
+      "legs_total": 69,
+      "expected_wins": 0.713182
     },
     "ud_6_2": {
       "wins": 0,

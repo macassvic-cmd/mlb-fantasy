@@ -2280,16 +2280,153 @@
           "correct": true
         }
       ]
+    },
+    "2026-07-27": {
+      "summary": {
+        "premium": {
+          "total": 4,
+          "correct": 1,
+          "win_rate": 25.0
+        },
+        "strong": {
+          "total": 7,
+          "correct": 2,
+          "win_rate": 28.6
+        }
+      },
+      "plays": [
+        {
+          "player_id": 547180,
+          "name": "Bryce Harper",
+          "team": "Philadelphia Phillies",
+          "call": "under",
+          "edge": -1.93,
+          "ud_line": 7.5,
+          "actual_ud": 24,
+          "tier": "premium",
+          "correct": false
+        },
+        {
+          "player_id": 669364,
+          "name": "Xavier Edwards",
+          "team": "Miami Marlins",
+          "call": "under",
+          "edge": -1.88,
+          "ud_line": 5.5,
+          "actual_ud": 6,
+          "tier": "premium",
+          "correct": false
+        },
+        {
+          "player_id": 666182,
+          "name": "Bo Bichette",
+          "team": "New York Mets",
+          "call": "under",
+          "edge": -1.69,
+          "ud_line": 6.5,
+          "actual_ud": 11,
+          "tier": "premium",
+          "correct": false
+        },
+        {
+          "player_id": 621566,
+          "name": "Matt Olson",
+          "team": "Atlanta Braves",
+          "call": "under",
+          "edge": -1.91,
+          "ud_line": 5.5,
+          "actual_ud": 5,
+          "tier": "premium",
+          "correct": true
+        },
+        {
+          "player_id": 699013,
+          "name": "Esmerlyn Valdez",
+          "team": "Pittsburgh Pirates",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 668804,
+          "name": "Bryan Reynolds",
+          "team": "Pittsburgh Pirates",
+          "call": "under",
+          "edge": -0.69,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 671739,
+          "name": "Michael Harris II",
+          "team": "Atlanta Braves",
+          "call": "under",
+          "edge": -1.4,
+          "ud_line": 5.5,
+          "actual_ud": 3,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 676475,
+          "name": "Alec Burleson",
+          "team": "St. Louis Cardinals",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 671056,
+          "name": "Iv\u00e1n Herrera",
+          "team": "St. Louis Cardinals",
+          "call": "over",
+          "edge": 1.97,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 677800,
+          "name": "Wilyer Abreu",
+          "team": "Boston Red Sox",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 5,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 575929,
+          "name": "Willson Contreras",
+          "team": "Boston Red Sox",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "tier": "strong",
+          "correct": true
+        }
+      ]
     }
   },
   "record": {
     "premium": {
-      "wins": 9,
-      "losses": 11
+      "wins": 10,
+      "losses": 14
     },
     "strong": {
-      "wins": 93,
-      "losses": 77
+      "wins": 95,
+      "losses": 82
     }
   }
 }

@@ -1293,6 +1293,381 @@
           ]
         }
       ]
+    },
+    "2026-07-27": {
+      "mixed_market_pairings": [],
+      "gap_filling_rescued_trios": [
+        {
+          "game_pk": 824570,
+          "team": 147,
+          "trio_type": "1-2-3",
+          "conservative_prob": 0.2086,
+          "stats_used": [
+            "RUNS",
+            "RUNS",
+            "HRRBI"
+          ],
+          "legs": [
+            {
+              "player_id": 502671,
+              "name": "Paul Goldschmidt",
+              "slot": 1,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 700250,
+              "name": "Ben Rice",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 642708,
+              "name": "Amed Rosario",
+              "slot": 3,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": true
+            }
+          ]
+        },
+        {
+          "game_pk": 824570,
+          "team": 147,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.2028,
+          "stats_used": [
+            "RUNS",
+            "HRRBI",
+            "HRRBI"
+          ],
+          "legs": [
+            {
+              "player_id": 700250,
+              "name": "Ben Rice",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 642708,
+              "name": "Amed Rosario",
+              "slot": 3,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": true
+            },
+            {
+              "player_id": 691176,
+              "name": "Jasson Dom\u00ednguez",
+              "slot": 4,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": true
+            }
+          ]
+        },
+        {
+          "game_pk": 823025,
+          "team": 138,
+          "trio_type": "1-2-3",
+          "conservative_prob": 0.1878,
+          "stats_used": [
+            "RUNS",
+            "RUNS",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 802139,
+              "name": "JJ Wetherholt",
+              "slot": 1,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 691023,
+              "name": "Jordan Walker",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 671056,
+              "name": "Iv\u00e1n Herrera",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            }
+          ]
+        },
+        {
+          "game_pk": 823025,
+          "team": 138,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1791,
+          "stats_used": [
+            "RUNS",
+            "RUNS",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 691023,
+              "name": "Jordan Walker",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 671056,
+              "name": "Iv\u00e1n Herrera",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 676475,
+              "name": "Alec Burleson",
+              "slot": 4,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            }
+          ]
+        },
+        {
+          "game_pk": 823195,
+          "team": 137,
+          "trio_type": "1-2-3",
+          "conservative_prob": 0.1675,
+          "stats_used": [
+            "RUNS",
+            "HRRBI",
+            "HRRBI"
+          ],
+          "legs": [
+            {
+              "player_id": 650333,
+              "name": "Luis Arraez",
+              "slot": 1,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 671218,
+              "name": "Heliot Ramos",
+              "slot": 2,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            },
+            {
+              "player_id": 805811,
+              "name": "Bryce Eldridge",
+              "slot": 3,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            }
+          ]
+        },
+        {
+          "game_pk": 823195,
+          "team": 158,
+          "trio_type": "1-2-3",
+          "conservative_prob": 0.1639,
+          "stats_used": [
+            "RUNS",
+            "RUNS",
+            "HRRBI"
+          ],
+          "legs": [
+            {
+              "player_id": 694192,
+              "name": "Jackson Chourio",
+              "slot": 1,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 668930,
+              "name": "Brice Turang",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 683734,
+              "name": "Andrew Vaughn",
+              "slot": 3,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            }
+          ]
+        },
+        {
+          "game_pk": 823353,
+          "team": 134,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1529,
+          "stats_used": [
+            "RUNS",
+            "RUNS",
+            "HRRBI"
+          ],
+          "legs": [
+            {
+              "player_id": 664040,
+              "name": "Brandon Lowe",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 668804,
+              "name": "Bryan Reynolds",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 699013,
+              "name": "Esmerlyn Valdez",
+              "slot": 4,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            }
+          ]
+        },
+        {
+          "game_pk": 823195,
+          "team": 158,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1368,
+          "stats_used": [
+            "RUNS",
+            "HRRBI",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 668930,
+              "name": "Brice Turang",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 683734,
+              "name": "Andrew Vaughn",
+              "slot": 3,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            },
+            {
+              "player_id": 661388,
+              "name": "William Contreras",
+              "slot": 4,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            }
+          ]
+        },
+        {
+          "game_pk": 823353,
+          "team": 134,
+          "trio_type": "1-2-3",
+          "conservative_prob": 0.1363,
+          "stats_used": [
+            "RUNS",
+            "RUNS",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 663968,
+              "name": "Jake Mangum",
+              "slot": 1,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 664040,
+              "name": "Brandon Lowe",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 668804,
+              "name": "Bryan Reynolds",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            }
+          ]
+        },
+        {
+          "game_pk": 823353,
+          "team": 109,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1271,
+          "stats_used": [
+            "RUNS",
+            "RUNS",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 672695,
+              "name": "Geraldo Perdomo",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 672515,
+              "name": "Gabriel Moreno",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 606466,
+              "name": "Ketel Marte",
+              "slot": 4,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            }
+          ]
+        }
+      ]
     }
   },
   "record": {
@@ -1310,9 +1685,9 @@
     }
   },
   "gap_filling_record": {
-    "rescue_fire_count": 32,
-    "days_tracked": 5,
-    "rescued_trio_legs_graded": 61,
-    "rescued_trio_legs_hit": 24
+    "rescue_fire_count": 42,
+    "days_tracked": 6,
+    "rescued_trio_legs_graded": 83,
+    "rescued_trio_legs_hit": 33
   }
 }
