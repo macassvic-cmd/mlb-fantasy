@@ -1,0 +1,248 @@
+{
+  "date": "2026-07-28",
+  "pairings": [
+    {
+      "trios": [
+        {
+          "game_pk": 823275,
+          "team": "San Diego Padres",
+          "opp_team": "Colorado Rockies",
+          "venue": "Petco Park",
+          "opp_era": 6.53,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 630105,
+              "name": "Jake Cronenworth",
+              "order": 2,
+              "leg_prob": 0.5965,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-07-29T01:40:00Z"
+            },
+            {
+              "player_id": 592518,
+              "name": "Manny Machado",
+              "order": 3,
+              "leg_prob": 0.5799,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-07-29T01:40:00Z"
+            },
+            {
+              "player_id": 664034,
+              "name": "Ty France",
+              "order": 4,
+              "leg_prob": 0.5799,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-07-29T01:40:00Z"
+            }
+          ],
+          "conservative_prob": 0.27,
+          "optimistic_prob": 0.3142
+        },
+        {
+          "game_pk": 823838,
+          "team": "Miami Marlins",
+          "opp_team": "Philadelphia Phillies",
+          "venue": "loanDepot park",
+          "opp_era": 5.82,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 669065,
+              "name": "Kyle Stowers",
+              "order": 2,
+              "leg_prob": 0.5965,
+              "game_time_pt": "3:40 PM PT",
+              "game_date_utc": "2026-07-28T22:40:00Z"
+            },
+            {
+              "player_id": 681715,
+              "name": "Heriberto Hern\u00e1ndez",
+              "order": 3,
+              "leg_prob": 0.5799,
+              "game_time_pt": "3:40 PM PT",
+              "game_date_utc": "2026-07-28T22:40:00Z"
+            },
+            {
+              "player_id": 669364,
+              "name": "Xavier Edwards",
+              "order": 4,
+              "leg_prob": 0.5799,
+              "game_time_pt": "3:40 PM PT",
+              "game_date_utc": "2026-07-28T22:40:00Z"
+            }
+          ],
+          "conservative_prob": 0.27,
+          "optimistic_prob": 0.3142
+        }
+      ],
+      "combined_conservative": 0.0729,
+      "combined_optimistic": 0.09872,
+      "ev_conservative": 1.187,
+      "ev_optimistic": 1.962,
+      "playable": true
+    },
+    {
+      "trios": [
+        {
+          "game_pk": 823275,
+          "team": "San Diego Padres",
+          "opp_team": "Colorado Rockies",
+          "venue": "Petco Park",
+          "opp_era": 6.53,
+          "trio_type": "1-2-3",
+          "legs": [
+            {
+              "player_id": 665487,
+              "name": "Fernando Tatis Jr.",
+              "order": 1,
+              "leg_prob": 0.5965,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-07-29T01:40:00Z"
+            },
+            {
+              "player_id": 630105,
+              "name": "Jake Cronenworth",
+              "order": 2,
+              "leg_prob": 0.5965,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-07-29T01:40:00Z"
+            },
+            {
+              "player_id": 592518,
+              "name": "Manny Machado",
+              "order": 3,
+              "leg_prob": 0.5799,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-07-29T01:40:00Z"
+            }
+          ],
+          "conservative_prob": 0.2348,
+          "optimistic_prob": 0.275
+        },
+        {
+          "game_pk": 823838,
+          "team": "Miami Marlins",
+          "opp_team": "Philadelphia Phillies",
+          "venue": "loanDepot park",
+          "opp_era": 5.82,
+          "trio_type": "1-2-3",
+          "legs": [
+            {
+              "player_id": 672640,
+              "name": "Otto Lopez",
+              "order": 1,
+              "leg_prob": 0.5965,
+              "game_time_pt": "3:40 PM PT",
+              "game_date_utc": "2026-07-28T22:40:00Z"
+            },
+            {
+              "player_id": 669065,
+              "name": "Kyle Stowers",
+              "order": 2,
+              "leg_prob": 0.5965,
+              "game_time_pt": "3:40 PM PT",
+              "game_date_utc": "2026-07-28T22:40:00Z"
+            },
+            {
+              "player_id": 681715,
+              "name": "Heriberto Hern\u00e1ndez",
+              "order": 3,
+              "leg_prob": 0.5799,
+              "game_time_pt": "3:40 PM PT",
+              "game_date_utc": "2026-07-28T22:40:00Z"
+            }
+          ],
+          "conservative_prob": 0.2348,
+          "optimistic_prob": 0.275
+        }
+      ],
+      "combined_conservative": 0.05513,
+      "combined_optimistic": 0.07563,
+      "ev_conservative": 0.654,
+      "ev_optimistic": 1.269,
+      "playable": true
+    },
+    {
+      "trios": [
+        {
+          "game_pk": 823923,
+          "team": "Los Angeles Dodgers",
+          "opp_team": "Seattle Mariners",
+          "venue": "UNIQLO Field at Dodger Stadium",
+          "opp_era": 4.85,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 681624,
+              "name": "Andy Pages",
+              "order": 2,
+              "leg_prob": 0.5773,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-29T02:10:00Z"
+            },
+            {
+              "player_id": 518692,
+              "name": "Freddie Freeman",
+              "order": 3,
+              "leg_prob": 0.5263,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-29T02:10:00Z"
+            },
+            {
+              "player_id": 571970,
+              "name": "Max Muncy",
+              "order": 4,
+              "leg_prob": 0.5263,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-07-29T02:10:00Z"
+            }
+          ],
+          "conservative_prob": 0.2152,
+          "optimistic_prob": 0.2505
+        },
+        {
+          "game_pk": 823026,
+          "team": "St. Louis Cardinals",
+          "opp_team": "Chicago Cubs",
+          "venue": "Busch Stadium",
+          "opp_era": 4.85,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 691023,
+              "name": "Jordan Walker",
+              "order": 2,
+              "leg_prob": 0.5773,
+              "game_time_pt": "4:45 PM PT",
+              "game_date_utc": "2026-07-28T23:45:00Z"
+            },
+            {
+              "player_id": 671056,
+              "name": "Iv\u00e1n Herrera",
+              "order": 3,
+              "leg_prob": 0.5263,
+              "game_time_pt": "4:45 PM PT",
+              "game_date_utc": "2026-07-28T23:45:00Z"
+            },
+            {
+              "player_id": 676475,
+              "name": "Alec Burleson",
+              "order": 4,
+              "leg_prob": 0.5263,
+              "game_time_pt": "4:45 PM PT",
+              "game_date_utc": "2026-07-28T23:45:00Z"
+            }
+          ],
+          "conservative_prob": 0.2152,
+          "optimistic_prob": 0.2505
+        }
+      ],
+      "combined_conservative": 0.04631,
+      "combined_optimistic": 0.06275,
+      "ev_conservative": 0.389,
+      "ev_optimistic": 0.883,
+      "playable": true
+    }
+  ]
+}
