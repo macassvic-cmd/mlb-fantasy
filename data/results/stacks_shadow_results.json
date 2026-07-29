@@ -1668,6 +1668,307 @@
           ]
         }
       ]
+    },
+    "2026-07-28": {
+      "mixed_market_pairings": [],
+      "gap_filling_rescued_trios": [
+        {
+          "game_pk": 823838,
+          "team": 146,
+          "trio_type": "1-2-3",
+          "conservative_prob": 0.212,
+          "stats_used": [
+            "RUNS",
+            "HRRBI",
+            "HRRBI"
+          ],
+          "legs": [
+            {
+              "player_id": 672640,
+              "name": "Otto Lopez",
+              "slot": 1,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 669065,
+              "name": "Kyle Stowers",
+              "slot": 2,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": true
+            },
+            {
+              "player_id": 681715,
+              "name": "Heriberto Hern\u00e1ndez",
+              "slot": 3,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            }
+          ]
+        },
+        {
+          "game_pk": 823275,
+          "team": 135,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1799,
+          "stats_used": [
+            "HRRBI",
+            "RUNS",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 630105,
+              "name": "Jake Cronenworth",
+              "slot": 2,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            },
+            {
+              "player_id": 592518,
+              "name": "Manny Machado",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 664034,
+              "name": "Ty France",
+              "slot": 4,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            }
+          ]
+        },
+        {
+          "game_pk": 824243,
+          "team": 116,
+          "trio_type": "1-2-3",
+          "conservative_prob": 0.1639,
+          "stats_used": [
+            "RUNS",
+            "RUNS",
+            "HRRBI"
+          ],
+          "legs": [
+            {
+              "player_id": 805808,
+              "name": "Kevin McGonigle",
+              "slot": 1,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 693307,
+              "name": "Dillon Dingler",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 690993,
+              "name": "Colt Keith",
+              "slot": 3,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": true
+            }
+          ]
+        },
+        {
+          "game_pk": 823026,
+          "team": 138,
+          "trio_type": "1-2-3",
+          "conservative_prob": 0.1639,
+          "stats_used": [
+            "RUNS",
+            "RUNS",
+            "HRRBI"
+          ],
+          "legs": [
+            {
+              "player_id": 802139,
+              "name": "JJ Wetherholt",
+              "slot": 1,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 691023,
+              "name": "Jordan Walker",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 671056,
+              "name": "Iv\u00e1n Herrera",
+              "slot": 3,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            }
+          ]
+        },
+        {
+          "game_pk": 823923,
+          "team": 119,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1529,
+          "stats_used": [
+            "RUNS",
+            "RUNS",
+            "HRRBI"
+          ],
+          "legs": [
+            {
+              "player_id": 681624,
+              "name": "Andy Pages",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 518692,
+              "name": "Freddie Freeman",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 571970,
+              "name": "Max Muncy",
+              "slot": 4,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": true
+            }
+          ]
+        },
+        {
+          "game_pk": 824243,
+          "team": 116,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1368,
+          "stats_used": [
+            "RUNS",
+            "HRRBI",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 693307,
+              "name": "Dillon Dingler",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 690993,
+              "name": "Colt Keith",
+              "slot": 3,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": true
+            },
+            {
+              "player_id": 682985,
+              "name": "Riley Greene",
+              "slot": 4,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            }
+          ]
+        },
+        {
+          "game_pk": 822703,
+          "team": 120,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1368,
+          "stats_used": [
+            "RUNS",
+            "HRRBI",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 671277,
+              "name": "Luis Garc\u00eda Jr.",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 677588,
+              "name": "Jos\u00e9 Tena",
+              "slot": 3,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": null
+            },
+            {
+              "player_id": 682928,
+              "name": "CJ Abrams",
+              "slot": 4,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            }
+          ]
+        },
+        {
+          "game_pk": 823026,
+          "team": 138,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1368,
+          "stats_used": [
+            "RUNS",
+            "HRRBI",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 691023,
+              "name": "Jordan Walker",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 671056,
+              "name": "Iv\u00e1n Herrera",
+              "slot": 3,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            },
+            {
+              "player_id": 676475,
+              "name": "Alec Burleson",
+              "slot": 4,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            }
+          ]
+        }
+      ]
     }
   },
   "record": {
@@ -1685,9 +1986,9 @@
     }
   },
   "gap_filling_record": {
-    "rescue_fire_count": 42,
-    "days_tracked": 6,
-    "rescued_trio_legs_graded": 83,
-    "rescued_trio_legs_hit": 33
+    "rescue_fire_count": 50,
+    "days_tracked": 7,
+    "rescued_trio_legs_graded": 98,
+    "rescued_trio_legs_hit": 40
   }
 }
