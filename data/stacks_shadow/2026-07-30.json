@@ -1,0 +1,222 @@
+{
+  "date": "2026-07-30",
+  "mixed_market": {
+    "trio_count": 9,
+    "pairings": []
+  },
+  "gap_filling": {
+    "date": "2026-07-30",
+    "baseline_trio_count": 2,
+    "fallback_trio_count": 8,
+    "baseline_pairing_count": 0,
+    "fallback_pairing_count": 0,
+    "rescued_trio_count": 6,
+    "rescued_trios": [
+      {
+        "game_pk": 822946,
+        "team": 139,
+        "trio_type": "2-3-4",
+        "conservative_prob": 0.199,
+        "stats_used": [
+          "RUNS",
+          "RUNS",
+          "HRRBI"
+        ],
+        "legs": [
+          {
+            "player_id": 666018,
+            "name": "Jonathan Aranda",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 691406,
+            "name": "Junior Caminero",
+            "slot": 3,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 656775,
+            "name": "Cedric Mullins",
+            "slot": 4,
+            "stat": "HRRBI",
+            "threshold": 2
+          }
+        ]
+      },
+      {
+        "game_pk": 822946,
+        "team": 139,
+        "trio_type": "1-2-3",
+        "conservative_prob": 0.1878,
+        "stats_used": [
+          "RUNS",
+          "RUNS",
+          "RUNS"
+        ],
+        "legs": [
+          {
+            "player_id": 650490,
+            "name": "Yandy D\u00edaz",
+            "slot": 1,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 666018,
+            "name": "Jonathan Aranda",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 691406,
+            "name": "Junior Caminero",
+            "slot": 3,
+            "stat": "RUNS",
+            "threshold": 1
+          }
+        ]
+      },
+      {
+        "game_pk": 824488,
+        "team": 134,
+        "trio_type": "1-2-3",
+        "conservative_prob": 0.1878,
+        "stats_used": [
+          "RUNS",
+          "RUNS",
+          "RUNS"
+        ],
+        "legs": [
+          {
+            "player_id": 693304,
+            "name": "Nick Gonzales",
+            "slot": 1,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 664040,
+            "name": "Brandon Lowe",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 668804,
+            "name": "Bryan Reynolds",
+            "slot": 3,
+            "stat": "RUNS",
+            "threshold": 1
+          }
+        ]
+      },
+      {
+        "game_pk": 823674,
+        "team": 118,
+        "trio_type": "2-3-4",
+        "conservative_prob": 0.1532,
+        "stats_used": [
+          "HRRBI",
+          "RUNS",
+          "HRRBI"
+        ],
+        "legs": [
+          {
+            "player_id": 670231,
+            "name": "John Rave",
+            "slot": 2,
+            "stat": "HRRBI",
+            "threshold": 2
+          },
+          {
+            "player_id": 695506,
+            "name": "Jac Caglianone",
+            "slot": 3,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 521692,
+            "name": "Salvador Perez",
+            "slot": 4,
+            "stat": "HRRBI",
+            "threshold": 2
+          }
+        ]
+      },
+      {
+        "game_pk": 823674,
+        "team": 142,
+        "trio_type": "2-3-4",
+        "conservative_prob": 0.1401,
+        "stats_used": [
+          "HRRBI",
+          "HRRBI",
+          "RUNS"
+        ],
+        "legs": [
+          {
+            "player_id": 686797,
+            "name": "Brooks Lee",
+            "slot": 2,
+            "stat": "HRRBI",
+            "threshold": 2
+          },
+          {
+            "player_id": 665019,
+            "name": "Kody Clemens",
+            "slot": 3,
+            "stat": "HRRBI",
+            "threshold": 2
+          },
+          {
+            "player_id": 605137,
+            "name": "Josh Bell",
+            "slot": 4,
+            "stat": "RUNS",
+            "threshold": 1
+          }
+        ]
+      },
+      {
+        "game_pk": 823674,
+        "team": 118,
+        "trio_type": "1-2-3",
+        "conservative_prob": 0.1363,
+        "stats_used": [
+          "RUNS",
+          "HRRBI",
+          "RUNS"
+        ],
+        "legs": [
+          {
+            "player_id": 695600,
+            "name": "Carter Jensen",
+            "slot": 1,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 670231,
+            "name": "John Rave",
+            "slot": 2,
+            "stat": "HRRBI",
+            "threshold": 2
+          },
+          {
+            "player_id": 695506,
+            "name": "Jac Caglianone",
+            "slot": 3,
+            "stat": "RUNS",
+            "threshold": 1
+          }
+        ]
+      }
+    ],
+    "fallback_pairings": []
+  }
+}

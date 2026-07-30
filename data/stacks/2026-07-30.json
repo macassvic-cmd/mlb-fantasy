@@ -1,0 +1,248 @@
+{
+  "date": "2026-07-30",
+  "pairings": [
+    {
+      "trios": [
+        {
+          "game_pk": 824488,
+          "team": "Pittsburgh Pirates",
+          "opp_team": "Cincinnati Reds",
+          "venue": "Great American Ball Park",
+          "opp_era": 5.61,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 664040,
+              "name": "Brandon Lowe",
+              "order": 2,
+              "leg_prob": 0.5965,
+              "game_time_pt": "4:10 PM PT",
+              "game_date_utc": "2026-07-30T23:10:00Z"
+            },
+            {
+              "player_id": 668804,
+              "name": "Bryan Reynolds",
+              "order": 3,
+              "leg_prob": 0.5799,
+              "game_time_pt": "4:10 PM PT",
+              "game_date_utc": "2026-07-30T23:10:00Z"
+            },
+            {
+              "player_id": 699013,
+              "name": "Esmerlyn Valdez",
+              "order": 4,
+              "leg_prob": 0.5799,
+              "game_time_pt": "4:10 PM PT",
+              "game_date_utc": "2026-07-30T23:10:00Z"
+            }
+          ],
+          "conservative_prob": 0.27,
+          "optimistic_prob": 0.3142
+        },
+        {
+          "game_pk": 822946,
+          "team": "Tampa Bay Rays",
+          "opp_team": "Texas Rangers",
+          "venue": "Tropicana Field",
+          "opp_era": 6.11,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 666018,
+              "name": "Jonathan Aranda",
+              "order": 2,
+              "leg_prob": 0.5965,
+              "game_time_pt": "9:10 AM PT",
+              "game_date_utc": "2026-07-30T16:10:00Z"
+            },
+            {
+              "player_id": 691406,
+              "name": "Junior Caminero",
+              "order": 3,
+              "leg_prob": 0.5799,
+              "game_time_pt": "9:10 AM PT",
+              "game_date_utc": "2026-07-30T16:10:00Z"
+            },
+            {
+              "player_id": 656775,
+              "name": "Cedric Mullins",
+              "order": 4,
+              "leg_prob": 0.5799,
+              "game_time_pt": "9:10 AM PT",
+              "game_date_utc": "2026-07-30T16:10:00Z"
+            }
+          ],
+          "conservative_prob": 0.27,
+          "optimistic_prob": 0.3142
+        }
+      ],
+      "combined_conservative": 0.0729,
+      "combined_optimistic": 0.09872,
+      "ev_conservative": 1.187,
+      "ev_optimistic": 1.962,
+      "playable": true
+    },
+    {
+      "trios": [
+        {
+          "game_pk": 824488,
+          "team": "Pittsburgh Pirates",
+          "opp_team": "Cincinnati Reds",
+          "venue": "Great American Ball Park",
+          "opp_era": 5.61,
+          "trio_type": "1-2-3",
+          "legs": [
+            {
+              "player_id": 693304,
+              "name": "Nick Gonzales",
+              "order": 1,
+              "leg_prob": 0.5965,
+              "game_time_pt": "4:10 PM PT",
+              "game_date_utc": "2026-07-30T23:10:00Z"
+            },
+            {
+              "player_id": 664040,
+              "name": "Brandon Lowe",
+              "order": 2,
+              "leg_prob": 0.5965,
+              "game_time_pt": "4:10 PM PT",
+              "game_date_utc": "2026-07-30T23:10:00Z"
+            },
+            {
+              "player_id": 668804,
+              "name": "Bryan Reynolds",
+              "order": 3,
+              "leg_prob": 0.5799,
+              "game_time_pt": "4:10 PM PT",
+              "game_date_utc": "2026-07-30T23:10:00Z"
+            }
+          ],
+          "conservative_prob": 0.2348,
+          "optimistic_prob": 0.275
+        },
+        {
+          "game_pk": 822946,
+          "team": "Tampa Bay Rays",
+          "opp_team": "Texas Rangers",
+          "venue": "Tropicana Field",
+          "opp_era": 6.11,
+          "trio_type": "1-2-3",
+          "legs": [
+            {
+              "player_id": 650490,
+              "name": "Yandy D\u00edaz",
+              "order": 1,
+              "leg_prob": 0.5965,
+              "game_time_pt": "9:10 AM PT",
+              "game_date_utc": "2026-07-30T16:10:00Z"
+            },
+            {
+              "player_id": 666018,
+              "name": "Jonathan Aranda",
+              "order": 2,
+              "leg_prob": 0.5965,
+              "game_time_pt": "9:10 AM PT",
+              "game_date_utc": "2026-07-30T16:10:00Z"
+            },
+            {
+              "player_id": 691406,
+              "name": "Junior Caminero",
+              "order": 3,
+              "leg_prob": 0.5799,
+              "game_time_pt": "9:10 AM PT",
+              "game_date_utc": "2026-07-30T16:10:00Z"
+            }
+          ],
+          "conservative_prob": 0.2348,
+          "optimistic_prob": 0.275
+        }
+      ],
+      "combined_conservative": 0.05513,
+      "combined_optimistic": 0.07563,
+      "ev_conservative": 0.654,
+      "ev_optimistic": 1.269,
+      "playable": true
+    },
+    {
+      "trios": [
+        {
+          "game_pk": 823674,
+          "team": "Minnesota Twins",
+          "opp_team": "Kansas City Royals",
+          "venue": "Target Field",
+          "opp_era": 4.93,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 686797,
+              "name": "Brooks Lee",
+              "order": 2,
+              "leg_prob": 0.5773,
+              "game_time_pt": "10:40 AM PT",
+              "game_date_utc": "2026-07-30T17:40:00Z"
+            },
+            {
+              "player_id": 665019,
+              "name": "Kody Clemens",
+              "order": 3,
+              "leg_prob": 0.5263,
+              "game_time_pt": "10:40 AM PT",
+              "game_date_utc": "2026-07-30T17:40:00Z"
+            },
+            {
+              "player_id": 605137,
+              "name": "Josh Bell",
+              "order": 4,
+              "leg_prob": 0.5263,
+              "game_time_pt": "10:40 AM PT",
+              "game_date_utc": "2026-07-30T17:40:00Z"
+            }
+          ],
+          "conservative_prob": 0.2152,
+          "optimistic_prob": 0.2505
+        },
+        {
+          "game_pk": 824974,
+          "team": "Boston Red Sox",
+          "opp_team": "Athletics",
+          "venue": "Sutter Health Park",
+          "opp_era": 4.74,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 678882,
+              "name": "Ceddanne Rafaela",
+              "order": 2,
+              "leg_prob": 0.4819,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-07-31T01:40:00Z"
+            },
+            {
+              "player_id": 677800,
+              "name": "Wilyer Abreu",
+              "order": 3,
+              "leg_prob": 0.5679,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-07-31T01:40:00Z"
+            },
+            {
+              "player_id": 575929,
+              "name": "Willson Contreras",
+              "order": 4,
+              "leg_prob": 0.5679,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-07-31T01:40:00Z"
+            }
+          ],
+          "conservative_prob": 0.2092,
+          "optimistic_prob": 0.2435
+        }
+      ],
+      "combined_conservative": 0.04502,
+      "combined_optimistic": 0.061,
+      "ev_conservative": 0.351,
+      "ev_optimistic": 0.83,
+      "playable": true
+    }
+  ]
+}
