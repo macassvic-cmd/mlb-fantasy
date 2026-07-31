@@ -2713,16 +2713,197 @@
           "correct": false
         }
       ]
+    },
+    "2026-07-30": {
+      "summary": {
+        "premium": {
+          "total": 5,
+          "correct": 2,
+          "win_rate": 40.0
+        },
+        "strong": {
+          "total": 10,
+          "correct": 3,
+          "win_rate": 30.0
+        }
+      },
+      "plays": [
+        {
+          "player_id": 691176,
+          "name": "Jasson Dom\u00ednguez",
+          "team": "New York Yankees",
+          "call": "under",
+          "edge": -1.82,
+          "ud_line": 6.5,
+          "actual_ud": 6,
+          "tier": "premium",
+          "correct": true
+        },
+        {
+          "player_id": 545341,
+          "name": "Randal Grichuk",
+          "team": "Chicago White Sox",
+          "call": "under",
+          "edge": -1.72,
+          "ud_line": 5.5,
+          "actual_ud": 12,
+          "tier": "premium",
+          "correct": false
+        },
+        {
+          "player_id": 701807,
+          "name": "Carson Benge",
+          "team": "New York Mets",
+          "call": "under",
+          "edge": -1.91,
+          "ud_line": 6.5,
+          "actual_ud": 9,
+          "tier": "premium",
+          "correct": false
+        },
+        {
+          "player_id": 689414,
+          "name": "Liam Hicks",
+          "team": "Miami Marlins",
+          "call": "under",
+          "edge": -1.6,
+          "ud_line": 5.5,
+          "actual_ud": 9,
+          "tier": "premium",
+          "correct": false
+        },
+        {
+          "player_id": 691016,
+          "name": "Tyler Soderstrom",
+          "team": "Athletics",
+          "call": "under",
+          "edge": -1.86,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "tier": "premium",
+          "correct": true
+        },
+        {
+          "player_id": 691406,
+          "name": "Junior Caminero",
+          "team": "Tampa Bay Rays",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 656775,
+          "name": "Cedric Mullins",
+          "team": "Tampa Bay Rays",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 5.5,
+          "actual_ud": 14,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 676475,
+          "name": "Alec Burleson",
+          "team": "St. Louis Cardinals",
+          "call": "over",
+          "edge": 0.12,
+          "ud_line": 6.5,
+          "actual_ud": 6,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 671056,
+          "name": "Iv\u00e1n Herrera",
+          "team": "St. Louis Cardinals",
+          "call": "over",
+          "edge": 0.25,
+          "ud_line": 5.5,
+          "actual_ud": 3,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 699013,
+          "name": "Esmerlyn Valdez",
+          "team": "Pittsburgh Pirates",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 6,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 668804,
+          "name": "Bryan Reynolds",
+          "team": "Pittsburgh Pirates",
+          "call": "over",
+          "edge": 0.15,
+          "ud_line": 7.5,
+          "actual_ud": 0,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 621566,
+          "name": "Matt Olson",
+          "team": "Atlanta Braves",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 645277,
+          "name": "Ozzie Albies",
+          "team": "Atlanta Braves",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 5.5,
+          "actual_ud": 7,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 575929,
+          "name": "Willson Contreras",
+          "team": "Boston Red Sox",
+          "call": "over",
+          "edge": 0.1,
+          "ud_line": 8.5,
+          "actual_ud": 20,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 677800,
+          "name": "Wilyer Abreu",
+          "team": "Boston Red Sox",
+          "call": "under",
+          "edge": -0.57,
+          "ud_line": 8.5,
+          "actual_ud": 14,
+          "tier": "strong",
+          "correct": false
+        }
+      ]
     }
   },
   "record": {
     "premium": {
-      "wins": 12,
-      "losses": 19
+      "wins": 14,
+      "losses": 22
     },
     "strong": {
-      "wins": 100,
-      "losses": 94
+      "wins": 103,
+      "losses": 101
     }
   }
 }

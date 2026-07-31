@@ -3573,6 +3573,89 @@
           "correct": true
         }
       ]
+    },
+    "2026-07-30": {
+      "summary": {
+        "total": 7,
+        "correct": 2,
+        "accuracy": 28.6,
+        "over_total": 4,
+        "over_correct": 1,
+        "under_total": 3,
+        "under_correct": 1
+      },
+      "plays": [
+        {
+          "player_id": 686948,
+          "name": "Drake Baldwin",
+          "team": "Atlanta Braves",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 5,
+          "correct": false
+        },
+        {
+          "player_id": 650490,
+          "name": "Yandy D\u00edaz",
+          "team": "Tampa Bay Rays",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "correct": true
+        },
+        {
+          "player_id": 691406,
+          "name": "Junior Caminero",
+          "team": "Tampa Bay Rays",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "correct": false
+        },
+        {
+          "player_id": 808959,
+          "name": "Munetaka Murakami",
+          "team": "Chicago White Sox",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 6,
+          "correct": false
+        },
+        {
+          "player_id": 694671,
+          "name": "Wyatt Langford",
+          "team": "Texas Rangers",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 11,
+          "correct": false
+        },
+        {
+          "player_id": 663757,
+          "name": "Trent Grisham",
+          "team": "New York Yankees",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "correct": false
+        },
+        {
+          "player_id": 667472,
+          "name": "Dane Myers",
+          "team": "Cincinnati Reds",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 6,
+          "correct": true
+        }
+      ]
     }
   }
 }
