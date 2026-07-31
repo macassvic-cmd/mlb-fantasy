@@ -1,0 +1,248 @@
+{
+  "date": "2026-07-31",
+  "pairings": [
+    {
+      "trios": [
+        {
+          "game_pk": 824975,
+          "team": "Detroit Tigers",
+          "opp_team": "Athletics",
+          "venue": "Sutter Health Park",
+          "opp_era": 6.23,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 805808,
+              "name": "Kevin McGonigle",
+              "order": 2,
+              "leg_prob": 0.5965,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-08-01T01:40:00Z"
+            },
+            {
+              "player_id": 701678,
+              "name": "Hao-Yu Lee",
+              "order": 3,
+              "leg_prob": 0.5799,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-08-01T01:40:00Z"
+            },
+            {
+              "player_id": 693307,
+              "name": "Dillon Dingler",
+              "order": 4,
+              "leg_prob": 0.5799,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-08-01T01:40:00Z"
+            }
+          ],
+          "conservative_prob": 0.27,
+          "optimistic_prob": 0.3142
+        },
+        {
+          "game_pk": 824486,
+          "team": "Pittsburgh Pirates",
+          "opp_team": "Cincinnati Reds",
+          "venue": "Great American Ball Park",
+          "opp_era": 7.06,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 664040,
+              "name": "Brandon Lowe",
+              "order": 2,
+              "leg_prob": 0.5965,
+              "game_time_pt": "3:10 PM PT",
+              "game_date_utc": "2026-07-31T22:10:00Z"
+            },
+            {
+              "player_id": 668804,
+              "name": "Bryan Reynolds",
+              "order": 3,
+              "leg_prob": 0.5799,
+              "game_time_pt": "3:10 PM PT",
+              "game_date_utc": "2026-07-31T22:10:00Z"
+            },
+            {
+              "player_id": 699013,
+              "name": "Esmerlyn Valdez",
+              "order": 4,
+              "leg_prob": 0.5799,
+              "game_time_pt": "3:10 PM PT",
+              "game_date_utc": "2026-07-31T22:10:00Z"
+            }
+          ],
+          "conservative_prob": 0.27,
+          "optimistic_prob": 0.3142
+        }
+      ],
+      "combined_conservative": 0.0729,
+      "combined_optimistic": 0.09872,
+      "ev_conservative": 1.187,
+      "ev_optimistic": 1.962,
+      "playable": true
+    },
+    {
+      "trios": [
+        {
+          "game_pk": 823999,
+          "team": "Milwaukee Brewers",
+          "opp_team": "Los Angeles Angels",
+          "venue": "Angel Stadium",
+          "opp_era": 7.34,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 694192,
+              "name": "Jackson Chourio",
+              "order": 2,
+              "leg_prob": 0.5965,
+              "game_time_pt": "6:38 PM PT",
+              "game_date_utc": "2026-08-01T01:38:00Z"
+            },
+            {
+              "player_id": 641343,
+              "name": "Jake Bauers",
+              "order": 3,
+              "leg_prob": 0.5799,
+              "game_time_pt": "6:38 PM PT",
+              "game_date_utc": "2026-08-01T01:38:00Z"
+            },
+            {
+              "player_id": 592885,
+              "name": "Christian Yelich",
+              "order": 4,
+              "leg_prob": 0.5799,
+              "game_time_pt": "6:38 PM PT",
+              "game_date_utc": "2026-08-01T01:38:00Z"
+            }
+          ],
+          "conservative_prob": 0.27,
+          "optimistic_prob": 0.3142
+        },
+        {
+          "game_pk": 824407,
+          "team": "Cleveland Guardians",
+          "opp_team": "Arizona Diamondbacks",
+          "venue": "Progressive Field",
+          "opp_era": 6.32,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 608070,
+              "name": "Jos\u00e9 Ram\u00edrez",
+              "order": 2,
+              "leg_prob": 0.5965,
+              "game_time_pt": "4:10 PM PT",
+              "game_date_utc": "2026-07-31T23:10:00Z"
+            },
+            {
+              "player_id": 800050,
+              "name": "Chase DeLauter",
+              "order": 3,
+              "leg_prob": 0.5799,
+              "game_time_pt": "4:10 PM PT",
+              "game_date_utc": "2026-07-31T23:10:00Z"
+            },
+            {
+              "player_id": 683953,
+              "name": "Travis Bazzana",
+              "order": 4,
+              "leg_prob": 0.5799,
+              "game_time_pt": "4:10 PM PT",
+              "game_date_utc": "2026-07-31T23:10:00Z"
+            }
+          ],
+          "conservative_prob": 0.27,
+          "optimistic_prob": 0.3142
+        }
+      ],
+      "combined_conservative": 0.0729,
+      "combined_optimistic": 0.09872,
+      "ev_conservative": 1.187,
+      "ev_optimistic": 1.962,
+      "playable": true
+    },
+    {
+      "trios": [
+        {
+          "game_pk": 824975,
+          "team": "Detroit Tigers",
+          "opp_team": "Athletics",
+          "venue": "Sutter Health Park",
+          "opp_era": 6.23,
+          "trio_type": "1-2-3",
+          "legs": [
+            {
+              "player_id": 650402,
+              "name": "Gleyber Torres",
+              "order": 1,
+              "leg_prob": 0.5965,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-08-01T01:40:00Z"
+            },
+            {
+              "player_id": 805808,
+              "name": "Kevin McGonigle",
+              "order": 2,
+              "leg_prob": 0.5965,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-08-01T01:40:00Z"
+            },
+            {
+              "player_id": 701678,
+              "name": "Hao-Yu Lee",
+              "order": 3,
+              "leg_prob": 0.5799,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-08-01T01:40:00Z"
+            }
+          ],
+          "conservative_prob": 0.2348,
+          "optimistic_prob": 0.275
+        },
+        {
+          "game_pk": 824486,
+          "team": "Pittsburgh Pirates",
+          "opp_team": "Cincinnati Reds",
+          "venue": "Great American Ball Park",
+          "opp_era": 7.06,
+          "trio_type": "1-2-3",
+          "legs": [
+            {
+              "player_id": 663968,
+              "name": "Jake Mangum",
+              "order": 1,
+              "leg_prob": 0.5965,
+              "game_time_pt": "3:10 PM PT",
+              "game_date_utc": "2026-07-31T22:10:00Z"
+            },
+            {
+              "player_id": 664040,
+              "name": "Brandon Lowe",
+              "order": 2,
+              "leg_prob": 0.5965,
+              "game_time_pt": "3:10 PM PT",
+              "game_date_utc": "2026-07-31T22:10:00Z"
+            },
+            {
+              "player_id": 668804,
+              "name": "Bryan Reynolds",
+              "order": 3,
+              "leg_prob": 0.5799,
+              "game_time_pt": "3:10 PM PT",
+              "game_date_utc": "2026-07-31T22:10:00Z"
+            }
+          ],
+          "conservative_prob": 0.2348,
+          "optimistic_prob": 0.275
+        }
+      ],
+      "combined_conservative": 0.05513,
+      "combined_optimistic": 0.07563,
+      "ev_conservative": 0.654,
+      "ev_optimistic": 1.269,
+      "playable": true
+    }
+  ]
+}
