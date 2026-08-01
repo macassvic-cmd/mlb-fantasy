@@ -1,0 +1,248 @@
+{
+  "date": "2026-08-01",
+  "pairings": [
+    {
+      "trios": [
+        {
+          "game_pk": 824972,
+          "team": "Detroit Tigers",
+          "opp_team": "Athletics",
+          "venue": "Sutter Health Park",
+          "opp_era": 6.45,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 650402,
+              "name": "Gleyber Torres",
+              "order": 2,
+              "leg_prob": 0.5965,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-08-02T01:40:00Z"
+            },
+            {
+              "player_id": 693307,
+              "name": "Dillon Dingler",
+              "order": 3,
+              "leg_prob": 0.5799,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-08-02T01:40:00Z"
+            },
+            {
+              "player_id": 682985,
+              "name": "Riley Greene",
+              "order": 4,
+              "leg_prob": 0.5799,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-08-02T01:40:00Z"
+            }
+          ],
+          "conservative_prob": 0.27,
+          "optimistic_prob": 0.3142
+        },
+        {
+          "game_pk": 824890,
+          "team": "Atlanta Braves",
+          "opp_team": "Washington Nationals",
+          "venue": "Truist Park",
+          "opp_era": 5.65,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 686948,
+              "name": "Drake Baldwin",
+              "order": 2,
+              "leg_prob": 0.5965,
+              "game_time_pt": "4:15 PM PT",
+              "game_date_utc": "2026-08-01T23:15:00Z"
+            },
+            {
+              "player_id": 621566,
+              "name": "Matt Olson",
+              "order": 3,
+              "leg_prob": 0.5799,
+              "game_time_pt": "4:15 PM PT",
+              "game_date_utc": "2026-08-01T23:15:00Z"
+            },
+            {
+              "player_id": 645277,
+              "name": "Ozzie Albies",
+              "order": 4,
+              "leg_prob": 0.5799,
+              "game_time_pt": "4:15 PM PT",
+              "game_date_utc": "2026-08-01T23:15:00Z"
+            }
+          ],
+          "conservative_prob": 0.27,
+          "optimistic_prob": 0.3142
+        }
+      ],
+      "combined_conservative": 0.0729,
+      "combined_optimistic": 0.09872,
+      "ev_conservative": 1.187,
+      "ev_optimistic": 1.962,
+      "playable": true
+    },
+    {
+      "trios": [
+        {
+          "game_pk": 824162,
+          "team": "Texas Rangers",
+          "opp_team": "Houston Astros",
+          "venue": "Daikin Park",
+          "opp_era": 8.1,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 694671,
+              "name": "Wyatt Langford",
+              "order": 2,
+              "leg_prob": 0.5965,
+              "game_time_pt": "4:10 PM PT",
+              "game_date_utc": "2026-08-01T23:10:00Z"
+            },
+            {
+              "player_id": 608369,
+              "name": "Corey Seager",
+              "order": 3,
+              "leg_prob": 0.5799,
+              "game_time_pt": "4:10 PM PT",
+              "game_date_utc": "2026-08-01T23:10:00Z"
+            },
+            {
+              "player_id": 607043,
+              "name": "Brandon Nimmo",
+              "order": 4,
+              "leg_prob": 0.5799,
+              "game_time_pt": "4:10 PM PT",
+              "game_date_utc": "2026-08-01T23:10:00Z"
+            }
+          ],
+          "conservative_prob": 0.27,
+          "optimistic_prob": 0.3142
+        },
+        {
+          "game_pk": 824649,
+          "team": "New York Yankees",
+          "opp_team": "Chicago Cubs",
+          "venue": "Wrigley Field",
+          "opp_era": 5.8,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 700250,
+              "name": "Ben Rice",
+              "order": 2,
+              "leg_prob": 0.5965,
+              "game_time_pt": "4:15 PM PT",
+              "game_date_utc": "2026-08-01T23:15:00Z"
+            },
+            {
+              "player_id": 642708,
+              "name": "Amed Rosario",
+              "order": 3,
+              "leg_prob": 0.5799,
+              "game_time_pt": "4:15 PM PT",
+              "game_date_utc": "2026-08-01T23:15:00Z"
+            },
+            {
+              "player_id": 691176,
+              "name": "Jasson Dom\u00ednguez",
+              "order": 4,
+              "leg_prob": 0.5799,
+              "game_time_pt": "4:15 PM PT",
+              "game_date_utc": "2026-08-01T23:15:00Z"
+            }
+          ],
+          "conservative_prob": 0.27,
+          "optimistic_prob": 0.3142
+        }
+      ],
+      "combined_conservative": 0.0729,
+      "combined_optimistic": 0.09872,
+      "ev_conservative": 1.187,
+      "ev_optimistic": 1.962,
+      "playable": true
+    },
+    {
+      "trios": [
+        {
+          "game_pk": 824326,
+          "team": "Kansas City Royals",
+          "opp_team": "Colorado Rockies",
+          "venue": "Coors Field",
+          "opp_era": 5.73,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 657041,
+              "name": "Lane Thomas",
+              "order": 2,
+              "leg_prob": 0.5965,
+              "game_time_pt": "5:10 PM PT",
+              "game_date_utc": "2026-08-02T00:10:00Z"
+            },
+            {
+              "player_id": 695506,
+              "name": "Jac Caglianone",
+              "order": 3,
+              "leg_prob": 0.5799,
+              "game_time_pt": "5:10 PM PT",
+              "game_date_utc": "2026-08-02T00:10:00Z"
+            },
+            {
+              "player_id": 521692,
+              "name": "Salvador Perez",
+              "order": 4,
+              "leg_prob": 0.5799,
+              "game_time_pt": "5:10 PM PT",
+              "game_date_utc": "2026-08-02T00:10:00Z"
+            }
+          ],
+          "conservative_prob": 0.27,
+          "optimistic_prob": 0.3142
+        },
+        {
+          "game_pk": 824972,
+          "team": "Detroit Tigers",
+          "opp_team": "Athletics",
+          "venue": "Sutter Health Park",
+          "opp_era": 6.45,
+          "trio_type": "1-2-3",
+          "legs": [
+            {
+              "player_id": 805808,
+              "name": "Kevin McGonigle",
+              "order": 1,
+              "leg_prob": 0.5965,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-08-02T01:40:00Z"
+            },
+            {
+              "player_id": 650402,
+              "name": "Gleyber Torres",
+              "order": 2,
+              "leg_prob": 0.5965,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-08-02T01:40:00Z"
+            },
+            {
+              "player_id": 693307,
+              "name": "Dillon Dingler",
+              "order": 3,
+              "leg_prob": 0.5799,
+              "game_time_pt": "6:40 PM PT",
+              "game_date_utc": "2026-08-02T01:40:00Z"
+            }
+          ],
+          "conservative_prob": 0.2348,
+          "optimistic_prob": 0.275
+        }
+      ],
+      "combined_conservative": 0.0634,
+      "combined_optimistic": 0.0864,
+      "ev_conservative": 0.902,
+      "ev_optimistic": 1.592,
+      "playable": true
+    }
+  ]
+}
