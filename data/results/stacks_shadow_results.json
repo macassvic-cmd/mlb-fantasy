@@ -2909,6 +2909,307 @@
           ]
         }
       ]
+    },
+    "2026-08-01": {
+      "mixed_market_pairings": [],
+      "gap_filling_rescued_trios": [
+        {
+          "game_pk": 823269,
+          "team": 137,
+          "trio_type": "1-2-3",
+          "conservative_prob": 0.1675,
+          "stats_used": [
+            "RUNS",
+            "HRRBI",
+            "HRRBI"
+          ],
+          "legs": [
+            {
+              "player_id": 650333,
+              "name": "Luis Arraez",
+              "slot": 1,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": null
+            },
+            {
+              "player_id": 671218,
+              "name": "Heliot Ramos",
+              "slot": 2,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            },
+            {
+              "player_id": 805811,
+              "name": "Bryce Eldridge",
+              "slot": 3,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": true
+            }
+          ]
+        },
+        {
+          "game_pk": 823269,
+          "team": 135,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1532,
+          "stats_used": [
+            "HRRBI",
+            "RUNS",
+            "HRRBI"
+          ],
+          "legs": [
+            {
+              "player_id": 650859,
+              "name": "Luis Rengifo",
+              "slot": 2,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            },
+            {
+              "player_id": 592518,
+              "name": "Manny Machado",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 664034,
+              "name": "Ty France",
+              "slot": 4,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": true
+            }
+          ]
+        },
+        {
+          "game_pk": 824405,
+          "team": 114,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1529,
+          "stats_used": [
+            "RUNS",
+            "RUNS",
+            "HRRBI"
+          ],
+          "legs": [
+            {
+              "player_id": 608070,
+              "name": "Jos\u00e9 Ram\u00edrez",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 800050,
+              "name": "Chase DeLauter",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 656555,
+              "name": "Rhys Hoskins",
+              "slot": 4,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": true
+            }
+          ]
+        },
+        {
+          "game_pk": 824972,
+          "team": 133,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1529,
+          "stats_used": [
+            "RUNS",
+            "RUNS",
+            "HRRBI"
+          ],
+          "legs": [
+            {
+              "player_id": 805779,
+              "name": "Jacob Wilson",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 641680,
+              "name": "Jonah Heim",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 691016,
+              "name": "Tyler Soderstrom",
+              "slot": 4,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": true
+            }
+          ]
+        },
+        {
+          "game_pk": 823109,
+          "team": 136,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1401,
+          "stats_used": [
+            "HRRBI",
+            "HRRBI",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 668227,
+              "name": "Randy Arozarena",
+              "slot": 2,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": true
+            },
+            {
+              "player_id": 686527,
+              "name": "Dominic Canzone",
+              "slot": 3,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            },
+            {
+              "player_id": 677594,
+              "name": "Julio Rodr\u00edguez",
+              "slot": 4,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            }
+          ]
+        },
+        {
+          "game_pk": 823269,
+          "team": 135,
+          "trio_type": "1-2-3",
+          "conservative_prob": 0.1396,
+          "stats_used": [
+            "HRRBI",
+            "HRRBI",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 665487,
+              "name": "Fernando Tatis Jr.",
+              "slot": 1,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            },
+            {
+              "player_id": 650859,
+              "name": "Luis Rengifo",
+              "slot": 2,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            },
+            {
+              "player_id": 592518,
+              "name": "Manny Machado",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            }
+          ]
+        },
+        {
+          "game_pk": 824972,
+          "team": 133,
+          "trio_type": "1-2-3",
+          "conservative_prob": 0.1377,
+          "stats_used": [
+            "HRRBI",
+            "RUNS",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 701762,
+              "name": "Nick Kurtz",
+              "slot": 1,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": null
+            },
+            {
+              "player_id": 805779,
+              "name": "Jacob Wilson",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 641680,
+              "name": "Jonah Heim",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            }
+          ]
+        },
+        {
+          "game_pk": 824405,
+          "team": 114,
+          "trio_type": "1-2-3",
+          "conservative_prob": 0.1363,
+          "stats_used": [
+            "RUNS",
+            "RUNS",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 682657,
+              "name": "Angel Mart\u00ednez",
+              "slot": 1,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 608070,
+              "name": "Jos\u00e9 Ram\u00edrez",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 800050,
+              "name": "Chase DeLauter",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            }
+          ]
+        }
+      ]
     }
   },
   "record": {
@@ -2926,9 +3227,9 @@
     }
   },
   "gap_filling_record": {
-    "rescue_fire_count": 75,
-    "days_tracked": 10,
-    "rescued_trio_legs_graded": 144,
-    "rescued_trio_legs_hit": 63
+    "rescue_fire_count": 83,
+    "days_tracked": 11,
+    "rescued_trio_legs_graded": 156,
+    "rescued_trio_legs_hit": 70
   }
 }

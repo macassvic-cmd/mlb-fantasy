@@ -3064,16 +3064,175 @@
           "correct": false
         }
       ]
+    },
+    "2026-08-01": {
+      "summary": {
+        "premium": {
+          "total": 4,
+          "correct": 3,
+          "win_rate": 75.0
+        },
+        "strong": {
+          "total": 9,
+          "correct": 8,
+          "win_rate": 88.9
+        }
+      },
+      "plays": [
+        {
+          "player_id": 691406,
+          "name": "Junior Caminero",
+          "team": "Tampa Bay Rays",
+          "call": "under",
+          "edge": -1.54,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "tier": "premium",
+          "correct": true
+        },
+        {
+          "player_id": 678246,
+          "name": "Miguel Vargas",
+          "team": "Chicago White Sox",
+          "call": "under",
+          "edge": -1.63,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "tier": "premium",
+          "correct": true
+        },
+        {
+          "player_id": 669065,
+          "name": "Kyle Stowers",
+          "team": "Miami Marlins",
+          "call": "under",
+          "edge": -1.61,
+          "ud_line": 5.5,
+          "actual_ud": 8,
+          "tier": "premium",
+          "correct": false
+        },
+        {
+          "player_id": 621493,
+          "name": "Taylor Ward",
+          "team": "Baltimore Orioles",
+          "call": "under",
+          "edge": -1.56,
+          "ud_line": 5.5,
+          "actual_ud": 3,
+          "tier": "premium",
+          "correct": true
+        },
+        {
+          "player_id": 676475,
+          "name": "Alec Burleson",
+          "team": "St. Louis Cardinals",
+          "call": "over",
+          "edge": 0.61,
+          "ud_line": 6.5,
+          "actual_ud": 9,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 671056,
+          "name": "Iv\u00e1n Herrera",
+          "team": "St. Louis Cardinals",
+          "call": "over",
+          "edge": 1.11,
+          "ud_line": 5.5,
+          "actual_ud": 8,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 699013,
+          "name": "Esmerlyn Valdez",
+          "team": "Pittsburgh Pirates",
+          "call": "over",
+          "edge": 0.51,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 668804,
+          "name": "Bryan Reynolds",
+          "team": "Pittsburgh Pirates",
+          "call": "under",
+          "edge": -0.98,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 621566,
+          "name": "Matt Olson",
+          "team": "Atlanta Braves",
+          "call": "over",
+          "edge": 1.68,
+          "ud_line": 7.5,
+          "actual_ud": 19,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 645277,
+          "name": "Ozzie Albies",
+          "team": "Atlanta Braves",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 7,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 696100,
+          "name": "Hunter Goodman",
+          "team": "Colorado Rockies",
+          "call": "over",
+          "edge": 0.46,
+          "ud_line": 8.5,
+          "actual_ud": 40,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 681198,
+          "name": "TJ Rumfield",
+          "team": "Colorado Rockies",
+          "call": "over",
+          "edge": 0.98,
+          "ud_line": 7.5,
+          "actual_ud": 19,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 677800,
+          "name": "Wilyer Abreu",
+          "team": "Boston Red Sox",
+          "call": "under",
+          "edge": -1.36,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "tier": "strong",
+          "correct": true
+        }
+      ]
     }
   },
   "record": {
     "premium": {
-      "wins": 17,
-      "losses": 22
+      "wins": 20,
+      "losses": 23
     },
     "strong": {
-      "wins": 109,
-      "losses": 106
+      "wins": 117,
+      "losses": 107
     }
   }
 }
