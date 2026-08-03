@@ -3137,20 +3137,303 @@
           "fully_graded": true
         }
       ]
+    },
+    "2026-08-02": {
+      "pairings": [
+        {
+          "combined_conservative": 0.0729,
+          "combined_optimistic": 0.09872,
+          "ev_conservative": 1.187,
+          "ev_optimistic": 1.962,
+          "playable": true,
+          "trios": [
+            {
+              "game_pk": 824323,
+              "team": "Kansas City Royals",
+              "opp_team": "Colorado Rockies",
+              "venue": "Coors Field",
+              "opp_era": 7.34,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 657041,
+                  "name": "Lane Thomas",
+                  "order": 2,
+                  "leg_prob": 0.5965,
+                  "game_time_pt": "12:10 PM PT",
+                  "game_date_utc": "2026-08-02T19:10:00Z",
+                  "actual_hit": null
+                },
+                {
+                  "player_id": 695506,
+                  "name": "Jac Caglianone",
+                  "order": 3,
+                  "leg_prob": 0.5799,
+                  "game_time_pt": "12:10 PM PT",
+                  "game_date_utc": "2026-08-02T19:10:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 521692,
+                  "name": "Salvador Perez",
+                  "order": 4,
+                  "leg_prob": 0.5799,
+                  "game_time_pt": "12:10 PM PT",
+                  "game_date_utc": "2026-08-02T19:10:00Z",
+                  "actual_hit": false
+                }
+              ],
+              "conservative_prob": 0.27,
+              "optimistic_prob": 0.3142,
+              "trio_hit": false,
+              "fully_graded": false
+            },
+            {
+              "game_pk": 822783,
+              "team": "St. Louis Cardinals",
+              "opp_team": "Toronto Blue Jays",
+              "venue": "Rogers Centre",
+              "opp_era": 9.49,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 691023,
+                  "name": "Jordan Walker",
+                  "order": 2,
+                  "leg_prob": 0.5965,
+                  "game_time_pt": "10:37 AM PT",
+                  "game_date_utc": "2026-08-02T17:37:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 676475,
+                  "name": "Alec Burleson",
+                  "order": 3,
+                  "leg_prob": 0.5799,
+                  "game_time_pt": "10:37 AM PT",
+                  "game_date_utc": "2026-08-02T17:37:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 671056,
+                  "name": "Iv\u00e1n Herrera",
+                  "order": 4,
+                  "leg_prob": 0.5799,
+                  "game_time_pt": "10:37 AM PT",
+                  "game_date_utc": "2026-08-02T17:37:00Z",
+                  "actual_hit": false
+                }
+              ],
+              "conservative_prob": 0.27,
+              "optimistic_prob": 0.3142,
+              "trio_hit": false,
+              "fully_graded": true
+            }
+          ],
+          "full6_hit": false,
+          "fully_graded": false
+        },
+        {
+          "combined_conservative": 0.05513,
+          "combined_optimistic": 0.07563,
+          "ev_conservative": 0.654,
+          "ev_optimistic": 1.269,
+          "playable": true,
+          "trios": [
+            {
+              "game_pk": 824323,
+              "team": "Kansas City Royals",
+              "opp_team": "Colorado Rockies",
+              "venue": "Coors Field",
+              "opp_era": 7.34,
+              "trio_type": "1-2-3",
+              "legs": [
+                {
+                  "player_id": 695600,
+                  "name": "Carter Jensen",
+                  "order": 1,
+                  "leg_prob": 0.5965,
+                  "game_time_pt": "12:10 PM PT",
+                  "game_date_utc": "2026-08-02T19:10:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 657041,
+                  "name": "Lane Thomas",
+                  "order": 2,
+                  "leg_prob": 0.5965,
+                  "game_time_pt": "12:10 PM PT",
+                  "game_date_utc": "2026-08-02T19:10:00Z",
+                  "actual_hit": null
+                },
+                {
+                  "player_id": 695506,
+                  "name": "Jac Caglianone",
+                  "order": 3,
+                  "leg_prob": 0.5799,
+                  "game_time_pt": "12:10 PM PT",
+                  "game_date_utc": "2026-08-02T19:10:00Z",
+                  "actual_hit": false
+                }
+              ],
+              "conservative_prob": 0.2348,
+              "optimistic_prob": 0.275,
+              "trio_hit": false,
+              "fully_graded": false
+            },
+            {
+              "game_pk": 822783,
+              "team": "St. Louis Cardinals",
+              "opp_team": "Toronto Blue Jays",
+              "venue": "Rogers Centre",
+              "opp_era": 9.49,
+              "trio_type": "1-2-3",
+              "legs": [
+                {
+                  "player_id": 663457,
+                  "name": "Lars Nootbaar",
+                  "order": 1,
+                  "leg_prob": 0.5965,
+                  "game_time_pt": "10:37 AM PT",
+                  "game_date_utc": "2026-08-02T17:37:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 691023,
+                  "name": "Jordan Walker",
+                  "order": 2,
+                  "leg_prob": 0.5965,
+                  "game_time_pt": "10:37 AM PT",
+                  "game_date_utc": "2026-08-02T17:37:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 676475,
+                  "name": "Alec Burleson",
+                  "order": 3,
+                  "leg_prob": 0.5799,
+                  "game_time_pt": "10:37 AM PT",
+                  "game_date_utc": "2026-08-02T17:37:00Z",
+                  "actual_hit": false
+                }
+              ],
+              "conservative_prob": 0.2348,
+              "optimistic_prob": 0.275,
+              "trio_hit": false,
+              "fully_graded": true
+            }
+          ],
+          "full6_hit": false,
+          "fully_graded": false
+        },
+        {
+          "combined_conservative": 0.04631,
+          "combined_optimistic": 0.06275,
+          "ev_conservative": 0.389,
+          "ev_optimistic": 0.883,
+          "playable": true,
+          "trios": [
+            {
+              "game_pk": 824483,
+              "team": "Cincinnati Reds",
+              "opp_team": "Pittsburgh Pirates",
+              "venue": "Great American Ball Park",
+              "opp_era": 4.83,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 701398,
+                  "name": "Sal Stewart",
+                  "order": 2,
+                  "leg_prob": 0.5773,
+                  "game_time_pt": "10:40 AM PT",
+                  "game_date_utc": "2026-08-02T17:40:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 668709,
+                  "name": "JJ Bleday",
+                  "order": 3,
+                  "leg_prob": 0.5263,
+                  "game_time_pt": "10:40 AM PT",
+                  "game_date_utc": "2026-08-02T17:40:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 663886,
+                  "name": "Tyler Stephenson",
+                  "order": 4,
+                  "leg_prob": 0.5263,
+                  "game_time_pt": "10:40 AM PT",
+                  "game_date_utc": "2026-08-02T17:40:00Z",
+                  "actual_hit": true
+                }
+              ],
+              "conservative_prob": 0.2152,
+              "optimistic_prob": 0.2505,
+              "trio_hit": true,
+              "fully_graded": true
+            },
+            {
+              "game_pk": 824404,
+              "team": "Cleveland Guardians",
+              "opp_team": "Arizona Diamondbacks",
+              "venue": "Progressive Field",
+              "opp_era": 4.86,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 608070,
+                  "name": "Jos\u00e9 Ram\u00edrez",
+                  "order": 2,
+                  "leg_prob": 0.5773,
+                  "game_time_pt": "10:40 AM PT",
+                  "game_date_utc": "2026-08-02T17:40:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 800050,
+                  "name": "Chase DeLauter",
+                  "order": 3,
+                  "leg_prob": 0.5263,
+                  "game_time_pt": "10:40 AM PT",
+                  "game_date_utc": "2026-08-02T17:40:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 683953,
+                  "name": "Travis Bazzana",
+                  "order": 4,
+                  "leg_prob": 0.5263,
+                  "game_time_pt": "10:40 AM PT",
+                  "game_date_utc": "2026-08-02T17:40:00Z",
+                  "actual_hit": false
+                }
+              ],
+              "conservative_prob": 0.2152,
+              "optimistic_prob": 0.2505,
+              "trio_hit": false,
+              "fully_graded": true
+            }
+          ],
+          "full6_hit": false,
+          "fully_graded": true
+        }
+      ]
     }
   },
   "record": {
     "legs": {
-      "wins": 101,
-      "losses": 91
+      "wins": 109,
+      "losses": 99
     },
     "trios": {
-      "wins": 13,
-      "losses": 47
+      "wins": 14,
+      "losses": 50
     },
     "full6": {
       "wins": 0,
-      "losses": 27
+      "losses": 28
     }
   }
 }
