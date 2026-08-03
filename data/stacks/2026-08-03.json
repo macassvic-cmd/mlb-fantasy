@@ -1,0 +1,248 @@
+{
+  "date": "2026-08-03",
+  "pairings": [
+    {
+      "trios": [
+        {
+          "game_pk": 824160,
+          "team": "Houston Astros",
+          "opp_team": "Toronto Blue Jays",
+          "venue": "Daikin Park",
+          "opp_era": 5.74,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 670541,
+              "name": "Yordan Alvarez",
+              "order": 2,
+              "leg_prob": 0.5965,
+              "game_time_pt": "5:10 PM PT",
+              "game_date_utc": "2026-08-04T00:10:00Z"
+            },
+            {
+              "player_id": 670623,
+              "name": "Isaac Paredes",
+              "order": 3,
+              "leg_prob": 0.5799,
+              "game_time_pt": "5:10 PM PT",
+              "game_date_utc": "2026-08-04T00:10:00Z"
+            },
+            {
+              "player_id": 572233,
+              "name": "Christian Walker",
+              "order": 4,
+              "leg_prob": 0.5799,
+              "game_time_pt": "5:10 PM PT",
+              "game_date_utc": "2026-08-04T00:10:00Z"
+            }
+          ],
+          "conservative_prob": 0.27,
+          "optimistic_prob": 0.3142
+        },
+        {
+          "game_pk": 824324,
+          "team": "Tampa Bay Rays",
+          "opp_team": "Colorado Rockies",
+          "venue": "Coors Field",
+          "opp_era": 6.54,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 666018,
+              "name": "Jonathan Aranda",
+              "order": 2,
+              "leg_prob": 0.5965,
+              "game_time_pt": "5:40 PM PT",
+              "game_date_utc": "2026-08-04T00:40:00Z"
+            },
+            {
+              "player_id": 691406,
+              "name": "Junior Caminero",
+              "order": 3,
+              "leg_prob": 0.5799,
+              "game_time_pt": "5:40 PM PT",
+              "game_date_utc": "2026-08-04T00:40:00Z"
+            },
+            {
+              "player_id": 668723,
+              "name": "Ryan Vilade",
+              "order": 4,
+              "leg_prob": 0.5799,
+              "game_time_pt": "5:40 PM PT",
+              "game_date_utc": "2026-08-04T00:40:00Z"
+            }
+          ],
+          "conservative_prob": 0.27,
+          "optimistic_prob": 0.3142
+        }
+      ],
+      "combined_conservative": 0.0729,
+      "combined_optimistic": 0.09872,
+      "ev_conservative": 1.187,
+      "ev_optimistic": 1.962,
+      "playable": true
+    },
+    {
+      "trios": [
+        {
+          "game_pk": 823431,
+          "team": "Washington Nationals",
+          "opp_team": "Philadelphia Phillies",
+          "venue": "Citizens Bank Park",
+          "opp_era": 5.61,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 695734,
+              "name": "Daylen Lile",
+              "order": 2,
+              "leg_prob": 0.5965,
+              "game_time_pt": "3:40 PM PT",
+              "game_date_utc": "2026-08-03T22:40:00Z"
+            },
+            {
+              "player_id": 686611,
+              "name": "Dylan Crews",
+              "order": 3,
+              "leg_prob": 0.5799,
+              "game_time_pt": "3:40 PM PT",
+              "game_date_utc": "2026-08-03T22:40:00Z"
+            },
+            {
+              "player_id": 682928,
+              "name": "CJ Abrams",
+              "order": 4,
+              "leg_prob": 0.5799,
+              "game_time_pt": "3:40 PM PT",
+              "game_date_utc": "2026-08-03T22:40:00Z"
+            }
+          ],
+          "conservative_prob": 0.27,
+          "optimistic_prob": 0.3142
+        },
+        {
+          "game_pk": 824160,
+          "team": "Toronto Blue Jays",
+          "opp_team": "Houston Astros",
+          "venue": "Daikin Park",
+          "opp_era": 7.17,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 665489,
+              "name": "Vladimir Guerrero Jr.",
+              "order": 2,
+              "leg_prob": 0.5965,
+              "game_time_pt": "5:10 PM PT",
+              "game_date_utc": "2026-08-04T00:10:00Z"
+            },
+            {
+              "player_id": 672960,
+              "name": "Kazuma Okamoto",
+              "order": 3,
+              "leg_prob": 0.5799,
+              "game_time_pt": "5:10 PM PT",
+              "game_date_utc": "2026-08-04T00:10:00Z"
+            },
+            {
+              "player_id": 543807,
+              "name": "George Springer",
+              "order": 4,
+              "leg_prob": 0.5799,
+              "game_time_pt": "5:10 PM PT",
+              "game_date_utc": "2026-08-04T00:10:00Z"
+            }
+          ],
+          "conservative_prob": 0.27,
+          "optimistic_prob": 0.3142
+        }
+      ],
+      "combined_conservative": 0.0729,
+      "combined_optimistic": 0.09872,
+      "ev_conservative": 1.187,
+      "ev_optimistic": 1.962,
+      "playable": true
+    },
+    {
+      "trios": [
+        {
+          "game_pk": 824160,
+          "team": "Houston Astros",
+          "opp_team": "Toronto Blue Jays",
+          "venue": "Daikin Park",
+          "opp_era": 5.74,
+          "trio_type": "1-2-3",
+          "legs": [
+            {
+              "player_id": 665161,
+              "name": "Jeremy Pe\u00f1a",
+              "order": 1,
+              "leg_prob": 0.5965,
+              "game_time_pt": "5:10 PM PT",
+              "game_date_utc": "2026-08-04T00:10:00Z"
+            },
+            {
+              "player_id": 670541,
+              "name": "Yordan Alvarez",
+              "order": 2,
+              "leg_prob": 0.5965,
+              "game_time_pt": "5:10 PM PT",
+              "game_date_utc": "2026-08-04T00:10:00Z"
+            },
+            {
+              "player_id": 670623,
+              "name": "Isaac Paredes",
+              "order": 3,
+              "leg_prob": 0.5799,
+              "game_time_pt": "5:10 PM PT",
+              "game_date_utc": "2026-08-04T00:10:00Z"
+            }
+          ],
+          "conservative_prob": 0.2348,
+          "optimistic_prob": 0.275
+        },
+        {
+          "game_pk": 824324,
+          "team": "Tampa Bay Rays",
+          "opp_team": "Colorado Rockies",
+          "venue": "Coors Field",
+          "opp_era": 6.54,
+          "trio_type": "1-2-3",
+          "legs": [
+            {
+              "player_id": 650490,
+              "name": "Yandy D\u00edaz",
+              "order": 1,
+              "leg_prob": 0.5965,
+              "game_time_pt": "5:40 PM PT",
+              "game_date_utc": "2026-08-04T00:40:00Z"
+            },
+            {
+              "player_id": 666018,
+              "name": "Jonathan Aranda",
+              "order": 2,
+              "leg_prob": 0.5965,
+              "game_time_pt": "5:40 PM PT",
+              "game_date_utc": "2026-08-04T00:40:00Z"
+            },
+            {
+              "player_id": 691406,
+              "name": "Junior Caminero",
+              "order": 3,
+              "leg_prob": 0.5799,
+              "game_time_pt": "5:40 PM PT",
+              "game_date_utc": "2026-08-04T00:40:00Z"
+            }
+          ],
+          "conservative_prob": 0.2348,
+          "optimistic_prob": 0.275
+        }
+      ],
+      "combined_conservative": 0.05513,
+      "combined_optimistic": 0.07563,
+      "ev_conservative": 0.654,
+      "ev_optimistic": 1.269,
+      "playable": true
+    }
+  ]
+}
