@@ -3474,6 +3474,122 @@
           ]
         }
       ]
+    },
+    "2026-08-03": {
+      "mixed_market_pairings": [],
+      "gap_filling_rescued_trios": [
+        {
+          "game_pk": 823431,
+          "team": 120,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.2028,
+          "stats_used": [
+            "RUNS",
+            "HRRBI",
+            "HRRBI"
+          ],
+          "legs": [
+            {
+              "player_id": 695734,
+              "name": "Daylen Lile",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 686611,
+              "name": "Dylan Crews",
+              "slot": 3,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            },
+            {
+              "player_id": 682928,
+              "name": "CJ Abrams",
+              "slot": 4,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            }
+          ]
+        },
+        {
+          "game_pk": 823757,
+          "team": 158,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1681,
+          "stats_used": [
+            "RUNS",
+            "HRRBI",
+            "HRRBI"
+          ],
+          "legs": [
+            {
+              "player_id": 694192,
+              "name": "Jackson Chourio",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 669003,
+              "name": "Garrett Mitchell",
+              "slot": 3,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            },
+            {
+              "player_id": 661388,
+              "name": "William Contreras",
+              "slot": 4,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            }
+          ]
+        },
+        {
+          "game_pk": 823757,
+          "team": 158,
+          "trio_type": "1-2-3",
+          "conservative_prob": 0.1656,
+          "stats_used": [
+            "HRRBI",
+            "RUNS",
+            "HRRBI"
+          ],
+          "legs": [
+            {
+              "player_id": 668930,
+              "name": "Brice Turang",
+              "slot": 1,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            },
+            {
+              "player_id": 694192,
+              "name": "Jackson Chourio",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 669003,
+              "name": "Garrett Mitchell",
+              "slot": 3,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            }
+          ]
+        }
+      ]
     }
   },
   "record": {
@@ -3491,9 +3607,9 @@
     }
   },
   "gap_filling_record": {
-    "rescue_fire_count": 90,
-    "days_tracked": 12,
-    "rescued_trio_legs_graded": 166,
-    "rescued_trio_legs_hit": 76
+    "rescue_fire_count": 93,
+    "days_tracked": 13,
+    "rescued_trio_legs_graded": 169,
+    "rescued_trio_legs_hit": 79
   }
 }

@@ -3382,16 +3382,241 @@
           "correct": false
         }
       ]
+    },
+    "2026-08-03": {
+      "summary": {
+        "premium": {
+          "total": 1,
+          "correct": 0,
+          "win_rate": 0.0
+        },
+        "strong": {
+          "total": 18,
+          "correct": 9,
+          "win_rate": 50.0
+        }
+      },
+      "plays": [
+        {
+          "player_id": 676475,
+          "name": "Alec Burleson",
+          "team": "St. Louis Cardinals",
+          "call": "under",
+          "edge": -1.87,
+          "ud_line": 5.5,
+          "actual_ud": 48,
+          "tier": "premium",
+          "correct": false
+        },
+        {
+          "player_id": 695578,
+          "name": "James Wood",
+          "team": "Washington Nationals",
+          "call": "over",
+          "edge": 0.45,
+          "ud_line": 8.5,
+          "actual_ud": 3,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 686611,
+          "name": "Dylan Crews",
+          "team": "Washington Nationals",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 682928,
+          "name": "CJ Abrams",
+          "team": "Washington Nationals",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 4,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 607208,
+          "name": "Trea Turner",
+          "team": "Philadelphia Phillies",
+          "call": "under",
+          "edge": -0.81,
+          "ud_line": 8.5,
+          "actual_ud": 0,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 695734,
+          "name": "Daylen Lile",
+          "team": "Washington Nationals",
+          "call": "over",
+          "edge": 1.16,
+          "ud_line": 6.5,
+          "actual_ud": 16,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 681082,
+          "name": "Bryson Stott",
+          "team": "Philadelphia Phillies",
+          "call": "over",
+          "edge": 0.74,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 547180,
+          "name": "Bryce Harper",
+          "team": "Philadelphia Phillies",
+          "call": "under",
+          "edge": -0.68,
+          "ud_line": 7.5,
+          "actual_ud": 16,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 683083,
+          "name": "Nasim Nu\u00f1ez",
+          "team": "Washington Nationals",
+          "call": "over",
+          "edge": 1.03,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 656941,
+          "name": "Kyle Schwarber",
+          "team": "Philadelphia Phillies",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 6,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 664761,
+          "name": "Alec Bohm",
+          "team": "Philadelphia Phillies",
+          "call": "under",
+          "edge": -0.1,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 660688,
+          "name": "Keibert Ruiz",
+          "team": "Washington Nationals",
+          "call": "under",
+          "edge": -0.39,
+          "ud_line": 5.5,
+          "actual_ud": 8,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 702222,
+          "name": "Justin Crawford",
+          "team": "Philadelphia Phillies",
+          "call": "under",
+          "edge": -0.61,
+          "ud_line": 5.5,
+          "actual_ud": 2,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 669016,
+          "name": "Brandon Marsh",
+          "team": "Philadelphia Phillies",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 699013,
+          "name": "Esmerlyn Valdez",
+          "team": "Pittsburgh Pirates",
+          "call": "over",
+          "edge": 0.69,
+          "ud_line": 5.5,
+          "actual_ud": 11,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 668804,
+          "name": "Bryan Reynolds",
+          "team": "Pittsburgh Pirates",
+          "call": "under",
+          "edge": -0.52,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 691406,
+          "name": "Junior Caminero",
+          "team": "Tampa Bay Rays",
+          "call": "under",
+          "edge": -1.34,
+          "ud_line": 10.5,
+          "actual_ud": 32,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 694249,
+          "name": "Cole Carrigg",
+          "team": "Colorado Rockies",
+          "call": "over",
+          "edge": 1.89,
+          "ud_line": 6.5,
+          "actual_ud": 13,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 681198,
+          "name": "TJ Rumfield",
+          "team": "Colorado Rockies",
+          "call": "over",
+          "edge": 1.19,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "tier": "strong",
+          "correct": false
+        }
+      ]
     }
   },
   "record": {
     "premium": {
       "wins": 22,
-      "losses": 24
+      "losses": 25
     },
     "strong": {
-      "wins": 121,
-      "losses": 113
+      "wins": 130,
+      "losses": 122
     }
   }
 }
