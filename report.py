@@ -134,8 +134,33 @@ def edge_label(edge):
     return "neutral"
 
 
+TOP25_RECORD_MIN_N_FOR_RATE = 5
+
+
+def top25_record_badge(player_id, top25_players):
+    """Cumulative Top-25 appearance record for this player, from
+    top25_results.json's per-player history (win/loss vs the UD line,
+    excluding pushes). Always the current running total regardless of
+    which date's card is showing it - not a point-in-time snapshot."""
+    p = top25_players.get(str(player_id)) if player_id is not None else None
+    history = p.get("history", []) if p else []
+    wins = sum(1 for h in history if h.get("grade") == "win")
+    losses = sum(1 for h in history if h.get("grade") == "loss")
+    n = wins + losses
+    if n == 0:
+        text = "Top 25: first appearance"
+    elif n < TOP25_RECORD_MIN_N_FOR_RATE:
+        text = f"Top 25: {wins}-{losses} (n={n})"
+    else:
+        rate = round(100 * wins / n, 1)
+        text = f"Top 25: {wins}-{losses} ({rate}%)"
+    return {"text": text, "wins": wins, "losses": losses, "n": n}
+
+
 def build_card(row):
     return {
+        "playerId": row.get("player_id"),
+        "premiumTier": slips_mod.premium_tier(row),
         "name":   row["name"],
         "team":   row["team"],
         "order":  row["order"] or "-",
@@ -670,9 +695,13 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     yesterday_cards = []
     daily_hit_rate = None
     daily_date = None
+    top25_players = top25_data.get("players", {})
     if t25_dates:
         daily_date = t25_dates[-1]
-        yesterday_cards = top25_data["dates"][daily_date]["top25"]
+        yesterday_cards = [
+            {**e, "top25Record": top25_record_badge(e.get("player_id"), top25_players)}
+            for e in top25_data["dates"][daily_date]["top25"]
+        ]
         decided = [e for e in yesterday_cards if e["grade"] in ("win", "loss")]
         if decided:
             hits = sum(1 for e in decided if e["grade"] == "win")
@@ -738,7 +767,10 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
 
     # --- Top 25 cards -------------------------------------------------
     cards = [build_card(row) for row in _by_game_time(rows[:25])]
-    cards_js = json.dumps(cards)
+    for c in cards:
+        c["top25Record"] = top25_record_badge(c.get("playerId"), top25_players)
+    # cards_js is serialized further below, after stack_pairings/value_rows/
+    # all_slips are known, so valuePlay/slip/stack membership can be added.
 
     # --- Premium: backtested high-win-rate subsets, see slips.premium_tier ---
     # Tier A ("Premium"): UNDER + edge 1.5-1.99 + batting order 3-4, 67.8%
@@ -837,6 +869,26 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
         for slip in slip_list:
             slip["legs"].sort(key=lambda l: l.get("game_date_utc") or "9999")
     slips_js = json.dumps(all_slips)
+
+    # --- Top 25 tier-membership badges (PREMIUM/STRONG already set in
+    # build_card; VALUE PLAY/SLIP/STACK need today's other sections'
+    # player_id sets, only known once stacks/value plays/slips are all
+    # built above) ---
+    stack_pids = {leg["player_id"]
+                  for pairing in stack_pairings
+                  for trio in pairing["trios"]
+                  for leg in trio["legs"]}
+    value_pids = {r.get("player_id") for r in value_rows}
+    slip_pids = {leg["player_id"]
+                 for slip_list in all_slips.values()
+                 for slip in slip_list
+                 for leg in slip["legs"]}
+    for c in cards:
+        pid = c.get("playerId")
+        c["valuePlay"] = pid in value_pids
+        c["slip"] = pid in slip_pids
+        c["stack"] = pid in stack_pids
+    cards_js = json.dumps(cards)
     # premium_rows is already filtered to market_anchored + premium_tier()=="premium"
     # (see the Premium section above) - reused here so the empty-slip state can
     # show real inventory instead of looking broken when the bar is legitimately
@@ -942,6 +994,11 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   .card .badge-getaway {{ background: #f87171; color: #1a0000; margin-left: 6px; }}
   .card .badge-premium {{ background: #a78bfa; margin-left: 6px; }}
   .card .badge-strong {{ background: #60a5fa; margin-left: 6px; }}
+  .card .badge-value  {{ background: #2dd4bf; margin-left: 6px; }}
+  .card .badge-slip   {{ background: #e879f9; margin-left: 6px; }}
+  .card .badge-stack  {{ background: #a3e635; margin-left: 6px; }}
+  .card .top25-record {{ font-size: 12px; color: #9fb0cc; margin-top: 6px; }}
+  .card .top25-record.has-rate {{ color: #c4cee0; }}
 
   /* Full leaderboard table */
   .controls {{ display: flex; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }}
@@ -1381,6 +1438,20 @@ function platoonMatchupHtml(c) {{
     </div>`;
 }}
 
+function top25RecordHtml(c) {{
+  if (!c.top25Record) return '';
+  const hasRate = c.top25Record.n >= {TOP25_RECORD_MIN_N_FOR_RATE};
+  return `<div class="top25-record${{hasRate ? ' has-rate' : ''}}">${{c.top25Record.text}}</div>`;
+}}
+
+function tierBadgesHtml(c) {{
+  return (c.premiumTier === 'premium' ? '<div class="badge badge-premium">&#9733; PREMIUM</div>' : '')
+    + (c.premiumTier === 'strong' ? '<div class="badge badge-strong">STRONG</div>' : '')
+    + (c.valuePlay ? '<div class="badge badge-value">VALUE PLAY</div>' : '')
+    + (c.slip ? '<div class="badge badge-slip">SLIP</div>' : '')
+    + (c.stack ? '<div class="badge badge-stack">STACK</div>' : '');
+}}
+
 function renderCard(c) {{
   const card = document.createElement('div');
   card.className = 'card ' + c.tier;
@@ -1394,6 +1465,7 @@ function renderCard(c) {{
     </div>
     <div class="stat-line">xwOBA ${{c.xwoba}} &nbsp;|&nbsp; Barrel% ${{c.barrel}} &nbsp;|&nbsp; Opp ERA ${{c.era}}</div>
     <div class="stat-line">${{c.wxIcon}} ${{c.wxText}} &nbsp;|&nbsp; Park ${{c.park}}</div>
+    ${{top25RecordHtml(c)}}
     ${{edgeRowHtml(c)}}
     ${{platoonMatchupHtml(c)}}
     ${{c.platoon ? '<div class="badge">Platoon Edge</div>' : ''}}
@@ -1402,8 +1474,7 @@ function renderCard(c) {{
     ${{c.projectedLineup && !c.getawayDayRisk ? '<div class="badge badge-projected">&#9888; Projected Lineup</div>' : ''}}
     ${{c.noLinePenalty ? '<div class="badge badge-no-line">&#9888; No Line &ndash; Lower Confidence</div>' : ''}}
     ${{c.getawayDayRisk ? '<div class="badge badge-getaway">&#9888; Projected Lineup &ndash; Getaway Day Risk</div>' : ''}}
-    ${{c.premiumTier === 'premium' ? '<div class="badge badge-premium">&#9733; PREMIUM</div>' : ''}}
-    ${{c.premiumTier === 'strong' ? '<div class="badge badge-strong">STRONG</div>' : ''}}
+    ${{tierBadgesHtml(c)}}
   `;
   return card;
 }}
@@ -1823,10 +1894,12 @@ for (const c of T25_CARDS) {{
     ${{callBadge}}
     <div class="stat-line">xwOBA ${{c.xwoba}} &nbsp;|&nbsp; Barrel% ${{c.barrel}} &nbsp;|&nbsp; Opp ERA ${{c.era}}</div>
     <div class="stat-line">${{c.wxIcon}} ${{c.wxText}} &nbsp;|&nbsp; Park ${{c.park}}</div>
+    ${{top25RecordHtml(c)}}
     ${{c.platoon ? '<div class="badge">Platoon Edge</div>' : ''}}
     ${{c.adjusted ? '<div class="badge badge-adjusted">Model adjusted</div>' : ''}}
     ${{c.noLinePenalty ? '<div class="badge badge-no-line">&#9888; No Line &ndash; Lower Confidence</div>' : ''}}
     ${{c.getawayDayRisk ? '<div class="badge badge-getaway">&#9888; Projected Lineup &ndash; Getaway Day Risk</div>' : ''}}
+    ${{tierBadgesHtml(c)}}
   `;
   t25Grid.appendChild(card);
 }}

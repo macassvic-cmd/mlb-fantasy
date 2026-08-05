@@ -719,12 +719,43 @@ def update_all_results(date_str, summary, results):
     print(f"Updated -> {ALL_RESULTS_PATH}")
 
 
+def _load_json_ids(path, extractor):
+    """Loads path (if present) and returns the set of player_ids extractor
+    pulls out of it. Used to compute that date's VALUE PLAY/SLIP/STACK
+    tier-membership badges - these are date-specific (unlike premiumTier,
+    which is derivable straight from the row), so they have to be read
+    from that day's own saved output, not today's."""
+    if not os.path.exists(path):
+        return set()
+    try:
+        with open(path, encoding="utf-8") as f:
+            data = json.load(f)
+        return extractor(data)
+    except Exception:
+        return set()
+
+
 def track_top25(date_str, rows, results_by_pid):
     """Record the top-25 players from this date's dashboard, with their
     win/loss outcome vs the UD line (same directional grade as the rest of
     the dashboard), and keep a per-player running history of Top-25
     appearances."""
     top25 = sorted(rows, key=lambda r: r["ud_pts"], reverse=True)[:25]
+
+    value_pids = _load_json_ids(
+        os.path.join(VALUE_PLAYS_DIR, f"{date_str}.json"),
+        lambda d: {p.get("player_id") for p in d.get("plays", [])},
+    )
+    slip_pids = _load_json_ids(
+        os.path.join(slips_mod.SLIPS_DIR, f"{date_str}.json"),
+        lambda d: {leg["player_id"] for slip_list in d.get("slips", {}).values()
+                   for slip in slip_list for leg in slip["legs"]},
+    )
+    stack_pids = _load_json_ids(
+        os.path.join(stacks_mod.STACKS_DIR, f"{date_str}.json"),
+        lambda d: {leg["player_id"] for pairing in d.get("pairings", [])
+                   for trio in pairing["trios"] for leg in trio["legs"]},
+    )
 
     entries = []
     for row in top25:
@@ -771,6 +802,10 @@ def track_top25(date_str, rows, results_by_pid):
             "grade": grade,
             "graded_vs_proj": graded_vs_proj,
             "getaway_day_risk": row.get("getaway_day_risk", False),
+            "premiumTier": slips_mod.premium_tier(row),
+            "valuePlay": pid in value_pids,
+            "slip": pid in slip_pids,
+            "stack": pid in stack_pids,
         })
 
     top25_data = load_json(TOP25_RESULTS_PATH, {"dates": {}, "players": {}})
