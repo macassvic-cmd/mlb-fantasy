@@ -3590,6 +3590,122 @@
           ]
         }
       ]
+    },
+    "2026-08-04": {
+      "mixed_market_pairings": [],
+      "gap_filling_rescued_trios": [
+        {
+          "game_pk": 824805,
+          "team": 110,
+          "trio_type": "1-2-3",
+          "conservative_prob": 0.1895,
+          "stats_used": [
+            "HRRBI",
+            "RUNS",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 687637,
+              "name": "Dylan Beavers",
+              "slot": 1,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            },
+            {
+              "player_id": 624413,
+              "name": "Pete Alonso",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 683002,
+              "name": "Gunnar Henderson",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            }
+          ]
+        },
+        {
+          "game_pk": 824321,
+          "team": 115,
+          "trio_type": "1-2-3",
+          "conservative_prob": 0.1363,
+          "stats_used": [
+            "RUNS",
+            "HRRBI",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 664983,
+              "name": "Jake McCarthy",
+              "slot": 1,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 691720,
+              "name": "Kyle Karros",
+              "slot": 2,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            },
+            {
+              "player_id": 694249,
+              "name": "Cole Carrigg",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            }
+          ]
+        },
+        {
+          "game_pk": 824321,
+          "team": 115,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1274,
+          "stats_used": [
+            "HRRBI",
+            "RUNS",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 691720,
+              "name": "Kyle Karros",
+              "slot": 2,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            },
+            {
+              "player_id": 694249,
+              "name": "Cole Carrigg",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 696100,
+              "name": "Hunter Goodman",
+              "slot": 4,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            }
+          ]
+        }
+      ]
     }
   },
   "record": {
@@ -3607,9 +3723,9 @@
     }
   },
   "gap_filling_record": {
-    "rescue_fire_count": 93,
-    "days_tracked": 13,
-    "rescued_trio_legs_graded": 169,
-    "rescued_trio_legs_hit": 79
+    "rescue_fire_count": 96,
+    "days_tracked": 14,
+    "rescued_trio_legs_graded": 175,
+    "rescued_trio_legs_hit": 80
   }
 }

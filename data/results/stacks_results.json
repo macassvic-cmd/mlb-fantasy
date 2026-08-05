@@ -3703,20 +3703,303 @@
           "fully_graded": true
         }
       ]
+    },
+    "2026-08-04": {
+      "pairings": [
+        {
+          "combined_conservative": 0.04952,
+          "combined_optimistic": 0.06751,
+          "ev_conservative": 0.486,
+          "ev_optimistic": 1.025,
+          "playable": true,
+          "trios": [
+            {
+              "game_pk": 824805,
+              "team": "Baltimore Orioles",
+              "opp_team": "Los Angeles Angels",
+              "venue": "Oriole Park at Camden Yards",
+              "opp_era": 7.98,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 624413,
+                  "name": "Pete Alonso",
+                  "order": 2,
+                  "leg_prob": 0.5972,
+                  "game_time_pt": "3:35 PM PT",
+                  "game_date_utc": "2026-08-04T22:35:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 683002,
+                  "name": "Gunnar Henderson",
+                  "order": 3,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "3:35 PM PT",
+                  "game_date_utc": "2026-08-04T22:35:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 621493,
+                  "name": "Taylor Ward",
+                  "order": 4,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "3:35 PM PT",
+                  "game_date_utc": "2026-08-04T22:35:00Z",
+                  "actual_hit": false
+                }
+              ],
+              "conservative_prob": 0.2279,
+              "optimistic_prob": 0.2661,
+              "trio_hit": false,
+              "fully_graded": true
+            },
+            {
+              "game_pk": 824321,
+              "team": "Colorado Rockies",
+              "opp_team": "Tampa Bay Rays",
+              "venue": "Coors Field",
+              "opp_era": 4.99,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 691720,
+                  "name": "Kyle Karros",
+                  "order": 2,
+                  "leg_prob": 0.5785,
+                  "game_time_pt": "5:40 PM PT",
+                  "game_date_utc": "2026-08-05T00:40:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 694249,
+                  "name": "Cole Carrigg",
+                  "order": 3,
+                  "leg_prob": 0.5339,
+                  "game_time_pt": "5:40 PM PT",
+                  "game_date_utc": "2026-08-05T00:40:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 696100,
+                  "name": "Hunter Goodman",
+                  "order": 4,
+                  "leg_prob": 0.5339,
+                  "game_time_pt": "5:40 PM PT",
+                  "game_date_utc": "2026-08-05T00:40:00Z",
+                  "actual_hit": false
+                }
+              ],
+              "conservative_prob": 0.2173,
+              "optimistic_prob": 0.2537,
+              "trio_hit": false,
+              "fully_graded": true
+            }
+          ],
+          "full6_hit": false,
+          "fully_graded": true
+        },
+        {
+          "combined_conservative": 0.04722,
+          "combined_optimistic": 0.06436,
+          "ev_conservative": 0.417,
+          "ev_optimistic": 0.931,
+          "playable": true,
+          "trios": [
+            {
+              "game_pk": 823432,
+              "team": "Philadelphia Phillies",
+              "opp_team": "Washington Nationals",
+              "venue": "Citizens Bank Park",
+              "opp_era": 4.94,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 656941,
+                  "name": "Kyle Schwarber",
+                  "order": 2,
+                  "leg_prob": 0.5785,
+                  "game_time_pt": "3:40 PM PT",
+                  "game_date_utc": "2026-08-04T22:40:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 547180,
+                  "name": "Bryce Harper",
+                  "order": 3,
+                  "leg_prob": 0.5339,
+                  "game_time_pt": "3:40 PM PT",
+                  "game_date_utc": "2026-08-04T22:40:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 664761,
+                  "name": "Alec Bohm",
+                  "order": 4,
+                  "leg_prob": 0.5339,
+                  "game_time_pt": "3:40 PM PT",
+                  "game_date_utc": "2026-08-04T22:40:00Z",
+                  "actual_hit": true
+                }
+              ],
+              "conservative_prob": 0.2173,
+              "optimistic_prob": 0.2537,
+              "trio_hit": false,
+              "fully_graded": true
+            },
+            {
+              "game_pk": 824161,
+              "team": "Toronto Blue Jays",
+              "opp_team": "Houston Astros",
+              "venue": "Daikin Park",
+              "opp_era": 4.76,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 665489,
+                  "name": "Vladimir Guerrero Jr.",
+                  "order": 2,
+                  "leg_prob": 0.5785,
+                  "game_time_pt": "5:10 PM PT",
+                  "game_date_utc": "2026-08-05T00:10:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 672960,
+                  "name": "Kazuma Okamoto",
+                  "order": 3,
+                  "leg_prob": 0.5339,
+                  "game_time_pt": "5:10 PM PT",
+                  "game_date_utc": "2026-08-05T00:10:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 543807,
+                  "name": "George Springer",
+                  "order": 4,
+                  "leg_prob": 0.5339,
+                  "game_time_pt": "5:10 PM PT",
+                  "game_date_utc": "2026-08-05T00:10:00Z",
+                  "actual_hit": false
+                }
+              ],
+              "conservative_prob": 0.2173,
+              "optimistic_prob": 0.2537,
+              "trio_hit": false,
+              "fully_graded": true
+            }
+          ],
+          "full6_hit": false,
+          "fully_graded": true
+        },
+        {
+          "combined_conservative": 0.04659,
+          "combined_optimistic": 0.06391,
+          "ev_conservative": 0.398,
+          "ev_optimistic": 0.917,
+          "playable": true,
+          "trios": [
+            {
+              "game_pk": 822865,
+              "team": "San Francisco Giants",
+              "opp_team": "Texas Rangers",
+              "venue": "Globe Life Field",
+              "opp_era": 4.77,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 808982,
+                  "name": "Jung Hoo Lee",
+                  "order": 2,
+                  "leg_prob": 0.5785,
+                  "game_time_pt": "5:05 PM PT",
+                  "game_date_utc": "2026-08-05T00:05:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 642715,
+                  "name": "Willy Adames",
+                  "order": 3,
+                  "leg_prob": 0.5339,
+                  "game_time_pt": "5:05 PM PT",
+                  "game_date_utc": "2026-08-05T00:05:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 646240,
+                  "name": "Rafael Devers",
+                  "order": 4,
+                  "leg_prob": 0.5339,
+                  "game_time_pt": "5:05 PM PT",
+                  "game_date_utc": "2026-08-05T00:05:00Z",
+                  "actual_hit": false
+                }
+              ],
+              "conservative_prob": 0.2173,
+              "optimistic_prob": 0.2537,
+              "trio_hit": false,
+              "fully_graded": true
+            },
+            {
+              "game_pk": 824805,
+              "team": "Baltimore Orioles",
+              "opp_team": "Los Angeles Angels",
+              "venue": "Oriole Park at Camden Yards",
+              "opp_era": 7.98,
+              "trio_type": "1-2-3",
+              "legs": [
+                {
+                  "player_id": 687637,
+                  "name": "Dylan Beavers",
+                  "order": 1,
+                  "leg_prob": 0.5972,
+                  "game_time_pt": "3:35 PM PT",
+                  "game_date_utc": "2026-08-04T22:35:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 624413,
+                  "name": "Pete Alonso",
+                  "order": 2,
+                  "leg_prob": 0.5972,
+                  "game_time_pt": "3:35 PM PT",
+                  "game_date_utc": "2026-08-04T22:35:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 683002,
+                  "name": "Gunnar Henderson",
+                  "order": 3,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "3:35 PM PT",
+                  "game_date_utc": "2026-08-04T22:35:00Z",
+                  "actual_hit": false
+                }
+              ],
+              "conservative_prob": 0.2144,
+              "optimistic_prob": 0.2519,
+              "trio_hit": false,
+              "fully_graded": true
+            }
+          ],
+          "full6_hit": false,
+          "fully_graded": true
+        }
+      ]
     }
   },
   "record": {
     "legs": {
-      "wins": 117,
-      "losses": 108
+      "wins": 120,
+      "losses": 123
     },
     "trios": {
       "wins": 14,
-      "losses": 55
+      "losses": 61
     },
     "full6": {
       "wins": 0,
-      "losses": 30
+      "losses": 33
     }
   }
 }
