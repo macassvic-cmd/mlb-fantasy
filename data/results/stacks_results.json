@@ -3986,20 +3986,303 @@
           "fully_graded": true
         }
       ]
+    },
+    "2026-08-05": {
+      "pairings": [
+        {
+          "combined_conservative": 0.05194,
+          "combined_optimistic": 0.07081,
+          "ev_conservative": 0.558,
+          "ev_optimistic": 1.124,
+          "playable": true,
+          "trios": [
+            {
+              "game_pk": 824158,
+              "team": "Houston Astros",
+              "opp_team": "Toronto Blue Jays",
+              "venue": "Daikin Park",
+              "opp_era": 5.92,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 670541,
+                  "name": "Yordan Alvarez",
+                  "order": 2,
+                  "leg_prob": 0.5972,
+                  "game_time_pt": "11:10 AM PT",
+                  "game_date_utc": "2026-08-05T18:10:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 670623,
+                  "name": "Isaac Paredes",
+                  "order": 3,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "11:10 AM PT",
+                  "game_date_utc": "2026-08-05T18:10:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 662139,
+                  "name": "Daulton Varsho",
+                  "order": 4,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "11:10 AM PT",
+                  "game_date_utc": "2026-08-05T18:10:00Z",
+                  "actual_hit": true
+                }
+              ],
+              "conservative_prob": 0.2279,
+              "optimistic_prob": 0.2661,
+              "trio_hit": false,
+              "fully_graded": true
+            },
+            {
+              "game_pk": 824482,
+              "team": "Cincinnati Reds",
+              "opp_team": "Athletics",
+              "venue": "Great American Ball Park",
+              "opp_era": 5.79,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 701398,
+                  "name": "Sal Stewart",
+                  "order": 2,
+                  "leg_prob": 0.5972,
+                  "game_time_pt": "3:40 PM PT",
+                  "game_date_utc": "2026-08-05T22:40:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 668709,
+                  "name": "JJ Bleday",
+                  "order": 3,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "3:40 PM PT",
+                  "game_date_utc": "2026-08-05T22:40:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 663886,
+                  "name": "Tyler Stephenson",
+                  "order": 4,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "3:40 PM PT",
+                  "game_date_utc": "2026-08-05T22:40:00Z",
+                  "actual_hit": null
+                }
+              ],
+              "conservative_prob": 0.2279,
+              "optimistic_prob": 0.2661,
+              "trio_hit": false,
+              "fully_graded": false
+            }
+          ],
+          "full6_hit": false,
+          "fully_graded": false
+        },
+        {
+          "combined_conservative": 0.05194,
+          "combined_optimistic": 0.07081,
+          "ev_conservative": 0.558,
+          "ev_optimistic": 1.124,
+          "playable": true,
+          "trios": [
+            {
+              "game_pk": 824082,
+              "team": "Kansas City Royals",
+              "opp_team": "Minnesota Twins",
+              "venue": "Kauffman Stadium",
+              "opp_era": 6.5,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 677951,
+                  "name": "Bobby Witt Jr.",
+                  "order": 2,
+                  "leg_prob": 0.5972,
+                  "game_time_pt": "4:40 PM PT",
+                  "game_date_utc": "2026-08-05T23:40:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 695506,
+                  "name": "Jac Caglianone",
+                  "order": 3,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "4:40 PM PT",
+                  "game_date_utc": "2026-08-05T23:40:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 521692,
+                  "name": "Salvador Perez",
+                  "order": 4,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "4:40 PM PT",
+                  "game_date_utc": "2026-08-05T23:40:00Z",
+                  "actual_hit": false
+                }
+              ],
+              "conservative_prob": 0.2279,
+              "optimistic_prob": 0.2661,
+              "trio_hit": false,
+              "fully_graded": true
+            },
+            {
+              "game_pk": 823429,
+              "team": "Philadelphia Phillies",
+              "opp_team": "Washington Nationals",
+              "venue": "Citizens Bank Park",
+              "opp_era": 5.56,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 607208,
+                  "name": "Trea Turner",
+                  "order": 2,
+                  "leg_prob": 0.5972,
+                  "game_time_pt": "3:40 PM PT",
+                  "game_date_utc": "2026-08-05T22:40:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 547180,
+                  "name": "Bryce Harper",
+                  "order": 3,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "3:40 PM PT",
+                  "game_date_utc": "2026-08-05T22:40:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 650333,
+                  "name": "Luis Arraez",
+                  "order": 4,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "3:40 PM PT",
+                  "game_date_utc": "2026-08-05T22:40:00Z",
+                  "actual_hit": true
+                }
+              ],
+              "conservative_prob": 0.2279,
+              "optimistic_prob": 0.2661,
+              "trio_hit": false,
+              "fully_graded": true
+            }
+          ],
+          "full6_hit": false,
+          "fully_graded": true
+        },
+        {
+          "combined_conservative": 0.05194,
+          "combined_optimistic": 0.07081,
+          "ev_conservative": 0.558,
+          "ev_optimistic": 1.124,
+          "playable": true,
+          "trios": [
+            {
+              "game_pk": 822866,
+              "team": "Texas Rangers",
+              "opp_team": "San Francisco Giants",
+              "venue": "Globe Life Field",
+              "opp_era": 6.63,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 694671,
+                  "name": "Wyatt Langford",
+                  "order": 2,
+                  "leg_prob": 0.5972,
+                  "game_time_pt": "11:35 AM PT",
+                  "game_date_utc": "2026-08-05T18:35:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 608369,
+                  "name": "Corey Seager",
+                  "order": 3,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "11:35 AM PT",
+                  "game_date_utc": "2026-08-05T18:35:00Z",
+                  "actual_hit": null
+                },
+                {
+                  "player_id": 607043,
+                  "name": "Brandon Nimmo",
+                  "order": 4,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "11:35 AM PT",
+                  "game_date_utc": "2026-08-05T18:35:00Z",
+                  "actual_hit": true
+                }
+              ],
+              "conservative_prob": 0.2279,
+              "optimistic_prob": 0.2661,
+              "trio_hit": false,
+              "fully_graded": false
+            },
+            {
+              "game_pk": 823429,
+              "team": "Washington Nationals",
+              "opp_team": "Philadelphia Phillies",
+              "venue": "Citizens Bank Park",
+              "opp_era": 6.72,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 665953,
+                  "name": "Andr\u00e9s Chaparro",
+                  "order": 2,
+                  "leg_prob": 0.5972,
+                  "game_time_pt": "3:40 PM PT",
+                  "game_date_utc": "2026-08-05T22:40:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 691781,
+                  "name": "Brady House",
+                  "order": 3,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "3:40 PM PT",
+                  "game_date_utc": "2026-08-05T22:40:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 682928,
+                  "name": "CJ Abrams",
+                  "order": 4,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "3:40 PM PT",
+                  "game_date_utc": "2026-08-05T22:40:00Z",
+                  "actual_hit": true
+                }
+              ],
+              "conservative_prob": 0.2279,
+              "optimistic_prob": 0.2661,
+              "trio_hit": true,
+              "fully_graded": true
+            }
+          ],
+          "full6_hit": false,
+          "fully_graded": false
+        }
+      ]
     }
   },
   "record": {
     "legs": {
-      "wins": 120,
-      "losses": 123
+      "wins": 129,
+      "losses": 130
     },
     "trios": {
-      "wins": 14,
-      "losses": 61
+      "wins": 15,
+      "losses": 64
     },
     "full6": {
       "wins": 0,
-      "losses": 33
+      "losses": 34
     }
   }
 }
