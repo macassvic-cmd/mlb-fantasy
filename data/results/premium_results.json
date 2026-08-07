@@ -4112,16 +4112,219 @@
           "correct": false
         }
       ]
+    },
+    "2026-08-06": {
+      "summary": {
+        "premium": {
+          "total": 3,
+          "correct": 0,
+          "win_rate": 0.0
+        },
+        "strong": {
+          "total": 14,
+          "correct": 12,
+          "win_rate": 85.7
+        }
+      },
+      "plays": [
+        {
+          "player_id": 694384,
+          "name": "Nolan Schanuel",
+          "team": "Los Angeles Angels",
+          "call": "under",
+          "edge": -1.7,
+          "ud_line": 6.5,
+          "actual_ud": 7,
+          "tier": "premium",
+          "correct": false
+        },
+        {
+          "player_id": 608070,
+          "name": "Jos\u00e9 Ram\u00edrez",
+          "team": "Cleveland Guardians",
+          "call": "under",
+          "edge": -1.58,
+          "ud_line": 6.5,
+          "actual_ud": 10,
+          "tier": "premium",
+          "correct": false
+        },
+        {
+          "player_id": 678246,
+          "name": "Miguel Vargas",
+          "team": "Chicago White Sox",
+          "call": "under",
+          "edge": -1.67,
+          "ud_line": 6.5,
+          "actual_ud": 11,
+          "tier": "premium",
+          "correct": false
+        },
+        {
+          "player_id": 668804,
+          "name": "Bryan Reynolds",
+          "team": "Pittsburgh Pirates",
+          "call": "over",
+          "edge": 0.82,
+          "ud_line": 5.5,
+          "actual_ud": 5,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 681082,
+          "name": "Bryson Stott",
+          "team": "Philadelphia Phillies",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 19,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 650333,
+          "name": "Luis Arraez",
+          "team": "Philadelphia Phillies",
+          "call": "over",
+          "edge": 1.54,
+          "ud_line": 7.5,
+          "actual_ud": 11,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 607208,
+          "name": "Trea Turner",
+          "team": "Philadelphia Phillies",
+          "call": "over",
+          "edge": 0.33,
+          "ud_line": 8.5,
+          "actual_ud": 11,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 664761,
+          "name": "Alec Bohm",
+          "team": "Philadelphia Phillies",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 592663,
+          "name": "J.T. Realmuto",
+          "team": "Philadelphia Phillies",
+          "call": "over",
+          "edge": 1.57,
+          "ud_line": 6.5,
+          "actual_ud": 15,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 656941,
+          "name": "Kyle Schwarber",
+          "team": "Philadelphia Phillies",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 9.5,
+          "actual_ud": 8,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 702222,
+          "name": "Justin Crawford",
+          "team": "Philadelphia Phillies",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 5.5,
+          "actual_ud": 5,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 669016,
+          "name": "Brandon Marsh",
+          "team": "Philadelphia Phillies",
+          "call": "over",
+          "edge": 0.43,
+          "ud_line": 6.5,
+          "actual_ud": 13,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 686611,
+          "name": "Dylan Crews",
+          "team": "Washington Nationals",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 683083,
+          "name": "Nasim Nu\u00f1ez",
+          "team": "Washington Nationals",
+          "call": "under",
+          "edge": -1.95,
+          "ud_line": 5.5,
+          "actual_ud": 3,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 677800,
+          "name": "Wilyer Abreu",
+          "team": "Boston Red Sox",
+          "call": "over",
+          "edge": 1.11,
+          "ud_line": 7.5,
+          "actual_ud": 12,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 621566,
+          "name": "Matt Olson",
+          "team": "Atlanta Braves",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 30,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 671739,
+          "name": "Michael Harris II",
+          "team": "Atlanta Braves",
+          "call": "over",
+          "edge": 0.28,
+          "ud_line": 6.5,
+          "actual_ud": 27,
+          "tier": "strong",
+          "correct": true
+        }
+      ]
     }
   },
   "record": {
     "premium": {
       "wins": 28,
-      "losses": 27
+      "losses": 30
     },
     "strong": {
-      "wins": 147,
-      "losses": 140
+      "wins": 159,
+      "losses": 142
     }
   }
 }

@@ -3970,6 +3970,270 @@
           ]
         }
       ]
+    },
+    "2026-08-06": {
+      "mixed_market_pairings": [],
+      "gap_filling_rescued_trios": [
+        {
+          "game_pk": 824481,
+          "team": 113,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1681,
+          "stats_used": [
+            "RUNS",
+            "HRRBI",
+            "HRRBI"
+          ],
+          "legs": [
+            {
+              "player_id": 701398,
+              "name": "Sal Stewart",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 668709,
+              "name": "JJ Bleday",
+              "slot": 3,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": true
+            },
+            {
+              "player_id": 663886,
+              "name": "Tyler Stephenson",
+              "slot": 4,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": true
+            }
+          ]
+        },
+        {
+          "game_pk": 825053,
+          "team": 109,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1681,
+          "stats_used": [
+            "RUNS",
+            "HRRBI",
+            "HRRBI"
+          ],
+          "legs": [
+            {
+              "player_id": 682998,
+              "name": "Corbin Carroll",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 672695,
+              "name": "Geraldo Perdomo",
+              "slot": 3,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            },
+            {
+              "player_id": 672515,
+              "name": "Gabriel Moreno",
+              "slot": 4,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": true
+            }
+          ]
+        },
+        {
+          "game_pk": 825053,
+          "team": 109,
+          "trio_type": "1-2-3",
+          "conservative_prob": 0.1656,
+          "stats_used": [
+            "HRRBI",
+            "RUNS",
+            "HRRBI"
+          ],
+          "legs": [
+            {
+              "player_id": 663457,
+              "name": "Lars Nootbaar",
+              "slot": 1,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            },
+            {
+              "player_id": 682998,
+              "name": "Corbin Carroll",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 672695,
+              "name": "Geraldo Perdomo",
+              "slot": 3,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            }
+          ]
+        },
+        {
+          "game_pk": 824729,
+          "team": 111,
+          "trio_type": "1-2-3",
+          "conservative_prob": 0.1639,
+          "stats_used": [
+            "RUNS",
+            "RUNS",
+            "HRRBI"
+          ],
+          "legs": [
+            {
+              "player_id": 686765,
+              "name": "Nick Sogard",
+              "slot": 1,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 678882,
+              "name": "Ceddanne Rafaela",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 677800,
+              "name": "Wilyer Abreu",
+              "slot": 3,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": true
+            }
+          ]
+        },
+        {
+          "game_pk": 824729,
+          "team": 111,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1368,
+          "stats_used": [
+            "RUNS",
+            "HRRBI",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 678882,
+              "name": "Ceddanne Rafaela",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 677800,
+              "name": "Wilyer Abreu",
+              "slot": 3,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": true
+            },
+            {
+              "player_id": 575929,
+              "name": "Willson Contreras",
+              "slot": 4,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": null
+            }
+          ]
+        },
+        {
+          "game_pk": 825053,
+          "team": 135,
+          "trio_type": "1-2-3",
+          "conservative_prob": 0.1363,
+          "stats_used": [
+            "RUNS",
+            "RUNS",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 665487,
+              "name": "Fernando Tatis Jr.",
+              "slot": 1,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 650859,
+              "name": "Luis Rengifo",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 592518,
+              "name": "Manny Machado",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            }
+          ]
+        },
+        {
+          "game_pk": 825053,
+          "team": 135,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1271,
+          "stats_used": [
+            "RUNS",
+            "RUNS",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 650859,
+              "name": "Luis Rengifo",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 592518,
+              "name": "Manny Machado",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 664034,
+              "name": "Ty France",
+              "slot": 4,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            }
+          ]
+        }
+      ]
     }
   },
   "record": {
@@ -3987,9 +4251,9 @@
     }
   },
   "gap_filling_record": {
-    "rescue_fire_count": 103,
-    "days_tracked": 15,
-    "rescued_trio_legs_graded": 187,
-    "rescued_trio_legs_hit": 86
+    "rescue_fire_count": 110,
+    "days_tracked": 16,
+    "rescued_trio_legs_graded": 199,
+    "rescued_trio_legs_hit": 93
   }
 }
