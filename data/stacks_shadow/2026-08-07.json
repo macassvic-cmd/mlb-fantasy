@@ -1,0 +1,120 @@
+{
+  "date": "2026-08-07",
+  "mixed_market": {
+    "trio_count": 3,
+    "pairings": []
+  },
+  "gap_filling": {
+    "date": "2026-08-07",
+    "baseline_trio_count": 0,
+    "fallback_trio_count": 3,
+    "baseline_pairing_count": 0,
+    "fallback_pairing_count": 0,
+    "rescued_trio_count": 3,
+    "rescued_trios": [
+      {
+        "game_pk": 823266,
+        "team": 135,
+        "trio_type": "1-2-3",
+        "conservative_prob": 0.1878,
+        "stats_used": [
+          "RUNS",
+          "RUNS",
+          "RUNS"
+        ],
+        "legs": [
+          {
+            "player_id": 665487,
+            "name": "Fernando Tatis Jr.",
+            "slot": 1,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 650859,
+            "name": "Luis Rengifo",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 592518,
+            "name": "Manny Machado",
+            "slot": 3,
+            "stat": "RUNS",
+            "threshold": 1
+          }
+        ]
+      },
+      {
+        "game_pk": 823266,
+        "team": 135,
+        "trio_type": "2-3-4",
+        "conservative_prob": 0.1791,
+        "stats_used": [
+          "RUNS",
+          "RUNS",
+          "RUNS"
+        ],
+        "legs": [
+          {
+            "player_id": 650859,
+            "name": "Luis Rengifo",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 592518,
+            "name": "Manny Machado",
+            "slot": 3,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 664034,
+            "name": "Ty France",
+            "slot": 4,
+            "stat": "RUNS",
+            "threshold": 1
+          }
+        ]
+      },
+      {
+        "game_pk": 825051,
+        "team": 109,
+        "trio_type": "2-3-4",
+        "conservative_prob": 0.1271,
+        "stats_used": [
+          "RUNS",
+          "RUNS",
+          "RUNS"
+        ],
+        "legs": [
+          {
+            "player_id": 682998,
+            "name": "Corbin Carroll",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 672515,
+            "name": "Gabriel Moreno",
+            "slot": 3,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 606466,
+            "name": "Ketel Marte",
+            "slot": 4,
+            "stat": "RUNS",
+            "threshold": 1
+          }
+        ]
+      }
+    ],
+    "fallback_pairings": []
+  }
+}
