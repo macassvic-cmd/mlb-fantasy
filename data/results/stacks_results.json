@@ -4552,20 +4552,303 @@
           "fully_graded": true
         }
       ]
+    },
+    "2026-08-07": {
+      "pairings": [
+        {
+          "combined_conservative": 0.05194,
+          "combined_optimistic": 0.07081,
+          "ev_conservative": 0.558,
+          "ev_optimistic": 1.124,
+          "playable": true,
+          "trios": [
+            {
+              "game_pk": 823266,
+              "team": "San Diego Padres",
+              "opp_team": "Houston Astros",
+              "venue": "Petco Park",
+              "opp_era": 7.36,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 650859,
+                  "name": "Luis Rengifo",
+                  "order": 2,
+                  "leg_prob": 0.5972,
+                  "game_time_pt": "6:40 PM PT",
+                  "game_date_utc": "2026-08-08T01:40:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 592518,
+                  "name": "Manny Machado",
+                  "order": 3,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "6:40 PM PT",
+                  "game_date_utc": "2026-08-08T01:40:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 664034,
+                  "name": "Ty France",
+                  "order": 4,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "6:40 PM PT",
+                  "game_date_utc": "2026-08-08T01:40:00Z",
+                  "actual_hit": false
+                }
+              ],
+              "conservative_prob": 0.2279,
+              "optimistic_prob": 0.2661,
+              "trio_hit": false,
+              "fully_graded": true
+            },
+            {
+              "game_pk": 823836,
+              "team": "Miami Marlins",
+              "opp_team": "Los Angeles Angels",
+              "venue": "loanDepot park",
+              "opp_era": 11.57,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 681715,
+                  "name": "Heriberto Hern\u00e1ndez",
+                  "order": 2,
+                  "leg_prob": 0.5972,
+                  "game_time_pt": "4:10 PM PT",
+                  "game_date_utc": "2026-08-07T23:10:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 682663,
+                  "name": "Agust\u00edn Ram\u00edrez",
+                  "order": 3,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "4:10 PM PT",
+                  "game_date_utc": "2026-08-07T23:10:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 669364,
+                  "name": "Xavier Edwards",
+                  "order": 4,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "4:10 PM PT",
+                  "game_date_utc": "2026-08-07T23:10:00Z",
+                  "actual_hit": false
+                }
+              ],
+              "conservative_prob": 0.2279,
+              "optimistic_prob": 0.2661,
+              "trio_hit": false,
+              "fully_graded": true
+            }
+          ],
+          "full6_hit": false,
+          "fully_graded": true
+        },
+        {
+          "combined_conservative": 0.05194,
+          "combined_optimistic": 0.07081,
+          "ev_conservative": 0.558,
+          "ev_optimistic": 1.124,
+          "playable": true,
+          "trios": [
+            {
+              "game_pk": 824566,
+              "team": "Cleveland Guardians",
+              "opp_team": "Chicago White Sox",
+              "venue": "Rate Field",
+              "opp_era": 5.82,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 800050,
+                  "name": "Chase DeLauter",
+                  "order": 2,
+                  "leg_prob": 0.5972,
+                  "game_time_pt": "4:40 PM PT",
+                  "game_date_utc": "2026-08-07T23:40:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 608070,
+                  "name": "Jos\u00e9 Ram\u00edrez",
+                  "order": 3,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "4:40 PM PT",
+                  "game_date_utc": "2026-08-07T23:40:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 663993,
+                  "name": "Nathaniel Lowe",
+                  "order": 4,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "4:40 PM PT",
+                  "game_date_utc": "2026-08-07T23:40:00Z",
+                  "actual_hit": null
+                }
+              ],
+              "conservative_prob": 0.2279,
+              "optimistic_prob": 0.2661,
+              "trio_hit": false,
+              "fully_graded": false
+            },
+            {
+              "game_pk": 824727,
+              "team": "Boston Red Sox",
+              "opp_team": "Athletics",
+              "venue": "Fenway Park",
+              "opp_era": 6.72,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 678882,
+                  "name": "Ceddanne Rafaela",
+                  "order": 2,
+                  "leg_prob": 0.5972,
+                  "game_time_pt": "4:10 PM PT",
+                  "game_date_utc": "2026-08-07T23:10:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 677800,
+                  "name": "Wilyer Abreu",
+                  "order": 3,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "4:10 PM PT",
+                  "game_date_utc": "2026-08-07T23:10:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 702332,
+                  "name": "Caleb Durbin",
+                  "order": 4,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "4:10 PM PT",
+                  "game_date_utc": "2026-08-07T23:10:00Z",
+                  "actual_hit": true
+                }
+              ],
+              "conservative_prob": 0.2279,
+              "optimistic_prob": 0.2661,
+              "trio_hit": true,
+              "fully_graded": true
+            }
+          ],
+          "full6_hit": false,
+          "fully_graded": false
+        },
+        {
+          "combined_conservative": 0.04886,
+          "combined_optimistic": 0.06703,
+          "ev_conservative": 0.466,
+          "ev_optimistic": 1.011,
+          "playable": true,
+          "trios": [
+            {
+              "game_pk": 823024,
+              "team": "St. Louis Cardinals",
+              "opp_team": "Colorado Rockies",
+              "venue": "Busch Stadium",
+              "opp_era": 5.75,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 671056,
+                  "name": "Iv\u00e1n Herrera",
+                  "order": 2,
+                  "leg_prob": 0.5972,
+                  "game_time_pt": "5:15 PM PT",
+                  "game_date_utc": "2026-08-08T00:15:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 676475,
+                  "name": "Alec Burleson",
+                  "order": 3,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "5:15 PM PT",
+                  "game_date_utc": "2026-08-08T00:15:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 665877,
+                  "name": "Jos\u00e9 Ferm\u00edn",
+                  "order": 4,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "5:15 PM PT",
+                  "game_date_utc": "2026-08-08T00:15:00Z",
+                  "actual_hit": false
+                }
+              ],
+              "conservative_prob": 0.2279,
+              "optimistic_prob": 0.2661,
+              "trio_hit": false,
+              "fully_graded": true
+            },
+            {
+              "game_pk": 823266,
+              "team": "San Diego Padres",
+              "opp_team": "Houston Astros",
+              "venue": "Petco Park",
+              "opp_era": 7.36,
+              "trio_type": "1-2-3",
+              "legs": [
+                {
+                  "player_id": 665487,
+                  "name": "Fernando Tatis Jr.",
+                  "order": 1,
+                  "leg_prob": 0.5972,
+                  "game_time_pt": "6:40 PM PT",
+                  "game_date_utc": "2026-08-08T01:40:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 650859,
+                  "name": "Luis Rengifo",
+                  "order": 2,
+                  "leg_prob": 0.5972,
+                  "game_time_pt": "6:40 PM PT",
+                  "game_date_utc": "2026-08-08T01:40:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 592518,
+                  "name": "Manny Machado",
+                  "order": 3,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "6:40 PM PT",
+                  "game_date_utc": "2026-08-08T01:40:00Z",
+                  "actual_hit": true
+                }
+              ],
+              "conservative_prob": 0.2144,
+              "optimistic_prob": 0.2519,
+              "trio_hit": false,
+              "fully_graded": true
+            }
+          ],
+          "full6_hit": false,
+          "fully_graded": true
+        }
+      ]
     }
   },
   "record": {
     "legs": {
-      "wins": 139,
-      "losses": 138
+      "wins": 149,
+      "losses": 145
     },
     "trios": {
-      "wins": 18,
-      "losses": 67
+      "wins": 19,
+      "losses": 71
     },
     "full6": {
       "wins": 0,
-      "losses": 37
+      "losses": 39
     }
   }
 }

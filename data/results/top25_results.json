@@ -31399,6 +31399,735 @@
           "stack": true
         }
       ]
+    },
+    "2026-08-07": {
+      "top25": [
+        {
+          "player_id": 665487,
+          "date": "2026-08-07",
+          "name": "Fernando Tatis Jr.",
+          "team": "San Diego Padres",
+          "order": 1,
+          "ud": 9.3,
+          "pp": 8.9,
+          "xwoba": 0.311,
+          "barrel": 3.6,
+          "era": 7.36,
+          "wxIcon": "\u26c5",
+          "wxText": "78\u00b0F 6mph WNW",
+          "park": 0.88,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "gameTimePt": "6:40 PM PT",
+          "projected_ud": 9.33,
+          "ud_line": 8.5,
+          "actual_ud": 17,
+          "grade": "win",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": true
+        },
+        {
+          "player_id": 672640,
+          "date": "2026-08-07",
+          "name": "Otto Lopez",
+          "team": "Miami Marlins",
+          "order": 1,
+          "ud": 9.1,
+          "pp": 8.9,
+          "xwoba": 0.269,
+          "barrel": 1.4,
+          "era": 11.57,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 0.96,
+          "platoon": false,
+          "adjusted": true,
+          "tier": "green",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 9.12,
+          "ud_line": null,
+          "actual_ud": 0,
+          "grade": "loss",
+          "graded_vs_proj": true,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 681715,
+          "date": "2026-08-07",
+          "name": "Heriberto Hern\u00e1ndez",
+          "team": "Miami Marlins",
+          "order": 2,
+          "ud": 9.1,
+          "pp": 8.8,
+          "xwoba": 0.274,
+          "barrel": 3.9,
+          "era": 11.57,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 0.96,
+          "platoon": false,
+          "adjusted": true,
+          "tier": "green",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 9.12,
+          "ud_line": null,
+          "actual_ud": 0,
+          "grade": "loss",
+          "graded_vs_proj": true,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": true
+        },
+        {
+          "player_id": 682663,
+          "date": "2026-08-07",
+          "name": "Agust\u00edn Ram\u00edrez",
+          "team": "Miami Marlins",
+          "order": 3,
+          "ud": 9.1,
+          "pp": 8.7,
+          "xwoba": 0.006,
+          "barrel": 0.0,
+          "era": 11.57,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 0.96,
+          "platoon": false,
+          "adjusted": true,
+          "tier": "green",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 9.12,
+          "ud_line": null,
+          "actual_ud": 8,
+          "grade": "loss",
+          "graded_vs_proj": true,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": true
+        },
+        {
+          "player_id": 669065,
+          "date": "2026-08-07",
+          "name": "Kyle Stowers",
+          "team": "Miami Marlins",
+          "order": 6,
+          "ud": 9.1,
+          "pp": 8.7,
+          "xwoba": 0.365,
+          "barrel": 7.9,
+          "era": 11.57,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 0.96,
+          "platoon": false,
+          "adjusted": true,
+          "tier": "green",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 9.12,
+          "ud_line": null,
+          "actual_ud": 19,
+          "grade": "win",
+          "graded_vs_proj": true,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 691594,
+          "date": "2026-08-07",
+          "name": "Javier Sanoja",
+          "team": "Miami Marlins",
+          "order": 7,
+          "ud": 9.1,
+          "pp": 8.8,
+          "xwoba": 0.272,
+          "barrel": 3.8,
+          "era": 11.57,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 0.96,
+          "platoon": false,
+          "adjusted": true,
+          "tier": "green",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 9.12,
+          "ud_line": null,
+          "actual_ud": 6,
+          "grade": "loss",
+          "graded_vs_proj": true,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 665923,
+          "date": "2026-08-07",
+          "name": "Esteury Ruiz",
+          "team": "Miami Marlins",
+          "order": 8,
+          "ud": 9.1,
+          "pp": 8.9,
+          "xwoba": 0.289,
+          "barrel": 5.3,
+          "era": 11.57,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 0.96,
+          "platoon": false,
+          "adjusted": true,
+          "tier": "green",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 9.12,
+          "ud_line": null,
+          "actual_ud": 12,
+          "grade": "win",
+          "graded_vs_proj": true,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 800050,
+          "date": "2026-08-07",
+          "name": "Chase DeLauter",
+          "team": "Cleveland Guardians",
+          "order": 2,
+          "ud": 8.9,
+          "pp": 8.6,
+          "xwoba": 0.387,
+          "barrel": 3.4,
+          "era": 5.82,
+          "wxIcon": "\ud83c\udf27\ufe0f",
+          "wxText": "76\u00b0F 5mph SSW",
+          "park": 1.08,
+          "platoon": false,
+          "adjusted": true,
+          "tier": "green",
+          "gameTimePt": "4:40 PM PT",
+          "projected_ud": 8.92,
+          "ud_line": null,
+          "actual_ud": 8,
+          "grade": "loss",
+          "graded_vs_proj": true,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": true
+        },
+        {
+          "player_id": 678882,
+          "date": "2026-08-07",
+          "name": "Ceddanne Rafaela",
+          "team": "Boston Red Sox",
+          "order": 2,
+          "ud": 8.8,
+          "pp": 8.6,
+          "xwoba": 0.345,
+          "barrel": 5.7,
+          "era": 6.72,
+          "wxIcon": "\u26c5",
+          "wxText": "80\u00b0F 6mph SW",
+          "park": 0.95,
+          "platoon": false,
+          "adjusted": true,
+          "tier": "green",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 8.84,
+          "ud_line": null,
+          "actual_ud": 12,
+          "grade": "win",
+          "graded_vs_proj": true,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": true
+        },
+        {
+          "player_id": 655316,
+          "date": "2026-08-07",
+          "name": "Andruw Monasterio",
+          "team": "Boston Red Sox",
+          "order": 6,
+          "ud": 8.8,
+          "pp": 8.5,
+          "xwoba": 0.317,
+          "barrel": 3.0,
+          "era": 6.72,
+          "wxIcon": "\u26c5",
+          "wxText": "80\u00b0F 6mph SW",
+          "park": 0.95,
+          "platoon": false,
+          "adjusted": true,
+          "tier": "green",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 8.84,
+          "ud_line": null,
+          "actual_ud": 13,
+          "grade": "win",
+          "graded_vs_proj": true,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 702332,
+          "date": "2026-08-07",
+          "name": "Caleb Durbin",
+          "team": "Boston Red Sox",
+          "order": 4,
+          "ud": 8.8,
+          "pp": 8.5,
+          "xwoba": 0.325,
+          "barrel": 1.5,
+          "era": 6.72,
+          "wxIcon": "\u26c5",
+          "wxText": "80\u00b0F 6mph SW",
+          "park": 0.95,
+          "platoon": false,
+          "adjusted": true,
+          "tier": "green",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 8.83,
+          "ud_line": null,
+          "actual_ud": 10,
+          "grade": "win",
+          "graded_vs_proj": true,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": true
+        },
+        {
+          "player_id": 677800,
+          "date": "2026-08-07",
+          "name": "Wilyer Abreu",
+          "team": "Boston Red Sox",
+          "order": 3,
+          "ud": 8.7,
+          "pp": 8.4,
+          "xwoba": 0.377,
+          "barrel": 6.9,
+          "era": 6.72,
+          "wxIcon": "\u26c5",
+          "wxText": "80\u00b0F 6mph SW",
+          "park": 0.95,
+          "platoon": false,
+          "adjusted": true,
+          "tier": "green",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 8.73,
+          "ud_line": null,
+          "actual_ud": 20,
+          "grade": "win",
+          "graded_vs_proj": true,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": true
+        },
+        {
+          "player_id": 677870,
+          "date": "2026-08-07",
+          "name": "Leo Jim\u00e9nez",
+          "team": "Miami Marlins",
+          "order": 5,
+          "ud": 8.7,
+          "pp": 7.8,
+          "xwoba": 0.238,
+          "barrel": 0.0,
+          "era": 11.57,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 0.96,
+          "platoon": false,
+          "adjusted": true,
+          "tier": "green",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 8.7,
+          "ud_line": null,
+          "actual_ud": 8,
+          "grade": "loss",
+          "graded_vs_proj": true,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 669364,
+          "date": "2026-08-07",
+          "name": "Xavier Edwards",
+          "team": "Miami Marlins",
+          "order": 4,
+          "ud": 8.6,
+          "pp": 8.3,
+          "xwoba": 0.271,
+          "barrel": 0.0,
+          "era": 11.57,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 0.96,
+          "platoon": false,
+          "adjusted": true,
+          "tier": "green",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 8.62,
+          "ud_line": null,
+          "actual_ud": 0,
+          "grade": "loss",
+          "graded_vs_proj": true,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": true
+        },
+        {
+          "player_id": 680776,
+          "date": "2026-08-07",
+          "name": "Jarren Duran",
+          "team": "Boston Red Sox",
+          "order": 7,
+          "ud": 8.6,
+          "pp": 8.5,
+          "xwoba": 0.339,
+          "barrel": 3.4,
+          "era": 6.72,
+          "wxIcon": "\u26c5",
+          "wxText": "80\u00b0F 6mph SW",
+          "park": 0.95,
+          "platoon": false,
+          "adjusted": true,
+          "tier": "green",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 8.58,
+          "ud_line": null,
+          "actual_ud": 19,
+          "grade": "win",
+          "graded_vs_proj": true,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 608070,
+          "date": "2026-08-07",
+          "name": "Jos\u00e9 Ram\u00edrez",
+          "team": "Cleveland Guardians",
+          "order": 3,
+          "ud": 8.5,
+          "pp": 8.3,
+          "xwoba": 0.278,
+          "barrel": 0.0,
+          "era": 5.82,
+          "wxIcon": "\ud83c\udf27\ufe0f",
+          "wxText": "76\u00b0F 5mph SSW",
+          "park": 1.08,
+          "platoon": false,
+          "adjusted": true,
+          "tier": "green",
+          "gameTimePt": "4:40 PM PT",
+          "projected_ud": 8.5,
+          "ud_line": null,
+          "actual_ud": 14,
+          "grade": "win",
+          "graded_vs_proj": true,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": true
+        },
+        {
+          "player_id": 650859,
+          "date": "2026-08-07",
+          "name": "Luis Rengifo",
+          "team": "San Diego Padres",
+          "order": 2,
+          "ud": 8.5,
+          "pp": 7.6,
+          "xwoba": 0.348,
+          "barrel": 0.0,
+          "era": 7.36,
+          "wxIcon": "\u26c5",
+          "wxText": "78\u00b0F 6mph WNW",
+          "park": 0.88,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "gameTimePt": "6:40 PM PT",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "grade": "loss",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": true,
+          "slip": false,
+          "stack": true
+        },
+        {
+          "player_id": 592518,
+          "date": "2026-08-07",
+          "name": "Manny Machado",
+          "team": "San Diego Padres",
+          "order": 3,
+          "ud": 8.5,
+          "pp": 7.6,
+          "xwoba": 0.315,
+          "barrel": 4.0,
+          "era": 7.36,
+          "wxIcon": "\u26c5",
+          "wxText": "78\u00b0F 6mph WNW",
+          "park": 0.88,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "gameTimePt": "6:40 PM PT",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 11,
+          "grade": "win",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": true,
+          "slip": false,
+          "stack": true
+        },
+        {
+          "player_id": 664034,
+          "date": "2026-08-07",
+          "name": "Ty France",
+          "team": "San Diego Padres",
+          "order": 4,
+          "ud": 8.5,
+          "pp": 7.6,
+          "xwoba": 0.329,
+          "barrel": 1.4,
+          "era": 7.36,
+          "wxIcon": "\u26c5",
+          "wxText": "78\u00b0F 6mph WNW",
+          "park": 0.88,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "gameTimePt": "6:40 PM PT",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "grade": "loss",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": true,
+          "slip": false,
+          "stack": true
+        },
+        {
+          "player_id": 701538,
+          "date": "2026-08-07",
+          "name": "Jackson Merrill",
+          "team": "San Diego Padres",
+          "order": 5,
+          "ud": 8.5,
+          "pp": 7.6,
+          "xwoba": 0.351,
+          "barrel": 5.6,
+          "era": 7.36,
+          "wxIcon": "\u26c5",
+          "wxText": "78\u00b0F 6mph WNW",
+          "park": 0.88,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "gameTimePt": "6:40 PM PT",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 12,
+          "grade": "win",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": true,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 663993,
+          "date": "2026-08-07",
+          "name": "Nathaniel Lowe",
+          "team": "Cleveland Guardians",
+          "order": 4,
+          "ud": 8.5,
+          "pp": 8.0,
+          "xwoba": 0.34,
+          "barrel": 0.0,
+          "era": 5.82,
+          "wxIcon": "\ud83c\udf27\ufe0f",
+          "wxText": "76\u00b0F 5mph SSW",
+          "park": 1.08,
+          "platoon": false,
+          "adjusted": true,
+          "tier": "green",
+          "gameTimePt": "4:40 PM PT",
+          "projected_ud": 8.46,
+          "ud_line": null,
+          "actual_ud": null,
+          "grade": null,
+          "graded_vs_proj": false,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": true
+        },
+        {
+          "player_id": 682998,
+          "date": "2026-08-07",
+          "name": "Corbin Carroll",
+          "team": "Arizona Diamondbacks",
+          "order": 2,
+          "ud": 8.4,
+          "pp": 8.2,
+          "xwoba": 0.359,
+          "barrel": 5.5,
+          "era": 4.64,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 1.05,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "gameTimePt": "6:40 PM PT",
+          "projected_ud": 8.44,
+          "ud_line": 8.5,
+          "actual_ud": 0,
+          "grade": "win",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 682928,
+          "date": "2026-08-07",
+          "name": "CJ Abrams",
+          "team": "Washington Nationals",
+          "order": 4,
+          "ud": 8.3,
+          "pp": 8.2,
+          "xwoba": 0.327,
+          "barrel": 6.5,
+          "era": "N/A",
+          "wxIcon": "\u26c5",
+          "wxText": "79\u00b0F 4mph SSW",
+          "park": 1.01,
+          "platoon": false,
+          "adjusted": true,
+          "tier": "green",
+          "gameTimePt": "3:45 PM PT",
+          "projected_ud": 8.34,
+          "ud_line": null,
+          "actual_ud": 5,
+          "grade": "loss",
+          "graded_vs_proj": true,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 672695,
+          "date": "2026-08-07",
+          "name": "Geraldo Perdomo",
+          "team": "Arizona Diamondbacks",
+          "order": 1,
+          "ud": 8.3,
+          "pp": 7.6,
+          "xwoba": 0.333,
+          "barrel": 4.6,
+          "era": 4.64,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 1.05,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "gameTimePt": "6:40 PM PT",
+          "projected_ud": 8.33,
+          "ud_line": 6.5,
+          "actual_ud": 16,
+          "grade": "win",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 807799,
+          "date": "2026-08-07",
+          "name": "Masataka Yoshida",
+          "team": "Boston Red Sox",
+          "order": 5,
+          "ud": 8.2,
+          "pp": 7.7,
+          "xwoba": 0.349,
+          "barrel": 3.8,
+          "era": 6.72,
+          "wxIcon": "\u26c5",
+          "wxText": "80\u00b0F 6mph SW",
+          "park": 0.95,
+          "platoon": false,
+          "adjusted": true,
+          "tier": "green",
+          "gameTimePt": "4:10 PM PT",
+          "projected_ud": 8.17,
+          "ud_line": null,
+          "actual_ud": 15,
+          "grade": "win",
+          "graded_vs_proj": true,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        }
+      ]
     }
   },
   "players": {
@@ -31537,7 +32266,8 @@
         "2026-07-27",
         "2026-07-28",
         "2026-08-04",
-        "2026-08-06"
+        "2026-08-06",
+        "2026-08-07"
       ],
       "history": [
         {
@@ -31599,6 +32329,12 @@
           "projected_ud": 8.96,
           "actual_ud": 8,
           "grade": "loss"
+        },
+        {
+          "date": "2026-08-07",
+          "projected_ud": 8.44,
+          "actual_ud": 0,
+          "grade": "win"
         }
       ]
     },
@@ -31944,7 +32680,8 @@
         "2026-07-21",
         "2026-07-24",
         "2026-08-04",
-        "2026-08-06"
+        "2026-08-06",
+        "2026-08-07"
       ],
       "history": [
         {
@@ -31988,6 +32725,12 @@
           "projected_ud": 8.42,
           "actual_ud": 0,
           "grade": "loss"
+        },
+        {
+          "date": "2026-08-07",
+          "projected_ud": 8.33,
+          "actual_ud": 16,
+          "grade": "win"
         }
       ]
     },
@@ -32662,7 +33405,8 @@
         "2026-07-07",
         "2026-07-08",
         "2026-07-11",
-        "2026-07-28"
+        "2026-07-28",
+        "2026-08-07"
       ],
       "history": [
         {
@@ -32732,6 +33476,13 @@
           "projected_ud": 9.38,
           "actual_ud": 0,
           "grade": "loss"
+        },
+        {
+          "date": "2026-08-07",
+          "projected_ud": 9.12,
+          "actual_ud": 0,
+          "grade": "loss",
+          "graded_vs_proj": true
         }
       ]
     },
@@ -33293,7 +34044,8 @@
         "2026-07-03",
         "2026-07-04",
         "2026-07-08",
-        "2026-07-11"
+        "2026-07-11",
+        "2026-08-07"
       ],
       "history": [
         {
@@ -33363,6 +34115,13 @@
           "projected_ud": 8.5,
           "actual_ud": 6,
           "grade": "loss"
+        },
+        {
+          "date": "2026-08-07",
+          "projected_ud": 9.12,
+          "actual_ud": 19,
+          "grade": "win",
+          "graded_vs_proj": true
         }
       ]
     },
@@ -33612,7 +34371,8 @@
       "team": "Miami Marlins",
       "dates_seen": [
         "2026-06-17",
-        "2026-06-29"
+        "2026-06-29",
+        "2026-08-07"
       ],
       "history": [
         {
@@ -33620,6 +34380,13 @@
           "projected_ud": 9.5,
           "actual_ud": 0,
           "grade": "loss"
+        },
+        {
+          "date": "2026-08-07",
+          "projected_ud": 9.12,
+          "actual_ud": 12,
+          "grade": "win",
+          "graded_vs_proj": true
         }
       ]
     },
@@ -33886,7 +34653,8 @@
         "2026-06-30",
         "2026-07-01",
         "2026-07-02",
-        "2026-07-03"
+        "2026-07-03",
+        "2026-08-07"
       ],
       "history": [
         {
@@ -33918,6 +34686,13 @@
           "projected_ud": 8.5,
           "actual_ud": 12,
           "grade": "win"
+        },
+        {
+          "date": "2026-08-07",
+          "projected_ud": 8.62,
+          "actual_ud": 0,
+          "grade": "loss",
+          "graded_vs_proj": true
         }
       ]
     },
@@ -35173,7 +35948,8 @@
         "2026-07-30",
         "2026-07-31",
         "2026-08-01",
-        "2026-08-02"
+        "2026-08-02",
+        "2026-08-07"
       ],
       "history": [
         {
@@ -35315,6 +36091,12 @@
           "projected_ud": 9.5,
           "actual_ud": 3,
           "grade": "loss"
+        },
+        {
+          "date": "2026-08-07",
+          "projected_ud": 9.33,
+          "actual_ud": 17,
+          "grade": "win"
         }
       ]
     },
@@ -35508,7 +36290,8 @@
         "2026-08-02",
         "2026-08-03",
         "2026-08-04",
-        "2026-08-05"
+        "2026-08-05",
+        "2026-08-07"
       ],
       "history": [
         {
@@ -35625,6 +36408,13 @@
           "projected_ud": 8.5,
           "actual_ud": 31,
           "grade": "win"
+        },
+        {
+          "date": "2026-08-07",
+          "projected_ud": 8.34,
+          "actual_ud": 5,
+          "grade": "loss",
+          "graded_vs_proj": true
         }
       ]
     },
@@ -35738,7 +36528,8 @@
         "2026-07-30",
         "2026-08-01",
         "2026-08-02",
-        "2026-08-06"
+        "2026-08-06",
+        "2026-08-07"
       ],
       "history": [
         {
@@ -35805,6 +36596,12 @@
           "date": "2026-08-06",
           "projected_ud": 8.5,
           "actual_ud": 10,
+          "grade": "win"
+        },
+        {
+          "date": "2026-08-07",
+          "projected_ud": 8.5,
+          "actual_ud": 12,
           "grade": "win"
         }
       ]
@@ -36455,7 +37252,8 @@
         "2026-07-22",
         "2026-07-27",
         "2026-07-29",
-        "2026-08-06"
+        "2026-08-06",
+        "2026-08-07"
       ],
       "history": [
         {
@@ -36511,6 +37309,13 @@
           "projected_ud": 8.61,
           "actual_ud": 12,
           "grade": "win"
+        },
+        {
+          "date": "2026-08-07",
+          "projected_ud": 8.73,
+          "actual_ud": 20,
+          "grade": "win",
+          "graded_vs_proj": true
         }
       ]
     },
@@ -36616,7 +37421,8 @@
         "2026-07-30",
         "2026-08-02",
         "2026-08-04",
-        "2026-08-06"
+        "2026-08-06",
+        "2026-08-07"
       ],
       "history": [
         {
@@ -36690,6 +37496,13 @@
           "projected_ud": 8.5,
           "actual_ud": 10,
           "grade": "win"
+        },
+        {
+          "date": "2026-08-07",
+          "projected_ud": 8.84,
+          "actual_ud": 12,
+          "grade": "win",
+          "graded_vs_proj": true
         }
       ]
     },
@@ -36701,7 +37514,8 @@
         "2026-06-23",
         "2026-07-27",
         "2026-07-29",
-        "2026-08-06"
+        "2026-08-06",
+        "2026-08-07"
       ],
       "history": [
         {
@@ -36733,6 +37547,13 @@
           "projected_ud": 8.47,
           "actual_ud": 5,
           "grade": "loss"
+        },
+        {
+          "date": "2026-08-07",
+          "projected_ud": 8.58,
+          "actual_ud": 19,
+          "grade": "win",
+          "graded_vs_proj": true
         }
       ]
     },
@@ -37055,7 +37876,8 @@
       "dates_seen": [
         "2026-06-17",
         "2026-06-23",
-        "2026-07-27"
+        "2026-07-27",
+        "2026-08-07"
       ],
       "history": [
         {
@@ -37069,6 +37891,13 @@
           "projected_ud": 8.5,
           "actual_ud": 6,
           "grade": "loss"
+        },
+        {
+          "date": "2026-08-07",
+          "projected_ud": 8.17,
+          "actual_ud": 15,
+          "grade": "win",
+          "graded_vs_proj": true
         }
       ]
     },
@@ -38570,7 +39399,8 @@
         "2026-07-27",
         "2026-07-29",
         "2026-07-30",
-        "2026-08-06"
+        "2026-08-06",
+        "2026-08-07"
       ],
       "history": [
         {
@@ -38632,6 +39462,13 @@
           "projected_ud": 8.5,
           "actual_ud": 21,
           "grade": "win"
+        },
+        {
+          "date": "2026-08-07",
+          "projected_ud": 8.83,
+          "actual_ud": 10,
+          "grade": "win",
+          "graded_vs_proj": true
         }
       ]
     },
@@ -39797,7 +40634,8 @@
         "2026-07-28",
         "2026-07-30",
         "2026-08-01",
-        "2026-08-06"
+        "2026-08-06",
+        "2026-08-07"
       ],
       "history": [
         {
@@ -39858,6 +40696,12 @@
           "date": "2026-08-06",
           "projected_ud": 8.37,
           "actual_ud": 7,
+          "grade": "win"
+        },
+        {
+          "date": "2026-08-07",
+          "projected_ud": 8.5,
+          "actual_ud": 11,
           "grade": "win"
         }
       ]
@@ -39989,7 +40833,8 @@
       "dates_seen": [
         "2026-06-29",
         "2026-07-01",
-        "2026-07-02"
+        "2026-07-02",
+        "2026-08-07"
       ],
       "history": [
         {
@@ -40009,6 +40854,13 @@
           "projected_ud": 8.5,
           "actual_ud": 6,
           "grade": "loss"
+        },
+        {
+          "date": "2026-08-07",
+          "projected_ud": 9.12,
+          "actual_ud": 6,
+          "grade": "loss",
+          "graded_vs_proj": true
         }
       ]
     },
@@ -40016,7 +40868,8 @@
       "name": "Leo Jim\u00e9nez",
       "team": "Miami Marlins",
       "dates_seen": [
-        "2026-07-01"
+        "2026-07-01",
+        "2026-08-07"
       ],
       "history": [
         {
@@ -40024,6 +40877,13 @@
           "projected_ud": 9.24,
           "actual_ud": 0,
           "grade": "loss"
+        },
+        {
+          "date": "2026-08-07",
+          "projected_ud": 8.7,
+          "actual_ud": 8,
+          "grade": "loss",
+          "graded_vs_proj": true
         }
       ]
     },
@@ -40082,7 +40942,8 @@
       "team": "Miami Marlins",
       "dates_seen": [
         "2026-06-29",
-        "2026-07-02"
+        "2026-07-02",
+        "2026-08-07"
       ],
       "history": [
         {
@@ -40090,6 +40951,13 @@
           "projected_ud": 9.14,
           "actual_ud": 14,
           "grade": "win"
+        },
+        {
+          "date": "2026-08-07",
+          "projected_ud": 9.12,
+          "actual_ud": 0,
+          "grade": "loss",
+          "graded_vs_proj": true
         }
       ]
     },
@@ -40115,7 +40983,8 @@
         "2026-07-01",
         "2026-07-22",
         "2026-07-26",
-        "2026-08-06"
+        "2026-08-06",
+        "2026-08-07"
       ],
       "history": [
         {
@@ -40142,6 +41011,12 @@
           "projected_ud": 7.92,
           "actual_ud": 14,
           "grade": "win"
+        },
+        {
+          "date": "2026-08-07",
+          "projected_ud": 8.5,
+          "actual_ud": 0,
+          "grade": "loss"
         }
       ]
     },
@@ -40409,7 +41284,8 @@
         "2026-07-29",
         "2026-07-31",
         "2026-08-02",
-        "2026-08-04"
+        "2026-08-04",
+        "2026-08-07"
       ],
       "history": [
         {
@@ -40466,6 +41342,13 @@
           "projected_ud": 8.36,
           "actual_ud": 14,
           "grade": "win"
+        },
+        {
+          "date": "2026-08-07",
+          "projected_ud": 8.92,
+          "actual_ud": 8,
+          "grade": "loss",
+          "graded_vs_proj": true
         }
       ]
     },
@@ -41599,7 +42482,8 @@
       "team": "Cleveland Guardians",
       "dates_seen": [
         "2026-07-23",
-        "2026-07-31"
+        "2026-07-31",
+        "2026-08-07"
       ],
       "history": [
         {
@@ -41613,6 +42497,13 @@
           "projected_ud": 8.88,
           "actual_ud": 12,
           "grade": "loss"
+        },
+        {
+          "date": "2026-08-07",
+          "projected_ud": 8.5,
+          "actual_ud": 14,
+          "grade": "win",
+          "graded_vs_proj": true
         }
       ]
     },
@@ -41833,7 +42724,8 @@
       "team": "Boston Red Sox",
       "dates_seen": [
         "2026-07-29",
-        "2026-07-30"
+        "2026-07-30",
+        "2026-08-07"
       ],
       "history": [
         {
@@ -41847,6 +42739,13 @@
           "projected_ud": 8.5,
           "actual_ud": 7,
           "grade": "win"
+        },
+        {
+          "date": "2026-08-07",
+          "projected_ud": 8.84,
+          "actual_ud": 13,
+          "grade": "win",
+          "graded_vs_proj": true
         }
       ]
     },
@@ -41870,7 +42769,8 @@
       "team": "San Diego Padres",
       "dates_seen": [
         "2026-07-30",
-        "2026-08-06"
+        "2026-08-06",
+        "2026-08-07"
       ],
       "history": [
         {
@@ -41884,6 +42784,12 @@
           "projected_ud": 8.18,
           "actual_ud": 9,
           "grade": "win"
+        },
+        {
+          "date": "2026-08-07",
+          "projected_ud": 8.5,
+          "actual_ud": 0,
+          "grade": "loss"
         }
       ]
     },
@@ -42070,6 +42976,30 @@
           "grade": "loss"
         }
       ]
+    },
+    "682663": {
+      "name": "Agust\u00edn Ram\u00edrez",
+      "team": "Miami Marlins",
+      "dates_seen": [
+        "2026-08-07"
+      ],
+      "history": [
+        {
+          "date": "2026-08-07",
+          "projected_ud": 9.12,
+          "actual_ud": 8,
+          "grade": "loss",
+          "graded_vs_proj": true
+        }
+      ]
+    },
+    "663993": {
+      "name": "Nathaniel Lowe",
+      "team": "Cleveland Guardians",
+      "dates_seen": [
+        "2026-08-07"
+      ],
+      "history": []
     }
   }
 }

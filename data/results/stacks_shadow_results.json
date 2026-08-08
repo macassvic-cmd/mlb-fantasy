@@ -4234,6 +4234,122 @@
           ]
         }
       ]
+    },
+    "2026-08-07": {
+      "mixed_market_pairings": [],
+      "gap_filling_rescued_trios": [
+        {
+          "game_pk": 823266,
+          "team": 135,
+          "trio_type": "1-2-3",
+          "conservative_prob": 0.1878,
+          "stats_used": [
+            "RUNS",
+            "RUNS",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 665487,
+              "name": "Fernando Tatis Jr.",
+              "slot": 1,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 650859,
+              "name": "Luis Rengifo",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 592518,
+              "name": "Manny Machado",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            }
+          ]
+        },
+        {
+          "game_pk": 823266,
+          "team": 135,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1791,
+          "stats_used": [
+            "RUNS",
+            "RUNS",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 650859,
+              "name": "Luis Rengifo",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 592518,
+              "name": "Manny Machado",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 664034,
+              "name": "Ty France",
+              "slot": 4,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            }
+          ]
+        },
+        {
+          "game_pk": 825051,
+          "team": 109,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1271,
+          "stats_used": [
+            "RUNS",
+            "RUNS",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 682998,
+              "name": "Corbin Carroll",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 672515,
+              "name": "Gabriel Moreno",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 606466,
+              "name": "Ketel Marte",
+              "slot": 4,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            }
+          ]
+        }
+      ]
     }
   },
   "record": {
@@ -4251,9 +4367,9 @@
     }
   },
   "gap_filling_record": {
-    "rescue_fire_count": 110,
-    "days_tracked": 16,
-    "rescued_trio_legs_graded": 199,
-    "rescued_trio_legs_hit": 93
+    "rescue_fire_count": 113,
+    "days_tracked": 17,
+    "rescued_trio_legs_graded": 208,
+    "rescued_trio_legs_hit": 96
   }
 }

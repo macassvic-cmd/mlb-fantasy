@@ -4267,6 +4267,59 @@
           "correct": false
         }
       ]
+    },
+    "2026-08-07": {
+      "summary": {
+        "total": 4,
+        "correct": 2,
+        "accuracy": 50.0,
+        "over_total": 4,
+        "over_correct": 2,
+        "under_total": 0,
+        "under_correct": 0
+      },
+      "plays": [
+        {
+          "player_id": 650859,
+          "name": "Luis Rengifo",
+          "team": "San Diego Padres",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "correct": false
+        },
+        {
+          "player_id": 592518,
+          "name": "Manny Machado",
+          "team": "San Diego Padres",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 11,
+          "correct": true
+        },
+        {
+          "player_id": 664034,
+          "name": "Ty France",
+          "team": "San Diego Padres",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "correct": false
+        },
+        {
+          "player_id": 701538,
+          "name": "Jackson Merrill",
+          "team": "San Diego Padres",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 12,
+          "correct": true
+        }
+      ]
     }
   }
 }
