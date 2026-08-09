@@ -1,0 +1,248 @@
+{
+  "date": "2026-08-09",
+  "pairings": [
+    {
+      "trios": [
+        {
+          "game_pk": 823835,
+          "team": "Miami Marlins",
+          "opp_team": "Los Angeles Angels",
+          "venue": "loanDepot park",
+          "opp_era": 7.24,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 669364,
+              "name": "Xavier Edwards",
+              "order": 2,
+              "leg_prob": 0.5972,
+              "game_time_pt": "10:40 AM PT",
+              "game_date_utc": "2026-08-09T17:40:00Z"
+            },
+            {
+              "player_id": 669065,
+              "name": "Kyle Stowers",
+              "order": 3,
+              "leg_prob": 0.5381,
+              "game_time_pt": "10:40 AM PT",
+              "game_date_utc": "2026-08-09T17:40:00Z"
+            },
+            {
+              "player_id": 672640,
+              "name": "Otto Lopez",
+              "order": 4,
+              "leg_prob": 0.5381,
+              "game_time_pt": "10:40 AM PT",
+              "game_date_utc": "2026-08-09T17:40:00Z"
+            }
+          ],
+          "conservative_prob": 0.2279,
+          "optimistic_prob": 0.2661
+        },
+        {
+          "game_pk": 823020,
+          "team": "St. Louis Cardinals",
+          "opp_team": "Colorado Rockies",
+          "venue": "Busch Stadium",
+          "opp_era": 6.94,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 691023,
+              "name": "Jordan Walker",
+              "order": 2,
+              "leg_prob": 0.5972,
+              "game_time_pt": "11:15 AM PT",
+              "game_date_utc": "2026-08-09T18:15:00Z"
+            },
+            {
+              "player_id": 671056,
+              "name": "Iv\u00e1n Herrera",
+              "order": 3,
+              "leg_prob": 0.5381,
+              "game_time_pt": "11:15 AM PT",
+              "game_date_utc": "2026-08-09T18:15:00Z"
+            },
+            {
+              "player_id": 676475,
+              "name": "Alec Burleson",
+              "order": 4,
+              "leg_prob": 0.5381,
+              "game_time_pt": "11:15 AM PT",
+              "game_date_utc": "2026-08-09T18:15:00Z"
+            }
+          ],
+          "conservative_prob": 0.2279,
+          "optimistic_prob": 0.2661
+        }
+      ],
+      "combined_conservative": 0.05194,
+      "combined_optimistic": 0.07081,
+      "ev_conservative": 0.558,
+      "ev_optimistic": 1.124,
+      "playable": true
+    },
+    {
+      "trios": [
+        {
+          "game_pk": 823268,
+          "team": "San Diego Padres",
+          "opp_team": "Houston Astros",
+          "venue": "Petco Park",
+          "opp_era": 6.59,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 630105,
+              "name": "Jake Cronenworth",
+              "order": 2,
+              "leg_prob": 0.5972,
+              "game_time_pt": "5:20 PM PT",
+              "game_date_utc": "2026-08-10T00:20:00Z"
+            },
+            {
+              "player_id": 592518,
+              "name": "Manny Machado",
+              "order": 3,
+              "leg_prob": 0.5381,
+              "game_time_pt": "5:20 PM PT",
+              "game_date_utc": "2026-08-10T00:20:00Z"
+            },
+            {
+              "player_id": 664034,
+              "name": "Ty France",
+              "order": 4,
+              "leg_prob": 0.5381,
+              "game_time_pt": "5:20 PM PT",
+              "game_date_utc": "2026-08-10T00:20:00Z"
+            }
+          ],
+          "conservative_prob": 0.2279,
+          "optimistic_prob": 0.2661
+        },
+        {
+          "game_pk": 823751,
+          "team": "Milwaukee Brewers",
+          "opp_team": "Minnesota Twins",
+          "venue": "American Family Field",
+          "opp_era": 4.75,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 694192,
+              "name": "Jackson Chourio",
+              "order": 2,
+              "leg_prob": 0.5785,
+              "game_time_pt": "11:10 AM PT",
+              "game_date_utc": "2026-08-09T18:10:00Z"
+            },
+            {
+              "player_id": 641343,
+              "name": "Jake Bauers",
+              "order": 3,
+              "leg_prob": 0.5339,
+              "game_time_pt": "11:10 AM PT",
+              "game_date_utc": "2026-08-09T18:10:00Z"
+            },
+            {
+              "player_id": 661388,
+              "name": "William Contreras",
+              "order": 4,
+              "leg_prob": 0.5339,
+              "game_time_pt": "11:10 AM PT",
+              "game_date_utc": "2026-08-09T18:10:00Z"
+            }
+          ],
+          "conservative_prob": 0.2173,
+          "optimistic_prob": 0.2537
+        }
+      ],
+      "combined_conservative": 0.04952,
+      "combined_optimistic": 0.06751,
+      "ev_conservative": 0.486,
+      "ev_optimistic": 1.025,
+      "playable": true
+    },
+    {
+      "trios": [
+        {
+          "game_pk": 823835,
+          "team": "Los Angeles Angels",
+          "opp_team": "Miami Marlins",
+          "venue": "loanDepot park",
+          "opp_era": 4.8,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 545361,
+              "name": "Mike Trout",
+              "order": 2,
+              "leg_prob": 0.5785,
+              "game_time_pt": "10:40 AM PT",
+              "game_date_utc": "2026-08-09T17:40:00Z"
+            },
+            {
+              "player_id": 694384,
+              "name": "Nolan Schanuel",
+              "order": 3,
+              "leg_prob": 0.5339,
+              "game_time_pt": "10:40 AM PT",
+              "game_date_utc": "2026-08-09T17:40:00Z"
+            },
+            {
+              "player_id": 687263,
+              "name": "Zach Neto",
+              "order": 4,
+              "leg_prob": 0.5339,
+              "game_time_pt": "10:40 AM PT",
+              "game_date_utc": "2026-08-09T17:40:00Z"
+            }
+          ],
+          "conservative_prob": 0.2173,
+          "optimistic_prob": 0.2537
+        },
+        {
+          "game_pk": 823020,
+          "team": "St. Louis Cardinals",
+          "opp_team": "Colorado Rockies",
+          "venue": "Busch Stadium",
+          "opp_era": 6.94,
+          "trio_type": "1-2-3",
+          "legs": [
+            {
+              "player_id": 802139,
+              "name": "JJ Wetherholt",
+              "order": 1,
+              "leg_prob": 0.5972,
+              "game_time_pt": "11:15 AM PT",
+              "game_date_utc": "2026-08-09T18:15:00Z"
+            },
+            {
+              "player_id": 691023,
+              "name": "Jordan Walker",
+              "order": 2,
+              "leg_prob": 0.5972,
+              "game_time_pt": "11:15 AM PT",
+              "game_date_utc": "2026-08-09T18:15:00Z"
+            },
+            {
+              "player_id": 671056,
+              "name": "Iv\u00e1n Herrera",
+              "order": 3,
+              "leg_prob": 0.5381,
+              "game_time_pt": "11:15 AM PT",
+              "game_date_utc": "2026-08-09T18:15:00Z"
+            }
+          ],
+          "conservative_prob": 0.2144,
+          "optimistic_prob": 0.2519
+        }
+      ],
+      "combined_conservative": 0.04659,
+      "combined_optimistic": 0.06391,
+      "ev_conservative": 0.398,
+      "ev_optimistic": 0.917,
+      "playable": true
+    }
+  ]
+}
