@@ -4350,6 +4350,196 @@
           ]
         }
       ]
+    },
+    "2026-08-08": {
+      "mixed_market_pairings": [],
+      "gap_filling_rescued_trios": [
+        {
+          "game_pk": 823426,
+          "team": 141,
+          "trio_type": "1-2-3",
+          "conservative_prob": 0.212,
+          "stats_used": [
+            "RUNS",
+            "HRRBI",
+            "HRRBI"
+          ],
+          "legs": [
+            {
+              "player_id": 664770,
+              "name": "Nathan Lukes",
+              "slot": 1,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 672386,
+              "name": "Alejandro Kirk",
+              "slot": 2,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            },
+            {
+              "player_id": 660821,
+              "name": "Jes\u00fas S\u00e1nchez",
+              "slot": 3,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            }
+          ]
+        },
+        {
+          "game_pk": 823021,
+          "team": 138,
+          "trio_type": "1-2-3",
+          "conservative_prob": 0.1878,
+          "stats_used": [
+            "RUNS",
+            "RUNS",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 802139,
+              "name": "JJ Wetherholt",
+              "slot": 1,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 691023,
+              "name": "Jordan Walker",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 676475,
+              "name": "Alec Burleson",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            }
+          ]
+        },
+        {
+          "game_pk": 823021,
+          "team": 138,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1791,
+          "stats_used": [
+            "RUNS",
+            "RUNS",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 691023,
+              "name": "Jordan Walker",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 676475,
+              "name": "Alec Burleson",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 671056,
+              "name": "Iv\u00e1n Herrera",
+              "slot": 4,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            }
+          ]
+        },
+        {
+          "game_pk": 824726,
+          "team": 111,
+          "trio_type": "1-2-3",
+          "conservative_prob": 0.1377,
+          "stats_used": [
+            "HRRBI",
+            "RUNS",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 686765,
+              "name": "Nick Sogard",
+              "slot": 1,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": true
+            },
+            {
+              "player_id": 678882,
+              "name": "Ceddanne Rafaela",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 677800,
+              "name": "Wilyer Abreu",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": null
+            }
+          ]
+        },
+        {
+          "game_pk": 824726,
+          "team": 111,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1271,
+          "stats_used": [
+            "RUNS",
+            "RUNS",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 678882,
+              "name": "Ceddanne Rafaela",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 677800,
+              "name": "Wilyer Abreu",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": null
+            },
+            {
+              "player_id": 702332,
+              "name": "Caleb Durbin",
+              "slot": 4,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            }
+          ]
+        }
+      ]
     }
   },
   "record": {
@@ -4367,9 +4557,9 @@
     }
   },
   "gap_filling_record": {
-    "rescue_fire_count": 113,
-    "days_tracked": 17,
-    "rescued_trio_legs_graded": 208,
-    "rescued_trio_legs_hit": 96
+    "rescue_fire_count": 118,
+    "days_tracked": 18,
+    "rescued_trio_legs_graded": 218,
+    "rescued_trio_legs_hit": 103
   }
 }
