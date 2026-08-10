@@ -1,0 +1,222 @@
+{
+  "date": "2026-08-10",
+  "mixed_market": {
+    "trio_count": 8,
+    "pairings": []
+  },
+  "gap_filling": {
+    "date": "2026-08-10",
+    "baseline_trio_count": 1,
+    "fallback_trio_count": 7,
+    "baseline_pairing_count": 0,
+    "fallback_pairing_count": 0,
+    "rescued_trio_count": 6,
+    "rescued_trios": [
+      {
+        "game_pk": 823675,
+        "team": 110,
+        "trio_type": "1-2-3",
+        "conservative_prob": 0.2086,
+        "stats_used": [
+          "RUNS",
+          "RUNS",
+          "HRRBI"
+        ],
+        "legs": [
+          {
+            "player_id": 683002,
+            "name": "Gunnar Henderson",
+            "slot": 1,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 624413,
+            "name": "Pete Alonso",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 702616,
+            "name": "Jackson Holliday",
+            "slot": 3,
+            "stat": "HRRBI",
+            "threshold": 2
+          }
+        ]
+      },
+      {
+        "game_pk": 823675,
+        "team": 110,
+        "trio_type": "2-3-4",
+        "conservative_prob": 0.2028,
+        "stats_used": [
+          "RUNS",
+          "HRRBI",
+          "HRRBI"
+        ],
+        "legs": [
+          {
+            "player_id": 624413,
+            "name": "Pete Alonso",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 702616,
+            "name": "Jackson Holliday",
+            "slot": 3,
+            "stat": "HRRBI",
+            "threshold": 2
+          },
+          {
+            "player_id": 641933,
+            "name": "Tyler O'Neill",
+            "slot": 4,
+            "stat": "HRRBI",
+            "threshold": 2
+          }
+        ]
+      },
+      {
+        "game_pk": 822780,
+        "team": 111,
+        "trio_type": "1-2-3",
+        "conservative_prob": 0.1878,
+        "stats_used": [
+          "RUNS",
+          "RUNS",
+          "RUNS"
+        ],
+        "legs": [
+          {
+            "player_id": 686765,
+            "name": "Nick Sogard",
+            "slot": 1,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 678882,
+            "name": "Ceddanne Rafaela",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 677800,
+            "name": "Wilyer Abreu",
+            "slot": 3,
+            "stat": "RUNS",
+            "threshold": 1
+          }
+        ]
+      },
+      {
+        "game_pk": 823018,
+        "team": 138,
+        "trio_type": "1-2-3",
+        "conservative_prob": 0.1878,
+        "stats_used": [
+          "RUNS",
+          "RUNS",
+          "RUNS"
+        ],
+        "legs": [
+          {
+            "player_id": 802139,
+            "name": "JJ Wetherholt",
+            "slot": 1,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 671056,
+            "name": "Iv\u00e1n Herrera",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 676475,
+            "name": "Alec Burleson",
+            "slot": 3,
+            "stat": "RUNS",
+            "threshold": 1
+          }
+        ]
+      },
+      {
+        "game_pk": 824969,
+        "team": 133,
+        "trio_type": "2-3-4",
+        "conservative_prob": 0.1681,
+        "stats_used": [
+          "RUNS",
+          "HRRBI",
+          "HRRBI"
+        ],
+        "legs": [
+          {
+            "player_id": 805779,
+            "name": "Jacob Wilson",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 641680,
+            "name": "Jonah Heim",
+            "slot": 3,
+            "stat": "HRRBI",
+            "threshold": 2
+          },
+          {
+            "player_id": 691016,
+            "name": "Tyler Soderstrom",
+            "slot": 4,
+            "stat": "HRRBI",
+            "threshold": 2
+          }
+        ]
+      },
+      {
+        "game_pk": 824969,
+        "team": 133,
+        "trio_type": "1-2-3",
+        "conservative_prob": 0.1656,
+        "stats_used": [
+          "HRRBI",
+          "RUNS",
+          "HRRBI"
+        ],
+        "legs": [
+          {
+            "player_id": 703607,
+            "name": "Henry Bolte",
+            "slot": 1,
+            "stat": "HRRBI",
+            "threshold": 2
+          },
+          {
+            "player_id": 805779,
+            "name": "Jacob Wilson",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 641680,
+            "name": "Jonah Heim",
+            "slot": 3,
+            "stat": "HRRBI",
+            "threshold": 2
+          }
+        ]
+      }
+    ],
+    "fallback_pairings": []
+  }
+}
