@@ -4540,6 +4540,270 @@
           ]
         }
       ]
+    },
+    "2026-08-09": {
+      "mixed_market_pairings": [],
+      "gap_filling_rescued_trios": [
+        {
+          "game_pk": 823268,
+          "team": 135,
+          "trio_type": "1-2-3",
+          "conservative_prob": 0.212,
+          "stats_used": [
+            "RUNS",
+            "HRRBI",
+            "HRRBI"
+          ],
+          "legs": [
+            {
+              "player_id": 665487,
+              "name": "Fernando Tatis Jr.",
+              "slot": 1,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 630105,
+              "name": "Jake Cronenworth",
+              "slot": 2,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            },
+            {
+              "player_id": 592518,
+              "name": "Manny Machado",
+              "slot": 3,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            }
+          ]
+        },
+        {
+          "game_pk": 823835,
+          "team": 146,
+          "trio_type": "1-2-3",
+          "conservative_prob": 0.1895,
+          "stats_used": [
+            "HRRBI",
+            "RUNS",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 805300,
+              "name": "Jakob Marsee",
+              "slot": 1,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": true
+            },
+            {
+              "player_id": 669364,
+              "name": "Xavier Edwards",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 669065,
+              "name": "Kyle Stowers",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            }
+          ]
+        },
+        {
+          "game_pk": 823835,
+          "team": 146,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1791,
+          "stats_used": [
+            "RUNS",
+            "RUNS",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 669364,
+              "name": "Xavier Edwards",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 669065,
+              "name": "Kyle Stowers",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 672640,
+              "name": "Otto Lopez",
+              "slot": 4,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            }
+          ]
+        },
+        {
+          "game_pk": 823751,
+          "team": 158,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1681,
+          "stats_used": [
+            "RUNS",
+            "HRRBI",
+            "HRRBI"
+          ],
+          "legs": [
+            {
+              "player_id": 694192,
+              "name": "Jackson Chourio",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 641343,
+              "name": "Jake Bauers",
+              "slot": 3,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": true
+            },
+            {
+              "player_id": 661388,
+              "name": "William Contreras",
+              "slot": 4,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            }
+          ]
+        },
+        {
+          "game_pk": 823751,
+          "team": 158,
+          "trio_type": "1-2-3",
+          "conservative_prob": 0.1656,
+          "stats_used": [
+            "HRRBI",
+            "RUNS",
+            "HRRBI"
+          ],
+          "legs": [
+            {
+              "player_id": 668930,
+              "name": "Brice Turang",
+              "slot": 1,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": true
+            },
+            {
+              "player_id": 694192,
+              "name": "Jackson Chourio",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 641343,
+              "name": "Jake Bauers",
+              "slot": 3,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": true
+            }
+          ]
+        },
+        {
+          "game_pk": 822700,
+          "team": 120,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1401,
+          "stats_used": [
+            "HRRBI",
+            "HRRBI",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 694673,
+              "name": "Abimelec Ortiz",
+              "slot": 2,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": true
+            },
+            {
+              "player_id": 686611,
+              "name": "Dylan Crews",
+              "slot": 3,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": true
+            },
+            {
+              "player_id": 695734,
+              "name": "Daylen Lile",
+              "slot": 4,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            }
+          ]
+        },
+        {
+          "game_pk": 823425,
+          "team": 143,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1271,
+          "stats_used": [
+            "RUNS",
+            "RUNS",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 607208,
+              "name": "Trea Turner",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 547180,
+              "name": "Bryce Harper",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 650333,
+              "name": "Luis Arraez",
+              "slot": 4,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            }
+          ]
+        }
+      ]
     }
   },
   "record": {
@@ -4557,9 +4821,9 @@
     }
   },
   "gap_filling_record": {
-    "rescue_fire_count": 118,
-    "days_tracked": 18,
-    "rescued_trio_legs_graded": 218,
-    "rescued_trio_legs_hit": 103
+    "rescue_fire_count": 125,
+    "days_tracked": 19,
+    "rescued_trio_legs_graded": 230,
+    "rescued_trio_legs_hit": 112
   }
 }

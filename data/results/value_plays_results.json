@@ -4332,6 +4332,89 @@
         "under_correct": 0
       },
       "plays": []
+    },
+    "2026-08-09": {
+      "summary": {
+        "total": 7,
+        "correct": 4,
+        "accuracy": 57.1,
+        "over_total": 4,
+        "over_correct": 3,
+        "under_total": 3,
+        "under_correct": 1
+      },
+      "plays": [
+        {
+          "player_id": 547180,
+          "name": "Bryce Harper",
+          "team": "Philadelphia Phillies",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 16,
+          "correct": true
+        },
+        {
+          "player_id": 669065,
+          "name": "Kyle Stowers",
+          "team": "Miami Marlins",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 17,
+          "correct": true
+        },
+        {
+          "player_id": 665487,
+          "name": "Fernando Tatis Jr.",
+          "team": "San Diego Padres",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 24,
+          "correct": true
+        },
+        {
+          "player_id": 678882,
+          "name": "Ceddanne Rafaela",
+          "team": "Boston Red Sox",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "correct": false
+        },
+        {
+          "player_id": 691718,
+          "name": "Pete Crow-Armstrong",
+          "team": "Chicago Cubs",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 11.5,
+          "actual_ud": 13,
+          "correct": false
+        },
+        {
+          "player_id": 664023,
+          "name": "Ian Happ",
+          "team": "Chicago Cubs",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 24,
+          "correct": false
+        },
+        {
+          "player_id": 660271,
+          "name": "Shohei Ohtani",
+          "team": "Los Angeles Dodgers",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 0,
+          "correct": true
+        }
+      ]
     }
   }
 }

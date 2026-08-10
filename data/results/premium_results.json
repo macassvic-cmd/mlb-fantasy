@@ -4345,16 +4345,263 @@
         }
       },
       "plays": []
+    },
+    "2026-08-09": {
+      "summary": {
+        "premium": {
+          "total": 4,
+          "correct": 2,
+          "win_rate": 50.0
+        },
+        "strong": {
+          "total": 17,
+          "correct": 7,
+          "win_rate": 41.2
+        }
+      },
+      "plays": [
+        {
+          "player_id": 575929,
+          "name": "Willson Contreras",
+          "team": "Boston Red Sox",
+          "call": "under",
+          "edge": -1.8,
+          "ud_line": 7.5,
+          "actual_ud": 8,
+          "tier": "premium",
+          "correct": false
+        },
+        {
+          "player_id": 665489,
+          "name": "Vladimir Guerrero Jr.",
+          "team": "Toronto Blue Jays",
+          "call": "under",
+          "edge": -1.6,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "tier": "premium",
+          "correct": false
+        },
+        {
+          "player_id": 671739,
+          "name": "Michael Harris II",
+          "team": "Atlanta Braves",
+          "call": "under",
+          "edge": -1.64,
+          "ud_line": 5.5,
+          "actual_ud": 5,
+          "tier": "premium",
+          "correct": true
+        },
+        {
+          "player_id": 571970,
+          "name": "Max Muncy",
+          "team": "Los Angeles Dodgers",
+          "call": "under",
+          "edge": -1.5,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "tier": "premium",
+          "correct": true
+        },
+        {
+          "player_id": 547180,
+          "name": "Bryce Harper",
+          "team": "Philadelphia Phillies",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 16,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 607208,
+          "name": "Trea Turner",
+          "team": "Philadelphia Phillies",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 702332,
+          "name": "Caleb Durbin",
+          "team": "Boston Red Sox",
+          "call": "over",
+          "edge": 1.65,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 650333,
+          "name": "Luis Arraez",
+          "team": "Philadelphia Phillies",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 5.5,
+          "actual_ud": 2,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 681082,
+          "name": "Bryson Stott",
+          "team": "Philadelphia Phillies",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 5.5,
+          "actual_ud": 17,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 702222,
+          "name": "Justin Crawford",
+          "team": "Philadelphia Phillies",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 5.5,
+          "actual_ud": 5,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 669016,
+          "name": "Brandon Marsh",
+          "team": "Philadelphia Phillies",
+          "call": "over",
+          "edge": 0.98,
+          "ud_line": 6.5,
+          "actual_ud": 6,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 656941,
+          "name": "Kyle Schwarber",
+          "team": "Philadelphia Phillies",
+          "call": "under",
+          "edge": -1.49,
+          "ud_line": 8.5,
+          "actual_ud": 45,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 668804,
+          "name": "Bryan Reynolds",
+          "team": "Pittsburgh Pirates",
+          "call": "over",
+          "edge": 0.47,
+          "ud_line": 6.5,
+          "actual_ud": 6,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 621566,
+          "name": "Matt Olson",
+          "team": "Atlanta Braves",
+          "call": "over",
+          "edge": 0.09,
+          "ud_line": 5.5,
+          "actual_ud": 14,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 664702,
+          "name": "Myles Straw",
+          "team": "Toronto Blue Jays",
+          "call": "over",
+          "edge": 0.02,
+          "ud_line": 5.5,
+          "actual_ud": 5,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 676391,
+          "name": "Ernie Clement",
+          "team": "Toronto Blue Jays",
+          "call": "under",
+          "edge": -0.87,
+          "ud_line": 5.5,
+          "actual_ud": 10,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 676475,
+          "name": "Alec Burleson",
+          "team": "St. Louis Cardinals",
+          "call": "over",
+          "edge": 1.0,
+          "ud_line": 8.5,
+          "actual_ud": 19,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 671056,
+          "name": "Iv\u00e1n Herrera",
+          "team": "St. Louis Cardinals",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 16,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 694249,
+          "name": "Cole Carrigg",
+          "team": "Colorado Rockies",
+          "call": "over",
+          "edge": 0.45,
+          "ud_line": 6.5,
+          "actual_ud": 9,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 696100,
+          "name": "Hunter Goodman",
+          "team": "Colorado Rockies",
+          "call": "under",
+          "edge": -0.56,
+          "ud_line": 5.5,
+          "actual_ud": 19,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 691406,
+          "name": "Junior Caminero",
+          "team": "Tampa Bay Rays",
+          "call": "under",
+          "edge": -0.96,
+          "ud_line": 6.5,
+          "actual_ud": 5,
+          "tier": "strong",
+          "correct": true
+        }
+      ]
     }
   },
   "record": {
     "premium": {
-      "wins": 28,
-      "losses": 30
+      "wins": 30,
+      "losses": 32
     },
     "strong": {
-      "wins": 159,
-      "losses": 142
+      "wins": 166,
+      "losses": 152
     }
   }
 }
