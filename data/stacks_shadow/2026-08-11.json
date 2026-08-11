@@ -1,0 +1,120 @@
+{
+  "date": "2026-08-11",
+  "mixed_market": {
+    "trio_count": 7,
+    "pairings": []
+  },
+  "gap_filling": {
+    "date": "2026-08-11",
+    "baseline_trio_count": 2,
+    "fallback_trio_count": 5,
+    "baseline_pairing_count": 0,
+    "fallback_pairing_count": 0,
+    "rescued_trio_count": 3,
+    "rescued_trios": [
+      {
+        "game_pk": 823997,
+        "team": 140,
+        "trio_type": "1-2-3",
+        "conservative_prob": 0.2086,
+        "stats_used": [
+          "RUNS",
+          "RUNS",
+          "HRRBI"
+        ],
+        "legs": [
+          {
+            "player_id": 694671,
+            "name": "Wyatt Langford",
+            "slot": 1,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 608369,
+            "name": "Corey Seager",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 677649,
+            "name": "Ezequiel Duran",
+            "slot": 3,
+            "stat": "HRRBI",
+            "threshold": 2
+          }
+        ]
+      },
+      {
+        "game_pk": 823997,
+        "team": 140,
+        "trio_type": "2-3-4",
+        "conservative_prob": 0.1804,
+        "stats_used": [
+          "RUNS",
+          "HRRBI",
+          "RUNS"
+        ],
+        "legs": [
+          {
+            "player_id": 608369,
+            "name": "Corey Seager",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 677649,
+            "name": "Ezequiel Duran",
+            "slot": 3,
+            "stat": "HRRBI",
+            "threshold": 2
+          },
+          {
+            "player_id": 607043,
+            "name": "Brandon Nimmo",
+            "slot": 4,
+            "stat": "RUNS",
+            "threshold": 1
+          }
+        ]
+      },
+      {
+        "game_pk": 823264,
+        "team": 158,
+        "trio_type": "2-3-4",
+        "conservative_prob": 0.1681,
+        "stats_used": [
+          "RUNS",
+          "HRRBI",
+          "HRRBI"
+        ],
+        "legs": [
+          {
+            "player_id": 694192,
+            "name": "Jackson Chourio",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 641343,
+            "name": "Jake Bauers",
+            "slot": 3,
+            "stat": "HRRBI",
+            "threshold": 2
+          },
+          {
+            "player_id": 683734,
+            "name": "Andrew Vaughn",
+            "slot": 4,
+            "stat": "HRRBI",
+            "threshold": 2
+          }
+        ]
+      }
+    ],
+    "fallback_pairings": []
+  }
+}
