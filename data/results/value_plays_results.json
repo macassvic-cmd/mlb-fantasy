@@ -4415,6 +4415,99 @@
           "correct": true
         }
       ]
+    },
+    "2026-08-10": {
+      "summary": {
+        "total": 8,
+        "correct": 3,
+        "accuracy": 37.5,
+        "over_total": 4,
+        "over_correct": 2,
+        "under_total": 4,
+        "under_correct": 1
+      },
+      "plays": [
+        {
+          "player_id": 686765,
+          "name": "Nick Sogard",
+          "team": "Boston Red Sox",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 6,
+          "correct": false
+        },
+        {
+          "player_id": 678882,
+          "name": "Ceddanne Rafaela",
+          "team": "Boston Red Sox",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "correct": true
+        },
+        {
+          "player_id": 575929,
+          "name": "Willson Contreras",
+          "team": "Boston Red Sox",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "correct": false
+        },
+        {
+          "player_id": 668904,
+          "name": "Royce Lewis",
+          "team": "Minnesota Twins",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 13,
+          "correct": true
+        },
+        {
+          "player_id": 682998,
+          "name": "Corbin Carroll",
+          "team": "Arizona Diamondbacks",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 9.5,
+          "actual_ud": 13,
+          "correct": false
+        },
+        {
+          "player_id": 670541,
+          "name": "Yordan Alvarez",
+          "team": "Houston Astros",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 11,
+          "correct": false
+        },
+        {
+          "player_id": 606466,
+          "name": "Ketel Marte",
+          "team": "Arizona Diamondbacks",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 16,
+          "correct": false
+        },
+        {
+          "player_id": 665489,
+          "name": "Vladimir Guerrero Jr.",
+          "team": "Toronto Blue Jays",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "correct": true
+        }
+      ]
     }
   }
 }
