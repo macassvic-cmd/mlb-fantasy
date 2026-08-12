@@ -5684,20 +5684,303 @@
           "fully_graded": true
         }
       ]
+    },
+    "2026-08-11": {
+      "pairings": [
+        {
+          "combined_conservative": 0.05194,
+          "combined_optimistic": 0.07081,
+          "ev_conservative": 0.558,
+          "ev_optimistic": 1.124,
+          "playable": true,
+          "trios": [
+            {
+              "game_pk": 824970,
+              "team": "Tampa Bay Rays",
+              "opp_team": "Athletics",
+              "venue": "Sutter Health Park",
+              "opp_era": 5.56,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 666018,
+                  "name": "Jonathan Aranda",
+                  "order": 2,
+                  "leg_prob": 0.5972,
+                  "game_time_pt": "6:40 PM PT",
+                  "game_date_utc": "2026-08-12T01:40:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 691406,
+                  "name": "Junior Caminero",
+                  "order": 3,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "6:40 PM PT",
+                  "game_date_utc": "2026-08-12T01:40:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 668723,
+                  "name": "Ryan Vilade",
+                  "order": 4,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "6:40 PM PT",
+                  "game_date_utc": "2026-08-12T01:40:00Z",
+                  "actual_hit": false
+                }
+              ],
+              "conservative_prob": 0.2279,
+              "optimistic_prob": 0.2661,
+              "trio_hit": false,
+              "fully_graded": true
+            },
+            {
+              "game_pk": 823997,
+              "team": "Texas Rangers",
+              "opp_team": "Los Angeles Angels",
+              "venue": "Angel Stadium",
+              "opp_era": 7.11,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 608369,
+                  "name": "Corey Seager",
+                  "order": 2,
+                  "leg_prob": 0.5972,
+                  "game_time_pt": "6:38 PM PT",
+                  "game_date_utc": "2026-08-12T01:38:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 677649,
+                  "name": "Ezequiel Duran",
+                  "order": 3,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "6:38 PM PT",
+                  "game_date_utc": "2026-08-12T01:38:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 607043,
+                  "name": "Brandon Nimmo",
+                  "order": 4,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "6:38 PM PT",
+                  "game_date_utc": "2026-08-12T01:38:00Z",
+                  "actual_hit": true
+                }
+              ],
+              "conservative_prob": 0.2279,
+              "optimistic_prob": 0.2661,
+              "trio_hit": false,
+              "fully_graded": true
+            }
+          ],
+          "full6_hit": false,
+          "fully_graded": true
+        },
+        {
+          "combined_conservative": 0.04886,
+          "combined_optimistic": 0.06703,
+          "ev_conservative": 0.466,
+          "ev_optimistic": 1.011,
+          "playable": true,
+          "trios": [
+            {
+              "game_pk": 823917,
+              "team": "Kansas City Royals",
+              "opp_team": "Los Angeles Dodgers",
+              "venue": "UNIQLO Field at Dodger Stadium",
+              "opp_era": 12.0,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 677951,
+                  "name": "Bobby Witt Jr.",
+                  "order": 2,
+                  "leg_prob": 0.5972,
+                  "game_time_pt": "7:10 PM PT",
+                  "game_date_utc": "2026-08-12T02:10:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 695506,
+                  "name": "Jac Caglianone",
+                  "order": 3,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "7:10 PM PT",
+                  "game_date_utc": "2026-08-12T02:10:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 521692,
+                  "name": "Salvador Perez",
+                  "order": 4,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "7:10 PM PT",
+                  "game_date_utc": "2026-08-12T02:10:00Z",
+                  "actual_hit": true
+                }
+              ],
+              "conservative_prob": 0.2279,
+              "optimistic_prob": 0.2661,
+              "trio_hit": true,
+              "fully_graded": true
+            },
+            {
+              "game_pk": 824970,
+              "team": "Tampa Bay Rays",
+              "opp_team": "Athletics",
+              "venue": "Sutter Health Park",
+              "opp_era": 5.56,
+              "trio_type": "1-2-3",
+              "legs": [
+                {
+                  "player_id": 650490,
+                  "name": "Yandy D\u00edaz",
+                  "order": 1,
+                  "leg_prob": 0.5972,
+                  "game_time_pt": "6:40 PM PT",
+                  "game_date_utc": "2026-08-12T01:40:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 666018,
+                  "name": "Jonathan Aranda",
+                  "order": 2,
+                  "leg_prob": 0.5972,
+                  "game_time_pt": "6:40 PM PT",
+                  "game_date_utc": "2026-08-12T01:40:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 691406,
+                  "name": "Junior Caminero",
+                  "order": 3,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "6:40 PM PT",
+                  "game_date_utc": "2026-08-12T01:40:00Z",
+                  "actual_hit": true
+                }
+              ],
+              "conservative_prob": 0.2144,
+              "optimistic_prob": 0.2519,
+              "trio_hit": false,
+              "fully_graded": true
+            }
+          ],
+          "full6_hit": false,
+          "fully_graded": true
+        },
+        {
+          "combined_conservative": 0.04597,
+          "combined_optimistic": 0.06345,
+          "ev_conservative": 0.379,
+          "ev_optimistic": 0.904,
+          "playable": true,
+          "trios": [
+            {
+              "game_pk": 823997,
+              "team": "Texas Rangers",
+              "opp_team": "Los Angeles Angels",
+              "venue": "Angel Stadium",
+              "opp_era": 7.11,
+              "trio_type": "1-2-3",
+              "legs": [
+                {
+                  "player_id": 694671,
+                  "name": "Wyatt Langford",
+                  "order": 1,
+                  "leg_prob": 0.5972,
+                  "game_time_pt": "6:38 PM PT",
+                  "game_date_utc": "2026-08-12T01:38:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 608369,
+                  "name": "Corey Seager",
+                  "order": 2,
+                  "leg_prob": 0.5972,
+                  "game_time_pt": "6:38 PM PT",
+                  "game_date_utc": "2026-08-12T01:38:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 677649,
+                  "name": "Ezequiel Duran",
+                  "order": 3,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "6:38 PM PT",
+                  "game_date_utc": "2026-08-12T01:38:00Z",
+                  "actual_hit": false
+                }
+              ],
+              "conservative_prob": 0.2144,
+              "optimistic_prob": 0.2519,
+              "trio_hit": false,
+              "fully_graded": true
+            },
+            {
+              "game_pk": 823917,
+              "team": "Kansas City Royals",
+              "opp_team": "Los Angeles Dodgers",
+              "venue": "UNIQLO Field at Dodger Stadium",
+              "opp_era": 12.0,
+              "trio_type": "1-2-3",
+              "legs": [
+                {
+                  "player_id": 679845,
+                  "name": "Nick Loftin",
+                  "order": 1,
+                  "leg_prob": 0.5972,
+                  "game_time_pt": "7:10 PM PT",
+                  "game_date_utc": "2026-08-12T02:10:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 677951,
+                  "name": "Bobby Witt Jr.",
+                  "order": 2,
+                  "leg_prob": 0.5972,
+                  "game_time_pt": "7:10 PM PT",
+                  "game_date_utc": "2026-08-12T02:10:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 695506,
+                  "name": "Jac Caglianone",
+                  "order": 3,
+                  "leg_prob": 0.5381,
+                  "game_time_pt": "7:10 PM PT",
+                  "game_date_utc": "2026-08-12T02:10:00Z",
+                  "actual_hit": true
+                }
+              ],
+              "conservative_prob": 0.2144,
+              "optimistic_prob": 0.2519,
+              "trio_hit": false,
+              "fully_graded": true
+            }
+          ],
+          "full6_hit": false,
+          "fully_graded": true
+        }
+      ]
     }
   },
   "record": {
     "legs": {
-      "wins": 184,
-      "losses": 164
+      "wins": 193,
+      "losses": 173
     },
     "trios": {
-      "wins": 25,
-      "losses": 83
+      "wins": 26,
+      "losses": 88
     },
     "full6": {
       "wins": 0,
-      "losses": 48
+      "losses": 51
     }
   }
 }

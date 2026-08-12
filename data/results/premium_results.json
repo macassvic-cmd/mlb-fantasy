@@ -4740,16 +4740,186 @@
           "correct": true
         }
       ]
+    },
+    "2026-08-11": {
+      "summary": {
+        "premium": {
+          "total": 4,
+          "correct": 3,
+          "win_rate": 75.0
+        },
+        "strong": {
+          "total": 10,
+          "correct": 4,
+          "win_rate": 40.0
+        }
+      },
+      "plays": [
+        {
+          "player_id": 666182,
+          "name": "Bo Bichette",
+          "team": "New York Mets",
+          "call": "under",
+          "edge": -1.85,
+          "ud_line": 7.5,
+          "actual_ud": 3,
+          "tier": "premium",
+          "correct": true
+        },
+        {
+          "player_id": 668709,
+          "name": "JJ Bleday",
+          "team": "Cincinnati Reds",
+          "call": "under",
+          "edge": -1.76,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "tier": "premium",
+          "correct": true
+        },
+        {
+          "player_id": 592518,
+          "name": "Manny Machado",
+          "team": "San Diego Padres",
+          "call": "under",
+          "edge": -1.53,
+          "ud_line": 5.5,
+          "actual_ud": 11,
+          "tier": "premium",
+          "correct": false
+        },
+        {
+          "player_id": 669242,
+          "name": "Tommy Edman",
+          "team": "Los Angeles Dodgers",
+          "call": "under",
+          "edge": -1.75,
+          "ud_line": 5.5,
+          "actual_ud": 3,
+          "tier": "premium",
+          "correct": true
+        },
+        {
+          "player_id": 668804,
+          "name": "Bryan Reynolds",
+          "team": "Pittsburgh Pirates",
+          "call": "over",
+          "edge": 0.53,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 693304,
+          "name": "Nick Gonzales",
+          "team": "Pittsburgh Pirates",
+          "call": "over",
+          "edge": 0.11,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 677800,
+          "name": "Wilyer Abreu",
+          "team": "Boston Red Sox",
+          "call": "under",
+          "edge": -0.1,
+          "ud_line": 5.5,
+          "actual_ud": 21,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 575929,
+          "name": "Willson Contreras",
+          "team": "Boston Red Sox",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 621566,
+          "name": "Matt Olson",
+          "team": "Atlanta Braves",
+          "call": "over",
+          "edge": 1.75,
+          "ud_line": 6.5,
+          "actual_ud": 21,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 671739,
+          "name": "Michael Harris II",
+          "team": "Atlanta Braves",
+          "call": "under",
+          "edge": -0.73,
+          "ud_line": 6.5,
+          "actual_ud": 6,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 691023,
+          "name": "Jordan Walker",
+          "team": "St. Louis Cardinals",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 9,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 691406,
+          "name": "Junior Caminero",
+          "team": "Tampa Bay Rays",
+          "call": "over",
+          "edge": 0.83,
+          "ud_line": 8.5,
+          "actual_ud": 21,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 696100,
+          "name": "Hunter Goodman",
+          "team": "Colorado Rockies",
+          "call": "under",
+          "edge": -0.5,
+          "ud_line": 6.5,
+          "actual_ud": 10,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 681198,
+          "name": "TJ Rumfield",
+          "team": "Colorado Rockies",
+          "call": "over",
+          "edge": 0.33,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "tier": "strong",
+          "correct": false
+        }
+      ]
     }
   },
   "record": {
     "premium": {
-      "wins": 32,
-      "losses": 32
+      "wins": 35,
+      "losses": 33
     },
     "strong": {
-      "wins": 170,
-      "losses": 158
+      "wins": 174,
+      "losses": 164
     }
   }
 }
