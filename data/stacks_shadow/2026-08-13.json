@@ -1,0 +1,52 @@
+{
+  "date": "2026-08-13",
+  "mixed_market": {
+    "trio_count": 5,
+    "pairings": []
+  },
+  "gap_filling": {
+    "date": "2026-08-13",
+    "baseline_trio_count": 4,
+    "fallback_trio_count": 5,
+    "baseline_pairing_count": 0,
+    "fallback_pairing_count": 0,
+    "rescued_trio_count": 1,
+    "rescued_trios": [
+      {
+        "game_pk": 822776,
+        "team": 111,
+        "trio_type": "1-2-3",
+        "conservative_prob": 0.212,
+        "stats_used": [
+          "RUNS",
+          "HRRBI",
+          "HRRBI"
+        ],
+        "legs": [
+          {
+            "player_id": 807799,
+            "name": "Masataka Yoshida",
+            "slot": 1,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 678882,
+            "name": "Ceddanne Rafaela",
+            "slot": 2,
+            "stat": "HRRBI",
+            "threshold": 2
+          },
+          {
+            "player_id": 668939,
+            "name": "Adley Rutschman",
+            "slot": 3,
+            "stat": "HRRBI",
+            "threshold": 2
+          }
+        ]
+      }
+    ],
+    "fallback_pairings": []
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "date": "2026-08-13",
+  "pairings": [
+    {
+      "trios": [
+        {
+          "game_pk": 822776,
+          "team": "Boston Red Sox",
+          "opp_team": "Toronto Blue Jays",
+          "venue": "Rogers Centre",
+          "opp_era": 7.25,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 678882,
+              "name": "Ceddanne Rafaela",
+              "order": 2,
+              "leg_prob": 0.5789,
+              "game_time_pt": "12:07 PM PT",
+              "game_date_utc": "2026-08-13T19:07:00Z"
+            },
+            {
+              "player_id": 668939,
+              "name": "Adley Rutschman",
+              "order": 3,
+              "leg_prob": 0.5361,
+              "game_time_pt": "12:07 PM PT",
+              "game_date_utc": "2026-08-13T19:07:00Z"
+            },
+            {
+              "player_id": 575929,
+              "name": "Willson Contreras",
+              "order": 4,
+              "leg_prob": 0.5361,
+              "game_time_pt": "12:07 PM PT",
+              "game_date_utc": "2026-08-13T19:07:00Z"
+            }
+          ],
+          "conservative_prob": 0.2211,
+          "optimistic_prob": 0.2582
+        },
+        {
+          "game_pk": 823915,
+          "team": "Milwaukee Brewers",
+          "opp_team": "Los Angeles Dodgers",
+          "venue": "UNIQLO Field at Dodger Stadium",
+          "opp_era": 4.54,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 668930,
+              "name": "Brice Turang",
+              "order": 2,
+              "leg_prob": 0.5373,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-08-14T02:10:00Z"
+            },
+            {
+              "player_id": 683734,
+              "name": "Andrew Vaughn",
+              "order": 3,
+              "leg_prob": 0.5489,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-08-14T02:10:00Z"
+            },
+            {
+              "player_id": 641343,
+              "name": "Jake Bauers",
+              "order": 4,
+              "leg_prob": 0.5489,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-08-14T02:10:00Z"
+            }
+          ],
+          "conservative_prob": 0.2151,
+          "optimistic_prob": 0.2513
+        }
+      ],
+      "combined_conservative": 0.04756,
+      "combined_optimistic": 0.06489,
+      "ev_conservative": 0.427,
+      "ev_optimistic": 0.947,
+      "playable": true
+    }
+  ]
+}
