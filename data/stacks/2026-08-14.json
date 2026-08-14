@@ -1,0 +1,167 @@
+{
+  "date": "2026-08-14",
+  "pairings": [
+    {
+      "trios": [
+        {
+          "game_pk": 823993,
+          "team": "Kansas City Royals",
+          "opp_team": "Los Angeles Angels",
+          "venue": "Angel Stadium",
+          "opp_era": 7.2,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 677951,
+              "name": "Bobby Witt Jr.",
+              "order": 2,
+              "leg_prob": 0.5789,
+              "game_time_pt": "6:38 PM PT",
+              "game_date_utc": "2026-08-15T01:38:00Z"
+            },
+            {
+              "player_id": 695506,
+              "name": "Jac Caglianone",
+              "order": 3,
+              "leg_prob": 0.5361,
+              "game_time_pt": "6:38 PM PT",
+              "game_date_utc": "2026-08-15T01:38:00Z"
+            },
+            {
+              "player_id": 521692,
+              "name": "Salvador Perez",
+              "order": 4,
+              "leg_prob": 0.5361,
+              "game_time_pt": "6:38 PM PT",
+              "game_date_utc": "2026-08-15T01:38:00Z"
+            }
+          ],
+          "conservative_prob": 0.2211,
+          "optimistic_prob": 0.2582
+        },
+        {
+          "game_pk": 823591,
+          "team": "Washington Nationals",
+          "opp_team": "New York Mets",
+          "venue": "Citi Field",
+          "opp_era": 10.13,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 694673,
+              "name": "Abimelec Ortiz",
+              "order": 2,
+              "leg_prob": 0.5789,
+              "game_time_pt": "4:10 PM PT",
+              "game_date_utc": "2026-08-14T23:10:00Z"
+            },
+            {
+              "player_id": 686611,
+              "name": "Dylan Crews",
+              "order": 3,
+              "leg_prob": 0.5361,
+              "game_time_pt": "4:10 PM PT",
+              "game_date_utc": "2026-08-14T23:10:00Z"
+            },
+            {
+              "player_id": 695734,
+              "name": "Daylen Lile",
+              "order": 4,
+              "leg_prob": 0.5361,
+              "game_time_pt": "4:10 PM PT",
+              "game_date_utc": "2026-08-14T23:10:00Z"
+            }
+          ],
+          "conservative_prob": 0.2211,
+          "optimistic_prob": 0.2582
+        }
+      ],
+      "combined_conservative": 0.04889,
+      "combined_optimistic": 0.06667,
+      "ev_conservative": 0.467,
+      "ev_optimistic": 1.0,
+      "playable": true
+    },
+    {
+      "trios": [
+        {
+          "game_pk": 823185,
+          "team": "San Francisco Giants",
+          "opp_team": "Colorado Rockies",
+          "venue": "Oracle Park",
+          "opp_era": 6.63,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 642715,
+              "name": "Willy Adames",
+              "order": 2,
+              "leg_prob": 0.5789,
+              "game_time_pt": "7:15 PM PT",
+              "game_date_utc": "2026-08-15T02:15:00Z"
+            },
+            {
+              "player_id": 805811,
+              "name": "Bryce Eldridge",
+              "order": 3,
+              "leg_prob": 0.5361,
+              "game_time_pt": "7:15 PM PT",
+              "game_date_utc": "2026-08-15T02:15:00Z"
+            },
+            {
+              "player_id": 646240,
+              "name": "Rafael Devers",
+              "order": 4,
+              "leg_prob": 0.5361,
+              "game_time_pt": "7:15 PM PT",
+              "game_date_utc": "2026-08-15T02:15:00Z"
+            }
+          ],
+          "conservative_prob": 0.2211,
+          "optimistic_prob": 0.2582
+        },
+        {
+          "game_pk": 823913,
+          "team": "Los Angeles Dodgers",
+          "opp_team": "Milwaukee Brewers",
+          "venue": "UNIQLO Field at Dodger Stadium",
+          "opp_era": 4.57,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 681624,
+              "name": "Andy Pages",
+              "order": 2,
+              "leg_prob": 0.5373,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-08-15T02:10:00Z"
+            },
+            {
+              "player_id": 669242,
+              "name": "Tommy Edman",
+              "order": 3,
+              "leg_prob": 0.5489,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-08-15T02:10:00Z"
+            },
+            {
+              "player_id": 518692,
+              "name": "Freddie Freeman",
+              "order": 4,
+              "leg_prob": 0.5489,
+              "game_time_pt": "7:10 PM PT",
+              "game_date_utc": "2026-08-15T02:10:00Z"
+            }
+          ],
+          "conservative_prob": 0.2151,
+          "optimistic_prob": 0.2513
+        }
+      ],
+      "combined_conservative": 0.04756,
+      "combined_optimistic": 0.06489,
+      "ev_conservative": 0.427,
+      "ev_optimistic": 0.947,
+      "playable": true
+    }
+  ]
+}

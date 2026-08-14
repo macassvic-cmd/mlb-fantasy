@@ -1,0 +1,290 @@
+{
+  "date": "2026-08-14",
+  "mixed_market": {
+    "trio_count": 12,
+    "pairings": []
+  },
+  "gap_filling": {
+    "date": "2026-08-14",
+    "baseline_trio_count": 4,
+    "fallback_trio_count": 12,
+    "baseline_pairing_count": 0,
+    "fallback_pairing_count": 0,
+    "rescued_trio_count": 8,
+    "rescued_trios": [
+      {
+        "game_pk": 823591,
+        "team": 120,
+        "trio_type": "1-2-3",
+        "conservative_prob": 0.212,
+        "stats_used": [
+          "RUNS",
+          "HRRBI",
+          "HRRBI"
+        ],
+        "legs": [
+          {
+            "player_id": 682928,
+            "name": "CJ Abrams",
+            "slot": 1,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 694673,
+            "name": "Abimelec Ortiz",
+            "slot": 2,
+            "stat": "HRRBI",
+            "threshold": 2
+          },
+          {
+            "player_id": 686611,
+            "name": "Dylan Crews",
+            "slot": 3,
+            "stat": "HRRBI",
+            "threshold": 2
+          }
+        ]
+      },
+      {
+        "game_pk": 823993,
+        "team": 118,
+        "trio_type": "2-3-4",
+        "conservative_prob": 0.199,
+        "stats_used": [
+          "RUNS",
+          "RUNS",
+          "HRRBI"
+        ],
+        "legs": [
+          {
+            "player_id": 677951,
+            "name": "Bobby Witt Jr.",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 695506,
+            "name": "Jac Caglianone",
+            "slot": 3,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 521692,
+            "name": "Salvador Perez",
+            "slot": 4,
+            "stat": "HRRBI",
+            "threshold": 2
+          }
+        ]
+      },
+      {
+        "game_pk": 823993,
+        "team": 118,
+        "trio_type": "1-2-3",
+        "conservative_prob": 0.1895,
+        "stats_used": [
+          "HRRBI",
+          "RUNS",
+          "RUNS"
+        ],
+        "legs": [
+          {
+            "player_id": 679845,
+            "name": "Nick Loftin",
+            "slot": 1,
+            "stat": "HRRBI",
+            "threshold": 2
+          },
+          {
+            "player_id": 677951,
+            "name": "Bobby Witt Jr.",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 695506,
+            "name": "Jac Caglianone",
+            "slot": 3,
+            "stat": "RUNS",
+            "threshold": 1
+          }
+        ]
+      },
+      {
+        "game_pk": 824643,
+        "team": 112,
+        "trio_type": "2-3-4",
+        "conservative_prob": 0.1681,
+        "stats_used": [
+          "RUNS",
+          "HRRBI",
+          "HRRBI"
+        ],
+        "legs": [
+          {
+            "player_id": 673548,
+            "name": "Seiya Suzuki",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 683737,
+            "name": "Michael Busch",
+            "slot": 3,
+            "stat": "HRRBI",
+            "threshold": 2
+          },
+          {
+            "player_id": 608324,
+            "name": "Alex Bregman",
+            "slot": 4,
+            "stat": "HRRBI",
+            "threshold": 2
+          }
+        ]
+      },
+      {
+        "game_pk": 823913,
+        "team": 119,
+        "trio_type": "1-2-3",
+        "conservative_prob": 0.1675,
+        "stats_used": [
+          "RUNS",
+          "HRRBI",
+          "HRRBI"
+        ],
+        "legs": [
+          {
+            "player_id": 660271,
+            "name": "Shohei Ohtani",
+            "slot": 1,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 681624,
+            "name": "Andy Pages",
+            "slot": 2,
+            "stat": "HRRBI",
+            "threshold": 2
+          },
+          {
+            "player_id": 669242,
+            "name": "Tommy Edman",
+            "slot": 3,
+            "stat": "HRRBI",
+            "threshold": 2
+          }
+        ]
+      },
+      {
+        "game_pk": 822777,
+        "team": 147,
+        "trio_type": "1-2-3",
+        "conservative_prob": 0.1656,
+        "stats_used": [
+          "HRRBI",
+          "RUNS",
+          "HRRBI"
+        ],
+        "legs": [
+          {
+            "player_id": 663757,
+            "name": "Trent Grisham",
+            "slot": 1,
+            "stat": "HRRBI",
+            "threshold": 2
+          },
+          {
+            "player_id": 700250,
+            "name": "Ben Rice",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 682987,
+            "name": "Spencer Jones",
+            "slot": 3,
+            "stat": "HRRBI",
+            "threshold": 2
+          }
+        ]
+      },
+      {
+        "game_pk": 824643,
+        "team": 112,
+        "trio_type": "1-2-3",
+        "conservative_prob": 0.1639,
+        "stats_used": [
+          "RUNS",
+          "RUNS",
+          "HRRBI"
+        ],
+        "legs": [
+          {
+            "player_id": 691718,
+            "name": "Pete Crow-Armstrong",
+            "slot": 1,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 673548,
+            "name": "Seiya Suzuki",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 683737,
+            "name": "Michael Busch",
+            "slot": 3,
+            "stat": "HRRBI",
+            "threshold": 2
+          }
+        ]
+      },
+      {
+        "game_pk": 822777,
+        "team": 147,
+        "trio_type": "2-3-4",
+        "conservative_prob": 0.1368,
+        "stats_used": [
+          "RUNS",
+          "HRRBI",
+          "RUNS"
+        ],
+        "legs": [
+          {
+            "player_id": 700250,
+            "name": "Ben Rice",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 682987,
+            "name": "Spencer Jones",
+            "slot": 3,
+            "stat": "HRRBI",
+            "threshold": 2
+          },
+          {
+            "player_id": 671277,
+            "name": "Luis Garc\u00eda Jr.",
+            "slot": 4,
+            "stat": "RUNS",
+            "threshold": 1
+          }
+        ]
+      }
+    ],
+    "fallback_pairings": []
+  }
+}
