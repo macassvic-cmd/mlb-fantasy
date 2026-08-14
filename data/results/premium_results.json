@@ -5102,16 +5102,87 @@
           "correct": true
         }
       ]
+    },
+    "2026-08-13": {
+      "summary": {
+        "premium": {
+          "total": 3,
+          "correct": 2,
+          "win_rate": 66.7
+        },
+        "strong": {
+          "total": 2,
+          "correct": 1,
+          "win_rate": 50.0
+        }
+      },
+      "plays": [
+        {
+          "player_id": 668804,
+          "name": "Bryan Reynolds",
+          "team": "Pittsburgh Pirates",
+          "call": "under",
+          "edge": -1.64,
+          "ud_line": 6.5,
+          "actual_ud": 7,
+          "tier": "premium",
+          "correct": false
+        },
+        {
+          "player_id": 686527,
+          "name": "Dominic Canzone",
+          "team": "Seattle Mariners",
+          "call": "under",
+          "edge": -1.82,
+          "ud_line": 5.5,
+          "actual_ud": 3,
+          "tier": "premium",
+          "correct": true
+        },
+        {
+          "player_id": 608369,
+          "name": "Corey Seager",
+          "team": "Texas Rangers",
+          "call": "under",
+          "edge": -1.97,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "tier": "premium",
+          "correct": true
+        },
+        {
+          "player_id": 693304,
+          "name": "Nick Gonzales",
+          "team": "Pittsburgh Pirates",
+          "call": "under",
+          "edge": -0.59,
+          "ud_line": 6.5,
+          "actual_ud": 11,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 575929,
+          "name": "Willson Contreras",
+          "team": "Boston Red Sox",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "tier": "strong",
+          "correct": true
+        }
+      ]
     }
   },
   "record": {
     "premium": {
-      "wins": 37,
-      "losses": 36
+      "wins": 39,
+      "losses": 37
     },
     "strong": {
-      "wins": 179,
-      "losses": 170
+      "wins": 180,
+      "losses": 171
     }
   }
 }
