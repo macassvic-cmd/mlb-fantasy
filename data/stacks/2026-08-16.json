@@ -1,0 +1,167 @@
+{
+  "date": "2026-08-16",
+  "pairings": [
+    {
+      "trios": [
+        {
+          "game_pk": 823991,
+          "team": "Kansas City Royals",
+          "opp_team": "Los Angeles Angels",
+          "venue": "Angel Stadium",
+          "opp_era": 6.71,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 677951,
+              "name": "Bobby Witt Jr.",
+              "order": 2,
+              "leg_prob": 0.5789,
+              "game_time_pt": "1:07 PM PT",
+              "game_date_utc": "2026-08-16T20:07:00Z"
+            },
+            {
+              "player_id": 695506,
+              "name": "Jac Caglianone",
+              "order": 3,
+              "leg_prob": 0.5361,
+              "game_time_pt": "1:07 PM PT",
+              "game_date_utc": "2026-08-16T20:07:00Z"
+            },
+            {
+              "player_id": 521692,
+              "name": "Salvador Perez",
+              "order": 4,
+              "leg_prob": 0.5361,
+              "game_time_pt": "1:07 PM PT",
+              "game_date_utc": "2026-08-16T20:07:00Z"
+            }
+          ],
+          "conservative_prob": 0.2211,
+          "optimistic_prob": 0.2582
+        },
+        {
+          "game_pk": 823670,
+          "team": "Minnesota Twins",
+          "opp_team": "Philadelphia Phillies",
+          "venue": "Target Field",
+          "opp_era": 6.27,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 621439,
+              "name": "Byron Buxton",
+              "order": 2,
+              "leg_prob": 0.5789,
+              "game_time_pt": "11:10 AM PT",
+              "game_date_utc": "2026-08-16T18:10:00Z"
+            },
+            {
+              "player_id": 680777,
+              "name": "Ryan Jeffers",
+              "order": 3,
+              "leg_prob": 0.5361,
+              "game_time_pt": "11:10 AM PT",
+              "game_date_utc": "2026-08-16T18:10:00Z"
+            },
+            {
+              "player_id": 668904,
+              "name": "Royce Lewis",
+              "order": 4,
+              "leg_prob": 0.5361,
+              "game_time_pt": "11:10 AM PT",
+              "game_date_utc": "2026-08-16T18:10:00Z"
+            }
+          ],
+          "conservative_prob": 0.2211,
+          "optimistic_prob": 0.2582
+        }
+      ],
+      "combined_conservative": 0.04889,
+      "combined_optimistic": 0.06667,
+      "ev_conservative": 0.467,
+      "ev_optimistic": 1.0,
+      "playable": true
+    },
+    {
+      "trios": [
+        {
+          "game_pk": 823590,
+          "team": "New York Mets",
+          "opp_team": "Washington Nationals",
+          "venue": "Citi Field",
+          "opp_era": 5.79,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 596019,
+              "name": "Francisco Lindor",
+              "order": 2,
+              "leg_prob": 0.5789,
+              "game_time_pt": "10:40 AM PT",
+              "game_date_utc": "2026-08-16T17:40:00Z"
+            },
+            {
+              "player_id": 666182,
+              "name": "Bo Bichette",
+              "order": 3,
+              "leg_prob": 0.5361,
+              "game_time_pt": "10:40 AM PT",
+              "game_date_utc": "2026-08-16T17:40:00Z"
+            },
+            {
+              "player_id": 701807,
+              "name": "Carson Benge",
+              "order": 4,
+              "leg_prob": 0.5361,
+              "game_time_pt": "10:40 AM PT",
+              "game_date_utc": "2026-08-16T17:40:00Z"
+            }
+          ],
+          "conservative_prob": 0.2211,
+          "optimistic_prob": 0.2582
+        },
+        {
+          "game_pk": 823182,
+          "team": "San Francisco Giants",
+          "opp_team": "Colorado Rockies",
+          "venue": "Oracle Park",
+          "opp_era": 5.61,
+          "trio_type": "2-3-4",
+          "legs": [
+            {
+              "player_id": 646240,
+              "name": "Rafael Devers",
+              "order": 2,
+              "leg_prob": 0.5789,
+              "game_time_pt": "1:05 PM PT",
+              "game_date_utc": "2026-08-16T20:05:00Z"
+            },
+            {
+              "player_id": 805811,
+              "name": "Bryce Eldridge",
+              "order": 3,
+              "leg_prob": 0.5361,
+              "game_time_pt": "1:05 PM PT",
+              "game_date_utc": "2026-08-16T20:05:00Z"
+            },
+            {
+              "player_id": 808982,
+              "name": "Jung Hoo Lee",
+              "order": 4,
+              "leg_prob": 0.5361,
+              "game_time_pt": "1:05 PM PT",
+              "game_date_utc": "2026-08-16T20:05:00Z"
+            }
+          ],
+          "conservative_prob": 0.2211,
+          "optimistic_prob": 0.2582
+        }
+      ],
+      "combined_conservative": 0.04889,
+      "combined_optimistic": 0.06667,
+      "ev_conservative": 0.467,
+      "ev_optimistic": 1.0,
+      "playable": true
+    }
+  ]
+}
