@@ -4860,6 +4860,99 @@
           "correct": true
         }
       ]
+    },
+    "2026-08-15": {
+      "summary": {
+        "total": 8,
+        "correct": 3,
+        "accuracy": 37.5,
+        "over_total": 4,
+        "over_correct": 2,
+        "under_total": 4,
+        "under_correct": 1
+      },
+      "plays": [
+        {
+          "player_id": 800050,
+          "name": "Chase DeLauter",
+          "team": "Cleveland Guardians",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 12,
+          "correct": true
+        },
+        {
+          "player_id": 805808,
+          "name": "Kevin McGonigle",
+          "team": "Detroit Tigers",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "correct": false
+        },
+        {
+          "player_id": 608324,
+          "name": "Alex Bregman",
+          "team": "Chicago Cubs",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "correct": false
+        },
+        {
+          "player_id": 646240,
+          "name": "Rafael Devers",
+          "team": "San Francisco Giants",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 10,
+          "correct": true
+        },
+        {
+          "player_id": 608369,
+          "name": "Corey Seager",
+          "team": "Texas Rangers",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 10,
+          "correct": false
+        },
+        {
+          "player_id": 660670,
+          "name": "Ronald Acu\u00f1a Jr.",
+          "team": "Atlanta Braves",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 17,
+          "correct": false
+        },
+        {
+          "player_id": 545361,
+          "name": "Mike Trout",
+          "team": "Los Angeles Angels",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 3,
+          "correct": true
+        },
+        {
+          "player_id": 694671,
+          "name": "Wyatt Langford",
+          "team": "Texas Rangers",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 22,
+          "correct": false
+        }
+      ]
     }
   }
 }

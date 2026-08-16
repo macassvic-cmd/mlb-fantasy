@@ -6537,15 +6537,112 @@
           "fully_graded": false
         }
       ]
+    },
+    "2026-08-15": {
+      "pairings": [
+        {
+          "combined_conservative": 0.04798,
+          "combined_optimistic": 0.06545,
+          "ev_conservative": 0.439,
+          "ev_optimistic": 0.964,
+          "playable": true,
+          "trios": [
+            {
+              "game_pk": 823184,
+              "team": "San Francisco Giants",
+              "opp_team": "Colorado Rockies",
+              "venue": "Oracle Park",
+              "opp_era": 6.83,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 646240,
+                  "name": "Rafael Devers",
+                  "order": 2,
+                  "leg_prob": 0.5789,
+                  "game_time_pt": "1:05 PM PT",
+                  "game_date_utc": "2026-08-15T20:05:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 805811,
+                  "name": "Bryce Eldridge",
+                  "order": 3,
+                  "leg_prob": 0.5361,
+                  "game_time_pt": "1:05 PM PT",
+                  "game_date_utc": "2026-08-15T20:05:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 682674,
+                  "name": "Victor Bericoto",
+                  "order": 4,
+                  "leg_prob": 0.5361,
+                  "game_time_pt": "1:05 PM PT",
+                  "game_date_utc": "2026-08-15T20:05:00Z",
+                  "actual_hit": null
+                }
+              ],
+              "conservative_prob": 0.2211,
+              "optimistic_prob": 0.2582,
+              "trio_hit": false,
+              "fully_graded": false
+            },
+            {
+              "game_pk": 823671,
+              "team": "Philadelphia Phillies",
+              "opp_team": "Minnesota Twins",
+              "venue": "Target Field",
+              "opp_era": 4.79,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 607208,
+                  "name": "Trea Turner",
+                  "order": 2,
+                  "leg_prob": 0.5827,
+                  "game_time_pt": "4:10 PM PT",
+                  "game_date_utc": "2026-08-15T23:10:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 547180,
+                  "name": "Bryce Harper",
+                  "order": 3,
+                  "leg_prob": 0.5294,
+                  "game_time_pt": "4:10 PM PT",
+                  "game_date_utc": "2026-08-15T23:10:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 650333,
+                  "name": "Luis Arraez",
+                  "order": 4,
+                  "leg_prob": 0.5294,
+                  "game_time_pt": "4:10 PM PT",
+                  "game_date_utc": "2026-08-15T23:10:00Z",
+                  "actual_hit": true
+                }
+              ],
+              "conservative_prob": 0.217,
+              "optimistic_prob": 0.2535,
+              "trio_hit": true,
+              "fully_graded": true
+            }
+          ],
+          "full6_hit": false,
+          "fully_graded": false
+        }
+      ]
     }
   },
   "record": {
     "legs": {
-      "wins": 215,
+      "wins": 220,
       "losses": 181
     },
     "trios": {
-      "wins": 29,
+      "wins": 30,
       "losses": 91
     },
     "full6": {

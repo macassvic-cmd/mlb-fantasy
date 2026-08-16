@@ -5902,6 +5902,159 @@
           ]
         }
       ]
+    },
+    "2026-08-15": {
+      "mixed_market_pairings": [],
+      "gap_filling_rescued_trios": [
+        {
+          "game_pk": 823671,
+          "team": 143,
+          "trio_type": "1-2-3",
+          "conservative_prob": 0.1656,
+          "stats_used": [
+            "HRRBI",
+            "RUNS",
+            "HRRBI"
+          ],
+          "legs": [
+            {
+              "player_id": 656941,
+              "name": "Kyle Schwarber",
+              "slot": 1,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            },
+            {
+              "player_id": 607208,
+              "name": "Trea Turner",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 547180,
+              "name": "Bryce Harper",
+              "slot": 3,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": true
+            }
+          ]
+        },
+        {
+          "game_pk": 824480,
+          "team": 113,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1529,
+          "stats_used": [
+            "RUNS",
+            "RUNS",
+            "HRRBI"
+          ],
+          "legs": [
+            {
+              "player_id": 701398,
+              "name": "Sal Stewart",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 668709,
+              "name": "JJ Bleday",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 663886,
+              "name": "Tyler Stephenson",
+              "slot": 4,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": false
+            }
+          ]
+        },
+        {
+          "game_pk": 824480,
+          "team": 146,
+          "trio_type": "2-3-4",
+          "conservative_prob": 0.1529,
+          "stats_used": [
+            "RUNS",
+            "RUNS",
+            "HRRBI"
+          ],
+          "legs": [
+            {
+              "player_id": 669364,
+              "name": "Xavier Edwards",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 672640,
+              "name": "Otto Lopez",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            },
+            {
+              "player_id": 665052,
+              "name": "Griffin Conine",
+              "slot": 4,
+              "stat": "HRRBI",
+              "threshold": 2,
+              "actual_hit": true
+            }
+          ]
+        },
+        {
+          "game_pk": 824480,
+          "team": 146,
+          "trio_type": "1-2-3",
+          "conservative_prob": 0.1363,
+          "stats_used": [
+            "RUNS",
+            "RUNS",
+            "RUNS"
+          ],
+          "legs": [
+            {
+              "player_id": 805300,
+              "name": "Jakob Marsee",
+              "slot": 1,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 669364,
+              "name": "Xavier Edwards",
+              "slot": 2,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": true
+            },
+            {
+              "player_id": 672640,
+              "name": "Otto Lopez",
+              "slot": 3,
+              "stat": "RUNS",
+              "threshold": 1,
+              "actual_hit": false
+            }
+          ]
+        }
+      ]
     }
   },
   "record": {
@@ -5919,9 +6072,9 @@
     }
   },
   "gap_filling_record": {
-    "rescue_fire_count": 154,
-    "days_tracked": 24,
-    "rescued_trio_legs_graded": 275,
-    "rescued_trio_legs_hit": 132
+    "rescue_fire_count": 158,
+    "days_tracked": 25,
+    "rescued_trio_legs_graded": 283,
+    "rescued_trio_legs_hit": 136
   }
 }
