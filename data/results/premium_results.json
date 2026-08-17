@@ -5458,16 +5458,142 @@
           "correct": true
         }
       ]
+    },
+    "2026-08-16": {
+      "summary": {
+        "premium": {
+          "total": 3,
+          "correct": 1,
+          "win_rate": 33.3
+        },
+        "strong": {
+          "total": 7,
+          "correct": 2,
+          "win_rate": 28.6
+        }
+      },
+      "plays": [
+        {
+          "player_id": 645277,
+          "name": "Ozzie Albies",
+          "team": "Atlanta Braves",
+          "call": "under",
+          "edge": -1.75,
+          "ud_line": 5.5,
+          "actual_ud": 3,
+          "tier": "premium",
+          "correct": true
+        },
+        {
+          "player_id": 693307,
+          "name": "Dillon Dingler",
+          "team": "Detroit Tigers",
+          "call": "under",
+          "edge": -1.58,
+          "ud_line": 6.5,
+          "actual_ud": 11,
+          "tier": "premium",
+          "correct": false
+        },
+        {
+          "player_id": 683734,
+          "name": "Andrew Vaughn",
+          "team": "Milwaukee Brewers",
+          "call": "under",
+          "edge": -1.85,
+          "ud_line": 5.5,
+          "actual_ud": 8,
+          "tier": "premium",
+          "correct": false
+        },
+        {
+          "player_id": 691406,
+          "name": "Junior Caminero",
+          "team": "Tampa Bay Rays",
+          "call": "over",
+          "edge": 1.5,
+          "ud_line": 7.5,
+          "actual_ud": 0,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 621566,
+          "name": "Matt Olson",
+          "team": "Atlanta Braves",
+          "call": "under",
+          "edge": -0.51,
+          "ud_line": 6.5,
+          "actual_ud": 25,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 668804,
+          "name": "Bryan Reynolds",
+          "team": "Pittsburgh Pirates",
+          "call": "under",
+          "edge": -1.45,
+          "ud_line": 6.5,
+          "actual_ud": 20,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 699013,
+          "name": "Esmerlyn Valdez",
+          "team": "Pittsburgh Pirates",
+          "call": "under",
+          "edge": -1.39,
+          "ud_line": 5.5,
+          "actual_ud": 19,
+          "tier": "strong",
+          "correct": false
+        },
+        {
+          "player_id": 691023,
+          "name": "Jordan Walker",
+          "team": "St. Louis Cardinals",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 35,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 676475,
+          "name": "Alec Burleson",
+          "team": "St. Louis Cardinals",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 31,
+          "tier": "strong",
+          "correct": true
+        },
+        {
+          "player_id": 666160,
+          "name": "Mickey Moniak",
+          "team": "Colorado Rockies",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 5.5,
+          "actual_ud": 9,
+          "tier": "strong",
+          "correct": false
+        }
+      ]
     }
   },
   "record": {
     "premium": {
-      "wins": 40,
-      "losses": 39
+      "wins": 41,
+      "losses": 41
     },
     "strong": {
-      "wins": 190,
-      "losses": 181
+      "wins": 192,
+      "losses": 186
     }
   }
 }
