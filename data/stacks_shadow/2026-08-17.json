@@ -1,0 +1,154 @@
+{
+  "date": "2026-08-17",
+  "mixed_market": {
+    "trio_count": 8,
+    "pairings": []
+  },
+  "gap_filling": {
+    "date": "2026-08-17",
+    "baseline_trio_count": 4,
+    "fallback_trio_count": 8,
+    "baseline_pairing_count": 0,
+    "fallback_pairing_count": 0,
+    "rescued_trio_count": 4,
+    "rescued_trios": [
+      {
+        "game_pk": 824320,
+        "team": 115,
+        "trio_type": "1-2-3",
+        "conservative_prob": 0.1675,
+        "stats_used": [
+          "RUNS",
+          "HRRBI",
+          "HRRBI"
+        ],
+        "legs": [
+          {
+            "player_id": 664983,
+            "name": "Jake McCarthy",
+            "slot": 1,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 694249,
+            "name": "Cole Carrigg",
+            "slot": 2,
+            "stat": "HRRBI",
+            "threshold": 2
+          },
+          {
+            "player_id": 666160,
+            "name": "Mickey Moniak",
+            "slot": 3,
+            "stat": "HRRBI",
+            "threshold": 2
+          }
+        ]
+      },
+      {
+        "game_pk": 824478,
+        "team": 138,
+        "trio_type": "1-2-3",
+        "conservative_prob": 0.1363,
+        "stats_used": [
+          "RUNS",
+          "RUNS",
+          "RUNS"
+        ],
+        "legs": [
+          {
+            "player_id": 802139,
+            "name": "JJ Wetherholt",
+            "slot": 1,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 671056,
+            "name": "Iv\u00e1n Herrera",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 676475,
+            "name": "Alec Burleson",
+            "slot": 3,
+            "stat": "RUNS",
+            "threshold": 1
+          }
+        ]
+      },
+      {
+        "game_pk": 824478,
+        "team": 138,
+        "trio_type": "2-3-4",
+        "conservative_prob": 0.1271,
+        "stats_used": [
+          "RUNS",
+          "RUNS",
+          "RUNS"
+        ],
+        "legs": [
+          {
+            "player_id": 671056,
+            "name": "Iv\u00e1n Herrera",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 676475,
+            "name": "Alec Burleson",
+            "slot": 3,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 691023,
+            "name": "Jordan Walker",
+            "slot": 4,
+            "stat": "RUNS",
+            "threshold": 1
+          }
+        ]
+      },
+      {
+        "game_pk": 823668,
+        "team": 144,
+        "trio_type": "2-3-4",
+        "conservative_prob": 0.1271,
+        "stats_used": [
+          "RUNS",
+          "RUNS",
+          "RUNS"
+        ],
+        "legs": [
+          {
+            "player_id": 660670,
+            "name": "Ronald Acu\u00f1a Jr.",
+            "slot": 2,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 621566,
+            "name": "Matt Olson",
+            "slot": 3,
+            "stat": "RUNS",
+            "threshold": 1
+          },
+          {
+            "player_id": 671739,
+            "name": "Michael Harris II",
+            "slot": 4,
+            "stat": "RUNS",
+            "threshold": 1
+          }
+        ]
+      }
+    ],
+    "fallback_pairings": []
+  }
+}
