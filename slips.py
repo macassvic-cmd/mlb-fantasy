@@ -299,45 +299,48 @@ def refresh_pp_edge_bucket_rates(results_data, force=False):
 MIN_LEG_PROB   = 0.53
 
 # ---------------------------------------------------------------------------
-# 2026-08-18 full recalibration — recomputed from all 6,731 graded UD plays
-# across the complete 48-date history (2026-06-14 to 2026-08-04; discovery +
-# out-of-sample combined), joined against each date's raw lineup data for
-# venue/team. adj = (fresh venue/team win rate - fresh 51.0% baseline) * 0.007,
-# rounded to the nearest 0.005 — a simple, consistent rescaling (matches the
-# ~0.006-0.008 ratio implied by the original hand-tuned values) rather than a
-# re-derivation of whatever ad hoc rounding produced the previous numbers.
-# Any venue/team whose |delta| fell under 3.0pt or n under 150 was dropped as
-# noise rather than kept at a token value. Nearly every TEAM_WIN_ADJ entry
-# fell into that bucket on the bigger sample - see recalibration report.
-# Dropped (previous value -> fresh delta, n): UNIQLO Field at Dodger Stadium
-# (+0.04 -> +1.7pt, n=245), "Guaranteed Rate Field" (+0.02, but the venue was
-# renamed "Rate Field" mid-season so this key silently matched nothing the
-# whole time; fresh Rate Field delta is -0.5pt, n=218 - correctly near-zero),
-# Coors Field (+0.02 -> +0.9pt, n=316), T-Mobile Park (+0.02 -> -0.4pt, n=174,
-# sign flip), PNC Park (-0.02 -> -0.7pt, n=197), Comerica Park (-0.02 ->
-# -0.3pt, n=231), Fenway Park (-0.02 -> -0.3pt, n=162).
+# VENUE_WIN_ADJ / TEAM_WIN_ADJ are historical reference only as of 2026-08-18
+# - their sole consumer, leg_win_prob(), has had no live caller since the
+# 2026-07-21 rebuild moved UD candidates onto premium_tier()'s own rate
+# directly (see the "Candidate generation" comment below), and premium_tier
+# itself is now retired (see PREMIUM_TIER_REINCLUSION_MIN_N above). Kept
+# accurate anyway per "kept but unwired, preserves the record" - cheap to
+# maintain and useful if either tier or a general edge-bucket model is ever
+# reinstated.
+#
+# 2026-08-18 full recalibration, second pass after discovering the local
+# repo was 13 dates stale (61 dates, 2026-06-14 to 2026-08-17, 8,193 graded
+# plays; baseline 50.7%). adj = (fresh win rate - baseline) * 0.007, rounded
+# to nearest 0.005; dropped if |delta| < 3.0pt or n < 150. Numbers moved
+# again from the first (48-date) pass: Kauffman Stadium (+5.3pt -> +2.5pt),
+# Tropicana Field (+3.2pt -> +2.0pt) and Rogers Centre (-3.4pt -> -2.2pt)
+# all fell below the keep bar with more data. T-Mobile Park flipped instead
+# of dropping further: first pass read it as flat (-0.4pt, dropped), full
+# data shows a real -4.0pt deficit (n=199) - the opposite of its ORIGINAL
+# pre-recalibration value (+0.02, i.e. thought to be a good venue).
 # ---------------------------------------------------------------------------
 VENUE_WIN_ADJ = {
-    "Kauffman Stadium":  +0.04,
     "Sutter Health Park": +0.04,
-    "Tropicana Field":    +0.02,
-    "Oracle Park":        -0.03,
+    "Oracle Park":        -0.04,
     "Citi Field":         -0.03,
-    "Chase Field":        -0.03,
-    "Rogers Centre":      -0.02,
+    "Chase Field":        -0.02,
+    "T-Mobile Park":      -0.03,
 }
 
-# Dropped (previous value -> fresh delta, n): Chicago White Sox (+0.03 ->
-# +0.2pt, n=215), Seattle Mariners (+0.02 -> -2.4pt, n=206, sign flip), San
-# Francisco Giants (-0.05 -> -2.1pt, n=262), Milwaukee Brewers (-0.03 ->
-# -2.2pt, n=240), Cleveland Guardians (-0.02 -> +1.5pt, n=181, sign flip),
-# New York Mets (-0.02 -> -1.2pt, n=191). Six of ten previous entries were
-# noise on the full sample - only these four held up.
+# Same 61-date recompute as above. Colorado Rockies (+4.7pt -> +2.8pt),
+# Tampa Bay Rays (+3.2pt -> +2.6pt) and Washington Nationals (-4.0pt ->
+# -0.6pt) all fell below the keep bar with more data - Washington Nationals
+# in particular looked like the most stable entry after the first pass and
+# didn't survive a second round. Two CONFIRMED sign flips from the original
+# pre-recalibration values, in the same direction on both the partial and
+# full recompute: Cleveland Guardians (orig -0.02 -> +1.5pt partial ->
+# +3.1pt full, n=221) and Seattle Mariners (orig +0.02 -> -2.4pt partial ->
+# -5.5pt full, n=254) - worth flagging to a human before ever trusting a
+# reversal like that operationally, even with two passes agreeing.
 TEAM_WIN_ADJ = {
-    "Colorado Rockies":     +0.03,
-    "Atlanta Braves":       +0.03,
-    "Tampa Bay Rays":       +0.02,
-    "Washington Nationals": -0.03,
+    "Atlanta Braves":      +0.02,
+    "Cleveland Guardians": +0.02,
+    "Seattle Mariners":    -0.04,
 }
 
 
@@ -431,19 +434,22 @@ def strong_tier_reinclusion_status(record):
 
 
 # ---------------------------------------------------------------------------
-# Premium tier (Tier A) reinclusion gate
+# Premium tier (Tier A) reinclusion gate - kept for reference only. The
+# Premium/Strong tiers, Slips, and Stacks were all retired from the live
+# dashboard on 2026-08-18 (see report.py/tracker.py); premium_tier() and
+# this gate are no longer called from anywhere live.
 #
-# 2026-08-18 full recalibration: Tier A's 2026-07-13 backtest (67.8%/67.4%
-# on this rejoin, n=87-92, discovery window 2026-06-14 to 2026-07-12) has
-# NOT held out of sample. The full out-of-sample dashboard record (every
-# graded Tier A play, matching premium_results.json's record["premium"]
-# exactly) is 25-26 (49.0%, n=51) - below a coin flip and well under the
-# ~53% MIN_LEG_PROB breakeven, let alone the 60%+ that justified "Premium"
-# billing. Combined discovery+out-of-sample is 60.8% (n=143), still above
-# 50% but that's dragged up entirely by the in-sample discovery half; the
-# true predictive test has failed decisively. Excluded from slip
-# construction on the same reinclusion-gate pattern as Strong tier below,
-# rather than mined for a replacement subset - see the recalibration report.
+# Final numbers before retirement, re-run after discovering the local repo
+# was 13 dates stale (61 dates, 2026-06-14 to 2026-08-17): Tier A's
+# 2026-07-13 backtest (67.8%/67.4% on rejoin, n=87-92, discovery window
+# 2026-06-14 to 2026-07-12) never held out of sample. Full out-of-sample
+# record (matching premium_results.json's record["premium"] exactly) is
+# 42-42 (50.0%, n=84) - a dead-flat coin flip across three separate ~9-42
+# play windows (33.3%, 52.4%, 51.5%), not a blip. Combined discovery+OOS is
+# 59.1% (n=176), still above 50% but eroding toward it as OOS data
+# accumulates and dilutes the in-sample half. This is what "leave it
+# excluded rather than search for a replacement" was resolving before the
+# broader decision to retire Premium/Slips/Stacks entirely superseded it.
 # ---------------------------------------------------------------------------
 PREMIUM_TIER_REINCLUSION_MIN_N = 50
 PREMIUM_TIER_REINCLUSION_MIN_RATE = 0.58
@@ -531,12 +537,12 @@ def _bad_era_for_under(row):
 # 67.8% backtest) and became the sole UD candidate source, with Tier B
 # ("strong") excluded pending re-validation (see strong_tier_reinclusion_status).
 #
-# 2026-08-18 recalibration: Tier A itself has since failed the same test it
-# was kept for. Full out-of-sample record is now 25-26 (49.0%, n=51) - see
-# premium_tier_reinclusion_status above. With Tier A excluded and Tier B
-# still excluded, there is currently NO validated UD signal to draw slip
-# candidates from, so this returns [] until either tier clears its
-# reinclusion bar again - not replaced with a newly-mined subset.
+# 2026-08-18 recalibration: Tier A itself failed the same test it was kept
+# for - full out-of-sample record 42-42 (50.0%, n=84), see the reinclusion
+# gate comment above. With Tier A excluded and Tier B still excluded, there
+# was no validated UD signal left to draw candidates from, and Slips itself
+# was retired from the live dashboard the same day (see report.py) - this
+# function has had no caller since.
 # ---------------------------------------------------------------------------
 
 
@@ -559,11 +565,12 @@ def _leg_dict(row, platform, call, line, edge, win_prob):
 
 
 def _ud_candidates(rows):
-    # Paused 2026-08-18: Tier A ("premium") was the sole source here (see
-    # module comment above) and its out-of-sample record has collapsed to
-    # 49.0% (n=51) - below a coin flip. No validated UD signal currently
-    # exists to draw candidates from. Re-enable once premium_tier_reinclusion_status
-    # (or a future strong_tier_reinclusion_status) clears its bar again.
+    # Unused since Slips was retired from the live dashboard 2026-08-18 (see
+    # report.py - it no longer calls build_all_slips at all). Left returning
+    # [] rather than deleted: Tier A ("premium"), the sole source here, had
+    # already collapsed to a 50.0% out-of-sample record (n=84) before the
+    # broader retirement decision superseded that question. Re-enable via
+    # report.py once a validated UD signal exists again.
     return []
 
 

@@ -216,13 +216,17 @@ def track_date(date_str):
     results_by_pid = {r["player_id"]: r for r in results}
     track_top25(date_str, rows, results_by_pid)
     grade_value_plays(date_str, results_by_pid)
-    grade_premium_plays(date_str, results_by_pid)
-    grade_slips(date_str, results_by_pid)
-    grade_stacks(date_str, results)
-    try:
-        grade_stacks_shadow(date_str, results)
-    except Exception as e:
-        print(f"Stacks shadow-mode grading failed (non-fatal): {e}")
+    # Premium/Slips/Stacks (and Stacks shadow-mode) retired from the live
+    # dashboard 2026-08-18 - see report.py/slips.py/stacks.py. No point
+    # accumulating win/loss records for products nobody sees anymore, so
+    # nightly grading for all four is off. The functions themselves (and
+    # their historical data/results/*.json records) are kept as-is; unwire,
+    # don't delete - matches the PP retirement pattern. Re-enable by calling
+    # them here again if any of these ever comes back.
+    # grade_premium_plays(date_str, results_by_pid)
+    # grade_slips(date_str, results_by_pid)
+    # grade_stacks(date_str, results)
+    # grade_stacks_shadow(date_str, results)
 
     # Weekly refresh of the edge-bucket win-rate table slips.py scores legs
     # with (see EDGE_BUCKET_REFRESH_DAYS) — keeps it from ever going stale

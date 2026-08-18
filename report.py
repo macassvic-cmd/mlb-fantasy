@@ -18,9 +18,6 @@ from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
 
 import projections as proj
-import slips as slips_mod
-import stacks as stacks_mod
-import stacks_mixed_market as stacks_mixed_mod
 from scrapers.market_lines import get_market_lines, compute_pp_ud_ratio, match_lines
 from scrapers.betr import get_betr_lines
 
@@ -160,7 +157,6 @@ def top25_record_badge(player_id, top25_players):
 def build_card(row):
     return {
         "playerId": row.get("player_id"),
-        "premiumTier": slips_mod.premium_tier(row),
         "name":   row["name"],
         "team":   row["team"],
         "order":  row["order"] or "-",
@@ -378,35 +374,42 @@ GETAWAY_DAY_PENALTY = 0.25
 # parks so the model calls fewer high-confidence OVERs where it has
 # historically been wrong.
 #
-# 2026-08-18 full recalibration (48 dates, 2026-06-14 to 2026-08-04, 6,731
-# graded plays; baseline 51.0%) - three of the seven previous entries turned
-# out to be noise from the original ~90-110-play samples and are dropped:
-# PNC Park (-4.0% -> -0.7%, n=197), Comerica Park (-3.9% -> -0.3%, n=231),
-# Fenway Park (-3.7% -> -0.3%, n=162) - all moved more than 3pt toward
-# baseline. Oracle Park held up directionally but shrank a lot (-12.1% ->
-# -4.1%, n=241) - flagged and reweighted down accordingly. Citi Field and
-# Chase Field were stable. Rogers Centre stayed just above the 3pt bar.
-#   Oracle Park:    46.9% win rate (n=241), -4.1% vs 51.0% baseline
-#   Citi Field:     46.7% win rate (n=227), -4.3%
-#   Chase Field:    46.4% win rate (n=222), -4.6%
-#   Rogers Centre:  47.5% win rate (n=221), -3.4%
+# 2026-08-18 full recalibration, re-run after discovering the local repo was
+# 13 dates stale (61 dates, 2026-06-14 to 2026-08-17, 8,193 graded plays;
+# baseline 50.7%). Numbers moved again from the first (48-date) pass -
+# Rogers Centre fell below the 3pt/n150 keep bar (-3.4% -> -2.2%, dropped),
+# Kauffman/Tropicana/Colorado/Tampa Bay also fell below bar on the slips.py
+# side (see there). T-Mobile Park flipped the other way: was ~flat on 48
+# dates (-0.4%, dropped that pass) but full data shows a real -4.0% deficit
+# (n=199) - added. PNC Park/Comerica Park/Fenway Park/Milwaukee Brewers stay
+# dropped (confirmed noise both passes). This volatility at n~200-300 is
+# itself the headline finding - see the recalibration report.
+#   Oracle Park:    45.8% win rate (n=308), -5.0% vs 50.7% baseline
+#   Citi Field:     46.6% win rate (n=268), -4.1%
+#   Chase Field:    47.5% win rate (n=305), -3.2%
+#   T-Mobile Park:  46.7% win rate (n=199), -4.0%
 VENUE_PROJECTION_PENALTIES = {
-    "Oracle Park":    0.03,
+    "Oracle Park":    0.04,
     "Citi Field":     0.03,
-    "Chase Field":    0.03,
-    "Rogers Centre":  0.02,
+    "Chase Field":    0.02,
+    "T-Mobile Park":  0.03,
 }
 
 # Teams with systematic model underperformance not fully explained by their home
 # venue (applies to ALL games, home and away). Giants are already penalized at
 # Oracle Park; only teams without a matching home-venue penalty are listed here.
 #
-# 2026-08-18 recalibration: Milwaukee Brewers dropped - deficit shrank from
-# -10.3% (n=103) to -2.2% (n=240), an 8.1pt move that's a clear noise flag on
-# the original thin sample. Washington Nationals held up (n=230).
-#   Washington Nationals: 47.0% win rate (n=230), -4.0% vs 51.0% baseline
+# 2026-08-18 full recalibration (61 dates - see venue comment above):
+# Washington Nationals evaporated further (-4.0% -> -0.6%, n=269) and is
+# dropped - it looked like the one stable holdout on the first pass but
+# didn't survive a second round of data. Seattle Mariners is new: was
+# indistinguishable from noise on the partial sample (+0.2%) but full data
+# shows a real -5.5% deficit (n=254) - the opposite direction of concern
+# from what the name in this dict used to represent, worth double-checking
+# again at the next recalibration before trusting it fully.
+#   Seattle Mariners: 45.3% win rate (n=254), -5.5% vs 50.7% baseline
 TEAM_PROJECTION_PENALTIES = {
-    "Washington Nationals": 0.03,
+    "Seattle Mariners": 0.04,
 }
 
 
@@ -473,29 +476,10 @@ def save_value_plays(date_str, value_rows):
 
 
 PREMIUM_PLAYS_DIR = os.path.join("data", "premium_plays")
-
-
-def save_premium_plays(date_str, premium_rows, strong_rows):
-    """Persist today's Premium/Strong tier calls so tracker.py can grade
-    them separately once actual results are in (see
-    tracker.grade_premium_plays)."""
-    def _play(row, tier):
-        return {
-            "player_id": row.get("player_id"),
-            "name": row["name"],
-            "team": row["team"],
-            "call": "over" if row["edge"] > 0 else "under",
-            "edge": row["edge"],
-            "ud_line": row.get("ud_line"),
-            "tier": tier,
-        }
-
-    plays = [_play(r, "premium") for r in premium_rows] + [_play(r, "strong") for r in strong_rows]
-
-    os.makedirs(PREMIUM_PLAYS_DIR, exist_ok=True)
-    out_path = os.path.join(PREMIUM_PLAYS_DIR, f"{date_str}.json")
-    with open(out_path, "w", encoding="utf-8") as f:
-        json.dump({"date": date_str, "plays": plays}, f, indent=2)
+# Premium tier retired 2026-08-18 (see slips.py) - save_premium_plays()
+# removed since nothing calls it anymore. PREMIUM_PLAYS_DIR stays defined
+# because tracker.grade_premium_plays still references it (kept but
+# unwired, same as the tier itself).
 
 
 # ---------------------------------------------------------------------------
@@ -659,8 +643,7 @@ DASHBOARD_COLS = [
 ]
 
 
-def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None, slips_results=None,
-                     premium_results=None, stacks_results=None):
+def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None):
     games_count = len({r["game_pk"] for r in rows})
     generated_dt = datetime.now(timezone.utc).astimezone(_PACIFIC)
     last_updated = generated_dt.strftime("%Y-%m-%d %I:%M %p PT")
@@ -774,74 +757,8 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     cards = [build_card(row) for row in _by_game_time(rows[:25])]
     for c in cards:
         c["top25Record"] = top25_record_badge(c.get("playerId"), top25_players)
-    # cards_js is serialized further below, after stack_pairings/value_rows/
-    # all_slips are known, so valuePlay/slip/stack membership can be added.
-
-    # --- Premium: backtested high-win-rate subsets, see slips.premium_tier ---
-    # Tier A ("Premium"): UNDER + edge 1.5-1.99 + batting order 3-4, 67.8%
-    # backtested win rate. Tier B ("Strong"): broader union, 64.1%
-    # backtested. Both from the 2026-07-13 subset-mining analysis over
-    # 4,071 graded plays (2026-06-14 to 2026-07-11); tracker.py grades
-    # these separately each night (see grade_premium_plays) so out-of-
-    # sample performance is visible against the backtested rate.
-    # Still classified and badged here regardless of live performance (the
-    # dashboard should keep showing the true record, good or bad) - but as
-    # of the 2026-08-18 recalibration BOTH tiers are excluded from slip
-    # construction; see slips._ud_candidates and *_tier_reinclusion_status.
-    premium_rows, strong_rows = [], []
-    for r in rows:
-        if not r.get("market_anchored"):
-            continue
-        t = slips_mod.premium_tier(r)
-        if t == "premium":
-            premium_rows.append(r)
-        elif t == "strong":
-            strong_rows.append(r)
-    premium_rows = _by_game_time(premium_rows)
-    strong_rows = _by_game_time(strong_rows)
-    save_premium_plays(date_str, premium_rows, strong_rows)
-    premium_cards = [dict(build_card(row), premiumTier="premium") for row in premium_rows]
-    strong_cards = [dict(build_card(row), premiumTier="strong") for row in strong_rows]
-    premium_cards_js = json.dumps(premium_cards)
-    strong_cards_js = json.dumps(strong_cards)
-
-    def _tier_record_str(tier):
-        rec = (premium_results or {}).get("record", {}).get(tier, {"wins": 0, "losses": 0})
-        total = rec["wins"] + rec["losses"]
-        if total == 0:
-            return "Live record: no graded plays yet."
-        rate = round(100 * rec["wins"] / total, 1)
-        return f"Live record: {rec['wins']}-{rec['losses']} ({rate}%) since tracking began."
-
-    premium_rec = (premium_results or {}).get("record", {}).get("premium", {"wins": 0, "losses": 0})
-    _, premium_reincl_status = slips_mod.premium_tier_reinclusion_status(premium_rec)
-    premium_record_str = _tier_record_str("premium") + " Excluded from slips - " + premium_reincl_status + "."
-    strong_rec = (premium_results or {}).get("record", {}).get("strong", {"wins": 0, "losses": 0})
-    _, strong_reincl_status = slips_mod.strong_tier_reinclusion_status(strong_rec)
-    strong_record_str = _tier_record_str("strong") + " Excluded from slips - " + strong_reincl_status + "."
-
-    # --- Stacks: correlated 3+3 trio pairings for the 30x payout bet type ---
-    # Built entirely on the empirical order x opponent-ERA backtest (see
-    # stacks.py module docstring) after a Monte Carlo simulator failed its
-    # own out-of-sample joint-probability validation. Every probability is
-    # shown as a conservative-to-optimistic range; only pairings whose
-    # CONSERVATIVE combined probability clears stacks.PLAYABLE_MIN_CONSERVATIVE
-    # (4.5%) are surfaced. tracker.py grades legs/trios/full-6-man nightly.
-    stack_pairings = stacks_mod.build_pairings(rows)
-    stacks_mod.save_stacks(date_str, stack_pairings)
-    stack_pairings_js = json.dumps(stack_pairings)
-
-    stacks_record = (stacks_results or {}).get("record", {})
-
-    def _stacks_record_str(level):
-        rec = stacks_record.get(level, {"wins": 0, "losses": 0})
-        total = rec["wins"] + rec["losses"]
-        if total == 0:
-            return f"{level}: no graded results yet."
-        rate = round(100 * rec["wins"] / total, 1)
-        return f"{level}: {rec['wins']}-{rec['losses']} ({rate}%)"
-
-    stacks_record_str = "  |  ".join(_stacks_record_str(lvl) for lvl in ("legs", "trios", "full6"))
+    # cards_js is serialized further below, after value_rows is known, so
+    # valuePlay membership can be added.
 
     # --- Value Plays: model vs. market disagreement above threshold ---------
     # Live thresholds tracked in data/results/edge_bucket_rates.json
@@ -872,41 +789,12 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     unanchored_cards = [build_card(row) for row in unanchored_rows]
     unanchored_cards_js = json.dumps(unanchored_cards)
 
-    # --- Optimized Slips ---------------------------------------------------
-    all_slips = slips_mod.build_all_slips(rows)
-    slips_mod.save_slips(date_str, all_slips)
-    # Sort each slip's legs by game time for display
-    for slip_list in all_slips.values():
-        for slip in slip_list:
-            slip["legs"].sort(key=lambda l: l.get("game_date_utc") or "9999")
-    slips_js = json.dumps(all_slips)
-
-    # --- Top 25 tier-membership badges (PREMIUM/STRONG already set in
-    # build_card; VALUE PLAY/SLIP/STACK need today's other sections'
-    # player_id sets, only known once stacks/value plays/slips are all
-    # built above) ---
-    stack_pids = {leg["player_id"]
-                  for pairing in stack_pairings
-                  for trio in pairing["trios"]
-                  for leg in trio["legs"]}
+    # --- Top 25 tier-membership badge (VALUE PLAY only now - PREMIUM/
+    # STRONG/SLIP/STACK retired 2026-08-18, see module docstrings) ---
     value_pids = {r.get("player_id") for r in value_rows}
-    slip_pids = {leg["player_id"]
-                 for slip_list in all_slips.values()
-                 for slip in slip_list
-                 for leg in slip["legs"]}
     for c in cards:
-        pid = c.get("playerId")
-        c["valuePlay"] = pid in value_pids
-        c["slip"] = pid in slip_pids
-        c["stack"] = pid in stack_pids
+        c["valuePlay"] = c.get("playerId") in value_pids
     cards_js = json.dumps(cards)
-    # premium_rows is already filtered to market_anchored + premium_tier()=="premium"
-    # (see the Premium section above) - reused here so the empty-slip state can
-    # show real inventory instead of looking broken when the bar is legitimately
-    # not met that day.
-    premium_leg_count_js = json.dumps(len(premium_rows))
-    slips_results = slips_results or {}
-    slips_records_js = json.dumps(slips_results.get("records", {}))
 
     # --- Full leaderboard table ---------------------------------------
     # Color tiers are relative to today's own distribution (top 25% green,
@@ -1021,11 +909,7 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   .card .badge-projected {{ background: #fbbf24; color: #3a2a00; margin-left: 6px; }}
   .card .badge-no-line {{ background: #fb923c; color: #1a0800; margin-left: 6px; }}
   .card .badge-getaway {{ background: #f87171; color: #1a0000; margin-left: 6px; }}
-  .card .badge-premium {{ background: #a78bfa; margin-left: 6px; }}
-  .card .badge-strong {{ background: #60a5fa; margin-left: 6px; }}
   .card .badge-value  {{ background: #2dd4bf; margin-left: 6px; }}
-  .card .badge-slip   {{ background: #e879f9; margin-left: 6px; }}
-  .card .badge-stack  {{ background: #a3e635; margin-left: 6px; }}
   .card .top25-record {{ font-size: 12px; color: #9fb0cc; margin-top: 6px; }}
   .card .top25-record.has-rate {{ color: #c4cee0; }}
 
@@ -1045,101 +929,6 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   tbody tr:nth-child(even) {{ background: #182241; }}
   tbody tr:hover {{ background: #25355a; }}
   td {{ border-bottom: 1px solid #1f2c46; color: #d6deef; }}
-
-  /* Slips tab */
-  .slips-section {{ margin-bottom: 28px; }}
-  .slips-section-header {{ font-size: 19px; font-weight: 800; padding: 8px 0 10px;
-                            border-bottom: 2px solid; margin-bottom: 14px; }}
-  .ud-header {{ color: #4ade80; border-color: #4ade80; }}
-  .pp-header {{ color: #60a5fa; border-color: #60a5fa; }}
-  .slips-sub-label {{ font-size: 12px; font-weight: 700; color: #9fb0cc; text-transform: uppercase;
-                      letter-spacing: 0.06em; margin: 14px 0 8px; }}
-  .slips-row {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-                gap: 14px; margin-bottom: 4px; }}
-  .slip-card {{ background: #16213a; border-radius: 12px; border: 2px solid #2a3a5c; overflow: hidden; }}
-  .slip-card.ud-slip {{ border-color: #4ade80; }}
-  .slip-card.pp-slip {{ border-color: #60a5fa; }}
-  .slip-header {{ padding: 12px 16px; display: flex; justify-content: space-between; align-items: flex-start; }}
-  .slip-card.ud-slip .slip-header {{ background: rgba(74,222,128,0.08); }}
-  .slip-card.pp-slip .slip-header {{ background: rgba(96,165,250,0.08); }}
-  .slip-header-left {{ display: flex; flex-direction: column; gap: 2px; }}
-  .slip-rank-badge {{ font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; }}
-  .slip-title {{ font-size: 15px; font-weight: 800; color: #fff; }}
-  .slip-lock {{ font-size: 11px; color: #9fb0cc; margin-top: 3px; }}
-  .slip-prob {{ text-align: right; }}
-  .slip-prob-val {{ font-size: 20px; font-weight: 800; color: #fff; }}
-  .slip-prob-lbl {{ font-size: 11px; color: #9fb0cc; display: block; }}
-  .slip-legs {{ padding: 0 16px 12px; }}
-  .slip-leg {{ display: flex; align-items: center; gap: 10px; padding: 8px 0;
-               border-bottom: 1px solid #1f2c46; }}
-  .slip-leg:last-child {{ border-bottom: none; }}
-  .slip-leg-call {{ width: 26px; height: 26px; border-radius: 50%; display: flex;
-                    align-items: center; justify-content: center; font-weight: 800;
-                    font-size: 12px; flex-shrink: 0; }}
-  .slip-leg-call.over  {{ background: rgba(74,222,128,0.2); color: #4ade80; }}
-  .slip-leg-call.under {{ background: rgba(251,146,60,0.2); color: #fb923c; }}
-  .slip-leg-body {{ flex: 1; min-width: 0; }}
-  .slip-leg-name {{ font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap;
-                    overflow: hidden; text-overflow: ellipsis; }}
-  .slip-leg-meta {{ font-size: 11px; color: #9fb0cc; margin-top: 1px; }}
-  .slip-leg-right {{ text-align: right; flex-shrink: 0; }}
-  .slip-leg-line {{ font-size: 13px; font-weight: 700; color: #fff; }}
-  .slip-leg-prob {{ font-size: 11px; color: #9fb0cc; }}
-  .slip-empty {{ background: #16213a; border: 2px dashed #2a3a5c; border-radius: 12px;
-                 padding: 24px; text-align: center; color: #6c7da0; font-size: 13px; }}
-  .slip-empty-discipline {{ border-style: solid; border-color: #2a4a3a; color: #9fb0cc;
-                             text-align: left; line-height: 1.5; }}
-  .slip-empty-discipline strong {{ color: #4ade80; }}
-  .slips-expected-banner {{ background: #16213a; border: 1px solid #2a3a5c; border-radius: 10px;
-                 padding: 12px 18px; margin-bottom: 18px; font-size: 13px; color: #c4cee0; }}
-  .slips-expected-banner strong {{ color: #fff; }}
-  .slips-records-section {{ margin-top: 24px; padding-top: 20px;
-                             border-top: 1px solid #2a3a5c; }}
-  .slips-records-section h3 {{ font-size: 15px; font-weight: 700; color: #c4cee0;
-                                margin-bottom: 10px; margin-top: 20px; }}
-  .slips-records-section h3:first-child {{ margin-top: 0; }}
-  .slips-rank-grid {{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }}
-  @media (max-width: 700px) {{ .slips-rank-grid {{ grid-template-columns: 1fr; }} }}
-  .slip-rank-card {{ background: #16213a; border: 2px solid #2a3a5c; border-radius: 10px;
-                     padding: 14px 16px; text-align: center; }}
-  .slip-rec-type {{ font-size: 12px; font-weight: 700; color: #9fb0cc; margin-bottom: 6px; text-transform: uppercase; }}
-  .slip-rec-record {{ font-size: 24px; font-weight: 800; color: #fff; }}
-  .slip-rec-legs {{ font-size: 12px; color: #9fb0cc; margin-top: 4px; }}
-  .slips-rec-table {{ width: 100%; border-collapse: collapse; font-size: 13px; }}
-  .slips-rec-table th {{ background: #1a2844; color: #9fb0cc; padding: 8px 12px;
-                          text-align: left; font-weight: 700; border-bottom: 1px solid #2a3a5c; }}
-  .slips-rec-table td {{ padding: 8px 12px; border-bottom: 1px solid #1f2c46; color: #d6deef; }}
-
-  /* Stacks tab */
-  .stacks-intro {{ color: #9fb0cc; font-size: 13px; margin-bottom: 16px; }}
-  .stacks-record-bar {{ background: #16213a; border: 1px solid #2a3a5c; border-radius: 8px;
-                         padding: 10px 16px; font-size: 12px; color: #c4cee0; margin-bottom: 20px; }}
-  .stack-pairing {{ background: #16213a; border: 2px solid #a78bfa; border-radius: 12px;
-                     margin-bottom: 20px; overflow: hidden; }}
-  .stack-pairing-header {{ padding: 14px 18px; background: rgba(167,139,250,0.10);
-                            display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; }}
-  .stack-pairing-title {{ font-size: 16px; font-weight: 800; color: #fff; }}
-  .stack-pairing-badge {{ display: inline-block; font-size: 11px; font-weight: 800; text-transform: uppercase;
-                           letter-spacing: 0.06em; padding: 3px 10px; border-radius: 10px; margin-left: 8px;
-                           background: #4ade80; color: #0d1626; }}
-  .stack-range {{ text-align: right; }}
-  .stack-range-val {{ font-size: 18px; font-weight: 800; color: #fff; }}
-  .stack-range-lbl {{ font-size: 11px; color: #9fb0cc; }}
-  .stack-ev {{ font-size: 12px; color: #4ade80; margin-top: 2px; }}
-  .stack-trios {{ display: grid; grid-template-columns: 1fr 1fr; gap: 0; }}
-  @media (max-width: 700px) {{ .stack-trios {{ grid-template-columns: 1fr; }} }}
-  .stack-trio {{ padding: 14px 18px; border-top: 1px solid #2a3a5c; }}
-  .stack-trio:first-child {{ border-right: 1px solid #2a3a5c; }}
-  @media (max-width: 700px) {{ .stack-trio:first-child {{ border-right: none; }} }}
-  .stack-trio-header {{ font-size: 13px; font-weight: 700; color: #d6deef; margin-bottom: 2px; }}
-  .stack-trio-meta {{ font-size: 11px; color: #9fb0cc; margin-bottom: 10px; }}
-  .stack-leg {{ display: flex; justify-content: space-between; align-items: center;
-                padding: 6px 0; border-bottom: 1px solid #1f2c46; }}
-  .stack-leg:last-child {{ border-bottom: none; }}
-  .stack-leg-name {{ font-size: 13px; font-weight: 700; color: #fff; }}
-  .stack-leg-order {{ font-size: 11px; color: #9fb0cc; margin-left: 6px; }}
-  .stack-leg-prob {{ font-size: 13px; font-weight: 700; color: #c4cee0; }}
-  .stacks-empty {{ color: #9fb0cc; font-size: 13px; padding: 20px 0; }}
 
   /* Results tab */
   .results-summary {{ display: flex; gap: 14px; margin-bottom: 16px; }}
@@ -1216,15 +1005,6 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   .platoon-title {{ font-weight: 800; margin-bottom: 4px; color: #cbd5e1; }}
   .platoon-row {{ display: flex; flex-direction: column; gap: 2px; color: #9fb0cc; }}
 
-  .premium-plays {{ margin: 16px 0 28px; padding: 16px; border: 2px solid #a78bfa;
-                     border-radius: 12px; background: linear-gradient(180deg, rgba(167,139,250,0.10), transparent); }}
-  .premium-plays h2 {{ margin: 0 0 4px; color: #a78bfa; font-size: 22px; }}
-  .premium-plays .vp-sub {{ color: #c4cee0; font-size: 13px; margin-bottom: 4px; }}
-  .premium-plays .tier-rate {{ font-weight: 800; }}
-  .premium-plays .card {{ border-width: 2px; }}
-  .premium-plays-empty {{ color: #9fb0cc; font-size: 13px; margin: 4px 0 12px; }}
-  .strong-tier-heading {{ margin: 18px 0 4px; color: #60a5fa; font-size: 16px; }}
-
   .value-plays {{ margin: 16px 0 28px; padding: 16px; border: 2px solid #fbbf24;
                    border-radius: 12px; background: linear-gradient(180deg, rgba(251,191,36,0.08), transparent); }}
   .value-plays h2 {{ margin: 0 0 4px; color: #fbbf24; font-size: 20px; }}
@@ -1261,17 +1041,6 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   </label>
 </div>
 
-<div class="premium-plays">
-  <h2>★ Premium</h2>
-  <div class="vp-sub">UNDER + edge 1.5-1.99 + batting order 3-4 &mdash; <span class="tier-rate">67.8% backtested win rate</span> (87 plays / 23 of 26 dates, stable both halves of the sample).</div>
-  <div class="vp-sub">{premium_record_str}</div>
-  <div class="card-grid" id="premiumGrid"></div>
-  <h3 class="strong-tier-heading">STRONG</h3>
-  <div class="vp-sub">Broader tier: top teams batting 3rd/4th + Citizens Bank Park &mdash; <span class="tier-rate">64.1% backtested win rate</span> (373 plays / 26 dates).</div>
-  <div class="vp-sub">{strong_record_str}</div>
-  <div class="card-grid" id="strongGrid"></div>
-</div>
-
 <div class="value-plays">
   <h2>🎯 Value Plays</h2>
   <div class="vp-sub">Top 4 OVER calls (model disagrees by 1.0+ pts) + top 4 UNDER calls (1.5+ pts) &mdash; thresholds calibrated from live, weekly-refreshed edge-bucket win rates.</div>
@@ -1287,8 +1056,6 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
 <div class="tabs">
   <button class="tab-btn active" id="tab-top25" data-tab="top25">Top 25</button>
   <button class="tab-btn" id="tab-full" data-tab="full">Full Leaderboard</button>
-  <button class="tab-btn" id="tab-slips" data-tab="slips">Slips</button>
-  <button class="tab-btn" id="tab-stacks" data-tab="stacks">Stacks</button>
   <button class="tab-btn" id="tab-results" data-tab="results">Results</button>
   <button class="tab-btn" id="tab-history" data-tab="history">Player History</button>
   <button class="tab-btn" id="tab-top25results" data-tab="top25results">Top 25 Results</button>
@@ -1316,14 +1083,6 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
       <tbody id="body"></tbody>
     </table>
   </div>
-</div>
-
-<div class="panel hidden" id="panel-slips">
-  <div id="slipsPanelContent"></div>
-</div>
-
-<div class="panel hidden" id="panel-stacks">
-  <div id="stacksPanelContent"></div>
 </div>
 
 <div class="panel hidden" id="panel-results">
@@ -1374,10 +1133,6 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
 
 <script>
 const CARDS = {cards_js};
-const PREMIUM_CARDS = {premium_cards_js};
-const STRONG_CARDS = {strong_cards_js};
-const STACK_PAIRINGS = {stack_pairings_js};
-const STACKS_RECORD_STR = {json.dumps(stacks_record_str)};
 const VALUE_CARDS = {value_cards_js};
 const UNANCHORED_CARDS = {unanchored_cards_js};
 const COLS = {cols_js};
@@ -1392,9 +1147,6 @@ const T25_ROLLING_RATE = {json.dumps(rolling_hit_rate)};
 const T25_BEST = {json.dumps(best_performer)};
 const T25_WORST = {json.dumps(worst_performer)};
 const T25_RECORDS = {record_rows_js};
-const SLIPS = {slips_js};
-const SLIPS_RECORDS = {slips_records_js};
-const PREMIUM_LEG_COUNT = {premium_leg_count_js};
 const GENERATED_AT = {json.dumps(generated_at_iso)};
 const GAME_DATE = {json.dumps(date_str)};
 const PLAYER_COUNT = {player_count};
@@ -1485,11 +1237,7 @@ function top25TreatmentClass(c) {{
 }}
 
 function tierBadgesHtml(c) {{
-  return (c.premiumTier === 'premium' ? '<div class="badge badge-premium">&#9733; PREMIUM</div>' : '')
-    + (c.premiumTier === 'strong' ? '<div class="badge badge-strong">STRONG</div>' : '')
-    + (c.valuePlay ? '<div class="badge badge-value">VALUE PLAY</div>' : '')
-    + (c.slip ? '<div class="badge badge-slip">SLIP</div>' : '')
-    + (c.stack ? '<div class="badge badge-stack">STACK</div>' : '');
+  return c.valuePlay ? '<div class="badge badge-value">VALUE PLAY</div>' : '';
 }}
 
 function renderCard(c) {{
@@ -1522,24 +1270,6 @@ function renderCard(c) {{
 const grid = document.getElementById('cardGrid');
 for (const c of CARDS) {{
   grid.appendChild(renderCard(c));
-}}
-
-// --- Premium / Strong ---
-const premiumGrid = document.getElementById('premiumGrid');
-if (PREMIUM_CARDS.length === 0) {{
-  premiumGrid.outerHTML = '<div class="premium-plays-empty">No Tier A plays on the current slate.</div>';
-}} else {{
-  for (const c of PREMIUM_CARDS) {{
-    premiumGrid.appendChild(renderCard(c));
-  }}
-}}
-const strongGrid = document.getElementById('strongGrid');
-if (STRONG_CARDS.length === 0) {{
-  strongGrid.outerHTML = '<div class="premium-plays-empty">No Tier B plays on the current slate.</div>';
-}} else {{
-  for (const c of STRONG_CARDS) {{
-    strongGrid.appendChild(renderCard(c));
-  }}
 }}
 
 // --- Value Plays ---
@@ -1588,220 +1318,9 @@ hideStartedToggle.addEventListener('change', () => {{
 applyHideStartedFilter();
 setInterval(applyHideStartedFilter, 30000); // live re-check as games start, no reload needed
 
-// --- Slips tab ---
-(function renderSlips() {{
-  // PrizePicks retired 2026-07-22: scraping is comprehensively blocked by
-  // DataDome (confirmed across multiple UA/header profiles, subdomains,
-  // and request timing - not a wrong-endpoint or rate issue, and not
-  // something to evade). data/results/pp_edge_bucket_rates.json and
-  // slips.refresh_pp_edge_bucket_rates() are preserved as-is for instant
-  // re-enablement if PrizePicks access ever becomes available again -
-  // this only removes the perpetually-empty dashboard section.
-  const SLIP_CONFIGS = [
-    {{key:'ud_8', label:'UD 8-Pick', platform:'ud', sub:'8-Man Slips', section:'Underdog', size:8}},
-    {{key:'ud_6', label:'UD 6-Pick', platform:'ud', sub:'6-Man Slips', section:'Underdog', size:6}},
-  ];
-  const RANK_COLORS = ['', '#ffd700', '#c0c0c0', '#cd7f32', '#9fb0cc', '#9fb0cc'];
-  const SLIP_KEYS   = ['ud_8','ud_6'];
-  const TYPE_LABELS = {{ud_8:'UD 8-Pick', ud_6:'UD 6-Pick'}};
-
-  function pct(p) {{ return (p * 100).toFixed(1) + '%'; }}
-
-  function legHtml(leg) {{
-    var callIcon = leg.call === 'over' ? '&#8593;' : '&#8595;';
-    var lineStr  = leg.line != null ? (leg.call.toUpperCase() + ' ' + leg.line.toFixed(1)) : '—';
-    var eraStr   = leg.opp_era != null ? ' &middot; ERA ' + leg.opp_era.toFixed(2) : '';
-    var timeStr  = leg.game_time_pt ? ' &middot; <span class="game-time">' + leg.game_time_pt + '</span>' : '';
-    return '<div class="slip-leg">'
-      + '<div class="slip-leg-call ' + leg.call + '">' + callIcon + '</div>'
-      + '<div class="slip-leg-body">'
-      +   '<div class="slip-leg-name">' + leg.name + '</div>'
-      +   '<div class="slip-leg-meta">' + leg.team + eraStr + timeStr + '</div>'
-      + '</div>'
-      + '<div class="slip-leg-right">'
-      +   '<div class="slip-leg-line">' + lineStr + '</div>'
-      +   '<div class="slip-leg-prob">' + pct(leg.win_prob) + '</div>'
-      + '</div>'
-      + '</div>';
-  }}
-
-  function emptyStateHtml(cfg, rank) {{
-    if (rank === 1) {{
-      return '<div class="slip-empty slip-empty-discipline">'
-        + '<strong>No slip published.</strong> Only ' + PREMIUM_LEG_COUNT + ' Premium-tier leg'
-        + (PREMIUM_LEG_COUNT === 1 ? '' : 's') + ' available today, ' + cfg.size + ' required. '
-        + 'Publishing below Premium tier is -EV at our breakeven of ~55% - see the general pool\\'s '
-        + 'real 52.5% leg rate. Zero slips is the correct call, not a bug.'
-        + '</div>';
-    }}
-    return '<div class="slip-empty">No additional qualifying ' + cfg.label + ' today.</div>';
-  }}
-
-  function slipCardHtml(cfg, slip, rank) {{
-    if (!slip) {{
-      return emptyStateHtml(cfg, rank);
-    }}
-    var recKey  = cfg.key + '_' + rank;
-    var rec     = SLIPS_RECORDS[recKey] || {{wins:0,losses:0,legs_win:0,legs_total:0,expected_wins:0}};
-    var recTotal = (rec.wins||0) + (rec.losses||0);
-    var recStr  = rec.wins + '–' + rec.losses
-      + (recTotal > 0 ? ' (exp ~' + (rec.expected_wins||0).toFixed(1) + ')' : '');
-    var legRate = rec.legs_total > 0 ? (rec.legs_win / rec.legs_total * 100).toFixed(0) + '% legs' : '';
-    var lockHtml = slip.lock_pt ? '<div class="slip-lock">&#128274; ' + slip.lock_pt + '</div>' : '';
-    return '<div class="slip-card ' + cfg.platform + '-slip">'
-      + '<div class="slip-header">'
-      +   '<div class="slip-header-left">'
-      +     '<span class="slip-rank-badge" style="color:' + RANK_COLORS[rank] + '">Slip #' + rank + '</span>'
-      +     '<div class="slip-title">' + cfg.label + '</div>'
-      +     lockHtml
-      +   '</div>'
-      +   '<div class="slip-prob">'
-      +     '<div class="slip-prob-val">' + pct(slip.combined_prob) + '</div>'
-      +     '<div class="slip-prob-lbl">' + recStr + (legRate ? ' &middot; ' + legRate : '') + '</div>'
-      +   '</div>'
-      + '</div>'
-      + '<div class="slip-legs">' + slip.legs.map(legHtml).join('') + '</div>'
-      + '</div>';
-  }}
-
-  // --- Overall expected-vs-actual banner ---
-  // A 0-N record with no context reads as total failure even when N is
-  // small enough that a handful of losses is normal variance around what
-  // the model itself expected - show the number it was actually supposed
-  // to beat.
-  var overallWins = 0, overallLosses = 0, overallExpected = 0;
-  Object.keys(SLIPS_RECORDS).forEach(function(k) {{
-    var rec = SLIPS_RECORDS[k];
-    overallWins     += rec.wins || 0;
-    overallLosses   += rec.losses || 0;
-    overallExpected += rec.expected_wins || 0;
-  }});
-  var overallTotal = overallWins + overallLosses;
-  var expectedHtml = '';
-  if (overallTotal > 0) {{
-    expectedHtml = '<div class="slips-expected-banner">'
-      + 'Overall record: <strong>' + overallWins + '-' + overallLosses + '</strong>'
-      + ' from ' + overallTotal + ' graded slips &mdash; model expected <strong>~'
-      + overallExpected.toFixed(1) + ' win' + (overallExpected.toFixed(1) === '1.0' ? '' : 's')
-      + '</strong> at the probabilities recorded when each slip was published.'
-      + '</div>';
-  }}
-
-  var html = expectedHtml;
-  var sections = [
-    {{id:'ud', label:'Underdog',   configs: SLIP_CONFIGS.filter(function(c){{return c.platform==='ud';}})}},
-  ];
-  sections.forEach(function(sec) {{
-    html += '<div class="slips-section">';
-    html += '<div class="slips-section-header ' + sec.id + '-header">' + sec.label + '</div>';
-    sec.configs.forEach(function(cfg) {{
-      var slipList = SLIPS[cfg.key] || [];
-      html += '<div class="slips-sub-label">' + cfg.sub + '</div>';
-      html += '<div class="slips-row">';
-      var count = Math.max(slipList.length, 1);
-      for (var i = 0; i < count; i++) {{
-        html += slipCardHtml(cfg, slipList[i] || null, i + 1);
-      }}
-      html += '</div>';
-    }});
-    html += '</div>';
-  }});
-
-  // --- Rank comparison section ---
-  html += '<div class="slips-records-section">';
-  html += '<h3>Performance by Slip Rank (all types combined)</h3>';
-  html += '<div class="slips-rank-grid">';
-  [1,2,3].forEach(function(r) {{
-    var w  = SLIP_KEYS.reduce(function(a,k){{return a+((SLIPS_RECORDS[k+'_'+r]||{{}}).wins||0);}},0);
-    var l  = SLIP_KEYS.reduce(function(a,k){{return a+((SLIPS_RECORDS[k+'_'+r]||{{}}).losses||0);}},0);
-    var lw = SLIP_KEYS.reduce(function(a,k){{return a+((SLIPS_RECORDS[k+'_'+r]||{{}}).legs_win||0);}},0);
-    var lt = SLIP_KEYS.reduce(function(a,k){{return a+((SLIPS_RECORDS[k+'_'+r]||{{}}).legs_total||0);}},0);
-    var lr = lt > 0 ? (lw/lt*100).toFixed(1)+'%' : '—';
-    html += '<div class="slip-rank-card" style="border-color:' + RANK_COLORS[r] + '">'
-      + '<div class="slip-rec-type">All Slip #' + r + 's</div>'
-      + '<div class="slip-rec-record">' + w + '–' + l + '</div>'
-      + '<div class="slip-rec-legs">Leg win rate: ' + lr + '</div>'
-      + '</div>';
-  }});
-  html += '</div>';
-
-  html += '<h3>Record by Type &amp; Rank</h3>';
-  html += '<div class="table-wrap"><table class="slips-rec-table">';
-  html += '<thead><tr><th>Slip Type</th><th style="color:#ffd700">Slip #1</th>'
-        + '<th style="color:#c0c0c0">Slip #2</th><th style="color:#cd7f32">Slip #3</th></tr></thead><tbody>';
-  SLIP_KEYS.forEach(function(k) {{
-    html += '<tr><td><strong>' + TYPE_LABELS[k] + '</strong></td>';
-    for (var r = 1; r <= 3; r++) {{
-      var rec = SLIPS_RECORDS[k+'_'+r] || {{wins:0,losses:0,legs_win:0,legs_total:0,expected_wins:0}};
-      var recTot = (rec.wins||0) + (rec.losses||0);
-      var lr  = rec.legs_total > 0 ? ' (' + (rec.legs_win/rec.legs_total*100).toFixed(0) + '% legs)' : '';
-      var exp = recTot > 0 ? ' [exp ~' + (rec.expected_wins||0).toFixed(1) + ']' : '';
-      html += '<td>' + rec.wins + '–' + rec.losses + lr + exp + '</td>';
-    }}
-    html += '</tr>';
-  }});
-  html += '</tbody></table></div>';
-  html += '</div>';
-
-  document.getElementById('slipsPanelContent').innerHTML = html;
-}})();
-
-// --- Stacks tab ---
-(function renderStacks() {{
-  function pct(p) {{ return (p * 100).toFixed(2) + '%'; }}
-  function evStr(ev) {{ return (ev >= 0 ? '+' : '') + (ev * 100).toFixed(0) + '%'; }}
-
-  function legHtml(leg) {{
-    var timeStr = leg.game_time_pt ? ' &middot; <span class="game-time">' + leg.game_time_pt + '</span>' : '';
-    return '<div class="stack-leg">'
-      + '<div><span class="stack-leg-name">' + leg.name + '</span>'
-      +   '<span class="stack-leg-order">#' + leg.order + timeStr + '</span></div>'
-      + '<div class="stack-leg-prob">' + pct(leg.leg_prob) + '</div>'
-      + '</div>';
-  }}
-
-  function trioHtml(trio) {{
-    return '<div class="stack-trio">'
-      + '<div class="stack-trio-header">' + trio.team + ' (' + trio.trio_type + ')</div>'
-      + '<div class="stack-trio-meta">vs ' + trio.opp_team + ' &middot; opp ERA ' + trio.opp_era.toFixed(2)
-      +   ' &middot; trio ' + pct(trio.conservative_prob) + '&ndash;' + pct(trio.optimistic_prob) + '</div>'
-      + trio.legs.map(legHtml).join('')
-      + '</div>';
-  }}
-
-  function pairingHtml(p) {{
-    return '<div class="stack-pairing">'
-      + '<div class="stack-pairing-header">'
-      +   '<div><span class="stack-pairing-title">6-Leg Stack</span>'
-      +     (p.playable ? '<span class="stack-pairing-badge">Playable</span>' : '') + '</div>'
-      +   '<div class="stack-range">'
-      +     '<div class="stack-range-val">' + pct(p.combined_conservative) + '&ndash;' + pct(p.combined_optimistic) + '</div>'
-      +     '<div class="stack-range-lbl">joint probability (breakeven 3.33%)</div>'
-      +     '<div class="stack-ev">EV ' + evStr(p.ev_conservative) + ' to ' + evStr(p.ev_optimistic) + ' at 30x</div>'
-      +   '</div>'
-      + '</div>'
-      + '<div class="stack-trios">' + p.trios.map(trioHtml).join('') + '</div>'
-      + '</div>';
-  }}
-
-  var html = '<div class="stacks-intro">Two 3-man same-team trios (consecutive top-of-order batters vs. a soft-ERA '
-    + 'opponent, ERA 4.50+) from different games, each player needing 2+ combined hits+runs+RBI. Probability shown as '
-    + 'a conservative&ndash;optimistic range based on how much of the adjacent-lineup correlation is genuine signal '
-    + 'vs. general team-day variance. Only pairings whose CONSERVATIVE estimate clears breakeven with margin (4.5%+) '
-    + 'are shown.</div>';
-  html += '<div class="stacks-record-bar">Running record &mdash; ' + STACKS_RECORD_STR + '</div>';
-
-  if (STACK_PAIRINGS.length === 0) {{
-    html += '<div class="stacks-empty">No pairings clear the conservative breakeven bar on today’s slate.</div>';
-  }} else {{
-    html += STACK_PAIRINGS.map(pairingHtml).join('');
-  }}
-
-  document.getElementById('stacksPanelContent').innerHTML = html;
-}})();
 
 // --- Tabs ---
-const PANELS = ['top25', 'full', 'slips', 'stacks', 'results', 'history', 'top25results'];
+const PANELS = ['top25', 'full', 'results', 'history', 'top25results'];
 document.querySelectorAll('.tab-btn').forEach(btn => {{
   btn.addEventListener('click', () => {{
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -2130,20 +1649,16 @@ def prepare_dashboard_context(date_arg=None):
     market_corrections = (results_data or {}).get("market_corrections", {})
     anchored_ids = apply_market_anchor(rows, market_lines, market_corrections)
 
-    # Daily Betr snapshot + shadow-mode mixed-market computation - NOT used
-    # for live anchoring/construction (the live Stacks tab is still
-    # stacks.build_pairings(rows), H+R+RBI/UD/PP only). This starts
-    # accumulating real day-by-day Betr coverage history (the blocker on
-    # every mixed-market volume question) and logs what mixed-market
-    # construction would have published, for nightly shadow grading - see
-    # stacks_mixed_market.py and tracker.grade_stacks_shadow. Best-effort,
-    # never blocks the real dashboard build.
+    # Daily Betr snapshot only - Stacks (and its shadow-mode mixed-market
+    # research path, stacks_mixed_market.py) was retired 2026-08-18; see
+    # tracker.py. Betr line collection stays on regardless: it's cheap and
+    # get_betr_lines() caches the raw snapshot to disk on its own, so this
+    # keeps building real day-by-day Betr coverage history for any future
+    # correlation research even with nothing consuming it live right now.
     try:
-        betr_lines = get_betr_lines(date_str)
-        shadow = stacks_mixed_mod.run_shadow_mode(date_str, players, betr_lines)
-        stacks_mixed_mod.save_shadow(date_str, shadow)
+        get_betr_lines(date_str)
     except Exception as e:
-        print(f"Betr snapshot / shadow-mode computation failed (non-fatal): {e}")
+        print(f"Betr snapshot fetch failed (non-fatal): {e}")
 
     corrections = build_corrections(results_data)
     apply_corrections(rows, corrections, skip=anchored_ids)
@@ -2159,30 +1674,6 @@ def prepare_dashboard_context(date_arg=None):
     return rows, date_str, results_data, top25_data
 
 
-def _load_slips_results():
-    path = os.path.join("data", "results", "slips_results.json")
-    if os.path.exists(path):
-        with open(path, encoding="utf-8") as f:
-            return json.load(f)
-    return {}
-
-
-def _load_premium_results():
-    path = os.path.join("data", "results", "premium_results.json")
-    if os.path.exists(path):
-        with open(path, encoding="utf-8") as f:
-            return json.load(f)
-    return {}
-
-
-def _load_stacks_results():
-    path = os.path.join("data", "results", "stacks_results.json")
-    if os.path.exists(path):
-        with open(path, encoding="utf-8") as f:
-            return json.load(f)
-    return {}
-
-
 def regenerate_dashboard(date_arg=None):
     """Rebuild output/dashboard.html from the latest projection + results
     data and push it to GitHub Pages. Used by tracker.py after nightly
@@ -2190,8 +1681,7 @@ def regenerate_dashboard(date_arg=None):
     pipeline run."""
     rows, date_str, results_data, top25_data = prepare_dashboard_context(date_arg)
     html_path = os.path.join("output", "dashboard.html")
-    write_dashboard(rows, date_str, html_path, results_data, top25_data, _load_slips_results(),
-                     _load_premium_results(), _load_stacks_results())
+    write_dashboard(rows, date_str, html_path, results_data, top25_data)
     print(f"Dashboard saved -> {os.path.abspath(html_path)}")
     deploy_to_github_pages(html_path, date_str)
     return html_path
@@ -2203,8 +1693,7 @@ def main():
 
     os.makedirs("output", exist_ok=True)
     html_path = os.path.join("output", "dashboard.html")
-    write_dashboard(rows, date_str, html_path, results_data, top25_data, _load_slips_results(),
-                     _load_premium_results(), _load_stacks_results())
+    write_dashboard(rows, date_str, html_path, results_data, top25_data)
     print(f"Dashboard saved -> {os.path.abspath(html_path)}")
 
     deploy_to_github_pages(html_path, date_str)
