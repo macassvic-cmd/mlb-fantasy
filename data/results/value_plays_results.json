@@ -5046,6 +5046,89 @@
           "correct": false
         }
       ]
+    },
+    "2026-08-17": {
+      "summary": {
+        "total": 7,
+        "correct": 3,
+        "accuracy": 42.9,
+        "over_total": 4,
+        "over_correct": 2,
+        "under_total": 3,
+        "under_correct": 1
+      },
+      "plays": [
+        {
+          "player_id": 695506,
+          "name": "Jac Caglianone",
+          "team": "Kansas City Royals",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 15,
+          "correct": true
+        },
+        {
+          "player_id": 802139,
+          "name": "JJ Wetherholt",
+          "team": "St. Louis Cardinals",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "correct": false
+        },
+        {
+          "player_id": 676475,
+          "name": "Alec Burleson",
+          "team": "St. Louis Cardinals",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 13,
+          "correct": true
+        },
+        {
+          "player_id": 695491,
+          "name": "Joshua B\u00e1ez",
+          "team": "St. Louis Cardinals",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 5,
+          "correct": false
+        },
+        {
+          "player_id": 660271,
+          "name": "Shohei Ohtani",
+          "team": "Los Angeles Dodgers",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 11.5,
+          "actual_ud": 40,
+          "correct": false
+        },
+        {
+          "player_id": 682829,
+          "name": "Elly De La Cruz",
+          "team": "Cincinnati Reds",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 0,
+          "correct": true
+        },
+        {
+          "player_id": 518692,
+          "name": "Freddie Freeman",
+          "team": "Los Angeles Dodgers",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 21,
+          "correct": false
+        }
+      ]
     }
   }
 }

@@ -6824,20 +6824,210 @@
           "fully_graded": true
         }
       ]
+    },
+    "2026-08-17": {
+      "pairings": [
+        {
+          "combined_conservative": 0.04798,
+          "combined_optimistic": 0.06545,
+          "ev_conservative": 0.439,
+          "ev_optimistic": 0.964,
+          "playable": true,
+          "trios": [
+            {
+              "game_pk": 824077,
+              "team": "Kansas City Royals",
+              "opp_team": "Athletics",
+              "venue": "Kauffman Stadium",
+              "opp_era": 6.16,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 677951,
+                  "name": "Bobby Witt Jr.",
+                  "order": 2,
+                  "leg_prob": 0.5789,
+                  "game_time_pt": "4:40 PM PT",
+                  "game_date_utc": "2026-08-17T23:40:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 695506,
+                  "name": "Jac Caglianone",
+                  "order": 3,
+                  "leg_prob": 0.5361,
+                  "game_time_pt": "4:40 PM PT",
+                  "game_date_utc": "2026-08-17T23:40:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 521692,
+                  "name": "Salvador Perez",
+                  "order": 4,
+                  "leg_prob": 0.5361,
+                  "game_time_pt": "4:40 PM PT",
+                  "game_date_utc": "2026-08-17T23:40:00Z",
+                  "actual_hit": true
+                }
+              ],
+              "conservative_prob": 0.2211,
+              "optimistic_prob": 0.2582,
+              "trio_hit": true,
+              "fully_graded": true
+            },
+            {
+              "game_pk": 824641,
+              "team": "Chicago Cubs",
+              "opp_team": "Chicago White Sox",
+              "venue": "Wrigley Field",
+              "opp_era": 4.96,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 673548,
+                  "name": "Seiya Suzuki",
+                  "order": 2,
+                  "leg_prob": 0.5827,
+                  "game_time_pt": "5:05 PM PT",
+                  "game_date_utc": "2026-08-18T00:05:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 608324,
+                  "name": "Alex Bregman",
+                  "order": 3,
+                  "leg_prob": 0.5294,
+                  "game_time_pt": "5:05 PM PT",
+                  "game_date_utc": "2026-08-18T00:05:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 664023,
+                  "name": "Ian Happ",
+                  "order": 4,
+                  "leg_prob": 0.5294,
+                  "game_time_pt": "5:05 PM PT",
+                  "game_date_utc": "2026-08-18T00:05:00Z",
+                  "actual_hit": true
+                }
+              ],
+              "conservative_prob": 0.217,
+              "optimistic_prob": 0.2535,
+              "trio_hit": true,
+              "fully_graded": true
+            }
+          ],
+          "full6_hit": true,
+          "fully_graded": true
+        },
+        {
+          "combined_conservative": 0.04668,
+          "combined_optimistic": 0.0637,
+          "ev_conservative": 0.4,
+          "ev_optimistic": 0.911,
+          "playable": true,
+          "trios": [
+            {
+              "game_pk": 823589,
+              "team": "New York Mets",
+              "opp_team": "San Diego Padres",
+              "venue": "Citi Field",
+              "opp_era": 4.88,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 596019,
+                  "name": "Francisco Lindor",
+                  "order": 2,
+                  "leg_prob": 0.5827,
+                  "game_time_pt": "4:10 PM PT",
+                  "game_date_utc": "2026-08-17T23:10:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 666182,
+                  "name": "Bo Bichette",
+                  "order": 3,
+                  "leg_prob": 0.5294,
+                  "game_time_pt": "4:10 PM PT",
+                  "game_date_utc": "2026-08-17T23:10:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 701807,
+                  "name": "Carson Benge",
+                  "order": 4,
+                  "leg_prob": 0.5294,
+                  "game_time_pt": "4:10 PM PT",
+                  "game_date_utc": "2026-08-17T23:10:00Z",
+                  "actual_hit": false
+                }
+              ],
+              "conservative_prob": 0.217,
+              "optimistic_prob": 0.2535,
+              "trio_hit": false,
+              "fully_graded": true
+            },
+            {
+              "game_pk": 823668,
+              "team": "Atlanta Braves",
+              "opp_team": "Minnesota Twins",
+              "venue": "Target Field",
+              "opp_era": 4.64,
+              "trio_type": "2-3-4",
+              "legs": [
+                {
+                  "player_id": 660670,
+                  "name": "Ronald Acu\u00f1a Jr.",
+                  "order": 2,
+                  "leg_prob": 0.5373,
+                  "game_time_pt": "4:40 PM PT",
+                  "game_date_utc": "2026-08-17T23:40:00Z",
+                  "actual_hit": true
+                },
+                {
+                  "player_id": 621566,
+                  "name": "Matt Olson",
+                  "order": 3,
+                  "leg_prob": 0.5489,
+                  "game_time_pt": "4:40 PM PT",
+                  "game_date_utc": "2026-08-17T23:40:00Z",
+                  "actual_hit": false
+                },
+                {
+                  "player_id": 671739,
+                  "name": "Michael Harris II",
+                  "order": 4,
+                  "leg_prob": 0.5489,
+                  "game_time_pt": "4:40 PM PT",
+                  "game_date_utc": "2026-08-17T23:40:00Z",
+                  "actual_hit": false
+                }
+              ],
+              "conservative_prob": 0.2151,
+              "optimistic_prob": 0.2513,
+              "trio_hit": false,
+              "fully_graded": true
+            }
+          ],
+          "full6_hit": false,
+          "fully_graded": true
+        }
+      ]
     }
   },
   "record": {
     "legs": {
-      "wins": 226,
-      "losses": 187
+      "wins": 234,
+      "losses": 191
     },
     "trios": {
-      "wins": 30,
-      "losses": 95
+      "wins": 32,
+      "losses": 97
     },
     "full6": {
-      "wins": 1,
-      "losses": 54
+      "wins": 2,
+      "losses": 55
     }
   }
 }
