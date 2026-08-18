@@ -35,6 +35,7 @@ SLIPS_RESULTS_PATH = os.path.join(RESULTS_DIR, "slips_results.json")
 PREMIUM_RESULTS_PATH = os.path.join(RESULTS_DIR, "premium_results.json")
 STACKS_RESULTS_PATH = os.path.join(RESULTS_DIR, "stacks_results.json")
 STACKS_SHADOW_RESULTS_PATH = os.path.join(RESULTS_DIR, "stacks_shadow_results.json")
+UD_UNDER_BAND_RESULTS_PATH = os.path.join(RESULTS_DIR, "ud_under_band_results.json")
 
 
 def classify(projected, actual):
@@ -216,6 +217,7 @@ def track_date(date_str):
     results_by_pid = {r["player_id"]: r for r in results}
     track_top25(date_str, rows, results_by_pid)
     grade_value_plays(date_str, results_by_pid)
+    grade_ud_under_band(date_str)
     # Premium/Slips/Stacks (and Stacks shadow-mode) retired from the live
     # dashboard 2026-08-18 - see report.py/slips.py/stacks.py. No point
     # accumulating win/loss records for products nobody sees anymore, so
@@ -329,6 +331,64 @@ def grade_value_plays(date_str, results_by_pid):
         json.dump(vp_results, f, indent=2)
 
     print(f"Value Plays: {hits}/{total} correct ({summary['accuracy']}%) -> {VALUE_PLAYS_RESULTS_PATH}")
+
+
+def grade_ud_under_band(date_str):
+    """Grade the day's UD UNDER 1.5-2.0-edge calls - the one finding from
+    the 2026-08-18 OVER-vs-UNDER analysis that replicated in and out of
+    sample (see report.UD_UNDER_BAND_* and the module comment there).
+    Deliberately reads straight from all_results.json's own
+    projected_ud/ud_line for date_str (already written by
+    update_all_results before this is called) rather than taking a
+    rows/results_by_pid argument, so there's no risk of drifting from the
+    exact point-in-time edge value grading itself uses. No additional
+    filters - UNDER call, edge in [1.5, 2.0), UD only. Tracked entirely
+    separate from every retired tier; only dates after
+    report.UD_UNDER_BAND_SEED_END count, so the frozen 566-play seed is
+    never double-counted."""
+    all_results = load_json(ALL_RESULTS_PATH, {"players": {}})
+    if date_str <= report.UD_UNDER_BAND_SEED_END:
+        print(f"UD UNDER 1.5-2.0 band: {date_str} is in the seed window (through "
+              f"{report.UD_UNDER_BAND_SEED_END}), not graded separately.")
+        return
+
+    wins = losses = 0
+    plays = []
+    for pid, p in all_results.get("players", {}).items():
+        for h in p.get("history", []):
+            if h.get("date") != date_str or h.get("result_ud") not in ("win", "loss"):
+                continue
+            line, proj = h.get("ud_line"), h.get("projected_ud")
+            if line is None or proj is None:
+                continue
+            edge = proj - line
+            if not (-report.UD_UNDER_BAND_HI < edge <= -report.UD_UNDER_BAND_LO):
+                continue
+            win = h["result_ud"] == "win"
+            wins += win
+            losses += not win
+            plays.append({"player_id": int(pid), "name": p.get("name", ""), "edge": round(edge, 2), "win": win})
+
+    data = load_json(UD_UNDER_BAND_RESULTS_PATH, {"seed": report.UD_UNDER_BAND_SEED, "dates": {}, "record": {"wins": 0, "losses": 0}})
+    data.setdefault("dates", {})
+    data["dates"][date_str] = {"wins": wins, "losses": losses, "plays": plays}
+    data["record"] = {
+        "wins": sum(d["wins"] for d in data["dates"].values()),
+        "losses": sum(d["losses"] for d in data["dates"].values()),
+    }
+
+    os.makedirs(RESULTS_DIR, exist_ok=True)
+    with open(UD_UNDER_BAND_RESULTS_PATH, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2)
+
+    seed = report.UD_UNDER_BAND_SEED
+    total_wins = seed["wins"] + data["record"]["wins"]
+    total_losses = seed["losses"] + data["record"]["losses"]
+    total_n = total_wins + total_losses
+    rate = round(100 * total_wins / total_n, 1) if total_n else 0.0
+    print(f"UD UNDER 1.5-2.0 band: {wins}-{losses} today -> live-tracked "
+          f"{data['record']['wins']}-{data['record']['losses']}, combined with seed "
+          f"{total_wins}-{total_losses} ({rate}%, n={total_n})")
 
 
 def grade_premium_plays(date_str, results_by_pid):

@@ -183,6 +183,7 @@ def build_card(row):
         "projectedLineup": row.get("lineup_status") == "projected",
         "tier":   card_tier(row["ud_pts"]),
         "edge":   row.get("edge"),
+        "udUnderBand": in_ud_under_band(row),
         "udLine": row.get("ud_line"),
         "edgeLabel": edge_label(row.get("edge")),
         "gameTimePt":  row.get("game_time_pt"),
@@ -354,6 +355,50 @@ VALUE_PLAY_UNDER_EDGE = 1.5   # UNDER value plays: 1.5 pt minimum (1.5-2.0 wins 
 VALUE_PLAY_EDGE = VALUE_PLAY_OVER_EDGE  # legacy alias
 assert VALUE_PLAY_OVER_EDGE  < MARKET_EDGE_CLAMP, "OVER threshold must be below the market edge clamp"
 assert VALUE_PLAY_UNDER_EDGE <= MARKET_EDGE_CLAMP, "UNDER threshold must not exceed the market edge clamp"
+
+# ---------------------------------------------------------------------------
+# UD UNDER 1.5-2.0 edge band - the one finding from the 2026-08-18 OVER vs
+# UNDER analysis that replicated in AND out of sample: 57.8% (327-239,
+# n=566) on UD alone, Wilson 95% CI floor 53.7%, split evenly between the
+# discovery window (56.4%, n=374) and clean out-of-sample (56.7%, n=275).
+# Deliberately just the raw bucket - UNDER call, edge in [1.5, 2.0), UD
+# only, nothing else layered on top. Premium Tier A was this exact effect
+# with a batting-order-3-4 filter mined on top, and that filter is what
+# didn't survive out-of-sample (see slips.py) - so this stays unfiltered on
+# purpose; do not add order/team/venue conditions to it. Tracked forward
+# from UD_UNDER_BAND_SEED_END (data/results/ud_under_band_results.json,
+# graded nightly by tracker.grade_ud_under_band), separate from every
+# retired tier, to keep testing whether it holds past 566 plays.
+# ---------------------------------------------------------------------------
+UD_UNDER_BAND_LO = 1.5
+UD_UNDER_BAND_HI = 2.0  # exclusive - the exact-2.0 clamp bucket performs differently (51.0%) and is NOT included
+UD_UNDER_BAND_SEED = {"wins": 327, "losses": 239, "n": 566}
+UD_UNDER_BAND_SEED_END = "2026-08-17"  # tracker.grade_ud_under_band only counts dates after this
+UD_UNDER_BAND_RESULTS_PATH = os.path.join("data", "results", "ud_under_band_results.json")
+
+
+def in_ud_under_band(row):
+    edge = row.get("edge")
+    return bool(row.get("market_anchored")) and edge is not None and -UD_UNDER_BAND_HI < edge <= -UD_UNDER_BAND_LO
+
+
+def ud_under_band_label():
+    """Combined seed + live-tracked record/rate, for the honest badge text
+    ('57.8% (n=612)'), not a tier name."""
+    live = {"wins": 0, "losses": 0}
+    if os.path.exists(UD_UNDER_BAND_RESULTS_PATH):
+        try:
+            with open(UD_UNDER_BAND_RESULTS_PATH, encoding="utf-8") as f:
+                live = json.load(f).get("record", live)
+        except Exception:
+            pass
+    wins = UD_UNDER_BAND_SEED["wins"] + live.get("wins", 0)
+    losses = UD_UNDER_BAND_SEED["losses"] + live.get("losses", 0)
+    n = wins + losses
+    rate = round(100 * wins / n, 1) if n else 0.0
+    live_n = live.get("wins", 0) + live.get("losses", 0)
+    since_note = f"{live_n} tracked since {UD_UNDER_BAND_SEED_END}" if live_n else f"tracking since {UD_UNDER_BAND_SEED_END}"
+    return f"UNDER 1.5–2.0 edge · {rate}% (n={n}, {since_note})"
 
 # Players without a posted UD/PP line are systematically more volatile than
 # the market suggests — UD withholds lines when lineup status is uncertain.
@@ -815,6 +860,7 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
             "cells": cells,
             "color": color,
             "gameDateUtc": row.get("game_date_utc"),
+            "underBand": in_ud_under_band(row),
         })
     # Default table order is soonest game first, independent of rank.
     table_rows.sort(key=lambda r: r["gameDateUtc"] or "9999")
@@ -910,6 +956,8 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   .card .badge-no-line {{ background: #fb923c; color: #1a0800; margin-left: 6px; }}
   .card .badge-getaway {{ background: #f87171; color: #1a0000; margin-left: 6px; }}
   .card .badge-value  {{ background: #2dd4bf; margin-left: 6px; }}
+  .card .badge-under-band {{ background: transparent; border: 1px solid #fb923c; color: #fb923c;
+                              margin-left: 6px; font-weight: 700; }}
   .card .top25-record {{ font-size: 12px; color: #9fb0cc; margin-top: 6px; }}
   .card .top25-record.has-rate {{ color: #c4cee0; }}
 
@@ -980,6 +1028,10 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   #tbl tbody tr.row-green:hover td  {{ background: #15351f; }}
   #tbl tbody tr.row-yellow:hover td {{ background: #3a3315; }}
   #tbl tbody tr.row-red:hover td    {{ background: #3a1818; }}
+  /* UD UNDER 1.5-2.0 edge band marker - raw bucket stat, not a tier */
+  #tbl tbody tr.under-band-row td:first-child {{ border-left: 3px solid #fb923c; }}
+  #tbl tbody tr.under-band-row td:first-child::after {{
+    content: " \25BC"; color: #fb923c; font-size: 10px; }}
   .bt-bar-row {{ display: flex; align-items: center; gap: 10px; margin: 6px 0; }}
   .bt-bar-label {{ width: 160px; font-size: 13px; color: #c4cee0; flex-shrink: 0; }}
   .bt-bar {{ flex: 1; height: 14px; background: #16213a; border: 1px solid #2a3a5c; border-radius: 4px; overflow: hidden; }}
@@ -1132,6 +1184,7 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
 
 
 <script>
+const UD_UNDER_BAND_LABEL = {json.dumps(ud_under_band_label())};
 const CARDS = {cards_js};
 const VALUE_CARDS = {value_cards_js};
 const UNANCHORED_CARDS = {unanchored_cards_js};
@@ -1237,7 +1290,8 @@ function top25TreatmentClass(c) {{
 }}
 
 function tierBadgesHtml(c) {{
-  return c.valuePlay ? '<div class="badge badge-value">VALUE PLAY</div>' : '';
+  return (c.valuePlay ? '<div class="badge badge-value">VALUE PLAY</div>' : '')
+    + (c.udUnderBand ? `<div class="badge badge-under-band" title="Raw edge bucket, not a tier - tracked separately since {UD_UNDER_BAND_SEED_END}">${{UD_UNDER_BAND_LABEL}}</div>` : '');
 }}
 
 function renderCard(c) {{
@@ -1603,11 +1657,13 @@ function render() {{
   for (const r of rows) {{
     const tr = document.createElement('tr');
     if (r.color) tr.classList.add(r.color);
-    for (const c of r.cells) {{
+    if (r.underBand) tr.classList.add('under-band-row');
+    r.cells.forEach((c, i) => {{
       const td = document.createElement('td');
       td.textContent = c;
+      if (i === 0 && r.underBand) td.title = UD_UNDER_BAND_LABEL;
       tr.appendChild(td);
-    }}
+    }});
     body.appendChild(tr);
   }}
 }}
