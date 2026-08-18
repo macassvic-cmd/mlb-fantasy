@@ -296,38 +296,48 @@ def refresh_pp_edge_bucket_rates(results_data, force=False):
     return payload
 
 
-MIN_EDGE_OVER  = 1.0
-MIN_EDGE_UNDER = 1.5
 MIN_LEG_PROB   = 0.53
 
+# ---------------------------------------------------------------------------
+# 2026-08-18 full recalibration — recomputed from all 6,731 graded UD plays
+# across the complete 48-date history (2026-06-14 to 2026-08-04; discovery +
+# out-of-sample combined), joined against each date's raw lineup data for
+# venue/team. adj = (fresh venue/team win rate - fresh 51.0% baseline) * 0.007,
+# rounded to the nearest 0.005 — a simple, consistent rescaling (matches the
+# ~0.006-0.008 ratio implied by the original hand-tuned values) rather than a
+# re-derivation of whatever ad hoc rounding produced the previous numbers.
+# Any venue/team whose |delta| fell under 3.0pt or n under 150 was dropped as
+# noise rather than kept at a token value. Nearly every TEAM_WIN_ADJ entry
+# fell into that bucket on the bigger sample - see recalibration report.
+# Dropped (previous value -> fresh delta, n): UNIQLO Field at Dodger Stadium
+# (+0.04 -> +1.7pt, n=245), "Guaranteed Rate Field" (+0.02, but the venue was
+# renamed "Rate Field" mid-season so this key silently matched nothing the
+# whole time; fresh Rate Field delta is -0.5pt, n=218 - correctly near-zero),
+# Coors Field (+0.02 -> +0.9pt, n=316), T-Mobile Park (+0.02 -> -0.4pt, n=174,
+# sign flip), PNC Park (-0.02 -> -0.7pt, n=197), Comerica Park (-0.02 ->
+# -0.3pt, n=231), Fenway Park (-0.02 -> -0.3pt, n=162).
+# ---------------------------------------------------------------------------
 VENUE_WIN_ADJ = {
-    "UNIQLO Field at Dodger Stadium": +0.04,
-    "Kauffman Stadium":               +0.03,
-    "Sutter Health Park":             +0.02,
-    "Guaranteed Rate Field":          +0.02,
-    "Coors Field":                    +0.02,
-    "T-Mobile Park":                  +0.02,
-    "Tropicana Field":                +0.015,
-    "Oracle Park":                    -0.05,
-    "Citi Field":                     -0.03,
-    "Chase Field":                    -0.025,
-    "PNC Park":                       -0.02,
-    "Comerica Park":                  -0.02,
-    "Rogers Centre":                  -0.02,
-    "Fenway Park":                    -0.02,
+    "Kauffman Stadium":  +0.04,
+    "Sutter Health Park": +0.04,
+    "Tropicana Field":    +0.02,
+    "Oracle Park":        -0.03,
+    "Citi Field":         -0.03,
+    "Chase Field":        -0.03,
+    "Rogers Centre":      -0.02,
 }
 
+# Dropped (previous value -> fresh delta, n): Chicago White Sox (+0.03 ->
+# +0.2pt, n=215), Seattle Mariners (+0.02 -> -2.4pt, n=206, sign flip), San
+# Francisco Giants (-0.05 -> -2.1pt, n=262), Milwaukee Brewers (-0.03 ->
+# -2.2pt, n=240), Cleveland Guardians (-0.02 -> +1.5pt, n=181, sign flip),
+# New York Mets (-0.02 -> -1.2pt, n=191). Six of ten previous entries were
+# noise on the full sample - only these four held up.
 TEAM_WIN_ADJ = {
-    "Chicago White Sox":    +0.03,
-    "Colorado Rockies":     +0.025,
-    "Seattle Mariners":     +0.02,
-    "Atlanta Braves":       +0.02,
+    "Colorado Rockies":     +0.03,
+    "Atlanta Braves":       +0.03,
     "Tampa Bay Rays":       +0.02,
-    "San Francisco Giants": -0.05,
-    "Milwaukee Brewers":    -0.03,
-    "Cleveland Guardians":  -0.02,
-    "New York Mets":        -0.02,
-    "Washington Nationals": -0.02,
+    "Washington Nationals": -0.03,
 }
 
 
@@ -421,6 +431,43 @@ def strong_tier_reinclusion_status(record):
 
 
 # ---------------------------------------------------------------------------
+# Premium tier (Tier A) reinclusion gate
+#
+# 2026-08-18 full recalibration: Tier A's 2026-07-13 backtest (67.8%/67.4%
+# on this rejoin, n=87-92, discovery window 2026-06-14 to 2026-07-12) has
+# NOT held out of sample. The full out-of-sample dashboard record (every
+# graded Tier A play, matching premium_results.json's record["premium"]
+# exactly) is 25-26 (49.0%, n=51) - below a coin flip and well under the
+# ~53% MIN_LEG_PROB breakeven, let alone the 60%+ that justified "Premium"
+# billing. Combined discovery+out-of-sample is 60.8% (n=143), still above
+# 50% but that's dragged up entirely by the in-sample discovery half; the
+# true predictive test has failed decisively. Excluded from slip
+# construction on the same reinclusion-gate pattern as Strong tier below,
+# rather than mined for a replacement subset - see the recalibration report.
+# ---------------------------------------------------------------------------
+PREMIUM_TIER_REINCLUSION_MIN_N = 50
+PREMIUM_TIER_REINCLUSION_MIN_RATE = 0.58
+
+
+def premium_tier_reinclusion_status(record):
+    """record: {"wins": int, "losses": int} from premium_results.json's
+    record["premium"]. Returns (eligible: bool, status_str)."""
+    wins, losses = record.get("wins", 0), record.get("losses", 0)
+    n = wins + losses
+    rate = wins / n if n else 0.0
+    if n < PREMIUM_TIER_REINCLUSION_MIN_N:
+        return False, (f"Premium tier: {wins}-{losses} ({rate*100:.1f}%, n={n}) - "
+                        f"needs {PREMIUM_TIER_REINCLUSION_MIN_N}+ plays before reconsidering "
+                        f"({PREMIUM_TIER_REINCLUSION_MIN_N - n} more needed)")
+    if rate >= PREMIUM_TIER_REINCLUSION_MIN_RATE:
+        return True, (f"Premium tier: {wins}-{losses} ({rate*100:.1f}%, n={n}) - "
+                       f"clears the {PREMIUM_TIER_REINCLUSION_MIN_RATE*100:.0f}% reinclusion bar, "
+                       f"eligible to revisit at a discount")
+    return False, (f"Premium tier: {wins}-{losses} ({rate*100:.1f}%, n={n}) - "
+                    f"below the {PREMIUM_TIER_REINCLUSION_MIN_RATE*100:.0f}% reinclusion bar, stays out")
+
+
+# ---------------------------------------------------------------------------
 # Per-leg scoring
 # ---------------------------------------------------------------------------
 
@@ -479,26 +526,18 @@ def _bad_era_for_under(row):
 # 44.4% — both at or below the ~55% breakeven a 6/8-pick multiplier needs)
 # traced to candidates being drawn from the whole market_anchored pool
 # gated only by the generic edge-bucket leg_win_prob() >= 0.53 — i.e. the
-# general leaderboard, not premium_tier(). Cross-checking published slip
-# legs against premium_tier live: "premium" (Tier A) legs hit 68.1% on UD
-# (n=47, matching its 67.8% backtest closely) — the real, validated signal.
-# "strong" (Tier B) is concerning even on UD (26.7%, n=15 — thin, but its
-# 95% CI [~19%,~52%] doesn't come close to its 64.1% backtest), so it's
-# excluded here pending re-validation with more graded data, rather than
-# risk repeating the same "trusted a backtest that didn't hold live"
-# mistake at a lower bar. This means Tier A ("premium") is the ONLY
-# qualifying pool, and it's genuinely rare: only 1 of 12 days had 6+
-# premium legs available at all. leg_win_prob()'s generic edge-bucket
-# model is NOT used here — Tier A's own definition (UNDER, edge 1.5-1.99,
-# order 3-4, or the broadened team/venue subsets) is a different,
-# independently-validated signal, so its own demonstrated rate is used
-# directly instead of requiring it ALSO clear an unrelated model's bar
-# (stacking both very nearly eliminates the pool - verified empirically).
+# general leaderboard, not premium_tier(). At the time, Tier A ("premium")
+# checked out as the one validated signal (68.1% live, n=47, matching its
+# 67.8% backtest) and became the sole UD candidate source, with Tier B
+# ("strong") excluded pending re-validation (see strong_tier_reinclusion_status).
+#
+# 2026-08-18 recalibration: Tier A itself has since failed the same test it
+# was kept for. Full out-of-sample record is now 25-26 (49.0%, n=51) - see
+# premium_tier_reinclusion_status above. With Tier A excluded and Tier B
+# still excluded, there is currently NO validated UD signal to draw slip
+# candidates from, so this returns [] until either tier clears its
+# reinclusion bar again - not replaced with a newly-mined subset.
 # ---------------------------------------------------------------------------
-
-# Blend of Tier A's 2026-07-13 backtest (67.8%, n=87) and its live
-# performance since (68.1%, n=47), weighted by sample size.
-PREMIUM_TIER_WIN_PROB = 0.6865
 
 
 def _leg_dict(row, platform, call, line, edge, win_prob):
@@ -520,27 +559,12 @@ def _leg_dict(row, platform, call, line, edge, win_prob):
 
 
 def _ud_candidates(rows):
-    # NOTE: deliberately does NOT apply _bad_era_for_under - that heuristic
-    # was validated for the general edge-bucket pool, not for Tier A, and
-    # empirically it's the difference between 5 and 6 qualifying legs on
-    # the single best day in the 12-day check sample (one short of a
-    # 6-pick) - stacking an unrelated, unvalidated-for-this-tier filter on
-    # top of an already-validated definition isn't principled caution.
-    out = []
-    for row in rows:
-        if not row.get("market_anchored"):
-            continue
-        if premium_tier(row) != "premium":
-            continue
-        edge = row.get("edge") or 0
-        if edge >= MIN_EDGE_OVER:
-            call, edge_abs = "over", min(edge, 2.0)
-        elif edge <= -MIN_EDGE_UNDER:
-            call, edge_abs = "under", min(abs(edge), 2.0)
-        else:
-            continue
-        out.append(_leg_dict(row, "ud", call, row.get("ud_line"), edge, PREMIUM_TIER_WIN_PROB))
-    return sorted(out, key=lambda x: x["win_prob"], reverse=True)
+    # Paused 2026-08-18: Tier A ("premium") was the sole source here (see
+    # module comment above) and its out-of-sample record has collapsed to
+    # 49.0% (n=51) - below a coin flip. No validated UD signal currently
+    # exists to draw candidates from. Re-enable once premium_tier_reinclusion_status
+    # (or a future strong_tier_reinclusion_status) clears its bar again.
+    return []
 
 
 def _pp_candidates(rows):

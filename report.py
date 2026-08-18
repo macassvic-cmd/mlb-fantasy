@@ -134,7 +134,7 @@ def edge_label(edge):
     return "neutral"
 
 
-TOP25_RECORD_MIN_N_FOR_RATE = 5
+TOP25_RECORD_MIN_N_FOR_RATE = 8
 
 
 def top25_record_badge(player_id, top25_players):
@@ -373,34 +373,39 @@ NO_LINE_PENALTY = 0.20
 GETAWAY_DAY_PENALTY = 0.25
 
 # Venues where the model's raw projections have systematically over-estimated
-# performance relative to the market line (based on 22 dates, ~80-145 plays each).
-# Applied as a fractional reduction to ud_pts/pp_pts BEFORE market anchoring,
-# compressing the edge at those parks so the model calls fewer high-confidence
-# OVERs where it has historically been wrong.
-#   Oracle Park:    40.0% win rate (n=100), -12.1% vs 52.1% baseline
-#   Citi Field:     46.9% win rate (n=96),  -5.2%
-#   Chase Field:    47.4% win rate (n=95),  -4.7%  (new)
-#   PNC Park:       48.0% win rate (n=102), -4.0%
-#   Comerica Park:  48.2% win rate (n=110), -3.9%
-#   Rogers Centre:  48.3% win rate (n=145), -3.8%  (new)
-#   Fenway Park:    48.4% win rate (n=93),  -3.7%  (new)
+# performance relative to the market line. Applied as a fractional reduction
+# to ud_pts/pp_pts BEFORE market anchoring, compressing the edge at those
+# parks so the model calls fewer high-confidence OVERs where it has
+# historically been wrong.
+#
+# 2026-08-18 full recalibration (48 dates, 2026-06-14 to 2026-08-04, 6,731
+# graded plays; baseline 51.0%) - three of the seven previous entries turned
+# out to be noise from the original ~90-110-play samples and are dropped:
+# PNC Park (-4.0% -> -0.7%, n=197), Comerica Park (-3.9% -> -0.3%, n=231),
+# Fenway Park (-3.7% -> -0.3%, n=162) - all moved more than 3pt toward
+# baseline. Oracle Park held up directionally but shrank a lot (-12.1% ->
+# -4.1%, n=241) - flagged and reweighted down accordingly. Citi Field and
+# Chase Field were stable. Rogers Centre stayed just above the 3pt bar.
+#   Oracle Park:    46.9% win rate (n=241), -4.1% vs 51.0% baseline
+#   Citi Field:     46.7% win rate (n=227), -4.3%
+#   Chase Field:    46.4% win rate (n=222), -4.6%
+#   Rogers Centre:  47.5% win rate (n=221), -3.4%
 VENUE_PROJECTION_PENALTIES = {
-    "Oracle Park":    0.07,
-    "Citi Field":     0.04,
+    "Oracle Park":    0.03,
+    "Citi Field":     0.03,
     "Chase Field":    0.03,
-    "PNC Park":       0.03,
-    "Comerica Park":  0.03,
-    "Rogers Centre":  0.03,
-    "Fenway Park":    0.03,
+    "Rogers Centre":  0.02,
 }
 
 # Teams with systematic model underperformance not fully explained by their home
 # venue (applies to ALL games, home and away). Giants are already penalized at
 # Oracle Park; only teams without a matching home-venue penalty are listed here.
-#   Milwaukee Brewers:    41.7% win rate (n=103), -10.3% vs 52.1% baseline
-#   Washington Nationals: 45.9% win rate (n=111), -6.1%
+#
+# 2026-08-18 recalibration: Milwaukee Brewers dropped - deficit shrank from
+# -10.3% (n=103) to -2.2% (n=240), an 8.1pt move that's a clear noise flag on
+# the original thin sample. Washington Nationals held up (n=230).
+#   Washington Nationals: 47.0% win rate (n=230), -4.0% vs 51.0% baseline
 TEAM_PROJECTION_PENALTIES = {
-    "Milwaukee Brewers":    0.05,
     "Washington Nationals": 0.03,
 }
 
@@ -779,6 +784,10 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     # 4,071 graded plays (2026-06-14 to 2026-07-11); tracker.py grades
     # these separately each night (see grade_premium_plays) so out-of-
     # sample performance is visible against the backtested rate.
+    # Still classified and badged here regardless of live performance (the
+    # dashboard should keep showing the true record, good or bad) - but as
+    # of the 2026-08-18 recalibration BOTH tiers are excluded from slip
+    # construction; see slips._ud_candidates and *_tier_reinclusion_status.
     premium_rows, strong_rows = [], []
     for r in rows:
         if not r.get("market_anchored"):
@@ -804,7 +813,9 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
         rate = round(100 * rec["wins"] / total, 1)
         return f"Live record: {rec['wins']}-{rec['losses']} ({rate}%) since tracking began."
 
-    premium_record_str = _tier_record_str("premium")
+    premium_rec = (premium_results or {}).get("record", {}).get("premium", {"wins": 0, "losses": 0})
+    _, premium_reincl_status = slips_mod.premium_tier_reinclusion_status(premium_rec)
+    premium_record_str = _tier_record_str("premium") + " Excluded from slips - " + premium_reincl_status + "."
     strong_rec = (premium_results or {}).get("record", {}).get("strong", {"wins": 0, "losses": 0})
     _, strong_reincl_status = slips_mod.strong_tier_reinclusion_status(strong_rec)
     strong_record_str = _tier_record_str("strong") + " Excluded from slips - " + strong_reincl_status + "."
@@ -972,6 +983,24 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   .card.green  {{ border-color: #4ade80; }}
   .card.yellow {{ border-color: #fbbf24; }}
   .card.red    {{ border-color: #f87171; }}
+
+  /* Top 25 hit-rate treatment - only for players with enough appearances
+     (n) behind their rate to mean something; see top25TreatmentClass().
+     .top25-hot (n 8-14, 55%+): solid border, no glow - promising but thin.
+     .top25-fire (n 15+, 55%+): animated gradient glow - the real signal. */
+  .card.top25-hot {{ border-color: #fb923c; }}
+  .card.top25-fire {{
+    border: 3px solid transparent;
+    background-image: linear-gradient(#16213a, #16213a),
+                       linear-gradient(135deg, #f97316, #fbbf24, #f97316);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    animation: top25FireGlow 2.2s ease-in-out infinite;
+  }}
+  @keyframes top25FireGlow {{
+    0%, 100% {{ box-shadow: 0 0 8px 1px rgba(249,115,22,0.45); }}
+    50%      {{ box-shadow: 0 0 20px 5px rgba(249,115,22,0.85); }}
+  }}
 
   .card .name {{ font-size: 18px; font-weight: 800; color: #fff; }}
   .card .meta {{ font-size: 12px; color: #9fb0cc; margin-top: 2px; }}
@@ -1444,6 +1473,17 @@ function top25RecordHtml(c) {{
   return `<div class="top25-record${{hasRate ? ' has-rate' : ''}}">${{c.top25Record.text}}</div>`;
 }}
 
+// n-gated so a thin sample never gets the same visual weight as a proven
+// one: under 8 appearances gets no treatment no matter how hot the rate
+// is; 8-14 gets a plain solid border; 15+ gets the animated glow.
+function top25TreatmentClass(c) {{
+  const r = c.top25Record;
+  if (!r || r.n < 8) return '';
+  const rate = r.wins / r.n;
+  if (rate < 0.55) return '';
+  return r.n >= 15 ? 'top25-fire' : 'top25-hot';
+}}
+
 function tierBadgesHtml(c) {{
   return (c.premiumTier === 'premium' ? '<div class="badge badge-premium">&#9733; PREMIUM</div>' : '')
     + (c.premiumTier === 'strong' ? '<div class="badge badge-strong">STRONG</div>' : '')
@@ -1454,7 +1494,7 @@ function tierBadgesHtml(c) {{
 
 function renderCard(c) {{
   const card = document.createElement('div');
-  card.className = 'card ' + c.tier;
+  card.className = ('card ' + c.tier + ' ' + top25TreatmentClass(c)).trim();
   if (c.gameDateUtc) card.dataset.gameTimeUtc = c.gameDateUtc;
   card.innerHTML = `
     <div class="name">${{c.name}}</div>
