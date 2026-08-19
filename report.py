@@ -969,8 +969,12 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
 
   /* Click-to-mark-used: dims the card so the eye skips it while scanning,
      without reordering or hiding anything. Purely a client-side visual
-     toggle persisted in localStorage - see markUsed()/USED_STORAGE_KEY. */
-  .card {{ cursor: pointer; }}
+     toggle persisted in localStorage - see toggleUsed()/usedStorageKey.
+     Scoped to the four picks grids only (cardGrid/undersGrid/valueGrid/
+     unanchoredGrid) - t25CardGrid's historical result cards aren't wired
+     to a click handler, so they must not get the pointer cursor either,
+     or they'd look clickable and do nothing. */
+  #cardGrid .card, #undersGrid .card, #valueGrid .card, #unanchoredGrid .card {{ cursor: pointer; }}
   .card.used {{ opacity: 0.4; filter: grayscale(0.85); }}
   .card.used:hover {{ opacity: 0.6; }}
   .card.used::after {{
