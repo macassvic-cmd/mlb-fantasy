@@ -850,20 +850,20 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     unanchored_cards = [build_card(row) for row in unanchored_rows]
     unanchored_cards_js = json.dumps(unanchored_cards)
 
-    # --- Unders tab: every UD UNDER call (market-anchored, negative edge),
-    # sorted by edge size descending - biggest model-vs-market disagreement
-    # first. Not capped like Top 25/Value Plays - this is meant to be the
-    # complete list of the day's UNDER calls so the validated 1.5-2.0 band
-    # (in_ud_under_band, see module comment above) can be seen in context
-    # against everything else. -------------------------------------------
-    unders_rows = [r for r in rows if r.get("market_anchored") and (r.get("edge") or 0) < 0]
+    # --- Unders tab: ONLY UD UNDER calls in the validated 1.5-2.0 edge band
+    # (in_ud_under_band, see module comment above) - unvalidated unders are
+    # noise that just bury the one replicated signal, so they're dropped
+    # entirely rather than shown unstyled. Sorted by edge size descending -
+    # biggest model-vs-market disagreement first. No top25Record here (it's
+    # a Top 25 appearance stat, irrelevant/misleading for a tab that isn't
+    # about Top 25 membership at all). -------------------------------------
+    unders_all_rows = [r for r in rows if r.get("market_anchored") and (r.get("edge") or 0) < 0]
+    unders_total_count = len(unders_all_rows)
+    unders_rows = [r for r in unders_all_rows if in_ud_under_band(r)]
     unders_rows.sort(key=lambda r: r["edge"])  # most negative (biggest edge) first
     unders_cards = [build_card(row) for row in unders_rows]
-    for c in unders_cards:
-        c["top25Record"] = top25_record_badge(c.get("playerId"), top25_players)
     unders_cards_js = json.dumps(unders_cards)
-    unders_band_count = sum(1 for c in unders_cards if c["udUnderBand"])
-    unders_total_count = len(unders_cards)
+    unders_band_count = len(unders_cards)
 
     # --- Top 25 tier-membership badge (VALUE PLAY only now - PREMIUM/
     # STRONG/SLIP/STACK retired 2026-08-18, see module docstrings) ---
@@ -1318,12 +1318,12 @@ function edgeRowHtml(c) {{
   if (c.edgeLabel === null || c.edgeLabel === undefined) return '';
   const sign = c.edge > 0 ? '+' : '';
   if (c.edgeLabel === 'over') {{
-    return `<div class="edge-row"><span class="edge-tag over">&#8593; OVER</span> ${{sign}}${{c.edge.toFixed(1)}} vs line ${{c.udLine.toFixed(1)}}</div>`;
+    return `<div class="edge-row"><span class="edge-tag over">&#8593; OVER</span> ${{sign}}${{c.edge.toFixed(2)}} vs line ${{c.udLine.toFixed(1)}}</div>`;
   }}
   if (c.edgeLabel === 'under') {{
-    return `<div class="edge-row"><span class="edge-tag under">&#8595; UNDER</span> ${{sign}}${{c.edge.toFixed(1)}} vs line ${{c.udLine.toFixed(1)}}</div>`;
+    return `<div class="edge-row"><span class="edge-tag under">&#8595; UNDER</span> ${{sign}}${{c.edge.toFixed(2)}} vs line ${{c.udLine.toFixed(1)}}</div>`;
   }}
-  return `<div class="edge-row"><span class="edge-tag neutral">NEUTRAL</span> ${{sign}}${{c.edge.toFixed(1)}} vs line ${{c.udLine.toFixed(1)}}</div>`;
+  return `<div class="edge-row"><span class="edge-tag neutral">NEUTRAL</span> ${{sign}}${{c.edge.toFixed(2)}} vs line ${{c.udLine.toFixed(1)}}</div>`;
 }}
 
 function platoonMatchupHtml(c) {{
