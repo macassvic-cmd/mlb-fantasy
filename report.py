@@ -382,9 +382,9 @@ def in_ud_under_band(row):
     return bool(row.get("market_anchored")) and edge is not None and -UD_UNDER_BAND_HI < edge <= -UD_UNDER_BAND_LO
 
 
-def ud_under_band_label():
-    """Combined seed + live-tracked record/rate, for the honest badge text
-    ('57.8% (n=612)'), not a tier name."""
+def _ud_under_band_combined_record():
+    """(wins, losses, live_n) combining the frozen seed with whatever
+    tracker.grade_ud_under_band has accumulated since UD_UNDER_BAND_SEED_END."""
     live = {"wins": 0, "losses": 0}
     if os.path.exists(UD_UNDER_BAND_RESULTS_PATH):
         try:
@@ -394,11 +394,27 @@ def ud_under_band_label():
             pass
     wins = UD_UNDER_BAND_SEED["wins"] + live.get("wins", 0)
     losses = UD_UNDER_BAND_SEED["losses"] + live.get("losses", 0)
+    live_n = live.get("wins", 0) + live.get("losses", 0)
+    return wins, losses, live_n
+
+
+def ud_under_band_label():
+    """Combined seed + live-tracked record/rate, for the honest badge text
+    ('57.8% (n=612)'), not a tier name."""
+    wins, losses, live_n = _ud_under_band_combined_record()
     n = wins + losses
     rate = round(100 * wins / n, 1) if n else 0.0
-    live_n = live.get("wins", 0) + live.get("losses", 0)
     since_note = f"{live_n} tracked since {UD_UNDER_BAND_SEED_END}" if live_n else f"tracking since {UD_UNDER_BAND_SEED_END}"
     return f"UNDER 1.5–2.0 edge · {rate}% (n={n}, {since_note})"
+
+
+def ud_under_band_header():
+    """Header line for the Unders tab: 'UNDER 1.5-2.0 edge band: X-Y (Z%)
+    tracked since 2026-08-17'."""
+    wins, losses, _ = _ud_under_band_combined_record()
+    n = wins + losses
+    rate = round(100 * wins / n, 1) if n else 0.0
+    return f"UNDER 1.5-2.0 edge band: {wins}-{losses} ({rate}%) tracked since {UD_UNDER_BAND_SEED_END}"
 
 # Players without a posted UD/PP line are systematically more volatile than
 # the market suggests — UD withholds lines when lineup status is uncertain.
@@ -834,6 +850,21 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     unanchored_cards = [build_card(row) for row in unanchored_rows]
     unanchored_cards_js = json.dumps(unanchored_cards)
 
+    # --- Unders tab: every UD UNDER call (market-anchored, negative edge),
+    # sorted by edge size descending - biggest model-vs-market disagreement
+    # first. Not capped like Top 25/Value Plays - this is meant to be the
+    # complete list of the day's UNDER calls so the validated 1.5-2.0 band
+    # (in_ud_under_band, see module comment above) can be seen in context
+    # against everything else. -------------------------------------------
+    unders_rows = [r for r in rows if r.get("market_anchored") and (r.get("edge") or 0) < 0]
+    unders_rows.sort(key=lambda r: r["edge"])  # most negative (biggest edge) first
+    unders_cards = [build_card(row) for row in unders_rows]
+    for c in unders_cards:
+        c["top25Record"] = top25_record_badge(c.get("playerId"), top25_players)
+    unders_cards_js = json.dumps(unders_cards)
+    unders_band_count = sum(1 for c in unders_cards if c["udUnderBand"])
+    unders_total_count = len(unders_cards)
+
     # --- Top 25 tier-membership badge (VALUE PLAY only now - PREMIUM/
     # STRONG/SLIP/STACK retired 2026-08-18, see module docstrings) ---
     value_pids = {r.get("player_id") for r in value_rows}
@@ -935,6 +966,23 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     0%, 100% {{ box-shadow: 0 0 8px 1px rgba(249,115,22,0.45); }}
     50%      {{ box-shadow: 0 0 20px 5px rgba(249,115,22,0.85); }}
   }}
+
+  /* Click-to-mark-used: dims the card so the eye skips it while scanning,
+     without reordering or hiding anything. Purely a client-side visual
+     toggle persisted in localStorage - see markUsed()/USED_STORAGE_KEY. */
+  .card {{ cursor: pointer; }}
+  .card.used {{ opacity: 0.4; filter: grayscale(0.85); }}
+  .card.used:hover {{ opacity: 0.6; }}
+  .card.used::after {{
+    content: '\2713'; position: absolute; top: 8px; right: 10px;
+    width: 22px; height: 22px; border-radius: 50%;
+    background: rgba(74,222,128,0.9); color: #0d1626;
+    font-size: 14px; font-weight: 900; line-height: 22px; text-align: center;
+  }}
+  .clear-marks-btn {{ padding: 5px 12px; font-size: 12px; font-weight: 600; border: 1px solid #3a4866;
+                       background: #16213a; color: #9fb0cc; border-radius: 6px; cursor: pointer;
+                       margin-bottom: 12px; }}
+  .clear-marks-btn:hover {{ background: #1c2944; color: #fff; border-color: #6c7da0; }}
 
   .card .name {{ font-size: 18px; font-weight: 800; color: #fff; }}
   .card .meta {{ font-size: 12px; color: #9fb0cc; margin-top: 2px; }}
@@ -1070,6 +1118,11 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   .unanchored-section .vp-sub {{ color: #7a8aab; font-size: 13px; margin-bottom: 12px; }}
   .unanchored-empty {{ color: #9fb0cc; font-size: 13px; }}
 
+  .unders-header {{ margin-bottom: 16px; padding: 10px 14px; border: 1px solid #3a4866;
+                     border-radius: 8px; background: #16213a; }}
+  .unders-header .unders-band-line {{ color: #fb923c; font-size: 13px; font-weight: 700; }}
+  .unders-header .unders-count-line {{ color: #9fb0cc; font-size: 12px; margin-top: 4px; }}
+
   /* Freshness banner */
   .freshness-banner {{ padding: 10px 24px; font-size: 14px; font-weight: 700; text-align: center; }}
   .freshness-banner.fresh {{ background: #15351f; color: #4ade80; }}
@@ -1096,17 +1149,20 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
 <div class="value-plays">
   <h2>🎯 Value Plays</h2>
   <div class="vp-sub">Top 4 OVER calls (model disagrees by 1.0+ pts) + top 4 UNDER calls (1.5+ pts) &mdash; thresholds calibrated from live, weekly-refreshed edge-bucket win rates.</div>
+  <button class="clear-marks-btn" data-clear-marks>Clear all marks</button>
   <div class="card-grid" id="valueGrid"></div>
 </div>
 
 <div class="unanchored-section">
   <h2>Unanchored (no posted line)</h2>
   <div class="vp-sub">Model-only projections &mdash; no UD/PP market line to compare against yet.</div>
+  <button class="clear-marks-btn" data-clear-marks>Clear all marks</button>
   <div class="card-grid" id="unanchoredGrid"></div>
 </div>
 
 <div class="tabs">
   <button class="tab-btn active" id="tab-top25" data-tab="top25">Top 25</button>
+  <button class="tab-btn" id="tab-unders" data-tab="unders">Unders</button>
   <button class="tab-btn" id="tab-full" data-tab="full">Full Leaderboard</button>
   <button class="tab-btn" id="tab-results" data-tab="results">Results</button>
   <button class="tab-btn" id="tab-history" data-tab="history">Player History</button>
@@ -1119,7 +1175,14 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     <span class="yellow">Yellow = Solid (5-8 pts)</span>
     <span class="red">Red = Avoid (under 5 pts)</span>
   </div>
+  <button class="clear-marks-btn" data-clear-marks>Clear all marks</button>
   <div class="card-grid" id="cardGrid"></div>
+</div>
+
+<div class="panel hidden" id="panel-unders">
+  <div class="unders-header" id="undersHeader"></div>
+  <button class="clear-marks-btn" data-clear-marks>Clear all marks</button>
+  <div class="card-grid" id="undersGrid"></div>
 </div>
 
 <div class="panel hidden" id="panel-full">
@@ -1188,6 +1251,10 @@ const UD_UNDER_BAND_LABEL = {json.dumps(ud_under_band_label())};
 const CARDS = {cards_js};
 const VALUE_CARDS = {value_cards_js};
 const UNANCHORED_CARDS = {unanchored_cards_js};
+const UNDERS_CARDS = {unders_cards_js};
+const UD_UNDER_BAND_HEADER = {json.dumps(ud_under_band_header())};
+const UNDERS_BAND_COUNT = {unders_band_count};
+const UNDERS_TOTAL_COUNT = {unders_total_count};
 const COLS = {cols_js};
 const ROWS = {rows_js};
 const TEAMS = {teams_js};
@@ -1294,10 +1361,51 @@ function tierBadgesHtml(c) {{
     + (c.udUnderBand ? `<div class="badge badge-under-band" title="Raw edge bucket, not a tier - tracked separately since {UD_UNDER_BAND_SEED_END}">${{UD_UNDER_BAND_LABEL}}</div>` : '');
 }}
 
-function renderCard(c) {{
+// --- Click-to-mark-used: a card you've already acted on dims out so your
+// eye skips it on the next pass. Purely visual (nothing reorders/hides),
+// shared across every grid a player's card appears in (Top 25/Unders/
+// Value/Unanchored), and keyed by today's date so it resets on its own
+// tomorrow rather than needing an explicit expiry. -----------------------
+const usedStorageKey = 'mlbUsedCards_' + GAME_DATE;
+let usedIds = new Set();
+try {{
+  usedIds = new Set(JSON.parse(localStorage.getItem(usedStorageKey) || '[]'));
+}} catch (e) {{}}
+
+function saveUsedIds() {{
+  try {{ localStorage.setItem(usedStorageKey, JSON.stringify([...usedIds])); }} catch (e) {{}}
+}}
+
+function applyUsedStateToAllCards() {{
+  document.querySelectorAll('.card[data-player-id]').forEach(el => {{
+    el.classList.toggle('used', usedIds.has(Number(el.dataset.playerId)));
+  }});
+}}
+
+function toggleUsed(playerId) {{
+  if (usedIds.has(playerId)) {{ usedIds.delete(playerId); }} else {{ usedIds.add(playerId); }}
+  saveUsedIds();
+  applyUsedStateToAllCards();
+}}
+
+document.querySelectorAll('.clear-marks-btn').forEach(btn => {{
+  btn.addEventListener('click', () => {{
+    usedIds.clear();
+    saveUsedIds();
+    applyUsedStateToAllCards();
+  }});
+}});
+
+function renderCard(c, treatmentFn) {{
   const card = document.createElement('div');
-  card.className = ('card ' + c.tier + ' ' + top25TreatmentClass(c)).trim();
+  const treatment = treatmentFn ? treatmentFn(c) : top25TreatmentClass(c);
+  card.className = ('card ' + c.tier + ' ' + treatment).trim();
   if (c.gameDateUtc) card.dataset.gameTimeUtc = c.gameDateUtc;
+  if (c.playerId !== null && c.playerId !== undefined) {{
+    card.dataset.playerId = c.playerId;
+    if (usedIds.has(c.playerId)) card.classList.add('used');
+    card.addEventListener('click', () => toggleUsed(c.playerId));
+  }}
   card.innerHTML = `
     <div class="name">${{c.name}}</div>
     <div class="meta">${{c.team}} &middot; Batting ${{c.order}} &middot; <span class="game-date">${{GAME_DATE}}</span>${{c.gameTimePt ? ` &middot; <span class="game-time">${{c.gameTimePt}}</span>` : ''}}</div>
@@ -1346,6 +1454,23 @@ if (UNANCHORED_CARDS.length === 0) {{
   }}
 }}
 
+// --- Unders tab: every UD UNDER call, sorted biggest-edge-first server
+// side. Cards in the validated 1.5-2.0 band get the same fire glow as a
+// hot Top 25 streak (top25-fire) - everything else renders like a normal
+// card, same as Top 25/Value/Unanchored. ------------------------------
+document.getElementById('undersHeader').innerHTML = `
+  <div class="unders-band-line">${{UD_UNDER_BAND_HEADER}}</div>
+  <div class="unders-count-line">${{UNDERS_BAND_COUNT}} of ${{UNDERS_TOTAL_COUNT}} UNDER calls today are in the band</div>
+`;
+const undersGrid = document.getElementById('undersGrid');
+if (UNDERS_CARDS.length === 0) {{
+  undersGrid.outerHTML = '<div class="unanchored-empty">No UD UNDER calls today.</div>';
+}} else {{
+  for (const c of UNDERS_CARDS) {{
+    undersGrid.appendChild(renderCard(c, cc => cc.udUnderBand ? 'top25-fire' : ''));
+  }}
+}}
+
 // --- Hide-started-games filter (applies to Top 25, Full Leaderboard,
 // Value Plays, Unanchored - NOT Results/Player History, which are
 // historical). Single shared toggle so state stays consistent across tabs.
@@ -1374,7 +1499,7 @@ setInterval(applyHideStartedFilter, 30000); // live re-check as games start, no 
 
 
 // --- Tabs ---
-const PANELS = ['top25', 'full', 'results', 'history', 'top25results'];
+const PANELS = ['top25', 'unders', 'full', 'results', 'history', 'top25results'];
 document.querySelectorAll('.tab-btn').forEach(btn => {{
   btn.addEventListener('click', () => {{
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
