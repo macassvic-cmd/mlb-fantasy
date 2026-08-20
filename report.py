@@ -416,6 +416,46 @@ def ud_under_band_header():
     rate = round(100 * wins / n, 1) if n else 0.0
     return f"UNDER 1.5-2.0 edge band: {wins}-{losses} ({rate}%) tracked since {UD_UNDER_BAND_SEED_END}"
 
+
+def wilson_ci(wins, n, z=1.96):
+    """Wilson score interval (95% by default) for a win rate, as (lo, hi)
+    percentages. More reliable than a normal-approximation CI at the
+    sample sizes involved here."""
+    if not n:
+        return (0.0, 0.0)
+    phat = wins / n
+    denom = 1 + z * z / n
+    center = (phat + z * z / (2 * n)) / denom
+    margin = (z * ((phat * (1 - phat) / n + z * z / (4 * n * n)) ** 0.5)) / denom
+    return (round(max(0, (center - margin) * 100), 1), round(min(100, (center + margin) * 100), 1))
+
+
+UD_UNDER_BAND_PLAYS_DIR = os.path.join("data", "ud_under_band_plays")
+
+
+def save_ud_under_band_plays(date_str, unders_rows):
+    """Snapshot of today's validated-band UNDER calls (unders_rows is
+    already filtered to the band - see write_dashboard), saved so
+    tracker.grade_ud_under_band can grade them the next day even for
+    players who end up DNPing. DNP'd players never get a
+    data/results/all_results.json history entry at all (pipeline.py skips
+    them outright - "didn't play (scratched, postponed, bench, etc.)"),
+    so without this snapshot there'd be no way to tell "wasn't in the
+    band" apart from "was in the band but didn't play"."""
+    plays = [{
+        "player_id": r.get("player_id"),
+        "name": r["name"],
+        "team": r["team"],
+        "projected_ud": r.get("ud_pts"),
+        "ud_line": r.get("ud_line"),
+        "edge": r.get("edge"),
+        "game_time_pt": r.get("game_time_pt"),
+    } for r in unders_rows]
+    os.makedirs(UD_UNDER_BAND_PLAYS_DIR, exist_ok=True)
+    with open(os.path.join(UD_UNDER_BAND_PLAYS_DIR, f"{date_str}.json"), "w", encoding="utf-8") as f:
+        json.dump({"date": date_str, "plays": plays}, f, indent=2)
+
+
 # Players without a posted UD/PP line are systematically more volatile than
 # the market suggests — UD withholds lines when lineup status is uncertain.
 # Discount their projection to reflect this hidden risk and make it harder
@@ -807,6 +847,25 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     best_performer = max(weekly, key=lambda x: x["rate"]) if weekly else None
     worst_performer = min(weekly, key=lambda x: x["rate"]) if weekly else None
 
+    # Top 25 Results - full-history calendar + all-time summary, covering
+    # every tracked date (not just yesterday/last 7 days like the summary
+    # cards above). Same day-cell shape as the general Results tab's
+    # calendar so it reuses that CSS/rendering pattern.
+    t25_calendar_cells = []
+    t25_all_hits = t25_all_decided = 0
+    for d in t25_dates:
+        day_decided = [e for e in top25_data["dates"][d]["top25"] if e["grade"] in ("win", "loss")]
+        day_hits = sum(1 for e in day_decided if e["grade"] == "win")
+        t25_calendar_cells.append({
+            "date": d,
+            "hit_rate": round(100 * day_hits / len(day_decided), 1) if day_decided else None,
+            "n": len(day_decided),
+        })
+        t25_all_hits += day_hits
+        t25_all_decided += len(day_decided)
+    t25_calendar_js = json.dumps(t25_calendar_cells)
+    t25_all_time_rate = round(100 * t25_all_hits / t25_all_decided, 1) if t25_all_decided else None
+
     # Default display order for every card grid is "soonest game first",
     # which is independent of (and applied after) whatever scoring/edge
     # logic decided which players make a given section - missing game
@@ -864,6 +923,44 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     unders_cards = [build_card(row) for row in unders_rows]
     unders_cards_js = json.dumps(unders_cards)
     unders_band_count = len(unders_cards)
+    save_ud_under_band_plays(date_str, unders_rows)
+
+    # --- Under Results tab: grading history for the validated band, built
+    # from data/results/ud_under_band_results.json (tracker.grade_ud_under_band,
+    # graded nightly). DNPs are tracked separately and never counted as
+    # wins/losses - see grade_ud_under_band's DNP handling. -----------------
+    under_band_data = {"seed": UD_UNDER_BAND_SEED, "dates": {}, "record": {"wins": 0, "losses": 0, "dnp": 0}}
+    if os.path.exists(UD_UNDER_BAND_RESULTS_PATH):
+        try:
+            with open(UD_UNDER_BAND_RESULTS_PATH, encoding="utf-8") as f:
+                under_band_data = json.load(f)
+        except Exception:
+            pass
+    under_dates = sorted(under_band_data.get("dates", {}).keys())
+    under_calendar_cells = []
+    for d in under_dates:
+        dd = under_band_data["dates"][d]
+        w, l, dnp = dd.get("wins", 0), dd.get("losses", 0), dd.get("dnp", 0)
+        decided = w + l
+        under_calendar_cells.append({
+            "date": d,
+            "hit_rate": round(100 * w / decided, 1) if decided else None,
+            "wins": w, "losses": l, "dnp": dnp,
+        })
+    under_calendar_js = json.dumps(under_calendar_cells)
+
+    under_yesterday_date = under_dates[-1] if under_dates else None
+    under_yesterday_cards_js = json.dumps(
+        under_band_data["dates"][under_yesterday_date]["plays"] if under_yesterday_date else []
+    )
+
+    under_live_record = under_band_data.get("record", {"wins": 0, "losses": 0, "dnp": 0})
+    under_total_wins = UD_UNDER_BAND_SEED["wins"] + under_live_record.get("wins", 0)
+    under_total_losses = UD_UNDER_BAND_SEED["losses"] + under_live_record.get("losses", 0)
+    under_total_dnp = under_live_record.get("dnp", 0)  # seed predates DNP tracking - live-tracked only
+    under_total_n = under_total_wins + under_total_losses
+    under_total_rate = round(100 * under_total_wins / under_total_n, 1) if under_total_n else 0.0
+    under_ci_lo, under_ci_hi = wilson_ci(under_total_wins, under_total_n)
 
     # --- Top 25 tier-membership badge (VALUE PLAY only now - PREMIUM/
     # STRONG/SLIP/STACK retired 2026-08-18, see module docstrings) ---
@@ -1069,6 +1166,7 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   .t25-overlay.win  {{ color: #4ade80; }}
   .t25-overlay.push {{ color: #fbbf24; }}
   .t25-overlay.loss {{ color: #f87171; }}
+  .t25-overlay.dnp  {{ color: #9fb0cc; font-size: 13px; letter-spacing: 0.5px; }}
   .section-title {{ margin: 22px 0 12px; color: #fff; font-size: 16px; }}
   #t25Tbl tbody tr.row-green  td {{ background: #15351f; }}
   #t25Tbl tbody tr.row-yellow td {{ background: #3a3315; }}
@@ -1171,6 +1269,7 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   <button class="tab-btn" id="tab-results" data-tab="results">Results</button>
   <button class="tab-btn" id="tab-history" data-tab="history">Player History</button>
   <button class="tab-btn" id="tab-top25results" data-tab="top25results">Top 25 Results</button>
+  <button class="tab-btn" id="tab-underresults" data-tab="underresults">Under Results</button>
 </div>
 
 <div class="panel" id="panel-top25">
@@ -1232,7 +1331,9 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
 
 <div class="panel hidden" id="panel-top25results">
   <div class="results-summary" id="t25Summary"></div>
-  <div class="legend">
+  <h3 class="section-title">Daily Hit Rate (every tracked date)</h3>
+  <div class="cal-grid" id="t25CalGrid"></div>
+  <div class="legend" style="margin-top:16px;">
     <span class="green">Green ✓ = won the call (right side of the UD line)</span>
     <span class="red">Red ✗ = lost the call (wrong side of the UD line)</span>
     <span class="yellow">Yellow ~ = push (landed exactly on the line)</span>
@@ -1246,6 +1347,20 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
       <tbody id="t25Body"></tbody>
     </table>
   </div>
+</div>
+
+<div class="panel hidden" id="panel-underresults">
+  <div class="results-summary" id="underSummary"></div>
+  <h3 class="section-title">Daily Hit Rate (since tracking began)</h3>
+  <div class="cal-grid" id="underCalGrid"></div>
+  <div class="legend" style="margin-top:16px;">
+    <span class="green">Green ✓ = won (UD UNDER call correct)</span>
+    <span class="red">Red ✗ = lost</span>
+    <span class="yellow">Yellow ~ = push (landed exactly on the line)</span>
+    <span style="background:#1c2944;color:#9fb0cc;border:1px solid #555;">Gray DNP = didn't play, excluded from the record</span>
+  </div>
+  <h3 class="section-title" id="underYesterdayTitle">Latest Graded Day's Band Plays</h3>
+  <div class="card-grid" id="underCardGrid"></div>
 </div>
 
 
@@ -1271,6 +1386,20 @@ const T25_ROLLING_RATE = {json.dumps(rolling_hit_rate)};
 const T25_BEST = {json.dumps(best_performer)};
 const T25_WORST = {json.dumps(worst_performer)};
 const T25_RECORDS = {record_rows_js};
+const T25_CAL = {t25_calendar_js};
+const T25_ALL_TIME_RATE = {json.dumps(t25_all_time_rate)};
+const T25_ALL_TIME_N = {t25_all_decided};
+const T25_ALL_TIME_HITS = {t25_all_hits};
+const UNDER_CAL = {under_calendar_js};
+const UNDER_YESTERDAY_DATE = {json.dumps(under_yesterday_date)};
+const UNDER_YESTERDAY_CARDS = {under_yesterday_cards_js};
+const UNDER_TOTAL_WINS = {under_total_wins};
+const UNDER_TOTAL_LOSSES = {under_total_losses};
+const UNDER_TOTAL_N = {under_total_n};
+const UNDER_TOTAL_RATE = {json.dumps(under_total_rate)};
+const UNDER_TOTAL_DNP = {under_total_dnp};
+const UNDER_CI_LO = {json.dumps(under_ci_lo)};
+const UNDER_CI_HI = {json.dumps(under_ci_hi)};
 const GENERATED_AT = {json.dumps(generated_at_iso)};
 const GAME_DATE = {json.dumps(date_str)};
 const PLAYER_COUNT = {player_count};
@@ -1503,7 +1632,7 @@ setInterval(applyHideStartedFilter, 30000); // live re-check as games start, no 
 
 
 // --- Tabs ---
-const PANELS = ['top25', 'unders', 'full', 'results', 'history', 'top25results'];
+const PANELS = ['top25', 'unders', 'full', 'results', 'history', 'top25results', 'underresults'];
 document.querySelectorAll('.tab-btn').forEach(btn => {{
   btn.addEventListener('click', () => {{
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -1597,7 +1726,22 @@ const t25Summary = document.getElementById('t25Summary');
     html += `<div class="summary-card worst"><div class="summary-value">${{T25_WORST.rate}}%</div>
              <div class="summary-label">Worst this week: ${{T25_WORST.name}}</div></div>`;
   }}
+  html += `<div class="summary-card"><div class="summary-value">${{T25_ALL_TIME_RATE !== null ? T25_ALL_TIME_RATE + '%' : 'N/A'}}</div>
+           <div class="summary-label">All-time (${{T25_ALL_TIME_HITS}}/${{T25_ALL_TIME_N}}, ${{T25_CAL.length}} days tracked)</div></div>`;
   t25Summary.innerHTML = html;
+}}
+
+const t25CalGrid = document.getElementById('t25CalGrid');
+for (const c of T25_CAL) {{
+  const cell = document.createElement('div');
+  cell.className = 'cal-cell';
+  cell.style.borderColor = c.hit_rate === null ? '#555' : hitColor(c.hit_rate);
+  cell.title = `${{c.date}}\\n${{c.hit_rate !== null ? c.hit_rate + '% (' + c.n + ' decided)' : 'No decided calls'}}`;
+  cell.innerHTML = `<div class="cal-date">${{c.date.slice(5)}}</div><div class="cal-rate">${{c.hit_rate !== null ? c.hit_rate + '%' : '—'}}</div>`;
+  t25CalGrid.appendChild(cell);
+}}
+if (T25_CAL.length === 0) {{
+  t25CalGrid.innerHTML = '<div class="empty-msg">No Top 25 results yet — run tracker.py after games finish.</div>';
 }}
 
 const t25Grid = document.getElementById('t25CardGrid');
@@ -1647,6 +1791,72 @@ for (const c of T25_CARDS) {{
 }}
 if (T25_CARDS.length === 0) {{
   t25Grid.innerHTML = '<div class="empty-msg">No Top 25 results yet — run tracker.py after games finish.</div>';
+}}
+
+// --- Under Results (UD UNDER 1.5-2.0 edge band tracking) ----------------
+const underSummary = document.getElementById('underSummary');
+{{
+  let html = '';
+  html += `<div class="summary-card"><div class="summary-value">${{UNDER_TOTAL_WINS}}-${{UNDER_TOTAL_LOSSES}}</div>
+           <div class="summary-label">All-time band record (${{UNDER_TOTAL_RATE}}%, n=${{UNDER_TOTAL_N}})</div></div>`;
+  html += `<div class="summary-card"><div class="summary-value">${{UNDER_CI_LO}}&ndash;${{UNDER_CI_HI}}%</div>
+           <div class="summary-label">95% Wilson CI</div></div>`;
+  html += `<div class="summary-card"><div class="summary-value">${{UNDER_TOTAL_DNP}}</div>
+           <div class="summary-label">DNP (excluded from record)</div></div>`;
+  underSummary.innerHTML = html;
+}}
+
+const underCalGrid = document.getElementById('underCalGrid');
+for (const c of UNDER_CAL) {{
+  const cell = document.createElement('div');
+  cell.className = 'cal-cell';
+  cell.style.borderColor = c.hit_rate === null ? '#555' : hitColor(c.hit_rate);
+  cell.title = `${{c.date}}\\n${{c.wins}}-${{c.losses}}${{c.hit_rate !== null ? ' (' + c.hit_rate + '%)' : ''}}\\nDNP: ${{c.dnp}}`;
+  cell.innerHTML = `<div class="cal-date">${{c.date.slice(5)}}</div><div class="cal-rate">${{c.hit_rate !== null ? c.hit_rate + '%' : '—'}}</div>`;
+  underCalGrid.appendChild(cell);
+}}
+if (UNDER_CAL.length === 0) {{
+  underCalGrid.innerHTML = '<div class="empty-msg">No band results yet — tracking starts the day after ' + {json.dumps(UD_UNDER_BAND_SEED_END)} + '.</div>';
+}}
+
+document.getElementById('underYesterdayTitle').textContent = UNDER_YESTERDAY_DATE
+  ? `${{UNDER_YESTERDAY_DATE}}'s Band Plays` : 'Latest Graded Day\\'s Band Plays';
+
+const underGrid = document.getElementById('underCardGrid');
+for (const c of UNDER_YESTERDAY_CARDS) {{
+  // Plays graded before this schema existed only have a boolean "win" -
+  // fall back to deriving grade from that so old dates don't misrender
+  // as DNP.
+  const grade = c.grade || (c.win === true ? 'win' : c.win === false ? 'loss' : 'dnp');
+  const card = document.createElement('div');
+  let borderClass = 'nodata';
+  let overlay = '<div class="t25-overlay dnp">DNP</div>';
+  if (grade === 'win') {{
+    borderClass = 'win';
+    overlay = '<div class="t25-overlay win">&#10003;</div>';
+  }} else if (grade === 'loss') {{
+    borderClass = 'loss';
+    overlay = '<div class="t25-overlay loss">&#10007;</div>';
+  }} else if (grade === 'push') {{
+    borderClass = 'push';
+    overlay = '<div class="t25-overlay push">~</div>';
+  }}
+  card.className = 'card t25-card ' + borderClass;
+  card.innerHTML = `
+    ${{overlay}}
+    <div class="name">${{c.name}}</div>
+    <div class="meta">${{c.team || ''}}${{c.game_time_pt ? ` &middot; <span class="game-time">${{c.game_time_pt}}</span>` : ''}}</div>
+    <div class="pts-row">
+      <div><span class="ud-pts">${{c.projected_ud != null ? c.projected_ud.toFixed(1) : 'N/A'}}</span><span class="pts-label">PROJ UD</span></div>
+      <div><span class="line-pts">${{c.ud_line != null ? c.ud_line.toFixed(1) : 'N/A'}}</span><span class="pts-label">UD LINE</span></div>
+      <div><span class="pp-pts">${{c.actual_ud != null ? c.actual_ud : (grade === 'dnp' ? 'DNP' : 'N/A')}}</span><span class="pts-label">ACTUAL UD</span></div>
+    </div>
+    <div class="edge-row"><span class="edge-tag under">&#8595; UNDER</span> ${{c.edge != null ? c.edge.toFixed(2) : ''}} vs line ${{c.ud_line != null ? c.ud_line.toFixed(1) : ''}}</div>
+  `;
+  underGrid.appendChild(card);
+}}
+if (UNDER_YESTERDAY_CARDS.length === 0) {{
+  underGrid.innerHTML = '<div class="empty-msg">No band plays graded yet.</div>';
 }}
 
 const T25_COLS = [

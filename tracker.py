@@ -217,7 +217,7 @@ def track_date(date_str):
     results_by_pid = {r["player_id"]: r for r in results}
     track_top25(date_str, rows, results_by_pid)
     grade_value_plays(date_str, results_by_pid)
-    grade_ud_under_band(date_str)
+    grade_ud_under_band(date_str, results_by_pid)
     # Premium/Slips/Stacks (and Stacks shadow-mode) retired from the live
     # dashboard 2026-08-18 - see report.py/slips.py/stacks.py. No point
     # accumulating win/loss records for products nobody sees anymore, so
@@ -333,48 +333,63 @@ def grade_value_plays(date_str, results_by_pid):
     print(f"Value Plays: {hits}/{total} correct ({summary['accuracy']}%) -> {VALUE_PLAYS_RESULTS_PATH}")
 
 
-def grade_ud_under_band(date_str):
+def grade_ud_under_band(date_str, results_by_pid):
     """Grade the day's UD UNDER 1.5-2.0-edge calls - the one finding from
     the 2026-08-18 OVER-vs-UNDER analysis that replicated in and out of
     sample (see report.UD_UNDER_BAND_* and the module comment there).
-    Deliberately reads straight from all_results.json's own
-    projected_ud/ud_line for date_str (already written by
-    update_all_results before this is called) rather than taking a
-    rows/results_by_pid argument, so there's no risk of drifting from the
-    exact point-in-time edge value grading itself uses. No additional
-    filters - UNDER call, edge in [1.5, 2.0), UD only. Tracked entirely
-    separate from every retired tier; only dates after
-    report.UD_UNDER_BAND_SEED_END count, so the frozen 566-play seed is
-    never double-counted."""
-    all_results = load_json(ALL_RESULTS_PATH, {"players": {}})
+
+    Reads the day's candidate list from report.save_ud_under_band_plays'
+    snapshot (data/ud_under_band_plays/{date}.json) rather than
+    reconstructing candidacy from all_results.json - a DNP'd player never
+    gets an all_results.json history entry at all (pipeline.py skips them
+    outright), so scanning history after the fact can't tell "wasn't in
+    the band" apart from "was in the band but didn't play." The snapshot
+    is the only place that distinction survives.
+
+    DNPs are counted separately and excluded from the win/loss record
+    entirely - being right or wrong requires the game to have happened.
+    Only dates after report.UD_UNDER_BAND_SEED_END count, so the frozen
+    566-play seed (which predates DNP tracking) is never double-counted."""
     if date_str <= report.UD_UNDER_BAND_SEED_END:
         print(f"UD UNDER 1.5-2.0 band: {date_str} is in the seed window (through "
               f"{report.UD_UNDER_BAND_SEED_END}), not graded separately.")
         return
 
-    wins = losses = 0
-    plays = []
-    for pid, p in all_results.get("players", {}).items():
-        for h in p.get("history", []):
-            if h.get("date") != date_str or h.get("result_ud") not in ("win", "loss"):
-                continue
-            line, proj = h.get("ud_line"), h.get("projected_ud")
-            if line is None or proj is None:
-                continue
-            edge = proj - line
-            if not (-report.UD_UNDER_BAND_HI < edge <= -report.UD_UNDER_BAND_LO):
-                continue
-            win = h["result_ud"] == "win"
-            wins += win
-            losses += not win
-            plays.append({"player_id": int(pid), "name": p.get("name", ""), "edge": round(edge, 2), "win": win})
+    plays_path = os.path.join(report.UD_UNDER_BAND_PLAYS_DIR, f"{date_str}.json")
+    if not os.path.exists(plays_path):
+        print(f"UD UNDER 1.5-2.0 band: no saved plays snapshot for {date_str} "
+              f"(dashboard wasn't generated that day?) - skipping.")
+        return
+    candidates = load_json(plays_path, {"plays": []}).get("plays", [])
 
-    data = load_json(UD_UNDER_BAND_RESULTS_PATH, {"seed": report.UD_UNDER_BAND_SEED, "dates": {}, "record": {"wins": 0, "losses": 0}})
+    wins = losses = dnp = 0
+    graded_plays = []
+    for play in candidates:
+        res = results_by_pid.get(play["player_id"])
+        if res is None:
+            grade = "dnp"
+            dnp += 1
+            actual_ud = None
+        else:
+            actual_ud = res.get("actual_ud")
+            result_ud = res.get("result_ud")
+            if result_ud == "win":
+                grade, wins = "win", wins + 1
+            elif result_ud == "loss":
+                grade, losses = "loss", losses + 1
+            elif result_ud == "push":
+                grade = "push"
+            else:
+                grade, dnp = "dnp", dnp + 1
+        graded_plays.append({**play, "actual_ud": actual_ud, "grade": grade})
+
+    data = load_json(UD_UNDER_BAND_RESULTS_PATH, {"seed": report.UD_UNDER_BAND_SEED, "dates": {}, "record": {"wins": 0, "losses": 0, "dnp": 0}})
     data.setdefault("dates", {})
-    data["dates"][date_str] = {"wins": wins, "losses": losses, "plays": plays}
+    data["dates"][date_str] = {"wins": wins, "losses": losses, "dnp": dnp, "plays": graded_plays}
     data["record"] = {
         "wins": sum(d["wins"] for d in data["dates"].values()),
         "losses": sum(d["losses"] for d in data["dates"].values()),
+        "dnp": sum(d.get("dnp", 0) for d in data["dates"].values()),
     }
 
     os.makedirs(RESULTS_DIR, exist_ok=True)
@@ -386,8 +401,8 @@ def grade_ud_under_band(date_str):
     total_losses = seed["losses"] + data["record"]["losses"]
     total_n = total_wins + total_losses
     rate = round(100 * total_wins / total_n, 1) if total_n else 0.0
-    print(f"UD UNDER 1.5-2.0 band: {wins}-{losses} today -> live-tracked "
-          f"{data['record']['wins']}-{data['record']['losses']}, combined with seed "
+    print(f"UD UNDER 1.5-2.0 band: {wins}-{losses} today ({dnp} DNP) -> live-tracked "
+          f"{data['record']['wins']}-{data['record']['losses']} ({data['record']['dnp']} DNP), combined with seed "
           f"{total_wins}-{total_losses} ({rate}%, n={total_n})")
 
 
