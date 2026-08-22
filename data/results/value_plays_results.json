@@ -5408,6 +5408,99 @@
           "correct": true
         }
       ]
+    },
+    "2026-08-21": {
+      "summary": {
+        "total": 8,
+        "correct": 6,
+        "accuracy": 75.0,
+        "over_total": 4,
+        "over_correct": 3,
+        "under_total": 4,
+        "under_correct": 3
+      },
+      "plays": [
+        {
+          "player_id": 665487,
+          "name": "Fernando Tatis Jr.",
+          "team": "San Diego Padres",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 16,
+          "correct": true
+        },
+        {
+          "player_id": 681082,
+          "name": "Bryson Stott",
+          "team": "Philadelphia Phillies",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 5,
+          "correct": false
+        },
+        {
+          "player_id": 663757,
+          "name": "Trent Grisham",
+          "team": "New York Yankees",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 12,
+          "correct": true
+        },
+        {
+          "player_id": 624413,
+          "name": "Pete Alonso",
+          "team": "Baltimore Orioles",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 21,
+          "correct": true
+        },
+        {
+          "player_id": 670541,
+          "name": "Yordan Alvarez",
+          "team": "Houston Astros",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 21,
+          "correct": false
+        },
+        {
+          "player_id": 677951,
+          "name": "Bobby Witt Jr.",
+          "team": "Kansas City Royals",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 6,
+          "correct": true
+        },
+        {
+          "player_id": 693307,
+          "name": "Dillon Dingler",
+          "team": "Detroit Tigers",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "correct": true
+        },
+        {
+          "player_id": 662139,
+          "name": "Daulton Varsho",
+          "team": "Houston Astros",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 6,
+          "correct": true
+        }
+      ]
     }
   }
 }
