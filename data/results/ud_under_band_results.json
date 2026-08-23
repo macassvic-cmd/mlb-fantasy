@@ -312,11 +312,51 @@
           "grade": "win"
         }
       ]
+    },
+    "2026-08-22": {
+      "wins": 2,
+      "losses": 1,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 663757,
+          "name": "Trent Grisham",
+          "team": "New York Yankees",
+          "projected_ud": 5.59,
+          "ud_line": 7.5,
+          "edge": -1.91,
+          "game_time_pt": "10:35 AM PT",
+          "actual_ud": 7,
+          "grade": "win"
+        },
+        {
+          "player_id": 663656,
+          "name": "Kyle Tucker",
+          "team": "Los Angeles Dodgers",
+          "projected_ud": 5.72,
+          "ud_line": 7.5,
+          "edge": -1.78,
+          "game_time_pt": "4:15 PM PT",
+          "actual_ud": 13,
+          "grade": "loss"
+        },
+        {
+          "player_id": 668930,
+          "name": "Brice Turang",
+          "team": "Milwaukee Brewers",
+          "projected_ud": 5.9,
+          "ud_line": 7.5,
+          "edge": -1.6,
+          "game_time_pt": "11:10 AM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 24,
-    "losses": 7,
+    "wins": 26,
+    "losses": 8,
     "dnp": 0
   }
 }

@@ -5501,6 +5501,99 @@
           "correct": true
         }
       ]
+    },
+    "2026-08-22": {
+      "summary": {
+        "total": 8,
+        "correct": 2,
+        "accuracy": 25.0,
+        "over_total": 4,
+        "over_correct": 1,
+        "under_total": 4,
+        "under_correct": 1
+      },
+      "plays": [
+        {
+          "player_id": 608369,
+          "name": "Corey Seager",
+          "team": "Texas Rangers",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 3,
+          "correct": false
+        },
+        {
+          "player_id": 608070,
+          "name": "Jos\u00e9 Ram\u00edrez",
+          "team": "Cleveland Guardians",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 5,
+          "correct": false
+        },
+        {
+          "player_id": 666176,
+          "name": "Jo Adell",
+          "team": "Cleveland Guardians",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 23,
+          "correct": true
+        },
+        {
+          "player_id": 669364,
+          "name": "Xavier Edwards",
+          "team": "Miami Marlins",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "correct": false
+        },
+        {
+          "player_id": 687263,
+          "name": "Zach Neto",
+          "team": "Los Angeles Angels",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 28,
+          "correct": false
+        },
+        {
+          "player_id": 545361,
+          "name": "Mike Trout",
+          "team": "Los Angeles Angels",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 17,
+          "correct": false
+        },
+        {
+          "player_id": 682829,
+          "name": "Elly De La Cruz",
+          "team": "Cincinnati Reds",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 32,
+          "correct": false
+        },
+        {
+          "player_id": 621439,
+          "name": "Byron Buxton",
+          "team": "Minnesota Twins",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 3,
+          "correct": true
+        }
+      ]
     }
   }
 }
