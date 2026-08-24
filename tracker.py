@@ -36,6 +36,16 @@ PREMIUM_RESULTS_PATH = os.path.join(RESULTS_DIR, "premium_results.json")
 STACKS_RESULTS_PATH = os.path.join(RESULTS_DIR, "stacks_results.json")
 STACKS_SHADOW_RESULTS_PATH = os.path.join(RESULTS_DIR, "stacks_shadow_results.json")
 UD_UNDER_BAND_RESULTS_PATH = os.path.join(RESULTS_DIR, "ud_under_band_results.json")
+MARKED_PLAYS_RESULTS_PATH = os.path.join(RESULTS_DIR, "marked_plays_results.json")
+
+# Fire/Hot marked-play cohort thresholds - must match report.top25TreatmentClass's
+# live badge logic (n>=8 minimum sample, 55%+ bar, n>=15 for the "fire" glow
+# vs. n 8-14 for "hot"). Kept as separate constants here (not imported from
+# report.py) because grading needs to reconstruct each date's classification
+# point-in-time, not read report.py's current-running-total badge.
+FIRE_MIN_N = 15
+HOT_MIN_N = 8
+MARK_MIN_RATE = 0.55
 
 
 def classify(projected, actual):
@@ -929,6 +939,101 @@ def track_top25(date_str, rows, results_by_pid):
     if decided:
         print(f"Top 25: {hits}/{len(decided)} win ({round(100*hits/len(decided),1)}%)")
     print(f"Updated -> {TOP25_RESULTS_PATH}")
+
+    track_marked_plays(top25_data)
+
+
+def _mark_tier(n_before, wins_before):
+    """fire/hot/None classification from a player's Top-25 record STRICTLY
+    BEFORE the date being classified - mirrors report.top25TreatmentClass's
+    live badge logic (n>=8 minimum sample, 55%+ bar, n>=15 for fire vs.
+    n 8-14 for hot) but point-in-time, so a date's classification never
+    depends on results that hadn't happened yet when that day's picks went
+    out."""
+    if n_before <= 0:
+        return None
+    rate = wins_before / n_before
+    if rate < MARK_MIN_RATE:
+        return None
+    if n_before >= FIRE_MIN_N:
+        return "fire"
+    if n_before >= HOT_MIN_N:
+        return "hot"
+    return None
+
+
+def track_marked_plays(top25_data):
+    """Fire/Hot marked-play cohort grading.
+
+    Recomputed from scratch off top25_data's full player histories on every
+    call (not accumulated incrementally), because these cohorts are DEFINED
+    by a player's past hit rate: the only honest way to grade a given date
+    is to reconstruct exactly which players would have carried the fire/hot
+    treatment using ONLY their appearances strictly before that date (see
+    _mark_tier). That also makes backfilling free - rerunning this against
+    the existing top25_results.json reconstructs every date's marks from
+    the historical record as it stood that day, with no risk of leaking a
+    player's later results into their own earlier classification.
+
+    UNVALIDATED cohort: it's selected on past performance, so it carries the
+    same regression-to-the-mean risk that retired Premium (see slips.py /
+    report.py PREMIUM history). Track and display it honestly, but it is
+    not a proven edge until it accumulates real out-of-sample volume.
+    """
+    players = top25_data.get("players", {})
+    histories = {pid: sorted(p.get("history", []), key=lambda h: h["date"])
+                 for pid, p in players.items()}
+
+    dates = sorted(top25_data.get("dates", {}).keys())
+    out_dates = {}
+    totals = {"fire": {"wins": 0, "losses": 0}, "hot": {"wins": 0, "losses": 0}}
+
+    for d in dates:
+        day_out = {"fire": [], "hot": []}
+        for e in top25_data["dates"][d]["top25"]:
+            pid = str(e["player_id"])
+            before = [h for h in histories.get(pid, []) if h["date"] < d]
+            wins_before = sum(1 for h in before if h["grade"] == "win")
+            n_before = sum(1 for h in before if h["grade"] in ("win", "loss"))
+            mark = _mark_tier(n_before, wins_before)
+            if mark is None:
+                continue
+            grade = e.get("grade")
+            day_out[mark].append({
+                "player_id": e["player_id"],
+                "name": e.get("name"),
+                "team": e.get("team"),
+                "grade": grade,
+                "n_before": n_before,
+                "wins_before": wins_before,
+                "rate_before": round(100 * wins_before / n_before, 1),
+            })
+            if grade == "win":
+                totals[mark]["wins"] += 1
+            elif grade == "loss":
+                totals[mark]["losses"] += 1
+        if day_out["fire"] or day_out["hot"]:
+            out_dates[d] = day_out
+
+    cohorts = {}
+    for mark in ("fire", "hot"):
+        w, l = totals[mark]["wins"], totals[mark]["losses"]
+        n = w + l
+        cohorts[mark] = {"wins": w, "losses": l, "n": n,
+                          "rate": round(100 * w / n, 1) if n else None}
+
+    out = {"dates": out_dates, "cohorts": cohorts}
+    with open(MARKED_PLAYS_RESULTS_PATH, "w", encoding="utf-8") as f:
+        json.dump(out, f, indent=2)
+
+    for mark in ("fire", "hot"):
+        c = cohorts[mark]
+        if c["n"]:
+            print(f"  Marked plays [{mark}]: {c['wins']}-{c['losses']} ({c['rate']}%, n={c['n']})")
+        else:
+            print(f"  Marked plays [{mark}]: no decided plays yet")
+    print(f"Updated -> {MARKED_PLAYS_RESULTS_PATH}")
+    return out
 
 
 def find_ungraded_date():

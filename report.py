@@ -375,6 +375,7 @@ UD_UNDER_BAND_HI = 2.0  # exclusive - the exact-2.0 clamp bucket performs differ
 UD_UNDER_BAND_SEED = {"wins": 327, "losses": 239, "n": 566}
 UD_UNDER_BAND_SEED_END = "2026-08-17"  # tracker.grade_ud_under_band only counts dates after this
 UD_UNDER_BAND_RESULTS_PATH = os.path.join("data", "results", "ud_under_band_results.json")
+MARKED_PLAYS_RESULTS_PATH = os.path.join("data", "results", "marked_plays_results.json")
 
 
 def in_ud_under_band(row):
@@ -866,6 +867,45 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     t25_calendar_js = json.dumps(t25_calendar_cells)
     t25_all_time_rate = round(100 * t25_all_hits / t25_all_decided, 1) if t25_all_decided else None
 
+    # --- Fire/Hot Marked Plays cohorts (UNVALIDATED - see
+    # tracker.track_marked_plays). Point-in-time reconstruction lives in
+    # tracker.py; this just reads its output and shapes it for display,
+    # using the same daily-calendar domain (t25_dates) as the Top 25
+    # Results calendar above so every tracked date gets a cell even on
+    # days with no qualifying fire/hot plays. -----------------------------
+    marked_data = {"dates": {}, "cohorts": {}}
+    if os.path.exists(MARKED_PLAYS_RESULTS_PATH):
+        try:
+            with open(MARKED_PLAYS_RESULTS_PATH, encoding="utf-8") as f:
+                marked_data = json.load(f)
+        except Exception:
+            pass
+
+    def _mark_calendar(mark):
+        cells = []
+        for d in t25_dates:
+            day = marked_data.get("dates", {}).get(d, {}).get(mark, [])
+            wins = sum(1 for e in day if e.get("grade") == "win")
+            losses = sum(1 for e in day if e.get("grade") == "loss")
+            n = wins + losses
+            cells.append({
+                "date": d, "wins": wins, "losses": losses, "n": n,
+                "rate": round(100 * wins / n, 1) if n else None,
+            })
+        return cells
+
+    def _mark_summary(mark):
+        c = marked_data.get("cohorts", {}).get(mark) or {"wins": 0, "losses": 0, "n": 0, "rate": None}
+        wins, losses, n = c.get("wins", 0), c.get("losses", 0), c.get("n", 0)
+        ci_lo, ci_hi = wilson_ci(wins, n)
+        return {"wins": wins, "losses": losses, "n": n, "rate": c.get("rate"),
+                "ci_lo": ci_lo, "ci_hi": ci_hi}
+
+    fire_cal_js = json.dumps(_mark_calendar("fire"))
+    hot_cal_js = json.dumps(_mark_calendar("hot"))
+    fire_summary_js = json.dumps(_mark_summary("fire"))
+    hot_summary_js = json.dumps(_mark_summary("hot"))
+
     # Default display order for every card grid is "soonest game first",
     # which is independent of (and applied after) whatever scoring/edge
     # logic decided which players make a given section - missing game
@@ -1064,6 +1104,13 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     50%      {{ box-shadow: 0 0 20px 5px rgba(249,115,22,0.85); }}
   }}
 
+  .unvalidated-badge {{ display: inline-block; margin-left: 8px; padding: 2px 8px; font-size: 11px;
+                         font-weight: 800; letter-spacing: 0.5px; color: #fb923c;
+                         border: 1px solid #fb923c; border-radius: 10px; vertical-align: middle; }}
+  .unvalidated-note {{ font-size: 12px; color: #fb923c; background: #2a1c0d; border: 1px solid #7c4a1e;
+                        border-radius: 6px; padding: 8px 12px; margin-bottom: 14px; }}
+  .cohort-label {{ font-size: 13px; font-weight: 700; color: #c4cee0; margin: 14px 0 8px; }}
+
   /* Click-to-mark-used: dims the card so the eye skips it while scanning,
      without reordering or hiding anything. Purely a client-side visual
      toggle persisted in localStorage - see toggleUsed()/usedStorageKey.
@@ -1139,6 +1186,10 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
                justify-content: center; }}
   .cal-date {{ font-size: 11px; color: #9fb0cc; }}
   .cal-rate {{ font-size: 16px; font-weight: 800; color: #fff; margin-top: 2px; }}
+  /* Wider variant for calendars that show a full "W-L (rate%)" record
+     instead of a bare percentage - see underCalGrid/fireCalGrid/hotCalGrid. */
+  .cal-cell.wide {{ width: 112px; }}
+  .cal-cell.wide .cal-rate {{ font-size: 12px; }}
   .empty-msg {{ color: #9fb0cc; font-size: 14px; }}
 
   /* Player History tab */
@@ -1340,6 +1391,16 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     <span style="background:#1c2944;color:#9fb0cc;border:1px solid #555;">Gray = no result yet</span>
   </div>
   <div class="card-grid" id="t25CardGrid"></div>
+
+  <h3 class="section-title">Fire &amp; Hot Marked Plays <span class="unvalidated-badge">UNVALIDATED</span></h3>
+  <div class="unvalidated-note">This cohort is selected by each player's own past Top 25 hit rate (fire = n&ge;15 appearances at 55%+; hot = n 8&ndash;14 at 55%+), so it is exposed to the same regression-to-the-mean risk that retired Premium. Treated and displayed honestly here, not as a proven edge, until it has real out-of-sample volume behind it.</div>
+  <div class="cohort-label">Fire (n&ge;15, 55%+ historical rate)</div>
+  <div class="results-summary" id="fireSummary"></div>
+  <div class="cal-grid" id="fireCalGrid"></div>
+  <div class="cohort-label">Hot (n 8&ndash;14, 55%+ historical rate)</div>
+  <div class="results-summary" id="hotSummary"></div>
+  <div class="cal-grid" id="hotCalGrid"></div>
+
   <h3 class="section-title">Running Record (all-time Top 25 appearances)</h3>
   <div class="table-wrap">
     <table id="t25Tbl">
@@ -1383,6 +1444,10 @@ const T25_CARDS = {yesterday_cards_js};
 const T25_DAILY_DATE = {json.dumps(daily_date)};
 const T25_DAILY_RATE = {json.dumps(daily_hit_rate)};
 const T25_ROLLING_RATE = {json.dumps(rolling_hit_rate)};
+const FIRE_CAL = {fire_cal_js};
+const HOT_CAL = {hot_cal_js};
+const FIRE_SUMMARY = {fire_summary_js};
+const HOT_SUMMARY = {hot_summary_js};
 const T25_BEST = {json.dumps(best_performer)};
 const T25_WORST = {json.dumps(worst_performer)};
 const T25_RECORDS = {record_rows_js};
@@ -1793,12 +1858,44 @@ if (T25_CARDS.length === 0) {{
   t25Grid.innerHTML = '<div class="empty-msg">No Top 25 results yet — run tracker.py after games finish.</div>';
 }}
 
+// --- Fire/Hot Marked Plays cohorts (UNVALIDATED - see
+// tracker.track_marked_plays). Renders a summary card + a daily calendar
+// strip per cohort, same "W-L (rate%)" tile format as Under Results so a
+// percentage never appears without the record behind it. -----------------
+function renderMarkCohort(summaryElId, calElId, summary, cal, emptyMsg) {{
+  const summaryEl = document.getElementById(summaryElId);
+  const ciText = summary.n ? `${{summary.ci_lo}}&ndash;${{summary.ci_hi}}%` : 'N/A';
+  summaryEl.innerHTML = `
+    <div class="summary-card"><div class="summary-value">${{summary.wins}}-${{summary.losses}}${{summary.rate !== null ? ' (' + summary.rate + '%)' : ''}}</div>
+         <div class="summary-label">All-time record (n=${{summary.n}})</div></div>
+    <div class="summary-card"><div class="summary-value">${{ciText}}</div>
+         <div class="summary-label">95% Wilson CI</div></div>
+  `;
+  const calEl = document.getElementById(calElId);
+  for (const c of cal) {{
+    if (c.n === 0) continue;
+    const cell = document.createElement('div');
+    cell.className = 'cal-cell wide';
+    cell.style.borderColor = c.rate === null ? '#555' : hitColor(c.rate);
+    cell.title = `${{c.date}}\\n${{c.wins}}-${{c.losses}}${{c.rate !== null ? ' (' + c.rate + '%)' : ''}}`;
+    cell.innerHTML = `<div class="cal-date">${{c.date.slice(5)}}</div><div class="cal-rate">${{c.wins}}-${{c.losses}} (${{c.rate}}%)</div>`;
+    calEl.appendChild(cell);
+  }}
+  if (!cal.some(c => c.n > 0)) {{
+    calEl.innerHTML = `<div class="empty-msg">${{emptyMsg}}</div>`;
+  }}
+}}
+renderMarkCohort('fireSummary', 'fireCalGrid', FIRE_SUMMARY, FIRE_CAL,
+  'No fire-marked plays yet - needs a player with 15+ Top 25 appearances at a 55%+ historical rate.');
+renderMarkCohort('hotSummary', 'hotCalGrid', HOT_SUMMARY, HOT_CAL,
+  'No hot-marked plays yet - needs a player with 8-14 Top 25 appearances at a 55%+ historical rate.');
+
 // --- Under Results (UD UNDER 1.5-2.0 edge band tracking) ----------------
 const underSummary = document.getElementById('underSummary');
 {{
   let html = '';
-  html += `<div class="summary-card"><div class="summary-value">${{UNDER_TOTAL_WINS}}-${{UNDER_TOTAL_LOSSES}}</div>
-           <div class="summary-label">All-time band record (${{UNDER_TOTAL_RATE}}%, n=${{UNDER_TOTAL_N}})</div></div>`;
+  html += `<div class="summary-card"><div class="summary-value">${{UNDER_TOTAL_WINS}}-${{UNDER_TOTAL_LOSSES}} (${{UNDER_TOTAL_RATE}}%)</div>
+           <div class="summary-label">All-time band record (n=${{UNDER_TOTAL_N}})</div></div>`;
   html += `<div class="summary-card"><div class="summary-value">${{UNDER_CI_LO}}&ndash;${{UNDER_CI_HI}}%</div>
            <div class="summary-label">95% Wilson CI</div></div>`;
   html += `<div class="summary-card"><div class="summary-value">${{UNDER_TOTAL_DNP}}</div>
@@ -1809,10 +1906,10 @@ const underSummary = document.getElementById('underSummary');
 const underCalGrid = document.getElementById('underCalGrid');
 for (const c of UNDER_CAL) {{
   const cell = document.createElement('div');
-  cell.className = 'cal-cell';
+  cell.className = 'cal-cell wide';
   cell.style.borderColor = c.hit_rate === null ? '#555' : hitColor(c.hit_rate);
   cell.title = `${{c.date}}\\n${{c.wins}}-${{c.losses}}${{c.hit_rate !== null ? ' (' + c.hit_rate + '%)' : ''}}\\nDNP: ${{c.dnp}}`;
-  cell.innerHTML = `<div class="cal-date">${{c.date.slice(5)}}</div><div class="cal-rate">${{c.hit_rate !== null ? c.hit_rate + '%' : '—'}}</div>`;
+  cell.innerHTML = `<div class="cal-date">${{c.date.slice(5)}}</div><div class="cal-rate">${{c.hit_rate !== null ? c.wins + '-' + c.losses + ' (' + c.hit_rate + '%)' : '—'}}</div>`;
   underCalGrid.appendChild(cell);
 }}
 if (UNDER_CAL.length === 0) {{
