@@ -2355,20 +2355,80 @@
           "rate_before": 63.6
         }
       ]
+    },
+    "2026-08-24": {
+      "fire": [
+        {
+          "player_id": 691718,
+          "name": "Pete Crow-Armstrong",
+          "team": "Chicago Cubs",
+          "grade": "win",
+          "n_before": 35,
+          "wins_before": 23,
+          "rate_before": 65.7
+        },
+        {
+          "player_id": 673548,
+          "name": "Seiya Suzuki",
+          "team": "Chicago Cubs",
+          "grade": "win",
+          "n_before": 25,
+          "wins_before": 18,
+          "rate_before": 72.0
+        },
+        {
+          "player_id": 701398,
+          "name": "Sal Stewart",
+          "team": "Cincinnati Reds",
+          "grade": "loss",
+          "n_before": 15,
+          "wins_before": 9,
+          "rate_before": 60.0
+        }
+      ],
+      "hot": [
+        {
+          "player_id": 672515,
+          "name": "Gabriel Moreno",
+          "team": "Arizona Diamondbacks",
+          "grade": "loss",
+          "n_before": 12,
+          "wins_before": 8,
+          "rate_before": 66.7
+        },
+        {
+          "player_id": 608324,
+          "name": "Alex Bregman",
+          "team": "Chicago Cubs",
+          "grade": "loss",
+          "n_before": 12,
+          "wins_before": 7,
+          "rate_before": 58.3
+        },
+        {
+          "player_id": 800050,
+          "name": "Chase DeLauter",
+          "team": "Cleveland Guardians",
+          "grade": null,
+          "n_before": 13,
+          "wins_before": 8,
+          "rate_before": 61.5
+        }
+      ]
     }
   },
   "cohorts": {
     "fire": {
-      "wins": 40,
-      "losses": 41,
-      "n": 81,
-      "rate": 49.4
+      "wins": 42,
+      "losses": 42,
+      "n": 84,
+      "rate": 50.0
     },
     "hot": {
       "wins": 82,
-      "losses": 63,
-      "n": 145,
-      "rate": 56.6
+      "losses": 65,
+      "n": 147,
+      "rate": 55.8
     }
   }
 }

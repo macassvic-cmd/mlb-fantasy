@@ -5687,6 +5687,89 @@
           "correct": false
         }
       ]
+    },
+    "2026-08-24": {
+      "summary": {
+        "total": 7,
+        "correct": 6,
+        "accuracy": 85.7,
+        "over_total": 4,
+        "over_correct": 3,
+        "under_total": 3,
+        "under_correct": 3
+      },
+      "plays": [
+        {
+          "player_id": 605137,
+          "name": "Josh Bell",
+          "team": "Minnesota Twins",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 17,
+          "correct": true
+        },
+        {
+          "player_id": 650490,
+          "name": "Yandy D\u00edaz",
+          "team": "Tampa Bay Rays",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "correct": true
+        },
+        {
+          "player_id": 691406,
+          "name": "Junior Caminero",
+          "team": "Tampa Bay Rays",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "correct": true
+        },
+        {
+          "player_id": 678246,
+          "name": "Miguel Vargas",
+          "team": "Chicago White Sox",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 6,
+          "correct": false
+        },
+        {
+          "player_id": 682829,
+          "name": "Elly De La Cruz",
+          "team": "Cincinnati Reds",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 3,
+          "correct": true
+        },
+        {
+          "player_id": 607043,
+          "name": "Brandon Nimmo",
+          "team": "Texas Rangers",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 6,
+          "correct": true
+        },
+        {
+          "player_id": 545361,
+          "name": "Mike Trout",
+          "team": "Los Angeles Angels",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 6,
+          "correct": true
+        }
+      ]
     }
   }
 }
