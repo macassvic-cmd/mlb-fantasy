@@ -2415,14 +2415,46 @@
           "rate_before": 61.5
         }
       ]
+    },
+    "2026-08-25": {
+      "fire": [
+        {
+          "player_id": 677951,
+          "name": "Bobby Witt Jr.",
+          "team": "Kansas City Royals",
+          "grade": "loss",
+          "n_before": 19,
+          "wins_before": 11,
+          "rate_before": 57.9
+        },
+        {
+          "player_id": 676475,
+          "name": "Alec Burleson",
+          "team": "St. Louis Cardinals",
+          "grade": "loss",
+          "n_before": 16,
+          "wins_before": 9,
+          "rate_before": 56.2
+        },
+        {
+          "player_id": 660271,
+          "name": "Shohei Ohtani",
+          "team": "Los Angeles Dodgers",
+          "grade": "win",
+          "n_before": 23,
+          "wins_before": 13,
+          "rate_before": 56.5
+        }
+      ],
+      "hot": []
     }
   },
   "cohorts": {
     "fire": {
-      "wins": 42,
-      "losses": 42,
-      "n": 84,
-      "rate": 50.0
+      "wins": 43,
+      "losses": 44,
+      "n": 87,
+      "rate": 49.4
     },
     "hot": {
       "wins": 82,
