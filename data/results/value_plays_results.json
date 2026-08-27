@@ -5863,6 +5863,89 @@
           "correct": false
         }
       ]
+    },
+    "2026-08-26": {
+      "summary": {
+        "total": 7,
+        "correct": 4,
+        "accuracy": 57.1,
+        "over_total": 4,
+        "over_correct": 2,
+        "under_total": 3,
+        "under_correct": 2
+      },
+      "plays": [
+        {
+          "player_id": 695734,
+          "name": "Daylen Lile",
+          "team": "Washington Nationals",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 0,
+          "correct": false
+        },
+        {
+          "player_id": 805808,
+          "name": "Kevin McGonigle",
+          "team": "Detroit Tigers",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "correct": false
+        },
+        {
+          "player_id": 680757,
+          "name": "Steven Kwan",
+          "team": "Cleveland Guardians",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 11,
+          "correct": true
+        },
+        {
+          "player_id": 608070,
+          "name": "Jos\u00e9 Ram\u00edrez",
+          "team": "Cleveland Guardians",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 13,
+          "correct": true
+        },
+        {
+          "player_id": 682829,
+          "name": "Elly De La Cruz",
+          "team": "Cincinnati Reds",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 18,
+          "correct": false
+        },
+        {
+          "player_id": 673548,
+          "name": "Seiya Suzuki",
+          "team": "Chicago Cubs",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 6,
+          "correct": true
+        },
+        {
+          "player_id": 691406,
+          "name": "Junior Caminero",
+          "team": "Tampa Bay Rays",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 6,
+          "correct": true
+        }
+      ]
     }
   }
 }

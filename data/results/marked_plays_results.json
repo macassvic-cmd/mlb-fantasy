@@ -2447,20 +2447,62 @@
         }
       ],
       "hot": []
+    },
+    "2026-08-26": {
+      "fire": [
+        {
+          "player_id": 660271,
+          "name": "Shohei Ohtani",
+          "team": "Los Angeles Dodgers",
+          "grade": "win",
+          "n_before": 24,
+          "wins_before": 14,
+          "rate_before": 58.3
+        },
+        {
+          "player_id": 664983,
+          "name": "Jake McCarthy",
+          "team": "Colorado Rockies",
+          "grade": "win",
+          "n_before": 27,
+          "wins_before": 15,
+          "rate_before": 55.6
+        }
+      ],
+      "hot": [
+        {
+          "player_id": 680757,
+          "name": "Steven Kwan",
+          "team": "Cleveland Guardians",
+          "grade": "win",
+          "n_before": 9,
+          "wins_before": 9,
+          "rate_before": 100.0
+        },
+        {
+          "player_id": 672515,
+          "name": "Gabriel Moreno",
+          "team": "Arizona Diamondbacks",
+          "grade": null,
+          "n_before": 13,
+          "wins_before": 8,
+          "rate_before": 61.5
+        }
+      ]
     }
   },
   "cohorts": {
     "fire": {
-      "wins": 43,
+      "wins": 45,
       "losses": 44,
-      "n": 87,
-      "rate": 49.4
+      "n": 89,
+      "rate": 50.6
     },
     "hot": {
-      "wins": 82,
+      "wins": 83,
       "losses": 65,
-      "n": 147,
-      "rate": 55.8
+      "n": 148,
+      "rate": 56.1
     }
   }
 }
