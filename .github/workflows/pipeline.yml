@@ -70,6 +70,27 @@ jobs:
       # ── Fresh-data check (pipeline crons only) ───────────────────────────
       # Sets skip=true if today's data file is <3h old. All pipeline steps
       # gate on this output so every-2h fires are free if data already exists.
+      #
+      # BUG FIXED 2026-08-27: this used to compare against `date -r "$DATA"`
+      # (the file's mtime). actions/checkout resets every file's mtime to
+      # checkout time, not its original commit time - so on a fresh runner
+      # the file always reads as a few seconds old, and every fire after the
+      # day's first successful fetch silently skipped regardless of how
+      # stale the data actually was. Went unnoticed for a month because the
+      # first fire of each UTC day still ran (file didn't exist yet), which
+      # looked like the gate working.
+      #
+      # Fixed by reading the file's last commit timestamp via `git log`
+      # instead of its mtime - immune to checkout, survives any runner.
+      # (Considered stamping a generated_at field inside the data JSON
+      # itself instead, which would be independent of git entirely, but
+      # data/{date}.json is a bare list of player records - not an object -
+      # consumed as such by projections.py/tracker.py/backtest.py/stacks.py.
+      # Wrapping it in {"generated_at": ..., "players": [...]} would mean
+      # updating every reader's schema for a freshness check that doesn't
+      # need it. `git log` gets the same correctness with a one-line,
+      # workflow-only change - checkout already uses fetch-depth: 0, so
+      # full history is available.)
 
       - name: Check for fresh pipeline data
         id: freshness
@@ -82,13 +103,19 @@ jobs:
           TODAY=$(date -u +%Y-%m-%d)
           DATA="data/${TODAY}.json"
           if [ -f "$DATA" ]; then
-            AGE=$(( $(date +%s) - $(date -r "$DATA" +%s 2>/dev/null || stat -c %Y "$DATA") ))
-            if [ "$AGE" -lt 10800 ]; then
-              echo "skip=true"  >> "$GITHUB_OUTPUT"
-              echo "Data for ${TODAY} is ${AGE}s old (<3h) — skipping this fire."
-            else
+            COMMIT_TS=$(git log -1 --format=%ct -- "$DATA" 2>/dev/null)
+            if [ -z "$COMMIT_TS" ]; then
               echo "skip=false" >> "$GITHUB_OUTPUT"
-              echo "Data for ${TODAY} is ${AGE}s old (>=3h) — running pipeline."
+              echo "Data for ${TODAY} exists but has no commit history (unexpected) — running pipeline."
+            else
+              AGE=$(( $(date +%s) - COMMIT_TS ))
+              if [ "$AGE" -lt 10800 ]; then
+                echo "skip=true"  >> "$GITHUB_OUTPUT"
+                echo "Data for ${TODAY} is ${AGE}s old (<3h, by last commit) — skipping this fire."
+              else
+                echo "skip=false" >> "$GITHUB_OUTPUT"
+                echo "Data for ${TODAY} is ${AGE}s old (>=3h, by last commit) — running pipeline."
+              fi
             fi
           else
             echo "skip=false" >> "$GITHUB_OUTPUT"
