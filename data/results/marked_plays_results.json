@@ -2489,20 +2489,62 @@
           "rate_before": 61.5
         }
       ]
+    },
+    "2026-08-27": {
+      "fire": [
+        {
+          "player_id": 677951,
+          "name": "Bobby Witt Jr.",
+          "team": "Kansas City Royals",
+          "grade": "win",
+          "n_before": 20,
+          "wins_before": 11,
+          "rate_before": 55.0
+        },
+        {
+          "player_id": 664983,
+          "name": "Jake McCarthy",
+          "team": "Colorado Rockies",
+          "grade": "loss",
+          "n_before": 28,
+          "wins_before": 16,
+          "rate_before": 57.1
+        },
+        {
+          "player_id": 682928,
+          "name": "CJ Abrams",
+          "team": "Washington Nationals",
+          "grade": "loss",
+          "n_before": 25,
+          "wins_before": 15,
+          "rate_before": 60.0
+        }
+      ],
+      "hot": [
+        {
+          "player_id": 681198,
+          "name": "TJ Rumfield",
+          "team": "Colorado Rockies",
+          "grade": "win",
+          "n_before": 9,
+          "wins_before": 7,
+          "rate_before": 77.8
+        }
+      ]
     }
   },
   "cohorts": {
     "fire": {
-      "wins": 45,
-      "losses": 44,
-      "n": 89,
-      "rate": 50.6
+      "wins": 46,
+      "losses": 46,
+      "n": 92,
+      "rate": 50.0
     },
     "hot": {
-      "wins": 83,
+      "wins": 84,
       "losses": 65,
-      "n": 148,
-      "rate": 56.1
+      "n": 149,
+      "rate": 56.4
     }
   }
 }
