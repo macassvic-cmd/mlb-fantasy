@@ -2,52 +2,68 @@
   "date": "2026-08-29",
   "plays": [
     {
-      "player_id": 646240,
-      "name": "Rafael Devers",
-      "team": "San Francisco Giants",
+      "player_id": 686948,
+      "name": "Drake Baldwin",
+      "team": "Atlanta Braves",
+      "call": "over",
+      "edge": 2.0,
+      "ud_line": 7.5
+    },
+    {
+      "player_id": 621566,
+      "name": "Matt Olson",
+      "team": "Atlanta Braves",
+      "call": "over",
+      "edge": 2.0,
+      "ud_line": 7.5
+    },
+    {
+      "player_id": 686797,
+      "name": "Brooks Lee",
+      "team": "Minnesota Twins",
       "call": "over",
       "edge": 2.0,
       "ud_line": 6.5
     },
     {
-      "player_id": 672515,
-      "name": "Gabriel Moreno",
-      "team": "Arizona Diamondbacks",
+      "player_id": 665019,
+      "name": "Kody Clemens",
+      "team": "Minnesota Twins",
       "call": "over",
       "edge": 2.0,
       "ud_line": 6.5
     },
     {
-      "player_id": 703607,
-      "name": "Henry Bolte",
-      "team": "Athletics",
-      "call": "over",
-      "edge": 2.0,
-      "ud_line": 6.5
+      "player_id": 808959,
+      "name": "Munetaka Murakami",
+      "team": "Chicago White Sox",
+      "call": "under",
+      "edge": -2.0,
+      "ud_line": 8.5
     },
     {
-      "player_id": 671732,
-      "name": "Lawrence Butler",
-      "team": "Athletics",
-      "call": "over",
-      "edge": 2.0,
-      "ud_line": 6.5
+      "player_id": 608070,
+      "name": "Jos\u00e9 Ram\u00edrez",
+      "team": "Cleveland Guardians",
+      "call": "under",
+      "edge": -2.0,
+      "ud_line": 8.5
     },
     {
-      "player_id": 545361,
-      "name": "Mike Trout",
-      "team": "Los Angeles Angels",
+      "player_id": 668930,
+      "name": "Brice Turang",
+      "team": "Milwaukee Brewers",
+      "call": "under",
+      "edge": -2.0,
+      "ud_line": 7.5
+    },
+    {
+      "player_id": 677594,
+      "name": "Julio Rodr\u00edguez",
+      "team": "Seattle Mariners",
       "call": "under",
       "edge": -2.0,
       "ud_line": 6.5
-    },
-    {
-      "player_id": 694208,
-      "name": "Mois\u00e9s Ballesteros",
-      "team": "Los Angeles Angels",
-      "call": "under",
-      "edge": -1.54,
-      "ud_line": 5.5
     }
   ]
 }

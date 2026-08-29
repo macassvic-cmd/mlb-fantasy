@@ -172,11 +172,11 @@ def refresh_edge_bucket_rates(results_data, force=False):
 # real-line calibration is genuinely different in shape, not just worse:
 # e.g. UNDER 1.5-2.0 is UD's *best* bucket (59.4%) but PP's *weakest*
 # (48.2%). Fit from 2026-06-12 to 2026-07-07 (21 dates with real PrizePicks
-# lines - see MIN_EXPECTED_LINES in scrapers/market_lines.py); PrizePicks
-# has returned zero lines every day since 2026-07-08 (DataDome bot
-# protection - see market_lines.get_market_lines), so this can't be
-# refreshed with live data until that's resolved. NOT wired into
-# _pp_candidates() yet - PP stays paused regardless of calibration quality
+# lines). PrizePicks returned zero lines every day from 2026-07-08 until
+# the fetch itself was removed 2026-08-29 (DataDome bot-protection never
+# lifted - see scrapers/market_lines.py's module docstring), so this
+# can't be refreshed with live data unless PP fetching is reinstated. NOT
+# wired into _pp_candidates() yet - PP stays paused regardless of calibration quality
 # until there's a live source of real PP lines again; this exists so
 # re-enabling PP is a calibration swap, not a re-investigation.
 # ---------------------------------------------------------------------------
