@@ -260,7 +260,7 @@
 <header>
   <div class="logo">⚾ MLB FANTASY PRO</div>
   <div class="header-mid">2026-08-29 &mdash; <span class="games">15 games today</span></div>
-  <div class="header-right" id="lastUpdated">Last Updated: 2026-08-29 10:44 AM PT</div>
+  <div class="header-right" id="lastUpdated">Last Updated: 2026-08-29 11:13 AM PT</div>
 </header>
 
 <div id="freshnessBanner" class="freshness-banner"></div>
@@ -395,6 +395,11 @@
   </div>
   <h3 class="section-title" id="underYesterdayTitle">Latest Graded Day's Band Plays</h3>
   <div class="card-grid" id="underCardGrid"></div>
+
+  <h3 class="section-title">6.5-Line UNDER, Non-Band <span class="unvalidated-badge">UNVALIDATED</span></h3>
+  <div class="unvalidated-note">Opened 2026-08-29 after the 6.5/under line-value breakdown showed plays OUTSIDE the validated 1.5&ndash;2.0 band running 633-526 (54.6%, n=1159) historically. That rate is the discovery number itself, not an out-of-sample confirmation - frozen here as the seed and tracked forward with the same discipline as the band. Not surfaced as a recommended play on the Unders tab until it earns real out-of-sample volume.</div>
+  <div class="results-summary" id="nonband65Summary"></div>
+  <div class="cal-grid" id="nonband65CalGrid"></div>
 </div>
 
 
@@ -438,7 +443,16 @@ const UNDER_TOTAL_RATE = 58.5;
 const UNDER_TOTAL_DNP = 3;
 const UNDER_CI_LO = 54.6;
 const UNDER_CI_HI = 62.3;
-const GENERATED_AT = "2026-08-29T10:44:24.645081-07:00";
+const NONBAND65_CAL = [];
+const NONBAND65_TOTAL_WINS = 633;
+const NONBAND65_TOTAL_LOSSES = 526;
+const NONBAND65_TOTAL_N = 1159;
+const NONBAND65_TOTAL_RATE = 54.6;
+const NONBAND65_LIVE_N = 0;
+const NONBAND65_LIVE_DNP = 0;
+const NONBAND65_CI_LO = 51.7;
+const NONBAND65_CI_HI = 57.5;
+const GENERATED_AT = "2026-08-29T11:13:35.090825-07:00";
 const GAME_DATE = "2026-08-29";
 const PLAYER_COUNT = 270;
 const GAMES_COUNT = 15;
@@ -929,6 +943,35 @@ for (const c of UNDER_YESTERDAY_CARDS) {
 }
 if (UNDER_YESTERDAY_CARDS.length === 0) {
   underGrid.innerHTML = '<div class="empty-msg">No band plays graded yet.</div>';
+}
+
+// --- 6.5-line UNDER, non-band (UNVALIDATED forward tracking, see
+// report.NON_BAND_65_UNDER_SEED module comment) - record/rate/n/CI +
+// calendar only, same as the Fire/Hot cohorts; deliberately no play-cards
+// grid since this cohort is never surfaced as a recommended play. --------
+{
+  const summaryEl = document.getElementById('nonband65Summary');
+  const ciText = NONBAND65_TOTAL_N ? `${NONBAND65_CI_LO}&ndash;${NONBAND65_CI_HI}%` : 'N/A';
+  summaryEl.innerHTML = `
+    <div class="summary-card"><div class="summary-value">${NONBAND65_TOTAL_WINS}-${NONBAND65_TOTAL_LOSSES} (${NONBAND65_TOTAL_RATE}%)</div>
+         <div class="summary-label">All-time record (n=${NONBAND65_TOTAL_N}, ${NONBAND65_LIVE_N} tracked live since 2026-08-29)</div></div>
+    <div class="summary-card"><div class="summary-value">${ciText}</div>
+         <div class="summary-label">95% Wilson CI</div></div>
+    <div class="summary-card"><div class="summary-value">${NONBAND65_LIVE_DNP}</div>
+         <div class="summary-label">DNP (excluded from record)</div></div>
+  `;
+  const calEl = document.getElementById('nonband65CalGrid');
+  for (const c of NONBAND65_CAL) {
+    const cell = document.createElement('div');
+    cell.className = 'cal-cell wide';
+    cell.style.borderColor = c.hit_rate === null ? '#555' : hitColor(c.hit_rate);
+    cell.title = `${c.date}\n${c.wins}-${c.losses}${c.hit_rate !== null ? ' (' + c.hit_rate + '%)' : ''}\nDNP: ${c.dnp}`;
+    cell.innerHTML = `<div class="cal-date">${c.date.slice(5)}</div><div class="cal-rate">${c.hit_rate !== null ? c.wins + '-' + c.losses + ' (' + c.hit_rate + '%)' : '—'}</div>`;
+    calEl.appendChild(cell);
+  }
+  if (NONBAND65_CAL.length === 0) {
+    calEl.innerHTML = '<div class="empty-msg">No non-band 6.5/under results yet - tracking starts the day after 2026-08-29.</div>';
+  }
 }
 
 const T25_COLS = [
