@@ -37,6 +37,7 @@ STACKS_RESULTS_PATH = os.path.join(RESULTS_DIR, "stacks_results.json")
 STACKS_SHADOW_RESULTS_PATH = os.path.join(RESULTS_DIR, "stacks_shadow_results.json")
 UD_UNDER_BAND_RESULTS_PATH = os.path.join(RESULTS_DIR, "ud_under_band_results.json")
 MARKED_PLAYS_RESULTS_PATH = os.path.join(RESULTS_DIR, "marked_plays_results.json")
+NON_BAND_65_UNDER_RESULTS_PATH = os.path.join(RESULTS_DIR, "non_band_65_under_results.json")
 
 # Fire/Hot marked-play cohort thresholds - must match report.top25TreatmentClass's
 # live badge logic (n>=8 minimum sample, 55%+ bar, n>=15 for the "fire" glow
@@ -228,6 +229,7 @@ def track_date(date_str):
     track_top25(date_str, rows, results_by_pid)
     grade_value_plays(date_str, results_by_pid)
     grade_ud_under_band(date_str, results_by_pid)
+    grade_65_under_nonband(date_str, results_by_pid)
     # Premium/Slips/Stacks (and Stacks shadow-mode) retired from the live
     # dashboard 2026-08-18 - see report.py/slips.py/stacks.py. No point
     # accumulating win/loss records for products nobody sees anymore, so
@@ -424,6 +426,79 @@ def grade_ud_under_band(date_str, results_by_pid):
     total_n = total_wins + total_losses
     rate = round(100 * total_wins / total_n, 1) if total_n else 0.0
     print(f"UD UNDER 1.5-2.0 band: {wins}-{losses} today ({dnp} DNP) -> live-tracked "
+          f"{data['record']['wins']}-{data['record']['losses']} ({data['record']['dnp']} DNP), combined with seed "
+          f"{total_wins}-{total_losses} ({rate}%, n={total_n})")
+
+
+def grade_65_under_nonband(date_str, results_by_pid):
+    """Grade the day's non-band 6.5-line UNDER calls - the forward-tracking
+    cohort opened 2026-08-29 (see report.NON_BAND_65_UNDER_SEED module
+    comment). Same structure as grade_ud_under_band: reads the day's
+    candidate list from report.save_65_under_nonband_plays' snapshot
+    (data/non_band_65_under_plays/{date}.json) rather than reconstructing
+    candidacy after the fact, for the same DNP-visibility reason. DNPs are
+    counted separately and excluded from win/loss. Only dates after
+    report.NON_BAND_65_UNDER_SEED_END count, so the frozen 1159-play seed
+    is never double-counted."""
+    if date_str <= report.NON_BAND_65_UNDER_SEED_END:
+        print(f"6.5/under non-band: {date_str} is in the seed window (through "
+              f"{report.NON_BAND_65_UNDER_SEED_END}), not graded separately.")
+        return
+
+    plays_path = os.path.join(report.NON_BAND_65_UNDER_PLAYS_DIR, f"{date_str}.json")
+    if not os.path.exists(plays_path):
+        print(f"6.5/under non-band: no saved plays snapshot for {date_str} "
+              f"(dashboard wasn't generated that day?) - skipping.")
+        return
+    candidates = load_json(plays_path, {"plays": []}).get("plays", [])
+
+    wins = losses = dnp = 0
+    graded_plays = []
+    for play in candidates:
+        res = results_by_pid.get(play["player_id"])
+        if res is None:
+            grade = "dnp"
+            dnp += 1
+            actual_ud = None
+        else:
+            actual_ud = res.get("actual_ud")
+            result_ud = res.get("result_ud")
+            if result_ud == "win":
+                grade, wins = "win", wins + 1
+            elif result_ud == "loss":
+                grade, losses = "loss", losses + 1
+            elif result_ud == "push":
+                grade = "push"
+            else:
+                grade, dnp = "dnp", dnp + 1
+        graded_plays.append({**play, "actual_ud": actual_ud, "grade": grade})
+
+    data = load_json(NON_BAND_65_UNDER_RESULTS_PATH,
+                      {"seed": report.NON_BAND_65_UNDER_SEED, "dates": {}, "record": {"wins": 0, "losses": 0, "dnp": 0}})
+    data.setdefault("dates", {})
+    entry = {"wins": wins, "losses": losses, "dnp": dnp, "plays": graded_plays}
+    if date_str in report.LOW_COVERAGE_DATES:
+        entry["low_coverage"] = True
+        entry["low_coverage_reason"] = report.LOW_COVERAGE_DATES[date_str]
+    data["dates"][date_str] = entry
+
+    counted = {d: dd for d, dd in data["dates"].items() if not dd.get("low_coverage")}
+    data["record"] = {
+        "wins": sum(d["wins"] for d in counted.values()),
+        "losses": sum(d["losses"] for d in counted.values()),
+        "dnp": sum(d.get("dnp", 0) for d in counted.values()),
+    }
+
+    os.makedirs(RESULTS_DIR, exist_ok=True)
+    with open(NON_BAND_65_UNDER_RESULTS_PATH, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2)
+
+    seed = report.NON_BAND_65_UNDER_SEED
+    total_wins = seed["wins"] + data["record"]["wins"]
+    total_losses = seed["losses"] + data["record"]["losses"]
+    total_n = total_wins + total_losses
+    rate = round(100 * total_wins / total_n, 1) if total_n else 0.0
+    print(f"6.5/under non-band: {wins}-{losses} today ({dnp} DNP) -> live-tracked "
           f"{data['record']['wins']}-{data['record']['losses']} ({data['record']['dnp']} DNP), combined with seed "
           f"{total_wins}-{total_losses} ({rate}%, n={total_n})")
 

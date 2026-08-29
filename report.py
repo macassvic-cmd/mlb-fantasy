@@ -399,6 +399,57 @@ def in_ud_under_band(row):
     return bool(row.get("market_anchored")) and edge is not None and -UD_UNDER_BAND_HI < edge <= -UD_UNDER_BAND_LO
 
 
+# ---------------------------------------------------------------------------
+# 6.5-line UNDER, non-band - forward-only cohort opened 2026-08-29. The
+# line-value breakdown that day showed 6.5/under plays OUTSIDE the
+# validated 1.5-2.0 band (in_ud_under_band) running 54.6% (633-526, n=1159,
+# Wilson CI floor 51.7%) across the full 2026-06-14 through 2026-08-28
+# history - distinct from, not a restatement of, the band's own 58.7% on
+# the 14% of 6.5/under plays that ARE in-band. That 54.6% is a discovery
+# number, not an out-of-sample confirmation - frozen here as the seed and
+# tracked forward with the same discipline as the band (own results file,
+# graded nightly by tracker.grade_65_under_nonband, own Under Results
+# section), but explicitly NOT surfaced on the Unders tab as a recommended
+# play - see write_dashboard - until it earns real out-of-sample volume.
+# Deliberately still the raw bucket: UD UNDER at exactly the 6.5 line,
+# market-anchored, excluding the 1.5-2.0 band - nothing else layered on.
+# ---------------------------------------------------------------------------
+NON_BAND_65_UNDER_LINE = 6.5
+NON_BAND_65_UNDER_SEED = {"wins": 633, "losses": 526, "n": 1159}
+NON_BAND_65_UNDER_SEED_END = "2026-08-29"  # tracker.grade_65_under_nonband only counts dates after this
+NON_BAND_65_UNDER_RESULTS_PATH = os.path.join("data", "results", "non_band_65_under_results.json")
+NON_BAND_65_UNDER_PLAYS_DIR = os.path.join("data", "non_band_65_under_plays")
+
+
+def in_65_under_nonband(row):
+    """UD UNDER calls at exactly the 6.5 line, market-anchored, EXCLUDING
+    the validated 1.5-2.0 band - see module comment above."""
+    if not row.get("market_anchored") or row.get("ud_line") != NON_BAND_65_UNDER_LINE:
+        return False
+    edge = row.get("edge")
+    if edge is None or edge >= 0:
+        return False
+    return not in_ud_under_band(row)
+
+
+def save_65_under_nonband_plays(date_str, rows):
+    """Snapshot of today's non-band 6.5-line UNDER calls, saved so
+    tracker.grade_65_under_nonband can grade them the next day even for
+    players who end up DNPing - same reasoning as save_ud_under_band_plays."""
+    plays = [{
+        "player_id": r.get("player_id"),
+        "name": r["name"],
+        "team": r["team"],
+        "projected_ud": r.get("ud_pts"),
+        "ud_line": r.get("ud_line"),
+        "edge": r.get("edge"),
+        "game_time_pt": r.get("game_time_pt"),
+    } for r in rows]
+    os.makedirs(NON_BAND_65_UNDER_PLAYS_DIR, exist_ok=True)
+    with open(os.path.join(NON_BAND_65_UNDER_PLAYS_DIR, f"{date_str}.json"), "w", encoding="utf-8") as f:
+        json.dump({"date": date_str, "plays": plays}, f, indent=2)
+
+
 def _ud_under_band_combined_record():
     """(wins, losses, live_n) combining the frozen seed with whatever
     tracker.grade_ud_under_band has accumulated since UD_UNDER_BAND_SEED_END."""
@@ -983,6 +1034,13 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     unders_band_count = len(unders_cards)
     save_ud_under_band_plays(date_str, unders_rows)
 
+    # Forward-tracking snapshot for the non-band 6.5/under cohort (see
+    # module comment on in_65_under_nonband) - graded nightly like the band,
+    # but deliberately NOT built into unders_cards/unders_rows above, so it
+    # never appears on the Unders tab as a recommended play.
+    nonband_65_under_rows = [r for r in unders_all_rows if in_65_under_nonband(r)]
+    save_65_under_nonband_plays(date_str, nonband_65_under_rows)
+
     # --- Under Results tab: grading history for the validated band, built
     # from data/results/ud_under_band_results.json (tracker.grade_ud_under_band,
     # graded nightly). DNPs are tracked separately and never counted as
@@ -1021,6 +1079,41 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     under_total_n = under_total_wins + under_total_losses
     under_total_rate = round(100 * under_total_wins / under_total_n, 1) if under_total_n else 0.0
     under_ci_lo, under_ci_hi = wilson_ci(under_total_wins, under_total_n)
+
+    # --- Under Results tab: second tracked cohort, the non-band 6.5/under
+    # forward tracking opened 2026-08-29 (see in_65_under_nonband module
+    # comment). Same shape as the band block above, minus a daily
+    # play-cards grid - this cohort isn't surfaced as recommended plays
+    # anywhere, so there's nothing to show beyond record/rate/n/CI and the
+    # calendar strip. UNVALIDATED - see NONBAND65_UNVALIDATED_NOTE below.
+    nonband65_data = {"seed": NON_BAND_65_UNDER_SEED, "dates": {}, "record": {"wins": 0, "losses": 0, "dnp": 0}}
+    if os.path.exists(NON_BAND_65_UNDER_RESULTS_PATH):
+        try:
+            with open(NON_BAND_65_UNDER_RESULTS_PATH, encoding="utf-8") as f:
+                nonband65_data = json.load(f)
+        except Exception:
+            pass
+    nonband65_dates = sorted(nonband65_data.get("dates", {}).keys())
+    nonband65_calendar_cells = []
+    for d in nonband65_dates:
+        dd = nonband65_data["dates"][d]
+        w, l, dnp = dd.get("wins", 0), dd.get("losses", 0), dd.get("dnp", 0)
+        decided = w + l
+        nonband65_calendar_cells.append({
+            "date": d,
+            "hit_rate": round(100 * w / decided, 1) if decided else None,
+            "wins": w, "losses": l, "dnp": dnp,
+        })
+    nonband65_calendar_js = json.dumps(nonband65_calendar_cells)
+
+    nonband65_live_record = nonband65_data.get("record", {"wins": 0, "losses": 0, "dnp": 0})
+    nonband65_total_wins = NON_BAND_65_UNDER_SEED["wins"] + nonband65_live_record.get("wins", 0)
+    nonband65_total_losses = NON_BAND_65_UNDER_SEED["losses"] + nonband65_live_record.get("losses", 0)
+    nonband65_live_dnp = nonband65_live_record.get("dnp", 0)
+    nonband65_total_n = nonband65_total_wins + nonband65_total_losses
+    nonband65_total_rate = round(100 * nonband65_total_wins / nonband65_total_n, 1) if nonband65_total_n else 0.0
+    nonband65_ci_lo, nonband65_ci_hi = wilson_ci(nonband65_total_wins, nonband65_total_n)
+    nonband65_live_n = nonband65_live_record.get("wins", 0) + nonband65_live_record.get("losses", 0)
 
     # --- Top 25 tier-membership badge (VALUE PLAY only now - PREMIUM/
     # STRONG/SLIP/STACK retired 2026-08-18, see module docstrings) ---
@@ -1454,6 +1547,11 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   </div>
   <h3 class="section-title" id="underYesterdayTitle">Latest Graded Day's Band Plays</h3>
   <div class="card-grid" id="underCardGrid"></div>
+
+  <h3 class="section-title">6.5-Line UNDER, Non-Band <span class="unvalidated-badge">UNVALIDATED</span></h3>
+  <div class="unvalidated-note">Opened {NON_BAND_65_UNDER_SEED_END} after the 6.5/under line-value breakdown showed plays OUTSIDE the validated 1.5&ndash;2.0 band running {NON_BAND_65_UNDER_SEED['wins']}-{NON_BAND_65_UNDER_SEED['losses']} ({round(100*NON_BAND_65_UNDER_SEED['wins']/NON_BAND_65_UNDER_SEED['n'],1)}%, n={NON_BAND_65_UNDER_SEED['n']}) historically. That rate is the discovery number itself, not an out-of-sample confirmation - frozen here as the seed and tracked forward with the same discipline as the band. Not surfaced as a recommended play on the Unders tab until it earns real out-of-sample volume.</div>
+  <div class="results-summary" id="nonband65Summary"></div>
+  <div class="cal-grid" id="nonband65CalGrid"></div>
 </div>
 
 
@@ -1497,6 +1595,15 @@ const UNDER_TOTAL_RATE = {json.dumps(under_total_rate)};
 const UNDER_TOTAL_DNP = {under_total_dnp};
 const UNDER_CI_LO = {json.dumps(under_ci_lo)};
 const UNDER_CI_HI = {json.dumps(under_ci_hi)};
+const NONBAND65_CAL = {nonband65_calendar_js};
+const NONBAND65_TOTAL_WINS = {nonband65_total_wins};
+const NONBAND65_TOTAL_LOSSES = {nonband65_total_losses};
+const NONBAND65_TOTAL_N = {nonband65_total_n};
+const NONBAND65_TOTAL_RATE = {json.dumps(nonband65_total_rate)};
+const NONBAND65_LIVE_N = {nonband65_live_n};
+const NONBAND65_LIVE_DNP = {nonband65_live_dnp};
+const NONBAND65_CI_LO = {json.dumps(nonband65_ci_lo)};
+const NONBAND65_CI_HI = {json.dumps(nonband65_ci_hi)};
 const GENERATED_AT = {json.dumps(generated_at_iso)};
 const GAME_DATE = {json.dumps(date_str)};
 const PLAYER_COUNT = {player_count};
@@ -1988,6 +2095,35 @@ for (const c of UNDER_YESTERDAY_CARDS) {{
 }}
 if (UNDER_YESTERDAY_CARDS.length === 0) {{
   underGrid.innerHTML = '<div class="empty-msg">No band plays graded yet.</div>';
+}}
+
+// --- 6.5-line UNDER, non-band (UNVALIDATED forward tracking, see
+// report.NON_BAND_65_UNDER_SEED module comment) - record/rate/n/CI +
+// calendar only, same as the Fire/Hot cohorts; deliberately no play-cards
+// grid since this cohort is never surfaced as a recommended play. --------
+{{
+  const summaryEl = document.getElementById('nonband65Summary');
+  const ciText = NONBAND65_TOTAL_N ? `${{NONBAND65_CI_LO}}&ndash;${{NONBAND65_CI_HI}}%` : 'N/A';
+  summaryEl.innerHTML = `
+    <div class="summary-card"><div class="summary-value">${{NONBAND65_TOTAL_WINS}}-${{NONBAND65_TOTAL_LOSSES}} (${{NONBAND65_TOTAL_RATE}}%)</div>
+         <div class="summary-label">All-time record (n=${{NONBAND65_TOTAL_N}}, ${{NONBAND65_LIVE_N}} tracked live since {NON_BAND_65_UNDER_SEED_END})</div></div>
+    <div class="summary-card"><div class="summary-value">${{ciText}}</div>
+         <div class="summary-label">95% Wilson CI</div></div>
+    <div class="summary-card"><div class="summary-value">${{NONBAND65_LIVE_DNP}}</div>
+         <div class="summary-label">DNP (excluded from record)</div></div>
+  `;
+  const calEl = document.getElementById('nonband65CalGrid');
+  for (const c of NONBAND65_CAL) {{
+    const cell = document.createElement('div');
+    cell.className = 'cal-cell wide';
+    cell.style.borderColor = c.hit_rate === null ? '#555' : hitColor(c.hit_rate);
+    cell.title = `${{c.date}}\\n${{c.wins}}-${{c.losses}}${{c.hit_rate !== null ? ' (' + c.hit_rate + '%)' : ''}}\\nDNP: ${{c.dnp}}`;
+    cell.innerHTML = `<div class="cal-date">${{c.date.slice(5)}}</div><div class="cal-rate">${{c.hit_rate !== null ? c.wins + '-' + c.losses + ' (' + c.hit_rate + '%)' : '—'}}</div>`;
+    calEl.appendChild(cell);
+  }}
+  if (NONBAND65_CAL.length === 0) {{
+    calEl.innerHTML = '<div class="empty-msg">No non-band 6.5/under results yet - tracking starts the day after {NON_BAND_65_UNDER_SEED_END}.</div>';
+  }}
 }}
 
 const T25_COLS = [
