@@ -759,7 +759,9 @@
       "wins": 0,
       "losses": 0,
       "dnp": 0,
-      "plays": []
+      "plays": [],
+      "low_coverage": true,
+      "low_coverage_reason": "UD line coverage ~12% (15/126 players) - board was posted from an early/thin fetch, hours before Underdog had posted most lines"
     },
     "2026-08-28": {
       "wins": 0,
@@ -777,12 +779,14 @@
           "actual_ud": null,
           "grade": "dnp"
         }
-      ]
+      ],
+      "low_coverage": true,
+      "low_coverage_reason": "UD line coverage ~3.7% (10/270 players) - same early-fetch cause"
     }
   },
   "record": {
     "wins": 42,
     "losses": 23,
-    "dnp": 4
+    "dnp": 3
   }
 }

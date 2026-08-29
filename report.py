@@ -377,6 +377,22 @@ UD_UNDER_BAND_SEED_END = "2026-08-17"  # tracker.grade_ud_under_band only counts
 UD_UNDER_BAND_RESULTS_PATH = os.path.join("data", "results", "ud_under_band_results.json")
 MARKED_PLAYS_RESULTS_PATH = os.path.join("data", "results", "marked_plays_results.json")
 
+# Dates whose UD line coverage was too thin for that day's grading to be
+# representative of anything - see scrapers/market_lines.py's re-fetch-if-
+# thin fix (2026-08-29), added after an unlucky early-UTC first-fetch each
+# day locked in a near-empty board with no re-fetch. Single source of
+# truth for both: (1) tracker.grade_ud_under_band, which excludes these
+# dates from the UD UNDER 1.5-2.0 band's cumulative record/rate (a
+# 15-33-line board can't produce a representative band sample), and
+# (2) the Results/Under Results calendar cells, which mark these dates
+# visibly caveated rather than silently blending them in with normal days.
+# Historical only - not something new dates get added to automatically;
+# add an entry here if another day is later found to have the same issue.
+LOW_COVERAGE_DATES = {
+    "2026-08-27": "UD line coverage ~12% (15/126 players)",
+    "2026-08-28": "UD line coverage ~3.7% (10/270 players)",
+}
+
 
 def in_ud_under_band(row):
     edge = row.get("edge")
@@ -766,6 +782,8 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
             "ud_hit_rate": s["ud"]["hit_rate"],
             "pp_hit_rate": s["pp"]["hit_rate"],
             "player_count": s["player_count"],
+            "lowCoverage": d in LOW_COVERAGE_DATES,
+            "lowCoverageReason": LOW_COVERAGE_DATES.get(d),
         })
         total_ud_hit += s["ud"]["win"]
         total_ud += s["ud"]["total"]
@@ -986,6 +1004,8 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
             "date": d,
             "hit_rate": round(100 * w / decided, 1) if decided else None,
             "wins": w, "losses": l, "dnp": dnp,
+            "lowCoverage": bool(dd.get("low_coverage")),
+            "lowCoverageReason": dd.get("low_coverage_reason"),
         })
     under_calendar_js = json.dumps(under_calendar_cells)
 
@@ -1190,6 +1210,18 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
      instead of a bare percentage - see underCalGrid/fireCalGrid/hotCalGrid. */
   .cal-cell.wide {{ width: 112px; }}
   .cal-cell.wide .cal-rate {{ font-size: 12px; }}
+  /* Low-coverage day (thin UD board - see report.LOW_COVERAGE_DATES):
+     hatched background so a thin/unrepresentative day reads as visibly
+     different at a glance, not just a differently-colored border. */
+  .cal-cell.low-coverage {{
+    position: relative;
+    background-image: repeating-linear-gradient(135deg, #3a2a15, #3a2a15 6px, #16213a 6px, #16213a 12px);
+    border-color: #fb923c !important;
+  }}
+  .cal-cell.low-coverage::after {{
+    content: '\26A0'; position: absolute; top: 2px; right: 4px;
+    font-size: 10px; color: #fb923c;
+  }}
   .empty-msg {{ color: #9fb0cc; font-size: 14px; }}
 
   /* Player History tab */
@@ -1718,9 +1750,10 @@ function hitColor(rate) {{
 const calGrid = document.getElementById('calGrid');
 for (const c of CAL) {{
   const cell = document.createElement('div');
-  cell.className = 'cal-cell';
+  cell.className = 'cal-cell' + (c.lowCoverage ? ' low-coverage' : '');
   cell.style.borderColor = hitColor(c.ud_hit_rate);
-  cell.title = `${{c.date}}\\nUD hit rate: ${{c.ud_hit_rate}}%\\nPP hit rate: ${{c.pp_hit_rate}}%\\nPlayers graded: ${{c.player_count}}`;
+  cell.title = `${{c.date}}\\nUD hit rate: ${{c.ud_hit_rate}}%\\nPP hit rate: ${{c.pp_hit_rate}}%\\nPlayers graded: ${{c.player_count}}`
+    + (c.lowCoverage ? `\\n\\n⚠ LOW COVERAGE: ${{c.lowCoverageReason}} - grading this day is unrepresentative.` : '');
   cell.innerHTML = `<div class="cal-date">${{c.date.slice(5)}}</div><div class="cal-rate">${{c.ud_hit_rate}}%</div>`;
   calGrid.appendChild(cell);
 }}
@@ -1906,10 +1939,11 @@ const underSummary = document.getElementById('underSummary');
 const underCalGrid = document.getElementById('underCalGrid');
 for (const c of UNDER_CAL) {{
   const cell = document.createElement('div');
-  cell.className = 'cal-cell wide';
-  cell.style.borderColor = c.hit_rate === null ? '#555' : hitColor(c.hit_rate);
-  cell.title = `${{c.date}}\\n${{c.wins}}-${{c.losses}}${{c.hit_rate !== null ? ' (' + c.hit_rate + '%)' : ''}}\\nDNP: ${{c.dnp}}`;
-  cell.innerHTML = `<div class="cal-date">${{c.date.slice(5)}}</div><div class="cal-rate">${{c.hit_rate !== null ? c.wins + '-' + c.losses + ' (' + c.hit_rate + '%)' : '—'}}</div>`;
+  cell.className = 'cal-cell wide' + (c.lowCoverage ? ' low-coverage' : '');
+  cell.style.borderColor = c.lowCoverage ? '#fb923c' : (c.hit_rate === null ? '#555' : hitColor(c.hit_rate));
+  cell.title = `${{c.date}}\\n${{c.wins}}-${{c.losses}}${{c.hit_rate !== null ? ' (' + c.hit_rate + '%)' : ''}}\\nDNP: ${{c.dnp}}`
+    + (c.lowCoverage ? `\\n\\n⚠ LOW COVERAGE: ${{c.lowCoverageReason}} - excluded from the band's all-time record/rate.` : '');
+  cell.innerHTML = `<div class="cal-date">${{c.date.slice(5)}}</div><div class="cal-rate">${{c.hit_rate !== null ? c.wins + '-' + c.losses + ' (' + c.hit_rate + '%)' : (c.lowCoverage ? 'excl.' : '—')}}</div>`;
   underCalGrid.appendChild(cell);
 }}
 if (UNDER_CAL.length === 0) {{

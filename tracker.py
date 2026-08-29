@@ -395,11 +395,23 @@ def grade_ud_under_band(date_str, results_by_pid):
 
     data = load_json(UD_UNDER_BAND_RESULTS_PATH, {"seed": report.UD_UNDER_BAND_SEED, "dates": {}, "record": {"wins": 0, "losses": 0, "dnp": 0}})
     data.setdefault("dates", {})
-    data["dates"][date_str] = {"wins": wins, "losses": losses, "dnp": dnp, "plays": graded_plays}
+    entry = {"wins": wins, "losses": losses, "dnp": dnp, "plays": graded_plays}
+    if date_str in report.LOW_COVERAGE_DATES:
+        entry["low_coverage"] = True
+        entry["low_coverage_reason"] = report.LOW_COVERAGE_DATES[date_str]
+    data["dates"][date_str] = entry
+
+    # LOW_COVERAGE_DATES are excluded from the cumulative record - a
+    # 15-33-line board can't produce a representative band sample (see
+    # report.LOW_COVERAGE_DATES). The record is always fully recomputed
+    # from data["dates"] rather than accumulated incrementally, so this
+    # exclusion applies retroactively every time this runs, not just going
+    # forward.
+    counted = {d: dd for d, dd in data["dates"].items() if not dd.get("low_coverage")}
     data["record"] = {
-        "wins": sum(d["wins"] for d in data["dates"].values()),
-        "losses": sum(d["losses"] for d in data["dates"].values()),
-        "dnp": sum(d.get("dnp", 0) for d in data["dates"].values()),
+        "wins": sum(d["wins"] for d in counted.values()),
+        "losses": sum(d["losses"] for d in counted.values()),
+        "dnp": sum(d.get("dnp", 0) for d in counted.values()),
     }
 
     os.makedirs(RESULTS_DIR, exist_ok=True)
