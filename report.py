@@ -399,6 +399,31 @@ def in_ud_under_band(row):
     return bool(row.get("market_anchored")) and edge is not None and -UD_UNDER_BAND_HI < edge <= -UD_UNDER_BAND_LO
 
 
+# Line-value split of the band's forward tracking, opened 2026-08-29 after
+# the line-value breakdown showed the band's blended 58.5% wasn't obviously
+# uniform (5.5 running hot at n=26, 6.5 running cold at n=13, both too thin
+# individually to call it either way). Measurement only - see
+# tracker.grade_ud_under_band's record_by_line, recomputed nightly from
+# data["dates"]'s existing per-play ud_line, same candidates that were
+# always being graded; nothing about band membership or the Unders tab
+# changes. No seed component: the frozen pre-08-18 seed (327-239) predates
+# per-play ud_line tracking entirely and can't be split retroactively, so
+# this is live-tracked-only from 2026-08-18 forward - a shorter window than
+# the band's own combined seed+live total.
+BAND_LINE_BUCKETS = [5.5, 6.5, 7.5]  # exact; anything >= 8.5 groups into "8.5+"
+
+
+def band_line_bucket(ud_line):
+    if ud_line is None:
+        return None
+    for b in BAND_LINE_BUCKETS:
+        if ud_line == b:
+            return b
+    if ud_line >= 8.5:
+        return "8.5+"
+    return "other"  # not observed in practice (band lines run 5.5-10.5) - kept so nothing is silently dropped
+
+
 # ---------------------------------------------------------------------------
 # 6.5-line UNDER, non-band - forward-only cohort opened 2026-08-29. The
 # line-value breakdown that day showed 6.5/under plays OUTSIDE the
@@ -1080,6 +1105,32 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     under_total_rate = round(100 * under_total_wins / under_total_n, 1) if under_total_n else 0.0
     under_ci_lo, under_ci_hi = wilson_ci(under_total_wins, under_total_n)
 
+    # --- Band line-value split (measurement only - see report.band_line_bucket
+    # module comment). Live-tracked only, no seed component: the frozen
+    # pre-08-18 seed predates per-play ud_line tracking and can't be split.
+    # Built as static server-rendered HTML (not a JS-driven table like the
+    # rest of the tab) since it's a small, slow-changing summary, not
+    # something that needs client-side sorting.
+    band_by_line = under_band_data.get("record_by_line", {})
+    _bucket_order = ["5.5", "6.5", "7.5", "8.5+", "other"]
+    band_line_rows_html = ""
+    for b in _bucket_order:
+        rec = band_by_line.get(b)
+        if not rec:
+            continue
+        w, l = rec.get("wins", 0), rec.get("losses", 0)
+        n = w + l
+        if not n:
+            continue
+        rate = round(100 * w / n, 1)
+        lo, hi = wilson_ci(w, n)
+        band_line_rows_html += (
+            f'<tr><td>{b}</td><td>{w}-{l}</td><td>{rate}%</td><td>{n}</td>'
+            f'<td>{lo}&ndash;{hi}%</td></tr>\n'
+        )
+    if not band_line_rows_html:
+        band_line_rows_html = '<tr><td colspan="5" style="color:#9fb0cc;">No graded band plays with a recorded line value yet.</td></tr>\n'
+
     # --- Under Results tab: second tracked cohort, the non-band 6.5/under
     # forward tracking opened 2026-08-29 (see in_65_under_nonband module
     # comment). Same shape as the band block above, minus a daily
@@ -1547,6 +1598,16 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   </div>
   <h3 class="section-title" id="underYesterdayTitle">Latest Graded Day's Band Plays</h3>
   <div class="card-grid" id="underCardGrid"></div>
+
+  <h3 class="section-title">Band Record by Line Value <span class="unvalidated-badge">MEASUREMENT ONLY</span></h3>
+  <div class="unvalidated-note">Opened 2026-08-29. Splits the SAME band candidates the Unders tab has always shown - nothing about band membership or what gets surfaced there changes. Live-tracked only (dates after {UD_UNDER_BAND_SEED_END}) - the frozen pre-{UD_UNDER_BAND_SEED_END} seed predates per-play line tracking and can't be split. Over a month of accumulation this answers whether the band performs uniformly across price points or is concentrated at specific lines.</div>
+  <div class="table-wrap" style="max-width:520px;">
+    <table>
+      <thead><tr><th>Line</th><th>Record</th><th>Rate</th><th>n</th><th>95% CI</th></tr></thead>
+      <tbody>
+{band_line_rows_html}      </tbody>
+    </table>
+  </div>
 
   <h3 class="section-title">6.5-Line UNDER, Non-Band <span class="unvalidated-badge">UNVALIDATED</span></h3>
   <div class="unvalidated-note">Opened {NON_BAND_65_UNDER_SEED_END} after the 6.5/under line-value breakdown showed plays OUTSIDE the validated 1.5&ndash;2.0 band running {NON_BAND_65_UNDER_SEED['wins']}-{NON_BAND_65_UNDER_SEED['losses']} ({round(100*NON_BAND_65_UNDER_SEED['wins']/NON_BAND_65_UNDER_SEED['n'],1)}%, n={NON_BAND_65_UNDER_SEED['n']}) historically. That rate is the discovery number itself, not an out-of-sample confirmation - frozen here as the seed and tracked forward with the same discipline as the band. Not surfaced as a recommended play on the Unders tab until it earns real out-of-sample volume.</div>

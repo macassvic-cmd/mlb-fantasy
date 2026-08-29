@@ -416,6 +416,24 @@ def grade_ud_under_band(date_str, results_by_pid):
         "dnp": sum(d.get("dnp", 0) for d in counted.values()),
     }
 
+    # Line-value split (measurement only - see report.band_line_bucket
+    # module comment). Recomputed from scratch from the same per-play
+    # records every run, same as data["record"] above. Plays predating the
+    # ud_line field (2026-08-18 only, old schema) can't be bucketed and are
+    # silently skipped here, same limitation the overall record has too.
+    by_line = {}
+    for dd in counted.values():
+        for p in dd.get("plays", []):
+            grade = p.get("grade")
+            if grade not in ("win", "loss"):
+                continue
+            bucket = report.band_line_bucket(p.get("ud_line"))
+            if bucket is None:
+                continue
+            rec = by_line.setdefault(str(bucket), {"wins": 0, "losses": 0})
+            rec["wins" if grade == "win" else "losses"] += 1
+    data["record_by_line"] = by_line
+
     os.makedirs(RESULTS_DIR, exist_ok=True)
     with open(UD_UNDER_BAND_RESULTS_PATH, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
