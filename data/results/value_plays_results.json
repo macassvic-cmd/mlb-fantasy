@@ -5958,6 +5958,49 @@
         "under_correct": 0
       },
       "plays": []
+    },
+    "2026-08-28": {
+      "summary": {
+        "total": 3,
+        "correct": 2,
+        "accuracy": 66.7,
+        "over_total": 2,
+        "over_correct": 2,
+        "under_total": 1,
+        "under_correct": 0
+      },
+      "plays": [
+        {
+          "player_id": 687551,
+          "name": "Drew Gilbert",
+          "team": "San Francisco Giants",
+          "call": "over",
+          "edge": 1.58,
+          "ud_line": 5.5,
+          "actual_ud": 6,
+          "correct": true
+        },
+        {
+          "player_id": 646240,
+          "name": "Rafael Devers",
+          "team": "San Francisco Giants",
+          "call": "over",
+          "edge": 1.02,
+          "ud_line": 7.5,
+          "actual_ud": 8,
+          "correct": true
+        },
+        {
+          "player_id": 682998,
+          "name": "Corbin Carroll",
+          "team": "Arizona Diamondbacks",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 9.5,
+          "actual_ud": 21,
+          "correct": false
+        }
+      ]
     }
   }
 }

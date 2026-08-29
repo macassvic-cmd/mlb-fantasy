@@ -2531,20 +2531,80 @@
           "rate_before": 77.8
         }
       ]
+    },
+    "2026-08-28": {
+      "fire": [
+        {
+          "player_id": 691718,
+          "name": "Pete Crow-Armstrong",
+          "team": "Chicago Cubs",
+          "grade": "loss",
+          "n_before": 36,
+          "wins_before": 24,
+          "rate_before": 66.7
+        },
+        {
+          "player_id": 673548,
+          "name": "Seiya Suzuki",
+          "team": "Chicago Cubs",
+          "grade": "win",
+          "n_before": 26,
+          "wins_before": 19,
+          "rate_before": 73.1
+        },
+        {
+          "player_id": 677951,
+          "name": "Bobby Witt Jr.",
+          "team": "Kansas City Royals",
+          "grade": "loss",
+          "n_before": 21,
+          "wins_before": 12,
+          "rate_before": 57.1
+        },
+        {
+          "player_id": 701398,
+          "name": "Sal Stewart",
+          "team": "Cincinnati Reds",
+          "grade": "win",
+          "n_before": 16,
+          "wins_before": 9,
+          "rate_before": 56.2
+        }
+      ],
+      "hot": [
+        {
+          "player_id": 669065,
+          "name": "Kyle Stowers",
+          "team": "Miami Marlins",
+          "grade": "loss",
+          "n_before": 13,
+          "wins_before": 9,
+          "rate_before": 69.2
+        },
+        {
+          "player_id": 672640,
+          "name": "Otto Lopez",
+          "team": "Miami Marlins",
+          "grade": "loss",
+          "n_before": 14,
+          "wins_before": 10,
+          "rate_before": 71.4
+        }
+      ]
     }
   },
   "cohorts": {
     "fire": {
-      "wins": 46,
-      "losses": 46,
-      "n": 92,
+      "wins": 48,
+      "losses": 48,
+      "n": 96,
       "rate": 50.0
     },
     "hot": {
       "wins": 84,
-      "losses": 65,
-      "n": 149,
-      "rate": 56.4
+      "losses": 67,
+      "n": 151,
+      "rate": 55.6
     }
   }
 }

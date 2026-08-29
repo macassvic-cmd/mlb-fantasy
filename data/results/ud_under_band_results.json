@@ -760,11 +760,29 @@
       "losses": 0,
       "dnp": 0,
       "plays": []
+    },
+    "2026-08-28": {
+      "wins": 0,
+      "losses": 0,
+      "dnp": 1,
+      "plays": [
+        {
+          "player_id": 596146,
+          "name": "Max Kepler",
+          "team": "Arizona Diamondbacks",
+          "projected_ud": 3.81,
+          "ud_line": 5.5,
+          "edge": -1.69,
+          "game_time_pt": "7:15 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        }
+      ]
     }
   },
   "record": {
     "wins": 42,
     "losses": 23,
-    "dnp": 3
+    "dnp": 4
   }
 }
