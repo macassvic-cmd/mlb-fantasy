@@ -782,21 +782,94 @@
       ],
       "low_coverage": true,
       "low_coverage_reason": "UD line coverage ~3.7% (10/270 players) - same early-fetch cause"
+    },
+    "2026-08-29": {
+      "wins": 2,
+      "losses": 3,
+      "dnp": 1,
+      "plays": [
+        {
+          "player_id": 668804,
+          "name": "Bryan Reynolds",
+          "team": "Pittsburgh Pirates",
+          "projected_ud": 4.54,
+          "ud_line": 6.5,
+          "edge": -1.96,
+          "game_time_pt": "11:15 AM PT",
+          "actual_ud": 8,
+          "grade": "loss"
+        },
+        {
+          "player_id": 694249,
+          "name": "Cole Carrigg",
+          "team": "Colorado Rockies",
+          "projected_ud": 4.61,
+          "ud_line": 6.5,
+          "edge": -1.89,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 6,
+          "grade": "win"
+        },
+        {
+          "player_id": 668904,
+          "name": "Royce Lewis",
+          "team": "Minnesota Twins",
+          "projected_ud": 4.72,
+          "ud_line": 6.5,
+          "edge": -1.78,
+          "game_time_pt": "11:10 AM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 686555,
+          "name": "Isaac Collins",
+          "team": "Kansas City Royals",
+          "projected_ud": 3.77,
+          "ud_line": 5.5,
+          "edge": -1.73,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 10,
+          "grade": "loss"
+        },
+        {
+          "player_id": 664034,
+          "name": "Ty France",
+          "team": "San Diego Padres",
+          "projected_ud": 3.88,
+          "ud_line": 5.5,
+          "edge": -1.62,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 19,
+          "grade": "loss"
+        },
+        {
+          "player_id": 686217,
+          "name": "Sal Frelick",
+          "team": "Milwaukee Brewers",
+          "projected_ud": 3.97,
+          "ud_line": 5.5,
+          "edge": -1.53,
+          "game_time_pt": "4:15 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 42,
-    "losses": 23,
-    "dnp": 3
+    "wins": 44,
+    "losses": 26,
+    "dnp": 4
   },
   "record_by_line": {
     "5.5": {
       "wins": 19,
-      "losses": 7
+      "losses": 9
     },
     "6.5": {
-      "wins": 4,
-      "losses": 9
+      "wins": 6,
+      "losses": 10
     },
     "8.5+": {
       "wins": 4,

@@ -6001,6 +6001,99 @@
           "correct": false
         }
       ]
+    },
+    "2026-08-29": {
+      "summary": {
+        "total": 8,
+        "correct": 5,
+        "accuracy": 62.5,
+        "over_total": 4,
+        "over_correct": 1,
+        "under_total": 4,
+        "under_correct": 4
+      },
+      "plays": [
+        {
+          "player_id": 686948,
+          "name": "Drake Baldwin",
+          "team": "Atlanta Braves",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 3,
+          "correct": false
+        },
+        {
+          "player_id": 621566,
+          "name": "Matt Olson",
+          "team": "Atlanta Braves",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 8,
+          "correct": true
+        },
+        {
+          "player_id": 686797,
+          "name": "Brooks Lee",
+          "team": "Minnesota Twins",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "correct": false
+        },
+        {
+          "player_id": 665019,
+          "name": "Kody Clemens",
+          "team": "Minnesota Twins",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "correct": false
+        },
+        {
+          "player_id": 808959,
+          "name": "Munetaka Murakami",
+          "team": "Chicago White Sox",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 6,
+          "correct": true
+        },
+        {
+          "player_id": 608070,
+          "name": "Jos\u00e9 Ram\u00edrez",
+          "team": "Cleveland Guardians",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 8,
+          "correct": true
+        },
+        {
+          "player_id": 668930,
+          "name": "Brice Turang",
+          "team": "Milwaukee Brewers",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 0,
+          "correct": true
+        },
+        {
+          "player_id": 677594,
+          "name": "Julio Rodr\u00edguez",
+          "team": "Seattle Mariners",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "correct": true
+        }
+      ]
     }
   }
 }

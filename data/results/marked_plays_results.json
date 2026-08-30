@@ -2591,20 +2591,98 @@
           "rate_before": 71.4
         }
       ]
+    },
+    "2026-08-29": {
+      "fire": [
+        {
+          "player_id": 691718,
+          "name": "Pete Crow-Armstrong",
+          "team": "Chicago Cubs",
+          "grade": "win",
+          "n_before": 37,
+          "wins_before": 24,
+          "rate_before": 64.9
+        },
+        {
+          "player_id": 547180,
+          "name": "Bryce Harper",
+          "team": "Philadelphia Phillies",
+          "grade": "win",
+          "n_before": 19,
+          "wins_before": 12,
+          "rate_before": 63.2
+        },
+        {
+          "player_id": 673548,
+          "name": "Seiya Suzuki",
+          "team": "Chicago Cubs",
+          "grade": "win",
+          "n_before": 27,
+          "wins_before": 20,
+          "rate_before": 74.1
+        },
+        {
+          "player_id": 676475,
+          "name": "Alec Burleson",
+          "team": "St. Louis Cardinals",
+          "grade": "loss",
+          "n_before": 18,
+          "wins_before": 10,
+          "rate_before": 55.6
+        },
+        {
+          "player_id": 701398,
+          "name": "Sal Stewart",
+          "team": "Cincinnati Reds",
+          "grade": "win",
+          "n_before": 17,
+          "wins_before": 10,
+          "rate_before": 58.8
+        }
+      ],
+      "hot": [
+        {
+          "player_id": 700250,
+          "name": "Ben Rice",
+          "team": "New York Yankees",
+          "grade": "loss",
+          "n_before": 8,
+          "wins_before": 6,
+          "rate_before": 75.0
+        },
+        {
+          "player_id": 646240,
+          "name": "Rafael Devers",
+          "team": "San Francisco Giants",
+          "grade": "win",
+          "n_before": 14,
+          "wins_before": 8,
+          "rate_before": 57.1
+        },
+        {
+          "player_id": 672515,
+          "name": "Gabriel Moreno",
+          "team": "Arizona Diamondbacks",
+          "grade": "win",
+          "n_before": 13,
+          "wins_before": 8,
+          "rate_before": 61.5
+        }
+      ]
     }
   },
   "cohorts": {
     "fire": {
-      "wins": 48,
-      "losses": 48,
-      "n": 96,
-      "rate": 50.0
+      "wins": 52,
+      "losses": 49,
+      "n": 101,
+      "rate": 51.5
     },
     "hot": {
-      "wins": 84,
-      "losses": 67,
-      "n": 151,
-      "rate": 55.6
+      "wins": 86,
+      "losses": 68,
+      "n": 154,
+      "rate": 55.8
     }
   }
 }
