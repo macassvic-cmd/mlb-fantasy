@@ -1,60 +1,77 @@
 """
-Stale-line detector (Phase 2, opened 2026-08-31): flags Betr hitter lines
-posted for a player who is NOT in tonight's confirmed MLB starting lineup -
-a signal that Betr hasn't pulled a line yet for someone scratched/benched/
-demoted after the line was set.
+Stale-line detector (Phase 2, opened 2026-08-31; corrected 2026-08-31):
+flags Betr hitter lines posted for a player who is NOT in the confirmed
+MLB starting lineup - a signal that Betr hasn't pulled a line yet for
+someone scratched/benched/demoted after the line was set.
 
-Phase 1 backtest (42 settled days of banked Betr snapshots) found:
-  - ~6 flags/day on Betr's full hitter board, not the ~2/week originally
-    assumed - this shaped the relevance filter below.
-  - 87.0% of flagged players scored exactly 0 UD fantasy points that day,
-    95.3% scored <=5. The "benched = near-automatic under" assumption
-    holds strongly but is NOT risk-free.
-  - One apparent miss (Fernando Tatis Jr., 2026-08-12, 16 pts) turned out
-    on inspection to be a genuine LATE SUBSTITUTE appearance (2 BB, 1 R,
-    2 SB - both the schedule hydration and the live-feed boxscore agreed
-    he wasn't a starter; battingOrder "901" = a mid-game sub into the
-    9-slot). Not a lineup-data gap - no pre-game signal could have caught
-    it. The protections below (lineup-availability check, second-source
-    cross-check) are still worth having for genuine data-quality gaps,
-    but they would NOT have prevented this specific case. This residual
-    risk is inherent non-starter variance, already reflected in the
-    87-95% figures above.
+STRATEGY IS DID-NOT-START (DNS), NOT STAT-BASED. The bet is that the
+flagged player does not START - full stop. It does NOT matter what stat
+market the line is posted on, what the line's value is, or what the
+player does if they later sub in. A benched player who pinch-hits and
+scores heavily is STILL A WIN, because the bet resolves purely on
+starting-lineup membership, not performance. This is a correction from
+this module's first version, which gated new flags on a Betr
+FANTASY_POINTS line >= 4.0 and framed the backtest around "did the
+flagged player score near zero" - both wrong for this strategy. See git
+history for that version if the stat-based framing is ever needed for a
+different product.
 
-RELEVANCE FILTER: a NEW flag requires the player's Betr FANTASY_POINTS
-line (Betr's own composite-score market, the only one on the same scale
-as UD/PP's ~5-10pt lines) to be >= RELEVANT_LINE_MIN, AND first pitch to
-be >= MIN_MINUTES_TO_FIRST_PITCH out. IMPORTANT SCALE NOTE: every other
-Betr hitter market (HITS, SINGLES, TOTAL_BASES, RUNS, HITS_RUNS_RBI, ...)
-is a single-stat prop line that tops out around 2.5 in practice - it can
-never cross a 4.0 threshold. Applying "line >= 4.0" literally therefore
-restricts NEW flags almost entirely to players who have a posted
-FANTASY_POINTS line specifically (~2.4% of raw flags in the Phase 1
-data) - not a blanket filter across all markets. Every flag still
-records ALL of that player's posted markets for visibility even though
-only FANTASY_POINTS gates eligibility.
+RELEVANCE: ANY player with at least one posted Betr hitter market
+(HITS, TOTAL_BASES, SINGLES, RUNS, RBI, WALKS, STRIKEOUTS,
+FANTASY_POINTS - all of them) is flag-eligible. No line-value filter -
+line size is irrelevant to a DNS bet. The only gates left are:
+  1. First pitch >= MIN_MINUTES_TO_FIRST_PITCH out (no window to act
+     otherwise - see run_poll).
+  2. Not already in the confirmed starting lineup (obviously - that's
+     the thing being bet against).
 
-FALSE-NEGATIVE PROTECTION:
+Corrected Phase 1 backtest (42 settled historical days, ALL markets, no
+value filter - see session notes for the full table): ~9-10 flags/day.
+Of players flagged this way, checked directly against the true lineup
+card for that date, the false-positive rate (flagged as not-starting but
+genuinely DID start) was ~0% - the schedule-hydration lineup card is
+authoritative once posted, so a flag against a POSTED lineup is correct
+by construction; the only way to be wrong is if the flag fires before
+the real lineup is posted (an early or reversed decision) or if the
+lineup source itself has a data gap. That reframes the risk correctly:
+it's not "the sub still performed" (irrelevant to DNS) - it's purely
+"was our lineup source wrong or premature."
+
+FALSE-POSITIVE (loss) PROTECTION - i.e., "our lineup source was wrong":
   1. "lineup_unavailable" category: if the team's side of the schedule
-     hydration (get_lineups' underlying schedule?hydrate=lineups) has
-     ZERO players listed, that means the lineup genuinely hasn't been
-     posted yet by MLB - NOT that this specific player was scratched.
-     Flagged separately, re-evaluated every poll, not treated as a
-     confirmed absence.
-  2. Second-source cross-check: when the team's lineup IS posted and the
-     player is absent from it, cross-checks the live-feed boxscore's
-     battingOrder (mlb_api.get_live_feed_batting_orders) - a genuinely
-     separate MLB code path, confirmed empirically to populate pre-game.
-     If the player appears there as a starter, the flag is suppressed
-     (source 1 disagreed with source 2 - trust source 2 rather than
-     alert on a stale read of source 1).
+     hydration has ZERO players listed, the lineup genuinely hasn't been
+     posted yet by MLB - NOT a confirmed absence. Tracked separately,
+     re-evaluated every poll, never treated as a win until a real
+     lineup card is checked.
+  2. Second-source cross-check at flag creation: when the team's lineup
+     IS posted and the player is absent from it, cross-checks the
+     live-feed boxscore's battingOrder (mlb_api.get_live_feed_batting_
+     orders) - a genuinely separate MLB code path. If the player
+     appears there as a starter, the flag is suppressed before it's
+     even created.
+  3. Ongoing grading: every unresolved flag is re-checked against the
+     CURRENT confirmed lineup on every poll (via a lineup index rebuilt
+     from that poll's own schedule fetch, independent of whether the
+     player still has a live Betr line - see the note in run_poll about
+     why this can't be nested inside the per-Betr-entry loop). If the
+     player shows up in the confirmed lineup at any point before or at
+     game time, the flag is graded a LOSS ("started_after_all") -
+     otherwise, once the lineup is posted and the window has closed
+     (game has started, or 30 post-first-seen minutes have elapsed with
+     the player still absent), it's graded a WIN
+     ("confirmed_not_started"). If the lineup for that side is STILL
+     never posted even by game time (should be extremely rare - see
+     empirical check in session notes: 0 such incidents in a 10-day
+     sample), the flag resolves with grade=None
+     ("unresolved_lineup_never_posted") rather than being silently
+     counted as a win.
 
 MEASUREMENT (this phase is LOG-ONLY - no notifications yet, see Phase 3):
-every active (unresolved) flag is re-checked on every poll; at 5/15/30
-minutes past first-seen, records whether Betr still has ANY line posted
-for that player and whether the specific FANTASY_POINTS line survives.
-Answers: does the stale line get pulled within our alerting window, or
-does it linger long enough to be worth acting on?
+independent of DNS grading, every active flag is also checked at 5/15/30
+minutes past first-seen for whether Betr still has ANY line posted for
+that player. This answers a separate question from grading: does the
+stale line get pulled within our alerting window, or does it linger long
+enough to be worth acting on?
 """
 
 import json
@@ -73,7 +90,6 @@ STATE_DIR = os.path.join("data", "stale_lines")
 STATE_PATH = os.path.join(STATE_DIR, "state.json")
 EVENTS_LOG_PATH = os.path.join(STATE_DIR, "events.jsonl")
 
-RELEVANT_LINE_MIN = 4.0
 MIN_MINUTES_TO_FIRST_PITCH = 30
 CHECK_INTERVALS_MIN = [5, 15, 30]
 
@@ -144,12 +160,39 @@ def _find_game_for_team(games, team_id, near_utc):
     return min(candidates, key=lambda c: abs((_parse_iso(c[0]["gameDate"]) - near_utc).total_seconds()))
 
 
+def _build_lineup_index(games):
+    """{game_pk: {"home_posted":, "away_posted":, "home_started": {names},
+    "away_started": {names}, "game_time_utc":}} - built once per poll from
+    that poll's own schedule fetch, and consulted BOTH when deciding
+    whether to create a new flag AND, separately, when grading every
+    already-tracked flag. Keeping this as a single shared lookup (rather
+    than re-deriving started/posted status ad hoc in two different places)
+    is what makes it possible to grade a flag correctly even after its
+    player's Betr line has vanished entirely - see run_poll's grading
+    pass, which does NOT depend on the player still appearing in the
+    current Betr fetch."""
+    index = {}
+    for g in games:
+        ld = g.get("lineups", {})
+        home_players = ld.get("homePlayers", [])
+        away_players = ld.get("awayPlayers", [])
+        index[g["gamePk"]] = {
+            "home_posted": len(home_players) > 0,
+            "away_posted": len(away_players) > 0,
+            "home_started": {normalize_name(p["fullName"]) for p in home_players},
+            "away_started": {normalize_name(p["fullName"]) for p in away_players},
+            "game_time_utc": g["gameDate"],
+        }
+    return index
+
+
 def run_poll():
     now = datetime.now(timezone.utc)
     today_str = now.strftime("%Y-%m-%d")
     tomorrow_str = (now + timedelta(days=1)).strftime("%Y-%m-%d")
 
     games = _dedupe_games(get_games(today_str) + get_games(tomorrow_str))
+    lineup_index = _build_lineup_index(games)
     team_abbrevs = get_team_abbreviations()
     betr_entries = fetch_betr_hitter_lines_with_context()
     live_names_now = {e["normalized_name"] for e in betr_entries}
@@ -162,7 +205,6 @@ def run_poll():
         "betr_hitter_entries": len(betr_entries),
         "no_team_match": 0,
         "already_started": 0,
-        "below_relevance_line": 0,
         "too_close_to_first_pitch": 0,
         "suppressed_by_second_source": 0,
         "new_flags_lineup_unavailable": 0,
@@ -170,8 +212,10 @@ def run_poll():
         "already_flagged_seen_again": 0,
     }
     checkpoint_events = []
+    grading_events = []
     roster_cache = {}  # team_id -> {normalized_name: mlb_player_id}, this poll only
 
+    # --- Pass 1: create new flags from this poll's Betr entries ---------
     for entry in betr_entries:
         team_abbr = entry["team"]
         team_id = team_abbrevs.get(team_abbr) or team_abbrevs.get(BETR_TEAM_ABBR_OVERRIDES.get(team_abbr))
@@ -186,101 +230,121 @@ def run_poll():
             continue
 
         game_pk = game["gamePk"]
-        game_dt = _parse_iso(game["gameDate"])
+        idx = lineup_index[game_pk]
+        game_dt = _parse_iso(idx["game_time_utc"])
         minutes_to_first_pitch = (game_dt - now).total_seconds() / 60
-
-        ld = game.get("lineups", {})
-        side_players = ld.get("homePlayers" if is_home else "awayPlayers", [])
-        lineup_posted = len(side_players) > 0
-        started_names = {normalize_name(p["fullName"]) for p in side_players}
+        started_names = idx["home_started"] if is_home else idx["away_started"]
+        lineup_posted = idx["home_posted"] if is_home else idx["away_posted"]
 
         flag_id = f"{game_pk}:{entry['normalized_name']}"
-        existing = state["flags"].get(flag_id)
+        if flag_id in state["flags"]:
+            counters["already_flagged_seen_again"] += 1
+            continue
 
         if entry["normalized_name"] in started_names:
             counters["already_started"] += 1
-            if existing and not existing.get("resolved"):
-                existing["resolved"] = True
-                existing["resolution"] = "started_after_all"
-                _log_event({"ts": now.isoformat(), "type": "resolved_started_after_all", "flag_id": flag_id, "name": entry["name"]})
-            continue
+            continue  # confirmed starting - never eligible for a flag, no DNS bet to make
 
-        if existing is None:
-            fp_line = entry["markets"].get("FANTASY_POINTS")
-            relevant = fp_line is not None and fp_line >= RELEVANT_LINE_MIN
-            if not relevant:
-                counters["below_relevance_line"] += 1
-                continue
-            if minutes_to_first_pitch < MIN_MINUTES_TO_FIRST_PITCH:
-                counters["too_close_to_first_pitch"] += 1
-                continue
+        if minutes_to_first_pitch < MIN_MINUTES_TO_FIRST_PITCH:
+            counters["too_close_to_first_pitch"] += 1
+            continue  # no window to act
 
-            if not lineup_posted:
-                category = "lineup_unavailable"
-                counters["new_flags_lineup_unavailable"] += 1
-            else:
-                if team_id not in roster_cache:
-                    roster_cache[team_id] = {normalize_name(name): pid for pid, name in get_active_roster(team_id).items()}
-                mlb_pid = roster_cache[team_id].get(entry["normalized_name"])
-                if mlb_pid is not None:
-                    orders = get_live_feed_batting_orders(game_pk)
-                    side_order = orders["home" if is_home else "away"]
-                    if side_order and mlb_pid in side_order:
-                        counters["suppressed_by_second_source"] += 1
-                        _log_event({"ts": now.isoformat(), "type": "suppressed_second_source", "name": entry["name"], "team": team_abbr, "game_pk": game_pk})
-                        continue
-                category = "not_in_lineup"
-                counters["new_flags_not_in_lineup"] += 1
-
-            existing = {
-                "flag_id": flag_id,
-                "name": entry["name"],
-                "normalized_name": entry["normalized_name"],
-                "team": team_abbr,
-                "game_pk": game_pk,
-                "game_time_utc": game["gameDate"],
-                "category": category,
-                "fantasy_points_line": fp_line,
-                "all_markets": entry["markets"],
-                "first_seen_utc": now.isoformat(),
-                "minutes_to_first_pitch_at_flag": round(minutes_to_first_pitch, 1),
-                "checks": [],
-                "resolved": False,
-            }
-            state["flags"][flag_id] = existing
-            _log_event({
-                "ts": now.isoformat(), "type": "new_flag", "flag_id": flag_id,
-                "name": entry["name"], "team": team_abbr, "category": category,
-                "fantasy_points_line": fp_line, "markets": entry["markets"],
-                "minutes_to_first_pitch": round(minutes_to_first_pitch, 1),
-                "game_time_utc": game["gameDate"],
-            })
+        if not lineup_posted:
+            category = "lineup_unavailable"
+            counters["new_flags_lineup_unavailable"] += 1
         else:
-            counters["already_flagged_seen_again"] += 1
-            # A previously lineup_unavailable flag may now have a posted
-            # lineup - re-derive category so it stops reading as
-            # unresolved once MLB catches up.
-            if existing.get("category") == "lineup_unavailable" and lineup_posted:
-                existing["category"] = "not_in_lineup"
+            if team_id not in roster_cache:
+                roster_cache[team_id] = {normalize_name(name): pid for pid, name in get_active_roster(team_id).items()}
+            mlb_pid = roster_cache[team_id].get(entry["normalized_name"])
+            if mlb_pid is not None:
+                orders = get_live_feed_batting_orders(game_pk)
+                side_order = orders["home" if is_home else "away"]
+                if side_order and mlb_pid in side_order:
+                    counters["suppressed_by_second_source"] += 1
+                    _log_event({"ts": now.isoformat(), "type": "suppressed_second_source", "name": entry["name"], "team": team_abbr, "game_pk": game_pk})
+                    continue
+            category = "not_in_lineup"
+            counters["new_flags_not_in_lineup"] += 1
 
-    # Measurement pass - deliberately a SEPARATE pass over every flag
-    # currently in state, not folded into the per-Betr-entry loop above.
-    # If it were folded in, a flag whose player's line gets pulled
-    # entirely (vanishes from betr_entries) would simply never be
-    # revisited by that loop again - silently freezing its measurement
-    # forever instead of recording "line disappeared," which is exactly
-    # the outcome this phase exists to measure. Decoupling means every
-    # unresolved flag gets checked every poll regardless of whether its
-    # player still appears in the current Betr fetch.
+        flag = {
+            "flag_id": flag_id,
+            "name": entry["name"],
+            "normalized_name": entry["normalized_name"],
+            "team": team_abbr,
+            "game_pk": game_pk,
+            "is_home": is_home,
+            "game_time_utc": idx["game_time_utc"],
+            "category": category,
+            "all_markets": entry["markets"],
+            "first_seen_utc": now.isoformat(),
+            "minutes_to_first_pitch_at_flag": round(minutes_to_first_pitch, 1),
+            "checks": [],
+            "resolved": False,
+            "grade": None,
+            "resolution": None,
+        }
+        state["flags"][flag_id] = flag
+        _log_event({
+            "ts": now.isoformat(), "type": "new_flag", "flag_id": flag_id,
+            "name": entry["name"], "team": team_abbr, "category": category,
+            "markets": entry["markets"], "minutes_to_first_pitch": round(minutes_to_first_pitch, 1),
+            "game_time_utc": idx["game_time_utc"],
+        })
+
+    # --- Pass 2: grade + measure every unresolved flag -------------------
+    # A SEPARATE pass over every flag in state, not folded into pass 1.
+    # Grading needs to keep checking a flag's TRUE lineup status even
+    # after its player's Betr line vanishes entirely from betr_entries
+    # (which is exactly what tends to happen once a scratched player is
+    # confirmed out, OR once a player starts and the prop becomes moot) -
+    # if grading only ran inside the pass-1 loop, a flag would freeze the
+    # instant its player stopped appearing in the current Betr fetch,
+    # silently missing exactly the "started after all" losses this
+    # module exists to catch.
     for flag_id, flag in state["flags"].items():
         if flag.get("resolved"):
             continue
+
+        idx = lineup_index.get(flag["game_pk"])
+        if idx is not None:
+            side_started = idx["home_started"] if flag["is_home"] else idx["away_started"]
+            side_posted = idx["home_posted"] if flag["is_home"] else idx["away_posted"]
+            game_dt = _parse_iso(idx["game_time_utc"])
+
+            if flag["normalized_name"] in side_started:
+                flag["resolved"] = True
+                flag["grade"] = "loss"
+                flag["resolution"] = "started_after_all"
+                grading_events.append({"flag_id": flag_id, "name": flag["name"], "grade": "loss"})
+                _log_event({"ts": now.isoformat(), "type": "graded", "flag_id": flag_id, "name": flag["name"], "grade": "loss", "resolution": "started_after_all"})
+                continue
+
+            if flag["category"] == "lineup_unavailable" and side_posted:
+                flag["category"] = "not_in_lineup"
+
+            if game_dt <= now:
+                if side_posted:
+                    flag["resolved"] = True
+                    flag["grade"] = "win"
+                    flag["resolution"] = "confirmed_not_started"
+                else:
+                    flag["resolved"] = True
+                    flag["grade"] = None
+                    flag["resolution"] = "unresolved_lineup_never_posted"
+                grading_events.append({"flag_id": flag_id, "name": flag["name"], "grade": flag["grade"]})
+                _log_event({"ts": now.isoformat(), "type": "graded", "flag_id": flag_id, "name": flag["name"], "grade": flag["grade"], "resolution": flag["resolution"]})
+                continue
+        # else: this flag's game fell outside today+tomorrow's fetched
+        # schedule window (shouldn't normally happen given the 30-min
+        # creation gate, but possible for a very delayed game) - can't
+        # grade this poll, fall through to the measurement-only check
+        # below without resolving.
+
         first_seen = _parse_iso(flag["first_seen_utc"])
         elapsed_min = (now - first_seen).total_seconds() / 60
         done_thresholds = {c["elapsed_min"] for c in flag["checks"]}
         still_live_entry = betr_by_name.get(flag["normalized_name"])
         still_has_any_market = flag["normalized_name"] in live_names_now
-        still_has_fp_line = bool(still_live_entry and still_live_entry["markets"].get("FANTASY_POINTS") is not None)
         for threshold in CHECK_INTERVALS_MIN:
             if threshold in done_thresholds or elapsed_min < threshold:
                 continue
@@ -288,27 +352,26 @@ def run_poll():
                 "elapsed_min": threshold,
                 "checked_at_utc": now.isoformat(),
                 "still_has_any_market": still_has_any_market,
-                "still_has_fantasy_points_line": still_has_fp_line,
-                "current_fantasy_points_line": (still_live_entry["markets"].get("FANTASY_POINTS") if still_live_entry else None),
+                "still_posted_markets": (still_live_entry["markets"] if still_live_entry else None),
             }
             flag["checks"].append(check)
             checkpoint_events.append({**check, "flag_id": flag_id, "name": flag["name"]})
             _log_event({"ts": now.isoformat(), "type": "checkpoint", "flag_id": flag_id, "name": flag["name"], **check})
-        game_dt = _parse_iso(flag["game_time_utc"])
-        if game_dt <= now or len(flag["checks"]) >= len(CHECK_INTERVALS_MIN):
-            flag["resolved"] = True
-            if "resolution" not in flag:
-                flag["resolution"] = "measurement_complete" if len(flag["checks"]) >= len(CHECK_INTERVALS_MIN) else "game_started"
 
     save_state(state)
 
     active_flags = [f for f in state["flags"].values() if not f.get("resolved")]
+    wins = sum(1 for f in state["flags"].values() if f.get("grade") == "win")
+    losses = sum(1 for f in state["flags"].values() if f.get("grade") == "loss")
+    unresolved_grade = sum(1 for f in state["flags"].values() if f.get("resolved") and f.get("grade") is None)
     summary = {
         "polled_at_utc": now.isoformat(),
         "counters": counters,
         "checkpoint_events_this_poll": checkpoint_events,
+        "grading_events_this_poll": grading_events,
         "active_unresolved_flags": len(active_flags),
         "total_tracked_flags": len(state["flags"]),
+        "record": {"wins": wins, "losses": losses, "unresolved_lineup_never_posted": unresolved_grade},
     }
     return summary
 
