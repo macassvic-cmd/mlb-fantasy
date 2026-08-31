@@ -1,0 +1,97 @@
+name: Stale Line Detector
+
+# Phase 2 (2026-08-31) - see stale_lines.py's module docstring for the
+# Phase 1 backtest this is built on (~6 flags/day, 87-95% score near
+# zero, one investigated "miss" that turned out to be a genuine
+# substitute appearance, not a data-quality bug).
+#
+# LOG-ONLY for now - no Discord/notification wiring yet (Phase 3). The
+# point of this phase is to accumulate data/stale_lines/state.json's
+# per-flag 5/15/30-minute checkpoints across a real multi-day sample, to
+# answer: does a stale Betr line actually survive long enough after we
+# detect it to be worth alerting on, or does Betr pull it faster than a
+# human could act? Don't wire up notifications until that's answered.
+#
+# CRON NOTE: */5 is the highest-frequency schedule GitHub Actions
+# supports, and per this repo's own recent experience (see pipeline.yml's
+# CRON STRATEGY comment - on-the-hour schedules dropped for 20+ hour
+# stretches three times in five days under normal load), a
+# constantly-running 5-minute cron is a materially bigger reliability
+# bet than anything else in this repo. GitHub's docs explicitly warn
+# high-frequency schedules are the most likely to be delayed/dropped
+# during busy periods. Treat gaps in data/stale_lines/state.json's
+# checkpoint coverage as expected, not a bug, when reviewing the
+# measurement data - and if this graduates to Phase 3 notifications,
+# that reliability gap becomes a real risk (a missed poll = a missed
+# alert), worth revisiting before depending on it.
+#
+# Window: 14:00-04:59 UTC covers roughly 7 AM-9 PM PDT first pitches with
+# the requested "~3h before first pitch" lead time on the earliest games
+# and the latest West-coast night games on the tail end.
+
+on:
+  schedule:
+    - cron: '*/5 14-23,0-4 * * *'
+  workflow_dispatch: {}
+
+# Scheduled fires are 5 minutes apart but a run could occasionally take
+# longer than that (API slowness) - queue rather than run concurrently,
+# so two runs never race on the git push below.
+concurrency:
+  group: stale-lines-poll
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # Deliberately NOT `pip install -r requirements.txt` - that pulls in
+      # pandas/numpy/pyarrow/pybaseball/matplotlib etc., none of which
+      # stale_lines.py or its two scraper imports (mlb_api.py, betr.py)
+      # need. Both scrapers here use stdlib (urllib) or plain `requests`
+      # only - keeping this install minimal matters a lot more here than
+      # in pipeline.yml, since this runs up to ~180x/day vs. a handful.
+      - name: Install minimal dependencies
+        run: pip install requests
+
+      - name: Poll for stale lines
+        env:
+          PYTHONUNBUFFERED: '1'
+        run: python stale_lines.py
+
+      - name: Commit and push if state changed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/stale_lines/
+          if git diff --cached --quiet; then
+            echo "No stale-line state changes this poll."
+          else
+            git commit -m "Stale-line poll $(date -u +'%Y-%m-%d %H:%M UTC')"
+            if ! git pull --rebase origin main; then
+              echo "Rebase conflict - resolving by taking this run's version of state files."
+              conflicts=$(git diff --name-only --diff-filter=U)
+              for f in $conflicts; do
+                git checkout --theirs -- "$f" 2>/dev/null && git add -- "$f" || git rm -f -- "$f"
+              done
+              git rebase --continue
+            fi
+            git push
+          fi

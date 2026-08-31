@@ -10,6 +10,7 @@ from datetime import datetime, timedelta
 from scrapers._timeout import call_with_timeout
 
 BASE = "https://statsapi.mlb.com/api/v1"
+BASE_V11 = "https://statsapi.mlb.com/api/v1.1"
 logger = logging.getLogger(__name__)
 
 
@@ -23,6 +24,17 @@ def _get(path, params=None, timeout=20):
     )
     if resp is None:
         raise RuntimeError(f"MLB API request timed out or failed: {path}")
+    resp.raise_for_status()
+    return resp.json()
+
+
+def _get_v11(path, params=None, timeout=20):
+    resp = call_with_timeout(
+        requests.get, f"{BASE_V11}{path}", params=params, timeout=timeout,
+        timeout_s=60, label=f"MLB API v1.1 {path}",
+    )
+    if resp is None:
+        raise RuntimeError(f"MLB API v1.1 request timed out or failed: {path}")
     resp.raise_for_status()
     return resp.json()
 
@@ -115,6 +127,72 @@ def get_lineups(date_str):
         register(lineups_data.get("awayPlayers", []), away, home, home_pitcher, "away")
 
     return lineups
+
+
+_team_abbr_cache = None
+
+
+def get_team_abbreviations():
+    """Return {abbreviation: team_id} for all active MLB teams, e.g.
+    {"SF": 137, ...}. Cached for the process lifetime - used by
+    stale_lines.py to resolve Betr's team.name (which IS the MLB
+    abbreviation - confirmed empirically 2026-08-31) back to an MLB team,
+    without needing a full roster fetch."""
+    global _team_abbr_cache
+    if _team_abbr_cache is None:
+        data = _get("/teams", {"sportId": 1})
+        _team_abbr_cache = {t["abbreviation"]: t["id"] for t in data.get("teams", []) if t.get("abbreviation")}
+    return _team_abbr_cache
+
+
+_roster_cache = {}
+
+
+def get_active_roster(team_id):
+    """Return {player_id: fullName} for team_id's current 26-man active
+    roster - includes bench/benched players, not just today's starters.
+    Cached per team_id for the process lifetime (a poll cycle looks this
+    up once per team, not once per player). Used by stale_lines.py to
+    resolve a Betr player name to an MLB numeric player_id (Betr's own
+    player IDs are a different, unrelated ID space), since only a roster
+    fetch - not the day's lineup - covers a scratched/benched player."""
+    if team_id not in _roster_cache:
+        data = _get(f"/teams/{team_id}/roster", {"rosterType": "active"})
+        _roster_cache[team_id] = {p["person"]["id"]: p["person"]["fullName"] for p in data.get("roster", [])}
+    return _roster_cache[team_id]
+
+
+def get_live_feed_batting_orders(game_pk):
+    """Return {"home": [player_id, ...] or None, "away": [...] or None} from
+    the game's live feed (/api/v1.1/game/{game_pk}/feed/live) -
+    liveData.boxscore.teams.{home,away}.battingOrder.
+
+    This is a genuinely separate code path from get_lineups' schedule
+    hydrate=lineups above - confirmed empirically 2026-08-31 that it
+    populates pre-game (as soon as lineups are announced), not just once
+    the game starts. Used by stale_lines.py as a general second-source
+    cross-check against a schedule-hydration gap (source 1 says absent,
+    source 2 says started -> trust source 2). NOTE: this would NOT have
+    caught the one real miss found in the Phase 1 backtest (Fernando
+    Tatis Jr., 2026-08-12) - on inspection both this endpoint and the
+    schedule hydration agreed he wasn't a starter; he was a genuine
+    late substitute (battingOrder "901"), not a data gap. Kept as
+    defense against a genuine future hydration disagreement, which is a
+    real (if less common) failure mode distinct from that case. None for
+    a side means that side's battingOrder wasn't present at all (distinct
+    from an empty list, which would mean the field existed but was empty
+    - not observed in practice, but handled the same way: "can't confirm"
+    rather than "confirmed absent")."""
+    try:
+        data = _get_v11(f"/game/{game_pk}/feed/live")
+    except Exception as e:
+        logger.warning(f"get_live_feed_batting_orders({game_pk}) failed: {e}")
+        return {"home": None, "away": None}
+    box = data.get("liveData", {}).get("boxscore", {}).get("teams", {})
+    return {
+        "home": box.get("home", {}).get("battingOrder") or None,
+        "away": box.get("away", {}).get("battingOrder") or None,
+    }
 
 
 # ---------------------------------------------------------------------------

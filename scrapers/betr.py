@@ -135,6 +135,55 @@ def fetch_betr_mlb_lines():
     return lines
 
 
+def fetch_betr_hitter_lines_with_context():
+    """Return a list of {name, normalized_name, team (MLB abbreviation, e.g.
+    "SF"), event_date_utc (ISO), markets: {stat_key: value}} - one entry per
+    hitter with at least one OPENED market, across every event Betr's
+    upcoming-events feed currently returns (today AND tomorrow - see
+    stale_lines.py, which is the only caller and handles that span).
+
+    Separate from fetch_betr_mlb_lines() (used by the main pipeline's daily
+    cache), which flattens to {stat_key: {name: value}} and discards which
+    team/event a line belongs to - fine for that use (same-day cache, team
+    irrelevant), but stale_lines.py needs the team (to check the RIGHT
+    team's lineup) and event_date_utc (to know how far out first pitch is
+    and filter out lines that belong to tomorrow's slate, not today's -
+    see the Phase 1 backtest note on Betr's feed spanning two days)."""
+    by_name = {}
+    for event_id in fetch_upcoming_mlb_event_ids():
+        data = _graphql(EVENT_PLAYERS_QUERY, {"id": event_id})
+        event = data.get("getEventByIdV2")
+        if not event or "teams" not in event:
+            continue
+        event_date = event.get("date")
+        for team in event["teams"]:
+            team_abbr = team.get("name")  # Betr's team.name IS the MLB abbreviation, e.g. "SF" - confirmed against /api/v1/teams
+            for player in team.get("players", []):
+                name = f"{player.get('firstName', '')} {player.get('lastName', '')}"
+                key_name = normalize_name(name)
+                markets = {}
+                for proj in player.get("projections", []):
+                    stat_key = proj.get("key")
+                    if stat_key not in HITTER_STAT_KEYS:
+                        continue
+                    if proj.get("marketStatus") != "OPENED":
+                        continue
+                    value = proj.get("value")
+                    if value is None:
+                        continue
+                    markets[stat_key] = value
+                if not markets:
+                    continue
+                by_name[key_name] = {
+                    "name": name.strip(),
+                    "normalized_name": key_name,
+                    "team": team_abbr,
+                    "event_date_utc": event_date,
+                    "markets": markets,
+                }
+    return list(by_name.values())
+
+
 def load_cached_betr_lines(date_str):
     """Read Betr lines from the per-date cache only (no live fetch)."""
     cache_path = os.path.join(CACHE_DIR, f"betr_{date_str}.json")
