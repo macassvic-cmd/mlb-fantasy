@@ -2669,14 +2669,28 @@
           "rate_before": 61.5
         }
       ]
+    },
+    "2026-08-30": {
+      "fire": [
+        {
+          "player_id": 547180,
+          "name": "Bryce Harper",
+          "team": "Philadelphia Phillies",
+          "grade": "win",
+          "n_before": 20,
+          "wins_before": 13,
+          "rate_before": 65.0
+        }
+      ],
+      "hot": []
     }
   },
   "cohorts": {
     "fire": {
-      "wins": 52,
+      "wins": 53,
       "losses": 49,
-      "n": 101,
-      "rate": 51.5
+      "n": 102,
+      "rate": 52.0
     },
     "hot": {
       "wins": 86,
