@@ -107,6 +107,48 @@ DISCORD_WEBHOOK_URL environment variable (a GitHub Actions secret, never
 committed - see .github/workflows/stale_lines.yml); if unset, every
 notification call is a silent no-op and log-only measurement is
 unaffected.
+
+EARLY (PRE-LINEUP) SIGNALS (Phase 4, added 2026-09-01), LOG-ONLY - no
+Discord wiring for these yet, deliberately, until lead time and accuracy
+are known: the lineup-based flag above only fires once MLB's lineup card
+posts, typically ~3h before first pitch - by then Betr has often already
+pulled the line itself, so there's no real window to act. The actual
+edge is earlier: knowing a player's out before the lineup confirms it.
+Two structured MLB Stats API sources, checked every poll for any player
+who currently has a posted Betr line (both stored in
+state["early_signals"], keyed distinctly from state["flags"] so they
+can't collide with or double-count the lineup-based flags):
+  1. Transactions (/api/v1/transactions) - classify_transaction() keeps
+     only unambiguous "removed from an active MLB roster" types (see its
+     docstring for the exact typeCode/description rules mined from a
+     14-day sample) - IL placements, options to the minors, DFAs,
+     releases. Explicitly excludes activations/recalls/contract
+     selections (the opposite signal). Deduped by the transaction's own
+     unique id, so each real transaction only ever fires once.
+  2. 40-man roster status (/teams/{id}/roster?rosterType=40Man) - unlike
+     the 26-man "active" roster used elsewhere, this includes IL/
+     optioned players with a status code (D10/D15/D60/RM/...). Any
+     Betr-lined player whose CURRENT status isn't "A" (Active) is a
+     high-confidence signal. Deduped by (player_id, status_code), so a
+     long-standing IL stint doesn't re-fire every poll - only a genuine
+     status transition does.
+A third source (RotoWire's public MLB news RSS feed,
+rotowire.com/rss/news.php?sport=MLB) was investigated but NOT built -
+confirmed publicly accessible with no auth, well-formed RSS, and a
+fairly consistent "PlayerName: headline" title pattern with real
+pre-lineup signal already visible in spot checks - but it's free text
+requiring a real keyword/regex classifier (not a clean field), so it's
+left for a later pass once the two structured sources above have proven
+out.
+
+Lead time is the whole point of this phase: _resolve_early_signals runs
+as its own decoupled pass (same reasoning as the grading pass above -
+can't be nested inside a per-entry loop) over every unresolved early
+signal, and once the same player+game either gets a standard
+not_in_lineup flag OR is confirmed in the real lineup, records the gap
+in minutes between the early signal firing and that lineup-based
+confirmation (or notes if the early signal turned out wrong - the
+player started anyway).
 """
 
 import json
@@ -124,6 +166,8 @@ from scrapers.mlb_api import (
     get_team_abbreviations,
     get_active_roster,
     get_live_feed_batting_orders,
+    get_forty_man_roster,
+    get_recent_transactions,
 )
 
 logger = logging.getLogger(__name__)
@@ -306,6 +350,241 @@ def _build_lineup_index(games):
     return index
 
 
+# ---------------------------------------------------------------------------
+# Early (pre-lineup) signals - Phase 4, log-only. See module docstring.
+# ---------------------------------------------------------------------------
+
+# Mined from a 14-day sample of /api/v1/transactions (550 transactions,
+# session notes have the full typeCode breakdown): these four typeCodes
+# unambiguously mean "removed from an active MLB roster" with no
+# legitimate opposite-direction usage observed - OPT (optioned to
+# minors), OUT (sent outright), DES (designated for assignment), REL
+# (released). "SC" (Status Change, the largest single bucket) covers
+# BOTH IL placements AND IL activations under the same code, so it needs
+# description text matched instead of a bare code check.
+TRANSACTION_OUT_TYPE_CODES = {"OPT", "OUT", "DES", "REL"}
+
+
+def classify_transaction(t):
+    """Return a short category string if this transaction is a
+    high-confidence pre-lineup OUT signal, or None if it's noise or the
+    OPPOSITE signal (an activation/recall/contract-selection, which
+    means the player is now MORE available, not less - deliberately
+    checked first and excluded even if the description also happens to
+    contain "injured list", e.g. "activated ... from the injured list")."""
+    code = t.get("typeCode")
+    desc = (t.get("description") or "").lower()
+    if any(k in desc for k in ("activated", "reinstated", "recalled", "selected the contract")):
+        return None
+    if code in TRANSACTION_OUT_TYPE_CODES:
+        return "roster_move_out"
+    if code == "SC" and "injured list" in desc and ("placed" in desc or "transferred" in desc):
+        return "injured_list"
+    return None
+
+
+def _transaction_team_id(t):
+    """The MLB team_id the player is LEAVING. An option/outright/DFA/
+    release has both fromTeam (the MLB team) and toTeam (the minor
+    league affiliate, or None for a release) - fromTeam is what we want.
+    An IL placement has only toTeam (the MLB team doing the placing,
+    which IS the player's current team) and no fromTeam at all."""
+    if t.get("fromTeam"):
+        return t["fromTeam"]["id"]
+    if t.get("toTeam"):
+        return t["toTeam"]["id"]
+    return None
+
+
+def _new_early_signal(key, source, category, name, norm, team_abbr, games, betr_entry, now, extra):
+    """Shared shape for both early-signal sources below - resolves the
+    player's upcoming game (if possible, for later lead-time comparison
+    against the corresponding lineup-based flag) using the exact same
+    team+event-time matching as the main detector."""
+    event_dt = _parse_iso(betr_entry["event_date_utc"]) if betr_entry else None
+    team_abbrevs = get_team_abbreviations()
+    team_id = team_abbrevs.get(team_abbr) or team_abbrevs.get(BETR_TEAM_ABBR_OVERRIDES.get(team_abbr))
+    game, is_home = (None, None)
+    if team_id is not None and event_dt is not None:
+        game, is_home = _find_game_for_team(games, team_id, event_dt)
+    signal = {
+        "flag_id": key,
+        "source": source,
+        "category": category,
+        "name": name,
+        "normalized_name": norm,
+        "team": team_abbr,
+        "game_pk": game["gamePk"] if game else None,
+        "is_home": is_home,
+        "game_time_utc": game["gameDate"] if game else None,
+        "first_seen_utc": now.isoformat(),
+        "resolved": False,
+        "outcome": None,
+        "lineup_lag_minutes": None,
+    }
+    signal.update(extra)
+    return signal
+
+
+def check_transactions(now, betr_by_name, games, state):
+    """Poll /api/v1/transactions over a short rolling window and create a
+    new early_signals entry for any classify_transaction()-positive move
+    involving a player who currently has a posted Betr line. Deduped by
+    the transaction's own unique id - a real transaction is a one-time
+    event, never re-fires."""
+    start = (now - timedelta(days=2)).strftime("%Y-%m-%d")
+    end = now.strftime("%Y-%m-%d")
+    try:
+        txns = get_recent_transactions(start, end)
+    except Exception as e:
+        logger.warning(f"get_recent_transactions failed: {e}")
+        return []
+
+    state.setdefault("early_signals", {})
+    new_signals = []
+    for t in txns:
+        category = classify_transaction(t)
+        if category is None:
+            continue
+        person = t.get("person") or {}
+        name = person.get("fullName")
+        if not name:
+            continue
+        norm = normalize_name(name)
+        betr_entry = betr_by_name.get(norm)
+        if betr_entry is None:
+            continue  # no posted Betr line - not relevant to this detector
+
+        key = f"transaction:{t.get('id')}"
+        if key in state["early_signals"]:
+            continue
+
+        signal = _new_early_signal(
+            key, "transaction", category, name, norm, betr_entry["team"], games, betr_entry, now,
+            {"transaction_id": t.get("id"), "transaction_date": t.get("date"), "description": t.get("description")},
+        )
+        state["early_signals"][key] = signal
+        new_signals.append(signal)
+        _log_event({"ts": now.isoformat(), "type": "early_signal", **signal})
+    return new_signals
+
+
+def check_roster_status(now, betr_by_name, team_abbrevs, games, state):
+    """Check the 40-man roster status of every team with at least one
+    Betr-lined player today, and create a new early_signals entry for
+    any such player whose CURRENT status isn't "A" (Active). Deduped by
+    (player_id, status_code) - a long-standing IL stint doesn't re-fire
+    every poll, only a genuine status transition (e.g. D10 -> D60) does."""
+    state.setdefault("early_signals", {})
+    new_signals = []
+    checked_teams = set()
+    for betr_entry in betr_by_name.values():
+        team_abbr = betr_entry["team"]
+        team_id = team_abbrevs.get(team_abbr) or team_abbrevs.get(BETR_TEAM_ABBR_OVERRIDES.get(team_abbr))
+        if team_id is None or team_id in checked_teams:
+            continue
+        checked_teams.add(team_id)
+        try:
+            roster = get_forty_man_roster(team_id)
+        except Exception as e:
+            logger.warning(f"get_forty_man_roster({team_id}) failed: {e}")
+            continue
+        for p in roster:
+            if p["status_code"] == "A" or not p["status_code"]:
+                continue
+            norm = normalize_name(p["name"])
+            player_betr_entry = betr_by_name.get(norm)
+            if player_betr_entry is None:
+                continue
+
+            key = f"status:{p['player_id']}:{p['status_code']}"
+            if key in state["early_signals"]:
+                continue
+
+            signal = _new_early_signal(
+                key, "roster_status", f"status_{p['status_code']}", p["name"], norm, team_abbr, games, player_betr_entry, now,
+                {"status_code": p["status_code"], "status_desc": p["status_desc"], "note": p.get("note")},
+            )
+            state["early_signals"][key] = signal
+            new_signals.append(signal)
+            _log_event({"ts": now.isoformat(), "type": "early_signal", **signal})
+    return new_signals
+
+
+def _resolve_early_signals(now, state, lineup_index):
+    """Decoupled pass (same reasoning as the main grading pass - can't be
+    nested inside a per-entry loop) over every unresolved early_signals
+    entry: once its game_pk/is_home is known and that game's lineup index
+    is available, check whether:
+      (a) the player shows up in the real lineup anyway -> "player_started_
+          anyway" (the early signal was wrong)
+      (b) a matching standard flag now exists for the same game_pk+player
+          AND its category is genuinely "not_in_lineup" (a confirmed
+          absence, not a still-pending "lineup_unavailable" placeholder -
+          matching against one of those produced nonsense negative lag
+          values against the real legacy backlog before this check was
+          added) AND it was first seen AFTER this signal (a match that
+          predates the signal isn't the signal buying any lead time) ->
+          "confirmed_by_lineup_flag", with lineup_lag_minutes recording
+          how much earlier the signal fired; a not_in_lineup match that
+          predates or ties the signal instead resolves as
+          "lineup_flag_predates_signal" (directionally right, but not a
+          genuine early win)
+      (c) the game has started with no qualifying match ever appearing ->
+          "confirmed_not_started_no_flag" if the lineup posted (signal was
+          directionally right, nothing to compare against - e.g.
+          MIN_MINUTES_TO_FIRST_PITCH filtered out a standard flag) or
+          "unresolved_lineup_never_posted" if it never did."""
+    for key, sig in state.get("early_signals", {}).items():
+        if sig.get("resolved"):
+            continue
+        if sig.get("game_pk") is None:
+            continue  # couldn't resolve a game yet - try again next poll
+        idx = lineup_index.get(sig["game_pk"])
+        if idx is None:
+            continue
+        side_started = idx["home_started"] if sig["is_home"] else idx["away_started"]
+        side_posted = idx["home_posted"] if sig["is_home"] else idx["away_posted"]
+        game_dt = _parse_iso(idx["game_time_utc"])
+
+        if sig["normalized_name"] in side_started:
+            sig["resolved"] = True
+            sig["outcome"] = "player_started_anyway"
+            _log_event({"ts": now.isoformat(), "type": "early_signal_resolved", "flag_id": key, "outcome": sig["outcome"]})
+            continue
+
+        # Only a flag that's a GENUINE confirmed absence (category ==
+        # not_in_lineup) counts as validating this early signal - a
+        # match against a still-pending "lineup_unavailable" placeholder
+        # (legacy flags from before 2026-09-01's correction can sit in
+        # that state for hours) is not a confirmation of anything yet.
+        # Also require the flag to have appeared AFTER this signal - a
+        # match that predates the signal isn't the signal "buying lead
+        # time," it's coincidental, and crediting it would produce
+        # nonsensical negative lag values (caught exactly this case
+        # against the real legacy backlog before shipping this fix).
+        matching_flag = state.get("flags", {}).get(f"{sig['game_pk']}:{sig['normalized_name']}")
+        if matching_flag is not None and matching_flag.get("category") == "not_in_lineup":
+            matching_first_seen = _parse_iso(matching_flag["first_seen_utc"])
+            sig_first_seen = _parse_iso(sig["first_seen_utc"])
+            if matching_first_seen >= sig_first_seen:
+                lag_min = (matching_first_seen - sig_first_seen).total_seconds() / 60
+                sig["resolved"] = True
+                sig["outcome"] = "confirmed_by_lineup_flag"
+                sig["lineup_lag_minutes"] = round(lag_min, 1)
+                _log_event({"ts": now.isoformat(), "type": "early_signal_resolved", "flag_id": key, "outcome": sig["outcome"], "lineup_lag_minutes": sig["lineup_lag_minutes"]})
+            else:
+                sig["resolved"] = True
+                sig["outcome"] = "lineup_flag_predates_signal"
+                _log_event({"ts": now.isoformat(), "type": "early_signal_resolved", "flag_id": key, "outcome": sig["outcome"]})
+            continue
+
+        if game_dt <= now:
+            sig["resolved"] = True
+            sig["outcome"] = "confirmed_not_started_no_flag" if side_posted else "unresolved_lineup_never_posted"
+            _log_event({"ts": now.isoformat(), "type": "early_signal_resolved", "flag_id": key, "outcome": sig["outcome"]})
+
+
 def run_poll():
     now = datetime.now(timezone.utc)
     today_str = now.strftime("%Y-%m-%d")
@@ -449,6 +728,14 @@ def run_poll():
         if category == "not_in_lineup" and flag["discord_message_id"] is None:
             _discord_post_new_flag(flag)
 
+    # --- Pass 1b: early (pre-lineup) signals - log-only, see module
+    # docstring's Phase 4 section. Independent of the lineup-based flags
+    # above - these fire regardless of whether any team's lineup is
+    # posted yet, which is the whole point (earlier than the lineup-based
+    # flag could ever fire). --------------------------------------------
+    new_transaction_signals = check_transactions(now, betr_by_name, games, state)
+    new_status_signals = check_roster_status(now, betr_by_name, team_abbrevs, games, state)
+
     # --- Pass 2: grade + measure every unresolved flag -------------------
     # A SEPARATE pass over every flag in state, not folded into pass 1.
     # Grading needs to keep checking a flag's TRUE lineup status even
@@ -545,12 +832,22 @@ def run_poll():
                 flag["discord_checkpoint_lines"].append(f"{icon} {threshold} min: {status}")
                 _discord_edit_checkpoint(flag)
 
+    # --- Pass 3: resolve early signals against this poll's lineup index --
+    _resolve_early_signals(now, state, lineup_index)
+
     save_state(state)
 
     active_flags = [f for f in state["flags"].values() if not f.get("resolved")]
     wins = sum(1 for f in state["flags"].values() if f.get("grade") == "win")
     losses = sum(1 for f in state["flags"].values() if f.get("grade") == "loss")
     unresolved_grade = sum(1 for f in state["flags"].values() if f.get("resolved") and f.get("grade") is None)
+
+    early_signals = state.get("early_signals", {}).values()
+    confirmed_lags = [s["lineup_lag_minutes"] for s in early_signals if s.get("outcome") == "confirmed_by_lineup_flag"]
+    early_signal_outcomes = {}
+    for s in early_signals:
+        early_signal_outcomes[s.get("outcome")] = early_signal_outcomes.get(s.get("outcome"), 0) + 1
+
     summary = {
         "polled_at_utc": now.isoformat(),
         "counters": counters,
@@ -559,6 +856,14 @@ def run_poll():
         "active_unresolved_flags": len(active_flags),
         "total_tracked_flags": len(state["flags"]),
         "record": {"wins": wins, "losses": losses, "unresolved_lineup_never_posted": unresolved_grade},
+        "early_signals": {
+            "new_this_poll": len(new_transaction_signals) + len(new_status_signals),
+            "new_transaction_signals": len(new_transaction_signals),
+            "new_roster_status_signals": len(new_status_signals),
+            "total_tracked": len(early_signals),
+            "outcomes": early_signal_outcomes,
+            "confirmed_lead_times_minutes": confirmed_lags,
+        },
     }
     return summary
 

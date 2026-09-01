@@ -195,6 +195,52 @@ def get_live_feed_batting_orders(game_pk):
     }
 
 
+_forty_man_cache = {}
+
+
+def get_forty_man_roster(team_id):
+    """Return [{"player_id":, "name":, "status_code":, "status_desc":,
+    "note":}] for team_id's 40-man roster - unlike get_active_roster
+    (rosterType="active", 26 players), this INCLUDES IL/optioned players
+    with their status (e.g. "D10"/"D15"/"D60" injured-list tiers, "RM"
+    reassigned to minors) and an optional free-text `note` (often the
+    injury detail, e.g. "Right rib stress fracture."). Cached per
+    team_id for the process lifetime. Used by stale_lines.py's
+    roster-status early-signal check: a player with a posted line whose
+    CURRENT status isn't "A" (Active) is a high-confidence pre-lineup
+    signal they won't be starting today."""
+    if team_id not in _forty_man_cache:
+        data = _get(f"/teams/{team_id}/roster", {"rosterType": "40Man"})
+        _forty_man_cache[team_id] = [
+            {
+                "player_id": p["person"]["id"],
+                "name": p["person"]["fullName"],
+                "status_code": p.get("status", {}).get("code"),
+                "status_desc": p.get("status", {}).get("description"),
+                "note": p.get("note"),
+            }
+            for p in data.get("roster", [])
+        ]
+    return _forty_man_cache[team_id]
+
+
+def get_recent_transactions(start_date, end_date):
+    """Return the raw list of transactions from /api/v1/transactions
+    between start_date and end_date (both "YYYY-MM-DD"). Each entry has
+    person.id/fullName, fromTeam/toTeam (either may be None depending on
+    transaction type - e.g. an IL placement only has toTeam, an option to
+    the minors has both), typeCode (e.g. "OPT" optioned, "SC" status
+    change - covers IL placements AND activations, "DES" designated for
+    assignment, "REL" released, "OUT" sent outright - see
+    stale_lines.classify_transaction for which of these are actually a
+    pre-lineup OUT signal vs. noise), and a free-text description. No
+    caching here (unlike the roster functions above) - stale_lines.py
+    calls this once per poll with a short rolling window, not once per
+    player/team, so there's nothing to cache against."""
+    data = _get("/transactions", {"sportId": 1, "startDate": start_date, "endDate": end_date})
+    return data.get("transactions", [])
+
+
 # ---------------------------------------------------------------------------
 # Player info
 # ---------------------------------------------------------------------------
