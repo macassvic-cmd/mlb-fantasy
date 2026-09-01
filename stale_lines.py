@@ -159,6 +159,18 @@ from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 
 import requests
+from dotenv import load_dotenv
+
+# Same pattern scrapers/weather.py already uses for OPENWEATHER_API_KEY -
+# a no-op in GitHub Actions (no .env file there; DISCORD_WEBHOOK_URL comes
+# through as an explicit env var from the workflow YAML either way) but
+# required for a standalone local invocation of this file specifically
+# (`python stale_lines.py --test-discord`) to pick up .env's webhook at
+# all. stale_lines_local.py already calls load_dotenv() itself before
+# importing this module, so this is redundant but harmless there -
+# without it here too, `python stale_lines.py --test-discord` run
+# directly (not through stale_lines_local.py) would silently no-op.
+load_dotenv()
 
 from scrapers.betr import fetch_betr_hitter_lines_with_context, normalize_name
 from scrapers.mlb_api import (
