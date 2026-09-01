@@ -11,6 +11,16 @@ add_afternoon_task.bat
 add_afternoon_task.ps1
 fix_tasks_admin.bat
 fix_tasks_admin.ps1
+setup_stale_lines_local_task.bat
+setup_stale_lines_local_task.ps1
+
+# Local stale-line runner — operational output only, never committed.
+# state.json/events.jsonl (the actual detector output) ARE committed;
+# these are purely this machine's own process bookkeeping.
+stale_lines_local.log
+data/stale_lines/local_heartbeat.json
+data/stale_lines/local_heartbeat.json.tmp
+data/stale_lines/watchdog_state.json
 
 # Old log files — pipeline.log is already ignored above
 *_final.log

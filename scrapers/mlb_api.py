@@ -224,6 +224,28 @@ def get_forty_man_roster(team_id):
     return _forty_man_cache[team_id]
 
 
+def clear_per_poll_caches():
+    """Clear _roster_cache and _forty_man_cache (NOT _team_abbr_cache,
+    which never changes intra-season and is safe to keep forever).
+
+    Both are documented as "cached for the process lifetime" - true and
+    harmless under GitHub Actions, where every poll IS a fresh process
+    (`python stale_lines.py` exits after one run.py invocation). It's a
+    real bug under stale_lines_local.py's persistent loop, where "process
+    lifetime" would otherwise mean "the entire multi-day run" - the
+    40-man roster status cache in particular is the ENTIRE basis of the
+    roster-status early-signal check (stale_lines.check_roster_status);
+    never invalidating it would mean a player's D10/D15/D60 transition is
+    only ever seen on the first poll after the process starts, then
+    silently never re-checked again. Called once per loop iteration by
+    stale_lines_local.py, before run_poll() - not called by run_poll()
+    itself, since the one-shot GitHub Actions path doesn't need it and
+    the caches exist specifically to avoid redundant fetches WITHIN a
+    single poll (e.g. multiple Betr-lined players on the same team)."""
+    _roster_cache.clear()
+    _forty_man_cache.clear()
+
+
 def get_recent_transactions(start_date, end_date):
     """Return the raw list of transactions from /api/v1/transactions
     between start_date and end_date (both "YYYY-MM-DD"). Each entry has

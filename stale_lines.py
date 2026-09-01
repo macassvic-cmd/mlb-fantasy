@@ -176,7 +176,14 @@ STATE_DIR = os.path.join("data", "stale_lines")
 STATE_PATH = os.path.join(STATE_DIR, "state.json")
 EVENTS_LOG_PATH = os.path.join(STATE_DIR, "events.jsonl")
 
-MIN_MINUTES_TO_FIRST_PITCH = 30
+# Lowered from 30 to 5 on 2026-09-01 - the Tyler Stephenson miss that day
+# was diagnosed as a GitHub Actions cron gap (103 minutes with zero polls),
+# not this gate (his lineup posted 3h16m-4h59m before first pitch, nowhere
+# near either threshold) - but 30 was still wrong on its own terms for a
+# strategy where a human can act on a 5-7 minute window. Lowering it now
+# that the local runner (stale_lines_local.py) polls every 30s makes a
+# 5-minute-out flag actually reachable in practice, not just in theory.
+MIN_MINUTES_TO_FIRST_PITCH = 5
 CHECK_INTERVALS_MIN = [5, 15, 30]
 
 DISCORD_WEBHOOK_ENV_VAR = "DISCORD_WEBHOOK_URL"
@@ -279,6 +286,27 @@ def _discord_edit_checkpoint(flag):
         return True
     except Exception as e:
         logger.warning(f"Discord webhook PATCH failed for {flag['name']}: {e}")
+        return False
+
+
+def post_system_alert(title, description, color=0xE74C3C):
+    """Generic (non-flag) Discord alert - used by stale_lines_local.py
+    (poll crashed) and stale_lines_watchdog.py (heartbeat stale), not by
+    the flag-detection logic above. Always a fresh message (no
+    POST+edit pairing like _discord_post_new_flag/_discord_edit_
+    checkpoint - a crash/stall alert is a one-off event, not something
+    that gets updated over time). Same no-op-if-unset, never-raise
+    contract as the flag-alert functions - a Discord outage on TOP of
+    whatever this is alerting about must never take down the caller."""
+    webhook_url = _discord_webhook_url()
+    if not webhook_url:
+        return False
+    try:
+        resp = requests.post(webhook_url, json={"embeds": [{"title": title, "description": description, "color": color}]}, timeout=15)
+        resp.raise_for_status()
+        return True
+    except Exception as e:
+        logger.warning(f"Discord system-alert POST failed: {e}")
         return False
 
 
