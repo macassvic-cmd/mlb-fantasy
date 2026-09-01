@@ -13,13 +13,30 @@ BASE = "https://statsapi.mlb.com/api/v1"
 BASE_V11 = "https://statsapi.mlb.com/api/v1.1"
 logger = logging.getLogger(__name__)
 
+# Shared Session, not a bare requests.get() per call - measured directly
+# against statsapi.mlb.com: a fresh connection costs ~15s (TLS handshake/
+# setup - DNS alone is ~0.5s, actual server response is ~0.1s once
+# connected), while a REUSED connection on the same Session drops to
+# ~0.1s. Irrelevant for a single GitHub Actions poll making one or two
+# calls, but stale_lines.check_roster_status can make ~30 sequential
+# calls (one per team with a Betr-lined player) in a single poll - at
+# ~15s/call unpooled that's 7+ minutes, incompatible with a 30-second
+# local polling cadence. With this Session reused across the whole
+# poll, the same 30 calls cost one ~15s connection setup + ~29 x 0.1s.
+# Safe as a module-level singleton here: every call to this module goes
+# through call_with_timeout's one-thread-at-a-time model (a new thread
+# per call, but the previous one has already joined before the next
+# starts) - never true concurrent access, which is the actual case
+# requests.Session's thread-safety caveat is about.
+_session = requests.Session()
+
 
 def _get(path, params=None, timeout=20):
     # requests' own `timeout` only bounds connect/read after DNS resolves -
     # it doesn't always bound a hung DNS lookup. Wrap with a hard wall-clock
     # backstop so a single stuck call can never block the whole pipeline.
     resp = call_with_timeout(
-        requests.get, f"{BASE}{path}", params=params, timeout=timeout,
+        _session.get, f"{BASE}{path}", params=params, timeout=timeout,
         timeout_s=60, label=f"MLB API {path}",
     )
     if resp is None:
@@ -30,7 +47,7 @@ def _get(path, params=None, timeout=20):
 
 def _get_v11(path, params=None, timeout=20):
     resp = call_with_timeout(
-        requests.get, f"{BASE_V11}{path}", params=params, timeout=timeout,
+        _session.get, f"{BASE_V11}{path}", params=params, timeout=timeout,
         timeout_s=60, label=f"MLB API v1.1 {path}",
     )
     if resp is None:
