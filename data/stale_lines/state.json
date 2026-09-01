@@ -897,7 +897,7 @@
       "game_pk": 824313,
       "is_home": false,
       "game_time_utc": "2026-09-02T00:40:00Z",
-      "category": "lineup_unavailable",
+      "category": "not_in_lineup",
       "all_markets": {
         "TOTAL_BASES": 1.5,
         "RUNS": 0.5
@@ -927,7 +927,7 @@
       "resolved": false,
       "grade": null,
       "resolution": null,
-      "discord_message_id": null,
+      "discord_message_id": "1544480975839305833",
       "discord_checkpoint_lines": []
     },
     "824313:pete alonso": {
@@ -966,9 +966,9 @@
           "still_posted_markets": null
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "loss",
+      "resolution": "started_after_all",
       "discord_message_id": null,
       "discord_checkpoint_lines": []
     },
@@ -1007,9 +1007,9 @@
           "still_posted_markets": null
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "loss",
+      "resolution": "started_after_all",
       "discord_message_id": null,
       "discord_checkpoint_lines": []
     },
@@ -1021,7 +1021,7 @@
       "game_pk": 824313,
       "is_home": false,
       "game_time_utc": "2026-09-02T00:40:00Z",
-      "category": "lineup_unavailable",
+      "category": "not_in_lineup",
       "all_markets": {
         "RUNS_BATTED_IN": 0.5,
         "TOTAL_BASES": 1.5,
@@ -1053,7 +1053,7 @@
       "resolved": false,
       "grade": null,
       "resolution": null,
-      "discord_message_id": null,
+      "discord_message_id": "1544480978817261679",
       "discord_checkpoint_lines": []
     },
     "824313:samuel basallo": {
@@ -1092,9 +1092,9 @@
           "still_posted_markets": null
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "loss",
+      "resolution": "started_after_all",
       "discord_message_id": null,
       "discord_checkpoint_lines": []
     },
@@ -1135,9 +1135,9 @@
           "still_posted_markets": null
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "loss",
+      "resolution": "started_after_all",
       "discord_message_id": null,
       "discord_checkpoint_lines": []
     },
@@ -1177,9 +1177,9 @@
           "still_posted_markets": null
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "loss",
+      "resolution": "started_after_all",
       "discord_message_id": null,
       "discord_checkpoint_lines": []
     },
@@ -1218,9 +1218,9 @@
           "still_posted_markets": null
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "loss",
+      "resolution": "started_after_all",
       "discord_message_id": null,
       "discord_checkpoint_lines": []
     },
@@ -1260,9 +1260,9 @@
           "still_posted_markets": null
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "loss",
+      "resolution": "started_after_all",
       "discord_message_id": null,
       "discord_checkpoint_lines": []
     },
@@ -15371,9 +15371,9 @@
           }
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "loss",
+      "resolution": "started_after_all",
       "discord_message_id": null,
       "discord_checkpoint_lines": []
     },
