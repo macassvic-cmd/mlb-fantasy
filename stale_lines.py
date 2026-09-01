@@ -37,8 +37,24 @@ lineup source itself has a data gap. That reframes the risk correctly:
 it's not "the sub still performed" (irrelevant to DNS) - it's purely
 "was our lineup source wrong or premature."
 
+CORRECTION (2026-09-01): flags used to also be created when a team's
+lineup wasn't posted yet ("lineup_unavailable"), on the theory that a
+later poll would re-check it once the real lineup appeared. In practice
+this produced ZERO signal: Betr posts hitter props for a team's likely
+full roster hours before lineups post, so "has a posted Betr line, no
+lineup posted yet" is true of nearly every rostered player on a normal
+day - not a scratch signal at all. Empirically, ALL 300 of this
+detector's first real flags were created this way, and every one that
+resolved (17/17) was a LOSS - completely ordinary starters whose props
+simply posted first. Pass 1 now skips creating a flag entirely when the
+lineup isn't posted yet (see run_poll) - a flag only exists once the
+real lineup card is checked and the player is confirmed absent from it.
+The lineup_unavailable category/upgrade path below is kept only to
+resolve flags that were already open before this correction shipped.
+
 FALSE-POSITIVE (loss) PROTECTION - i.e., "our lineup source was wrong":
-  1. "lineup_unavailable" category: if the team's side of the schedule
+  1. "lineup_unavailable" category (LEGACY - see correction above, no
+     longer created going forward): if the team's side of the schedule
      hydration has ZERO players listed, the lineup genuinely hasn't been
      posted yet by MLB - NOT a confirmed absence. Tracked separately,
      re-evaluated every poll, never treated as a win until a real
@@ -96,6 +112,7 @@ unaffected.
 import json
 import logging
 import os
+import sys
 from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 
@@ -323,7 +340,7 @@ def run_poll():
         "already_started": 0,
         "too_close_to_first_pitch": 0,
         "suppressed_by_second_source": 0,
-        "new_flags_lineup_unavailable": 0,
+        "skipped_lineup_not_yet_posted": 0,
         "new_flags_not_in_lineup": 0,
         "already_flagged_seen_again": 0,
     }
@@ -366,21 +383,34 @@ def run_poll():
             continue  # no window to act
 
         if not lineup_posted:
-            category = "lineup_unavailable"
-            counters["new_flags_lineup_unavailable"] += 1
-        else:
-            if team_id not in roster_cache:
-                roster_cache[team_id] = {normalize_name(name): pid for pid, name in get_active_roster(team_id).items()}
-            mlb_pid = roster_cache[team_id].get(entry["normalized_name"])
-            if mlb_pid is not None:
-                orders = get_live_feed_batting_orders(game_pk)
-                side_order = orders["home" if is_home else "away"]
-                if side_order and mlb_pid in side_order:
-                    counters["suppressed_by_second_source"] += 1
-                    _log_event({"ts": now.isoformat(), "type": "suppressed_second_source", "name": entry["name"], "team": team_abbr, "game_pk": game_pk})
-                    continue
-            category = "not_in_lineup"
-            counters["new_flags_not_in_lineup"] += 1
+            # NOT a flag. Corrected 2026-09-01: creating a "lineup_
+            # unavailable" flag here (the original design) isn't a
+            # scratch signal at all - it just means Betr has posted a
+            # prop on a player before MLB's lineup card exists yet, which
+            # is completely routine (Betr covers the likely full roster
+            # hours ahead of lineups). Empirically, EVERY one of this
+            # detector's first 300 real flags were created exactly this
+            # way, and every one that has resolved so far (17/17) was a
+            # LOSS - the player was, unsurprisingly, just a normal
+            # starter whose prop happened to post before the lineup did.
+            # See session notes for the full cohort breakdown. Skip
+            # entirely here; the real signal requires the lineup to
+            # already be posted with the player genuinely absent from it.
+            counters["skipped_lineup_not_yet_posted"] += 1
+            continue
+
+        if team_id not in roster_cache:
+            roster_cache[team_id] = {normalize_name(name): pid for pid, name in get_active_roster(team_id).items()}
+        mlb_pid = roster_cache[team_id].get(entry["normalized_name"])
+        if mlb_pid is not None:
+            orders = get_live_feed_batting_orders(game_pk)
+            side_order = orders["home" if is_home else "away"]
+            if side_order and mlb_pid in side_order:
+                counters["suppressed_by_second_source"] += 1
+                _log_event({"ts": now.isoformat(), "type": "suppressed_second_source", "name": entry["name"], "team": team_abbr, "game_pk": game_pk})
+                continue
+        category = "not_in_lineup"
+        counters["new_flags_not_in_lineup"] += 1
 
         flag = {
             "flag_id": flag_id,
@@ -391,6 +421,7 @@ def run_poll():
             "is_home": is_home,
             "game_time_utc": idx["game_time_utc"],
             "category": category,
+            "created_as": category,
             "all_markets": entry["markets"],
             "first_seen_utc": now.isoformat(),
             "minutes_to_first_pitch_at_flag": round(minutes_to_first_pitch, 1),
@@ -449,6 +480,12 @@ def run_poll():
                 _log_event({"ts": now.isoformat(), "type": "graded", "flag_id": flag_id, "name": flag["name"], "grade": "loss", "resolution": "started_after_all"})
                 continue
 
+            # LEGACY ONLY as of 2026-09-01: pass 1 no longer creates new
+            # lineup_unavailable flags at all (see the module docstring
+            # and pass 1's skip logic above), so this upgrade path only
+            # ever fires for flags that were already open before that
+            # change shipped. Kept so those pre-existing flags still
+            # resolve correctly instead of being orphaned.
             if flag["category"] == "lineup_unavailable" and side_posted:
                 flag["category"] = "not_in_lineup"
 
@@ -526,7 +563,42 @@ def run_poll():
     return summary
 
 
+def send_test_discord_message():
+    """Post a single synthetic, clearly-labeled test message through the
+    EXACT same code path a real flag uses (_discord_post_new_flag ->
+    _flag_embed), without touching state.json/events.jsonl at all - pure
+    webhook-wiring verification, invoked via `python stale_lines.py
+    --test-discord` (see .github/workflows/stale_lines.yml's
+    workflow_dispatch input). Returns True/False; the caller (main())
+    reports the result, but actually confirming the message *arrived* in
+    the channel is on whoever set up the webhook - this process has no
+    way to read Discord back."""
+    now = datetime.now(timezone.utc)
+    fake_flag = {
+        "name": "[TEST] Webhook Wiring Check",
+        "team": "N/A",
+        "game_time_utc": (now + timedelta(minutes=45)).isoformat().replace("+00:00", "Z"),
+        "category": "not_in_lineup",
+        "all_markets": {"TEST_MARKET": 0.0},
+        "minutes_to_first_pitch_at_flag": 45.0,
+        "discord_checkpoint_lines": ["This is a one-off connectivity test, not a real flag - safe to ignore/delete."],
+        "discord_message_id": None,
+    }
+    if not _discord_webhook_url():
+        print("DISCORD_WEBHOOK_URL is not set - nothing to test.")
+        return False
+    ok = _discord_post_new_flag(fake_flag)
+    if ok:
+        print(f"Test message posted successfully. Discord message_id: {fake_flag['discord_message_id']}")
+    else:
+        print("Test message POST failed - see the warning above for the underlying error.")
+    return ok
+
+
 def main():
+    if "--test-discord" in sys.argv:
+        ok = send_test_discord_message()
+        sys.exit(0 if ok else 1)
     summary = run_poll()
     print(json.dumps(summary, indent=2))
 

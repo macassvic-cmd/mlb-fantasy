@@ -41,7 +41,13 @@ name: Stale Line Detector
 on:
   schedule:
     - cron: '*/5 14-23,0-4 * * *'
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      test_discord:
+        description: 'Send a one-off test message via the webhook instead of polling (verifies DISCORD_WEBHOOK_URL wiring - no state.json changes)'
+        required: false
+        default: 'false'
+        type: boolean
 
 # Scheduled fires are 5 minutes apart but a run could occasionally take
 # longer than that (API slowness) - queue rather than run concurrently,
@@ -78,7 +84,15 @@ jobs:
       - name: Install minimal dependencies
         run: pip install requests
 
+      - name: Send Discord test message
+        if: github.event.inputs.test_discord == 'true'
+        env:
+          PYTHONUNBUFFERED: '1'
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python stale_lines.py --test-discord
+
       - name: Poll for stale lines
+        if: github.event.inputs.test_discord != 'true'
         env:
           PYTHONUNBUFFERED: '1'
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
