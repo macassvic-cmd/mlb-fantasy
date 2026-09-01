@@ -5,12 +5,21 @@ name: Stale Line Detector
 # zero, one investigated "miss" that turned out to be a genuine
 # substitute appearance, not a data-quality bug).
 #
-# LOG-ONLY for now - no Discord/notification wiring yet (Phase 3). The
-# point of this phase is to accumulate data/stale_lines/state.json's
-# per-flag 5/15/30-minute checkpoints across a real multi-day sample, to
-# answer: does a stale Betr line actually survive long enough after we
-# detect it to be worth alerting on, or does Betr pull it faster than a
-# human could act? Don't wire up notifications until that's answered.
+# Phase 3 (2026-09-01) added Discord notifications - see stale_lines.py's
+# module docstring for exactly what alerts and what doesn't
+# (category="not_in_lineup" only; "lineup_unavailable" would flood the
+# channel with non-actionable noise). Notifications are additive and
+# informational, not gated on the log-only measurement data - the point
+# of that measurement (data/stale_lines/state.json's per-flag 5/15/30-
+# minute checkpoints) is still live and unaffected: does a stale Betr
+# line actually survive long enough after we alert to be worth acting
+# on, or does Betr pull it faster than a human could move?
+#
+# DISCORD_WEBHOOK_URL is a GitHub Actions secret (Settings -> Secrets and
+# variables -> Actions -> New repository secret) - never committed to
+# this file or anywhere else in the repo. If the secret is unset, every
+# notification call in stale_lines.py is a silent no-op; log-only
+# measurement runs exactly as before.
 #
 # CRON NOTE: */5 is the highest-frequency schedule GitHub Actions
 # supports, and per this repo's own recent experience (see pipeline.yml's
@@ -72,6 +81,7 @@ jobs:
       - name: Poll for stale lines
         env:
           PYTHONUNBUFFERED: '1'
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: python stale_lines.py
 
       - name: Commit and push if state changed
