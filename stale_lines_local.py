@@ -104,8 +104,20 @@ def write_heartbeat(ok, summary=None, error=None):
 
 
 def _git(args):
+    # GIT_EDITOR=true - `git rebase --continue` after resolving a
+    # conflict can try to open an interactive editor to confirm the
+    # commit message; there's no TTY here, and without this it fails
+    # outright ("Terminal is dumb, but EDITOR unset") instead of just
+    # keeping the existing message and continuing. Found live against
+    # the real .github/workflows/stale_lines.yml the first time this
+    # repo produced a genuine byte-level conflict (this process and that
+    # workflow both writing data/stale_lines/ around the same moment) -
+    # fixed there too, mirrored here so this process doesn't hit the
+    # identical failure just because a sandbox test happened not to
+    # trigger it.
+    env = {**os.environ, "GIT_EDITOR": "true"}
     return subprocess.run(
-        ["git", *args], cwd=REPO_ROOT,
+        ["git", *args], cwd=REPO_ROOT, env=env,
         capture_output=True, text=True, timeout=GIT_SUBPROCESS_TIMEOUT,
     )
 

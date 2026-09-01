@@ -101,6 +101,19 @@ jobs:
       - name: Commit and push if state changed
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # `git rebase --continue` after resolving a conflict can try to
+          # open an editor to confirm the commit message - there is no
+          # interactive editor in a GitHub Actions runner, and it fails
+          # loudly ("Terminal is dumb, but EDITOR unset") instead of just
+          # proceeding with the existing message. Found live 2026-09-01:
+          # the very first time this repo produced a genuine byte-level
+          # conflict on data/stale_lines/ (two pollers - this workflow and
+          # the new local runner - both writing the same files around the
+          # same moment), this step failed outright and silently dropped
+          # that poll's grading/checkpoint updates. GIT_EDITOR=true makes
+          # git run the no-op `true` command instead of prompting,
+          # keeping the default message and continuing.
+          GIT_EDITOR: "true"
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
