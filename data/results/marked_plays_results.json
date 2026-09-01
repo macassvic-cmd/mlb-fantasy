@@ -2683,19 +2683,70 @@
         }
       ],
       "hot": []
+    },
+    "2026-08-31": {
+      "fire": [
+        {
+          "player_id": 547180,
+          "name": "Bryce Harper",
+          "team": "Philadelphia Phillies",
+          "grade": "win",
+          "n_before": 21,
+          "wins_before": 14,
+          "rate_before": 66.7
+        },
+        {
+          "player_id": 646240,
+          "name": "Rafael Devers",
+          "team": "San Francisco Giants",
+          "grade": "win",
+          "n_before": 15,
+          "wins_before": 9,
+          "rate_before": 60.0
+        },
+        {
+          "player_id": 694671,
+          "name": "Wyatt Langford",
+          "team": "Texas Rangers",
+          "grade": "loss",
+          "n_before": 15,
+          "wins_before": 9,
+          "rate_before": 60.0
+        }
+      ],
+      "hot": [
+        {
+          "player_id": 666018,
+          "name": "Jonathan Aranda",
+          "team": "Tampa Bay Rays",
+          "grade": "loss",
+          "n_before": 12,
+          "wins_before": 8,
+          "rate_before": 66.7
+        },
+        {
+          "player_id": 672515,
+          "name": "Gabriel Moreno",
+          "team": "Arizona Diamondbacks",
+          "grade": "win",
+          "n_before": 14,
+          "wins_before": 9,
+          "rate_before": 64.3
+        }
+      ]
     }
   },
   "cohorts": {
     "fire": {
-      "wins": 53,
-      "losses": 49,
-      "n": 102,
-      "rate": 52.0
+      "wins": 55,
+      "losses": 50,
+      "n": 105,
+      "rate": 52.4
     },
     "hot": {
-      "wins": 86,
-      "losses": 68,
-      "n": 154,
+      "wins": 87,
+      "losses": 69,
+      "n": 156,
       "rate": 55.8
     }
   }

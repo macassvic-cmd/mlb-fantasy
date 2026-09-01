@@ -972,21 +972,127 @@
           "grade": "win"
         }
       ]
+    },
+    "2026-08-31": {
+      "wins": 4,
+      "losses": 3,
+      "dnp": 2,
+      "plays": [
+        {
+          "player_id": 641355,
+          "name": "Cody Bellinger",
+          "team": "New York Yankees",
+          "projected_ud": 4.51,
+          "ud_line": 6.5,
+          "edge": -1.99,
+          "game_time_pt": "6:38 PM PT",
+          "actual_ud": 6,
+          "grade": "win"
+        },
+        {
+          "player_id": 682928,
+          "name": "CJ Abrams",
+          "team": "Washington Nationals",
+          "projected_ud": 5.65,
+          "ud_line": 7.5,
+          "edge": -1.85,
+          "game_time_pt": "3:45 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 686948,
+          "name": "Drake Baldwin",
+          "team": "Atlanta Braves",
+          "projected_ud": 4.67,
+          "ud_line": 6.5,
+          "edge": -1.83,
+          "game_time_pt": "3:05 PM PT",
+          "actual_ud": 13,
+          "grade": "loss"
+        },
+        {
+          "player_id": 668227,
+          "name": "Randy Arozarena",
+          "team": "Seattle Mariners",
+          "projected_ud": 4.73,
+          "ud_line": 6.5,
+          "edge": -1.77,
+          "game_time_pt": "3:45 PM PT",
+          "actual_ud": 36,
+          "grade": "loss"
+        },
+        {
+          "player_id": 690993,
+          "name": "Colt Keith",
+          "team": "Detroit Tigers",
+          "projected_ud": 3.74,
+          "ud_line": 5.5,
+          "edge": -1.76,
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 693307,
+          "name": "Dillon Dingler",
+          "team": "Detroit Tigers",
+          "projected_ud": 3.81,
+          "ud_line": 5.5,
+          "edge": -1.69,
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 694192,
+          "name": "Jackson Chourio",
+          "team": "Milwaukee Brewers",
+          "projected_ud": 4.87,
+          "ud_line": 6.5,
+          "edge": -1.63,
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 8,
+          "grade": "loss"
+        },
+        {
+          "player_id": 669364,
+          "name": "Xavier Edwards",
+          "team": "Miami Marlins",
+          "projected_ud": 4.95,
+          "ud_line": 6.5,
+          "edge": -1.55,
+          "game_time_pt": "3:45 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 645277,
+          "name": "Ozzie Albies",
+          "team": "Atlanta Braves",
+          "projected_ud": 3.95,
+          "ud_line": 5.5,
+          "edge": -1.55,
+          "game_time_pt": "3:05 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 50,
-    "losses": 30,
-    "dnp": 4
+    "wins": 54,
+    "losses": 33,
+    "dnp": 6
   },
   "record_by_line": {
     "5.5": {
-      "wins": 22,
+      "wins": 25,
       "losses": 11
     },
     "6.5": {
-      "wins": 8,
-      "losses": 11
+      "wins": 9,
+      "losses": 14
     },
     "8.5+": {
       "wins": 4,
