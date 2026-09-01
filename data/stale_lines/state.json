@@ -15442,12 +15442,21 @@
       },
       "first_seen_utc": "2026-09-01T23:17:31.818843+00:00",
       "minutes_to_first_pitch_at_flag": 172.5,
-      "checks": [],
+      "checks": [
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-01T23:22:31.829479+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
+        }
+      ],
       "resolved": false,
       "grade": null,
       "resolution": null,
       "discord_message_id": "1544486407161126943",
-      "discord_checkpoint_lines": []
+      "discord_checkpoint_lines": [
+        "\u26a0\ufe0f 5 min: no longer posted"
+      ]
     }
   },
   "early_signals": {
