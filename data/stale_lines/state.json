@@ -1303,9 +1303,9 @@
           "still_posted_markets": null
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "loss",
+      "resolution": "started_after_all",
       "discord_message_id": null,
       "discord_checkpoint_lines": []
     },
@@ -1345,9 +1345,9 @@
           "still_posted_markets": null
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "loss",
+      "resolution": "started_after_all",
       "discord_message_id": null,
       "discord_checkpoint_lines": []
     },
@@ -1359,7 +1359,7 @@
       "game_pk": 824313,
       "is_home": true,
       "game_time_utc": "2026-09-02T00:40:00Z",
-      "category": "lineup_unavailable",
+      "category": "not_in_lineup",
       "all_markets": {
         "TOTAL_BASES": 1.5,
         "RUNS": 0.5,
@@ -1390,7 +1390,7 @@
       "resolved": false,
       "grade": null,
       "resolution": null,
-      "discord_message_id": null,
+      "discord_message_id": "1544454685744959539",
       "discord_checkpoint_lines": []
     },
     "824313:mickey moniak": {
@@ -1430,9 +1430,9 @@
           "still_posted_markets": null
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "loss",
+      "resolution": "started_after_all",
       "discord_message_id": null,
       "discord_checkpoint_lines": []
     },
@@ -1444,7 +1444,7 @@
       "game_pk": 824313,
       "is_home": true,
       "game_time_utc": "2026-09-02T00:40:00Z",
-      "category": "lineup_unavailable",
+      "category": "not_in_lineup",
       "all_markets": {
         "HITTER_STRIKEOUTS": 0.5,
         "HITS_RUNS_RUNS_BATTED_IN": 1.5,
@@ -1475,7 +1475,7 @@
       "resolved": false,
       "grade": null,
       "resolution": null,
-      "discord_message_id": null,
+      "discord_message_id": "1544454689481818204",
       "discord_checkpoint_lines": []
     },
     "824313:hunter goodman": {
@@ -1516,9 +1516,9 @@
           "still_posted_markets": null
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "loss",
+      "resolution": "started_after_all",
       "discord_message_id": null,
       "discord_checkpoint_lines": []
     },
@@ -1530,7 +1530,7 @@
       "game_pk": 824313,
       "is_home": true,
       "game_time_utc": "2026-09-02T00:40:00Z",
-      "category": "lineup_unavailable",
+      "category": "not_in_lineup",
       "all_markets": {
         "HITS_RUNS_RUNS_BATTED_IN": 1.5,
         "SINGLES": 0.5
@@ -1560,7 +1560,7 @@
       "resolved": false,
       "grade": null,
       "resolution": null,
-      "discord_message_id": null,
+      "discord_message_id": "1544454693248438406",
       "discord_checkpoint_lines": []
     },
     "824313:jordan beck": {
@@ -1571,7 +1571,7 @@
       "game_pk": 824313,
       "is_home": true,
       "game_time_utc": "2026-09-02T00:40:00Z",
-      "category": "lineup_unavailable",
+      "category": "not_in_lineup",
       "all_markets": {
         "HITS_RUNS_RUNS_BATTED_IN": 1.5,
         "SINGLES": 0.5
@@ -1601,7 +1601,7 @@
       "resolved": false,
       "grade": null,
       "resolution": null,
-      "discord_message_id": null,
+      "discord_message_id": "1544454696855535687",
       "discord_checkpoint_lines": []
     },
     "824313:tj rumfield": {
@@ -1641,9 +1641,9 @@
           "still_posted_markets": null
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "loss",
+      "resolution": "started_after_all",
       "discord_message_id": null,
       "discord_checkpoint_lines": []
     },
@@ -15421,9 +15421,9 @@
           }
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "loss",
+      "resolution": "started_after_all",
       "discord_message_id": null,
       "discord_checkpoint_lines": []
     }
