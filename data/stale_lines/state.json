@@ -2107,9 +2107,9 @@
           }
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "loss",
+      "resolution": "started_after_all",
       "discord_message_id": null,
       "discord_checkpoint_lines": []
     },
@@ -2148,9 +2148,9 @@
           "still_posted_markets": null
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "loss",
+      "resolution": "started_after_all",
       "discord_message_id": null,
       "discord_checkpoint_lines": []
     },
@@ -2199,9 +2199,9 @@
           }
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "loss",
+      "resolution": "started_after_all",
       "discord_message_id": null,
       "discord_checkpoint_lines": []
     },
@@ -2255,9 +2255,9 @@
           }
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "loss",
+      "resolution": "started_after_all",
       "discord_message_id": null,
       "discord_checkpoint_lines": []
     },
@@ -2309,9 +2309,9 @@
           }
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "loss",
+      "resolution": "started_after_all",
       "discord_message_id": null,
       "discord_checkpoint_lines": []
     },
@@ -2362,9 +2362,9 @@
           }
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "loss",
+      "resolution": "started_after_all",
       "discord_message_id": null,
       "discord_checkpoint_lines": []
     },
@@ -2404,9 +2404,9 @@
           "still_posted_markets": null
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "loss",
+      "resolution": "started_after_all",
       "discord_message_id": null,
       "discord_checkpoint_lines": []
     },
@@ -11457,9 +11457,9 @@
           }
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "loss",
+      "resolution": "started_after_all",
       "discord_message_id": null,
       "discord_checkpoint_lines": []
     },
@@ -11471,7 +11471,7 @@
       "game_pk": 823984,
       "is_home": true,
       "game_time_utc": "2026-09-02T01:38:00Z",
-      "category": "lineup_unavailable",
+      "category": "not_in_lineup",
       "all_markets": {
         "SINGLES": 0.5
       },
@@ -11506,7 +11506,7 @@
       "resolved": false,
       "grade": null,
       "resolution": null,
-      "discord_message_id": null,
+      "discord_message_id": "1544451419258626235",
       "discord_checkpoint_lines": []
     },
     "823984:christian moore": {
@@ -11550,9 +11550,9 @@
           }
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "loss",
+      "resolution": "started_after_all",
       "discord_message_id": null,
       "discord_checkpoint_lines": []
     },
