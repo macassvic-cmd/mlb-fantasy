@@ -12499,9 +12499,9 @@
           }
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "loss",
+      "resolution": "started_after_all",
       "discord_message_id": "1544467893796999212",
       "discord_checkpoint_lines": []
     },
@@ -15425,6 +15425,28 @@
       "grade": "loss",
       "resolution": "started_after_all",
       "discord_message_id": null,
+      "discord_checkpoint_lines": []
+    },
+    "823908:enrique hernandez": {
+      "flag_id": "823908:enrique hernandez",
+      "name": "Enrique Hern\u00e1ndez",
+      "normalized_name": "enrique hernandez",
+      "team": "LAD",
+      "game_pk": 823908,
+      "is_home": true,
+      "game_time_utc": "2026-09-02T02:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS": 0.5
+      },
+      "first_seen_utc": "2026-09-01T23:17:31.818843+00:00",
+      "minutes_to_first_pitch_at_flag": 172.5,
+      "checks": [],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1544486407161126943",
       "discord_checkpoint_lines": []
     }
   },
