@@ -17120,6 +17120,12 @@
           "checked_at_utc": "2026-09-02T18:43:51.570537+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 3,
+          "checked_at_utc": "2026-09-02T18:44:51.571905+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -17129,7 +17135,8 @@
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
         "\u26a0\ufe0f 1 min: no longer posted",
-        "\u26a0\ufe0f 2 min: no longer posted"
+        "\u26a0\ufe0f 2 min: no longer posted",
+        "\u26a0\ufe0f 3 min: no longer posted"
       ]
     },
     "824390:brayan rocchio": {
@@ -17169,6 +17176,18 @@
           "checked_at_utc": "2026-09-02T18:43:51.570537+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-02T18:44:51.571905+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 3,
+          "checked_at_utc": "2026-09-02T18:45:51.574171+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -17177,7 +17196,9 @@
       "discord_message_id": "1544779674553688216",
       "discord_checkpoint_lines": [
         "\u26a0\ufe0f 0.5 min: no longer posted",
-        "\u26a0\ufe0f 1 min: no longer posted"
+        "\u26a0\ufe0f 1 min: no longer posted",
+        "\u26a0\ufe0f 2 min: no longer posted",
+        "\u26a0\ufe0f 3 min: no longer posted"
       ]
     }
   },
