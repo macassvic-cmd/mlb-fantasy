@@ -18958,6 +18958,15 @@
           "still_posted_markets": {
             "TOTAL_BASES": 0.5
           }
+        },
+        {
+          "elapsed_min": 3,
+          "checked_at_utc": "2026-09-02T22:38:38.705182+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITTER_STRIKEOUTS": 1.5,
+            "TOTAL_BASES": 0.5
+          }
         }
       ],
       "resolved": false,
@@ -18967,7 +18976,8 @@
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
-        "\u2705 2 min: still live"
+        "\u2705 2 min: still live",
+        "\u2705 3 min: still live"
       ]
     },
     "823906:victor scott": {
@@ -19024,6 +19034,12 @@
           "checked_at_utc": "2026-09-02T22:37:38.703422+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 3,
+          "checked_at_utc": "2026-09-02T22:38:38.705182+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -19033,7 +19049,8 @@
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
-        "\u26a0\ufe0f 2 min: no longer posted"
+        "\u26a0\ufe0f 2 min: no longer posted",
+        "\u26a0\ufe0f 3 min: no longer posted"
       ]
     },
     "823983:trent grisham": {
@@ -19069,6 +19086,20 @@
           "still_posted_markets": {
             "HITS_RUNS_RUNS_BATTED_IN": 1.5
           }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-02T22:38:08.704295+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5
+          }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-02T22:39:08.706708+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -19076,7 +19107,9 @@
       "resolution": null,
       "discord_message_id": "1544838632232321129",
       "discord_checkpoint_lines": [
-        "\u2705 0.5 min: still live"
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live",
+        "\u26a0\ufe0f 2 min: no longer posted"
       ]
     }
   },
