@@ -17942,6 +17942,12 @@
           "checked_at_utc": "2026-09-02T20:36:21.808630+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 15,
+          "checked_at_utc": "2026-09-02T20:46:21.829033+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -17953,7 +17959,8 @@
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
         "\u2705 3 min: still live",
-        "\u26a0\ufe0f 5 min: no longer posted"
+        "\u26a0\ufe0f 5 min: no longer posted",
+        "\u26a0\ufe0f 15 min: no longer posted"
       ]
     },
     "823660:spencer torkelson": {
@@ -18017,6 +18024,12 @@
           "checked_at_utc": "2026-09-02T20:36:21.808630+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 15,
+          "checked_at_utc": "2026-09-02T20:46:21.829033+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -18028,7 +18041,8 @@
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
         "\u26a0\ufe0f 3 min: no longer posted",
-        "\u26a0\ufe0f 5 min: no longer posted"
+        "\u26a0\ufe0f 5 min: no longer posted",
+        "\u26a0\ufe0f 15 min: no longer posted"
       ]
     },
     "823660:gleyber torres": {
@@ -18102,6 +18116,12 @@
           "checked_at_utc": "2026-09-02T20:36:21.808630+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 15,
+          "checked_at_utc": "2026-09-02T20:46:21.829033+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -18113,7 +18133,8 @@
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
         "\u2705 3 min: still live",
-        "\u26a0\ufe0f 5 min: no longer posted"
+        "\u26a0\ufe0f 5 min: no longer posted",
+        "\u26a0\ufe0f 15 min: no longer posted"
       ]
     },
     "824147:jake rogers": {
@@ -18181,6 +18202,12 @@
           "checked_at_utc": "2026-09-02T20:36:21.808630+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 15,
+          "checked_at_utc": "2026-09-02T20:46:21.829033+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -18192,7 +18219,120 @@
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
         "\u26a0\ufe0f 3 min: no longer posted",
-        "\u26a0\ufe0f 5 min: no longer posted"
+        "\u26a0\ufe0f 5 min: no longer posted",
+        "\u26a0\ufe0f 15 min: no longer posted"
+      ]
+    },
+    "824068:leo jimenez": {
+      "flag_id": "824068:leo jimenez",
+      "name": "Leo Jim\u00e9nez",
+      "normalized_name": "leo jimenez",
+      "team": "MIA",
+      "game_pk": 824068,
+      "is_home": false,
+      "game_time_utc": "2026-09-02T23:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-02T20:46:21.829033+00:00",
+      "lineup_first_posted_utc": "2026-09-02T20:46:21.829033+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 173.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-02T20:46:21.829033+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-02T20:46:51.830208+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-02T20:47:21.831247+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1544810753284907119",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live"
+      ]
+    },
+    "824068:brian navarreto": {
+      "flag_id": "824068:brian navarreto",
+      "name": "Brian Navarreto",
+      "normalized_name": "brian navarreto",
+      "team": "MIA",
+      "game_pk": 824068,
+      "is_home": false,
+      "game_time_utc": "2026-09-02T23:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 0.5,
+        "HITS": 0.5
+      },
+      "first_seen_utc": "2026-09-02T20:46:21.829033+00:00",
+      "lineup_first_posted_utc": "2026-09-02T20:46:21.829033+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 173.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-02T20:46:21.829033+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-02T20:46:51.830208+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-02T20:47:21.831247+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1544810755734376478",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live"
       ]
     }
   },
@@ -18341,6 +18481,7 @@
     "823660:home": "2026-09-02T19:56:21.722049+00:00",
     "824634:home": "2026-09-02T20:15:21.763504+00:00",
     "823660:away": "2026-09-02T20:31:21.794466+00:00",
-    "824147:away": "2026-09-02T20:31:21.794466+00:00"
+    "824147:away": "2026-09-02T20:31:21.794466+00:00",
+    "824068:away": "2026-09-02T20:46:21.829033+00:00"
   }
 }
