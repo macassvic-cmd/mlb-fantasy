@@ -16692,6 +16692,76 @@
         "\u26a0\ufe0f 15 min: no longer posted",
         "\u26a0\ufe0f 30 min: no longer posted"
       ]
+    },
+    "825037:garrett stubbs": {
+      "flag_id": "825037:garrett stubbs",
+      "name": "Garrett Stubbs",
+      "normalized_name": "garrett stubbs",
+      "team": "PHI",
+      "game_pk": 825037,
+      "is_home": false,
+      "game_time_utc": "2026-09-02T19:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 0.5,
+        "HITS": 0.5,
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-02T17:01:51.357697+00:00",
+      "lineup_first_posted_utc": "2026-09-02T17:01:51.357697+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 158.1,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-02T17:01:51.357697+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5,
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1544754258782453832",
+      "discord_checkpoint_lines": []
+    },
+    "825037:alec bohm": {
+      "flag_id": "825037:alec bohm",
+      "name": "Alec Bohm",
+      "normalized_name": "alec bohm",
+      "team": "PHI",
+      "game_pk": 825037,
+      "is_home": false,
+      "game_time_utc": "2026-09-02T19:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITTER_STRIKEOUTS": 0.5
+      },
+      "first_seen_utc": "2026-09-02T17:01:51.357697+00:00",
+      "lineup_first_posted_utc": "2026-09-02T17:01:51.357697+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 158.1,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-02T17:01:51.357697+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITTER_STRIKEOUTS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1544754262913978429",
+      "discord_checkpoint_lines": []
     }
   },
   "early_signals": {
@@ -16824,6 +16894,7 @@
     "822851:home": "2026-09-02T16:04:32.661365+00:00",
     "822851:away": "2026-09-02T16:04:32.661365+00:00",
     "825037:home": "2026-09-02T16:04:32.661365+00:00",
-    "824312:home": "2026-09-02T16:08:48.452716+00:00"
+    "824312:home": "2026-09-02T16:08:48.452716+00:00",
+    "825037:away": "2026-09-02T17:01:51.357697+00:00"
   }
 }
