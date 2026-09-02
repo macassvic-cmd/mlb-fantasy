@@ -15724,12 +15724,21 @@
       },
       "first_seen_utc": "2026-09-02T14:11:14.906992+00:00",
       "minutes_to_first_pitch_at_flag": 173.8,
-      "checks": [],
+      "checks": [
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-02T14:16:14.920773+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
+        }
+      ],
       "resolved": false,
       "grade": null,
       "resolution": null,
       "discord_message_id": "1544711368551301285",
-      "discord_checkpoint_lines": []
+      "discord_checkpoint_lines": [
+        "\u26a0\ufe0f 5 min: no longer posted"
+      ]
     },
     "822686:mauricio dubon": {
       "flag_id": "822686:mauricio dubon",
