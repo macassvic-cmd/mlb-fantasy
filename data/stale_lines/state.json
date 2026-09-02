@@ -18932,13 +18932,43 @@
             "TOTAL_BASES": 0.5,
             "HITTER_STRIKEOUTS": 1.5
           }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-02T22:36:08.699798+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITTER_STRIKEOUTS": 1.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-02T22:36:38.700965+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITTER_STRIKEOUTS": 1.5
+          }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-02T22:37:38.703422+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5
+          }
         }
       ],
       "resolved": false,
       "grade": null,
       "resolution": null,
       "discord_message_id": "1544838255243952261",
-      "discord_checkpoint_lines": []
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live"
+      ]
     },
     "823906:victor scott": {
       "flag_id": "823906:victor scott",
@@ -18969,13 +18999,85 @@
             "HITS_RUNS_RUNS_BATTED_IN": 0.5,
             "HITS": 0.5
           }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-02T22:36:08.699798+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 0.5,
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-02T22:36:38.700965+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 0.5
+          }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-02T22:37:38.703422+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
       "grade": null,
       "resolution": null,
       "discord_message_id": "1544838258330968105",
-      "discord_checkpoint_lines": []
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live",
+        "\u26a0\ufe0f 2 min: no longer posted"
+      ]
+    },
+    "823983:trent grisham": {
+      "flag_id": "823983:trent grisham",
+      "name": "Trent Grisham",
+      "normalized_name": "trent grisham",
+      "team": "NYY",
+      "game_pk": 823983,
+      "is_home": false,
+      "game_time_utc": "2026-09-03T01:38:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5
+      },
+      "first_seen_utc": "2026-09-02T22:37:08.702227+00:00",
+      "lineup_first_posted_utc": "2026-09-02T22:37:08.702227+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 180.9,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-02T22:37:08.702227+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-02T22:37:38.703422+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1544838632232321129",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live"
+      ]
     }
   },
   "early_signals": {
@@ -19128,6 +19230,7 @@
     "824147:home": "2026-09-02T20:54:51.847465+00:00",
     "824634:away": "2026-09-02T20:59:21.855486+00:00",
     "823983:home": "2026-09-02T21:31:21.917852+00:00",
-    "823906:away": "2026-09-02T22:35:38.699015+00:00"
+    "823906:away": "2026-09-02T22:35:38.699015+00:00",
+    "823983:away": "2026-09-02T22:37:08.702227+00:00"
   }
 }
