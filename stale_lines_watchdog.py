@@ -49,15 +49,61 @@ def _save_json(path, data):
         json.dump(data, f, indent=2)
 
 
-def _attempt_restart():
-    """Best-effort: Task Scheduler's own restart-on-failure only fires
-    when the task's process actually EXITS - a genuinely hung-but-still-
-    running process needs to be ended first. Returns a short status
-    string for the alert; never raises."""
+def _kill_all_runner_processes():
+    """Find and force-kill EVERY python.exe whose command line references
+    stale_lines_local.py, plus each one's process tree - not just whichever
+    single process Task Scheduler happens to be tracking as "the task."
+
+    Fixes a real bug found live 2026-09-02: the task launches via
+    run_stale_lines_local.bat under cmd.exe (see setup_stale_lines_local_
+    task.ps1), so the PID Task Scheduler tracks is cmd.exe, with
+    python.exe as its CHILD. The old `schtasks /End` only signals that
+    tracked cmd.exe PID - on Windows, ending a parent does not kill its
+    child, so the actual python.exe runner survived, detached from Task
+    Scheduler's tracking. Task Scheduler then considered the task "not
+    running" and happily started ANOTHER instance on the next restart.
+    Four such orphans had accumulated over 24h this way, all racing
+    unlocked on the same state.json/events.jsonl/git repo. Enumerating by
+    command line and killing every match (taskkill's /T tree-kills each
+    one, /F forces it) closes the gap regardless of which process Task
+    Scheduler itself thinks is "the" runner."""
     try:
-        subprocess.run(["schtasks", "/End", "/TN", RUNNER_TASK_NAME], capture_output=True, text=True, timeout=30)
+        ps_cmd = (
+            "Get-CimInstance Win32_Process -Filter \"Name='python.exe'\" "
+            "| Where-Object { $_.CommandLine -like '*stale_lines_local.py*' } "
+            "| Select-Object -ExpandProperty ProcessId"
+        )
+        result = subprocess.run(
+            ["powershell", "-NoProfile", "-NonInteractive", "-Command", ps_cmd],
+            capture_output=True, text=True, timeout=30,
+        )
+        pids = [line.strip() for line in result.stdout.splitlines() if line.strip().isdigit()]
+    except Exception as e:
+        return f"process lookup failed: {e}"
+
+    if not pids:
+        return "no runner processes found to kill"
+
+    killed, failed = [], []
+    for pid in pids:
+        r = subprocess.run(["taskkill", "/F", "/T", "/PID", pid], capture_output=True, text=True, timeout=15)
+        (killed if r.returncode == 0 else failed).append(pid)
+    status = f"killed {len(killed)} process(es) {killed}"
+    if failed:
+        status += f", failed to kill {failed}"
+    return status
+
+
+def _attempt_restart():
+    """Best-effort: kills EVERY orphaned copy of the runner - not just the
+    one Task Scheduler happens to be tracking (see _kill_all_runner_
+    processes for why that distinction matters) - then starts the task
+    fresh. Returns a short status string for the alert; never raises."""
+    try:
+        kill_status = _kill_all_runner_processes()
         result = subprocess.run(["schtasks", "/Run", "/TN", RUNNER_TASK_NAME], capture_output=True, text=True, timeout=30)
-        return "restart attempted" if result.returncode == 0 else f"restart attempt failed: {result.stderr.strip()}"
+        start_status = "task started" if result.returncode == 0 else f"task start failed: {result.stderr.strip()}"
+        return f"{kill_status}; {start_status}"
     except Exception as e:
         return f"restart attempt failed: {e}"
 

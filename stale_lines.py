@@ -433,6 +433,18 @@ def _update_lineup_posted_index(state, lineup_index, now):
 # description text matched instead of a bare code check.
 TRANSACTION_OUT_TYPE_CODES = {"OPT", "OUT", "DES", "REL"}
 
+# Shared with the reversal pass in check_transactions below, added
+# 2026-09-02: these are the OPPOSITE of an OUT signal (player is now MORE
+# available), which classify_transaction() has always excluded from
+# creating a new signal - but that same exclusion list is exactly what
+# should retroactively CLOSE an already-open early signal for the same
+# player. Investigated after 3 of the first 4 roster_status signals
+# (Greene/Smith/Wood) turned out to be real same-day IL activations
+# landing hours after our snapshot, not stale/misread status data - the
+# 40-man endpoint was correct at read time, reality just changed before
+# game time and nothing was watching for that reversal.
+REVERSAL_KEYWORDS = ("activated", "reinstated", "recalled", "selected the contract")
+
 
 def classify_transaction(t):
     """Return a short category string if this transaction is a
@@ -443,7 +455,7 @@ def classify_transaction(t):
     contain "injured list", e.g. "activated ... from the injured list")."""
     code = t.get("typeCode")
     desc = (t.get("description") or "").lower()
-    if any(k in desc for k in ("activated", "reinstated", "recalled", "selected the contract")):
+    if any(k in desc for k in REVERSAL_KEYWORDS):
         return None
     if code in TRANSACTION_OUT_TYPE_CODES:
         return "roster_move_out"
@@ -547,7 +559,46 @@ def check_transactions(now, betr_by_name, games, state):
         state["early_signals"][key] = signal
         new_signals.append(signal)
         _log_event({"ts": now.isoformat(), "type": "early_signal", **signal})
+
+    _resolve_reversals(now, txns, state)
     return new_signals
+
+
+def _resolve_reversals(now, txns, state):
+    """Close out an already-open roster_status/transaction early signal as
+    soon as the SAME rolling transaction window that feeds check_transactions
+    shows a REVERSAL_KEYWORDS move (activated/reinstated/recalled/selected)
+    for that player - added 2026-09-02. Without this, a signal that was
+    genuinely correct when it fired (real IL stint, real option) but
+    overtaken by a real roster move before game time sat open until
+    _resolve_early_signals eventually saw the player start and called it
+    "player_started_anyway" - which reads as the detection being wrong,
+    when the actual failure is not watching for the reversal we already
+    fetch every poll and simply discard in classify_transaction(). No
+    extra API call: reuses the exact txns list check_transactions already
+    pulled for this poll."""
+    for t in txns:
+        desc = (t.get("description") or "").lower()
+        if not any(k in desc for k in REVERSAL_KEYWORDS):
+            continue
+        person = t.get("person") or {}
+        name = person.get("fullName")
+        if not name:
+            continue
+        norm = normalize_name(name)
+        for sig in state.get("early_signals", {}).values():
+            if sig.get("resolved") or sig["normalized_name"] != norm:
+                continue
+            if sig["source"] not in ("roster_status", "transaction"):
+                continue
+            sig["resolved"] = True
+            sig["outcome"] = "reversed_by_activation"
+            sig["reversal_transaction_id"] = t.get("id")
+            sig["reversal_description"] = t.get("description")
+            _log_event({
+                "ts": now.isoformat(), "type": "early_signal_resolved", "flag_id": sig["flag_id"],
+                "outcome": sig["outcome"], "reversal_description": t.get("description"),
+            })
 
 
 def check_roster_status(now, betr_by_name, team_abbrevs, games, state):
