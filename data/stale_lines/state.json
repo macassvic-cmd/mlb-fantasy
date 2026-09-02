@@ -17146,9 +17146,9 @@
           "still_posted_markets": null
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "win",
+      "resolution": "confirmed_not_started",
       "discord_message_id": "1544779423260348550",
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
@@ -17229,9 +17229,9 @@
           "still_posted_markets": null
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "win",
+      "resolution": "confirmed_not_started",
       "discord_message_id": "1544779674553688216",
       "discord_checkpoint_lines": [
         "\u26a0\ufe0f 0.5 min: no longer posted",
@@ -17327,9 +17327,9 @@
           "still_posted_markets": null
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "win",
+      "resolution": "confirmed_not_started",
       "discord_message_id": "1544781562451591251",
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
@@ -17590,9 +17590,9 @@
           "still_posted_markets": null
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "win",
+      "resolution": "confirmed_not_started",
       "discord_message_id": "1544792005983600723",
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
@@ -17678,9 +17678,9 @@
           "still_posted_markets": null
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "win",
+      "resolution": "confirmed_not_started",
       "discord_message_id": "1544795906191130758",
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
@@ -18967,6 +18967,12 @@
             "HITTER_STRIKEOUTS": 1.5,
             "TOTAL_BASES": 0.5
           }
+        },
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-02T22:40:38.708629+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -18977,7 +18983,8 @@
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
-        "\u2705 3 min: still live"
+        "\u2705 3 min: still live",
+        "\u26a0\ufe0f 5 min: no longer posted"
       ]
     },
     "823906:victor scott": {
@@ -19040,6 +19047,12 @@
           "checked_at_utc": "2026-09-02T22:38:38.705182+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-02T22:40:38.708629+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -19050,7 +19063,8 @@
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
         "\u26a0\ufe0f 2 min: no longer posted",
-        "\u26a0\ufe0f 3 min: no longer posted"
+        "\u26a0\ufe0f 3 min: no longer posted",
+        "\u26a0\ufe0f 5 min: no longer posted"
       ]
     },
     "823983:trent grisham": {
@@ -19100,6 +19114,12 @@
           "checked_at_utc": "2026-09-02T22:39:08.706708+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 3,
+          "checked_at_utc": "2026-09-02T22:40:08.707891+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -19109,7 +19129,8 @@
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
-        "\u26a0\ufe0f 2 min: no longer posted"
+        "\u26a0\ufe0f 2 min: no longer posted",
+        "\u26a0\ufe0f 3 min: no longer posted"
       ]
     }
   },
