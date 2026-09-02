@@ -2401,7 +2401,28 @@ def regenerate_dashboard(date_arg=None):
     """Rebuild output/dashboard.html from the latest projection + results
     data and push it to GitHub Pages. Used by tracker.py after nightly
     grading so the Results and Player History tabs update without a full
-    pipeline run."""
+    pipeline run.
+
+    date_arg=None means TODAY specifically here - not "whatever's most
+    recent," which is what proj.load_data(None) does downstream. This
+    call site is unattended (fired by tracker.py's nightly grading, no
+    human present to notice a label mismatch), so if today's data file
+    doesn't exist yet it must skip the rebuild rather than let
+    prepare_dashboard_context fall back to an older date and render it
+    under today's label. Bug found 2026-09-02: the nightly tracker cron
+    landed at 3:39am PT, before that morning's first pipeline fetch, and
+    silently rebuilt the live dashboard from 2026-09-01's data - a
+    dashboard stamped "today" showing yesterday's board is worse than no
+    rebuild at all.
+    """
+    if date_arg is None:
+        today_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+        if not os.path.exists(os.path.join("data", f"{today_str}.json")):
+            print(f"regenerate_dashboard: no data/{today_str}.json yet - skipping rebuild "
+                  f"(would otherwise fall back to an older date and mislabel it as today).")
+            return None
+        date_arg = today_str
+
     rows, date_str, results_data, top25_data = prepare_dashboard_context(date_arg)
     html_path = os.path.join("output", "dashboard.html")
     write_dashboard(rows, date_str, html_path, results_data, top25_data)

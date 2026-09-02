@@ -196,7 +196,16 @@ EVENTS_LOG_PATH = os.path.join(STATE_DIR, "events.jsonl")
 # that the local runner (stale_lines_local.py) polls every 30s makes a
 # 5-minute-out flag actually reachable in practice, not just in theory.
 MIN_MINUTES_TO_FIRST_PITCH = 5
-CHECK_INTERVALS_MIN = [5, 15, 30]
+
+# Extended 2026-09-02: the first cohort of real not_in_lineup flags showed
+# 13/14 (93%) already gone by the OLD first checkpoint (5 min) - meaning the
+# entire actionable window was invisible to this measurement. Sub-5-minute
+# buckets close that gap so the record shows whether Betr pulls in 30s, 2
+# min, or 4 min - the actual question that decides whether a 30s-poll alert
+# has any usable window at all. 0.5 min = 30s matches the local runner's own
+# poll cadence (stale_lines_local.py); finer than that isn't measurable
+# since it's faster than we poll.
+CHECK_INTERVALS_MIN = [0.5, 1, 2, 3, 5, 15, 30]
 
 DISCORD_WEBHOOK_ENV_VAR = "DISCORD_WEBHOOK_URL"
 _PACIFIC = ZoneInfo("America/Los_Angeles")
@@ -390,6 +399,26 @@ def _build_lineup_index(games):
     return index
 
 
+def _update_lineup_posted_index(state, lineup_index, now):
+    """state["lineup_posted_at"][f"{game_pk}:{side}"] = the ISO timestamp of
+    the FIRST poll that ever observed that side's lineup as posted - written
+    once, never overwritten. Added 2026-09-02 so a flag/signal created
+    against an already-posted lineup can report how long WE took to notice
+    the posting (our own poll-cadence latency), separate from how long Betr
+    takes to react once we do. Necessarily approximate right after a
+    process (re)start or the first poll of a new game day: if the lineup
+    was already posted the very first time this index sees that game side,
+    the true posting time could be anywhere before that first observation -
+    there is no way to backdate it after the fact."""
+    posted_index = state.setdefault("lineup_posted_at", {})
+    for game_pk, idx in lineup_index.items():
+        for side in ("home", "away"):
+            if idx[f"{side}_posted"]:
+                key = f"{game_pk}:{side}"
+                if key not in posted_index:
+                    posted_index[key] = now.isoformat()
+
+
 # ---------------------------------------------------------------------------
 # Early (pre-lineup) signals - Phase 4, log-only. See module docstring.
 # ---------------------------------------------------------------------------
@@ -461,6 +490,18 @@ def _new_early_signal(key, source, category, name, norm, team_abbr, games, betr_
         "resolved": False,
         "outcome": None,
         "lineup_lag_minutes": None,
+        # t=0 baseline, added 2026-09-02: True by construction (this signal
+        # only exists because betr_entry was live in THIS poll's Betr
+        # fetch - see check_transactions/check_roster_status's own gate),
+        # but recorded explicitly with its own timestamp rather than left
+        # implicit, so _measure_early_signal_checkpoints below has a real
+        # anchor point instead of assuming t=0 is always True.
+        "checks": [{
+            "elapsed_min": 0,
+            "checked_at_utc": now.isoformat(),
+            "still_has_any_market": True,
+            "still_posted_markets": betr_entry["markets"] if betr_entry else None,
+        }],
     }
     signal.update(extra)
     return signal
@@ -549,6 +590,36 @@ def check_roster_status(now, betr_by_name, team_abbrevs, games, state):
             new_signals.append(signal)
             _log_event({"ts": now.isoformat(), "type": "early_signal", **signal})
     return new_signals
+
+
+def _measure_early_signal_checkpoints(now, betr_by_name, live_names_now, state):
+    """Same 5/15/30(+sub-5-minute) 'is Betr's line still posted' measurement
+    run_poll's grading pass already does for lineup-based flags, applied to
+    early_signals - added 2026-09-02. Without this, an early signal had no
+    way to show whether it buys real time before Betr also reacts, which is
+    the entire point of comparing this source against the lineup-based
+    flag. Stops once a signal resolves, same as the flag version - matches
+    CHECK_INTERVALS_MIN exactly so the two are directly comparable."""
+    for sig in state.get("early_signals", {}).values():
+        if sig.get("resolved"):
+            continue
+        sig.setdefault("checks", [])
+        first_seen = _parse_iso(sig["first_seen_utc"])
+        elapsed_min = (now - first_seen).total_seconds() / 60
+        done_thresholds = {c["elapsed_min"] for c in sig["checks"]}
+        still_live_entry = betr_by_name.get(sig["normalized_name"])
+        still_has_any_market = sig["normalized_name"] in live_names_now
+        for threshold in CHECK_INTERVALS_MIN:
+            if threshold in done_thresholds or elapsed_min < threshold:
+                continue
+            check = {
+                "elapsed_min": threshold,
+                "checked_at_utc": now.isoformat(),
+                "still_has_any_market": still_has_any_market,
+                "still_posted_markets": (still_live_entry["markets"] if still_live_entry else None),
+            }
+            sig["checks"].append(check)
+            _log_event({"ts": now.isoformat(), "type": "early_signal_checkpoint", "flag_id": sig["flag_id"], "name": sig["name"], **check})
 
 
 def _resolve_early_signals(now, state, lineup_index):
@@ -652,6 +723,7 @@ def run_poll():
 
     state = load_state()
     state.setdefault("flags", {})
+    _update_lineup_posted_index(state, lineup_index, now)
 
     counters = {
         "betr_hitter_entries": len(betr_entries),
@@ -731,6 +803,20 @@ def run_poll():
         category = "not_in_lineup"
         counters["new_flags_not_in_lineup"] += 1
 
+        # Detection latency, added 2026-09-02: how long AFTER the real
+        # lineup card first posted did our own poll cadence take to notice
+        # it - separate from how long Betr then takes to react (that's what
+        # the checks/checkpoints below measure). None if this game side's
+        # posting predates _update_lineup_posted_index's own tracking
+        # (e.g. right after a process restart) - can't backdate a posting
+        # time we never observed.
+        lineup_posted_key = f"{game_pk}:{'home' if is_home else 'away'}"
+        lineup_first_posted_utc = state.get("lineup_posted_at", {}).get(lineup_posted_key)
+        detection_latency_seconds = (
+            round((now - _parse_iso(lineup_first_posted_utc)).total_seconds(), 1)
+            if lineup_first_posted_utc else None
+        )
+
         flag = {
             "flag_id": flag_id,
             "name": entry["name"],
@@ -743,8 +829,20 @@ def run_poll():
             "created_as": category,
             "all_markets": entry["markets"],
             "first_seen_utc": now.isoformat(),
+            "lineup_first_posted_utc": lineup_first_posted_utc,
+            "detection_latency_seconds": detection_latency_seconds,
             "minutes_to_first_pitch_at_flag": round(minutes_to_first_pitch, 1),
-            "checks": [],
+            # t=0 baseline, added 2026-09-02: True by construction (this
+            # flag only exists because `entry` was live in THIS poll's Betr
+            # fetch), recorded explicitly with its own timestamp so the
+            # 0.5/1/2/3/5/15/30-min checkpoints below have a real anchor
+            # instead of an assumed-true starting point.
+            "checks": [{
+                "elapsed_min": 0,
+                "checked_at_utc": now.isoformat(),
+                "still_has_any_market": True,
+                "still_posted_markets": entry["markets"],
+            }],
             "resolved": False,
             "grade": None,
             "resolution": None,
@@ -872,7 +970,11 @@ def run_poll():
                 flag["discord_checkpoint_lines"].append(f"{icon} {threshold} min: {status}")
                 _discord_edit_checkpoint(flag)
 
-    # --- Pass 3: resolve early signals against this poll's lineup index --
+    # --- Pass 3: measure + resolve early signals against this poll's
+    # lineup index. Measurement runs first so a signal that resolves on
+    # this exact poll still gets whatever checkpoint it just reached
+    # recorded before resolution stops further checks. -------------------
+    _measure_early_signal_checkpoints(now, betr_by_name, live_names_now, state)
     _resolve_early_signals(now, state, lineup_index)
 
     save_state(state)
