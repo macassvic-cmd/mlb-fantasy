@@ -18750,13 +18750,47 @@
             "HITS_RUNS_RUNS_BATTED_IN": 0.5,
             "HITS": 0.5
           }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-02T21:31:51.919284+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 0.5,
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-02T21:32:21.920759+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 0.5,
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-02T21:33:21.922735+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 0.5,
+            "HITS": 0.5
+          }
         }
       ],
       "resolved": false,
       "grade": null,
       "resolution": null,
       "discord_message_id": "1544822078166016123",
-      "discord_checkpoint_lines": []
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live"
+      ]
     },
     "823983:jose siri": {
       "flag_id": "823983:jose siri",
@@ -18783,13 +18817,37 @@
           "still_posted_markets": {
             "HITS": 0.5
           }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-02T21:31:51.919284+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-02T21:32:21.920759+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-02T21:33:21.922735+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
       "grade": null,
       "resolution": null,
       "discord_message_id": "1544822081588433038",
-      "discord_checkpoint_lines": []
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u26a0\ufe0f 1 min: no longer posted",
+        "\u26a0\ufe0f 2 min: no longer posted"
+      ]
     }
   },
   "early_signals": {
