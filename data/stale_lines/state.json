@@ -15708,6 +15708,28 @@
         "\u26a0\ufe0f 15 min: no longer posted",
         "\u26a0\ufe0f 30 min: no longer posted"
       ]
+    },
+    "822686:lane thomas": {
+      "flag_id": "822686:lane thomas",
+      "name": "Lane Thomas",
+      "normalized_name": "lane thomas",
+      "team": "ATL",
+      "game_pk": 822686,
+      "is_home": false,
+      "game_time_utc": "2026-09-02T17:05:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5
+      },
+      "first_seen_utc": "2026-09-02T14:11:14.906992+00:00",
+      "minutes_to_first_pitch_at_flag": 173.8,
+      "checks": [],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1544711368551301285",
+      "discord_checkpoint_lines": []
     }
   },
   "early_signals": {
