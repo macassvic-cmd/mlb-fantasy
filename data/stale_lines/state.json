@@ -15798,6 +15798,74 @@
         "\u26a0\ufe0f 15 min: no longer posted",
         "\u26a0\ufe0f 30 min: no longer posted"
       ]
+    },
+    "822686:jorbit vivas": {
+      "flag_id": "822686:jorbit vivas",
+      "name": "Jorbit Vivas",
+      "normalized_name": "jorbit vivas",
+      "team": "WSH",
+      "game_pk": 822686,
+      "is_home": true,
+      "game_time_utc": "2026-09-02T17:05:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS": 0.5,
+        "HITTER_STRIKEOUTS": 0.5
+      },
+      "first_seen_utc": "2026-09-02T14:59:18.292009+00:00",
+      "minutes_to_first_pitch_at_flag": 125.7,
+      "checks": [],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1544723419701055511",
+      "discord_checkpoint_lines": []
+    },
+    "822686:brady house": {
+      "flag_id": "822686:brady house",
+      "name": "Brady House",
+      "normalized_name": "brady house",
+      "team": "WSH",
+      "game_pk": 822686,
+      "is_home": true,
+      "game_time_utc": "2026-09-02T17:05:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-02T14:59:18.292009+00:00",
+      "minutes_to_first_pitch_at_flag": 125.7,
+      "checks": [],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1544723424012927138",
+      "discord_checkpoint_lines": []
+    },
+    "822686:jacob young": {
+      "flag_id": "822686:jacob young",
+      "name": "Jacob Young",
+      "normalized_name": "jacob young",
+      "team": "WSH",
+      "game_pk": 822686,
+      "is_home": true,
+      "game_time_utc": "2026-09-02T17:05:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-02T14:59:18.292009+00:00",
+      "minutes_to_first_pitch_at_flag": 125.7,
+      "checks": [],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1544723430484484197",
+      "discord_checkpoint_lines": []
     }
   },
   "early_signals": {
@@ -15884,8 +15952,8 @@
       "is_home": true,
       "game_time_utc": "2026-09-02T17:05:00Z",
       "first_seen_utc": "2026-09-02T04:29:05.802210+00:00",
-      "resolved": false,
-      "outcome": null,
+      "resolved": true,
+      "outcome": "player_started_anyway",
       "lineup_lag_minutes": null,
       "status_code": "D10",
       "status_desc": "Injured 10-Day",
