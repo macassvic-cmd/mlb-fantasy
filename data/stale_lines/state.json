@@ -15471,6 +15471,126 @@
         "\u26a0\ufe0f 15 min: no longer posted",
         "\u26a0\ufe0f 30 min: no longer posted"
       ]
+    },
+    "824470:freddy fermin": {
+      "flag_id": "824470:freddy fermin",
+      "name": "Freddy Fermin",
+      "normalized_name": "freddy fermin",
+      "team": "SD",
+      "game_pk": 824470,
+      "is_home": false,
+      "game_time_utc": "2026-09-02T16:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-02T13:30:52.380535+00:00",
+      "minutes_to_first_pitch_at_flag": 189.1,
+      "checks": [],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1544701170214248479",
+      "discord_checkpoint_lines": []
+    },
+    "824470:manny machado": {
+      "flag_id": "824470:manny machado",
+      "name": "Manny Machado",
+      "normalized_name": "manny machado",
+      "team": "SD",
+      "game_pk": 824470,
+      "is_home": false,
+      "game_time_utc": "2026-09-02T16:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "FANTASY_POINTS": 6.5,
+        "RUNS_BATTED_IN": 0.5,
+        "TOTAL_BASES": 1.5,
+        "HITS_RUNS_RUNS_BATTED_IN": 2.5,
+        "RUNS": 0.5,
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-02T13:30:52.380535+00:00",
+      "minutes_to_first_pitch_at_flag": 189.1,
+      "checks": [],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1544701209900880025",
+      "discord_checkpoint_lines": []
+    },
+    "824470:tj friedl": {
+      "flag_id": "824470:tj friedl",
+      "name": "TJ Friedl",
+      "normalized_name": "tj friedl",
+      "team": "CIN",
+      "game_pk": 824470,
+      "is_home": true,
+      "game_time_utc": "2026-09-02T16:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 0.5,
+        "HITTER_STRIKEOUTS": 0.5,
+        "HITS": 0.5
+      },
+      "first_seen_utc": "2026-09-02T13:30:52.380535+00:00",
+      "minutes_to_first_pitch_at_flag": 189.1,
+      "checks": [],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1544701252040921270",
+      "discord_checkpoint_lines": []
+    },
+    "824470:eugenio suarez": {
+      "flag_id": "824470:eugenio suarez",
+      "name": "Eugenio Su\u00e1rez",
+      "normalized_name": "eugenio suarez",
+      "team": "CIN",
+      "game_pk": 824470,
+      "is_home": true,
+      "game_time_utc": "2026-09-02T16:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+        "HITS": 0.5
+      },
+      "first_seen_utc": "2026-09-02T13:30:52.380535+00:00",
+      "minutes_to_first_pitch_at_flag": 189.1,
+      "checks": [],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1544701298115346473",
+      "discord_checkpoint_lines": []
+    },
+    "824470:jose trevino": {
+      "flag_id": "824470:jose trevino",
+      "name": "Jose Trevino",
+      "normalized_name": "jose trevino",
+      "team": "CIN",
+      "game_pk": 824470,
+      "is_home": true,
+      "game_time_utc": "2026-09-02T16:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITTER_STRIKEOUTS": 0.5,
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-02T13:30:52.380535+00:00",
+      "minutes_to_first_pitch_at_flag": 189.1,
+      "checks": [],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1544701344781303970",
+      "discord_checkpoint_lines": []
     }
   },
   "early_signals": {
