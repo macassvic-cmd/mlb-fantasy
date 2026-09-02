@@ -18904,6 +18904,78 @@
         "\u26a0\ufe0f 15 min: no longer posted",
         "\u26a0\ufe0f 30 min: no longer posted"
       ]
+    },
+    "823906:joshua baez": {
+      "flag_id": "823906:joshua baez",
+      "name": "Joshua B\u00e1ez",
+      "normalized_name": "joshua baez",
+      "team": "STL",
+      "game_pk": 823906,
+      "is_home": false,
+      "game_time_utc": "2026-09-03T02:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 0.5,
+        "HITTER_STRIKEOUTS": 1.5
+      },
+      "first_seen_utc": "2026-09-02T22:35:38.699015+00:00",
+      "lineup_first_posted_utc": "2026-09-02T22:35:38.699015+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 214.4,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-02T22:35:38.699015+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITTER_STRIKEOUTS": 1.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1544838255243952261",
+      "discord_checkpoint_lines": []
+    },
+    "823906:victor scott": {
+      "flag_id": "823906:victor scott",
+      "name": "Victor Scott II",
+      "normalized_name": "victor scott",
+      "team": "STL",
+      "game_pk": 823906,
+      "is_home": false,
+      "game_time_utc": "2026-09-03T02:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 0.5,
+        "HITS_RUNS_RUNS_BATTED_IN": 0.5,
+        "HITS": 0.5
+      },
+      "first_seen_utc": "2026-09-02T22:35:38.699015+00:00",
+      "lineup_first_posted_utc": "2026-09-02T22:35:38.699015+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 214.4,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-02T22:35:38.699015+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 0.5,
+            "HITS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1544838258330968105",
+      "discord_checkpoint_lines": []
     }
   },
   "early_signals": {
@@ -19055,6 +19127,7 @@
     "824068:away": "2026-09-02T20:46:21.829033+00:00",
     "824147:home": "2026-09-02T20:54:51.847465+00:00",
     "824634:away": "2026-09-02T20:59:21.855486+00:00",
-    "823983:home": "2026-09-02T21:31:21.917852+00:00"
+    "823983:home": "2026-09-02T21:31:21.917852+00:00",
+    "823906:away": "2026-09-02T22:35:38.699015+00:00"
   }
 }
