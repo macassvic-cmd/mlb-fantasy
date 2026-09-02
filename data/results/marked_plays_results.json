@@ -2734,20 +2734,80 @@
           "rate_before": 64.3
         }
       ]
+    },
+    "2026-09-01": {
+      "fire": [
+        {
+          "player_id": 691718,
+          "name": "Pete Crow-Armstrong",
+          "team": "Chicago Cubs",
+          "grade": "loss",
+          "n_before": 38,
+          "wins_before": 25,
+          "rate_before": 65.8
+        },
+        {
+          "player_id": 673548,
+          "name": "Seiya Suzuki",
+          "team": "Chicago Cubs",
+          "grade": "win",
+          "n_before": 28,
+          "wins_before": 21,
+          "rate_before": 75.0
+        },
+        {
+          "player_id": 701398,
+          "name": "Sal Stewart",
+          "team": "Cincinnati Reds",
+          "grade": "win",
+          "n_before": 18,
+          "wins_before": 11,
+          "rate_before": 61.1
+        },
+        {
+          "player_id": 701538,
+          "name": "Jackson Merrill",
+          "team": "San Diego Padres",
+          "grade": "win",
+          "n_before": 19,
+          "wins_before": 14,
+          "rate_before": 73.7
+        }
+      ],
+      "hot": [
+        {
+          "player_id": 700250,
+          "name": "Ben Rice",
+          "team": "New York Yankees",
+          "grade": "loss",
+          "n_before": 9,
+          "wins_before": 6,
+          "rate_before": 66.7
+        },
+        {
+          "player_id": 680757,
+          "name": "Steven Kwan",
+          "team": "Cleveland Guardians",
+          "grade": "loss",
+          "n_before": 10,
+          "wins_before": 10,
+          "rate_before": 100.0
+        }
+      ]
     }
   },
   "cohorts": {
     "fire": {
-      "wins": 55,
-      "losses": 50,
-      "n": 105,
-      "rate": 52.4
+      "wins": 58,
+      "losses": 51,
+      "n": 109,
+      "rate": 53.2
     },
     "hot": {
       "wins": 87,
-      "losses": 69,
-      "n": 156,
-      "rate": 55.8
+      "losses": 71,
+      "n": 158,
+      "rate": 55.1
     }
   }
 }

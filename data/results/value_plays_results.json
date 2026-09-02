@@ -6280,6 +6280,99 @@
           "correct": true
         }
       ]
+    },
+    "2026-09-01": {
+      "summary": {
+        "total": 8,
+        "correct": 2,
+        "accuracy": 25.0,
+        "over_total": 4,
+        "over_correct": 1,
+        "under_total": 4,
+        "under_correct": 1
+      },
+      "plays": [
+        {
+          "player_id": 687637,
+          "name": "Dylan Beavers",
+          "team": "Baltimore Orioles",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 6,
+          "correct": false
+        },
+        {
+          "player_id": 700250,
+          "name": "Ben Rice",
+          "team": "New York Yankees",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 5,
+          "correct": false
+        },
+        {
+          "player_id": 701398,
+          "name": "Sal Stewart",
+          "team": "Cincinnati Reds",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "correct": true
+        },
+        {
+          "player_id": 664034,
+          "name": "Ty France",
+          "team": "San Diego Padres",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "correct": false
+        },
+        {
+          "player_id": 677951,
+          "name": "Bobby Witt Jr.",
+          "team": "Kansas City Royals",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 9.5,
+          "actual_ud": 9,
+          "correct": true
+        },
+        {
+          "player_id": 660271,
+          "name": "Shohei Ohtani",
+          "team": "Los Angeles Dodgers",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 9.5,
+          "actual_ud": 13,
+          "correct": false
+        },
+        {
+          "player_id": 695600,
+          "name": "Carter Jensen",
+          "team": "Kansas City Royals",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 11,
+          "correct": false
+        },
+        {
+          "player_id": 669065,
+          "name": "Kyle Stowers",
+          "team": "Miami Marlins",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 14,
+          "correct": false
+        }
+      ]
     }
   }
 }
