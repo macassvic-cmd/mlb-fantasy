@@ -17524,6 +17524,18 @@
             "TOTAL_BASES": 0.5,
             "HITS": 0.5
           }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-02T19:32:51.672176+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-02T19:33:51.675205+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -17531,7 +17543,9 @@
       "resolution": null,
       "discord_message_id": "1544792005983600723",
       "discord_checkpoint_lines": [
-        "\u2705 0.5 min: still live"
+        "\u2705 0.5 min: still live",
+        "\u26a0\ufe0f 1 min: no longer posted",
+        "\u26a0\ufe0f 2 min: no longer posted"
       ]
     }
   },
