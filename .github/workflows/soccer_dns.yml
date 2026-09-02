@@ -1,0 +1,72 @@
+name: Soccer DNS Detector
+
+# Opened 2026-09-02 - see soccer_dns.py's module docstring for the full
+# strategy. Unlike stale_lines.py (MLB), this is NOT a race - a club's
+# injury list is public days before a match, so this runs ONCE A DAY
+# rather than polling. DISCORD_WEBHOOK_URL is the same GitHub Actions
+# secret stale_lines.yml already uses (Settings -> Secrets and variables
+# -> Actions) - unset means every notification is a silent no-op.
+#
+# Time picked with no real constraint behind it (there's no window to
+# race against here) - mid-morning UTC, well before any evening kickoff
+# in any of the leagues covered, and late enough that Transfermarkt's
+# injury pages have had the day's updates land.
+
+on:
+  schedule:
+    - cron: '0 10 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # Minimal install, same reasoning as stale_lines.yml - soccer_dns.py
+      # and its scraper imports (betr.py, transfermarkt.py, espn_soccer.py)
+      # only need requests + bs4 + dotenv, not the full pipeline stack.
+      - name: Install minimal dependencies
+        run: pip install requests beautifulsoup4 python-dotenv
+
+      - name: Run daily soccer DNS scan
+        env:
+          PYTHONUNBUFFERED: '1'
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python soccer_dns.py
+
+      - name: Commit and push if state changed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_EDITOR: "true"
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/soccer_dns/ data/transfermarkt/
+          if git diff --cached --quiet; then
+            echo "No soccer-DNS state changes this scan."
+          else
+            git commit -m "Soccer DNS scan $(date -u +'%Y-%m-%d %H:%M UTC')"
+            if ! git pull --rebase origin main; then
+              echo "Rebase conflict - resolving by taking this run's version of state files."
+              conflicts=$(git diff --name-only --diff-filter=U)
+              for f in $conflicts; do
+                git checkout --theirs -- "$f" 2>/dev/null && git add -- "$f" || git rm -f -- "$f"
+              done
+              git rebase --continue
+            fi
+            git push
+          fi
