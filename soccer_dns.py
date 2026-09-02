@@ -39,6 +39,16 @@ DISCORD: one message per flag, posted at detection with the injury
 reason/since/expected-return dates included (so a human can sanity-check
 before acting - there's no race here to hide that latency behind), then
 PATCHed once with the final grade once graded.
+
+DAILY DIGEST (added 2026-09-02): every run also posts one compiled
+summary of every currently-active flag, grouped by league and sorted
+longest-out-first within each group - see build_digest_embeds. Filtered
+against THIS run's own board fetch (_still_live), not just state.json,
+since a flag can go stale (Betr pulls the line) between detection and
+digest time with nothing polling in between to notice - unlike
+stale_lines.py's MLB flags, which get re-checked every 30s. Split across
+multiple Discord messages if the combined embeds would exceed Discord's
+per-message limits (10 embeds / ~6000 chars) - see send_digest.
 """
 
 import json
@@ -54,7 +64,7 @@ load_dotenv()
 
 from scrapers.betr import normalize_name as betr_normalize_name
 from scrapers import espn_soccer
-from scrapers.transfermarkt import get_team_injuries_cached
+from scrapers.transfermarkt import get_team_injuries_cached, parse_date_ddmmyyyy
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
@@ -82,6 +92,19 @@ DISCORD_WEBHOOK_ENV_VAR = "DISCORD_WEBHOOK_URL"
 # a few hours - graded no sooner than this many hours after kickoff, to
 # avoid a premature "unresolved" read on a match still in progress.
 GRADE_AFTER_HOURS = 4
+
+LEAGUE_DISPLAY_NAMES = {
+    "EPL": "Premier League", "MLS": "MLS", "LLG": "La Liga",
+    "L1F": "Ligue 1", "BUN": "Bundesliga", "SEA": "Serie A",
+}
+
+# Discord hard limits: 4096 chars per embed description, 10 embeds per
+# message, 6000 chars total across all embeds in one message. Kept well
+# under each (buffer for field names/formatting overhead) rather than
+# computed exactly against the wire limit.
+DISCORD_EMBED_DESC_LIMIT = 3800
+DISCORD_EMBEDS_PER_MSG = 10
+DISCORD_MSG_CHAR_BUDGET = 5500
 
 UPCOMING_EVENTS_QUERY = """query UpcomingEventsInfo($league: League!) {
   getUpcomingEventsV2(league: $league) { ... on EventV2 { id date status } }
@@ -239,6 +262,114 @@ def _confirmed_out_through_fixture(injury, fixture_date):
     return ret > fixture_date
 
 
+def _still_live(flag, board):
+    """True if the flag's player still has an OPENED Betr market in THIS
+    run's board fetch - a flag can go stale between detection and digest
+    time (Betr pulls the line, or the fixture itself falls out of Betr's
+    upcoming-events window) without soccer_dns.py ever polling in
+    between to notice, unlike stale_lines.py's 5/15/30-min checkpoints.
+    The digest is meant to be actionable right now, so anything no
+    longer live is excluded rather than shown as a stale recommendation."""
+    ev = board.get(flag["event_id"])
+    if not ev:
+        return False
+    players = ev["teams"].get(flag["team"])
+    if not players:
+        return False
+    return flag["normalized_name"] in players
+
+
+def _digest_line(flag, now):
+    since_date = parse_date_ddmmyyyy(flag["since"])
+    days_out = f" ({(now.date() - since_date).days}d)" if since_date else ""
+    ret = flag["expected_return"] or "indefinite"
+    opp = f" vs {flag['opponent']}" if flag.get("opponent") else ""
+    fixture = flag["event_date"][:10] if flag.get("event_date") else "?"
+    markets = ", ".join(flag["markets"])
+    return (f"**{flag['name']}** ({flag['team']}){opp} on {fixture} — "
+            f"{flag['reason']}, out since {flag['since'] or 'unknown'}{days_out}, "
+            f"return: {ret} — _{markets}_")
+
+
+def _chunk_lines(lines, limit):
+    """Greedily pack lines into "\n"-joined chunks, each kept under
+    limit chars - a single embed description can't exceed Discord's
+    4096-char cap, so a league with enough active flags needs more than
+    one embed ("League (cont.)")."""
+    chunks, current, current_len = [], [], 0
+    for line in lines:
+        added_len = len(line) + 1
+        if current and current_len + added_len > limit:
+            chunks.append("\n".join(current))
+            current, current_len = [], 0
+        current.append(line)
+        current_len += added_len
+    if current:
+        chunks.append("\n".join(current))
+    return chunks
+
+
+def build_digest_embeds(state, board, now):
+    """One or more embeds per league, sorted longest-out-first within
+    each league, restricted to flags still live in `board` right now -
+    see _still_live for why that check can't just trust state.json."""
+    by_league = {}
+    for flag in state.get("flags", {}).values():
+        if flag.get("resolved") or not _still_live(flag, board):
+            continue
+        by_league.setdefault(flag["league"], []).append(flag)
+
+    embeds = []
+    for league in sorted(by_league, key=lambda l: LEAGUE_DISPLAY_NAMES.get(l, l)):
+        flags = by_league[league]
+        flags.sort(key=lambda f: parse_date_ddmmyyyy(f["since"]) or datetime.max.date())
+        lines = [_digest_line(f, now) for f in flags]
+        chunks = _chunk_lines(lines, DISCORD_EMBED_DESC_LIMIT)
+        league_name = LEAGUE_DISPLAY_NAMES.get(league, league)
+        for i, chunk in enumerate(chunks):
+            title = f"⚽ {league_name} — {len(flags)} live" if i == 0 else f"⚽ {league_name} (cont.)"
+            embeds.append({"title": title, "description": chunk, "color": 0x3498DB})
+    return embeds, len(by_league)
+
+
+def send_digest(embeds):
+    """POSTs `embeds` as one or more Discord messages, batching to stay
+    under the 10-embeds/6000-chars-per-message limits - a genuinely
+    large digest is several messages, not a failed send."""
+    webhook_url = _discord_webhook_url()
+    if not webhook_url:
+        logger.warning("DISCORD_WEBHOOK_URL not set - digest not sent.")
+        return 0
+    if not embeds:
+        logger.info("Digest: nothing currently live - skipping send.")
+        return 0
+
+    batches, current, current_chars = [], [], 0
+    for embed in embeds:
+        embed_chars = len(embed.get("title", "")) + len(embed.get("description", ""))
+        if current and (len(current) >= DISCORD_EMBEDS_PER_MSG or current_chars + embed_chars > DISCORD_MSG_CHAR_BUDGET):
+            batches.append(current)
+            current, current_chars = [], 0
+        current.append(embed)
+        current_chars += embed_chars
+    if current:
+        batches.append(current)
+
+    sent = 0
+    for i, batch in enumerate(batches):
+        content = "**Soccer DNS — Daily Digest**" if i == 0 else None
+        payload = {"embeds": batch}
+        if content:
+            payload["content"] = content
+        try:
+            resp = requests.post(webhook_url, json=payload, timeout=15)
+            resp.raise_for_status()
+            sent += 1
+        except Exception as e:
+            logger.warning(f"Digest POST failed for batch {i+1}/{len(batches)}: {e}")
+    return sent
+
+
 def run_scan():
     now = datetime.now(timezone.utc)
     today_str = now.strftime("%Y-%m-%d")
@@ -322,10 +453,15 @@ def run_scan():
     unresolved_no_data = sum(1 for f in state["flags"].values() if f.get("resolved") and f.get("grade") is None)
     active = sum(1 for f in state["flags"].values() if not f.get("resolved"))
 
+    # --- Daily digest: one compiled post of everything still live -------
+    digest_embeds, digest_leagues = build_digest_embeds(state, board, now)
+    digest_messages_sent = send_digest(digest_embeds)
+
     summary = {
         "scanned_at_utc": now.isoformat(), "counters": counters, "graded_this_run": graded,
         "active_unresolved_flags": active, "total_tracked_flags": len(state["flags"]),
         "record": {"wins": wins, "losses": losses, "unresolved_no_espn_data": unresolved_no_data},
+        "digest": {"leagues_included": digest_leagues, "embeds": len(digest_embeds), "messages_sent": digest_messages_sent},
     }
     return summary
 

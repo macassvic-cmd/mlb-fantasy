@@ -160,7 +160,7 @@ def resolve_team(full_name):
 _DATE_RE = re.compile(r"(\d{2})/(\d{2})/(\d{4})")
 
 
-def _parse_tm_date(s):
+def parse_date_ddmmyyyy(s):
     """Transfermarkt dates are DD/MM/YYYY. Returns a date or None for a
     blank cell (an indefinite injury with no announced return date)."""
     m = _DATE_RE.match((s or "").strip())
@@ -212,9 +212,9 @@ def fetch_team_injuries(slug, team_id):
             "normalized_name": normalize_name(name),
             "reason": reason,
             "since": since,
-            "since_date": _parse_tm_date(since),
+            "since_date": parse_date_ddmmyyyy(since),
             "expected_return": expected_return,
-            "expected_return_date": _parse_tm_date(expected_return),
+            "expected_return_date": parse_date_ddmmyyyy(expected_return),
         })
     return records
 
@@ -237,8 +237,8 @@ def get_team_injuries_cached(full_name, cache_date_str):
         with open(cache_path, encoding="utf-8") as f:
             cached = json.load(f)
         for r in cached:
-            r["since_date"] = _parse_tm_date(r["since"])
-            r["expected_return_date"] = _parse_tm_date(r["expected_return"])
+            r["since_date"] = parse_date_ddmmyyyy(r["since"])
+            r["expected_return_date"] = parse_date_ddmmyyyy(r["expected_return"])
         return cached
 
     records = fetch_team_injuries(slug, team_id)
