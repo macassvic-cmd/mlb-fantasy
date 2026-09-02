@@ -15545,6 +15545,24 @@
       "status_code": "D10",
       "status_desc": "Injured 10-Day",
       "note": "Right adductor strain"
+    },
+    "status:695578:D10": {
+      "flag_id": "status:695578:D10",
+      "source": "roster_status",
+      "category": "status_D10",
+      "name": "James Wood",
+      "normalized_name": "james wood",
+      "team": "WSH",
+      "game_pk": 822686,
+      "is_home": true,
+      "game_time_utc": "2026-09-02T17:05:00Z",
+      "first_seen_utc": "2026-09-02T04:29:05.802210+00:00",
+      "resolved": false,
+      "outcome": null,
+      "lineup_lag_minutes": null,
+      "status_code": "D10",
+      "status_desc": "Injured 10-Day",
+      "note": "Left oblique strain."
     }
   }
 }
