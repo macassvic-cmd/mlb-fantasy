@@ -17747,6 +17747,12 @@
           "checked_at_utc": "2026-09-02T20:20:21.774069+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 15,
+          "checked_at_utc": "2026-09-02T20:30:21.793035+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -17758,7 +17764,8 @@
         "\u26a0\ufe0f 1 min: no longer posted",
         "\u26a0\ufe0f 2 min: no longer posted",
         "\u26a0\ufe0f 3 min: no longer posted",
-        "\u26a0\ufe0f 5 min: no longer posted"
+        "\u26a0\ufe0f 5 min: no longer posted",
+        "\u26a0\ufe0f 15 min: no longer posted"
       ]
     },
     "824634:michael conforto": {
@@ -17828,6 +17835,12 @@
           "checked_at_utc": "2026-09-02T20:20:21.774069+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 15,
+          "checked_at_utc": "2026-09-02T20:30:21.793035+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -17839,8 +17852,151 @@
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
         "\u2705 3 min: still live",
-        "\u26a0\ufe0f 5 min: no longer posted"
+        "\u26a0\ufe0f 5 min: no longer posted",
+        "\u26a0\ufe0f 15 min: no longer posted"
       ]
+    },
+    "823660:dillon dingler": {
+      "flag_id": "823660:dillon dingler",
+      "name": "Dillon Dingler",
+      "normalized_name": "dillon dingler",
+      "team": "DET",
+      "game_pk": 823660,
+      "is_home": false,
+      "game_time_utc": "2026-09-02T23:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 1.5,
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+        "RUNS": 0.5
+      },
+      "first_seen_utc": "2026-09-02T20:31:21.794466+00:00",
+      "lineup_first_posted_utc": "2026-09-02T20:31:21.794466+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 188.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-02T20:31:21.794466+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 1.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "RUNS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1544806977727627328",
+      "discord_checkpoint_lines": []
+    },
+    "823660:spencer torkelson": {
+      "flag_id": "823660:spencer torkelson",
+      "name": "Spencer Torkelson",
+      "normalized_name": "spencer torkelson",
+      "team": "DET",
+      "game_pk": 823660,
+      "is_home": false,
+      "game_time_utc": "2026-09-02T23:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5
+      },
+      "first_seen_utc": "2026-09-02T20:31:21.794466+00:00",
+      "lineup_first_posted_utc": "2026-09-02T20:31:21.794466+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 188.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-02T20:31:21.794466+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1544806980613447772",
+      "discord_checkpoint_lines": []
+    },
+    "823660:gleyber torres": {
+      "flag_id": "823660:gleyber torres",
+      "name": "Gleyber Torres",
+      "normalized_name": "gleyber torres",
+      "team": "DET",
+      "game_pk": 823660,
+      "is_home": false,
+      "game_time_utc": "2026-09-02T23:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+        "RUNS": 0.5,
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-02T20:31:21.794466+00:00",
+      "lineup_first_posted_utc": "2026-09-02T20:31:21.794466+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 188.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-02T20:31:21.794466+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "RUNS": 0.5,
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1544806983612502017",
+      "discord_checkpoint_lines": []
+    },
+    "824147:jake rogers": {
+      "flag_id": "824147:jake rogers",
+      "name": "Jake Rogers",
+      "normalized_name": "jake rogers",
+      "team": "CHW",
+      "game_pk": 824147,
+      "is_home": false,
+      "game_time_utc": "2026-09-03T00:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 0.5,
+        "HITS": 0.5
+      },
+      "first_seen_utc": "2026-09-02T20:31:21.794466+00:00",
+      "lineup_first_posted_utc": "2026-09-02T20:31:21.794466+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 218.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-02T20:31:21.794466+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1544806986074292226",
+      "discord_checkpoint_lines": []
     }
   },
   "early_signals": {
@@ -17986,6 +18142,8 @@
     "822931:away": "2026-09-02T19:31:51.669848+00:00",
     "823339:away": "2026-09-02T19:47:21.703284+00:00",
     "823660:home": "2026-09-02T19:56:21.722049+00:00",
-    "824634:home": "2026-09-02T20:15:21.763504+00:00"
+    "824634:home": "2026-09-02T20:15:21.763504+00:00",
+    "823660:away": "2026-09-02T20:31:21.794466+00:00",
+    "824147:away": "2026-09-02T20:31:21.794466+00:00"
   }
 }
