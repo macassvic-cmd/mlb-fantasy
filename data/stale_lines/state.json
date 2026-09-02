@@ -16756,6 +16756,12 @@
           "checked_at_utc": "2026-09-02T17:06:51.367706+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 15,
+          "checked_at_utc": "2026-09-02T17:16:51.385403+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -16767,7 +16773,8 @@
         "\u26a0\ufe0f 1 min: no longer posted",
         "\u26a0\ufe0f 2 min: no longer posted",
         "\u26a0\ufe0f 3 min: no longer posted",
-        "\u26a0\ufe0f 5 min: no longer posted"
+        "\u26a0\ufe0f 5 min: no longer posted",
+        "\u26a0\ufe0f 15 min: no longer posted"
       ]
     },
     "825037:alec bohm": {
@@ -16829,6 +16836,12 @@
           "checked_at_utc": "2026-09-02T17:06:51.367706+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 15,
+          "checked_at_utc": "2026-09-02T17:16:51.385403+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -16840,7 +16853,70 @@
         "\u26a0\ufe0f 1 min: no longer posted",
         "\u26a0\ufe0f 2 min: no longer posted",
         "\u2705 3 min: still live",
-        "\u26a0\ufe0f 5 min: no longer posted"
+        "\u26a0\ufe0f 5 min: no longer posted",
+        "\u26a0\ufe0f 15 min: no longer posted"
+      ]
+    },
+    "824717:cal raleigh": {
+      "flag_id": "824717:cal raleigh",
+      "name": "Cal Raleigh",
+      "normalized_name": "cal raleigh",
+      "team": "SEA",
+      "game_pk": 824717,
+      "is_home": false,
+      "game_time_utc": "2026-09-02T20:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+        "HITTER_STRIKEOUTS": 1.5,
+        "RUNS": 0.5,
+        "WALKS": 0.5
+      },
+      "first_seen_utc": "2026-09-02T17:16:21.384640+00:00",
+      "lineup_first_posted_utc": "2026-09-02T17:16:21.384640+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 173.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-02T17:16:21.384640+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "HITTER_STRIKEOUTS": 1.5,
+            "RUNS": 0.5,
+            "WALKS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-02T17:16:51.385403+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "HITTER_STRIKEOUTS": 1.5,
+            "WALKS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-02T17:17:21.386807+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "HITTER_STRIKEOUTS": 1.5,
+            "WALKS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1544757906790944864",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live"
       ]
     }
   },
@@ -16976,6 +17052,7 @@
     "825037:home": "2026-09-02T16:04:32.661365+00:00",
     "824312:home": "2026-09-02T16:08:48.452716+00:00",
     "825037:away": "2026-09-02T17:01:51.357697+00:00",
-    "824717:home": "2026-09-02T17:04:51.363139+00:00"
+    "824717:home": "2026-09-02T17:04:51.363139+00:00",
+    "824717:away": "2026-09-02T17:16:21.384640+00:00"
   }
 }
