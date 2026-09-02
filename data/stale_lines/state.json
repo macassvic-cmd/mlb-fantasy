@@ -16516,12 +16516,26 @@
       },
       "first_seen_utc": "2026-09-02T16:07:48.483951+00:00",
       "minutes_to_first_pitch_at_flag": 182.2,
-      "checks": [],
+      "checks": [
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-02T16:08:48.452716+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 1.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "RUNS": 0.5,
+            "SINGLES": 0.5
+          }
+        }
+      ],
       "resolved": false,
       "grade": null,
       "resolution": null,
       "discord_message_id": "1544740657170743323",
-      "discord_checkpoint_lines": []
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live"
+      ]
     },
     "824312:mickey moniak": {
       "flag_id": "824312:mickey moniak",
@@ -16539,12 +16553,25 @@
       },
       "first_seen_utc": "2026-09-02T16:07:48.483951+00:00",
       "minutes_to_first_pitch_at_flag": 182.2,
-      "checks": [],
+      "checks": [
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-02T16:08:48.452716+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 1.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        }
+      ],
       "resolved": false,
       "grade": null,
       "resolution": null,
       "discord_message_id": "1544740661209735269",
-      "discord_checkpoint_lines": []
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live"
+      ]
     }
   },
   "early_signals": {
@@ -16676,6 +16703,7 @@
     "822686:away": "2026-09-02T16:04:32.661365+00:00",
     "822851:home": "2026-09-02T16:04:32.661365+00:00",
     "822851:away": "2026-09-02T16:04:32.661365+00:00",
-    "825037:home": "2026-09-02T16:04:32.661365+00:00"
+    "825037:home": "2026-09-02T16:04:32.661365+00:00",
+    "824312:home": "2026-09-02T16:08:48.452716+00:00"
   }
 }
