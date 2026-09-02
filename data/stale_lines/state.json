@@ -17100,13 +17100,85 @@
           "still_posted_markets": {
             "HITS_RUNS_RUNS_BATTED_IN": 0.5
           }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-02T18:42:21.567911+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 0.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-02T18:42:51.569188+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-02T18:43:51.570537+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
       "grade": null,
       "resolution": null,
       "discord_message_id": "1544779423260348550",
-      "discord_checkpoint_lines": []
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u26a0\ufe0f 1 min: no longer posted",
+        "\u26a0\ufe0f 2 min: no longer posted"
+      ]
+    },
+    "824390:brayan rocchio": {
+      "flag_id": "824390:brayan rocchio",
+      "name": "Brayan Rocchio",
+      "normalized_name": "brayan rocchio",
+      "team": "CLE",
+      "game_pk": 824390,
+      "is_home": true,
+      "game_time_utc": "2026-09-02T22:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-02T18:42:51.569188+00:00",
+      "lineup_first_posted_utc": "2026-09-02T18:41:51.566422+00:00",
+      "detection_latency_seconds": 60.0,
+      "minutes_to_first_pitch_at_flag": 237.1,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-02T18:42:51.569188+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-02T18:43:21.569644+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-02T18:43:51.570537+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1544779674553688216",
+      "discord_checkpoint_lines": [
+        "\u26a0\ufe0f 0.5 min: no longer posted",
+        "\u26a0\ufe0f 1 min: no longer posted"
+      ]
     }
   },
   "early_signals": {
@@ -17244,6 +17316,7 @@
     "824717:home": "2026-09-02T17:04:51.363139+00:00",
     "824717:away": "2026-09-02T17:16:21.384640+00:00",
     "824312:away": "2026-09-02T17:35:21.426627+00:00",
-    "824390:home": "2026-09-02T18:41:51.566422+00:00"
+    "824390:home": "2026-09-02T18:41:51.566422+00:00",
+    "822931:home": "2026-09-02T18:42:51.569188+00:00"
   }
 }
