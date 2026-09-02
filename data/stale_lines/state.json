@@ -15486,14 +15486,23 @@
         "HITS_RUNS_RUNS_BATTED_IN": 1.5,
         "SINGLES": 0.5
       },
-      "first_seen_utc": "2026-09-02T13:32:34.119365+00:00",
-      "minutes_to_first_pitch_at_flag": 187.4,
-      "checks": [],
+      "first_seen_utc": "2026-09-02T13:30:52.380535+00:00",
+      "minutes_to_first_pitch_at_flag": 189.1,
+      "checks": [
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-02T13:35:52.410028+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
+        }
+      ],
       "resolved": false,
       "grade": null,
       "resolution": null,
-      "discord_message_id": "1544701664122896487",
-      "discord_checkpoint_lines": []
+      "discord_message_id": "1544701170214248479",
+      "discord_checkpoint_lines": [
+        "\u26a0\ufe0f 5 min: no longer posted"
+      ]
     },
     "824470:manny machado": {
       "flag_id": "824470:manny machado",
@@ -15513,14 +15522,25 @@
         "RUNS": 0.5,
         "SINGLES": 0.5
       },
-      "first_seen_utc": "2026-09-02T13:32:34.119365+00:00",
-      "minutes_to_first_pitch_at_flag": 187.4,
-      "checks": [],
+      "first_seen_utc": "2026-09-02T13:30:52.380535+00:00",
+      "minutes_to_first_pitch_at_flag": 189.1,
+      "checks": [
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-02T13:35:52.410028+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "FANTASY_POINTS": 6.5
+          }
+        }
+      ],
       "resolved": false,
       "grade": null,
       "resolution": null,
-      "discord_message_id": "1544701720955723849",
-      "discord_checkpoint_lines": []
+      "discord_message_id": "1544701209900880025",
+      "discord_checkpoint_lines": [
+        "\u2705 5 min: still live"
+      ]
     },
     "824470:tj friedl": {
       "flag_id": "824470:tj friedl",
@@ -15534,16 +15554,26 @@
       "created_as": "not_in_lineup",
       "all_markets": {
         "TOTAL_BASES": 0.5,
+        "HITTER_STRIKEOUTS": 0.5,
         "HITS": 0.5
       },
-      "first_seen_utc": "2026-09-02T13:32:34.119365+00:00",
-      "minutes_to_first_pitch_at_flag": 187.4,
-      "checks": [],
+      "first_seen_utc": "2026-09-02T13:30:52.380535+00:00",
+      "minutes_to_first_pitch_at_flag": 189.1,
+      "checks": [
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-02T13:35:52.410028+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
+        }
+      ],
       "resolved": false,
       "grade": null,
       "resolution": null,
-      "discord_message_id": "1544701760285966442",
-      "discord_checkpoint_lines": []
+      "discord_message_id": "1544701252040921270",
+      "discord_checkpoint_lines": [
+        "\u26a0\ufe0f 5 min: no longer posted"
+      ]
     },
     "824470:eugenio suarez": {
       "flag_id": "824470:eugenio suarez",
@@ -15559,14 +15589,23 @@
         "HITS_RUNS_RUNS_BATTED_IN": 1.5,
         "HITS": 0.5
       },
-      "first_seen_utc": "2026-09-02T13:33:55.364431+00:00",
-      "minutes_to_first_pitch_at_flag": 186.1,
-      "checks": [],
+      "first_seen_utc": "2026-09-02T13:30:52.380535+00:00",
+      "minutes_to_first_pitch_at_flag": 189.1,
+      "checks": [
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-02T13:35:52.410028+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
+        }
+      ],
       "resolved": false,
       "grade": null,
       "resolution": null,
-      "discord_message_id": "1544701980864417919",
-      "discord_checkpoint_lines": []
+      "discord_message_id": "1544701298115346473",
+      "discord_checkpoint_lines": [
+        "\u26a0\ufe0f 5 min: no longer posted"
+      ]
     },
     "824470:jose trevino": {
       "flag_id": "824470:jose trevino",
@@ -15579,17 +15618,26 @@
       "category": "not_in_lineup",
       "created_as": "not_in_lineup",
       "all_markets": {
-        "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+        "HITTER_STRIKEOUTS": 0.5,
         "SINGLES": 0.5
       },
-      "first_seen_utc": "2026-09-02T13:33:55.364431+00:00",
-      "minutes_to_first_pitch_at_flag": 186.1,
-      "checks": [],
+      "first_seen_utc": "2026-09-02T13:30:52.380535+00:00",
+      "minutes_to_first_pitch_at_flag": 189.1,
+      "checks": [
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-02T13:35:52.410028+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
+        }
+      ],
       "resolved": false,
       "grade": null,
       "resolution": null,
-      "discord_message_id": "1544702023402782855",
-      "discord_checkpoint_lines": []
+      "discord_message_id": "1544701344781303970",
+      "discord_checkpoint_lines": [
+        "\u26a0\ufe0f 5 min: no longer posted"
+      ]
     }
   },
   "early_signals": {
