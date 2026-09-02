@@ -17384,6 +17384,21 @@
           "still_posted_markets": {
             "WALKS": 0.5
           }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-02T19:22:51.649148+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "WALKS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 3,
+          "checked_at_utc": "2026-09-02T19:23:51.651158+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -17392,7 +17407,9 @@
       "discord_message_id": "1544789237604294740",
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
-        "\u2705 1 min: still live"
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live",
+        "\u26a0\ufe0f 3 min: no longer posted"
       ]
     },
     "824068:josh rojas": {
@@ -17426,6 +17443,18 @@
           "checked_at_utc": "2026-09-02T19:22:21.648182+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-02T19:22:51.649148+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-02T19:23:51.651158+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -17433,7 +17462,9 @@
       "resolution": null,
       "discord_message_id": "1544789489182834789",
       "discord_checkpoint_lines": [
-        "\u26a0\ufe0f 0.5 min: no longer posted"
+        "\u26a0\ufe0f 0.5 min: no longer posted",
+        "\u26a0\ufe0f 1 min: no longer posted",
+        "\u26a0\ufe0f 2 min: no longer posted"
       ]
     }
   },
