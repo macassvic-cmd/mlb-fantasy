@@ -21727,6 +21727,15 @@
             "TOTAL_BASES": 1.5,
             "FANTASY_POINTS": 7.5
           }
+        },
+        {
+          "elapsed_min": 3,
+          "checked_at_utc": "2026-09-03T22:05:16.735436+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 1.5,
+            "FANTASY_POINTS": 7.5
+          }
         }
       ],
       "resolved": false,
@@ -21736,7 +21745,68 @@
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
-        "\u2705 2 min: still live"
+        "\u2705 2 min: still live",
+        "\u2705 3 min: still live"
+      ]
+    },
+    "823095:denzel clarke": {
+      "flag_id": "823095:denzel clarke",
+      "name": "Denzel Clarke",
+      "normalized_name": "denzel clarke",
+      "team": "ATH",
+      "game_pk": 823095,
+      "is_home": false,
+      "game_time_utc": "2026-09-04T01:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 0.5,
+        "HITS_RUNS_RUNS_BATTED_IN": 0.5,
+        "HITS": 0.5
+      },
+      "first_seen_utc": "2026-09-03T22:05:16.735436+00:00",
+      "lineup_first_posted_utc": "2026-09-03T22:05:16.735436+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 214.7,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-03T22:05:16.735436+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 0.5,
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-03T22:05:46.736641+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 0.5,
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-03T22:06:16.738039+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 0.5,
+            "HITS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545192999183458356",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live"
       ]
     }
   },
@@ -21907,6 +21977,8 @@
     "824632:home": "2026-09-03T20:20:16.527899+00:00",
     "824069:away": "2026-09-03T20:45:46.575915+00:00",
     "822853:away": "2026-09-03T21:11:16.629561+00:00",
-    "823907:home": "2026-09-03T22:02:16.728800+00:00"
+    "823907:home": "2026-09-03T22:02:16.728800+00:00",
+    "823095:home": "2026-09-03T22:05:16.735436+00:00",
+    "823095:away": "2026-09-03T22:05:16.735436+00:00"
   }
 }
