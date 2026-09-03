@@ -19787,6 +19787,62 @@
         "\u2705 3 min: still live",
         "\u26a0\ufe0f 5 min: no longer posted"
       ]
+    },
+    "823337:esmerlyn valdez": {
+      "flag_id": "823337:esmerlyn valdez",
+      "name": "Esmerlyn Valdez",
+      "normalized_name": "esmerlyn valdez",
+      "team": "PIT",
+      "game_pk": 823337,
+      "is_home": true,
+      "game_time_utc": "2026-09-03T16:35:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+        "RUNS": 0.5
+      },
+      "first_seen_utc": "2026-09-03T14:13:45.794838+00:00",
+      "lineup_first_posted_utc": "2026-09-03T14:13:45.794838+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 141.2,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-03T14:13:45.794838+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "RUNS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-03T14:14:15.796488+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "RUNS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-03T14:14:45.797111+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "RUNS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545074340918333591",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live"
+      ]
     }
   },
   "early_signals": {
@@ -19943,6 +19999,7 @@
     "823983:away": "2026-09-02T22:37:08.702227+00:00",
     "823906:home": "2026-09-02T22:43:38.715492+00:00",
     "823337:away": "2026-09-03T13:54:15.748700+00:00",
-    "824388:home": "2026-09-03T14:00:45.765321+00:00"
+    "824388:home": "2026-09-03T14:00:45.765321+00:00",
+    "823337:home": "2026-09-03T14:13:45.794838+00:00"
   }
 }
