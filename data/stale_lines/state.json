@@ -19438,6 +19438,12 @@
             "TOTAL_BASES": 0.5,
             "HITS": 0.5
           }
+        },
+        {
+          "elapsed_min": 15,
+          "checked_at_utc": "2026-09-03T00:17:38.915358+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -19449,7 +19455,8 @@
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
         "\u2705 3 min: still live",
-        "\u2705 5 min: still live"
+        "\u2705 5 min: still live",
+        "\u26a0\ufe0f 15 min: no longer posted"
       ]
     }
   },
