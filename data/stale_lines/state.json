@@ -19774,6 +19774,12 @@
           "checked_at_utc": "2026-09-03T14:05:45.776214+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 15,
+          "checked_at_utc": "2026-09-03T14:15:45.799342+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -19785,7 +19791,8 @@
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
         "\u2705 3 min: still live",
-        "\u26a0\ufe0f 5 min: no longer posted"
+        "\u26a0\ufe0f 5 min: no longer posted",
+        "\u26a0\ufe0f 15 min: no longer posted"
       ]
     },
     "823337:esmerlyn valdez": {
@@ -19833,6 +19840,23 @@
             "HITS_RUNS_RUNS_BATTED_IN": 1.5,
             "RUNS": 0.5
           }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-03T14:15:45.799342+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "RUNS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 3,
+          "checked_at_utc": "2026-09-03T14:16:45.802022+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5
+          }
         }
       ],
       "resolved": false,
@@ -19841,7 +19865,9 @@
       "discord_message_id": "1545074340918333591",
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
-        "\u2705 1 min: still live"
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live",
+        "\u2705 3 min: still live"
       ]
     }
   },
