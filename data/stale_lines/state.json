@@ -20495,6 +20495,111 @@
         "\u26a0\ufe0f 15 min: no longer posted",
         "\u26a0\ufe0f 30 min: no longer posted"
       ]
+    },
+    "824796:trevor story": {
+      "flag_id": "824796:trevor story",
+      "name": "Trevor Story",
+      "normalized_name": "trevor story",
+      "team": "BOS",
+      "game_pk": 824796,
+      "is_home": false,
+      "game_time_utc": "2026-09-03T23:15:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-03T19:45:46.455829+00:00",
+      "lineup_first_posted_utc": "2026-09-03T19:45:46.455829+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 209.2,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-03T19:45:46.455829+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545157892649521215",
+      "discord_checkpoint_lines": []
+    },
+    "824796:connor wong": {
+      "flag_id": "824796:connor wong",
+      "name": "Connor Wong",
+      "normalized_name": "connor wong",
+      "team": "BOS",
+      "game_pk": 824796,
+      "is_home": false,
+      "game_time_utc": "2026-09-03T23:15:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS": 0.5
+      },
+      "first_seen_utc": "2026-09-03T19:45:46.455829+00:00",
+      "lineup_first_posted_utc": "2026-09-03T19:45:46.455829+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 209.2,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-03T19:45:46.455829+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545157896269074523",
+      "discord_checkpoint_lines": []
+    },
+    "824796:ceddanne rafaela": {
+      "flag_id": "824796:ceddanne rafaela",
+      "name": "Ceddanne Rafaela",
+      "normalized_name": "ceddanne rafaela",
+      "team": "BOS",
+      "game_pk": 824796,
+      "is_home": false,
+      "game_time_utc": "2026-09-03T23:15:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 1.5,
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+        "RUNS": 0.5
+      },
+      "first_seen_utc": "2026-09-03T19:45:46.455829+00:00",
+      "lineup_first_posted_utc": "2026-09-03T19:45:46.455829+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 209.2,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-03T19:45:46.455829+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 1.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "RUNS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545157899788091494",
+      "discord_checkpoint_lines": []
     }
   },
   "early_signals": {
@@ -20655,6 +20760,7 @@
     "823337:home": "2026-09-03T14:13:45.794838+00:00",
     "824388:away": "2026-09-03T14:32:45.827742+00:00",
     "824144:home": "2026-09-03T15:05:15.893058+00:00",
-    "824144:away": "2026-09-03T15:16:15.914852+00:00"
+    "824144:away": "2026-09-03T15:16:15.914852+00:00",
+    "824796:away": "2026-09-03T19:45:46.455829+00:00"
   }
 }
