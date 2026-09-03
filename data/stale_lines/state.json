@@ -20371,6 +20371,12 @@
           "checked_at_utc": "2026-09-03T15:10:15.902696+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 15,
+          "checked_at_utc": "2026-09-03T15:20:15.923457+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -20382,7 +20388,8 @@
         "\u2705 1 min: still live",
         "\u26a0\ufe0f 2 min: no longer posted",
         "\u26a0\ufe0f 3 min: no longer posted",
-        "\u26a0\ufe0f 5 min: no longer posted"
+        "\u26a0\ufe0f 5 min: no longer posted",
+        "\u26a0\ufe0f 15 min: no longer posted"
       ]
     },
     "824144:drew romo": {
@@ -20448,6 +20455,12 @@
             "TOTAL_BASES": 0.5,
             "HITS": 0.5
           }
+        },
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-03T15:21:15.925519+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -20458,7 +20471,8 @@
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
-        "\u2705 3 min: still live"
+        "\u2705 3 min: still live",
+        "\u26a0\ufe0f 5 min: no longer posted"
       ]
     }
   },
