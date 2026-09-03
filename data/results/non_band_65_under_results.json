@@ -784,11 +784,271 @@
           "grade": "loss"
         }
       ]
+    },
+    "2026-09-02": {
+      "wins": 13,
+      "losses": 9,
+      "dnp": 1,
+      "plays": [
+        {
+          "player_id": 665742,
+          "name": "Juan Soto",
+          "team": "New York Mets",
+          "projected_ud": 6.46,
+          "ud_line": 6.5,
+          "edge": -0.04,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 17,
+          "grade": "loss"
+        },
+        {
+          "player_id": 808982,
+          "name": "Jung Hoo Lee",
+          "team": "San Francisco Giants",
+          "projected_ud": 6.43,
+          "ud_line": 6.5,
+          "edge": -0.07,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 669065,
+          "name": "Kyle Stowers",
+          "team": "Miami Marlins",
+          "projected_ud": 6.23,
+          "ud_line": 6.5,
+          "edge": -0.27,
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 19,
+          "grade": "loss"
+        },
+        {
+          "player_id": 605137,
+          "name": "Josh Bell",
+          "team": "Minnesota Twins",
+          "projected_ud": 6.21,
+          "ud_line": 6.5,
+          "edge": -0.29,
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 6,
+          "grade": "win"
+        },
+        {
+          "player_id": 672386,
+          "name": "Alejandro Kirk",
+          "team": "Toronto Blue Jays",
+          "projected_ud": 6.08,
+          "ud_line": 6.5,
+          "edge": -0.42,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 681198,
+          "name": "TJ Rumfield",
+          "team": "Colorado Rockies",
+          "projected_ud": 5.94,
+          "ud_line": 6.5,
+          "edge": -0.56,
+          "game_time_pt": "12:10 PM PT",
+          "actual_ud": 10,
+          "grade": "loss"
+        },
+        {
+          "player_id": 686948,
+          "name": "Drake Baldwin",
+          "team": "Atlanta Braves",
+          "projected_ud": 5.9,
+          "ud_line": 6.5,
+          "edge": -0.6,
+          "game_time_pt": "10:05 AM PT",
+          "actual_ud": 5,
+          "grade": "win"
+        },
+        {
+          "player_id": 695600,
+          "name": "Carter Jensen",
+          "team": "Kansas City Royals",
+          "projected_ud": 5.79,
+          "ud_line": 6.5,
+          "edge": -0.71,
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 31,
+          "grade": "loss"
+        },
+        {
+          "player_id": 703607,
+          "name": "Henry Bolte",
+          "team": "Athletics",
+          "projected_ud": 5.77,
+          "ud_line": 6.5,
+          "edge": -0.73,
+          "game_time_pt": "11:35 AM PT",
+          "actual_ud": 45,
+          "grade": "loss"
+        },
+        {
+          "player_id": 682928,
+          "name": "CJ Abrams",
+          "team": "Washington Nationals",
+          "projected_ud": 5.74,
+          "ud_line": 6.5,
+          "edge": -0.76,
+          "game_time_pt": "10:05 AM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 803011,
+          "name": "Sam Antonacci",
+          "team": "Chicago White Sox",
+          "projected_ud": 5.65,
+          "ud_line": 6.5,
+          "edge": -0.85,
+          "game_time_pt": "5:10 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 678882,
+          "name": "Ceddanne Rafaela",
+          "team": "Boston Red Sox",
+          "projected_ud": 5.63,
+          "ud_line": 6.5,
+          "edge": -0.87,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 621566,
+          "name": "Matt Olson",
+          "team": "Atlanta Braves",
+          "projected_ud": 5.01,
+          "ud_line": 6.5,
+          "edge": -1.49,
+          "game_time_pt": "10:05 AM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 607208,
+          "name": "Trea Turner",
+          "team": "Philadelphia Phillies",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "12:40 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 650333,
+          "name": "Luis Arraez",
+          "team": "Philadelphia Phillies",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "12:40 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 664761,
+          "name": "Alec Bohm",
+          "team": "Philadelphia Phillies",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "12:40 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 681082,
+          "name": "Bryson Stott",
+          "team": "Philadelphia Phillies",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "12:40 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 687462,
+          "name": "Spencer Horwitz",
+          "team": "Pittsburgh Pirates",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 7,
+          "grade": "loss"
+        },
+        {
+          "player_id": 800050,
+          "name": "Chase DeLauter",
+          "team": "Cleveland Guardians",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 12,
+          "grade": "loss"
+        },
+        {
+          "player_id": 608070,
+          "name": "Jos\u00e9 Ram\u00edrez",
+          "team": "Cleveland Guardians",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 665489,
+          "name": "Vladimir Guerrero Jr.",
+          "team": "Toronto Blue Jays",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 31,
+          "grade": "loss"
+        },
+        {
+          "player_id": 691718,
+          "name": "Pete Crow-Armstrong",
+          "team": "Chicago Cubs",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 13,
+          "grade": "loss"
+        },
+        {
+          "player_id": 808959,
+          "name": "Munetaka Murakami",
+          "team": "Chicago White Sox",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "5:10 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 28,
-    "losses": 38,
-    "dnp": 3
+    "wins": 41,
+    "losses": 47,
+    "dnp": 4
   }
 }

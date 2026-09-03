@@ -1173,29 +1173,135 @@
           "grade": "win"
         }
       ]
+    },
+    "2026-09-02": {
+      "wins": 1,
+      "losses": 8,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 660670,
+          "name": "Ronald Acu\u00f1a Jr.",
+          "team": "Atlanta Braves",
+          "projected_ud": 5.54,
+          "ud_line": 7.5,
+          "edge": -1.96,
+          "game_time_pt": "10:05 AM PT",
+          "actual_ud": 30,
+          "grade": "loss"
+        },
+        {
+          "player_id": 676391,
+          "name": "Ernie Clement",
+          "team": "Toronto Blue Jays",
+          "projected_ud": 3.58,
+          "ud_line": 5.5,
+          "edge": -1.92,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 9,
+          "grade": "loss"
+        },
+        {
+          "player_id": 545361,
+          "name": "Mike Trout",
+          "team": "Los Angeles Angels",
+          "projected_ud": 3.6,
+          "ud_line": 5.5,
+          "edge": -1.9,
+          "game_time_pt": "6:38 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 680869,
+          "name": "Zack Gelof",
+          "team": "Athletics",
+          "projected_ud": 4.63,
+          "ud_line": 6.5,
+          "edge": -1.87,
+          "game_time_pt": "11:35 AM PT",
+          "actual_ud": 20,
+          "grade": "loss"
+        },
+        {
+          "player_id": 677951,
+          "name": "Bobby Witt Jr.",
+          "team": "Kansas City Royals",
+          "projected_ud": 6.64,
+          "ud_line": 8.5,
+          "edge": -1.86,
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 12,
+          "grade": "loss"
+        },
+        {
+          "player_id": 677594,
+          "name": "Julio Rodr\u00edguez",
+          "team": "Seattle Mariners",
+          "projected_ud": 4.93,
+          "ud_line": 6.5,
+          "edge": -1.57,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 10,
+          "grade": "loss"
+        },
+        {
+          "player_id": 668709,
+          "name": "JJ Bleday",
+          "team": "Cincinnati Reds",
+          "projected_ud": 4.94,
+          "ud_line": 6.5,
+          "edge": -1.56,
+          "game_time_pt": "9:40 AM PT",
+          "actual_ud": 27,
+          "grade": "loss"
+        },
+        {
+          "player_id": 673548,
+          "name": "Seiya Suzuki",
+          "team": "Chicago Cubs",
+          "projected_ud": 3.94,
+          "ud_line": 5.5,
+          "edge": -1.56,
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 6,
+          "grade": "loss"
+        },
+        {
+          "player_id": 694212,
+          "name": "Samuel Basallo",
+          "team": "Baltimore Orioles",
+          "projected_ud": 5.97,
+          "ud_line": 7.5,
+          "edge": -1.53,
+          "game_time_pt": "12:10 PM PT",
+          "actual_ud": 8,
+          "grade": "loss"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 59,
-    "losses": 36,
+    "wins": 60,
+    "losses": 44,
     "dnp": 6
   },
   "record_by_line": {
     "5.5": {
-      "wins": 27,
-      "losses": 14
+      "wins": 28,
+      "losses": 16
     },
     "6.5": {
       "wins": 11,
-      "losses": 14
+      "losses": 17
     },
     "8.5+": {
       "wins": 5,
-      "losses": 2
+      "losses": 3
     },
     "7.5": {
       "wins": 7,
-      "losses": 3
+      "losses": 5
     }
   }
 }
