@@ -19686,6 +19686,61 @@
         "\u26a0\ufe0f 3 min: no longer posted",
         "\u2705 5 min: still live"
       ]
+    },
+    "824388:patrick bailey": {
+      "flag_id": "824388:patrick bailey",
+      "name": "Patrick Bailey",
+      "normalized_name": "patrick bailey",
+      "team": "CLE",
+      "game_pk": 824388,
+      "is_home": true,
+      "game_time_utc": "2026-09-03T17:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS": 0.5,
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-03T14:00:45.765321+00:00",
+      "lineup_first_posted_utc": "2026-09-03T14:00:45.765321+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 189.2,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-03T14:00:45.765321+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS": 0.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-03T14:01:15.766440+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS": 0.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-03T14:01:45.767416+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545071069151367339",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live"
+      ]
     }
   },
   "early_signals": {
@@ -19841,6 +19896,7 @@
     "823906:away": "2026-09-02T22:35:38.699015+00:00",
     "823983:away": "2026-09-02T22:37:08.702227+00:00",
     "823906:home": "2026-09-02T22:43:38.715492+00:00",
-    "823337:away": "2026-09-03T13:54:15.748700+00:00"
+    "823337:away": "2026-09-03T13:54:15.748700+00:00",
+    "824388:home": "2026-09-03T14:00:45.765321+00:00"
   }
 }
