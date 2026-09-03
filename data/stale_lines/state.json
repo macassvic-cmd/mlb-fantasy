@@ -20311,6 +20311,58 @@
         "\u26a0\ufe0f 15 min: no longer posted",
         "\u26a0\ufe0f 30 min: no longer posted"
       ]
+    },
+    "824144:cam smith": {
+      "flag_id": "824144:cam smith",
+      "name": "Cam Smith",
+      "normalized_name": "cam smith",
+      "team": "HOU",
+      "game_pk": 824144,
+      "is_home": true,
+      "game_time_utc": "2026-09-03T18:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5
+      },
+      "first_seen_utc": "2026-09-03T15:05:15.893058+00:00",
+      "lineup_first_posted_utc": "2026-09-03T15:05:15.893058+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 184.7,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-03T15:05:15.893058+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-03T15:05:45.894540+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-03T15:06:15.895000+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545087301095268514",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live"
+      ]
     }
   },
   "early_signals": {
@@ -20469,6 +20521,7 @@
     "823337:away": "2026-09-03T13:54:15.748700+00:00",
     "824388:home": "2026-09-03T14:00:45.765321+00:00",
     "823337:home": "2026-09-03T14:13:45.794838+00:00",
-    "824388:away": "2026-09-03T14:32:45.827742+00:00"
+    "824388:away": "2026-09-03T14:32:45.827742+00:00",
+    "824144:home": "2026-09-03T15:05:15.893058+00:00"
   }
 }
