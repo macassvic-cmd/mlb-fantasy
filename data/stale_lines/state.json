@@ -21169,6 +21169,52 @@
         "\u26a0\ufe0f 3 min: no longer posted",
         "\u26a0\ufe0f 5 min: no longer posted"
       ]
+    },
+    "824632:matt shaw": {
+      "flag_id": "824632:matt shaw",
+      "name": "Matt Shaw",
+      "normalized_name": "matt shaw",
+      "team": "CHC",
+      "game_pk": 824632,
+      "is_home": true,
+      "game_time_utc": "2026-09-03T23:15:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 0.5,
+        "HITS": 0.5
+      },
+      "first_seen_utc": "2026-09-03T20:20:16.527899+00:00",
+      "lineup_first_posted_utc": "2026-09-03T20:20:16.527899+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 174.7,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-03T20:20:16.527899+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-03T20:20:46.528911+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545166574070014007",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live"
+      ]
     }
   },
   "early_signals": {
@@ -21334,6 +21380,7 @@
     "824069:home": "2026-09-03T19:58:46.482815+00:00",
     "822853:home": "2026-09-03T20:00:46.486976+00:00",
     "824796:home": "2026-09-03T20:01:16.487530+00:00",
-    "824632:away": "2026-09-03T20:12:16.511036+00:00"
+    "824632:away": "2026-09-03T20:12:16.511036+00:00",
+    "824632:home": "2026-09-03T20:20:16.527899+00:00"
   }
 }
