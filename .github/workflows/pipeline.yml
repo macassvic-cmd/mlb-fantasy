@@ -2,51 +2,57 @@ name: MLB Fantasy Pipeline
 
 # All cron times are UTC. The MLB season runs in PDT (UTC-7) Apr–Oct.
 #
-# CRON STRATEGY (updated 2026-08-31):
+# CRON STRATEGY (updated 2026-09-03):
 # ─────────────────────────────────────────────────────────────────────────────
-# GitHub crons are delayed 0.2–6.8h (avg 3.4h, measured over 21 fires) AND
-# disproportionately drop on-the-hour (:00) schedules during high-load
-# windows (start of every hour) - GitHub's own docs call this out. That
-# pattern showed up directly here: the tracker's single on-the-hour crons
-# ('0 6', '0 13') kept landing reliably while the pipeline's crons went
-# missing for 20+ hour stretches three separate times in five days
-# (2026-08-26/27, 08-29/30, 08-30/31) - no pipeline-fetch cron landed at
-# all in those windows, only the tracker's, which rebuilt the dashboard
-# from stale data and made it look like the pipeline "ran" with the wrong
-# date rather than not having run at all.
+# The 2026-08-31 fix (staggering pipeline-fetch crons off :00 to :07/:23/:41)
+# did NOT work - confirmed by a week of `gh run list` data collected
+# 2026-08-27 through 2026-09-03: the staggered entries dropped at the same
+# rate as the :00 ones they replaced. Every single day in that window, the
+# first fetch attempt(s) inside the intended 13:00-21:00 UTC (6am-2pm PDT)
+# window were silently dropped, with the day's first REAL fetch often not
+# landing until 17:00-18:00 UTC or later - sometimes not at all without a
+# manual `workflow_dispatch`. This is GitHub's documented behavior (schedule
+# events can be delayed or dropped under platform load, worse during
+# high-traffic UTC hours) - it isn't specific to which minute the cron is
+# set to, so staggering by a few minutes doesn't meaningfully dodge it.
 #
-# Fix: pipeline-fetch crons moved off :00, staggered so they don't all
-# queue at the same instant:
-#   '0 13,15,17,19,21 * * *'  -> '7 13,15,17,19,21 * * *'
-#   '0 16 * * *'              -> '23 16 * * *'
-#   '0 21 * * *'              -> '41 21 * * *'
-# TRANSITIONAL: the old :00 entries are kept below for now - cron
-# (re)registration takes 24-48h to take effect, and dropping the :00
-# entries immediately would leave a coverage gap until the new ones start
-# firing. Remove the three '0 ...' pipeline entries once the staggered
-# ones are confirmed landing (`gh run list --workflow=pipeline.yml` should
-# show schedule-triggered runs at :07/:23/:41 past the hour) - both sets
-# can coexist meanwhile, same as the original '0 16'/'0 21' transition.
+# NEW STRATEGY: massively over-schedule instead of trying to dodge the
+# problem with cleverer timing. The freshness gate below means a redundant
+# fire (today's data already exists and is <3h old) costs only the
+# "Check for fresh pipeline data" step - a few seconds - so firing every 20
+# minutes across the whole failure-prone morning window is nearly free, and
+# makes it statistically very unlikely for EVERY attempt to be dropped on
+# the same day. 21 independent fires between 12:00-18:40 UTC (5am-11:40am
+# PDT) replace the old 2-3 staggered attempts.
 #
-# Tracker crons ('0 6', '0 13') are UNCHANGED - they've been landing
-# reliably; only the pipeline-fetch crons showed the on-the-hour problem.
+# SELF-HEALING: the tracker crons ('0 6', '0 13') have landed reliably all
+# week (unlike the fetch crons) - see the "Check for fresh pipeline data"
+# step, which now runs on EVERY trigger (not just pipeline-labeled ones) and
+# gates the fetch/projections/dashboard steps purely on data freshness, not
+# on which cron fired. A tracker fire that finds today's data missing now
+# runs the full pipeline itself before grading, instead of just re-rendering
+# the dashboard from yesterday's data (the exact bug fixed in report.py's
+# regenerate_dashboard on 2026-09-02) - a reliable cron now covers for an
+# unreliable one.
+#
+# DEADLINE ALERT: a separate `deadline_alert` job fires once at 17:00 UTC
+# and posts to Discord if today's data still isn't fresh by then - a signal
+# reachable from a phone, since the whole point of the redundant schedule
+# above is not needing a human at a laptop to notice and manually trigger a
+# run (which is what happened nearly every day this week otherwise).
 
 on:
   schedule:
-    # TRANSITIONAL (added 2026-08-31) - remove once the staggered entries
-    # below are confirmed firing. See CRON STRATEGY note above.
-    - cron: '0 13,15,17,19,21 * * *'
-    - cron: '0 16 * * *'
-    - cron: '0 21 * * *'
-    - cron: '7 13,15,17,19,21 * * *'  # Pipeline: 5 attempts 6 AM–2 PM PDT, staggered off :00 (smart-skip handles dedup)
-    - cron: '23 16 * * *'             # Morning pipeline backup, staggered off :00
-    - cron: '41 21 * * *'             # Afternoon pipeline backup, staggered off :00
-    - cron: '0 6 * * *'               # Nightly tracker  — 11:00 PM PDT (primary) - unchanged, reliable
-    - cron: '0 13 * * *'              # Backup tracker   —  6:00 AM PDT - unchanged, reliable
+    - cron: '*/20 12-18 * * *'  # Primary: 21 fires, 5am-11:40am PDT - see CRON STRATEGY above
+    - cron: '41 19 * * *'       # Afternoon backup #1 - 12:41pm PDT
+    - cron: '41 21 * * *'       # Afternoon backup #2 -  2:41pm PDT
+    - cron: '0 6 * * *'         # Nightly tracker  — 11:00 PM PDT (primary) - reliable all week
+    - cron: '0 13 * * *'        # Backup tracker   —  6:00 AM PDT - reliable all week
+    - cron: '0 17 * * *'        # Deadline-alert check only - see deadline_alert job below
   workflow_dispatch:
     inputs:
       run_type:
-        description: 'pipeline = morning/afternoon run | tracker = nightly grading'
+        description: 'pipeline = fetch/rebuild only | tracker = also grade (fetch still runs first if today''s data is missing/stale)'
         required: true
         default: 'pipeline'
         type: choice
@@ -101,9 +107,16 @@ jobs:
         id: rundate
         run: echo "today=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
 
-      # ── Fresh-data check (pipeline crons only) ───────────────────────────
-      # Sets skip=true if today's data file is <3h old. All pipeline steps
-      # gate on this output so every-2h fires are free if data already exists.
+      # ── Fresh-data check (every trigger, not just pipeline-labeled ones) ──
+      # Runs unconditionally now (changed 2026-09-03) - this is what makes
+      # the tracker crons self-healing (see CRON STRATEGY above): a tracker
+      # fire that finds today's data missing/stale sets skip=false exactly
+      # the same way a pipeline fire would, so the fetch/projections/
+      # dashboard steps below (gated purely on this output, not on which
+      # cron fired) run the full pipeline before tracker.py grades anything.
+      # Sets skip=true if today's data file is <3h old, so a redundant fire
+      # (of which there are now many - see the dense schedule above) costs
+      # only this one quick step.
       #
       # BUG FIXED 2026-08-27: this used to compare against `date -r "$DATA"`
       # (the file's mtime). actions/checkout resets every file's mtime to
@@ -128,14 +141,6 @@ jobs:
 
       - name: Check for fresh pipeline data
         id: freshness
-        if: >-
-          github.event.schedule == '0 13,15,17,19,21 * * *' ||
-          github.event.schedule == '0 16 * * *' ||
-          github.event.schedule == '0 21 * * *' ||
-          github.event.schedule == '7 13,15,17,19,21 * * *' ||
-          github.event.schedule == '23 16 * * *' ||
-          github.event.schedule == '41 21 * * *' ||
-          github.event.inputs.run_type == 'pipeline'
         run: |
           TODAY="${{ steps.rundate.outputs.today }}"
           DATA="data/${TODAY}.json"
@@ -162,16 +167,7 @@ jobs:
       # ── Pipeline steps ───────────────────────────────────────────────────
 
       - name: Pipeline — fetch data
-        if: >-
-          steps.freshness.outputs.skip != 'true' && (
-            github.event.schedule == '0 13,15,17,19,21 * * *' ||
-            github.event.schedule == '0 16 * * *' ||
-            github.event.schedule == '0 21 * * *' ||
-            github.event.schedule == '7 13,15,17,19,21 * * *' ||
-            github.event.schedule == '23 16 * * *' ||
-            github.event.schedule == '41 21 * * *' ||
-            github.event.inputs.run_type == 'pipeline'
-          )
+        if: steps.freshness.outputs.skip != 'true'
         run: |
           # NOTE: capture $? from a plain invocation, not from `if ! cmd`.
           # `$?` after `if ! cmd; then` reflects the negated/inverted status
@@ -231,29 +227,11 @@ jobs:
           fi
 
       - name: Pipeline — generate projections
-        if: >-
-          steps.freshness.outputs.skip != 'true' && (
-            github.event.schedule == '0 13,15,17,19,21 * * *' ||
-            github.event.schedule == '0 16 * * *' ||
-            github.event.schedule == '0 21 * * *' ||
-            github.event.schedule == '7 13,15,17,19,21 * * *' ||
-            github.event.schedule == '23 16 * * *' ||
-            github.event.schedule == '41 21 * * *' ||
-            github.event.inputs.run_type == 'pipeline'
-          )
+        if: steps.freshness.outputs.skip != 'true'
         run: python projections.py "${{ steps.rundate.outputs.today }}"
 
       - name: Pipeline — build dashboard
-        if: >-
-          steps.freshness.outputs.skip != 'true' && (
-            github.event.schedule == '0 13,15,17,19,21 * * *' ||
-            github.event.schedule == '0 16 * * *' ||
-            github.event.schedule == '0 21 * * *' ||
-            github.event.schedule == '7 13,15,17,19,21 * * *' ||
-            github.event.schedule == '23 16 * * *' ||
-            github.event.schedule == '41 21 * * *' ||
-            github.event.inputs.run_type == 'pipeline'
-          )
+        if: steps.freshness.outputs.skip != 'true'
         run: python report.py "${{ steps.rundate.outputs.today }}"
 
       # ── Tracker step ─────────────────────────────────────────────────────
@@ -309,3 +287,33 @@ jobs:
             git push
             gh workflow run pages.yml || true
           fi
+
+  # ── Deadline alert ──────────────────────────────────────────────────────
+  # Separate job (not a step in `run` above) so it can't be skipped by
+  # anything the main job does and doesn't wait on/race with it - a
+  # phone-reachable signal that the dense retry schedule above has, for
+  # whatever reason, still not produced today's data by 17:00 UTC (10am
+  # PDT), rather than the user discovering a stale dashboard on their own.
+  # `if:` scopes this to its own dedicated cron only - every other trigger
+  # (the dense fetch schedule, tracker crons, manual dispatch) skips it.
+  # The actual check lives in check_pipeline_deadline.py (repo root) rather
+  # than an inline heredoc - a YAML `run: |` block forces every line,
+  # including a heredoc's own closing delimiter, to carry the step's
+  # indentation, which a plain bash heredoc terminator can't match without
+  # unreliable whitespace gymnastics. ubuntu-latest ships python3, so no
+  # setup-python step is needed for a stdlib-only script.
+  deadline_alert:
+    runs-on: ubuntu-latest
+    if: github.event.schedule == '0 17 * * *'
+    timeout-minutes: 5
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Alert if today's data is still stale
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python3 check_pipeline_deadline.py
