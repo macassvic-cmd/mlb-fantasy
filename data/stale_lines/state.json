@@ -19911,6 +19911,148 @@
         "\u26a0\ufe0f 5 min: no longer posted",
         "\u26a0\ufe0f 15 min: no longer posted"
       ]
+    },
+    "824388:george springer": {
+      "flag_id": "824388:george springer",
+      "name": "George Springer",
+      "normalized_name": "george springer",
+      "team": "TOR",
+      "game_pk": 824388,
+      "is_home": false,
+      "game_time_utc": "2026-09-03T17:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+        "RUNS": 0.5,
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-03T14:32:45.827742+00:00",
+      "lineup_first_posted_utc": "2026-09-03T14:32:45.827742+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 157.2,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-03T14:32:45.827742+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "RUNS": 0.5,
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545079122366042123",
+      "discord_checkpoint_lines": []
+    },
+    "824388:alejandro kirk": {
+      "flag_id": "824388:alejandro kirk",
+      "name": "Alejandro Kirk",
+      "normalized_name": "alejandro kirk",
+      "team": "TOR",
+      "game_pk": 824388,
+      "is_home": false,
+      "game_time_utc": "2026-09-03T17:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITTER_STRIKEOUTS": 0.5,
+        "TOTAL_BASES": 1.5,
+        "RUNS": 0.5
+      },
+      "first_seen_utc": "2026-09-03T14:32:45.827742+00:00",
+      "lineup_first_posted_utc": "2026-09-03T14:32:45.827742+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 157.2,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-03T14:32:45.827742+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITTER_STRIKEOUTS": 0.5,
+            "TOTAL_BASES": 1.5,
+            "RUNS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545079125461434449",
+      "discord_checkpoint_lines": []
+    },
+    "824388:myles straw": {
+      "flag_id": "824388:myles straw",
+      "name": "Myles Straw",
+      "normalized_name": "myles straw",
+      "team": "TOR",
+      "game_pk": 824388,
+      "is_home": false,
+      "game_time_utc": "2026-09-03T17:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITTER_STRIKEOUTS": 0.5,
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-03T14:32:45.827742+00:00",
+      "lineup_first_posted_utc": "2026-09-03T14:32:45.827742+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 157.2,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-03T14:32:45.827742+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITTER_STRIKEOUTS": 0.5,
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545079129521791050",
+      "discord_checkpoint_lines": []
+    },
+    "824388:kazuma okamoto": {
+      "flag_id": "824388:kazuma okamoto",
+      "name": "Kazuma Okamoto",
+      "normalized_name": "kazuma okamoto",
+      "team": "TOR",
+      "game_pk": 824388,
+      "is_home": false,
+      "game_time_utc": "2026-09-03T17:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5
+      },
+      "first_seen_utc": "2026-09-03T14:32:45.827742+00:00",
+      "lineup_first_posted_utc": "2026-09-03T14:32:45.827742+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 157.2,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-03T14:32:45.827742+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545079132621373532",
+      "discord_checkpoint_lines": []
     }
   },
   "early_signals": {
@@ -20068,6 +20210,7 @@
     "823906:home": "2026-09-02T22:43:38.715492+00:00",
     "823337:away": "2026-09-03T13:54:15.748700+00:00",
     "824388:home": "2026-09-03T14:00:45.765321+00:00",
-    "823337:home": "2026-09-03T14:13:45.794838+00:00"
+    "823337:home": "2026-09-03T14:13:45.794838+00:00",
+    "824388:away": "2026-09-03T14:32:45.827742+00:00"
   }
 }
