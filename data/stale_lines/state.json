@@ -24741,6 +24741,14 @@
             "HITS_RUNS_RUNS_BATTED_IN": 0.5,
             "HITS": 0.5
           }
+        },
+        {
+          "elapsed_min": 3,
+          "checked_at_utc": "2026-09-04T22:34:26.336854+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS": 0.5
+          }
         }
       ],
       "resolved": false,
@@ -24750,7 +24758,8 @@
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
-        "\u2705 2 min: still live"
+        "\u2705 2 min: still live",
+        "\u2705 3 min: still live"
       ]
     },
     "823093:tommy white": {
@@ -24802,6 +24811,12 @@
           "still_posted_markets": {
             "SINGLES": 0.5
           }
+        },
+        {
+          "elapsed_min": 3,
+          "checked_at_utc": "2026-09-04T22:34:26.336854+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -24811,7 +24826,8 @@
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
-        "\u2705 2 min: still live"
+        "\u2705 2 min: still live",
+        "\u26a0\ufe0f 3 min: no longer posted"
       ]
     }
   },
