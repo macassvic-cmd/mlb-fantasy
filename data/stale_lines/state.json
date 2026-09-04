@@ -23808,6 +23808,152 @@
         "\u2705 3 min: still live",
         "\u26a0\ufe0f 5 min: no longer posted"
       ]
+    },
+    "823338:jared triolo": {
+      "flag_id": "823338:jared triolo",
+      "name": "Jared Triolo",
+      "normalized_name": "jared triolo",
+      "team": "PIT",
+      "game_pk": 823338,
+      "is_home": true,
+      "game_time_utc": "2026-09-04T22:45:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITTER_STRIKEOUTS": 0.5,
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-04T21:23:26.186334+00:00",
+      "lineup_first_posted_utc": "2026-09-04T21:23:26.186334+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 81.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-04T21:23:26.186334+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITTER_STRIKEOUTS": 0.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-04T21:23:56.187356+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITTER_STRIKEOUTS": 0.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545544863708352644",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live"
+      ]
+    },
+    "823338:esmerlyn valdez": {
+      "flag_id": "823338:esmerlyn valdez",
+      "name": "Esmerlyn Valdez",
+      "normalized_name": "esmerlyn valdez",
+      "team": "PIT",
+      "game_pk": 823338,
+      "is_home": true,
+      "game_time_utc": "2026-09-04T22:45:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 0.5,
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+        "HITTER_STRIKEOUTS": 1.5,
+        "WALKS": 0.5
+      },
+      "first_seen_utc": "2026-09-04T21:23:26.186334+00:00",
+      "lineup_first_posted_utc": "2026-09-04T21:23:26.186334+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 81.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-04T21:23:26.186334+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "HITTER_STRIKEOUTS": 1.5,
+            "WALKS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-04T21:23:56.187356+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "WALKS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545544866866401351",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live"
+      ]
+    },
+    "823338:rafael flores": {
+      "flag_id": "823338:rafael flores",
+      "name": "Rafael Flores Jr.",
+      "normalized_name": "rafael flores",
+      "team": "PIT",
+      "game_pk": 823338,
+      "is_home": true,
+      "game_time_utc": "2026-09-04T22:45:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-04T21:23:26.186334+00:00",
+      "lineup_first_posted_utc": "2026-09-04T21:23:26.186334+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 81.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-04T21:23:26.186334+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-04T21:23:56.187356+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545544869676720162",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live"
+      ]
     }
   },
   "early_signals": {
@@ -23912,8 +24058,8 @@
       "is_home": true,
       "game_time_utc": "2026-09-04T22:45:00Z",
       "first_seen_utc": "2026-09-04T04:30:47.566222+00:00",
-      "resolved": false,
-      "outcome": null,
+      "resolved": true,
+      "outcome": "player_started_anyway",
       "lineup_lag_minutes": null,
       "checks": [
         {
@@ -24278,6 +24424,7 @@
     "824554:away": "2026-09-04T20:29:56.071034+00:00",
     "824146:away": "2026-09-04T20:43:26.098153+00:00",
     "824146:home": "2026-09-04T20:45:26.102821+00:00",
-    "823256:home": "2026-09-04T21:11:56.161858+00:00"
+    "823256:home": "2026-09-04T21:11:56.161858+00:00",
+    "823338:home": "2026-09-04T21:23:26.186334+00:00"
   }
 }
