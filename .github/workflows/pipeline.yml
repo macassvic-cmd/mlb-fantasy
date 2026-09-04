@@ -105,7 +105,9 @@ jobs:
       # before any step that can run long makes that impossible.
       - name: Compute run date
         id: rundate
-        run: echo "today=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+        run: |
+          echo "today=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+          echo "run_start_utc=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_OUTPUT"
 
       # ── Fresh-data check (every trigger, not just pipeline-labeled ones) ──
       # Runs unconditionally (changed 2026-09-03) - this is what makes the
@@ -219,16 +221,17 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           # ── Race check ──────────────────────────────────────────────────
-          # Pipeline steps can take up to 90 min. If this run started when
-          # today's data was stale/missing (skip=false) but another fire
-          # finished and pushed today's data while we were working, our
-          # regenerated files are redundant. Drop them and exit clean
-          # instead of racing at push time below.
+          # Pipeline steps can take up to 90 min, so two fires can
+          # genuinely overlap. Logic lives in check_pipeline_race.py, not
+          # inline here - see that file's docstring for why the original
+          # "does data/{date}.json exist on origin?" version was wrong
+          # (true for the rest of the day after the first fetch, so it
+          # discarded every later-in-the-day refetch's work too, not just
+          # a genuine race - found 2026-09-04 while validating the
+          # freshness-marker fix in the same commit).
           if [ "${{ steps.freshness.outputs.skip }}" = "false" ]; then
-            TODAY="${{ steps.rundate.outputs.today }}"
             git fetch origin main
-            if git cat-file -e "origin/main:data/${TODAY}.json" 2>/dev/null; then
-              echo "origin/main already has data/${TODAY}.json — another run finished first. Discarding local changes, no push needed."
+            if python3 check_pipeline_race.py "${{ steps.rundate.outputs.run_start_utc }}"; then
               git checkout -- .
               git clean -fd
               exit 0
