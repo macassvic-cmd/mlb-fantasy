@@ -22052,6 +22052,35 @@
       "status_code": "D10",
       "status_desc": "Injured 10-Day",
       "note": "Left oblique strain."
+    },
+    "status:804606:D60": {
+      "flag_id": "status:804606:D60",
+      "source": "roster_status",
+      "category": "status_D60",
+      "name": "Konnor Griffin",
+      "normalized_name": "konnor griffin",
+      "team": "PIT",
+      "game_pk": 823338,
+      "is_home": true,
+      "game_time_utc": "2026-09-04T22:45:00Z",
+      "first_seen_utc": "2026-09-04T04:30:47.566222+00:00",
+      "resolved": false,
+      "outcome": null,
+      "lineup_lag_minutes": null,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-04T04:30:47.566222+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "status_code": "D60",
+      "status_desc": "Injured 60-Day",
+      "note": "Left ring finger sagittal band injury"
     }
   },
   "lineup_posted_at": {
