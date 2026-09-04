@@ -24248,6 +24248,55 @@
         "\u2705 2 min: still live",
         "\u2705 3 min: still live"
       ]
+    },
+    "824311:jose fermin": {
+      "flag_id": "824311:jose fermin",
+      "name": "Jos\u00e9 Ferm\u00edn",
+      "normalized_name": "jose fermin",
+      "team": "STL",
+      "game_pk": 824311,
+      "is_home": false,
+      "game_time_utc": "2026-09-05T00:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITTER_STRIKEOUTS": 0.5,
+        "TOTAL_BASES": 1.5,
+        "RUNS": 0.5
+      },
+      "first_seen_utc": "2026-09-04T21:48:26.242254+00:00",
+      "lineup_first_posted_utc": "2026-09-04T21:48:26.242254+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 171.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-04T21:48:26.242254+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITTER_STRIKEOUTS": 0.5,
+            "TOTAL_BASES": 1.5,
+            "RUNS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-04T21:48:56.242824+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITTER_STRIKEOUTS": 0.5,
+            "TOTAL_BASES": 1.5,
+            "RUNS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545551155537518644",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live"
+      ]
     }
   },
   "early_signals": {
@@ -24721,6 +24770,7 @@
     "823256:home": "2026-09-04T21:11:56.161858+00:00",
     "823338:home": "2026-09-04T21:23:26.186334+00:00",
     "822852:away": "2026-09-04T21:36:26.215186+00:00",
-    "824067:away": "2026-09-04T21:38:26.221784+00:00"
+    "824067:away": "2026-09-04T21:38:26.221784+00:00",
+    "824311:away": "2026-09-04T21:48:26.242254+00:00"
   }
 }
