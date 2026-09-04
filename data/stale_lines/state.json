@@ -22916,6 +22916,12 @@
             "TOTAL_BASES": 0.5,
             "HITS": 0.5
           }
+        },
+        {
+          "elapsed_min": 3,
+          "checked_at_utc": "2026-09-04T20:01:26.009955+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -22925,8 +22931,112 @@
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
-        "\u2705 2 min: still live"
+        "\u2705 2 min: still live",
+        "\u26a0\ufe0f 3 min: no longer posted"
       ]
+    },
+    "823824:kyle stowers": {
+      "flag_id": "823824:kyle stowers",
+      "name": "Kyle Stowers",
+      "normalized_name": "kyle stowers",
+      "team": "MIA",
+      "game_pk": 823824,
+      "is_home": true,
+      "game_time_utc": "2026-09-04T23:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5
+      },
+      "first_seen_utc": "2026-09-04T20:01:56.011351+00:00",
+      "lineup_first_posted_utc": "2026-09-04T20:01:56.011351+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 188.1,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-04T20:01:56.011351+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545524354085818369",
+      "discord_checkpoint_lines": []
+    },
+    "823824:jakob marsee": {
+      "flag_id": "823824:jakob marsee",
+      "name": "Jakob Marsee",
+      "normalized_name": "jakob marsee",
+      "team": "MIA",
+      "game_pk": 823824,
+      "is_home": true,
+      "game_time_utc": "2026-09-04T23:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 0.5,
+        "HITS": 0.5
+      },
+      "first_seen_utc": "2026-09-04T20:01:56.011351+00:00",
+      "lineup_first_posted_utc": "2026-09-04T20:01:56.011351+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 188.1,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-04T20:01:56.011351+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545524357646913680",
+      "discord_checkpoint_lines": []
+    },
+    "823579:shay whitcomb": {
+      "flag_id": "823579:shay whitcomb",
+      "name": "Shay Whitcomb",
+      "normalized_name": "shay whitcomb",
+      "team": "SF",
+      "game_pk": 823579,
+      "is_home": false,
+      "game_time_utc": "2026-09-04T23:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 0.5,
+        "HITS": 0.5
+      },
+      "first_seen_utc": "2026-09-04T20:01:56.011351+00:00",
+      "lineup_first_posted_utc": "2026-09-04T20:01:56.011351+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 188.1,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-04T20:01:56.011351+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545524360993841184",
+      "discord_checkpoint_lines": []
     }
   },
   "early_signals": {
@@ -23388,6 +23498,9 @@
     "824797:home": "2026-09-04T19:37:25.958543+00:00",
     "824797:away": "2026-09-04T19:37:25.958543+00:00",
     "824067:home": "2026-09-04T19:50:25.986763+00:00",
-    "824554:home": "2026-09-04T19:58:26.003429+00:00"
+    "824554:home": "2026-09-04T19:58:26.003429+00:00",
+    "822852:home": "2026-09-04T20:01:26.009955+00:00",
+    "823579:away": "2026-09-04T20:01:56.011351+00:00",
+    "823824:home": "2026-09-04T20:01:56.011351+00:00"
   }
 }
