@@ -23189,6 +23189,66 @@
         "\u2705 3 min: still live",
         "\u2705 5 min: still live"
       ]
+    },
+    "824471:joey ortiz": {
+      "flag_id": "824471:joey ortiz",
+      "name": "Joey Ortiz",
+      "normalized_name": "joey ortiz",
+      "team": "MIL",
+      "game_pk": 824471,
+      "is_home": false,
+      "game_time_utc": "2026-09-04T22:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITTER_STRIKEOUTS": 0.5,
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-04T20:10:26.028461+00:00",
+      "lineup_first_posted_utc": "2026-09-04T20:10:26.028461+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 119.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-04T20:10:26.028461+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITTER_STRIKEOUTS": 0.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-04T20:10:56.029256+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITTER_STRIKEOUTS": 0.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-04T20:11:26.030346+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITTER_STRIKEOUTS": 0.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545526491587289150",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live"
+      ]
     }
   },
   "early_signals": {
@@ -23653,6 +23713,7 @@
     "824554:home": "2026-09-04T19:58:26.003429+00:00",
     "822852:home": "2026-09-04T20:01:26.009955+00:00",
     "823579:away": "2026-09-04T20:01:56.011351+00:00",
-    "823824:home": "2026-09-04T20:01:56.011351+00:00"
+    "823824:home": "2026-09-04T20:01:56.011351+00:00",
+    "824471:away": "2026-09-04T20:10:26.028461+00:00"
   }
 }
