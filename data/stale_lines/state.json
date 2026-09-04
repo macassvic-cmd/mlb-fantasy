@@ -23609,6 +23609,12 @@
           "checked_at_utc": "2026-09-04T21:00:26.136045+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 30,
+          "checked_at_utc": "2026-09-04T21:15:26.169165+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -23621,7 +23627,8 @@
         "\u2705 2 min: still live",
         "\u2705 3 min: still live",
         "\u26a0\ufe0f 5 min: no longer posted",
-        "\u26a0\ufe0f 15 min: no longer posted"
+        "\u26a0\ufe0f 15 min: no longer posted",
+        "\u26a0\ufe0f 30 min: no longer posted"
       ]
     },
     "824146:cam smith": {
@@ -23693,6 +23700,12 @@
           "checked_at_utc": "2026-09-04T21:00:26.136045+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 30,
+          "checked_at_utc": "2026-09-04T21:15:26.169165+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -23705,7 +23718,8 @@
         "\u2705 2 min: still live",
         "\u2705 3 min: still live",
         "\u26a0\ufe0f 5 min: no longer posted",
-        "\u26a0\ufe0f 15 min: no longer posted"
+        "\u26a0\ufe0f 15 min: no longer posted",
+        "\u26a0\ufe0f 30 min: no longer posted"
       ]
     },
     "823256:freddy fermin": {
@@ -23767,6 +23781,14 @@
             "HITS": 0.5,
             "SINGLES": 0.5
           }
+        },
+        {
+          "elapsed_min": 3,
+          "checked_at_utc": "2026-09-04T21:14:56.167726+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5
+          }
         }
       ],
       "resolved": false,
@@ -23776,7 +23798,8 @@
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
-        "\u2705 2 min: still live"
+        "\u2705 2 min: still live",
+        "\u2705 3 min: still live"
       ]
     }
   },
