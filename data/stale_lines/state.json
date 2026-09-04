@@ -24749,6 +24749,12 @@
           "still_posted_markets": {
             "HITS": 0.5
           }
+        },
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-04T22:36:26.339865+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -24759,7 +24765,8 @@
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
-        "\u2705 3 min: still live"
+        "\u2705 3 min: still live",
+        "\u26a0\ufe0f 5 min: no longer posted"
       ]
     },
     "823093:tommy white": {
@@ -24817,6 +24824,12 @@
           "checked_at_utc": "2026-09-04T22:34:26.336854+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-04T22:36:26.339865+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -24827,7 +24840,64 @@
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
-        "\u26a0\ufe0f 3 min: no longer posted"
+        "\u26a0\ufe0f 3 min: no longer posted",
+        "\u26a0\ufe0f 5 min: no longer posted"
+      ]
+    },
+    "823256:jose caballero": {
+      "flag_id": "823256:jose caballero",
+      "name": "Jos\u00e9 Caballero",
+      "normalized_name": "jose caballero",
+      "team": "NYY",
+      "game_pk": 823256,
+      "is_home": false,
+      "game_time_utc": "2026-09-05T01:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 0.5,
+        "HITS": 0.5
+      },
+      "first_seen_utc": "2026-09-04T22:35:56.339586+00:00",
+      "lineup_first_posted_utc": "2026-09-04T22:35:56.339586+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 184.1,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-04T22:35:56.339586+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-04T22:36:26.339865+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-04T22:36:56.340917+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545563110482509992",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live"
       ]
     }
   },
@@ -25308,6 +25378,7 @@
     "823093:home": "2026-09-04T22:15:56.297841+00:00",
     "824387:away": "2026-09-04T22:24:26.314208+00:00",
     "824387:home": "2026-09-04T22:31:26.329532+00:00",
-    "823093:away": "2026-09-04T22:31:26.329532+00:00"
+    "823093:away": "2026-09-04T22:31:26.329532+00:00",
+    "823256:away": "2026-09-04T22:35:56.339586+00:00"
   }
 }
