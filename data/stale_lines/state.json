@@ -24236,6 +24236,12 @@
           "still_posted_markets": {
             "SINGLES": 0.5
           }
+        },
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-04T21:49:26.244284+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -24246,7 +24252,8 @@
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
-        "\u2705 3 min: still live"
+        "\u2705 3 min: still live",
+        "\u26a0\ufe0f 5 min: no longer posted"
       ]
     },
     "824311:jose fermin": {
@@ -24288,6 +24295,26 @@
             "TOTAL_BASES": 1.5,
             "RUNS": 0.5
           }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-04T21:49:26.244284+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITTER_STRIKEOUTS": 0.5,
+            "TOTAL_BASES": 1.5,
+            "RUNS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-04T21:50:26.246734+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITTER_STRIKEOUTS": 0.5,
+            "TOTAL_BASES": 1.5,
+            "RUNS": 0.5
+          }
         }
       ],
       "resolved": false,
@@ -24295,7 +24322,9 @@
       "resolution": null,
       "discord_message_id": "1545551155537518644",
       "discord_checkpoint_lines": [
-        "\u2705 0.5 min: still live"
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live"
       ]
     }
   },
