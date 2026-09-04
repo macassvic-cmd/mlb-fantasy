@@ -23420,6 +23420,52 @@
         "\u26a0\ufe0f 5 min: no longer posted",
         "\u26a0\ufe0f 15 min: no longer posted"
       ]
+    },
+    "824146:ildemaro vargas": {
+      "flag_id": "824146:ildemaro vargas",
+      "name": "Ildemaro Vargas",
+      "normalized_name": "ildemaro vargas",
+      "team": "ARI",
+      "game_pk": 824146,
+      "is_home": false,
+      "game_time_utc": "2026-09-05T00:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-04T20:43:26.098153+00:00",
+      "lineup_first_posted_utc": "2026-09-04T20:43:26.098153+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 206.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-04T20:43:26.098153+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-04T20:43:56.099644+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545534797546528939",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live"
+      ]
     }
   },
   "early_signals": {
@@ -23887,6 +23933,7 @@
     "823824:home": "2026-09-04T20:01:56.011351+00:00",
     "824471:away": "2026-09-04T20:10:26.028461+00:00",
     "823824:away": "2026-09-04T20:20:26.050087+00:00",
-    "824554:away": "2026-09-04T20:29:56.071034+00:00"
+    "824554:away": "2026-09-04T20:29:56.071034+00:00",
+    "824146:away": "2026-09-04T20:43:26.098153+00:00"
   }
 }
