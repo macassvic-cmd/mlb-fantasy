@@ -23298,6 +23298,39 @@
         "\u26a0\ufe0f 3 min: no longer posted",
         "\u26a0\ufe0f 5 min: no longer posted"
       ]
+    },
+    "823824:miguel amaya": {
+      "flag_id": "823824:miguel amaya",
+      "name": "Miguel Amaya",
+      "normalized_name": "miguel amaya",
+      "team": "CHC",
+      "game_pk": 823824,
+      "is_home": false,
+      "game_time_utc": "2026-09-04T23:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS": 0.5
+      },
+      "first_seen_utc": "2026-09-04T20:20:26.050087+00:00",
+      "lineup_first_posted_utc": "2026-09-04T20:20:26.050087+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 169.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-04T20:20:26.050087+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545529011546099846",
+      "discord_checkpoint_lines": []
     }
   },
   "early_signals": {
@@ -23763,6 +23796,7 @@
     "822852:home": "2026-09-04T20:01:26.009955+00:00",
     "823579:away": "2026-09-04T20:01:56.011351+00:00",
     "823824:home": "2026-09-04T20:01:56.011351+00:00",
-    "824471:away": "2026-09-04T20:10:26.028461+00:00"
+    "824471:away": "2026-09-04T20:10:26.028461+00:00",
+    "823824:away": "2026-09-04T20:20:26.050087+00:00"
   }
 }
