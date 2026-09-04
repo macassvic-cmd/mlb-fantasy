@@ -22,26 +22,31 @@ gymnastics - a real file sidesteps that entirely and is testable locally.
 
 import json
 import os
-import subprocess
 import sys
 import time
 import urllib.request
 from datetime import datetime, timezone
 
-STALE_AFTER_SECONDS = 10800  # 3h - same floor pipeline.yml's freshness gate uses
+STALE_AFTER_SECONDS = 10800  # 3h - same floor check_pipeline_freshness.py uses
+
+MARKER_PATH = os.path.join("data", ".pipeline_last_fetch.json")
 
 
-def is_stale(data_path):
-    if not os.path.exists(data_path):
+def is_stale(today):
+    # Reads the same self-reported marker check_pipeline_freshness.py
+    # does, not git commit history - a same-day rerun with byte-identical
+    # output never advances a file's last-commit timestamp (see that
+    # module's docstring for the 2026-09-04 incident this caused), which
+    # would make THIS check just as blind to "did a fetch actually just
+    # happen" as the freshness gate originally was.
+    if not os.path.exists(MARKER_PATH):
         return True
-    out = subprocess.run(
-        ["git", "log", "-1", "--format=%ct", "--", data_path],
-        capture_output=True, text=True,
-    )
-    ts = out.stdout.strip()
-    if not ts:
+    with open(MARKER_PATH, encoding="utf-8") as f:
+        marker = json.load(f)
+    if marker.get("date") != today:
         return True
-    return (time.time() - int(ts)) >= STALE_AFTER_SECONDS
+    fetched_at = datetime.fromisoformat(marker["fetched_at_utc"])
+    return (time.time() - fetched_at.timestamp()) >= STALE_AFTER_SECONDS
 
 
 def send_alert(webhook_url, today):
@@ -57,29 +62,38 @@ def send_alert(webhook_url, today):
         ),
         "color": 0xE74C3C,
     }]}
+    # User-Agent is required, not cosmetic: Discord's webhook endpoint is
+    # fronted by Cloudflare, which 403s (error 1010 - "banned based on
+    # your browser's signature") a request carrying urllib's default
+    # "Python-urllib/3.x" UA. Confirmed live 2026-09-04 - the first real
+    # deadline check correctly detected stale data and tried to alert,
+    # but the POST itself failed with exactly this error, silently
+    # (`run.py` still exits nonzero and the workflow shows a failed job,
+    # but no Discord message ever arrives - the alert fails exactly the
+    # one time it's supposed to matter). scrapers/betr.py, market_lines.py
+    # etc. already set this same header for the same reason.
     req = urllib.request.Request(
         webhook_url, data=json.dumps(body).encode(),
-        headers={"Content-Type": "application/json"},
+        headers={"Content-Type": "application/json", "User-Agent": "Mozilla/5.0"},
     )
     urllib.request.urlopen(req, timeout=15)
 
 
 def main():
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    data_path = os.path.join("data", f"{today}.json")
 
-    if not is_stale(data_path):
-        print(f"OK: {data_path} is fresh.")
+    if not is_stale(today):
+        print(f"OK: data for {today} is fresh.")
         return
 
     webhook_url = os.environ.get("DISCORD_WEBHOOK_URL")
     if not webhook_url:
-        print(f"STALE ({data_path} missing or >={STALE_AFTER_SECONDS}s old) but DISCORD_WEBHOOK_URL is unset - no-op.")
+        print(f"STALE (no fresh fetch marker for {today}) but DISCORD_WEBHOOK_URL is unset - no-op.")
         return
 
     try:
         send_alert(webhook_url, today)
-        print(f"ALERTED: {data_path} missing or stale as of the 17:00 UTC deadline.")
+        print(f"ALERTED: no fresh fetch marker for {today} as of the 17:00 UTC deadline.")
     except Exception as e:
         print(f"Discord alert POST failed: {e}", file=sys.stderr)
         sys.exit(1)

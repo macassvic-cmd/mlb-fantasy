@@ -13,7 +13,7 @@ import os
 import sys
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 logging.basicConfig(
     level=logging.INFO,
@@ -544,6 +544,30 @@ def run_pipeline(date_str):
         json.dump(all_players, f, indent=2, default=str)
 
     logger.info(f"Saved {len(all_players)} records to {out_path}")
+
+    # Freshness marker, added 2026-09-04: a same-day rerun (common during
+    # the dense CI retry schedule - see .github/workflows/pipeline.yml's
+    # CRON STRATEGY) very often produces BYTE-IDENTICAL output to an
+    # earlier fetch that same day, since most of the underlying source
+    # data (season/rolling stats, matchups) hasn't changed yet if the
+    # slate's games haven't started - `git diff --cached --quiet` then
+    # correctly finds nothing to commit, so data/{date}.json's last-commit
+    # timestamp never advances. The CI freshness gate used to read THAT
+    # timestamp via `git log`, which meant it never saw a fetch as
+    # "just happened" once the content stopped changing - every fire past
+    # the 3h mark re-triggered a full ~15min redundant fetch forever,
+    # exactly backwards from the "redundant fires are nearly free" design
+    # the dense schedule depends on (confirmed live 2026-09-04: 5 of 6
+    # fires that day did a full wasted refetch). This file's CONTENT
+    # changes every single successful run regardless of whether the data
+    # itself did, so git always commits it and the CI freshness check can
+    # read fetched_at_utc directly instead of inferring "did we just fetch"
+    # from a git history side effect that doesn't reliably track it.
+    marker_path = os.path.join("data", ".pipeline_last_fetch.json")
+    with open(marker_path, "w", encoding="utf-8") as f:
+        json.dump({"date": date_str, "fetched_at_utc": datetime.now(timezone.utc).isoformat(),
+                   "player_count": len(all_players)}, f, indent=2)
+
     return all_players
 
 
