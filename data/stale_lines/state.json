@@ -24405,13 +24405,39 @@
             "SINGLES": 0.5,
             "WALKS": 0.5
           }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-04T22:00:56.267951+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "RUNS": 0.5,
+            "SINGLES": 0.5,
+            "WALKS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-04T22:01:26.268957+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-04T22:02:26.270292+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
       "grade": null,
       "resolution": null,
       "discord_message_id": "1545554175205576778",
-      "discord_checkpoint_lines": []
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u26a0\ufe0f 1 min: no longer posted",
+        "\u26a0\ufe0f 2 min: no longer posted"
+      ]
     },
     "823905:dalton rushing": {
       "flag_id": "823905:dalton rushing",
@@ -24438,13 +24464,39 @@
           "still_posted_markets": {
             "HITS_RUNS_RUNS_BATTED_IN": 1.5
           }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-04T22:00:56.267951+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-04T22:01:26.268957+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5
+          }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-04T22:02:26.270292+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
       "grade": null,
       "resolution": null,
       "discord_message_id": "1545554178150113382",
-      "discord_checkpoint_lines": []
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live",
+        "\u26a0\ufe0f 2 min: no longer posted"
+      ]
     },
     "823905:shohei ohtani": {
       "flag_id": "823905:shohei ohtani",
@@ -24479,13 +24531,45 @@
             "HITS_RUNS_RUNS_BATTED_IN": 2.5,
             "SINGLES": 0.5
           }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-04T22:00:56.267951+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 1.5,
+            "FANTASY_POINTS": 7.5,
+            "SINGLES": 0.5,
+            "WALKS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-04T22:01:26.268957+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 1.5,
+            "FANTASY_POINTS": 7.5,
+            "SINGLES": 0.5,
+            "WALKS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-04T22:02:26.270292+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
       "grade": null,
       "resolution": null,
       "discord_message_id": "1545554182537355335",
-      "discord_checkpoint_lines": []
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live",
+        "\u26a0\ufe0f 2 min: no longer posted"
+      ]
     }
   },
   "early_signals": {
