@@ -23887,6 +23887,12 @@
           "checked_at_utc": "2026-09-04T21:28:26.196938+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 15,
+          "checked_at_utc": "2026-09-04T21:38:26.221784+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -23898,7 +23904,8 @@
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
         "\u2705 3 min: still live",
-        "\u26a0\ufe0f 5 min: no longer posted"
+        "\u26a0\ufe0f 5 min: no longer posted",
+        "\u26a0\ufe0f 15 min: no longer posted"
       ]
     },
     "823338:esmerlyn valdez": {
@@ -23981,6 +23988,12 @@
           "still_posted_markets": {
             "TOTAL_BASES": 0.5
           }
+        },
+        {
+          "elapsed_min": 15,
+          "checked_at_utc": "2026-09-04T21:38:26.221784+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -23992,7 +24005,8 @@
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
         "\u2705 3 min: still live",
-        "\u2705 5 min: still live"
+        "\u2705 5 min: still live",
+        "\u26a0\ufe0f 15 min: no longer posted"
       ]
     },
     "823338:rafael flores": {
@@ -24057,6 +24071,12 @@
           "checked_at_utc": "2026-09-04T21:28:26.196938+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 15,
+          "checked_at_utc": "2026-09-04T21:38:26.221784+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -24068,7 +24088,64 @@
         "\u2705 1 min: still live",
         "\u26a0\ufe0f 2 min: no longer posted",
         "\u26a0\ufe0f 3 min: no longer posted",
-        "\u26a0\ufe0f 5 min: no longer posted"
+        "\u26a0\ufe0f 5 min: no longer posted",
+        "\u26a0\ufe0f 15 min: no longer posted"
+      ]
+    },
+    "824067:andres gimenez": {
+      "flag_id": "824067:andres gimenez",
+      "name": "Andr\u00e9s Gim\u00e9nez",
+      "normalized_name": "andres gimenez",
+      "team": "TOR",
+      "game_pk": 824067,
+      "is_home": false,
+      "game_time_utc": "2026-09-05T00:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-04T21:38:26.221784+00:00",
+      "lineup_first_posted_utc": "2026-09-04T21:38:26.221784+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 151.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-04T21:38:26.221784+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-04T21:38:56.223386+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-04T21:39:26.224328+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545548639227875419",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live"
       ]
     }
   },
@@ -24542,6 +24619,7 @@
     "824146:home": "2026-09-04T20:45:26.102821+00:00",
     "823256:home": "2026-09-04T21:11:56.161858+00:00",
     "823338:home": "2026-09-04T21:23:26.186334+00:00",
-    "822852:away": "2026-09-04T21:36:26.215186+00:00"
+    "822852:away": "2026-09-04T21:36:26.215186+00:00",
+    "824067:away": "2026-09-04T21:38:26.221784+00:00"
   }
 }
