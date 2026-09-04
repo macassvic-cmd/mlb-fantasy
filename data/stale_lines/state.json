@@ -21960,6 +21960,41 @@
         "\u26a0\ufe0f 15 min: no longer posted",
         "\u26a0\ufe0f 30 min: no longer posted"
       ]
+    },
+    "824424:eduardo valencia": {
+      "flag_id": "824424:eduardo valencia",
+      "name": "Eduardo Valencia",
+      "normalized_name": "eduardo valencia",
+      "team": "DET",
+      "game_pk": 824424,
+      "is_home": false,
+      "game_time_utc": "2026-09-04T18:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-04T15:01:19.114796+00:00",
+      "lineup_first_posted_utc": "2026-09-04T15:01:19.114796+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 188.7,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-04T15:01:19.114796+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545448701713973329",
+      "discord_checkpoint_lines": []
     }
   },
   "early_signals": {
@@ -22224,6 +22259,8 @@
     "823907:home": "2026-09-03T22:02:16.728800+00:00",
     "823095:home": "2026-09-03T22:05:16.735436+00:00",
     "823095:away": "2026-09-03T22:05:16.735436+00:00",
-    "823907:away": "2026-09-03T22:20:16.766593+00:00"
+    "823907:away": "2026-09-03T22:20:16.766593+00:00",
+    "824424:home": "2026-09-04T15:01:19.114796+00:00",
+    "824424:away": "2026-09-04T15:01:19.114796+00:00"
   }
 }
