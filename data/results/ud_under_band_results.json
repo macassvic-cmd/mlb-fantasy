@@ -1279,20 +1279,93 @@
           "grade": "loss"
         }
       ]
+    },
+    "2026-09-03": {
+      "wins": 3,
+      "losses": 2,
+      "dnp": 1,
+      "plays": [
+        {
+          "player_id": 663538,
+          "name": "Nico Hoerner",
+          "team": "Chicago Cubs",
+          "projected_ud": 3.56,
+          "ud_line": 5.5,
+          "edge": -1.94,
+          "game_time_pt": "4:15 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 701350,
+          "name": "Roman Anthony",
+          "team": "Boston Red Sox",
+          "projected_ud": 5.65,
+          "ud_line": 7.5,
+          "edge": -1.85,
+          "game_time_pt": "4:15 PM PT",
+          "actual_ud": 17,
+          "grade": "loss"
+        },
+        {
+          "player_id": 676391,
+          "name": "Ernie Clement",
+          "team": "Toronto Blue Jays",
+          "projected_ud": 3.68,
+          "ud_line": 5.5,
+          "edge": -1.82,
+          "game_time_pt": "10:10 AM PT",
+          "actual_ud": 10,
+          "grade": "loss"
+        },
+        {
+          "player_id": 803011,
+          "name": "Sam Antonacci",
+          "team": "Chicago White Sox",
+          "projected_ud": 4.86,
+          "ud_line": 6.5,
+          "edge": -1.64,
+          "game_time_pt": "11:10 AM PT",
+          "actual_ud": 5,
+          "grade": "win"
+        },
+        {
+          "player_id": 689414,
+          "name": "Liam Hicks",
+          "team": "Tampa Bay Rays",
+          "projected_ud": 3.87,
+          "ud_line": 5.5,
+          "edge": -1.63,
+          "game_time_pt": "5:05 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 650490,
+          "name": "Yandy D\u00edaz",
+          "team": "Tampa Bay Rays",
+          "projected_ud": 4.98,
+          "ud_line": 6.5,
+          "edge": -1.52,
+          "game_time_pt": "5:05 PM PT",
+          "actual_ud": 6,
+          "grade": "win"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 60,
-    "losses": 44,
-    "dnp": 6
+    "wins": 63,
+    "losses": 46,
+    "dnp": 7
   },
   "record_by_line": {
     "5.5": {
-      "wins": 28,
-      "losses": 16
+      "wins": 29,
+      "losses": 17
     },
     "6.5": {
-      "wins": 11,
+      "wins": 13,
       "losses": 17
     },
     "8.5+": {
@@ -1301,7 +1374,7 @@
     },
     "7.5": {
       "wins": 7,
-      "losses": 5
+      "losses": 6
     }
   }
 }

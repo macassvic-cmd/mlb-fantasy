@@ -2854,14 +2854,46 @@
           "rate_before": 57.1
         }
       ]
+    },
+    "2026-09-03": {
+      "fire": [
+        {
+          "player_id": 670541,
+          "name": "Yordan Alvarez",
+          "team": "Houston Astros",
+          "grade": "loss",
+          "n_before": 19,
+          "wins_before": 12,
+          "rate_before": 63.2
+        },
+        {
+          "player_id": 646240,
+          "name": "Rafael Devers",
+          "team": "San Francisco Giants",
+          "grade": "loss",
+          "n_before": 17,
+          "wins_before": 11,
+          "rate_before": 64.7
+        },
+        {
+          "player_id": 660271,
+          "name": "Shohei Ohtani",
+          "team": "Los Angeles Dodgers",
+          "grade": null,
+          "n_before": 25,
+          "wins_before": 15,
+          "rate_before": 60.0
+        }
+      ],
+      "hot": []
     }
   },
   "cohorts": {
     "fire": {
       "wins": 59,
-      "losses": 55,
-      "n": 114,
-      "rate": 51.8
+      "losses": 57,
+      "n": 116,
+      "rate": 50.9
     },
     "hot": {
       "wins": 87,

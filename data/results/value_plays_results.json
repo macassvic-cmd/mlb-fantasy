@@ -6466,6 +6466,99 @@
           "correct": false
         }
       ]
+    },
+    "2026-09-03": {
+      "summary": {
+        "total": 8,
+        "correct": 4,
+        "accuracy": 50.0,
+        "over_total": 4,
+        "over_correct": 1,
+        "under_total": 4,
+        "under_correct": 3
+      },
+      "plays": [
+        {
+          "player_id": 694192,
+          "name": "Jackson Chourio",
+          "team": "Milwaukee Brewers",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 0,
+          "correct": false
+        },
+        {
+          "player_id": 665161,
+          "name": "Jeremy Pe\u00f1a",
+          "team": "Houston Astros",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "correct": false
+        },
+        {
+          "player_id": 661388,
+          "name": "William Contreras",
+          "team": "Milwaukee Brewers",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "correct": false
+        },
+        {
+          "player_id": 668227,
+          "name": "Randy Arozarena",
+          "team": "Seattle Mariners",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 20,
+          "correct": true
+        },
+        {
+          "player_id": 669065,
+          "name": "Kyle Stowers",
+          "team": "Miami Marlins",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 9,
+          "correct": false
+        },
+        {
+          "player_id": 808959,
+          "name": "Munetaka Murakami",
+          "team": "Chicago White Sox",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "correct": true
+        },
+        {
+          "player_id": 677942,
+          "name": "Blaze Alexander",
+          "team": "Baltimore Orioles",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 5,
+          "correct": true
+        },
+        {
+          "player_id": 666018,
+          "name": "Jonathan Aranda",
+          "team": "Tampa Bay Rays",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "correct": true
+        }
+      ]
     }
   }
 }
