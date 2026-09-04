@@ -24270,6 +24270,12 @@
           "checked_at_utc": "2026-09-04T21:49:26.244284+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 15,
+          "checked_at_utc": "2026-09-04T21:59:26.264277+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -24281,7 +24287,8 @@
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
         "\u2705 3 min: still live",
-        "\u26a0\ufe0f 5 min: no longer posted"
+        "\u26a0\ufe0f 5 min: no longer posted",
+        "\u26a0\ufe0f 15 min: no longer posted"
       ]
     },
     "824311:jose fermin": {
@@ -24368,6 +24375,117 @@
         "\u26a0\ufe0f 3 min: no longer posted",
         "\u26a0\ufe0f 5 min: no longer posted"
       ]
+    },
+    "823905:freddie freeman": {
+      "flag_id": "823905:freddie freeman",
+      "name": "Freddie Freeman",
+      "normalized_name": "freddie freeman",
+      "team": "LAD",
+      "game_pk": 823905,
+      "is_home": true,
+      "game_time_utc": "2026-09-05T02:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "RUNS": 0.5,
+        "SINGLES": 0.5,
+        "WALKS": 0.5
+      },
+      "first_seen_utc": "2026-09-04T22:00:26.266775+00:00",
+      "lineup_first_posted_utc": "2026-09-04T22:00:26.266775+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 249.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-04T22:00:26.266775+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "RUNS": 0.5,
+            "SINGLES": 0.5,
+            "WALKS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545554175205576778",
+      "discord_checkpoint_lines": []
+    },
+    "823905:dalton rushing": {
+      "flag_id": "823905:dalton rushing",
+      "name": "Dalton Rushing",
+      "normalized_name": "dalton rushing",
+      "team": "LAD",
+      "game_pk": 823905,
+      "is_home": true,
+      "game_time_utc": "2026-09-05T02:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5
+      },
+      "first_seen_utc": "2026-09-04T22:00:26.266775+00:00",
+      "lineup_first_posted_utc": "2026-09-04T22:00:26.266775+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 249.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-04T22:00:26.266775+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545554178150113382",
+      "discord_checkpoint_lines": []
+    },
+    "823905:shohei ohtani": {
+      "flag_id": "823905:shohei ohtani",
+      "name": "Shohei Ohtani",
+      "normalized_name": "shohei ohtani",
+      "team": "LAD",
+      "game_pk": 823905,
+      "is_home": true,
+      "game_time_utc": "2026-09-05T02:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "FANTASY_POINTS": 7.5,
+        "WALKS": 0.5,
+        "TOTAL_BASES": 1.5,
+        "HITS_RUNS_RUNS_BATTED_IN": 2.5,
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-04T22:00:26.266775+00:00",
+      "lineup_first_posted_utc": "2026-09-04T22:00:26.266775+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 249.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-04T22:00:26.266775+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "FANTASY_POINTS": 7.5,
+            "WALKS": 0.5,
+            "TOTAL_BASES": 1.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 2.5,
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545554182537355335",
+      "discord_checkpoint_lines": []
     }
   },
   "early_signals": {
@@ -24842,6 +24960,7 @@
     "823338:home": "2026-09-04T21:23:26.186334+00:00",
     "822852:away": "2026-09-04T21:36:26.215186+00:00",
     "824067:away": "2026-09-04T21:38:26.221784+00:00",
-    "824311:away": "2026-09-04T21:48:26.242254+00:00"
+    "824311:away": "2026-09-04T21:48:26.242254+00:00",
+    "823905:home": "2026-09-04T22:00:26.266775+00:00"
   }
 }
