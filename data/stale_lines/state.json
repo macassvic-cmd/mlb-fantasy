@@ -23881,6 +23881,12 @@
             "HITS_RUNS_RUNS_BATTED_IN": 1.5,
             "SINGLES": 0.5
           }
+        },
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-04T21:28:26.196938+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -23891,7 +23897,8 @@
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
-        "\u2705 3 min: still live"
+        "\u2705 3 min: still live",
+        "\u26a0\ufe0f 5 min: no longer posted"
       ]
     },
     "823338:esmerlyn valdez": {
@@ -23966,6 +23973,14 @@
             "HITS_RUNS_RUNS_BATTED_IN": 1.5,
             "HITS": 0.5
           }
+        },
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-04T21:28:26.196938+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5
+          }
         }
       ],
       "resolved": false,
@@ -23976,7 +23991,8 @@
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
-        "\u2705 3 min: still live"
+        "\u2705 3 min: still live",
+        "\u2705 5 min: still live"
       ]
     },
     "823338:rafael flores": {
@@ -24035,6 +24051,12 @@
           "checked_at_utc": "2026-09-04T21:26:26.192648+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-04T21:28:26.196938+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -24045,7 +24067,8 @@
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
         "\u26a0\ufe0f 2 min: no longer posted",
-        "\u26a0\ufe0f 3 min: no longer posted"
+        "\u26a0\ufe0f 3 min: no longer posted",
+        "\u26a0\ufe0f 5 min: no longer posted"
       ]
     }
   },
