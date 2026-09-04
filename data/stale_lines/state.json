@@ -22781,13 +22781,37 @@
           "still_posted_markets": {
             "HITS": 0.5
           }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-04T19:37:55.959357+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-04T19:38:25.960547+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-04T19:39:25.962643+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS": 0.5
+          }
         }
       ],
       "resolved": false,
       "grade": null,
       "resolution": null,
       "discord_message_id": "1545518187129479229",
-      "discord_checkpoint_lines": []
+      "discord_checkpoint_lines": [
+        "\u26a0\ufe0f 0.5 min: no longer posted",
+        "\u26a0\ufe0f 1 min: no longer posted",
+        "\u2705 2 min: still live"
+      ]
     }
   },
   "early_signals": {
