@@ -22452,6 +22452,41 @@
         "\u26a0\ufe0f 3 min: no longer posted",
         "\u26a0\ufe0f 5 min: no longer posted"
       ]
+    },
+    "823579:aj ewing": {
+      "flag_id": "823579:aj ewing",
+      "name": "A.J. Ewing",
+      "normalized_name": "aj ewing",
+      "team": "NYM",
+      "game_pk": 823579,
+      "is_home": true,
+      "game_time_utc": "2026-09-04T23:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-04T18:53:19.606646+00:00",
+      "lineup_first_posted_utc": "2026-09-04T18:53:19.606646+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 256.7,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-04T18:53:19.606646+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545507087931674747",
+      "discord_checkpoint_lines": []
     }
   },
   "early_signals": {
@@ -22906,6 +22941,7 @@
     "824424:away": "2026-09-04T15:01:19.114796+00:00",
     "824471:home": "2026-09-04T17:50:19.474158+00:00",
     "824311:home": "2026-09-04T18:40:49.581071+00:00",
-    "823418:away": "2026-09-04T18:45:49.591108+00:00"
+    "823418:away": "2026-09-04T18:45:49.591108+00:00",
+    "823579:home": "2026-09-04T18:53:19.606646+00:00"
   }
 }
