@@ -23475,6 +23475,15 @@
             "HITS_RUNS_RUNS_BATTED_IN": 1.5,
             "SINGLES": 0.5
           }
+        },
+        {
+          "elapsed_min": 3,
+          "checked_at_utc": "2026-09-04T20:46:26.104864+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
         }
       ],
       "resolved": false,
@@ -23484,7 +23493,8 @@
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
-        "\u2705 2 min: still live"
+        "\u2705 2 min: still live",
+        "\u2705 3 min: still live"
       ]
     },
     "824146:christian vazquez": {
@@ -23518,13 +23528,48 @@
             "HITS": 0.5,
             "SINGLES": 0.5
           }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-04T20:45:56.103761+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 0.5,
+            "HITS": 0.5,
+            "HITTER_STRIKEOUTS": 0.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-04T20:46:26.104864+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 0.5,
+            "HITS": 0.5,
+            "HITTER_STRIKEOUTS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-04T20:47:26.106996+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 0.5,
+            "HITS": 0.5,
+            "HITTER_STRIKEOUTS": 0.5
+          }
         }
       ],
       "resolved": false,
       "grade": null,
       "resolution": null,
       "discord_message_id": "1545535301194092618",
-      "discord_checkpoint_lines": []
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live"
+      ]
     },
     "824146:cam smith": {
       "flag_id": "824146:cam smith",
@@ -23551,13 +23596,41 @@
           "still_posted_markets": {
             "HITS_RUNS_RUNS_BATTED_IN": 1.5
           }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-04T20:45:56.103761+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-04T20:46:26.104864+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5
+          }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-04T20:47:26.106996+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5
+          }
         }
       ],
       "resolved": false,
       "grade": null,
       "resolution": null,
       "discord_message_id": "1545535304910245971",
-      "discord_checkpoint_lines": []
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live"
+      ]
     }
   },
   "early_signals": {
