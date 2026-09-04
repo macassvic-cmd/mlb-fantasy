@@ -22318,6 +22318,53 @@
       "status_code": "RM",
       "status_desc": "Reassigned to Minors",
       "note": null
+    },
+    "transaction:941175": {
+      "flag_id": "transaction:941175",
+      "source": "transaction",
+      "category": "roster_move_out",
+      "name": "Drew Romo",
+      "normalized_name": "drew romo",
+      "team": "CHW",
+      "game_pk": 824554,
+      "is_home": true,
+      "game_time_utc": "2026-09-04T23:40:00Z",
+      "first_seen_utc": "2026-09-04T15:46:49.212800+00:00",
+      "resolved": false,
+      "outcome": null,
+      "lineup_lag_minutes": null,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-04T15:46:49.212800+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-04T15:47:19.213967+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-04T15:47:49.215287+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        }
+      ],
+      "transaction_id": 941175,
+      "transaction_date": "2026-09-04",
+      "description": "Chicago White Sox optioned C Drew Romo to Charlotte Knights."
     }
   },
   "lineup_posted_at": {
