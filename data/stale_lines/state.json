@@ -22847,6 +22847,12 @@
           "checked_at_utc": "2026-09-04T19:52:25.991727+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 30,
+          "checked_at_utc": "2026-09-04T20:07:26.022192+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -22859,7 +22865,8 @@
         "\u2705 2 min: still live",
         "\u26a0\ufe0f 3 min: no longer posted",
         "\u26a0\ufe0f 5 min: no longer posted",
-        "\u26a0\ufe0f 15 min: no longer posted"
+        "\u26a0\ufe0f 15 min: no longer posted",
+        "\u26a0\ufe0f 30 min: no longer posted"
       ]
     },
     "824554:drew romo": {
@@ -22997,6 +23004,12 @@
           "checked_at_utc": "2026-09-04T20:04:56.017364+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-04T20:06:56.020945+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -23007,7 +23020,8 @@
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
-        "\u26a0\ufe0f 3 min: no longer posted"
+        "\u26a0\ufe0f 3 min: no longer posted",
+        "\u26a0\ufe0f 5 min: no longer posted"
       ]
     },
     "823824:jakob marsee": {
@@ -23070,6 +23084,12 @@
           "checked_at_utc": "2026-09-04T20:04:56.017364+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-04T20:06:56.020945+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -23080,7 +23100,8 @@
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
-        "\u26a0\ufe0f 3 min: no longer posted"
+        "\u26a0\ufe0f 3 min: no longer posted",
+        "\u26a0\ufe0f 5 min: no longer posted"
       ]
     },
     "823579:shay whitcomb": {
@@ -23146,6 +23167,15 @@
             "TOTAL_BASES": 0.5,
             "HITS": 0.5
           }
+        },
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-04T20:06:56.020945+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
         }
       ],
       "resolved": false,
@@ -23156,7 +23186,8 @@
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
-        "\u2705 3 min: still live"
+        "\u2705 3 min: still live",
+        "\u2705 5 min: still live"
       ]
     }
   },
