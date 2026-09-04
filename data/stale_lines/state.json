@@ -22847,6 +22847,52 @@
         "\u26a0\ufe0f 5 min: no longer posted",
         "\u26a0\ufe0f 15 min: no longer posted"
       ]
+    },
+    "824554:drew romo": {
+      "flag_id": "824554:drew romo",
+      "name": "Drew Romo",
+      "normalized_name": "drew romo",
+      "team": "CHW",
+      "game_pk": 824554,
+      "is_home": true,
+      "game_time_utc": "2026-09-04T23:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 0.5,
+        "HITS": 0.5
+      },
+      "first_seen_utc": "2026-09-04T19:58:26.003429+00:00",
+      "lineup_first_posted_utc": "2026-09-04T19:58:26.003429+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 221.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-04T19:58:26.003429+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-04T19:58:56.005169+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545523471700725771",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live"
+      ]
     }
   },
   "early_signals": {
@@ -23043,9 +23089,9 @@
       "is_home": true,
       "game_time_utc": "2026-09-04T23:40:00Z",
       "first_seen_utc": "2026-09-04T15:37:49.193071+00:00",
-      "resolved": false,
-      "outcome": null,
-      "lineup_lag_minutes": null,
+      "resolved": true,
+      "outcome": "confirmed_by_lineup_flag",
+      "lineup_lag_minutes": 260.6,
       "checks": [
         {
           "elapsed_min": 0,
@@ -23135,9 +23181,9 @@
       "is_home": true,
       "game_time_utc": "2026-09-04T23:40:00Z",
       "first_seen_utc": "2026-09-04T15:46:49.212800+00:00",
-      "resolved": false,
-      "outcome": null,
-      "lineup_lag_minutes": null,
+      "resolved": true,
+      "outcome": "confirmed_by_lineup_flag",
+      "lineup_lag_minutes": 251.6,
       "checks": [
         {
           "elapsed_min": 0,
@@ -23307,6 +23353,7 @@
     "823338:away": "2026-09-04T19:30:25.943096+00:00",
     "824797:home": "2026-09-04T19:37:25.958543+00:00",
     "824797:away": "2026-09-04T19:37:25.958543+00:00",
-    "824067:home": "2026-09-04T19:50:25.986763+00:00"
+    "824067:home": "2026-09-04T19:50:25.986763+00:00",
+    "824554:home": "2026-09-04T19:58:26.003429+00:00"
   }
 }
