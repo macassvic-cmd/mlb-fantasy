@@ -22197,6 +22197,21 @@
             "RUNS": 0.5,
             "SINGLES": 0.5
           }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-04T18:42:49.585186+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "RUNS": 0.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 3,
+          "checked_at_utc": "2026-09-04T18:43:49.586876+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -22205,7 +22220,9 @@
       "discord_message_id": "1545503942048219239",
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
-        "\u2705 1 min: still live"
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live",
+        "\u26a0\ufe0f 3 min: no longer posted"
       ]
     },
     "824311:ezequiel tovar": {
@@ -22250,6 +22267,18 @@
           "checked_at_utc": "2026-09-04T18:41:49.583445+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-04T18:42:49.585186+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 3,
+          "checked_at_utc": "2026-09-04T18:43:49.586876+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -22258,7 +22287,9 @@
       "discord_message_id": "1545503945341009971",
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
-        "\u26a0\ufe0f 1 min: no longer posted"
+        "\u26a0\ufe0f 1 min: no longer posted",
+        "\u26a0\ufe0f 2 min: no longer posted",
+        "\u26a0\ufe0f 3 min: no longer posted"
       ]
     },
     "824311:brett sullivan": {
@@ -22302,6 +22333,18 @@
           "checked_at_utc": "2026-09-04T18:41:49.583445+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-04T18:42:49.585186+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 3,
+          "checked_at_utc": "2026-09-04T18:43:49.586876+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -22310,7 +22353,9 @@
       "discord_message_id": "1545503949048783001",
       "discord_checkpoint_lines": [
         "\u26a0\ufe0f 0.5 min: no longer posted",
-        "\u26a0\ufe0f 1 min: no longer posted"
+        "\u26a0\ufe0f 1 min: no longer posted",
+        "\u26a0\ufe0f 2 min: no longer posted",
+        "\u26a0\ufe0f 3 min: no longer posted"
       ]
     }
   },
