@@ -27804,6 +27804,156 @@
         "\u26a0\ufe0f 15 min: no longer posted",
         "\u26a0\ufe0f 30 min: no longer posted"
       ]
+    },
+    "823904:will smith": {
+      "flag_id": "823904:will smith",
+      "name": "Will Smith",
+      "normalized_name": "will smith",
+      "team": "LAD",
+      "game_pk": 823904,
+      "is_home": true,
+      "game_time_utc": "2026-09-06T01:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+        "RUNS": 0.5,
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-05T21:00:24.153517+00:00",
+      "lineup_first_posted_utc": "2026-09-05T21:00:24.153517+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 249.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-05T21:00:24.153517+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "RUNS": 0.5,
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545901454651555982",
+      "discord_checkpoint_lines": []
+    },
+    "823904:shohei ohtani": {
+      "flag_id": "823904:shohei ohtani",
+      "name": "Shohei Ohtani",
+      "normalized_name": "shohei ohtani",
+      "team": "LAD",
+      "game_pk": 823904,
+      "is_home": true,
+      "game_time_utc": "2026-09-06T01:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "FANTASY_POINTS": 7.5,
+        "WALKS": 0.5,
+        "TOTAL_BASES": 1.5,
+        "HITTER_STRIKEOUTS": 1.5,
+        "RUNS": 0.5,
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-05T21:00:24.153517+00:00",
+      "lineup_first_posted_utc": "2026-09-05T21:00:24.153517+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 249.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-05T21:00:24.153517+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "FANTASY_POINTS": 7.5,
+            "WALKS": 0.5,
+            "TOTAL_BASES": 1.5,
+            "HITTER_STRIKEOUTS": 1.5,
+            "RUNS": 0.5,
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545901457859940473",
+      "discord_checkpoint_lines": []
+    },
+    "823904:enrique hernandez": {
+      "flag_id": "823904:enrique hernandez",
+      "name": "Enrique Hern\u00e1ndez",
+      "normalized_name": "enrique hernandez",
+      "team": "LAD",
+      "game_pk": 823904,
+      "is_home": true,
+      "game_time_utc": "2026-09-06T01:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 0.5,
+        "HITS": 0.5
+      },
+      "first_seen_utc": "2026-09-05T21:00:24.153517+00:00",
+      "lineup_first_posted_utc": "2026-09-05T21:00:24.153517+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 249.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-05T21:00:24.153517+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545901461471363196",
+      "discord_checkpoint_lines": []
+    },
+    "823904:alex call": {
+      "flag_id": "823904:alex call",
+      "name": "Alex Call",
+      "normalized_name": "alex call",
+      "team": "LAD",
+      "game_pk": 823904,
+      "is_home": true,
+      "game_time_utc": "2026-09-06T01:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 0.5,
+        "HITS": 0.5
+      },
+      "first_seen_utc": "2026-09-05T21:00:24.153517+00:00",
+      "lineup_first_posted_utc": "2026-09-05T21:00:24.153517+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 249.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-05T21:00:24.153517+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545901466731155598",
+      "discord_checkpoint_lines": []
     }
   },
   "early_signals": {
@@ -28310,6 +28460,7 @@
     "824066:away": "2026-09-05T20:16:24.079111+00:00",
     "824145:home": "2026-09-05T20:17:54.082698+00:00",
     "824553:home": "2026-09-05T20:31:24.109466+00:00",
-    "822850:away": "2026-09-05T20:53:54.147409+00:00"
+    "822850:away": "2026-09-05T20:53:54.147409+00:00",
+    "823904:home": "2026-09-05T21:00:24.153517+00:00"
   }
 }
