@@ -25195,6 +25195,14 @@
           "still_posted_markets": {
             "HITS_RUNS_RUNS_BATTED_IN": 1.5
           }
+        },
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-05T17:27:11.505844+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5
+          }
         }
       ],
       "resolved": false,
@@ -25205,7 +25213,8 @@
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
-        "\u2705 3 min: still live"
+        "\u2705 3 min: still live",
+        "\u2705 5 min: still live"
       ]
     }
   },
