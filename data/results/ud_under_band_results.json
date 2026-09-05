@@ -1352,24 +1352,141 @@
           "grade": "win"
         }
       ]
+    },
+    "2026-09-04": {
+      "wins": 5,
+      "losses": 5,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 676475,
+          "name": "Alec Burleson",
+          "team": "St. Louis Cardinals",
+          "projected_ud": 7.56,
+          "ud_line": 9.5,
+          "edge": -1.94,
+          "game_time_pt": "5:40 PM PT",
+          "actual_ud": 5,
+          "grade": "win"
+        },
+        {
+          "player_id": 677942,
+          "name": "Blaze Alexander",
+          "team": "Baltimore Orioles",
+          "projected_ud": 4.59,
+          "ud_line": 6.5,
+          "edge": -1.91,
+          "game_time_pt": "4:05 PM PT",
+          "actual_ud": 9,
+          "grade": "loss"
+        },
+        {
+          "player_id": 695578,
+          "name": "James Wood",
+          "team": "Washington Nationals",
+          "projected_ud": 4.7,
+          "ud_line": 6.5,
+          "edge": -1.8,
+          "game_time_pt": "7:10 PM PT",
+          "actual_ud": 14,
+          "grade": "loss"
+        },
+        {
+          "player_id": 592626,
+          "name": "Joc Pederson",
+          "team": "Texas Rangers",
+          "projected_ud": 3.7,
+          "ud_line": 5.5,
+          "edge": -1.8,
+          "game_time_pt": "5:05 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 660670,
+          "name": "Ronald Acu\u00f1a Jr.",
+          "team": "Atlanta Braves",
+          "projected_ud": 4.72,
+          "ud_line": 6.5,
+          "edge": -1.78,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 14,
+          "grade": "loss"
+        },
+        {
+          "player_id": 656941,
+          "name": "Kyle Schwarber",
+          "team": "Philadelphia Phillies",
+          "projected_ud": 3.89,
+          "ud_line": 5.5,
+          "edge": -1.61,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 664761,
+          "name": "Alec Bohm",
+          "team": "Philadelphia Phillies",
+          "projected_ud": 3.9,
+          "ud_line": 5.5,
+          "edge": -1.6,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 22,
+          "grade": "loss"
+        },
+        {
+          "player_id": 607043,
+          "name": "Brandon Nimmo",
+          "team": "Texas Rangers",
+          "projected_ud": 4.94,
+          "ud_line": 6.5,
+          "edge": -1.56,
+          "game_time_pt": "5:05 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 681198,
+          "name": "TJ Rumfield",
+          "team": "Colorado Rockies",
+          "projected_ud": 4.96,
+          "ud_line": 6.5,
+          "edge": -1.54,
+          "game_time_pt": "5:40 PM PT",
+          "actual_ud": 30,
+          "grade": "loss"
+        },
+        {
+          "player_id": 691728,
+          "name": "Zac Veen",
+          "team": "Colorado Rockies",
+          "projected_ud": 3.98,
+          "ud_line": 5.5,
+          "edge": -1.52,
+          "game_time_pt": "5:40 PM PT",
+          "actual_ud": 2,
+          "grade": "win"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 63,
-    "losses": 46,
+    "wins": 68,
+    "losses": 51,
     "dnp": 7
   },
   "record_by_line": {
     "5.5": {
-      "wins": 29,
-      "losses": 17
+      "wins": 32,
+      "losses": 18
     },
     "6.5": {
-      "wins": 13,
-      "losses": 17
+      "wins": 14,
+      "losses": 21
     },
     "8.5+": {
-      "wins": 5,
+      "wins": 6,
       "losses": 3
     },
     "7.5": {

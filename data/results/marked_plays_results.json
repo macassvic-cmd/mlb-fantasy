@@ -2886,6 +2886,47 @@
         }
       ],
       "hot": []
+    },
+    "2026-09-04": {
+      "fire": [],
+      "hot": [
+        {
+          "player_id": 680757,
+          "name": "Steven Kwan",
+          "team": "Cleveland Guardians",
+          "grade": "loss",
+          "n_before": 11,
+          "wins_before": 10,
+          "rate_before": 90.9
+        },
+        {
+          "player_id": 608070,
+          "name": "Jos\u00e9 Ram\u00edrez",
+          "team": "Cleveland Guardians",
+          "grade": "loss",
+          "n_before": 9,
+          "wins_before": 5,
+          "rate_before": 55.6
+        },
+        {
+          "player_id": 606466,
+          "name": "Ketel Marte",
+          "team": "Arizona Diamondbacks",
+          "grade": "win",
+          "n_before": 14,
+          "wins_before": 8,
+          "rate_before": 57.1
+        },
+        {
+          "player_id": 800050,
+          "name": "Chase DeLauter",
+          "team": "Cleveland Guardians",
+          "grade": "win",
+          "n_before": 13,
+          "wins_before": 8,
+          "rate_before": 61.5
+        }
+      ]
     }
   },
   "cohorts": {
@@ -2896,10 +2937,10 @@
       "rate": 50.9
     },
     "hot": {
-      "wins": 87,
-      "losses": 72,
-      "n": 159,
-      "rate": 54.7
+      "wins": 89,
+      "losses": 74,
+      "n": 163,
+      "rate": 54.6
     }
   }
 }
