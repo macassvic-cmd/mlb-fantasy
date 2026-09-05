@@ -27307,6 +27307,12 @@
           "checked_at_utc": "2026-09-05T19:59:24.047043+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 30,
+          "checked_at_utc": "2026-09-05T20:14:24.074397+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -27319,7 +27325,8 @@
         "\u26a0\ufe0f 2 min: no longer posted",
         "\u26a0\ufe0f 3 min: no longer posted",
         "\u26a0\ufe0f 5 min: no longer posted",
-        "\u26a0\ufe0f 15 min: no longer posted"
+        "\u26a0\ufe0f 15 min: no longer posted",
+        "\u26a0\ufe0f 30 min: no longer posted"
       ]
     },
     "824795:coby mayo": {
@@ -27391,6 +27398,12 @@
           "checked_at_utc": "2026-09-05T19:59:24.047043+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 30,
+          "checked_at_utc": "2026-09-05T20:14:24.074397+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -27403,7 +27416,8 @@
         "\u26a0\ufe0f 2 min: no longer posted",
         "\u26a0\ufe0f 3 min: no longer posted",
         "\u26a0\ufe0f 5 min: no longer posted",
-        "\u26a0\ufe0f 15 min: no longer posted"
+        "\u26a0\ufe0f 15 min: no longer posted",
+        "\u26a0\ufe0f 30 min: no longer posted"
       ]
     },
     "823335:tyler heineman": {
@@ -27629,6 +27643,15 @@
             "TOTAL_BASES": 0.5,
             "HITS": 0.5
           }
+        },
+        {
+          "elapsed_min": 3,
+          "checked_at_utc": "2026-09-05T20:13:54.073051+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
         }
       ],
       "resolved": false,
@@ -27638,7 +27661,8 @@
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
-        "\u2705 2 min: still live"
+        "\u2705 2 min: still live",
+        "\u2705 3 min: still live"
       ]
     },
     "823257:jazz chisholm": {
@@ -27690,6 +27714,14 @@
           "still_posted_markets": {
             "TOTAL_BASES": 0.5
           }
+        },
+        {
+          "elapsed_min": 3,
+          "checked_at_utc": "2026-09-05T20:13:54.073051+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5
+          }
         }
       ],
       "resolved": false,
@@ -27699,7 +27731,8 @@
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
-        "\u2705 2 min: still live"
+        "\u2705 2 min: still live",
+        "\u2705 3 min: still live"
       ]
     }
   },
