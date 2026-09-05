@@ -27445,6 +27445,26 @@
             "HITTER_STRIKEOUTS": 0.5,
             "HITS": 0.5
           }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-05T20:07:54.062938+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITTER_STRIKEOUTS": 0.5,
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-05T20:08:54.065165+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5,
+            "HITTER_STRIKEOUTS": 0.5
+          }
         }
       ],
       "resolved": false,
@@ -27452,7 +27472,9 @@
       "resolution": null,
       "discord_message_id": "1545887992546205868",
       "discord_checkpoint_lines": [
-        "\u2705 0.5 min: still live"
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live"
       ]
     },
     "823335:oswald peraza": {
@@ -27491,6 +27513,24 @@
             "TOTAL_BASES": 0.5,
             "SINGLES": 0.5
           }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-05T20:07:54.062938+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-05T20:08:54.065165+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "SINGLES": 0.5
+          }
         }
       ],
       "resolved": false,
@@ -27498,7 +27538,9 @@
       "resolution": null,
       "discord_message_id": "1545887995301994517",
       "discord_checkpoint_lines": [
-        "\u2705 0.5 min: still live"
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live"
       ]
     }
   },
