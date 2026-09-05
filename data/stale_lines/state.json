@@ -25364,6 +25364,21 @@
             "HITS_RUNS_RUNS_BATTED_IN": 1.5,
             "SINGLES": 0.5
           }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-05T18:42:52.843924+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 3,
+          "checked_at_utc": "2026-09-05T18:43:52.845723+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -25372,7 +25387,9 @@
       "discord_message_id": "1545866346171211819",
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
-        "\u2705 1 min: still live"
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live",
+        "\u26a0\ufe0f 3 min: no longer posted"
       ]
     },
     "823419:bryan de la cruz": {
@@ -25411,6 +25428,24 @@
             "HITS_RUNS_RUNS_BATTED_IN": 1.5,
             "SINGLES": 0.5
           }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-05T18:42:22.842346+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-05T18:43:22.844352+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
         }
       ],
       "resolved": false,
@@ -25418,7 +25453,9 @@
       "resolution": null,
       "discord_message_id": "1545866553172692993",
       "discord_checkpoint_lines": [
-        "\u2705 0.5 min: still live"
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live"
       ]
     }
   },
