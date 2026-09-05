@@ -243,15 +243,40 @@ jobs:
             echo "Nothing changed — no commit needed."
           else
             git commit -m "Pipeline run $(date -u +'%Y-%m-%d %H:%M UTC')"
-            if ! git pull --rebase origin main; then
-              echo "Rebase conflict — resolving by taking this run's generated version of every conflicting file."
-              conflicts=$(git diff --name-only --diff-filter=U)
-              for f in $conflicts; do
-                git checkout --theirs -- "$f" 2>/dev/null && git add -- "$f" || git rm -f -- "$f"
-              done
-              git rebase --continue
+
+            # Push retry loop, added 2026-09-05: the race check above only
+            # protects against a race THIS run can see at the moment it
+            # checks - two runs that both pass that check within moments
+            # of each other (confirmed live: run 33985378721 and
+            # 33986103759 both started their commit step at 19:07:01,
+            # neither saw the other's marker yet) can still collide at the
+            # final `git push`, which fails outright with "[rejected] ...
+            # fetch first" and no retry - the whole job then fails and
+            # that run's real, freshly-fetched data is lost even though it
+            # did nothing wrong. Denser scheduling makes this collision
+            # more likely, not less, so it needs its own retry rather than
+            # relying on the one-shot rebase-conflict handling below.
+            PUSHED=false
+            for attempt in 1 2 3 4 5; do
+              if ! git pull --rebase origin main; then
+                echo "Rebase conflict — resolving by taking this run's generated version of every conflicting file."
+                conflicts=$(git diff --name-only --diff-filter=U)
+                for f in $conflicts; do
+                  git checkout --theirs -- "$f" 2>/dev/null && git add -- "$f" || git rm -f -- "$f"
+                done
+                git rebase --continue
+              fi
+              if git push; then
+                PUSHED=true
+                break
+              fi
+              echo "Push rejected (attempt ${attempt}/5) - another run landed first, retrying after a short backoff."
+              sleep $(( attempt * 3 ))
+            done
+            if [ "$PUSHED" != "true" ]; then
+              echo "::error::Failed to push after 5 attempts - persistent contention, not a one-off collision."
+              exit 1
             fi
-            git push
             gh workflow run pages.yml || true
           fi
 
