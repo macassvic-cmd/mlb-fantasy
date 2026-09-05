@@ -25392,6 +25392,12 @@
           "checked_at_utc": "2026-09-05T18:45:52.848289+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 15,
+          "checked_at_utc": "2026-09-05T18:55:52.868624+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -25403,7 +25409,8 @@
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
         "\u26a0\ufe0f 3 min: no longer posted",
-        "\u26a0\ufe0f 5 min: no longer posted"
+        "\u26a0\ufe0f 5 min: no longer posted",
+        "\u26a0\ufe0f 15 min: no longer posted"
       ]
     },
     "823419:bryan de la cruz": {
@@ -25472,6 +25479,12 @@
           "checked_at_utc": "2026-09-05T18:46:22.849226+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 15,
+          "checked_at_utc": "2026-09-05T18:56:22.869417+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -25483,7 +25496,8 @@
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
         "\u26a0\ufe0f 3 min: no longer posted",
-        "\u26a0\ufe0f 5 min: no longer posted"
+        "\u26a0\ufe0f 5 min: no longer posted",
+        "\u26a0\ufe0f 15 min: no longer posted"
       ]
     },
     "824468:tj friedl": {
@@ -25749,6 +25763,12 @@
           "checked_at_utc": "2026-09-05T18:54:22.867107+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 3,
+          "checked_at_utc": "2026-09-05T18:55:22.866983+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -25758,7 +25778,8 @@
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
-        "\u26a0\ufe0f 2 min: no longer posted"
+        "\u26a0\ufe0f 2 min: no longer posted",
+        "\u26a0\ufe0f 3 min: no longer posted"
       ]
     },
     "824389:chase delauter": {
@@ -25805,6 +25826,22 @@
           "still_posted_markets": {
             "HITS_RUNS_RUNS_BATTED_IN": 1.5
           }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-05T18:55:22.866983+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "RUNS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 3,
+          "checked_at_utc": "2026-09-05T18:56:22.869417+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5
+          }
         }
       ],
       "resolved": false,
@@ -25813,8 +25850,84 @@
       "discord_message_id": "1545869493618741389",
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
-        "\u2705 1 min: still live"
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live",
+        "\u2705 3 min: still live"
       ]
+    },
+    "823335:spencer horwitz": {
+      "flag_id": "823335:spencer horwitz",
+      "name": "Spencer Horwitz",
+      "normalized_name": "spencer horwitz",
+      "team": "PIT",
+      "game_pk": 823335,
+      "is_home": true,
+      "game_time_utc": "2026-09-05T22:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITTER_STRIKEOUTS": 0.5,
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-05T18:56:52.869903+00:00",
+      "lineup_first_posted_utc": "2026-09-05T18:56:52.869903+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 223.1,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-05T18:56:52.869903+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITTER_STRIKEOUTS": 0.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545870377883017268",
+      "discord_checkpoint_lines": []
+    },
+    "823335:brandon lowe": {
+      "flag_id": "823335:brandon lowe",
+      "name": "Brandon Lowe",
+      "normalized_name": "brandon lowe",
+      "team": "PIT",
+      "game_pk": 823335,
+      "is_home": true,
+      "game_time_utc": "2026-09-05T22:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+        "HITTER_STRIKEOUTS": 1.5,
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-05T18:56:52.869903+00:00",
+      "lineup_first_posted_utc": "2026-09-05T18:56:52.869903+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 223.1,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-05T18:56:52.869903+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "HITTER_STRIKEOUTS": 1.5,
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545870380735012916",
+      "discord_checkpoint_lines": []
     }
   },
   "early_signals": {
@@ -26307,6 +26420,7 @@
     "824468:home": "2026-09-05T18:45:52.848289+00:00",
     "824145:away": "2026-09-05T18:49:52.855932+00:00",
     "824553:away": "2026-09-05T18:52:22.861182+00:00",
-    "824389:home": "2026-09-05T18:53:22.862866+00:00"
+    "824389:home": "2026-09-05T18:53:22.862866+00:00",
+    "823335:home": "2026-09-05T18:56:52.869903+00:00"
   }
 }
