@@ -26124,6 +26124,26 @@
             "HITS_RUNS_RUNS_BATTED_IN": 1.5,
             "SINGLES": 0.5
           }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-05T19:03:52.882830+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITTER_STRIKEOUTS": 0.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 3,
+          "checked_at_utc": "2026-09-05T19:04:52.884868+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITTER_STRIKEOUTS": 0.5,
+            "SINGLES": 0.5
+          }
         }
       ],
       "resolved": false,
@@ -26132,7 +26152,9 @@
       "discord_message_id": "1545871630704713769",
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
-        "\u2705 1 min: still live"
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live",
+        "\u2705 3 min: still live"
       ]
     },
     "824066:nick loftin": {
@@ -26182,6 +26204,25 @@
             "HITS_RUNS_RUNS_BATTED_IN": 1.5,
             "SINGLES": 0.5
           }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-05T19:03:52.882830+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITTER_STRIKEOUTS": 0.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 3,
+          "checked_at_utc": "2026-09-05T19:04:52.884868+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITTER_STRIKEOUTS": 0.5,
+            "SINGLES": 0.5
+          }
         }
       ],
       "resolved": false,
@@ -26190,7 +26231,58 @@
       "discord_message_id": "1545871633535864913",
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
-        "\u2705 1 min: still live"
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live",
+        "\u2705 3 min: still live"
+      ]
+    },
+    "822850:elias diaz": {
+      "flag_id": "822850:elias diaz",
+      "name": "Elias D\u00edaz",
+      "normalized_name": "elias diaz",
+      "team": "TEX",
+      "game_pk": 822850,
+      "is_home": true,
+      "game_time_utc": "2026-09-05T23:05:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 0.5,
+        "HITS_RUNS_RUNS_BATTED_IN": 0.5,
+        "HITS": 0.5
+      },
+      "first_seen_utc": "2026-09-05T19:04:22.883810+00:00",
+      "lineup_first_posted_utc": "2026-09-05T19:04:22.883810+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 240.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-05T19:04:22.883810+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 0.5,
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-05T19:04:52.884868+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 0.5,
+            "HITS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545872258604605494",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live"
       ]
     }
   },
@@ -26686,6 +26778,7 @@
     "824553:away": "2026-09-05T18:52:22.861182+00:00",
     "824389:home": "2026-09-05T18:53:22.862866+00:00",
     "823335:home": "2026-09-05T18:56:52.869903+00:00",
-    "824066:home": "2026-09-05T19:01:52.878608+00:00"
+    "824066:home": "2026-09-05T19:01:52.878608+00:00",
+    "822850:home": "2026-09-05T19:04:22.883810+00:00"
   }
 }
