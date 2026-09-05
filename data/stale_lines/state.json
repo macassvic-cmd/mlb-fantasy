@@ -27405,6 +27405,101 @@
         "\u26a0\ufe0f 5 min: no longer posted",
         "\u26a0\ufe0f 15 min: no longer posted"
       ]
+    },
+    "823335:tyler heineman": {
+      "flag_id": "823335:tyler heineman",
+      "name": "Tyler Heineman",
+      "normalized_name": "tyler heineman",
+      "team": "LAA",
+      "game_pk": 823335,
+      "is_home": false,
+      "game_time_utc": "2026-09-05T22:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 0.5,
+        "HITTER_STRIKEOUTS": 0.5,
+        "HITS": 0.5
+      },
+      "first_seen_utc": "2026-09-05T20:06:54.061210+00:00",
+      "lineup_first_posted_utc": "2026-09-05T20:06:54.061210+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 153.1,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-05T20:06:54.061210+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITTER_STRIKEOUTS": 0.5,
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-05T20:07:24.062605+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITTER_STRIKEOUTS": 0.5,
+            "HITS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545887992546205868",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live"
+      ]
+    },
+    "823335:oswald peraza": {
+      "flag_id": "823335:oswald peraza",
+      "name": "Oswald Peraza",
+      "normalized_name": "oswald peraza",
+      "team": "LAA",
+      "game_pk": 823335,
+      "is_home": false,
+      "game_time_utc": "2026-09-05T22:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 0.5,
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-05T20:06:54.061210+00:00",
+      "lineup_first_posted_utc": "2026-09-05T20:06:54.061210+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 153.1,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-05T20:06:54.061210+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-05T20:07:24.062605+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545887995301994517",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live"
+      ]
     }
   },
   "early_signals": {
@@ -27905,6 +28000,7 @@
     "824389:away": "2026-09-05T19:10:52.896539+00:00",
     "823257:home": "2026-09-05T19:21:52.917849+00:00",
     "824795:away": "2026-09-05T19:35:52.944758+00:00",
-    "824795:home": "2026-09-05T19:44:24.017986+00:00"
+    "824795:home": "2026-09-05T19:44:24.017986+00:00",
+    "823335:away": "2026-09-05T20:06:54.061210+00:00"
   }
 }
