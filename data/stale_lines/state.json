@@ -26556,6 +26556,12 @@
           "checked_at_utc": "2026-09-05T19:22:52.920104+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 30,
+          "checked_at_utc": "2026-09-05T19:37:52.949094+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -26568,7 +26574,8 @@
         "\u2705 2 min: still live",
         "\u2705 3 min: still live",
         "\u2705 5 min: still live",
-        "\u26a0\ufe0f 15 min: no longer posted"
+        "\u26a0\ufe0f 15 min: no longer posted",
+        "\u26a0\ufe0f 30 min: no longer posted"
       ]
     },
     "824468:brice turang": {
@@ -26640,6 +26647,12 @@
           "checked_at_utc": "2026-09-05T19:22:52.920104+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 30,
+          "checked_at_utc": "2026-09-05T19:37:52.949094+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -26652,7 +26665,8 @@
         "\u26a0\ufe0f 2 min: no longer posted",
         "\u26a0\ufe0f 3 min: no longer posted",
         "\u26a0\ufe0f 5 min: no longer posted",
-        "\u26a0\ufe0f 15 min: no longer posted"
+        "\u26a0\ufe0f 15 min: no longer posted",
+        "\u26a0\ufe0f 30 min: no longer posted"
       ]
     },
     "824389:colt keith": {
@@ -26971,6 +26985,12 @@
           "checked_at_utc": "2026-09-05T19:26:52.928767+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 15,
+          "checked_at_utc": "2026-09-05T19:36:52.947113+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -26982,7 +27002,8 @@
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
         "\u26a0\ufe0f 3 min: no longer posted",
-        "\u26a0\ufe0f 5 min: no longer posted"
+        "\u26a0\ufe0f 5 min: no longer posted",
+        "\u26a0\ufe0f 15 min: no longer posted"
       ]
     },
     "824795:adley rutschman": {
@@ -27023,6 +27044,26 @@
             "HITS_RUNS_RUNS_BATTED_IN": 1.5,
             "SINGLES": 0.5
           }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-05T19:36:52.947113+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITTER_STRIKEOUTS": 0.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-05T19:37:52.949094+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITTER_STRIKEOUTS": 0.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
         }
       ],
       "resolved": false,
@@ -27030,7 +27071,9 @@
       "resolution": null,
       "discord_message_id": "1545880186531086499",
       "discord_checkpoint_lines": [
-        "\u2705 0.5 min: still live"
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live"
       ]
     },
     "824795:caleb durbin": {
@@ -27072,6 +27115,26 @@
             "HITS_RUNS_RUNS_BATTED_IN": 1.5,
             "SINGLES": 0.5
           }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-05T19:36:52.947113+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITTER_STRIKEOUTS": 0.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-05T19:37:52.949094+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITTER_STRIKEOUTS": 0.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
         }
       ],
       "resolved": false,
@@ -27079,7 +27142,9 @@
       "resolution": null,
       "discord_message_id": "1545880189077164063",
       "discord_checkpoint_lines": [
-        "\u2705 0.5 min: still live"
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live"
       ]
     }
   },
