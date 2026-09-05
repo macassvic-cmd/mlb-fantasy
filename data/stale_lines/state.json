@@ -27652,6 +27652,12 @@
             "TOTAL_BASES": 0.5,
             "HITS": 0.5
           }
+        },
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-05T20:15:54.077835+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -27662,7 +27668,8 @@
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
-        "\u2705 3 min: still live"
+        "\u2705 3 min: still live",
+        "\u26a0\ufe0f 5 min: no longer posted"
       ]
     },
     "823257:jazz chisholm": {
@@ -27722,6 +27729,12 @@
           "still_posted_markets": {
             "TOTAL_BASES": 0.5
           }
+        },
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-05T20:15:54.077835+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -27732,7 +27745,8 @@
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
-        "\u2705 3 min: still live"
+        "\u2705 3 min: still live",
+        "\u26a0\ufe0f 5 min: no longer posted"
       ]
     }
   },
@@ -28236,6 +28250,7 @@
     "824795:away": "2026-09-05T19:35:52.944758+00:00",
     "824795:home": "2026-09-05T19:44:24.017986+00:00",
     "823335:away": "2026-09-05T20:06:54.061210+00:00",
-    "823257:away": "2026-09-05T20:10:54.068733+00:00"
+    "823257:away": "2026-09-05T20:10:54.068733+00:00",
+    "824066:away": "2026-09-05T20:16:24.079111+00:00"
   }
 }
