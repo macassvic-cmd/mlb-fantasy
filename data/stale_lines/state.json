@@ -27202,6 +27202,118 @@
         "\u2705 3 min: still live",
         "\u26a0\ufe0f 5 min: no longer posted"
       ]
+    },
+    "824795:luis robert": {
+      "flag_id": "824795:luis robert",
+      "name": "Luis Robert Jr.",
+      "normalized_name": "luis robert",
+      "team": "BAL",
+      "game_pk": 824795,
+      "is_home": true,
+      "game_time_utc": "2026-09-05T23:05:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-05T19:44:24.017986+00:00",
+      "lineup_first_posted_utc": "2026-09-05T19:44:24.017986+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 200.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-05T19:44:24.017986+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-05T19:44:54.019321+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-05T19:45:24.019789+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545882340427825336",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live"
+      ]
+    },
+    "824795:coby mayo": {
+      "flag_id": "824795:coby mayo",
+      "name": "Coby Mayo",
+      "normalized_name": "coby mayo",
+      "team": "BAL",
+      "game_pk": 824795,
+      "is_home": true,
+      "game_time_utc": "2026-09-05T23:05:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 0.5,
+        "HITS": 0.5
+      },
+      "first_seen_utc": "2026-09-05T19:44:24.017986+00:00",
+      "lineup_first_posted_utc": "2026-09-05T19:44:24.017986+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 200.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-05T19:44:24.017986+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-05T19:44:54.019321+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-05T19:45:24.019789+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545882343921684674",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live"
+      ]
     }
   },
   "early_signals": {
@@ -27701,6 +27813,7 @@
     "824468:away": "2026-09-05T19:07:52.890402+00:00",
     "824389:away": "2026-09-05T19:10:52.896539+00:00",
     "823257:home": "2026-09-05T19:21:52.917849+00:00",
-    "824795:away": "2026-09-05T19:35:52.944758+00:00"
+    "824795:away": "2026-09-05T19:35:52.944758+00:00",
+    "824795:home": "2026-09-05T19:44:24.017986+00:00"
   }
 }
