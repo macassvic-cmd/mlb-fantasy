@@ -25844,6 +25844,12 @@
           "checked_at_utc": "2026-09-05T19:07:22.890707+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 30,
+          "checked_at_utc": "2026-09-05T19:22:22.919205+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -25856,7 +25862,8 @@
         "\u26a0\ufe0f 2 min: no longer posted",
         "\u26a0\ufe0f 3 min: no longer posted",
         "\u26a0\ufe0f 5 min: no longer posted",
-        "\u26a0\ufe0f 15 min: no longer posted"
+        "\u26a0\ufe0f 15 min: no longer posted",
+        "\u26a0\ufe0f 30 min: no longer posted"
       ]
     },
     "824389:chase delauter": {
@@ -25934,6 +25941,12 @@
           "checked_at_utc": "2026-09-05T19:08:22.891129+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 30,
+          "checked_at_utc": "2026-09-05T19:23:22.921767+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -25946,7 +25959,8 @@
         "\u2705 2 min: still live",
         "\u2705 3 min: still live",
         "\u2705 5 min: still live",
-        "\u26a0\ufe0f 15 min: no longer posted"
+        "\u26a0\ufe0f 15 min: no longer posted",
+        "\u26a0\ufe0f 30 min: no longer posted"
       ]
     },
     "823335:spencer horwitz": {
@@ -26501,6 +26515,12 @@
             "HITS_RUNS_RUNS_BATTED_IN": 1.5,
             "RUNS": 0.5
           }
+        },
+        {
+          "elapsed_min": 15,
+          "checked_at_utc": "2026-09-05T19:22:52.920104+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -26512,7 +26532,8 @@
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
         "\u2705 3 min: still live",
-        "\u2705 5 min: still live"
+        "\u2705 5 min: still live",
+        "\u26a0\ufe0f 15 min: no longer posted"
       ]
     },
     "824468:brice turang": {
@@ -26578,6 +26599,12 @@
           "checked_at_utc": "2026-09-05T19:12:52.900988+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 15,
+          "checked_at_utc": "2026-09-05T19:22:52.920104+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -26589,7 +26616,8 @@
         "\u26a0\ufe0f 1 min: no longer posted",
         "\u26a0\ufe0f 2 min: no longer posted",
         "\u26a0\ufe0f 3 min: no longer posted",
-        "\u26a0\ufe0f 5 min: no longer posted"
+        "\u26a0\ufe0f 5 min: no longer posted",
+        "\u26a0\ufe0f 15 min: no longer posted"
       ]
     },
     "824389:colt keith": {
@@ -26850,13 +26878,42 @@
             "HITS_RUNS_RUNS_BATTED_IN": 1.5,
             "SINGLES": 0.5
           }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-05T19:22:22.919205+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-05T19:22:52.920104+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-05T19:23:52.922145+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "SINGLES": 0.5
+          }
         }
       ],
       "resolved": false,
       "grade": null,
       "resolution": null,
       "discord_message_id": "1545876669691068487",
-      "discord_checkpoint_lines": []
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live"
+      ]
     }
   },
   "early_signals": {
