@@ -25237,6 +25237,43 @@
         "\u26a0\ufe0f 15 min: no longer posted",
         "\u26a0\ufe0f 30 min: no longer posted"
       ]
+    },
+    "823419:mike yastrzemski": {
+      "flag_id": "823419:mike yastrzemski",
+      "name": "Mike Yastrzemski",
+      "normalized_name": "mike yastrzemski",
+      "team": "ATL",
+      "game_pk": 823419,
+      "is_home": false,
+      "game_time_utc": "2026-09-05T22:05:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 0.5,
+        "HITS_RUNS_RUNS_BATTED_IN": 0.5,
+        "HITS": 0.5
+      },
+      "first_seen_utc": "2026-09-05T18:31:22.817448+00:00",
+      "lineup_first_posted_utc": "2026-09-05T18:31:22.817448+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 213.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-05T18:31:22.817448+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 0.5,
+            "HITS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1545863954515890298",
+      "discord_checkpoint_lines": []
     }
   },
   "early_signals": {
@@ -25722,6 +25759,7 @@
     "823577:home": "2026-09-05T16:40:41.417798+00:00",
     "823823:away": "2026-09-05T16:55:11.441878+00:00",
     "823823:home": "2026-09-05T17:02:11.455302+00:00",
-    "823577:away": "2026-09-05T17:22:11.495104+00:00"
+    "823577:away": "2026-09-05T17:22:11.495104+00:00",
+    "823419:away": "2026-09-05T18:31:22.817448+00:00"
   }
 }
