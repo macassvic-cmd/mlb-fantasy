@@ -30500,6 +30500,12 @@
           "checked_at_utc": "2026-09-06T14:56:56.219336+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 30,
+          "checked_at_utc": "2026-09-06T15:11:56.245272+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -30512,7 +30518,8 @@
         "\u2705 2 min: still live",
         "\u2705 3 min: still live",
         "\u26a0\ufe0f 5 min: no longer posted",
-        "\u26a0\ufe0f 15 min: no longer posted"
+        "\u26a0\ufe0f 15 min: no longer posted",
+        "\u26a0\ufe0f 30 min: no longer posted"
       ]
     },
     "823578:mark vientos": {
@@ -31094,6 +31101,12 @@
           "checked_at_utc": "2026-09-06T15:10:56.242769+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-06T15:12:56.246639+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -31104,7 +31117,8 @@
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
         "\u26a0\ufe0f 2 min: no longer posted",
-        "\u26a0\ufe0f 3 min: no longer posted"
+        "\u26a0\ufe0f 3 min: no longer posted",
+        "\u26a0\ufe0f 5 min: no longer posted"
       ]
     },
     "823336:jake mangum": {
@@ -31162,6 +31176,12 @@
           "checked_at_utc": "2026-09-06T15:10:56.242769+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-06T15:12:56.246639+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -31172,7 +31192,8 @@
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
-        "\u26a0\ufe0f 3 min: no longer posted"
+        "\u26a0\ufe0f 3 min: no longer posted",
+        "\u26a0\ufe0f 5 min: no longer posted"
       ]
     },
     "823336:rafael flores": {
@@ -31215,6 +31236,18 @@
           "checked_at_utc": "2026-09-06T15:10:26.242297+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-06T15:11:26.243777+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 3,
+          "checked_at_utc": "2026-09-06T15:12:26.245974+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -31223,7 +31256,9 @@
       "discord_message_id": "1546175520847437976",
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
-        "\u26a0\ufe0f 1 min: no longer posted"
+        "\u26a0\ufe0f 1 min: no longer posted",
+        "\u26a0\ufe0f 2 min: no longer posted",
+        "\u26a0\ufe0f 3 min: no longer posted"
       ]
     }
   },
