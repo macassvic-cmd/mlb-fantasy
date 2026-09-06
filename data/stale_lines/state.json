@@ -32285,13 +32285,47 @@
             "RUNS": 0.5,
             "SINGLES": 0.5
           }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-06T15:50:26.309440+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 1.5,
+            "RUNS": 0.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-06T15:50:56.310404+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 1.5,
+            "RUNS": 0.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-06T15:51:56.311544+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 1.5,
+            "RUNS": 0.5,
+            "SINGLES": 0.5
+          }
         }
       ],
       "resolved": false,
       "grade": null,
       "resolution": null,
       "discord_message_id": "1546185712976527432",
-      "discord_checkpoint_lines": []
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live"
+      ]
     },
     "824309:hunter goodman": {
       "flag_id": "824309:hunter goodman",
@@ -32328,13 +32362,56 @@
             "RUNS": 0.5,
             "SINGLES": 0.5
           }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-06T15:50:26.309440+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "RUNS_BATTED_IN": 0.5,
+            "TOTAL_BASES": 1.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 2.5,
+            "FANTASY_POINTS": 7.5,
+            "RUNS": 0.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-06T15:50:56.310404+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "RUNS_BATTED_IN": 0.5,
+            "TOTAL_BASES": 1.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 2.5,
+            "FANTASY_POINTS": 7.5,
+            "RUNS": 0.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-06T15:51:56.311544+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "RUNS_BATTED_IN": 0.5,
+            "TOTAL_BASES": 1.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 2.5,
+            "FANTASY_POINTS": 7.5,
+            "RUNS": 0.5,
+            "SINGLES": 0.5
+          }
         }
       ],
       "resolved": false,
       "grade": null,
       "resolution": null,
       "discord_message_id": "1546185715954753659",
-      "discord_checkpoint_lines": []
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live"
+      ]
     }
   },
   "early_signals": {
