@@ -33552,6 +33552,39 @@
         "\u26a0\ufe0f 15 min: no longer posted",
         "\u26a0\ufe0f 30 min: no longer posted"
       ]
+    },
+    "823903:alex call": {
+      "flag_id": "823903:alex call",
+      "name": "Alex Call",
+      "normalized_name": "alex call",
+      "team": "LAD",
+      "game_pk": 823903,
+      "is_home": true,
+      "game_time_utc": "2026-09-07T02:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-06T22:01:02.820720+00:00",
+      "lineup_first_posted_utc": "2026-09-06T22:01:02.820720+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 249.0,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-06T22:01:02.820720+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1546279093903822869",
+      "discord_checkpoint_lines": []
     }
   },
   "early_signals": {
@@ -34091,6 +34124,7 @@
     "823253:away": "2026-09-06T17:16:26.463235+00:00",
     "824552:home": "2026-09-06T18:02:56.547279+00:00",
     "823091:home": "2026-09-06T18:16:26.571235+00:00",
-    "824552:away": "2026-09-06T19:22:30.594129+00:00"
+    "824552:away": "2026-09-06T19:22:30.594129+00:00",
+    "823903:home": "2026-09-06T22:01:02.820720+00:00"
   }
 }
