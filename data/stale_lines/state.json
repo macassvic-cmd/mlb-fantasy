@@ -29223,6 +29223,15 @@
             "TOTAL_BASES": 0.5,
             "HITS": 0.5
           }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-06T14:20:56.152871+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
         }
       ],
       "resolved": false,
@@ -29231,7 +29240,8 @@
       "discord_message_id": "1546162811724501103",
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
-        "\u2705 1 min: still live"
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live"
       ]
     },
     "824142:lars nootbaar": {
@@ -29287,6 +29297,17 @@
             "SINGLES": 0.5,
             "WALKS": 0.5
           }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-06T14:20:56.152871+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "RUNS": 0.5,
+            "SINGLES": 0.5,
+            "WALKS": 0.5
+          }
         }
       ],
       "resolved": false,
@@ -29295,7 +29316,8 @@
       "discord_message_id": "1546162814782017598",
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
-        "\u2705 1 min: still live"
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live"
       ]
     },
     "824142:ryan waldschmidt": {
@@ -29343,6 +29365,15 @@
             "TOTAL_BASES": 0.5,
             "HITS": 0.5
           }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-06T14:20:56.152871+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
         }
       ],
       "resolved": false,
@@ -29351,8 +29382,295 @@
       "discord_message_id": "1546162818267611229",
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
-        "\u2705 1 min: still live"
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live"
       ]
+    },
+    "824385:javier baez": {
+      "flag_id": "824385:javier baez",
+      "name": "Javier B\u00e1ez",
+      "normalized_name": "javier baez",
+      "team": "DET",
+      "game_pk": 824385,
+      "is_home": false,
+      "game_time_utc": "2026-09-06T17:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 0.5,
+        "HITS": 0.5
+      },
+      "first_seen_utc": "2026-09-06T14:20:56.152871+00:00",
+      "lineup_first_posted_utc": "2026-09-06T14:20:56.152871+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 199.1,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-06T14:20:56.152871+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-06T14:21:26.153552+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1546163315657539636",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live"
+      ]
+    },
+    "824385:zach mckinstry": {
+      "flag_id": "824385:zach mckinstry",
+      "name": "Zach McKinstry",
+      "normalized_name": "zach mckinstry",
+      "team": "DET",
+      "game_pk": 824385,
+      "is_home": false,
+      "game_time_utc": "2026-09-06T17:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 0.5,
+        "HITS": 0.5
+      },
+      "first_seen_utc": "2026-09-06T14:20:56.152871+00:00",
+      "lineup_first_posted_utc": "2026-09-06T14:20:56.152871+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 199.1,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-06T14:20:56.152871+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-06T14:21:26.153552+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1546163318568517794",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live"
+      ]
+    },
+    "824385:spencer torkelson": {
+      "flag_id": "824385:spencer torkelson",
+      "name": "Spencer Torkelson",
+      "normalized_name": "spencer torkelson",
+      "team": "DET",
+      "game_pk": 824385,
+      "is_home": false,
+      "game_time_utc": "2026-09-06T17:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 0.5,
+        "HITTER_STRIKEOUTS": 1.5,
+        "HITS": 0.5
+      },
+      "first_seen_utc": "2026-09-06T14:20:56.152871+00:00",
+      "lineup_first_posted_utc": "2026-09-06T14:20:56.152871+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 199.1,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-06T14:20:56.152871+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITTER_STRIKEOUTS": 1.5,
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-06T14:21:26.153552+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITTER_STRIKEOUTS": 1.5,
+            "HITS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1546163321861054536",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live"
+      ]
+    },
+    "824385:gleyber torres": {
+      "flag_id": "824385:gleyber torres",
+      "name": "Gleyber Torres",
+      "normalized_name": "gleyber torres",
+      "team": "DET",
+      "game_pk": 824385,
+      "is_home": false,
+      "game_time_utc": "2026-09-06T17:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-06T14:20:56.152871+00:00",
+      "lineup_first_posted_utc": "2026-09-06T14:20:56.152871+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 199.1,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-06T14:20:56.152871+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-06T14:21:26.153552+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1546163325740785776",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live"
+      ]
+    },
+    "824469:edwin arroyo": {
+      "flag_id": "824469:edwin arroyo",
+      "name": "Edwin Arroyo",
+      "normalized_name": "edwin arroyo",
+      "team": "CIN",
+      "game_pk": 824469,
+      "is_home": true,
+      "game_time_utc": "2026-09-06T16:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS": 0.5
+      },
+      "first_seen_utc": "2026-09-06T14:21:26.153552+00:00",
+      "lineup_first_posted_utc": "2026-09-06T14:21:26.153552+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 108.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-06T14:21:26.153552+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1546163440458928332",
+      "discord_checkpoint_lines": []
+    },
+    "824469:jose trevino": {
+      "flag_id": "824469:jose trevino",
+      "name": "Jose Trevino",
+      "normalized_name": "jose trevino",
+      "team": "CIN",
+      "game_pk": 824469,
+      "is_home": true,
+      "game_time_utc": "2026-09-06T16:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 0.5
+      },
+      "first_seen_utc": "2026-09-06T14:21:26.153552+00:00",
+      "lineup_first_posted_utc": "2026-09-06T14:21:26.153552+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 108.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-06T14:21:26.153552+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1546163443541876842",
+      "discord_checkpoint_lines": []
+    },
+    "823417:jt realmuto": {
+      "flag_id": "823417:jt realmuto",
+      "name": "J.T. Realmuto",
+      "normalized_name": "jt realmuto",
+      "team": "PHI",
+      "game_pk": 823417,
+      "is_home": true,
+      "game_time_utc": "2026-09-06T17:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-06T14:21:26.153552+00:00",
+      "lineup_first_posted_utc": "2026-09-06T14:21:26.153552+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 168.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-06T14:21:26.153552+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1546163447614668913",
+      "discord_checkpoint_lines": []
     }
   },
   "early_signals": {
@@ -29867,6 +30185,9 @@
     "824310:away": "2026-09-05T22:20:54.270517+00:00",
     "824469:away": "2026-09-06T13:16:26.029235+00:00",
     "824794:away": "2026-09-06T14:02:56.118255+00:00",
-    "824142:away": "2026-09-06T14:18:56.149300+00:00"
+    "824142:away": "2026-09-06T14:18:56.149300+00:00",
+    "824385:away": "2026-09-06T14:20:56.152871+00:00",
+    "824469:home": "2026-09-06T14:21:26.153552+00:00",
+    "823417:home": "2026-09-06T14:21:26.153552+00:00"
   }
 }
