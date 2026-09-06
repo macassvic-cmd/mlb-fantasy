@@ -29171,9 +29171,9 @@
           "still_posted_markets": null
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "win",
+      "resolution": "confirmed_not_started",
       "discord_message_id": "1546158784089423905",
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
@@ -30988,9 +30988,9 @@
           "still_posted_markets": null
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "win",
+      "resolution": "confirmed_not_started",
       "discord_message_id": "1546173254446620806",
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
@@ -31083,9 +31083,9 @@
           "still_posted_markets": null
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "win",
+      "resolution": "confirmed_not_started",
       "discord_message_id": "1546173257999458450",
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
@@ -31170,9 +31170,9 @@
           "still_posted_markets": null
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "win",
+      "resolution": "confirmed_not_started",
       "discord_message_id": "1546175142693175337",
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
@@ -31259,9 +31259,9 @@
           "still_posted_markets": null
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "win",
+      "resolution": "confirmed_not_started",
       "discord_message_id": "1546175145784119417",
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
@@ -31345,9 +31345,9 @@
           "still_posted_markets": null
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "win",
+      "resolution": "confirmed_not_started",
       "discord_message_id": "1546175520847437976",
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
@@ -31430,9 +31430,9 @@
           "still_posted_markets": null
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "win",
+      "resolution": "confirmed_not_started",
       "discord_message_id": "1546177281737625641",
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
@@ -31528,9 +31528,9 @@
           "still_posted_markets": null
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "win",
+      "resolution": "confirmed_not_started",
       "discord_message_id": "1546177285378277457",
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
@@ -33173,6 +33173,69 @@
         "\u26a0\ufe0f 3 min: no longer posted",
         "\u26a0\ufe0f 5 min: no longer posted",
         "\u26a0\ufe0f 15 min: no longer posted"
+      ]
+    },
+    "823822:ian happ": {
+      "flag_id": "823822:ian happ",
+      "name": "Ian Happ",
+      "normalized_name": "ian happ",
+      "team": "CHC",
+      "game_pk": 823822,
+      "is_home": false,
+      "game_time_utc": "2026-09-06T17:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+        "RUNS": 0.5,
+        "SINGLES": 0.5,
+        "WALKS": 0.5
+      },
+      "first_seen_utc": "2026-09-06T17:34:56.494802+00:00",
+      "lineup_first_posted_utc": "2026-09-06T14:48:56.204017+00:00",
+      "detection_latency_seconds": 9960.3,
+      "minutes_to_first_pitch_at_flag": 5.1,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-06T17:34:56.494802+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "RUNS": 0.5,
+            "SINGLES": 0.5,
+            "WALKS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-06T17:35:26.495476+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "RUNS": 0.5,
+            "SINGLES": 0.5,
+            "WALKS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-06T17:35:56.495901+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "RUNS": 0.5,
+            "WALKS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1546212135896621189",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live"
       ]
     }
   },
