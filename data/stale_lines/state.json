@@ -29994,6 +29994,151 @@
         "\u2705 3 min: still live",
         "\u26a0\ufe0f 5 min: no longer posted"
       ]
+    },
+    "823417:haseong kim": {
+      "flag_id": "823417:haseong kim",
+      "name": "Ha-Seong Kim",
+      "normalized_name": "haseong kim",
+      "team": "ATL",
+      "game_pk": 823417,
+      "is_home": false,
+      "game_time_utc": "2026-09-06T17:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS": 0.5
+      },
+      "first_seen_utc": "2026-09-06T14:30:26.170316+00:00",
+      "lineup_first_posted_utc": "2026-09-06T14:30:26.170316+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 159.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-06T14:30:26.170316+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-06T14:30:56.171366+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-06T14:31:26.172194+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1546165705097879660",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live"
+      ]
+    },
+    "823417:dominic smith": {
+      "flag_id": "823417:dominic smith",
+      "name": "Dominic Smith",
+      "normalized_name": "dominic smith",
+      "team": "ATL",
+      "game_pk": 823417,
+      "is_home": false,
+      "game_time_utc": "2026-09-06T17:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 0.5
+      },
+      "first_seen_utc": "2026-09-06T14:30:26.170316+00:00",
+      "lineup_first_posted_utc": "2026-09-06T14:30:26.170316+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 159.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-06T14:30:26.170316+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-06T14:30:56.171366+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-06T14:31:26.172194+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1546165708285804585",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live"
+      ]
+    },
+    "824385:jose ramirez": {
+      "flag_id": "824385:jose ramirez",
+      "name": "Jos\u00e9 Ram\u00edrez",
+      "normalized_name": "jose ramirez",
+      "team": "CLE",
+      "game_pk": 824385,
+      "is_home": true,
+      "game_time_utc": "2026-09-06T17:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "FANTASY_POINTS": 6.5,
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+        "RUNS": 0.5,
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-06T14:31:26.172194+00:00",
+      "lineup_first_posted_utc": "2026-09-06T14:31:26.172194+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 188.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-06T14:31:26.172194+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "FANTASY_POINTS": 6.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "RUNS": 0.5,
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1546165956353458178",
+      "discord_checkpoint_lines": []
     }
   },
   "early_signals": {
@@ -30511,6 +30656,8 @@
     "824142:away": "2026-09-06T14:18:56.149300+00:00",
     "824385:away": "2026-09-06T14:20:56.152871+00:00",
     "824469:home": "2026-09-06T14:21:26.153552+00:00",
-    "823417:home": "2026-09-06T14:21:26.153552+00:00"
+    "823417:home": "2026-09-06T14:21:26.153552+00:00",
+    "823417:away": "2026-09-06T14:30:26.170316+00:00",
+    "824385:home": "2026-09-06T14:31:26.172194+00:00"
   }
 }
