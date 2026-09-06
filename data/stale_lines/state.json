@@ -31834,6 +31834,12 @@
             "HITS_RUNS_RUNS_BATTED_IN": 2.5,
             "RUNS": 0.5
           }
+        },
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-06T15:35:26.282999+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -31844,7 +31850,8 @@
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
-        "\u2705 3 min: still live"
+        "\u2705 3 min: still live",
+        "\u26a0\ufe0f 5 min: no longer posted"
       ]
     },
     "824065:alejandro kirk": {
@@ -31905,6 +31912,12 @@
             "RUNS_BATTED_IN": 0.5,
             "TOTAL_BASES": 1.5
           }
+        },
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-06T15:35:26.282999+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -31915,7 +31928,8 @@
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
-        "\u2705 3 min: still live"
+        "\u2705 3 min: still live",
+        "\u26a0\ufe0f 5 min: no longer posted"
       ]
     },
     "824065:myles straw": {
@@ -31977,6 +31991,12 @@
           "checked_at_utc": "2026-09-06T15:33:26.279905+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-06T15:35:26.282999+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -31987,7 +32007,8 @@
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
-        "\u26a0\ufe0f 3 min: no longer posted"
+        "\u26a0\ufe0f 3 min: no longer posted",
+        "\u26a0\ufe0f 5 min: no longer posted"
       ]
     },
     "822848:danny jansen": {
@@ -32053,6 +32074,12 @@
             "TOTAL_BASES": 0.5,
             "HITS": 0.5
           }
+        },
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-06T15:35:26.282999+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -32063,7 +32090,60 @@
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
-        "\u2705 3 min: still live"
+        "\u2705 3 min: still live",
+        "\u26a0\ufe0f 5 min: no longer posted"
+      ]
+    },
+    "824142:jake meyers": {
+      "flag_id": "824142:jake meyers",
+      "name": "Jake Meyers",
+      "normalized_name": "jake meyers",
+      "team": "HOU",
+      "game_pk": 824142,
+      "is_home": true,
+      "game_time_utc": "2026-09-06T18:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-06T15:34:26.282324+00:00",
+      "lineup_first_posted_utc": "2026-09-06T15:34:26.282324+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 155.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-06T15:34:26.282324+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-06T15:34:56.282777+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-06T15:35:26.282999+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1546181811925811271",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live"
       ]
     }
   },
@@ -32594,6 +32674,7 @@
     "823336:away": "2026-09-06T15:16:26.251567+00:00",
     "823578:away": "2026-09-06T15:22:26.261421+00:00",
     "824065:away": "2026-09-06T15:30:26.275010+00:00",
-    "822848:home": "2026-09-06T15:30:26.275010+00:00"
+    "822848:home": "2026-09-06T15:30:26.275010+00:00",
+    "824142:home": "2026-09-06T15:34:26.282324+00:00"
   }
 }
