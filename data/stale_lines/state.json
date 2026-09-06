@@ -31082,6 +31082,18 @@
           "still_posted_markets": {
             "SINGLES": 0.5
           }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-06T15:09:56.241336+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 3,
+          "checked_at_utc": "2026-09-06T15:10:56.242769+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -31090,7 +31102,9 @@
       "discord_message_id": "1546175142693175337",
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
-        "\u2705 1 min: still live"
+        "\u2705 1 min: still live",
+        "\u26a0\ufe0f 2 min: no longer posted",
+        "\u26a0\ufe0f 3 min: no longer posted"
       ]
     },
     "823336:jake mangum": {
@@ -31134,6 +31148,20 @@
           "still_posted_markets": {
             "HITS_RUNS_RUNS_BATTED_IN": 1.5
           }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-06T15:09:56.241336+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5
+          }
+        },
+        {
+          "elapsed_min": 3,
+          "checked_at_utc": "2026-09-06T15:10:56.242769+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -31142,7 +31170,60 @@
       "discord_message_id": "1546175145784119417",
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
-        "\u2705 1 min: still live"
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live",
+        "\u26a0\ufe0f 3 min: no longer posted"
+      ]
+    },
+    "823336:rafael flores": {
+      "flag_id": "823336:rafael flores",
+      "name": "Rafael Flores Jr.",
+      "normalized_name": "rafael flores",
+      "team": "PIT",
+      "game_pk": 823336,
+      "is_home": true,
+      "game_time_utc": "2026-09-06T17:35:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-06T15:09:26.240054+00:00",
+      "lineup_first_posted_utc": "2026-09-06T15:07:56.237384+00:00",
+      "detection_latency_seconds": 90.0,
+      "minutes_to_first_pitch_at_flag": 145.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-06T15:09:26.240054+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-06T15:09:56.241336+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-06T15:10:26.242297+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1546175520847437976",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u26a0\ufe0f 1 min: no longer posted"
       ]
     }
   },
