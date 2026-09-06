@@ -33279,6 +33279,98 @@
         "\u26a0\ufe0f 3 min: no longer posted",
         "\u26a0\ufe0f 5 min: no longer posted"
       ]
+    },
+    "823091:cole young": {
+      "flag_id": "823091:cole young",
+      "name": "Cole Young",
+      "normalized_name": "cole young",
+      "team": "SEA",
+      "game_pk": 823091,
+      "is_home": true,
+      "game_time_utc": "2026-09-06T20:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-06T18:16:26.571235+00:00",
+      "lineup_first_posted_utc": "2026-09-06T18:16:26.571235+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 113.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-06T18:16:26.571235+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-06T18:16:56.572000+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1546222583081340970",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live"
+      ]
+    },
+    "823091:taylor ward": {
+      "flag_id": "823091:taylor ward",
+      "name": "Taylor Ward",
+      "normalized_name": "taylor ward",
+      "team": "SEA",
+      "game_pk": 823091,
+      "is_home": true,
+      "game_time_utc": "2026-09-06T20:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+        "WALKS": 0.5
+      },
+      "first_seen_utc": "2026-09-06T18:16:26.571235+00:00",
+      "lineup_first_posted_utc": "2026-09-06T18:16:26.571235+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 113.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-06T18:16:26.571235+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "WALKS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-06T18:16:56.572000+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "WALKS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1546222595429502988",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live"
+      ]
     }
   },
   "early_signals": {
@@ -33816,6 +33908,7 @@
     "824309:away": "2026-09-06T16:51:56.420099+00:00",
     "823091:away": "2026-09-06T17:16:26.463235+00:00",
     "823253:away": "2026-09-06T17:16:26.463235+00:00",
-    "824552:home": "2026-09-06T18:02:56.547279+00:00"
+    "824552:home": "2026-09-06T18:02:56.547279+00:00",
+    "823091:home": "2026-09-06T18:16:26.571235+00:00"
   }
 }
