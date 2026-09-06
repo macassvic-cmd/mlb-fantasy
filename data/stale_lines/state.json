@@ -30880,6 +30880,12 @@
           "checked_at_utc": "2026-09-06T15:08:26.238692+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 30,
+          "checked_at_utc": "2026-09-06T15:23:26.263269+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -30892,7 +30898,8 @@
         "\u2705 2 min: still live",
         "\u2705 3 min: still live",
         "\u26a0\ufe0f 5 min: no longer posted",
-        "\u26a0\ufe0f 15 min: no longer posted"
+        "\u26a0\ufe0f 15 min: no longer posted",
+        "\u26a0\ufe0f 30 min: no longer posted"
       ]
     },
     "824794:luis robert": {
@@ -31135,6 +31142,12 @@
           "checked_at_utc": "2026-09-06T15:12:56.246639+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 15,
+          "checked_at_utc": "2026-09-06T15:22:56.262287+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -31146,7 +31159,8 @@
         "\u2705 1 min: still live",
         "\u26a0\ufe0f 2 min: no longer posted",
         "\u26a0\ufe0f 3 min: no longer posted",
-        "\u26a0\ufe0f 5 min: no longer posted"
+        "\u26a0\ufe0f 5 min: no longer posted",
+        "\u26a0\ufe0f 15 min: no longer posted"
       ]
     },
     "823336:jake mangum": {
@@ -31210,6 +31224,12 @@
           "checked_at_utc": "2026-09-06T15:12:56.246639+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 15,
+          "checked_at_utc": "2026-09-06T15:22:56.262287+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -31221,7 +31241,8 @@
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
         "\u26a0\ufe0f 3 min: no longer posted",
-        "\u26a0\ufe0f 5 min: no longer posted"
+        "\u26a0\ufe0f 5 min: no longer posted",
+        "\u26a0\ufe0f 15 min: no longer posted"
       ]
     },
     "823336:rafael flores": {
@@ -31282,6 +31303,12 @@
           "checked_at_utc": "2026-09-06T15:14:26.249265+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 15,
+          "checked_at_utc": "2026-09-06T15:24:26.264916+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -31293,7 +31320,8 @@
         "\u26a0\ufe0f 1 min: no longer posted",
         "\u26a0\ufe0f 2 min: no longer posted",
         "\u26a0\ufe0f 3 min: no longer posted",
-        "\u26a0\ufe0f 5 min: no longer posted"
+        "\u26a0\ufe0f 5 min: no longer posted",
+        "\u26a0\ufe0f 15 min: no longer posted"
       ]
     },
     "823336:denzer guzman": {
@@ -31478,13 +31506,45 @@
             "TOTAL_BASES": 0.5,
             "HITS": 0.5
           }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-06T15:22:56.262287+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-06T15:23:26.263269+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-06T15:24:26.264916+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5,
+            "SINGLES": 0.5
+          }
         }
       ],
       "resolved": false,
       "grade": null,
       "resolution": null,
       "discord_message_id": "1546178792484110449",
-      "discord_checkpoint_lines": []
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live"
+      ]
     },
     "823578:turner hill": {
       "flag_id": "823578:turner hill",
@@ -31513,13 +31573,44 @@
             "HITS_RUNS_RUNS_BATTED_IN": 1.5,
             "SINGLES": 0.5
           }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-06T15:22:56.262287+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-06T15:23:26.263269+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-06T15:24:26.264916+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
         }
       ],
       "resolved": false,
       "grade": null,
       "resolution": null,
       "discord_message_id": "1546178795591966772",
-      "discord_checkpoint_lines": []
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live"
+      ]
     },
     "823578:shay whitcomb": {
       "flag_id": "823578:shay whitcomb",
@@ -31548,13 +31639,44 @@
             "TOTAL_BASES": 0.5,
             "HITS": 0.5
           }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-06T15:22:56.262287+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-06T15:23:26.263269+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-06T15:24:26.264916+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
         }
       ],
       "resolved": false,
       "grade": null,
       "resolution": null,
       "discord_message_id": "1546178799400521840",
-      "discord_checkpoint_lines": []
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live"
+      ]
     }
   },
   "early_signals": {
