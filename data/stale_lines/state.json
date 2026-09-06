@@ -31347,6 +31347,12 @@
           "checked_at_utc": "2026-09-06T15:19:26.256413+00:00",
           "still_has_any_market": false,
           "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-06T15:21:26.259904+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -31357,7 +31363,8 @@
         "\u2705 0.5 min: still live",
         "\u26a0\ufe0f 1 min: no longer posted",
         "\u26a0\ufe0f 2 min: no longer posted",
-        "\u26a0\ufe0f 3 min: no longer posted"
+        "\u26a0\ufe0f 3 min: no longer posted",
+        "\u26a0\ufe0f 5 min: no longer posted"
       ]
     },
     "823336:oswald peraza": {
@@ -31422,6 +31429,14 @@
           "still_posted_markets": {
             "HITS": 0.5
           }
+        },
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-06T15:21:26.259904+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS": 0.5
+          }
         }
       ],
       "resolved": false,
@@ -31432,8 +31447,114 @@
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
-        "\u2705 3 min: still live"
+        "\u2705 3 min: still live",
+        "\u2705 5 min: still live"
       ]
+    },
+    "823578:nate furman": {
+      "flag_id": "823578:nate furman",
+      "name": "Nate Furman",
+      "normalized_name": "nate furman",
+      "team": "SF",
+      "game_pk": 823578,
+      "is_home": false,
+      "game_time_utc": "2026-09-06T17:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 0.5,
+        "HITS": 0.5
+      },
+      "first_seen_utc": "2026-09-06T15:22:26.261421+00:00",
+      "lineup_first_posted_utc": "2026-09-06T15:22:26.261421+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 137.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-06T15:22:26.261421+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1546178792484110449",
+      "discord_checkpoint_lines": []
+    },
+    "823578:turner hill": {
+      "flag_id": "823578:turner hill",
+      "name": "Turner Hill",
+      "normalized_name": "turner hill",
+      "team": "SF",
+      "game_pk": 823578,
+      "is_home": false,
+      "game_time_utc": "2026-09-06T17:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-06T15:22:26.261421+00:00",
+      "lineup_first_posted_utc": "2026-09-06T15:22:26.261421+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 137.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-06T15:22:26.261421+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1546178795591966772",
+      "discord_checkpoint_lines": []
+    },
+    "823578:shay whitcomb": {
+      "flag_id": "823578:shay whitcomb",
+      "name": "Shay Whitcomb",
+      "normalized_name": "shay whitcomb",
+      "team": "SF",
+      "game_pk": 823578,
+      "is_home": false,
+      "game_time_utc": "2026-09-06T17:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 0.5,
+        "HITS": 0.5
+      },
+      "first_seen_utc": "2026-09-06T15:22:26.261421+00:00",
+      "lineup_first_posted_utc": "2026-09-06T15:22:26.261421+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 137.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-06T15:22:26.261421+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1546178799400521840",
+      "discord_checkpoint_lines": []
     }
   },
   "early_signals": {
@@ -31960,6 +32081,7 @@
     "824794:home": "2026-09-06T15:00:26.226479+00:00",
     "823822:home": "2026-09-06T15:03:26.230783+00:00",
     "823336:home": "2026-09-06T15:07:56.237384+00:00",
-    "823336:away": "2026-09-06T15:16:26.251567+00:00"
+    "823336:away": "2026-09-06T15:16:26.251567+00:00",
+    "823578:away": "2026-09-06T15:22:26.261421+00:00"
   }
 }
