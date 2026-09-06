@@ -32683,6 +32683,18 @@
           "still_posted_markets": {
             "TOTAL_BASES": 0.5
           }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-06T16:53:26.422764+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 3,
+          "checked_at_utc": "2026-09-06T16:54:26.424567+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -32691,7 +32703,9 @@
       "discord_message_id": "1546201189509496973",
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
-        "\u2705 1 min: still live"
+        "\u2705 1 min: still live",
+        "\u26a0\ufe0f 2 min: no longer posted",
+        "\u26a0\ufe0f 3 min: no longer posted"
       ]
     },
     "823253:sungmun song": {
@@ -32741,6 +32755,23 @@
             "TOTAL_BASES": 0.5,
             "HITS": 0.5
           }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-06T16:53:26.422764+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 3,
+          "checked_at_utc": "2026-09-06T16:54:26.424567+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS": 0.5
+          }
         }
       ],
       "resolved": false,
@@ -32749,7 +32780,9 @@
       "discord_message_id": "1546201192579731587",
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
-        "\u2705 1 min: still live"
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live",
+        "\u2705 3 min: still live"
       ]
     },
     "824309:jose fermin": {
@@ -32788,6 +32821,21 @@
             "RUNS": 0.5,
             "TOTAL_BASES": 1.5
           }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-06T16:52:56.421864+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-06T16:53:56.423681+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "RUNS": 0.5,
+            "TOTAL_BASES": 1.5
+          }
         }
       ],
       "resolved": false,
@@ -32795,7 +32843,9 @@
       "resolution": null,
       "discord_message_id": "1546201315804315769",
       "discord_checkpoint_lines": [
-        "\u2705 0.5 min: still live"
+        "\u2705 0.5 min: still live",
+        "\u26a0\ufe0f 1 min: no longer posted",
+        "\u2705 2 min: still live"
       ]
     }
   },
