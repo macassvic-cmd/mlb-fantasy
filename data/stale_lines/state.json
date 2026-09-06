@@ -32896,6 +32896,111 @@
         "\u26a0\ufe0f 5 min: no longer posted",
         "\u26a0\ufe0f 15 min: no longer posted"
       ]
+    },
+    "823091:denzel clarke": {
+      "flag_id": "823091:denzel clarke",
+      "name": "Denzel Clarke",
+      "normalized_name": "denzel clarke",
+      "team": "ATH",
+      "game_pk": 823091,
+      "is_home": false,
+      "game_time_utc": "2026-09-06T20:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 0.5,
+        "HITS_RUNS_RUNS_BATTED_IN": 0.5,
+        "HITS": 0.5
+      },
+      "first_seen_utc": "2026-09-06T17:16:26.463235+00:00",
+      "lineup_first_posted_utc": "2026-09-06T17:16:26.463235+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 173.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-06T17:16:26.463235+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS_RUNS_RUNS_BATTED_IN": 0.5,
+            "HITS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1546207480999321751",
+      "discord_checkpoint_lines": []
+    },
+    "823091:jonah heim": {
+      "flag_id": "823091:jonah heim",
+      "name": "Jonah Heim",
+      "normalized_name": "jonah heim",
+      "team": "ATH",
+      "game_pk": 823091,
+      "is_home": false,
+      "game_time_utc": "2026-09-06T20:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-06T17:16:26.463235+00:00",
+      "lineup_first_posted_utc": "2026-09-06T17:16:26.463235+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 173.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-06T17:16:26.463235+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1546207483893252188",
+      "discord_checkpoint_lines": []
+    },
+    "823253:heliot ramos": {
+      "flag_id": "823253:heliot ramos",
+      "name": "Heliot Ramos",
+      "normalized_name": "heliot ramos",
+      "team": "NYY",
+      "game_pk": 823253,
+      "is_home": false,
+      "game_time_utc": "2026-09-06T20:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 0.5,
+        "HITS": 0.5
+      },
+      "first_seen_utc": "2026-09-06T17:16:26.463235+00:00",
+      "lineup_first_posted_utc": "2026-09-06T17:16:26.463235+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 173.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-06T17:16:26.463235+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1546207487403884565",
+      "discord_checkpoint_lines": []
     }
   },
   "early_signals": {
@@ -33430,6 +33535,8 @@
     "824309:home": "2026-09-06T15:49:56.308096+00:00",
     "822848:away": "2026-09-06T16:00:26.327272+00:00",
     "823253:home": "2026-09-06T16:51:26.418639+00:00",
-    "824309:away": "2026-09-06T16:51:56.420099+00:00"
+    "824309:away": "2026-09-06T16:51:56.420099+00:00",
+    "823091:away": "2026-09-06T17:16:26.463235+00:00",
+    "823253:away": "2026-09-06T17:16:26.463235+00:00"
   }
 }
