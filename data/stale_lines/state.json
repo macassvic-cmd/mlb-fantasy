@@ -30352,6 +30352,22 @@
           "still_posted_markets": {
             "HITS": 0.5
           }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-06T14:42:56.193006+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-06T14:43:56.195396+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS": 0.5
+          }
         }
       ],
       "resolved": false,
@@ -30359,7 +30375,9 @@
       "resolution": null,
       "discord_message_id": "1546168599943713000",
       "discord_checkpoint_lines": [
-        "\u2705 0.5 min: still live"
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live"
       ]
     },
     "823578:mark vientos": {
@@ -30398,6 +30416,24 @@
             "HITS_RUNS_RUNS_BATTED_IN": 1.5,
             "SINGLES": 0.5
           }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-06T14:42:56.193006+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-06T14:43:56.195396+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
         }
       ],
       "resolved": false,
@@ -30405,7 +30441,9 @@
       "resolution": null,
       "discord_message_id": "1546168605031272509",
       "discord_checkpoint_lines": [
-        "\u2705 0.5 min: still live"
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live"
       ]
     }
   },
