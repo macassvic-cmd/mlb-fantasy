@@ -30319,6 +30319,12 @@
             "FANTASY_POINTS": 6.5,
             "RUNS": 0.5
           }
+        },
+        {
+          "elapsed_min": 15,
+          "checked_at_utc": "2026-09-06T14:46:26.199493+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -30330,7 +30336,8 @@
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
         "\u2705 3 min: still live",
-        "\u2705 5 min: still live"
+        "\u2705 5 min: still live",
+        "\u26a0\ufe0f 15 min: no longer posted"
       ]
     },
     "823578:christopher morel": {
@@ -30390,6 +30397,12 @@
           "still_posted_markets": {
             "HITS": 0.5
           }
+        },
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-06T14:46:56.200360+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -30400,7 +30413,8 @@
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
-        "\u2705 3 min: still live"
+        "\u2705 3 min: still live",
+        "\u26a0\ufe0f 5 min: no longer posted"
       ]
     },
     "823578:mark vientos": {
@@ -30465,6 +30479,12 @@
           "still_posted_markets": {
             "SINGLES": 0.5
           }
+        },
+        {
+          "elapsed_min": 5,
+          "checked_at_utc": "2026-09-06T14:46:56.200360+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -30475,7 +30495,8 @@
         "\u2705 0.5 min: still live",
         "\u2705 1 min: still live",
         "\u2705 2 min: still live",
-        "\u2705 3 min: still live"
+        "\u2705 3 min: still live",
+        "\u26a0\ufe0f 5 min: no longer posted"
       ]
     },
     "824065:michael massey": {
@@ -30527,6 +30548,21 @@
             "HITS_RUNS_RUNS_BATTED_IN": 1.5,
             "SINGLES": 0.5
           }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-06T14:46:26.199493+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 3,
+          "checked_at_utc": "2026-09-06T14:47:26.201344+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -30535,7 +30571,9 @@
       "discord_message_id": "1546169229328515113",
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
-        "\u2705 1 min: still live"
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live",
+        "\u26a0\ufe0f 3 min: no longer posted"
       ]
     },
     "824065:carter jensen": {
@@ -30589,6 +30627,22 @@
             "SINGLES": 0.5,
             "WALKS": 0.5
           }
+        },
+        {
+          "elapsed_min": 2,
+          "checked_at_utc": "2026-09-06T14:46:26.199493+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "RUNS": 0.5,
+            "WALKS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 3,
+          "checked_at_utc": "2026-09-06T14:47:26.201344+00:00",
+          "still_has_any_market": false,
+          "still_posted_markets": null
         }
       ],
       "resolved": false,
@@ -30597,7 +30651,9 @@
       "discord_message_id": "1546169232587362437",
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
-        "\u2705 1 min: still live"
+        "\u2705 1 min: still live",
+        "\u2705 2 min: still live",
+        "\u26a0\ufe0f 3 min: no longer posted"
       ]
     }
   },
