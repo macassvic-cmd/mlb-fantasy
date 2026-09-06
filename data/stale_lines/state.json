@@ -30318,6 +30318,95 @@
         "\u2705 3 min: still live",
         "\u2705 5 min: still live"
       ]
+    },
+    "823578:christopher morel": {
+      "flag_id": "823578:christopher morel",
+      "name": "Christopher Morel",
+      "normalized_name": "christopher morel",
+      "team": "NYM",
+      "game_pk": 823578,
+      "is_home": true,
+      "game_time_utc": "2026-09-06T17:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS": 0.5
+      },
+      "first_seen_utc": "2026-09-06T14:41:56.192045+00:00",
+      "lineup_first_posted_utc": "2026-09-06T14:41:56.192045+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 178.1,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-06T14:41:56.192045+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-06T14:42:26.192369+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1546168599943713000",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live"
+      ]
+    },
+    "823578:mark vientos": {
+      "flag_id": "823578:mark vientos",
+      "name": "Mark Vientos",
+      "normalized_name": "mark vientos",
+      "team": "NYM",
+      "game_pk": 823578,
+      "is_home": true,
+      "game_time_utc": "2026-09-06T17:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-06T14:41:56.192045+00:00",
+      "lineup_first_posted_utc": "2026-09-06T14:41:56.192045+00:00",
+      "detection_latency_seconds": 0.0,
+      "minutes_to_first_pitch_at_flag": 178.1,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-06T14:41:56.192045+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-06T14:42:26.192369+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS_RUNS_RUNS_BATTED_IN": 1.5,
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1546168605031272509",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live"
+      ]
     }
   },
   "early_signals": {
@@ -30837,6 +30926,7 @@
     "824469:home": "2026-09-06T14:21:26.153552+00:00",
     "823417:home": "2026-09-06T14:21:26.153552+00:00",
     "823417:away": "2026-09-06T14:30:26.170316+00:00",
-    "824385:home": "2026-09-06T14:31:26.172194+00:00"
+    "824385:home": "2026-09-06T14:31:26.172194+00:00",
+    "823578:home": "2026-09-06T14:41:56.192045+00:00"
   }
 }
