@@ -30557,9 +30557,9 @@
           "still_posted_markets": null
         }
       ],
-      "resolved": false,
-      "grade": null,
-      "resolution": null,
+      "resolved": true,
+      "grade": "loss",
+      "resolution": "started_after_all",
       "discord_message_id": "1546168605031272509",
       "discord_checkpoint_lines": [
         "\u2705 0.5 min: still live",
@@ -30740,6 +30740,62 @@
         "\u2705 2 min: still live",
         "\u26a0\ufe0f 3 min: no longer posted",
         "\u2705 5 min: still live"
+      ]
+    },
+    "823578:francisco alvarez": {
+      "flag_id": "823578:francisco alvarez",
+      "name": "Francisco Alvarez",
+      "normalized_name": "francisco alvarez",
+      "team": "NYM",
+      "game_pk": 823578,
+      "is_home": true,
+      "game_time_utc": "2026-09-06T17:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "TOTAL_BASES": 0.5,
+        "HITS": 0.5
+      },
+      "first_seen_utc": "2026-09-06T14:53:26.212320+00:00",
+      "lineup_first_posted_utc": "2026-09-06T14:41:56.192045+00:00",
+      "detection_latency_seconds": 690.0,
+      "minutes_to_first_pitch_at_flag": 166.6,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-06T14:53:26.212320+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 0.5,
+          "checked_at_utc": "2026-09-06T14:53:56.213570+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        },
+        {
+          "elapsed_min": 1,
+          "checked_at_utc": "2026-09-06T14:54:26.214737+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "TOTAL_BASES": 0.5,
+            "HITS": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1546171493975597087",
+      "discord_checkpoint_lines": [
+        "\u2705 0.5 min: still live",
+        "\u2705 1 min: still live"
       ]
     }
   },
