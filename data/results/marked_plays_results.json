@@ -2927,20 +2927,80 @@
           "rate_before": 61.5
         }
       ]
+    },
+    "2026-09-05": {
+      "fire": [
+        {
+          "player_id": 691718,
+          "name": "Pete Crow-Armstrong",
+          "team": "Chicago Cubs",
+          "grade": "loss",
+          "n_before": 39,
+          "wins_before": 25,
+          "rate_before": 64.1
+        },
+        {
+          "player_id": 664983,
+          "name": "Jake McCarthy",
+          "team": "Colorado Rockies",
+          "grade": "win",
+          "n_before": 29,
+          "wins_before": 16,
+          "rate_before": 55.2
+        },
+        {
+          "player_id": 673548,
+          "name": "Seiya Suzuki",
+          "team": "Chicago Cubs",
+          "grade": "win",
+          "n_before": 29,
+          "wins_before": 22,
+          "rate_before": 75.9
+        },
+        {
+          "player_id": 606466,
+          "name": "Ketel Marte",
+          "team": "Arizona Diamondbacks",
+          "grade": "win",
+          "n_before": 15,
+          "wins_before": 9,
+          "rate_before": 60.0
+        },
+        {
+          "player_id": 646240,
+          "name": "Rafael Devers",
+          "team": "San Francisco Giants",
+          "grade": "win",
+          "n_before": 18,
+          "wins_before": 11,
+          "rate_before": 61.1
+        }
+      ],
+      "hot": [
+        {
+          "player_id": 681198,
+          "name": "TJ Rumfield",
+          "team": "Colorado Rockies",
+          "grade": "win",
+          "n_before": 10,
+          "wins_before": 8,
+          "rate_before": 80.0
+        }
+      ]
     }
   },
   "cohorts": {
     "fire": {
-      "wins": 59,
-      "losses": 57,
-      "n": 116,
-      "rate": 50.9
+      "wins": 63,
+      "losses": 58,
+      "n": 121,
+      "rate": 52.1
     },
     "hot": {
-      "wins": 89,
+      "wins": 90,
       "losses": 74,
-      "n": 163,
-      "rate": 54.6
+      "n": 164,
+      "rate": 54.9
     }
   }
 }

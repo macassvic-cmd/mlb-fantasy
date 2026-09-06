@@ -1469,20 +1469,126 @@
           "grade": "win"
         }
       ]
+    },
+    "2026-09-05": {
+      "wins": 6,
+      "losses": 3,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 701807,
+          "name": "Carson Benge",
+          "team": "New York Mets",
+          "projected_ud": 4.58,
+          "ud_line": 6.5,
+          "edge": -1.92,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 669357,
+          "name": "Nolan Gorman",
+          "team": "St. Louis Cardinals",
+          "projected_ud": 3.62,
+          "ud_line": 5.5,
+          "edge": -1.88,
+          "game_time_pt": "5:10 PM PT",
+          "actual_ud": 8,
+          "grade": "loss"
+        },
+        {
+          "player_id": 596019,
+          "name": "Francisco Lindor",
+          "team": "New York Mets",
+          "projected_ud": 4.64,
+          "ud_line": 6.5,
+          "edge": -1.86,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 543760,
+          "name": "Marcus Semien",
+          "team": "New York Mets",
+          "projected_ud": 3.78,
+          "ud_line": 5.5,
+          "edge": -1.72,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 8,
+          "grade": "loss"
+        },
+        {
+          "player_id": 670541,
+          "name": "Yordan Alvarez",
+          "team": "Houston Astros",
+          "projected_ud": 5.79,
+          "ud_line": 7.5,
+          "edge": -1.71,
+          "game_time_pt": "4:15 PM PT",
+          "actual_ud": 6,
+          "grade": "win"
+        },
+        {
+          "player_id": 663494,
+          "name": "Bryan Torres",
+          "team": "St. Louis Cardinals",
+          "projected_ud": 4.83,
+          "ud_line": 6.5,
+          "edge": -1.67,
+          "game_time_pt": "5:10 PM PT",
+          "actual_ud": 6,
+          "grade": "win"
+        },
+        {
+          "player_id": 650333,
+          "name": "Luis Arraez",
+          "team": "Philadelphia Phillies",
+          "projected_ud": 3.86,
+          "ud_line": 5.5,
+          "edge": -1.64,
+          "game_time_pt": "3:05 PM PT",
+          "actual_ud": 8,
+          "grade": "loss"
+        },
+        {
+          "player_id": 624413,
+          "name": "Pete Alonso",
+          "team": "Baltimore Orioles",
+          "projected_ud": 4.92,
+          "ud_line": 6.5,
+          "edge": -1.58,
+          "game_time_pt": "4:05 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 691023,
+          "name": "Jordan Walker",
+          "team": "St. Louis Cardinals",
+          "projected_ud": 5.99,
+          "ud_line": 7.5,
+          "edge": -1.51,
+          "game_time_pt": "5:10 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 68,
-    "losses": 51,
+    "wins": 74,
+    "losses": 54,
     "dnp": 7
   },
   "record_by_line": {
     "5.5": {
       "wins": 32,
-      "losses": 18
+      "losses": 21
     },
     "6.5": {
-      "wins": 14,
+      "wins": 18,
       "losses": 21
     },
     "8.5+": {
@@ -1490,7 +1596,7 @@
       "losses": 3
     },
     "7.5": {
-      "wins": 7,
+      "wins": 9,
       "losses": 6
     }
   }

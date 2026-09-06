@@ -6652,6 +6652,99 @@
           "correct": false
         }
       ]
+    },
+    "2026-09-05": {
+      "summary": {
+        "total": 8,
+        "correct": 4,
+        "accuracy": 50.0,
+        "over_total": 4,
+        "over_correct": 1,
+        "under_total": 4,
+        "under_correct": 3
+      },
+      "plays": [
+        {
+          "player_id": 695600,
+          "name": "Carter Jensen",
+          "team": "Kansas City Royals",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 5,
+          "correct": false
+        },
+        {
+          "player_id": 695506,
+          "name": "Jac Caglianone",
+          "team": "Kansas City Royals",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 5,
+          "correct": false
+        },
+        {
+          "player_id": 673548,
+          "name": "Seiya Suzuki",
+          "team": "Chicago Cubs",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 11,
+          "correct": true
+        },
+        {
+          "player_id": 804606,
+          "name": "Konnor Griffin",
+          "team": "Pittsburgh Pirates",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "correct": false
+        },
+        {
+          "player_id": 665742,
+          "name": "Juan Soto",
+          "team": "New York Mets",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 0,
+          "correct": true
+        },
+        {
+          "player_id": 676475,
+          "name": "Alec Burleson",
+          "team": "St. Louis Cardinals",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 3,
+          "correct": true
+        },
+        {
+          "player_id": 671056,
+          "name": "Iv\u00e1n Herrera",
+          "team": "St. Louis Cardinals",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 21,
+          "correct": false
+        },
+        {
+          "player_id": 666182,
+          "name": "Bo Bichette",
+          "team": "New York Mets",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "correct": true
+        }
+      ]
     }
   }
 }
