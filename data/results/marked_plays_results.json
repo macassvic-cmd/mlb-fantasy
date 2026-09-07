@@ -2987,14 +2987,37 @@
           "rate_before": 80.0
         }
       ]
+    },
+    "2026-09-06": {
+      "fire": [
+        {
+          "player_id": 691718,
+          "name": "Pete Crow-Armstrong",
+          "team": "Chicago Cubs",
+          "grade": "loss",
+          "n_before": 40,
+          "wins_before": 25,
+          "rate_before": 62.5
+        },
+        {
+          "player_id": 646240,
+          "name": "Rafael Devers",
+          "team": "San Francisco Giants",
+          "grade": "loss",
+          "n_before": 19,
+          "wins_before": 12,
+          "rate_before": 63.2
+        }
+      ],
+      "hot": []
     }
   },
   "cohorts": {
     "fire": {
       "wins": 63,
-      "losses": 58,
-      "n": 121,
-      "rate": 52.1
+      "losses": 60,
+      "n": 123,
+      "rate": 51.2
     },
     "hot": {
       "wins": 90,
