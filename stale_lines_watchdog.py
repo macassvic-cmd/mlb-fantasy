@@ -134,6 +134,20 @@ def _attempt_restart():
 
 
 def main():
+    # Same kill switch stale_lines_local.py checks - see its own comment
+    # for why a file-based sentinel rather than disabling the Scheduled
+    # Task directly (no permission to do that from this session). Without
+    # this, a disabled-but-not-running poller would look "stalled" to
+    # this watchdog, which would then dutifully try to restart it
+    # (itself a no-op, since the poller's own kill switch would fire
+    # immediately) and fire a one-time "appears stalled" alert - harmless
+    # but pointless noise for a state we deliberately chose.
+    from stale_lines_local import DISABLED_SENTINEL_PATH, _disabled_reason
+    reason = _disabled_reason()
+    if reason is not None:
+        print(f"SKIPPED: stale_lines_local is DISABLED ({reason}) - not checking or restarting.")
+        return
+
     now = datetime.now(timezone.utc)
     heartbeat = _load_json(HEARTBEAT_PATH, None)
     watchdog_state = _load_json(WATCHDOG_STATE_PATH, {

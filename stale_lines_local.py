@@ -192,12 +192,51 @@ ALERT_MILESTONES = {1, 5, 20, 100, 500, 1000}
 BACKOFF_AFTER_FAILURES = 10          # ~5 min of continuous failure at 30s/poll
 BACKOFF_POLL_INTERVAL_SECONDS = 600  # 10 min, once backed off
 
+# Code-level kill switch, added 2026-09-08: Betr locked their GraphQL
+# endpoint behind real HTTP Basic Auth (see stale_lines.py's module
+# docstring) - polling a deliberately-gated endpoint indefinitely has no
+# value, so this detector is disabled. The RIGHT way to disable it would
+# be to disable the "MLB Stale Lines Local"/"MLB Stale Lines Watchdog"
+# Scheduled Tasks, but that requires elevated permissions this session
+# doesn't have (Access Denied via both the PowerShell cmdlet and
+# schtasks.exe directly - same wall as killing the orphaned processes
+# from the 2026-09-02 and 2026-09-07 incidents). This file-based sentinel
+# is the fallback: checked before anything else runs, so even a Task
+# Scheduler AtStartup/AtLogOn trigger (which WILL still fire after a
+# reboot, since the task itself couldn't be disabled) launches into an
+# immediate no-op instead of resuming 30s polling against a dead
+# endpoint. Delete DISABLED_SENTINEL_PATH to re-enable - see check_betr_
+# access.py / .github/workflows/betr_access_check.yml for the once-daily
+# check that alerts if Betr's endpoint becomes public again, which is
+# the actual signal to delete this file.
+DISABLED_SENTINEL_PATH = os.path.join("data", "stale_lines", "DISABLED")
+
+
+def _disabled_reason():
+    """Returns the sentinel file's contents (the reason it was disabled)
+    if present, else None. A relative path check, not an absolute one -
+    matches every other path in this file, all relative to the repo
+    root the task's WorkingDirectory is set to."""
+    if os.path.exists(DISABLED_SENTINEL_PATH):
+        try:
+            with open(DISABLED_SENTINEL_PATH, encoding="utf-8") as f:
+                return f.read().strip() or "(no reason recorded)"
+        except Exception:
+            return "(no reason recorded)"
+    return None
+
 
 def _should_alert_for_failure(consecutive_failures):
     return consecutive_failures in ALERT_MILESTONES or consecutive_failures % 1000 == 0
 
 
 def run_forever():
+    reason = _disabled_reason()
+    if reason is not None:
+        logger.warning("stale_lines_local is DISABLED (%s) - exiting immediately without polling. "
+                        "Delete %s to re-enable.", reason, DISABLED_SENTINEL_PATH)
+        return
+
     logger.info("stale_lines_local starting - polling every %ss, git push throttled to every %ss", POLL_INTERVAL_SECONDS, GIT_PUSH_INTERVAL_SECONDS)
     if not sl._discord_webhook_url():
         logger.warning("DISCORD_WEBHOOK_URL is not set (checked .env and environment) - notifications will be a no-op.")

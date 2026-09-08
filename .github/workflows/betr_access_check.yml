@@ -1,0 +1,59 @@
+name: Betr Access Check
+
+# Opened 2026-09-08 after Betr locked api.fantasy.betr.app/graphql
+# behind real HTTP Basic Auth, which disabled the MLB stale-line
+# detector (data/stale_lines/DISABLED, stale_lines.yml disabled) and
+# soccer_dns.py (soccer_dns.yml disabled) - see check_betr_access.py's
+# module docstring. This is the cheap once-daily alternative to leaving
+# either detector polling a deliberately-gated endpoint indefinitely:
+# one request a day, alert once via Discord if access is restored.
+#
+# Time picked with no real constraint behind it, same reasoning as
+# soccer_dns.yml's own schedule - there's nothing to race here.
+
+on:
+  schedule:
+    - cron: '26 11 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run daily Betr access check
+        env:
+          PYTHONUNBUFFERED: '1'
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python3 check_betr_access.py
+
+      - name: Commit and push if state changed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_EDITOR: "true"
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/betr_access_check.json
+          if git diff --cached --quiet; then
+            echo "No state change."
+          else
+            git commit -m "Betr access check $(date -u +'%Y-%m-%d %H:%M UTC')"
+            if ! git pull --rebase origin main; then
+              conflicts=$(git diff --name-only --diff-filter=U)
+              for f in $conflicts; do
+                git checkout --theirs -- "$f" 2>/dev/null && git add -- "$f" || git rm -f -- "$f"
+              done
+              git rebase --continue
+            fi
+            git push
+          fi
