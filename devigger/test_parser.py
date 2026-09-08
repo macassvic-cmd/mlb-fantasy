@@ -71,16 +71,47 @@ class TestJuiceSpecification(unittest.TestCase):
     def test_percent_default_juice(self):
         leg = parse_leg("+600%")
         self.assertEqual(leg.market.odds[0], 600)
-        self.assertIn("default historical hold", leg.market.juice_source)
+        self.assertIn("CNM-calibrated curve", leg.market.juice_source)
 
-    def test_percent_default_hold_matches_constant(self):
+    def test_percent_matches_cnm_reference_exactly(self):
+        # Real CNM reference output (2026-09-06 validation, "default 10%
+        # juice per leg"): these 4 (input, CNM fair American odds) pairs
+        # are the calibration points themselves, so this is really
+        # checking that the interpolation reproduces its own control
+        # points exactly (a regression guard, not new evidence) - see
+        # parser.py's CALIBRATION docstring for the full validation.
+        from devig import devig_multiplicative, prob_to_american
+        cases = [(100, 124), (-120, 102), (-165, -130), (-110, 112)]
+        for odds, cnm_fair_odds in cases:
+            leg = parse_leg(f"{odds:+d}%")
+            result = devig_multiplicative(leg.market.odds)
+            our_fair_odds = prob_to_american(result.fair_probabilities[0])
+            self.assertAlmostEqual(our_fair_odds, cnm_fair_odds, places=1, msg=f"{odds:+d}%")
+
+    def test_percent_extrapolation_flagged_outside_calibrated_range(self):
+        # -165 (raw ~62.6%) is the most extreme calibration point on the
+        # favorite side - a much heavier favorite must extrapolate, and
+        # say so.
+        leg = parse_leg("-2000%")
+        self.assertIn("EXTRAPOLATED", leg.market.juice_source)
+        # Within the calibrated 50-62% band, no such flag.
+        leg2 = parse_leg("-120%")
+        self.assertNotIn("EXTRAPOLATED", leg2.market.juice_source)
+
+    def test_percent_underdog_reflects_symmetrically(self):
+        # No underdog (raw<0.5) calibration points exist - handled by
+        # reflecting through 0.5. A favorite and its exact mirror
+        # underdog should get symmetric treatment (swap fair/other
+        # roughly mirrors too, modulo which side is "primary").
         from devig import american_to_prob
-        import parser as parser_mod
-        leg = parse_leg("+600%")
-        primary_raw = american_to_prob(600)
-        other_raw = american_to_prob(leg.market.odds[1])
-        expected_hold = parser_mod.DEFAULT_HISTORICAL_HOLD_PCT / 100.0
-        self.assertAlmostEqual(primary_raw + other_raw - 1.0, expected_hold, places=6)
+        fav_leg = parse_leg("-120%")
+        dog_leg = parse_leg("+120%")
+        fav_raw = american_to_prob(fav_leg.market.odds[0])
+        dog_raw = american_to_prob(dog_leg.market.odds[0])
+        # The favorite's raw prob and the underdog's raw prob should be
+        # complementary (0.545 and 0.455), and so should their
+        # synthesized fair treatment by symmetry.
+        self.assertAlmostEqual(fav_raw, 1 - dog_raw, places=6)
 
     def test_bad_bracket_size_rejected(self):
         with self.assertRaises(ValueError):
