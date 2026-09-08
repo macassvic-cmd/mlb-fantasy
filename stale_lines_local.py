@@ -166,6 +166,37 @@ def git_commit_and_push_if_changed():
         logger.error("git_commit_and_push_if_changed failed: %s", e)
 
 
+
+# ALERT_MILESTONES + BACKOFF, added 2026-09-08 after a real incident: Betr's
+# API started 401'ing on 2026-09-07 and ran 2195+ consecutive failures
+# (~18 hours) before anyone noticed. The alert itself was NOT the problem -
+# post_system_alert fired on literally every single failed poll, which
+# over 18 hours meant 2000+ near-identical "poll crashed" Discord messages.
+# That's not silence, but it's operationally indistinguishable from
+# silence - a channel getting 4000+ copies of the same message in a day
+# gets muted/scrolled past, not read. Alert once immediately (so a human
+# has a chance to catch it fast), then only again at widening milestones
+# (a channel getting a message at failure #1, #5, #20, #100, #500, #1000,
+# then every #1000 stays legible while still surfacing a sustained outage
+# periodically rather than going fully silent for the remaining 17 hours).
+#
+# Backing off the poll interval itself is separate but related: hammering
+# a dead endpoint every 30s for 18 hours (2195 requests) accomplishes
+# nothing when the failure is external (this incident: Betr locked their
+# GraphQL endpoint behind real HTTP Basic Auth - not something that
+# resolves itself between one poll and the next 30 seconds later). Once
+# a failure streak is long enough to rule out a transient blip, slow down
+# to reduce pointless load/log volume - still checking regularly enough
+# to notice a real recovery, just not every 30s.
+ALERT_MILESTONES = {1, 5, 20, 100, 500, 1000}
+BACKOFF_AFTER_FAILURES = 10          # ~5 min of continuous failure at 30s/poll
+BACKOFF_POLL_INTERVAL_SECONDS = 600  # 10 min, once backed off
+
+
+def _should_alert_for_failure(consecutive_failures):
+    return consecutive_failures in ALERT_MILESTONES or consecutive_failures % 1000 == 0
+
+
 def run_forever():
     logger.info("stale_lines_local starting - polling every %ss, git push throttled to every %ss", POLL_INTERVAL_SECONDS, GIT_PUSH_INTERVAL_SECONDS)
     if not sl._discord_webhook_url():
@@ -190,23 +221,34 @@ def run_forever():
                 summary["active_unresolved_flags"], summary["total_tracked_flags"],
                 summary["early_signals"]["new_this_poll"], summary["record"],
             )
+            if consecutive_failures >= BACKOFF_AFTER_FAILURES:
+                logger.info("Recovered after %s consecutive failures - resuming normal %ss poll interval.",
+                            consecutive_failures, POLL_INTERVAL_SECONDS)
+                sl.post_system_alert(
+                    "✅ stale_lines_local recovered",
+                    f"Poll succeeded after {consecutive_failures} consecutive failures - back to normal {POLL_INTERVAL_SECONDS}s polling.",
+                    color=0x2ECC71,
+                )
             consecutive_failures = 0
         except Exception as e:
             consecutive_failures += 1
             logger.error("poll failed (%s consecutive): %s\n%s", consecutive_failures, e, traceback.format_exc())
             write_heartbeat(ok=False, error=str(e))
-            sl.post_system_alert(
-                "\U0001F534 stale_lines_local poll crashed",
-                f"Poll failed at {datetime.now(timezone.utc).isoformat()} ({consecutive_failures} consecutive failure(s)):\n```{e}```",
-            )
+            if _should_alert_for_failure(consecutive_failures):
+                sl.post_system_alert(
+                    "\U0001F534 stale_lines_local poll crashed",
+                    f"Poll failed at {datetime.now(timezone.utc).isoformat()} ({consecutive_failures} consecutive failure(s)):\n```{e}```",
+                )
 
         now_monotonic = time.monotonic()
         if now_monotonic - last_push >= GIT_PUSH_INTERVAL_SECONDS:
             git_commit_and_push_if_changed()
             last_push = now_monotonic
 
+        poll_interval = (BACKOFF_POLL_INTERVAL_SECONDS if consecutive_failures >= BACKOFF_AFTER_FAILURES
+                         else POLL_INTERVAL_SECONDS)
         elapsed = time.monotonic() - iter_start
-        time.sleep(max(1.0, POLL_INTERVAL_SECONDS - elapsed))
+        time.sleep(max(1.0, poll_interval - elapsed))
 
 
 if __name__ == "__main__":
