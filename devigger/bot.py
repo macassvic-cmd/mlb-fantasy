@@ -1,16 +1,22 @@
 """
-Discord bot exposing /devig and /ev as slash commands. Webhooks can't
-receive commands (they're send-only), so this needs a real bot
+Discord bot exposing /devig, /ev, and /sgp as slash commands. Webhooks
+can't receive commands (they're send-only), so this needs a real bot
 application with a token - see README.md in this directory for the
 exact discord.com/developers setup steps.
 
-Wraps parser.py / combine.py / ev.py, all already unit-tested
-independently (see test_parser.py, test_combine.py, test_ev.py,
-test_devig.py - 66 tests). This file itself is NOT live-tested against
-Discord's actual API (no way to do that from here without a real bot
-token and a server to join) - the command wiring and embed formatting
-below follow discord.py's documented patterns, but treat first real use
-as the live test of THIS layer specifically, not the math underneath it.
+Wraps parser.py / combine.py / ev.py / correlation.py, all already
+unit-tested independently (86 tests across test_devig.py, test_parser.py,
+test_combine.py, test_ev.py, test_correlation.py). This file itself is
+NOT live-tested against Discord's actual API (no way to do that from
+here without a real bot token and a server to join) - the command
+wiring and embed formatting below follow discord.py's documented
+patterns, but treat first real use as the live test of THIS layer
+specifically, not the math underneath it.
+
+If you already have bot.py running from before 2026-09-08: restart it
+to pick up both the "%" juice-curve calibration fix and the new /sgp
+command - same as every other long-lived process in this project, it
+won't see file changes until relaunched.
 """
 
 import logging
@@ -23,7 +29,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from combine import evaluate
-from ev import pickem_ev
+from correlation import evaluate_correlated, parse_sgp_specs
+from ev import pickem_ev, kelly_sizing
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger("devigger_bot")
@@ -160,6 +167,63 @@ def build_ev_embed(input_str, method, result, ev_result):
     return embed
 
 
+def build_sgp_embed(input_str, sgp_str, method, corr_result, ev_result, kelly_result):
+    display_method = METHOD_DISPLAY.get(method, method)
+    color = 0x2ECC71 if ev_result.clears_breakeven else 0xE74C3C
+    embed = discord.Embed(
+        title="SGP Correlation + EV + Kelly",
+        description=(f"`{input_str}`\nSGP groups: `{sgp_str}`\n"
+                      f"Method: **{display_method}** @ **{ev_result.payout_multiplier:.2f}x**"),
+        color=color,
+    )
+
+    idx = 1
+    for g in corr_result.groups:
+        embed.add_field(
+            name=f"Group {idx} ({g.leg_count} legs, r={g.r:.2f})",
+            value=(f"Independent: `{g.independent_probability * 100:.3f}%`  |  "
+                   f"Correlated: `{g.correlated_probability * 100:.3f}%`"),
+            inline=False,
+        )
+        idx += 1
+
+    embed.add_field(name="Uncorrelated fair value",
+                     value=(f"`{corr_result.uncorrelated_fair_american_odds:+.0f}` "
+                            f"(`{corr_result.uncorrelated_probability * 100:.3f}%`)"), inline=True)
+    embed.add_field(name="Correlated fair value",
+                     value=(f"`{corr_result.correlated_fair_american_odds:+.0f}` "
+                            f"(`{corr_result.correlated_probability * 100:.3f}%`)"), inline=True)
+    embed.add_field(name="​", value="​", inline=True)  # spacer for a clean 3-column row
+
+    embed.add_field(name="EV (per $1 staked)", value=f"`{ev_result.ev_fraction * 100:+.2f}%`", inline=True)
+    embed.add_field(name="Breakeven probability", value=f"`{ev_result.breakeven_probability * 100:.2f}%`", inline=True)
+    embed.add_field(
+        name="Clears breakeven?",
+        value="**YES** ✅" if ev_result.clears_breakeven else "**NO** ❌",
+        inline=True,
+    )
+
+    kelly_lines = [
+        f"Full: `{kelly_result.full_kelly_fraction * 100:.2f}%`",
+        f"Half: `{kelly_result.half_kelly_fraction * 100:.2f}%`",
+        f"Quarter: `{kelly_result.quarter_kelly_fraction * 100:.2f}%`",
+    ]
+    if kelly_result.bankroll is not None:
+        kelly_lines = [
+            f"Full: `${kelly_result.full_kelly_dollars:.2f}` (`{kelly_result.full_kelly_fraction * 100:.2f}%`)",
+            f"Half: `${kelly_result.half_kelly_dollars:.2f}` (`{kelly_result.half_kelly_fraction * 100:.2f}%`)",
+            f"Quarter: `${kelly_result.quarter_kelly_dollars:.2f}` (`{kelly_result.quarter_kelly_fraction * 100:.2f}%`)",
+        ]
+    embed.add_field(name="Kelly sizing", value="\n".join(kelly_lines), inline=False)
+
+    embed.set_footer(text=(
+        "Correlation formula validated against real CNM output. SGP-group input syntax "
+        "(leg_count:r) and Kelly $ unit (% of bankroll) are this project's own design/"
+        "reverse-engineering, not confirmed against CNM's actual UI - sanity-check before acting."
+    ))
+    return embed
+
+
 @client.tree.command(name="devig", description="Devig an odds string and show fair value / hold / probability.")
 @app_commands.describe(
     odds="CNM-format odds string, e.g. +500/-700 or -115/-110||-185/+140",
@@ -204,6 +268,36 @@ async def ev_command(interaction: discord.Interaction, odds: str, payout_multipl
         return
 
     embed = build_ev_embed(odds, method_value, result, ev_result)
+    await interaction.response.send_message(embed=embed)
+
+
+@client.tree.command(name="sgp", description="Correlated SGP fair value + EV + Kelly sizing (comma-parlay only, no ||).")
+@app_commands.describe(
+    odds="Comma-separated parlay odds string (no || groups), e.g. +100%,-120%,-165%,+100%,-110%",
+    sgp_groups=("SGP groups as leg_count:r pairs, comma-separated, covering every leg in order, "
+                "e.g. '3:0.33,2:0.14' for a 3-leg SGP (r=0.33) then a 2-leg SGP (r=0.14)"),
+    payout_multiplier="Total return multiple if it hits (e.g. 29.0 for +2800 American)",
+    bankroll="Optional: your bankroll, to show Kelly sizing in dollars instead of just % of bankroll",
+    method="Devig method (default: Multiplicative)",
+)
+@app_commands.choices(method=METHOD_CHOICES)
+async def sgp_command(interaction: discord.Interaction, odds: str, sgp_groups: str, payout_multiplier: float,
+                       bankroll: float = None, method: app_commands.Choice[str] = None):
+    method_value = method.value if method else "multiplicative"
+    try:
+        specs = parse_sgp_specs(sgp_groups)
+        corr_result = evaluate_correlated(odds, specs, method=method_value)
+        ev_result = pickem_ev(corr_result.correlated_probability, payout_multiplier)
+        kelly_result = kelly_sizing(corr_result.correlated_probability, payout_multiplier, bankroll=bankroll)
+    except ValueError as e:
+        await interaction.response.send_message(f"Couldn't compute that: {e}", ephemeral=True)
+        return
+    except Exception as e:
+        logger.exception(f"/sgp failed for input {odds!r} groups={sgp_groups!r} @ {payout_multiplier}")
+        await interaction.response.send_message(f"Something went wrong: {e}", ephemeral=True)
+        return
+
+    embed = build_sgp_embed(odds, sgp_groups, method_value, corr_result, ev_result, kelly_result)
     await interaction.response.send_message(embed=embed)
 
 

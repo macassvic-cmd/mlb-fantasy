@@ -12,18 +12,36 @@ switchable devig methods, then compares against a flat pick'em payout.
   labels which method was used so you can sanity-check against the real
   CNM tool.
 - **`parser.py`** (input grammar, parlay/OR/XOR, juice specification) -
-  34 more unit tests. The comma/slash/^/|| grammar and the 2-value
-  juice-bracket ("borrow a reference market's hold") are confirmed
-  directly against the real CNM spec. The 3-value alt-line juice formula
-  and the `%`-default historical hold are this project's own reasoned
-  interpretation, not confirmed against CNM - every synthesized leg's
-  `juice_source` field says exactly how its missing side was derived, so
-  you can check it against CNM's actual number for the same input.
+  the comma/slash/^/|| grammar and the 2-value juice-bracket ("borrow a
+  reference market's hold") are confirmed directly against the real CNM
+  spec. The `%`-default juice is CALIBRATED against 4 real CNM reference
+  legs (validated 2026-09-08 - matches CNM's fair value exactly within
+  the calibrated 50-62% probability range; outside that range it linearly
+  extrapolates and flags `[EXTRAPOLATED...]` in `juice_source`). The
+  3-value alt-line juice formula is still this project's own reasoned
+  interpretation, not confirmed against CNM.
+- **`correlation.py`** (SGP correlation, `/sgp`) - the correlation MATH
+  (`P_correlated = P_independent + r*(P_min - P_independent)`, groups
+  combined via product) is validated against real CNM reference output
+  (5-leg parlay, two SGP groups) - matches within CNM's own display
+  precision. The `leg_count:r` **input syntax** for specifying groups is
+  this project's own placeholder, not CNM's actual "correlation textbox"
+  format (not available here) - if you have that spec, the math stays
+  the same, only `parse_sgp_specs` needs to change.
+- **`ev.py`**'s Kelly sizing - CNM's "u" unit was reverse-engineered
+  (not guessed) from the reference example: computing the standard
+  Kelly fraction from CNM's own reported probability/payout reproduces
+  their "2.24u" almost exactly, confirming **u = % of bankroll**. Dollar
+  amounts require you to supply your own bankroll; nothing here assumes
+  one.
 - **`bot.py`** - not live-tested against Discord's API (no bot token
   available in this environment). The embed-building logic was exercised
-  directly against real `evaluate()` output for every input format
-  variant and didn't crash, but the first real `/devig` and `/ev` in
-  your server are this layer's actual test.
+  directly against real `evaluate()`/`evaluate_correlated()` output for
+  every input format variant and the full CNM reference scenario, and
+  didn't crash - but the first real `/devig`, `/ev`, and `/sgp` in your
+  server are this layer's actual test. **If you already had bot.py
+  running from before 2026-09-08, restart it** to pick up the juice
+  calibration fix and the new `/sgp` command.
 
 ## Discord setup (one-time)
 
@@ -65,8 +83,8 @@ python bot.py
 ```
 
 You should see `Logged in as <bot name>` and a sync confirmation in the
-console. In Discord, type `/devig` or `/ev` in any channel the bot can
-see.
+console. In Discord, type `/devig`, `/ev`, or `/sgp` in any channel the
+bot can see.
 
 ## Commands
 
@@ -78,6 +96,14 @@ see.
   `payout_multiplier`x total (e.g. `3.0` for a pick'em paying 3x your
   stake). Reports breakeven probability, edge, EV%, and whether it
   clears breakeven.
+- **`/sgp <odds> <sgp_groups> <payout_multiplier> [bankroll] [method]`** -
+  for a comma-separated parlay only (no `||`). `sgp_groups` partitions
+  every leg into same-game groups as `leg_count:r` pairs, e.g.
+  `3:0.33,2:0.14` for a 3-leg SGP at r=0.33 followed by a 2-leg SGP at
+  r=0.14 - a leg with no real correlation to anything else is its own
+  `1:0` group. Reports uncorrelated vs. correlated fair value, EV%, and
+  Full/Half/Quarter Kelly sizing (in % of bankroll, or dollars if you
+  pass `bankroll`).
 
 ### Input format examples
 
@@ -97,7 +123,7 @@ see.
 
 ```
 cd devigger
-python -m unittest test_devig test_parser test_combine test_ev -v
+python -m unittest test_devig test_parser test_combine test_ev test_correlation -v
 ```
 
-66 tests, all passing as of this writing.
+89 tests, all passing as of this writing.
