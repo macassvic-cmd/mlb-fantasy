@@ -1,0 +1,7 @@
+Disabled 2026-09-08: Betr locked api.fantasy.betr.app/graphql behind
+real HTTP Basic Auth (WWW-Authenticate: Basic realm="Realm") - the
+previously-public endpoint this detector depends on is now
+deliberately gated, not transiently down. Indefinite polling has no
+value. See .github/workflows/betr_access_check.yml for the once-daily
+check that alerts if this reverts - delete this file to re-enable once
+it does.
