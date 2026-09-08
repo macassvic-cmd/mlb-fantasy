@@ -18,6 +18,21 @@ or cares which book the JSON came from - Betr, Dabble, a spreadsheet
 export, anything - as long as the 5 required fields are present (see
 board_loader.py's schema docs).
 
+MIXED-SPORT FILES: if your export bundles every sport into one file
+instead of one file per sport, drop it directly in
+data/dns_watch/incoming/ (the root, NOT the mlb/ or soccer/ sub-folder).
+Every record must carry its own "sport" field (or alias "league_sport")
+- "mlb" or "soccer" - since there's no folder name to fall back on for a
+default. process_mixed_file() splits the records by that field, routes
+the mlb subset through stale_lines.run_poll() and the soccer subset
+through soccer_dns.run_scan() (each exactly as if it had been the whole
+file), and quietly ignores any record whose "sport" isn't one of those
+two (reported in the summary, not treated as an error - a bundled export
+covering sports we don't support yet shouldn't fail the whole file).
+Files placed in the mlb/ or soccer/ sub-folders are still assumed
+single-sport and processed the old way - use the sub-folders when you
+already know a file is one sport, the root when it's bundled.
+
 TWO MODES, pick based on how hands-off you want this:
   --once (default)  process whatever's sitting in incoming/ right now,
                      then exit. No persistent process, so none of the
@@ -44,12 +59,15 @@ INCOMING_DIR = os.path.join(BASE_DIR, "incoming")
 PROCESSED_DIR = os.path.join(BASE_DIR, "processed")
 FAILED_DIR = os.path.join(BASE_DIR, "failed")
 SPORTS = ["mlb", "soccer"]
+MIXED = "mixed"  # bucket name for processed/failed sub-folders of root-level (multi-sport) files
 DEFAULT_WATCH_INTERVAL_SECONDS = 60
 
 
 def _ensure_dirs():
+    os.makedirs(INCOMING_DIR, exist_ok=True)
     for sport in SPORTS:
         os.makedirs(os.path.join(INCOMING_DIR, sport), exist_ok=True)
+    for sport in SPORTS + [MIXED]:
         os.makedirs(os.path.join(PROCESSED_DIR, sport), exist_ok=True)
         os.makedirs(os.path.join(FAILED_DIR, sport), exist_ok=True)
 
@@ -76,6 +94,42 @@ def process_file(path, sport):
     raise ValueError(f"Unknown sport {sport!r} - expected one of {SPORTS}.")
 
 
+def process_mixed_file(path):
+    """For a file dropped in incoming/ (root) rather than a sport
+    sub-folder - every record must carry its own "sport" (no folder to
+    default to), so this loads with sport_hint=None, splits by that
+    field, and runs each recognized sport's records through its own
+    detector, just as if that sport had been the whole file. Records
+    whose "sport" isn't "mlb" or "soccer" are ignored, not errored -
+    only raises if NOTHING recognizable was found at all."""
+    from board_loader import load_prop_records, to_mlb_betr_entries, to_soccer_board
+
+    records = load_prop_records(path, sport_hint=None)
+
+    by_sport = {}
+    for r in records:
+        by_sport.setdefault(r.sport, []).append(r)
+
+    unsupported = {s: len(rs) for s, rs in by_sport.items() if s not in SPORTS}
+    summary = {"skipped_unsupported_sports": unsupported}
+
+    mlb_records = by_sport.get("mlb", [])
+    if mlb_records:
+        import stale_lines as sl
+        summary["mlb"] = sl.run_poll(betr_entries=to_mlb_betr_entries(mlb_records))
+
+    soccer_records = by_sport.get("soccer", [])
+    if soccer_records:
+        import soccer_dns as sd
+        summary["soccer"] = sd.run_scan(board=to_soccer_board(soccer_records))
+
+    if not mlb_records and not soccer_records:
+        raise ValueError(f"No 'mlb' or 'soccer' records found in {path} - "
+                          f"sports present were {dict((s, len(rs)) for s, rs in by_sport.items())!r}.")
+
+    return summary
+
+
 def process_all_pending():
     _ensure_dirs()
     results = []
@@ -99,8 +153,28 @@ def process_all_pending():
                     f.write(f"{datetime.now(timezone.utc).isoformat()}\n{e}\n\n{traceback.format_exc()}")
                 print(f"[{sport}] FAILED {fname}: {e}\n  (moved to {dest}, details in {error_path})")
                 results.append({"file": fname, "sport": sport, "status": "failed", "error": str(e)})
+
+    for fname in sorted(os.listdir(INCOMING_DIR)):
+        path = os.path.join(INCOMING_DIR, fname)
+        if not fname.endswith(".json") or not os.path.isfile(path):
+            continue  # skips the mlb/, soccer/ sub-folders themselves
+        try:
+            summary = process_mixed_file(path)
+            dest = os.path.join(PROCESSED_DIR, MIXED, fname)
+            shutil.move(path, dest)
+            print(f"[{MIXED}] processed {fname} -> {dest}\n  {summary}")
+            results.append({"file": fname, "sport": MIXED, "status": "ok", "summary": summary})
+        except Exception as e:
+            dest = os.path.join(FAILED_DIR, MIXED, fname)
+            shutil.move(path, dest)
+            error_path = dest + ".error.txt"
+            with open(error_path, "w", encoding="utf-8") as f:
+                f.write(f"{datetime.now(timezone.utc).isoformat()}\n{e}\n\n{traceback.format_exc()}")
+            print(f"[{MIXED}] FAILED {fname}: {e}\n  (moved to {dest}, details in {error_path})")
+            results.append({"file": fname, "sport": MIXED, "status": "failed", "error": str(e)})
+
     if not results:
-        print("Nothing pending in data/dns_watch/incoming/{mlb,soccer}/.")
+        print("Nothing pending in data/dns_watch/incoming/ (root or {mlb,soccer}/).")
     return results
 
 

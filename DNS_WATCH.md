@@ -58,11 +58,29 @@ swap in real data, drop it in the matching `incoming/` sub-folder.
 
 ```
 data/dns_watch/
-  incoming/mlb/      <- drop MLB JSON files here
-  incoming/soccer/   <- drop soccer JSON files here
-  processed/{mlb,soccer}/   <- moved here after a successful run
-  failed/{mlb,soccer}/      <- moved here on error, with a sibling .error.txt
+  incoming/mlb/      <- drop single-sport MLB JSON files here
+  incoming/soccer/   <- drop single-sport soccer JSON files here
+  incoming/          <- drop MIXED-sport JSON files directly here (root, not a sub-folder)
+  processed/{mlb,soccer,mixed}/   <- moved here after a successful run
+  failed/{mlb,soccer,mixed}/      <- moved here on error, with a sibling .error.txt
 ```
+
+**Mixed-sport files** (one export covering every sport, not split per
+book): drop it in `incoming/` itself, not a sub-folder. Every record must
+carry its own `"sport"` field (or alias `"league_sport"`) - `"mlb"` or
+`"soccer"` - since there's no folder name to default to. The file is split
+by that field: `mlb` records go through `stale_lines.run_poll()`, `soccer`
+records go through `soccer_dns.run_scan()`, each exactly as if it had been
+the whole file, and any record whose `sport` isn't one of those two is
+skipped (reported in the run summary, not treated as an error) - so a
+bundled export that also includes sports this project doesn't cover yet
+(NBA, NFL, whatever) won't fail the whole file. `league` (EPL, MLS, etc.)
+is unrelated to routing - it's an optional, soccer-only field used later
+for result grading.
+
+If you already know a file is single-sport, still use the `mlb/` /
+`soccer/` sub-folders - `sport` can then be omitted per-record and inferred
+from the folder.
 
 Run it:
 

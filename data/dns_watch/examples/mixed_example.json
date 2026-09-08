@@ -1,0 +1,32 @@
+{
+  "props": [
+    {
+      "player_name": "Aaron Judge",
+      "team": "NYY",
+      "market": "hits",
+      "line": 1.5,
+      "odds": -120,
+      "event_date": "2026-09-10T23:05:00Z",
+      "sport": "mlb"
+    },
+    {
+      "player_name": "Bukayo Saka",
+      "team": "Arsenal",
+      "opponent": "Chelsea",
+      "league": "EPL",
+      "market": "shots",
+      "line": 1.5,
+      "odds": -110,
+      "event_date": "2026-09-14T15:00:00Z",
+      "sport": "soccer"
+    },
+    {
+      "player_name": "LeBron James",
+      "team": "LAL",
+      "market": "points",
+      "line": 25.5,
+      "event_date": "2026-09-10T23:05:00Z",
+      "sport": "nba"
+    }
+  ]
+}
