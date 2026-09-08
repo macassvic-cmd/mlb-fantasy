@@ -747,7 +747,18 @@ def _resolve_early_signals(now, state, lineup_index):
             _log_event({"ts": now.isoformat(), "type": "early_signal_resolved", "flag_id": key, "outcome": sig["outcome"]})
 
 
-def run_poll():
+def run_poll(betr_entries=None):
+    """betr_entries=None falls back to fetch_betr_hitter_lines_with_
+    context() (kept for reference/in case Betr ever reopens the
+    endpoint it locked down - see that function's own docstring and
+    data/stale_lines/DISABLED) - as of 2026-09-08 the real entry point
+    is dns_watch.py, which loads a user-supplied JSON file via
+    board_loader.to_mlb_betr_entries() and passes the result straight
+    in here. Everything below this line is unchanged either way -
+    lineup lookups (games/lineup_index/team_abbrevs, all MLB Stats API,
+    never touched Betr) and the whole detection/grading/early-signals
+    pipeline never cared where betr_entries came from, only that it has
+    this shape: [{name, normalized_name, team, event_date_utc, markets}]."""
     now = datetime.now(timezone.utc)
     today_str = now.strftime("%Y-%m-%d")
     tomorrow_str = (now + timedelta(days=1)).strftime("%Y-%m-%d")
@@ -768,7 +779,8 @@ def run_poll():
     games = _dedupe_games(get_games(yesterday_str) + get_games(today_str) + get_games(tomorrow_str))
     lineup_index = _build_lineup_index(games)
     team_abbrevs = get_team_abbreviations()
-    betr_entries = fetch_betr_hitter_lines_with_context()
+    if betr_entries is None:
+        betr_entries = fetch_betr_hitter_lines_with_context()
     live_names_now = {e["normalized_name"] for e in betr_entries}
     betr_by_name = {e["normalized_name"]: e for e in betr_entries}
 

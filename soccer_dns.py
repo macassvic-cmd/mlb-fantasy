@@ -164,9 +164,16 @@ def save_state(state):
 
 
 def _flag_embed(flag):
+    # flag["league"] can be None for a JSON-sourced flag whose input
+    # record didn't specify one (board_loader.to_soccer_board() has no
+    # reliable way to infer league from an arbitrary book's export) -
+    # found live 2026-09-08: Discord's embed API requires field values
+    # to be non-empty strings, so passing the bare None through here
+    # 400'd every JSON-sourced flag's individual post (the digest was
+    # unaffected - it doesn't render a League field).
     fields = [
         {"name": "Team", "value": flag["team"], "inline": True},
-        {"name": "League", "value": flag["league"], "inline": True},
+        {"name": "League", "value": flag.get("league") or "Unknown", "inline": True},
         {"name": "Fixture date", "value": flag["event_date"][:10], "inline": True},
         {"name": "Injury/suspension", "value": flag["reason"], "inline": False},
         {"name": "Out since", "value": flag["since"] or "unknown", "inline": True},
@@ -370,13 +377,21 @@ def send_digest(embeds):
     return sent
 
 
-def run_scan():
+def run_scan(board=None):
+    """board=None falls back to fetch_betr_soccer_board() (kept for
+    reference/in case Betr ever reopens the endpoint - see that
+    function's own docstring) - as of 2026-09-08 the real entry point is
+    dns_watch.py, which loads a user-supplied JSON file via
+    board_loader.to_soccer_board() and passes the result straight in
+    here. Everything below this line is unchanged either way - detection,
+    grading, and the digest never cared where the board came from."""
     now = datetime.now(timezone.utc)
     today_str = now.strftime("%Y-%m-%d")
     state = load_state()
     state.setdefault("flags", {})
 
-    board = fetch_betr_soccer_board()
+    if board is None:
+        board = fetch_betr_soccer_board()
     counters = {"events_scanned": len(board), "player_lines_checked": 0, "new_flags": 0, "already_flagged": 0}
 
     # --- Detection pass ---------------------------------------------------
