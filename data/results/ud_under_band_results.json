@@ -1659,21 +1659,83 @@
           "grade": "loss"
         }
       ]
+    },
+    "2026-09-07": {
+      "wins": 4,
+      "losses": 1,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 650333,
+          "name": "Luis Arraez",
+          "team": "Philadelphia Phillies",
+          "projected_ud": 4.55,
+          "ud_line": 6.5,
+          "edge": -1.95,
+          "game_time_pt": "10:05 AM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 686681,
+          "name": "Michael Massey",
+          "team": "Kansas City Royals",
+          "projected_ud": 3.55,
+          "ud_line": 5.5,
+          "edge": -1.95,
+          "game_time_pt": "11:10 AM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 805808,
+          "name": "Kevin McGonigle",
+          "team": "Detroit Tigers",
+          "projected_ud": 4.68,
+          "ud_line": 6.5,
+          "edge": -1.82,
+          "game_time_pt": "12:10 PM PT",
+          "actual_ud": 14,
+          "grade": "loss"
+        },
+        {
+          "player_id": 607208,
+          "name": "Trea Turner",
+          "team": "Philadelphia Phillies",
+          "projected_ud": 4.98,
+          "ud_line": 6.5,
+          "edge": -1.52,
+          "game_time_pt": "10:05 AM PT",
+          "actual_ud": 6,
+          "grade": "win"
+        },
+        {
+          "player_id": 668904,
+          "name": "Royce Lewis",
+          "team": "Minnesota Twins",
+          "projected_ud": 3.99,
+          "ud_line": 5.5,
+          "edge": -1.51,
+          "game_time_pt": "12:10 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 80,
-    "losses": 55,
+    "wins": 84,
+    "losses": 56,
     "dnp": 7
   },
   "record_by_line": {
     "5.5": {
-      "wins": 34,
+      "wins": 36,
       "losses": 22
     },
     "6.5": {
-      "wins": 22,
-      "losses": 21
+      "wins": 24,
+      "losses": 22
     },
     "8.5+": {
       "wins": 6,

@@ -6838,6 +6838,99 @@
           "correct": false
         }
       ]
+    },
+    "2026-09-07": {
+      "summary": {
+        "total": 8,
+        "correct": 4,
+        "accuracy": 50.0,
+        "over_total": 4,
+        "over_correct": 1,
+        "under_total": 4,
+        "under_correct": 3
+      },
+      "plays": [
+        {
+          "player_id": 682829,
+          "name": "Elly De La Cruz",
+          "team": "Cincinnati Reds",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 21,
+          "correct": true
+        },
+        {
+          "player_id": 681715,
+          "name": "Heriberto Hern\u00e1ndez",
+          "team": "Miami Marlins",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "correct": false
+        },
+        {
+          "player_id": 672640,
+          "name": "Otto Lopez",
+          "team": "Miami Marlins",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "correct": false
+        },
+        {
+          "player_id": 681508,
+          "name": "Mickey Gasper",
+          "team": "Boston Red Sox",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "correct": false
+        },
+        {
+          "player_id": 665742,
+          "name": "Juan Soto",
+          "team": "New York Mets",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 13,
+          "correct": false
+        },
+        {
+          "player_id": 677951,
+          "name": "Bobby Witt Jr.",
+          "team": "Kansas City Royals",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 5,
+          "correct": true
+        },
+        {
+          "player_id": 606466,
+          "name": "Ketel Marte",
+          "team": "Arizona Diamondbacks",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 8,
+          "correct": true
+        },
+        {
+          "player_id": 660271,
+          "name": "Shohei Ohtani",
+          "team": "Los Angeles Dodgers",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 3,
+          "correct": true
+        }
+      ]
     }
   }
 }

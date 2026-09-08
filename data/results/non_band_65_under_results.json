@@ -1842,11 +1842,139 @@
           "grade": "loss"
         }
       ]
+    },
+    "2026-09-07": {
+      "wins": 2,
+      "losses": 9,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 669242,
+          "name": "Tommy Edman",
+          "team": "Los Angeles Dodgers",
+          "projected_ud": 6.47,
+          "ud_line": 6.5,
+          "edge": -0.03,
+          "game_time_pt": "6:10 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 805999,
+          "name": "A.J. Ewing",
+          "team": "New York Mets",
+          "projected_ud": 6.35,
+          "ud_line": 6.5,
+          "edge": -0.15,
+          "game_time_pt": "10:10 AM PT",
+          "actual_ud": 18,
+          "grade": "loss"
+        },
+        {
+          "player_id": 672695,
+          "name": "Geraldo Perdomo",
+          "team": "Arizona Diamondbacks",
+          "projected_ud": 6.17,
+          "ud_line": 6.5,
+          "edge": -0.33,
+          "game_time_pt": "11:10 AM PT",
+          "actual_ud": 10,
+          "grade": "loss"
+        },
+        {
+          "player_id": 808982,
+          "name": "Jung Hoo Lee",
+          "team": "San Francisco Giants",
+          "projected_ud": 5.89,
+          "ud_line": 6.5,
+          "edge": -0.61,
+          "game_time_pt": "5:10 PM PT",
+          "actual_ud": 6,
+          "grade": "win"
+        },
+        {
+          "player_id": 677942,
+          "name": "Blaze Alexander",
+          "team": "Baltimore Orioles",
+          "projected_ud": 5.65,
+          "ud_line": 6.5,
+          "edge": -0.85,
+          "game_time_pt": "10:35 AM PT",
+          "actual_ud": 8,
+          "grade": "loss"
+        },
+        {
+          "player_id": 676475,
+          "name": "Alec Burleson",
+          "team": "St. Louis Cardinals",
+          "projected_ud": 5.51,
+          "ud_line": 6.5,
+          "edge": -0.99,
+          "game_time_pt": "5:10 PM PT",
+          "actual_ud": 16,
+          "grade": "loss"
+        },
+        {
+          "player_id": 701807,
+          "name": "Carson Benge",
+          "team": "New York Mets",
+          "projected_ud": 5.44,
+          "ud_line": 6.5,
+          "edge": -1.06,
+          "game_time_pt": "10:10 AM PT",
+          "actual_ud": 14,
+          "grade": "loss"
+        },
+        {
+          "player_id": 518692,
+          "name": "Freddie Freeman",
+          "team": "Los Angeles Dodgers",
+          "projected_ud": 5.25,
+          "ud_line": 6.5,
+          "edge": -1.25,
+          "game_time_pt": "6:10 PM PT",
+          "actual_ud": 9,
+          "grade": "loss"
+        },
+        {
+          "player_id": 695600,
+          "name": "Carter Jensen",
+          "team": "Kansas City Royals",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "11:10 AM PT",
+          "actual_ud": 13,
+          "grade": "loss"
+        },
+        {
+          "player_id": 686469,
+          "name": "Vinnie Pasquantino",
+          "team": "Kansas City Royals",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "11:10 AM PT",
+          "actual_ud": 9,
+          "grade": "loss"
+        },
+        {
+          "player_id": 521692,
+          "name": "Salvador Perez",
+          "team": "Kansas City Royals",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "11:10 AM PT",
+          "actual_ud": 18,
+          "grade": "loss"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 80,
-    "losses": 78,
+    "wins": 82,
+    "losses": 87,
     "dnp": 4
   }
 }
