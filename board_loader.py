@@ -109,6 +109,11 @@ FIELD_ALIASES = {
     # "team" is a short code and no explicit "opponent" is given - see
     # _resolve_soccer_team_name().
     "matchup": ["game", "matchup", "fixture_name", "event_name"],
+    # Optional: a roster position ("RF", "SP", ...). MLB-only consumer is
+    # to_mlb_betr_entries()'s pitcher filter - see its own docstring for
+    # why this matters (found live 2026-09-08: 10 of 11 flags from a real
+    # export were starting pitchers wrongly flagged "not in lineup").
+    "position": ["position", "pos"],
 }
 REQUIRED_FIELDS = ["player_name", "team", "market", "line", "event_date"]
 
@@ -156,6 +161,7 @@ class PropRecord:
     odds: Optional[float] = None
     sport: Optional[str] = None
     league: Optional[str] = None
+    position: Optional[str] = None
     source_file: Optional[str] = None
 
 
@@ -249,6 +255,9 @@ def _normalize_record(record, sport_hint, source_file, index):
         league_norm = str(league_raw).strip().lower()
         league_final = _LEAGUE_VALUE_TO_CANONICAL.get(league_norm, str(league_raw).strip().upper())
 
+    position_raw = _find_field(record, "position")
+    position_final = str(position_raw).strip().upper() if position_raw else None
+
     return PropRecord(
         player_name=player_name,
         normalized_name=normalize_name(player_name),
@@ -260,6 +269,7 @@ def _normalize_record(record, sport_hint, source_file, index):
         odds=odds_val,
         sport=sport,
         league=league_final,
+        position=position_final,
         source_file=source_file,
     )
 
@@ -319,12 +329,46 @@ def load_prop_records(source, sport_hint=None, skip_invalid=False):
     return records
 
 
-def to_mlb_betr_entries(records):
+# stale_lines.run_poll()'s whole detection strategy is "is this player in
+# today's official BATTING lineup" - it was built and validated only
+# against Betr's own fetch_betr_hitter_lines_with_context() (hitters
+# only, per that name). A starting pitcher is NEVER in the 9-slot batting
+# order under the universal DH rule, so that check misfires on every
+# single pitcher prop as a false "not in lineup" - confirmed live
+# 2026-09-08, 10 of 11 new flags from one real export were starting
+# pitchers (Tarik Skubal among them) wrongly flagged this way. A pitcher
+# needs a wholly different check (probable-starter status) that this
+# phase doesn't build - for now, pitchers are excluded from this
+# detector entirely rather than run through a check that's guaranteed
+# wrong for them.
+PITCHER_POSITIONS = {"SP", "RP", "P", "CL"}
+# Fallback signal for a book that doesn't supply "position" at all -
+# these stat types don't exist for a hitter, so seeing ANY of them on a
+# player is unambiguous proof they're a pitcher (a bare "strikeouts"
+# market is deliberately excluded - ambiguous, since batters have a
+# strikeouts-prop too).
+PITCHER_ONLY_MARKETS = {
+    "OUTS", "EARNED-RUNS", "EARNED RUNS", "HITS-ALLOWED", "HITS ALLOWED",
+    "WALKS-ALLOWED", "WALKS ALLOWED", "PITCHES-THROWN", "PITCHING-OUTS",
+    "WIN", "QUALITY-START", "HOLD", "SAVE",
+}
+
+
+def to_mlb_betr_entries(records, report_skipped=False):
     """[{name, normalized_name, team, event_date_utc, markets: {stat_key: line}}]
     - matches scrapers.betr.fetch_betr_hitter_lines_with_context()'s
     exact return shape (one entry per player, markets merged across
-    that player's multiple prop records in the file)."""
+    that player's multiple prop records in the file). Pitchers are
+    excluded - see PITCHER_POSITIONS/PITCHER_ONLY_MARKETS above.
+
+    report_skipped=True returns (entries, skipped_pitchers) instead of a
+    bare list - skipped_pitchers is [{"name":, "normalized_name":,
+    "reason":}, ...] so a caller can surface what got excluded rather
+    than losing it silently, same pattern as load_prop_records'
+    skip_invalid."""
     by_name = {}
+    positions_seen = {}
+    pitcher_market_hit = set()
     for r in records:
         if r.sport != "mlb":
             continue
@@ -333,7 +377,26 @@ def to_mlb_betr_entries(records):
             "team": r.team, "event_date_utc": r.event_date, "markets": {},
         })
         entry["markets"][r.market] = r.line
-    return list(by_name.values())
+        if r.position:
+            positions_seen.setdefault(r.normalized_name, set()).add(r.position)
+        if r.market in PITCHER_ONLY_MARKETS:
+            pitcher_market_hit.add(r.normalized_name)
+
+    pitchers = {
+        name for name in by_name
+        if (positions_seen.get(name) or set()) & PITCHER_POSITIONS or name in pitcher_market_hit
+    }
+
+    entries = [v for k, v in by_name.items() if k not in pitchers]
+    if not report_skipped:
+        return entries
+
+    skipped = [
+        {"name": by_name[name]["name"], "normalized_name": name,
+         "reason": "pitcher - not covered by the batting-lineup DNS check"}
+        for name in pitchers
+    ]
+    return entries, skipped
 
 
 def to_soccer_board(records):

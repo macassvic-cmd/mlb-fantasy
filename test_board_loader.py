@@ -141,6 +141,54 @@ class TestToMlbBetrEntries(unittest.TestCase):
         self.assertEqual(len(entries), 1)
         self.assertEqual(entries[0]["name"], "X")
 
+    def test_pitcher_excluded_by_position(self):
+        # A starting pitcher is never in the batting lineup (universal DH)
+        # - this detector's lineup check is guaranteed wrong for them, so
+        # they must never reach it at all. Found live 2026-09-08: 10 of 11
+        # flags from one real export were exactly this.
+        records = load_prop_records([
+            {"player_name": "Tarik Skubal", "team": "DET", "position": "SP",
+             "market": "STRIKEOUTS", "line": 7.5, "event_date": "2026-09-10", "sport": "mlb"},
+            {"player_name": "Aaron Judge", "team": "NYY", "position": "RF",
+             "market": "HITS", "line": 1.5, "event_date": "2026-09-10", "sport": "mlb"},
+        ])
+        entries = to_mlb_betr_entries(records)
+        self.assertEqual([e["name"] for e in entries], ["Aaron Judge"])
+
+    def test_pitcher_excluded_by_unambiguous_market_when_no_position(self):
+        records = load_prop_records([
+            {"player_name": "Bryce Miller", "team": "SEA", "market": "OUTS",
+             "line": 16.5, "event_date": "2026-09-10", "sport": "mlb"},
+            {"player_name": "Bryce Miller", "team": "SEA", "market": "STRIKEOUTS",
+             "line": 5.5, "event_date": "2026-09-10", "sport": "mlb"},
+        ])
+        entries = to_mlb_betr_entries(records)
+        self.assertEqual(entries, [])
+
+    def test_bare_strikeouts_market_alone_not_treated_as_pitcher_signal(self):
+        # Ambiguous on its own (batters have a strikeouts prop too) - not
+        # enough signal by itself without a position or another
+        # pitcher-only market. Documents the known limitation rather than
+        # silently guessing.
+        records = load_prop_records([
+            {"player_name": "Some Hitter", "team": "NYY", "market": "STRIKEOUTS",
+             "line": 1.5, "event_date": "2026-09-10", "sport": "mlb"},
+        ])
+        entries = to_mlb_betr_entries(records)
+        self.assertEqual(len(entries), 1)
+
+    def test_report_skipped_returns_pitchers(self):
+        records = load_prop_records([
+            {"player_name": "Tarik Skubal", "team": "DET", "position": "SP",
+             "market": "STRIKEOUTS", "line": 7.5, "event_date": "2026-09-10", "sport": "mlb"},
+            {"player_name": "Aaron Judge", "team": "NYY", "position": "RF",
+             "market": "HITS", "line": 1.5, "event_date": "2026-09-10", "sport": "mlb"},
+        ])
+        entries, skipped = to_mlb_betr_entries(records, report_skipped=True)
+        self.assertEqual([e["name"] for e in entries], ["Aaron Judge"])
+        self.assertEqual(len(skipped), 1)
+        self.assertEqual(skipped[0]["name"], "Tarik Skubal")
+
 
 class TestToSoccerBoard(unittest.TestCase):
     def test_groups_by_fixture(self):

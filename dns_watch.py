@@ -88,10 +88,12 @@ def process_file(path, sport):
 
     if sport == "mlb":
         import stale_lines as sl
-        entries = to_mlb_betr_entries(records)
-        if not entries:
+        entries, skipped_pitchers = to_mlb_betr_entries(records, report_skipped=True)
+        if not entries and not skipped_pitchers:
             raise ValueError(f"No 'mlb' records found in {path} (sport_hint was {sport!r}).")
         summary = sl.run_poll(betr_entries=entries)
+        if skipped_pitchers:
+            summary = {"skipped_pitchers": {"count": len(skipped_pitchers), "names": [p["name"] for p in skipped_pitchers]}, **summary}
     elif sport == "soccer":
         import soccer_dns as sd
         board = to_soccer_board(records)
@@ -130,7 +132,10 @@ def process_mixed_file(path):
     mlb_records = by_sport.get("mlb", [])
     if mlb_records:
         import stale_lines as sl
-        summary["mlb"] = sl.run_poll(betr_entries=to_mlb_betr_entries(mlb_records))
+        mlb_entries, skipped_pitchers = to_mlb_betr_entries(mlb_records, report_skipped=True)
+        summary["mlb"] = sl.run_poll(betr_entries=mlb_entries)
+        if skipped_pitchers:
+            summary["skipped_pitchers"] = {"count": len(skipped_pitchers), "names": [p["name"] for p in skipped_pitchers]}
 
     soccer_records = by_sport.get("soccer", [])
     if soccer_records:

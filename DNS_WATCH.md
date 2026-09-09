@@ -45,6 +45,7 @@ books' native export field names will just work:
 | `sport` | `sport`, `league_sport` |
 | `league` | `league`, `competition` |
 | `matchup` (optional, soccer) | `game`, `matchup`, `fixture_name`, `event_name` |
+| `position` (optional, MLB) | `position`, `pos` |
 
 `sport` and `league` VALUES are also mapped, not just matched literally:
 - `sport: "Baseball"` → `mlb`, `sport: "Football"` (association football) →
@@ -67,6 +68,19 @@ opponent. It only does this when the match is unambiguous; otherwise it
 leaves `team` untouched rather than risk the wrong club. MLB team values
 are never touched this way — 3-letter codes (`"NYY"`) are already what the
 detector expects.
+
+**MLB pitchers are excluded automatically.** The lineup-check this detector
+uses only makes sense for hitters — a starting pitcher is never in the
+batting lineup at all (universal DH), so that check is guaranteed wrong for
+them. A record is treated as a pitcher (and dropped before it ever reaches
+the lineup check, reported as `skipped_pitchers` in the run summary rather
+than silently lost) if its `position` is `SP`/`RP`/`P`/`CL`, or — if no
+`position` field is given at all — if it carries a pitcher-only stat market
+(`outs`, `earned-runs`, `hits-allowed`, `walks-allowed`, `win`,
+`quality-start`, `hold`, `save`). A bare `strikeouts` market alone isn't
+enough signal by itself (batters have a strikeouts prop too) — send
+`position` if your book has it, so pitchers with only a strikeouts line
+still get caught correctly.
 
 A malformed record raises a loud, specific error (missing field names,
 record index, and the record's own content) rather than silently dropping
