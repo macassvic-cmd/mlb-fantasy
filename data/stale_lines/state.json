@@ -33639,6 +33639,399 @@
         "\u26a0\ufe0f 15 min: no longer posted",
         "\u26a0\ufe0f 30 min: no longer posted"
       ]
+    },
+    "823092:bryce miller": {
+      "flag_id": "823092:bryce miller",
+      "name": "Bryce Miller",
+      "normalized_name": "bryce miller",
+      "team": "SEA",
+      "game_pk": 823092,
+      "is_home": true,
+      "game_time_utc": "2026-09-09T01:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS-ALLOWED": 4.5,
+        "OUTS": 15.5,
+        "STRIKEOUTS": 4.5
+      },
+      "first_seen_utc": "2026-09-09T00:31:33.256088+00:00",
+      "lineup_first_posted_utc": "2026-09-08T23:27:37.100665+00:00",
+      "detection_latency_seconds": 3836.2,
+      "minutes_to_first_pitch_at_flag": 68.4,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-09T00:31:33.256088+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS-ALLOWED": 4.5,
+            "OUTS": 15.5,
+            "STRIKEOUTS": 4.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1547041849942741024",
+      "discord_checkpoint_lines": []
+    },
+    "823092:cal quantrill": {
+      "flag_id": "823092:cal quantrill",
+      "name": "Cal Quantrill.",
+      "normalized_name": "cal quantrill",
+      "team": "TEX",
+      "game_pk": 823092,
+      "is_home": false,
+      "game_time_utc": "2026-09-09T01:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "OUTS": 15.5,
+        "STRIKEOUTS": 4.5
+      },
+      "first_seen_utc": "2026-09-09T00:31:33.256088+00:00",
+      "lineup_first_posted_utc": "2026-09-08T23:27:37.100665+00:00",
+      "detection_latency_seconds": 3836.2,
+      "minutes_to_first_pitch_at_flag": 68.4,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-09T00:31:33.256088+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "OUTS": 15.5,
+            "STRIKEOUTS": 4.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1547041917026697247",
+      "discord_checkpoint_lines": []
+    },
+    "824957:jack perkins": {
+      "flag_id": "824957:jack perkins",
+      "name": "Jack Perkins",
+      "normalized_name": "jack perkins",
+      "team": "ATH",
+      "game_pk": 824957,
+      "is_home": true,
+      "game_time_utc": "2026-09-09T01:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "EARNED-RUNS": 2.5,
+        "STRIKEOUTS": 4.5
+      },
+      "first_seen_utc": "2026-09-09T00:31:33.256088+00:00",
+      "lineup_first_posted_utc": "2026-09-08T23:27:37.100665+00:00",
+      "detection_latency_seconds": 3836.2,
+      "minutes_to_first_pitch_at_flag": 68.4,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-09T00:31:33.256088+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "EARNED-RUNS": 2.5,
+            "STRIKEOUTS": 4.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1547041977055444994",
+      "discord_checkpoint_lines": []
+    },
+    "824957:jose soriano": {
+      "flag_id": "824957:jose soriano",
+      "name": "Jos\u00e9 Soriano",
+      "normalized_name": "jose soriano",
+      "team": "TOR",
+      "game_pk": 824957,
+      "is_home": false,
+      "game_time_utc": "2026-09-09T01:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS-ALLOWED": 5.5,
+        "OUTS": 17.5,
+        "STRIKEOUTS": 4.5
+      },
+      "first_seen_utc": "2026-09-09T00:31:33.256088+00:00",
+      "lineup_first_posted_utc": "2026-09-08T23:27:37.100665+00:00",
+      "detection_latency_seconds": 3836.2,
+      "minutes_to_first_pitch_at_flag": 68.4,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-09T00:31:33.256088+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS-ALLOWED": 5.5,
+            "OUTS": 17.5,
+            "STRIKEOUTS": 4.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1547042034227871805",
+      "discord_checkpoint_lines": []
+    },
+    "823250:casey mize": {
+      "flag_id": "823250:casey mize",
+      "name": "Casey Mize",
+      "normalized_name": "casey mize",
+      "team": "SD",
+      "game_pk": 823250,
+      "is_home": true,
+      "game_time_utc": "2026-09-09T01:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "OUTS": 15.5,
+        "STRIKEOUTS": 4.5
+      },
+      "first_seen_utc": "2026-09-09T00:31:33.256088+00:00",
+      "lineup_first_posted_utc": "2026-09-08T23:27:37.100665+00:00",
+      "detection_latency_seconds": 3836.2,
+      "minutes_to_first_pitch_at_flag": 68.4,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-09T00:31:33.256088+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "OUTS": 15.5,
+            "STRIKEOUTS": 4.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1547042089122926663",
+      "discord_checkpoint_lines": []
+    },
+    "823250:riley cornelio": {
+      "flag_id": "823250:riley cornelio",
+      "name": "Riley Cornelio",
+      "normalized_name": "riley cornelio",
+      "team": "WSH",
+      "game_pk": 823250,
+      "is_home": false,
+      "game_time_utc": "2026-09-09T01:40:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "STRIKEOUTS": 1.5
+      },
+      "first_seen_utc": "2026-09-09T00:31:33.256088+00:00",
+      "lineup_first_posted_utc": "2026-09-08T23:27:37.100665+00:00",
+      "detection_latency_seconds": 3836.2,
+      "minutes_to_first_pitch_at_flag": 68.4,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-09T00:31:33.256088+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "STRIKEOUTS": 1.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1547042448587366496",
+      "discord_checkpoint_lines": []
+    },
+    "823174:landen roupp": {
+      "flag_id": "823174:landen roupp",
+      "name": "Landen Roupp",
+      "normalized_name": "landen roupp",
+      "team": "SF",
+      "game_pk": 823174,
+      "is_home": true,
+      "game_time_utc": "2026-09-09T01:45:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "STRIKEOUTS": 4.5
+      },
+      "first_seen_utc": "2026-09-09T00:31:33.256088+00:00",
+      "lineup_first_posted_utc": "2026-09-08T23:27:37.100665+00:00",
+      "detection_latency_seconds": 3836.2,
+      "minutes_to_first_pitch_at_flag": 73.4,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-09T00:31:33.256088+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "STRIKEOUTS": 4.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1547042216340627518",
+      "discord_checkpoint_lines": []
+    },
+    "823174:leonardo bernal": {
+      "flag_id": "823174:leonardo bernal",
+      "name": "Leonardo Bernal",
+      "normalized_name": "leonardo bernal",
+      "team": "STL",
+      "game_pk": 823174,
+      "is_home": false,
+      "game_time_utc": "2026-09-09T01:45:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS": 0.5,
+        "HITS + RBIS + RUNS": 1.5,
+        "HOME-RUNS": 0.5,
+        "RBIS": 0.5,
+        "RUNS": 0.5,
+        "SINGLES": 0.5
+      },
+      "first_seen_utc": "2026-09-09T00:31:33.256088+00:00",
+      "lineup_first_posted_utc": "2026-09-08T23:27:37.100665+00:00",
+      "detection_latency_seconds": 3836.2,
+      "minutes_to_first_pitch_at_flag": 73.4,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-09T00:31:33.256088+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS": 0.5,
+            "HITS + RBIS + RUNS": 1.5,
+            "HOME-RUNS": 0.5,
+            "RBIS": 0.5,
+            "RUNS": 0.5,
+            "SINGLES": 0.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1547042290722148465",
+      "discord_checkpoint_lines": []
+    },
+    "823174:quinn mathews": {
+      "flag_id": "823174:quinn mathews",
+      "name": "Quinn Mathews",
+      "normalized_name": "quinn mathews",
+      "team": "STL",
+      "game_pk": 823174,
+      "is_home": false,
+      "game_time_utc": "2026-09-09T01:45:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS-ALLOWED": 4.5,
+        "OUTS": 16.5,
+        "STRIKEOUTS": 5.5
+      },
+      "first_seen_utc": "2026-09-09T00:31:33.256088+00:00",
+      "lineup_first_posted_utc": "2026-09-08T23:27:37.100665+00:00",
+      "detection_latency_seconds": 3836.2,
+      "minutes_to_first_pitch_at_flag": 73.4,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-09T00:31:33.256088+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS-ALLOWED": 4.5,
+            "OUTS": 16.5,
+            "STRIKEOUTS": 5.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1547042458351833180",
+      "discord_checkpoint_lines": []
+    },
+    "823901:nick lodolo": {
+      "flag_id": "823901:nick lodolo",
+      "name": "Nick Lodolo",
+      "normalized_name": "nick lodolo",
+      "team": "CIN",
+      "game_pk": 823901,
+      "is_home": false,
+      "game_time_utc": "2026-09-09T02:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "HITS-ALLOWED": 5.5,
+        "STRIKEOUTS": 4.5
+      },
+      "first_seen_utc": "2026-09-09T00:31:33.256088+00:00",
+      "lineup_first_posted_utc": "2026-09-08T23:27:37.100665+00:00",
+      "detection_latency_seconds": 3836.2,
+      "minutes_to_first_pitch_at_flag": 98.4,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-09T00:31:33.256088+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "HITS-ALLOWED": 5.5,
+            "STRIKEOUTS": 4.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1547042411325431859",
+      "discord_checkpoint_lines": []
+    },
+    "823901:tarik skubal": {
+      "flag_id": "823901:tarik skubal",
+      "name": "Tarik Skubal",
+      "normalized_name": "tarik skubal",
+      "team": "LAD",
+      "game_pk": 823901,
+      "is_home": true,
+      "game_time_utc": "2026-09-09T02:10:00Z",
+      "category": "not_in_lineup",
+      "created_as": "not_in_lineup",
+      "all_markets": {
+        "STRIKEOUTS": 8.5
+      },
+      "first_seen_utc": "2026-09-09T00:31:33.256088+00:00",
+      "lineup_first_posted_utc": "2026-09-08T23:27:37.100665+00:00",
+      "detection_latency_seconds": 3836.2,
+      "minutes_to_first_pitch_at_flag": 98.4,
+      "checks": [
+        {
+          "elapsed_min": 0,
+          "checked_at_utc": "2026-09-09T00:31:33.256088+00:00",
+          "still_has_any_market": true,
+          "still_posted_markets": {
+            "STRIKEOUTS": 8.5
+          }
+        }
+      ],
+      "resolved": false,
+      "grade": null,
+      "resolution": null,
+      "discord_message_id": "1547042427691606062",
+      "discord_checkpoint_lines": []
     }
   },
   "early_signals": {
@@ -34180,6 +34573,58 @@
     "823091:home": "2026-09-06T18:16:26.571235+00:00",
     "824552:away": "2026-09-06T19:22:30.594129+00:00",
     "823903:home": "2026-09-06T22:01:02.820720+00:00",
-    "823903:away": "2026-09-07T00:01:03.069825+00:00"
+    "823903:away": "2026-09-07T00:01:03.069825+00:00",
+    "823415:home": "2026-09-08T23:27:37.100665+00:00",
+    "823415:away": "2026-09-08T23:27:37.100665+00:00",
+    "823820:home": "2026-09-08T23:27:37.100665+00:00",
+    "823820:away": "2026-09-08T23:27:37.100665+00:00",
+    "824715:home": "2026-09-08T23:27:37.100665+00:00",
+    "824715:away": "2026-09-08T23:27:37.100665+00:00",
+    "824793:home": "2026-09-08T23:27:37.100665+00:00",
+    "824793:away": "2026-09-08T23:27:37.100665+00:00",
+    "824062:home": "2026-09-08T23:27:37.100665+00:00",
+    "824062:away": "2026-09-08T23:27:37.100665+00:00",
+    "823742:home": "2026-09-08T23:27:37.100665+00:00",
+    "823742:away": "2026-09-08T23:27:37.100665+00:00",
+    "824229:home": "2026-09-08T23:27:37.100665+00:00",
+    "824229:away": "2026-09-08T23:27:37.100665+00:00",
+    "823254:home": "2026-09-08T23:27:37.100665+00:00",
+    "823254:away": "2026-09-08T23:27:37.100665+00:00",
+    "823175:home": "2026-09-08T23:27:37.100665+00:00",
+    "823175:away": "2026-09-08T23:27:37.100665+00:00",
+    "823902:home": "2026-09-08T23:27:37.100665+00:00",
+    "823902:away": "2026-09-08T23:27:37.100665+00:00",
+    "824958:home": "2026-09-08T23:27:37.100665+00:00",
+    "824958:away": "2026-09-08T23:27:37.100665+00:00",
+    "824792:home": "2026-09-08T23:27:37.100665+00:00",
+    "824792:away": "2026-09-08T23:27:37.100665+00:00",
+    "824228:home": "2026-09-08T23:27:37.100665+00:00",
+    "824228:away": "2026-09-08T23:27:37.100665+00:00",
+    "823414:home": "2026-09-08T23:27:37.100665+00:00",
+    "823414:away": "2026-09-08T23:27:37.100665+00:00",
+    "823821:home": "2026-09-08T23:27:37.100665+00:00",
+    "823821:away": "2026-09-08T23:27:37.100665+00:00",
+    "824714:home": "2026-09-08T23:27:37.100665+00:00",
+    "824714:away": "2026-09-08T23:27:37.100665+00:00",
+    "823500:home": "2026-09-08T23:27:37.100665+00:00",
+    "823500:away": "2026-09-08T23:27:37.100665+00:00",
+    "824875:home": "2026-09-08T23:27:37.100665+00:00",
+    "824875:away": "2026-09-08T23:27:37.100665+00:00",
+    "824063:home": "2026-09-08T23:27:37.100665+00:00",
+    "824063:away": "2026-09-08T23:27:37.100665+00:00",
+    "824551:home": "2026-09-08T23:27:37.100665+00:00",
+    "824551:away": "2026-09-08T23:27:37.100665+00:00",
+    "823738:home": "2026-09-08T23:27:37.100665+00:00",
+    "823738:away": "2026-09-08T23:27:37.100665+00:00",
+    "823250:home": "2026-09-08T23:27:37.100665+00:00",
+    "823250:away": "2026-09-08T23:27:37.100665+00:00",
+    "823092:home": "2026-09-08T23:27:37.100665+00:00",
+    "823092:away": "2026-09-08T23:27:37.100665+00:00",
+    "824957:home": "2026-09-08T23:27:37.100665+00:00",
+    "824957:away": "2026-09-08T23:27:37.100665+00:00",
+    "823174:home": "2026-09-08T23:27:37.100665+00:00",
+    "823174:away": "2026-09-08T23:27:37.100665+00:00",
+    "823901:home": "2026-09-08T23:27:37.100665+00:00",
+    "823901:away": "2026-09-08T23:27:37.100665+00:00"
   }
 }
