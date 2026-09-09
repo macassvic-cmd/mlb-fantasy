@@ -49,6 +49,20 @@ HEADERS = {"User-Agent": "Mozilla/5.0"}
 SITE_BASE = "https://site.api.espn.com/apis/site/v2/sports"
 CORE_BASE = "https://sports.core.api.espn.com/v2/sports"
 
+# confirmed_out_statuses/not_confirmed_statuses hold TWO vocabularies
+# merged into one set per league, since fetch_team_injuries() checks
+# whichever field is available for a given record (see that function's
+# own docstring for why): (1) the free-text top-level "status" field
+# ("Out", "Injured Reserve", ...), and (2) details.fantasyStatus.
+# abbreviation - a small, stable ESPN-internal code ("OUT", "IR", ...)
+# that turned out to be the more reliable signal after a real 2026-09-09
+# find: some records' top-level "status" was a bare numeric string
+# ("7", "12") - an ESPN-side data glitch - while fantasyStatus.
+# abbreviation was correct ("OUT", "IR") on the very same record. Full
+# vocabularies surveyed live across all teams on 2026-09-09 (preseason -
+# not exhaustive for a full season): NFL fantasyStatus abbreviations
+# seen were IR, IR-R, NFI-R, OUT, PUP-R, QUESTIONABLE, RESERVE-CEL,
+# RESERVE-SUS; NBA: GTD, OUT; NHL: IR, IR-LT, OUT.
 LEAGUE_CONFIG = {
     "nfl": {
         "sport_slug": "football", "league_slug": "nfl", "emoji": "🏈",
@@ -56,25 +70,42 @@ LEAGUE_CONFIG = {
             "out", "injured reserve", "reserve/injured", "physically unable to perform",
             "pup", "non-football injury", "reserve/suspended", "suspended",
             "reserve/pup", "out for season", "reserve/out",
+            "ir", "ir-r", "nfi-r", "pup-r", "reserve-cel", "reserve-sus",
         },
-        "not_confirmed_statuses": {"active", "questionable", "doubtful", "probable", "game-time decision"},
+        "not_confirmed_statuses": {"active", "questionable", "doubtful", "probable", "game-time decision", "gtd"},
     },
     "nba": {
         "sport_slug": "basketball", "league_slug": "nba", "emoji": "🏀",
-        "confirmed_out_statuses": {"out", "out for season", "suspended", "injured reserve"},
-        "not_confirmed_statuses": {"active", "questionable", "doubtful", "probable", "day-to-day", "day to day", "game-time decision"},
+        "confirmed_out_statuses": {"out", "out for season", "suspended", "injured reserve", "ir"},
+        "not_confirmed_statuses": {"active", "questionable", "doubtful", "probable", "day-to-day", "day to day", "game-time decision", "gtd"},
     },
     "nhl": {
         "sport_slug": "hockey", "league_slug": "nhl", "emoji": "🏒",
         "confirmed_out_statuses": {
             "out", "injured reserve", "injured non-roster", "suspension", "suspended",
             "out for season", "long term injured reserve", "ltir",
+            "ir", "ir-lt",
         },
         "not_confirmed_statuses": {"active", "questionable", "doubtful", "probable", "day-to-day", "day to day", "game-time decision"},
     },
 }
 
 _team_cache = {}  # league -> {espn_team_id: normalized_display_name}
+_abbrev_cache = {}  # league -> {lowercased_espn_abbreviation: espn_team_id}
+
+# A book's own team abbreviation doesn't always match ESPN's exact one,
+# even though both are unambiguous 2-4 letter codes for the same team -
+# found live 2026-09-09 comparing a real export's NFL/NBA codes against
+# ESPN's (see match_espn_team_id's docstring): "WAS" vs ESPN's "WSH",
+# "GSW" vs "GS", "SAS" vs "SA", "NYK" vs "NY". Kept as a small explicit
+# table (checked before the full-name fuzzy fallback) rather than a
+# fuzzier abbreviation match, since two different 2-3 letter codes can
+# collide by coincidence in a way two full club names rarely do.
+ABBREVIATION_ALIASES = {
+    "nfl": {"was": "wsh"},
+    "nba": {"gsw": "gs", "sas": "sa", "nyk": "ny", "nop": "no", "uta": "utah"},
+    "nhl": {"njd": "nj", "tbl": "tb", "sjs": "sj", "lak": "la", "uta": "utah"},
+}
 
 
 def _get(url):
@@ -89,12 +120,22 @@ def _teams_for_league(league):
         data = _get(f"{SITE_BASE}/{cfg['sport_slug']}/{cfg['league_slug']}/teams")
         teams = data["sports"][0]["leagues"][0]["teams"]
         _team_cache[league] = {t["team"]["id"]: normalize_name(t["team"]["displayName"]) for t in teams}
+        _abbrev_cache[league] = {
+            t["team"]["abbreviation"].lower(): t["team"]["id"]
+            for t in teams if t["team"].get("abbreviation")
+        }
     return _team_cache[league]
 
 
 def match_espn_team_id(league, team_name):
-    """Same tolerant matching as espn_soccer.match_espn_team_id - a
-    book's team name rarely matches ESPN's display name exactly."""
+    """Best-effort ESPN team id for a book's team value, which might be a
+    short code ("KC") or a full name ("Kansas City Chiefs") - checked in
+    that order:
+    1. Exact match against ESPN's own abbreviation for this league (via
+       ABBREVIATION_ALIASES for the handful of known mismatches).
+    2. Same tolerant full-name matching as espn_soccer.match_espn_team_id
+       (substring/word-overlap) - a book's full name rarely matches
+       ESPN's display name exactly either."""
     cfg = LEAGUE_CONFIG.get(league)
     if not cfg:
         return None
@@ -103,6 +144,13 @@ def match_espn_team_id(league, team_name):
     except Exception as e:
         logger.warning(f"ESPN {league} teams fetch failed: {e}")
         return None
+
+    abbrev_norm = (team_name or "").strip().lower()
+    abbrev_norm = ABBREVIATION_ALIASES.get(league, {}).get(abbrev_norm, abbrev_norm)
+    abbrev_id = _abbrev_cache.get(league, {}).get(abbrev_norm)
+    if abbrev_id:
+        return abbrev_id
+
     norm_full = normalize_name(team_name)
     for tid, tnorm in teams.items():
         if tnorm and (tnorm in norm_full or norm_full in tnorm):
@@ -155,17 +203,27 @@ def fetch_team_injuries(league, team_id):
         date = d.get("date") or ""
         existing = latest_by_athlete.get(athlete_id)
         if existing is None or date > existing["date"]:
+            # details.fantasyStatus.abbreviation is checked FIRST for the
+            # confirmed-out decision, ahead of the free-text top-level
+            # "status" - found live 2026-09-09 that "status" is sometimes
+            # a bare numeric string ("7", "12", an ESPN-side glitch) on
+            # the exact same record where fantasyStatus.abbreviation
+            # correctly says "OUT"/"IR". "status" is kept as the human-
+            # readable value shown in Discord either way.
+            fantasy_abbrev = ((d.get("details") or {}).get("fantasyStatus") or {}).get("abbreviation") or ""
             latest_by_athlete[athlete_id] = {
                 "athlete_ref": athlete_ref, "date": date, "status": d.get("status") or "",
+                "fantasy_status": fantasy_abbrev,
                 "return_date": (d.get("details") or {}).get("returnDate"),
             }
 
     results = []
     for info in latest_by_athlete.values():
-        status_norm = info["status"].strip().lower()
-        if status_norm not in cfg["confirmed_out_statuses"]:
-            if status_norm and status_norm not in cfg["not_confirmed_statuses"]:
-                logger.info(f"ESPN {league}: unrecognized injury status {info['status']!r} - not treated as confirmed-out")
+        decision_key = (info["fantasy_status"] or info["status"]).strip().lower()
+        if decision_key not in cfg["confirmed_out_statuses"]:
+            if decision_key and decision_key not in cfg["not_confirmed_statuses"]:
+                logger.info(f"ESPN {league}: unrecognized injury status {decision_key!r} "
+                            f"(status={info['status']!r}, fantasyStatus={info['fantasy_status']!r}) - not treated as confirmed-out")
             continue
         try:
             athlete = _get(info["athlete_ref"])
@@ -175,9 +233,15 @@ def fetch_team_injuries(league, team_id):
         name = athlete.get("displayName") or athlete.get("fullName")
         if not name:
             continue
+        # Prefer the free-text status for display ("Injured Reserve" reads
+        # better than "IR") UNLESS it's the numeric-glitch case (see
+        # module docstring) - a bare digit string is worse for a human
+        # reading the Discord card than the fantasyStatus abbreviation.
+        display_status = info["fantasy_status"] if info["status"].strip().isdigit() else (info["status"] or info["fantasy_status"])
         results.append({
             "name": name, "normalized_name": normalize_name(name),
-            "status": info["status"], "since": (info["date"][:10] if info["date"] else None),
+            "status": display_status,
+            "since": (info["date"][:10] if info["date"] else None),
             "expected_return_date": info["return_date"],
         })
     return results
