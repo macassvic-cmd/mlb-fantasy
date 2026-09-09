@@ -215,5 +215,121 @@ class TestToSoccerBoard(unittest.TestCase):
         self.assertEqual(sorted(player_entry["markets"]), ["SHOTS"])
 
 
+class TestSkipInvalid(unittest.TestCase):
+    def test_default_still_raises_on_bad_record(self):
+        with self.assertRaises(ValueError):
+            load_prop_records(
+                [{"player_name": "A", "team": "", "market": "HITS", "line": 1.5, "event_date": "2026-09-10"}],
+                sport_hint="mlb",
+            )
+
+    def test_skip_invalid_returns_tuple_and_keeps_good_records(self):
+        result = load_prop_records(
+            [
+                {"player_name": "A", "team": "NYY", "market": "HITS", "line": 1.5, "event_date": "2026-09-10"},
+                {"player_name": "B", "team": "", "market": "HITS", "line": 1.5, "event_date": "2026-09-10"},
+            ],
+            sport_hint="mlb", skip_invalid=True,
+        )
+        records, skipped = result
+        self.assertEqual(len(records), 1)
+        self.assertEqual(records[0].player_name, "A")
+        self.assertEqual(len(skipped), 1)
+        self.assertEqual(skipped[0]["index"], 1)
+        self.assertIn("team", skipped[0]["error"])
+
+    def test_skip_invalid_with_no_bad_records_returns_empty_skipped_list(self):
+        records, skipped = load_prop_records(
+            [{"player_name": "A", "team": "NYY", "market": "HITS", "line": 1.5, "event_date": "2026-09-10"}],
+            sport_hint="mlb", skip_invalid=True,
+        )
+        self.assertEqual(len(records), 1)
+        self.assertEqual(skipped, [])
+
+
+class TestRealWorldBookQuirks(unittest.TestCase):
+    """Regression tests from a real mixed-sport export that initially
+    failed to load - see board_loader.py's SPORT_VALUE_ALIASES/
+    LEAGUE_VALUE_ALIASES/_resolve_soccer_team_name() docstrings."""
+
+    def test_start_time_utc_alias(self):
+        records = load_prop_records([
+            {"player_name": "Aaron Judge", "team": "NYY", "stat": "hits", "line": 1.5,
+             "start_time_utc": "2026-09-10T23:05:00.000Z", "sport": "Baseball"},
+        ])
+        self.assertEqual(records[0].event_date, "2026-09-10T23:05:00.000Z")
+
+    def test_sport_value_aliases_baseball_and_football(self):
+        records = load_prop_records([
+            {"player_name": "A", "team": "NYY", "stat": "hits", "line": 1.5,
+             "start_time_utc": "2026-09-10", "sport": "Baseball"},
+            {"player_name": "B", "team": "BOU", "stat": "shots", "line": 1.5,
+             "start_time_utc": "2026-09-12", "sport": "Football"},
+        ])
+        self.assertEqual(records[0].sport, "mlb")
+        self.assertEqual(records[1].sport, "soccer")
+
+    def test_unmapped_sport_passes_through_lowercased_not_rejected(self):
+        records = load_prop_records([
+            {"player_name": "C", "team": "Rut", "stat": "anytime-touchdown", "line": 0.5,
+             "start_time_utc": "2026-09-11", "sport": "American Football"},
+        ])
+        self.assertEqual(records[0].sport, "american football")
+
+    def test_league_value_alias_from_full_competition_name(self):
+        records = load_prop_records([
+            {"player_name": "B", "team": "BOU", "opponent": "Brentford",
+             "competition": "England - Premier League", "stat": "shots", "line": 1.5,
+             "start_time_utc": "2026-09-12", "sport": "Football"},
+        ])
+        self.assertEqual(records[0].league, "EPL")
+
+    def test_unmapped_league_kept_as_uppercased_string(self):
+        records = load_prop_records([
+            {"player_name": "B", "team": "BOU", "opponent": "Brentford",
+             "competition": "UEFA - Champions League", "stat": "shots", "line": 1.5,
+             "start_time_utc": "2026-09-12", "sport": "Football"},
+        ])
+        self.assertEqual(records[0].league, "UEFA - CHAMPIONS LEAGUE")
+
+    def test_matchup_resolves_short_code_to_full_team_and_opponent(self):
+        records = load_prop_records([
+            {"player_name": "Adam Smith", "team": "BOU", "game": "Brentford @ AFC Bournemouth",
+             "stat": "assists", "line": 0.5, "start_time_utc": "2026-09-12", "sport": "Football"},
+        ])
+        r = records[0]
+        self.assertEqual(r.team, "AFC Bournemouth")
+        self.assertEqual(r.opponent, "Brentford")
+
+    def test_matchup_ignored_when_opponent_already_given(self):
+        records = load_prop_records([
+            {"player_name": "Adam Smith", "team": "BOU", "opponent": "Explicit Opponent",
+             "game": "Brentford @ AFC Bournemouth", "stat": "assists", "line": 0.5,
+             "start_time_utc": "2026-09-12", "sport": "Football"},
+        ])
+        self.assertEqual(records[0].team, "BOU")
+        self.assertEqual(records[0].opponent, "Explicit Opponent")
+
+    def test_matchup_not_applied_for_mlb(self):
+        # Short codes are already what MLB downstream code expects - don't
+        # touch team/opponent there even if a "game" field is present.
+        records = load_prop_records([
+            {"player_name": "Aaron Judge", "team": "NYY", "game": "Colorado Rockies @ New York Yankees",
+             "stat": "hits", "line": 1.5, "start_time_utc": "2026-09-08", "sport": "Baseball"},
+        ])
+        self.assertEqual(records[0].team, "NYY")
+        self.assertIsNone(records[0].opponent)
+
+    def test_matchup_ambiguous_leaves_team_unchanged(self):
+        # Neither side's normalized name contains the short code -
+        # must not guess.
+        records = load_prop_records([
+            {"player_name": "X", "team": "ZZZ", "game": "Brentford @ AFC Bournemouth",
+             "stat": "shots", "line": 1.5, "start_time_utc": "2026-09-12", "sport": "Football"},
+        ])
+        self.assertEqual(records[0].team, "ZZZ")
+        self.assertIsNone(records[0].opponent)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

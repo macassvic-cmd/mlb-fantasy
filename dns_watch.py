@@ -16,7 +16,12 @@ or silently dropping it.
 Book-agnostic by construction: nothing here or in board_loader.py knows
 or cares which book the JSON came from - Betr, Dabble, a spreadsheet
 export, anything - as long as the 5 required fields are present (see
-board_loader.py's schema docs).
+board_loader.py's schema docs). Both process_file() and
+process_mixed_file() load with skip_invalid=True - an individual
+malformed record (missing field, empty string where a real value was
+expected) is skipped and reported in the run summary rather than
+aborting the whole file, since a large automated export inevitably has
+a few bad rows and one shouldn't cost every other valid record in it.
 
 MIXED-SPORT FILES: if your export bundles every sport into one file
 instead of one file per sport, drop it directly in
@@ -75,23 +80,30 @@ def _ensure_dirs():
 def process_file(path, sport):
     from board_loader import load_prop_records, to_mlb_betr_entries, to_soccer_board
 
-    records = load_prop_records(path, sport_hint=sport)
+    # skip_invalid=True: a large automated export can have a handful of
+    # genuinely bad rows (see load_prop_records' own docstring) - one bad
+    # row shouldn't sink every other valid record in the file. Skipped
+    # rows are still reported (skipped_invalid_records below), not lost.
+    records, skipped = load_prop_records(path, sport_hint=sport, skip_invalid=True)
 
     if sport == "mlb":
         import stale_lines as sl
         entries = to_mlb_betr_entries(records)
         if not entries:
             raise ValueError(f"No 'mlb' records found in {path} (sport_hint was {sport!r}).")
-        return sl.run_poll(betr_entries=entries)
-
-    if sport == "soccer":
+        summary = sl.run_poll(betr_entries=entries)
+    elif sport == "soccer":
         import soccer_dns as sd
         board = to_soccer_board(records)
         if not board:
             raise ValueError(f"No 'soccer' records found in {path} (sport_hint was {sport!r}).")
-        return sd.run_scan(board=board)
+        summary = sd.run_scan(board=board)
+    else:
+        raise ValueError(f"Unknown sport {sport!r} - expected one of {SPORTS}.")
 
-    raise ValueError(f"Unknown sport {sport!r} - expected one of {SPORTS}.")
+    if skipped:
+        summary = {"skipped_invalid_records": {"count": len(skipped), "examples": skipped[:5]}, **summary}
+    return summary
 
 
 def process_mixed_file(path):
@@ -104,7 +116,7 @@ def process_mixed_file(path):
     only raises if NOTHING recognizable was found at all."""
     from board_loader import load_prop_records, to_mlb_betr_entries, to_soccer_board
 
-    records = load_prop_records(path, sport_hint=None)
+    records, skipped = load_prop_records(path, sport_hint=None, skip_invalid=True)
 
     by_sport = {}
     for r in records:
@@ -112,6 +124,8 @@ def process_mixed_file(path):
 
     unsupported = {s: len(rs) for s, rs in by_sport.items() if s not in SPORTS}
     summary = {"skipped_unsupported_sports": unsupported}
+    if skipped:
+        summary["skipped_invalid_records"] = {"count": len(skipped), "examples": skipped[:5]}
 
     mlb_records = by_sport.get("mlb", [])
     if mlb_records:
