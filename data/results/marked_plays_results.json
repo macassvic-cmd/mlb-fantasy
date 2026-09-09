@@ -3061,20 +3061,62 @@
           "rate_before": 64.3
         }
       ]
+    },
+    "2026-09-08": {
+      "fire": [
+        {
+          "player_id": 670541,
+          "name": "Yordan Alvarez",
+          "team": "Houston Astros",
+          "grade": "loss",
+          "n_before": 20,
+          "wins_before": 12,
+          "rate_before": 60.0
+        }
+      ],
+      "hot": [
+        {
+          "player_id": 700250,
+          "name": "Ben Rice",
+          "team": "New York Yankees",
+          "grade": "loss",
+          "n_before": 10,
+          "wins_before": 6,
+          "rate_before": 60.0
+        },
+        {
+          "player_id": 666018,
+          "name": "Jonathan Aranda",
+          "team": "Tampa Bay Rays",
+          "grade": "loss",
+          "n_before": 13,
+          "wins_before": 8,
+          "rate_before": 61.5
+        },
+        {
+          "player_id": 668930,
+          "name": "Brice Turang",
+          "team": "Milwaukee Brewers",
+          "grade": "win",
+          "n_before": 12,
+          "wins_before": 7,
+          "rate_before": 58.3
+        }
+      ]
     }
   },
   "cohorts": {
     "fire": {
       "wins": 65,
-      "losses": 62,
-      "n": 127,
-      "rate": 51.2
+      "losses": 63,
+      "n": 128,
+      "rate": 50.8
     },
     "hot": {
-      "wins": 90,
-      "losses": 75,
-      "n": 165,
-      "rate": 54.5
+      "wins": 91,
+      "losses": 77,
+      "n": 168,
+      "rate": 54.2
     }
   }
 }
