@@ -22,8 +22,8 @@ class TestProcessMixedFile(unittest.TestCase):
              "event_date": "2026-09-10", "sport": "mlb"},
             {"player_name": "B", "team": "Arsenal", "opponent": "Chelsea", "market": "SHOTS",
              "line": 1.5, "event_date": "2026-09-14", "sport": "soccer"},
-            {"player_name": "C", "team": "LAL", "market": "POINTS", "line": 20.5,
-             "event_date": "2026-09-10", "sport": "nba"},
+            {"player_name": "C", "team": "Mumbai Indians", "market": "RUNS", "line": 20.5,
+             "event_date": "2026-09-10", "sport": "cricket"},
         ]}
         fd, path = tempfile.mkstemp(suffix=".json")
         os.close(fd)
@@ -34,9 +34,26 @@ class TestProcessMixedFile(unittest.TestCase):
                 summary = process_mixed_file(path)
             self.assertEqual(summary["mlb"], "mlb-ok")
             self.assertEqual(summary["soccer"], "soccer-ok")
-            self.assertEqual(summary["skipped_unsupported_sports"], {"nba": 1})
+            self.assertEqual(summary["skipped_unsupported_sports"], {"cricket": 1})
             mock_mlb.assert_called_once()
             mock_soccer.assert_called_once()
+        finally:
+            os.remove(path)
+
+    def test_pro_league_routed_to_pro_league_dns(self):
+        data = {"props": [
+            {"player_name": "A", "team": "Kansas City Chiefs", "market": "PASSING_YARDS",
+             "line": 250.5, "event_date": "2026-09-10", "sport": "nfl"},
+        ]}
+        fd, path = tempfile.mkstemp(suffix=".json")
+        os.close(fd)
+        try:
+            _write_json(path, data)
+            with patch("pro_league_dns.run_scan", return_value="nfl-ok") as mock_nfl:
+                summary = process_mixed_file(path)
+            self.assertEqual(summary["nfl"], "nfl-ok")
+            mock_nfl.assert_called_once()
+            self.assertEqual(mock_nfl.call_args.kwargs.get("league"), "nfl")
         finally:
             os.remove(path)
 
@@ -60,8 +77,8 @@ class TestProcessMixedFile(unittest.TestCase):
 
     def test_raises_when_nothing_recognized(self):
         data = {"props": [
-            {"player_name": "C", "team": "LAL", "market": "POINTS", "line": 20.5,
-             "event_date": "2026-09-10", "sport": "nba"},
+            {"player_name": "C", "team": "Mumbai Indians", "market": "RUNS", "line": 20.5,
+             "event_date": "2026-09-10", "sport": "cricket"},
         ]}
         fd, path = tempfile.mkstemp(suffix=".json")
         os.close(fd)
@@ -69,7 +86,7 @@ class TestProcessMixedFile(unittest.TestCase):
             _write_json(path, data)
             with self.assertRaises(ValueError) as ctx:
                 process_mixed_file(path)
-            self.assertIn("nba", str(ctx.exception))
+            self.assertIn("cricket", str(ctx.exception))
         finally:
             os.remove(path)
 

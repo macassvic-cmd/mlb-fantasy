@@ -2,7 +2,7 @@
 
 import unittest
 
-from board_loader import load_prop_records, to_mlb_betr_entries, to_soccer_board
+from board_loader import load_prop_records, to_mlb_betr_entries, to_pro_league_entries, to_soccer_board
 
 
 class TestFieldAliasing(unittest.TestCase):
@@ -377,6 +377,70 @@ class TestRealWorldBookQuirks(unittest.TestCase):
         ])
         self.assertEqual(records[0].team, "ZZZ")
         self.assertIsNone(records[0].opponent)
+
+
+class TestProLeagueSupport(unittest.TestCase):
+    """nfl/nba/nhl support added 2026-09-09 - see board_loader.py's
+    SPORT_VALUE_ALIASES comment and pro_league_dns.py."""
+
+    def test_nba_sport_value_alias(self):
+        records = load_prop_records([
+            {"player_name": "A", "team": "Boston Celtics", "market": "points",
+             "line": 20.5, "event_date": "2026-10-01", "sport": "Basketball"},
+        ])
+        self.assertEqual(records[0].sport, "nba")
+
+    def test_nhl_sport_value_alias(self):
+        records = load_prop_records([
+            {"player_name": "A", "team": "Boston Bruins", "market": "shots",
+             "line": 2.5, "event_date": "2026-10-01", "sport": "Ice Hockey"},
+        ])
+        self.assertEqual(records[0].sport, "nhl")
+
+    def test_american_football_with_nfl_competition_promoted_to_nfl(self):
+        records = load_prop_records([
+            {"player_name": "A", "team": "Kansas City Chiefs", "competition": "NFL",
+             "market": "passing_yards", "line": 250.5, "event_date": "2026-09-10",
+             "sport": "American Football"},
+        ])
+        self.assertEqual(records[0].sport, "nfl")
+
+    def test_american_football_with_cfb_competition_stays_unsupported(self):
+        records = load_prop_records([
+            {"player_name": "A", "team": "Rutgers", "competition": "CFB",
+             "market": "passing_yards", "line": 250.5, "event_date": "2026-09-10",
+             "sport": "American Football"},
+        ])
+        self.assertEqual(records[0].sport, "american football")
+
+    def test_american_football_with_no_competition_stays_unsupported(self):
+        records = load_prop_records([
+            {"player_name": "A", "team": "Kansas City Chiefs",
+             "market": "passing_yards", "line": 250.5, "event_date": "2026-09-10",
+             "sport": "American Football"},
+        ])
+        self.assertEqual(records[0].sport, "american football")
+
+    def test_to_pro_league_entries_shape_and_filtering(self):
+        records = load_prop_records([
+            {"player_name": "A", "team": "Kansas City Chiefs", "competition": "NFL",
+             "market": "passing_yards", "line": 250.5, "event_date": "2026-09-10T20:00:00Z",
+             "sport": "American Football"},
+            {"player_name": "A", "team": "Kansas City Chiefs", "competition": "NFL",
+             "market": "passing_tds", "line": 1.5, "event_date": "2026-09-10T20:00:00Z",
+             "sport": "American Football"},
+            {"player_name": "B", "team": "Boston Celtics", "market": "points",
+             "line": 20.5, "event_date": "2026-10-01", "sport": "Basketball"},
+        ])
+        nfl_entries = to_pro_league_entries(records, "nfl")
+        self.assertEqual(len(nfl_entries), 1)  # merged - same player, two markets
+        e = nfl_entries[0]
+        self.assertEqual(set(e.keys()), {"name", "normalized_name", "team", "event_date_utc", "markets"})
+        self.assertEqual(e["markets"], {"PASSING_YARDS": 250.5, "PASSING_TDS": 1.5})
+
+        nba_entries = to_pro_league_entries(records, "nba")
+        self.assertEqual(len(nba_entries), 1)
+        self.assertEqual(nba_entries[0]["name"], "B")
 
 
 if __name__ == "__main__":

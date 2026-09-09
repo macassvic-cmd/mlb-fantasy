@@ -125,11 +125,25 @@ REQUIRED_FIELDS = ["player_name", "team", "market", "line", "event_date"]
 # through lowercased, which to_mlb_betr_entries()/to_soccer_board() and
 # dns_watch.py's process_mixed_file() all already treat as "not ours" -
 # reported/skipped, never an error.
+# "football" alone always means soccer (association football) - the ONE
+# sport value that's genuinely ambiguous is "american football", since a
+# real export was found (2026-09-08) to bucket BOTH college (CFB) and,
+# presumably, NFL games under that same literal sport string. CFB has no
+# reliable injury-report data source (checked live 2026-09-08 via ESPN -
+# came back empty; college programs aren't required to disclose the way
+# pro leagues are), so "american football" is deliberately NOT mapped
+# here - see the competition-based disambiguation in _normalize_record,
+# which promotes it to "nfl" only when the competition/league value
+# itself says so, and otherwise leaves it as "american football" (skipped/
+# reported as unsupported, same as today).
 SPORT_VALUE_ALIASES = {
     "mlb": {"mlb", "baseball"},
     "soccer": {"soccer", "football", "association football", "futbol"},
+    "nba": {"nba", "basketball"},
+    "nhl": {"nhl", "ice hockey", "hockey"},
 }
 _SPORT_VALUE_TO_CANONICAL = {alias: canon for canon, aliases in SPORT_VALUE_ALIASES.items() for alias in aliases}
+_NFL_COMPETITION_ALIASES = {"nfl", "national football league"}
 
 # Same idea for a soccer record's "league"/"competition" value, mapped to
 # the exact codes soccer_dns.LEAGUES / scrapers.espn_soccer.LEAGUE_SLUGS
@@ -222,6 +236,15 @@ def _normalize_record(record, sport_hint, source_file, index):
                           f"to the record/file, or drop it in a sport-named sub-folder.")
     sport_norm = str(sport_raw).strip().lower()
     sport = _SPORT_VALUE_TO_CANONICAL.get(sport_norm, sport_norm)
+    if sport == "american football":
+        # Ambiguous on the sport value alone (see SPORT_VALUE_ALIASES'
+        # comment) - only promote to the supported "nfl" when the
+        # competition/league value itself says so; otherwise leave as
+        # "american football" (skipped/reported as unsupported, since
+        # college football has no reliable injury-report data source).
+        competition_raw = _find_field(record, "league")
+        if competition_raw and str(competition_raw).strip().lower() in _NFL_COMPETITION_ALIASES:
+            sport = "nfl"
 
     raw_line = _find_field(record, "line")
     try:
@@ -354,29 +377,40 @@ PITCHER_ONLY_MARKETS = {
 }
 
 
-def to_mlb_betr_entries(records, report_skipped=False):
-    """[{name, normalized_name, team, event_date_utc, markets: {stat_key: line}}]
-    - matches scrapers.betr.fetch_betr_hitter_lines_with_context()'s
-    exact return shape (one entry per player, markets merged across
-    that player's multiple prop records in the file). Pitchers are
-    excluded - see PITCHER_POSITIONS/PITCHER_ONLY_MARKETS above.
-
-    report_skipped=True returns (entries, skipped_pitchers) instead of a
-    bare list - skipped_pitchers is [{"name":, "normalized_name":,
-    "reason":}, ...] so a caller can surface what got excluded rather
-    than losing it silently, same pattern as load_prop_records'
-    skip_invalid."""
+def _group_by_player(records, sport):
+    """{normalized_name: {name, normalized_name, team, event_date_utc,
+    markets: {stat_key: line}}} - one entry per player, markets merged
+    across that player's multiple prop records in the file. Shared by
+    to_mlb_betr_entries() and to_pro_league_entries()."""
     by_name = {}
-    positions_seen = {}
-    pitcher_market_hit = set()
     for r in records:
-        if r.sport != "mlb":
+        if r.sport != sport:
             continue
         entry = by_name.setdefault(r.normalized_name, {
             "name": r.player_name, "normalized_name": r.normalized_name,
             "team": r.team, "event_date_utc": r.event_date, "markets": {},
         })
         entry["markets"][r.market] = r.line
+    return by_name
+
+
+def to_mlb_betr_entries(records, report_skipped=False):
+    """[{name, normalized_name, team, event_date_utc, markets: {stat_key: line}}]
+    - matches scrapers.betr.fetch_betr_hitter_lines_with_context()'s
+    exact return shape. Pitchers are excluded - see
+    PITCHER_POSITIONS/PITCHER_ONLY_MARKETS above.
+
+    report_skipped=True returns (entries, skipped_pitchers) instead of a
+    bare list - skipped_pitchers is [{"name":, "normalized_name":,
+    "reason":}, ...] so a caller can surface what got excluded rather
+    than losing it silently, same pattern as load_prop_records'
+    skip_invalid."""
+    by_name = _group_by_player(records, "mlb")
+    positions_seen = {}
+    pitcher_market_hit = set()
+    for r in records:
+        if r.sport != "mlb":
+            continue
         if r.position:
             positions_seen.setdefault(r.normalized_name, set()).add(r.position)
         if r.market in PITCHER_ONLY_MARKETS:
@@ -397,6 +431,14 @@ def to_mlb_betr_entries(records, report_skipped=False):
         for name in pitchers
     ]
     return entries, skipped
+
+
+def to_pro_league_entries(records, league):
+    """[{name, normalized_name, team, event_date_utc, markets: {stat_key: line}}]
+    for "nfl"|"nba"|"nhl" - same flat shape as to_mlb_betr_entries()
+    (pro_league_dns.py's detection is a per-player team-injury-report
+    check, no fixture/lineup grouping needed the way soccer's is)."""
+    return list(_group_by_player(records, league).values())
 
 
 def to_soccer_board(records):

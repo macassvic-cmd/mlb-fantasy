@@ -1,12 +1,26 @@
 # JSON-driven DNS detector (book-agnostic)
 
-Betr's API is now locked behind real HTTP Basic Auth, so both DNS detectors
-(MLB "not in lineup," soccer injury) no longer pull a board themselves.
-Instead you supply the board as a JSON file. Nothing about the detection
-logic changed — same MLB Stats API lineup checks, same Transfermarkt injury
-scraping/name matching, same return-date-vs-fixture filter, same Discord
-cards + digest. Only the input source changed, so this works for Betr,
+Betr's API is now locked behind real HTTP Basic Auth, so none of the DNS
+detectors pull a board themselves. Instead you supply the board as a JSON
+file. **Supported sports: MLB, soccer, NFL, NBA, NHL.** Nothing about the
+MLB/soccer detection logic changed — same MLB Stats API lineup checks, same
+Transfermarkt injury scraping/name matching, same return-date-vs-fixture
+filter, same Discord cards + digest. NFL/NBA/NHL (added 2026-09-09) use the
+same return-date-vs-fixture filter against ESPN's injury reports instead —
+see `pro_league_dns.py`'s module docstring for the one difference: they
+don't have result grading (win/loss tracking) yet, only detection/alerting.
+Only the input source changed for MLB/soccer, so this works for Betr,
 Dabble, or any other book — anything you can export a board from.
+
+**Not supported, checked and ruled out:** college football (CFB) — no
+reliable injury-report data source exists (checked live via ESPN; college
+programs aren't required to disclose the way pro leagues are). A record
+whose `sport` is `"American Football"` only gets treated as NFL if its
+`competition`/`league` value says `"NFL"` — otherwise it's assumed to be
+CFB and left unsupported (skipped, not errored).
+
+**Not supported, not yet researched:** cricket, rugby league, tennis,
+esports.
 
 ## 1. Schema
 
@@ -21,10 +35,10 @@ A file is either a bare array of prop records, or an object:
 level or inferred from the folder), `league` (soccer only — enables result
 grading; without it, detection/alerting/digest still work fine)
 
-`sport` is `"mlb"` or `"soccer"` — or a value that maps to one of those (see
-below). It can be set once at the file level, per record (overrides the
-file level), or left off entirely if the file is dropped in the `mlb/` or
-`soccer/` sub-folder of the watched directory.
+`sport` is `"mlb"`, `"soccer"`, `"nfl"`, `"nba"`, or `"nhl"` — or a value that
+maps to one of those (see below). It can be set once at the file level, per
+record (overrides the file level), or left off entirely if the file is
+dropped in that sport's own sub-folder of the watched directory.
 
 `event_date` should be ISO8601, ideally UTC (`"2026-09-10T23:05:00Z"`).
 
@@ -49,9 +63,12 @@ books' native export field names will just work:
 
 `sport` and `league` VALUES are also mapped, not just matched literally:
 - `sport: "Baseball"` → `mlb`, `sport: "Football"` (association football) →
-  `soccer`. Anything else (`"American Football"`, `"Cricket"`, `"Tennis"`,
-  ...) passes through lowercased and is cleanly skipped/reported rather
-  than erroring — see the mixed-file section below.
+  `soccer`, `sport: "Basketball"` → `nba`, `sport: "Ice Hockey"` → `nhl`.
+  `sport: "American Football"` → `nfl` ONLY if `competition`/`league` is
+  `"NFL"` (see above) — otherwise it stays `"american football"`. Anything
+  else (`"Cricket"`, `"Tennis"`, `"Rugby League"`, `"Esports"`, ...) passes
+  through lowercased and is cleanly skipped/reported rather than erroring —
+  see the mixed-file section below.
 - `league`/`competition: "England - Premier League"` → `EPL`, and similarly
   for LaLiga (`LLG`), Ligue 1 (`L1F`), Bundesliga (`BUN`), Serie A (`SEA`),
   MLS. An unrecognized competition (e.g. `"UEFA - Champions League"`) is
@@ -93,37 +110,35 @@ row with an empty `"team"` shouldn't cost every other valid record in a
 
 ### Examples
 
-`data/dns_watch/examples/mlb_example.json` and
-`data/dns_watch/examples/soccer_example.json` are working samples — copy one,
-swap in real data, drop it in the matching `incoming/` sub-folder.
+`data/dns_watch/examples/mlb_example.json`, `soccer_example.json`,
+`nfl_example.json`, and `mixed_example.json` are working samples — copy
+one, swap in real data, drop it in the matching `incoming/` sub-folder.
 
 ## 2. Watched folder
 
 ```
 data/dns_watch/
-  incoming/mlb/      <- drop single-sport MLB JSON files here
-  incoming/soccer/   <- drop single-sport soccer JSON files here
-  incoming/          <- drop MIXED-sport JSON files directly here (root, not a sub-folder)
-  processed/{mlb,soccer,mixed}/   <- moved here after a successful run
-  failed/{mlb,soccer,mixed}/      <- moved here on error, with a sibling .error.txt
+  incoming/mlb/, soccer/, nfl/, nba/, nhl/   <- drop single-sport JSON files here
+  incoming/                                  <- drop MIXED-sport JSON files directly here (root, not a sub-folder)
+  processed/{mlb,soccer,nfl,nba,nhl,mixed}/  <- moved here after a successful run
+  failed/{mlb,soccer,nfl,nba,nhl,mixed}/     <- moved here on error, with a sibling .error.txt
 ```
 
 **Mixed-sport files** (one export covering every sport, not split per
 book): drop it in `incoming/` itself, not a sub-folder. Every record must
-carry its own `"sport"` field (or alias `"league_sport"`) - `"mlb"` or
-`"soccer"` - since there's no folder name to default to. The file is split
-by that field: `mlb` records go through `stale_lines.run_poll()`, `soccer`
-records go through `soccer_dns.run_scan()`, each exactly as if it had been
-the whole file, and any record whose `sport` isn't one of those two is
-skipped (reported in the run summary, not treated as an error) - so a
-bundled export that also includes sports this project doesn't cover yet
-(NBA, NFL, whatever) won't fail the whole file. `league` (EPL, MLS, etc.)
-is unrelated to routing - it's an optional, soccer-only field used later
-for result grading.
+carry its own `"sport"` field (or alias `"league_sport"`) - since there's
+no folder name to default to. The file is split by that field and each
+supported sport's subset runs through its own detector exactly as if it
+had been the whole file; any record whose `sport` isn't one of the
+supported ones is skipped (reported in the run summary as
+`skipped_unsupported_sports`, not treated as an error) - so a bundled
+export that also includes CFB, cricket, or anything else won't fail the
+whole file. `league` (EPL, MLS, etc.) is unrelated to routing - it's an
+optional field used later for result grading (soccer only, for now).
 
-If you already know a file is single-sport, still use the `mlb/` /
-`soccer/` sub-folders - `sport` can then be omitted per-record and inferred
-from the folder.
+If you already know a file is single-sport, still use that sport's own
+sub-folder - `sport` can then be omitted per-record and inferred from the
+folder.
 
 Run it:
 
@@ -139,16 +154,37 @@ and are comfortable stopping it yourself when done.
 
 ## 3. Output
 
-Unchanged: individual Discord flag cards as records are matched against
-lineups/injuries, plus the same compiled digest — same channels, same
-formatting.
+MLB/soccer: unchanged — individual Discord flag cards as records are
+matched against lineups/injuries, plus the same compiled digest, same
+channels/formatting. NFL/NBA/NHL: same card + digest shape, but flags never
+resolve to a win/loss grade yet (see below) — they'll show as active
+indefinitely until grading is built.
 
 ## 4. Reused, unmodified logic
 
 - `scrapers/mlb_api.py` — lineups, first-pitch timing
 - `scrapers/transfermarkt.py` — injury/suspension scraping, expected-return dates
+- `scrapers/espn_soccer.py` / `scrapers/espn_pro_leagues.py` — team resolution,
+  and (NFL/NBA/NHL) ESPN's injury-report data
 - Name normalization/matching (`scrapers/betr.normalize_name`)
 - `stale_lines.py` / `soccer_dns.py` core detection, classification, Discord
   posting — each only gained one optional parameter (`betr_entries=`,
   `board=`) so a pre-loaded board can be passed straight in instead of being
   fetched live.
+
+## 5. NFL/NBA/NHL — what's different from MLB/soccer
+
+- **Detection source**: ESPN's injury-report endpoint instead of a lineup
+  post (MLB) or Transfermarkt (soccer). That endpoint is a running log of
+  status changes, not a current-status list — the loader already dedupes
+  to each player's most recent entry before checking it, so a player who
+  was hurt a month ago but is active now won't get flagged.
+- **No grading yet.** MLB/soccer flags eventually resolve to a win/loss
+  based on what actually happened; NFL/NBA/NHL flags don't (yet) - the
+  boxscore/roster data needed to check that hadn't had a real completed
+  game to verify the response shape against as of this build. They still
+  alert and digest correctly, they just stay "active" forever in state.
+- **Status vocabulary is a best guess.** The confirmed-out status lists
+  (`Out`, `Injured Reserve`, etc. per league) were built from a small
+  preseason sample, not a full season — an unrecognized status is logged,
+  never guessed at, and won't cause a wrong flag either way.
