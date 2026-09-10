@@ -3103,20 +3103,80 @@
           "rate_before": 58.3
         }
       ]
+    },
+    "2026-09-09": {
+      "fire": [
+        {
+          "player_id": 701538,
+          "name": "Jackson Merrill",
+          "team": "San Diego Padres",
+          "grade": "win",
+          "n_before": 21,
+          "wins_before": 15,
+          "rate_before": 71.4
+        },
+        {
+          "player_id": 669065,
+          "name": "Kyle Stowers",
+          "team": "Miami Marlins",
+          "grade": "win",
+          "n_before": 15,
+          "wins_before": 9,
+          "rate_before": 60.0
+        },
+        {
+          "player_id": 672640,
+          "name": "Otto Lopez",
+          "team": "Miami Marlins",
+          "grade": "win",
+          "n_before": 16,
+          "wins_before": 10,
+          "rate_before": 62.5
+        },
+        {
+          "player_id": 664983,
+          "name": "Jake McCarthy",
+          "team": "Colorado Rockies",
+          "grade": "loss",
+          "n_before": 30,
+          "wins_before": 17,
+          "rate_before": 56.7
+        }
+      ],
+      "hot": [
+        {
+          "player_id": 668930,
+          "name": "Brice Turang",
+          "team": "Milwaukee Brewers",
+          "grade": "win",
+          "n_before": 13,
+          "wins_before": 8,
+          "rate_before": 61.5
+        },
+        {
+          "player_id": 605141,
+          "name": "Mookie Betts",
+          "team": "Los Angeles Dodgers",
+          "grade": "win",
+          "n_before": 9,
+          "wins_before": 5,
+          "rate_before": 55.6
+        }
+      ]
     }
   },
   "cohorts": {
     "fire": {
-      "wins": 65,
-      "losses": 63,
-      "n": 128,
-      "rate": 50.8
+      "wins": 68,
+      "losses": 64,
+      "n": 132,
+      "rate": 51.5
     },
     "hot": {
-      "wins": 91,
+      "wins": 93,
       "losses": 77,
-      "n": 168,
-      "rate": 54.2
+      "n": 170,
+      "rate": 54.7
     }
   }
 }

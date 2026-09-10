@@ -1816,28 +1816,167 @@
           "grade": "win"
         }
       ]
+    },
+    "2026-09-09": {
+      "wins": 5,
+      "losses": 7,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 695578,
+          "name": "James Wood",
+          "team": "Washington Nationals",
+          "projected_ud": 6.64,
+          "ud_line": 8.5,
+          "edge": -1.86,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 6,
+          "grade": "win"
+        },
+        {
+          "player_id": 572233,
+          "name": "Christian Walker",
+          "team": "Houston Astros",
+          "projected_ud": 3.73,
+          "ud_line": 5.5,
+          "edge": -1.77,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 665161,
+          "name": "Jeremy Pe\u00f1a",
+          "team": "Houston Astros",
+          "projected_ud": 3.75,
+          "ud_line": 5.5,
+          "edge": -1.75,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 11,
+          "grade": "loss"
+        },
+        {
+          "player_id": 671732,
+          "name": "Lawrence Butler",
+          "team": "Athletics",
+          "projected_ud": 4.76,
+          "ud_line": 6.5,
+          "edge": -1.74,
+          "game_time_pt": "12:05 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 621566,
+          "name": "Matt Olson",
+          "team": "Atlanta Braves",
+          "projected_ud": 3.81,
+          "ud_line": 5.5,
+          "edge": -1.69,
+          "game_time_pt": "4:15 PM PT",
+          "actual_ud": 5,
+          "grade": "win"
+        },
+        {
+          "player_id": 571448,
+          "name": "Nolan Arenado",
+          "team": "Arizona Diamondbacks",
+          "projected_ud": 3.83,
+          "ud_line": 5.5,
+          "edge": -1.67,
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 20,
+          "grade": "loss"
+        },
+        {
+          "player_id": 676391,
+          "name": "Ernie Clement",
+          "team": "Toronto Blue Jays",
+          "projected_ud": 3.88,
+          "ud_line": 5.5,
+          "edge": -1.62,
+          "game_time_pt": "12:05 PM PT",
+          "actual_ud": 6,
+          "grade": "loss"
+        },
+        {
+          "player_id": 545121,
+          "name": "Ildemaro Vargas",
+          "team": "Arizona Diamondbacks",
+          "projected_ud": 3.9,
+          "ud_line": 5.5,
+          "edge": -1.6,
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 9,
+          "grade": "loss"
+        },
+        {
+          "player_id": 690993,
+          "name": "Colt Keith",
+          "team": "Detroit Tigers",
+          "projected_ud": 3.96,
+          "ud_line": 5.5,
+          "edge": -1.54,
+          "game_time_pt": "10:10 AM PT",
+          "actual_ud": 16,
+          "grade": "loss"
+        },
+        {
+          "player_id": 665489,
+          "name": "Vladimir Guerrero Jr.",
+          "team": "Toronto Blue Jays",
+          "projected_ud": 5.97,
+          "ud_line": 7.5,
+          "edge": -1.53,
+          "game_time_pt": "12:05 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 694197,
+          "name": "Angel Genao",
+          "team": "Cleveland Guardians",
+          "projected_ud": 3.97,
+          "ud_line": 5.5,
+          "edge": -1.53,
+          "game_time_pt": "3:35 PM PT",
+          "actual_ud": 8,
+          "grade": "loss"
+        },
+        {
+          "player_id": 650333,
+          "name": "Luis Arraez",
+          "team": "Philadelphia Phillies",
+          "projected_ud": 3.99,
+          "ud_line": 5.5,
+          "edge": -1.51,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 16,
+          "grade": "loss"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 88,
-    "losses": 60,
+    "wins": 93,
+    "losses": 67,
     "dnp": 7
   },
   "record_by_line": {
     "5.5": {
-      "wins": 37,
-      "losses": 26
+      "wins": 39,
+      "losses": 33
     },
     "6.5": {
-      "wins": 26,
+      "wins": 27,
       "losses": 22
     },
     "8.5+": {
-      "wins": 6,
+      "wins": 7,
       "losses": 3
     },
     "7.5": {
-      "wins": 10,
+      "wins": 11,
       "losses": 6
     }
   }
