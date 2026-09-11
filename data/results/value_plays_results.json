@@ -7117,6 +7117,89 @@
           "correct": false
         }
       ]
+    },
+    "2026-09-10": {
+      "summary": {
+        "total": 7,
+        "correct": 4,
+        "accuracy": 57.1,
+        "over_total": 3,
+        "over_correct": 1,
+        "under_total": 4,
+        "under_correct": 3
+      },
+      "plays": [
+        {
+          "player_id": 803011,
+          "name": "Sam Antonacci",
+          "team": "Chicago White Sox",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "correct": false
+        },
+        {
+          "player_id": 678246,
+          "name": "Miguel Vargas",
+          "team": "Chicago White Sox",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 5.5,
+          "actual_ud": 7,
+          "correct": true
+        },
+        {
+          "player_id": 808959,
+          "name": "Munetaka Murakami",
+          "team": "Chicago White Sox",
+          "call": "over",
+          "edge": 1.68,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "correct": false
+        },
+        {
+          "player_id": 804606,
+          "name": "Konnor Griffin",
+          "team": "Pittsburgh Pirates",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "correct": true
+        },
+        {
+          "player_id": 665833,
+          "name": "Oneil Cruz",
+          "team": "Pittsburgh Pirates",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 22,
+          "correct": false
+        },
+        {
+          "player_id": 664040,
+          "name": "Brandon Lowe",
+          "team": "Pittsburgh Pirates",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "correct": true
+        },
+        {
+          "player_id": 668804,
+          "name": "Bryan Reynolds",
+          "team": "Pittsburgh Pirates",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "correct": true
+        }
+      ]
     }
   }
 }

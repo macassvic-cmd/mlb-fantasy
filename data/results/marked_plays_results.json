@@ -3163,20 +3163,62 @@
           "rate_before": 55.6
         }
       ]
+    },
+    "2026-09-10": {
+      "fire": [
+        {
+          "player_id": 607208,
+          "name": "Trea Turner",
+          "team": "Philadelphia Phillies",
+          "grade": "loss",
+          "n_before": 23,
+          "wins_before": 13,
+          "rate_before": 56.5
+        },
+        {
+          "player_id": 547180,
+          "name": "Bryce Harper",
+          "team": "Philadelphia Phillies",
+          "grade": "loss",
+          "n_before": 22,
+          "wins_before": 15,
+          "rate_before": 68.2
+        },
+        {
+          "player_id": 681082,
+          "name": "Bryson Stott",
+          "team": "Philadelphia Phillies",
+          "grade": "loss",
+          "n_before": 16,
+          "wins_before": 11,
+          "rate_before": 68.8
+        }
+      ],
+      "hot": [
+        {
+          "player_id": 650333,
+          "name": "Luis Arraez",
+          "team": "Philadelphia Phillies",
+          "grade": "loss",
+          "n_before": 12,
+          "wins_before": 10,
+          "rate_before": 83.3
+        }
+      ]
     }
   },
   "cohorts": {
     "fire": {
       "wins": 68,
-      "losses": 64,
-      "n": 132,
-      "rate": 51.5
+      "losses": 67,
+      "n": 135,
+      "rate": 50.4
     },
     "hot": {
       "wins": 93,
-      "losses": 77,
-      "n": 170,
-      "rate": 54.7
+      "losses": 78,
+      "n": 171,
+      "rate": 54.4
     }
   }
 }

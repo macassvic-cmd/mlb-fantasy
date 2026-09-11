@@ -2358,11 +2358,51 @@
           "grade": "loss"
         }
       ]
+    },
+    "2026-09-10": {
+      "wins": 2,
+      "losses": 1,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 804606,
+          "name": "Konnor Griffin",
+          "team": "Pittsburgh Pirates",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 665833,
+          "name": "Oneil Cruz",
+          "team": "Pittsburgh Pirates",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 22,
+          "grade": "loss"
+        },
+        {
+          "player_id": 664040,
+          "name": "Brandon Lowe",
+          "team": "Pittsburgh Pirates",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 95,
-    "losses": 108,
+    "wins": 97,
+    "losses": 109,
     "dnp": 4
   }
 }

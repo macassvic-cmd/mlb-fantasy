@@ -1955,17 +1955,46 @@
           "grade": "loss"
         }
       ]
+    },
+    "2026-09-10": {
+      "wins": 1,
+      "losses": 1,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 693304,
+          "name": "Nick Gonzales",
+          "team": "Pittsburgh Pirates",
+          "projected_ud": 3.53,
+          "ud_line": 5.5,
+          "edge": -1.97,
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 6,
+          "grade": "loss"
+        },
+        {
+          "player_id": 687462,
+          "name": "Spencer Horwitz",
+          "team": "Pittsburgh Pirates",
+          "projected_ud": 3.76,
+          "ud_line": 5.5,
+          "edge": -1.74,
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 93,
-    "losses": 67,
+    "wins": 94,
+    "losses": 68,
     "dnp": 7
   },
   "record_by_line": {
     "5.5": {
-      "wins": 39,
-      "losses": 33
+      "wins": 40,
+      "losses": 34
     },
     "6.5": {
       "wins": 27,
