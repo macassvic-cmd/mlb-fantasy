@@ -7200,6 +7200,99 @@
           "correct": true
         }
       ]
+    },
+    "2026-09-11": {
+      "summary": {
+        "total": 8,
+        "correct": 5,
+        "accuracy": 62.5,
+        "over_total": 4,
+        "over_correct": 3,
+        "under_total": 4,
+        "under_correct": 2
+      },
+      "plays": [
+        {
+          "player_id": 605141,
+          "name": "Mookie Betts",
+          "team": "Los Angeles Dodgers",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 5,
+          "correct": false
+        },
+        {
+          "player_id": 703607,
+          "name": "Henry Bolte",
+          "team": "Athletics",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 9,
+          "correct": true
+        },
+        {
+          "player_id": 673548,
+          "name": "Seiya Suzuki",
+          "team": "Chicago Cubs",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 22,
+          "correct": true
+        },
+        {
+          "player_id": 665833,
+          "name": "Oneil Cruz",
+          "team": "Pittsburgh Pirates",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "correct": true
+        },
+        {
+          "player_id": 805808,
+          "name": "Kevin McGonigle",
+          "team": "Detroit Tigers",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 0,
+          "correct": true
+        },
+        {
+          "player_id": 677951,
+          "name": "Bobby Witt Jr.",
+          "team": "Kansas City Royals",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 6,
+          "correct": true
+        },
+        {
+          "player_id": 665487,
+          "name": "Fernando Tatis Jr.",
+          "team": "San Diego Padres",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 11,
+          "correct": false
+        },
+        {
+          "player_id": 701538,
+          "name": "Jackson Merrill",
+          "team": "San Diego Padres",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 20,
+          "correct": false
+        }
+      ]
     }
   }
 }

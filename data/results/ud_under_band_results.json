@@ -1984,28 +1984,189 @@
           "grade": "win"
         }
       ]
+    },
+    "2026-09-11": {
+      "wins": 5,
+      "losses": 9,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 690993,
+          "name": "Colt Keith",
+          "team": "Detroit Tigers",
+          "projected_ud": 3.51,
+          "ud_line": 5.5,
+          "edge": -1.99,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 668904,
+          "name": "Royce Lewis",
+          "team": "Minnesota Twins",
+          "projected_ud": 3.57,
+          "ud_line": 5.5,
+          "edge": -1.93,
+          "game_time_pt": "5:10 PM PT",
+          "actual_ud": 8,
+          "grade": "loss"
+        },
+        {
+          "player_id": 668885,
+          "name": "Austin Martin",
+          "team": "Minnesota Twins",
+          "projected_ud": 3.66,
+          "ud_line": 5.5,
+          "edge": -1.84,
+          "game_time_pt": "5:10 PM PT",
+          "actual_ud": 8,
+          "grade": "loss"
+        },
+        {
+          "player_id": 621566,
+          "name": "Matt Olson",
+          "team": "Atlanta Braves",
+          "projected_ud": 4.67,
+          "ud_line": 6.5,
+          "edge": -1.83,
+          "game_time_pt": "4:15 PM PT",
+          "actual_ud": 17,
+          "grade": "loss"
+        },
+        {
+          "player_id": 665742,
+          "name": "Juan Soto",
+          "team": "New York Mets",
+          "projected_ud": 5.68,
+          "ud_line": 7.5,
+          "edge": -1.82,
+          "game_time_pt": "4:05 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 672640,
+          "name": "Otto Lopez",
+          "team": "Miami Marlins",
+          "projected_ud": 3.68,
+          "ud_line": 5.5,
+          "edge": -1.82,
+          "game_time_pt": "4:10 PM PT",
+          "actual_ud": 12,
+          "grade": "loss"
+        },
+        {
+          "player_id": 669134,
+          "name": "Luis Campusano",
+          "team": "San Diego Padres",
+          "projected_ud": 3.71,
+          "ud_line": 5.5,
+          "edge": -1.79,
+          "game_time_pt": "7:15 PM PT",
+          "actual_ud": 13,
+          "grade": "loss"
+        },
+        {
+          "player_id": 687957,
+          "name": "Dustin Harris",
+          "team": "San Diego Padres",
+          "projected_ud": 3.72,
+          "ud_line": 5.5,
+          "edge": -1.78,
+          "game_time_pt": "7:15 PM PT",
+          "actual_ud": 22,
+          "grade": "loss"
+        },
+        {
+          "player_id": 686555,
+          "name": "Isaac Collins",
+          "team": "Kansas City Royals",
+          "projected_ud": 3.79,
+          "ud_line": 5.5,
+          "edge": -1.71,
+          "game_time_pt": "4:10 PM PT",
+          "actual_ud": 15,
+          "grade": "loss"
+        },
+        {
+          "player_id": 691594,
+          "name": "Javier Sanoja",
+          "team": "Miami Marlins",
+          "projected_ud": 3.81,
+          "ud_line": 5.5,
+          "edge": -1.69,
+          "game_time_pt": "4:10 PM PT",
+          "actual_ud": 19,
+          "grade": "loss"
+        },
+        {
+          "player_id": 664761,
+          "name": "Alec Bohm",
+          "team": "Philadelphia Phillies",
+          "projected_ud": 3.83,
+          "ud_line": 5.5,
+          "edge": -1.67,
+          "game_time_pt": "4:15 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 545361,
+          "name": "Mike Trout",
+          "team": "Los Angeles Angels",
+          "projected_ud": 4.9,
+          "ud_line": 6.5,
+          "edge": -1.6,
+          "game_time_pt": "3:45 PM PT",
+          "actual_ud": 17,
+          "grade": "loss"
+        },
+        {
+          "player_id": 608070,
+          "name": "Jos\u00e9 Ram\u00edrez",
+          "team": "Cleveland Guardians",
+          "projected_ud": 4.94,
+          "ud_line": 6.5,
+          "edge": -1.56,
+          "game_time_pt": "5:10 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 665161,
+          "name": "Jeremy Pe\u00f1a",
+          "team": "Houston Astros",
+          "projected_ud": 3.99,
+          "ud_line": 5.5,
+          "edge": -1.51,
+          "game_time_pt": "4:10 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 94,
-    "losses": 68,
+    "wins": 99,
+    "losses": 77,
     "dnp": 7
   },
   "record_by_line": {
     "5.5": {
-      "wins": 40,
-      "losses": 34
+      "wins": 43,
+      "losses": 41
     },
     "6.5": {
-      "wins": 27,
-      "losses": 22
+      "wins": 28,
+      "losses": 24
     },
     "8.5+": {
       "wins": 7,
       "losses": 3
     },
     "7.5": {
-      "wins": 11,
+      "wins": 12,
       "losses": 6
     }
   }

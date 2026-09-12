@@ -3205,20 +3205,71 @@
           "rate_before": 83.3
         }
       ]
+    },
+    "2026-09-11": {
+      "fire": [
+        {
+          "player_id": 691718,
+          "name": "Pete Crow-Armstrong",
+          "team": "Chicago Cubs",
+          "grade": "win",
+          "n_before": 42,
+          "wins_before": 26,
+          "rate_before": 61.9
+        },
+        {
+          "player_id": 673548,
+          "name": "Seiya Suzuki",
+          "team": "Chicago Cubs",
+          "grade": "win",
+          "n_before": 31,
+          "wins_before": 23,
+          "rate_before": 74.2
+        }
+      ],
+      "hot": [
+        {
+          "player_id": 605141,
+          "name": "Mookie Betts",
+          "team": "Los Angeles Dodgers",
+          "grade": "loss",
+          "n_before": 10,
+          "wins_before": 6,
+          "rate_before": 60.0
+        },
+        {
+          "player_id": 668930,
+          "name": "Brice Turang",
+          "team": "Milwaukee Brewers",
+          "grade": "win",
+          "n_before": 14,
+          "wins_before": 9,
+          "rate_before": 64.3
+        },
+        {
+          "player_id": 671056,
+          "name": "Iv\u00e1n Herrera",
+          "team": "St. Louis Cardinals",
+          "grade": "loss",
+          "n_before": 12,
+          "wins_before": 7,
+          "rate_before": 58.3
+        }
+      ]
     }
   },
   "cohorts": {
     "fire": {
-      "wins": 68,
+      "wins": 70,
       "losses": 67,
-      "n": 135,
-      "rate": 50.4
+      "n": 137,
+      "rate": 51.1
     },
     "hot": {
-      "wins": 93,
-      "losses": 78,
-      "n": 171,
-      "rate": 54.4
+      "wins": 94,
+      "losses": 80,
+      "n": 174,
+      "rate": 54.0
     }
   }
 }

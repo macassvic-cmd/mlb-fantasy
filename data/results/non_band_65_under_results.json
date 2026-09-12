@@ -2398,11 +2398,172 @@
           "grade": "win"
         }
       ]
+    },
+    "2026-09-11": {
+      "wins": 7,
+      "losses": 7,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 691777,
+          "name": "Max Muncy",
+          "team": "Athletics",
+          "projected_ud": 6.48,
+          "ud_line": 6.5,
+          "edge": -0.02,
+          "game_time_pt": "6:40 PM PT",
+          "actual_ud": 5,
+          "grade": "win"
+        },
+        {
+          "player_id": 663656,
+          "name": "Kyle Tucker",
+          "team": "Los Angeles Dodgers",
+          "projected_ud": 6.43,
+          "ud_line": 6.5,
+          "edge": -0.07,
+          "game_time_pt": "4:10 PM PT",
+          "actual_ud": 35,
+          "grade": "loss"
+        },
+        {
+          "player_id": 699013,
+          "name": "Esmerlyn Valdez",
+          "team": "Pittsburgh Pirates",
+          "projected_ud": 6.39,
+          "ud_line": 6.5,
+          "edge": -0.11,
+          "game_time_pt": "11:20 AM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 592450,
+          "name": "Aaron Judge",
+          "team": "New York Yankees",
+          "projected_ud": 6.35,
+          "ud_line": 6.5,
+          "edge": -0.15,
+          "game_time_pt": "4:05 PM PT",
+          "actual_ud": 6,
+          "grade": "win"
+        },
+        {
+          "player_id": 680757,
+          "name": "Steven Kwan",
+          "team": "Cleveland Guardians",
+          "projected_ud": 6.3,
+          "ud_line": 6.5,
+          "edge": -0.2,
+          "game_time_pt": "5:10 PM PT",
+          "actual_ud": 10,
+          "grade": "loss"
+        },
+        {
+          "player_id": 571970,
+          "name": "Max Muncy",
+          "team": "Los Angeles Dodgers",
+          "projected_ud": 6.17,
+          "ud_line": 6.5,
+          "edge": -0.33,
+          "game_time_pt": "4:10 PM PT",
+          "actual_ud": 14,
+          "grade": "loss"
+        },
+        {
+          "player_id": 665877,
+          "name": "Jos\u00e9 Ferm\u00edn",
+          "team": "St. Louis Cardinals",
+          "projected_ud": 6.14,
+          "ud_line": 6.5,
+          "edge": -0.36,
+          "game_time_pt": "5:15 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 621493,
+          "name": "Taylor Ward",
+          "team": "Seattle Mariners",
+          "projected_ud": 5.94,
+          "ud_line": 6.5,
+          "edge": -0.56,
+          "game_time_pt": "6:40 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 592518,
+          "name": "Manny Machado",
+          "team": "San Diego Padres",
+          "projected_ud": 5.75,
+          "ud_line": 6.5,
+          "edge": -0.75,
+          "game_time_pt": "7:15 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 804606,
+          "name": "Konnor Griffin",
+          "team": "Pittsburgh Pirates",
+          "projected_ud": 5.48,
+          "ud_line": 6.5,
+          "edge": -1.02,
+          "game_time_pt": "11:20 AM PT",
+          "actual_ud": 13,
+          "grade": "loss"
+        },
+        {
+          "player_id": 683734,
+          "name": "Andrew Vaughn",
+          "team": "Milwaukee Brewers",
+          "projected_ud": 5.32,
+          "ud_line": 6.5,
+          "edge": -1.18,
+          "game_time_pt": "4:45 PM PT",
+          "actual_ud": 13,
+          "grade": "loss"
+        },
+        {
+          "player_id": 700250,
+          "name": "Ben Rice",
+          "team": "New York Yankees",
+          "projected_ud": 5.19,
+          "ud_line": 6.5,
+          "edge": -1.31,
+          "game_time_pt": "4:05 PM PT",
+          "actual_ud": 24,
+          "grade": "loss"
+        },
+        {
+          "player_id": 813841,
+          "name": "Jonah Cox",
+          "team": "San Francisco Giants",
+          "projected_ud": 5.07,
+          "ud_line": 6.5,
+          "edge": -1.43,
+          "game_time_pt": "7:15 PM PT",
+          "actual_ud": 17,
+          "grade": "loss"
+        },
+        {
+          "player_id": 681715,
+          "name": "Heriberto Hern\u00e1ndez",
+          "team": "Miami Marlins",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "4:10 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 97,
-    "losses": 109,
+    "wins": 104,
+    "losses": 116,
     "dnp": 4
   }
 }
