@@ -18,6 +18,8 @@ from datetime import datetime, timedelta, timezone
 import projections as proj
 import report
 import clv
+import start_history
+import dnp_score
 from scrapers.market_lines import compute_pp_ud_ratio, load_cached_market_lines, match_lines
 from scrapers.mlb_api import get_player_game_log
 
@@ -233,6 +235,19 @@ def track_date(date_str):
     grade_65_under_nonband(date_str, results_by_pid)
     grade_top25_gated(date_str, results_by_pid)
     clv.grade_clv(date_str)
+
+    # DNP score: keep the start/bench history dataset growing (idempotent -
+    # safe even if this date was already recorded), then grade whatever
+    # dnp_score.score_today snapshot pipeline.py saved for this date against
+    # the real outcome - see dnp_score.py / start_history.py.
+    try:
+        start_history.record_date(date_str)
+    except Exception as e:
+        print(f"start_history.record_date({date_str}) failed (non-fatal): {e}")
+    try:
+        dnp_score.grade_dnp_scores(date_str)
+    except Exception as e:
+        print(f"dnp_score.grade_dnp_scores({date_str}) failed (non-fatal): {e}")
     # Premium/Slips/Stacks (and Stacks shadow-mode) retired from the live
     # dashboard 2026-08-18 - see report.py/slips.py/stacks.py. No point
     # accumulating win/loss records for products nobody sees anymore, so

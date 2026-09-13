@@ -545,6 +545,19 @@ def run_pipeline(date_str):
 
     logger.info(f"Saved {len(all_players)} records to {out_path}")
 
+    # DNP score snapshot (added 2026-09-13) - scores today's slate for
+    # "will NOT start" risk using data/player_start_history.json + today's
+    # lineup_status/platoon signals (see dnp_score.py). Snapshotted here,
+    # right when the day's player universe is freshest, so
+    # tracker.py's nightly grade_dnp_scores has something to grade against
+    # once games are Final. Non-fatal - a scoring failure should never take
+    # down the core pipeline, same reasoning as report.py's Betr snapshot.
+    try:
+        import dnp_score
+        dnp_score.score_today(date_str)
+    except Exception as e:
+        logger.warning(f"dnp_score.score_today failed (non-fatal): {e}")
+
     # Freshness marker, added 2026-09-04: a same-day rerun (common during
     # the dense CI retry schedule - see .github/workflows/pipeline.yml's
     # CRON STRATEGY) very often produces BYTE-IDENTICAL output to an

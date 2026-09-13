@@ -212,6 +212,71 @@ def get_live_feed_batting_orders(game_pk):
     }
 
 
+def get_game_start_data(game_pk):
+    """Full start/bench breakdown for a completed game, for building
+    start_history.py's historical dataset - added 2026-09-13 for the DNP
+    score. One call to the same live-feed endpoint as
+    get_live_feed_batting_orders, but reads each player's OWN `battingOrder`
+    field (a 3-char string: first digit = lineup slot 1-9, last two digits =
+    substitution sequence, "00" meaning they started that slot) instead of
+    the team-level top-level battingOrder array - empirically found
+    (2026-09-13, game 824792) to sometimes miss real starters that the
+    per-player field has correct. Returns
+    {"home": {"team_id","opp_pitcher_id","opp_pitcher_hand","players":[...]},
+     "away": {...}} where each entry in "players" is a non-pitcher:
+    {"player_id","name","position","started","batting_order_slot","entered_as_sub"}.
+    Returns None on failure (caller should treat as "couldn't backfill this
+    game", not "everyone benched")."""
+    try:
+        data = _get_v11(f"/game/{game_pk}/feed/live")
+    except Exception as e:
+        logger.warning(f"get_game_start_data({game_pk}) failed: {e}")
+        return None
+
+    box = data.get("liveData", {}).get("boxscore", {}).get("teams", {})
+    game_data_players = data.get("gameData", {}).get("players", {})
+    probable = data.get("gameData", {}).get("probablePitchers", {})
+
+    result = {}
+    for side in ("home", "away"):
+        team_box = box.get(side, {})
+        opp_side = "away" if side == "home" else "home"
+        opp_pitcher = probable.get(opp_side, {})
+        opp_pitcher_id = opp_pitcher.get("id")
+        opp_pitcher_hand = None
+        if opp_pitcher_id is not None:
+            opp_pitcher_hand = game_data_players.get(f"ID{opp_pitcher_id}", {}).get("pitchHand", {}).get("code")
+
+        players = []
+        for pid_key, p in team_box.get("players", {}).items():
+            position = p.get("position", {})
+            if position.get("type") == "Pitcher":
+                continue
+            batting_order = p.get("battingOrder")
+            if batting_order:
+                slot = int(batting_order) // 100
+                sub_seq = int(batting_order) % 100
+                started = sub_seq == 0
+            else:
+                slot, started = None, False
+            players.append({
+                "player_id": (p.get("person") or {}).get("id"),
+                "name": (p.get("person") or {}).get("fullName"),
+                "position": position.get("abbreviation"),
+                "started": started,
+                "batting_order_slot": slot,
+                "entered_as_sub": bool(batting_order) and not started,
+            })
+
+        result[side] = {
+            "team_id": (team_box.get("team") or {}).get("id"),
+            "opp_pitcher_id": opp_pitcher_id,
+            "opp_pitcher_hand": opp_pitcher_hand,
+            "players": players,
+        }
+    return result
+
+
 _forty_man_cache = {}
 
 
