@@ -1970,11 +1970,600 @@
           "grade": "loss"
         }
       ]
+    },
+    "2026-09-08": {
+      "wins": 8,
+      "losses": 9,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 669257,
+          "name": "Will Smith",
+          "team": "Los Angeles Dodgers",
+          "projected_ud": 6.37,
+          "ud_line": 6.5,
+          "edge": -0.13,
+          "game_time_pt": "7:10 PM PT",
+          "actual_ud": 17,
+          "grade": "loss"
+        },
+        {
+          "player_id": 621566,
+          "name": "Matt Olson",
+          "team": "Atlanta Braves",
+          "projected_ud": 6.32,
+          "ud_line": 6.5,
+          "edge": -0.18,
+          "game_time_pt": "4:15 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 683002,
+          "name": "Gunnar Henderson",
+          "team": "Baltimore Orioles",
+          "projected_ud": 6.3,
+          "ud_line": 6.5,
+          "edge": -0.2,
+          "game_time_pt": "3:35 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 596019,
+          "name": "Francisco Lindor",
+          "team": "New York Mets",
+          "projected_ud": 6.14,
+          "ud_line": 6.5,
+          "edge": -0.36,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 19,
+          "grade": "loss"
+        },
+        {
+          "player_id": 671732,
+          "name": "Lawrence Butler",
+          "team": "Athletics",
+          "projected_ud": 6.12,
+          "ud_line": 6.5,
+          "edge": -0.38,
+          "game_time_pt": "6:40 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 804606,
+          "name": "Konnor Griffin",
+          "team": "Pittsburgh Pirates",
+          "projected_ud": 5.77,
+          "ud_line": 6.5,
+          "edge": -0.73,
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 14,
+          "grade": "loss"
+        },
+        {
+          "player_id": 695578,
+          "name": "James Wood",
+          "team": "Washington Nationals",
+          "projected_ud": 5.74,
+          "ud_line": 6.5,
+          "edge": -0.76,
+          "game_time_pt": "6:40 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 672515,
+          "name": "Gabriel Moreno",
+          "team": "Arizona Diamondbacks",
+          "projected_ud": 5.65,
+          "ud_line": 6.5,
+          "edge": -0.85,
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 8,
+          "grade": "loss"
+        },
+        {
+          "player_id": 808959,
+          "name": "Munetaka Murakami",
+          "team": "Chicago White Sox",
+          "projected_ud": 5.57,
+          "ud_line": 6.5,
+          "edge": -0.93,
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 672695,
+          "name": "Geraldo Perdomo",
+          "team": "Arizona Diamondbacks",
+          "projected_ud": 5.48,
+          "ud_line": 6.5,
+          "edge": -1.02,
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 5,
+          "grade": "win"
+        },
+        {
+          "player_id": 676475,
+          "name": "Alec Burleson",
+          "team": "St. Louis Cardinals",
+          "projected_ud": 5.45,
+          "ud_line": 6.5,
+          "edge": -1.05,
+          "game_time_pt": "6:45 PM PT",
+          "actual_ud": 12,
+          "grade": "loss"
+        },
+        {
+          "player_id": 701807,
+          "name": "Carson Benge",
+          "team": "New York Mets",
+          "projected_ud": 5.41,
+          "ud_line": 6.5,
+          "edge": -1.09,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 10,
+          "grade": "loss"
+        },
+        {
+          "player_id": 663457,
+          "name": "Lars Nootbaar",
+          "team": "Arizona Diamondbacks",
+          "projected_ud": 5.36,
+          "ud_line": 6.5,
+          "edge": -1.14,
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 6,
+          "grade": "win"
+        },
+        {
+          "player_id": 606466,
+          "name": "Ketel Marte",
+          "team": "Arizona Diamondbacks",
+          "projected_ud": 5.16,
+          "ud_line": 6.5,
+          "edge": -1.34,
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 13,
+          "grade": "loss"
+        },
+        {
+          "player_id": 607208,
+          "name": "Trea Turner",
+          "team": "Philadelphia Phillies",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 22,
+          "grade": "loss"
+        },
+        {
+          "player_id": 668227,
+          "name": "Randy Arozarena",
+          "team": "Seattle Mariners",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "6:40 PM PT",
+          "actual_ud": 10,
+          "grade": "loss"
+        },
+        {
+          "player_id": 677594,
+          "name": "Julio Rodr\u00edguez",
+          "team": "Seattle Mariners",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "6:40 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        }
+      ]
+    },
+    "2026-09-09": {
+      "wins": 5,
+      "losses": 12,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 701807,
+          "name": "Carson Benge",
+          "team": "New York Mets",
+          "projected_ud": 6.43,
+          "ud_line": 6.5,
+          "edge": -0.07,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 10,
+          "grade": "loss"
+        },
+        {
+          "player_id": 665019,
+          "name": "Kody Clemens",
+          "team": "Minnesota Twins",
+          "projected_ud": 6.39,
+          "ud_line": 6.5,
+          "edge": -0.11,
+          "game_time_pt": "10:10 AM PT",
+          "actual_ud": 14,
+          "grade": "loss"
+        },
+        {
+          "player_id": 702332,
+          "name": "Caleb Durbin",
+          "team": "Boston Red Sox",
+          "projected_ud": 6.37,
+          "ud_line": 6.5,
+          "edge": -0.13,
+          "game_time_pt": "3:45 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 663656,
+          "name": "Kyle Tucker",
+          "team": "Los Angeles Dodgers",
+          "projected_ud": 6.28,
+          "ud_line": 6.5,
+          "edge": -0.22,
+          "game_time_pt": "7:10 PM PT",
+          "actual_ud": 25,
+          "grade": "loss"
+        },
+        {
+          "player_id": 671739,
+          "name": "Michael Harris II",
+          "team": "Atlanta Braves",
+          "projected_ud": 6.26,
+          "ud_line": 6.5,
+          "edge": -0.24,
+          "game_time_pt": "4:15 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 680757,
+          "name": "Steven Kwan",
+          "team": "Cleveland Guardians",
+          "projected_ud": 6.21,
+          "ud_line": 6.5,
+          "edge": -0.29,
+          "game_time_pt": "3:35 PM PT",
+          "actual_ud": 8,
+          "grade": "loss"
+        },
+        {
+          "player_id": 677594,
+          "name": "Julio Rodr\u00edguez",
+          "team": "Seattle Mariners",
+          "projected_ud": 5.91,
+          "ud_line": 6.5,
+          "edge": -0.59,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 813841,
+          "name": "Jonah Cox",
+          "team": "San Francisco Giants",
+          "projected_ud": 5.89,
+          "ud_line": 6.5,
+          "edge": -0.61,
+          "game_time_pt": "12:45 PM PT",
+          "actual_ud": 7,
+          "grade": "loss"
+        },
+        {
+          "player_id": 624413,
+          "name": "Pete Alonso",
+          "team": "Baltimore Orioles",
+          "projected_ud": 5.86,
+          "ud_line": 6.5,
+          "edge": -0.64,
+          "game_time_pt": "3:35 PM PT",
+          "actual_ud": 11,
+          "grade": "loss"
+        },
+        {
+          "player_id": 608070,
+          "name": "Jos\u00e9 Ram\u00edrez",
+          "team": "Cleveland Guardians",
+          "projected_ud": 5.7,
+          "ud_line": 6.5,
+          "edge": -0.8,
+          "game_time_pt": "3:35 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 545361,
+          "name": "Mike Trout",
+          "team": "Los Angeles Angels",
+          "projected_ud": 5.57,
+          "ud_line": 6.5,
+          "edge": -0.93,
+          "game_time_pt": "3:45 PM PT",
+          "actual_ud": 8,
+          "grade": "loss"
+        },
+        {
+          "player_id": 547180,
+          "name": "Bryce Harper",
+          "team": "Philadelphia Phillies",
+          "projected_ud": 5.3,
+          "ud_line": 6.5,
+          "edge": -1.2,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 12,
+          "grade": "loss"
+        },
+        {
+          "player_id": 672695,
+          "name": "Geraldo Perdomo",
+          "team": "Arizona Diamondbacks",
+          "projected_ud": 5.16,
+          "ud_line": 6.5,
+          "edge": -1.34,
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 6,
+          "grade": "win"
+        },
+        {
+          "player_id": 607208,
+          "name": "Trea Turner",
+          "team": "Philadelphia Phillies",
+          "projected_ud": 5.01,
+          "ud_line": 6.5,
+          "edge": -1.49,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 25,
+          "grade": "loss"
+        },
+        {
+          "player_id": 691777,
+          "name": "Max Muncy",
+          "team": "Athletics",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "12:05 PM PT",
+          "actual_ud": 9,
+          "grade": "loss"
+        },
+        {
+          "player_id": 808982,
+          "name": "Jung Hoo Lee",
+          "team": "San Francisco Giants",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "12:45 PM PT",
+          "actual_ud": 15,
+          "grade": "loss"
+        },
+        {
+          "player_id": 670541,
+          "name": "Yordan Alvarez",
+          "team": "Houston Astros",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 13,
+          "grade": "loss"
+        }
+      ]
+    },
+    "2026-09-10": {
+      "wins": 2,
+      "losses": 1,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 804606,
+          "name": "Konnor Griffin",
+          "team": "Pittsburgh Pirates",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 665833,
+          "name": "Oneil Cruz",
+          "team": "Pittsburgh Pirates",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 22,
+          "grade": "loss"
+        },
+        {
+          "player_id": 664040,
+          "name": "Brandon Lowe",
+          "team": "Pittsburgh Pirates",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        }
+      ]
+    },
+    "2026-09-11": {
+      "wins": 7,
+      "losses": 7,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 691777,
+          "name": "Max Muncy",
+          "team": "Athletics",
+          "projected_ud": 6.48,
+          "ud_line": 6.5,
+          "edge": -0.02,
+          "game_time_pt": "6:40 PM PT",
+          "actual_ud": 5,
+          "grade": "win"
+        },
+        {
+          "player_id": 663656,
+          "name": "Kyle Tucker",
+          "team": "Los Angeles Dodgers",
+          "projected_ud": 6.43,
+          "ud_line": 6.5,
+          "edge": -0.07,
+          "game_time_pt": "4:10 PM PT",
+          "actual_ud": 35,
+          "grade": "loss"
+        },
+        {
+          "player_id": 699013,
+          "name": "Esmerlyn Valdez",
+          "team": "Pittsburgh Pirates",
+          "projected_ud": 6.39,
+          "ud_line": 6.5,
+          "edge": -0.11,
+          "game_time_pt": "11:20 AM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 592450,
+          "name": "Aaron Judge",
+          "team": "New York Yankees",
+          "projected_ud": 6.35,
+          "ud_line": 6.5,
+          "edge": -0.15,
+          "game_time_pt": "4:05 PM PT",
+          "actual_ud": 6,
+          "grade": "win"
+        },
+        {
+          "player_id": 680757,
+          "name": "Steven Kwan",
+          "team": "Cleveland Guardians",
+          "projected_ud": 6.3,
+          "ud_line": 6.5,
+          "edge": -0.2,
+          "game_time_pt": "5:10 PM PT",
+          "actual_ud": 10,
+          "grade": "loss"
+        },
+        {
+          "player_id": 571970,
+          "name": "Max Muncy",
+          "team": "Los Angeles Dodgers",
+          "projected_ud": 6.17,
+          "ud_line": 6.5,
+          "edge": -0.33,
+          "game_time_pt": "4:10 PM PT",
+          "actual_ud": 14,
+          "grade": "loss"
+        },
+        {
+          "player_id": 665877,
+          "name": "Jos\u00e9 Ferm\u00edn",
+          "team": "St. Louis Cardinals",
+          "projected_ud": 6.14,
+          "ud_line": 6.5,
+          "edge": -0.36,
+          "game_time_pt": "5:15 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 621493,
+          "name": "Taylor Ward",
+          "team": "Seattle Mariners",
+          "projected_ud": 5.94,
+          "ud_line": 6.5,
+          "edge": -0.56,
+          "game_time_pt": "6:40 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 592518,
+          "name": "Manny Machado",
+          "team": "San Diego Padres",
+          "projected_ud": 5.75,
+          "ud_line": 6.5,
+          "edge": -0.75,
+          "game_time_pt": "7:15 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 804606,
+          "name": "Konnor Griffin",
+          "team": "Pittsburgh Pirates",
+          "projected_ud": 5.48,
+          "ud_line": 6.5,
+          "edge": -1.02,
+          "game_time_pt": "11:20 AM PT",
+          "actual_ud": 13,
+          "grade": "loss"
+        },
+        {
+          "player_id": 683734,
+          "name": "Andrew Vaughn",
+          "team": "Milwaukee Brewers",
+          "projected_ud": 5.32,
+          "ud_line": 6.5,
+          "edge": -1.18,
+          "game_time_pt": "4:45 PM PT",
+          "actual_ud": 13,
+          "grade": "loss"
+        },
+        {
+          "player_id": 700250,
+          "name": "Ben Rice",
+          "team": "New York Yankees",
+          "projected_ud": 5.19,
+          "ud_line": 6.5,
+          "edge": -1.31,
+          "game_time_pt": "4:05 PM PT",
+          "actual_ud": 24,
+          "grade": "loss"
+        },
+        {
+          "player_id": 813841,
+          "name": "Jonah Cox",
+          "team": "San Francisco Giants",
+          "projected_ud": 5.07,
+          "ud_line": 6.5,
+          "edge": -1.43,
+          "game_time_pt": "7:15 PM PT",
+          "actual_ud": 17,
+          "grade": "loss"
+        },
+        {
+          "player_id": 681715,
+          "name": "Heriberto Hern\u00e1ndez",
+          "team": "Miami Marlins",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "4:10 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 82,
-    "losses": 87,
+    "wins": 104,
+    "losses": 116,
     "dnp": 4
   }
 }
