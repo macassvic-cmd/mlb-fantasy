@@ -2559,11 +2559,271 @@
           "grade": "win"
         }
       ]
+    },
+    "2026-09-12": {
+      "wins": 11,
+      "losses": 12,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 802415,
+          "name": "Chandler Simpson",
+          "team": "Tampa Bay Rays",
+          "projected_ud": 6.48,
+          "ud_line": 6.5,
+          "edge": -0.02,
+          "game_time_pt": "3:10 PM PT",
+          "actual_ud": 5,
+          "grade": "win"
+        },
+        {
+          "player_id": 571970,
+          "name": "Max Muncy",
+          "team": "Los Angeles Dodgers",
+          "projected_ud": 6.17,
+          "ud_line": 6.5,
+          "edge": -0.33,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 14,
+          "grade": "loss"
+        },
+        {
+          "player_id": 694671,
+          "name": "Wyatt Langford",
+          "team": "Texas Rangers",
+          "projected_ud": 6.13,
+          "ud_line": 6.5,
+          "edge": -0.37,
+          "game_time_pt": "5:10 PM PT",
+          "actual_ud": 20,
+          "grade": "loss"
+        },
+        {
+          "player_id": 672695,
+          "name": "Geraldo Perdomo",
+          "team": "Arizona Diamondbacks",
+          "projected_ud": 6.11,
+          "ud_line": 6.5,
+          "edge": -0.39,
+          "game_time_pt": "5:10 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 668804,
+          "name": "Bryan Reynolds",
+          "team": "Pittsburgh Pirates",
+          "projected_ud": 6.1,
+          "ud_line": 6.5,
+          "edge": -0.4,
+          "game_time_pt": "11:20 AM PT",
+          "actual_ud": 5,
+          "grade": "win"
+        },
+        {
+          "player_id": 593428,
+          "name": "Xander Bogaerts",
+          "team": "San Diego Padres",
+          "projected_ud": 6.07,
+          "ud_line": 6.5,
+          "edge": -0.43,
+          "game_time_pt": "1:05 PM PT",
+          "actual_ud": 23,
+          "grade": "loss"
+        },
+        {
+          "player_id": 668939,
+          "name": "Adley Rutschman",
+          "team": "Boston Red Sox",
+          "projected_ud": 5.94,
+          "ud_line": 6.5,
+          "edge": -0.56,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 10,
+          "grade": "loss"
+        },
+        {
+          "player_id": 664040,
+          "name": "Brandon Lowe",
+          "team": "Pittsburgh Pirates",
+          "projected_ud": 5.92,
+          "ud_line": 6.5,
+          "edge": -0.58,
+          "game_time_pt": "11:20 AM PT",
+          "actual_ud": 8,
+          "grade": "loss"
+        },
+        {
+          "player_id": 607043,
+          "name": "Brandon Nimmo",
+          "team": "Texas Rangers",
+          "projected_ud": 5.91,
+          "ud_line": 6.5,
+          "edge": -0.59,
+          "game_time_pt": "5:10 PM PT",
+          "actual_ud": 16,
+          "grade": "loss"
+        },
+        {
+          "player_id": 671056,
+          "name": "Iv\u00e1n Herrera",
+          "team": "St. Louis Cardinals",
+          "projected_ud": 5.9,
+          "ud_line": 6.5,
+          "edge": -0.6,
+          "game_time_pt": "4:15 PM PT",
+          "actual_ud": 6,
+          "grade": "win"
+        },
+        {
+          "player_id": 545361,
+          "name": "Mike Trout",
+          "team": "Los Angeles Angels",
+          "projected_ud": 5.72,
+          "ud_line": 6.5,
+          "edge": -0.78,
+          "game_time_pt": "1:05 PM PT",
+          "actual_ud": 8,
+          "grade": "loss"
+        },
+        {
+          "player_id": 678246,
+          "name": "Miguel Vargas",
+          "team": "Chicago White Sox",
+          "projected_ud": 5.43,
+          "ud_line": 6.5,
+          "edge": -1.07,
+          "game_time_pt": "4:15 PM PT",
+          "actual_ud": 5,
+          "grade": "win"
+        },
+        {
+          "player_id": 804606,
+          "name": "Konnor Griffin",
+          "team": "Pittsburgh Pirates",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "11:20 AM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 687637,
+          "name": "Dylan Beavers",
+          "team": "Baltimore Orioles",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "12:07 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 624413,
+          "name": "Pete Alonso",
+          "team": "Baltimore Orioles",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "12:07 PM PT",
+          "actual_ud": 22,
+          "grade": "loss"
+        },
+        {
+          "player_id": 702616,
+          "name": "Jackson Holliday",
+          "team": "Baltimore Orioles",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "12:07 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 683002,
+          "name": "Gunnar Henderson",
+          "team": "Baltimore Orioles",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "12:07 PM PT",
+          "actual_ud": 11,
+          "grade": "loss"
+        },
+        {
+          "player_id": 682928,
+          "name": "CJ Abrams",
+          "team": "Washington Nationals",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "1:05 PM PT",
+          "actual_ud": 17,
+          "grade": "loss"
+        },
+        {
+          "player_id": 695734,
+          "name": "Daylen Lile",
+          "team": "Washington Nationals",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "1:05 PM PT",
+          "actual_ud": 7,
+          "grade": "loss"
+        },
+        {
+          "player_id": 807712,
+          "name": "Luke Keaschall",
+          "team": "Minnesota Twins",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 5,
+          "grade": "win"
+        },
+        {
+          "player_id": 676475,
+          "name": "Alec Burleson",
+          "team": "St. Louis Cardinals",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "4:15 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 808959,
+          "name": "Munetaka Murakami",
+          "team": "Chicago White Sox",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "4:15 PM PT",
+          "actual_ud": 10,
+          "grade": "loss"
+        },
+        {
+          "player_id": 592626,
+          "name": "Joc Pederson",
+          "team": "Texas Rangers",
+          "projected_ud": 4.5,
+          "ud_line": 6.5,
+          "edge": -2.0,
+          "game_time_pt": "5:10 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 104,
-    "losses": 116,
+    "wins": 115,
+    "losses": 128,
     "dnp": 4
   }
 }

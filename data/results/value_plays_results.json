@@ -7293,6 +7293,99 @@
           "correct": false
         }
       ]
+    },
+    "2026-09-12": {
+      "summary": {
+        "total": 8,
+        "correct": 5,
+        "accuracy": 62.5,
+        "over_total": 4,
+        "over_correct": 3,
+        "under_total": 4,
+        "under_correct": 2
+      },
+      "plays": [
+        {
+          "player_id": 691718,
+          "name": "Pete Crow-Armstrong",
+          "team": "Chicago Cubs",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 0,
+          "correct": false
+        },
+        {
+          "player_id": 805808,
+          "name": "Kevin McGonigle",
+          "team": "Detroit Tigers",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 20,
+          "correct": true
+        },
+        {
+          "player_id": 682985,
+          "name": "Riley Greene",
+          "team": "Detroit Tigers",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 10,
+          "correct": true
+        },
+        {
+          "player_id": 664983,
+          "name": "Jake McCarthy",
+          "team": "Colorado Rockies",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 12,
+          "correct": true
+        },
+        {
+          "player_id": 695578,
+          "name": "James Wood",
+          "team": "Washington Nationals",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 8.5,
+          "actual_ud": 16,
+          "correct": false
+        },
+        {
+          "player_id": 701350,
+          "name": "Roman Anthony",
+          "team": "Boston Red Sox",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 7.5,
+          "actual_ud": 8,
+          "correct": false
+        },
+        {
+          "player_id": 804606,
+          "name": "Konnor Griffin",
+          "team": "Pittsburgh Pirates",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "correct": true
+        },
+        {
+          "player_id": 687637,
+          "name": "Dylan Beavers",
+          "team": "Baltimore Orioles",
+          "call": "under",
+          "edge": -2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "correct": true
+        }
+      ]
     }
   }
 }

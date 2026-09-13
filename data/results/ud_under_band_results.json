@@ -2145,25 +2145,164 @@
           "grade": "win"
         }
       ]
+    },
+    "2026-09-12": {
+      "wins": 7,
+      "losses": 5,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 642350,
+          "name": "Jose Siri",
+          "team": "Los Angeles Angels",
+          "projected_ud": 3.58,
+          "ud_line": 5.5,
+          "edge": -1.92,
+          "game_time_pt": "1:05 PM PT",
+          "actual_ud": 9,
+          "grade": "loss"
+        },
+        {
+          "player_id": 668904,
+          "name": "Royce Lewis",
+          "team": "Minnesota Twins",
+          "projected_ud": 3.6,
+          "ud_line": 5.5,
+          "edge": -1.9,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 8,
+          "grade": "loss"
+        },
+        {
+          "player_id": 677800,
+          "name": "Wilyer Abreu",
+          "team": "Boston Red Sox",
+          "projected_ud": 4.61,
+          "ud_line": 6.5,
+          "edge": -1.89,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 10,
+          "grade": "loss"
+        },
+        {
+          "player_id": 687952,
+          "name": "Christian Encarnacion-Strand",
+          "team": "Baltimore Orioles",
+          "projected_ud": 3.7,
+          "ud_line": 5.5,
+          "edge": -1.8,
+          "game_time_pt": "12:07 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 596115,
+          "name": "Trevor Story",
+          "team": "Boston Red Sox",
+          "projected_ud": 4.74,
+          "ud_line": 6.5,
+          "edge": -1.76,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 8,
+          "grade": "loss"
+        },
+        {
+          "player_id": 680776,
+          "name": "Jarren Duran",
+          "team": "Boston Red Sox",
+          "projected_ud": 3.75,
+          "ud_line": 5.5,
+          "edge": -1.75,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 665487,
+          "name": "Fernando Tatis Jr.",
+          "team": "San Diego Padres",
+          "projected_ud": 6.76,
+          "ud_line": 8.5,
+          "edge": -1.74,
+          "game_time_pt": "1:05 PM PT",
+          "actual_ud": 34,
+          "grade": "loss"
+        },
+        {
+          "player_id": 686611,
+          "name": "Dylan Crews",
+          "team": "Washington Nationals",
+          "projected_ud": 4.81,
+          "ud_line": 6.5,
+          "edge": -1.69,
+          "game_time_pt": "1:05 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 695731,
+          "name": "Braden Montgomery",
+          "team": "Chicago White Sox",
+          "projected_ud": 3.84,
+          "ud_line": 5.5,
+          "edge": -1.66,
+          "game_time_pt": "4:15 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 701785,
+          "name": "Kaelen Culpepper",
+          "team": "Minnesota Twins",
+          "projected_ud": 3.86,
+          "ud_line": 5.5,
+          "edge": -1.64,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 681508,
+          "name": "Mickey Gasper",
+          "team": "Boston Red Sox",
+          "projected_ud": 4.9,
+          "ud_line": 6.5,
+          "edge": -1.6,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 5,
+          "grade": "win"
+        },
+        {
+          "player_id": 702332,
+          "name": "Caleb Durbin",
+          "team": "Boston Red Sox",
+          "projected_ud": 3.9,
+          "ud_line": 5.5,
+          "edge": -1.6,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 5,
+          "grade": "win"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 99,
-    "losses": 77,
+    "wins": 106,
+    "losses": 82,
     "dnp": 7
   },
   "record_by_line": {
     "5.5": {
-      "wins": 43,
-      "losses": 41
+      "wins": 48,
+      "losses": 43
     },
     "6.5": {
-      "wins": 28,
-      "losses": 24
+      "wins": 30,
+      "losses": 26
     },
     "8.5+": {
       "wins": 7,
-      "losses": 3
+      "losses": 4
     },
     "7.5": {
       "wins": 12,
@@ -2174,8 +2313,8 @@
     "665161": {
       "name": "Jeremy Pe\u00f1a",
       "team": "Houston Astros",
-      "wins": 1,
-      "losses": 0
+      "wins": 2,
+      "losses": 1
     },
     "683737": {
       "name": "Michael Busch",
@@ -2312,13 +2451,13 @@
     "686611": {
       "name": "Dylan Crews",
       "team": "Washington Nationals",
-      "wins": 1,
+      "wins": 2,
       "losses": 1
     },
     "547180": {
       "name": "Bryce Harper",
       "team": "Philadelphia Phillies",
-      "wins": 0,
+      "wins": 1,
       "losses": 1
     },
     "606192": {
@@ -2366,7 +2505,7 @@
     "687462": {
       "name": "Spencer Horwitz",
       "team": "Pittsburgh Pirates",
-      "wins": 2,
+      "wins": 3,
       "losses": 1
     },
     "660271": {
@@ -2384,8 +2523,8 @@
     "621566": {
       "name": "Matt Olson",
       "team": "Atlanta Braves",
-      "wins": 0,
-      "losses": 1
+      "wins": 1,
+      "losses": 2
     },
     "672515": {
       "name": "Gabriel Moreno",
@@ -2421,7 +2560,7 @@
       "name": "Isaac Collins",
       "team": "Kansas City Royals",
       "wins": 1,
-      "losses": 1
+      "losses": 2
     },
     "694212": {
       "name": "Samuel Basallo",
@@ -2451,7 +2590,7 @@
       "name": "Royce Lewis",
       "team": "Minnesota Twins",
       "wins": 3,
-      "losses": 0
+      "losses": 2
     },
     "664034": {
       "name": "Ty France",
@@ -2522,8 +2661,8 @@
     "690993": {
       "name": "Colt Keith",
       "team": "Detroit Tigers",
-      "wins": 1,
-      "losses": 0
+      "wins": 2,
+      "losses": 1
     },
     "693307": {
       "name": "Dillon Dingler",
@@ -2547,7 +2686,7 @@
       "name": "Javier Sanoja",
       "team": "Miami Marlins",
       "wins": 0,
-      "losses": 1
+      "losses": 2
     },
     "686797": {
       "name": "Brooks Lee",
@@ -2559,7 +2698,7 @@
       "name": "Jake Mangum",
       "team": "Pittsburgh Pirates",
       "wins": 1,
-      "losses": 0
+      "losses": 1
     },
     "682998": {
       "name": "Corbin Carroll",
@@ -2577,13 +2716,13 @@
       "name": "Ernie Clement",
       "team": "Toronto Blue Jays",
       "wins": 0,
-      "losses": 2
+      "losses": 3
     },
     "545361": {
       "name": "Mike Trout",
       "team": "Los Angeles Angels",
       "wins": 1,
-      "losses": 0
+      "losses": 1
     },
     "680869": {
       "name": "Zack Gelof",
@@ -2636,7 +2775,7 @@
     "695578": {
       "name": "James Wood",
       "team": "Washington Nationals",
-      "wins": 0,
+      "wins": 1,
       "losses": 1
     },
     "592626": {
@@ -2648,13 +2787,13 @@
     "656941": {
       "name": "Kyle Schwarber",
       "team": "Philadelphia Phillies",
-      "wins": 1,
+      "wins": 2,
       "losses": 0
     },
     "664761": {
       "name": "Alec Bohm",
       "team": "Philadelphia Phillies",
-      "wins": 0,
+      "wins": 1,
       "losses": 1
     },
     "607043": {
@@ -2715,7 +2854,7 @@
       "name": "Luis Arraez",
       "team": "Philadelphia Phillies",
       "wins": 1,
-      "losses": 1
+      "losses": 3
     },
     "624413": {
       "name": "Pete Alonso",
@@ -2733,7 +2872,7 @@
       "name": "Nick Gonzales",
       "team": "Pittsburgh Pirates",
       "wins": 1,
-      "losses": 0
+      "losses": 1
     },
     "804606": {
       "name": "Konnor Griffin",
@@ -2756,6 +2895,150 @@
     "607208": {
       "name": "Trea Turner",
       "team": "Philadelphia Phillies",
+      "wins": 1,
+      "losses": 0
+    },
+    "814439": {
+      "name": "Ryan Waldschmidt",
+      "team": "Arizona Diamondbacks",
+      "wins": 1,
+      "losses": 0
+    },
+    "571448": {
+      "name": "Nolan Arenado",
+      "team": "Arizona Diamondbacks",
+      "wins": 0,
+      "losses": 2
+    },
+    "677800": {
+      "name": "Wilyer Abreu",
+      "team": "Boston Red Sox",
+      "wins": 1,
+      "losses": 1
+    },
+    "681082": {
+      "name": "Bryson Stott",
+      "team": "Philadelphia Phillies",
+      "wins": 0,
+      "losses": 1
+    },
+    "572233": {
+      "name": "Christian Walker",
+      "team": "Houston Astros",
+      "wins": 1,
+      "losses": 0
+    },
+    "671732": {
+      "name": "Lawrence Butler",
+      "team": "Athletics",
+      "wins": 1,
+      "losses": 0
+    },
+    "545121": {
+      "name": "Ildemaro Vargas",
+      "team": "Arizona Diamondbacks",
+      "wins": 0,
+      "losses": 1
+    },
+    "665489": {
+      "name": "Vladimir Guerrero Jr.",
+      "team": "Toronto Blue Jays",
+      "wins": 1,
+      "losses": 0
+    },
+    "694197": {
+      "name": "Angel Genao",
+      "team": "Cleveland Guardians",
+      "wins": 0,
+      "losses": 1
+    },
+    "668885": {
+      "name": "Austin Martin",
+      "team": "Minnesota Twins",
+      "wins": 0,
+      "losses": 1
+    },
+    "665742": {
+      "name": "Juan Soto",
+      "team": "New York Mets",
+      "wins": 1,
+      "losses": 0
+    },
+    "672640": {
+      "name": "Otto Lopez",
+      "team": "Miami Marlins",
+      "wins": 0,
+      "losses": 1
+    },
+    "669134": {
+      "name": "Luis Campusano",
+      "team": "San Diego Padres",
+      "wins": 0,
+      "losses": 1
+    },
+    "687957": {
+      "name": "Dustin Harris",
+      "team": "San Diego Padres",
+      "wins": 0,
+      "losses": 1
+    },
+    "608070": {
+      "name": "Jos\u00e9 Ram\u00edrez",
+      "team": "Cleveland Guardians",
+      "wins": 1,
+      "losses": 0
+    },
+    "642350": {
+      "name": "Jose Siri",
+      "team": "Los Angeles Angels",
+      "wins": 0,
+      "losses": 1
+    },
+    "687952": {
+      "name": "Christian Encarnacion-Strand",
+      "team": "Baltimore Orioles",
+      "wins": 1,
+      "losses": 0
+    },
+    "596115": {
+      "name": "Trevor Story",
+      "team": "Boston Red Sox",
+      "wins": 0,
+      "losses": 1
+    },
+    "680776": {
+      "name": "Jarren Duran",
+      "team": "Boston Red Sox",
+      "wins": 1,
+      "losses": 0
+    },
+    "665487": {
+      "name": "Fernando Tatis Jr.",
+      "team": "San Diego Padres",
+      "wins": 0,
+      "losses": 1
+    },
+    "695731": {
+      "name": "Braden Montgomery",
+      "team": "Chicago White Sox",
+      "wins": 1,
+      "losses": 0
+    },
+    "701785": {
+      "name": "Kaelen Culpepper",
+      "team": "Minnesota Twins",
+      "wins": 1,
+      "losses": 0
+    },
+    "681508": {
+      "name": "Mickey Gasper",
+      "team": "Boston Red Sox",
+      "wins": 1,
+      "losses": 0
+    },
+    "702332": {
+      "name": "Caleb Durbin",
+      "team": "Boston Red Sox",
       "wins": 1,
       "losses": 0
     }
