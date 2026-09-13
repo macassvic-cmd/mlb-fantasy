@@ -17,6 +17,7 @@ from datetime import datetime, timedelta, timezone
 
 import projections as proj
 import report
+import clv
 from scrapers.market_lines import compute_pp_ud_ratio, load_cached_market_lines, match_lines
 from scrapers.mlb_api import get_player_game_log
 
@@ -38,15 +39,15 @@ STACKS_SHADOW_RESULTS_PATH = os.path.join(RESULTS_DIR, "stacks_shadow_results.js
 UD_UNDER_BAND_RESULTS_PATH = os.path.join(RESULTS_DIR, "ud_under_band_results.json")
 MARKED_PLAYS_RESULTS_PATH = os.path.join(RESULTS_DIR, "marked_plays_results.json")
 NON_BAND_65_UNDER_RESULTS_PATH = os.path.join(RESULTS_DIR, "non_band_65_under_results.json")
+TOP25_GATED_RESULTS_PATH = os.path.join(RESULTS_DIR, "top25_gated_results.json")
 
-# Fire/Hot marked-play cohort thresholds - must match report.top25TreatmentClass's
-# live badge logic (n>=8 minimum sample, 55%+ bar, n>=15 for the "fire" glow
-# vs. n 8-14 for "hot"). Kept as separate constants here (not imported from
-# report.py) because grading needs to reconstruct each date's classification
-# point-in-time, not read report.py's current-running-total badge.
-FIRE_MIN_N = 15
-HOT_MIN_N = 8
-MARK_MIN_RATE = 0.55
+# Fire/Hot marked-play cohort thresholds - imported from report.py (the
+# canonical copy, used there for the live top25_tier badge) rather than
+# redefined here, so the point-in-time backtest classification below and the
+# live dashboard badge can never drift apart the way they used to when each
+# side kept its own copy (report.py's old client-side JS included).
+from report import FIRE_MIN_N, HOT_MIN_N, MARK_MIN_RATE
+from shrinkage import shrink_rate, pooled_rate as pooled_rate_fn
 
 
 def classify(projected, actual):
@@ -230,6 +231,8 @@ def track_date(date_str):
     grade_value_plays(date_str, results_by_pid)
     grade_ud_under_band(date_str, results_by_pid)
     grade_65_under_nonband(date_str, results_by_pid)
+    grade_top25_gated(date_str, results_by_pid)
+    clv.grade_clv(date_str)
     # Premium/Slips/Stacks (and Stacks shadow-mode) retired from the live
     # dashboard 2026-08-18 - see report.py/slips.py/stacks.py. No point
     # accumulating win/loss records for products nobody sees anymore, so
@@ -434,6 +437,21 @@ def grade_ud_under_band(date_str, results_by_pid):
             rec["wins" if grade == "win" else "losses"] += 1
     data["record_by_line"] = by_line
 
+    # Per-player record within the band - added 2026-09-13 so report.py can
+    # show a Bayesian-shrunk per-player UNDER-band rate (see shrinkage.py)
+    # the same way it already does for Top-25. Recomputed from scratch from
+    # the same per-play records every run, same discipline as record_by_line.
+    by_player = {}
+    for dd in counted.values():
+        for p in dd.get("plays", []):
+            grade = p.get("grade")
+            if grade not in ("win", "loss"):
+                continue
+            pid = str(p.get("player_id"))
+            rec = by_player.setdefault(pid, {"name": p.get("name"), "team": p.get("team"), "wins": 0, "losses": 0})
+            rec["wins" if grade == "win" else "losses"] += 1
+    data["record_by_player"] = by_player
+
     os.makedirs(RESULTS_DIR, exist_ok=True)
     with open(UD_UNDER_BAND_RESULTS_PATH, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
@@ -519,6 +537,67 @@ def grade_65_under_nonband(date_str, results_by_pid):
     print(f"6.5/under non-band: {wins}-{losses} today ({dnp} DNP) -> live-tracked "
           f"{data['record']['wins']}-{data['record']['losses']} ({data['record']['dnp']} DNP), combined with seed "
           f"{total_wins}-{total_losses} ({rate}%, n={total_n})")
+
+
+def grade_top25_gated(date_str, results_by_pid):
+    """Grade the day's Top-25 OVERs that cleared the new edge + supporting-
+    signal gate (report.is_actionable / report.save_top25_gated_plays) -
+    added 2026-09-13 because raw Top-25-by-rank does NOT separate winners
+    from losers (49.3% out-of-sample, see report.top25_results.json), so
+    that record keeps running unchanged as a diagnostic but is no longer
+    treated as validated. This is a brand-new, separate, deliberately
+    UNVALIDATED cohort that tests whether the edge+signal gate itself does
+    any better - same DNP/snapshot discipline as grade_ud_under_band (a
+    DNP'd player never gets an all_results.json entry, so candidacy has to
+    be read from the day's own saved snapshot, not reconstructed after the
+    fact). No seed - this cohort didn't exist before today, so it starts at
+    0-0 and its record only means anything once real volume accumulates."""
+    plays_path = os.path.join(report.TOP25_GATED_PLAYS_DIR, f"{date_str}.json")
+    if not os.path.exists(plays_path):
+        print(f"Top 25 gated: no saved plays snapshot for {date_str} "
+              f"(dashboard wasn't generated that day?) - skipping.")
+        return
+    candidates = load_json(plays_path, {"plays": []}).get("plays", [])
+
+    wins = losses = dnp = 0
+    graded_plays = []
+    for play in candidates:
+        res = results_by_pid.get(play["player_id"])
+        if res is None:
+            grade = "dnp"
+            dnp += 1
+            actual_ud = None
+        else:
+            actual_ud = res.get("actual_ud")
+            result_ud = res.get("result_ud")
+            if result_ud == "win":
+                grade, wins = "win", wins + 1
+            elif result_ud == "loss":
+                grade, losses = "loss", losses + 1
+            elif result_ud == "push":
+                grade = "push"
+            else:
+                grade, dnp = "dnp", dnp + 1
+        graded_plays.append({**play, "actual_ud": actual_ud, "grade": grade})
+
+    data = load_json(TOP25_GATED_RESULTS_PATH, {"dates": {}, "record": {"wins": 0, "losses": 0, "dnp": 0}})
+    data.setdefault("dates", {})
+    data["dates"][date_str] = {"wins": wins, "losses": losses, "dnp": dnp, "plays": graded_plays}
+
+    data["record"] = {
+        "wins": sum(d["wins"] for d in data["dates"].values()),
+        "losses": sum(d["losses"] for d in data["dates"].values()),
+        "dnp": sum(d.get("dnp", 0) for d in data["dates"].values()),
+    }
+
+    os.makedirs(RESULTS_DIR, exist_ok=True)
+    with open(TOP25_GATED_RESULTS_PATH, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2)
+
+    total = data["record"]["wins"] + data["record"]["losses"]
+    rate = round(100 * data["record"]["wins"] / total, 1) if total else 0.0
+    print(f"Top 25 gated: {wins}-{losses} today ({dnp} DNP) -> running "
+          f"{data['record']['wins']}-{data['record']['losses']} ({rate}%, n={total})")
 
 
 def grade_premium_plays(date_str, results_by_pid):
@@ -1048,16 +1127,24 @@ def track_top25(date_str, rows, results_by_pid):
     track_marked_plays(top25_data)
 
 
-def _mark_tier(n_before, wins_before):
+def _mark_tier(n_before, wins_before, baseline_before):
     """fire/hot/None classification from a player's Top-25 record STRICTLY
-    BEFORE the date being classified - mirrors report.top25TreatmentClass's
-    live badge logic (n>=8 minimum sample, 55%+ bar, n>=15 for fire vs.
-    n 8-14 for hot) but point-in-time, so a date's classification never
-    depends on results that hadn't happened yet when that day's picks went
-    out."""
+    BEFORE the date being classified - mirrors report.top25_tier's live
+    badge logic (n>=8 minimum sample, 55%+ bar on the SHRUNK rate, n>=15 for
+    fire vs. n 8-14 for hot) but point-in-time, so a date's classification
+    never depends on results that hadn't happened yet when that day's picks
+    went out.
+
+    Uses shrink_rate (see shrinkage.py) instead of the raw wins_before/n_before
+    rate - added 2026-09-13 so a small-n hot streak (e.g. 4-2, 66.7% raw)
+    gets pulled hard toward baseline_before and can no longer clear
+    MARK_MIN_RATE on a handful of games the way the raw rate did. baseline_before
+    is that SAME date's pooled before-only rate across all players (see
+    track_marked_plays), so this stays leak-free like the rest of this
+    function."""
     if n_before <= 0:
         return None
-    rate = wins_before / n_before
+    rate = shrink_rate(wins_before, n_before - wins_before, baseline_before)
     if rate < MARK_MIN_RATE:
         return None
     if n_before >= FIRE_MIN_N:
@@ -1095,12 +1182,27 @@ def track_marked_plays(top25_data):
 
     for d in dates:
         day_out = {"fire": [], "hot": []}
+        # Pooled baseline for THIS date's shrinkage prior, built only from
+        # history strictly before d across every player - computed once per
+        # date (not per player) so it's the same number every player on
+        # that date is compared against, and never leaks a result that
+        # hadn't happened yet into the classification.
+        pool_wins = pool_losses = 0
+        for h_list in histories.values():
+            for h in h_list:
+                if h["date"] < d:
+                    if h["grade"] == "win":
+                        pool_wins += 1
+                    elif h["grade"] == "loss":
+                        pool_losses += 1
+        baseline_before = pooled_rate_fn(pool_wins, pool_losses)
+
         for e in top25_data["dates"][d]["top25"]:
             pid = str(e["player_id"])
             before = [h for h in histories.get(pid, []) if h["date"] < d]
             wins_before = sum(1 for h in before if h["grade"] == "win")
             n_before = sum(1 for h in before if h["grade"] in ("win", "loss"))
-            mark = _mark_tier(n_before, wins_before)
+            mark = _mark_tier(n_before, wins_before, baseline_before)
             if mark is None:
                 continue
             grade = e.get("grade")

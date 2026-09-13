@@ -18,6 +18,8 @@ from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
 
 import projections as proj
+import clv
+from shrinkage import shrink_rate, pooled_rate
 from scrapers.market_lines import get_market_lines, compute_pp_ud_ratio, match_lines
 from scrapers.betr import get_betr_lines
 
@@ -133,25 +135,82 @@ def edge_label(edge):
 
 TOP25_RECORD_MIN_N_FOR_RATE = 8
 
+# Fire/Hot tier thresholds - the canonical copy. tracker.py imports these
+# (rather than defining its own) so its point-in-time backtest grading
+# (tracker._mark_tier) and this module's live badge (top25_tier below) can
+# never drift out of sync the way report.py's old client-side JS
+# top25TreatmentClass used to (that duplication is gone - see top25_tier).
+FIRE_MIN_N = 15
+HOT_MIN_N = 8
+MARK_MIN_RATE = 0.55
 
-def top25_record_badge(player_id, top25_players):
+
+def top25_pooled_baseline(top25_players):
+    """Pooled Top-25 win rate across every tracked player, used as the
+    shrinkage prior for any single player's record - our own data shows
+    Top-25-by-rank alone runs close to a coin flip (49.3%), so that's what
+    a thin sample should be pulled toward, not an arbitrary 50%. Added
+    2026-09-13 (see shrinkage.py)."""
+    wins = losses = 0
+    for p in top25_players.values():
+        for h in p.get("history", []):
+            if h.get("grade") == "win":
+                wins += 1
+            elif h.get("grade") == "loss":
+                losses += 1
+    return pooled_rate(wins, losses)
+
+
+def top25_record_badge(player_id, top25_players, baseline=None):
     """Cumulative Top-25 appearance record for this player, from
     top25_results.json's per-player history (win/loss vs the UD line,
     excluding pushes). Always the current running total regardless of
-    which date's card is showing it - not a point-in-time snapshot."""
+    which date's card is showing it - not a point-in-time snapshot.
+
+    Also returns a Bayesian-shrunk rate (shrink_rate, see shrinkage.py)
+    pulled toward the pooled Top-25 baseline, weighted by n - a thin record
+    (e.g. 4-2) lands close to baseline, a deep one (e.g. 23-8) keeps most of
+    its own signal. `baseline` should be top25_pooled_baseline(top25_players)
+    computed once per dashboard render; recomputed here if not supplied."""
+    if baseline is None:
+        baseline = top25_pooled_baseline(top25_players)
     p = top25_players.get(str(player_id)) if player_id is not None else None
     history = p.get("history", []) if p else []
     wins = sum(1 for h in history if h.get("grade") == "win")
     losses = sum(1 for h in history if h.get("grade") == "loss")
     n = wins + losses
+    shrunk_rate = round(100 * shrink_rate(wins, losses, baseline), 1)
     if n == 0:
         text = "Top 25: first appearance"
     elif n < TOP25_RECORD_MIN_N_FOR_RATE:
-        text = f"Top 25: {wins}-{losses} (n={n})"
+        text = f"Top 25: {wins}-{losses} (n={n}, shrunk {shrunk_rate}%)"
     else:
         rate = round(100 * wins / n, 1)
-        text = f"Top 25: {wins}-{losses} ({rate}%)"
-    return {"text": text, "wins": wins, "losses": losses, "n": n}
+        text = f"Top 25: {wins}-{losses} (raw {rate}%, shrunk {shrunk_rate}%)"
+    return {"text": text, "wins": wins, "losses": losses, "n": n,
+            "shrunkRate": shrunk_rate}
+
+
+def top25_tier(player_id, top25_players, baseline):
+    """Live fire/hot classification for today's card, using ALL history to
+    date (no leakage concern here - this is today's real-time badge, not a
+    backtested historical date; see tracker._mark_tier for the point-in-time
+    version used when grading past dates). Uses the shrunk rate rather than
+    the raw rate, so a small-n hot streak (the "Oneil Cruz at 4-2" case)
+    can no longer light up fire/hot purely on a few good games."""
+    p = top25_players.get(str(player_id)) if player_id is not None else None
+    history = p.get("history", []) if p else []
+    wins = sum(1 for h in history if h.get("grade") == "win")
+    n = wins + sum(1 for h in history if h.get("grade") == "loss")
+    if n <= 0:
+        return None
+    if shrink_rate(wins, n - wins, baseline) < MARK_MIN_RATE:
+        return None
+    if n >= FIRE_MIN_N:
+        return "fire"
+    if n >= HOT_MIN_N:
+        return "hot"
+    return None
 
 
 def build_card(row):
@@ -181,6 +240,7 @@ def build_card(row):
         "noLinePenalty": row.get("no_line_penalty", False),
         "getawayDayRisk": row.get("getaway_day_risk", False),
         "projectedLineup": row.get("lineup_status") == "projected",
+        "lineupConfirmed": bool(row.get("lineup_confirmed", True)),
         "tier":   card_tier(row["ud_pts"]),
         "edge":   row.get("edge"),
         "udUnderBand": in_ud_under_band(row),
@@ -188,6 +248,15 @@ def build_card(row):
         "edgeLabel": edge_label(row.get("edge")),
         "gameTimePt":  row.get("game_time_pt"),
         "gameDateUtc": row.get("game_date_utc"),
+        # actionable/actionableReason/top25Tier are computed once per row in
+        # write_dashboard (report.is_actionable / report.top25_tier) before
+        # any cards are built, so every grid (Top 25/Value/Unanchored/
+        # Unders) reflects the same gate - see the module comment above
+        # in_ud_under_band. Default True/"n/a" here only protects any stray
+        # caller that builds a card from a row that skipped that step.
+        "actionable": row.get("actionable", True),
+        "actionableReason": row.get("actionable_reason", "n/a"),
+        "top25Tier": row.get("top25_tier"),
     }
 
 
@@ -397,6 +466,94 @@ LOW_COVERAGE_DATES = {
 def in_ud_under_band(row):
     edge = row.get("edge")
     return bool(row.get("market_anchored")) and edge is not None and -UD_UNDER_BAND_HI < edge <= -UD_UNDER_BAND_LO
+
+
+# ---------------------------------------------------------------------------
+# Actionable gate - added 2026-09-13. Two things our own out-of-sample data
+# has now shown: (1) a projected (unconfirmed) lineup is a real risk, not
+# cosmetic - batting order swings the OVER/UNDER call, and a lineup can
+# still change after we've shown a play; (2) Top-25 rank ALONE doesn't
+# separate winners from losers (49.3% out-of-sample) the way the UD UNDER
+# 1.5-2.0 band does (in_ud_under_band, above - the one thing that
+# replicated). is_actionable() is the single gate both of those funnel
+# through: nothing built on a projected lineup can ever be actionable
+# regardless of edge/tier, and a Top-25 OVER additionally needs a real
+# live-line edge (the same validated OVER bucket Value Plays already use -
+# TOP25_OVER_EDGE_MIN is a straight alias, not a new number) PLUS one
+# supporting signal. This does not change the Top 25 tab's membership/rank
+# (still purely ud_pts) - it only changes what's marked actionable and what
+# gets persisted into a results file for future grading.
+# ---------------------------------------------------------------------------
+
+TOP25_OVER_EDGE_MIN = VALUE_PLAY_OVER_EDGE  # reuse the real validated OVER bucket (1.0pt, 54.3%), not a new threshold
+
+TOP25_GATED_PLAYS_DIR = os.path.join("data", "top25_gated_plays")
+
+
+def contact_percentile_cutoffs(rows, pct=75):
+    """That day's own 75th-percentile xwOBA/Barrel% among market-anchored
+    rows - self-normalizing "strong contact" bar rather than a fixed
+    absolute number (xwOBA/barrel scales drift year to year; a hardcoded
+    cutoff wouldn't). This is a new, NOT yet backtested heuristic - it only
+    ever serves as one of several optional supporting signals behind the
+    real edge requirement in is_actionable, never as a standalone filter."""
+    anchored = [r for r in rows if r.get("market_anchored")]
+    xwoba_vals = [r["xwoba"] for r in anchored if r.get("xwoba") is not None]
+    barrel_vals = [r["barrel_pct"] for r in anchored if r.get("barrel_pct") is not None]
+    return {
+        "xwoba": percentile(xwoba_vals, pct) if xwoba_vals else float("inf"),
+        "barrel": percentile(barrel_vals, pct) if barrel_vals else float("inf"),
+    }
+
+
+def is_actionable(row, top25_players, top25_baseline, contact_cutoffs):
+    """Whether this row is a play we'd actually surface as actionable, vs.
+    informational only. Returns (bool, reason). See module comment above
+    for why: a projected lineup is a hard gate (no edge/tier overrides it),
+    the validated UNDER band is unconditionally actionable once lineup-
+    confirmed, and a Top-25 OVER needs a real edge plus a supporting signal
+    (platoon advantage, that day's top-quartile contact, or a shrunk Top-25
+    sample meaningfully above baseline) since rank alone isn't a filter."""
+    if not row.get("lineup_confirmed", True):
+        return False, "projected lineup - not confirmed"
+
+    if in_ud_under_band(row):
+        return True, "validated UNDER band"
+
+    edge = row.get("edge")
+    if row.get("market_anchored") and edge is not None and edge >= TOP25_OVER_EDGE_MIN:
+        if row.get("platoon_advantage") == "batter":
+            return True, "edge + platoon advantage"
+        if (row.get("xwoba") is not None and row["xwoba"] >= contact_cutoffs["xwoba"]) or \
+           (row.get("barrel_pct") is not None and row["barrel_pct"] >= contact_cutoffs["barrel"]):
+            return True, "edge + strong contact"
+        rec = top25_record_badge(row.get("player_id"), top25_players, top25_baseline)
+        if rec["n"] >= TOP25_RECORD_MIN_N_FOR_RATE and rec["shrunkRate"] / 100 >= MARK_MIN_RATE:
+            return True, "edge + shrunk sample above baseline"
+
+    return False, "rank only - no supporting signal"
+
+
+def save_top25_gated_plays(date_str, gated_rows):
+    """Snapshot of today's Top-25 OVERs that cleared is_actionable's edge +
+    supporting-signal gate, saved so tracker.grade_top25_gated can grade
+    them the next day even for players who end up DNPing - same reasoning
+    as save_ud_under_band_plays. This is a brand-new cohort (opened
+    2026-09-13, no seed) testing whether the gate itself holds up; it does
+    not affect Top 25 tab membership."""
+    plays = [{
+        "player_id": r.get("player_id"),
+        "name": r["name"],
+        "team": r["team"],
+        "projected_ud": r.get("ud_pts"),
+        "ud_line": r.get("ud_line"),
+        "edge": r.get("edge"),
+        "actionable_reason": r.get("actionable_reason"),
+        "game_time_pt": r.get("game_time_pt"),
+    } for r in gated_rows]
+    os.makedirs(TOP25_GATED_PLAYS_DIR, exist_ok=True)
+    with open(os.path.join(TOP25_GATED_PLAYS_DIR, f"{date_str}.json"), "w", encoding="utf-8") as f:
+        json.dump({"date": date_str, "plays": plays}, f, indent=2)
 
 
 # Line-value split of the band's forward tracking, opened 2026-08-29 after
@@ -880,10 +1037,11 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     daily_hit_rate = None
     daily_date = None
     top25_players = top25_data.get("players", {})
+    top25_baseline = top25_pooled_baseline(top25_players)
     if t25_dates:
         daily_date = t25_dates[-1]
         yesterday_cards = [
-            {**e, "top25Record": top25_record_badge(e.get("player_id"), top25_players)}
+            {**e, "top25Record": top25_record_badge(e.get("player_id"), top25_players, top25_baseline)}
             for e in top25_data["dates"][daily_date]["top25"]
         ]
         decided = [e for e in yesterday_cards if e["grade"] in ("win", "loss")]
@@ -1007,12 +1165,54 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     def _by_game_time(row_list):
         return sorted(row_list, key=lambda r: r.get("game_date_utc") or "9999")
 
+    # --- Actionable gate (report.is_actionable, see module comment above
+    # in_ud_under_band) - computed once per row, for every row, before any
+    # card/tab is built, so the confirmed-lineup hard gate and the Top-25
+    # edge+signal gate apply identically everywhere a row can surface
+    # (Top 25/Value/Unanchored/Unders). Needs the UD-UNDER-band's own
+    # per-player record (for the Unders tab's shrunk per-player badge) - so
+    # that file is loaded here, once, rather than down in the Under Results
+    # section below (which reuses this same `under_band_data`). ------------
+    under_band_data = {"seed": UD_UNDER_BAND_SEED, "dates": {}, "record": {"wins": 0, "losses": 0, "dnp": 0}}
+    if os.path.exists(UD_UNDER_BAND_RESULTS_PATH):
+        try:
+            with open(UD_UNDER_BAND_RESULTS_PATH, encoding="utf-8") as f:
+                under_band_data = json.load(f)
+        except Exception:
+            pass
+    under_band_by_player = under_band_data.get("record_by_player", {})
+    _ubw, _ubl, _ = _ud_under_band_combined_record()
+    under_band_baseline = pooled_rate(_ubw, _ubl)
+
+    contact_cutoffs = contact_percentile_cutoffs(rows)
+    for r in rows:
+        r["actionable"], r["actionable_reason"] = is_actionable(r, top25_players, top25_baseline, contact_cutoffs)
+        r["top25_tier"] = top25_tier(r.get("player_id"), top25_players, top25_baseline)
+
+    # Forward CLV capture (clv.record_line_snapshot) - runs on every
+    # dashboard render, i.e. every pipeline cycle already happening today,
+    # so the first render of the day captures the "open" line and whichever
+    # render is last before lock naturally becomes "close". Must run AFTER
+    # actionable is set above (only actionable-at-close rows get graded -
+    # see clv.grade_clv), but doesn't depend on which tab a row ends up in.
+    clv.record_line_snapshot(date_str, rows)
+
     # --- Top 25 cards -------------------------------------------------
     cards = [build_card(row) for row in _by_game_time(rows[:25])]
     for c in cards:
-        c["top25Record"] = top25_record_badge(c.get("playerId"), top25_players)
+        c["top25Record"] = top25_record_badge(c.get("playerId"), top25_players, top25_baseline)
     # cards_js is serialized further below, after value_rows is known, so
     # valuePlay membership can be added.
+
+    # New Top-25-OVER-gated cohort (report.save_top25_gated_plays) - the
+    # subset of today's Top 25 whose OVER call cleared is_actionable's
+    # edge+signal gate. Kept separate from the validated UNDER band (which
+    # has its own snapshot/results file already) so this brand-new,
+    # unvalidated gate can be judged on its own merits.
+    top25_gated_rows = [r for r in rows[:25]
+                         if r.get("actionable") and edge_label(r.get("edge")) == "over"
+                         and r.get("actionable_reason") != "validated UNDER band"]
+    save_top25_gated_plays(date_str, top25_gated_rows)
 
     # --- Value Plays: model vs. market disagreement above threshold ---------
     # Live thresholds tracked in data/results/edge_bucket_rates.json
@@ -1034,7 +1234,11 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     over_rows.sort(key=lambda r: r["edge"], reverse=True)
     under_rows.sort(key=lambda r: r["edge"])
     value_rows = over_rows[:4] + under_rows[:4]
-    save_value_plays(date_str, value_rows)
+    # Confirmed-lineup hard gate: a play built on a projected lineup is
+    # still shown on the dashboard (build_card below flags it), but never
+    # persisted into the snapshot a future grading run reads from - see
+    # module comment on is_actionable.
+    save_value_plays(date_str, [r for r in value_rows if r.get("actionable")])
     value_cards = [build_card(row) for row in _by_game_time(value_rows)]
     value_cards_js = json.dumps(value_cards)
 
@@ -1055,28 +1259,30 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     unders_rows = [r for r in unders_all_rows if in_ud_under_band(r)]
     unders_rows.sort(key=lambda r: r["edge"])  # most negative (biggest edge) first
     unders_cards = [build_card(row) for row in unders_rows]
+    for c in unders_cards:
+        pid = str(c.get("playerId"))
+        prec = under_band_by_player.get(pid)
+        w, l = (prec.get("wins", 0), prec.get("losses", 0)) if prec else (0, 0)
+        n = w + l
+        shrunk = round(100 * shrink_rate(w, l, under_band_baseline), 1)
+        c["underBandRecord"] = {"wins": w, "losses": l, "n": n, "shrunkRate": shrunk}
     unders_cards_js = json.dumps(unders_cards)
     unders_band_count = len(unders_cards)
-    save_ud_under_band_plays(date_str, unders_rows)
+    save_ud_under_band_plays(date_str, [r for r in unders_rows if r.get("actionable")])
 
     # Forward-tracking snapshot for the non-band 6.5/under cohort (see
     # module comment on in_65_under_nonband) - graded nightly like the band,
     # but deliberately NOT built into unders_cards/unders_rows above, so it
     # never appears on the Unders tab as a recommended play.
     nonband_65_under_rows = [r for r in unders_all_rows if in_65_under_nonband(r)]
-    save_65_under_nonband_plays(date_str, nonband_65_under_rows)
+    save_65_under_nonband_plays(date_str, [r for r in nonband_65_under_rows if r.get("actionable")])
 
     # --- Under Results tab: grading history for the validated band, built
     # from data/results/ud_under_band_results.json (tracker.grade_ud_under_band,
     # graded nightly). DNPs are tracked separately and never counted as
-    # wins/losses - see grade_ud_under_band's DNP handling. -----------------
-    under_band_data = {"seed": UD_UNDER_BAND_SEED, "dates": {}, "record": {"wins": 0, "losses": 0, "dnp": 0}}
-    if os.path.exists(UD_UNDER_BAND_RESULTS_PATH):
-        try:
-            with open(UD_UNDER_BAND_RESULTS_PATH, encoding="utf-8") as f:
-                under_band_data = json.load(f)
-        except Exception:
-            pass
+    # wins/losses - see grade_ud_under_band's DNP handling. `under_band_data`
+    # was already loaded above (before the Top 25 cards section) for the
+    # per-player shrunk badge - reused here rather than reloaded. -----------
     under_dates = sorted(under_band_data.get("dates", {}).keys())
     under_calendar_cells = []
     for d in under_dates:
@@ -1165,6 +1371,56 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     nonband65_total_rate = round(100 * nonband65_total_wins / nonband65_total_n, 1) if nonband65_total_n else 0.0
     nonband65_ci_lo, nonband65_ci_hi = wilson_ci(nonband65_total_wins, nonband65_total_n)
     nonband65_live_n = nonband65_live_record.get("wins", 0) + nonband65_live_record.get("losses", 0)
+
+    # --- Top 25 Gated Results (report.is_actionable's Top-25 OVER cohort,
+    # tracker.grade_top25_gated) - brand-new 2026-09-13, no seed. Same
+    # calendar-cell shape as the other cohorts above. ----------------------
+    top25_gated_data = {"dates": {}, "record": {"wins": 0, "losses": 0, "dnp": 0}}
+    top25_gated_path = os.path.join("data", "results", "top25_gated_results.json")
+    if os.path.exists(top25_gated_path):
+        try:
+            with open(top25_gated_path, encoding="utf-8") as f:
+                top25_gated_data = json.load(f)
+        except Exception:
+            pass
+    top25_gated_dates = sorted(top25_gated_data.get("dates", {}).keys())
+    top25_gated_calendar_cells = []
+    for d in top25_gated_dates:
+        dd = top25_gated_data["dates"][d]
+        w, l, dnp = dd.get("wins", 0), dd.get("losses", 0), dd.get("dnp", 0)
+        decided = w + l
+        top25_gated_calendar_cells.append({
+            "date": d, "hit_rate": round(100 * w / decided, 1) if decided else None,
+            "wins": w, "losses": l, "dnp": dnp,
+        })
+    top25_gated_calendar_js = json.dumps(top25_gated_calendar_cells)
+    top25_gated_record = top25_gated_data.get("record", {"wins": 0, "losses": 0, "dnp": 0})
+    top25_gated_n = top25_gated_record.get("wins", 0) + top25_gated_record.get("losses", 0)
+    top25_gated_rate = round(100 * top25_gated_record.get("wins", 0) / top25_gated_n, 1) if top25_gated_n else 0.0
+    top25_gated_ci_lo, top25_gated_ci_hi = wilson_ci(top25_gated_record.get("wins", 0), top25_gated_n)
+
+    # --- CLV tab: forward record (clv.grade_clv) + honest backtest coverage
+    # summary (backtest.backtest_clv, run separately/offline - see its
+    # module docstring for why real two-snapshot coverage is small). Both
+    # read whatever's on disk; neither is computed here. -------------------
+    clv_data = {"record": {"positive": 0, "negative": 0, "push": 0, "n": 0, "win_rate": None, "avg_clv_points": None}}
+    if os.path.exists(clv.CLV_RESULTS_PATH):
+        try:
+            with open(clv.CLV_RESULTS_PATH, encoding="utf-8") as f:
+                clv_data = json.load(f)
+        except Exception:
+            pass
+    clv_forward_js = json.dumps(clv_data.get("record", {}))
+
+    clv_backtest_path = os.path.join("data", "backtest", "clv_backtest.json")
+    clv_backtest_data = {"coverage": {"dates_checked": 0, "dates_with_two_snapshots": 0}, "summary": {}}
+    if os.path.exists(clv_backtest_path):
+        try:
+            with open(clv_backtest_path, encoding="utf-8") as f:
+                clv_backtest_data = json.load(f)
+        except Exception:
+            pass
+    clv_backtest_js = json.dumps(clv_backtest_data)
 
     # --- Top 25 tier-membership badge (VALUE PLAY only now - PREMIUM/
     # STRONG/SLIP/STACK retired 2026-08-18, see module docstrings) ---
@@ -1320,6 +1576,28 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
                               margin-left: 6px; font-weight: 700; }}
   .card .top25-record {{ font-size: 12px; color: #9fb0cc; margin-top: 6px; }}
   .card .top25-record.has-rate {{ color: #c4cee0; }}
+  .card .badge-actionable {{ background: #4ade80; color: #0d1626; margin-left: 6px; }}
+  .card .badge-not-actionable {{ background: transparent; border: 1px solid #6c7da0; color: #9fb0cc;
+                                  margin-left: 6px; font-weight: 600; }}
+
+  /* Batting order chip - prominent and color-coded (top of order gets the
+     most plate appearances, bottom the fewest), added 2026-09-13 since
+     order is a primary OVER/UNDER driver, not a footnote in the meta line. */
+  .order-chip {{ display: inline-block; margin-top: 4px; padding: 2px 9px; font-size: 12px;
+                  font-weight: 800; border-radius: 10px; }}
+  .order-chip.order-top    {{ background: #4ade80; color: #0d1626; }}
+  .order-chip.order-mid    {{ background: #60a5fa; color: #0d1626; }}
+  .order-chip.order-bottom {{ background: #3a4866; color: #c4cee0; }}
+
+  /* Confirmed-lineup hard gate: a projected-lineup card is still shown, but
+     visibly not-yet-real - dimmed and hatched rather than just badged, so
+     it reads differently at a glance from a card that's simply low-signal.
+     Distinct from .card.used (a manual, one-off "I've seen this" dismiss). */
+  .card.pending-lineup {{
+    opacity: 0.55;
+    background-image: repeating-linear-gradient(135deg, rgba(251,191,36,0.06) 0 10px,
+                                                  transparent 10px 20px);
+  }}
 
   /* Full leaderboard table */
   .controls {{ display: flex; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }}
@@ -1497,6 +1775,7 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   <button class="tab-btn" id="tab-history" data-tab="history">Player History</button>
   <button class="tab-btn" id="tab-top25results" data-tab="top25results">Top 25 Results</button>
   <button class="tab-btn" id="tab-underresults" data-tab="underresults">Under Results</button>
+  <button class="tab-btn" id="tab-clv" data-tab="clv">CLV</button>
 </div>
 
 <div class="panel" id="panel-top25">
@@ -1613,6 +1892,20 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   <div class="unvalidated-note">Opened {NON_BAND_65_UNDER_SEED_END} after the 6.5/under line-value breakdown showed plays OUTSIDE the validated 1.5&ndash;2.0 band running {NON_BAND_65_UNDER_SEED['wins']}-{NON_BAND_65_UNDER_SEED['losses']} ({round(100*NON_BAND_65_UNDER_SEED['wins']/NON_BAND_65_UNDER_SEED['n'],1)}%, n={NON_BAND_65_UNDER_SEED['n']}) historically. That rate is the discovery number itself, not an out-of-sample confirmation - frozen here as the seed and tracked forward with the same discipline as the band. Not surfaced as a recommended play on the Unders tab until it earns real out-of-sample volume.</div>
   <div class="results-summary" id="nonband65Summary"></div>
   <div class="cal-grid" id="nonband65CalGrid"></div>
+
+  <h3 class="section-title">Top 25 Gated (edge + signal) <span class="unvalidated-badge">UNVALIDATED</span></h3>
+  <div class="unvalidated-note">Opened 2026-09-13. Raw Top-25-by-rank does not separate winners from losers (49.3% out-of-sample - see the Top 25 Results tab), so it's no longer treated as actionable on its own. This cohort is just today's Top-25 OVERs that additionally cleared a real live-line edge plus a supporting signal (platoon advantage, that day's top-quartile contact, or a Bayesian-shrunk personal record meaningfully above baseline - see report.is_actionable). Brand new, no seed - it starts at 0-0 and only means something once it accumulates real volume.</div>
+  <div class="results-summary" id="top25GatedSummary"></div>
+  <div class="cal-grid" id="top25GatedCalGrid"></div>
+</div>
+
+<div class="panel hidden" id="panel-clv">
+  <div class="unvalidated-note">CLV (Closing Line Value) measures whether the line moved in our favor between when a play is first surfaced and when it locks - independent of whether the play itself won or lost. Forward tracking is the priority for the remainder of this season; the backtest below is honest about how little historical two-snapshot coverage actually exists (see clv.py / backtest.backtest_clv).</div>
+  <h3 class="section-title">Forward CLV Record</h3>
+  <div class="results-summary" id="clvForwardSummary"></div>
+  <h3 class="section-title">Backtest CLV Coverage</h3>
+  <div class="results-summary" id="clvBacktestSummary"></div>
+  <div class="unvalidated-note" id="clvBacktestNote"></div>
 </div>
 
 
@@ -1665,6 +1958,15 @@ const NONBAND65_LIVE_N = {nonband65_live_n};
 const NONBAND65_LIVE_DNP = {nonband65_live_dnp};
 const NONBAND65_CI_LO = {json.dumps(nonband65_ci_lo)};
 const NONBAND65_CI_HI = {json.dumps(nonband65_ci_hi)};
+const TOP25_GATED_CAL = {top25_gated_calendar_js};
+const TOP25_GATED_WINS = {top25_gated_record.get("wins", 0)};
+const TOP25_GATED_LOSSES = {top25_gated_record.get("losses", 0)};
+const TOP25_GATED_N = {top25_gated_n};
+const TOP25_GATED_RATE = {json.dumps(top25_gated_rate)};
+const TOP25_GATED_CI_LO = {json.dumps(top25_gated_ci_lo)};
+const TOP25_GATED_CI_HI = {json.dumps(top25_gated_ci_hi)};
+const CLV_FORWARD = {clv_forward_js};
+const CLV_BACKTEST = {clv_backtest_js};
 const GENERATED_AT = {json.dumps(generated_at_iso)};
 const GAME_DATE = {json.dumps(date_str)};
 const PLAYER_COUNT = {player_count};
@@ -1743,20 +2045,39 @@ function top25RecordHtml(c) {{
   return `<div class="top25-record${{hasRate ? ' has-rate' : ''}}">${{c.top25Record.text}}</div>`;
 }}
 
-// n-gated so a thin sample never gets the same visual weight as a proven
-// one: under 8 appearances gets no treatment no matter how hot the rate
-// is; 8-14 gets a plain solid border; 15+ gets the animated glow.
+function underBandRecordHtml(c) {{
+  if (!c.underBandRecord || c.underBandRecord.n === 0) return '';
+  const r = c.underBandRecord;
+  return `<div class="top25-record">Band record: ${{r.wins}}-${{r.losses}} (shrunk ${{r.shrunkRate}}%, n=${{r.n}})</div>`;
+}}
+
+// Server-computed (report.top25_tier) - shrunk-rate fire/hot classification,
+// see shrinkage.py. No client-side threshold logic anymore: this used to
+// re-derive n>=8/n>=15/rate>=0.55 from the raw record here in JS, which
+// would have silently drifted out of sync with the new shrinkage math on
+// the Python side the moment one side changed and not the other.
 function top25TreatmentClass(c) {{
-  const r = c.top25Record;
-  if (!r || r.n < 8) return '';
-  const rate = r.wins / r.n;
-  if (rate < 0.55) return '';
-  return r.n >= 15 ? 'top25-fire' : 'top25-hot';
+  if (c.top25Tier === 'fire') return 'top25-fire';
+  if (c.top25Tier === 'hot') return 'top25-hot';
+  return '';
 }}
 
 function tierBadgesHtml(c) {{
   return (c.valuePlay ? '<div class="badge badge-value">VALUE PLAY</div>' : '')
-    + (c.udUnderBand ? `<div class="badge badge-under-band" title="Raw edge bucket, not a tier - tracked separately since {UD_UNDER_BAND_SEED_END}">${{UD_UNDER_BAND_LABEL}}</div>` : '');
+    + (c.udUnderBand ? `<div class="badge badge-under-band" title="Raw edge bucket, not a tier - tracked separately since {UD_UNDER_BAND_SEED_END}">${{UD_UNDER_BAND_LABEL}}</div>` : '')
+    + (c.actionable
+        ? `<div class="badge badge-actionable" title="${{c.actionableReason}}">&#10003; ACTIONABLE</div>`
+        : `<div class="badge badge-not-actionable" title="${{c.actionableReason}}">INFO ONLY &middot; ${{c.actionableReason}}</div>`);
+}}
+
+// Batting order matters a lot for OVER/UNDER (more PA opportunity higher in
+// the order) - a dedicated, color-coded chip rather than burying it in the
+// small meta line, per the 2026-09-13 sharpening pass.
+function orderChipHtml(c) {{
+  if (c.order === '-' || c.order == null) return '';
+  const n = Number(c.order);
+  const cls = n <= 2 ? 'order-top' : (n <= 6 ? 'order-mid' : 'order-bottom');
+  return `<div class="order-chip ${{cls}}">Batting ${{c.order}}</div>`;
 }}
 
 // --- Click-to-mark-used: a card you've already acted on dims out so your
@@ -1797,7 +2118,11 @@ document.querySelectorAll('.clear-marks-btn').forEach(btn => {{
 function renderCard(c, treatmentFn) {{
   const card = document.createElement('div');
   const treatment = treatmentFn ? treatmentFn(c) : top25TreatmentClass(c);
-  card.className = ('card ' + c.tier + ' ' + treatment).trim();
+  // pending-lineup: a distinct dimmed treatment (not just a badge) for the
+  // confirmed-lineup hard gate specifically, so it reads as "not real yet"
+  // rather than merely "no supporting signal" - see is_actionable.
+  const pending = (!c.actionable && !c.lineupConfirmed) ? 'pending-lineup' : '';
+  card.className = ('card ' + c.tier + ' ' + treatment + ' ' + pending).trim();
   if (c.gameDateUtc) card.dataset.gameTimeUtc = c.gameDateUtc;
   if (c.playerId !== null && c.playerId !== undefined) {{
     card.dataset.playerId = c.playerId;
@@ -1806,7 +2131,8 @@ function renderCard(c, treatmentFn) {{
   }}
   card.innerHTML = `
     <div class="name">${{c.name}}</div>
-    <div class="meta">${{c.team}} &middot; Batting ${{c.order}} &middot; <span class="game-date">${{GAME_DATE}}</span>${{c.gameTimePt ? ` &middot; <span class="game-time">${{c.gameTimePt}}</span>` : ''}}</div>
+    ${{orderChipHtml(c)}}
+    <div class="meta">${{c.team}} &middot; <span class="game-date">${{GAME_DATE}}</span>${{c.gameTimePt ? ` &middot; <span class="game-time">${{c.gameTimePt}}</span>` : ''}}</div>
     <div class="pts-row">
       <div><span class="ud-pts">${{c.ud}}</span><span class="pts-label">UD PTS</span></div>
       <div><span class="pp-pts">${{c.pp}}</span><span class="pts-label">PP PTS</span></div>
@@ -1814,6 +2140,7 @@ function renderCard(c, treatmentFn) {{
     <div class="stat-line">xwOBA ${{c.xwoba}} &nbsp;|&nbsp; Barrel% ${{c.barrel}} &nbsp;|&nbsp; Opp ERA ${{c.era}}</div>
     <div class="stat-line">${{c.wxIcon}} ${{c.wxText}} &nbsp;|&nbsp; Park ${{c.park}}</div>
     ${{top25RecordHtml(c)}}
+    ${{underBandRecordHtml(c)}}
     ${{edgeRowHtml(c)}}
     ${{platoonMatchupHtml(c)}}
     ${{c.platoon ? '<div class="badge">Platoon Edge</div>' : ''}}
@@ -1897,7 +2224,7 @@ setInterval(applyHideStartedFilter, 30000); // live re-check as games start, no 
 
 
 // --- Tabs ---
-const PANELS = ['top25', 'unders', 'full', 'results', 'history', 'top25results', 'underresults'];
+const PANELS = ['top25', 'unders', 'full', 'results', 'history', 'top25results', 'underresults', 'clv'];
 document.querySelectorAll('.tab-btn').forEach(btn => {{
   btn.addEventListener('click', () => {{
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -2185,6 +2512,72 @@ if (UNDER_YESTERDAY_CARDS.length === 0) {{
   if (NONBAND65_CAL.length === 0) {{
     calEl.innerHTML = '<div class="empty-msg">No non-band 6.5/under results yet - tracking starts the day after {NON_BAND_65_UNDER_SEED_END}.</div>';
   }}
+}}
+
+// --- Top 25 Gated (UNVALIDATED, brand new 2026-09-13 - see
+// report.is_actionable / tracker.grade_top25_gated). Same record/rate/n/CI
+// + calendar shape as the other cohorts above; no seed, so an empty state
+// just means it hasn't run yet, not that the gate has failed. ------------
+{{
+  const summaryEl = document.getElementById('top25GatedSummary');
+  const ciText = TOP25_GATED_N ? `${{TOP25_GATED_CI_LO}}&ndash;${{TOP25_GATED_CI_HI}}%` : 'N/A';
+  summaryEl.innerHTML = `
+    <div class="summary-card"><div class="summary-value">${{TOP25_GATED_WINS}}-${{TOP25_GATED_LOSSES}} (${{TOP25_GATED_RATE}}%)</div>
+         <div class="summary-label">Record since 2026-09-13 (n=${{TOP25_GATED_N}})</div></div>
+    <div class="summary-card"><div class="summary-value">${{ciText}}</div>
+         <div class="summary-label">95% Wilson CI</div></div>
+  `;
+  const calEl = document.getElementById('top25GatedCalGrid');
+  for (const c of TOP25_GATED_CAL) {{
+    const cell = document.createElement('div');
+    cell.className = 'cal-cell wide';
+    cell.style.borderColor = c.hit_rate === null ? '#555' : hitColor(c.hit_rate);
+    cell.title = `${{c.date}}\\n${{c.wins}}-${{c.losses}}${{c.hit_rate !== null ? ' (' + c.hit_rate + '%)' : ''}}\\nDNP: ${{c.dnp}}`;
+    cell.innerHTML = `<div class="cal-date">${{c.date.slice(5)}}</div><div class="cal-rate">${{c.hit_rate !== null ? c.wins + '-' + c.losses + ' (' + c.hit_rate + '%)' : '—'}}</div>`;
+    calEl.appendChild(cell);
+  }}
+  if (TOP25_GATED_CAL.length === 0) {{
+    calEl.innerHTML = '<div class="empty-msg">No gated Top 25 results yet - tracking starts 2026-09-13.</div>';
+  }}
+}}
+
+// --- CLV tab: forward record (grows daily via clv.grade_clv) + honest
+// backtest coverage (offline, via `python backtest.py --clv-backtest` -
+// see backtest.backtest_clv). Coverage is deliberately reported as-is, not
+// padded - a small/zero number here means exactly what it says. ----------
+{{
+  const r = CLV_FORWARD;
+  const fwdEl = document.getElementById('clvForwardSummary');
+  if (!r.n) {{
+    fwdEl.innerHTML = '<div class="empty-msg">No forward CLV graded yet - starts accumulating the first night tracker.py runs after this gets deployed.</div>';
+  }} else {{
+    fwdEl.innerHTML = `
+      <div class="summary-card"><div class="summary-value">${{r.positive}}-${{r.negative}} (${{r.push}} push)</div>
+           <div class="summary-label">Positive-vs-negative CLV (n=${{r.n}})</div></div>
+      <div class="summary-card"><div class="summary-value">${{r.win_rate !== null ? r.win_rate + '%' : 'N/A'}}</div>
+           <div class="summary-label">% of plays with positive CLV</div></div>
+      <div class="summary-card"><div class="summary-value">${{r.avg_clv_points !== null ? (r.avg_clv_points > 0 ? '+' : '') + r.avg_clv_points : 'N/A'}}</div>
+           <div class="summary-label">Avg CLV (line points)</div></div>
+    `;
+  }}
+
+  const cov = CLV_BACKTEST.coverage || {{dates_checked: 0, dates_with_two_snapshots: 0}};
+  const btEl = document.getElementById('clvBacktestSummary');
+  const s = CLV_BACKTEST.summary || {{}};
+  if (!cov.dates_with_two_snapshots) {{
+    btEl.innerHTML = '<div class="empty-msg">0 historical dates have two distinct line snapshots yet - see backtest.backtest_clv. Forward tracking above is where real CLV coverage will come from.</div>';
+  }} else {{
+    btEl.innerHTML = `
+      <div class="summary-card"><div class="summary-value">${{cov.dates_with_two_snapshots}} / ${{cov.dates_checked}}</div>
+           <div class="summary-label">Historical dates with a real two-snapshot capture</div></div>
+      <div class="summary-card"><div class="summary-value">${{s.n || 0}}</div>
+           <div class="summary-label">Backtested plays</div></div>
+      <div class="summary-card"><div class="summary-value">${{s.avg_clv_points != null ? (s.avg_clv_points > 0 ? '+' : '') + s.avg_clv_points : 'N/A'}}</div>
+           <div class="summary-label">Avg CLV (line points)</div></div>
+    `;
+  }}
+  document.getElementById('clvBacktestNote').textContent =
+    `Coverage note: only dates where the pipeline happened to re-commit a genuinely different line (see backtest.backtest_clv's git-history scan) count toward the backtest - everything else has just one snapshot and is correctly excluded, not estimated.`;
 }}
 
 const T25_COLS = [

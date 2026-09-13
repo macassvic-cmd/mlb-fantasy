@@ -17,12 +17,14 @@ Usage:
 import argparse
 import json
 import os
+import subprocess
 import time
 from datetime import datetime, timedelta
 
 import pipeline
 import projections as proj
 import report
+import clv
 from tracker import classify, summarize
 from scrapers.mlb_api import get_player_game_log
 from scrapers.market_lines import load_cached_market_lines, compute_pp_ud_ratio, match_lines
@@ -457,6 +459,202 @@ def daterange(start_str, end_str):
     return dates
 
 
+# ---------------------------------------------------------------------------
+# CLV backtest
+#
+# data/market_lines/{date}.json is a daily cache overwritten in place with
+# no timestamp field - normally exactly one snapshot per date, so there's no
+# real closing-line-movement history to read back out of it directly.
+# BUT the pipeline's CI commits data/ on every run (see
+# .github/workflows/pipeline.yml's "Pipeline run ..." commits), so git
+# history is an incidental timestamped time series wherever a date's file
+# happened to get re-committed with genuinely different content - which
+# only happens via the health-check re-fetch path added 2026-08-29 for
+# thin-coverage days (see scrapers/market_lines.py). Verified during the
+# 2026-09-13 planning pass: almost every date file has exactly one commit
+# ever; only a couple of dates have a second commit with real value changes.
+# This function reports that honestly rather than pretending broader
+# coverage exists - see CLV_BACKTEST_PATH's "coverage" field.
+# ---------------------------------------------------------------------------
+
+CLV_BACKTEST_PATH = os.path.join(BACKTEST_DIR, "clv_backtest.json")
+
+
+def _git_log_hashes(path):
+    """All commit hashes touching `path`, oldest last (git log's default
+    newest-first order)."""
+    try:
+        out = subprocess.run(["git", "log", "--format=%H", "--", path],
+                              capture_output=True, text=True, check=True)
+        return [h for h in out.stdout.strip().splitlines() if h]
+    except Exception:
+        return []
+
+
+def _git_show_json(commit_hash, path):
+    try:
+        out = subprocess.run(["git", "show", f"{commit_hash}:{path}"],
+                              capture_output=True, text=True, check=True)
+        return json.loads(out.stdout)
+    except Exception:
+        return None
+
+
+def _git_commit_time(commit_hash):
+    try:
+        out = subprocess.run(["git", "show", "-s", "--format=%cI", commit_hash],
+                              capture_output=True, text=True, check=True)
+        return out.stdout.strip()
+    except Exception:
+        return None
+
+
+def _find_two_snapshot_dates():
+    """Scans every data/market_lines/*.json file's git history for dates
+    with >=2 commits carrying genuinely different `ud` line content (a
+    no-op recommit doesn't count as a second snapshot). Returns
+    (dates_checked, list of qualifying snapshot dicts)."""
+    market_dir = os.path.join("data", "market_lines")
+    if not os.path.isdir(market_dir):
+        return 0, []
+
+    dates_checked = set()
+    qualifying = []
+    for fname in sorted(os.listdir(market_dir)):
+        if not fname.endswith(".json"):
+            continue
+        path = os.path.join("data", "market_lines", fname).replace(os.sep, "/")
+        hashes = _git_log_hashes(path)
+        if not hashes:
+            continue
+        base = fname[:-5]
+        date_str = base[len("betr_"):] if base.startswith("betr_") else base
+        dates_checked.add(date_str)
+        if len(hashes) < 2:
+            continue
+
+        newest, oldest = hashes[0], hashes[-1]
+        open_data = _git_show_json(oldest, path)
+        close_data = _git_show_json(newest, path)
+        if not isinstance(open_data, dict) or not isinstance(close_data, dict):
+            continue
+        open_ud = open_data.get("ud", {}) or {}
+        close_ud = close_data.get("ud", {}) or {}
+        differs = any(name in close_ud and close_ud[name] != line for name, line in open_ud.items())
+        if not differs:
+            continue
+
+        qualifying.append({
+            "date": date_str, "file": fname,
+            "open_lines": open_data, "close_lines": close_data,
+            "open_at": _git_commit_time(oldest), "close_at": _git_commit_time(newest),
+        })
+
+    return len(dates_checked), qualifying
+
+
+def backtest_clv():
+    """Retroactively compute what forward CLV tracking (clv.py) would have
+    recorded, for whichever historical dates genuinely have two distinct
+    line snapshots. Only actionable-at-open plays count (report.is_actionable,
+    evaluated against the OPEN snapshot so the reconstructed call matches
+    what would have actually been surfaced that morning) - same discipline
+    as the forward tracker. top25_players is passed as {} here (no
+    point-in-time historical Top-25 record reconstruction for this small a
+    backtest), so the "shrunk sample above baseline" supporting signal never
+    fires for these dates - only platoon/contact signals can qualify a
+    historical Top-25 OVER, which is a real (if minor) undercount of what
+    forward tracking will actually catch."""
+    dates_checked, qualifying = _find_two_snapshot_dates()
+    print(f"CLV backtest: {len(qualifying)} of {dates_checked} historical dates "
+          f"have two distinct line snapshots.")
+
+    plays = []
+    for q in qualifying:
+        date_str = q["date"]
+        data_path = os.path.join("data", f"{date_str}.json")
+        if not os.path.exists(data_path):
+            print(f"  {date_str}: no cached data/{date_str}.json - skipping (won't re-run pipeline for this).")
+            continue
+
+        with open(data_path, encoding="utf-8") as f:
+            raw_players = json.load(f)
+        rows = [report.build_row(p) for p in raw_players]
+        report.recalibrate_points(rows)
+        report.apply_venue_penalty(rows)
+        report.apply_market_anchor(rows, q["open_lines"], {})
+
+        contact_cutoffs = report.contact_percentile_cutoffs(rows)
+        close_pp_ud_ratio = compute_pp_ud_ratio(q["close_lines"])
+        day_plays = 0
+        not_actionable = 0
+        for row in rows:
+            row["actionable"], row["actionable_reason"] = report.is_actionable(row, {}, 0.5, contact_cutoffs)
+            if not row.get("actionable"):
+                not_actionable += 1
+                continue
+            call = report.edge_label(row.get("edge"))
+            if call not in ("over", "under"):
+                continue
+            close_ud_line, _ = match_lines(row["name"], q["close_lines"], close_pp_ud_ratio)
+            if close_ud_line is None:
+                continue
+            clv_points = clv.compute_clv(row["ud_line"], close_ud_line, call)
+            plays.append({
+                "date": date_str, "player_id": row.get("player_id"), "name": row["name"],
+                "call": call, "open_line": row["ud_line"], "open_at": q["open_at"],
+                "close_line": round(close_ud_line, 2), "close_at": q["close_at"],
+                "clv_points": round(clv_points, 2),
+            })
+            day_plays += 1
+        anchored_n = sum(1 for r in rows if r.get("market_anchored"))
+        # Honest note, not just a bare zero: the cached data/{date}.json this
+        # reads is whatever pipeline run happened to be on disk when this
+        # date was last processed - if that snapshot's lineups were still
+        # "projected" (e.g. an early-morning cache from a thin-coverage day
+        # like 2026-08-29, see report.LOW_COVERAGE_DATES), the confirmed-
+        # lineup hard gate correctly excludes everything, same as it would
+        # have live that day. That's the gate working as intended, not a
+        # backtest bug - but worth surfacing so a 0 doesn't read as "nothing
+        # to see here" when it actually means "this day's lineups were
+        # never confirmed in the cache we have."
+        print(f"  {date_str}: {day_plays} actionable plays with a close-line match "
+              f"({anchored_n} anchored, {not_actionable} excluded by is_actionable)")
+
+    positive = sum(1 for p in plays if p["clv_points"] > 0)
+    negative = sum(1 for p in plays if p["clv_points"] < 0)
+    push = sum(1 for p in plays if p["clv_points"] == 0)
+    n = len(plays)
+    summary = {
+        "positive": positive, "negative": negative, "push": push, "n": n,
+        "win_rate": round(100 * positive / (positive + negative), 1) if (positive + negative) else None,
+        "avg_clv_points": round(sum(p["clv_points"] for p in plays) / n, 3) if n else None,
+    }
+
+    payload = {
+        "coverage": {
+            "dates_checked": dates_checked,
+            "dates_with_two_snapshots": len(qualifying),
+            "dates": [q["date"] for q in qualifying],
+        },
+        "plays": plays,
+        "summary": summary,
+    }
+    os.makedirs(BACKTEST_DIR, exist_ok=True)
+    with open(CLV_BACKTEST_PATH, "w", encoding="utf-8") as f:
+        json.dump(payload, f, indent=2)
+
+    if n:
+        print(f"CLV backtest: {positive}-{negative} ({push} push), {summary['win_rate']}% positive, "
+              f"avg {summary['avg_clv_points']:+.3f} pts (n={n}) -> {CLV_BACKTEST_PATH}")
+    else:
+        print(f"CLV backtest: 0 gradeable plays from {len(qualifying)} qualifying dates "
+              f"(see per-date lines above for why - missing cache vs. the confirmed-lineup "
+              f"gate excluding everything) -> {CLV_BACKTEST_PATH}")
+    print("This coverage is small by construction (see module comment) - "
+          "forward tracking (clv.py) is where real CLV coverage will come from.")
+
+
 def main():
     parser = argparse.ArgumentParser(description="MLB Fantasy full-season backtest")
     parser.add_argument("--start", default="2026-03-20")
@@ -464,10 +662,16 @@ def main():
     parser.add_argument("--limit", type=int, default=None, help="only process first N dates")
     parser.add_argument("--no-cache", action="store_true", help="re-run pipeline even if data/<date>.json exists")
     parser.add_argument("--calibrate-only", action="store_true", help="skip the date loop, just run calibration")
+    parser.add_argument("--clv-backtest", action="store_true",
+                         help="skip the date loop, just backtest CLV from git line-snapshot history")
     args = parser.parse_args()
 
     if args.calibrate_only:
         run_calibration()
+        return
+
+    if args.clv_backtest:
+        backtest_clv()
         return
 
     end = args.end or (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d")
