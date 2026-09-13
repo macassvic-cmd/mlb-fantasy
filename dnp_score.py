@@ -113,24 +113,42 @@ def _opp_pitcher_hand(row):
     return bat_side if same_hand else ("R" if bat_side == "L" else "L")
 
 
-def score_player(row, history, news_risk):
-    """(score_0_100, reasons: list[str]) for one player's raw pipeline
-    record (a dict from data/{date}.json, NOT report.build_row's
-    flattened version - see module docstring)."""
-    pid = row.get("player_id")
+# Flat score for a player whose lineup IS posted and who is genuinely NOT
+# in it - added 2026-09-13 for the live Dabble board (dabble_adapter.py),
+# which can represent this state directly (pipeline.py's data/{date}.json
+# never can - it only ever contains the 9 players it guessed INTO a lineup
+# slot, so a real "confirmed not starting" case has no representation
+# there at all). This is near-certainty, not a heuristic blend - it's
+# functionally the same fact stale_lines.py's hard boolean detector would
+# flag - so it deliberately bypasses the weighted signals below rather
+# than being yet another additive contribution.
+CONFIRMED_NOT_STARTING_SCORE = 97
+
+
+def score_candidate(*, player_id, name, position, start_status, opp_pitcher_hand,
+                     is_early_game, history, news_risk):
+    """Core scorer - both the pipeline path (score_player, below) and the
+    live Dabble board path (dabble_adapter.score_dabble_board) funnel
+    through this exact function, so the weights are applied identically
+    regardless of where the candidate came from. `start_status` is one of
+    "confirmed_starting" | "confirmed_not_starting" | "not_yet_posted".
+    Returns (score_0_100, reasons: list[str])."""
+    if start_status == "confirmed_not_starting":
+        return CONFIRMED_NOT_STARTING_SCORE, ["Lineup posted - CONFIRMED not in the starting lineup"]
+
     score = BASE_SCORE
     reasons = []
 
-    confirmed = bool(row.get("lineup_confirmed", True))
-    if not confirmed:
+    if start_status == "confirmed_starting":
+        reasons.append("Confirmed starting in today's lineup")
+    else:  # "not_yet_posted" (or "unknown" - treated the same: no confirmation either way yet)
         score += NOT_CONFIRMED_WEIGHT
-        reasons.append("Lineup not yet confirmed (projected only)")
-
-        if _is_early_game(row.get("game_date_utc")):
+        reasons.append("Lineup not yet posted/confirmed")
+        if is_early_game:
             score += GETAWAY_DAY_BONUS
-            reasons.append("Early game (before 18:00 UTC) while still unconfirmed - getaway-day risk")
+            reasons.append("Early game while still unconfirmed - getaway-day risk")
 
-    wins, losses, n = start_history.start_rate(history, pid, n_games=10)
+    wins, losses, n = start_history.start_rate(history, player_id, n_games=10)
     recent_rate = wins / n if n else None
     if n >= MIN_GAMES_FOR_RATE_SIGNAL:
         contribution = (1 - recent_rate) * RECENT_START_RATE_WEIGHT
@@ -138,30 +156,29 @@ def score_player(row, history, news_risk):
             score += contribution
             reasons.append(f"Started only {round(100 * recent_rate)}% of last {n} team games")
 
-    hand = _opp_pitcher_hand(row)
-    if hand and n >= MIN_GAMES_FOR_RATE_SIGNAL:
-        hw, hl, hn = start_history.start_rate_vs_hand(history, pid, hand, n_games=15)
+    if opp_pitcher_hand and n >= MIN_GAMES_FOR_RATE_SIGNAL:
+        hw, hl, hn = start_history.start_rate_vs_hand(history, player_id, opp_pitcher_hand, n_games=15)
         if hn >= MIN_GAMES_FOR_RATE_SIGNAL:
             hand_rate = hw / hn
             diff = (recent_rate or 1.0) - hand_rate
             if diff >= 0.15:
                 score += diff * VS_HAND_WEIGHT
-                reasons.append(f"Starts only {round(100 * hand_rate)}% of the time vs {hand}HP "
+                reasons.append(f"Starts only {round(100 * hand_rate)}% of the time vs {opp_pitcher_hand}HP "
                                 f"(n={hn}, overall {round(100 * (recent_rate or 0))}%)")
 
-    streak = start_history.consecutive_starts(history, pid)
+    streak = start_history.consecutive_starts(history, player_id)
     if streak >= STREAK_FATIGUE_MIN_GAMES:
         fatigue = min((streak - (STREAK_FATIGUE_MIN_GAMES - 1)) * 2, STREAK_FATIGUE_MAX)
         score += fatigue
         reasons.append(f"On a {streak}-game start streak")
-        if row.get("position") == "C" and streak >= CATCHER_REST_MIN_STREAK:
+        if position == "C" and streak >= CATCHER_REST_MIN_STREAK:
             score += CATCHER_REST_BONUS
             reasons.append(f"Catcher on a {streak}-game streak - rest risk elevated")
-    elif row.get("position") == "C" and streak >= CATCHER_REST_MIN_STREAK:
+    elif position == "C" and streak >= CATCHER_REST_MIN_STREAK:
         score += CATCHER_REST_BONUS
         reasons.append(f"Catcher on a {streak}-game streak - rest risk elevated")
 
-    news = news_risk.get(normalize_name(row.get("name", "")))
+    news = news_risk.get(normalize_name(name or ""))
     if news:
         tier, headline = news
         score += NEWS_RISK_BONUS
@@ -172,6 +189,46 @@ def score_player(row, history, news_risk):
     if not reasons:
         reasons.append("Confirmed starter, no elevated risk signals")
     return score, reasons
+
+
+def compute_confidence(*, start_status, recent_n, opp_hand_known, game_resolved):
+    """0-100: how much data actually backs this candidate's score, NOT a
+    restatement of the score itself - a 90 built on a resolved game,
+    posted lineup, and 10 games of history means something different from
+    a 90 built on none of that. Same "how much data backs this" spirit as
+    report.confidence_score, simplified to the signals score_candidate
+    actually uses."""
+    confidence = 0
+    if game_resolved:
+        confidence += 25
+    if start_status != "unknown":
+        confidence += 25
+    if recent_n >= MIN_GAMES_FOR_RATE_SIGNAL:
+        confidence += 30
+    if opp_hand_known:
+        confidence += 20
+    return confidence
+
+
+def score_player(row, history, news_risk):
+    """(score_0_100, reasons: list[str]) for one player's raw PIPELINE
+    record (a dict from data/{date}.json, NOT report.build_row's
+    flattened version - see module docstring). Thin wrapper around
+    score_candidate: pipeline.py's data/{date}.json only ever contains
+    players it guessed INTO a lineup slot, so "confirmed_not_starting"
+    never applies here - only "confirmed_starting" (lineup_confirmed=True)
+    or "not_yet_posted" (lineup_confirmed=False, i.e. still projected)."""
+    start_status = "confirmed_starting" if row.get("lineup_confirmed", True) else "not_yet_posted"
+    return score_candidate(
+        player_id=row.get("player_id"),
+        name=row.get("name"),
+        position=row.get("position"),
+        start_status=start_status,
+        opp_pitcher_hand=_opp_pitcher_hand(row),
+        is_early_game=_is_early_game(row.get("game_date_utc")),
+        history=history,
+        news_risk=news_risk,
+    )
 
 
 def tier_label(score):
