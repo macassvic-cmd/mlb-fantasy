@@ -39,6 +39,7 @@ from a real false positive.
 import json
 import logging
 import os
+import re
 import urllib.request
 
 from scrapers.espn_soccer import normalize_name
@@ -242,6 +243,120 @@ def fetch_team_injuries(league, team_id):
             "name": name, "normalized_name": normalize_name(name),
             "status": display_status,
             "since": (info["date"][:10] if info["date"] else None),
+            "expected_return_date": info["return_date"],
+        })
+    return results
+
+
+# Free-text practice-participation phrases found live 2026-09-11 in real
+# NFL Questionable records' shortComment/longComment fields (not a
+# separate structured field ESPN exposes - these ride along on the SAME
+# injury detail record fetch_team_injuries_soft_tiers already makes, no
+# extra source/request needed). Checked in this order - "dnp" before
+# "limited" before "full" - since a longComment sometimes mentions more
+# than one day's participation ("was limited Wednesday... did not
+# participate Thursday") and the MOST RECENT/most restrictive one is the
+# more useful signal for a watchlist entry read same-day.
+PRACTICE_PARTICIPATION_PATTERNS = {
+    "dnp": [r"\bdid not participate\b", r"\bdnp\b", r"\bsat out (of )?practice\b",
+            r"\bwas held out of practice\b"],
+    "limited": [r"\blimited participant\b", r"\bwas limited\b", r"\blimited in practice\b"],
+    "full": [r"\bfull participant\b", r"\breturned to (full )?practice\b", r"\bpracticed (in )?full\b",
+             r"\bfully practiced\b"],
+}
+_COMPILED_PRACTICE = {tier: [re.compile(p, re.I) for p in pats] for tier, pats in PRACTICE_PARTICIPATION_PATTERNS.items()}
+
+
+def _classify_practice_participation(text):
+    """Which PRACTICE_PARTICIPATION_PATTERNS tier the comment text
+    matches, checked dnp -> limited -> full (most-restrictive first, in
+    case both a limited and a full practice are mentioned across
+    different days in the same comment), or None if the comment doesn't
+    mention practice participation at all."""
+    text = text or ""
+    for tier in ("dnp", "limited", "full"):
+        if any(p.search(text) for p in _COMPILED_PRACTICE[tier]):
+            return tier
+    return None
+
+
+def fetch_team_injuries_soft_tiers(league, team_id):
+    """[{name, normalized_name, status, tier, practice_tier, raw_text,
+    since, expected_return_date}] for every player on this team whose
+    MOST RECENT status-log entry is a NOT-CONFIRMED tier (questionable/
+    doubtful/probable/day-to-day/gtd - see LEAGUE_CONFIG's
+    not_confirmed_statuses) - added 2026-09-11 for watchlist_dns.py's
+    soft at-risk watchlist. Deliberately separate from
+    fetch_team_injuries() (the hard DNS detector's source): shares the
+    same ref-fetching/latest-status-log resolution (_fetch_all_injury_
+    refs) but a DIFFERENT status filter and return shape, so this can
+    never affect the confirmed-out path pro_league_dns.py depends on.
+    Players whose latest status IS confirmed-out are skipped here
+    entirely - that's the hard detector's job, not this one's; a player
+    shouldn't show up on both.
+
+    practice_tier is derived from the SAME record's shortComment/
+    longComment text (see PRACTICE_PARTICIPATION_PATTERNS) - confirmed
+    live 2026-09-11 that ESPN's injury records carry real practice-
+    participation detail in free text even though there's no separate
+    structured field for it, so this needs no second source/request."""
+    cfg = LEAGUE_CONFIG[league]
+    try:
+        refs = _fetch_all_injury_refs(cfg, team_id)
+    except Exception as e:
+        logger.warning(f"ESPN {league} soft-tier injuries fetch failed for team {team_id}: {e}")
+        return []
+
+    latest_by_athlete = {}
+    for ref in refs:
+        try:
+            d = _get(ref)
+        except Exception as e:
+            logger.warning(f"ESPN {league} injury detail fetch failed: {e}")
+            continue
+        athlete_ref = (d.get("athlete") or {}).get("$ref")
+        if not athlete_ref:
+            continue
+        athlete_id = athlete_ref.rstrip("/").split("/")[-1].split("?")[0]
+        date = d.get("date") or ""
+        existing = latest_by_athlete.get(athlete_id)
+        if existing is None or date > existing["date"]:
+            fantasy_abbrev = ((d.get("details") or {}).get("fantasyStatus") or {}).get("abbreviation") or ""
+            latest_by_athlete[athlete_id] = {
+                "athlete_ref": athlete_ref, "date": date, "status": d.get("status") or "",
+                "fantasy_status": fantasy_abbrev,
+                "return_date": (d.get("details") or {}).get("returnDate"),
+                "short_comment": d.get("shortComment") or "", "long_comment": d.get("longComment") or "",
+            }
+
+    results = []
+    for info in latest_by_athlete.values():
+        decision_key = (info["fantasy_status"] or info["status"]).strip().lower()
+        if decision_key == "active" or decision_key in cfg["confirmed_out_statuses"]:
+            continue  # healthy, or the hard detector's territory - not this function's job
+        if decision_key not in cfg["not_confirmed_statuses"]:
+            if decision_key:
+                logger.info(f"ESPN {league}: unrecognized injury status {decision_key!r} for soft-tier watchlist - skipped")
+            continue
+
+        try:
+            athlete = _get(info["athlete_ref"])
+        except Exception as e:
+            logger.warning(f"ESPN {league} athlete fetch failed: {e}")
+            continue
+        name = athlete.get("displayName") or athlete.get("fullName")
+        if not name:
+            continue
+
+        display_status = info["fantasy_status"] if info["status"].strip().isdigit() else (info["status"] or info["fantasy_status"])
+        comment_text = f"{info['long_comment']} {info['short_comment']}".strip()
+        results.append({
+            "name": name, "normalized_name": normalize_name(name),
+            "status": display_status, "tier": decision_key,
+            "practice_tier": _classify_practice_participation(comment_text),
+            "raw_text": info["long_comment"] or info["short_comment"] or display_status,
+            "since": (info["date"][:10] if info["date"] else None),
+            "date_utc": info["date"] or None,
             "expected_return_date": info["return_date"],
         })
     return results

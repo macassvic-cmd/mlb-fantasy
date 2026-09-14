@@ -44,6 +44,7 @@ LEAGUE_SLUGS = {
 }
 
 _team_cache = {}  # league_slug -> {espn_team_id: normalized_display_name}
+_team_raw_cache = {}  # league_slug -> [{"id":, "abbreviation":, "displayName":}, ...]
 
 
 def normalize_name(name):
@@ -61,21 +62,76 @@ def _get(url):
         return json.load(resp)
 
 
+def _teams_raw_for_league(league_slug):
+    """[{"id":, "abbreviation":, "displayName":}, ...] straight off ESPN's
+    own team list - the source of truth both _teams_for_league (fuzzy
+    full-name matching) and resolve_team_by_code (exact abbreviation
+    matching, see that function's docstring) build on, fetched/cached
+    once per league."""
+    if league_slug not in _team_raw_cache:
+        data = _get(f"{BASE}/{league_slug}/teams")
+        _team_raw_cache[league_slug] = [t["team"] for t in data["sports"][0]["leagues"][0]["teams"]]
+    return _team_raw_cache[league_slug]
+
+
 def _teams_for_league(league_slug):
     if league_slug not in _team_cache:
-        data = _get(f"{BASE}/{league_slug}/teams")
-        teams = data["sports"][0]["leagues"][0]["teams"]
-        _team_cache[league_slug] = {
-            t["team"]["id"]: normalize_name(t["team"]["displayName"]) for t in teams
-        }
+        teams = _teams_raw_for_league(league_slug)
+        _team_cache[league_slug] = {t["id"]: normalize_name(t["displayName"]) for t in teams}
     return _team_cache[league_slug]
 
 
-def match_espn_team_id(league_code, team_full_name):
-    """Best-effort ESPN team id for a Betr club full_name, via normalized
-    substring overlap (same tolerance as transfermarkt.py's alias
-    fallback needs - full legal names rarely match ESPN's short display
-    names exactly). None if nothing overlaps."""
+def resolve_team_by_code(league_code, team_code):
+    """(team_id, display_name) for an EXACT match against ESPN's own
+    "abbreviation" field (e.g. "NEW" -> Newcastle United, id 361 -
+    confirmed live 2026-09-13), or None if team_code isn't a real ESPN
+    abbreviation for this league. This is the correct way to resolve a
+    Dabble board's short team code - see match_espn_team_id's docstring
+    for why passing that same code to Transfermarkt's free-text search
+    (or relying on lucky substring overlap here) is NOT safe: a bare
+    3-letter code has no reliable relationship to a club's real name,
+    and Dabble's codes happen to equal ESPN's own abbreviations often
+    enough (NEW, LEE, TOR, ROM...) that the coincidence went unnoticed
+    until Transfermarkt's search returned an unrelated club (e.g. "TOR"
+    -> Real Madrid) for a code ESPN itself resolves correctly."""
+    league_slug = LEAGUE_SLUGS.get(league_code)
+    if not league_slug or not team_code:
+        return None
+    try:
+        teams = _teams_raw_for_league(league_slug)
+    except Exception as e:
+        logger.warning(f"ESPN teams fetch failed for {league_slug}: {e}")
+        return None
+    code_norm = str(team_code).strip().upper()
+    for t in teams:
+        if str(t.get("abbreviation", "")).upper() == code_norm:
+            return t["id"], t["displayName"]
+    return None
+
+
+def team_display_name(league_code, team_code):
+    """ESPN's real display name for a Dabble board's team code (e.g.
+    "NEW" -> "Newcastle United"), for callers (Transfermarkt injury
+    lookup) that need a genuinely searchable club name rather than a
+    bare code - see resolve_team_by_code. Falls back to team_code
+    unchanged if it isn't a recognized ESPN abbreviation for this
+    league, so a caller is no worse off than before this existed."""
+    hit = resolve_team_by_code(league_code, team_code)
+    return hit[1] if hit else team_code
+
+
+def match_espn_team_id(league_code, team_name_or_code):
+    """ESPN team id for a Betr/Dabble team value - tries an EXACT
+    abbreviation match first (resolve_team_by_code; the correct path for
+    a short code like "NEW"), then falls back to normalized substring/
+    word overlap against full display names (the original matching this
+    function used, still needed for callers passing a real full legal
+    name like "Ballspielverein Borussia 09 Dortmund" rather than a
+    code). None if neither approach finds anything."""
+    exact = resolve_team_by_code(league_code, team_name_or_code)
+    if exact:
+        return exact[0]
+
     league_slug = LEAGUE_SLUGS.get(league_code)
     if not league_slug:
         return None
@@ -84,7 +140,7 @@ def match_espn_team_id(league_code, team_full_name):
     except Exception as e:
         logger.warning(f"ESPN teams fetch failed for {league_slug}: {e}")
         return None
-    norm_full = normalize_name(team_full_name)
+    norm_full = normalize_name(team_name_or_code)
     for tid, tnorm in teams.items():
         if tnorm and (tnorm in norm_full or norm_full in tnorm):
             return tid

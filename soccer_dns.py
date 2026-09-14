@@ -481,7 +481,64 @@ def run_scan(board=None):
     return summary
 
 
+def coverage_report(source=None):
+    """python soccer_dns.py --coverage - the "never discover a coverage
+    hole by manually noticing a player" diagnostic (item 9). Runs the full
+    Dabble-only soccer_adapter.py pipeline and reports, for every live
+    Dabble soccer player, whether each enrichment stage actually found
+    something - not whether the player "should" have data, since the
+    whole point of the 2026-09-14 fix is that every Dabble player is a
+    candidate regardless of what any other source knows about him."""
+    import soccer_adapter
+
+    source = source or soccer_adapter.DEFAULT_BOARD_PATH
+    candidates = soccer_adapter.score_dabble_soccer_board(source=source, persist=False, notify=False)
+    n = len(candidates)
+    if n == 0:
+        print("coverage_report: no live Dabble soccer candidates found.")
+        return {}
+
+    matched_fixture = sum(1 for c in candidates if c["official_status"] != "unknown" or c.get("league_code"))
+    injury_enriched = sum(1 for c in candidates if c["transfermarkt_injury"] or c["rotowire_status_raw"])
+    predicted_lineup_coverage = sum(1 for c in candidates if c["predicted_xi_sources"])
+    history_coverage = sum(1 for c in candidates if c["starts_last_5"][2] > 0)
+    unenriched = sum(1 for c in candidates if c["low_data"])
+
+    summary = {
+        "dabble_soccer_players": n,
+        "matched_fixtures": f"{matched_fixture}/{n}",
+        "injury_enrichment": f"{injury_enriched}/{n}",
+        "predicted_lineup_coverage": f"{predicted_lineup_coverage}/{n}",
+        "history_coverage": f"{history_coverage}/{n}",
+        "completely_unenriched_players": unenriched,
+    }
+    print(f"Dabble soccer players = {n}")
+    print(f"matched fixtures      = {matched_fixture}/{n}")
+    print(f"injury enrichment     = {injury_enriched}/{n}")
+    print(f"predicted lineup cov. = {predicted_lineup_coverage}/{n}")
+    print(f"history coverage      = {history_coverage}/{n}")
+    print(f"completely unenriched = {unenriched}")
+    if unenriched:
+        print("\nLOW DATA / ENRICHMENT MISSING players (still scored, never dropped - see item 10):")
+        for c in candidates:
+            if c["low_data"]:
+                print(f"  - {c['player_name']} ({c['team']}, {c.get('league_raw')})")
+    return summary
+
+
 def main():
+    import sys
+    # Player names routinely carry diacritics (Dedic, Balde, ...) - the
+    # default Windows console codepage (cp1252) crashes on them the moment
+    # anything tries to print one (found live 2026-09-14 running
+    # --coverage). UTF-8 stdout is safe on every platform this runs on.
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+    if "--coverage" in sys.argv:
+        coverage_report()
+        return
     summary = run_scan()
     print(json.dumps(summary, indent=2, default=str))
 

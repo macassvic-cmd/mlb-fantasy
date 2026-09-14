@@ -991,7 +991,105 @@ DASHBOARD_COLS = [
     ("park_hr",     "Park Factor",  "2f"),
     ("days_rest",   "Days Rest",    "i"),
     ("platoon_edge","Platoon Edge", "s"),
+    # DNP/Void Sniper columns (2026-09-13) - populated ONLY when this row's
+    # player_id matches a CURRENTLY-LIVE Dabble candidate (see
+    # load_dns_snapshot below) - "—" otherwise. kind="s" deliberately even
+    # though the value is numeric: these are pre-formatted ints or the "—"
+    # placeholder, not raw floats that need fmt_value's coercion (which
+    # would crash calling int("—")).
+    ("dnp_score",      "DNP",           "s"),
+    ("dnp_confidence", "Confidence",    "s"),
+    ("dnp_urgency",    "Urgency",       "s"),
+    ("dnp_status",     "Lineup Status", "s"),
+    ("dabble_status",  "Dabble",        "s"),
 ]
+
+
+# ---------------------------------------------------------------------------
+# DNP Sniper (DNS) - Dabble-only candidate universe.
+#
+# The DNS candidate universe comes EXCLUSIVELY from dabble_adapter.py's own
+# live-board scoring (data/dnp_live_snapshots/{date}.json) - never from the
+# pipeline/projection rows. Phase 2 specifically fixed the problem where a
+# Dabble player missing from pipeline.py's projection wasn't being scored
+# at all; joining the Full Leaderboard's projection rows onto Dabble data
+# (below, in write_dashboard) is display-only annotation in the OPPOSITE
+# direction and must never be used to construct a DNS candidate.
+# ---------------------------------------------------------------------------
+
+DNP_LIVE_SNAPSHOTS_DIR = os.path.join("data", "dnp_live_snapshots")
+
+
+def load_dns_snapshot(date_str):
+    """Loads data/dnp_live_snapshots/{date}.json (dabble_adapter.py's
+    output) and splits into (live, removed, by_player_id).
+
+    "live" = every candidate whose most recent score_history timestamp
+    equals the file's _latest_batch_ts - i.e. Dabble still had an eligible
+    live prop for them as of the most recent scoring pass. This is the
+    default/actionable DNS view.
+
+    "removed" = everyone else: Dabble no longer has an eligible live prop
+    for them, but the historical record (peak score, when it first
+    crossed each threshold, how long we had) is kept for the DNS tab's
+    Removed/History view - that lead-time measurement is the whole point
+    of dabble_adapter.py's timestamped snapshots.
+
+    by_player_id covers the LIVE set only - see module comment above."""
+    path = os.path.join(DNP_LIVE_SNAPSHOTS_DIR, f"{date_str}.json")
+    if not os.path.exists(path):
+        return [], [], {}
+    try:
+        with open(path, encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception:
+        return [], [], {}
+
+    batch_ts = data.get("_latest_batch_ts")
+    live, removed = [], []
+    by_pid = {}
+    for key, entry in data.items():
+        if key.startswith("_"):
+            continue
+        history = entry.get("score_history") or []
+        if not history:
+            continue
+        last_ts = history[-1].get("ts")
+        latest = entry.get("latest") or {}
+        card = {
+            "playerId": entry.get("player_id"),
+            "gameId": entry.get("game_id"),
+            "name": entry.get("name"),
+            "team": latest.get("team", entry.get("team")),
+            "opponent": latest.get("opponent"),
+            "position": latest.get("position"),
+            "gameStartUtc": latest.get("game_start"),
+            "gameTimePt": game_time_pt(latest.get("game_start")),
+            "dnpScore": latest.get("dnp_score", history[-1].get("dnp_score")),
+            "confidenceScore": latest.get("confidence_score", history[-1].get("confidence_score")),
+            "urgencyScore": latest.get("urgency_score", history[-1].get("urgency_score")),
+            "combinedPriority": latest.get("combined_priority"),
+            "projectedStartStatus": latest.get("projected_start_status", history[-1].get("start_status")),
+            "evidenceCount": latest.get("evidence_count"),
+            "historicalStartRate": latest.get("historical_start_rate"),
+            "platoonStartRate": latest.get("platoon_start_rate"),
+            "consecutiveStarts": latest.get("consecutive_starts"),
+            "topReasons": latest.get("top_reasons", []),
+            "urgencyReasons": latest.get("urgency_reasons", []),
+            "contributions": latest.get("contributions", []),
+            "props": latest.get("props", []),
+            "lastSeenAt": last_ts,
+        }
+        if last_ts == batch_ts:
+            live.append(card)
+            if card["playerId"] is not None:
+                by_pid[card["playerId"]] = card
+        else:
+            removed.append(card)
+
+    live.sort(key=lambda c: c.get("combinedPriority") or 0, reverse=True)
+    removed.sort(key=lambda c: c.get("lastSeenAt") or "", reverse=True)
+    return live, removed, by_pid
 
 
 def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None):
@@ -1003,6 +1101,27 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
 
     results_data = results_data or {"dates": {}, "players": {}}
     top25_data = top25_data or {"dates": {}, "players": {}}
+
+    # --- DNP Sniper (DNS) data - Dabble-only candidate universe, see
+    # load_dns_snapshot's module comment. Joined ONTO the projection rows
+    # below for the Full Leaderboard's annotation columns (display only -
+    # this never adds/removes a DNS candidate); dns_live/dns_removed feed
+    # the dedicated DNS tab directly, independent of these rows entirely. -
+    dns_live, dns_removed, dns_by_pid = load_dns_snapshot(date_str)
+    for r in rows:
+        dns = dns_by_pid.get(r.get("player_id"))
+        if dns:
+            r["dnp_score"] = dns["dnpScore"]
+            r["dnp_confidence"] = dns["confidenceScore"]
+            r["dnp_urgency"] = dns["urgencyScore"]
+            r["dnp_status"] = dns["projectedStartStatus"]
+            r["dabble_status"] = "LIVE"
+        else:
+            r["dnp_score"] = "—"
+            r["dnp_confidence"] = "—"
+            r["dnp_urgency"] = "—"
+            r["dnp_status"] = "—"
+            r["dabble_status"] = "—"
 
     # --- Results: last 30 days calendar heatmap ------------------------
     result_dates = sorted(results_data.get("dates", {}).keys())[-30:]
@@ -1457,6 +1576,12 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     teams = sorted({r["team"] for r in rows})
     teams_js = json.dumps(teams)
 
+    # --- DNP Sniper tab data - straight from load_dns_snapshot, no
+    # re-derivation here (see that function's module comment on why this
+    # candidate universe must stay Dabble-only). ---------------------------
+    dns_live_js = json.dumps(dns_live)
+    dns_removed_js = json.dumps(dns_removed)
+
     html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1598,6 +1723,40 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     background-image: repeating-linear-gradient(135deg, rgba(251,191,36,0.06) 0 10px,
                                                   transparent 10px 20px);
   }}
+
+  /* DNP Sniper (DNS) tab - added 2026-09-13. Dabble-only candidate
+     universe (see report.load_dns_snapshot) - visually distinct tier
+     borders so a 90+ "sniper" candidate reads instantly, same spirit as
+     .card.top25-fire's glow but its own color language (purple/red) so
+     the two products are never visually confused. */
+  .dns-view-toggle {{ display: flex; gap: 8px; margin-bottom: 14px; }}
+  .dns-view-btn {{ padding: 8px 18px; font-size: 13px; font-weight: 700; border: 1px solid #2a3a5c;
+                    background: #16213a; color: #9fb0cc; border-radius: 6px; cursor: pointer; }}
+  .dns-view-btn.active {{ background: #1c2944; color: #fff; border-color: #6c7da0; }}
+
+  .dns-card.dns-tier-sniper   {{ border: 2px solid #8e44ad; box-shadow: 0 0 14px 2px rgba(142,68,173,0.5); }}
+  .dns-card.dns-tier-veryhigh {{ border: 2px solid #e74c3c; }}
+  .dns-card.dns-tier-strong   {{ border: 2px solid #e67e22; }}
+  .dns-card.dns-tier-watch    {{ border: 2px solid #f1c40f; }}
+  .dns-card.dns-tier-low      {{ border: 2px solid #2a3a5c; }}
+  .dns-card.dns-removed       {{ opacity: 0.6; filter: grayscale(0.4); }}
+
+  .dns-score-row {{ display: flex; gap: 14px; margin-top: 10px; align-items: baseline; }}
+  .dns-score-box {{ display: flex; flex-direction: column; align-items: center; }}
+  .dns-score-box .dns-score-value {{ font-size: 30px; font-weight: 900; color: #fff; }}
+  .dns-score-box.small .dns-score-value {{ font-size: 18px; font-weight: 700; color: #9fb0cc; }}
+
+  .dns-contributions {{ margin-top: 10px; font-size: 12px; color: #c4cee0; line-height: 1.6; }}
+  .dns-contribution-line {{ white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }}
+  .dns-markets {{ margin-top: 8px; font-size: 12px; color: #9fb0cc; }}
+
+  /* Full leaderboard's DNP column - visually prominent per the tier a
+     player's dnp_score falls into, independent of the row's own
+     ud_pts-based green/yellow/red coloring. */
+  td.dnp-cell {{ font-weight: 800; }}
+  td.dnp-cell-watch    {{ color: #f1c40f; }}
+  td.dnp-cell-high     {{ color: #e67e22; }}
+  td.dnp-cell-critical {{ color: #e74c3c; }}
 
   /* Full leaderboard table */
   .controls {{ display: flex; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }}
@@ -1769,6 +1928,7 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
 
 <div class="tabs">
   <button class="tab-btn active" id="tab-top25" data-tab="top25">Top 25</button>
+  <button class="tab-btn" id="tab-dnpsniper" data-tab="dnpsniper">DNP Sniper</button>
   <button class="tab-btn" id="tab-unders" data-tab="unders">Unders</button>
   <button class="tab-btn" id="tab-full" data-tab="full">Full Leaderboard</button>
   <button class="tab-btn" id="tab-results" data-tab="results">Results</button>
@@ -1908,6 +2068,26 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   <div class="unvalidated-note" id="clvBacktestNote"></div>
 </div>
 
+<div class="panel hidden" id="panel-dnpsniper">
+  <div class="unvalidated-note">DNP Sniper (DNS) is a Dabble-only product: every candidate here comes straight from the live Dabble MLB board (dabble_adapter.py), scored for "will NOT start" risk - never from the projection leaderboard. A player leaves this actionable view the moment Dabble no longer has an eligible live prop on them, but their alert/tracking history is kept - see the Removed/History view. Sorted by combined hunting priority (DNP score weighted 70%, urgency 30%) by default.</div>
+
+  <div class="dns-view-toggle">
+    <button class="dns-view-btn active" id="dnsViewLive" data-view="live">Live Candidates</button>
+    <button class="dns-view-btn" id="dnsViewRemoved" data-view="removed">Removed / History</button>
+  </div>
+
+  <div class="filter-bar" id="dnsFilterBar">
+    <label class="filter-toggle"><input type="radio" name="dnsThreshold" value="0" checked> All</label>
+    <label class="filter-toggle"><input type="radio" name="dnsThreshold" value="60"> DNP &ge; 60</label>
+    <label class="filter-toggle"><input type="radio" name="dnsThreshold" value="70"> DNP &ge; 70</label>
+    <label class="filter-toggle"><input type="radio" name="dnsThreshold" value="80"> DNP &ge; 80</label>
+    <label class="filter-toggle"><input type="radio" name="dnsThreshold" value="90"> DNP &ge; 90</label>
+    <label class="filter-toggle"><input type="checkbox" id="dnsLineupNotPosted"> Lineup Not Posted Only</label>
+  </div>
+
+  <div class="card-grid" id="dnsCardGrid"></div>
+</div>
+
 
 
 <script>
@@ -1967,6 +2147,8 @@ const TOP25_GATED_CI_LO = {json.dumps(top25_gated_ci_lo)};
 const TOP25_GATED_CI_HI = {json.dumps(top25_gated_ci_hi)};
 const CLV_FORWARD = {clv_forward_js};
 const CLV_BACKTEST = {clv_backtest_js};
+const DNS_LIVE = {dns_live_js};
+const DNS_REMOVED = {dns_removed_js};
 const GENERATED_AT = {json.dumps(generated_at_iso)};
 const GAME_DATE = {json.dumps(date_str)};
 const PLAYER_COUNT = {player_count};
@@ -2224,7 +2406,7 @@ setInterval(applyHideStartedFilter, 30000); // live re-check as games start, no 
 
 
 // --- Tabs ---
-const PANELS = ['top25', 'unders', 'full', 'results', 'history', 'top25results', 'underresults', 'clv'];
+const PANELS = ['top25', 'unders', 'full', 'results', 'history', 'top25results', 'underresults', 'clv', 'dnpsniper'];
 document.querySelectorAll('.tab-btn').forEach(btn => {{
   btn.addEventListener('click', () => {{
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -2580,6 +2762,95 @@ if (UNDER_YESTERDAY_CARDS.length === 0) {{
     `Coverage note: only dates where the pipeline happened to re-commit a genuinely different line (see backtest.backtest_clv's git-history scan) count toward the backtest - everything else has just one snapshot and is correctly excluded, not estimated.`;
 }}
 
+// --- DNP Sniper (DNS) tab - Dabble-only candidate universe, rendered
+// straight from DNS_LIVE/DNS_REMOVED (dabble_adapter.py's scoring output
+// via load_dns_snapshot) - no scoring logic here, display only. ----------
+function dnsTierClass(score) {{
+  if (score >= 90) return 'dns-tier-sniper';
+  if (score >= 80) return 'dns-tier-veryhigh';
+  if (score >= 70) return 'dns-tier-strong';
+  if (score >= 60) return 'dns-tier-watch';
+  return 'dns-tier-low';
+}}
+
+function dnsStatusBadge(status) {{
+  if (status === 'confirmed_not_starting') return '<div class="badge badge-getaway">CONFIRMED NOT STARTING</div>';
+  if (status === 'confirmed_starting') return '<div class="badge badge-anchored">CONFIRMED STARTING</div>';
+  return '<div class="badge badge-projected">LINEUP NOT YET POSTED</div>';
+}}
+
+function dnsContributionsHtml(contributions) {{
+  if (!contributions || !contributions.length) return '';
+  return '<div class="dns-contributions">' + contributions.map(c => {{
+    const label = c[0], pts = c[1];
+    const sign = pts > 0 ? `+${{pts}}` : (pts === 0 ? '' : `${{pts}}`);
+    return `<div class="dns-contribution-line">${{sign}} ${{label}}</div>`;
+  }}).join('') + '</div>';
+}}
+
+function dnsMarketsHtml(props) {{
+  if (!props || !props.length) return '<div class="dns-markets">No live markets.</div>';
+  return '<div class="dns-markets"><b>Live Dabble markets:</b> ' +
+    props.map(p => `${{p.market}} ${{p.line}}`).join(', ') + '</div>';
+}}
+
+function dnsCard(c, removed) {{
+  const card = document.createElement('div');
+  card.className = ('card dns-card ' + dnsTierClass(c.dnpScore) + (removed ? ' dns-removed' : '')).trim();
+  const matchup = c.opponent ? `${{c.team}} vs ${{c.opponent}}` : c.team;
+  card.innerHTML = `
+    <div class="name">${{c.name}}</div>
+    <div class="meta">${{matchup}}${{c.position ? ' &middot; ' + c.position : ''}}${{c.gameTimePt ? ' &middot; ' + c.gameTimePt : ''}}</div>
+    <div class="dns-score-row">
+      <div class="dns-score-box"><span class="dns-score-value">${{c.dnpScore}}</span><span class="pts-label">DNP</span></div>
+      <div class="dns-score-box small"><span class="dns-score-value">${{c.confidenceScore}}</span><span class="pts-label">CONF</span></div>
+      <div class="dns-score-box small"><span class="dns-score-value">${{c.urgencyScore}}</span><span class="pts-label">URG</span></div>
+    </div>
+    ${{dnsStatusBadge(c.projectedStartStatus)}}
+    ${{removed
+        ? `<div class="badge badge-no-line">REMOVED &middot; last seen ${{c.lastSeenAt ? new Date(c.lastSeenAt).toLocaleString() : 'unknown'}}</div>`
+        : '<div class="badge badge-value">DABBLE LIVE</div>'}}
+    ${{dnsContributionsHtml(c.contributions)}}
+    ${{dnsMarketsHtml(c.props)}}
+  `;
+  return card;
+}}
+
+let dnsView = 'live';
+document.getElementById('dnsViewLive').addEventListener('click', () => {{
+  dnsView = 'live';
+  document.getElementById('dnsViewLive').classList.add('active');
+  document.getElementById('dnsViewRemoved').classList.remove('active');
+  renderDns();
+}});
+document.getElementById('dnsViewRemoved').addEventListener('click', () => {{
+  dnsView = 'removed';
+  document.getElementById('dnsViewRemoved').classList.add('active');
+  document.getElementById('dnsViewLive').classList.remove('active');
+  renderDns();
+}});
+document.querySelectorAll('input[name="dnsThreshold"]').forEach(r => r.addEventListener('change', renderDns));
+document.getElementById('dnsLineupNotPosted').addEventListener('change', renderDns);
+
+function renderDns() {{
+  const grid = document.getElementById('dnsCardGrid');
+  grid.innerHTML = '';
+  const source = dnsView === 'live' ? DNS_LIVE : DNS_REMOVED;
+  const checkedEl = document.querySelector('input[name="dnsThreshold"]:checked');
+  const threshold = checkedEl ? Number(checkedEl.value) : 0;
+  const notPostedOnly = document.getElementById('dnsLineupNotPosted').checked;
+  let list = source.filter(c => c.dnpScore >= threshold);
+  if (notPostedOnly) list = list.filter(c => c.projectedStartStatus === 'not_yet_posted');
+  if (list.length === 0) {{
+    grid.innerHTML = '<div class="unanchored-empty">No DNS candidates match this filter.</div>';
+    return;
+  }}
+  for (const c of list) {{
+    grid.appendChild(dnsCard(c, dnsView === 'removed'));
+  }}
+}}
+renderDns();
+
 const T25_COLS = [
   {{key: 'name',       label: 'Player'}},
   {{key: 'times',      label: 'Times in Top 25'}},
@@ -2672,6 +2943,7 @@ for (const t of TEAMS) {{
 }}
 
 const GAME_TIME_COL_IDX = COLS.findIndex(c => c.key === 'game_time_pt');
+const DNP_COL_IDX = COLS.findIndex(c => c.key === 'dnp_score');
 let sortCol = GAME_TIME_COL_IDX >= 0 ? GAME_TIME_COL_IDX : 4;
 let sortDir = 1; // ascending = soonest game first, by default
 
@@ -2722,6 +2994,12 @@ function render() {{
       const td = document.createElement('td');
       td.textContent = c;
       if (i === 0 && r.underBand) td.title = UD_UNDER_BAND_LABEL;
+      if (i === DNP_COL_IDX && typeof c === 'number') {{
+        td.classList.add('dnp-cell');
+        if (c >= 85) td.classList.add('dnp-cell-critical');
+        else if (c >= 70) td.classList.add('dnp-cell-high');
+        else if (c >= 60) td.classList.add('dnp-cell-watch');
+      }}
       tr.appendChild(td);
     }});
     body.appendChild(tr);

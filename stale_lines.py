@@ -132,14 +132,22 @@ can't collide with or double-count the lineup-based flags):
      high-confidence signal. Deduped by (player_id, status_code), so a
      long-standing IL stint doesn't re-fire every poll - only a genuine
      status transition does.
-A third source (RotoWire's public MLB news RSS feed,
-rotowire.com/rss/news.php?sport=MLB) was investigated but NOT built -
-confirmed publicly accessible with no auth, well-formed RSS, and a
-fairly consistent "PlayerName: headline" title pattern with real
-pre-lineup signal already visible in spot checks - but it's free text
-requiring a real keyword/regex classifier (not a clean field), so it's
-left for a later pass once the two structured sources above have proven
-out.
+A third source, RotoWire's public MLB news RSS feed (rotowire.com/rss/
+news.php?sport=MLB), was added 2026-09-11 (see check_news() and
+rss_news_classifier.py) after diagnosing 5 of the first 6 tracked early
+signals as misses: in every case the real reversal transaction existed
+with the exact wording _resolve_reversals already checks for, but wasn't
+visible via /api/v1/transactions until after the real lineup had already
+resolved the signal - the structured MLB Stats API sources above are not
+reliably timely, independent of their keyword-matching logic being
+correct. News (a beat reporter relaying what the manager just said) is
+this project's one confirmed real catch that predates a manager's own
+formal paperwork. Same shadow-mode restriction as the two sources above:
+log-only, no Discord wiring, until this one's own accuracy/lead-time is
+known - see rss_news_classifier.py's docstring for the classifier itself
+and why "day-to-day" is deliberately excluded from its confirmed-out
+tier (as ambiguous as "questionable", which pro_league_dns.py's ESPN
+config already excludes for the same reason).
 
 Lead time is the whole point of this phase: _resolve_early_signals runs
 as its own decoupled pass (same reasoning as the grading pass above -
@@ -181,6 +189,7 @@ from scrapers.mlb_api import (
     get_forty_man_roster,
     get_recent_transactions,
 )
+from rss_news_classifier import fetch_and_classify as fetch_news_items
 
 logger = logging.getLogger(__name__)
 
@@ -307,6 +316,66 @@ def _discord_edit_checkpoint(flag):
         return True
     except Exception as e:
         logger.warning(f"Discord webhook PATCH failed for {flag['name']}: {e}")
+        return False
+
+
+# Deliberately far from FLAG_EMBED's orange (0xE67E22) so the two are
+# never confusable at a glance in the same channel - grey reads as
+# "not a real alert" the way orange reads as "real alert" here.
+EARLY_SIGNAL_TEST_COLOR = 0x95A5A6
+EARLY_SIGNAL_TEST_FOOTER = "UNVALIDATED SOURCE - manually verify. Not for action."
+
+
+def _early_signal_test_embed(signal, betr_entry, detail_label, detail_text):
+    """Embed for the shadow-mode 'testing' Discord alert added 2026-09-11
+    - one per early_signals source (transaction/roster_status/news),
+    posted ONCE at signal creation (no checkpoint editing - unlike
+    _flag_embed/_discord_edit_checkpoint, these aren't tracked over time,
+    just surfaced for a human to manually check against the real news).
+    Deliberately visually distinct from _flag_embed (see
+    EARLY_SIGNAL_TEST_COLOR) and carries its own footer so it can never
+    be mistaken for a real actionable flag - this is a shadow source
+    whose accuracy hasn't been proven yet (see this file's own module
+    docstring, Phase 4 section)."""
+    markets = betr_entry["markets"] if betr_entry else {}
+    return {
+        "title": f"\U0001F9EA TESTING — {signal['source']} signal: {signal['name']} ({signal['team']})",
+        "description": "Shadow-mode early signal - NOT a confirmed DNS flag. Posted for manual spot-checking only.",
+        "color": EARLY_SIGNAL_TEST_COLOR,
+        "fields": [
+            {"name": "Source", "value": signal["source"], "inline": True},
+            {"name": "Category", "value": signal["category"], "inline": True},
+            {"name": "Game time", "value": _format_game_time_pt(signal["game_time_utc"]) if signal.get("game_time_utc") else "Unknown (game not yet resolved)", "inline": True},
+            {"name": detail_label, "value": detail_text or "(none)", "inline": False},
+            {"name": "Live line at signal time", "value": _format_markets(markets), "inline": False},
+        ],
+        "footer": {"text": EARLY_SIGNAL_TEST_FOOTER},
+    }
+
+
+def _discord_post_early_signal_test(signal, betr_entry, detail_label, detail_text):
+    """POST the shadow-mode testing embed for one early signal. Same
+    no-op-if-unset, never-raise contract as _discord_post_new_flag - a
+    Discord outage must never break early-signal detection/logging, and
+    this is explicitly NOT the real flag alert path (see module docstring
+    and this file's own history of keeping early_signals's Discord
+    wiring deliberately separate from state["flags"]'s). Stores the
+    returned message id on the signal for debugging only - these
+    messages are never edited/checkpointed, unlike real flags."""
+    webhook_url = _discord_webhook_url()
+    if not webhook_url:
+        return False
+    try:
+        resp = requests.post(
+            f"{webhook_url}?wait=true",
+            json={"embeds": [_early_signal_test_embed(signal, betr_entry, detail_label, detail_text)]},
+            timeout=15,
+        )
+        resp.raise_for_status()
+        signal["discord_test_message_id"] = resp.json().get("id")
+        return True
+    except Exception as e:
+        logger.warning(f"Discord TESTING webhook POST failed for {signal['name']} ({signal['source']}): {e}")
         return False
 
 
@@ -559,16 +628,51 @@ def check_transactions(now, betr_by_name, games, state):
         state["early_signals"][key] = signal
         new_signals.append(signal)
         _log_event({"ts": now.isoformat(), "type": "early_signal", **signal})
+        _discord_post_early_signal_test(signal, betr_entry, "Transaction", t.get("description"))
 
     _resolve_reversals(now, txns, state)
     return new_signals
 
 
+# Sources whose early_signals a reversal (from ANY of these same three
+# sources) is allowed to close - extended 2026-09-11 to include "news"
+# alongside the original "roster_status"/"transaction" pair, so e.g. a
+# transaction-feed reversal can close a news-sourced signal and vice
+# versa. The three sources are being run head-to-head specifically to
+# compare accuracy/lead time, so each one's reversal detection should be
+# able to validate (or invalidate) any of the others, not just itself.
+EARLY_SIGNAL_SOURCES = ("roster_status", "transaction", "news")
+
+
+def _close_open_signals_as_reversed(now, norm_name, outcome, state, **extra):
+    """Close every unresolved early_signals entry for norm_name (across
+    EARLY_SIGNAL_SOURCES) with the given outcome - shared by
+    _resolve_reversals (transaction-feed reversals) and check_news
+    (news-feed reversals) so there's exactly one place that knows what
+    "closing a signal early" means. extra is merged onto the signal dict
+    and into the logged event (e.g. which transaction id or RSS guid
+    triggered the close) for later diagnosis - see this file's own
+    history of needing exactly that detail to diagnose the 2026-09
+    misses."""
+    for sig in state.get("early_signals", {}).values():
+        if sig.get("resolved") or sig["normalized_name"] != norm_name:
+            continue
+        if sig["source"] not in EARLY_SIGNAL_SOURCES:
+            continue
+        sig["resolved"] = True
+        sig["outcome"] = outcome
+        sig.update(extra)
+        _log_event({
+            "ts": now.isoformat(), "type": "early_signal_resolved", "flag_id": sig["flag_id"],
+            "outcome": outcome, **extra,
+        })
+
+
 def _resolve_reversals(now, txns, state):
-    """Close out an already-open roster_status/transaction early signal as
-    soon as the SAME rolling transaction window that feeds check_transactions
-    shows a REVERSAL_KEYWORDS move (activated/reinstated/recalled/selected)
-    for that player - added 2026-09-02. Without this, a signal that was
+    """Close out an already-open early signal (any source) as soon as the
+    SAME rolling transaction window that feeds check_transactions shows a
+    REVERSAL_KEYWORDS move (activated/reinstated/recalled/selected) for
+    that player - added 2026-09-02. Without this, a signal that was
     genuinely correct when it fired (real IL stint, real option) but
     overtaken by a real roster move before game time sat open until
     _resolve_early_signals eventually saw the player start and called it
@@ -576,7 +680,17 @@ def _resolve_reversals(now, txns, state):
     when the actual failure is not watching for the reversal we already
     fetch every poll and simply discard in classify_transaction(). No
     extra API call: reuses the exact txns list check_transactions already
-    pulled for this poll."""
+    pulled for this poll.
+
+    NOTE (2026-09-11): diagnosing 5 real misses found the matching
+    reversal transaction for EVERY one of them already existed with
+    exactly this wording, but wasn't visible via /api/v1/transactions
+    until after the real lineup had already resolved the signal as
+    "player_started_anyway" - in Mickey Gasper's case the reversal
+    transaction's own date field predates the signal's creation by
+    almost a full day. This function's logic is correct; the feed it
+    depends on is not reliably timely. See check_news() for the second,
+    independent source added to address that."""
     for t in txns:
         desc = (t.get("description") or "").lower()
         if not any(k in desc for k in REVERSAL_KEYWORDS):
@@ -586,19 +700,10 @@ def _resolve_reversals(now, txns, state):
         if not name:
             continue
         norm = normalize_name(name)
-        for sig in state.get("early_signals", {}).values():
-            if sig.get("resolved") or sig["normalized_name"] != norm:
-                continue
-            if sig["source"] not in ("roster_status", "transaction"):
-                continue
-            sig["resolved"] = True
-            sig["outcome"] = "reversed_by_activation"
-            sig["reversal_transaction_id"] = t.get("id")
-            sig["reversal_description"] = t.get("description")
-            _log_event({
-                "ts": now.isoformat(), "type": "early_signal_resolved", "flag_id": sig["flag_id"],
-                "outcome": sig["outcome"], "reversal_description": t.get("description"),
-            })
+        _close_open_signals_as_reversed(
+            now, norm, "reversed_by_activation", state,
+            reversal_transaction_id=t.get("id"), reversal_description=t.get("description"),
+        )
 
 
 def check_roster_status(now, betr_by_name, team_abbrevs, games, state):
@@ -606,22 +711,42 @@ def check_roster_status(now, betr_by_name, team_abbrevs, games, state):
     Betr-lined player today, and create a new early_signals entry for
     any such player whose CURRENT status isn't "A" (Active). Deduped by
     (player_id, status_code) - a long-standing IL stint doesn't re-fire
-    every poll, only a genuine status transition (e.g. D10 -> D60) does."""
+    every poll, only a genuine status transition (e.g. D10 -> D60) does.
+
+    CLOSURE (added 2026-09-11): also re-checks every already-open
+    roster_status signal against a fresh roster fetch and closes it the
+    moment that player's OWN status flips back to "A" - previously,
+    closing a roster_status signal depended entirely on _resolve_
+    reversals matching a same-wording transaction in the (separately
+    fetched, separately timed) transactions feed, which diagnosing 5 real
+    misses found is not reliably fast enough - the 40-man endpoint itself
+    is a more direct, no-extra-source way to notice this player's own
+    status has already changed. Fetches the open signal's team even if no
+    CURRENTLY-lined player is on it (the creation loop above only visits
+    teams with a live Betr line today - a signal survives even after
+    Betr pulls that player's line entirely, so closure can't depend on
+    the line still being posted)."""
     state.setdefault("early_signals", {})
     new_signals = []
     checked_teams = set()
+    rosters_by_team = {}
+
+    def get_roster(team_id):
+        if team_id not in rosters_by_team:
+            try:
+                rosters_by_team[team_id] = get_forty_man_roster(team_id)
+            except Exception as e:
+                logger.warning(f"get_forty_man_roster({team_id}) failed: {e}")
+                rosters_by_team[team_id] = []
+        return rosters_by_team[team_id]
+
     for betr_entry in betr_by_name.values():
         team_abbr = betr_entry["team"]
         team_id = team_abbrevs.get(team_abbr) or team_abbrevs.get(BETR_TEAM_ABBR_OVERRIDES.get(team_abbr))
         if team_id is None or team_id in checked_teams:
             continue
         checked_teams.add(team_id)
-        try:
-            roster = get_forty_man_roster(team_id)
-        except Exception as e:
-            logger.warning(f"get_forty_man_roster({team_id}) failed: {e}")
-            continue
-        for p in roster:
+        for p in get_roster(team_id):
             if p["status_code"] == "A" or not p["status_code"]:
                 continue
             norm = normalize_name(p["name"])
@@ -635,11 +760,92 @@ def check_roster_status(now, betr_by_name, team_abbrevs, games, state):
 
             signal = _new_early_signal(
                 key, "roster_status", f"status_{p['status_code']}", p["name"], norm, team_abbr, games, player_betr_entry, now,
-                {"status_code": p["status_code"], "status_desc": p["status_desc"], "note": p.get("note")},
+                {"player_id": p["player_id"], "status_code": p["status_code"], "status_desc": p["status_desc"], "note": p.get("note")},
             )
             state["early_signals"][key] = signal
             new_signals.append(signal)
             _log_event({"ts": now.isoformat(), "type": "early_signal", **signal})
+            status_detail = f"{p['status_code']} — {p['status_desc']}" + (f" ({p['note']})" if p.get("note") else "")
+            _discord_post_early_signal_test(signal, player_betr_entry, "Roster status", status_detail)
+
+    for sig in state["early_signals"].values():
+        if sig.get("resolved") or sig["source"] != "roster_status":
+            continue
+        player_id = sig.get("player_id")  # absent on signals created before 2026-09-11 - nothing to re-check
+        if player_id is None:
+            continue
+        team_id = team_abbrevs.get(sig["team"]) or team_abbrevs.get(BETR_TEAM_ABBR_OVERRIDES.get(sig["team"]))
+        if team_id is None:
+            continue
+        current = next((p for p in get_roster(team_id) if p["player_id"] == player_id), None)
+        if current is None:
+            continue  # dropped off the 40-man entirely (release/DFA-and-cleared) - not a "back to active" signal
+        if current["status_code"] == "A" or not current["status_code"]:
+            _close_open_signals_as_reversed(
+                now, sig["normalized_name"], "reversed_by_roster_status", state,
+                reversal_status_code=current["status_code"],
+            )
+
+    return new_signals
+
+
+def check_news(now, betr_by_name, games, state):
+    """Third early-signal source (added 2026-09-11, shadow mode - see
+    rss_news_classifier.py's module docstring for why): polls RotoWire's
+    public MLB RSS feed and creates a new early_signals entry (source=
+    "news") for any "confirmed_out"-classified headline about a player
+    who currently has a posted Betr line. Deduped by the feed's own
+    <guid> - a real headline is a one-time event, never re-fires, same
+    reasoning as a transaction's own id for check_transactions().
+
+    A "reversal"-classified headline (activated/recalled/etc - see
+    rss_news_classifier.REVERSAL_PATTERNS) closes any already-open early
+    signal for that player from ANY of EARLY_SIGNAL_SOURCES, not just a
+    news-sourced one - same _close_open_signals_as_reversed() path
+    _resolve_reversals() uses, just fed by news instead of the
+    transaction log. "not_confirmed" (day-to-day, questionable, ...) and
+    "unclassified" headlines are deliberately ignored entirely - see
+    rss_news_classifier.py's own docstring for why day-to-day is kept
+    out of the confirmed tier."""
+    try:
+        items = fetch_news_items()
+    except Exception as e:
+        logger.warning(f"RotoWire RSS fetch/classify failed: {e}")
+        return []
+
+    state.setdefault("early_signals", {})
+    new_signals = []
+    for item in items:
+        norm = item["normalized_name"]
+
+        if item["classification"] == "reversal":
+            _close_open_signals_as_reversed(
+                now, norm, "reversed_by_news", state,
+                reversal_guid=item["guid"], reversal_headline=item["headline"],
+            )
+            continue
+
+        if item["classification"] != "confirmed_out":
+            continue
+
+        betr_entry = betr_by_name.get(norm)
+        if betr_entry is None:
+            continue  # no posted Betr line - not relevant to this detector
+
+        key = f"news:{item['guid']}"
+        if key in state["early_signals"]:
+            continue
+
+        signal = _new_early_signal(
+            key, "news", "confirmed_out_news", item["name"], norm, betr_entry["team"], games, betr_entry, now,
+            {"guid": item["guid"], "headline": item["headline"],
+             "pub_date": item.get("pub_date"), "pub_date_utc": item.get("pub_date_utc")},
+        )
+        state["early_signals"][key] = signal
+        new_signals.append(signal)
+        _log_event({"ts": now.isoformat(), "type": "early_signal", **signal})
+        _discord_post_early_signal_test(signal, betr_entry, "Headline (classified: confirmed_out)", item["headline"])
+
     return new_signals
 
 
@@ -936,6 +1142,7 @@ def run_poll(betr_entries=None):
     # flag could ever fire). --------------------------------------------
     new_transaction_signals = check_transactions(now, betr_by_name, games, state)
     new_status_signals = check_roster_status(now, betr_by_name, team_abbrevs, games, state)
+    new_news_signals = check_news(now, betr_by_name, games, state)
 
     # --- Pass 2: grade + measure every unresolved flag -------------------
     # A SEPARATE pass over every flag in state, not folded into pass 1.
@@ -1050,8 +1257,20 @@ def run_poll(betr_entries=None):
     early_signals = state.get("early_signals", {}).values()
     confirmed_lags = [s["lineup_lag_minutes"] for s in early_signals if s.get("outcome") == "confirmed_by_lineup_flag"]
     early_signal_outcomes = {}
+    # Per-source breakdown (added 2026-09-11 alongside the news source) -
+    # the whole point of running transaction/roster_status/news side by
+    # side is a head-to-head accuracy/lead-time comparison, which the
+    # combined-across-sources view above can't answer on its own.
+    outcomes_by_source = {}
+    confirmed_lags_by_source = {}
     for s in early_signals:
-        early_signal_outcomes[s.get("outcome")] = early_signal_outcomes.get(s.get("outcome"), 0) + 1
+        outcome = s.get("outcome")
+        early_signal_outcomes[outcome] = early_signal_outcomes.get(outcome, 0) + 1
+        src = s.get("source")
+        outcomes_by_source.setdefault(src, {})
+        outcomes_by_source[src][outcome] = outcomes_by_source[src].get(outcome, 0) + 1
+        if outcome == "confirmed_by_lineup_flag":
+            confirmed_lags_by_source.setdefault(src, []).append(s["lineup_lag_minutes"])
 
     summary = {
         "polled_at_utc": now.isoformat(),
@@ -1062,12 +1281,15 @@ def run_poll(betr_entries=None):
         "total_tracked_flags": len(state["flags"]),
         "record": {"wins": wins, "losses": losses, "unresolved_lineup_never_posted": unresolved_grade},
         "early_signals": {
-            "new_this_poll": len(new_transaction_signals) + len(new_status_signals),
+            "new_this_poll": len(new_transaction_signals) + len(new_status_signals) + len(new_news_signals),
             "new_transaction_signals": len(new_transaction_signals),
             "new_roster_status_signals": len(new_status_signals),
+            "new_news_signals": len(new_news_signals),
             "total_tracked": len(early_signals),
             "outcomes": early_signal_outcomes,
             "confirmed_lead_times_minutes": confirmed_lags,
+            "outcomes_by_source": outcomes_by_source,
+            "confirmed_lead_times_minutes_by_source": confirmed_lags_by_source,
         },
     }
     return summary

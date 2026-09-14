@@ -69,11 +69,11 @@ class TestPlayerAbsentFromProjectedLineup(unittest.TestCase):
         ]}
         patches = _patch_mlb_api()
         with patches[0], patches[1], patches[2], patches[3]:
-            candidates = dabble_adapter.score_dabble_board(source=board, persist=False)
+            candidates = dabble_adapter.score_dabble_board(source=board, persist=False, notify=False)
         self.assertEqual(len(candidates), 1)
         c = candidates[0]
         self.assertEqual(c["player_name"], "Test Player")
-        self.assertIsInstance(c["score"], int)
+        self.assertIsInstance(c["dnp_score"], int)
         self.assertEqual(c["projected_start_status"], "not_yet_posted")
 
 
@@ -95,7 +95,7 @@ class TestDuplicatePropsNoDuplicateScoring(unittest.TestCase):
         ]}
         patches = _patch_mlb_api()
         with patches[0], patches[1], patches[2], patches[3]:
-            candidates = dabble_adapter.score_dabble_board(source=board, persist=False)
+            candidates = dabble_adapter.score_dabble_board(source=board, persist=False, notify=False)
         self.assertEqual(len(candidates), 1, "three markets for one player must produce ONE scored candidate")
         self.assertEqual(len(candidates[0]["props"]), 3, "but all three props should still be attached to it")
 
@@ -141,10 +141,10 @@ class TestGracefulEnrichmentFailure(unittest.TestCase):
              patch("dabble_adapter.get_team_abbreviations", return_value=TEAM_ABBREVS), \
              patch("dabble_adapter.get_active_roster", side_effect=RuntimeError("roster API down")), \
              patch("dabble_adapter.get_game_start_data", side_effect=_fake_get_game_start_data):
-            candidates = dabble_adapter.score_dabble_board(source=board, persist=False)
+            candidates = dabble_adapter.score_dabble_board(source=board, persist=False, notify=False)
         self.assertEqual(len(candidates), 1)
         self.assertIsNone(candidates[0]["player_id"], "no roster match possible, but scoring must still complete")
-        self.assertIsInstance(candidates[0]["score"], int)
+        self.assertIsInstance(candidates[0]["dnp_score"], int)
 
     def test_scoring_continues_when_pitcher_lookup_fails(self):
         board = {"sport": "mlb", "generated_at": "2026-09-13T10:00:00Z", "props": [
@@ -155,17 +155,18 @@ class TestGracefulEnrichmentFailure(unittest.TestCase):
              patch("dabble_adapter.get_team_abbreviations", return_value=TEAM_ABBREVS), \
              patch("dabble_adapter.get_active_roster", side_effect=_fake_get_active_roster), \
              patch("dabble_adapter.get_game_start_data", side_effect=RuntimeError("live feed down")):
-            candidates = dabble_adapter.score_dabble_board(source=board, persist=False)
+            candidates = dabble_adapter.score_dabble_board(source=board, persist=False, notify=False)
         self.assertEqual(len(candidates), 1)
         self.assertIsNone(candidates[0]["opposing_pitcher_hand"])
-        self.assertIsInstance(candidates[0]["score"], int)
+        self.assertIsInstance(candidates[0]["dnp_score"], int)
 
 
 class TestLiveSnapshotGrading(unittest.TestCase):
     def test_snapshot_can_be_graded_against_actual_outcome(self):
         candidates = [{
             "player_name": "Test Player", "normalized_name": "test player", "team": "NYY",
-            "player_id": 12345, "game_id": 900001, "score": 82, "projected_start_status": "not_yet_posted",
+            "player_id": 12345, "game_id": 900001, "dnp_score": 82, "confidence_score": 55,
+            "urgency_score": 20, "projected_start_status": "not_yet_posted",
         }]
         with patch("dabble_adapter.LIVE_SNAPSHOTS_DIR", "data/_test_dnp_live_snapshots"):
             dabble_adapter.record_live_snapshot("2099-01-01", candidates)
@@ -184,7 +185,7 @@ class TestLiveSnapshotGrading(unittest.TestCase):
 
         self.assertEqual(len(graded), 1)
         self.assertEqual(graded[0]["actual_started"], False)
-        self.assertEqual(graded[0]["final_score"], 82)
+        self.assertEqual(graded[0]["final_dnp_score"], 82)
 
 
 if __name__ == "__main__":

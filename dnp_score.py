@@ -1,26 +1,32 @@
 """
-DNP Score - a 0-100 "will NOT start today" probability for MLB position
-players, computed BEFORE the official lineup posts. Once a lineup is
-confirmed one way or the other, stale_lines.py's hard boolean detector is
-the authoritative signal - this score's real value is the pre-confirmation
-window (minutes of lead time, not seconds). Pinch-hitting doesn't matter
-for MLB grading, so the target is simply "did not start", not the fuller
-bench x zero-PA formula originally floated.
+DNP Score v2 (2026-09-13, Phase 2.1) - three separate, orthogonal scores
+for an MLB position player with a live prop:
 
-Transparent weighted model for v1 (per the plan: explainable now, switch to
-a calibrated ML model once dnp_score_results.json has enough labeled
-history to train against - see grade_dnp_scores). Every weight below has an
-inline comment explaining the number; none of them are backtested yet, so
-treat this as a heuristic ranking tool, not a validated edge, until
-calibration data says otherwise.
+  dnp_score        - P(will NOT start), a pure evidence-based estimate.
+                      NEVER influenced by time-to-game, lineup-release ETA,
+                      or "early game" - those are timing/action signals,
+                      not evidence the player will be absent. See
+                      score_urgency for all of that.
+  confidence_score  - how much evidence backs the dnp_score, NOT how
+                      certain the prediction is. A player with no lineup
+                      source posted yet can score high or low on dnp_score,
+                      but can never hit 100 confidence, because "no lineup
+                      posted" is itself a missing evidence source.
+  urgency_score     - how time-critical acting on this candidate is right
+                      now (lineup-release proximity, first-pitch proximity,
+                      whether the projected status just changed). This is
+                      where every timing signal lives.
 
-v1 scores every player in data/{date}.json (today's pipeline output -
-confirmed + projected starters). It does NOT yet score players who have a
-live Dabble/Betr prop but weren't guessed into a lineup slot by pipeline.py
-at all - that requires wiring in the live board via board_loader.py, which
-is the natural fast-follow once a board JSON is flowing through
-dns_watch.py (see stale_lines.run_poll for the name/team/game resolution
-this would reuse).
+Phase 1 (score_player/score_today, the pipeline path) mixed "not yet
+confirmed" (a pure evidence gap) with "early game" (a timing signal) into
+one additive score - that conflation is exactly what this rework removes.
+A years-long everyday starter who simply hasn't had today's lineup posted
+yet should score LOW on dnp_score (their prior says they almost always
+start) and MODERATE-TO-HIGH on urgency (if game time is close), not
+"medium-high" on one blended number the way v1 did.
+
+Every weight below is still a transparent, hand-set heuristic - none of
+this is backtested. See grade_dnp_scores for the self-calibration loop.
 
 Usage:
   python dnp_score.py --today                 # score most recent data/{date}.json
@@ -34,9 +40,9 @@ import os
 from datetime import datetime, timedelta, timezone
 
 import start_history
-from report import _is_early_game
 from scrapers.betr import normalize_name
 from scrapers.mlb_api import get_game_start_data
+from stale_lines import _parse_iso
 
 SCORES_DIR = os.path.join("data", "dnp_scores")
 RESULTS_PATH = os.path.join("data", "results", "dnp_score_results.json")
@@ -48,19 +54,53 @@ WATCHLIST_EVENTS_PATH = os.path.join("data", "watchlist", "events.jsonl")
 # excluded here.
 RISK_NEWS_TIERS = {"doubtful", "questionable", "game-time-decision", "day-to-day", "news-mention"}
 NEWS_LOOKBACK_HOURS = 48
-
-# --- Weights - each documented individually; total is clamped to 0-100 ---
-BASE_SCORE = 3  # residual late-scratch risk even for a totally normal case
-NOT_CONFIRMED_WEIGHT = 45  # dominant signal - see module docstring
-RECENT_START_RATE_WEIGHT = 20  # scaled by (1 - recent start rate), n>=3 required
-VS_HAND_WEIGHT = 15  # scaled by how much lower their vs-hand rate is than their overall recent rate
-STREAK_FATIGUE_MAX = 10  # consecutive-starts fatigue, capped
-STREAK_FATIGUE_MIN_GAMES = 6  # streak length before fatigue starts counting
-CATCHER_REST_BONUS = 8  # extra bump for a catcher on a 4+ game streak
-CATCHER_REST_MIN_STREAK = 4
-GETAWAY_DAY_BONUS = 7  # only applied on top of NOT_CONFIRMED_WEIGHT, not standalone
-NEWS_RISK_BONUS = 12
 MIN_GAMES_FOR_RATE_SIGNAL = 3  # below this, a rate is noise - skip the signal entirely
+
+# ---------------------------------------------------------------------------
+# DNP score weights - PURE evidence about start likelihood. No game_start,
+# no "is_early_game", no ETA of any kind belongs in this section - see
+# score_urgency for all timing signals.
+# ---------------------------------------------------------------------------
+CONFIRMED_NOT_STARTING_SCORE = 97  # lineup posted, genuinely absent - near-certainty, not a heuristic blend
+CONFIRMED_STARTING_SCORE = 3       # lineup posted, this player IS in it - small residual late-scratch risk
+DEFAULT_PRIOR_NO_HISTORY = 15      # no usable start history at all - league-average bench-rate placeholder,
+                                    # not a real backtested rate yet (see module docstring)
+PLATOON_WEIGHT = 20                # scaled by how much lower their vs-hand rate is than their overall recent rate
+STREAK_FATIGUE_MAX = 10            # consecutive-starts fatigue, capped
+STREAK_FATIGUE_MIN_GAMES = 6       # streak length before fatigue starts counting
+CATCHER_REST_BONUS = 8             # extra bump for a catcher on a 4+ game streak
+CATCHER_REST_MIN_STREAK = 4
+NEWS_RISK_BONUS = 12
+
+# ---------------------------------------------------------------------------
+# Confidence weights - evidence QUALITY/COMPLETENESS, not certainty. Sums
+# to 100 only when every source is present AND a lineup has posted -
+# "no lineup source posted" alone caps this at 70 (30 history + 15 hand +
+# 15 freshness + 10 news, if every one of THOSE also happens to be present -
+# realistically much lower), which is the explicit requirement: a
+# not-yet-posted candidate can never show 100 confidence.
+# ---------------------------------------------------------------------------
+CONFIDENCE_HISTORY_MAX = 30       # scaled by min(n, 10)/10 - partial credit for a partial sample
+CONFIDENCE_OPP_HAND_KNOWN = 15
+CONFIDENCE_LINEUP_POSTED = 30     # 0 whenever start_status == "not_yet_posted"/"unknown"
+CONFIDENCE_NEWS_AVAILABLE = 10
+CONFIDENCE_FRESHNESS_MAX = 15
+
+# ---------------------------------------------------------------------------
+# Urgency weights - ALL timing/action signals live here, never in dnp_score.
+# ASSUMED_LINEUP_LEAD_MINUTES is a placeholder (MLB lineups typically post
+# a few hours pre-game) pending the real per-team learned release-time
+# model the original brainstorm described - not built yet, documented as a
+# known gap rather than silently pretended-precise.
+# ---------------------------------------------------------------------------
+ASSUMED_LINEUP_LEAD_MINUTES = 180
+URGENCY_OVERDUE_RELEASE = 45       # past the assumed release window, still not posted
+URGENCY_RELEASE_IMMINENT = 35      # within 45 min of the assumed release window
+URGENCY_RELEASE_APPROACHING = 15   # within 2 hours of the assumed release window
+URGENCY_FIRST_PITCH_SOON = 25      # under 30 minutes to first pitch
+URGENCY_FIRST_PITCH_NEAR = 10      # under 90 minutes to first pitch
+URGENCY_STATUS_CHANGED = 15        # projected status flipped since the last check this same day
+URGENCY_RESOLVED = 5               # lineup already posted either way - no more "sniping" window, informational only
 
 
 def _load_watchlist_risk_map():
@@ -102,10 +142,12 @@ def _load_watchlist_risk_map():
     return risk
 
 
-def _opp_pitcher_hand(row):
+def _opp_pitcher_hand_from_row(row):
     """Derive today's opposing starter's handedness from bat_side +
     platoon.platoon_same_hand (both already computed by the pipeline) -
-    avoids a second lookup for something we already have implicitly."""
+    avoids a second lookup for something we already have implicitly.
+    Only used by the pipeline path (score_player) - the live Dabble path
+    resolves this directly via dabble_adapter._resolve_player_context."""
     bat_side = row.get("bat_side")
     same_hand = (row.get("platoon") or {}).get("platoon_same_hand")
     if bat_side not in ("L", "R") or same_hand is None:
@@ -113,48 +155,36 @@ def _opp_pitcher_hand(row):
     return bat_side if same_hand else ("R" if bat_side == "L" else "L")
 
 
-# Flat score for a player whose lineup IS posted and who is genuinely NOT
-# in it - added 2026-09-13 for the live Dabble board (dabble_adapter.py),
-# which can represent this state directly (pipeline.py's data/{date}.json
-# never can - it only ever contains the 9 players it guessed INTO a lineup
-# slot, so a real "confirmed not starting" case has no representation
-# there at all). This is near-certainty, not a heuristic blend - it's
-# functionally the same fact stale_lines.py's hard boolean detector would
-# flag - so it deliberately bypasses the weighted signals below rather
-# than being yet another additive contribution.
-CONFIRMED_NOT_STARTING_SCORE = 97
+# ---------------------------------------------------------------------------
+# DNP score - pure evidence, no timing signals
+# ---------------------------------------------------------------------------
 
-
-def score_candidate(*, player_id, name, position, start_status, opp_pitcher_hand,
-                     is_early_game, history, news_risk):
-    """Core scorer - both the pipeline path (score_player, below) and the
-    live Dabble board path (dabble_adapter.score_dabble_board) funnel
-    through this exact function, so the weights are applied identically
-    regardless of where the candidate came from. `start_status` is one of
-    "confirmed_starting" | "confirmed_not_starting" | "not_yet_posted".
-    Returns (score_0_100, reasons: list[str])."""
+def score_dnp(*, player_id, name, position, start_status, opp_pitcher_hand, history, news_risk):
+    """(dnp_score_0_100, contributions: [(label, points), ...]). Every
+    point on the score is itemized here in the same units it's added in,
+    so a caller can print an exact diagnostic breakdown - see
+    format_diagnostic(). Contributions with 0 points (e.g. "no lineup
+    source posted yet") are kept in the list as informational notes."""
     if start_status == "confirmed_not_starting":
-        return CONFIRMED_NOT_STARTING_SCORE, ["Lineup posted - CONFIRMED not in the starting lineup"]
-
-    score = BASE_SCORE
-    reasons = []
-
+        return CONFIRMED_NOT_STARTING_SCORE, [("Lineup posted - CONFIRMED not in the starting lineup",
+                                                CONFIRMED_NOT_STARTING_SCORE)]
     if start_status == "confirmed_starting":
-        reasons.append("Confirmed starting in today's lineup")
-    else:  # "not_yet_posted" (or "unknown" - treated the same: no confirmation either way yet)
-        score += NOT_CONFIRMED_WEIGHT
-        reasons.append("Lineup not yet posted/confirmed")
-        if is_early_game:
-            score += GETAWAY_DAY_BONUS
-            reasons.append("Early game while still unconfirmed - getaway-day risk")
+        return CONFIRMED_STARTING_SCORE, [("Confirmed starting in today's lineup", CONFIRMED_STARTING_SCORE)]
 
+    # "not_yet_posted" / "unknown": build a genuine prior estimate. No flat
+    # "unconfirmed" penalty here - an everyday starter whose lineup simply
+    # hasn't posted yet should score LOW, not medium-high, purely because
+    # of this line of reasoning (see module docstring for why v1 got this
+    # wrong via NOT_CONFIRMED_WEIGHT + GETAWAY_DAY_BONUS).
+    contributions = []
     wins, losses, n = start_history.start_rate(history, player_id, n_games=10)
-    recent_rate = wins / n if n else None
     if n >= MIN_GAMES_FOR_RATE_SIGNAL:
-        contribution = (1 - recent_rate) * RECENT_START_RATE_WEIGHT
-        if contribution >= 1:
-            score += contribution
-            reasons.append(f"Started only {round(100 * recent_rate)}% of last {n} team games")
+        recent_rate = wins / n
+        base = round((1 - recent_rate) * 100)
+        contributions.append((f"{round(100 * (1 - recent_rate))}% historical non-start rate (n={n})", base))
+    else:
+        recent_rate = None
+        contributions.append((f"No usable start history (n={n}) - league-average prior", DEFAULT_PRIOR_NO_HISTORY))
 
     if opp_pitcher_hand and n >= MIN_GAMES_FOR_RATE_SIGNAL:
         hw, hl, hn = start_history.start_rate_vs_hand(history, player_id, opp_pitcher_hand, n_games=15)
@@ -162,85 +192,198 @@ def score_candidate(*, player_id, name, position, start_status, opp_pitcher_hand
             hand_rate = hw / hn
             diff = (recent_rate or 1.0) - hand_rate
             if diff >= 0.15:
-                score += diff * VS_HAND_WEIGHT
-                reasons.append(f"Starts only {round(100 * hand_rate)}% of the time vs {opp_pitcher_hand}HP "
-                                f"(n={hn}, overall {round(100 * (recent_rate or 0))}%)")
+                contributions.append((
+                    f"Platoon: starts only {round(100 * hand_rate)}% vs {opp_pitcher_hand}HP "
+                    f"(n={hn}, overall {round(100 * (recent_rate or 0))}%)",
+                    round(diff * PLATOON_WEIGHT),
+                ))
 
     streak = start_history.consecutive_starts(history, player_id)
     if streak >= STREAK_FATIGUE_MIN_GAMES:
         fatigue = min((streak - (STREAK_FATIGUE_MIN_GAMES - 1)) * 2, STREAK_FATIGUE_MAX)
-        score += fatigue
-        reasons.append(f"On a {streak}-game start streak")
+        contributions.append((f"On a {streak}-game start streak", fatigue))
         if position == "C" and streak >= CATCHER_REST_MIN_STREAK:
-            score += CATCHER_REST_BONUS
-            reasons.append(f"Catcher on a {streak}-game streak - rest risk elevated")
+            contributions.append((f"Catcher on a {streak}-game streak - rest risk elevated", CATCHER_REST_BONUS))
     elif position == "C" and streak >= CATCHER_REST_MIN_STREAK:
-        score += CATCHER_REST_BONUS
-        reasons.append(f"Catcher on a {streak}-game streak - rest risk elevated")
+        contributions.append((f"Catcher on a {streak}-game streak - rest risk elevated", CATCHER_REST_BONUS))
 
     news = news_risk.get(normalize_name(name or ""))
     if news:
         tier, headline = news
-        score += NEWS_RISK_BONUS
         snippet = (headline or "")[:80]
-        reasons.append(f"Recent news ({tier}): {snippet}" if snippet else f"Recent news tier: {tier}")
+        label = f"Recent news ({tier}): {snippet}" if snippet else f"Recent news tier: {tier}"
+        contributions.append((label, NEWS_RISK_BONUS))
 
-    score = max(0, min(100, round(score)))
-    if not reasons:
-        reasons.append("Confirmed starter, no elevated risk signals")
-    return score, reasons
+    contributions.append(("No projected lineup source posted yet", 0))
+
+    score = max(0, min(100, round(sum(c[1] for c in contributions))))
+    return score, contributions
 
 
-def compute_confidence(*, start_status, recent_n, opp_hand_known, game_resolved):
-    """0-100: how much data actually backs this candidate's score, NOT a
-    restatement of the score itself - a 90 built on a resolved game,
-    posted lineup, and 10 games of history means something different from
-    a 90 built on none of that. Same "how much data backs this" spirit as
-    report.confidence_score, simplified to the signals score_candidate
-    actually uses."""
+# ---------------------------------------------------------------------------
+# Confidence score - evidence completeness, not prediction certainty
+# ---------------------------------------------------------------------------
+
+def _freshness_credit(scraped_at):
+    if not scraped_at:
+        return 0
+    try:
+        dt = _parse_iso(scraped_at) if isinstance(scraped_at, str) else None
+    except (ValueError, TypeError):
+        dt = None
+    if dt is None:
+        return 0
+    age_minutes = (datetime.now(timezone.utc) - dt).total_seconds() / 60
+    if age_minutes <= 30:
+        return CONFIDENCE_FRESHNESS_MAX
+    if age_minutes <= 90:
+        return round(CONFIDENCE_FRESHNESS_MAX * 0.5)
+    return 0
+
+
+def score_confidence(*, start_status, recent_n, opp_hand_known, news_available, scraped_at=None):
+    """(confidence_0_100, evidence_count). A not-yet-posted candidate loses
+    the full CONFIDENCE_LINEUP_POSTED weight unconditionally - that's the
+    single largest bucket, so this can never reach 100 without a real
+    posted lineup, regardless of how complete every other signal is."""
+    evidence_count = 0
     confidence = 0
-    if game_resolved:
-        confidence += 25
-    if start_status != "unknown":
-        confidence += 25
-    if recent_n >= MIN_GAMES_FOR_RATE_SIGNAL:
-        confidence += 30
+
+    history_credit = round(min(recent_n, 10) / 10 * CONFIDENCE_HISTORY_MAX)
+    confidence += history_credit
+    if recent_n > 0:
+        evidence_count += 1
+
     if opp_hand_known:
-        confidence += 20
-    return confidence
+        confidence += CONFIDENCE_OPP_HAND_KNOWN
+        evidence_count += 1
+
+    if start_status in ("confirmed_starting", "confirmed_not_starting"):
+        confidence += CONFIDENCE_LINEUP_POSTED
+        evidence_count += 1
+
+    if news_available:
+        confidence += CONFIDENCE_NEWS_AVAILABLE
+        evidence_count += 1
+
+    freshness_credit = _freshness_credit(scraped_at)
+    confidence += freshness_credit
+    if freshness_credit > 0:
+        evidence_count += 1
+
+    return max(0, min(100, round(confidence))), evidence_count
+
+
+# ---------------------------------------------------------------------------
+# Urgency score - ALL timing signals live here
+# ---------------------------------------------------------------------------
+
+def score_urgency(*, start_status, game_start, status_changed_recently=False, now=None):
+    """(urgency_0_100, reasons: list[str]). Deliberately the ONLY place
+    game_start/time-to-first-pitch/lineup-release-ETA are used anywhere in
+    this module - dnp_score must never see them (see module docstring)."""
+    if start_status != "not_yet_posted" and start_status != "unknown":
+        return URGENCY_RESOLVED, ["Lineup already resolved - no more waiting window"]
+
+    now = now or datetime.now(timezone.utc)
+    game_dt = _parse_iso(game_start) if game_start else None
+    if game_dt is None:
+        return 0, ["Game time unknown - cannot estimate urgency"]
+
+    minutes_to_first_pitch = (game_dt - now).total_seconds() / 60
+    minutes_to_expected_release = minutes_to_first_pitch - ASSUMED_LINEUP_LEAD_MINUTES
+
+    score = 0
+    reasons = []
+    if minutes_to_expected_release <= 0:
+        score += URGENCY_OVERDUE_RELEASE
+        reasons.append(f"Past the assumed lineup-release window ({round(-minutes_to_expected_release)} min "
+                        f"overdue) and still unposted")
+    elif minutes_to_expected_release <= 45:
+        score += URGENCY_RELEASE_IMMINENT
+        reasons.append(f"Lineup release expected in ~{round(minutes_to_expected_release)} min")
+    elif minutes_to_expected_release <= 120:
+        score += URGENCY_RELEASE_APPROACHING
+        reasons.append(f"Lineup release expected in ~{round(minutes_to_expected_release)} min")
+
+    if minutes_to_first_pitch <= 30:
+        score += URGENCY_FIRST_PITCH_SOON
+        reasons.append("First pitch under 30 minutes away")
+    elif minutes_to_first_pitch <= 90:
+        score += URGENCY_FIRST_PITCH_NEAR
+        reasons.append("First pitch under 90 minutes away")
+
+    if status_changed_recently:
+        score += URGENCY_STATUS_CHANGED
+        reasons.append("Projected status changed since the last check")
+
+    reasons.append("Cross-book prop-removal timing not available yet")  # honest gap - see dabble_adapter module docstring
+
+    return max(0, min(100, round(score))), reasons
+
+
+def tier_label(dnp_score):
+    if dnp_score >= 90:
+        return "DNP SNIPER"
+    if dnp_score >= 80:
+        return "Very High"
+    if dnp_score >= 70:
+        return "Strong Watch"
+    if dnp_score >= 60:
+        return "Watch"
+    return "Ignore"
+
+
+def combined_priority(dnp_score, urgency_score):
+    """Sort key for "hunting priority" - DNP stays primary (0.7 weight),
+    urgency breaks ties / boosts genuinely time-critical candidates (0.3).
+    A documented choice, not a derived one - there's no "correct" blend."""
+    return round(dnp_score * 0.7 + urgency_score * 0.3, 1)
+
+
+def format_diagnostic(name, dnp_score, confidence_score, urgency_score, contributions):
+    lines = [f"{name} - DNP {dnp_score} | Conf {confidence_score} | Urgency {urgency_score}"]
+    for label, points in contributions:
+        if points > 0:
+            lines.append(f"  +{points} {label}")
+        elif points == 0:
+            lines.append(f"  {label}")
+        else:
+            lines.append(f"  {points} {label}")
+    return "\n".join(lines)
 
 
 def score_player(row, history, news_risk):
-    """(score_0_100, reasons: list[str]) for one player's raw PIPELINE
-    record (a dict from data/{date}.json, NOT report.build_row's
-    flattened version - see module docstring). Thin wrapper around
-    score_candidate: pipeline.py's data/{date}.json only ever contains
-    players it guessed INTO a lineup slot, so "confirmed_not_starting"
-    never applies here - only "confirmed_starting" (lineup_confirmed=True)
-    or "not_yet_posted" (lineup_confirmed=False, i.e. still projected)."""
+    """Pipeline-path candidate (a dict from data/{date}.json, NOT
+    report.build_row's flattened version). data/{date}.json only ever
+    contains players guessed INTO a lineup slot, so "confirmed_not_starting"
+    never applies here - only "confirmed_starting" or "not_yet_posted".
+    Returns a dict with the full v2 output schema (dnp_score/
+    confidence_score/urgency_score/...)."""
     start_status = "confirmed_starting" if row.get("lineup_confirmed", True) else "not_yet_posted"
-    return score_candidate(
-        player_id=row.get("player_id"),
-        name=row.get("name"),
-        position=row.get("position"),
-        start_status=start_status,
-        opp_pitcher_hand=_opp_pitcher_hand(row),
-        is_early_game=_is_early_game(row.get("game_date_utc")),
-        history=history,
-        news_risk=news_risk,
+    pid = row.get("player_id")
+    opp_hand = _opp_pitcher_hand_from_row(row)
+
+    dnp, contributions = score_dnp(
+        player_id=pid, name=row.get("name"), position=row.get("position"),
+        start_status=start_status, opp_pitcher_hand=opp_hand, history=history, news_risk=news_risk,
     )
+    wins, losses, n = start_history.start_rate(history, pid, n_games=10)
+    news_hit = news_risk.get(normalize_name(row.get("name", "")))
+    confidence, evidence_count = score_confidence(
+        start_status=start_status, recent_n=n, opp_hand_known=opp_hand is not None,
+        news_available=news_hit is not None,
+    )
+    urgency, urgency_reasons = score_urgency(start_status=start_status, game_start=row.get("game_date_utc"))
 
-
-def tier_label(score):
-    if score >= 90:
-        return "DNP SNIPER"
-    if score >= 80:
-        return "Very High"
-    if score >= 70:
-        return "Strong Watch"
-    if score >= 60:
-        return "Watch"
-    return "Ignore"
+    return {
+        "dnp_score": dnp, "confidence_score": confidence, "urgency_score": urgency,
+        "evidence_count": evidence_count, "combined_priority": combined_priority(dnp, urgency),
+        "projected_start_status": start_status,
+        "top_reasons": [label for label, _ in contributions],
+        "urgency_reasons": urgency_reasons,
+        "contributions": contributions,
+    }
 
 
 def score_today(date_str):
@@ -259,7 +402,7 @@ def score_today(date_str):
 
     scored = []
     for row in raw_players:
-        score, reasons = score_player(row, history, news_risk)
+        result = score_player(row, history, news_risk)
         scored.append({
             "player_id": row.get("player_id"),
             "name": row.get("name"),
@@ -269,11 +412,10 @@ def score_today(date_str):
             "position": row.get("position"),
             "batting_order": row.get("batting_order"),
             "lineup_status": row.get("lineup_status"),
-            "score": score,
-            "tier": tier_label(score),
-            "reasons": reasons,
+            "tier": tier_label(result["dnp_score"]),
+            **result,
         })
-    scored.sort(key=lambda r: r["score"], reverse=True)
+    scored.sort(key=lambda r: r["dnp_score"], reverse=True)
 
     os.makedirs(SCORES_DIR, exist_ok=True)
     with open(os.path.join(SCORES_DIR, f"{date_str}.json"), "w", encoding="utf-8") as f:
@@ -283,14 +425,14 @@ def score_today(date_str):
 
 
 def print_ranked(scored, min_score=60):
-    shown = [s for s in scored if s["score"] >= min_score]
+    shown = [s for s in scored if s["dnp_score"] >= min_score]
     if not shown:
         print(f"No candidates scored >= {min_score}.")
         return
     for s in shown:
-        print(f"\n{s['name']} ({s['team']} vs {s['opp_team']}) - {s['score']} {s['tier']}")
-        for r in s["reasons"]:
-            print(f"  - {r}")
+        print()
+        print(format_diagnostic(f"{s['name']} ({s['team']} vs {s['opp_team']})",
+                                 s["dnp_score"], s["confidence_score"], s["urgency_score"], s["contributions"]))
 
 
 # ---------------------------------------------------------------------------
@@ -310,7 +452,12 @@ def grade_dnp_scores(date_str):
     same source start_history.py backfills from) and roll into
     data/results/dnp_score_results.json's calibration table. Recomputed
     from scratch from all dates on every run, same "no incremental drift"
-    discipline as the rest of this codebase's results files."""
+    discipline as the rest of this codebase's results files.
+
+    c.get("dnp_score", c.get("score")) tolerates snapshots saved by the
+    pre-2026-09-13 v1 scorer (field was named "score") as well as v2's
+    "dnp_score" - old snapshots already committed shouldn't become
+    ungradeable just because the field was renamed."""
     snapshot_path = os.path.join(SCORES_DIR, f"{date_str}.json")
     if not os.path.exists(snapshot_path):
         print(f"dnp_score: no score snapshot for {date_str} - nothing to grade.")
@@ -324,7 +471,8 @@ def grade_dnp_scores(date_str):
     for c in snapshot["candidates"]:
         game_pk = c.get("game_pk")
         pid = c.get("player_id")
-        if game_pk is None or pid is None:
+        predicted_score = c.get("dnp_score", c.get("score"))
+        if game_pk is None or pid is None or predicted_score is None:
             continue
         if game_pk not in game_pk_cache:
             game_pk_cache[game_pk] = get_game_start_data(game_pk)
@@ -342,7 +490,7 @@ def grade_dnp_scores(date_str):
         if actual_started is None:
             continue  # pitcher-filtered or not found - can't grade
         graded.append({
-            "player_id": pid, "name": c["name"], "predicted_score": c["score"],
+            "player_id": pid, "name": c["name"], "predicted_score": predicted_score,
             "actual_started": actual_started,
         })
 

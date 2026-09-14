@@ -1,0 +1,200 @@
+"""
+Soccer Start History - the soccer equivalent of start_history.py, for the
+same reason: we need real "how often does this player actually start"
+data to score DNS, and no such dataset exists yet for soccer. Built from
+scrapers/espn_soccer.py's post-match squad data (get_match_squad_names),
+the only real, working, non-paywalled source of confirmed starter/bench
+status this repo has for soccer (ESPN's soccer injuries endpoint is
+confirmed empty - see that module's docstring - which is why
+Transfermarkt exists for injuries and this exists separately for history).
+
+Schema: data/player_soccer_start_history.json:
+  {espn_athlete_key: {"name":, "matches": [{"date","league","event_id",
+   "team_id","opponent_team_id","started":bool,"active":bool}]}}
+espn_athlete_key is normalize_name(fullName) - ESPN's roster entries in
+the summary endpoint used here don't reliably carry a stable athlete id
+in every league, so normalized name (same normalize_name() as the rest of
+this codebase's soccer path) is the join key, same limitation
+transfermarkt.py/soccer_dns.py already live with.
+
+Usage:
+  python soccer_start_history.py --backfill --league EPL --start 2026-08-01 --end 2026-09-13
+  python soccer_start_history.py --record-date 2026-09-13 --league EPL
+"""
+
+import argparse
+import json
+import os
+import time
+from datetime import datetime, timedelta
+
+from scrapers.espn_soccer import get_scoreboard, get_match_squad_names, normalize_name
+
+HISTORY_PATH = os.path.join("data", "player_soccer_start_history.json")
+BACKFILL_SLEEP_SECONDS = 0.3
+
+
+def _load(path, default):
+    if os.path.exists(path):
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    return default
+
+
+def _save(path, data):
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2)
+
+
+def record_date(league_code, date_str, history=None):
+    """Record every completed match's squad for one league/date. Idempotent -
+    replaces (not duplicates) this date's entries for any player touched."""
+    own_history = history is None
+    if history is None:
+        history = _load(HISTORY_PATH, {})
+
+    events = get_scoreboard(league_code, date_str)
+    recorded = 0
+    for ev in events:
+        event_id = ev.get("id")
+        comp = (ev.get("competitions") or [{}])[0]
+        competitors = comp.get("competitors", [])
+        team_ids = {c.get("homeAway"): c.get("team", {}).get("id") for c in competitors}
+        if not event_id:
+            continue
+
+        squad = get_match_squad_names(league_code, event_id)
+        time.sleep(BACKFILL_SLEEP_SECONDS)
+        if not squad:
+            continue  # not played yet / postponed / ESPN hasn't posted it - not "nobody played"
+
+        for norm_name, info in squad.items():
+            team_id = info.get("team_id")
+            opp_team_id = team_ids.get("away") if team_id == team_ids.get("home") else team_ids.get("home")
+            entry = history.setdefault(norm_name, {"name": norm_name, "matches": []})
+            entry["matches"] = [m for m in entry["matches"] if m["event_id"] != event_id]
+            entry["matches"].append({
+                "date": date_str, "league": league_code, "event_id": event_id,
+                "team_id": team_id, "opponent_team_id": opp_team_id,
+                "started": info["starter"], "active": info["active"],
+            })
+            recorded += 1
+
+    for p in history.values():
+        p["matches"].sort(key=lambda m: m["date"])
+
+    print(f"soccer_start_history: recorded {recorded} player-matches for {league_code} {date_str}.")
+    if own_history:
+        _save(HISTORY_PATH, history)
+    return history
+
+
+def backfill(league_code, start_date, end_date):
+    history = _load(HISTORY_PATH, {})
+    d = datetime.strptime(start_date, "%Y-%m-%d")
+    end = datetime.strptime(end_date, "%Y-%m-%d")
+    dates = []
+    while d <= end:
+        dates.append(d.strftime("%Y-%m-%d"))
+        d += timedelta(days=1)
+
+    print(f"soccer_start_history backfill: {league_code}, {len(dates)} dates, {start_date} .. {end_date}")
+    for i, date_str in enumerate(dates, 1):
+        print(f"[{i}/{len(dates)}] {league_code} {date_str}")
+        try:
+            history = record_date(league_code, date_str, history=history)
+        except Exception as e:
+            print(f"  ERROR: {e}")
+        _save(HISTORY_PATH, history)
+
+    print(f"Backfill complete -> {HISTORY_PATH} ({len(history)} players)")
+
+
+# ---------------------------------------------------------------------------
+# Query helpers - used by soccer_dns_score.py
+# ---------------------------------------------------------------------------
+
+def _player_matches(history, normalized_name, before_date=None):
+    p = history.get(normalized_name)
+    if not p:
+        return []
+    matches = p["matches"]
+    if before_date is not None:
+        matches = [m for m in matches if m["date"] < before_date]
+    return sorted(matches, key=lambda m: m["date"])
+
+
+def starts_last_n(history, normalized_name, n=5, before_date=None):
+    matches = _player_matches(history, normalized_name, before_date)[-n:]
+    started = sum(1 for m in matches if m["started"])
+    return started, len(matches) - started, len(matches)
+
+
+def days_rest(history, normalized_name, as_of_date, before_date=None):
+    """Days since this player's last match appearance (started or sub) -
+    None if no history at all."""
+    matches = _player_matches(history, normalized_name, before_date)
+    appeared = [m for m in matches if m["active"]]
+    if not appeared:
+        return None
+    last_date = datetime.strptime(appeared[-1]["date"], "%Y-%m-%d")
+    return (datetime.strptime(as_of_date, "%Y-%m-%d") - last_date).days
+
+
+def first_recent_start(history, normalized_name, n=5, before_date=None):
+    """True if this player's most recent match was a start, but none of
+    the n-1 matches before that were - i.e. exactly the Mama Balde case
+    ("made his first start of the season last match")."""
+    matches = _player_matches(history, normalized_name, before_date)[-n:]
+    if not matches or not matches[-1]["started"]:
+        return False
+    return not any(m["started"] for m in matches[:-1])
+
+
+def frequent_substitute(history, normalized_name, n=10, before_date=None):
+    """True if this player regularly appears (bench-to-pitch) but rarely
+    starts - a real rotation signal distinct from "injured"/"out"."""
+    matches = _player_matches(history, normalized_name, before_date)[-n:]
+    appeared = sum(1 for m in matches if m["active"])
+    started = sum(1 for m in matches if m["started"])
+    return appeared >= 5 and started <= appeared * 0.3
+
+
+def rotation_player(history, normalized_name, n=10, before_date=None):
+    """True if starts are inconsistent (neither a clear starter nor a
+    clear non-starter) - the general "could go either way" signal."""
+    matches = _player_matches(history, normalized_name, before_date)[-n:]
+    if len(matches) < 5:
+        return False
+    rate = sum(1 for m in matches if m["started"]) / len(matches)
+    return 0.3 <= rate <= 0.7
+
+
+def main():
+    import sys
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # see soccer_dns.main's comment
+    except Exception:
+        pass
+    parser = argparse.ArgumentParser(description="Soccer player start/bench history backfill")
+    parser.add_argument("--league", required=True, help="league code, e.g. EPL/LLG/L1F/BUN/SEA/MLS")
+    parser.add_argument("--backfill", action="store_true")
+    parser.add_argument("--start", help="backfill start date YYYY-MM-DD")
+    parser.add_argument("--end", default=None, help="backfill end date YYYY-MM-DD (default: yesterday)")
+    parser.add_argument("--record-date", default=None, help="record a single date YYYY-MM-DD")
+    args = parser.parse_args()
+
+    if args.backfill:
+        if not args.start:
+            parser.error("--backfill requires --start")
+        end = args.end or (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d")
+        backfill(args.league, args.start, end)
+    elif args.record_date:
+        record_date(args.league, args.record_date)
+    else:
+        parser.error("specify --backfill (with --start/--end) or --record-date")
+
+
+if __name__ == "__main__":
+    main()

@@ -202,7 +202,7 @@ def group_props_by_player(props):
 # resolved ONCE regardless of how many hundreds of props reference it.
 # ---------------------------------------------------------------------------
 
-def _build_mlb_context(players):
+def _build_mlb_context(players, snapshot_date):
     dates = set()
     for p in players.values():
         dt = _parse_iso(p["event_date"])
@@ -220,12 +220,22 @@ def _build_mlb_context(players):
     lineup_index = _build_lineup_index(games)
     team_abbrevs = get_team_abbreviations()
 
+    prior_snapshot = {}
+    snapshot_path = os.path.join(LIVE_SNAPSHOTS_DIR, f"{snapshot_date}.json")
+    if os.path.exists(snapshot_path):
+        try:
+            with open(snapshot_path, encoding="utf-8") as f:
+                prior_snapshot = json.load(f)
+        except Exception:
+            prior_snapshot = {}
+
     return {
         "games": games,
         "lineup_index": lineup_index,
         "team_abbrevs": team_abbrevs,
         "roster_cache": {},   # team_id -> {normalized_name: player_id}
         "pitcher_cache": {},  # game_pk -> get_game_start_data() result
+        "prior_snapshot": prior_snapshot,  # today's live snapshot from an earlier poll this run, if any
     }
 
 
@@ -312,25 +322,39 @@ def _resolve_player_context(player, ctx):
 # Step 3: enrich + score every player
 # ---------------------------------------------------------------------------
 
+def _status_changed_recently(player, pid, current_status, ctx):
+    """True if this player's projected_start_status differs from the last
+    entry in TODAY's live snapshot (if one exists from an earlier poll this
+    same day) - the only piece of "did anything just change" signal
+    urgency has without real cross-book removal timestamps yet."""
+    prior = ctx.get("prior_snapshot", {})
+    candidate_keys = [f"name:{player['normalized_name']}:{player['team']}"]
+    if pid is not None:
+        candidate_keys.insert(0, f"pid:{pid}")
+    for key in candidate_keys:
+        entry = prior.get(key)
+        if entry and entry.get("score_history"):
+            last_status = entry["score_history"][-1].get("start_status")
+            return last_status is not None and last_status != current_status
+    return False
+
+
 def enrich_and_score_player(player, ctx, history, news_risk):
     """One player record (from group_props_by_player) -> a fully enriched,
     scored candidate dict. Never raises - a missing enrichment source
     (unresolved game, no start history, no roster match) degrades that one
     signal gracefully rather than blocking the player from being scored at
-    all - see dnp_score.score_candidate's own per-signal guards."""
+    all - see dnp_score's own per-signal guards. Uses dnp_score's v2 API:
+    dnp/confidence/urgency are three separate, orthogonal scores - see
+    dnp_score.py's module docstring for why they're never blended."""
     rctx = _resolve_player_context(player, ctx)
     pid = rctx["player_id"]
+    status = rctx["projected_start_status"]
 
-    is_early_game = dnp_score._is_early_game(rctx["game_start"])
-    score, reasons = dnp_score.score_candidate(
-        player_id=pid,
-        name=player["player_name"],
-        position=player.get("position"),
-        start_status=rctx["projected_start_status"],
-        opp_pitcher_hand=rctx["opposing_pitcher_hand"],
-        is_early_game=is_early_game,
-        history=history,
-        news_risk=news_risk,
+    dnp, contributions = dnp_score.score_dnp(
+        player_id=pid, name=player["player_name"], position=player.get("position"),
+        start_status=status, opp_pitcher_hand=rctx["opposing_pitcher_hand"],
+        history=history, news_risk=news_risk,
     )
 
     wins, losses, n = start_history.start_rate(history, pid, n_games=10) if pid else (0, 0, 0)
@@ -344,11 +368,15 @@ def enrich_and_score_player(player, ctx, history, news_risk):
             platoon_start_rate = round(100 * hw / hn, 1)
 
     news_hit = news_risk.get(player["normalized_name"])
-    confidence = dnp_score.compute_confidence(
-        start_status=rctx["projected_start_status"],
-        recent_n=n,
-        opp_hand_known=rctx["opposing_pitcher_hand"] is not None,
-        game_resolved=rctx["game_id"] is not None,
+    confidence, evidence_count = dnp_score.score_confidence(
+        start_status=status, recent_n=n, opp_hand_known=rctx["opposing_pitcher_hand"] is not None,
+        news_available=news_hit is not None,
+        scraped_at=player["props"][0]["scraped_at"] if player["props"] else None,
+    )
+
+    changed = _status_changed_recently(player, pid, status, ctx)
+    urgency, urgency_reasons = dnp_score.score_urgency(
+        start_status=status, game_start=rctx["game_start"], status_changed_recently=changed,
     )
 
     return {
@@ -363,37 +391,50 @@ def enrich_and_score_player(player, ctx, history, news_risk):
         "props": player["props"],
         # --- enrichment fields (requested explicitly - kept visible on the
         # candidate, not just folded opaquely into the score) ---
-        "projected_start_status": rctx["projected_start_status"],
+        "projected_start_status": status,
         "historical_start_rate": historical_start_rate,
         "recent_start_rate_n": n,
         "opposing_pitcher_hand": rctx["opposing_pitcher_hand"],
         "platoon_start_rate": platoon_start_rate,
         "consecutive_starts": consecutive,
         "injury_rest_note": news_hit[1] if news_hit else None,
-        # --- score ---
-        "score": score,
-        "tier": dnp_score.tier_label(score),
-        "confidence": confidence,
-        "reasons": reasons,
+        # --- three separate scores (see dnp_score.py) ---
+        "dnp_score": dnp,
+        "confidence_score": confidence,
+        "urgency_score": urgency,
+        "evidence_count": evidence_count,
+        "combined_priority": dnp_score.combined_priority(dnp, urgency),
+        "tier": dnp_score.tier_label(dnp),
+        "top_reasons": [label for label, _ in contributions],
+        "urgency_reasons": urgency_reasons,
+        "contributions": contributions,
     }
 
 
-def score_dabble_board(source=DEFAULT_BOARD_PATH, persist=True, snapshot_date=None):
+def score_dabble_board(source=DEFAULT_BOARD_PATH, persist=True, snapshot_date=None, notify=True):
+    snapshot_date = snapshot_date or datetime.now(timezone.utc).strftime("%Y-%m-%d")
     props = load_dabble_props(source)
     players = group_props_by_player(props)
     if not players:
         print("dabble_adapter: no MLB players found on this board.")
         return []
 
-    ctx = _build_mlb_context(players)
+    ctx = _build_mlb_context(players, snapshot_date)
     history = start_history._load(start_history.HISTORY_PATH, {})
     news_risk = dnp_score._load_watchlist_risk_map()
 
     candidates = [enrich_and_score_player(p, ctx, history, news_risk) for p in players.values()]
-    candidates.sort(key=lambda c: c["score"], reverse=True)
+    candidates.sort(key=lambda c: c["dnp_score"], reverse=True)
 
     if persist:
-        record_live_snapshot(snapshot_date or datetime.now(timezone.utc).strftime("%Y-%m-%d"), candidates)
+        record_live_snapshot(snapshot_date, candidates)
+
+    if notify:
+        try:
+            import dnp_alerts
+            dnp_alerts.notify_dabble_candidates(candidates, date_str=snapshot_date)
+        except Exception as e:
+            print(f"dabble_adapter: dnp_alerts.notify_dabble_candidates failed (non-fatal): {e}")
 
     return candidates
 
@@ -414,11 +455,20 @@ def _snapshot_key(candidate):
 
 
 def record_live_snapshot(date_str, candidates):
-    """Append this run's score to every candidate's running score_history
-    and stamp first_crossed[threshold] the first time each of
-    THRESHOLDS_TO_TRACK is reached - data/dnp_live_snapshots/{date}.json.
-    Safe to call many times a day (e.g. once per poll cycle); each call
-    only ever appends/fills in, never overwrites prior history."""
+    """Append this run's score to every candidate's running score_history,
+    stamp first_crossed[threshold] the first time each of
+    THRESHOLDS_TO_TRACK is reached, and refresh "latest" with the full
+    current candidate payload (props/reasons/contributions/etc.) so a
+    consumer (report.py's DNS tab) can render a complete card without
+    re-scoring anything - data/dnp_live_snapshots/{date}.json.
+
+    "_latest_batch_ts" (top-level) is this call's timestamp, stamped on
+    every entry touched this run - that's how a consumer distinguishes
+    "live right now" (entry's last score_history ts == _latest_batch_ts)
+    from "seen earlier today, not in this run" i.e. Dabble removed it
+    (see report.py's DNS tab: Live view vs. Removed/History view). Safe to
+    call many times a day; each call only ever appends/fills in, never
+    overwrites prior history for an untouched entry."""
     os.makedirs(LIVE_SNAPSHOTS_DIR, exist_ok=True)
     path = os.path.join(LIVE_SNAPSHOTS_DIR, f"{date_str}.json")
     data = {}
@@ -430,6 +480,7 @@ def record_live_snapshot(date_str, candidates):
             data = {}
 
     now_iso = datetime.now(timezone.utc).isoformat()
+    data["_latest_batch_ts"] = now_iso
     for c in candidates:
         key = _snapshot_key(c)
         entry = data.setdefault(key, {
@@ -441,11 +492,31 @@ def record_live_snapshot(date_str, candidates):
         entry["player_id"] = c.get("player_id")
         if c.get("game_id") is not None:
             entry["game_id"] = c["game_id"]  # keep latest resolved game_id (a poll early in the day may not have resolved it yet)
-        entry["score_history"].append({"ts": now_iso, "score": c["score"],
+        entry["score_history"].append({"ts": now_iso, "dnp_score": c["dnp_score"],
+                                        "confidence_score": c["confidence_score"],
+                                        "urgency_score": c["urgency_score"],
                                         "start_status": c["projected_start_status"]})
         for t in THRESHOLDS_TO_TRACK:
-            if c["score"] >= t and entry["first_crossed"][str(t)] is None:
+            if c["dnp_score"] >= t and entry["first_crossed"][str(t)] is None:
                 entry["first_crossed"][str(t)] = now_iso
+
+        entry["latest"] = {
+            "ts": now_iso,
+            "team": c["team"], "opponent": c.get("opponent"), "game_start": c.get("game_start"),
+            "position": c.get("position"),
+            "dnp_score": c["dnp_score"], "confidence_score": c["confidence_score"],
+            "urgency_score": c["urgency_score"], "combined_priority": c.get("combined_priority"),
+            "projected_start_status": c["projected_start_status"],
+            "evidence_count": c.get("evidence_count"),
+            "historical_start_rate": c.get("historical_start_rate"),
+            "platoon_start_rate": c.get("platoon_start_rate"),
+            "consecutive_starts": c.get("consecutive_starts"),
+            "top_reasons": c.get("top_reasons", []),
+            "urgency_reasons": c.get("urgency_reasons", []),
+            "contributions": c.get("contributions", []),
+            "props": [{"market": p["market"], "line": p["line"], "prop_id": p["prop_id"]}
+                      for p in c.get("props", [])],
+        }
 
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
@@ -471,6 +542,8 @@ def grade_live_snapshot(date_str):
     game_cache = {}
     graded = []
     for key, entry in data.items():
+        if key.startswith("_"):
+            continue  # metadata key (_latest_batch_ts), not a candidate entry
         game_id = entry.get("game_id")
         pid = entry.get("player_id")
         if game_id is None or pid is None:
@@ -492,7 +565,8 @@ def grade_live_snapshot(date_str):
             continue
         graded.append({
             "key": key, "name": entry["name"], "actual_started": actual_started,
-            "first_crossed": entry["first_crossed"], "final_score": entry["score_history"][-1]["score"],
+            "first_crossed": entry["first_crossed"],
+            "final_dnp_score": entry["score_history"][-1].get("dnp_score", entry["score_history"][-1].get("score")),
         })
     return graded
 
@@ -501,12 +575,15 @@ def grade_live_snapshot(date_str):
 # Live ranked output
 # ---------------------------------------------------------------------------
 
-def print_ranked(candidates, top_n=20):
-    shown = candidates[:top_n]
+def print_ranked(candidates, top_n=20, sort_key="dnp_score", title=None):
+    shown = sorted(candidates, key=lambda c: c[sort_key], reverse=True)[:top_n]
+    if title:
+        print(f"\n=== {title} ===")
     if not shown:
         print("No candidates.")
         return
-    print(f"{'Score':<7}{'Conf':<6}{'Player':<24}{'Game':<16}{'Market/Line':<32}{'Status':<22}Top reasons")
+    print(f"{'DNP':<5}{'Conf':<6}{'Urg':<5}{'Pri':<6}{'Player':<24}{'Game':<16}{'Market/Line':<32}"
+          f"{'Status':<22}Top reasons")
     for c in shown:
         game = f"{c['team']}@{c['opponent']}" if c["opponent"] else c["team"]
         props_str = ", ".join(f"{p['market']} {p['line']}" for p in c["props"][:2])
@@ -514,9 +591,9 @@ def print_ranked(candidates, top_n=20):
             props_str += f" (+{len(c['props']) - 2})"
         if len(props_str) > 31:
             props_str = props_str[:28] + "..."
-        reasons = "; ".join(c["reasons"][:2])
-        print(f"{c['score']:<7}{c['confidence']:<6}{c['player_name']:<24}{game:<16}{props_str:<32}"
-              f"{c['projected_start_status']:<22}{reasons}")
+        reasons = "; ".join(c["top_reasons"][:2])
+        print(f"{c['dnp_score']:<5}{c['confidence_score']:<6}{c['urgency_score']:<5}{c['combined_priority']:<6}"
+              f"{c['player_name']:<24}{game:<16}{props_str:<32}{c['projected_start_status']:<22}{reasons}")
 
 
 def main():
@@ -524,11 +601,14 @@ def main():
     parser.add_argument("--source", default=DEFAULT_BOARD_PATH, help="path to a Dabble board JSON")
     parser.add_argument("--top", type=int, default=20)
     parser.add_argument("--no-persist", action="store_true", help="don't write a live snapshot")
+    parser.add_argument("--no-notify", action="store_true", help="don't send/track Discord alerts")
     args = parser.parse_args()
 
-    candidates = score_dabble_board(source=args.source, persist=not args.no_persist)
-    print(f"\nScored {len(candidates)} MLB players from {args.source}.\n")
-    print_ranked(candidates, top_n=args.top)
+    candidates = score_dabble_board(source=args.source, persist=not args.no_persist, notify=not args.no_notify)
+    print(f"\nScored {len(candidates)} MLB players from {args.source}.")
+    print_ranked(candidates, top_n=args.top, sort_key="dnp_score", title="Top by DNP probability")
+    print_ranked(candidates, top_n=args.top, sort_key="urgency_score", title="Top by urgency")
+    print_ranked(candidates, top_n=args.top, sort_key="combined_priority", title="Top by combined hunting priority")
 
 
 if __name__ == "__main__":

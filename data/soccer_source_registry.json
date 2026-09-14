@@ -1,0 +1,21 @@
+{
+  "_comment": "Trusted-source registry for soccer_x_monitor.py. Editable by hand - add/remove accounts as you verify them. trust_tier: 1=official club/league, 2=established beat reporter, 3=established soccer news outlet, 4=aggregator, 5=unknown/unverified. Seeded with placeholder examples only (not verified live X accounts) - fill in real handles you trust before enabling live monitoring. Entries with trust_tier 5 are effectively 'discovery only' - see soccer_x_monitor.TRUST_TIER_WEIGHT.",
+  "sources": [
+    {
+      "account": "EXAMPLE_ClubOfficial",
+      "team": "EXAMPLE - replace with a real club handle",
+      "league": "EPL",
+      "source_type": "club_official",
+      "trust_tier": 1,
+      "notes": "Placeholder - not a verified account. Add real official club accounts here."
+    },
+    {
+      "account": "EXAMPLE_BeatReporter",
+      "team": null,
+      "league": "EPL",
+      "source_type": "beat_reporter",
+      "trust_tier": 2,
+      "notes": "Placeholder - not a verified account. Add real, known beat reporters/local journalists here."
+    }
+  ]
+}
