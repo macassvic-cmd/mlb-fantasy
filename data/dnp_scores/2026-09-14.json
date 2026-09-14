@@ -2,40 +2,6 @@
   "date": "2026-09-14",
   "candidates": [
     {
-      "player_id": 695391,
-      "name": "Brett Harris",
-      "team": "San Francisco Giants",
-      "opp_team": "St. Louis Cardinals",
-      "game_pk": 823006,
-      "position": "3B",
-      "batting_order": 8,
-      "lineup_status": "projected",
-      "tier": "DNP SNIPER",
-      "dnp_score": 100,
-      "confidence_score": 27,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 70.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "100% historical non-start rate (n=4)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "100% historical non-start rate (n=4)",
-          100
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
       "player_id": 686668,
       "name": "Brenton Doyle",
       "team": "Chicago White Sox",
@@ -44,24 +10,25 @@
       "position": "CF",
       "batting_order": 9,
       "lineup_status": "projected",
-      "tier": "DNP SNIPER",
-      "dnp_score": 90,
+      "tier": "Very High",
+      "dnp_score": 80,
       "confidence_score": 45,
-      "urgency_score": 0,
+      "urgency_score": 15,
       "evidence_count": 2,
-      "combined_priority": 63.0,
+      "combined_priority": 60.5,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
-        "90% historical non-start rate (n=10)",
+        "80% historical non-start rate (n=10)",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
+        "Lineup release expected in ~93 min",
         "Cross-book prop-removal timing not available yet"
       ],
       "contributions": [
         [
-          "90% historical non-start rate (n=10)",
-          90
+          "80% historical non-start rate (n=10)",
+          80
         ],
         [
           "No projected lineup source posted yet",
@@ -77,74 +44,6 @@
       "game_pk": 823656,
       "position": "SS",
       "batting_order": 9,
-      "lineup_status": "projected",
-      "tier": "DNP SNIPER",
-      "dnp_score": 90,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 63.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "90% historical non-start rate (n=10)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "90% historical non-start rate (n=10)",
-          90
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 605353,
-      "name": "Vimael Mach\u00edn",
-      "team": "Colorado Rockies",
-      "opp_team": "San Diego Padres",
-      "game_pk": 824308,
-      "position": "SS",
-      "batting_order": 7,
-      "lineup_status": "projected",
-      "tier": "Very High",
-      "dnp_score": 86,
-      "confidence_score": 36,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 60.2,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "86% historical non-start rate (n=7)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "86% historical non-start rate (n=7)",
-          86
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 807727,
-      "name": "Charles McAdoo",
-      "team": "Toronto Blue Jays",
-      "opp_team": "Detroit Tigers",
-      "game_pk": 822765,
-      "position": "2B",
-      "batting_order": 5,
       "lineup_status": "projected",
       "tier": "Very High",
       "dnp_score": 80,
@@ -163,6 +62,40 @@
       "contributions": [
         [
           "80% historical non-start rate (n=10)",
+          80
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 695391,
+      "name": "Brett Harris",
+      "team": "San Francisco Giants",
+      "opp_team": "St. Louis Cardinals",
+      "game_pk": 823006,
+      "position": "3B",
+      "batting_order": 8,
+      "lineup_status": "projected",
+      "tier": "Very High",
+      "dnp_score": 80,
+      "confidence_score": 30,
+      "urgency_score": 0,
+      "evidence_count": 2,
+      "combined_priority": 56.0,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "80% historical non-start rate (n=5)",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "80% historical non-start rate (n=5)",
           80
         ],
         [
@@ -206,23 +139,23 @@
       ]
     },
     {
-      "player_id": 624431,
-      "name": "Jose Trevino",
-      "team": "Cincinnati Reds",
-      "opp_team": "Los Angeles Dodgers",
-      "game_pk": 824465,
-      "position": "C",
-      "batting_order": 8,
+      "player_id": 605353,
+      "name": "Vimael Mach\u00edn",
+      "team": "Colorado Rockies",
+      "opp_team": "San Diego Padres",
+      "game_pk": 824308,
+      "position": "SS",
+      "batting_order": 7,
       "lineup_status": "projected",
       "tier": "Strong Watch",
-      "dnp_score": 70,
-      "confidence_score": 45,
+      "dnp_score": 75,
+      "confidence_score": 39,
       "urgency_score": 0,
       "evidence_count": 2,
-      "combined_priority": 49.0,
+      "combined_priority": 52.5,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
-        "70% historical non-start rate (n=10)",
+        "75% historical non-start rate (n=8)",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -230,8 +163,8 @@
       ],
       "contributions": [
         [
-          "70% historical non-start rate (n=10)",
-          70
+          "75% historical non-start rate (n=8)",
+          75
         ],
         [
           "No projected lineup source posted yet",
@@ -240,26 +173,27 @@
       ]
     },
     {
-      "player_id": 678218,
-      "name": "Brandon Valenzuela",
+      "player_id": 807727,
+      "name": "Charles McAdoo",
       "team": "Toronto Blue Jays",
       "opp_team": "Detroit Tigers",
       "game_pk": 822765,
-      "position": "C",
-      "batting_order": 8,
+      "position": "2B",
+      "batting_order": 5,
       "lineup_status": "projected",
       "tier": "Strong Watch",
       "dnp_score": 70,
-      "confidence_score": 30,
-      "urgency_score": 0,
-      "evidence_count": 1,
-      "combined_priority": 49.0,
+      "confidence_score": 45,
+      "urgency_score": 15,
+      "evidence_count": 2,
+      "combined_priority": 53.5,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "70% historical non-start rate (n=10)",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
+        "Lineup release expected in ~120 min",
         "Cross-book prop-removal timing not available yet"
       ],
       "contributions": [
@@ -342,139 +276,33 @@
       ]
     },
     {
-      "player_id": 806956,
-      "name": "Ethan Salas",
-      "team": "San Diego Padres",
-      "opp_team": "Colorado Rockies",
-      "game_pk": 824308,
-      "position": "C",
-      "batting_order": 9,
-      "lineup_status": "projected",
-      "tier": "Strong Watch",
-      "dnp_score": 70,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 49.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "70% historical non-start rate (n=10)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "70% historical non-start rate (n=10)",
-          70
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 543510,
-      "name": "James McCann",
-      "team": "Arizona Diamondbacks",
-      "opp_team": "Miami Marlins",
-      "game_pk": 825034,
+      "player_id": 624431,
+      "name": "Jose Trevino",
+      "team": "Cincinnati Reds",
+      "opp_team": "Los Angeles Dodgers",
+      "game_pk": 824465,
       "position": "C",
       "batting_order": 8,
       "lineup_status": "projected",
-      "tier": "Strong Watch",
-      "dnp_score": 70,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 49.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "70% historical non-start rate (n=10)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "70% historical non-start rate (n=10)",
-          70
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 703197,
-      "name": "Michael Arroyo",
-      "team": "Seattle Mariners",
-      "opp_team": "Los Angeles Angels",
-      "game_pk": 823981,
-      "position": "SS",
-      "batting_order": 7,
-      "lineup_status": "projected",
       "tier": "Watch",
-      "dnp_score": 67,
-      "confidence_score": 33,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 46.9,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "67% historical non-start rate (n=6)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "67% historical non-start rate (n=6)",
-          67
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 665923,
-      "name": "Esteury Ruiz",
-      "team": "Miami Marlins",
-      "opp_team": "Arizona Diamondbacks",
-      "game_pk": 825034,
-      "position": "RF",
-      "batting_order": 9,
-      "lineup_status": "projected",
-      "tier": "Watch",
-      "dnp_score": 64,
+      "dnp_score": 60,
       "confidence_score": 45,
-      "urgency_score": 0,
+      "urgency_score": 15,
       "evidence_count": 2,
-      "combined_priority": 44.8,
+      "combined_priority": 46.5,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "60% historical non-start rate (n=10)",
-        "Platoon: starts only 20% vs RHP (n=15, overall 40%)",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
+        "Lineup release expected in ~93 min",
         "Cross-book prop-removal timing not available yet"
       ],
       "contributions": [
         [
           "60% historical non-start rate (n=10)",
           60
-        ],
-        [
-          "Platoon: starts only 20% vs RHP (n=15, overall 40%)",
-          4
         ],
         [
           "No projected lineup source posted yet",
@@ -494,15 +322,51 @@
       "tier": "Watch",
       "dnp_score": 60,
       "confidence_score": 30,
-      "urgency_score": 0,
+      "urgency_score": 15,
       "evidence_count": 1,
-      "combined_priority": 42.0,
+      "combined_priority": 46.5,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "60% historical non-start rate (n=10)",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
+        "Lineup release expected in ~93 min",
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "60% historical non-start rate (n=10)",
+          60
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 678218,
+      "name": "Brandon Valenzuela",
+      "team": "Toronto Blue Jays",
+      "opp_team": "Detroit Tigers",
+      "game_pk": 822765,
+      "position": "C",
+      "batting_order": 8,
+      "lineup_status": "projected",
+      "tier": "Watch",
+      "dnp_score": 60,
+      "confidence_score": 30,
+      "urgency_score": 15,
+      "evidence_count": 1,
+      "combined_priority": 46.5,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "60% historical non-start rate (n=10)",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Lineup release expected in ~120 min",
         "Cross-book prop-removal timing not available yet"
       ],
       "contributions": [
@@ -590,40 +454,6 @@
       ]
     },
     {
-      "player_id": 687859,
-      "name": "Troy Johnston",
-      "team": "Colorado Rockies",
-      "opp_team": "San Diego Padres",
-      "game_pk": 824308,
-      "position": "RF",
-      "batting_order": 6,
-      "lineup_status": "projected",
-      "tier": "Watch",
-      "dnp_score": 60,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 42.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "60% historical non-start rate (n=10)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "60% historical non-start rate (n=10)",
-          60
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
       "player_id": 691728,
       "name": "Zac Veen",
       "team": "Colorado Rockies",
@@ -658,24 +488,23 @@
       ]
     },
     {
-      "player_id": 669743,
-      "name": "Alex Call",
-      "team": "Los Angeles Dodgers",
-      "opp_team": "Cincinnati Reds",
-      "game_pk": 824465,
-      "position": "LF",
-      "batting_order": 7,
+      "player_id": 806956,
+      "name": "Ethan Salas",
+      "team": "San Diego Padres",
+      "opp_team": "Colorado Rockies",
+      "game_pk": 824308,
+      "position": "C",
+      "batting_order": 9,
       "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 55,
+      "tier": "Watch",
+      "dnp_score": 60,
       "confidence_score": 45,
       "urgency_score": 0,
       "evidence_count": 2,
-      "combined_priority": 38.5,
+      "combined_priority": 42.0,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
-        "50% historical non-start rate (n=10)",
-        "Platoon: starts only 27% vs LHP (n=15, overall 50%)",
+        "60% historical non-start rate (n=10)",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -683,12 +512,110 @@
       ],
       "contributions": [
         [
-          "50% historical non-start rate (n=10)",
-          50
+          "60% historical non-start rate (n=10)",
+          60
         ],
         [
-          "Platoon: starts only 27% vs LHP (n=15, overall 50%)",
-          5
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 543510,
+      "name": "James McCann",
+      "team": "Arizona Diamondbacks",
+      "opp_team": "Miami Marlins",
+      "game_pk": 825034,
+      "position": "C",
+      "batting_order": 8,
+      "lineup_status": "projected",
+      "tier": "Watch",
+      "dnp_score": 60,
+      "confidence_score": 45,
+      "urgency_score": 0,
+      "evidence_count": 2,
+      "combined_priority": 42.0,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "60% historical non-start rate (n=10)",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "60% historical non-start rate (n=10)",
+          60
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 665923,
+      "name": "Esteury Ruiz",
+      "team": "Miami Marlins",
+      "opp_team": "Arizona Diamondbacks",
+      "game_pk": 825034,
+      "position": "RF",
+      "batting_order": 9,
+      "lineup_status": "projected",
+      "tier": "Watch",
+      "dnp_score": 60,
+      "confidence_score": 45,
+      "urgency_score": 0,
+      "evidence_count": 2,
+      "combined_priority": 42.0,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "60% historical non-start rate (n=10)",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "60% historical non-start rate (n=10)",
+          60
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 703197,
+      "name": "Michael Arroyo",
+      "team": "Seattle Mariners",
+      "opp_team": "Los Angeles Angels",
+      "game_pk": 823981,
+      "position": "SS",
+      "batting_order": 7,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 57,
+      "confidence_score": 36,
+      "urgency_score": 0,
+      "evidence_count": 2,
+      "combined_priority": 39.9,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "57% historical non-start rate (n=7)",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "57% historical non-start rate (n=7)",
+          57
         ],
         [
           "No projected lineup source posted yet",
@@ -747,9 +674,9 @@
       "tier": "Ignore",
       "dnp_score": 53,
       "confidence_score": 45,
-      "urgency_score": 0,
+      "urgency_score": 15,
       "evidence_count": 2,
-      "combined_priority": 37.1,
+      "combined_priority": 41.6,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "50% historical non-start rate (n=10)",
@@ -757,6 +684,7 @@
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
+        "Lineup release expected in ~120 min",
         "Cross-book prop-removal timing not available yet"
       ],
       "contributions": [
@@ -767,40 +695,6 @@
         [
           "Platoon: starts only 33% vs RHP (n=15, overall 50%)",
           3
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 667472,
-      "name": "Dane Myers",
-      "team": "Cincinnati Reds",
-      "opp_team": "Los Angeles Dodgers",
-      "game_pk": 824465,
-      "position": "CF",
-      "batting_order": 1,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 50,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 35.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "50% historical non-start rate (n=10)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "50% historical non-start rate (n=10)",
-          50
         ],
         [
           "No projected lineup source posted yet",
@@ -820,15 +714,16 @@
       "tier": "Ignore",
       "dnp_score": 50,
       "confidence_score": 30,
-      "urgency_score": 0,
+      "urgency_score": 15,
       "evidence_count": 1,
-      "combined_priority": 35.0,
+      "combined_priority": 39.5,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "50% historical non-start rate (n=10)",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
+        "Lineup release expected in ~93 min",
         "Cross-book prop-removal timing not available yet"
       ],
       "contributions": [
@@ -854,49 +749,16 @@
       "tier": "Ignore",
       "dnp_score": 50,
       "confidence_score": 45,
-      "urgency_score": 0,
+      "urgency_score": 15,
       "evidence_count": 2,
-      "combined_priority": 35.0,
+      "combined_priority": 39.5,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "50% historical non-start rate (n=10)",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "50% historical non-start rate (n=10)",
-          50
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 690976,
-      "name": "Alex Freeland",
-      "team": "Los Angeles Dodgers",
-      "opp_team": "Cincinnati Reds",
-      "game_pk": 824465,
-      "position": "2B",
-      "batting_order": 9,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 50,
-      "confidence_score": 30,
-      "urgency_score": 0,
-      "evidence_count": 1,
-      "combined_priority": 35.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "50% historical non-start rate (n=10)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
+        "Lineup release expected in ~93 min",
         "Cross-book prop-removal timing not available yet"
       ],
       "contributions": [
@@ -922,15 +784,16 @@
       "tier": "Ignore",
       "dnp_score": 50,
       "confidence_score": 45,
-      "urgency_score": 0,
+      "urgency_score": 15,
       "evidence_count": 2,
-      "combined_priority": 35.0,
+      "combined_priority": 39.5,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "50% historical non-start rate (n=10)",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
+        "Lineup release expected in ~120 min",
         "Cross-book prop-removal timing not available yet"
       ],
       "contributions": [
@@ -1013,74 +876,6 @@
       ]
     },
     {
-      "player_id": 665750,
-      "name": "Leody Taveras",
-      "team": "Baltimore Orioles",
-      "opp_team": "New York Mets",
-      "game_pk": 823575,
-      "position": "CF",
-      "batting_order": 8,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 50,
-      "confidence_score": 30,
-      "urgency_score": 0,
-      "evidence_count": 1,
-      "combined_priority": 35.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "50% historical non-start rate (n=10)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "50% historical non-start rate (n=10)",
-          50
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 668800,
-      "name": "Andrew Knizner",
-      "team": "San Francisco Giants",
-      "opp_team": "St. Louis Cardinals",
-      "game_pk": 823006,
-      "position": "C",
-      "batting_order": 7,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 50,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 35.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "50% historical non-start rate (n=10)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "50% historical non-start rate (n=10)",
-          50
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
       "player_id": 666160,
       "name": "Mickey Moniak",
       "team": "Colorado Rockies",
@@ -1115,81 +910,13 @@
       ]
     },
     {
-      "player_id": 687957,
-      "name": "Dustin Harris",
-      "team": "San Diego Padres",
-      "opp_team": "Colorado Rockies",
+      "player_id": 687859,
+      "name": "Troy Johnston",
+      "team": "Colorado Rockies",
+      "opp_team": "San Diego Padres",
       "game_pk": 824308,
-      "position": "LF",
-      "batting_order": 2,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 50,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 35.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "50% historical non-start rate (n=10)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "50% historical non-start rate (n=10)",
-          50
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 694203,
-      "name": "Denzer Guzman",
-      "team": "Los Angeles Angels",
-      "opp_team": "Seattle Mariners",
-      "game_pk": 823981,
-      "position": "3B",
+      "position": "RF",
       "batting_order": 6,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 50,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 35.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "50% historical non-start rate (n=10)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "50% historical non-start rate (n=10)",
-          50
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 642350,
-      "name": "Jose Siri",
-      "team": "Los Angeles Angels",
-      "opp_team": "Seattle Mariners",
-      "game_pk": 823981,
-      "position": "LF",
-      "batting_order": 8,
       "lineup_status": "projected",
       "tier": "Ignore",
       "dnp_score": 50,
@@ -1228,9 +955,9 @@
       "tier": "Ignore",
       "dnp_score": 49,
       "confidence_score": 45,
-      "urgency_score": 0,
+      "urgency_score": 15,
       "evidence_count": 2,
-      "combined_priority": 34.3,
+      "combined_priority": 38.8,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "40% historical non-start rate (n=10)",
@@ -1238,6 +965,7 @@
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
+        "Lineup release expected in ~93 min",
         "Cross-book prop-removal timing not available yet"
       ],
       "contributions": [
@@ -1248,6 +976,46 @@
         [
           "Platoon: starts only 15% vs LHP (n=13, overall 60%)",
           9
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 669743,
+      "name": "Alex Call",
+      "team": "Los Angeles Dodgers",
+      "opp_team": "Cincinnati Reds",
+      "game_pk": 824465,
+      "position": "LF",
+      "batting_order": 7,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 47,
+      "confidence_score": 45,
+      "urgency_score": 15,
+      "evidence_count": 2,
+      "combined_priority": 37.4,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "40% historical non-start rate (n=10)",
+        "Platoon: starts only 27% vs LHP (n=15, overall 60%)",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Lineup release expected in ~93 min",
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "40% historical non-start rate (n=10)",
+          40
+        ],
+        [
+          "Platoon: starts only 27% vs LHP (n=15, overall 60%)",
+          7
         ],
         [
           "No projected lineup source posted yet",
@@ -1304,15 +1072,15 @@
       "batting_order": 9,
       "lineup_status": "projected",
       "tier": "Ignore",
-      "dnp_score": 46,
+      "dnp_score": 45,
       "confidence_score": 45,
       "urgency_score": 0,
       "evidence_count": 2,
-      "combined_priority": 32.2,
+      "combined_priority": 31.5,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "40% historical non-start rate (n=10)",
-        "Platoon: starts only 31% vs RHP (n=13, overall 60%)",
+        "Platoon: starts only 36% vs RHP (n=14, overall 60%)",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -1324,8 +1092,8 @@
           40
         ],
         [
-          "Platoon: starts only 31% vs RHP (n=13, overall 60%)",
-          6
+          "Platoon: starts only 36% vs RHP (n=14, overall 60%)",
+          5
         ],
         [
           "No projected lineup source posted yet",
@@ -1334,65 +1102,62 @@
       ]
     },
     {
-      "player_id": 669392,
-      "name": "Samad Taylor",
-      "team": "San Diego Padres",
-      "opp_team": "Colorado Rockies",
-      "game_pk": 824308,
-      "position": "LF",
-      "batting_order": 8,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 41,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 28.7,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "30% historical non-start rate (n=10)",
-        "Platoon: starts only 17% vs RHP (n=6, overall 70%)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "30% historical non-start rate (n=10)",
-          30
-        ],
-        [
-          "Platoon: starts only 17% vs RHP (n=6, overall 70%)",
-          11
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 669257,
-      "name": "Will Smith",
-      "team": "Los Angeles Dodgers",
-      "opp_team": "Cincinnati Reds",
+      "player_id": 667472,
+      "name": "Dane Myers",
+      "team": "Cincinnati Reds",
+      "opp_team": "Los Angeles Dodgers",
       "game_pk": 824465,
-      "position": "C",
-      "batting_order": 4,
+      "position": "CF",
+      "batting_order": 1,
       "lineup_status": "projected",
       "tier": "Ignore",
       "dnp_score": 40,
       "confidence_score": 45,
-      "urgency_score": 0,
+      "urgency_score": 15,
       "evidence_count": 2,
-      "combined_priority": 28.0,
+      "combined_priority": 32.5,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "40% historical non-start rate (n=10)",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
+        "Lineup release expected in ~93 min",
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "40% historical non-start rate (n=10)",
+          40
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 690976,
+      "name": "Alex Freeland",
+      "team": "Los Angeles Dodgers",
+      "opp_team": "Cincinnati Reds",
+      "game_pk": 824465,
+      "position": "2B",
+      "batting_order": 9,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 40,
+      "confidence_score": 30,
+      "urgency_score": 15,
+      "evidence_count": 1,
+      "combined_priority": 32.5,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "40% historical non-start rate (n=10)",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Lineup release expected in ~93 min",
         "Cross-book prop-removal timing not available yet"
       ],
       "contributions": [
@@ -1418,15 +1183,16 @@
       "tier": "Ignore",
       "dnp_score": 40,
       "confidence_score": 45,
-      "urgency_score": 0,
+      "urgency_score": 15,
       "evidence_count": 2,
-      "combined_priority": 28.0,
+      "combined_priority": 32.5,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "40% historical non-start rate (n=10)",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
+        "Lineup release expected in ~93 min",
         "Cross-book prop-removal timing not available yet"
       ],
       "contributions": [
@@ -1452,15 +1218,16 @@
       "tier": "Ignore",
       "dnp_score": 40,
       "confidence_score": 45,
-      "urgency_score": 0,
+      "urgency_score": 15,
       "evidence_count": 2,
-      "combined_priority": 28.0,
+      "combined_priority": 32.5,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "40% historical non-start rate (n=10)",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
+        "Lineup release expected in ~120 min",
         "Cross-book prop-removal timing not available yet"
       ],
       "contributions": [
@@ -1486,49 +1253,16 @@
       "tier": "Ignore",
       "dnp_score": 40,
       "confidence_score": 45,
-      "urgency_score": 0,
+      "urgency_score": 15,
       "evidence_count": 2,
-      "combined_priority": 28.0,
+      "combined_priority": 32.5,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "40% historical non-start rate (n=10)",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "40% historical non-start rate (n=10)",
-          40
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 656716,
-      "name": "Zach McKinstry",
-      "team": "Detroit Tigers",
-      "opp_team": "Toronto Blue Jays",
-      "game_pk": 822765,
-      "position": "RF",
-      "batting_order": 8,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 40,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 28.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "40% historical non-start rate (n=10)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
+        "Lineup release expected in ~120 min",
         "Cross-book prop-removal timing not available yet"
       ],
       "contributions": [
@@ -1645,6 +1379,40 @@
       ]
     },
     {
+      "player_id": 665750,
+      "name": "Leody Taveras",
+      "team": "Baltimore Orioles",
+      "opp_team": "New York Mets",
+      "game_pk": 823575,
+      "position": "CF",
+      "batting_order": 8,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 40,
+      "confidence_score": 30,
+      "urgency_score": 0,
+      "evidence_count": 1,
+      "combined_priority": 28.0,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "40% historical non-start rate (n=10)",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "40% historical non-start rate (n=10)",
+          40
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
       "player_id": 681297,
       "name": "Colton Cowser",
       "team": "Baltimore Orioles",
@@ -1713,6 +1481,142 @@
       ]
     },
     {
+      "player_id": 668800,
+      "name": "Andrew Knizner",
+      "team": "San Francisco Giants",
+      "opp_team": "St. Louis Cardinals",
+      "game_pk": 823006,
+      "position": "C",
+      "batting_order": 7,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 40,
+      "confidence_score": 45,
+      "urgency_score": 0,
+      "evidence_count": 2,
+      "combined_priority": 28.0,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "40% historical non-start rate (n=10)",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "40% historical non-start rate (n=10)",
+          40
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 687957,
+      "name": "Dustin Harris",
+      "team": "San Diego Padres",
+      "opp_team": "Colorado Rockies",
+      "game_pk": 824308,
+      "position": "LF",
+      "batting_order": 2,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 40,
+      "confidence_score": 45,
+      "urgency_score": 0,
+      "evidence_count": 2,
+      "combined_priority": 28.0,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "40% historical non-start rate (n=10)",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "40% historical non-start rate (n=10)",
+          40
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 694203,
+      "name": "Denzer Guzman",
+      "team": "Los Angeles Angels",
+      "opp_team": "Seattle Mariners",
+      "game_pk": 823981,
+      "position": "3B",
+      "batting_order": 6,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 40,
+      "confidence_score": 45,
+      "urgency_score": 0,
+      "evidence_count": 2,
+      "combined_priority": 28.0,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "40% historical non-start rate (n=10)",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "40% historical non-start rate (n=10)",
+          40
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 642350,
+      "name": "Jose Siri",
+      "team": "Los Angeles Angels",
+      "opp_team": "Seattle Mariners",
+      "game_pk": 823981,
+      "position": "LF",
+      "batting_order": 8,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 40,
+      "confidence_score": 45,
+      "urgency_score": 0,
+      "evidence_count": 2,
+      "combined_priority": 28.0,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "40% historical non-start rate (n=10)",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "40% historical non-start rate (n=10)",
+          40
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
       "player_id": 642215,
       "name": "Weston Wilson",
       "team": "Seattle Mariners",
@@ -1747,57 +1651,24 @@
       ]
     },
     {
-      "player_id": 663457,
-      "name": "Lars Nootbaar",
-      "team": "Arizona Diamondbacks",
-      "opp_team": "Miami Marlins",
-      "game_pk": 825034,
-      "position": "DH",
-      "batting_order": 1,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 40,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 28.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "40% historical non-start rate (n=10)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "40% historical non-start rate (n=10)",
-          40
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 691019,
-      "name": "Kyle Teel",
-      "team": "Chicago White Sox",
-      "opp_team": "Cleveland Guardians",
-      "game_pk": 824386,
-      "position": "C",
-      "batting_order": 2,
+      "player_id": 669392,
+      "name": "Samad Taylor",
+      "team": "San Diego Padres",
+      "opp_team": "Colorado Rockies",
+      "game_pk": 824308,
+      "position": "LF",
+      "batting_order": 8,
       "lineup_status": "projected",
       "tier": "Ignore",
       "dnp_score": 38,
-      "confidence_score": 39,
+      "confidence_score": 45,
       "urgency_score": 0,
       "evidence_count": 2,
       "combined_priority": 26.6,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
-        "38% historical non-start rate (n=8)",
+        "30% historical non-start rate (n=10)",
+        "Platoon: starts only 29% vs RHP (n=7, overall 70%)",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -1805,47 +1676,12 @@
       ],
       "contributions": [
         [
-          "38% historical non-start rate (n=8)",
-          38
+          "30% historical non-start rate (n=10)",
+          30
         ],
         [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 683011,
-      "name": "Anthony Volpe",
-      "team": "New York Yankees",
-      "opp_team": "Minnesota Twins",
-      "game_pk": 823656,
-      "position": "SS",
-      "batting_order": 6,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 36,
-      "confidence_score": 42,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 25.2,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "33% historical non-start rate (n=9)",
-        "Platoon: starts only 50% vs RHP (n=6, overall 67%)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "33% historical non-start rate (n=9)",
-          33
-        ],
-        [
-          "Platoon: starts only 50% vs RHP (n=6, overall 67%)",
-          3
+          "Platoon: starts only 29% vs RHP (n=7, overall 70%)",
+          8
         ],
         [
           "No projected lineup source posted yet",
@@ -1893,120 +1729,33 @@
       ]
     },
     {
-      "player_id": 690993,
-      "name": "Colt Keith",
-      "team": "Detroit Tigers",
-      "opp_team": "Toronto Blue Jays",
-      "game_pk": 822765,
-      "position": "3B",
-      "batting_order": 3,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 32,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 22.4,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "30% historical non-start rate (n=10)",
-        "On a 6-game start streak",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "30% historical non-start rate (n=10)",
-          30
-        ],
-        [
-          "On a 6-game start streak",
-          2
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 669134,
-      "name": "Luis Campusano",
-      "team": "San Diego Padres",
-      "opp_team": "Colorado Rockies",
-      "game_pk": 824308,
+      "player_id": 691019,
+      "name": "Kyle Teel",
+      "team": "Chicago White Sox",
+      "opp_team": "Cleveland Guardians",
+      "game_pk": 824386,
       "position": "C",
-      "batting_order": 4,
+      "batting_order": 2,
       "lineup_status": "projected",
       "tier": "Ignore",
-      "dnp_score": 31,
-      "confidence_score": 45,
-      "urgency_score": 0,
+      "dnp_score": 33,
+      "confidence_score": 42,
+      "urgency_score": 15,
       "evidence_count": 2,
-      "combined_priority": 21.7,
+      "combined_priority": 27.6,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
-        "10% historical non-start rate (n=10)",
-        "Platoon: starts only 67% vs RHP (n=15, overall 90%)",
-        "On a 9-game start streak",
-        "Catcher on a 9-game streak - rest risk elevated",
+        "33% historical non-start rate (n=9)",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
+        "Lineup release expected in ~93 min",
         "Cross-book prop-removal timing not available yet"
       ],
       "contributions": [
         [
-          "10% historical non-start rate (n=10)",
-          10
-        ],
-        [
-          "Platoon: starts only 67% vs RHP (n=15, overall 90%)",
-          5
-        ],
-        [
-          "On a 9-game start streak",
-          8
-        ],
-        [
-          "Catcher on a 9-game streak - rest risk elevated",
-          8
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 553993,
-      "name": "Eugenio Su\u00e1rez",
-      "team": "Cincinnati Reds",
-      "opp_team": "Los Angeles Dodgers",
-      "game_pk": 824465,
-      "position": "DH",
-      "batting_order": 4,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 30,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 21.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "30% historical non-start rate (n=10)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "30% historical non-start rate (n=10)",
-          30
+          "33% historical non-start rate (n=9)",
+          33
         ],
         [
           "No projected lineup source posted yet",
@@ -2026,15 +1775,51 @@
       "tier": "Ignore",
       "dnp_score": 30,
       "confidence_score": 45,
-      "urgency_score": 0,
+      "urgency_score": 15,
       "evidence_count": 2,
-      "combined_priority": 21.0,
+      "combined_priority": 25.5,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "30% historical non-start rate (n=10)",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
+        "Lineup release expected in ~93 min",
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "30% historical non-start rate (n=10)",
+          30
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 669257,
+      "name": "Will Smith",
+      "team": "Los Angeles Dodgers",
+      "opp_team": "Cincinnati Reds",
+      "game_pk": 824465,
+      "position": "C",
+      "batting_order": 4,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 30,
+      "confidence_score": 45,
+      "urgency_score": 15,
+      "evidence_count": 2,
+      "combined_priority": 25.5,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "30% historical non-start rate (n=10)",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Lineup release expected in ~93 min",
         "Cross-book prop-removal timing not available yet"
       ],
       "contributions": [
@@ -2060,15 +1845,16 @@
       "tier": "Ignore",
       "dnp_score": 30,
       "confidence_score": 45,
-      "urgency_score": 0,
+      "urgency_score": 15,
       "evidence_count": 2,
-      "combined_priority": 21.0,
+      "combined_priority": 25.5,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "30% historical non-start rate (n=10)",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
+        "Lineup release expected in ~93 min",
         "Cross-book prop-removal timing not available yet"
       ],
       "contributions": [
@@ -2094,15 +1880,16 @@
       "tier": "Ignore",
       "dnp_score": 30,
       "confidence_score": 30,
-      "urgency_score": 0,
+      "urgency_score": 15,
       "evidence_count": 1,
-      "combined_priority": 21.0,
+      "combined_priority": 25.5,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "30% historical non-start rate (n=10)",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
+        "Lineup release expected in ~93 min",
         "Cross-book prop-removal timing not available yet"
       ],
       "contributions": [
@@ -2117,26 +1904,27 @@
       ]
     },
     {
-      "player_id": 624424,
-      "name": "Michael Conforto",
-      "team": "Chicago Cubs",
-      "opp_team": "Atlanta Braves",
-      "game_pk": 824629,
-      "position": "DH",
-      "batting_order": 7,
+      "player_id": 656716,
+      "name": "Zach McKinstry",
+      "team": "Detroit Tigers",
+      "opp_team": "Toronto Blue Jays",
+      "game_pk": 822765,
+      "position": "RF",
+      "batting_order": 8,
       "lineup_status": "projected",
       "tier": "Ignore",
       "dnp_score": 30,
       "confidence_score": 45,
-      "urgency_score": 0,
+      "urgency_score": 15,
       "evidence_count": 2,
-      "combined_priority": 21.0,
+      "combined_priority": 25.5,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "30% historical non-start rate (n=10)",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
+        "Lineup release expected in ~120 min",
         "Cross-book prop-removal timing not available yet"
       ],
       "contributions": [
@@ -2192,6 +1980,40 @@
       "game_pk": 823656,
       "position": "1B",
       "batting_order": 4,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 30,
+      "confidence_score": 45,
+      "urgency_score": 0,
+      "evidence_count": 2,
+      "combined_priority": 21.0,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "30% historical non-start rate (n=10)",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "30% historical non-start rate (n=10)",
+          30
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 683011,
+      "name": "Anthony Volpe",
+      "team": "New York Yankees",
+      "opp_team": "Minnesota Twins",
+      "game_pk": 823656,
+      "position": "SS",
+      "batting_order": 6,
       "lineup_status": "projected",
       "tier": "Ignore",
       "dnp_score": 30,
@@ -2355,6 +2177,40 @@
       ]
     },
     {
+      "player_id": 663457,
+      "name": "Lars Nootbaar",
+      "team": "Arizona Diamondbacks",
+      "opp_team": "Miami Marlins",
+      "game_pk": 825034,
+      "position": "DH",
+      "batting_order": 1,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 30,
+      "confidence_score": 45,
+      "urgency_score": 0,
+      "evidence_count": 2,
+      "combined_priority": 21.0,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "30% historical non-start rate (n=10)",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "30% historical non-start rate (n=10)",
+          30
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
       "player_id": 682998,
       "name": "Corbin Carroll",
       "team": "Arizona Diamondbacks",
@@ -2432,19 +2288,20 @@
       "batting_order": 3,
       "lineup_status": "projected",
       "tier": "Ignore",
-      "dnp_score": 27,
+      "dnp_score": 29,
       "confidence_score": 45,
-      "urgency_score": 0,
+      "urgency_score": 15,
       "evidence_count": 2,
-      "combined_priority": 18.9,
+      "combined_priority": 24.8,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "20% historical non-start rate (n=10)",
         "Platoon: starts only 53% vs LHP (n=15, overall 80%)",
-        "On a 6-game start streak",
+        "On a 7-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
+        "Lineup release expected in ~93 min",
         "Cross-book prop-removal timing not available yet"
       ],
       "contributions": [
@@ -2457,8 +2314,8 @@
           5
         ],
         [
-          "On a 6-game start streak",
-          2
+          "On a 7-game start streak",
+          4
         ],
         [
           "No projected lineup source posted yet",
@@ -2467,19 +2324,19 @@
       ]
     },
     {
-      "player_id": 663728,
-      "name": "Cal Raleigh",
-      "team": "Seattle Mariners",
-      "opp_team": "Los Angeles Angels",
-      "game_pk": 823981,
+      "player_id": 669224,
+      "name": "Austin Wells",
+      "team": "New York Yankees",
+      "opp_team": "Minnesota Twins",
+      "game_pk": 823656,
       "position": "C",
-      "batting_order": 4,
+      "batting_order": 8,
       "lineup_status": "projected",
       "tier": "Ignore",
       "dnp_score": 26,
-      "confidence_score": 30,
+      "confidence_score": 45,
       "urgency_score": 0,
-      "evidence_count": 1,
+      "evidence_count": 2,
       "combined_priority": 18.2,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
@@ -2511,64 +2368,20 @@
       ]
     },
     {
-      "player_id": 669224,
-      "name": "Austin Wells",
-      "team": "New York Yankees",
-      "opp_team": "Minnesota Twins",
-      "game_pk": 823656,
-      "position": "C",
-      "batting_order": 8,
+      "player_id": 690993,
+      "name": "Colt Keith",
+      "team": "Detroit Tigers",
+      "opp_team": "Toronto Blue Jays",
+      "game_pk": 822765,
+      "position": "3B",
+      "batting_order": 3,
       "lineup_status": "projected",
       "tier": "Ignore",
       "dnp_score": 24,
       "confidence_score": 45,
-      "urgency_score": 0,
+      "urgency_score": 15,
       "evidence_count": 2,
-      "combined_priority": 16.8,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "10% historical non-start rate (n=10)",
-        "On a 8-game start streak",
-        "Catcher on a 8-game streak - rest risk elevated",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "10% historical non-start rate (n=10)",
-          10
-        ],
-        [
-          "On a 8-game start streak",
-          6
-        ],
-        [
-          "Catcher on a 8-game streak - rest risk elevated",
-          8
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 813841,
-      "name": "Jonah Cox",
-      "team": "San Francisco Giants",
-      "opp_team": "St. Louis Cardinals",
-      "game_pk": 823006,
-      "position": "CF",
-      "batting_order": 4,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 24,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 16.8,
+      "combined_priority": 21.3,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "20% historical non-start rate (n=10)",
@@ -2576,6 +2389,7 @@
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
+        "Lineup release expected in ~120 min",
         "Cross-book prop-removal timing not available yet"
       ],
       "contributions": [
@@ -2633,26 +2447,193 @@
       ]
     },
     {
-      "player_id": 663886,
-      "name": "Tyler Stephenson",
+      "player_id": 669134,
+      "name": "Luis Campusano",
+      "team": "San Diego Padres",
+      "opp_team": "Colorado Rockies",
+      "game_pk": 824308,
+      "position": "C",
+      "batting_order": 4,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 23,
+      "confidence_score": 45,
+      "urgency_score": 0,
+      "evidence_count": 2,
+      "combined_priority": 16.1,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "0% historical non-start rate (n=10)",
+        "Platoon: starts only 73% vs RHP (n=15, overall 100%)",
+        "On a 10-game start streak",
+        "Catcher on a 10-game streak - rest risk elevated",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "0% historical non-start rate (n=10)",
+          0
+        ],
+        [
+          "Platoon: starts only 73% vs RHP (n=15, overall 100%)",
+          5
+        ],
+        [
+          "On a 10-game start streak",
+          10
+        ],
+        [
+          "Catcher on a 10-game streak - rest risk elevated",
+          8
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 687637,
+      "name": "Dylan Beavers",
+      "team": "Baltimore Orioles",
+      "opp_team": "New York Mets",
+      "game_pk": 823575,
+      "position": "LF",
+      "batting_order": 1,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 22,
+      "confidence_score": 45,
+      "urgency_score": 0,
+      "evidence_count": 2,
+      "combined_priority": 15.4,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "20% historical non-start rate (n=10)",
+        "On a 6-game start streak",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "20% historical non-start rate (n=10)",
+          20
+        ],
+        [
+          "On a 6-game start streak",
+          2
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 702616,
+      "name": "Jackson Holliday",
+      "team": "Baltimore Orioles",
+      "opp_team": "New York Mets",
+      "game_pk": 823575,
+      "position": "2B",
+      "batting_order": 7,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 22,
+      "confidence_score": 45,
+      "urgency_score": 0,
+      "evidence_count": 2,
+      "combined_priority": 15.4,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "20% historical non-start rate (n=10)",
+        "On a 6-game start streak",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "20% historical non-start rate (n=10)",
+          20
+        ],
+        [
+          "On a 6-game start streak",
+          2
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 694376,
+      "name": "Shay Whitcomb",
+      "team": "San Francisco Giants",
+      "opp_team": "St. Louis Cardinals",
+      "game_pk": 823006,
+      "position": "3B",
+      "batting_order": 6,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 22,
+      "confidence_score": 45,
+      "urgency_score": 0,
+      "evidence_count": 2,
+      "combined_priority": 15.4,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "20% historical non-start rate (n=10)",
+        "On a 6-game start streak",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "20% historical non-start rate (n=10)",
+          20
+        ],
+        [
+          "On a 6-game start streak",
+          2
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 553993,
+      "name": "Eugenio Su\u00e1rez",
       "team": "Cincinnati Reds",
       "opp_team": "Los Angeles Dodgers",
       "game_pk": 824465,
-      "position": "C",
-      "batting_order": 5,
+      "position": "DH",
+      "batting_order": 4,
       "lineup_status": "projected",
       "tier": "Ignore",
       "dnp_score": 20,
       "confidence_score": 45,
-      "urgency_score": 0,
+      "urgency_score": 15,
       "evidence_count": 2,
-      "combined_priority": 14.0,
+      "combined_priority": 18.5,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "20% historical non-start rate (n=10)",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
+        "Lineup release expected in ~93 min",
         "Cross-book prop-removal timing not available yet"
       ],
       "contributions": [
@@ -2678,15 +2659,16 @@
       "tier": "Ignore",
       "dnp_score": 20,
       "confidence_score": 30,
-      "urgency_score": 0,
+      "urgency_score": 15,
       "evidence_count": 1,
-      "combined_priority": 14.0,
+      "combined_priority": 18.5,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "20% historical non-start rate (n=10)",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
+        "Lineup release expected in ~93 min",
         "Cross-book prop-removal timing not available yet"
       ],
       "contributions": [
@@ -2712,15 +2694,16 @@
       "tier": "Ignore",
       "dnp_score": 20,
       "confidence_score": 45,
-      "urgency_score": 0,
+      "urgency_score": 15,
       "evidence_count": 2,
-      "combined_priority": 14.0,
+      "combined_priority": 18.5,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "20% historical non-start rate (n=10)",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
+        "Lineup release expected in ~120 min",
         "Cross-book prop-removal timing not available yet"
       ],
       "contributions": [
@@ -2746,117 +2729,16 @@
       "tier": "Ignore",
       "dnp_score": 20,
       "confidence_score": 45,
-      "urgency_score": 0,
+      "urgency_score": 15,
       "evidence_count": 2,
-      "combined_priority": 14.0,
+      "combined_priority": 18.5,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "20% historical non-start rate (n=10)",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "20% historical non-start rate (n=10)",
-          20
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 687637,
-      "name": "Dylan Beavers",
-      "team": "Baltimore Orioles",
-      "opp_team": "New York Mets",
-      "game_pk": 823575,
-      "position": "LF",
-      "batting_order": 1,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 20,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 14.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "20% historical non-start rate (n=10)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "20% historical non-start rate (n=10)",
-          20
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 687952,
-      "name": "Christian Encarnacion-Strand",
-      "team": "Baltimore Orioles",
-      "opp_team": "New York Mets",
-      "game_pk": 823575,
-      "position": "3B",
-      "batting_order": 6,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 20,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 14.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "20% historical non-start rate (n=10)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "20% historical non-start rate (n=10)",
-          20
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 702616,
-      "name": "Jackson Holliday",
-      "team": "Baltimore Orioles",
-      "opp_team": "New York Mets",
-      "game_pk": 823575,
-      "position": "2B",
-      "batting_order": 7,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 20,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 14.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "20% historical non-start rate (n=10)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
+        "Lineup release expected in ~120 min",
         "Cross-book prop-removal timing not available yet"
       ],
       "contributions": [
@@ -2905,19 +2787,19 @@
       ]
     },
     {
-      "player_id": 699393,
-      "name": "Pedro Ram\u00edrez",
+      "player_id": 624424,
+      "name": "Michael Conforto",
       "team": "Chicago Cubs",
       "opp_team": "Atlanta Braves",
       "game_pk": 824629,
-      "position": "2B",
-      "batting_order": 8,
+      "position": "DH",
+      "batting_order": 7,
       "lineup_status": "projected",
       "tier": "Ignore",
       "dnp_score": 20,
-      "confidence_score": 30,
+      "confidence_score": 45,
       "urgency_score": 0,
-      "evidence_count": 1,
+      "evidence_count": 2,
       "combined_priority": 14.0,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
@@ -3007,40 +2889,6 @@
       ]
     },
     {
-      "player_id": 592450,
-      "name": "Aaron Judge",
-      "team": "New York Yankees",
-      "opp_team": "Minnesota Twins",
-      "game_pk": 823656,
-      "position": "RF",
-      "batting_order": 3,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 20,
-      "confidence_score": 30,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 14.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "20% historical non-start rate (n=5)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "20% historical non-start rate (n=5)",
-          20
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
       "player_id": 691023,
       "name": "Jordan Walker",
       "team": "St. Louis Cardinals",
@@ -3109,13 +2957,13 @@
       ]
     },
     {
-      "player_id": 694376,
-      "name": "Shay Whitcomb",
+      "player_id": 813841,
+      "name": "Jonah Cox",
       "team": "San Francisco Giants",
       "opp_team": "St. Louis Cardinals",
       "game_pk": 823006,
-      "position": "3B",
-      "batting_order": 6,
+      "position": "CF",
+      "batting_order": 4,
       "lineup_status": "projected",
       "tier": "Ignore",
       "dnp_score": 20,
@@ -3125,7 +2973,9 @@
       "combined_priority": 14.0,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
-        "20% historical non-start rate (n=10)",
+        "10% historical non-start rate (n=10)",
+        "Platoon: starts only 71% vs LHP (n=14, overall 90%)",
+        "On a 8-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -3133,42 +2983,16 @@
       ],
       "contributions": [
         [
-          "20% historical non-start rate (n=10)",
-          20
+          "10% historical non-start rate (n=10)",
+          10
         ],
         [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 630105,
-      "name": "Jake Cronenworth",
-      "team": "San Diego Padres",
-      "opp_team": "Colorado Rockies",
-      "game_pk": 824308,
-      "position": "2B",
-      "batting_order": 7,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 20,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 14.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "20% historical non-start rate (n=10)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
+          "Platoon: starts only 71% vs LHP (n=14, overall 90%)",
+          4
+        ],
         [
-          "20% historical non-start rate (n=10)",
-          20
+          "On a 8-game start streak",
+          6
         ],
         [
           "No projected lineup source posted yet",
@@ -3245,40 +3069,6 @@
       ]
     },
     {
-      "player_id": 665052,
-      "name": "Griffin Conine",
-      "team": "Miami Marlins",
-      "opp_team": "Arizona Diamondbacks",
-      "game_pk": 825034,
-      "position": "RF",
-      "batting_order": 4,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 20,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 14.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "20% historical non-start rate (n=10)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "20% historical non-start rate (n=10)",
-          20
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
       "player_id": 699302,
       "name": "H\u00e9ctor Rodr\u00edguez",
       "team": "Cincinnati Reds",
@@ -3290,17 +3080,18 @@
       "tier": "Ignore",
       "dnp_score": 18,
       "confidence_score": 45,
-      "urgency_score": 0,
+      "urgency_score": 15,
       "evidence_count": 2,
-      "combined_priority": 12.6,
+      "combined_priority": 17.1,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "Platoon: starts only 58% vs LHP (n=12, overall 100%)",
-        "On a 16-game start streak",
+        "Platoon: starts only 62% vs LHP (n=13, overall 100%)",
+        "On a 17-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
+        "Lineup release expected in ~93 min",
         "Cross-book prop-removal timing not available yet"
       ],
       "contributions": [
@@ -3309,11 +3100,11 @@
           0
         ],
         [
-          "Platoon: starts only 58% vs LHP (n=12, overall 100%)",
+          "Platoon: starts only 62% vs LHP (n=13, overall 100%)",
           8
         ],
         [
-          "On a 16-game start streak",
+          "On a 17-game start streak",
           10
         ],
         [
@@ -3323,19 +3114,59 @@
       ]
     },
     {
-      "player_id": 677587,
-      "name": "Brayan Rocchio",
-      "team": "Cleveland Guardians",
-      "opp_team": "Chicago White Sox",
-      "game_pk": 824386,
-      "position": "SS",
-      "batting_order": 9,
+      "player_id": 672960,
+      "name": "Kazuma Okamoto",
+      "team": "Toronto Blue Jays",
+      "opp_team": "Detroit Tigers",
+      "game_pk": 822765,
+      "position": "3B",
+      "batting_order": 4,
       "lineup_status": "projected",
       "tier": "Ignore",
       "dnp_score": 18,
-      "confidence_score": 30,
+      "confidence_score": 45,
+      "urgency_score": 15,
+      "evidence_count": 2,
+      "combined_priority": 17.1,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "10% historical non-start rate (n=10)",
+        "On a 9-game start streak",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Lineup release expected in ~120 min",
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "10% historical non-start rate (n=10)",
+          10
+        ],
+        [
+          "On a 9-game start streak",
+          8
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 671739,
+      "name": "Michael Harris II",
+      "team": "Atlanta Braves",
+      "opp_team": "Chicago Cubs",
+      "game_pk": 824629,
+      "position": "CF",
+      "batting_order": 1,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 18,
+      "confidence_score": 45,
       "urgency_score": 0,
-      "evidence_count": 1,
+      "evidence_count": 2,
       "combined_priority": 12.6,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
@@ -3379,8 +3210,8 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 42-game start streak",
-        "Catcher on a 42-game streak - rest risk elevated",
+        "On a 43-game start streak",
+        "Catcher on a 43-game streak - rest risk elevated",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -3392,11 +3223,11 @@
           0
         ],
         [
-          "On a 42-game start streak",
+          "On a 43-game start streak",
           10
         ],
         [
-          "Catcher on a 42-game streak - rest risk elevated",
+          "Catcher on a 43-game streak - rest risk elevated",
           8
         ],
         [
@@ -3406,13 +3237,13 @@
       ]
     },
     {
-      "player_id": 643289,
-      "name": "Mauricio Dub\u00f3n",
-      "team": "Atlanta Braves",
-      "opp_team": "Chicago Cubs",
-      "game_pk": 824629,
-      "position": "LF",
-      "batting_order": 5,
+      "player_id": 676475,
+      "name": "Alec Burleson",
+      "team": "St. Louis Cardinals",
+      "opp_team": "San Francisco Giants",
+      "game_pk": 823006,
+      "position": "1B",
+      "batting_order": 3,
       "lineup_status": "projected",
       "tier": "Ignore",
       "dnp_score": 18,
@@ -3462,8 +3293,8 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 11-game start streak",
-        "Catcher on a 11-game streak - rest risk elevated",
+        "On a 12-game start streak",
+        "Catcher on a 12-game streak - rest risk elevated",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -3475,129 +3306,12 @@
           0
         ],
         [
-          "On a 11-game start streak",
+          "On a 12-game start streak",
           10
         ],
         [
-          "Catcher on a 11-game streak - rest risk elevated",
+          "Catcher on a 12-game streak - rest risk elevated",
           8
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 672960,
-      "name": "Kazuma Okamoto",
-      "team": "Toronto Blue Jays",
-      "opp_team": "Detroit Tigers",
-      "game_pk": 822765,
-      "position": "3B",
-      "batting_order": 4,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 16,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 11.2,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "10% historical non-start rate (n=10)",
-        "On a 8-game start streak",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "10% historical non-start rate (n=10)",
-          10
-        ],
-        [
-          "On a 8-game start streak",
-          6
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 671739,
-      "name": "Michael Harris II",
-      "team": "Atlanta Braves",
-      "opp_team": "Chicago Cubs",
-      "game_pk": 824629,
-      "position": "CF",
-      "batting_order": 1,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 16,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 11.2,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "10% historical non-start rate (n=10)",
-        "On a 8-game start streak",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "10% historical non-start rate (n=10)",
-          10
-        ],
-        [
-          "On a 8-game start streak",
-          6
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 676475,
-      "name": "Alec Burleson",
-      "team": "St. Louis Cardinals",
-      "opp_team": "San Francisco Giants",
-      "game_pk": 823006,
-      "position": "1B",
-      "batting_order": 3,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 16,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 11.2,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "10% historical non-start rate (n=10)",
-        "On a 8-game start streak",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "10% historical non-start rate (n=10)",
-          10
-        ],
-        [
-          "On a 8-game start streak",
-          6
         ],
         [
           "No projected lineup source posted yet",
@@ -3615,6 +3329,286 @@
       "batting_order": 3,
       "lineup_status": "projected",
       "tier": "Ignore",
+      "dnp_score": 18,
+      "confidence_score": 45,
+      "urgency_score": 0,
+      "evidence_count": 2,
+      "combined_priority": 12.6,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "10% historical non-start rate (n=10)",
+        "On a 9-game start streak",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "10% historical non-start rate (n=10)",
+          10
+        ],
+        [
+          "On a 9-game start streak",
+          8
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 663728,
+      "name": "Cal Raleigh",
+      "team": "Seattle Mariners",
+      "opp_team": "Los Angeles Angels",
+      "game_pk": 823981,
+      "position": "C",
+      "batting_order": 4,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 18,
+      "confidence_score": 30,
+      "urgency_score": 0,
+      "evidence_count": 1,
+      "combined_priority": 12.6,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "0% historical non-start rate (n=10)",
+        "On a 10-game start streak",
+        "Catcher on a 10-game streak - rest risk elevated",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "0% historical non-start rate (n=10)",
+          0
+        ],
+        [
+          "On a 10-game start streak",
+          10
+        ],
+        [
+          "Catcher on a 10-game streak - rest risk elevated",
+          8
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 606466,
+      "name": "Ketel Marte",
+      "team": "Arizona Diamondbacks",
+      "opp_team": "Miami Marlins",
+      "game_pk": 825034,
+      "position": "2B",
+      "batting_order": 2,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 18,
+      "confidence_score": 30,
+      "urgency_score": 0,
+      "evidence_count": 1,
+      "combined_priority": 12.6,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "10% historical non-start rate (n=10)",
+        "On a 9-game start streak",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "10% historical non-start rate (n=10)",
+          10
+        ],
+        [
+          "On a 9-game start streak",
+          8
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 691723,
+      "name": "Coby Mayo",
+      "team": "Baltimore Orioles",
+      "opp_team": "New York Mets",
+      "game_pk": 823575,
+      "position": "3B",
+      "batting_order": 4,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 17,
+      "confidence_score": 45,
+      "urgency_score": 0,
+      "evidence_count": 2,
+      "combined_priority": 11.9,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "10% historical non-start rate (n=10)",
+        "Platoon: starts only 73% vs RHP (n=15, overall 90%)",
+        "On a 7-game start streak",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "10% historical non-start rate (n=10)",
+          10
+        ],
+        [
+          "Platoon: starts only 73% vs RHP (n=15, overall 90%)",
+          3
+        ],
+        [
+          "On a 7-game start streak",
+          4
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 592450,
+      "name": "Aaron Judge",
+      "team": "New York Yankees",
+      "opp_team": "Minnesota Twins",
+      "game_pk": 823656,
+      "position": "RF",
+      "batting_order": 3,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 17,
+      "confidence_score": 33,
+      "urgency_score": 0,
+      "evidence_count": 2,
+      "combined_priority": 11.9,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "17% historical non-start rate (n=6)",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "17% historical non-start rate (n=6)",
+          17
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 665926,
+      "name": "Andr\u00e9s Gim\u00e9nez",
+      "team": "Toronto Blue Jays",
+      "opp_team": "Detroit Tigers",
+      "game_pk": 822765,
+      "position": "SS",
+      "batting_order": 7,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 16,
+      "confidence_score": 45,
+      "urgency_score": 15,
+      "evidence_count": 2,
+      "combined_priority": 15.7,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "10% historical non-start rate (n=10)",
+        "On a 8-game start streak",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Lineup release expected in ~120 min",
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "10% historical non-start rate (n=10)",
+          10
+        ],
+        [
+          "On a 8-game start streak",
+          6
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 682985,
+      "name": "Riley Greene",
+      "team": "Detroit Tigers",
+      "opp_team": "Toronto Blue Jays",
+      "game_pk": 822765,
+      "position": "LF",
+      "batting_order": 4,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 16,
+      "confidence_score": 45,
+      "urgency_score": 15,
+      "evidence_count": 2,
+      "combined_priority": 15.7,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "10% historical non-start rate (n=10)",
+        "On a 8-game start streak",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Lineup release expected in ~120 min",
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "10% historical non-start rate (n=10)",
+          10
+        ],
+        [
+          "On a 8-game start streak",
+          6
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 805999,
+      "name": "A.J. Ewing",
+      "team": "New York Mets",
+      "opp_team": "Baltimore Orioles",
+      "game_pk": 823575,
+      "position": "CF",
+      "batting_order": 6,
+      "lineup_status": "projected",
+      "tier": "Ignore",
       "dnp_score": 16,
       "confidence_score": 45,
       "urgency_score": 0,
@@ -3645,19 +3639,19 @@
       ]
     },
     {
-      "player_id": 606466,
-      "name": "Ketel Marte",
-      "team": "Arizona Diamondbacks",
-      "opp_team": "Miami Marlins",
+      "player_id": 805300,
+      "name": "Jakob Marsee",
+      "team": "Miami Marlins",
+      "opp_team": "Arizona Diamondbacks",
       "game_pk": 825034,
-      "position": "2B",
-      "batting_order": 2,
+      "position": "CF",
+      "batting_order": 6,
       "lineup_status": "projected",
       "tier": "Ignore",
       "dnp_score": 16,
-      "confidence_score": 30,
+      "confidence_score": 45,
       "urgency_score": 0,
-      "evidence_count": 1,
+      "evidence_count": 2,
       "combined_priority": 11.2,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
@@ -3684,13 +3678,52 @@
       ]
     },
     {
-      "player_id": 800543,
-      "name": "Josue De Paula",
-      "team": "Los Angeles Dodgers",
-      "opp_team": "Cincinnati Reds",
-      "game_pk": 824465,
-      "position": "RF",
+      "player_id": 687952,
+      "name": "Christian Encarnacion-Strand",
+      "team": "Baltimore Orioles",
+      "opp_team": "New York Mets",
+      "game_pk": 823575,
+      "position": "3B",
       "batting_order": 6,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 15,
+      "confidence_score": 45,
+      "urgency_score": 0,
+      "evidence_count": 2,
+      "combined_priority": 10.5,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "10% historical non-start rate (n=10)",
+        "Platoon: starts only 67% vs RHP (n=15, overall 90%)",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "10% historical non-start rate (n=10)",
+          10
+        ],
+        [
+          "Platoon: starts only 67% vs RHP (n=15, overall 90%)",
+          5
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 691181,
+      "name": "Emmanuel Rodriguez",
+      "team": "Minnesota Twins",
+      "opp_team": "New York Yankees",
+      "game_pk": 823656,
+      "position": "CF",
+      "batting_order": 7,
       "lineup_status": "projected",
       "tier": "Ignore",
       "dnp_score": 15,
@@ -3718,57 +3751,13 @@
       ]
     },
     {
-      "player_id": 691723,
-      "name": "Coby Mayo",
-      "team": "Baltimore Orioles",
-      "opp_team": "New York Mets",
-      "game_pk": 823575,
-      "position": "3B",
-      "batting_order": 4,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 15,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 10.5,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "10% historical non-start rate (n=10)",
-        "Platoon: starts only 73% vs RHP (n=15, overall 90%)",
-        "On a 6-game start streak",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "10% historical non-start rate (n=10)",
-          10
-        ],
-        [
-          "Platoon: starts only 73% vs RHP (n=15, overall 90%)",
-          3
-        ],
-        [
-          "On a 6-game start streak",
-          2
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 691181,
-      "name": "Emmanuel Rodriguez",
-      "team": "Minnesota Twins",
-      "opp_team": "New York Yankees",
-      "game_pk": 823656,
-      "position": "CF",
-      "batting_order": 7,
+      "player_id": 814154,
+      "name": "Scott Bandura",
+      "team": "San Francisco Giants",
+      "opp_team": "St. Louis Cardinals",
+      "game_pk": 823006,
+      "position": "LF",
+      "batting_order": 5,
       "lineup_status": "projected",
       "tier": "Ignore",
       "dnp_score": 15,
@@ -3796,93 +3785,20 @@
       ]
     },
     {
-      "player_id": 814154,
-      "name": "Scott Bandura",
-      "team": "San Francisco Giants",
-      "opp_team": "St. Louis Cardinals",
-      "game_pk": 823006,
-      "position": "LF",
-      "batting_order": 5,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 15,
-      "confidence_score": 15,
-      "urgency_score": 0,
-      "evidence_count": 1,
-      "combined_priority": 10.5,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "No usable start history (n=0) - league-average prior",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "No usable start history (n=0) - league-average prior",
-          15
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 665926,
-      "name": "Andr\u00e9s Gim\u00e9nez",
-      "team": "Toronto Blue Jays",
-      "opp_team": "Detroit Tigers",
-      "game_pk": 822765,
-      "position": "SS",
-      "batting_order": 7,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 14,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 9.8,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "10% historical non-start rate (n=10)",
-        "On a 7-game start streak",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "10% historical non-start rate (n=10)",
-          10
-        ],
-        [
-          "On a 7-game start streak",
-          4
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 682985,
-      "name": "Riley Greene",
+      "player_id": 805808,
+      "name": "Kevin McGonigle",
       "team": "Detroit Tigers",
       "opp_team": "Toronto Blue Jays",
       "game_pk": 822765,
-      "position": "LF",
-      "batting_order": 4,
+      "position": "SS",
+      "batting_order": 1,
       "lineup_status": "projected",
       "tier": "Ignore",
       "dnp_score": 14,
       "confidence_score": 45,
-      "urgency_score": 0,
+      "urgency_score": 15,
       "evidence_count": 2,
-      "combined_priority": 9.8,
+      "combined_priority": 14.3,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "10% historical non-start rate (n=10)",
@@ -3890,6 +3806,7 @@
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
+        "Lineup release expected in ~120 min",
         "Cross-book prop-removal timing not available yet"
       ],
       "contributions": [
@@ -3908,20 +3825,20 @@
       ]
     },
     {
-      "player_id": 805999,
-      "name": "A.J. Ewing",
-      "team": "New York Mets",
-      "opp_team": "Baltimore Orioles",
-      "game_pk": 823575,
+      "player_id": 703601,
+      "name": "Max Clark",
+      "team": "Detroit Tigers",
+      "opp_team": "Toronto Blue Jays",
+      "game_pk": 822765,
       "position": "CF",
       "batting_order": 6,
       "lineup_status": "projected",
       "tier": "Ignore",
       "dnp_score": 14,
       "confidence_score": 45,
-      "urgency_score": 0,
+      "urgency_score": 15,
       "evidence_count": 2,
-      "combined_priority": 9.8,
+      "combined_priority": 14.3,
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "10% historical non-start rate (n=10)",
@@ -3929,6 +3846,7 @@
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
+        "Lineup release expected in ~120 min",
         "Cross-book prop-removal timing not available yet"
       ],
       "contributions": [
@@ -3964,8 +3882,8 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "Platoon: starts only 80% vs RHP (n=10, overall 100%)",
-        "On a 12-game start streak",
+        "Platoon: starts only 82% vs RHP (n=11, overall 100%)",
+        "On a 13-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -3977,129 +3895,12 @@
           0
         ],
         [
-          "Platoon: starts only 80% vs RHP (n=10, overall 100%)",
+          "Platoon: starts only 82% vs RHP (n=11, overall 100%)",
           4
         ],
         [
-          "On a 12-game start streak",
+          "On a 13-game start streak",
           10
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 805300,
-      "name": "Jakob Marsee",
-      "team": "Miami Marlins",
-      "opp_team": "Arizona Diamondbacks",
-      "game_pk": 825034,
-      "position": "CF",
-      "batting_order": 6,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 14,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 9.8,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "10% historical non-start rate (n=10)",
-        "On a 7-game start streak",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "10% historical non-start rate (n=10)",
-          10
-        ],
-        [
-          "On a 7-game start streak",
-          4
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 805808,
-      "name": "Kevin McGonigle",
-      "team": "Detroit Tigers",
-      "opp_team": "Toronto Blue Jays",
-      "game_pk": 822765,
-      "position": "SS",
-      "batting_order": 1,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 12,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 8.4,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "10% historical non-start rate (n=10)",
-        "On a 6-game start streak",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "10% historical non-start rate (n=10)",
-          10
-        ],
-        [
-          "On a 6-game start streak",
-          2
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 703601,
-      "name": "Max Clark",
-      "team": "Detroit Tigers",
-      "opp_team": "Toronto Blue Jays",
-      "game_pk": 822765,
-      "position": "CF",
-      "batting_order": 6,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 12,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 8.4,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "10% historical non-start rate (n=10)",
-        "On a 6-game start streak",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "10% historical non-start rate (n=10)",
-          10
-        ],
-        [
-          "On a 6-game start streak",
-          2
         ],
         [
           "No projected lineup source posted yet",
@@ -4115,6 +3916,721 @@
       "game_pk": 824465,
       "position": "SS",
       "batting_order": 2,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 10,
+      "confidence_score": 30,
+      "urgency_score": 15,
+      "evidence_count": 1,
+      "combined_priority": 11.5,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "0% historical non-start rate (n=10)",
+        "On a 42-game start streak",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Lineup release expected in ~93 min",
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "0% historical non-start rate (n=10)",
+          0
+        ],
+        [
+          "On a 42-game start streak",
+          10
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 701398,
+      "name": "Sal Stewart",
+      "team": "Cincinnati Reds",
+      "opp_team": "Los Angeles Dodgers",
+      "game_pk": 824465,
+      "position": "1B",
+      "batting_order": 3,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 10,
+      "confidence_score": 45,
+      "urgency_score": 15,
+      "evidence_count": 2,
+      "combined_priority": 11.5,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "0% historical non-start rate (n=10)",
+        "On a 42-game start streak",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Lineup release expected in ~93 min",
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "0% historical non-start rate (n=10)",
+          0
+        ],
+        [
+          "On a 42-game start streak",
+          10
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 663886,
+      "name": "Tyler Stephenson",
+      "team": "Cincinnati Reds",
+      "opp_team": "Los Angeles Dodgers",
+      "game_pk": 824465,
+      "position": "C",
+      "batting_order": 5,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 10,
+      "confidence_score": 45,
+      "urgency_score": 15,
+      "evidence_count": 2,
+      "combined_priority": 11.5,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "10% historical non-start rate (n=10)",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Lineup release expected in ~93 min",
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "10% historical non-start rate (n=10)",
+          10
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 668709,
+      "name": "JJ Bleday",
+      "team": "Cincinnati Reds",
+      "opp_team": "Los Angeles Dodgers",
+      "game_pk": 824465,
+      "position": "LF",
+      "batting_order": 6,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 10,
+      "confidence_score": 45,
+      "urgency_score": 15,
+      "evidence_count": 2,
+      "combined_priority": 11.5,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "0% historical non-start rate (n=10)",
+        "On a 41-game start streak",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Lineup release expected in ~93 min",
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "0% historical non-start rate (n=10)",
+          0
+        ],
+        [
+          "On a 41-game start streak",
+          10
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 605141,
+      "name": "Mookie Betts",
+      "team": "Los Angeles Dodgers",
+      "opp_team": "Cincinnati Reds",
+      "game_pk": 824465,
+      "position": "SS",
+      "batting_order": 1,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 10,
+      "confidence_score": 45,
+      "urgency_score": 15,
+      "evidence_count": 2,
+      "combined_priority": 11.5,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "10% historical non-start rate (n=10)",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Lineup release expected in ~93 min",
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "10% historical non-start rate (n=10)",
+          10
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 663656,
+      "name": "Kyle Tucker",
+      "team": "Los Angeles Dodgers",
+      "opp_team": "Cincinnati Reds",
+      "game_pk": 824465,
+      "position": "RF",
+      "batting_order": 5,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 10,
+      "confidence_score": 45,
+      "urgency_score": 15,
+      "evidence_count": 2,
+      "combined_priority": 11.5,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "10% historical non-start rate (n=10)",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Lineup release expected in ~93 min",
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "10% historical non-start rate (n=10)",
+          10
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 680757,
+      "name": "Steven Kwan",
+      "team": "Cleveland Guardians",
+      "opp_team": "Chicago White Sox",
+      "game_pk": 824386,
+      "position": "LF",
+      "batting_order": 1,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 10,
+      "confidence_score": 45,
+      "urgency_score": 15,
+      "evidence_count": 2,
+      "combined_priority": 11.5,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "0% historical non-start rate (n=10)",
+        "On a 33-game start streak",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Lineup release expected in ~93 min",
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "0% historical non-start rate (n=10)",
+          0
+        ],
+        [
+          "On a 33-game start streak",
+          10
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 666176,
+      "name": "Jo Adell",
+      "team": "Cleveland Guardians",
+      "opp_team": "Chicago White Sox",
+      "game_pk": 824386,
+      "position": "RF",
+      "batting_order": 4,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 10,
+      "confidence_score": 45,
+      "urgency_score": 15,
+      "evidence_count": 2,
+      "combined_priority": 11.5,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "0% historical non-start rate (n=10)",
+        "On a 21-game start streak",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Lineup release expected in ~93 min",
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "0% historical non-start rate (n=10)",
+          0
+        ],
+        [
+          "On a 21-game start streak",
+          10
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 677587,
+      "name": "Brayan Rocchio",
+      "team": "Cleveland Guardians",
+      "opp_team": "Chicago White Sox",
+      "game_pk": 824386,
+      "position": "SS",
+      "batting_order": 9,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 10,
+      "confidence_score": 30,
+      "urgency_score": 15,
+      "evidence_count": 1,
+      "combined_priority": 11.5,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "0% historical non-start rate (n=10)",
+        "On a 10-game start streak",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Lineup release expected in ~93 min",
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "0% historical non-start rate (n=10)",
+          0
+        ],
+        [
+          "On a 10-game start streak",
+          10
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 803011,
+      "name": "Sam Antonacci",
+      "team": "Chicago White Sox",
+      "opp_team": "Cleveland Guardians",
+      "game_pk": 824386,
+      "position": "LF",
+      "batting_order": 1,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 10,
+      "confidence_score": 45,
+      "urgency_score": 15,
+      "evidence_count": 2,
+      "combined_priority": 11.5,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "10% historical non-start rate (n=10)",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Lineup release expected in ~93 min",
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "10% historical non-start rate (n=10)",
+          10
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 678246,
+      "name": "Miguel Vargas",
+      "team": "Chicago White Sox",
+      "opp_team": "Cleveland Guardians",
+      "game_pk": 824386,
+      "position": "3B",
+      "batting_order": 3,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 10,
+      "confidence_score": 45,
+      "urgency_score": 15,
+      "evidence_count": 2,
+      "combined_priority": 11.5,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "10% historical non-start rate (n=10)",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Lineup release expected in ~93 min",
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "10% historical non-start rate (n=10)",
+          10
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 808959,
+      "name": "Munetaka Murakami",
+      "team": "Chicago White Sox",
+      "opp_team": "Cleveland Guardians",
+      "game_pk": 824386,
+      "position": "1B",
+      "batting_order": 4,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 10,
+      "confidence_score": 45,
+      "urgency_score": 15,
+      "evidence_count": 2,
+      "combined_priority": 11.5,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "10% historical non-start rate (n=10)",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Lineup release expected in ~93 min",
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "10% historical non-start rate (n=10)",
+          10
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 643217,
+      "name": "Andrew Benintendi",
+      "team": "Chicago White Sox",
+      "opp_team": "Cleveland Guardians",
+      "game_pk": 824386,
+      "position": "DH",
+      "batting_order": 5,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 10,
+      "confidence_score": 45,
+      "urgency_score": 15,
+      "evidence_count": 2,
+      "combined_priority": 11.5,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "10% historical non-start rate (n=10)",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Lineup release expected in ~93 min",
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "10% historical non-start rate (n=10)",
+          10
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 671976,
+      "name": "Tristan Peters",
+      "team": "Chicago White Sox",
+      "opp_team": "Cleveland Guardians",
+      "game_pk": 824386,
+      "position": "CF",
+      "batting_order": 6,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 10,
+      "confidence_score": 45,
+      "urgency_score": 15,
+      "evidence_count": 2,
+      "combined_priority": 11.5,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "10% historical non-start rate (n=10)",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Lineup release expected in ~93 min",
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "10% historical non-start rate (n=10)",
+          10
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 805367,
+      "name": "Chase Meidroth",
+      "team": "Chicago White Sox",
+      "opp_team": "Cleveland Guardians",
+      "game_pk": 824386,
+      "position": "2B",
+      "batting_order": 7,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 10,
+      "confidence_score": 45,
+      "urgency_score": 15,
+      "evidence_count": 2,
+      "combined_priority": 11.5,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "0% historical non-start rate (n=10)",
+        "On a 13-game start streak",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Lineup release expected in ~93 min",
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "0% historical non-start rate (n=10)",
+          0
+        ],
+        [
+          "On a 13-game start streak",
+          10
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 695657,
+      "name": "Colson Montgomery",
+      "team": "Chicago White Sox",
+      "opp_team": "Cleveland Guardians",
+      "game_pk": 824386,
+      "position": "SS",
+      "batting_order": 8,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 10,
+      "confidence_score": 45,
+      "urgency_score": 15,
+      "evidence_count": 2,
+      "combined_priority": 11.5,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "0% historical non-start rate (n=10)",
+        "On a 16-game start streak",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Lineup release expected in ~93 min",
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "0% historical non-start rate (n=10)",
+          0
+        ],
+        [
+          "On a 16-game start streak",
+          10
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 703520,
+      "name": "Brett Bateman",
+      "team": "Toronto Blue Jays",
+      "opp_team": "Detroit Tigers",
+      "game_pk": 822765,
+      "position": "CF",
+      "batting_order": 1,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 10,
+      "confidence_score": 45,
+      "urgency_score": 15,
+      "evidence_count": 2,
+      "combined_priority": 11.5,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "0% historical non-start rate (n=10)",
+        "On a 15-game start streak",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Lineup release expected in ~120 min",
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "0% historical non-start rate (n=10)",
+          0
+        ],
+        [
+          "On a 15-game start streak",
+          10
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 665489,
+      "name": "Vladimir Guerrero Jr.",
+      "team": "Toronto Blue Jays",
+      "opp_team": "Detroit Tigers",
+      "game_pk": 822765,
+      "position": "1B",
+      "batting_order": 3,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 10,
+      "confidence_score": 45,
+      "urgency_score": 15,
+      "evidence_count": 2,
+      "combined_priority": 11.5,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "0% historical non-start rate (n=10)",
+        "On a 27-game start streak",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Lineup release expected in ~120 min",
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "0% historical non-start rate (n=10)",
+          0
+        ],
+        [
+          "On a 27-game start streak",
+          10
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 807726,
+      "name": "John Peck",
+      "team": "Detroit Tigers",
+      "opp_team": "Toronto Blue Jays",
+      "game_pk": 822765,
+      "position": "SS",
+      "batting_order": 9,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 10,
+      "confidence_score": 45,
+      "urgency_score": 15,
+      "evidence_count": 2,
+      "combined_priority": 11.5,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "10% historical non-start rate (n=10)",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Lineup release expected in ~120 min",
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "10% historical non-start rate (n=10)",
+          10
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 596019,
+      "name": "Francisco Lindor",
+      "team": "New York Mets",
+      "opp_team": "Baltimore Orioles",
+      "game_pk": 823575,
+      "position": "SS",
+      "batting_order": 1,
       "lineup_status": "projected",
       "tier": "Ignore",
       "dnp_score": 10,
@@ -4147,52 +4663,13 @@
       ]
     },
     {
-      "player_id": 701398,
-      "name": "Sal Stewart",
-      "team": "Cincinnati Reds",
-      "opp_team": "Los Angeles Dodgers",
-      "game_pk": 824465,
-      "position": "1B",
-      "batting_order": 3,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 10,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 7.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "0% historical non-start rate (n=10)",
-        "On a 41-game start streak",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "0% historical non-start rate (n=10)",
-          0
-        ],
-        [
-          "On a 41-game start streak",
-          10
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 668709,
-      "name": "JJ Bleday",
-      "team": "Cincinnati Reds",
-      "opp_team": "Los Angeles Dodgers",
-      "game_pk": 824465,
+      "player_id": 665742,
+      "name": "Juan Soto",
+      "team": "New York Mets",
+      "opp_team": "Baltimore Orioles",
+      "game_pk": 823575,
       "position": "LF",
-      "batting_order": 6,
+      "batting_order": 2,
       "lineup_status": "projected",
       "tier": "Ignore",
       "dnp_score": 10,
@@ -4203,7 +4680,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 40-game start streak",
+        "On a 11-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -4215,7 +4692,7 @@
           0
         ],
         [
-          "On a 40-game start streak",
+          "On a 11-game start streak",
           10
         ],
         [
@@ -4225,368 +4702,13 @@
       ]
     },
     {
-      "player_id": 605141,
-      "name": "Mookie Betts",
-      "team": "Los Angeles Dodgers",
-      "opp_team": "Cincinnati Reds",
-      "game_pk": 824465,
-      "position": "SS",
-      "batting_order": 1,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 10,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 7.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "10% historical non-start rate (n=10)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "10% historical non-start rate (n=10)",
-          10
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 663656,
-      "name": "Kyle Tucker",
-      "team": "Los Angeles Dodgers",
-      "opp_team": "Cincinnati Reds",
-      "game_pk": 824465,
-      "position": "RF",
-      "batting_order": 5,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 10,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 7.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "10% historical non-start rate (n=10)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "10% historical non-start rate (n=10)",
-          10
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 680757,
-      "name": "Steven Kwan",
-      "team": "Cleveland Guardians",
-      "opp_team": "Chicago White Sox",
-      "game_pk": 824386,
-      "position": "LF",
-      "batting_order": 1,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 10,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 7.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "0% historical non-start rate (n=10)",
-        "On a 32-game start streak",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "0% historical non-start rate (n=10)",
-          0
-        ],
-        [
-          "On a 32-game start streak",
-          10
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 666176,
-      "name": "Jo Adell",
-      "team": "Cleveland Guardians",
-      "opp_team": "Chicago White Sox",
-      "game_pk": 824386,
-      "position": "RF",
-      "batting_order": 4,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 10,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 7.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "0% historical non-start rate (n=10)",
-        "On a 20-game start streak",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "0% historical non-start rate (n=10)",
-          0
-        ],
-        [
-          "On a 20-game start streak",
-          10
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 803011,
-      "name": "Sam Antonacci",
-      "team": "Chicago White Sox",
-      "opp_team": "Cleveland Guardians",
-      "game_pk": 824386,
-      "position": "LF",
-      "batting_order": 1,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 10,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 7.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "10% historical non-start rate (n=10)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "10% historical non-start rate (n=10)",
-          10
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 678246,
-      "name": "Miguel Vargas",
-      "team": "Chicago White Sox",
-      "opp_team": "Cleveland Guardians",
-      "game_pk": 824386,
+      "player_id": 666182,
+      "name": "Bo Bichette",
+      "team": "New York Mets",
+      "opp_team": "Baltimore Orioles",
+      "game_pk": 823575,
       "position": "3B",
       "batting_order": 3,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 10,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 7.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "10% historical non-start rate (n=10)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "10% historical non-start rate (n=10)",
-          10
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 808959,
-      "name": "Munetaka Murakami",
-      "team": "Chicago White Sox",
-      "opp_team": "Cleveland Guardians",
-      "game_pk": 824386,
-      "position": "1B",
-      "batting_order": 4,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 10,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 7.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "10% historical non-start rate (n=10)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "10% historical non-start rate (n=10)",
-          10
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 643217,
-      "name": "Andrew Benintendi",
-      "team": "Chicago White Sox",
-      "opp_team": "Cleveland Guardians",
-      "game_pk": 824386,
-      "position": "DH",
-      "batting_order": 5,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 10,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 7.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "10% historical non-start rate (n=10)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "10% historical non-start rate (n=10)",
-          10
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 671976,
-      "name": "Tristan Peters",
-      "team": "Chicago White Sox",
-      "opp_team": "Cleveland Guardians",
-      "game_pk": 824386,
-      "position": "CF",
-      "batting_order": 6,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 10,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 7.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "10% historical non-start rate (n=10)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "10% historical non-start rate (n=10)",
-          10
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 805367,
-      "name": "Chase Meidroth",
-      "team": "Chicago White Sox",
-      "opp_team": "Cleveland Guardians",
-      "game_pk": 824386,
-      "position": "2B",
-      "batting_order": 7,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 10,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 7.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "0% historical non-start rate (n=10)",
-        "On a 12-game start streak",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "0% historical non-start rate (n=10)",
-          0
-        ],
-        [
-          "On a 12-game start streak",
-          10
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 695657,
-      "name": "Colson Montgomery",
-      "team": "Chicago White Sox",
-      "opp_team": "Cleveland Guardians",
-      "game_pk": 824386,
-      "position": "SS",
-      "batting_order": 8,
       "lineup_status": "projected",
       "tier": "Ignore",
       "dnp_score": 10,
@@ -4619,235 +4741,6 @@
       ]
     },
     {
-      "player_id": 703520,
-      "name": "Brett Bateman",
-      "team": "Toronto Blue Jays",
-      "opp_team": "Detroit Tigers",
-      "game_pk": 822765,
-      "position": "CF",
-      "batting_order": 1,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 10,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 7.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "0% historical non-start rate (n=10)",
-        "On a 14-game start streak",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "0% historical non-start rate (n=10)",
-          0
-        ],
-        [
-          "On a 14-game start streak",
-          10
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 665489,
-      "name": "Vladimir Guerrero Jr.",
-      "team": "Toronto Blue Jays",
-      "opp_team": "Detroit Tigers",
-      "game_pk": 822765,
-      "position": "1B",
-      "batting_order": 3,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 10,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 7.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "0% historical non-start rate (n=10)",
-        "On a 26-game start streak",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "0% historical non-start rate (n=10)",
-          0
-        ],
-        [
-          "On a 26-game start streak",
-          10
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 807726,
-      "name": "John Peck",
-      "team": "Detroit Tigers",
-      "opp_team": "Toronto Blue Jays",
-      "game_pk": 822765,
-      "position": "SS",
-      "batting_order": 9,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 10,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 7.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "10% historical non-start rate (n=10)",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "10% historical non-start rate (n=10)",
-          10
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 596019,
-      "name": "Francisco Lindor",
-      "team": "New York Mets",
-      "opp_team": "Baltimore Orioles",
-      "game_pk": 823575,
-      "position": "SS",
-      "batting_order": 1,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 10,
-      "confidence_score": 30,
-      "urgency_score": 0,
-      "evidence_count": 1,
-      "combined_priority": 7.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "0% historical non-start rate (n=10)",
-        "On a 40-game start streak",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "0% historical non-start rate (n=10)",
-          0
-        ],
-        [
-          "On a 40-game start streak",
-          10
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 665742,
-      "name": "Juan Soto",
-      "team": "New York Mets",
-      "opp_team": "Baltimore Orioles",
-      "game_pk": 823575,
-      "position": "LF",
-      "batting_order": 2,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 10,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 7.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "0% historical non-start rate (n=10)",
-        "On a 10-game start streak",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "0% historical non-start rate (n=10)",
-          0
-        ],
-        [
-          "On a 10-game start streak",
-          10
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
-      "player_id": 666182,
-      "name": "Bo Bichette",
-      "team": "New York Mets",
-      "opp_team": "Baltimore Orioles",
-      "game_pk": 823575,
-      "position": "3B",
-      "batting_order": 3,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 10,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 7.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "0% historical non-start rate (n=10)",
-        "On a 14-game start streak",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "0% historical non-start rate (n=10)",
-          0
-        ],
-        [
-          "On a 14-game start streak",
-          10
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
       "player_id": 701807,
       "name": "Carson Benge",
       "team": "New York Mets",
@@ -4865,7 +4758,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 30-game start streak",
+        "On a 31-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -4877,7 +4770,7 @@
           0
         ],
         [
-          "On a 30-game start streak",
+          "On a 31-game start streak",
           10
         ],
         [
@@ -4904,7 +4797,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 41-game start streak",
+        "On a 42-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -4916,7 +4809,7 @@
           0
         ],
         [
-          "On a 41-game start streak",
+          "On a 42-game start streak",
           10
         ],
         [
@@ -4977,7 +4870,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 42-game start streak",
+        "On a 43-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -4989,7 +4882,7 @@
           0
         ],
         [
-          "On a 42-game start streak",
+          "On a 43-game start streak",
           10
         ],
         [
@@ -5084,7 +4977,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 42-game start streak",
+        "On a 43-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -5096,7 +4989,7 @@
           0
         ],
         [
-          "On a 42-game start streak",
+          "On a 43-game start streak",
           10
         ],
         [
@@ -5123,7 +5016,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 27-game start streak",
+        "On a 28-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -5135,7 +5028,41 @@
           0
         ],
         [
-          "On a 27-game start streak",
+          "On a 28-game start streak",
+          10
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 699393,
+      "name": "Pedro Ram\u00edrez",
+      "team": "Chicago Cubs",
+      "opp_team": "Atlanta Braves",
+      "game_pk": 824629,
+      "position": "2B",
+      "batting_order": 8,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 10,
+      "confidence_score": 30,
+      "urgency_score": 0,
+      "evidence_count": 1,
+      "combined_priority": 7.0,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "10% historical non-start rate (n=10)",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "10% historical non-start rate (n=10)",
           10
         ],
         [
@@ -5162,7 +5089,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 15-game start streak",
+        "On a 16-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -5174,7 +5101,7 @@
           0
         ],
         [
-          "On a 15-game start streak",
+          "On a 16-game start streak",
           10
         ],
         [
@@ -5201,7 +5128,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 42-game start streak",
+        "On a 43-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -5213,7 +5140,46 @@
           0
         ],
         [
-          "On a 42-game start streak",
+          "On a 43-game start streak",
+          10
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 643289,
+      "name": "Mauricio Dub\u00f3n",
+      "team": "Atlanta Braves",
+      "opp_team": "Chicago Cubs",
+      "game_pk": 824629,
+      "position": "LF",
+      "batting_order": 5,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 10,
+      "confidence_score": 45,
+      "urgency_score": 0,
+      "evidence_count": 2,
+      "combined_priority": 7.0,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "0% historical non-start rate (n=10)",
+        "On a 10-game start streak",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "0% historical non-start rate (n=10)",
+          0
+        ],
+        [
+          "On a 10-game start streak",
           10
         ],
         [
@@ -5274,7 +5240,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 14-game start streak",
+        "On a 15-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -5286,7 +5252,7 @@
           0
         ],
         [
-          "On a 14-game start streak",
+          "On a 15-game start streak",
           10
         ],
         [
@@ -5313,7 +5279,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 33-game start streak",
+        "On a 34-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -5325,7 +5291,7 @@
           0
         ],
         [
-          "On a 33-game start streak",
+          "On a 34-game start streak",
           10
         ],
         [
@@ -5352,7 +5318,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 31-game start streak",
+        "On a 32-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -5364,7 +5330,7 @@
           0
         ],
         [
-          "On a 31-game start streak",
+          "On a 32-game start streak",
           10
         ],
         [
@@ -5391,7 +5357,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 24-game start streak",
+        "On a 25-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -5403,7 +5369,7 @@
           0
         ],
         [
-          "On a 24-game start streak",
+          "On a 25-game start streak",
           10
         ],
         [
@@ -5430,7 +5396,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 40-game start streak",
+        "On a 41-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -5442,7 +5408,7 @@
           0
         ],
         [
-          "On a 40-game start streak",
+          "On a 41-game start streak",
           10
         ],
         [
@@ -5503,7 +5469,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 12-game start streak",
+        "On a 13-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -5515,7 +5481,7 @@
           0
         ],
         [
-          "On a 12-game start streak",
+          "On a 13-game start streak",
           10
         ],
         [
@@ -5542,7 +5508,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 11-game start streak",
+        "On a 12-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -5554,7 +5520,7 @@
           0
         ],
         [
-          "On a 11-game start streak",
+          "On a 12-game start streak",
           10
         ],
         [
@@ -5581,7 +5547,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 41-game start streak",
+        "On a 42-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -5593,7 +5559,7 @@
           0
         ],
         [
-          "On a 41-game start streak",
+          "On a 42-game start streak",
           10
         ],
         [
@@ -5620,7 +5586,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 17-game start streak",
+        "On a 18-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -5632,7 +5598,7 @@
           0
         ],
         [
-          "On a 17-game start streak",
+          "On a 18-game start streak",
           10
         ],
         [
@@ -5659,7 +5625,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 31-game start streak",
+        "On a 32-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -5671,7 +5637,7 @@
           0
         ],
         [
-          "On a 31-game start streak",
+          "On a 32-game start streak",
           10
         ],
         [
@@ -5698,7 +5664,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 33-game start streak",
+        "On a 34-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -5710,7 +5676,7 @@
           0
         ],
         [
-          "On a 33-game start streak",
+          "On a 34-game start streak",
           10
         ],
         [
@@ -5737,7 +5703,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 40-game start streak",
+        "On a 41-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -5749,7 +5715,7 @@
           0
         ],
         [
-          "On a 40-game start streak",
+          "On a 41-game start streak",
           10
         ],
         [
@@ -5810,7 +5776,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 10-game start streak",
+        "On a 11-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -5822,7 +5788,7 @@
           0
         ],
         [
-          "On a 10-game start streak",
+          "On a 11-game start streak",
           10
         ],
         [
@@ -5883,7 +5849,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 26-game start streak",
+        "On a 27-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -5895,7 +5861,7 @@
           0
         ],
         [
-          "On a 26-game start streak",
+          "On a 27-game start streak",
           10
         ],
         [
@@ -5922,7 +5888,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 41-game start streak",
+        "On a 42-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -5934,7 +5900,7 @@
           0
         ],
         [
-          "On a 41-game start streak",
+          "On a 42-game start streak",
           10
         ],
         [
@@ -5951,6 +5917,79 @@
       "game_pk": 824308,
       "position": "SS",
       "batting_order": 6,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 10,
+      "confidence_score": 45,
+      "urgency_score": 0,
+      "evidence_count": 2,
+      "combined_priority": 7.0,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "0% historical non-start rate (n=10)",
+        "On a 13-game start streak",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "0% historical non-start rate (n=10)",
+          0
+        ],
+        [
+          "On a 13-game start streak",
+          10
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 630105,
+      "name": "Jake Cronenworth",
+      "team": "San Diego Padres",
+      "opp_team": "Colorado Rockies",
+      "game_pk": 824308,
+      "position": "2B",
+      "batting_order": 7,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 10,
+      "confidence_score": 45,
+      "urgency_score": 0,
+      "evidence_count": 2,
+      "combined_priority": 7.0,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "10% historical non-start rate (n=10)",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "10% historical non-start rate (n=10)",
+          10
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 687263,
+      "name": "Zach Neto",
+      "team": "Los Angeles Angels",
+      "opp_team": "Seattle Mariners",
+      "game_pk": 823981,
+      "position": "SS",
+      "batting_order": 1,
       "lineup_status": "projected",
       "tier": "Ignore",
       "dnp_score": 10,
@@ -5983,45 +6022,6 @@
       ]
     },
     {
-      "player_id": 687263,
-      "name": "Zach Neto",
-      "team": "Los Angeles Angels",
-      "opp_team": "Seattle Mariners",
-      "game_pk": 823981,
-      "position": "SS",
-      "batting_order": 1,
-      "lineup_status": "projected",
-      "tier": "Ignore",
-      "dnp_score": 10,
-      "confidence_score": 45,
-      "urgency_score": 0,
-      "evidence_count": 2,
-      "combined_priority": 7.0,
-      "projected_start_status": "not_yet_posted",
-      "top_reasons": [
-        "0% historical non-start rate (n=10)",
-        "On a 11-game start streak",
-        "No projected lineup source posted yet"
-      ],
-      "urgency_reasons": [
-        "Cross-book prop-removal timing not available yet"
-      ],
-      "contributions": [
-        [
-          "0% historical non-start rate (n=10)",
-          0
-        ],
-        [
-          "On a 11-game start streak",
-          10
-        ],
-        [
-          "No projected lineup source posted yet",
-          0
-        ]
-      ]
-    },
-    {
       "player_id": 545361,
       "name": "Mike Trout",
       "team": "Los Angeles Angels",
@@ -6039,7 +6039,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 40-game start streak",
+        "On a 41-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -6051,7 +6051,7 @@
           0
         ],
         [
-          "On a 40-game start streak",
+          "On a 41-game start streak",
           10
         ],
         [
@@ -6078,7 +6078,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 24-game start streak",
+        "On a 25-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -6090,7 +6090,7 @@
           0
         ],
         [
-          "On a 24-game start streak",
+          "On a 25-game start streak",
           10
         ],
         [
@@ -6117,7 +6117,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 19-game start streak",
+        "On a 20-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -6129,7 +6129,7 @@
           0
         ],
         [
-          "On a 19-game start streak",
+          "On a 20-game start streak",
           10
         ],
         [
@@ -6156,7 +6156,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 17-game start streak",
+        "On a 18-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -6168,7 +6168,7 @@
           0
         ],
         [
-          "On a 17-game start streak",
+          "On a 18-game start streak",
           10
         ],
         [
@@ -6195,7 +6195,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 41-game start streak",
+        "On a 42-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -6207,7 +6207,7 @@
           0
         ],
         [
-          "On a 41-game start streak",
+          "On a 42-game start streak",
           10
         ],
         [
@@ -6234,7 +6234,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 15-game start streak",
+        "On a 16-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -6246,7 +6246,7 @@
           0
         ],
         [
-          "On a 15-game start streak",
+          "On a 16-game start streak",
           10
         ],
         [
@@ -6273,7 +6273,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 41-game start streak",
+        "On a 42-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -6285,7 +6285,7 @@
           0
         ],
         [
-          "On a 41-game start streak",
+          "On a 42-game start streak",
           10
         ],
         [
@@ -6312,7 +6312,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 15-game start streak",
+        "On a 16-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -6324,7 +6324,7 @@
           0
         ],
         [
-          "On a 15-game start streak",
+          "On a 16-game start streak",
           10
         ],
         [
@@ -6385,7 +6385,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 27-game start streak",
+        "On a 28-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -6397,7 +6397,7 @@
           0
         ],
         [
-          "On a 27-game start streak",
+          "On a 28-game start streak",
           10
         ],
         [
@@ -6424,7 +6424,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 13-game start streak",
+        "On a 14-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -6436,7 +6436,7 @@
           0
         ],
         [
-          "On a 13-game start streak",
+          "On a 14-game start streak",
           10
         ],
         [
@@ -6463,7 +6463,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 27-game start streak",
+        "On a 28-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -6475,7 +6475,7 @@
           0
         ],
         [
-          "On a 27-game start streak",
+          "On a 28-game start streak",
           10
         ],
         [
@@ -6502,7 +6502,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 41-game start streak",
+        "On a 42-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -6514,7 +6514,41 @@
           0
         ],
         [
-          "On a 41-game start streak",
+          "On a 42-game start streak",
+          10
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 665052,
+      "name": "Griffin Conine",
+      "team": "Miami Marlins",
+      "opp_team": "Arizona Diamondbacks",
+      "game_pk": 825034,
+      "position": "RF",
+      "batting_order": 4,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 10,
+      "confidence_score": 45,
+      "urgency_score": 0,
+      "evidence_count": 2,
+      "combined_priority": 7.0,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "10% historical non-start rate (n=10)",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "10% historical non-start rate (n=10)",
           10
         ],
         [
@@ -6541,7 +6575,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 23-game start streak",
+        "On a 24-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -6553,7 +6587,7 @@
           0
         ],
         [
-          "On a 23-game start streak",
+          "On a 24-game start streak",
           10
         ],
         [
@@ -6580,7 +6614,7 @@
       "projected_start_status": "not_yet_posted",
       "top_reasons": [
         "0% historical non-start rate (n=10)",
-        "On a 20-game start streak",
+        "On a 21-game start streak",
         "No projected lineup source posted yet"
       ],
       "urgency_reasons": [
@@ -6592,8 +6626,43 @@
           0
         ],
         [
-          "On a 20-game start streak",
+          "On a 21-game start streak",
           10
+        ],
+        [
+          "No projected lineup source posted yet",
+          0
+        ]
+      ]
+    },
+    {
+      "player_id": 800543,
+      "name": "Josue De Paula",
+      "team": "Los Angeles Dodgers",
+      "opp_team": "Cincinnati Reds",
+      "game_pk": 824465,
+      "position": "RF",
+      "batting_order": 6,
+      "lineup_status": "projected",
+      "tier": "Ignore",
+      "dnp_score": 0,
+      "confidence_score": 24,
+      "urgency_score": 15,
+      "evidence_count": 2,
+      "combined_priority": 4.5,
+      "projected_start_status": "not_yet_posted",
+      "top_reasons": [
+        "0% historical non-start rate (n=3)",
+        "No projected lineup source posted yet"
+      ],
+      "urgency_reasons": [
+        "Lineup release expected in ~93 min",
+        "Cross-book prop-removal timing not available yet"
+      ],
+      "contributions": [
+        [
+          "0% historical non-start rate (n=3)",
+          0
         ],
         [
           "No projected lineup source posted yet",

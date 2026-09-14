@@ -152,12 +152,12 @@
       "hits": 1.04
     },
     "weather": {
-      "temp_f": 58.1,
-      "wind_speed_mph": 5.9,
-      "wind_direction": "NE",
+      "temp_f": 76.0,
+      "wind_speed_mph": 5.3,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 83,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -329,12 +329,12 @@
       "hits": 1.04
     },
     "weather": {
-      "temp_f": 58.1,
-      "wind_speed_mph": 5.9,
-      "wind_direction": "NE",
+      "temp_f": 76.0,
+      "wind_speed_mph": 5.3,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 83,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -506,12 +506,12 @@
       "hits": 1.04
     },
     "weather": {
-      "temp_f": 58.1,
-      "wind_speed_mph": 5.9,
-      "wind_direction": "NE",
+      "temp_f": 76.0,
+      "wind_speed_mph": 5.3,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 83,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -683,12 +683,12 @@
       "hits": 1.04
     },
     "weather": {
-      "temp_f": 58.1,
-      "wind_speed_mph": 5.9,
-      "wind_direction": "NE",
+      "temp_f": 76.0,
+      "wind_speed_mph": 5.3,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 83,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -860,12 +860,12 @@
       "hits": 1.04
     },
     "weather": {
-      "temp_f": 58.1,
-      "wind_speed_mph": 5.9,
-      "wind_direction": "NE",
+      "temp_f": 76.0,
+      "wind_speed_mph": 5.3,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 83,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -1037,12 +1037,12 @@
       "hits": 1.04
     },
     "weather": {
-      "temp_f": 58.1,
-      "wind_speed_mph": 5.9,
-      "wind_direction": "NE",
+      "temp_f": 76.0,
+      "wind_speed_mph": 5.3,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 83,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -1214,12 +1214,12 @@
       "hits": 1.04
     },
     "weather": {
-      "temp_f": 58.1,
-      "wind_speed_mph": 5.9,
-      "wind_direction": "NE",
+      "temp_f": 76.0,
+      "wind_speed_mph": 5.3,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 83,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -1391,12 +1391,12 @@
       "hits": 1.04
     },
     "weather": {
-      "temp_f": 58.1,
-      "wind_speed_mph": 5.9,
-      "wind_direction": "NE",
+      "temp_f": 76.0,
+      "wind_speed_mph": 5.3,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 83,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -1511,35 +1511,7 @@
       "ud_fpts_per_game": 7.74,
       "pp_fpts_per_game": 7.43
     },
-    "statcast": {
-      "avg_ev_7d": 83.3,
-      "ev_stdev_7d": 12.6,
-      "ev_floor_7d": 70.4,
-      "ev_ceiling_7d": 100.8,
-      "hard_hit_pct_7d": 26.3,
-      "barrel_pct_7d": 0.0,
-      "xwoba_7d": 0.221,
-      "doc_avg_ev_7d": 84.6,
-      "doc_pitches_7d": 25,
-      "avg_ev_14d": 83.6,
-      "ev_stdev_14d": 13.2,
-      "ev_floor_14d": 69.0,
-      "ev_ceiling_14d": 101.5,
-      "hard_hit_pct_14d": 25.7,
-      "barrel_pct_14d": 0.0,
-      "xwoba_14d": 0.225,
-      "doc_avg_ev_14d": 83.9,
-      "doc_pitches_14d": 53,
-      "avg_ev_30d": 83.4,
-      "ev_stdev_30d": 15.3,
-      "ev_floor_30d": 67.1,
-      "ev_ceiling_30d": 102.8,
-      "hard_hit_pct_30d": 25.8,
-      "barrel_pct_30d": 3.9,
-      "xwoba_30d": 0.278,
-      "doc_avg_ev_30d": 84.8,
-      "doc_pitches_30d": 79
-    },
+    "statcast": {},
     "fg_stats": {},
     "matchup": {
       "era": 2.84,
@@ -1568,12 +1540,12 @@
       "hits": 1.04
     },
     "weather": {
-      "temp_f": 58.1,
-      "wind_speed_mph": 5.9,
-      "wind_direction": "NE",
+      "temp_f": 76.0,
+      "wind_speed_mph": 5.3,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 83,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -1745,12 +1717,12 @@
       "hits": 1.04
     },
     "weather": {
-      "temp_f": 58.1,
-      "wind_speed_mph": 5.9,
-      "wind_direction": "NE",
+      "temp_f": 76.0,
+      "wind_speed_mph": 5.3,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 83,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -1922,12 +1894,12 @@
       "hits": 1.04
     },
     "weather": {
-      "temp_f": 58.1,
-      "wind_speed_mph": 5.9,
-      "wind_direction": "NE",
+      "temp_f": 76.0,
+      "wind_speed_mph": 5.3,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 83,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -2099,12 +2071,12 @@
       "hits": 1.04
     },
     "weather": {
-      "temp_f": 58.1,
-      "wind_speed_mph": 5.9,
-      "wind_direction": "NE",
+      "temp_f": 76.0,
+      "wind_speed_mph": 5.3,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 83,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -2276,12 +2248,12 @@
       "hits": 1.04
     },
     "weather": {
-      "temp_f": 58.1,
-      "wind_speed_mph": 5.9,
-      "wind_direction": "NE",
+      "temp_f": 76.0,
+      "wind_speed_mph": 5.3,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 83,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -2453,12 +2425,12 @@
       "hits": 1.04
     },
     "weather": {
-      "temp_f": 58.1,
-      "wind_speed_mph": 5.9,
-      "wind_direction": "NE",
+      "temp_f": 76.0,
+      "wind_speed_mph": 5.3,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 83,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -2623,12 +2595,12 @@
       "hits": 1.04
     },
     "weather": {
-      "temp_f": 58.1,
-      "wind_speed_mph": 5.9,
-      "wind_direction": "NE",
+      "temp_f": 76.0,
+      "wind_speed_mph": 5.3,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 83,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -2790,12 +2762,12 @@
       "hits": 1.04
     },
     "weather": {
-      "temp_f": 58.1,
-      "wind_speed_mph": 5.9,
-      "wind_direction": "NE",
+      "temp_f": 76.0,
+      "wind_speed_mph": 5.3,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 83,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -2967,12 +2939,12 @@
       "hits": 1.04
     },
     "weather": {
-      "temp_f": 58.1,
-      "wind_speed_mph": 5.9,
-      "wind_direction": "NE",
+      "temp_f": 76.0,
+      "wind_speed_mph": 5.3,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 83,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -3144,12 +3116,12 @@
       "hits": 1.04
     },
     "weather": {
-      "temp_f": 58.1,
-      "wind_speed_mph": 5.9,
-      "wind_direction": "NE",
+      "temp_f": 76.0,
+      "wind_speed_mph": 5.3,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 83,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -3321,12 +3293,12 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 59.8,
-      "wind_speed_mph": 10.4,
+      "temp_f": 68.9,
+      "wind_speed_mph": 4.5,
       "wind_direction": "NNE",
       "precip_probability": 0,
-      "humidity": 74,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -3441,35 +3413,7 @@
       "ud_fpts_per_game": 8.16,
       "pp_fpts_per_game": 7.58
     },
-    "statcast": {
-      "avg_ev_7d": 84.0,
-      "ev_stdev_7d": 14.9,
-      "ev_floor_7d": 69.2,
-      "ev_ceiling_7d": 104.7,
-      "hard_hit_pct_7d": 30.8,
-      "barrel_pct_7d": 3.8,
-      "xwoba_7d": 0.383,
-      "doc_avg_ev_7d": 89.5,
-      "doc_pitches_7d": 16,
-      "avg_ev_14d": 85.1,
-      "ev_stdev_14d": 14.0,
-      "ev_floor_14d": 67.3,
-      "ev_ceiling_14d": 102.1,
-      "hard_hit_pct_14d": 31.5,
-      "barrel_pct_14d": 3.7,
-      "xwoba_14d": 0.341,
-      "doc_avg_ev_14d": 87.9,
-      "doc_pitches_14d": 38,
-      "avg_ev_30d": 85.6,
-      "ev_stdev_30d": 12.8,
-      "ev_floor_30d": 69.1,
-      "ev_ceiling_30d": 100.9,
-      "hard_hit_pct_30d": 26.6,
-      "barrel_pct_30d": 1.8,
-      "xwoba_30d": 0.31,
-      "doc_avg_ev_30d": 86.9,
-      "doc_pitches_30d": 71
-    },
+    "statcast": {},
     "fg_stats": {},
     "matchup": {
       "era": 2.77,
@@ -3498,12 +3442,12 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 59.8,
-      "wind_speed_mph": 10.4,
+      "temp_f": 68.9,
+      "wind_speed_mph": 4.5,
       "wind_direction": "NNE",
       "precip_probability": 0,
-      "humidity": 74,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -3675,12 +3619,12 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 59.8,
-      "wind_speed_mph": 10.4,
+      "temp_f": 68.9,
+      "wind_speed_mph": 4.5,
       "wind_direction": "NNE",
       "precip_probability": 0,
-      "humidity": 74,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -3852,12 +3796,12 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 59.8,
-      "wind_speed_mph": 10.4,
+      "temp_f": 68.9,
+      "wind_speed_mph": 4.5,
       "wind_direction": "NNE",
       "precip_probability": 0,
-      "humidity": 74,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -4029,12 +3973,12 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 59.8,
-      "wind_speed_mph": 10.4,
+      "temp_f": 68.9,
+      "wind_speed_mph": 4.5,
       "wind_direction": "NNE",
       "precip_probability": 0,
-      "humidity": 74,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -4206,12 +4150,12 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 59.8,
-      "wind_speed_mph": 10.4,
+      "temp_f": 68.9,
+      "wind_speed_mph": 4.5,
       "wind_direction": "NNE",
       "precip_probability": 0,
-      "humidity": 74,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -4383,12 +4327,12 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 59.8,
-      "wind_speed_mph": 10.4,
+      "temp_f": 68.9,
+      "wind_speed_mph": 4.5,
       "wind_direction": "NNE",
       "precip_probability": 0,
-      "humidity": 74,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -4560,12 +4504,12 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 59.8,
-      "wind_speed_mph": 10.4,
+      "temp_f": 68.9,
+      "wind_speed_mph": 4.5,
       "wind_direction": "NNE",
       "precip_probability": 0,
-      "humidity": 74,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -4737,12 +4681,12 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 59.8,
-      "wind_speed_mph": 10.4,
+      "temp_f": 68.9,
+      "wind_speed_mph": 4.5,
       "wind_direction": "NNE",
       "precip_probability": 0,
-      "humidity": 74,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -4907,12 +4851,12 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 59.8,
-      "wind_speed_mph": 10.4,
+      "temp_f": 68.9,
+      "wind_speed_mph": 4.5,
       "wind_direction": "NNE",
       "precip_probability": 0,
-      "humidity": 74,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -5077,12 +5021,12 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 59.8,
-      "wind_speed_mph": 10.4,
+      "temp_f": 68.9,
+      "wind_speed_mph": 4.5,
       "wind_direction": "NNE",
       "precip_probability": 0,
-      "humidity": 74,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -5247,12 +5191,12 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 59.8,
-      "wind_speed_mph": 10.4,
+      "temp_f": 68.9,
+      "wind_speed_mph": 4.5,
       "wind_direction": "NNE",
       "precip_probability": 0,
-      "humidity": 74,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -5417,12 +5361,12 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 59.8,
-      "wind_speed_mph": 10.4,
+      "temp_f": 68.9,
+      "wind_speed_mph": 4.5,
       "wind_direction": "NNE",
       "precip_probability": 0,
-      "humidity": 74,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -5587,12 +5531,12 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 59.8,
-      "wind_speed_mph": 10.4,
+      "temp_f": 68.9,
+      "wind_speed_mph": 4.5,
       "wind_direction": "NNE",
       "precip_probability": 0,
-      "humidity": 74,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -5757,12 +5701,12 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 59.8,
-      "wind_speed_mph": 10.4,
+      "temp_f": 68.9,
+      "wind_speed_mph": 4.5,
       "wind_direction": "NNE",
       "precip_probability": 0,
-      "humidity": 74,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -5927,12 +5871,12 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 59.8,
-      "wind_speed_mph": 10.4,
+      "temp_f": 68.9,
+      "wind_speed_mph": 4.5,
       "wind_direction": "NNE",
       "precip_probability": 0,
-      "humidity": 74,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -6097,12 +6041,12 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 59.8,
-      "wind_speed_mph": 10.4,
+      "temp_f": 68.9,
+      "wind_speed_mph": 4.5,
       "wind_direction": "NNE",
       "precip_probability": 0,
-      "humidity": 74,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -6267,12 +6211,12 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 59.8,
-      "wind_speed_mph": 10.4,
+      "temp_f": 68.9,
+      "wind_speed_mph": 4.5,
       "wind_direction": "NNE",
       "precip_probability": 0,
-      "humidity": 74,
-      "condition": "scattered clouds",
+      "humidity": 49,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -6437,12 +6381,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 55,
-      "wind_speed_mph": 7.5,
-      "wind_direction": "NW",
+      "temp_f": 67.3,
+      "wind_speed_mph": 2.0,
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 85,
-      "condition": "clear sky",
+      "humidity": 55,
+      "condition": "few clouds",
       "is_indoor": true,
       "weather_available": true
     },
@@ -6607,12 +6551,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 55,
-      "wind_speed_mph": 7.5,
-      "wind_direction": "NW",
+      "temp_f": 67.3,
+      "wind_speed_mph": 2.0,
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 85,
-      "condition": "clear sky",
+      "humidity": 55,
+      "condition": "few clouds",
       "is_indoor": true,
       "weather_available": true
     },
@@ -6777,12 +6721,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 55,
-      "wind_speed_mph": 7.5,
-      "wind_direction": "NW",
+      "temp_f": 67.3,
+      "wind_speed_mph": 2.0,
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 85,
-      "condition": "clear sky",
+      "humidity": 55,
+      "condition": "few clouds",
       "is_indoor": true,
       "weather_available": true
     },
@@ -6947,12 +6891,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 55,
-      "wind_speed_mph": 7.5,
-      "wind_direction": "NW",
+      "temp_f": 67.3,
+      "wind_speed_mph": 2.0,
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 85,
-      "condition": "clear sky",
+      "humidity": 55,
+      "condition": "few clouds",
       "is_indoor": true,
       "weather_available": true
     },
@@ -7109,7 +7053,14 @@
     },
     "platoon": {
       "platoon_same_hand": true,
-      "advantage": null
+      "batter_woba": 0.232,
+      "batter_split_pa": 39,
+      "batter_split_label": "vs RHP",
+      "pitcher_woba_against": 0.228,
+      "pitcher_split_pa": 176,
+      "pitcher_split_label": "vs RHB",
+      "edge_woba": 0.004,
+      "advantage": "neutral"
     },
     "park_factor": {
       "hr": 1.05,
@@ -7117,12 +7068,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 55,
-      "wind_speed_mph": 7.5,
-      "wind_direction": "NW",
+      "temp_f": 67.3,
+      "wind_speed_mph": 2.0,
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 85,
-      "condition": "clear sky",
+      "humidity": 55,
+      "condition": "few clouds",
       "is_indoor": true,
       "weather_available": true
     },
@@ -7287,12 +7238,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 55,
-      "wind_speed_mph": 7.5,
-      "wind_direction": "NW",
+      "temp_f": 67.3,
+      "wind_speed_mph": 2.0,
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 85,
-      "condition": "clear sky",
+      "humidity": 55,
+      "condition": "few clouds",
       "is_indoor": true,
       "weather_available": true
     },
@@ -7457,12 +7408,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 55,
-      "wind_speed_mph": 7.5,
-      "wind_direction": "NW",
+      "temp_f": 67.3,
+      "wind_speed_mph": 2.0,
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 85,
-      "condition": "clear sky",
+      "humidity": 55,
+      "condition": "few clouds",
       "is_indoor": true,
       "weather_available": true
     },
@@ -7627,12 +7578,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 55,
-      "wind_speed_mph": 7.5,
-      "wind_direction": "NW",
+      "temp_f": 67.3,
+      "wind_speed_mph": 2.0,
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 85,
-      "condition": "clear sky",
+      "humidity": 55,
+      "condition": "few clouds",
       "is_indoor": true,
       "weather_available": true
     },
@@ -7797,12 +7748,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 55,
-      "wind_speed_mph": 7.5,
-      "wind_direction": "NW",
+      "temp_f": 67.3,
+      "wind_speed_mph": 2.0,
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 85,
-      "condition": "clear sky",
+      "humidity": 55,
+      "condition": "few clouds",
       "is_indoor": true,
       "weather_available": true
     },
@@ -7967,12 +7918,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 55,
-      "wind_speed_mph": 7.5,
-      "wind_direction": "NW",
+      "temp_f": 67.3,
+      "wind_speed_mph": 2.0,
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 85,
-      "condition": "clear sky",
+      "humidity": 55,
+      "condition": "few clouds",
       "is_indoor": true,
       "weather_available": true
     },
@@ -8137,12 +8088,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 55,
-      "wind_speed_mph": 7.5,
-      "wind_direction": "NW",
+      "temp_f": 67.3,
+      "wind_speed_mph": 2.0,
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 85,
-      "condition": "clear sky",
+      "humidity": 55,
+      "condition": "few clouds",
       "is_indoor": true,
       "weather_available": true
     },
@@ -8307,12 +8258,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 55,
-      "wind_speed_mph": 7.5,
-      "wind_direction": "NW",
+      "temp_f": 67.3,
+      "wind_speed_mph": 2.0,
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 85,
-      "condition": "clear sky",
+      "humidity": 55,
+      "condition": "few clouds",
       "is_indoor": true,
       "weather_available": true
     },
@@ -8477,12 +8428,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 55,
-      "wind_speed_mph": 7.5,
-      "wind_direction": "NW",
+      "temp_f": 67.3,
+      "wind_speed_mph": 2.0,
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 85,
-      "condition": "clear sky",
+      "humidity": 55,
+      "condition": "few clouds",
       "is_indoor": true,
       "weather_available": true
     },
@@ -8597,35 +8548,7 @@
       "ud_fpts_per_game": 3.61,
       "pp_fpts_per_game": 3.3
     },
-    "statcast": {
-      "avg_ev_7d": 85.6,
-      "ev_stdev_7d": 13.8,
-      "ev_floor_7d": 74.2,
-      "ev_ceiling_7d": 101.2,
-      "hard_hit_pct_7d": 21.4,
-      "barrel_pct_7d": 3.6,
-      "xwoba_7d": 0.214,
-      "doc_avg_ev_7d": 82.2,
-      "doc_pitches_7d": 17,
-      "avg_ev_14d": 86.7,
-      "ev_stdev_14d": 14.3,
-      "ev_floor_14d": 69.3,
-      "ev_ceiling_14d": 104.0,
-      "hard_hit_pct_14d": 32.8,
-      "barrel_pct_14d": 3.4,
-      "xwoba_14d": 0.214,
-      "doc_avg_ev_14d": 85.5,
-      "doc_pitches_14d": 35,
-      "avg_ev_30d": 84.2,
-      "ev_stdev_30d": 14.6,
-      "ev_floor_30d": 66.8,
-      "ev_ceiling_30d": 103.1,
-      "hard_hit_pct_30d": 29.3,
-      "barrel_pct_30d": 2.4,
-      "xwoba_30d": 0.233,
-      "doc_avg_ev_30d": 83.2,
-      "doc_pitches_30d": 76
-    },
+    "statcast": {},
     "fg_stats": {},
     "matchup": {
       "era": 3.48,
@@ -8647,12 +8570,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 55,
-      "wind_speed_mph": 7.5,
-      "wind_direction": "NW",
+      "temp_f": 67.3,
+      "wind_speed_mph": 2.0,
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 85,
-      "condition": "clear sky",
+      "humidity": 55,
+      "condition": "few clouds",
       "is_indoor": true,
       "weather_available": true
     },
@@ -8817,12 +8740,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 55,
-      "wind_speed_mph": 7.5,
-      "wind_direction": "NW",
+      "temp_f": 67.3,
+      "wind_speed_mph": 2.0,
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 85,
-      "condition": "clear sky",
+      "humidity": 55,
+      "condition": "few clouds",
       "is_indoor": true,
       "weather_available": true
     },
@@ -8987,12 +8910,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 55,
-      "wind_speed_mph": 7.5,
-      "wind_direction": "NW",
+      "temp_f": 67.3,
+      "wind_speed_mph": 2.0,
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 85,
-      "condition": "clear sky",
+      "humidity": 55,
+      "condition": "few clouds",
       "is_indoor": true,
       "weather_available": true
     },
@@ -9157,12 +9080,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 55,
-      "wind_speed_mph": 7.5,
-      "wind_direction": "NW",
+      "temp_f": 67.3,
+      "wind_speed_mph": 2.0,
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 85,
-      "condition": "clear sky",
+      "humidity": 55,
+      "condition": "few clouds",
       "is_indoor": true,
       "weather_available": true
     },
@@ -9327,12 +9250,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 55,
-      "wind_speed_mph": 7.5,
-      "wind_direction": "NW",
+      "temp_f": 67.3,
+      "wind_speed_mph": 2.0,
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 85,
-      "condition": "clear sky",
+      "humidity": 55,
+      "condition": "few clouds",
       "is_indoor": true,
       "weather_available": true
     },
@@ -9497,12 +9420,12 @@
       "hits": 0.97
     },
     "weather": {
-      "temp_f": 70.7,
+      "temp_f": 75.2,
       "wind_speed_mph": 13.3,
-      "wind_direction": "NNW",
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 66,
-      "condition": "scattered clouds",
+      "humidity": 40,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -9667,12 +9590,12 @@
       "hits": 0.97
     },
     "weather": {
-      "temp_f": 70.7,
+      "temp_f": 75.2,
       "wind_speed_mph": 13.3,
-      "wind_direction": "NNW",
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 66,
-      "condition": "scattered clouds",
+      "humidity": 40,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -9837,12 +9760,12 @@
       "hits": 0.97
     },
     "weather": {
-      "temp_f": 70.7,
+      "temp_f": 75.2,
       "wind_speed_mph": 13.3,
-      "wind_direction": "NNW",
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 66,
-      "condition": "scattered clouds",
+      "humidity": 40,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -10007,12 +9930,12 @@
       "hits": 0.97
     },
     "weather": {
-      "temp_f": 70.7,
+      "temp_f": 75.2,
       "wind_speed_mph": 13.3,
-      "wind_direction": "NNW",
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 66,
-      "condition": "scattered clouds",
+      "humidity": 40,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -10169,7 +10092,14 @@
     },
     "platoon": {
       "platoon_same_hand": false,
-      "advantage": null
+      "batter_woba": 0.343,
+      "batter_split_pa": 267,
+      "batter_split_label": "vs RHP",
+      "pitcher_woba_against": 0.304,
+      "pitcher_split_pa": 362,
+      "pitcher_split_label": "vs LHB",
+      "edge_woba": 0.039,
+      "advantage": "batter"
     },
     "park_factor": {
       "hr": 0.95,
@@ -10177,12 +10107,12 @@
       "hits": 0.97
     },
     "weather": {
-      "temp_f": 70.7,
+      "temp_f": 75.2,
       "wind_speed_mph": 13.3,
-      "wind_direction": "NNW",
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 66,
-      "condition": "scattered clouds",
+      "humidity": 40,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -10347,12 +10277,12 @@
       "hits": 0.97
     },
     "weather": {
-      "temp_f": 70.7,
+      "temp_f": 75.2,
       "wind_speed_mph": 13.3,
-      "wind_direction": "NNW",
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 66,
-      "condition": "scattered clouds",
+      "humidity": 40,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -10517,12 +10447,12 @@
       "hits": 0.97
     },
     "weather": {
-      "temp_f": 70.7,
+      "temp_f": 75.2,
       "wind_speed_mph": 13.3,
-      "wind_direction": "NNW",
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 66,
-      "condition": "scattered clouds",
+      "humidity": 40,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -10687,12 +10617,12 @@
       "hits": 0.97
     },
     "weather": {
-      "temp_f": 70.7,
+      "temp_f": 75.2,
       "wind_speed_mph": 13.3,
-      "wind_direction": "NNW",
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 66,
-      "condition": "scattered clouds",
+      "humidity": 40,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -10857,12 +10787,12 @@
       "hits": 0.97
     },
     "weather": {
-      "temp_f": 70.7,
+      "temp_f": 75.2,
       "wind_speed_mph": 13.3,
-      "wind_direction": "NNW",
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 66,
-      "condition": "scattered clouds",
+      "humidity": 40,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -11027,12 +10957,12 @@
       "hits": 0.97
     },
     "weather": {
-      "temp_f": 70.7,
+      "temp_f": 75.2,
       "wind_speed_mph": 13.3,
-      "wind_direction": "NNW",
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 66,
-      "condition": "scattered clouds",
+      "humidity": 40,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -11197,12 +11127,12 @@
       "hits": 0.97
     },
     "weather": {
-      "temp_f": 70.7,
+      "temp_f": 75.2,
       "wind_speed_mph": 13.3,
-      "wind_direction": "NNW",
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 66,
-      "condition": "scattered clouds",
+      "humidity": 40,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -11367,12 +11297,12 @@
       "hits": 0.97
     },
     "weather": {
-      "temp_f": 70.7,
+      "temp_f": 75.2,
       "wind_speed_mph": 13.3,
-      "wind_direction": "NNW",
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 66,
-      "condition": "scattered clouds",
+      "humidity": 40,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -11537,12 +11467,12 @@
       "hits": 0.97
     },
     "weather": {
-      "temp_f": 70.7,
+      "temp_f": 75.2,
       "wind_speed_mph": 13.3,
-      "wind_direction": "NNW",
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 66,
-      "condition": "scattered clouds",
+      "humidity": 40,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -11707,12 +11637,12 @@
       "hits": 0.97
     },
     "weather": {
-      "temp_f": 70.7,
+      "temp_f": 75.2,
       "wind_speed_mph": 13.3,
-      "wind_direction": "NNW",
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 66,
-      "condition": "scattered clouds",
+      "humidity": 40,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -11877,12 +11807,12 @@
       "hits": 0.97
     },
     "weather": {
-      "temp_f": 70.7,
+      "temp_f": 75.2,
       "wind_speed_mph": 13.3,
-      "wind_direction": "NNW",
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 66,
-      "condition": "scattered clouds",
+      "humidity": 40,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -12047,12 +11977,12 @@
       "hits": 0.97
     },
     "weather": {
-      "temp_f": 70.7,
+      "temp_f": 75.2,
       "wind_speed_mph": 13.3,
-      "wind_direction": "NNW",
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 66,
-      "condition": "scattered clouds",
+      "humidity": 40,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -12217,12 +12147,12 @@
       "hits": 0.97
     },
     "weather": {
-      "temp_f": 70.7,
+      "temp_f": 75.2,
       "wind_speed_mph": 13.3,
-      "wind_direction": "NNW",
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 66,
-      "condition": "scattered clouds",
+      "humidity": 40,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -12387,12 +12317,12 @@
       "hits": 0.97
     },
     "weather": {
-      "temp_f": 70.7,
+      "temp_f": 75.2,
       "wind_speed_mph": 13.3,
-      "wind_direction": "NNW",
+      "wind_direction": "N",
       "precip_probability": 0,
-      "humidity": 66,
-      "condition": "scattered clouds",
+      "humidity": 40,
+      "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
     },
@@ -12557,12 +12487,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 56.7,
-      "wind_speed_mph": 4.2,
-      "wind_direction": "N",
+      "temp_f": 69.2,
+      "wind_speed_mph": 12.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 78,
-      "condition": "clear sky",
+      "humidity": 49,
+      "condition": "few clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -12727,12 +12657,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 56.7,
-      "wind_speed_mph": 4.2,
-      "wind_direction": "N",
+      "temp_f": 69.2,
+      "wind_speed_mph": 12.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 78,
-      "condition": "clear sky",
+      "humidity": 49,
+      "condition": "few clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -12897,12 +12827,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 56.7,
-      "wind_speed_mph": 4.2,
-      "wind_direction": "N",
+      "temp_f": 69.2,
+      "wind_speed_mph": 12.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 78,
-      "condition": "clear sky",
+      "humidity": 49,
+      "condition": "few clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -13067,12 +12997,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 56.7,
-      "wind_speed_mph": 4.2,
-      "wind_direction": "N",
+      "temp_f": 69.2,
+      "wind_speed_mph": 12.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 78,
-      "condition": "clear sky",
+      "humidity": 49,
+      "condition": "few clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -13237,12 +13167,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 56.7,
-      "wind_speed_mph": 4.2,
-      "wind_direction": "N",
+      "temp_f": 69.2,
+      "wind_speed_mph": 12.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 78,
-      "condition": "clear sky",
+      "humidity": 49,
+      "condition": "few clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -13357,35 +13287,7 @@
       "ud_fpts_per_game": 5.96,
       "pp_fpts_per_game": 5.81
     },
-    "statcast": {
-      "avg_ev_7d": 79.7,
-      "ev_stdev_7d": 12.6,
-      "ev_floor_7d": 66.0,
-      "ev_ceiling_7d": 97.9,
-      "hard_hit_pct_7d": 14.0,
-      "barrel_pct_7d": 2.3,
-      "xwoba_7d": 0.329,
-      "doc_avg_ev_7d": 83.6,
-      "doc_pitches_7d": 22,
-      "avg_ev_14d": 80.1,
-      "ev_stdev_14d": 13.4,
-      "ev_floor_14d": 64.9,
-      "ev_ceiling_14d": 98.4,
-      "hard_hit_pct_14d": 20.2,
-      "barrel_pct_14d": 2.2,
-      "xwoba_14d": 0.326,
-      "doc_avg_ev_14d": 83.1,
-      "doc_pitches_14d": 51,
-      "avg_ev_30d": 80.8,
-      "ev_stdev_30d": 12.7,
-      "ev_floor_30d": 66.1,
-      "ev_ceiling_30d": 98.4,
-      "hard_hit_pct_30d": 17.6,
-      "barrel_pct_30d": 1.7,
-      "xwoba_30d": 0.321,
-      "doc_avg_ev_30d": 83.9,
-      "doc_pitches_30d": 104
-    },
+    "statcast": {},
     "fg_stats": {},
     "matchup": {
       "era": 4.13,
@@ -13407,12 +13309,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 56.7,
-      "wind_speed_mph": 4.2,
-      "wind_direction": "N",
+      "temp_f": 69.2,
+      "wind_speed_mph": 12.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 78,
-      "condition": "clear sky",
+      "humidity": 49,
+      "condition": "few clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -13577,12 +13479,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 56.7,
-      "wind_speed_mph": 4.2,
-      "wind_direction": "N",
+      "temp_f": 69.2,
+      "wind_speed_mph": 12.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 78,
-      "condition": "clear sky",
+      "humidity": 49,
+      "condition": "few clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -13747,12 +13649,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 56.7,
-      "wind_speed_mph": 4.2,
-      "wind_direction": "N",
+      "temp_f": 69.2,
+      "wind_speed_mph": 12.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 78,
-      "condition": "clear sky",
+      "humidity": 49,
+      "condition": "few clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -13917,12 +13819,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 56.7,
-      "wind_speed_mph": 4.2,
-      "wind_direction": "N",
+      "temp_f": 69.2,
+      "wind_speed_mph": 12.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 78,
-      "condition": "clear sky",
+      "humidity": 49,
+      "condition": "few clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -14087,12 +13989,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 56.7,
-      "wind_speed_mph": 4.2,
-      "wind_direction": "N",
+      "temp_f": 69.2,
+      "wind_speed_mph": 12.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 78,
-      "condition": "clear sky",
+      "humidity": 49,
+      "condition": "few clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -14257,12 +14159,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 56.7,
-      "wind_speed_mph": 4.2,
-      "wind_direction": "N",
+      "temp_f": 69.2,
+      "wind_speed_mph": 12.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 78,
-      "condition": "clear sky",
+      "humidity": 49,
+      "condition": "few clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -14427,12 +14329,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 56.7,
-      "wind_speed_mph": 4.2,
-      "wind_direction": "N",
+      "temp_f": 69.2,
+      "wind_speed_mph": 12.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 78,
-      "condition": "clear sky",
+      "humidity": 49,
+      "condition": "few clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -14597,12 +14499,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 56.7,
-      "wind_speed_mph": 4.2,
-      "wind_direction": "N",
+      "temp_f": 69.2,
+      "wind_speed_mph": 12.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 78,
-      "condition": "clear sky",
+      "humidity": 49,
+      "condition": "few clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -14767,12 +14669,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 56.7,
-      "wind_speed_mph": 4.2,
-      "wind_direction": "N",
+      "temp_f": 69.2,
+      "wind_speed_mph": 12.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 78,
-      "condition": "clear sky",
+      "humidity": 49,
+      "condition": "few clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -14937,12 +14839,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 56.7,
-      "wind_speed_mph": 4.2,
-      "wind_direction": "N",
+      "temp_f": 69.2,
+      "wind_speed_mph": 12.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 78,
-      "condition": "clear sky",
+      "humidity": 49,
+      "condition": "few clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -15057,35 +14959,7 @@
       "ud_fpts_per_game": 6.04,
       "pp_fpts_per_game": 5.67
     },
-    "statcast": {
-      "avg_ev_7d": 80.1,
-      "ev_stdev_7d": 13.9,
-      "ev_floor_7d": 59.8,
-      "ev_ceiling_7d": 97.0,
-      "hard_hit_pct_7d": 18.8,
-      "barrel_pct_7d": 3.1,
-      "xwoba_7d": 0.293,
-      "doc_avg_ev_7d": 85.1,
-      "doc_pitches_7d": 26,
-      "avg_ev_14d": 82.4,
-      "ev_stdev_14d": 13.1,
-      "ev_floor_14d": 68.9,
-      "ev_ceiling_14d": 98.1,
-      "hard_hit_pct_14d": 21.1,
-      "barrel_pct_14d": 5.6,
-      "xwoba_14d": 0.316,
-      "doc_avg_ev_14d": 85.1,
-      "doc_pitches_14d": 53,
-      "avg_ev_30d": 82.2,
-      "ev_stdev_30d": 16.0,
-      "ev_floor_30d": 68.4,
-      "ev_ceiling_30d": 101.2,
-      "hard_hit_pct_30d": 23.2,
-      "barrel_pct_30d": 4.2,
-      "xwoba_30d": 0.284,
-      "doc_avg_ev_30d": 85.3,
-      "doc_pitches_30d": 114
-    },
+    "statcast": {},
     "fg_stats": {},
     "matchup": {
       "era": 5.28,
@@ -15107,12 +14981,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 56.7,
-      "wind_speed_mph": 4.2,
-      "wind_direction": "N",
+      "temp_f": 69.2,
+      "wind_speed_mph": 12.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 78,
-      "condition": "clear sky",
+      "humidity": 49,
+      "condition": "few clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -15277,12 +15151,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 56.7,
-      "wind_speed_mph": 4.2,
-      "wind_direction": "N",
+      "temp_f": 69.2,
+      "wind_speed_mph": 12.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 78,
-      "condition": "clear sky",
+      "humidity": 49,
+      "condition": "few clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -15447,12 +15321,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 56.7,
-      "wind_speed_mph": 4.2,
-      "wind_direction": "N",
+      "temp_f": 69.2,
+      "wind_speed_mph": 12.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 78,
-      "condition": "clear sky",
+      "humidity": 49,
+      "condition": "few clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -15617,12 +15491,12 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 53.4,
-      "wind_speed_mph": 8.1,
-      "wind_direction": "SE",
-      "precip_probability": 0,
-      "humidity": 76,
-      "condition": "few clouds",
+      "temp_f": 58.8,
+      "wind_speed_mph": 16.1,
+      "wind_direction": "SSE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "heavy intensity rain",
       "is_indoor": false,
       "weather_available": true
     },
@@ -15787,12 +15661,12 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 53.4,
-      "wind_speed_mph": 8.1,
-      "wind_direction": "SE",
-      "precip_probability": 0,
-      "humidity": 76,
-      "condition": "few clouds",
+      "temp_f": 58.8,
+      "wind_speed_mph": 16.1,
+      "wind_direction": "SSE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "heavy intensity rain",
       "is_indoor": false,
       "weather_available": true
     },
@@ -15957,12 +15831,12 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 53.4,
-      "wind_speed_mph": 8.1,
-      "wind_direction": "SE",
-      "precip_probability": 0,
-      "humidity": 76,
-      "condition": "few clouds",
+      "temp_f": 58.8,
+      "wind_speed_mph": 16.1,
+      "wind_direction": "SSE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "heavy intensity rain",
       "is_indoor": false,
       "weather_available": true
     },
@@ -16077,35 +15951,7 @@
       "ud_fpts_per_game": 8.04,
       "pp_fpts_per_game": 7.3
     },
-    "statcast": {
-      "avg_ev_7d": 83.1,
-      "ev_stdev_7d": 13.0,
-      "ev_floor_7d": 68.0,
-      "ev_ceiling_7d": 99.8,
-      "hard_hit_pct_7d": 20.0,
-      "barrel_pct_7d": 5.0,
-      "xwoba_7d": 0.341,
-      "doc_avg_ev_7d": 86.8,
-      "doc_pitches_7d": 18,
-      "avg_ev_14d": 85.0,
-      "ev_stdev_14d": 14.7,
-      "ev_floor_14d": 64.0,
-      "ev_ceiling_14d": 103.6,
-      "hard_hit_pct_14d": 29.4,
-      "barrel_pct_14d": 7.8,
-      "xwoba_14d": 0.392,
-      "doc_avg_ev_14d": 89.5,
-      "doc_pitches_14d": 41,
-      "avg_ev_30d": 81.8,
-      "ev_stdev_30d": 18.0,
-      "ev_floor_30d": 62.0,
-      "ev_ceiling_30d": 104.1,
-      "hard_hit_pct_30d": 26.3,
-      "barrel_pct_30d": 6.8,
-      "xwoba_30d": 0.346,
-      "doc_avg_ev_30d": 85.0,
-      "doc_pitches_30d": 86
-    },
+    "statcast": {},
     "fg_stats": {},
     "matchup": {
       "era": 4.05,
@@ -16127,12 +15973,12 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 53.4,
-      "wind_speed_mph": 8.1,
-      "wind_direction": "SE",
-      "precip_probability": 0,
-      "humidity": 76,
-      "condition": "few clouds",
+      "temp_f": 58.8,
+      "wind_speed_mph": 16.1,
+      "wind_direction": "SSE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "heavy intensity rain",
       "is_indoor": false,
       "weather_available": true
     },
@@ -16297,12 +16143,12 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 53.4,
-      "wind_speed_mph": 8.1,
-      "wind_direction": "SE",
-      "precip_probability": 0,
-      "humidity": 76,
-      "condition": "few clouds",
+      "temp_f": 58.8,
+      "wind_speed_mph": 16.1,
+      "wind_direction": "SSE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "heavy intensity rain",
       "is_indoor": false,
       "weather_available": true
     },
@@ -16467,12 +16313,12 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 53.4,
-      "wind_speed_mph": 8.1,
-      "wind_direction": "SE",
-      "precip_probability": 0,
-      "humidity": 76,
-      "condition": "few clouds",
+      "temp_f": 58.8,
+      "wind_speed_mph": 16.1,
+      "wind_direction": "SSE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "heavy intensity rain",
       "is_indoor": false,
       "weather_available": true
     },
@@ -16637,12 +16483,12 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 53.4,
-      "wind_speed_mph": 8.1,
-      "wind_direction": "SE",
-      "precip_probability": 0,
-      "humidity": 76,
-      "condition": "few clouds",
+      "temp_f": 58.8,
+      "wind_speed_mph": 16.1,
+      "wind_direction": "SSE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "heavy intensity rain",
       "is_indoor": false,
       "weather_available": true
     },
@@ -16747,35 +16593,7 @@
       "ud_fpts_per_game": 4.86,
       "pp_fpts_per_game": 4.29
     },
-    "statcast": {
-      "avg_ev_7d": 82.0,
-      "ev_stdev_7d": 20.9,
-      "ev_floor_7d": 63.7,
-      "ev_ceiling_7d": 102.3,
-      "hard_hit_pct_7d": 30.0,
-      "barrel_pct_7d": 5.0,
-      "xwoba_7d": 0.281,
-      "doc_avg_ev_7d": 83.7,
-      "doc_pitches_7d": 25,
-      "avg_ev_14d": 80.3,
-      "ev_stdev_14d": 16.9,
-      "ev_floor_14d": 64.0,
-      "ev_ceiling_14d": 101.1,
-      "hard_hit_pct_14d": 22.7,
-      "barrel_pct_14d": 2.3,
-      "xwoba_14d": 0.244,
-      "doc_avg_ev_14d": 81.5,
-      "doc_pitches_14d": 43,
-      "avg_ev_30d": 80.2,
-      "ev_stdev_30d": 17.0,
-      "ev_floor_30d": 62.3,
-      "ev_ceiling_30d": 101.6,
-      "hard_hit_pct_30d": 23.6,
-      "barrel_pct_30d": 3.6,
-      "xwoba_30d": 0.255,
-      "doc_avg_ev_30d": 80.9,
-      "doc_pitches_30d": 50
-    },
+    "statcast": {},
     "fg_stats": {},
     "matchup": {
       "era": 4.05,
@@ -16797,12 +16615,12 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 53.4,
-      "wind_speed_mph": 8.1,
-      "wind_direction": "SE",
-      "precip_probability": 0,
-      "humidity": 76,
-      "condition": "few clouds",
+      "temp_f": 58.8,
+      "wind_speed_mph": 16.1,
+      "wind_direction": "SSE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "heavy intensity rain",
       "is_indoor": false,
       "weather_available": true
     },
@@ -16967,12 +16785,12 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 53.4,
-      "wind_speed_mph": 8.1,
-      "wind_direction": "SE",
-      "precip_probability": 0,
-      "humidity": 76,
-      "condition": "few clouds",
+      "temp_f": 58.8,
+      "wind_speed_mph": 16.1,
+      "wind_direction": "SSE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "heavy intensity rain",
       "is_indoor": false,
       "weather_available": true
     },
@@ -17137,12 +16955,12 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 53.4,
-      "wind_speed_mph": 8.1,
-      "wind_direction": "SE",
-      "precip_probability": 0,
-      "humidity": 76,
-      "condition": "few clouds",
+      "temp_f": 58.8,
+      "wind_speed_mph": 16.1,
+      "wind_direction": "SSE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "heavy intensity rain",
       "is_indoor": false,
       "weather_available": true
     },
@@ -17307,12 +17125,12 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 53.4,
-      "wind_speed_mph": 8.1,
-      "wind_direction": "SE",
-      "precip_probability": 0,
-      "humidity": 76,
-      "condition": "few clouds",
+      "temp_f": 58.8,
+      "wind_speed_mph": 16.1,
+      "wind_direction": "SSE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "heavy intensity rain",
       "is_indoor": false,
       "weather_available": true
     },
@@ -17477,12 +17295,12 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 53.4,
-      "wind_speed_mph": 8.1,
-      "wind_direction": "SE",
-      "precip_probability": 0,
-      "humidity": 76,
-      "condition": "few clouds",
+      "temp_f": 58.8,
+      "wind_speed_mph": 16.1,
+      "wind_direction": "SSE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "heavy intensity rain",
       "is_indoor": false,
       "weather_available": true
     },
@@ -17647,12 +17465,12 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 53.4,
-      "wind_speed_mph": 8.1,
-      "wind_direction": "SE",
-      "precip_probability": 0,
-      "humidity": 76,
-      "condition": "few clouds",
+      "temp_f": 58.8,
+      "wind_speed_mph": 16.1,
+      "wind_direction": "SSE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "heavy intensity rain",
       "is_indoor": false,
       "weather_available": true
     },
@@ -17767,35 +17585,7 @@
       "ud_fpts_per_game": 9.0,
       "pp_fpts_per_game": 8.67
     },
-    "statcast": {
-      "avg_ev_7d": 87.5,
-      "ev_stdev_7d": 14.1,
-      "ev_floor_7d": 71.3,
-      "ev_ceiling_7d": 107.8,
-      "hard_hit_pct_7d": 30.8,
-      "barrel_pct_7d": 3.8,
-      "xwoba_7d": 0.364,
-      "doc_avg_ev_7d": 88.9,
-      "doc_pitches_7d": 23,
-      "avg_ev_14d": 85.8,
-      "ev_stdev_14d": 14.5,
-      "ev_floor_14d": 70.9,
-      "ev_ceiling_14d": 106.0,
-      "hard_hit_pct_14d": 26.7,
-      "barrel_pct_14d": 6.7,
-      "xwoba_14d": 0.373,
-      "doc_avg_ev_14d": 89.1,
-      "doc_pitches_14d": 53,
-      "avg_ev_30d": 85.6,
-      "ev_stdev_30d": 14.7,
-      "ev_floor_30d": 70.9,
-      "ev_ceiling_30d": 106.5,
-      "hard_hit_pct_30d": 24.8,
-      "barrel_pct_30d": 6.2,
-      "xwoba_30d": 0.354,
-      "doc_avg_ev_30d": 89.9,
-      "doc_pitches_30d": 108
-    },
+    "statcast": {},
     "fg_stats": {},
     "matchup": {
       "era": 5.65,
@@ -17817,12 +17607,12 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 53.4,
-      "wind_speed_mph": 8.1,
-      "wind_direction": "SE",
-      "precip_probability": 0,
-      "humidity": 76,
-      "condition": "few clouds",
+      "temp_f": 58.8,
+      "wind_speed_mph": 16.1,
+      "wind_direction": "SSE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "heavy intensity rain",
       "is_indoor": false,
       "weather_available": true
     },
@@ -17987,12 +17777,12 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 53.4,
-      "wind_speed_mph": 8.1,
-      "wind_direction": "SE",
-      "precip_probability": 0,
-      "humidity": 76,
-      "condition": "few clouds",
+      "temp_f": 58.8,
+      "wind_speed_mph": 16.1,
+      "wind_direction": "SSE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "heavy intensity rain",
       "is_indoor": false,
       "weather_available": true
     },
@@ -18157,12 +17947,12 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 53.4,
-      "wind_speed_mph": 8.1,
-      "wind_direction": "SE",
-      "precip_probability": 0,
-      "humidity": 76,
-      "condition": "few clouds",
+      "temp_f": 58.8,
+      "wind_speed_mph": 16.1,
+      "wind_direction": "SSE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "heavy intensity rain",
       "is_indoor": false,
       "weather_available": true
     },
@@ -18327,12 +18117,12 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 53.4,
-      "wind_speed_mph": 8.1,
-      "wind_direction": "SE",
-      "precip_probability": 0,
-      "humidity": 76,
-      "condition": "few clouds",
+      "temp_f": 58.8,
+      "wind_speed_mph": 16.1,
+      "wind_direction": "SSE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "heavy intensity rain",
       "is_indoor": false,
       "weather_available": true
     },
@@ -18447,35 +18237,7 @@
       "ud_fpts_per_game": 3.88,
       "pp_fpts_per_game": 3.68
     },
-    "statcast": {
-      "avg_ev_7d": 74.5,
-      "ev_stdev_7d": 24.0,
-      "ev_floor_7d": 46.4,
-      "ev_ceiling_7d": 98.4,
-      "hard_hit_pct_7d": 16.7,
-      "barrel_pct_7d": 0.0,
-      "xwoba_7d": 0.279,
-      "doc_avg_ev_7d": null,
-      "doc_pitches_7d": 4,
-      "avg_ev_14d": 75.1,
-      "ev_stdev_14d": 15.7,
-      "ev_floor_14d": 52.1,
-      "ev_ceiling_14d": 89.9,
-      "hard_hit_pct_14d": 8.3,
-      "barrel_pct_14d": 0.0,
-      "xwoba_14d": 0.203,
-      "doc_avg_ev_14d": 80.7,
-      "doc_pitches_14d": 21,
-      "avg_ev_30d": 78.3,
-      "ev_stdev_30d": 16.6,
-      "ev_floor_30d": 59.5,
-      "ev_ceiling_30d": 99.3,
-      "hard_hit_pct_30d": 17.5,
-      "barrel_pct_30d": 2.5,
-      "xwoba_30d": 0.286,
-      "doc_avg_ev_30d": 82.1,
-      "doc_pitches_30d": 56
-    },
+    "statcast": {},
     "fg_stats": {},
     "matchup": {
       "era": 5.65,
@@ -18497,12 +18259,12 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 53.4,
-      "wind_speed_mph": 8.1,
-      "wind_direction": "SE",
-      "precip_probability": 0,
-      "humidity": 76,
-      "condition": "few clouds",
+      "temp_f": 58.8,
+      "wind_speed_mph": 16.1,
+      "wind_direction": "SSE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "heavy intensity rain",
       "is_indoor": false,
       "weather_available": true
     },
@@ -18667,12 +18429,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 63.1,
-      "wind_speed_mph": 7.9,
-      "wind_direction": "E",
+      "temp_f": 85.1,
+      "wind_speed_mph": 10.9,
+      "wind_direction": "SE",
       "precip_probability": 0,
-      "humidity": 75,
-      "condition": "clear sky",
+      "humidity": 44,
+      "condition": "scattered clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -18837,12 +18599,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 63.1,
-      "wind_speed_mph": 7.9,
-      "wind_direction": "E",
+      "temp_f": 85.1,
+      "wind_speed_mph": 10.9,
+      "wind_direction": "SE",
       "precip_probability": 0,
-      "humidity": 75,
-      "condition": "clear sky",
+      "humidity": 44,
+      "condition": "scattered clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -18851,7 +18613,7 @@
       "singles": 0.3109,
       "doubles": 0.0366,
       "triples": 0.0,
-      "hr": 0.0531,
+      "hr": 0.0558,
       "bb": 0.1175,
       "hbp": 0.0381,
       "rbi": 0.2917,
@@ -19007,12 +18769,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 63.1,
-      "wind_speed_mph": 7.9,
-      "wind_direction": "E",
+      "temp_f": 85.1,
+      "wind_speed_mph": 10.9,
+      "wind_direction": "SE",
       "precip_probability": 0,
-      "humidity": 75,
-      "condition": "clear sky",
+      "humidity": 44,
+      "condition": "scattered clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -19021,7 +18783,7 @@
       "singles": 0.2194,
       "doubles": 0.0823,
       "triples": 0.0,
-      "hr": 0.0399,
+      "hr": 0.0418,
       "bb": 0.1333,
       "hbp": 0.01,
       "rbi": 0.2917,
@@ -19177,12 +18939,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 63.1,
-      "wind_speed_mph": 7.9,
-      "wind_direction": "E",
+      "temp_f": 85.1,
+      "wind_speed_mph": 10.9,
+      "wind_direction": "SE",
       "precip_probability": 0,
-      "humidity": 75,
-      "condition": "clear sky",
+      "humidity": 44,
+      "condition": "scattered clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -19191,7 +18953,7 @@
       "singles": 0.1966,
       "doubles": 0.1051,
       "triples": 0.0,
-      "hr": 0.0399,
+      "hr": 0.0418,
       "bb": 0.0698,
       "hbp": 0.01,
       "rbi": 0.1131,
@@ -19347,12 +19109,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 63.1,
-      "wind_speed_mph": 7.9,
-      "wind_direction": "E",
+      "temp_f": 85.1,
+      "wind_speed_mph": 10.9,
+      "wind_direction": "SE",
       "precip_probability": 0,
-      "humidity": 75,
-      "condition": "clear sky",
+      "humidity": 44,
+      "condition": "scattered clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -19361,7 +19123,7 @@
       "singles": 0.288,
       "doubles": 0.0594,
       "triples": 0.0,
-      "hr": 0.0664,
+      "hr": 0.0698,
       "bb": 0.1016,
       "hbp": 0.01,
       "rbi": 0.4107,
@@ -19517,12 +19279,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 63.1,
-      "wind_speed_mph": 7.9,
-      "wind_direction": "E",
+      "temp_f": 85.1,
+      "wind_speed_mph": 10.9,
+      "wind_direction": "SE",
       "precip_probability": 0,
-      "humidity": 75,
-      "condition": "clear sky",
+      "humidity": 44,
+      "condition": "scattered clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -19531,7 +19293,7 @@
       "singles": 0.192,
       "doubles": 0.0411,
       "triples": 0.0,
-      "hr": 0.0425,
+      "hr": 0.0446,
       "bb": 0.0762,
       "hbp": 0.01,
       "rbi": 0.2024,
@@ -19687,12 +19449,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 63.1,
-      "wind_speed_mph": 7.9,
-      "wind_direction": "E",
+      "temp_f": 85.1,
+      "wind_speed_mph": 10.9,
+      "wind_direction": "SE",
       "precip_probability": 0,
-      "humidity": 75,
-      "condition": "clear sky",
+      "humidity": 44,
+      "condition": "scattered clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -19701,7 +19463,7 @@
       "singles": 0.288,
       "doubles": 0.0823,
       "triples": 0.0,
-      "hr": 0.0664,
+      "hr": 0.0698,
       "bb": 0.1175,
       "hbp": 0.01,
       "rbi": 0.2619,
@@ -19857,12 +19619,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 63.1,
-      "wind_speed_mph": 7.9,
-      "wind_direction": "E",
+      "temp_f": 85.1,
+      "wind_speed_mph": 10.9,
+      "wind_direction": "SE",
       "precip_probability": 0,
-      "humidity": 75,
-      "condition": "clear sky",
+      "humidity": 44,
+      "condition": "scattered clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -20027,12 +19789,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 63.1,
-      "wind_speed_mph": 7.9,
-      "wind_direction": "E",
+      "temp_f": 85.1,
+      "wind_speed_mph": 10.9,
+      "wind_direction": "SE",
       "precip_probability": 0,
-      "humidity": 75,
-      "condition": "clear sky",
+      "humidity": 44,
+      "condition": "scattered clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -20041,7 +19803,7 @@
       "singles": 0.1737,
       "doubles": 0.0823,
       "triples": 0.0,
-      "hr": 0.0399,
+      "hr": 0.0418,
       "bb": 0.0857,
       "hbp": 0.01,
       "rbi": 0.1726,
@@ -20197,12 +19959,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 63.1,
-      "wind_speed_mph": 7.9,
-      "wind_direction": "E",
+      "temp_f": 85.1,
+      "wind_speed_mph": 10.9,
+      "wind_direction": "SE",
       "precip_probability": 0,
-      "humidity": 75,
-      "condition": "clear sky",
+      "humidity": 44,
+      "condition": "scattered clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -20211,7 +19973,7 @@
       "singles": 0.1691,
       "doubles": 0.0423,
       "triples": 0.0,
-      "hr": 0.0437,
+      "hr": 0.0459,
       "bb": 0.0783,
       "hbp": 0.01,
       "rbi": 0.1,
@@ -20367,12 +20129,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 63.1,
-      "wind_speed_mph": 7.9,
-      "wind_direction": "E",
+      "temp_f": 85.1,
+      "wind_speed_mph": 10.9,
+      "wind_direction": "SE",
       "precip_probability": 0,
-      "humidity": 75,
-      "condition": "clear sky",
+      "humidity": 44,
+      "condition": "scattered clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -20537,12 +20299,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 63.1,
-      "wind_speed_mph": 7.9,
-      "wind_direction": "E",
+      "temp_f": 85.1,
+      "wind_speed_mph": 10.9,
+      "wind_direction": "SE",
       "precip_probability": 0,
-      "humidity": 75,
-      "condition": "clear sky",
+      "humidity": 44,
+      "condition": "scattered clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -20551,7 +20313,7 @@
       "singles": 0.3013,
       "doubles": 0.1127,
       "triples": 0.0,
-      "hr": 0.0399,
+      "hr": 0.0419,
       "bb": 0.1596,
       "hbp": 0.01,
       "rbi": 0.3632,
@@ -20707,12 +20469,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 63.1,
-      "wind_speed_mph": 7.9,
-      "wind_direction": "E",
+      "temp_f": 85.1,
+      "wind_speed_mph": 10.9,
+      "wind_direction": "SE",
       "precip_probability": 0,
-      "humidity": 75,
-      "condition": "clear sky",
+      "humidity": 44,
+      "condition": "scattered clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -20721,7 +20483,7 @@
       "singles": 0.3447,
       "doubles": 0.0358,
       "triples": 0.0,
-      "hr": 0.0399,
+      "hr": 0.0419,
       "bb": 0.0843,
       "hbp": 0.01,
       "rbi": 0.1374,
@@ -20877,12 +20639,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 63.1,
-      "wind_speed_mph": 7.9,
-      "wind_direction": "E",
+      "temp_f": 85.1,
+      "wind_speed_mph": 10.9,
+      "wind_direction": "SE",
       "precip_probability": 0,
-      "humidity": 75,
-      "condition": "clear sky",
+      "humidity": 44,
+      "condition": "scattered clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -21037,12 +20799,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 63.1,
-      "wind_speed_mph": 7.9,
-      "wind_direction": "E",
+      "temp_f": 85.1,
+      "wind_speed_mph": 10.9,
+      "wind_direction": "SE",
       "precip_probability": 0,
-      "humidity": 75,
-      "condition": "clear sky",
+      "humidity": 44,
+      "condition": "scattered clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -21051,7 +20813,7 @@
       "singles": 0.2363,
       "doubles": 0.0574,
       "triples": 0.0,
-      "hr": 0.0399,
+      "hr": 0.0419,
       "bb": 0.0693,
       "hbp": 0.01,
       "rbi": 0.1091,
@@ -21207,12 +20969,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 63.1,
-      "wind_speed_mph": 7.9,
-      "wind_direction": "E",
+      "temp_f": 85.1,
+      "wind_speed_mph": 10.9,
+      "wind_direction": "SE",
       "precip_probability": 0,
-      "humidity": 75,
-      "condition": "clear sky",
+      "humidity": 44,
+      "condition": "scattered clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -21221,7 +20983,7 @@
       "singles": 0.15,
       "doubles": 0.0767,
       "triples": 0.0,
-      "hr": 0.0455,
+      "hr": 0.0478,
       "bb": 0.0609,
       "hbp": 0.01,
       "rbi": 0.106,
@@ -21377,12 +21139,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 63.1,
-      "wind_speed_mph": 7.9,
-      "wind_direction": "E",
+      "temp_f": 85.1,
+      "wind_speed_mph": 10.9,
+      "wind_direction": "SE",
       "precip_probability": 0,
-      "humidity": 75,
-      "condition": "clear sky",
+      "humidity": 44,
+      "condition": "scattered clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -21537,12 +21299,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 63.1,
-      "wind_speed_mph": 7.9,
-      "wind_direction": "E",
+      "temp_f": 85.1,
+      "wind_speed_mph": 10.9,
+      "wind_direction": "SE",
       "precip_probability": 0,
-      "humidity": 75,
-      "condition": "clear sky",
+      "humidity": 44,
+      "condition": "scattered clouds",
       "is_indoor": false,
       "weather_available": true
     },
@@ -21551,7 +21313,7 @@
       "singles": 0.323,
       "doubles": 0.03,
       "triples": 0.0,
-      "hr": 0.0651,
+      "hr": 0.0684,
       "bb": 0.0994,
       "hbp": 0.01,
       "rbi": 0.1938,
@@ -21707,11 +21469,11 @@
       "hits": 1.12
     },
     "weather": {
-      "temp_f": 70.4,
-      "wind_speed_mph": 0.4,
-      "wind_direction": "WSW",
+      "temp_f": 81.2,
+      "wind_speed_mph": 9.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 55,
+      "humidity": 34,
       "condition": "overcast clouds",
       "is_indoor": false,
       "weather_available": true
@@ -21877,11 +21639,11 @@
       "hits": 1.12
     },
     "weather": {
-      "temp_f": 70.4,
-      "wind_speed_mph": 0.4,
-      "wind_direction": "WSW",
+      "temp_f": 81.2,
+      "wind_speed_mph": 9.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 55,
+      "humidity": 34,
       "condition": "overcast clouds",
       "is_indoor": false,
       "weather_available": true
@@ -22047,11 +21809,11 @@
       "hits": 1.12
     },
     "weather": {
-      "temp_f": 70.4,
-      "wind_speed_mph": 0.4,
-      "wind_direction": "WSW",
+      "temp_f": 81.2,
+      "wind_speed_mph": 9.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 55,
+      "humidity": 34,
       "condition": "overcast clouds",
       "is_indoor": false,
       "weather_available": true
@@ -22217,11 +21979,11 @@
       "hits": 1.12
     },
     "weather": {
-      "temp_f": 70.4,
-      "wind_speed_mph": 0.4,
-      "wind_direction": "WSW",
+      "temp_f": 81.2,
+      "wind_speed_mph": 9.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 55,
+      "humidity": 34,
       "condition": "overcast clouds",
       "is_indoor": false,
       "weather_available": true
@@ -22387,11 +22149,11 @@
       "hits": 1.12
     },
     "weather": {
-      "temp_f": 70.4,
-      "wind_speed_mph": 0.4,
-      "wind_direction": "WSW",
+      "temp_f": 81.2,
+      "wind_speed_mph": 9.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 55,
+      "humidity": 34,
       "condition": "overcast clouds",
       "is_indoor": false,
       "weather_available": true
@@ -22557,11 +22319,11 @@
       "hits": 1.12
     },
     "weather": {
-      "temp_f": 70.4,
-      "wind_speed_mph": 0.4,
-      "wind_direction": "WSW",
+      "temp_f": 81.2,
+      "wind_speed_mph": 9.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 55,
+      "humidity": 34,
       "condition": "overcast clouds",
       "is_indoor": false,
       "weather_available": true
@@ -22727,11 +22489,11 @@
       "hits": 1.12
     },
     "weather": {
-      "temp_f": 70.4,
-      "wind_speed_mph": 0.4,
-      "wind_direction": "WSW",
+      "temp_f": 81.2,
+      "wind_speed_mph": 9.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 55,
+      "humidity": 34,
       "condition": "overcast clouds",
       "is_indoor": false,
       "weather_available": true
@@ -22887,11 +22649,11 @@
       "hits": 1.12
     },
     "weather": {
-      "temp_f": 70.4,
-      "wind_speed_mph": 0.4,
-      "wind_direction": "WSW",
+      "temp_f": 81.2,
+      "wind_speed_mph": 9.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 55,
+      "humidity": 34,
       "condition": "overcast clouds",
       "is_indoor": false,
       "weather_available": true
@@ -23057,11 +22819,11 @@
       "hits": 1.12
     },
     "weather": {
-      "temp_f": 70.4,
-      "wind_speed_mph": 0.4,
-      "wind_direction": "WSW",
+      "temp_f": 81.2,
+      "wind_speed_mph": 9.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 55,
+      "humidity": 34,
       "condition": "overcast clouds",
       "is_indoor": false,
       "weather_available": true
@@ -23227,11 +22989,11 @@
       "hits": 1.12
     },
     "weather": {
-      "temp_f": 70.4,
-      "wind_speed_mph": 0.4,
-      "wind_direction": "WSW",
+      "temp_f": 81.2,
+      "wind_speed_mph": 9.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 55,
+      "humidity": 34,
       "condition": "overcast clouds",
       "is_indoor": false,
       "weather_available": true
@@ -23397,11 +23159,11 @@
       "hits": 1.12
     },
     "weather": {
-      "temp_f": 70.4,
-      "wind_speed_mph": 0.4,
-      "wind_direction": "WSW",
+      "temp_f": 81.2,
+      "wind_speed_mph": 9.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 55,
+      "humidity": 34,
       "condition": "overcast clouds",
       "is_indoor": false,
       "weather_available": true
@@ -23559,7 +23321,14 @@
     },
     "platoon": {
       "platoon_same_hand": true,
-      "advantage": null
+      "batter_woba": 0.31,
+      "batter_split_pa": 467,
+      "batter_split_label": "vs RHP",
+      "pitcher_woba_against": 0.332,
+      "pitcher_split_pa": 259,
+      "pitcher_split_label": "vs RHB",
+      "edge_woba": -0.022,
+      "advantage": "pitcher"
     },
     "park_factor": {
       "hr": 1.2,
@@ -23567,11 +23336,11 @@
       "hits": 1.12
     },
     "weather": {
-      "temp_f": 70.4,
-      "wind_speed_mph": 0.4,
-      "wind_direction": "WSW",
+      "temp_f": 81.2,
+      "wind_speed_mph": 9.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 55,
+      "humidity": 34,
       "condition": "overcast clouds",
       "is_indoor": false,
       "weather_available": true
@@ -23737,11 +23506,11 @@
       "hits": 1.12
     },
     "weather": {
-      "temp_f": 70.4,
-      "wind_speed_mph": 0.4,
-      "wind_direction": "WSW",
+      "temp_f": 81.2,
+      "wind_speed_mph": 9.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 55,
+      "humidity": 34,
       "condition": "overcast clouds",
       "is_indoor": false,
       "weather_available": true
@@ -23907,11 +23676,11 @@
       "hits": 1.12
     },
     "weather": {
-      "temp_f": 70.4,
-      "wind_speed_mph": 0.4,
-      "wind_direction": "WSW",
+      "temp_f": 81.2,
+      "wind_speed_mph": 9.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 55,
+      "humidity": 34,
       "condition": "overcast clouds",
       "is_indoor": false,
       "weather_available": true
@@ -24077,11 +23846,11 @@
       "hits": 1.12
     },
     "weather": {
-      "temp_f": 70.4,
-      "wind_speed_mph": 0.4,
-      "wind_direction": "WSW",
+      "temp_f": 81.2,
+      "wind_speed_mph": 9.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 55,
+      "humidity": 34,
       "condition": "overcast clouds",
       "is_indoor": false,
       "weather_available": true
@@ -24247,11 +24016,11 @@
       "hits": 1.12
     },
     "weather": {
-      "temp_f": 70.4,
-      "wind_speed_mph": 0.4,
-      "wind_direction": "WSW",
+      "temp_f": 81.2,
+      "wind_speed_mph": 9.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 55,
+      "humidity": 34,
       "condition": "overcast clouds",
       "is_indoor": false,
       "weather_available": true
@@ -24417,11 +24186,11 @@
       "hits": 1.12
     },
     "weather": {
-      "temp_f": 70.4,
-      "wind_speed_mph": 0.4,
-      "wind_direction": "WSW",
+      "temp_f": 81.2,
+      "wind_speed_mph": 9.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 55,
+      "humidity": 34,
       "condition": "overcast clouds",
       "is_indoor": false,
       "weather_available": true
@@ -24587,11 +24356,11 @@
       "hits": 1.12
     },
     "weather": {
-      "temp_f": 70.4,
-      "wind_speed_mph": 0.4,
-      "wind_direction": "WSW",
+      "temp_f": 81.2,
+      "wind_speed_mph": 9.7,
+      "wind_direction": "ESE",
       "precip_probability": 0,
-      "humidity": 55,
+      "humidity": 34,
       "condition": "overcast clouds",
       "is_indoor": false,
       "weather_available": true
@@ -24757,11 +24526,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 69.2,
-      "wind_speed_mph": 5.0,
-      "wind_direction": "SSE",
+      "temp_f": 80.0,
+      "wind_speed_mph": 11.7,
+      "wind_direction": "SSW",
       "precip_probability": 0,
-      "humidity": 83,
+      "humidity": 62,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -24927,11 +24696,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 69.2,
-      "wind_speed_mph": 5.0,
-      "wind_direction": "SSE",
+      "temp_f": 80.0,
+      "wind_speed_mph": 11.7,
+      "wind_direction": "SSW",
       "precip_probability": 0,
-      "humidity": 83,
+      "humidity": 62,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -25097,11 +24866,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 69.2,
-      "wind_speed_mph": 5.0,
-      "wind_direction": "SSE",
+      "temp_f": 80.0,
+      "wind_speed_mph": 11.7,
+      "wind_direction": "SSW",
       "precip_probability": 0,
-      "humidity": 83,
+      "humidity": 62,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -25259,7 +25028,14 @@
     },
     "platoon": {
       "platoon_same_hand": false,
-      "advantage": null
+      "batter_woba": 0.292,
+      "batter_split_pa": 160,
+      "batter_split_label": "vs LHP",
+      "pitcher_woba_against": 0.297,
+      "pitcher_split_pa": 67,
+      "pitcher_split_label": "vs RHB",
+      "edge_woba": -0.005,
+      "advantage": "neutral"
     },
     "park_factor": {
       "hr": 1.02,
@@ -25267,11 +25043,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 69.2,
-      "wind_speed_mph": 5.0,
-      "wind_direction": "SSE",
+      "temp_f": 80.0,
+      "wind_speed_mph": 11.7,
+      "wind_direction": "SSW",
       "precip_probability": 0,
-      "humidity": 83,
+      "humidity": 62,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -25437,11 +25213,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 69.2,
-      "wind_speed_mph": 5.0,
-      "wind_direction": "SSE",
+      "temp_f": 80.0,
+      "wind_speed_mph": 11.7,
+      "wind_direction": "SSW",
       "precip_probability": 0,
-      "humidity": 83,
+      "humidity": 62,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -25607,11 +25383,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 69.2,
-      "wind_speed_mph": 5.0,
-      "wind_direction": "SSE",
+      "temp_f": 80.0,
+      "wind_speed_mph": 11.7,
+      "wind_direction": "SSW",
       "precip_probability": 0,
-      "humidity": 83,
+      "humidity": 62,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -25777,11 +25553,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 69.2,
-      "wind_speed_mph": 5.0,
-      "wind_direction": "SSE",
+      "temp_f": 80.0,
+      "wind_speed_mph": 11.7,
+      "wind_direction": "SSW",
       "precip_probability": 0,
-      "humidity": 83,
+      "humidity": 62,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -25947,11 +25723,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 69.2,
-      "wind_speed_mph": 5.0,
-      "wind_direction": "SSE",
+      "temp_f": 80.0,
+      "wind_speed_mph": 11.7,
+      "wind_direction": "SSW",
       "precip_probability": 0,
-      "humidity": 83,
+      "humidity": 62,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -26117,11 +25893,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 69.2,
-      "wind_speed_mph": 5.0,
-      "wind_direction": "SSE",
+      "temp_f": 80.0,
+      "wind_speed_mph": 11.7,
+      "wind_direction": "SSW",
       "precip_probability": 0,
-      "humidity": 83,
+      "humidity": 62,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -26287,11 +26063,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 69.2,
-      "wind_speed_mph": 5.0,
-      "wind_direction": "SSE",
+      "temp_f": 80.0,
+      "wind_speed_mph": 11.7,
+      "wind_direction": "SSW",
       "precip_probability": 0,
-      "humidity": 83,
+      "humidity": 62,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -26457,11 +26233,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 69.2,
-      "wind_speed_mph": 5.0,
-      "wind_direction": "SSE",
+      "temp_f": 80.0,
+      "wind_speed_mph": 11.7,
+      "wind_direction": "SSW",
       "precip_probability": 0,
-      "humidity": 83,
+      "humidity": 62,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -26627,11 +26403,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 69.2,
-      "wind_speed_mph": 5.0,
-      "wind_direction": "SSE",
+      "temp_f": 80.0,
+      "wind_speed_mph": 11.7,
+      "wind_direction": "SSW",
       "precip_probability": 0,
-      "humidity": 83,
+      "humidity": 62,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -26797,11 +26573,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 69.2,
-      "wind_speed_mph": 5.0,
-      "wind_direction": "SSE",
+      "temp_f": 80.0,
+      "wind_speed_mph": 11.7,
+      "wind_direction": "SSW",
       "precip_probability": 0,
-      "humidity": 83,
+      "humidity": 62,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -26967,11 +26743,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 69.2,
-      "wind_speed_mph": 5.0,
-      "wind_direction": "SSE",
+      "temp_f": 80.0,
+      "wind_speed_mph": 11.7,
+      "wind_direction": "SSW",
       "precip_probability": 0,
-      "humidity": 83,
+      "humidity": 62,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -27137,11 +26913,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 69.2,
-      "wind_speed_mph": 5.0,
-      "wind_direction": "SSE",
+      "temp_f": 80.0,
+      "wind_speed_mph": 11.7,
+      "wind_direction": "SSW",
       "precip_probability": 0,
-      "humidity": 83,
+      "humidity": 62,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -27307,11 +27083,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 69.2,
-      "wind_speed_mph": 5.0,
-      "wind_direction": "SSE",
+      "temp_f": 80.0,
+      "wind_speed_mph": 11.7,
+      "wind_direction": "SSW",
       "precip_probability": 0,
-      "humidity": 83,
+      "humidity": 62,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -27467,11 +27243,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 69.2,
-      "wind_speed_mph": 5.0,
-      "wind_direction": "SSE",
+      "temp_f": 80.0,
+      "wind_speed_mph": 11.7,
+      "wind_direction": "SSW",
       "precip_probability": 0,
-      "humidity": 83,
+      "humidity": 62,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -27587,35 +27363,7 @@
       "ud_fpts_per_game": 6.71,
       "pp_fpts_per_game": 6.14
     },
-    "statcast": {
-      "avg_ev_7d": 79.4,
-      "ev_stdev_7d": 11.9,
-      "ev_floor_7d": 68.9,
-      "ev_ceiling_7d": 93.4,
-      "hard_hit_pct_7d": 16.7,
-      "barrel_pct_7d": 0.0,
-      "xwoba_7d": 0.479,
-      "doc_avg_ev_7d": 68.0,
-      "doc_pitches_7d": 4,
-      "avg_ev_14d": 86.6,
-      "ev_stdev_14d": 12.4,
-      "ev_floor_14d": 70.0,
-      "ev_ceiling_14d": 101.2,
-      "hard_hit_pct_14d": 37.5,
-      "barrel_pct_14d": 0.0,
-      "xwoba_14d": 0.415,
-      "doc_avg_ev_14d": 80.9,
-      "doc_pitches_14d": 10,
-      "avg_ev_30d": 86.8,
-      "ev_stdev_30d": 13.1,
-      "ev_floor_30d": 69.8,
-      "ev_ceiling_30d": 102.1,
-      "hard_hit_pct_30d": 38.1,
-      "barrel_pct_30d": 0.0,
-      "xwoba_30d": 0.414,
-      "doc_avg_ev_30d": 80.9,
-      "doc_pitches_30d": 16
-    },
+    "statcast": {},
     "fg_stats": {},
     "matchup": {
       "era": 3.32,
@@ -27637,11 +27385,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 69.2,
-      "wind_speed_mph": 5.0,
-      "wind_direction": "SSE",
+      "temp_f": 80.0,
+      "wind_speed_mph": 11.7,
+      "wind_direction": "SSW",
       "precip_probability": 0,
-      "humidity": 83,
+      "humidity": 62,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -27807,12 +27555,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 89.7,
-      "wind_speed_mph": 2.4,
-      "wind_direction": "WSW",
-      "precip_probability": 87,
-      "humidity": 47,
-      "condition": "light rain",
+      "temp_f": 101.0,
+      "wind_speed_mph": 1.7,
+      "wind_direction": "S",
+      "precip_probability": 0,
+      "humidity": 31,
+      "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
     },
@@ -27977,12 +27725,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 89.7,
-      "wind_speed_mph": 2.4,
-      "wind_direction": "WSW",
-      "precip_probability": 87,
-      "humidity": 47,
-      "condition": "light rain",
+      "temp_f": 101.0,
+      "wind_speed_mph": 1.7,
+      "wind_direction": "S",
+      "precip_probability": 0,
+      "humidity": 31,
+      "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
     },
@@ -28147,12 +27895,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 89.7,
-      "wind_speed_mph": 2.4,
-      "wind_direction": "WSW",
-      "precip_probability": 87,
-      "humidity": 47,
-      "condition": "light rain",
+      "temp_f": 101.0,
+      "wind_speed_mph": 1.7,
+      "wind_direction": "S",
+      "precip_probability": 0,
+      "humidity": 31,
+      "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
     },
@@ -28317,12 +28065,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 89.7,
-      "wind_speed_mph": 2.4,
-      "wind_direction": "WSW",
-      "precip_probability": 87,
-      "humidity": 47,
-      "condition": "light rain",
+      "temp_f": 101.0,
+      "wind_speed_mph": 1.7,
+      "wind_direction": "S",
+      "precip_probability": 0,
+      "humidity": 31,
+      "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
     },
@@ -28487,12 +28235,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 89.7,
-      "wind_speed_mph": 2.4,
-      "wind_direction": "WSW",
-      "precip_probability": 87,
-      "humidity": 47,
-      "condition": "light rain",
+      "temp_f": 101.0,
+      "wind_speed_mph": 1.7,
+      "wind_direction": "S",
+      "precip_probability": 0,
+      "humidity": 31,
+      "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
     },
@@ -28657,12 +28405,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 89.7,
-      "wind_speed_mph": 2.4,
-      "wind_direction": "WSW",
-      "precip_probability": 87,
-      "humidity": 47,
-      "condition": "light rain",
+      "temp_f": 101.0,
+      "wind_speed_mph": 1.7,
+      "wind_direction": "S",
+      "precip_probability": 0,
+      "humidity": 31,
+      "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
     },
@@ -28827,12 +28575,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 89.7,
-      "wind_speed_mph": 2.4,
-      "wind_direction": "WSW",
-      "precip_probability": 87,
-      "humidity": 47,
-      "condition": "light rain",
+      "temp_f": 101.0,
+      "wind_speed_mph": 1.7,
+      "wind_direction": "S",
+      "precip_probability": 0,
+      "humidity": 31,
+      "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
     },
@@ -28997,12 +28745,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 89.7,
-      "wind_speed_mph": 2.4,
-      "wind_direction": "WSW",
-      "precip_probability": 87,
-      "humidity": 47,
-      "condition": "light rain",
+      "temp_f": 101.0,
+      "wind_speed_mph": 1.7,
+      "wind_direction": "S",
+      "precip_probability": 0,
+      "humidity": 31,
+      "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
     },
@@ -29167,12 +28915,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 89.7,
-      "wind_speed_mph": 2.4,
-      "wind_direction": "WSW",
-      "precip_probability": 87,
-      "humidity": 47,
-      "condition": "light rain",
+      "temp_f": 101.0,
+      "wind_speed_mph": 1.7,
+      "wind_direction": "S",
+      "precip_probability": 0,
+      "humidity": 31,
+      "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
     },
@@ -29337,12 +29085,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 89.7,
-      "wind_speed_mph": 2.4,
-      "wind_direction": "WSW",
-      "precip_probability": 87,
-      "humidity": 47,
-      "condition": "light rain",
+      "temp_f": 101.0,
+      "wind_speed_mph": 1.7,
+      "wind_direction": "S",
+      "precip_probability": 0,
+      "humidity": 31,
+      "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
     },
@@ -29507,12 +29255,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 89.7,
-      "wind_speed_mph": 2.4,
-      "wind_direction": "WSW",
-      "precip_probability": 87,
-      "humidity": 47,
-      "condition": "light rain",
+      "temp_f": 101.0,
+      "wind_speed_mph": 1.7,
+      "wind_direction": "S",
+      "precip_probability": 0,
+      "humidity": 31,
+      "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
     },
@@ -29677,12 +29425,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 89.7,
-      "wind_speed_mph": 2.4,
-      "wind_direction": "WSW",
-      "precip_probability": 87,
-      "humidity": 47,
-      "condition": "light rain",
+      "temp_f": 101.0,
+      "wind_speed_mph": 1.7,
+      "wind_direction": "S",
+      "precip_probability": 0,
+      "humidity": 31,
+      "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
     },
@@ -29847,12 +29595,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 89.7,
-      "wind_speed_mph": 2.4,
-      "wind_direction": "WSW",
-      "precip_probability": 87,
-      "humidity": 47,
-      "condition": "light rain",
+      "temp_f": 101.0,
+      "wind_speed_mph": 1.7,
+      "wind_direction": "S",
+      "precip_probability": 0,
+      "humidity": 31,
+      "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
     },
@@ -30017,12 +29765,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 89.7,
-      "wind_speed_mph": 2.4,
-      "wind_direction": "WSW",
-      "precip_probability": 87,
-      "humidity": 47,
-      "condition": "light rain",
+      "temp_f": 101.0,
+      "wind_speed_mph": 1.7,
+      "wind_direction": "S",
+      "precip_probability": 0,
+      "humidity": 31,
+      "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
     },
@@ -30187,12 +29935,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 89.7,
-      "wind_speed_mph": 2.4,
-      "wind_direction": "WSW",
-      "precip_probability": 87,
-      "humidity": 47,
-      "condition": "light rain",
+      "temp_f": 101.0,
+      "wind_speed_mph": 1.7,
+      "wind_direction": "S",
+      "precip_probability": 0,
+      "humidity": 31,
+      "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
     },
@@ -30357,12 +30105,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 89.7,
-      "wind_speed_mph": 2.4,
-      "wind_direction": "WSW",
-      "precip_probability": 87,
-      "humidity": 47,
-      "condition": "light rain",
+      "temp_f": 101.0,
+      "wind_speed_mph": 1.7,
+      "wind_direction": "S",
+      "precip_probability": 0,
+      "humidity": 31,
+      "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
     },
@@ -30527,12 +30275,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 89.7,
-      "wind_speed_mph": 2.4,
-      "wind_direction": "WSW",
-      "precip_probability": 87,
-      "humidity": 47,
-      "condition": "light rain",
+      "temp_f": 101.0,
+      "wind_speed_mph": 1.7,
+      "wind_direction": "S",
+      "precip_probability": 0,
+      "humidity": 31,
+      "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
     },
@@ -30697,12 +30445,12 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 89.7,
-      "wind_speed_mph": 2.4,
-      "wind_direction": "WSW",
-      "precip_probability": 87,
-      "humidity": 47,
-      "condition": "light rain",
+      "temp_f": 101.0,
+      "wind_speed_mph": 1.7,
+      "wind_direction": "S",
+      "precip_probability": 0,
+      "humidity": 31,
+      "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
     },
