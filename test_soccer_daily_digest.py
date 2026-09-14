@@ -38,9 +38,15 @@ class _TempDigestDir(unittest.TestCase):
         self._tmp = tempfile.TemporaryDirectory()
         self._patch_dir = patch.object(digest, "DIGEST_DIR", self._tmp.name)
         self._patch_dir.start()
+        # _attempt_board_refresh would otherwise invoke the REAL external
+        # Dabble board producer (confirmed present on this machine, hits
+        # a real live API) - must never fire from a unit test.
+        self._patch_refresh = patch.object(digest, "_attempt_board_refresh", return_value=False)
+        self._patch_refresh.start()
 
     def tearDown(self):
         self._patch_dir.stop()
+        self._patch_refresh.stop()
         self._tmp.cleanup()
 
 
@@ -140,6 +146,7 @@ class TestFailedDiscordRetryable(_TempDigestDir):
             with patch("soccer_adapter.score_dabble_soccer_board", return_value=[_fake_candidate("Player A")]), \
                  patch.dict(os.environ, {}, clear=False):
                 os.environ.pop(digest.WEBHOOK_ENV_VAR, None)
+                os.environ.pop(digest.FALLBACK_WEBHOOK_ENV_VAR, None)
                 record = digest.run_daily_digest(source=path, date_str="2026-09-14")
                 self.assertFalse(record["discord_attempted"], "no webhook configured is a documented no-op")
                 self.assertFalse(record["discord_delivered"])

@@ -47,9 +47,21 @@ generated; "attempted but Discord was down" stays retryable via --force.
 import argparse
 import json
 import os
+import subprocess
+import sys
 from datetime import datetime, timedelta, timezone
 
 import requests
+
+# This repo has never had direct access to a live Dabble API - the board
+# is produced OUTSIDE this repo by a separate script and dropped as a
+# file (see soccer_adapter.py's module docstring / dns_watch.py). Best-
+# effort attempt to trigger a fresh fetch from it before checking
+# staleness - item 5's "the daily job must refresh the board itself."
+# Confirmed this path does NOT exist on this dev machine, so in THIS
+# environment this is a documented no-op and _board_freshness's own
+# staleness check below is what actually protects against a stale send.
+EXTERNAL_PRODUCER_PATH = r"C:\platform-tools\dabble_board_producer.py"
 
 DIGEST_DIR = os.path.join("data", "soccer_daily_digest")
 WEBHOOK_ENV_VAR = "DISCORD_SOCCER_DNS_WEBHOOK_URL"  # same channel/env var as soccer_alerts.py's real-time alerts
@@ -77,8 +89,13 @@ DAILY_DIGEST_SCHEDULE = [
 ]
 
 
+FALLBACK_WEBHOOK_ENV_VAR = "DISCORD_WEBHOOK_URL"
+
+
 def _webhook_url():
-    return os.environ.get(WEBHOOK_ENV_VAR)
+    """Same fallback as soccer_alerts.py's _webhook_url - see that
+    function's docstring."""
+    return os.environ.get(WEBHOOK_ENV_VAR) or os.environ.get(FALLBACK_WEBHOOK_ENV_VAR)
 
 
 def _digest_path(date_str):
@@ -115,6 +132,32 @@ def _new_record(date_str):
 # stale refresh must produce a system warning, never a digest built off
 # old data (see module docstring's FLOW section).
 # ---------------------------------------------------------------------------
+
+def _attempt_board_refresh(output_path):
+    """Best-effort external producer invocation - see EXTERNAL_PRODUCER_
+    PATH's comment. Confirmed live 2026-09-14 that this producer IS
+    present on this machine and genuinely hits Dabble's real API
+    (api.dabble.com) directly, no auth required for the DFS props
+    endpoints - `--sport soccer --output <output_path>` writes straight
+    to the exact file soccer_adapter.py reads, skipping the incoming/
+    dns_watch.py hand-off for this automated flow. Returns True only if
+    it actually ran successfully; False (logged, never raised) covers
+    both "not installed here" and "ran but failed" - either way the
+    caller falls through to _board_freshness's own check rather than
+    trusting this call's success."""
+    if not os.path.exists(EXTERNAL_PRODUCER_PATH):
+        print(f"soccer_daily_digest: external board producer not found at {EXTERNAL_PRODUCER_PATH} - "
+              f"cannot force a fresh Dabble fetch from this machine; falling back to whatever board is "
+              f"already on disk (staleness is still checked next).")
+        return False
+    try:
+        subprocess.run([sys.executable, EXTERNAL_PRODUCER_PATH, "--sport", "soccer", "--output", output_path],
+                        timeout=90, check=True, capture_output=True, text=True)
+        return True
+    except Exception as e:
+        print(f"soccer_daily_digest: board producer invocation failed (non-fatal): {e}")
+        return False
+
 
 def _board_freshness(source):
     """(is_fresh: bool, age_hours: float_or_None, generated_at: str_or_None) -
@@ -290,6 +333,10 @@ def run_daily_digest(force=False, source=None, date_str=None, now=None):
 
     record = _new_record(date_str)
     record["generated_at"] = now.isoformat()
+
+    # Step 1 of the flow (item 5): attempt a real refresh BEFORE ever
+    # checking/trusting whatever board file is already on disk.
+    _attempt_board_refresh(source)
 
     fresh, age_hours, board_generated_at = _board_freshness(source)
     if not fresh:

@@ -65,8 +65,19 @@ NEWS_SIGNAL_X_TRUST_MAX_TIER = 2
 NEWS_SIGNAL_ROTOWIRE_WORSENING = {"hard_out", "fifty-fifty", "late-call", "fitness-test"}
 
 
+FALLBACK_WEBHOOK_ENV_VAR = "DISCORD_WEBHOOK_URL"
+
+
 def _webhook_url():
-    return os.environ.get(WEBHOOK_ENV_VAR)
+    """DISCORD_SOCCER_DNS_WEBHOOK_URL if set; otherwise falls back to the
+    generic DISCORD_WEBHOOK_URL already configured for this deployment
+    (2026-09-14: Discord made mandatory for Soccer DNS, and a dedicated
+    soccer webhook was never provisioned - confirmed only the generic one
+    exists) rather than treating Soccer DNS as unconfigured when a real,
+    working webhook is sitting right there. Point DISCORD_SOCCER_DNS_
+    WEBHOOK_URL at its own channel later if mixing with whatever else
+    posts to the generic one becomes a problem."""
+    return os.environ.get(WEBHOOK_ENV_VAR) or os.environ.get(FALLBACK_WEBHOOK_ENV_VAR)
 
 
 def _alerts_path(date_str):
