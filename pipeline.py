@@ -346,8 +346,12 @@ def _fill_missing_lineups(mlb_lineups, games, date_str):
     side already has a confirmed lineup is left untouched."""
     from scrapers.mlb_api import get_recent_team_lineup
 
+    fetched_at = datetime.now(timezone.utc).isoformat()
     for v in mlb_lineups.values():
         v.setdefault("lineup_status", "confirmed")
+        v.setdefault("lineup_source", "mlb_official")
+        v.setdefault("lineup_source_updated_at", fetched_at)
+        v.setdefault("lineup_fetched_at", fetched_at)
 
     covered_teams = {(v["game_pk"], v["team_id"]) for v in mlb_lineups.values()}
 
@@ -384,12 +388,69 @@ def _fill_missing_lineups(mlb_lineups, games, date_str):
                     "venue_name": venue.get("name", ""),
                     "game_date_utc": game.get("gameDate"),
                     "lineup_status": "projected",
+                    "lineup_source": "mlb_recent_game_projection",
+                    "lineup_source_updated_at": None,  # no real "posted at" for a projection - honest gap
+                    "lineup_fetched_at": fetched_at,
                 }
 
         fallback(home, away, away_pitcher, "home")
         fallback(away, home, home_pitcher, "away")
 
     return mlb_lineups
+
+
+def _protect_against_lineup_regression(date_str, mlb_lineups):
+    """(mlb_lineups, carried_over_records) - a stale projected record must
+    never override a newer confirmed lineup, applied here in the
+    direction that actually matters day to day: a NEWER fetch that
+    (transiently) came back empty/incomplete for a game must never
+    overwrite an OLDER but confirmed read from an earlier run the same
+    date. MLB does not "unpost" a posted lineup, so a previously-
+    confirmed player showing up as projected-or-missing on a later
+    same-day run is far more likely a transient fetch gap than a real
+    change - guarded here rather than trusted blindly.
+
+    carried_over_records are COMPLETE prior process_player() output
+    records (not re-run through processing this cycle - their stats/
+    projections are last-run's, only their lineup confirmation status
+    is what's being protected) for any guarded player; that player is
+    also REMOVED from the returned mlb_lineups so the main loop doesn't
+    reprocess them against this run's degraded lineup_data (whose shape
+    doesn't match a finished record anyway). Every disagreement is
+    logged, never silently resolved, and this only ever RESTORES a
+    prior confirmed record - it can't fabricate a new one."""
+    out_path = os.path.join("data", f"{date_str}.json")
+    if not os.path.exists(out_path):
+        return mlb_lineups, []
+    try:
+        with open(out_path, encoding="utf-8") as f:
+            previous = json.load(f)
+    except Exception:
+        return mlb_lineups, []
+
+    previously_confirmed = {
+        p["player_id"]: p for p in previous
+        if p.get("lineup_status") == "confirmed" and p.get("player_id") is not None
+    }
+
+    carried_over = []
+    for pid, prev in previously_confirmed.items():
+        current = mlb_lineups.get(pid)
+        if current is not None and current.get("lineup_status") == "confirmed":
+            continue  # still confirmed this run (possibly a reordered lineup) - trust the fresh read
+        logger.warning(
+            f"lineup regression guarded: player_id={pid} ({prev.get('team_name')}, game_pk="
+            f"{prev.get('game_pk')}) was confirmed as of {prev.get('lineup_source_updated_at')} but this "
+            f"run's fetch shows {'projected' if current else 'no lineup at all'} - keeping the prior "
+            f"confirmed record instead of downgrading it (its stats/projections are last run's, not "
+            f"reprocessed this cycle)."
+        )
+        mlb_lineups.pop(pid, None)
+        carried_over.append(dict(prev, lineup_source=prev.get("lineup_source", "mlb_official") + "_retained"))
+
+    if carried_over:
+        logger.warning(f"lineup regression guard retained {len(carried_over)} previously-confirmed player(s) this run.")
+    return mlb_lineups, carried_over
 
 
 def _fetch_platoon_map(mlb_lineups, pinfo_map, pitcher_hand_map, max_workers=8):
@@ -429,6 +490,54 @@ def _fetch_platoon_map(mlb_lineups, pinfo_map, pitcher_hand_map, max_workers=8):
     return platoon_map
 
 
+def print_lineup_audit(date_str, all_players, games):
+    """Prints the per-team lineup-confirmation summary required before
+    publishing (2026-09-14 lineup-confirmation bug fix) - makes a
+    regressed/stale confirmation impossible to miss silently. A team
+    counts as "confirmed" only if EVERY one of its batters in today's
+    data is confirmed; any team with even one non-confirmed batter
+    (or the lineup-regression guard's carried-over record) is listed
+    under "projected" so a partial/mixed state is never hidden inside
+    a rounded-up "confirmed" count. "unavailable" = scheduled today but
+    with zero player records at all - a total fetch failure for that
+    whole side, distinct from "posted late" (projected)."""
+    team_status = {}
+    for p in all_players:
+        team = p.get("team_name")
+        if not team:
+            continue
+        team_status.setdefault(team, set()).add(p.get("lineup_status", "confirmed"))
+
+    scheduled_teams = set()
+    for g in games:
+        scheduled_teams.add(g["teams"]["home"]["team"]["name"])
+        scheduled_teams.add(g["teams"]["away"]["team"]["name"])
+
+    confirmed_teams = sorted(t for t, statuses in team_status.items() if statuses == {"confirmed"})
+    projected_teams = sorted(t for t, statuses in team_status.items() if statuses != {"confirmed"})
+    unavailable_teams = sorted(scheduled_teams - set(team_status.keys()))
+
+    print("\n" + "=" * 70)
+    print(f"LINEUP AUDIT - {date_str}")
+    print("=" * 70)
+    print(f"Games today: {len(games)}")
+    print(f"Teams with confirmed lineup: {len(confirmed_teams)}")
+    print(f"Teams still projected: {len(projected_teams)}")
+    print(f"Teams unavailable (no lineup data at all): {len(unavailable_teams)}")
+    if projected_teams:
+        print("\nTeams still marked PROJECTED:")
+        for t in projected_teams:
+            print(f"  - {t}")
+    if unavailable_teams:
+        print("\nTeams UNAVAILABLE (no data fetched):")
+        for t in unavailable_teams:
+            print(f"  - {t}")
+    print("=" * 70 + "\n")
+
+    return {"games": len(games), "confirmed_teams": confirmed_teams,
+            "projected_teams": projected_teams, "unavailable_teams": unavailable_teams}
+
+
 def run_pipeline(date_str):
     from scrapers.mlb_api import get_lineups, get_games, get_player_info
 
@@ -453,9 +562,10 @@ def run_pipeline(date_str):
 
     confirmed_count = len(mlb_lineups)
     mlb_lineups = _fill_missing_lineups(mlb_lineups, games, date_str)
-    projected_count = len(mlb_lineups) - confirmed_count
+    mlb_lineups, carried_over_records = _protect_against_lineup_regression(date_str, mlb_lineups)
+    projected_count = sum(1 for v in mlb_lineups.values() if v.get("lineup_status") != "confirmed")
 
-    if not mlb_lineups:
+    if not mlb_lineups and not carried_over_records:
         logger.warning("Could not build any lineups (confirmed or projected) - skipping.")
         return []
 
@@ -534,16 +644,26 @@ def run_pipeline(date_str):
                 lineup_status = lineup_data.get("lineup_status", "confirmed")
                 rec["lineup_status"] = lineup_status
                 rec["lineup_confirmed"] = lineup_status == "confirmed"
+                rec["lineup_source"] = lineup_data.get("lineup_source")
+                rec["lineup_source_updated_at"] = lineup_data.get("lineup_source_updated_at")
+                rec["lineup_fetched_at"] = lineup_data.get("lineup_fetched_at")
                 all_players.append(rec)
         except Exception as e:
             logger.error(f"process_player failed for {name} ({pid}): {e}")
 
         time.sleep(0.15)
 
+    if carried_over_records:
+        all_players.extend(carried_over_records)
+        logger.info(f"Carried forward {len(carried_over_records)} previously-confirmed player record(s) "
+                    f"that this run's fetch couldn't reproduce (see lineup regression guard above).")
+
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(all_players, f, indent=2, default=str)
 
     logger.info(f"Saved {len(all_players)} records to {out_path}")
+
+    print_lineup_audit(date_str, all_players, games)
 
     # MLB DNP/DNS DISCONTINUED (2026-09-14) - focus moved 100% to Soccer
     # DNS. dnp_score.py/dabble_adapter.py/dnp_alerts.py are left on disk
@@ -588,9 +708,12 @@ def run_pipeline(date_str):
 # ---------------------------------------------------------------------------
 
 def main():
+    from scrapers.mlb_api import mlb_today_str
+
     parser = argparse.ArgumentParser(description="MLB Fantasy Data Pipeline")
-    parser.add_argument("--date", default=datetime.now().strftime("%Y-%m-%d"),
-                        help="Target date YYYY-MM-DD (default: today)")
+    parser.add_argument("--date", default=mlb_today_str(),
+                        help="Target date YYYY-MM-DD (default: today, Pacific-anchored - see "
+                             "scrapers.mlb_api.mlb_today_str)")
     parser.add_argument("--backfill", type=int, default=0,
                         help="Also process N previous days (0 = today only)")
     parser.add_argument("--verbose", action="store_true")

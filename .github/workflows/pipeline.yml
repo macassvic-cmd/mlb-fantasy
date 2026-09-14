@@ -103,10 +103,21 @@ jobs:
       # writes to the old date, the later steps ask for the new date, and
       # data/{new date}.json doesn't exist. One shared value computed
       # before any step that can run long makes that impossible.
+      # "today" MUST be the Pacific-anchored MLB baseball day, not a bare
+      # UTC date (2026-09-14 fix) - UTC runs 7-8 hours ahead of Pacific,
+      # so any trigger firing between ~17:00-23:59 PT (the nightly
+      # tracker's self-healing re-fetch included) would otherwise compute
+      # TOMORROW's date, silently fetch that day's schedule (real games,
+      # zero lineups posted yet since they haven't happened), and persist
+      # it as "today" - which reads exactly like the reported bug
+      # (everyone stuck on "projected" despite real confirmed lineups
+      # existing for the actual current Pacific day). See scrapers.
+      # mlb_api.mlb_today_str, which every Python entry point uses for
+      # this same reason - this step must stay in agreement with it.
       - name: Compute run date
         id: rundate
         run: |
-          echo "today=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+          echo "today=$(TZ=America/Los_Angeles date +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
           echo "run_start_utc=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_OUTPUT"
 
       # ── Fresh-data check (every trigger, not just pipeline-labeled ones) ──

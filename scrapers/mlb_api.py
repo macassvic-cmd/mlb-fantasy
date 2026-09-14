@@ -5,13 +5,43 @@ Provides schedule, lineups, player/pitcher stats, and game logs.
 
 import requests
 import logging
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 
 from scrapers._timeout import call_with_timeout
 
 BASE = "https://statsapi.mlb.com/api/v1"
 BASE_V11 = "https://statsapi.mlb.com/api/v1.1"
 logger = logging.getLogger(__name__)
+
+# MLB's "baseball day" is a Pacific/Eastern-anchored concept (a 7pm PT
+# first pitch is unambiguously "today's game" to every fan and to MLB's
+# own scheduling), not a UTC one. Found live 2026-09-14: this pipeline's
+# CLI default (bare datetime.now()) and its CI workflow (`date -u`) both
+# compute "today" in UTC, which runs 7-8 hours AHEAD of Pacific - between
+# ~17:00 and 23:59 PT, UTC's calendar date has already rolled over to
+# TOMORROW while Pacific's "today" is still in progress. A run that fires
+# in that window (e.g. the nightly tracker's self-healing re-fetch) would
+# silently ask MLB's schedule API for tomorrow's slate - a real date, with
+# real games, that simply has no lineups posted yet - and persist that as
+# if it were "today," which is indistinguishable from the reported bug
+# symptom (most players stuck on "projected" despite real confirmed
+# lineups existing for the actual current day). MLB_TZ anchors every
+# "what day is it" decision in this module to the same zone the games
+# themselves are experienced in.
+MLB_TZ = ZoneInfo("America/Los_Angeles")
+
+
+def mlb_today_str(now=None):
+    """Today's date (YYYY-MM-DD) as MLB's Pacific-anchored baseball day
+    sees it - see MLB_TZ's comment for why this must never be a bare
+    datetime.now()/date -u UTC computation. `now`, if given, may be naive
+    (assumed UTC, matching this codebase's own convention elsewhere) or
+    tz-aware."""
+    now = now or datetime.now(timezone.utc)
+    if now.tzinfo is None:
+        now = now.replace(tzinfo=timezone.utc)
+    return now.astimezone(MLB_TZ).strftime("%Y-%m-%d")
 
 # Shared Session, not a bare requests.get() per call - measured directly
 # against statsapi.mlb.com: a fresh connection costs ~15s (TLS handshake/
@@ -111,9 +141,15 @@ def get_lineups(date_str):
     """
     Returns {player_id: lineup_record} for every batter in today's lineups.
     Falls back gracefully if lineups aren't posted yet.
-    """
+
+    Every record is stamped lineup_source="mlb_official" and both
+    lineup_source_updated_at/lineup_fetched_at = this call's own fetch
+    time (MLB's schedule/lineups hydration doesn't expose a distinct
+    "when was this lineup posted" timestamp we can read - fetch time is
+    the honest proxy, not a fabricated posting time)."""
     games = get_games(date_str)
     lineups = {}
+    fetched_at = datetime.now(timezone.utc).isoformat()
 
     for game in games:
         game_pk = game["gamePk"]
@@ -138,6 +174,10 @@ def get_lineups(date_str):
                     "venue_id": venue.get("id"),
                     "venue_name": venue.get("name", ""),
                     "game_date_utc": game.get("gameDate"),
+                    "lineup_status": "confirmed",
+                    "lineup_source": "mlb_official",
+                    "lineup_source_updated_at": fetched_at,
+                    "lineup_fetched_at": fetched_at,
                 }
 
         register(lineups_data.get("homePlayers", []), home, away, away_pitcher, "home")

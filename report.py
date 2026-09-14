@@ -241,6 +241,8 @@ def build_card(row):
         "getawayDayRisk": row.get("getaway_day_risk", False),
         "projectedLineup": row.get("lineup_status") == "projected",
         "lineupConfirmed": bool(row.get("lineup_confirmed", True)),
+        "lineupSource": row.get("lineup_source"),
+        "lineupSourceUpdatedAt": row.get("lineup_source_updated_at"),
         "tier":   card_tier(row["ud_pts"]),
         "edge":   row.get("edge"),
         "udUnderBand": in_ud_under_band(row),
@@ -325,6 +327,9 @@ def build_row(p):
         "venue":        p.get("venue_name", ""),
         "lineup_status":    p.get("lineup_status", "confirmed"),
         "lineup_confirmed": bool(p.get("lineup_confirmed", True)),
+        "lineup_source":            p.get("lineup_source"),
+        "lineup_source_updated_at": p.get("lineup_source_updated_at"),
+        "lineup_fetched_at":        p.get("lineup_fetched_at"),
         "game_date_utc":    p.get("game_date_utc"),
         "game_time_pt":     game_time_pt(p.get("game_date_utc")),
     }
@@ -1571,6 +1576,7 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   .card .badge-adjusted {{ background: #60a5fa; margin-left: 6px; }}
   .card .badge-anchored {{ background: #f0abfc; margin-left: 6px; }}
   .card .badge-projected {{ background: #fbbf24; color: #3a2a00; margin-left: 6px; }}
+  .card .badge-confirmed {{ background: #22c55e; color: #06210f; margin-left: 6px; }}
   .card .badge-no-line {{ background: #fb923c; color: #1a0800; margin-left: 6px; }}
   .card .badge-getaway {{ background: #f87171; color: #1a0000; margin-left: 6px; }}
   .card .badge-value  {{ background: #2dd4bf; margin-left: 6px; }}
@@ -2089,11 +2095,41 @@ function orderChipHtml(c) {{
 // eye skips it on the next pass. Purely visual (nothing reorders/hides),
 // shared across every grid a player's card appears in (Top 25/Unders/
 // Value/Unanchored), and keyed by today's date so it resets on its own
-// tomorrow rather than needing an explicit expiry. -----------------------
-const usedStorageKey = 'mlbUsedCards_' + GAME_DATE;
+// tomorrow rather than needing an explicit expiry.
+//
+// NOT the same thing as .pending-lineup (the diagonal-striped dimming a
+// few lines down in renderCard) - that one is a DATA-DRIVEN indicator
+// for a genuinely-unconfirmed lineup, driven entirely by c.actionable/
+// c.lineupConfirmed off today's pipeline data, and toggles on its own as
+// real confirmations come in. It is NOT a manual mark, has nothing to do
+// with usedIds/localStorage, and "Clear all marks" does not touch it -
+// found live 2026-09-14 that a stale lineup-confirmation bug (fixed
+// separately in pipeline.py) made most of a slate's cards LOOK exactly
+// like they'd already been marked/clicked (dimmed + faded) when nobody
+// had touched them - that was .pending-lineup firing broadly because the
+// data said "not confirmed" when the real lineups already were, not a
+// bug in the click-to-mark system below.
+//
+// mlb_marks_v2_ (bumped from the older mlbUsedCards_ scheme, 2026-09-14)
+// so a browser carrying any pre-existing marks (either scheme) starts
+// today's slate on a guaranteed clean, unversioned-key-free slate rather
+// than trusting old data under ambiguous provenance - see the one-time
+// legacy-key sweep just below.
+const usedStorageKey = 'mlb_marks_v2_' + GAME_DATE;
 let usedIds = new Set();
 try {{
   usedIds = new Set(JSON.parse(localStorage.getItem(usedStorageKey) || '[]'));
+}} catch (e) {{}}
+
+// One-time cleanup: drop any key from the pre-versioning scheme so it
+// can never be misread by future code that happens to reuse that prefix.
+// Never migrates old marks forward - a version bump means "start clean,"
+// not "carry old, unaudited state into the new schema."
+try {{
+  for (let i = localStorage.length - 1; i >= 0; i--) {{
+    const k = localStorage.key(i);
+    if (k && k.startsWith('mlbUsedCards_')) localStorage.removeItem(k);
+  }}
 }} catch (e) {{}}
 
 function saveUsedIds() {{
@@ -2152,6 +2188,7 @@ function renderCard(c, treatmentFn) {{
     ${{c.adjusted ? '<div class="badge badge-adjusted">Model adjusted</div>' : ''}}
     ${{c.anchored ? '<div class="badge badge-anchored">Live line</div>' : ''}}
     ${{c.projectedLineup && !c.getawayDayRisk ? '<div class="badge badge-projected">&#9888; Projected Lineup</div>' : ''}}
+    ${{!c.projectedLineup ? '<div class="badge badge-confirmed">&#10003; Confirmed Lineup</div>' : ''}}
     ${{c.noLinePenalty ? '<div class="badge badge-no-line">&#9888; No Line &ndash; Lower Confidence</div>' : ''}}
     ${{c.getawayDayRisk ? '<div class="badge badge-getaway">&#9888; Projected Lineup &ndash; Getaway Day Risk</div>' : ''}}
     ${{tierBadgesHtml(c)}}

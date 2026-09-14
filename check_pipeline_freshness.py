@@ -24,19 +24,35 @@ with a fresh timestamp on EVERY successful run regardless of whether the
 player data itself changed, so this never depends on git commit history
 or file mtimes at all, just the fetcher's own self-reported completion
 time.
+
+  3. Found 2026-09-14: `today` here was computed as a bare UTC date,
+     disagreeing with pipeline.py/.github/workflows/pipeline.yml's
+     Pacific-anchored "today" (see scrapers.mlb_api.mlb_today_str) for
+     roughly 17:00-23:59 PT every evening - UTC's calendar date is
+     already tomorrow's during that window. This gate would then see
+     the real fetch marker (correctly dated in Pacific terms) as "for a
+     different day," always report skip=false, and force a full
+     redundant refetch on every fire in that window - not a data-
+     correctness bug (pipeline.py still fetches the right Pacific date
+     either way, per its own --date argument from the workflow's
+     rundate step), but silently defeated the "redundant fires are
+     nearly free" premise the dense retry schedule depends on. Now
+     shares the exact same date computation as everything else.
 """
 
 import json
 import os
 import sys
 import time
-from datetime import datetime, timezone
+from datetime import datetime
+
+from scrapers.mlb_api import mlb_today_str
 
 STALE_AFTER_SECONDS = 10800  # 3h
 
 
 def main():
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    today = mlb_today_str()
     marker_path = os.path.join("data", ".pipeline_last_fetch.json")
 
     skip = False

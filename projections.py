@@ -132,6 +132,31 @@ def _fmt(val, width, decimals=2, fallback="N/A"):
     return f"{val:.{decimals}f}".ljust(width)
 
 
+def print_top25_lineup_audit(players, top_n=25):
+    """Prints confirmed/projected/unconfirmed counts for today's Top 25
+    (by the same ud_fpts ranking report.py's dashboard uses) - required
+    before publishing per the 2026-09-14 lineup-confirmation bug fix.
+    "unconfirmed" here means lineup_status is neither confirmed nor
+    projected (e.g. missing entirely) - kept as its own bucket rather
+    than folded into "projected" so a genuine data gap is never quietly
+    counted the same as "just hasn't posted yet."""
+    ranked = sorted(players, key=lambda p: ud_fpts(p), reverse=True)[:top_n]
+    confirmed = sum(1 for p in ranked if p.get("lineup_status") == "confirmed")
+    projected = sum(1 for p in ranked if p.get("lineup_status") == "projected")
+    unconfirmed = len(ranked) - confirmed - projected
+
+    print(f"\nTop {len(ranked)} players:")
+    print(f"  confirmed starter count:   {confirmed}")
+    print(f"  projected starter count:   {projected}")
+    print(f"  unconfirmed count:         {unconfirmed}")
+    if projected or unconfirmed:
+        print("  Top 25 players NOT confirmed:")
+        for p in ranked:
+            if p.get("lineup_status") != "confirmed":
+                print(f"    - {p.get('name')} ({p.get('team_name')}) - {p.get('lineup_status', 'unconfirmed')}")
+    return {"confirmed": confirmed, "projected": projected, "unconfirmed": unconfirmed}
+
+
 def print_leaderboard(players, scoring="ud", top_n=30, date_str=""):
     label = "UNDERDOG" if scoring == "ud" else "PRIZEPICKS"
     key = "ud_fpts_per_game" if scoring == "ud" else "pp_fpts_per_game"
@@ -343,6 +368,8 @@ def main():
     confirmed = sum(1 for p in players if p.get("lineup_confirmed"))
 
     print(f"\nLoaded {total} players for {date_str}  ({confirmed} lineup-confirmed)")
+
+    print_top25_lineup_audit(players)
 
     print_leaderboard(players, scoring="ud", date_str=date_str)
     print_leaderboard(players, scoring="pp", date_str=date_str)
