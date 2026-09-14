@@ -483,12 +483,32 @@ def run_scan(board=None):
 
 def coverage_report(source=None):
     """python soccer_dns.py --coverage - the "never discover a coverage
-    hole by manually noticing a player" diagnostic (item 9). Runs the full
-    Dabble-only soccer_adapter.py pipeline and reports, for every live
-    Dabble soccer player, whether each enrichment stage actually found
-    something - not whether the player "should" have data, since the
-    whole point of the 2026-09-14 fix is that every Dabble player is a
-    candidate regardless of what any other source knows about him."""
+    hole by manually noticing a player" diagnostic (item 9, reconciled
+    2026-09-14 coverage audit item 1). Runs the full Dabble-only
+    soccer_adapter.py pipeline and reports, for every live Dabble soccer
+    player, whether each enrichment stage actually found something - not
+    whether the player "should" have data, since the whole point of the
+    2026-09-14 fix is that every Dabble player is a candidate regardless
+    of what any other source knows about him.
+
+    RECONCILED DEFINITIONS (the original report's predicted_lineup_
+    coverage=3/76 alongside completely_unenriched=76/76 was a real
+    contradiction - a candidate counted toward predicted-XI coverage
+    necessarily has >=1 real signal backing it, so "completely
+    unenriched" must exclude him):
+      board_only            - zero signal from ANY of the 4 independent
+                               raw sources (history/injury/news/X) - this
+                               IS "completely unenriched," precisely.
+      has_history           - >=1 recorded match on file (soccer_start_
+                               history.py), any sample size.
+      has_predicted_xi      - >=1 source in the predicted-XI consensus -
+                               a SYNTHESIS of the 4 raw sources, not a
+                               5th independent one (never double-counted
+                               into has_multiple_external_sources).
+      has_injury/has_news/has_x_signal - the other 3 raw sources.
+      has_multiple_external_sources - >=2 of the 4 raw sources present.
+    See soccer_adapter.enrich_and_score_player's own module comment for
+    the full field-level definitions."""
     import soccer_adapter
 
     source = source or soccer_adapter.DEFAULT_BOARD_PATH
@@ -498,35 +518,143 @@ def coverage_report(source=None):
         print("coverage_report: no live Dabble soccer candidates found.")
         return {}
 
-    matched_fixture = sum(1 for c in candidates if c["official_status"] != "unknown" or c.get("league_code"))
-    injury_enriched = sum(1 for c in candidates if c["transfermarkt_injury"] or c["rotowire_status_raw"])
-    predicted_lineup_coverage = sum(1 for c in candidates if c["predicted_xi_sources"])
-    history_coverage = sum(1 for c in candidates if c["starts_last_5"][2] > 0)
-    unenriched = sum(1 for c in candidates if c["low_data"])
+    def pct(k):
+        return f"{k}/{n} ({round(100 * k / n)}%)"
+
+    matched_fixture = sum(1 for c in candidates if c.get("league_code"))
+    dabble_status_present = sum(1 for c in candidates
+                                 if c.get("dabble_status_raw") or c.get("dabble_status_normalized"))
+    history_1plus = sum(1 for c in candidates if c["has_history"])
+    history_3plus = sum(1 for c in candidates if c["starts_last_10"][2] >= 3)
+    history_5plus = sum(1 for c in candidates if c["starts_last_10"][2] >= 5)
+    history_10plus = sum(1 for c in candidates if c["starts_last_10"][2] >= 10)
+    predicted_xi_coverage = sum(1 for c in candidates if c["has_predicted_xi"])
+    injury_signal = sum(1 for c in candidates if c["has_injury"])
+    news_signal = sum(1 for c in candidates if c["has_news"])
+    x_signal = sum(1 for c in candidates if c["has_x_signal"])
+
+    rotowire_matched = sum(1 for c in candidates if c["source_health"]["rotowire"]["entity_matched"])
+    transfermarkt_matched = sum(1 for c in candidates if c["source_health"]["transfermarkt"]["entity_matched"])
+    official_lineup_matched = sum(1 for c in candidates if c["source_health"]["official_lineup"]["entity_matched"])
+    x_attempted = any(c["source_health"]["x"]["source_attempted"] for c in candidates)
+
+    board_only = sum(1 for c in candidates if c["board_only"])
+    one_source = sum(1 for c in candidates
+                      if c["has_any_external_enrichment"] and not c["has_multiple_external_sources"])
+    two_plus_source = sum(1 for c in candidates if c["has_multiple_external_sources"])
+    fully_enriched = sum(1 for c in candidates
+                          if c["has_history"] and c["has_injury"] and c["has_news"] and c["has_x_signal"])
 
     summary = {
         "dabble_soccer_players": n,
-        "matched_fixtures": f"{matched_fixture}/{n}",
-        "injury_enrichment": f"{injury_enriched}/{n}",
-        "predicted_lineup_coverage": f"{predicted_lineup_coverage}/{n}",
-        "history_coverage": f"{history_coverage}/{n}",
-        "completely_unenriched_players": unenriched,
+        "matched_fixtures": pct(matched_fixture),
+        "dabble_status_field_coverage": pct(dabble_status_present),
+        "history_coverage": {"1+": pct(history_1plus), "3+": pct(history_3plus),
+                              "5+": pct(history_5plus), "10+": pct(history_10plus)},
+        "predicted_xi_coverage": pct(predicted_xi_coverage),
+        "injury_signal_transfermarkt": pct(injury_signal),
+        "news_signal_rotowire": pct(news_signal),
+        "x_signal": pct(x_signal),
+        "source_match_rates": {
+            "official_lineup_team_matched": pct(official_lineup_matched),
+            "transfermarkt_team_matched": pct(transfermarkt_matched),
+            "rotowire_player_matched": pct(rotowire_matched),
+            "x_enabled": x_attempted,
+        },
+        "coverage_tiers": {"board_only": board_only, "one_source": one_source,
+                            "two_plus_source": two_plus_source, "fully_enriched": fully_enriched},
+        "completely_unenriched_players": board_only,
     }
-    print(f"Dabble soccer players = {n}")
-    print(f"matched fixtures      = {matched_fixture}/{n}")
-    print(f"injury enrichment     = {injury_enriched}/{n}")
-    print(f"predicted lineup cov. = {predicted_lineup_coverage}/{n}")
-    print(f"history coverage      = {history_coverage}/{n}")
-    print(f"completely unenriched = {unenriched}")
-    if unenriched:
-        print("\nLOW DATA / ENRICHMENT MISSING players (still scored, never dropped - see item 10):")
+
+    print(f"Dabble soccer players    = {n}")
+    print(f"matched fixtures         = {pct(matched_fixture)}")
+    print(f"Dabble status field      = {pct(dabble_status_present)}")
+    print(f"history coverage 1+/3+/5+/10+ = {history_1plus}/{history_3plus}/{history_5plus}/{history_10plus}")
+    print(f"predicted XI coverage    = {pct(predicted_xi_coverage)}")
+    print(f"injury signal (TM)       = {pct(injury_signal)}")
+    print(f"news signal (RotoWire)   = {pct(news_signal)}")
+    print(f"X signal                 = {pct(x_signal)}")
+    print()
+    print(f"RotoWire player match rate  = {pct(rotowire_matched)}  (matched vs adverse are different - "
+          f"see news signal above for adverse count)")
+    print(f"Transfermarkt team match rate = {pct(transfermarkt_matched)}")
+    print(f"Official lineup team match rate = {pct(official_lineup_matched)}")
+    print(f"X realtime: {'ENABLED' if x_attempted else 'DISABLED - missing X_BEARER_TOKEN'}")
+    print()
+    print(f"{n} total")
+    print(f"{board_only} board-only")
+    print(f"{one_source} one-source")
+    print(f"{two_plus_source} two-plus-source")
+    print(f"{fully_enriched} fully enriched")
+
+    if board_only:
+        print("\nBOARD-ONLY players (zero signal from history/injury/news/X - still scored, never dropped):")
         for c in candidates:
-            if c["low_data"]:
+            if c["board_only"]:
                 print(f"  - {c['player_name']} ({c['team']}, {c.get('league_raw')})")
     return summary
 
 
+def trace_player(query, source=None):
+    """python soccer_dns.py --trace "PLAYER NAME" - the full, no-hidden-
+    stages pipeline trace requested by the 2026-09-14 coverage audit
+    (item 7): every candidate currently live on the Dabble board whose
+    normalized name contains (or is contained by) the query, scored, with
+    every enrichment stage's result printed explicitly - never silently
+    concludes "no signal" without naming which sources were actually
+    checked and what each one found."""
+    import soccer_adapter
+    from scrapers.betr import normalize_name
+
+    source = source or soccer_adapter.DEFAULT_BOARD_PATH
+    props = soccer_adapter.load_dabble_soccer_props(source)
+    players = soccer_adapter.group_props_by_player(props)
+    q = normalize_name(query)
+    matches = {k: v for k, v in players.items() if q and (q in k[0] or k[0] in q)}
+
+    if not matches:
+        print(f'--trace: no live Dabble player matching "{query}" found on {source}.')
+        print("Reason: the Dabble board IS the candidate universe (see soccer_adapter.py's module")
+        print("docstring) - if he has no live prop right now, he is not a candidate, by design,")
+        print("regardless of what any external source might say about him.")
+        return None
+
+    context = soccer_adapter._build_enrichment_context(players)
+    for player in matches.values():
+        c = soccer_adapter.enrich_and_score_player(player, context)
+        sh = c["source_health"]
+        print("=" * 78)
+        print(f"Dabble player matched   : {c['player_name']}  (team {c['team']}, id {c.get('dabble_player_id')})")
+        print(f"Dabble raw status       : raw={c.get('dabble_status_raw')!r} "
+              f"normalized={c.get('dabble_status_normalized')!r}")
+        print(f"Fixture                 : {c.get('matchup')} @ {c.get('event_date')} "
+              f"(league {c.get('league_raw')} -> {c.get('league_code')})")
+        print(f"Team resolution         : entity_matched={sh['official_lineup']['entity_matched']}  "
+              f"official_status={c['official_status']}")
+        n5, n10 = c["starts_last_5"], c["starts_last_10"]
+        print(f"History sample size     : last5={n5[2]} (W{n5[0]}/L{n5[1]})  last10={n10[2]} (W{n10[0]}/L{n10[1]})")
+        print(f"RotoWire player resolved: matched={sh['rotowire']['entity_matched']}  "
+              f"page={sh['rotowire'].get('player_page_matched')}  url={sh['rotowire'].get('player_page_url')}")
+        print(f"RotoWire status         : page_tag={c.get('rotowire_page_tag')!r} "
+              f"scored_as={c.get('rotowire_status_raw')!r} source={c.get('rotowire_source')}")
+        print(f"Transfermarkt resolved  : team_matched={sh['transfermarkt']['entity_matched']}")
+        print(f"Transfermarkt injury    : {c.get('transfermarkt_injury')}")
+        print(f"Predicted XI sources    : consensus={c['prediction_consensus']}  "
+              f"start={c['predicted_start_sources']}  bench={c['predicted_bench_sources']}")
+        print(f"X enabled               : {sh['x']['source_attempted']}")
+        print(f"X signals               : matched={sh['x']['entity_matched']}  signal={c.get('x_signal')}")
+        print(f"DNS score               : {c['dns_score']}")
+        print(f"Confidence              : {c['confidence_score']}")
+        print(f"Urgency                 : {c['urgency_score']}")
+        print(f"Combined priority       : {c['combined_priority']}")
+        print(f"Top reasons             : {c['top_reasons']}")
+        print(f"Coverage                : board_only={c['board_only']} "
+              f"multi_source={c['has_multiple_external_sources']}")
+    return matches
+
+
 def main():
+    import argparse
     import sys
     # Player names routinely carry diacritics (Dedic, Balde, ...) - the
     # default Windows console codepage (cp1252) crashes on them the moment
@@ -536,8 +664,33 @@ def main():
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     except Exception:
         pass
-    if "--coverage" in sys.argv:
+
+    parser = argparse.ArgumentParser(description="Soccer DNS", add_help=False)
+    parser.add_argument("--coverage", action="store_true")
+    parser.add_argument("--trace", default=None, metavar="PLAYER")
+    parser.add_argument("--send-daily-digest", action="store_true")
+    parser.add_argument("--digest-status", action="store_true")
+    parser.add_argument("--force", action="store_true", help="with --send-daily-digest, resend even if already delivered today")
+    parser.add_argument("--test-discord", action="store_true", help="send a plain Soccer DNS Discord health-check message")
+    args, _unknown = parser.parse_known_args()
+
+    if args.coverage:
         coverage_report()
+        return
+    if args.trace:
+        trace_player(args.trace)
+        return
+    if args.send_daily_digest:
+        import soccer_daily_digest
+        soccer_daily_digest.run_daily_digest(force=args.force)
+        return
+    if args.digest_status:
+        import soccer_daily_digest
+        soccer_daily_digest.digest_status()
+        return
+    if args.test_discord:
+        import soccer_daily_digest
+        soccer_daily_digest.send_test_message()
         return
     summary = run_scan()
     print(json.dumps(summary, indent=2, default=str))

@@ -22,14 +22,15 @@ import json
 import os
 from datetime import datetime, timedelta, timezone
 
+import rotowire_soccer
 import soccer_dns_score
 import soccer_start_history
 import soccer_x_monitor
 from board_loader import _LEAGUE_VALUE_TO_CANONICAL
 from rotowire_soccer import fetch_rotowire_soccer_status
 from scrapers.betr import normalize_name
-from scrapers.espn_soccer import (match_espn_team_id, find_espn_event, get_match_squad_names,
-                                   team_display_name, LEAGUE_SLUGS)
+from scrapers.espn_soccer import (match_espn_team_id, resolve_team_by_code, find_espn_event,
+                                   get_match_squad_names, team_display_name, LEAGUE_SLUGS)
 from scrapers.transfermarkt import get_team_injuries_cached
 
 DEFAULT_BOARD_PATH = os.path.join("data", "dns_watch", "processed", "soccer", "dabble_soccer_board.json")
@@ -165,16 +166,32 @@ def _league_code(league_raw):
 def _build_enrichment_context(players):
     context = {
         "rotowire": {},
+        "rotowire_player_index": {},
+        "rotowire_status_cache": {},  # in-process memo for this run - see rotowire_soccer.get_player_status
         "history": {},
         "espn_team_cache": {},   # (league_code, team_name) -> espn_team_id
         "espn_event_cache": {},  # (league_code, fixture_id) -> espn event or None
-        "transfermarkt_cache": {},  # team full name -> injuries list
+        "transfermarkt_cache": {},  # (league_code, team_code) -> injuries list
         "dabble_live_players": [],
     }
     try:
         context["rotowire"] = fetch_rotowire_soccer_status()
     except Exception as e:
-        print(f"soccer_adapter: RotoWire enrichment unavailable (non-fatal): {e}")
+        print(f"soccer_adapter: RotoWire feed enrichment unavailable (non-fatal): {e}")
+
+    try:
+        context["rotowire_player_index"] = rotowire_soccer.build_player_index()
+        # Warm the player-page status cache for every live Dabble player
+        # CONCURRENTLY up front - sequential per-player fetches inside the
+        # per-candidate enrichment loop below would otherwise turn a ~76-
+        # player board into 76 serial HTTP round trips (confirmed live
+        # 2026-09-14 this pushed a single scoring run past 2 minutes).
+        rotowire_soccer.prefetch_player_statuses(
+            [p["player_name"] for p in players.values()],
+            index=context["rotowire_player_index"], cache=context["rotowire_status_cache"],
+        )
+    except Exception as e:
+        print(f"soccer_adapter: RotoWire player-page index/prefetch unavailable (non-fatal): {e}")
 
     try:
         context["history"] = soccer_start_history._load(soccer_start_history.HISTORY_PATH, {})
@@ -194,16 +211,23 @@ def _build_enrichment_context(players):
 # ---------------------------------------------------------------------------
 
 def _enrich_transfermarkt(player, context, league_code):
-    """Resolves player["team"] (a Dabble board short code like "NEW") to
-    its real club name via ESPN's own abbreviation list (team_display_
-    name) BEFORE calling Transfermarkt - passing the bare code straight
-    to Transfermarkt's free-text search returns whatever unrelated club
-    ranks first (confirmed live 2026-09-13: "TOR" resolved to Real
-    Madrid, "CHI" to Liverpool - both silently cached as if verified in
-    data/transfermarkt/team_resolution.json). Cached per (league_code,
-    team_code) since the same short code can mean different clubs across
-    leagues; falls back to the raw code (old, unsafe behavior) only when
-    no league_code is available to resolve against at all."""
+    """(hit_or_None, source_health) - resolves player["team"] (a Dabble
+    board short code like "NEW") to its real club name via ESPN's own
+    abbreviation list (team_display_name) BEFORE calling Transfermarkt -
+    passing the bare code straight to Transfermarkt's free-text search
+    returns whatever unrelated club ranks first (confirmed live
+    2026-09-13: "TOR" resolved to Real Madrid, "CHI" to Liverpool - both
+    silently cached as if verified in data/transfermarkt/team_
+    resolution.json - see scrapers.espn_soccer.resolve_team_by_code and
+    test_espn_soccer.py's regression tests guarding against a repeat).
+    Cached per (league_code, team_code) since the same short code can
+    mean different clubs across leagues.
+
+    source_health separates "did we even resolve the right CLUB" (team_
+    matched) from "is THIS PLAYER specifically on that club's injury
+    list" (signal_found) - a matched team with no injury hit is a real,
+    valuable "checked, healthy" result, not a gap (see item 6)."""
+    team_matched = league_code is not None and resolve_team_by_code(league_code, player["team"]) is not None
     cache_key = (league_code, player["team"])
     if cache_key not in context["transfermarkt_cache"]:
         try:
@@ -215,23 +239,80 @@ def _enrich_transfermarkt(player, context, league_code):
             context["transfermarkt_cache"][cache_key] = []
     injuries = context["transfermarkt_cache"][cache_key]
     match = next((r for r in injuries if r["normalized_name"] == player["normalized_name"]), None)
+    health = {"source_attempted": True, "entity_matched": team_matched, "signal_found": match is not None}
     if not match:
-        return None
-    return {
+        return None, health
+    hit = {
         "source": "transfermarkt", "section": match["section"], "reason": match["reason"],
         "since": match.get("since"), "expected_return": match.get("expected_return"),
         "expected_return_date": match.get("expected_return_date"),
     }
+    return hit, health
 
 
 def _enrich_rotowire(player, context):
-    return context["rotowire"].get(player["normalized_name"])
+    """(hit_or_None, source_health) - combines two independent RotoWire
+    signals (item 3):
+      1. the RSS headline feed (context["rotowire"]) - only covers a
+         player RotoWire happened to write about within NEWS_LOOKBACK_
+         HOURS, but carries a real timestamp.
+      2. the player-page lookup (rotowire_soccer.get_player_status) -
+         covers ANY player with a RotoWire page at all (34k+ index) via
+         its live status card, but no timestamp (the page doesn't expose
+         when the tag was set).
+    The feed wins when both exist (more specific text, has a timestamp);
+    the page fills in when the feed has nothing. entity_matched is true
+    if EITHER source found this player at all - that's the coverage
+    number item 3 asks for (rotowire_player_match_rate), independent of
+    whether either one currently shows anything adverse (rotowire_
+    adverse_signal_rate)."""
+    feed_hit = context["rotowire"].get(player["normalized_name"])
+    page_result = rotowire_soccer.get_player_status(
+        player["player_name"], index=context.get("rotowire_player_index"),
+        cache=context.get("rotowire_status_cache"),
+        use_disk_cache=context.get("rotowire_use_disk_cache", True),
+    )
+
+    entity_matched = feed_hit is not None or page_result["matched"]
+    signal_found = feed_hit is not None or page_result["signal_found"]
+    health = {"source_attempted": True, "entity_matched": entity_matched, "signal_found": signal_found,
+              "player_page_matched": page_result["matched"], "player_page_url": page_result["page_url"],
+              "player_page_ambiguous": page_result.get("ambiguous", False)}
+
+    if feed_hit:
+        return dict(feed_hit, rotowire_source="feed"), health
+    if page_result["signal_found"]:
+        # soccer_dns_score._score_dns reads rotowire_status_raw FIRST as
+        # the key into ROTOWIRE_STATUS_PRIOR - for a feed hit that field
+        # already holds the specific matchable tier (e.g. "fitness-test"),
+        # never free display text, so a player-page hit must put its
+        # MAPPED tier there too (bug found live 2026-09-14: putting the
+        # page's literal tag ("GTD") there instead silently scored 0,
+        # since "GTD" isn't a ROTOWIRE_STATUS_PRIOR key - the mapping to
+        # "fifty-fifty" was computed but never actually reached scoring).
+        # rotowire_page_tag keeps the literal page text for display/
+        # --trace/dashboard purposes without touching the scoring path.
+        hit = {
+            "rotowire_status_raw": page_result["rotowire_status_normalized"],
+            "rotowire_status_normalized": page_result["rotowire_status_normalized"],
+            "rotowire_page_tag": page_result["status_tag"],
+            "rotowire_injury": page_result["injury"],
+            "rotowire_news_at": None,  # the player page carries no timestamp - see module docstring
+            "rotowire_predicted_start": None,
+            "rotowire_source": "player_page",
+        }
+        return hit, health
+    return None, health
 
 
 def _enrich_espn_official_status(player, context, league_code):
-    """(status, squad_info) where status is 'confirmed_starting' |
-    'confirmed_not_starting' | 'not_yet_posted'. Best-effort team/fixture
-    resolution - None/'not_yet_posted' on any failure, never raises.
+    """(status, squad_info, source_health) where status is 'confirmed_
+    starting' | 'confirmed_not_starting' | 'not_yet_posted'. Best-effort
+    team/fixture resolution - 'not_yet_posted'/health flags on any
+    failure, never raises. source_health's entity_matched means "we
+    resolved this player's team to a real ESPN team id" (independent of
+    whether a fixture/squad has posted yet); signal_found means the
+    official lineup has actually posted either way.
 
     HONEST CAVEAT (unverified as of this build): scrapers.espn_soccer's
     docstring says get_match_squad_names only reliably resolves once ESPN
@@ -241,7 +322,7 @@ def _enrich_espn_official_status(player, context, league_code):
     genuinely pre-kickoff "official lineup out" signal for soccer is
     unproven and needs live validation against a real matchday."""
     if not league_code or league_code not in LEAGUE_SLUGS:
-        return "not_yet_posted", None
+        return "not_yet_posted", None, {"source_attempted": False, "entity_matched": False, "signal_found": False}
 
     team_cache_key = (league_code, player["team"])
     if team_cache_key not in context["espn_team_cache"]:
@@ -251,7 +332,7 @@ def _enrich_espn_official_status(player, context, league_code):
             context["espn_team_cache"][team_cache_key] = None
     team_id = context["espn_team_cache"][team_cache_key]
     if not team_id:
-        return "not_yet_posted", None
+        return "not_yet_posted", None, {"source_attempted": True, "entity_matched": False, "signal_found": False}
 
     event_cache_key = (league_code, player["fixture_id"] or player["event_date"])
     if event_cache_key not in context["espn_event_cache"]:
@@ -277,28 +358,40 @@ def _enrich_espn_official_status(player, context, league_code):
             print(f"soccer_adapter: ESPN event lookup failed (non-fatal): {e}")
             context["espn_event_cache"][event_cache_key] = None
     event = context["espn_event_cache"][event_cache_key]
+    matched_health = {"source_attempted": True, "entity_matched": True, "signal_found": False}
     if not event:
-        return "not_yet_posted", None
+        return "not_yet_posted", None, matched_health
 
     try:
         squad = get_match_squad_names(league_code, event["id"])
     except Exception as e:
         print(f"soccer_adapter: ESPN squad lookup failed (non-fatal): {e}")
-        return "not_yet_posted", None
+        return "not_yet_posted", None, matched_health
     if not squad:
-        return "not_yet_posted", None
+        return "not_yet_posted", None, matched_health
 
+    matched_health["signal_found"] = True
     info = squad.get(player["normalized_name"])
     if info is None:
-        return "confirmed_not_starting", {"reason": "not named in matchday squad"}
+        return "confirmed_not_starting", {"reason": "not named in matchday squad"}, matched_health
     if info["starter"]:
-        return "confirmed_starting", info
-    return "confirmed_not_starting", info  # named to squad but NOT starting - grading only cares about starting XI
+        return "confirmed_starting", info, matched_health
+    return "confirmed_not_starting", info, matched_health  # named to squad but NOT starting - grading only cares about starting XI
 
 
 def _enrich_x(player, context):
+    """(hit_or_None, source_health). attempted reflects whether X
+    monitoring is even configured (has_credentials()) - see item 5/6:
+    "no hits" while disabled must never be reported the same as "checked,
+    found nothing" while enabled."""
+    attempted = soccer_x_monitor.has_credentials()
     variants = soccer_x_monitor.name_variants(player["player_name"])
-    return soccer_x_monitor.get_player_x_signal(variants)
+    hit = soccer_x_monitor.get_player_x_signal(variants) if attempted else None
+    health = {
+        "source_attempted": attempted, "entity_matched": hit is not None,
+        "signal_found": bool(hit and (hit.get("extracted_injury") or hit.get("extracted_start_signal"))),
+    }
+    return hit, health
 
 
 def _build_predicted_xi_sources(player, league_code, context, history, transfermarkt_hit, rotowire_hit, x_hit):
@@ -353,10 +446,10 @@ def _build_predicted_xi_sources(player, league_code, context, history, transferm
 
 def enrich_and_score_player(player, context):
     league_code = _league_code(player["league_raw"])
-    official_status, squad_info = _enrich_espn_official_status(player, context, league_code)
-    transfermarkt_hit = _enrich_transfermarkt(player, context, league_code)
-    rotowire_hit = _enrich_rotowire(player, context)
-    x_hit = _enrich_x(player, context)
+    official_status, squad_info, official_health = _enrich_espn_official_status(player, context, league_code)
+    transfermarkt_hit, transfermarkt_health = _enrich_transfermarkt(player, context, league_code)
+    rotowire_hit, rotowire_health = _enrich_rotowire(player, context)
+    x_hit, x_health = _enrich_x(player, context)
     history = context["history"]
 
     predicted_xi_sources = _build_predicted_xi_sources(
@@ -398,12 +491,42 @@ def enrich_and_score_player(player, context):
 
     # Watchdog: never silently drop a candidate because enrichment failed -
     # see item 10. A player with zero usable enrichment signals is still
-    # scored (on history/prior alone) and explicitly flagged.
-    enrichment_sources_found = sum([
-        bool(league_code), bool(transfermarkt_hit is not None or (league_code is not None)),
-        bool(rotowire_hit), bool(x_hit), starts5[2] > 0,
-    ])
+    # scored (on history/prior alone) and explicitly flagged. low_data is
+    # about the SCORE's evidentiary weight (dnp_score.py's confidence
+    # philosophy) - see the has_*/source_health fields below for the
+    # separate, unambiguous COVERAGE question the 2026-09-14 audit asked
+    # for (item 1): "did every source get a fair, checked attempt", not
+    # "how much did that attempt end up adding to the score."
     low_data = evidence_count <= 1
+
+    # --- Coverage metrics (2026-09-14 coverage audit, item 1) - explicit,
+    # reconciled definitions instead of overloading evidence_count/
+    # low_data (whose >=3-match significance floor made "history
+    # coverage" and "completely unenriched" contradict each other in the
+    # original report). has_history here means "ANY recorded match at
+    # all" (n>=1) - a real, if thin, coverage fact - separate from
+    # whether that sample was large enough to move the score. ----------
+    has_history = starts5[2] > 0 or starts10[2] > 0
+    has_predicted_xi = bool(predicted_xi_sources)
+    has_injury = transfermarkt_hit is not None
+    has_news = rotowire_hit is not None
+    has_x_signal = x_hit is not None
+    # The four INDEPENDENT raw channels - has_predicted_xi is deliberately
+    # excluded from this count: it's a synthesis OF these four (see
+    # _build_predicted_xi_sources), so counting it here would double-count
+    # the same evidence as a second "source."
+    _raw_source_count = sum([has_history, has_injury, has_news, has_x_signal])
+    has_any_external_enrichment = _raw_source_count > 0
+    has_multiple_external_sources = _raw_source_count >= 2
+    board_only = not has_any_external_enrichment  # item 1's "completely_unenriched"
+
+    source_health = {
+        "official_lineup": official_health,
+        "transfermarkt": transfermarkt_health,
+        "rotowire": rotowire_health,
+        "x": x_health,
+        "history": {"source_attempted": True, "entity_matched": has_history, "signal_found": None},
+    }
 
     return {
         "player_name": player["player_name"], "normalized_name": player["normalized_name"],
@@ -418,6 +541,13 @@ def enrich_and_score_player(player, context):
         "transfermarkt_injury": transfermarkt_hit,
         "rotowire_status_raw": (rotowire_hit or {}).get("rotowire_status_raw"),
         "rotowire_status_normalized": (rotowire_hit or {}).get("rotowire_status_normalized"),
+        # The literal tag text as RotoWire's OWN page displays it (e.g.
+        # "GTD") - always populated when a player-page hit exists, even
+        # if that tag didn't map to a scoreable tier (see _enrich_rotowire's
+        # comment) - use THIS for human-facing display, never rotowire_
+        # status_raw/normalized, which are scoring-oriented fields that
+        # can be None for an unmapped-but-real tag.
+        "rotowire_page_tag": (rotowire_hit or {}).get("rotowire_page_tag"),
         "rotowire_injury": (rotowire_hit or {}).get("rotowire_injury"),
         "rotowire_news_at": (rotowire_hit or {}).get("rotowire_news_at"),
         "rotowire_predicted_start": (rotowire_hit or {}).get("rotowire_predicted_start"),
@@ -438,6 +568,18 @@ def enrich_and_score_player(player, context):
         "contributions": contributions,
         "low_data": low_data,
         "watchdog_note": "LOW DATA / ENRICHMENT MISSING" if low_data else None,
+        "rotowire_source": (rotowire_hit or {}).get("rotowire_source"),
+        "rotowire_player_page_matched": rotowire_health.get("player_page_matched", False),
+        "rotowire_player_page_url": rotowire_health.get("player_page_url"),
+        "has_history": has_history,
+        "has_predicted_xi": has_predicted_xi,
+        "has_injury": has_injury,
+        "has_news": has_news,
+        "has_x_signal": has_x_signal,
+        "has_any_external_enrichment": has_any_external_enrichment,
+        "has_multiple_external_sources": has_multiple_external_sources,
+        "board_only": board_only,
+        "source_health": source_health,
     }
 
 

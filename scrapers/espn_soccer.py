@@ -113,11 +113,39 @@ def team_display_name(league_code, team_code):
     """ESPN's real display name for a Dabble board's team code (e.g.
     "NEW" -> "Newcastle United"), for callers (Transfermarkt injury
     lookup) that need a genuinely searchable club name rather than a
-    bare code - see resolve_team_by_code. Falls back to team_code
-    unchanged if it isn't a recognized ESPN abbreviation for this
-    league, so a caller is no worse off than before this existed."""
-    hit = resolve_team_by_code(league_code, team_code)
-    return hit[1] if hit else team_code
+    bare code - see resolve_team_by_code.
+
+    Falls back to a substring match against ESPN's own display names
+    (same tolerance match_espn_team_id's fuzzy path uses) when the exact
+    abbreviation doesn't line up - confirmed live 2026-09-14 this is a
+    REAL gap, not a hypothetical: Dabble's "ROM" (3 letters) has no exact
+    match against ESPN's own Serie A abbreviation for the same club
+    ("ROMA", 4 letters), so exact-only matching would leave "ROM" falling
+    through to the bare-code fallback below and getting refused by
+    transfermarkt.resolve_team's guard entirely (safe, but a real
+    coverage loss for a resolvable team). Only falls back to team_code
+    unchanged (a caller is no worse off than before this existed) when
+    NEITHER approach finds anything."""
+    exact = resolve_team_by_code(league_code, team_code)
+    if exact:
+        return exact[1]
+
+    league_slug = LEAGUE_SLUGS.get(league_code)
+    if not league_slug:
+        return team_code
+    try:
+        teams = _teams_raw_for_league(league_slug)
+    except Exception as e:
+        logger.warning(f"ESPN teams fetch failed for {league_slug}: {e}")
+        return team_code
+    code_norm = normalize_name(team_code)
+    if not code_norm:
+        return team_code
+    for t in teams:
+        tnorm = normalize_name(t.get("displayName") or "")
+        if tnorm and (code_norm in tnorm or tnorm in code_norm):
+            return t["displayName"]
+    return team_code
 
 
 def match_espn_team_id(league_code, team_name_or_code):

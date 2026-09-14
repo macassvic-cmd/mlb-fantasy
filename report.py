@@ -1092,6 +1092,97 @@ def load_dns_snapshot(date_str):
     return live, removed, by_pid
 
 
+SOCCER_DNS_LIVE_SNAPSHOTS_DIR = os.path.join("data", "soccer_dnp_live_snapshots")
+
+
+def load_soccer_dns_snapshot(date_str):
+    """Same live/removed split as load_dns_snapshot, over soccer_adapter.
+    py's data/soccer_dnp_live_snapshots/{date}.json instead - see that
+    module's own docstring for the schema (dns_score/confidence_score/
+    urgency_score/combined_priority, RotoWire/Transfermarkt/predicted-XI
+    fields, source_health, has_* coverage flags). Dashboard visibility
+    added 2026-09-14 (coverage-audit follow-up item 14) - display only,
+    no scoring logic here, mirroring the MLB DNP Sniper tab's own split."""
+    path = os.path.join(SOCCER_DNS_LIVE_SNAPSHOTS_DIR, f"{date_str}.json")
+    if not os.path.exists(path):
+        return [], []
+    try:
+        with open(path, encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception:
+        return [], []
+
+    batch_ts = data.get("_latest_batch_ts")
+    live, removed = [], []
+    for key, entry in data.items():
+        if key.startswith("_"):
+            continue
+        history = entry.get("score_history") or []
+        if not history:
+            continue
+        last_ts = history[-1].get("ts")
+        latest = entry.get("latest") or {}
+        card = {
+            "name": entry.get("name"), "team": latest.get("team"),
+            "matchup": latest.get("matchup"), "leagueCode": latest.get("league_code"),
+            "leagueRaw": latest.get("league_raw"), "eventDate": latest.get("event_date"),
+            "gameTimePt": game_time_pt(latest.get("event_date")),
+            "dnsScore": latest.get("dns_score", history[-1].get("dns_score")),
+            "confidenceScore": latest.get("confidence_score", history[-1].get("confidence_score")),
+            "urgencyScore": latest.get("urgency_score", history[-1].get("urgency_score")),
+            "combinedPriority": latest.get("combined_priority"),
+            "officialStatus": latest.get("official_status", history[-1].get("official_status")),
+            "dabbleStatusRaw": latest.get("dabble_status_raw"),
+            "rotowirePageTag": latest.get("rotowire_page_tag"),
+            "rotowireStatusRaw": latest.get("rotowire_status_raw"),
+            "transfermarktInjury": latest.get("transfermarkt_injury"),
+            "predictionConsensus": latest.get("prediction_consensus"),
+            "predictedStartSources": latest.get("predicted_start_sources", []),
+            "predictedXiSources": latest.get("predicted_xi_sources", []),
+            "hasAnyExternalEnrichment": latest.get("has_any_external_enrichment"),
+            "boardOnly": latest.get("board_only"),
+            "topReasons": latest.get("top_reasons", []),
+            "lastSeenAt": last_ts,
+        }
+        if last_ts == batch_ts:
+            live.append(card)
+        else:
+            removed.append(card)
+
+    live.sort(key=lambda c: c.get("combinedPriority") or 0, reverse=True)
+    removed.sort(key=lambda c: c.get("lastSeenAt") or "", reverse=True)
+    return live, removed
+
+
+def load_notification_health():
+    """Discord/X readiness for both sports' DNS products - dashboard
+    visibility added 2026-09-14 (coverage-audit follow-up item 14), so
+    "no alerts fired today" is visibly distinguishable from "nothing is
+    even wired up" without SSHing in to check environment variables."""
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    digest_record = None
+    digest_path = os.path.join("data", "soccer_daily_digest", f"{today}.json")
+    if os.path.exists(digest_path):
+        try:
+            with open(digest_path, encoding="utf-8") as f:
+                digest_record = json.load(f)
+        except Exception:
+            digest_record = None
+
+    try:
+        import soccer_x_monitor
+        x_enabled = soccer_x_monitor.has_credentials()
+    except Exception:
+        x_enabled = False
+
+    return {
+        "mlbDiscordConfigured": bool(os.environ.get("DISCORD_DNP_WEBHOOK_URL")),
+        "soccerDiscordConfigured": bool(os.environ.get("DISCORD_SOCCER_DNS_WEBHOOK_URL")),
+        "xEnabled": x_enabled,
+        "soccerDigestToday": digest_record,
+    }
+
+
 def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None):
     games_count = len({r["game_pk"] for r in rows})
     generated_dt = datetime.now(timezone.utc).astimezone(_PACIFIC)
@@ -1108,6 +1199,8 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     # this never adds/removes a DNS candidate); dns_live/dns_removed feed
     # the dedicated DNS tab directly, independent of these rows entirely. -
     dns_live, dns_removed, dns_by_pid = load_dns_snapshot(date_str)
+    soccer_dns_live, soccer_dns_removed = load_soccer_dns_snapshot(date_str)
+    notification_health = load_notification_health()
     for r in rows:
         dns = dns_by_pid.get(r.get("player_id"))
         if dns:
@@ -1581,6 +1674,9 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     # candidate universe must stay Dabble-only). ---------------------------
     dns_live_js = json.dumps(dns_live)
     dns_removed_js = json.dumps(dns_removed)
+    soccer_dns_live_js = json.dumps(soccer_dns_live, ensure_ascii=False)
+    soccer_dns_removed_js = json.dumps(soccer_dns_removed, ensure_ascii=False)
+    notification_health_js = json.dumps(notification_health, ensure_ascii=False)
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -1929,6 +2025,7 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
 <div class="tabs">
   <button class="tab-btn active" id="tab-top25" data-tab="top25">Top 25</button>
   <button class="tab-btn" id="tab-dnpsniper" data-tab="dnpsniper">DNP Sniper</button>
+  <button class="tab-btn" id="tab-soccerdns" data-tab="soccerdns">Soccer DNS</button>
   <button class="tab-btn" id="tab-unders" data-tab="unders">Unders</button>
   <button class="tab-btn" id="tab-full" data-tab="full">Full Leaderboard</button>
   <button class="tab-btn" id="tab-results" data-tab="results">Results</button>
@@ -2088,6 +2185,27 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   <div class="card-grid" id="dnsCardGrid"></div>
 </div>
 
+<div class="panel hidden" id="panel-soccerdns">
+  <div class="unvalidated-note">Soccer DNS is the same Dabble-only architecture as MLB's DNP Sniper (soccer_adapter.py) - the live Dabble soccer board is the entire candidate universe; Transfermarkt/RotoWire/X/predicted-XI/start-history enrich a candidate but never decide who exists. Sorted by combined hunting priority by default. Added 2026-09-14.</div>
+
+  <div class="unvalidated-note" id="soccerNotificationHealth"></div>
+
+  <div class="dns-view-toggle">
+    <button class="dns-view-btn active" id="soccerDnsViewLive" data-view="live">Live Candidates</button>
+    <button class="dns-view-btn" id="soccerDnsViewRemoved" data-view="removed">Removed / History</button>
+  </div>
+
+  <div class="filter-bar" id="soccerDnsFilterBar">
+    <label class="filter-toggle"><input type="radio" name="soccerDnsThreshold" value="0" checked> All</label>
+    <label class="filter-toggle"><input type="radio" name="soccerDnsThreshold" value="60"> DNS &ge; 60</label>
+    <label class="filter-toggle"><input type="radio" name="soccerDnsThreshold" value="70"> DNS &ge; 70</label>
+    <label class="filter-toggle"><input type="radio" name="soccerDnsThreshold" value="80"> DNS &ge; 80</label>
+    <label class="filter-toggle"><input type="radio" name="soccerDnsThreshold" value="90"> DNS &ge; 90</label>
+  </div>
+
+  <div class="card-grid" id="soccerDnsCardGrid"></div>
+</div>
+
 
 
 <script>
@@ -2149,6 +2267,9 @@ const CLV_FORWARD = {clv_forward_js};
 const CLV_BACKTEST = {clv_backtest_js};
 const DNS_LIVE = {dns_live_js};
 const DNS_REMOVED = {dns_removed_js};
+const SOCCER_DNS_LIVE = {soccer_dns_live_js};
+const SOCCER_DNS_REMOVED = {soccer_dns_removed_js};
+const NOTIFICATION_HEALTH = {notification_health_js};
 const GENERATED_AT = {json.dumps(generated_at_iso)};
 const GAME_DATE = {json.dumps(date_str)};
 const PLAYER_COUNT = {player_count};
@@ -2406,7 +2527,7 @@ setInterval(applyHideStartedFilter, 30000); // live re-check as games start, no 
 
 
 // --- Tabs ---
-const PANELS = ['top25', 'unders', 'full', 'results', 'history', 'top25results', 'underresults', 'clv', 'dnpsniper'];
+const PANELS = ['top25', 'unders', 'full', 'results', 'history', 'top25results', 'underresults', 'clv', 'dnpsniper', 'soccerdns'];
 document.querySelectorAll('.tab-btn').forEach(btn => {{
   btn.addEventListener('click', () => {{
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -2850,6 +2971,109 @@ function renderDns() {{
   }}
 }}
 renderDns();
+
+// --- Soccer DNS tab - same Dabble-only architecture as MLB's DNP Sniper
+// (soccer_adapter.py via report.load_soccer_dns_snapshot) - display only,
+// no scoring logic here. Added 2026-09-14 coverage-audit follow-up. -----
+function soccerDnsTierClass(score) {{
+  if (score >= 90) return 'dns-tier-sniper';
+  if (score >= 80) return 'dns-tier-veryhigh';
+  if (score >= 70) return 'dns-tier-strong';
+  if (score >= 60) return 'dns-tier-watch';
+  return 'dns-tier-low';
+}}
+
+function soccerDnsStatusBadge(status) {{
+  if (status === 'confirmed_not_starting') return '<div class="badge badge-getaway">CONFIRMED NOT STARTING</div>';
+  if (status === 'confirmed_starting') return '<div class="badge badge-anchored">CONFIRMED STARTING</div>';
+  return '<div class="badge badge-projected">LINEUP NOT YET POSTED</div>';
+}}
+
+function soccerDnsSignalHtml(c) {{
+  const lines = [];
+  if (c.transfermarktInjury) lines.push(`Transfermarkt: ${{c.transfermarktInjury.reason}}`);
+  if (c.rotowirePageTag || c.rotowireStatusRaw) lines.push(`RotoWire: ${{c.rotowirePageTag || c.rotowireStatusRaw}}`);
+  if (c.predictionConsensus && c.predictionConsensus !== 'unknown') {{
+    lines.push(`Predicted XI: ${{c.predictionConsensus}} (${{(c.predictedStartSources || []).length}}/${{(c.predictedXiSources || []).length}})`);
+  }}
+  if (!lines.length) lines.push(c.boardOnly ? 'No enrichment signal found (board-only)' : 'Checked - no adverse signal');
+  return '<div class="dns-contributions">' + lines.map(l => `<div class="dns-contribution-line">${{l}}</div>`).join('') + '</div>';
+}}
+
+function soccerDnsReasonsHtml(reasons) {{
+  if (!reasons || !reasons.length) return '';
+  return '<div class="dns-markets"><b>Top reasons:</b> ' + reasons.slice(0, 3).join('; ') + '</div>';
+}}
+
+function soccerDnsCard(c, removed) {{
+  const card = document.createElement('div');
+  card.className = ('card dns-card ' + soccerDnsTierClass(c.dnsScore) + (removed ? ' dns-removed' : '')).trim();
+  const matchup = c.matchup || c.team;
+  card.innerHTML = `
+    <div class="name">${{c.name}}</div>
+    <div class="meta">${{c.team}} &middot; ${{matchup}}${{c.leagueCode ? ' &middot; ' + c.leagueCode : ''}}${{c.gameTimePt ? ' &middot; ' + c.gameTimePt : ''}}</div>
+    <div class="dns-score-row">
+      <div class="dns-score-box"><span class="dns-score-value">${{c.dnsScore}}</span><span class="pts-label">DNS</span></div>
+      <div class="dns-score-box small"><span class="dns-score-value">${{c.confidenceScore}}</span><span class="pts-label">CONF</span></div>
+      <div class="dns-score-box small"><span class="dns-score-value">${{c.urgencyScore}}</span><span class="pts-label">URG</span></div>
+    </div>
+    ${{soccerDnsStatusBadge(c.officialStatus)}}
+    ${{removed
+        ? `<div class="badge badge-no-line">REMOVED &middot; last seen ${{c.lastSeenAt ? new Date(c.lastSeenAt).toLocaleString() : 'unknown'}}</div>`
+        : '<div class="badge badge-value">DABBLE LIVE</div>'}}
+    ${{soccerDnsSignalHtml(c)}}
+    ${{soccerDnsReasonsHtml(c.topReasons)}}
+  `;
+  return card;
+}}
+
+let soccerDnsView = 'live';
+document.getElementById('soccerDnsViewLive').addEventListener('click', () => {{
+  soccerDnsView = 'live';
+  document.getElementById('soccerDnsViewLive').classList.add('active');
+  document.getElementById('soccerDnsViewRemoved').classList.remove('active');
+  renderSoccerDns();
+}});
+document.getElementById('soccerDnsViewRemoved').addEventListener('click', () => {{
+  soccerDnsView = 'removed';
+  document.getElementById('soccerDnsViewRemoved').classList.add('active');
+  document.getElementById('soccerDnsViewLive').classList.remove('active');
+  renderSoccerDns();
+}});
+document.querySelectorAll('input[name="soccerDnsThreshold"]').forEach(r => r.addEventListener('change', renderSoccerDns));
+
+function renderSoccerDns() {{
+  const grid = document.getElementById('soccerDnsCardGrid');
+  grid.innerHTML = '';
+  const source = soccerDnsView === 'live' ? SOCCER_DNS_LIVE : SOCCER_DNS_REMOVED;
+  const checkedEl = document.querySelector('input[name="soccerDnsThreshold"]:checked');
+  const threshold = checkedEl ? Number(checkedEl.value) : 0;
+  const list = source.filter(c => c.dnsScore >= threshold);
+  if (list.length === 0) {{
+    grid.innerHTML = '<div class="unanchored-empty">No Soccer DNS candidates match this filter.</div>';
+    return;
+  }}
+  for (const c of list) {{
+    grid.appendChild(soccerDnsCard(c, soccerDnsView === 'removed'));
+  }}
+}}
+renderSoccerDns();
+
+// --- Notification / source health (item 14) - visible proof that "no
+// alerts today" and "nothing is wired up" are different facts. --------
+(function renderNotificationHealth() {{
+  const el = document.getElementById('soccerNotificationHealth');
+  const h = NOTIFICATION_HEALTH;
+  const digest = h.soccerDigestToday;
+  const digestLine = digest
+    ? `Daily digest: generated ${{digest.generated_at}} &middot; ${{digest.candidate_count}} candidates ` +
+      `(${{digest.watch_count}} WATCH / ${{digest.high_count}} HIGH) &middot; Discord delivered: ${{digest.discord_delivered ? 'YES' : 'NO'}}` +
+      (digest.discord_error ? ` (${{digest.discord_error}})` : '')
+    : 'Daily digest: not generated yet today.';
+  el.innerHTML = `<b>Notification health</b> &middot; MLB Discord: ${{h.mlbDiscordConfigured ? 'CONFIGURED' : 'NOT CONFIGURED'}}` +
+    ` &middot; Soccer Discord: ${{h.soccerDiscordConfigured ? 'CONFIGURED' : 'NOT CONFIGURED'}}` +
+    ` &middot; X realtime: ${{h.xEnabled ? 'ENABLED' : 'DISABLED'}}<br>${{digestLine}}`;
+}})();
 
 const T25_COLS = [
   {{key: 'name',       label: 'Player'}},

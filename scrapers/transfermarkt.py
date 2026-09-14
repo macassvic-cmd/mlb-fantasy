@@ -138,10 +138,38 @@ def _search_team_once(query):
     return None, None
 
 
+_SUSPICIOUS_BOARD_CODE_RE = re.compile(r"^[A-Z]{2,4}$")
+
+
+def _looks_like_a_bare_board_code(name):
+    """True for something like "TOR"/"NEW"/"CHI" - a book's short team
+    code, never a real club's full name. Guards against the exact
+    incident found live 2026-09-13: soccer_adapter.py once passed Dabble's
+    raw 3-letter code straight into resolve_team(), whose free-text
+    search returned an unrelated club ("TOR" -> Real Madrid, "CHI" ->
+    Liverpool) and silently cached it as if verified - see item 8 of the
+    2026-09-14 coverage audit. A real club name is never just 2-4 bare
+    uppercase letters, so this is a safe, cheap check with no legitimate
+    false positives observed in this codebase's actual team names."""
+    return bool(_SUSPICIOUS_BOARD_CODE_RE.match(name or ""))
+
+
 def resolve_team(full_name):
     """(slug, team_id) for a club's Transfermarkt profile, cached forever
     (a club's TM id doesn't change season to season). Tries the raw
-    Betr full_name first, then TEAM_SEARCH_ALIASES if that fails."""
+    Betr full_name first, then TEAM_SEARCH_ALIASES if that fails.
+
+    Refuses (None, None), WITHOUT searching or caching anything, when
+    full_name looks like a bare board code rather than a real club name -
+    see _looks_like_a_bare_board_code. A caller with only a short code
+    (e.g. a Dabble team abbreviation) must resolve it to a real name
+    first - scrapers.espn_soccer.team_display_name does exactly that."""
+    if _looks_like_a_bare_board_code(full_name):
+        logger.warning(f"transfermarkt.resolve_team: refusing to search/cache {full_name!r} - looks like a "
+                        f"bare short board code, not a real club name. Resolve it to a real name first "
+                        f"(see scrapers.espn_soccer.team_display_name).")
+        return None, None
+
     cache = _load_team_cache()
     if full_name in cache:
         entry = cache[full_name]

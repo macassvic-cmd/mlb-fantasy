@@ -131,6 +131,49 @@ def starts_last_n(history, normalized_name, n=5, before_date=None):
     return started, len(matches) - started, len(matches)
 
 
+# Named n=3/5/10 wrappers (coverage audit item 4) - same starts_last_n
+# underneath, just the exact call shape a caller/report can name directly
+# without repeating the n= kwarg everywhere.
+def starts_last_3(history, normalized_name, before_date=None):
+    return starts_last_n(history, normalized_name, n=3, before_date=before_date)
+
+
+def starts_last_5(history, normalized_name, before_date=None):
+    return starts_last_n(history, normalized_name, n=5, before_date=before_date)
+
+
+def starts_last_10(history, normalized_name, before_date=None):
+    return starts_last_n(history, normalized_name, n=10, before_date=before_date)
+
+
+# MINUTES-PLAYED DATA IS NOT AVAILABLE (checked live 2026-09-14): ESPN's
+# soccer match-summary roster stats (the only per-player, per-match data
+# source this module has - see module docstring) carries appearances/
+# cards/goals/shots/saves per player but NO minutes-played field of any
+# kind. minutes_last_3/5/10 were requested (coverage audit item 4) but
+# cannot be honestly computed without a new data source - documented gap,
+# not a silent omission or a fabricated value. If a real per-match minutes
+# source is ever added, it belongs in record_date() alongside "started"/
+# "active" - the query helpers below (start_rate/bench_rate) are already
+# shaped to make adding "minutes_rate"-style helpers trivial then.
+MINUTES_DATA_AVAILABLE = False
+
+
+def start_rate(history, normalized_name, n=10, before_date=None):
+    """Percent (0-100, rounded) of the last n recorded matches started,
+    or None if there's no history at all - never divides by zero."""
+    wins, losses, total = starts_last_n(history, normalized_name, n=n, before_date=before_date)
+    return round(100 * wins / total, 1) if total else None
+
+
+def bench_rate(history, normalized_name, n=10, before_date=None):
+    """100 - start_rate - kept as its own named function (rather than
+    making every caller compute 100-start_rate itself) since "bench rate"
+    is the framing coverage reports/diagnostics actually want to show."""
+    rate = start_rate(history, normalized_name, n=n, before_date=before_date)
+    return round(100 - rate, 1) if rate is not None else None
+
+
 def days_rest(history, normalized_name, as_of_date, before_date=None):
     """Days since this player's last match appearance (started or sub) -
     None if no history at all."""
