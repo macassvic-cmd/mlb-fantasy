@@ -2145,25 +2145,164 @@
           "grade": "win"
         }
       ]
+    },
+    "2026-09-12": {
+      "wins": 7,
+      "losses": 5,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 642350,
+          "name": "Jose Siri",
+          "team": "Los Angeles Angels",
+          "projected_ud": 3.58,
+          "ud_line": 5.5,
+          "edge": -1.92,
+          "game_time_pt": "1:05 PM PT",
+          "actual_ud": 9,
+          "grade": "loss"
+        },
+        {
+          "player_id": 668904,
+          "name": "Royce Lewis",
+          "team": "Minnesota Twins",
+          "projected_ud": 3.6,
+          "ud_line": 5.5,
+          "edge": -1.9,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 8,
+          "grade": "loss"
+        },
+        {
+          "player_id": 677800,
+          "name": "Wilyer Abreu",
+          "team": "Boston Red Sox",
+          "projected_ud": 4.61,
+          "ud_line": 6.5,
+          "edge": -1.89,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 10,
+          "grade": "loss"
+        },
+        {
+          "player_id": 687952,
+          "name": "Christian Encarnacion-Strand",
+          "team": "Baltimore Orioles",
+          "projected_ud": 3.7,
+          "ud_line": 5.5,
+          "edge": -1.8,
+          "game_time_pt": "12:07 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 596115,
+          "name": "Trevor Story",
+          "team": "Boston Red Sox",
+          "projected_ud": 4.74,
+          "ud_line": 6.5,
+          "edge": -1.76,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 8,
+          "grade": "loss"
+        },
+        {
+          "player_id": 680776,
+          "name": "Jarren Duran",
+          "team": "Boston Red Sox",
+          "projected_ud": 3.75,
+          "ud_line": 5.5,
+          "edge": -1.75,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 665487,
+          "name": "Fernando Tatis Jr.",
+          "team": "San Diego Padres",
+          "projected_ud": 6.76,
+          "ud_line": 8.5,
+          "edge": -1.74,
+          "game_time_pt": "1:05 PM PT",
+          "actual_ud": 34,
+          "grade": "loss"
+        },
+        {
+          "player_id": 686611,
+          "name": "Dylan Crews",
+          "team": "Washington Nationals",
+          "projected_ud": 4.81,
+          "ud_line": 6.5,
+          "edge": -1.69,
+          "game_time_pt": "1:05 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 695731,
+          "name": "Braden Montgomery",
+          "team": "Chicago White Sox",
+          "projected_ud": 3.84,
+          "ud_line": 5.5,
+          "edge": -1.66,
+          "game_time_pt": "4:15 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 701785,
+          "name": "Kaelen Culpepper",
+          "team": "Minnesota Twins",
+          "projected_ud": 3.86,
+          "ud_line": 5.5,
+          "edge": -1.64,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 681508,
+          "name": "Mickey Gasper",
+          "team": "Boston Red Sox",
+          "projected_ud": 4.9,
+          "ud_line": 6.5,
+          "edge": -1.6,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 5,
+          "grade": "win"
+        },
+        {
+          "player_id": 702332,
+          "name": "Caleb Durbin",
+          "team": "Boston Red Sox",
+          "projected_ud": 3.9,
+          "ud_line": 5.5,
+          "edge": -1.6,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 5,
+          "grade": "win"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 99,
-    "losses": 77,
+    "wins": 106,
+    "losses": 82,
     "dnp": 7
   },
   "record_by_line": {
     "5.5": {
-      "wins": 43,
-      "losses": 41
+      "wins": 48,
+      "losses": 43
     },
     "6.5": {
-      "wins": 28,
-      "losses": 24
+      "wins": 30,
+      "losses": 26
     },
     "8.5+": {
       "wins": 7,
-      "losses": 3
+      "losses": 4
     },
     "7.5": {
       "wins": 12,
@@ -2312,7 +2451,7 @@
     "686611": {
       "name": "Dylan Crews",
       "team": "Washington Nationals",
-      "wins": 1,
+      "wins": 2,
       "losses": 1
     },
     "547180": {
@@ -2451,7 +2590,7 @@
       "name": "Royce Lewis",
       "team": "Minnesota Twins",
       "wins": 3,
-      "losses": 1
+      "losses": 2
     },
     "664034": {
       "name": "Ty France",
@@ -2775,7 +2914,7 @@
       "name": "Wilyer Abreu",
       "team": "Boston Red Sox",
       "wins": 1,
-      "losses": 0
+      "losses": 1
     },
     "681082": {
       "name": "Bryson Stott",
@@ -2846,6 +2985,60 @@
     "608070": {
       "name": "Jos\u00e9 Ram\u00edrez",
       "team": "Cleveland Guardians",
+      "wins": 1,
+      "losses": 0
+    },
+    "642350": {
+      "name": "Jose Siri",
+      "team": "Los Angeles Angels",
+      "wins": 0,
+      "losses": 1
+    },
+    "687952": {
+      "name": "Christian Encarnacion-Strand",
+      "team": "Baltimore Orioles",
+      "wins": 1,
+      "losses": 0
+    },
+    "596115": {
+      "name": "Trevor Story",
+      "team": "Boston Red Sox",
+      "wins": 0,
+      "losses": 1
+    },
+    "680776": {
+      "name": "Jarren Duran",
+      "team": "Boston Red Sox",
+      "wins": 1,
+      "losses": 0
+    },
+    "665487": {
+      "name": "Fernando Tatis Jr.",
+      "team": "San Diego Padres",
+      "wins": 0,
+      "losses": 1
+    },
+    "695731": {
+      "name": "Braden Montgomery",
+      "team": "Chicago White Sox",
+      "wins": 1,
+      "losses": 0
+    },
+    "701785": {
+      "name": "Kaelen Culpepper",
+      "team": "Minnesota Twins",
+      "wins": 1,
+      "losses": 0
+    },
+    "681508": {
+      "name": "Mickey Gasper",
+      "team": "Boston Red Sox",
+      "wins": 1,
+      "losses": 0
+    },
+    "702332": {
+      "name": "Caleb Durbin",
+      "team": "Boston Red Sox",
       "wins": 1,
       "losses": 0
     }

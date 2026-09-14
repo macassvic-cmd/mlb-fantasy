@@ -2029,20 +2029,80 @@
           "rate_before": 64.3
         }
       ]
+    },
+    "2026-09-12": {
+      "fire": [
+        {
+          "player_id": 691718,
+          "name": "Pete Crow-Armstrong",
+          "team": "Chicago Cubs",
+          "grade": "loss",
+          "n_before": 43,
+          "wins_before": 27,
+          "rate_before": 62.8
+        },
+        {
+          "player_id": 606466,
+          "name": "Ketel Marte",
+          "team": "Arizona Diamondbacks",
+          "grade": "loss",
+          "n_before": 16,
+          "wins_before": 10,
+          "rate_before": 62.5
+        },
+        {
+          "player_id": 668930,
+          "name": "Brice Turang",
+          "team": "Milwaukee Brewers",
+          "grade": "win",
+          "n_before": 15,
+          "wins_before": 10,
+          "rate_before": 66.7
+        },
+        {
+          "player_id": 672515,
+          "name": "Gabriel Moreno",
+          "team": "Arizona Diamondbacks",
+          "grade": "win",
+          "n_before": 16,
+          "wins_before": 10,
+          "rate_before": 62.5
+        }
+      ],
+      "hot": [
+        {
+          "player_id": 680757,
+          "name": "Steven Kwan",
+          "team": "Cleveland Guardians",
+          "grade": "loss",
+          "n_before": 12,
+          "wins_before": 10,
+          "rate_before": 83.3
+        },
+        {
+          "player_id": 800050,
+          "name": "Chase DeLauter",
+          "team": "Cleveland Guardians",
+          "grade": "loss",
+          "n_before": 14,
+          "wins_before": 9,
+          "rate_before": 64.3
+        }
+      ]
     }
   },
   "cohorts": {
     "fire": {
-      "wins": 48,
-      "losses": 44,
-      "n": 92,
-      "rate": 52.2
+      "wins": 50,
+      "losses": 46,
+      "n": 96,
+      "rate": 52.1
     },
     "hot": {
       "wins": 49,
-      "losses": 41,
-      "n": 90,
-      "rate": 54.4
+      "losses": 43,
+      "n": 92,
+      "rate": 53.3
     }
   }
 }
