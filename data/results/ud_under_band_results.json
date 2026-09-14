@@ -2284,21 +2284,160 @@
           "grade": "win"
         }
       ]
+    },
+    "2026-09-13": {
+      "wins": 6,
+      "losses": 6,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 702616,
+          "name": "Jackson Holliday",
+          "team": "Baltimore Orioles",
+          "projected_ud": 3.55,
+          "ud_line": 5.5,
+          "edge": -1.95,
+          "game_time_pt": "10:37 AM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 677649,
+          "name": "Ezequiel Duran",
+          "team": "Texas Rangers",
+          "projected_ud": 4.58,
+          "ud_line": 6.5,
+          "edge": -1.92,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 8,
+          "grade": "loss"
+        },
+        {
+          "player_id": 672515,
+          "name": "Gabriel Moreno",
+          "team": "Arizona Diamondbacks",
+          "projected_ud": 4.61,
+          "ud_line": 6.5,
+          "edge": -1.89,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 14,
+          "grade": "loss"
+        },
+        {
+          "player_id": 701807,
+          "name": "Carson Benge",
+          "team": "New York Mets",
+          "projected_ud": 3.62,
+          "ud_line": 5.5,
+          "edge": -1.88,
+          "game_time_pt": "10:35 AM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 666182,
+          "name": "Bo Bichette",
+          "team": "New York Mets",
+          "projected_ud": 3.68,
+          "ud_line": 5.5,
+          "edge": -1.82,
+          "game_time_pt": "10:35 AM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 808959,
+          "name": "Munetaka Murakami",
+          "team": "Chicago White Sox",
+          "projected_ud": 4.78,
+          "ud_line": 6.5,
+          "edge": -1.72,
+          "game_time_pt": "11:15 AM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 694374,
+          "name": "Tim Tawa",
+          "team": "Arizona Diamondbacks",
+          "projected_ud": 3.78,
+          "ud_line": 5.5,
+          "edge": -1.72,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 10,
+          "grade": "loss"
+        },
+        {
+          "player_id": 683002,
+          "name": "Gunnar Henderson",
+          "team": "Baltimore Orioles",
+          "projected_ud": 3.81,
+          "ud_line": 5.5,
+          "edge": -1.69,
+          "game_time_pt": "10:37 AM PT",
+          "actual_ud": 12,
+          "grade": "loss"
+        },
+        {
+          "player_id": 694671,
+          "name": "Wyatt Langford",
+          "team": "Texas Rangers",
+          "projected_ud": 4.84,
+          "ud_line": 6.5,
+          "edge": -1.66,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 608369,
+          "name": "Corey Seager",
+          "team": "Texas Rangers",
+          "projected_ud": 4.89,
+          "ud_line": 6.5,
+          "edge": -1.61,
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 26,
+          "grade": "loss"
+        },
+        {
+          "player_id": 808982,
+          "name": "Jung Hoo Lee",
+          "team": "San Francisco Giants",
+          "projected_ud": 3.89,
+          "ud_line": 5.5,
+          "edge": -1.61,
+          "game_time_pt": "4:20 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 666160,
+          "name": "Mickey Moniak",
+          "team": "Colorado Rockies",
+          "projected_ud": 3.94,
+          "ud_line": 5.5,
+          "edge": -1.56,
+          "game_time_pt": "9:10 AM PT",
+          "actual_ud": 6,
+          "grade": "loss"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 106,
-    "losses": 82,
+    "wins": 112,
+    "losses": 88,
     "dnp": 7
   },
   "record_by_line": {
     "5.5": {
-      "wins": 48,
-      "losses": 43
+      "wins": 52,
+      "losses": 46
     },
     "6.5": {
-      "wins": 30,
-      "losses": 26
+      "wins": 32,
+      "losses": 29
     },
     "8.5+": {
       "wins": 7,
@@ -2338,7 +2477,7 @@
       "name": "Ezequiel Duran",
       "team": "Texas Rangers",
       "wins": 1,
-      "losses": 0
+      "losses": 1
     },
     "663616": {
       "name": "Trevor Larnach",
@@ -2403,7 +2542,7 @@
     "694671": {
       "name": "Wyatt Langford",
       "team": "Texas Rangers",
-      "wins": 1,
+      "wins": 2,
       "losses": 0
     },
     "701398": {
@@ -2415,7 +2554,7 @@
     "808982": {
       "name": "Jung Hoo Lee",
       "team": "San Francisco Giants",
-      "wins": 1,
+      "wins": 2,
       "losses": 1
     },
     "663757": {
@@ -2530,7 +2669,7 @@
       "name": "Gabriel Moreno",
       "team": "Arizona Diamondbacks",
       "wins": 0,
-      "losses": 1
+      "losses": 2
     },
     "671739": {
       "name": "Michael Harris II",
@@ -2817,7 +2956,7 @@
     "701807": {
       "name": "Carson Benge",
       "team": "New York Mets",
-      "wins": 1,
+      "wins": 2,
       "losses": 0
     },
     "669357": {
@@ -3041,6 +3180,48 @@
       "team": "Boston Red Sox",
       "wins": 1,
       "losses": 0
+    },
+    "702616": {
+      "name": "Jackson Holliday",
+      "team": "Baltimore Orioles",
+      "wins": 1,
+      "losses": 0
+    },
+    "666182": {
+      "name": "Bo Bichette",
+      "team": "New York Mets",
+      "wins": 1,
+      "losses": 0
+    },
+    "808959": {
+      "name": "Munetaka Murakami",
+      "team": "Chicago White Sox",
+      "wins": 1,
+      "losses": 0
+    },
+    "694374": {
+      "name": "Tim Tawa",
+      "team": "Arizona Diamondbacks",
+      "wins": 0,
+      "losses": 1
+    },
+    "683002": {
+      "name": "Gunnar Henderson",
+      "team": "Baltimore Orioles",
+      "wins": 0,
+      "losses": 1
+    },
+    "608369": {
+      "name": "Corey Seager",
+      "team": "Texas Rangers",
+      "wins": 0,
+      "losses": 1
+    },
+    "666160": {
+      "name": "Mickey Moniak",
+      "team": "Colorado Rockies",
+      "wins": 0,
+      "losses": 1
     }
   }
 }

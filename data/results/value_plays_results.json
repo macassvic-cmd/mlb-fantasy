@@ -7386,6 +7386,39 @@
           "correct": true
         }
       ]
+    },
+    "2026-09-13": {
+      "summary": {
+        "total": 2,
+        "correct": 2,
+        "accuracy": 100.0,
+        "over_total": 2,
+        "over_correct": 2,
+        "under_total": 0,
+        "under_correct": 0
+      },
+      "plays": [
+        {
+          "player_id": 805808,
+          "name": "Kevin McGonigle",
+          "team": "Detroit Tigers",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 17,
+          "correct": true
+        },
+        {
+          "player_id": 682985,
+          "name": "Riley Greene",
+          "team": "Detroit Tigers",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 21,
+          "correct": true
+        }
+      ]
     }
   }
 }

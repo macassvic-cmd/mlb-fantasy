@@ -2089,20 +2089,53 @@
           "rate_before": 64.3
         }
       ]
+    },
+    "2026-09-13": {
+      "fire": [
+        {
+          "player_id": 691718,
+          "name": "Pete Crow-Armstrong",
+          "team": "Chicago Cubs",
+          "grade": "loss",
+          "n_before": 44,
+          "wins_before": 27,
+          "rate_before": 61.4
+        },
+        {
+          "player_id": 701538,
+          "name": "Jackson Merrill",
+          "team": "San Diego Padres",
+          "grade": "win",
+          "n_before": 22,
+          "wins_before": 16,
+          "rate_before": 72.7
+        }
+      ],
+      "hot": [
+        {
+          "player_id": 703607,
+          "name": "Henry Bolte",
+          "team": "Athletics",
+          "grade": "win",
+          "n_before": 8,
+          "wins_before": 6,
+          "rate_before": 75.0
+        }
+      ]
     }
   },
   "cohorts": {
     "fire": {
-      "wins": 50,
-      "losses": 46,
-      "n": 96,
-      "rate": 52.1
+      "wins": 51,
+      "losses": 47,
+      "n": 98,
+      "rate": 52.0
     },
     "hot": {
-      "wins": 49,
+      "wins": 50,
       "losses": 43,
-      "n": 92,
-      "rate": 53.3
+      "n": 93,
+      "rate": 53.8
     }
   }
 }

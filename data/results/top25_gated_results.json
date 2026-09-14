@@ -1,0 +1,148 @@
+{
+  "dates": {
+    "2026-09-13": {
+      "wins": 9,
+      "losses": 2,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 805808,
+          "name": "Kevin McGonigle",
+          "team": "Detroit Tigers",
+          "projected_ud": 9.5,
+          "ud_line": 7.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "9:10 AM PT",
+          "actual_ud": 17,
+          "grade": "win"
+        },
+        {
+          "player_id": 703607,
+          "name": "Henry Bolte",
+          "team": "Athletics",
+          "projected_ud": 9.37,
+          "ud_line": 7.5,
+          "edge": 1.87,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "1:05 PM PT",
+          "actual_ud": 8,
+          "grade": "win"
+        },
+        {
+          "player_id": 663728,
+          "name": "Cal Raleigh",
+          "team": "Seattle Mariners",
+          "projected_ud": 8.96,
+          "ud_line": 7.5,
+          "edge": 1.46,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "1:05 PM PT",
+          "actual_ud": 5,
+          "grade": "loss"
+        },
+        {
+          "player_id": 682985,
+          "name": "Riley Greene",
+          "team": "Detroit Tigers",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "9:10 AM PT",
+          "actual_ud": 21,
+          "grade": "win"
+        },
+        {
+          "player_id": 682928,
+          "name": "CJ Abrams",
+          "team": "Washington Nationals",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "10:35 AM PT",
+          "actual_ud": 11,
+          "grade": "win"
+        },
+        {
+          "player_id": 695734,
+          "name": "Daylen Lile",
+          "team": "Washington Nationals",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "10:35 AM PT",
+          "actual_ud": 15,
+          "grade": "win"
+        },
+        {
+          "player_id": 605141,
+          "name": "Mookie Betts",
+          "team": "Los Angeles Dodgers",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "10:40 AM PT",
+          "actual_ud": 14,
+          "grade": "win"
+        },
+        {
+          "player_id": 682829,
+          "name": "Elly De La Cruz",
+          "team": "Cincinnati Reds",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "11:10 AM PT",
+          "actual_ud": 10,
+          "grade": "win"
+        },
+        {
+          "player_id": 691718,
+          "name": "Pete Crow-Armstrong",
+          "team": "Chicago Cubs",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "11:20 AM PT",
+          "actual_ud": 0,
+          "grade": "loss"
+        },
+        {
+          "player_id": 680869,
+          "name": "Zack Gelof",
+          "team": "Athletics",
+          "projected_ud": 8.14,
+          "ud_line": 6.5,
+          "edge": 1.64,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "1:05 PM PT",
+          "actual_ud": 29,
+          "grade": "win"
+        },
+        {
+          "player_id": 701538,
+          "name": "Jackson Merrill",
+          "team": "San Diego Padres",
+          "projected_ud": 8.14,
+          "ud_line": 6.5,
+          "edge": 1.64,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "4:20 PM PT",
+          "actual_ud": 10,
+          "grade": "win"
+        }
+      ]
+    }
+  },
+  "record": {
+    "wins": 9,
+    "losses": 2,
+    "dnp": 0
+  }
+}
