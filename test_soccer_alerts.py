@@ -484,5 +484,184 @@ class TestGradeAlerts(unittest.TestCase):
         self.assertFalse(data["rec1"]["long_term_injury"])
 
 
+class TestClassifyAlert(unittest.TestCase):
+    """2026-09-15 fix: PREDICTION (alerted before official confirmation
+    and before kickoff) vs CONFIRMATION (alerted after official_status
+    was already confirmed_not_starting, or after kickoff) - found live
+    that 32 of 33 graded 2026-09-14 alerts were confirmations, not
+    predictions, and the plain win/loss record had been conflating the
+    two."""
+
+    def test_already_confirmed_not_starting_is_a_confirmation(self):
+        self.assertEqual(sa._classify_alert("confirmed_not_starting", 120), "confirmation")
+
+    def test_not_yet_confirmed_and_before_kickoff_is_a_prediction(self):
+        self.assertEqual(sa._classify_alert("not_yet_posted", 120), "prediction")
+
+    def test_at_or_after_kickoff_is_a_confirmation_even_if_not_yet_confirmed(self):
+        self.assertEqual(sa._classify_alert("not_yet_posted", 0), "confirmation")
+        self.assertEqual(sa._classify_alert("not_yet_posted", -30), "confirmation")
+
+    def test_build_alert_record_stores_the_classification(self):
+        future_iso = "2026-09-20T15:00:00.000Z"
+        candidate = {
+            "dabble_player_id": "p1", "player_name": "Test", "team": "TST", "matchup": "TST @ OPP",
+            "fixture_id": "f1", "event_date": future_iso, "dns_score": 80, "confidence_score": 70,
+            "urgency_score": 0, "official_status": "not_yet_posted", "dabble_status_raw": None,
+            "props": [], "top_reasons": [], "transfermarkt_injury": None,
+        }
+        now_iso = "2026-09-14T00:00:00+00:00"
+        record = sa._build_alert_record(candidate, 75, "2026-09-14", now_iso)
+        self.assertEqual(record["alert_classification"], "prediction")
+
+        candidate["official_status"] = "confirmed_not_starting"
+        record2 = sa._build_alert_record(candidate, sa.CRITICAL_KEY, "2026-09-14", now_iso)
+        self.assertEqual(record2["alert_classification"], "confirmation")
+
+
+class TestGradingSummary(unittest.TestCase):
+    """item 2/3, 2026-09-15: grading_summary/print_grading_report split
+    graded records by alert_classification and bucket PREDICTION wins by
+    lead time."""
+
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self._patch_dir = patch("soccer_alerts.ALERTS_DIR", self._tmp.name)
+        self._patch_dir.start()
+
+    def tearDown(self):
+        self._patch_dir.stop()
+        self._tmp.cleanup()
+
+    def _record(self, classification, outcome, alerted_at=None, game_start=None, long_term_injury=False):
+        return {
+            "alert_classification": classification, "outcome": outcome, "official_started": None,
+            "graded_at": "2026-09-14T20:00:00+00:00", "long_term_injury": long_term_injury,
+            "alerted_at": alerted_at, "game_start": game_start,
+        }
+
+    def test_splits_prediction_and_confirmation(self):
+        date_str = "2026-09-14"
+        sa._save_alerts(date_str, {
+            "r1": self._record("prediction", "not_in_squad"),
+            "r2": self._record("confirmation", "not_in_squad"),
+            "r3": self._record("confirmation", "came_off_bench"),
+        })
+        summary = sa.grading_summary(date_str)
+        self.assertEqual(summary["prediction"]["n"], 1)
+        self.assertEqual(summary["confirmation"]["n"], 2)
+
+    def test_ungraded_records_are_excluded(self):
+        date_str = "2026-09-14"
+        r = self._record("prediction", "not_in_squad")
+        r["graded_at"] = None
+        sa._save_alerts(date_str, {"r1": r})
+        summary = sa.grading_summary(date_str)
+        self.assertEqual(summary["prediction"]["n"], 0)
+
+    def test_win_loss_matches_existing_rule_unchanged(self):
+        date_str = "2026-09-14"
+        sa._save_alerts(date_str, {
+            "r1": self._record("prediction", "not_in_squad"),
+            "r2": self._record("prediction", "came_off_bench"),
+            "r3": self._record("prediction", "unused_sub"),
+            "r4": self._record("prediction", "started"),
+        })
+        summary = sa.grading_summary(date_str)
+        self.assertEqual(summary["prediction"]["win"], 3)
+        self.assertEqual(summary["prediction"]["loss"], 1)
+
+    def test_long_term_injury_excluded_from_win_loss(self):
+        date_str = "2026-09-14"
+        sa._save_alerts(date_str, {
+            "r1": self._record("prediction", "not_in_squad", long_term_injury=True),
+        })
+        summary = sa.grading_summary(date_str)
+        self.assertEqual(summary["prediction"]["win"], 0)
+        self.assertEqual(summary["prediction"]["long_term_injury"], 1)
+
+    def test_prediction_win_lead_time_buckets(self):
+        date_str = "2026-09-14"
+        sa._save_alerts(date_str, {
+            "r1": self._record("prediction", "not_in_squad",
+                                alerted_at="2026-09-10T00:00:00+00:00", game_start="2026-09-14T00:00:00+00:00"),
+            "r2": self._record("prediction", "not_in_squad",
+                                alerted_at="2026-09-13T20:00:00+00:00", game_start="2026-09-14T00:00:00+00:00"),
+            "r3": self._record("prediction", "not_in_squad",
+                                alerted_at="2026-09-13T23:00:00+00:00", game_start="2026-09-14T00:00:00+00:00"),
+        })
+        summary = sa.grading_summary(date_str)
+        buckets = summary["prediction"]["win_lead_time_buckets"]
+        self.assertEqual(buckets["24h+"], 1)
+        self.assertEqual(buckets["2-24h"], 1)
+        self.assertEqual(buckets["<2h"], 1)
+
+    def test_confirmation_side_has_no_lead_time_buckets(self):
+        date_str = "2026-09-14"
+        sa._save_alerts(date_str, {"r1": self._record("confirmation", "not_in_squad")})
+        summary = sa.grading_summary(date_str)
+        self.assertNotIn("win_lead_time_buckets", summary["confirmation"])
+
+    def test_old_record_without_stored_classification_falls_back_to_computing_it(self):
+        date_str = "2026-09-14"
+        old_style = {
+            "outcome": "not_in_squad", "official_started": False, "graded_at": "2026-09-14T20:00:00+00:00",
+            "long_term_injury": False, "official_status": "confirmed_not_starting",
+            "minutes_to_game": 100, "alerted_at": None, "game_start": None,
+        }
+        sa._save_alerts(date_str, {"r1": old_style})
+        summary = sa.grading_summary(date_str)
+        self.assertEqual(summary["confirmation"]["n"], 1, "old records lacking alert_classification "
+                                                            "must still classify correctly")
+
+
+class TestGradeAlertsRecent(unittest.TestCase):
+    """item 4, 2026-09-15: grade_alerts_recent sweeps the last N days
+    every call, not just yesterday - grade_alerts alone never retries a
+    date once "yesterday" moves past it."""
+
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self._patch_dir = patch("soccer_alerts.ALERTS_DIR", self._tmp.name)
+        self._patch_dir.start()
+
+    def tearDown(self):
+        self._patch_dir.stop()
+        self._tmp.cleanup()
+
+    def test_grades_a_date_several_days_back_not_only_yesterday(self):
+        # 3 days before "today" (2026-09-14) - grade_alerts alone (called
+        # only for "yesterday") would never reach this date at all.
+        old_date = "2026-09-11"
+        sa._save_alerts(old_date, {"r1": {
+            "player_id": "p1", "player_name": "Test", "team": "TST", "league_code": "EPL",
+            "normalized_name": "test", "fixture_id": "f1", "graded_at": None, "official_started": None,
+        }})
+        with patch("soccer_alerts.grade_alerts") as mock_grade:
+            def fake_grade(d):
+                data = sa._load_alerts(d)
+                for k, v in data.items():
+                    if not k.startswith("_") and v.get("graded_at") is None:
+                        v["graded_at"] = "2026-09-14T00:00:00+00:00"
+                        v["outcome"] = "not_in_squad"
+                sa._save_alerts(d, data)
+            mock_grade.side_effect = fake_grade
+            n = sa.grade_alerts_recent(days=7, as_of_date="2026-09-14")
+        self.assertEqual(n, 1)
+        self.assertIsNotNone(sa._load_alerts(old_date)["r1"]["graded_at"])
+
+    def test_a_date_with_no_alerts_file_is_skipped_cheaply(self):
+        n = sa.grade_alerts_recent(days=7, as_of_date="2026-09-14")
+        self.assertEqual(n, 0)
+
+    def test_one_dates_failure_does_not_block_the_others(self):
+        good_date = "2026-09-12"
+        sa._save_alerts(good_date, {"r1": {"graded_at": None}})
+        with patch("soccer_alerts.grade_alerts", side_effect=[Exception("boom")] * 2 + [None] * 5):
+            n = sa.grade_alerts_recent(days=7, as_of_date="2026-09-14")
+        # no crash raised - non-fatal per-date handling confirmed by reaching here
+        self.assertIsInstance(n, int)
+
+
 if __name__ == "__main__":
     unittest.main()

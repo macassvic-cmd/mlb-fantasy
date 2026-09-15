@@ -34,7 +34,7 @@ import argparse
 import json
 import os
 import statistics
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 import requests
 
@@ -122,7 +122,30 @@ def _minutes_between(a_iso, b_iso):
     return (b - a).total_seconds() / 60
 
 
+def _classify_alert(official_status, minutes_to_game):
+    """'prediction' if this alert fired BEFORE the official lineup
+    confirmed the player out AND before kickoff; 'confirmation' if it
+    fired at/after official confirmation, or at/after kickoff -
+    2026-09-15 fix: the plain win/loss record conflated "DNS predicted
+    this in advance" with "DNS correctly relayed already-public
+    information." Found live re-examining the 33 graded 2026-09-14
+    alerts: 32 of 33 fired with official_status already confirmed_not_
+    starting - real, correct information, but not a prediction.
+
+    Computed from official_status/minutes_to_game (not the raw
+    candidate) so the exact same function classifies both a freshly
+    built record and an old, already-persisted one - every record has
+    carried these two fields since the very first version of this
+    module, so no backfill is needed for old data."""
+    if official_status == "confirmed_not_starting":
+        return "confirmation"
+    if minutes_to_game is not None and minutes_to_game <= 0:
+        return "confirmation"
+    return "prediction"
+
+
 def _build_alert_record(candidate, alert_type, date_str, now_iso, extra_reason=None):
+    minutes_to_game = _minutes_between(now_iso, candidate.get("event_date"))
     return {
         "player_id": candidate.get("dabble_player_id"),
         "player_name": candidate["player_name"],
@@ -137,7 +160,13 @@ def _build_alert_record(candidate, alert_type, date_str, now_iso, extra_reason=N
         "alert_type": alert_type,
         "alerted_at": now_iso,
         "game_start": candidate.get("event_date"),
-        "minutes_to_game": _minutes_between(now_iso, candidate.get("event_date")),
+        "minutes_to_game": minutes_to_game,
+        # 'prediction' vs 'confirmation' (2026-09-15 fix) - see
+        # _classify_alert's docstring. Computed at creation time since
+        # both inputs are already known then; grading later never
+        # changes it (grading determines the OUTCOME, not whether this
+        # was predictive in the first place).
+        "alert_classification": _classify_alert(candidate["official_status"], minutes_to_game),
         "official_status": candidate["official_status"],
         "dabble_status_raw": candidate.get("dabble_status_raw"),
         "dabble_live": True,
@@ -639,6 +668,131 @@ def print_speed_report():
           "each row above has real, graded volume - do not read a ranking into small-n rows.")
 
 
+def _lead_time_bucket(alerted_at_iso, game_start_iso):
+    """'24h+' / '2-24h' / '<2h' - how much notice a PREDICTION win gave,
+    since an earlier correct call is worth more than a late one (item 3,
+    2026-09-15). None if either timestamp is missing/unparseable."""
+    hours_before = _minutes_between(alerted_at_iso, game_start_iso)
+    if hours_before is None:
+        return None
+    hours_before = hours_before / 60
+    if hours_before >= 24:
+        return "24h+"
+    if hours_before >= 2:
+        return "2-24h"
+    return "<2h"
+
+
+def grading_summary(date_str):
+    """{prediction: {...}, confirmation: {...}} for every GRADED alert
+    record on date_str, split by alert_classification (2026-09-15 fix -
+    see _classify_alert). Each side's dict: outcome counts, long_term_
+    injury count, win/loss (long-term-injury records excluded from win/
+    loss, per the existing rule - win definition itself is unchanged:
+    did-not-play = win, started = loss). prediction also carries
+    lead_time_buckets (24h+/2-24h/<2h) for its WINS only, per item 3.
+
+    Uses the record's OWN stored alert_classification when present
+    (every record built from here forward has one); falls back to
+    _classify_alert on official_status/minutes_to_game for older
+    records that predate the field - both fields have existed since
+    this module's first version, so this is an exact classification,
+    never a guess, for old data too."""
+    records = [r for k, r in _load_alerts(date_str).items()
+               if not k.startswith("_last_state:") and not k.startswith(STALE_KICKOFF_KEY_PREFIX)]
+    graded = [r for r in records if r.get("graded_at")]
+
+    prediction, confirmation = [], []
+    for r in graded:
+        classification = r.get("alert_classification") or _classify_alert(
+            r.get("official_status"), r.get("minutes_to_game"))
+        (prediction if classification == "prediction" else confirmation).append(r)
+
+    def _side_summary(recs, with_lead_time=False):
+        outcomes = {o: sum(1 for r in recs if r.get("outcome") == o) for o in OUTCOMES}
+        lti = [r for r in recs if r.get("long_term_injury")]
+        non_lti = [r for r in recs if not r.get("long_term_injury")]
+        wins = [r for r in non_lti if r.get("outcome") in DID_NOT_PLAY_OUTCOMES]
+        losses = [r for r in non_lti if r.get("outcome") == "started"]
+        postponed = sum(1 for r in non_lti if r.get("outcome") == "match_postponed")
+        summary = {"n": len(recs), "outcomes": outcomes, "long_term_injury": len(lti),
+                   "win": len(wins), "loss": len(losses), "postponed_excluded": postponed}
+        if with_lead_time:
+            buckets = {"24h+": 0, "2-24h": 0, "<2h": 0, "unknown": 0}
+            for r in wins:
+                b = _lead_time_bucket(r.get("alerted_at"), r.get("game_start")) or "unknown"
+                buckets[b] += 1
+            summary["win_lead_time_buckets"] = buckets
+        return summary
+
+    return {"prediction": _side_summary(prediction, with_lead_time=True),
+            "confirmation": _side_summary(confirmation)}
+
+
+def print_grading_report(date_str):
+    """python soccer_alerts.py --grading-report DATE - item 2/3,
+    2026-09-15: the headline record is PREDICTION only (alerted before
+    official confirmation and before kickoff) - CONFIRMATION (alerted
+    after official_status was already confirmed_not_starting, or after
+    kickoff) is real, correct information but not a prediction, and
+    inflating the headline record with it was exactly the mistake found
+    live re-examining 2026-09-14: 32 of 33 graded alerts were
+    confirmations, not predictions."""
+    summary = grading_summary(date_str)
+
+    def _print_side(label, s):
+        print(f"=== {label} (n={s['n']}) ===")
+        for o in OUTCOMES:
+            print(f"  {o:<16}: {s['outcomes'][o]}")
+        print(f"  long_term_injury : {s['long_term_injury']}")
+        print(f"  WIN  (did not play): {s['win']}")
+        print(f"  LOSS (started)     : {s['loss']}")
+        if s.get("postponed_excluded"):
+            print(f"  postponed (excluded from win/loss): {s['postponed_excluded']}")
+        if "win_lead_time_buckets" in s:
+            print("  win lead time:")
+            for b in ("24h+", "2-24h", "<2h", "unknown"):
+                print(f"    {b:<8}: {s['win_lead_time_buckets'][b]}")
+
+    print(f"Grading report for {date_str}")
+    _print_side("PREDICTION (headline)", summary["prediction"])
+    print()
+    _print_side("CONFIRMATION (not a prediction - shown separately)", summary["confirmation"])
+
+
+def grade_alerts_recent(days=7, as_of_date=None):
+    """Grades every date in the last `days` days (item 4, 2026-09-15) -
+    grade_alerts alone never retries a date once "yesterday" moves past
+    it, so a record that couldn't be graded on its first attempt (ESPN
+    summary not posted yet) was stuck ungraded forever with only the
+    daily pipeline running. This sweeps the whole recent window every
+    call - grade_alerts itself already skips anything with graded_at
+    set and any date with no alerts file, so re-checking settled dates
+    is cheap, not wasteful."""
+    from soccer_dates import soccer_today_str
+    as_of = as_of_date or soccer_today_str()
+    as_of_dt = datetime.strptime(as_of, "%Y-%m-%d")
+    total_graded = 0
+    for days_back in range(1, days + 1):
+        d = (as_of_dt - timedelta(days=days_back)).strftime("%Y-%m-%d")
+        try:
+            data = _load_alerts(d)
+            if not data:
+                continue
+            before = sum(1 for k, v in data.items()
+                         if not k.startswith("_last_state:") and not k.startswith(STALE_KICKOFF_KEY_PREFIX)
+                         and v.get("graded_at"))
+            grade_alerts(d)
+            after_data = _load_alerts(d)
+            after = sum(1 for k, v in after_data.items()
+                        if not k.startswith("_last_state:") and not k.startswith(STALE_KICKOFF_KEY_PREFIX)
+                        and v.get("graded_at"))
+            total_graded += after - before
+        except Exception as e:
+            print(f"soccer_alerts: grading {d} failed (non-fatal): {e}")
+    return total_graded
+
+
 def main():
     import sys
     try:
@@ -651,6 +805,10 @@ def main():
     parser.add_argument("--backfill-grading-fields", default=None, metavar="DATE",
                          help="date YYYY-MM-DD - backfill league_code/normalized_name onto "
                               "pre-item-4-schema alert records, only where exactly derivable")
+    parser.add_argument("--grading-report", default=None, metavar="DATE",
+                         help="date YYYY-MM-DD - PREDICTION vs CONFIRMATION win/loss report")
+    parser.add_argument("--grade-recent", type=int, default=None, metavar="DAYS",
+                         help="grade every date in the last DAYS days, not just yesterday")
     args = parser.parse_args()
     if args.speed_report:
         print_speed_report()
@@ -658,8 +816,13 @@ def main():
         grade_alerts(args.grade)
     elif args.backfill_grading_fields:
         backfill_grading_fields(args.backfill_grading_fields)
+    elif args.grading_report:
+        print_grading_report(args.grading_report)
+    elif args.grade_recent:
+        grade_alerts_recent(days=args.grade_recent)
     else:
-        parser.error("specify --speed-report, --grade, or --backfill-grading-fields")
+        parser.error("specify --speed-report, --grade, --grade-recent, --grading-report, "
+                      "or --backfill-grading-fields")
 
 
 if __name__ == "__main__":

@@ -47,11 +47,12 @@ class _TempDigestDir(unittest.TestCase):
         # docs/soccer-dns.html on every test run - must never fire either.
         self._patch_dashboard = patch("soccer_dashboard.generate")
         self._patch_dashboard.start()
-        # soccer_alerts.grade_alerts (item 4, 2026-09-14) would otherwise
-        # load-and-resave the REAL data/soccer_dns_alerts/<yesterday>.json
-        # on every test run if that file happens to exist - must never
-        # touch real production alert data from a unit test.
-        self._patch_grade = patch("soccer_alerts.grade_alerts")
+        # soccer_alerts.grade_alerts_recent (item 4, 2026-09-14, swept to
+        # a 7-day window 2026-09-15) would otherwise load-and-resave up
+        # to 7 real data/soccer_dns_alerts/<date>.json files on every
+        # test run if any happen to exist - must never touch real
+        # production alert data from a unit test.
+        self._patch_grade = patch("soccer_alerts.grade_alerts_recent")
         self._patch_grade.start()
 
     def tearDown(self):
