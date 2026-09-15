@@ -131,16 +131,6 @@
   .order-chip.order-mid    { background: #60a5fa; color: #0d1626; }
   .order-chip.order-bottom { background: #3a4866; color: #c4cee0; }
 
-  /* Confirmed-lineup hard gate: a projected-lineup card is still shown, but
-     visibly not-yet-real - dimmed and hatched rather than just badged, so
-     it reads differently at a glance from a card that's simply low-signal.
-     Distinct from .card.used (a manual, one-off "I've seen this" dismiss). */
-  .card.pending-lineup {
-    opacity: 0.55;
-    background-image: repeating-linear-gradient(135deg, rgba(251,191,36,0.06) 0 10px,
-                                                  transparent 10px 20px);
-  }
-
   /* Full leaderboard table */
   .controls { display: flex; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
   .controls input, .controls select { padding: 8px 12px; font-size: 14px; background: #16213a;
@@ -635,18 +625,15 @@ function orderChipHtml(c) {
 // Value/Unanchored), and keyed by today's date so it resets on its own
 // tomorrow rather than needing an explicit expiry.
 //
-// NOT the same thing as .pending-lineup (the diagonal-striped dimming a
-// few lines down in renderCard) - that one is a DATA-DRIVEN indicator
-// for a genuinely-unconfirmed lineup, driven entirely by c.actionable/
-// c.lineupConfirmed off today's pipeline data, and toggles on its own as
-// real confirmations come in. It is NOT a manual mark, has nothing to do
-// with usedIds/localStorage, and "Clear all marks" does not touch it -
-// found live 2026-09-14 that a stale lineup-confirmation bug (fixed
-// separately in pipeline.py) made most of a slate's cards LOOK exactly
-// like they'd already been marked/clicked (dimmed + faded) when nobody
-// had touched them - that was .pending-lineup firing broadly because the
-// data said "not confirmed" when the real lineups already were, not a
-// bug in the click-to-mark system below.
+// Dimming a card is now this system and nothing else. Until 2026-09-15
+// there was also .pending-lineup, a DATA-DRIVEN diagonal-striped dimming
+// for a genuinely-unconfirmed lineup (!c.actionable && !c.lineupConfirmed)
+// that was far too easy to mistake for a manual mark: found live
+// 2026-09-14 that a stale lineup-confirmation bug (fixed separately in
+// pipeline.py) made most of a slate's cards LOOK exactly like they'd
+// already been marked/clicked (dimmed + faded) when nobody had touched
+// them. That treatment is gone along with the confirmed-lineup gate in
+// is_actionable, so a dimmed card means exactly one thing: you clicked it.
 //
 // mlb_marks_v2_ (bumped from the older mlbUsedCards_ scheme, 2026-09-14)
 // so a browser carrying any pre-existing marks (either scheme) starts
@@ -697,11 +684,12 @@ document.querySelectorAll('.clear-marks-btn').forEach(btn => {
 function renderCard(c, treatmentFn) {
   const card = document.createElement('div');
   const treatment = treatmentFn ? treatmentFn(c) : top25TreatmentClass(c);
-  // pending-lineup: a distinct dimmed treatment (not just a badge) for the
-  // confirmed-lineup hard gate specifically, so it reads as "not real yet"
-  // rather than merely "no supporting signal" - see is_actionable.
-  const pending = (!c.actionable && !c.lineupConfirmed) ? 'pending-lineup' : '';
-  card.className = ('card ' + c.tier + ' ' + treatment + ' ' + pending).trim();
+  // No .pending-lineup here: the whole-card dimmed/striped treatment for an
+  // unconfirmed lineup was removed 2026-09-15 with the confirmed-lineup gate
+  // in is_actionable. An unconfirmed lineup no longer disqualifies a play, so
+  // a whole-card treatment overstated it - the "Projected Lineup" badge below
+  // still carries that information, at badge weight.
+  card.className = ('card ' + c.tier + ' ' + treatment).trim();
   if (c.gameDateUtc) card.dataset.gameTimeUtc = c.gameDateUtc;
   if (c.playerId !== null && c.playerId !== undefined) {
     card.dataset.playerId = c.playerId;
