@@ -106,8 +106,17 @@ def _dedup_key(date_str, player_id, fixture_id, alert_type):
 
 
 def _minutes_between(a_iso, b_iso):
+    """None on a missing OR genuinely malformed timestamp - _parse_iso
+    itself only guards against falsy input and raises on real garbage,
+    which is fine for its other (trusted-source) callers but not here:
+    a Dabble/candidate event_date is exactly the kind of field that can
+    show up malformed (item 2, 2026-09-14's "unknown" kickoff-status
+    case is built on this never raising)."""
     from stale_lines import _parse_iso
-    a, b = _parse_iso(a_iso), _parse_iso(b_iso)
+    try:
+        a, b = _parse_iso(a_iso), _parse_iso(b_iso)
+    except ValueError:
+        return None
     if a is None or b is None:
         return None
     return (b - a).total_seconds() / 60
@@ -137,6 +146,50 @@ def _build_alert_record(candidate, alert_type, date_str, now_iso, extra_reason=N
         "official_started": None,
         "graded_at": None,
         "dabble_removed_at": None,
+    }
+
+
+STALE_KICKOFF_KEY_PREFIX = "_stale_kickoff:"
+
+
+def _kickoff_status(candidate, now_iso):
+    """('upcoming'|'post_kickoff'|'unknown', minutes_to_game) - item 2
+    (2026-09-14): found live that this module had NO kickoff check at
+    all. A real fixture (NE @ CHI, kickoff 2026-09-13 21:30 UTC) stayed
+    marked dabble_live=True on the board for ~12 hours after it actually
+    started, and notify_soccer_candidates kept generating fresh
+    threshold-crossing alerts for Carles Gil the whole time - the board
+    data was stale, not a scoring bug, but nothing here ever checked.
+
+    minutes_to_game > 0 means kickoff is still ahead; <= 0 means it has
+    passed. 'unknown' (event_date missing/unparseable) is its OWN
+    case - never treated as "still upcoming," since alerting blind
+    on unparseable timing is exactly the kind of mistake this exists to
+    prevent."""
+    minutes_to_game = _minutes_between(now_iso, candidate.get("event_date"))
+    if minutes_to_game is None:
+        return "unknown", None
+    return ("upcoming" if minutes_to_game > 0 else "post_kickoff"), minutes_to_game
+
+
+def _record_stale_kickoff_problem(data, candidate, now_iso, minutes_to_game, reason):
+    """Records a data-problem entry instead of either alerting past
+    kickoff or silently doing nothing (item 2) - a fixture stuck showing
+    live well after it should have kicked off, or with a game_start that
+    can't even be parsed, is a real thing worth surfacing, distinct from
+    a normal quiet period with nothing to report. One entry per fixture
+    per day (not re-logged/re-printed on every subsequent scoring pass)."""
+    pid = candidate.get("dabble_player_id")
+    fixture_id = candidate.get("fixture_id")
+    key = f"{STALE_KICKOFF_KEY_PREFIX}{pid}:{fixture_id}"
+    if key in data:
+        return
+    print(f"soccer_alerts: DATA PROBLEM - {candidate.get('player_name')} ({candidate.get('matchup')}) "
+          f"kickoff check failed ({reason}); suppressing real-time alerts for this fixture, not alerting blind.")
+    data[key] = {
+        "player_id": pid, "player_name": candidate.get("player_name"), "fixture_id": fixture_id,
+        "matchup": candidate.get("matchup"), "game_start": candidate.get("event_date"),
+        "detected_at": now_iso, "minutes_to_game": minutes_to_game, "reason": reason,
     }
 
 
@@ -237,6 +290,21 @@ def notify_soccer_candidates(candidates, date_str=None):
             continue
         seen_keys.add((pid, fixture_id))
 
+        # Never send a real-time alert at or after kickoff (item 2,
+        # 2026-09-14) - a candidate whose kickoff has already passed (or
+        # whose event_date can't even be parsed) is recorded as a data
+        # problem instead and skips threshold/critical/news-signal
+        # alerting entirely for this fixture. seen_keys is already
+        # updated above so the "removed today" bookkeeping below still
+        # treats it normally.
+        kickoff_status, minutes_to_game = _kickoff_status(c, now_iso)
+        if kickoff_status != "upcoming":
+            if kickoff_status == "post_kickoff" and c.get("dabble_live", True):
+                _record_stale_kickoff_problem(data, c, now_iso, minutes_to_game, "still_live_past_kickoff")
+            elif kickoff_status == "unknown":
+                _record_stale_kickoff_problem(data, c, now_iso, None, "event_date_unparseable")
+            continue
+
         prior_key = f"_last_state:{pid}:{fixture_id}"
         prior_entry = data.get(prior_key)
         previous_score = (prior_entry or {}).get("dns_score", 0)
@@ -249,13 +317,30 @@ def notify_soccer_candidates(candidates, date_str=None):
         }
 
         crossed = [t for t in ALERT_THRESHOLDS if previous_score < t <= current_score]
+        # Only the HIGHEST send-eligible threshold crossed in a single
+        # scoring pass triggers an actual Discord send (item 3,
+        # 2026-09-14) - found live that a player jumping straight past
+        # several send-eligible thresholds in one pass produced one
+        # Discord message PER threshold (60 through 90 plus critical, 8
+        # messages in the same second for what is really one event).
+        # Deliberately computed over DISCORD_SEND_THRESHOLDS, not the
+        # raw numeric max of `crossed` - a jump that also blows past a
+        # non-sendable threshold (e.g. straight to 95, crossing 90 too)
+        # must still send for 85, not suppress entirely because 90 (the
+        # true numeric max) isn't itself Discord-eligible. Every
+        # threshold still gets its own record/dedup key below -
+        # print_speed_report and any other calibration code that reads
+        # per-threshold history is unaffected - only the number of
+        # actual Discord posts changes.
+        sendable_crossed = [t for t in crossed if t in DISCORD_SEND_THRESHOLDS]
+        highest_sendable = max(sendable_crossed) if sendable_crossed else None
         for threshold in crossed:
             key = _dedup_key(date_str, pid, fixture_id, threshold)
             if key in data:
                 continue
             record = _build_alert_record(c, threshold, date_str, now_iso)
             data[key] = record
-            if _should_send_discord(c, threshold):
+            if threshold == highest_sendable and _should_send_discord(c, threshold):
                 send_discord_alert(record, _severity_for(threshold))
 
         if c["official_status"] == "confirmed_not_starting":
@@ -274,7 +359,7 @@ def notify_soccer_candidates(candidates, date_str=None):
                 send_discord_alert(record, SEVERITY_LABELS[NEWS_SIGNAL_KEY])
 
     for key, record in list(data.items()):
-        if key.startswith("_last_state:"):
+        if key.startswith("_last_state:") or key.startswith(STALE_KICKOFF_KEY_PREFIX):
             continue
         pg = (record.get("player_id"), record.get("fixture_id"))
         if pg in seen_keys or pg == (None, None):
@@ -320,7 +405,7 @@ def _all_alert_records():
         with open(os.path.join(ALERTS_DIR, fname), encoding="utf-8") as f:
             data = json.load(f)
         for key, record in data.items():
-            if key.startswith("_last_state:"):
+            if key.startswith("_last_state:") or key.startswith(STALE_KICKOFF_KEY_PREFIX):
                 continue
             records.append(record)
     return records
