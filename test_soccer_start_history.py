@@ -88,8 +88,8 @@ class TestNameVariantResolution(unittest.TestCase):
          "started": True, "active": True},
     ]}}
 
-    def test_full_legal_name_resolves_via_first_and_last_word(self):
-        self.assertTrue(sh.previous_start(self.HISTORY, "bryan zaragoza martinez"))
+    def test_full_legal_name_resolves_via_first_and_last_word_with_team_confirmed(self):
+        self.assertTrue(sh.previous_start(self.HISTORY, "bryan zaragoza martinez", expected_team_id="t1"))
 
     def test_exact_match_still_preferred_over_variant(self):
         history = {"jon martin": {"name": "jon martin", "matches": [
@@ -101,21 +101,76 @@ class TestNameVariantResolution(unittest.TestCase):
              "opponent_team_id": "t2", "competition": "LLG", "home_away": "home",
              "started": True, "active": True}]}}
         # exact 2-word key "jon martin" must win over any variant of a
-        # different 3-word name that happens to share first/last word.
+        # different 3-word name that happens to share first/last word -
+        # and needs no expected_team_id at all since it's an exact match.
         self.assertFalse(sh.previous_start(history, "jon martin"))
 
     def test_two_word_names_have_no_variants_to_try(self):
         self.assertEqual(sh._name_variant_candidates("bryan zaragoza"), [])
 
-    def test_four_word_name_resolves_via_first_plus_third_word(self):
+    def test_four_word_name_resolves_via_first_plus_third_word_with_team_confirmed(self):
         history = {"jose gaya": {"name": "jose gaya", "matches": [
             {"date": "2026-08-01", "league": "LLG", "event_id": "1", "team_id": "t1",
              "opponent_team_id": "t2", "competition": "LLG", "home_away": "home",
              "started": True, "active": True}]}}
-        self.assertTrue(sh.previous_start(history, "jose luis gaya pena"))
+        self.assertTrue(sh.previous_start(history, "jose luis gaya pena", expected_team_id="t1"))
 
     def test_unresolvable_name_returns_none_not_a_crash(self):
-        self.assertIsNone(sh.previous_start(self.HISTORY, "someone else entirely"))
+        self.assertIsNone(sh.previous_start(self.HISTORY, "someone else entirely", expected_team_id="t1"))
+
+
+class TestTeamConfirmationForPartialMatches(unittest.TestCase):
+    """2026-09-14 item 1 (name-match audit): a name-variant match must be
+    REJECTED - not silently accepted - unless its team is confirmed. A
+    shortened variant ("bryan zaragoza") can coincidentally collide with
+    an unrelated player who happens to share that exact shortened form;
+    team confirmation is what catches that instead of trusting the name
+    alone."""
+
+    HISTORY = {"bryan zaragoza": {"name": "bryan zaragoza", "matches": [
+        {"date": "2026-08-01", "league": "LLG", "event_id": "1", "team_id": "t1",
+         "opponent_team_id": "t2", "competition": "LLG", "home_away": "home",
+         "started": True, "active": True},
+    ]}}
+
+    def test_variant_rejected_without_expected_team_id(self):
+        self.assertIsNone(sh.previous_start(self.HISTORY, "bryan zaragoza martinez"))
+
+    def test_variant_rejected_when_team_id_mismatches(self):
+        self.assertIsNone(sh.previous_start(self.HISTORY, "bryan zaragoza martinez", expected_team_id="wrong_team"))
+
+    def test_variant_accepted_when_team_id_matches(self):
+        self.assertTrue(sh.previous_start(self.HISTORY, "bryan zaragoza martinez", expected_team_id="t1"))
+
+    def test_exact_match_needs_no_expected_team_id(self):
+        self.assertTrue(sh.previous_start(self.HISTORY, "bryan zaragoza"))
+
+    def test_reject_log_records_missing_team_rejection(self):
+        log = []
+        sh.previous_start(self.HISTORY, "bryan zaragoza martinez", reject_log=log)
+        self.assertEqual(len(log), 1)
+        self.assertFalse(log[0]["accepted"])
+        self.assertEqual(log[0]["variant"], "bryan zaragoza")
+
+    def test_reject_log_records_team_mismatch_rejection(self):
+        log = []
+        sh.previous_start(self.HISTORY, "bryan zaragoza martinez", expected_team_id="wrong_team", reject_log=log)
+        self.assertEqual(len(log), 1)
+        self.assertFalse(log[0]["accepted"])
+        self.assertEqual(log[0]["entry_team_ids"], ["t1"])
+
+    def test_no_log_entry_for_a_clean_exact_match(self):
+        log = []
+        sh.previous_start(self.HISTORY, "bryan zaragoza", reject_log=log)
+        self.assertEqual(log, [])
+
+    def test_log_records_an_accepted_variant_match_too(self):
+        # reject_log records every variant ATTEMPT, accepted or not - the
+        # audit needs both to compute precision (accepted / total).
+        log = []
+        sh.previous_start(self.HISTORY, "bryan zaragoza martinez", expected_team_id="t1", reject_log=log)
+        self.assertEqual(len(log), 1)
+        self.assertTrue(log[0]["accepted"])
 
 
 if __name__ == "__main__":

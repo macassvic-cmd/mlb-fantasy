@@ -15,6 +15,7 @@ table. rotowire_predicted_start is always None for the same reason - RSS
 headlines are a status/injury feed, not a predicted-lineup feed.
 """
 
+import html
 import json
 import os
 import re
@@ -175,28 +176,79 @@ def _name_variant_candidates(player_name):
 
 
 def resolve_player_page(player_name, index=None):
-    """(url, player_id, ambiguous:bool) for player_name's RotoWire page,
-    or None if no sitemap entry matches at all. Tries the exact full
-    name first, then each of _name_variant_candidates's short forms -
-    see that function's docstring for why a bare exact-match-only
-    lookup badly undercounts real coverage. ambiguous=True means
-    MULTIPLE distinct players share whichever name string actually
-    matched - url/player_id are the first candidate only, surfaced for
-    visibility, but callers should not treat a signal_found off an
-    ambiguous match as reliably about THIS specific player."""
+    """(url, player_id, ambiguous:bool, via_variant:bool) for player_
+    name's RotoWire page, or None if no sitemap entry matches at all.
+    Tries the exact full name first, then each of _name_variant_
+    candidates's short forms - see that function's docstring for why a
+    bare exact-match-only lookup badly undercounts real coverage.
+    ambiguous=True means MULTIPLE distinct players share whichever name
+    string actually matched - url/player_id are the first candidate
+    only, surfaced for visibility, but callers should not treat a
+    signal_found off an ambiguous match as reliably about THIS specific
+    player.
+
+    via_variant (2026-09-14 item 1, name-match audit) tells the caller
+    whether this hit came from the EXACT full name (needs no further
+    checking) or from a shortened variant - a real, if rare, risk: a
+    DIFFERENT player who happens to share the same shortened form. See
+    get_player_status, which requires an independent team confirmation
+    before accepting a via_variant=True match."""
     index = index if index is not None else build_player_index()
 
-    for candidate_name in [player_name] + _name_variant_candidates(player_name):
+    norm_exact = normalize_name(player_name)
+    exact_candidates = index.get(norm_exact)
+    if exact_candidates:
+        return exact_candidates[0]["url"], exact_candidates[0]["player_id"], len(exact_candidates) > 1, False
+
+    for candidate_name in _name_variant_candidates(player_name):
         norm = normalize_name(candidate_name)
         candidates = index.get(norm)
         if candidates:
-            return candidates[0]["url"], candidates[0]["player_id"], len(candidates) > 1
+            return candidates[0]["url"], candidates[0]["player_id"], len(candidates) > 1, True
     return None
 
 
 _INJURY_CARD_RE = re.compile(
     r'p-card__injury">\s*<div class="tag">([^<]*)</div>(.*?)</div>\s*</div>\s*</div>', re.S)
 _INJURY_DATA_RE = re.compile(r'p-card__injury-data">([^<]+)<b>([^<]*)</b>', re.S)
+
+# Player-card header block ("Espanyol" / "La Liga", "Chicago Fire" / "MLS")
+# - confirmed live 2026-09-14 across LaLiga and MLS player pages as a real,
+# consistently-structured current-team field (distinct from the injury
+# card's free text). Added for item 1's team-confirmation requirement: a
+# name-VARIANT match (_name_variant_candidates) can coincidentally land on
+# a different real player sharing the same shortened name - this is the
+# independent fact that catches that case.
+_TEAM_LEAGUE_RE = re.compile(r'font-weight:700">([^<]+)</div><div style="font-size: 14px;">([^<]+)</div>')
+
+
+def _parse_player_team(page_html):
+    """(team_name, league_name) off the page's team header block, or
+    (None, None) if that exact block isn't present - never fabricates a
+    team when the page layout doesn't match.
+
+    html.unescape() is required, not cosmetic: confirmed live 2026-09-14
+    that RotoWire's own markup renders this block as literal HTML
+    entities ("Atl&eacute;tico Madrid"), which without unescaping would
+    never string-equal ESPN's "Atlético Madrid" and would wrongly REJECT
+    a genuinely correct team-confirmed match (found auditing item 1's
+    name-match precision - Grimaldo, Hjulmand, and others all failed
+    team confirmation for exactly this reason before this fix)."""
+    m = _TEAM_LEAGUE_RE.search(page_html)
+    return (html.unescape(m.group(1)).strip(), html.unescape(m.group(2)).strip()) if m else (None, None)
+
+
+def _team_names_match(a, b):
+    """Loose-but-real equality for two team display strings that may
+    differ only by suffix/diacritics/language (RotoWire's short form vs
+    ESPN's full display name) - normalize_name already strips diacritics
+    and case; substring-tolerant both ways so a shortened or suffixed
+    name on either side still counts as the same club. Never a fuzzy
+    "close enough" guess across genuinely different clubs."""
+    na, nb = normalize_name(a or ""), normalize_name(b or "")
+    if not na or not nb:
+        return False
+    return na == nb or na in nb or nb in na
 
 
 def _parse_injury_card(html):
@@ -219,13 +271,6 @@ def _parse_injury_card(html):
     return {"tag": tag, "injury": fields.get("injury"), "est_return": fields.get("est_return")}
 
 
-def fetch_player_page_status(url):
-    """_parse_injury_card's result for a live fetch of `url` - re-raises
-    on a network failure so get_player_status can distinguish "fetched,
-    healthy" (None) from "couldn't check" (exception -> attempted=True,
-    matched stays whatever the index said, signal stays unknown)."""
-    html = _fetch_url(url, timeout=15)
-    return _parse_injury_card(html)
 
 
 def _load_status_cache(path=PLAYER_STATUS_CACHE_PATH):
@@ -244,13 +289,15 @@ def _save_status_cache(cache, path=PLAYER_STATUS_CACHE_PATH):
         json.dump(cache, f, indent=2, ensure_ascii=False)
 
 
-def get_player_status(player_name, index=None, cache=None, use_disk_cache=True):
+def get_player_status(player_name, index=None, cache=None, use_disk_cache=True,
+                       expected_team=None, match_log=None):
     """The full player-page-lookup result for one player - ALWAYS
     returns a dict, never None, so a caller can tell "checked, nothing
     wrong" apart from "never checked":
 
       attempted        - True (this function always tries the index)
-      matched           - a sitemap entry exists for this name
+      matched           - a sitemap entry exists for this name AND (if
+                           via_variant) team confirmation passed
       ambiguous         - multiple distinct players share this name
       page_url          - RotoWire's player page, if matched
       status_tag        - raw tag off the page ("GTD", "Out", ...), or
@@ -262,6 +309,23 @@ def get_player_status(player_name, index=None, cache=None, use_disk_cache=True):
       signal_found      - True only if matched AND a status card exists
       source            - "player_page" (always this value when matched)
       checked_at        - when this specific page fetch/cache-hit happened
+      via_variant       - True if the match came from a shortened name
+                           variant rather than the exact full name
+      team_confirmed    - True/False if via_variant (whether the page's
+                           own team matched expected_team), None if not
+                           applicable (exact match, no check needed)
+      page_team         - the team RotoWire's own page shows, if fetched
+
+    expected_team (2026-09-14 item 1, name-match audit): a real team
+    display name to confirm against when the match came via a name
+    variant - REQUIRED to accept a variant match at all. Missing or
+    mismatched team on a variant match is rejected (treated the same as
+    "not matched"), never silently accepted - see _team_names_match.
+    Exact full-name matches need no team check (via_variant=False).
+
+    match_log (optional, a list) - every variant-match ATTEMPT (accepted
+    or rejected) is appended as a dict, for the coverage/precision audit
+    (item 1) to inspect without re-fetching pages.
 
     `cache` (optional, an in-process dict) lets one board-scoring run
     reuse a fetch across candidates without re-hitting disk; `use_disk_
@@ -291,22 +355,56 @@ def get_player_status(player_name, index=None, cache=None, use_disk_cache=True):
             "attempted": True, "matched": False, "ambiguous": False, "page_url": None,
             "status_tag": None, "rotowire_status_normalized": None, "injury": None,
             "est_return": None, "signal_found": False, "source": "player_page", "checked_at": now_iso,
+            "via_variant": False, "team_confirmed": None, "page_team": None,
         }
     else:
-        url, player_id, ambiguous = hit
+        url, player_id, ambiguous, via_variant = hit
+        page_team = None
         try:
-            card = fetch_player_page_status(url)
+            html = _fetch_url(url, timeout=15)
+            card = _parse_injury_card(html)
+            page_team, _page_league = _parse_player_team(html)
         except Exception as e:
             print(f"rotowire_soccer: player page fetch failed for {player_name} (non-fatal): {e}")
             card = None
-        status_tag = card["tag"] if card else None
-        result = {
-            "attempted": True, "matched": True, "ambiguous": ambiguous, "page_url": url,
-            "player_id": player_id, "status_tag": status_tag,
-            "rotowire_status_normalized": ROTOWIRE_PAGE_TAG_TO_NORMALIZED.get((status_tag or "").lower()),
-            "injury": card["injury"] if card else None, "est_return": card["est_return"] if card else None,
-            "signal_found": card is not None, "source": "player_page", "checked_at": now_iso,
-        }
+
+        team_confirmed = None
+        reject_reason = None
+        if via_variant:
+            if not expected_team:
+                team_confirmed, reject_reason = False, "no_expected_team_to_confirm"
+            elif not page_team:
+                team_confirmed, reject_reason = False, "page_team_unavailable"
+            elif not _team_names_match(page_team, expected_team):
+                team_confirmed, reject_reason = False, f"team_mismatch (page={page_team!r} expected={expected_team!r})"
+            else:
+                team_confirmed = True
+
+        if match_log is not None:
+            match_log.append({
+                "player_name": player_name, "normalized_name": norm, "via_variant": via_variant,
+                "page_url": url, "page_team": page_team, "expected_team": expected_team,
+                "accepted": (not via_variant) or bool(team_confirmed), "reason": reject_reason,
+            })
+
+        if via_variant and not team_confirmed:
+            print(f"rotowire_soccer: rejected partial match '{player_name}' -> {url} ({reject_reason})")
+            result = {
+                "attempted": True, "matched": False, "ambiguous": ambiguous, "page_url": None,
+                "status_tag": None, "rotowire_status_normalized": None, "injury": None,
+                "est_return": None, "signal_found": False, "source": "player_page", "checked_at": now_iso,
+                "via_variant": via_variant, "team_confirmed": False, "page_team": page_team,
+            }
+        else:
+            status_tag = card["tag"] if card else None
+            result = {
+                "attempted": True, "matched": True, "ambiguous": ambiguous, "page_url": url,
+                "player_id": player_id, "status_tag": status_tag,
+                "rotowire_status_normalized": ROTOWIRE_PAGE_TAG_TO_NORMALIZED.get((status_tag or "").lower()),
+                "injury": card["injury"] if card else None, "est_return": card["est_return"] if card else None,
+                "signal_found": card is not None, "source": "player_page", "checked_at": now_iso,
+                "via_variant": via_variant, "team_confirmed": team_confirmed, "page_team": page_team,
+            }
 
     if cache is not None:
         cache[norm] = result
@@ -316,16 +414,26 @@ def get_player_status(player_name, index=None, cache=None, use_disk_cache=True):
     return result
 
 
-def prefetch_player_statuses(player_names, index=None, cache=None, use_disk_cache=True, max_workers=8):
+def prefetch_player_statuses(player_specs, index=None, cache=None, use_disk_cache=True, max_workers=8,
+                              match_log=None):
     """Warms `cache` (an in-process dict, mutated in place) for every
-    name in player_names via a small thread pool - sequential player-page
-    fetches for ~76 live Dabble players would otherwise take well over a
-    minute every single scoring cycle (each name is a real HTTP request;
-    confirmed live 2026-09-14 that this is what made soccer_dns.py
-    --coverage exceed a 2-minute budget once player-page lookups were
-    added). Pure performance optimization - get_player_status's per-name
-    result/caching contract is unchanged, and this is safe to skip
-    entirely (callers just get slower, not wrong, per-name fetches).
+    (player_name, expected_team) pair in player_specs via a small thread
+    pool - sequential player-page fetches for ~175 live Dabble players
+    would otherwise take well over a minute every single scoring cycle
+    (each name is a real HTTP request; confirmed live 2026-09-14 that
+    this is what made soccer_dns.py --coverage exceed a 2-minute budget
+    once player-page lookups were added). Pure performance optimization -
+    get_player_status's per-name result/caching contract is unchanged,
+    and this is safe to skip entirely (callers just get slower, not
+    wrong, per-name fetches).
+
+    expected_team travels alongside each name (rather than a bare name
+    list) so get_player_status can still run its team-confirmation check
+    (item 1) on a prefetched/cached result exactly as it would on a
+    direct call - a plain list of names would silently skip that check
+    for every prefetched player. match_log (optional, a list) collects
+    every variant-match attempt across the whole batch - safe to share
+    across threads (list.append is atomic under the GIL).
 
     Loads/saves the on-disk cache ONCE for the whole batch (rather than
     once per name, which would race across threads) - names already
@@ -341,7 +449,7 @@ def prefetch_player_statuses(player_names, index=None, cache=None, use_disk_cach
 
     to_fetch = []
     seen_norms = set()
-    for name in player_names:
+    for name, expected_team in player_specs:
         norm = normalize_name(name)
         if norm in seen_norms:
             continue
@@ -357,10 +465,13 @@ def prefetch_player_statuses(player_names, index=None, cache=None, use_disk_cach
                     continue
             except Exception:
                 pass
-        to_fetch.append(name)
+        to_fetch.append((name, expected_team))
 
-    def _fetch_one(name):
-        return normalize_name(name), get_player_status(name, index=index, cache=None, use_disk_cache=False)
+    def _fetch_one(spec):
+        name, expected_team = spec
+        return normalize_name(name), get_player_status(
+            name, index=index, cache=None, use_disk_cache=False,
+            expected_team=expected_team, match_log=match_log)
 
     if to_fetch:
         with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as ex:

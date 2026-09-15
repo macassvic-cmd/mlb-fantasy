@@ -163,12 +163,52 @@ def _league_code(league_raw):
     return _LEAGUE_VALUE_TO_CANONICAL.get(str(league_raw).strip().lower())
 
 
+def _expected_team_display_name(league_code, team_code):
+    """A real, ESPN-verified club display name for a Dabble board's short
+    team code, or None if it can't be resolved to a real name at all
+    (2026-09-14 item 1, name-match audit) - used as the ground truth a
+    RotoWire name-VARIANT match must be confirmed against
+    (rotowire_soccer.get_player_status's expected_team). Deliberately
+    returns None rather than the bare code itself when unresolved
+    (team_display_name's own no-match fallback) - an unresolved code
+    must never be treated as if it "matched" some short RotoWire
+    abbreviation by coincidence."""
+    if not league_code:
+        return None
+    exact = resolve_team_by_code(league_code, team_code)
+    if exact:
+        return exact[1]
+    name = team_display_name(league_code, team_code)
+    return name if name != team_code else None
+
+
+def _resolve_espn_team_id(player, context, league_code):
+    """ESPN's numeric team id for player['team'] (a Dabble short code) -
+    the same id space soccer_start_history's recorded matches use for
+    team_id, so it doubles as the team-confirmation anchor for a
+    history name-variant match (item 1). Cached in context, shared with
+    _enrich_espn_official_status's own (independent) need for the same
+    id - this is a second call into the same cache, not a second real
+    lookup."""
+    if not league_code or league_code not in LEAGUE_SLUGS:
+        return None
+    team_cache_key = (league_code, player["team"])
+    if team_cache_key not in context["espn_team_cache"]:
+        try:
+            context["espn_team_cache"][team_cache_key] = match_espn_team_id(league_code, player["team"])
+        except Exception:
+            context["espn_team_cache"][team_cache_key] = None
+    return context["espn_team_cache"][team_cache_key]
+
+
 def _build_enrichment_context(players):
     context = {
         "rotowire": {},
         "rotowire_player_index": {},
         "rotowire_status_cache": {},  # in-process memo for this run - see rotowire_soccer.get_player_status
+        "rotowire_match_log": [],  # every RotoWire variant-match attempt this run (item 1 name-match audit)
         "history": {},
+        "history_reject_log": [],  # every history variant-match attempt this run (item 1 name-match audit)
         "espn_team_cache": {},   # (league_code, team_name) -> espn_team_id
         "espn_event_cache": {},  # (league_code, fixture_id) -> espn event or None
         "transfermarkt_cache": {},  # (league_code, team_code) -> injuries list
@@ -186,9 +226,13 @@ def _build_enrichment_context(players):
         # per-candidate enrichment loop below would otherwise turn a ~76-
         # player board into 76 serial HTTP round trips (confirmed live
         # 2026-09-14 this pushed a single scoring run past 2 minutes).
+        # expected_team travels with each name so a name-variant match
+        # still gets team-confirmed even when prefetched (item 1).
+        specs = [(p["player_name"], _expected_team_display_name(_league_code(p["league_raw"]), p["team"]))
+                  for p in players.values()]
         rotowire_soccer.prefetch_player_statuses(
-            [p["player_name"] for p in players.values()],
-            index=context["rotowire_player_index"], cache=context["rotowire_status_cache"],
+            specs, index=context["rotowire_player_index"], cache=context["rotowire_status_cache"],
+            match_log=context["rotowire_match_log"],
         )
     except Exception as e:
         print(f"soccer_adapter: RotoWire player-page index/prefetch unavailable (non-fatal): {e}")
@@ -251,7 +295,7 @@ def _enrich_transfermarkt(player, context, league_code):
     return hit, health
 
 
-def _enrich_rotowire(player, context):
+def _enrich_rotowire(player, context, league_code):
     """(hit_or_None, source_health) - combines two independent RotoWire
     signals (item 3):
       1. the RSS headline feed (context["rotowire"]) - only covers a
@@ -266,12 +310,18 @@ def _enrich_rotowire(player, context):
     if EITHER source found this player at all - that's the coverage
     number item 3 asks for (rotowire_player_match_rate), independent of
     whether either one currently shows anything adverse (rotowire_
-    adverse_signal_rate)."""
+    adverse_signal_rate).
+
+    expected_team (2026-09-14 item 1, name-match audit) is passed to
+    get_player_status so a name-VARIANT match is team-confirmed before
+    being trusted - see that function's docstring."""
+    expected_team = _expected_team_display_name(league_code, player["team"])
     feed_hit = context["rotowire"].get(player["normalized_name"])
     page_result = rotowire_soccer.get_player_status(
         player["player_name"], index=context.get("rotowire_player_index"),
         cache=context.get("rotowire_status_cache"),
         use_disk_cache=context.get("rotowire_use_disk_cache", True),
+        expected_team=expected_team, match_log=context.get("rotowire_match_log"),
     )
 
     entity_matched = feed_hit is not None or page_result["matched"]
@@ -325,13 +375,7 @@ def _enrich_espn_official_status(player, context, league_code):
     if not league_code or league_code not in LEAGUE_SLUGS:
         return "not_yet_posted", None, {"source_attempted": False, "entity_matched": False, "signal_found": False}
 
-    team_cache_key = (league_code, player["team"])
-    if team_cache_key not in context["espn_team_cache"]:
-        try:
-            context["espn_team_cache"][team_cache_key] = match_espn_team_id(league_code, player["team"])
-        except Exception:
-            context["espn_team_cache"][team_cache_key] = None
-    team_id = context["espn_team_cache"][team_cache_key]
+    team_id = _resolve_espn_team_id(player, context, league_code)
     if not team_id:
         return "not_yet_posted", None, {"source_attempted": True, "entity_matched": False, "signal_found": False}
 
@@ -395,7 +439,8 @@ def _enrich_x(player, context):
     return hit, health
 
 
-def _build_predicted_xi_sources(player, league_code, context, history, transfermarkt_hit, rotowire_hit, x_hit):
+def _build_predicted_xi_sources(player, league_code, context, history, transfermarkt_hit, rotowire_hit, x_hit,
+                                 expected_team_id=None):
     """[{source, vote: "start"|"bench"|"unknown", predicted_start:
     True|False|None, observed_at, source_updated_at}] across every real
     signal available - see item 4. No fabricated "predicted lineup"
@@ -445,7 +490,9 @@ def _build_predicted_xi_sources(player, league_code, context, history, transferm
                          "source_updated_at": x_hit.get("created_at")})
 
     if history:
-        wins, losses, n = soccer_start_history.starts_last_n(history, player["normalized_name"], n=5)
+        reject_log = context.get("history_reject_log")
+        wins, losses, n = soccer_start_history.starts_last_n(
+            history, player["normalized_name"], n=5, expected_team_id=expected_team_id, reject_log=reject_log)
         if n >= 3:
             predicted = (wins / n) >= 0.6
             sources.append({"source": "recent_start_pattern", "vote": "start" if predicted else "bench",
@@ -456,7 +503,8 @@ def _build_predicted_xi_sources(player, league_code, context, history, transferm
         # (0 starts, then broke into the XI last match) found during the
         # 2026-09-14 audit. Kept as its OWN source (not folded into the
         # rate-based one above) so both can coexist/disagree honestly.
-        if soccer_start_history.first_recent_start(history, player["normalized_name"]):
+        if soccer_start_history.first_recent_start(
+                history, player["normalized_name"], expected_team_id=expected_team_id, reject_log=reject_log):
             sources.append({"source": "first_recent_start", "vote": "start", "predicted_start": True,
                              "observed_at": now_iso, "source_updated_at": None})
 
@@ -467,12 +515,20 @@ def enrich_and_score_player(player, context):
     league_code = _league_code(player["league_raw"])
     official_status, squad_info, official_health = _enrich_espn_official_status(player, context, league_code)
     transfermarkt_hit, transfermarkt_health = _enrich_transfermarkt(player, context, league_code)
-    rotowire_hit, rotowire_health = _enrich_rotowire(player, context)
+    rotowire_hit, rotowire_health = _enrich_rotowire(player, context, league_code)
     x_hit, x_health = _enrich_x(player, context)
     history = context["history"]
+    # The same ESPN team id _enrich_espn_official_status resolves (cached,
+    # so free here) - required to confirm any history name-VARIANT match
+    # (item 1, 2026-09-14 name-match audit); a missing/unresolved team id
+    # means a variant match can't be confirmed and is rejected, not a
+    # silent name-only accept.
+    espn_team_id = _resolve_espn_team_id(player, context, league_code)
+    history_reject_log = context.get("history_reject_log")
 
     predicted_xi_sources = _build_predicted_xi_sources(
-        player, league_code, context, history, transfermarkt_hit, rotowire_hit, x_hit)
+        player, league_code, context, history, transfermarkt_hit, rotowire_hit, x_hit,
+        expected_team_id=espn_team_id)
     predicted_start_sources = [s["source"] for s in predicted_xi_sources if s["predicted_start"] is True]
     predicted_bench_sources = [s["source"] for s in predicted_xi_sources if s["predicted_start"] is False]
     predicted_unknown_sources = [s["source"] for s in predicted_xi_sources if s["vote"] == "unknown"]
@@ -497,14 +553,15 @@ def enrich_and_score_player(player, context):
     unknown_votes = len(predicted_unknown_sources)
     predicted_xi_source_count = len(predicted_xi_sources)
 
-    starts5 = soccer_start_history.starts_last_n(history, player["normalized_name"], n=5) if history else (0, 0, 0)
-    starts10 = soccer_start_history.starts_last_n(history, player["normalized_name"], n=10) if history else (0, 0, 0)
-    days_rest_val = soccer_start_history.days_rest(history, player["normalized_name"], player["event_date"][:10]) if history else None
-    first_start = soccer_start_history.first_recent_start(history, player["normalized_name"]) if history else False
-    freq_sub = soccer_start_history.frequent_substitute(history, player["normalized_name"]) if history else False
-    rotation = soccer_start_history.rotation_player(history, player["normalized_name"]) if history else False
-    prev_start = soccer_start_history.previous_start(history, player["normalized_name"]) if history else None
-    starts3 = soccer_start_history.starts_last_3(history, player["normalized_name"]) if history else (0, 0, 0)
+    _h_kwargs = {"expected_team_id": espn_team_id, "reject_log": history_reject_log}
+    starts5 = soccer_start_history.starts_last_n(history, player["normalized_name"], n=5, **_h_kwargs) if history else (0, 0, 0)
+    starts10 = soccer_start_history.starts_last_n(history, player["normalized_name"], n=10, **_h_kwargs) if history else (0, 0, 0)
+    days_rest_val = soccer_start_history.days_rest(history, player["normalized_name"], player["event_date"][:10], **_h_kwargs) if history else None
+    first_start = soccer_start_history.first_recent_start(history, player["normalized_name"], **_h_kwargs) if history else False
+    freq_sub = soccer_start_history.frequent_substitute(history, player["normalized_name"], **_h_kwargs) if history else False
+    rotation = soccer_start_history.rotation_player(history, player["normalized_name"], **_h_kwargs) if history else False
+    prev_start = soccer_start_history.previous_start(history, player["normalized_name"], **_h_kwargs) if history else None
+    starts3 = soccer_start_history.starts_last_3(history, player["normalized_name"], **_h_kwargs) if history else (0, 0, 0)
 
     dns_score, confidence_score, urgency_score, evidence_count, contributions, urgency_reasons = \
         soccer_dns_score.score_candidate(
@@ -622,6 +679,34 @@ def enrich_and_score_player(player, context):
     }
 
 
+NAME_MATCH_AUDIT_PATH = os.path.join("data", "soccer_name_match_audit.json")
+
+
+def _summarize_match_log(entries):
+    accepted = sum(1 for e in entries if e["accepted"])
+    total = len(entries)
+    return {"total_attempts": total, "accepted": accepted, "rejected": total - accepted,
+            "precision": round(100 * accepted / total, 1) if total else None, "entries": entries}
+
+
+def _write_name_match_audit(context, date_str):
+    """Persists every name-VARIANT match attempt (history + RotoWire)
+    this run made, accepted or rejected, with a precision summary -
+    2026-09-14 item 1's name-match audit needs this to inspect real
+    matches without re-running/re-fetching. Written every run (not just
+    when something was rejected) so precision=None ("nothing to check
+    this run") is visibly distinct from "checked and all passed."."""
+    audit = {
+        "generated_at": datetime.now(timezone.utc).isoformat(), "date": date_str,
+        "history": _summarize_match_log(context.get("history_reject_log", [])),
+        "rotowire": _summarize_match_log(context.get("rotowire_match_log", [])),
+    }
+    os.makedirs(os.path.dirname(NAME_MATCH_AUDIT_PATH) or ".", exist_ok=True)
+    with open(NAME_MATCH_AUDIT_PATH, "w", encoding="utf-8") as f:
+        json.dump(audit, f, indent=2, ensure_ascii=False)
+    return audit
+
+
 def score_dabble_soccer_board(source=DEFAULT_BOARD_PATH, persist=True, snapshot_date=None, notify=True):
     from soccer_dates import soccer_today_str
     snapshot_date = snapshot_date or soccer_today_str()
@@ -637,6 +722,10 @@ def score_dabble_soccer_board(source=DEFAULT_BOARD_PATH, persist=True, snapshot_
 
     if persist:
         record_live_snapshot(snapshot_date, candidates)
+        try:
+            _write_name_match_audit(context, snapshot_date)
+        except Exception as e:
+            print(f"soccer_adapter: name-match audit write failed (non-fatal): {e}")
 
     if notify:
         try:

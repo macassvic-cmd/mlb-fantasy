@@ -181,17 +181,51 @@ def _name_variant_candidates(normalized_name):
     return candidates
 
 
-def _resolve_key(history, normalized_name):
+def _entry_team_ids(entry):
+    return {m.get("team_id") for m in entry["matches"] if m.get("team_id")}
+
+
+def _resolve_key(history, normalized_name, expected_team_id=None, reject_log=None):
+    """The history key to actually use for normalized_name - the exact
+    key if it exists (no further check needed), otherwise the first
+    name-variant that ALSO passes team confirmation (2026-09-14 item 1,
+    name-match audit).
+
+    A variant match is REJECTED - never accepted - when there's no
+    expected_team_id to confirm against, or when the candidate entry's
+    own recorded team_ids don't include it: a shortened variant
+    ("jose gaya") can coincidentally collide with an unrelated player
+    who happens to share that exact shortened form, and the whole point
+    of requiring team confirmation is to catch that case instead of
+    silently trusting the name alone. Falls through to "not found"
+    (unresolved) rather than a wrong player - reject_log (optional, a
+    list) records every rejected attempt for the coverage/precision
+    audit to inspect."""
     if normalized_name in history:
         return normalized_name
     for variant in _name_variant_candidates(normalized_name):
-        if variant in history:
+        entry = history.get(variant)
+        if not entry:
+            continue
+        team_ids = _entry_team_ids(entry)
+        if expected_team_id is None:
+            accepted, reason = False, "no_expected_team_id_to_confirm"
+        elif expected_team_id not in team_ids:
+            accepted, reason = False, f"team_mismatch (entry has {sorted(team_ids)}, expected {expected_team_id})"
+        else:
+            accepted, reason = True, None
+        if reject_log is not None:
+            reject_log.append({"normalized_name": normalized_name, "variant": variant,
+                                "expected_team_id": expected_team_id, "entry_team_ids": sorted(team_ids),
+                                "accepted": accepted, "reason": reason})
+        if accepted:
             return variant
+        print(f"soccer_start_history: rejected partial match '{normalized_name}' -> '{variant}' ({reason})")
     return normalized_name
 
 
-def _player_matches(history, normalized_name, before_date=None):
-    p = history.get(_resolve_key(history, normalized_name))
+def _player_matches(history, normalized_name, before_date=None, expected_team_id=None, reject_log=None):
+    p = history.get(_resolve_key(history, normalized_name, expected_team_id=expected_team_id, reject_log=reject_log))
     if not p:
         return []
     matches = p["matches"]
@@ -200,8 +234,9 @@ def _player_matches(history, normalized_name, before_date=None):
     return sorted(matches, key=lambda m: m["date"])
 
 
-def starts_last_n(history, normalized_name, n=5, before_date=None):
-    matches = _player_matches(history, normalized_name, before_date)[-n:]
+def starts_last_n(history, normalized_name, n=5, before_date=None, expected_team_id=None, reject_log=None):
+    matches = _player_matches(history, normalized_name, before_date,
+                               expected_team_id=expected_team_id, reject_log=reject_log)[-n:]
     started = sum(1 for m in matches if m["started"])
     return started, len(matches) - started, len(matches)
 
@@ -209,16 +244,19 @@ def starts_last_n(history, normalized_name, n=5, before_date=None):
 # Named n=3/5/10 wrappers (coverage audit item 4) - same starts_last_n
 # underneath, just the exact call shape a caller/report can name directly
 # without repeating the n= kwarg everywhere.
-def starts_last_3(history, normalized_name, before_date=None):
-    return starts_last_n(history, normalized_name, n=3, before_date=before_date)
+def starts_last_3(history, normalized_name, before_date=None, expected_team_id=None, reject_log=None):
+    return starts_last_n(history, normalized_name, n=3, before_date=before_date,
+                          expected_team_id=expected_team_id, reject_log=reject_log)
 
 
-def starts_last_5(history, normalized_name, before_date=None):
-    return starts_last_n(history, normalized_name, n=5, before_date=before_date)
+def starts_last_5(history, normalized_name, before_date=None, expected_team_id=None, reject_log=None):
+    return starts_last_n(history, normalized_name, n=5, before_date=before_date,
+                          expected_team_id=expected_team_id, reject_log=reject_log)
 
 
-def starts_last_10(history, normalized_name, before_date=None):
-    return starts_last_n(history, normalized_name, n=10, before_date=before_date)
+def starts_last_10(history, normalized_name, before_date=None, expected_team_id=None, reject_log=None):
+    return starts_last_n(history, normalized_name, n=10, before_date=before_date,
+                          expected_team_id=expected_team_id, reject_log=reject_log)
 
 
 # MINUTES-PLAYED DATA IS NOT AVAILABLE (checked live 2026-09-14): ESPN's
@@ -234,25 +272,28 @@ def starts_last_10(history, normalized_name, before_date=None):
 MINUTES_DATA_AVAILABLE = False
 
 
-def start_rate(history, normalized_name, n=10, before_date=None):
+def start_rate(history, normalized_name, n=10, before_date=None, expected_team_id=None, reject_log=None):
     """Percent (0-100, rounded) of the last n recorded matches started,
     or None if there's no history at all - never divides by zero."""
-    wins, losses, total = starts_last_n(history, normalized_name, n=n, before_date=before_date)
+    wins, losses, total = starts_last_n(history, normalized_name, n=n, before_date=before_date,
+                                         expected_team_id=expected_team_id, reject_log=reject_log)
     return round(100 * wins / total, 1) if total else None
 
 
-def bench_rate(history, normalized_name, n=10, before_date=None):
+def bench_rate(history, normalized_name, n=10, before_date=None, expected_team_id=None, reject_log=None):
     """100 - start_rate - kept as its own named function (rather than
     making every caller compute 100-start_rate itself) since "bench rate"
     is the framing coverage reports/diagnostics actually want to show."""
-    rate = start_rate(history, normalized_name, n=n, before_date=before_date)
+    rate = start_rate(history, normalized_name, n=n, before_date=before_date,
+                       expected_team_id=expected_team_id, reject_log=reject_log)
     return round(100 - rate, 1) if rate is not None else None
 
 
-def days_rest(history, normalized_name, as_of_date, before_date=None):
+def days_rest(history, normalized_name, as_of_date, before_date=None, expected_team_id=None, reject_log=None):
     """Days since this player's last match appearance (started or sub) -
     None if no history at all."""
-    matches = _player_matches(history, normalized_name, before_date)
+    matches = _player_matches(history, normalized_name, before_date,
+                               expected_team_id=expected_team_id, reject_log=reject_log)
     appeared = [m for m in matches if m["active"]]
     if not appeared:
         return None
@@ -260,7 +301,7 @@ def days_rest(history, normalized_name, as_of_date, before_date=None):
     return (datetime.strptime(as_of_date, "%Y-%m-%d") - last_date).days
 
 
-def previous_start(history, normalized_name, before_date=None):
+def previous_start(history, normalized_name, before_date=None, expected_team_id=None, reject_log=None):
     """True/False/None - did this player START his most recent recorded
     match (None if there's no history at all). A simple, explicitly-
     named field (2026-09-14 item 2) distinct from first_recent_start
@@ -268,35 +309,39 @@ def previous_start(history, normalized_name, before_date=None):
     this is just "what happened last time," the raw building block a
     caller might want directly rather than only via the derived signals
     above."""
-    matches = _player_matches(history, normalized_name, before_date)
+    matches = _player_matches(history, normalized_name, before_date,
+                               expected_team_id=expected_team_id, reject_log=reject_log)
     if not matches:
         return None
     return matches[-1]["started"]
 
 
-def first_recent_start(history, normalized_name, n=5, before_date=None):
+def first_recent_start(history, normalized_name, n=5, before_date=None, expected_team_id=None, reject_log=None):
     """True if this player's most recent match was a start, but none of
     the n-1 matches before that were - i.e. exactly the Mama Balde case
     ("made his first start of the season last match")."""
-    matches = _player_matches(history, normalized_name, before_date)[-n:]
+    matches = _player_matches(history, normalized_name, before_date,
+                               expected_team_id=expected_team_id, reject_log=reject_log)[-n:]
     if not matches or not matches[-1]["started"]:
         return False
     return not any(m["started"] for m in matches[:-1])
 
 
-def frequent_substitute(history, normalized_name, n=10, before_date=None):
+def frequent_substitute(history, normalized_name, n=10, before_date=None, expected_team_id=None, reject_log=None):
     """True if this player regularly appears (bench-to-pitch) but rarely
     starts - a real rotation signal distinct from "injured"/"out"."""
-    matches = _player_matches(history, normalized_name, before_date)[-n:]
+    matches = _player_matches(history, normalized_name, before_date,
+                               expected_team_id=expected_team_id, reject_log=reject_log)[-n:]
     appeared = sum(1 for m in matches if m["active"])
     started = sum(1 for m in matches if m["started"])
     return appeared >= 5 and started <= appeared * 0.3
 
 
-def rotation_player(history, normalized_name, n=10, before_date=None):
+def rotation_player(history, normalized_name, n=10, before_date=None, expected_team_id=None, reject_log=None):
     """True if starts are inconsistent (neither a clear starter nor a
     clear non-starter) - the general "could go either way" signal."""
-    matches = _player_matches(history, normalized_name, before_date)[-n:]
+    matches = _player_matches(history, normalized_name, before_date,
+                               expected_team_id=expected_team_id, reject_log=reject_log)[-n:]
     if len(matches) < 5:
         return False
     rate = sum(1 for m in matches if m["started"]) / len(matches)
