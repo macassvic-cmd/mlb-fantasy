@@ -382,23 +382,15 @@ def _enrich_espn_official_status(player, context, league_code):
     event_cache_key = (league_code, player["fixture_id"] or player["event_date"])
     if event_cache_key not in context["espn_event_cache"]:
         try:
-            date_str = player["event_date"][:10]
             # We only know OUR team's id reliably; find_espn_event needs
-            # both sides, so scan the day's scoreboard for a fixture
-            # involving team_id instead of requiring the opponent id too.
-            from scrapers.espn_soccer import get_scoreboard
-            event = None
-            for offset in (0, 1, -1):
-                d = (datetime.strptime(date_str, "%Y-%m-%d") + timedelta(days=offset)).strftime("%Y-%m-%d")
-                for ev in get_scoreboard(league_code, d):
-                    comp = (ev.get("competitions") or [{}])[0]
-                    ids = {c.get("team", {}).get("id") for c in comp.get("competitors", [])}
-                    if team_id in ids:
-                        event = ev
-                        break
-                if event:
-                    break
-            context["espn_event_cache"][event_cache_key] = event
+            # both sides, so find_event_by_team scans the day's
+            # scoreboard for a fixture involving team_id instead of
+            # requiring the opponent id too (shared with soccer_alerts.
+            # grade_alerts's own need for exactly this, factored out of
+            # this function's old inline duplicate 2026-09-14 item 4).
+            from scrapers.espn_soccer import find_event_by_team
+            date_str = player["event_date"][:10]
+            context["espn_event_cache"][event_cache_key] = find_event_by_team(league_code, team_id, date_str)
         except Exception as e:
             print(f"soccer_adapter: ESPN event lookup failed (non-fatal): {e}")
             context["espn_event_cache"][event_cache_key] = None

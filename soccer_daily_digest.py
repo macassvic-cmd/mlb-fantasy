@@ -416,6 +416,20 @@ def run_daily_digest(force=False, source=None, date_str=None, now=None):
     except Exception as e:
         print(f"soccer_daily_digest: dashboard regeneration failed (non-fatal, digest still sends): {e}")
 
+    # Grade YESTERDAY's alerts every run (item 4, 2026-09-14) - by today
+    # those matches should be Final and ESPN's squad data available.
+    # grade_alerts was previously never called anywhere in the pipeline
+    # (only reachable via a manual `python soccer_alerts.py --grade`
+    # nobody had run), which is why no alert record ever accumulated a
+    # real outcome. Non-fatal: a grading failure must never block the
+    # digest itself from sending.
+    try:
+        import soccer_alerts
+        yesterday = (datetime.strptime(date_str, "%Y-%m-%d") - timedelta(days=1)).strftime("%Y-%m-%d")
+        soccer_alerts.grade_alerts(yesterday)
+    except Exception as e:
+        print(f"soccer_daily_digest: grading yesterday's alerts failed (non-fatal): {e}")
+
     total_live = len(candidates)
     if total_live == 0:
         attempted, delivered, status, error = _post_discord(content=_zero_candidate_message())

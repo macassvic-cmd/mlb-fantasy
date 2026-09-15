@@ -213,6 +213,32 @@ def find_espn_event(league_code, home_team_id, away_team_id, date_str):
     return None
 
 
+def find_event_by_team(league_code, team_id, date_str):
+    """The ESPN event on date_str (or the day after/before, absorbing a
+    UTC-date rollover the same way find_espn_event does) involving
+    team_id - unlike find_espn_event, this only needs ONE side's team
+    id, which is all a Dabble-board-derived caller (soccer_adapter.py's
+    official-lineup enrichment, soccer_alerts.py's grading - both need
+    exactly this, previously duplicated inline in soccer_adapter.py
+    before being factored out here 2026-09-14) reliably has - the
+    opponent's id would need its OWN board-to-ESPN resolution the caller
+    may not have done. None if no event found (postponed with no ESPN
+    listing at all, team id didn't resolve, or ESPN hasn't posted the
+    fixture yet)."""
+    from datetime import datetime, timedelta
+    if not team_id:
+        return None
+    base_date = datetime.strptime(date_str, "%Y-%m-%d")
+    for offset in (0, 1, -1):
+        d = (base_date + timedelta(days=offset)).strftime("%Y-%m-%d")
+        for ev in get_scoreboard(league_code, d):
+            comp = (ev.get("competitions") or [{}])[0]
+            ids = {c.get("team", {}).get("id") for c in comp.get("competitors", [])}
+            if team_id in ids:
+                return ev
+    return None
+
+
 def get_match_squad_names(league_code, event_id):
     """{normalized_name: {"team_id":, "starter":bool, "active":bool}} for
     EVERY player named to either team's matchday squad (rosters[].roster)

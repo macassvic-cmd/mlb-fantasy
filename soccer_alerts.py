@@ -126,7 +126,9 @@ def _build_alert_record(candidate, alert_type, date_str, now_iso, extra_reason=N
     return {
         "player_id": candidate.get("dabble_player_id"),
         "player_name": candidate["player_name"],
+        "normalized_name": candidate.get("normalized_name"),  # needed to grade against ESPN's squad list later
         "team": candidate["team"],
+        "league_code": candidate.get("league_code"),  # needed to resolve the ESPN event/squad later
         "opponent": candidate.get("matchup"),
         "fixture_id": candidate.get("fixture_id"),
         "dns_score": candidate["dns_score"],
@@ -143,7 +145,14 @@ def _build_alert_record(candidate, alert_type, date_str, now_iso, extra_reason=N
         "dabble_prop_ids": [p["prop_id"] for p in candidate.get("props", [])],
         "top_reasons": candidate.get("top_reasons", []),
         "extra_reason": extra_reason,
+        # Since date of any Transfermarkt injury at alert time - item 4's
+        # long-term-injury exclusion needs this to tell "already known
+        # injured weeks ago" apart from "a real DNS prediction that came
+        # true," so grading can report the two separately.
+        "transfermarkt_injury_since": (candidate.get("transfermarkt_injury") or {}).get("since"),
         "official_started": None,
+        "outcome": None,
+        "long_term_injury": False,
         "graded_at": None,
         "dabble_removed_at": None,
     }
@@ -371,12 +380,58 @@ def notify_soccer_candidates(candidates, date_str=None):
     return data
 
 
-def grade_alerts(date_str, get_match_squad_fn=None):
-    """Populate official_started for every alert record on date_str -
-    mirrors dnp_alerts.grade_alerts. get_match_squad_fn injectable for
-    testing; defaults to scrapers.espn_soccer.get_match_squad_names."""
+OUTCOMES = ("started", "came_off_bench", "unused_sub", "not_in_squad", "match_postponed", "unknown")
+# Did-not-play outcomes for print_speed_report's existing hit-rate math
+# (item 4, 2026-09-14) - "came off the bench" is its OWN bucket, never
+# folded into a plain "loss," since a bench appearance is a materially
+# different real-world outcome from never being in the squad at all.
+DID_NOT_PLAY_OUTCOMES = ("came_off_bench", "unused_sub", "not_in_squad")
+LONG_TERM_INJURY_DAYS = 14
+
+
+def grade_alerts(date_str, get_match_squad_fn=None, find_event_fn=None, match_espn_team_id_fn=None):
+    """Populate official_started/outcome/graded_at for every alert record
+    on date_str whose fixture's official matchday squad has posted -
+    mirrors dnp_alerts.grade_alerts's MLB pattern, using ESPN's soccer
+    match-squad data as ground truth (the same source soccer_adapter.py's
+    own official-lineup enrichment uses).
+
+    2026-09-14 item 4: this was previously a stub that unconditionally
+    set official_started=None with no real league/event lookup, AND
+    nothing in the pipeline ever called it automatically - grading only
+    happened if someone manually ran `python soccer_alerts.py --grade
+    <date>`, which nobody had. Both are fixed: this is a real
+    implementation, and soccer_dns.py's daily digest now calls it for
+    yesterday's date every run (see that module) so grading actually
+    accumulates.
+
+    Outcomes (the required split, distinct from a flat True/False):
+      started         - named in the matchday squad AND started
+      came_off_bench  - named in the squad, active, but did NOT start
+      unused_sub      - named in the squad, NOT active at all
+      not_in_squad    - the matchday squad posted but this player isn't
+                        in it at all (not even on the bench)
+      match_postponed - ESPN's own event status says postponed/canceled
+                        (a real, positive signal - never inferred merely
+                        from "no event found yet")
+      unknown         - can't determine yet (event/summary not posted,
+                        or the record is missing what grading needs) -
+                        stays ungraded, retried on a later run
+
+    official_started (True/False/None) is kept for print_speed_report's
+    existing non_start-rate math (True only for "started"; False for
+    every DID_NOT_PLAY_OUTCOMES entry); `outcome` carries the full,
+    undiluted breakdown. long_term_injury flags a record whose
+    Transfermarkt injury predates the match by more than
+    LONG_TERM_INJURY_DAYS days - reported separately so an
+    already-known injury doesn't inflate the "DNS correctly predicted
+    a DNP" record with something that was never really a prediction."""
     if get_match_squad_fn is None:
         from scrapers.espn_soccer import get_match_squad_names as get_match_squad_fn
+    if find_event_fn is None:
+        from scrapers.espn_soccer import find_event_by_team as find_event_fn
+    if match_espn_team_id_fn is None:
+        from scrapers.espn_soccer import match_espn_team_id as match_espn_team_id_fn
 
     data = _load_alerts(date_str)
     if not data:
@@ -384,15 +439,74 @@ def grade_alerts(date_str, get_match_squad_fn=None):
         return
 
     now_iso = datetime.now(timezone.utc).isoformat()
+    event_cache = {}
+    squad_cache = {}
     graded = 0
     for key, record in data.items():
-        if key.startswith("_last_state:") or record.get("official_started") is not None:
+        if key.startswith("_last_state:") or key.startswith(STALE_KICKOFF_KEY_PREFIX):
             continue
-        record["official_started"] = None  # left for a caller with real league/event context - see soccer_adapter.py
+        if record.get("graded_at") is not None:
+            continue  # already settled - never re-grade
+
+        league_code = record.get("league_code")
+        team = record.get("team")
+        normalized_name = record.get("normalized_name")
+        game_start = record.get("game_start")
+        if not league_code or not team or not normalized_name or not game_start:
+            continue  # missing what grading needs - leave ungraded, never guess
+
+        date_only = game_start[:10]
+        event_key = (league_code, team, date_only)
+        if event_key not in event_cache:
+            team_id = match_espn_team_id_fn(league_code, team)
+            event_cache[event_key] = find_event_fn(league_code, team_id, date_only) if team_id else None
+        event = event_cache[event_key]
+        if event is None:
+            continue  # not posted yet (or unresolvable) - try again on a later grading run
+
+        status_name = ((event.get("status") or {}).get("type") or {}).get("name", "")
+        if "POSTPON" in status_name.upper() or "CANCEL" in status_name.upper():
+            record["outcome"] = "match_postponed"
+            record["official_started"] = None
+            record["graded_at"] = now_iso
+            graded += 1
+            continue
+
+        event_id = event["id"]
+        if event_id not in squad_cache:
+            squad_cache[event_id] = get_match_squad_fn(league_code, event_id)
+        squad = squad_cache[event_id]
+        if not squad:
+            continue  # match summary not posted yet - try again on a later grading run
+
+        info = squad.get(normalized_name)
+        if info is None:
+            outcome, started = "not_in_squad", False
+        elif info["starter"]:
+            outcome, started = "started", True
+        elif info["active"]:
+            outcome, started = "came_off_bench", False
+        else:
+            outcome, started = "unused_sub", False
+
+        long_term_injury = False
+        since = record.get("transfermarkt_injury_since")
+        if since:
+            try:
+                since_dt = datetime.strptime(since[:10], "%Y-%m-%d")
+                match_dt = datetime.strptime(date_only, "%Y-%m-%d")
+                long_term_injury = (match_dt - since_dt).days > LONG_TERM_INJURY_DAYS
+            except ValueError:
+                pass
+
+        record["outcome"] = outcome
+        record["official_started"] = started
+        record["long_term_injury"] = long_term_injury
         record["graded_at"] = now_iso
         graded += 1
+
     _save_alerts(date_str, data)
-    print(f"soccer_alerts: touched {graded} alert record(s) for {date_str} (grading needs league/event context - see soccer_adapter.py's official_status).")
+    print(f"soccer_alerts: graded {graded} alert record(s) for {date_str}.")
 
 
 def _all_alert_records():

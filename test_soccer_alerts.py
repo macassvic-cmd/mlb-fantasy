@@ -196,5 +196,132 @@ class TestOneAlertPerThresholdCrossing(unittest.TestCase):
         self.assertEqual(self.mock_send.call_count, 0)
 
 
+class TestGradeAlerts(unittest.TestCase):
+    """item 4, 2026-09-14: grade_alerts was a stub that never actually
+    determined an outcome and was never called anywhere in the pipeline.
+    Real ESPN lookups always injected (get_match_squad_fn/find_event_fn/
+    match_espn_team_id_fn) - no real network."""
+
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self._patch_dir = patch("soccer_alerts.ALERTS_DIR", self._tmp.name)
+        self._patch_dir.start()
+
+    def tearDown(self):
+        self._patch_dir.stop()
+        self._tmp.cleanup()
+
+    def _seed(self, record, key="rec1", date_str="2026-09-14"):
+        data = {key: record}
+        sa._save_alerts(date_str, data)
+        return date_str
+
+    def _base_record(self, **overrides):
+        r = {
+            "player_id": "p1", "player_name": "Test Player", "normalized_name": "test player",
+            "team": "TST", "league_code": "EPL", "fixture_id": "f1",
+            "game_start": "2026-09-14T15:00:00.000Z", "graded_at": None,
+            "official_started": None, "outcome": None, "long_term_injury": False,
+            "transfermarkt_injury_since": None,
+        }
+        r.update(overrides)
+        return r
+
+    FOUND_EVENT = {"id": "ev1", "status": {"type": {"name": "STATUS_FULL_TIME"}}}
+    POSTPONED_EVENT = {"id": "ev1", "status": {"type": {"name": "STATUS_POSTPONED"}}}
+
+    def _grade(self, date_str, squad=None, event=FOUND_EVENT, team_id="t1"):
+        sa.grade_alerts(
+            date_str,
+            get_match_squad_fn=lambda lc, eid: (squad or {}),
+            find_event_fn=lambda lc, tid, d: event,
+            match_espn_team_id_fn=lambda lc, team: team_id,
+        )
+        return sa._load_alerts(date_str)
+
+    def test_started_outcome(self):
+        date_str = self._seed(self._base_record())
+        data = self._grade(date_str, squad={"test player": {"starter": True, "active": True}})
+        self.assertEqual(data["rec1"]["outcome"], "started")
+        self.assertTrue(data["rec1"]["official_started"])
+        self.assertIsNotNone(data["rec1"]["graded_at"])
+
+    def test_came_off_bench_outcome(self):
+        date_str = self._seed(self._base_record())
+        data = self._grade(date_str, squad={"test player": {"starter": False, "active": True}})
+        self.assertEqual(data["rec1"]["outcome"], "came_off_bench")
+        self.assertFalse(data["rec1"]["official_started"])
+
+    def test_unused_sub_outcome(self):
+        date_str = self._seed(self._base_record())
+        data = self._grade(date_str, squad={"test player": {"starter": False, "active": False}})
+        self.assertEqual(data["rec1"]["outcome"], "unused_sub")
+        self.assertFalse(data["rec1"]["official_started"])
+
+    def test_not_in_squad_outcome(self):
+        date_str = self._seed(self._base_record())
+        data = self._grade(date_str, squad={"someone else": {"starter": True, "active": True}})
+        self.assertEqual(data["rec1"]["outcome"], "not_in_squad")
+        self.assertFalse(data["rec1"]["official_started"])
+
+    def test_match_postponed_is_a_positive_signal_not_an_absence_guess(self):
+        date_str = self._seed(self._base_record())
+        data = self._grade(date_str, squad={}, event=self.POSTPONED_EVENT)
+        self.assertEqual(data["rec1"]["outcome"], "match_postponed")
+        self.assertIsNone(data["rec1"]["official_started"])
+        self.assertIsNotNone(data["rec1"]["graded_at"])
+
+    def test_no_event_found_leaves_record_ungraded(self):
+        date_str = self._seed(self._base_record())
+        data = self._grade(date_str, event=None)
+        self.assertIsNone(data["rec1"]["graded_at"])
+        self.assertIsNone(data["rec1"]["outcome"])
+
+    def test_no_squad_posted_yet_leaves_record_ungraded(self):
+        date_str = self._seed(self._base_record())
+        data = self._grade(date_str, squad={})
+        self.assertIsNone(data["rec1"]["graded_at"])
+
+    def test_missing_required_fields_leaves_record_ungraded(self):
+        date_str = self._seed(self._base_record(league_code=None))
+        data = self._grade(date_str, squad={"test player": {"starter": True, "active": True}})
+        self.assertIsNone(data["rec1"]["graded_at"])
+
+    def test_already_graded_record_is_never_re_graded(self):
+        date_str = self._seed(self._base_record(outcome="started", official_started=True,
+                                                  graded_at="2026-09-14T20:00:00+00:00"))
+        # Even if this call WOULD produce a different verdict, a settled record must not change.
+        data = self._grade(date_str, squad={"test player": {"starter": False, "active": False}})
+        self.assertEqual(data["rec1"]["outcome"], "started")
+        self.assertEqual(data["rec1"]["graded_at"], "2026-09-14T20:00:00+00:00")
+
+    def test_last_state_and_stale_kickoff_keys_are_never_touched(self):
+        date_str = "2026-09-14"
+        data = {
+            "_last_state:p1:f1": {"dns_score": 80},
+            f"{sa.STALE_KICKOFF_KEY_PREFIX}p1:f1": {"reason": "still_live_past_kickoff"},
+            "rec1": self._base_record(),
+        }
+        sa._save_alerts(date_str, data)
+        result = self._grade(date_str, squad={"test player": {"starter": True, "active": True}})
+        self.assertEqual(result["_last_state:p1:f1"], {"dns_score": 80})
+        self.assertEqual(result[f"{sa.STALE_KICKOFF_KEY_PREFIX}p1:f1"], {"reason": "still_live_past_kickoff"})
+
+    def test_long_term_injury_flagged_when_since_predates_match_by_over_14_days(self):
+        date_str = self._seed(self._base_record(transfermarkt_injury_since="2026-08-01T00:00:00+00:00"))
+        data = self._grade(date_str, squad={"test player": {"starter": False, "active": False}})
+        self.assertTrue(data["rec1"]["long_term_injury"])
+
+    def test_recent_injury_not_flagged_as_long_term(self):
+        date_str = self._seed(self._base_record(transfermarkt_injury_since="2026-09-10T00:00:00+00:00"))
+        data = self._grade(date_str, squad={"test player": {"starter": False, "active": False}})
+        self.assertFalse(data["rec1"]["long_term_injury"])
+
+    def test_no_injury_since_is_not_long_term(self):
+        date_str = self._seed(self._base_record(transfermarkt_injury_since=None))
+        data = self._grade(date_str, squad={"test player": {"starter": True, "active": True}})
+        self.assertFalse(data["rec1"]["long_term_injury"])
+
+
 if __name__ == "__main__":
     unittest.main()
