@@ -11,7 +11,6 @@ Usage:
 import json
 import os
 import shutil
-import subprocess
 import sys
 import webbrowser
 from datetime import datetime, timezone
@@ -1011,12 +1010,39 @@ DASHBOARD_COLS = [
 
 
 
+def lineup_freshness_signals(rows, now=None):
+    """(all_games_started, any_unconfirmed_lineup_pending) - the same
+    "any game that hasn't started with an unconfirmed lineup" question
+    check_pipeline_freshness.py's _any_unconfirmed_lineup_pending answers
+    for the CI gate, computed here for the page's own merged status
+    banner (2026-09-15 item 6) so the two are asking the same thing about
+    the same data, not two independently-drifting notions of "stale."
+    A row with a missing/malformed game_date_utc is skipped (never
+    guessed) rather than counted either way."""
+    now = now or datetime.now(timezone.utc)
+    unstarted_games = []
+    for r in rows:
+        gd = r.get("game_date_utc")
+        if not gd:
+            continue
+        try:
+            gt = datetime.fromisoformat(gd.replace("Z", "+00:00"))
+        except ValueError:
+            continue
+        if gt > now:
+            unstarted_games.append((gt, r))
+    all_games_started = len(unstarted_games) == 0
+    any_unconfirmed_lineup_pending = any(not r.get("lineup_confirmed", False) for _, r in unstarted_games)
+    return all_games_started, any_unconfirmed_lineup_pending
+
+
 def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None):
     games_count = len({r["game_pk"] for r in rows})
     generated_dt = datetime.now(timezone.utc).astimezone(_PACIFIC)
     last_updated = generated_dt.strftime("%Y-%m-%d %I:%M %p PT")
     generated_at_iso = generated_dt.isoformat()
     player_count = len(rows)
+    all_games_started, any_unconfirmed_lineup_pending = lineup_freshness_signals(rows)
 
     results_data = results_data or {"dates": {}, "players": {}}
     top25_data = top25_data or {"dates": {}, "players": {}}
@@ -1743,6 +1769,7 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   /* Freshness banner */
   .freshness-banner {{ padding: 10px 24px; font-size: 14px; font-weight: 700; text-align: center; }}
   .freshness-banner.fresh {{ background: #15351f; color: #4ade80; }}
+  .freshness-banner.warn {{ background: #3a2e10; color: #fbbf24; }}
   .freshness-banner.stale {{ background: #3a1818; color: #f87171; }}
   .card .game-date {{ color: #6c7da0; }}
 </style>
@@ -1984,39 +2011,75 @@ const GENERATED_AT = {json.dumps(generated_at_iso)};
 const GAME_DATE = {json.dumps(date_str)};
 const PLAYER_COUNT = {player_count};
 const GAMES_COUNT = {games_count};
+const ALL_GAMES_STARTED = {json.dumps(all_games_started)};
+const ANY_UNCONFIRMED_LINEUP_PENDING = {json.dumps(any_unconfirmed_lineup_pending)};
 
-// --- Freshness indicator ---
+// --- Freshness indicator (2026-09-15 item 6) - ONE merged status drives
+// both the header line and the banner, so they can never disagree the
+// way the old two-independent-checks version did (the banner used to
+// check ONLY whether GAME_DATE matched today, so it showed a green
+// checkmark on data that was hours old as long as the date itself was
+// right - found live 2026-09-15 with a 10:40am PT fetch still showing
+// "Today's data" at 3pm). Tiers, in priority order:
+//   green - updated within the last 45 min, OR every one of today's
+//           games has already started (nothing left to go stale on)
+//   red   - older than 2 hours AND at least one game hasn't started yet
+//           (the urgent case: a real game is coming and the data
+//           predates it by a lot)
+//   amber - in between (not fresh enough for green, not stale enough
+//           for red) AND at least one unstarted game still has an
+//           unconfirmed lineup
+//   green - falls through here only when 45min-2h old but nothing
+//           left unconfirmed anyway (no real risk right now)
+function formatAge(ageMinutes) {{
+  const h = Math.floor(ageMinutes / 60);
+  const m = Math.round(ageMinutes % 60);
+  if (h <= 0) return `${{m}}m ago`;
+  return `${{h}}h ${{m}}m ago`;
+}}
+
 function updateFreshness() {{
   const generated = new Date(GENERATED_AT);
   const now = new Date();
-  const ageHours = (now - generated) / 3600000;
+  const ageMinutes = (now - generated) / 60000;
+  const ageStr = formatAge(ageMinutes);
 
   const timeStr = generated.toLocaleString('en-US', {{
     month: 'long', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true,
   }});
-  const lastUpdatedEl = document.getElementById('lastUpdated');
   const todayStr = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
-  // A recent rebuild timestamp does not imply fresh game data — the pipeline
-  // can regenerate the dashboard from yesterday's data file if today's fetch
-  // failed silently. "Fresh" requires BOTH a recent rebuild AND GAME_DATE
-  // matching today, not just ageHours.
-  if (ageHours > 4) {{
-    lastUpdatedEl.innerHTML = `Last Updated: ${{timeStr}} PT &mdash; <span style="color:#f87171">&#9888; Data may be stale - pipeline may not have run</span>`;
-  }} else if (GAME_DATE !== todayStr) {{
-    lastUpdatedEl.innerHTML = `Last Updated: ${{timeStr}} PT &mdash; <span style="color:#f87171">&#9888; Rebuilt recently but showing ${{GAME_DATE}}'s data, not today's</span>`;
+  const wrongDate = GAME_DATE !== todayStr;
+
+  let tier, label;
+  if (wrongDate) {{
+    tier = 'stale';
+    label = `Rebuilt recently but showing ${{GAME_DATE}}'s data, not today's`;
+  }} else if (ageMinutes <= 45 || ALL_GAMES_STARTED) {{
+    tier = 'fresh';
+    label = ALL_GAMES_STARTED && ageMinutes > 45 ? "All of today's games have started" : 'Fresh';
+  }} else if (ageMinutes > 120) {{
+    tier = 'stale';
+    label = 'Data may be stale - a game is coming and this predates it by 2h+';
+  }} else if (ANY_UNCONFIRMED_LINEUP_PENDING) {{
+    tier = 'warn';
+    label = 'Lineups may have changed since this was fetched';
   }} else {{
-    lastUpdatedEl.innerHTML = `Last Updated: ${{timeStr}} PT &mdash; <span style="color:#4ade80">&#10003; Fresh</span>`;
+    tier = 'fresh';
+    label = 'Fresh';
   }}
 
+  const cssClass = tier === 'fresh' ? 'fresh' : (tier === 'warn' ? 'warn' : 'stale');
+  const color = tier === 'fresh' ? '#4ade80' : (tier === 'warn' ? '#fbbf24' : '#f87171');
+  const icon = tier === 'fresh' ? '&#10003;' : '&#9888;';
+
+  const lastUpdatedEl = document.getElementById('lastUpdated');
+  lastUpdatedEl.innerHTML = `Last Updated: ${{timeStr}} PT (${{ageStr}}) &mdash; <span style="color:${{color}}">${{icon}} ${{label}}</span>`;
+
   const banner = document.getElementById('freshnessBanner');
-  const updatedTime = generated.toLocaleTimeString('en-US', {{ hour: 'numeric', minute: '2-digit', hour12: true }});
-  if (GAME_DATE === todayStr) {{
-    banner.className = 'freshness-banner fresh';
-    banner.innerHTML = `&#10003; Today's data &mdash; ${{GAME_DATE}} &mdash; ${{PLAYER_COUNT}} players &mdash; ${{GAMES_COUNT}} games &mdash; Updated ${{updatedTime}}`;
-  }} else {{
-    banner.className = 'freshness-banner stale';
-    banner.innerHTML = `&#9888; Showing data from ${{GAME_DATE}} &mdash; pipeline may not have run today`;
-  }}
+  banner.className = 'freshness-banner ' + cssClass;
+  banner.innerHTML = wrongDate
+    ? `&#9888; Showing data from ${{GAME_DATE}} &mdash; pipeline may not have run today`
+    : `${{icon}} ${{GAME_DATE}} &mdash; ${{PLAYER_COUNT}} players &mdash; ${{GAMES_COUNT}} games &mdash; updated ${{ageStr}} &mdash; ${{label}}`;
 }}
 updateFreshness();
 setInterval(updateFreshness, 60000);
@@ -2882,61 +2945,44 @@ def main():
 
 
 # ---------------------------------------------------------------------------
-# GitHub Pages auto-deploy
-#
-# Copies the freshly generated dashboard to docs/index.html and pushes it to
-# the mlb-fantasy repo so https://macassvic-cmd.github.io/mlb-fantasy/ stays
-# in sync with the latest run. Best-effort: any failure (no network, no git,
-# merge conflicts, etc.) is logged and swallowed so it never breaks the
-# pipeline.
+# GitHub Pages deploy - copy-only, see deploy_to_github_pages's docstring
+# for why commit/push moved to being GitHub Actions' job alone.
 # ---------------------------------------------------------------------------
 
 DOCS_DASHBOARD_PATH = os.path.join("docs", "index.html")
 
 
-GIT_SUBPROCESS_TIMEOUT = 60  # seconds - git push has hung indefinitely under
-# the S4U scheduled-task context (no interactive desktop to satisfy a
-# credential prompt), blocking the whole tracker.py/pipeline.py process for
-# hours with nothing to time it out. Every git call here is now bounded.
-
-
 def deploy_to_github_pages(html_path, date_str):
-    try:
-        os.makedirs("docs", exist_ok=True)
-        shutil.copyfile(html_path, DOCS_DASHBOARD_PATH)
+    """Copies the freshly-rendered dashboard to docs/index.html - commit
+    and push are GitHub Actions' job ONLY (2026-09-15 decision).
 
-        # In GitHub Actions the workflow's commit step handles all git
-        # operations for every file at once. Doing a partial commit here
-        # would race with that step and leave data files uncommitted.
-        if os.environ.get("GITHUB_ACTIONS"):
-            print("GitHub Pages: dashboard copied to docs/ (workflow will commit).")
-            return
+    Before this: a local run (this machine's Task Scheduler jobs, or a
+    manual `python report.py`) would git add/commit/push docs/index.html
+    itself WITHOUT first pulling - a real, hit-live race with GitHub
+    Actions' own pipeline.yml, which already has its own robust fetch/
+    rebase/retry logic for exactly this contention (see that workflow's
+    "Commit and push all changes" step). A local push landing without
+    pulling first can silently overwrite/conflict with an Actions run
+    that fetched newer data, and there is no matching retry/reconciliation
+    logic here to recover from it - confirmed live 2026-09-15 when a
+    manual local report.py run's push was rejected outright ("fetch
+    first") because an Actions run had landed in the meantime.
 
-        repo_root = os.path.dirname(os.path.abspath(__file__))
-        subprocess.run(["git", "add", "docs/index.html"], cwd=repo_root, check=True,
-                        capture_output=True, text=True, timeout=GIT_SUBPROCESS_TIMEOUT)
+    GitHub Actions is the sole publisher now (chosen over local Task
+    Scheduler specifically because this PC can sleep/be off, which
+    Actions can't) - this function still writes docs/index.html locally
+    so a manual run is useful for testing/preview, it just never commits
+    or pushes it. If local automation needs to publish again later, it
+    must git pull --rebase (or equivalent) immediately before push, not
+    push blind."""
+    os.makedirs("docs", exist_ok=True)
+    shutil.copyfile(html_path, DOCS_DASHBOARD_PATH)
 
-        status = subprocess.run(["git", "status", "--porcelain", "docs/index.html"],
-                                 cwd=repo_root, check=True, capture_output=True, text=True,
-                                 timeout=GIT_SUBPROCESS_TIMEOUT)
-        if not status.stdout.strip():
-            print("GitHub Pages: no dashboard changes to deploy.")
-            return
-
-        subprocess.run(["git", "commit", "-q", "-m", f"Update dashboard for {date_str}"],
-                        cwd=repo_root, check=True, capture_output=True, text=True,
-                        timeout=GIT_SUBPROCESS_TIMEOUT)
-        subprocess.run(["git", "push"], cwd=repo_root, check=True, capture_output=True, text=True,
-                        timeout=GIT_SUBPROCESS_TIMEOUT)
-        print("GitHub Pages: dashboard deployed -> https://macassvic-cmd.github.io/mlb-fantasy/")
-    except Exception as e:
-        if isinstance(e, subprocess.TimeoutExpired):
-            detail = f"timed out after {GIT_SUBPROCESS_TIMEOUT}s"
-        elif isinstance(e, subprocess.CalledProcessError):
-            detail = e.stderr
-        else:
-            detail = str(e)
-        print(f"GitHub Pages deploy skipped (non-fatal): {detail}")
+    if os.environ.get("GITHUB_ACTIONS"):
+        print("GitHub Pages: dashboard copied to docs/ (workflow will commit).")
+    else:
+        print("GitHub Pages: dashboard copied to docs/ locally for preview - "
+              "NOT committed/pushed (GitHub Actions is the sole publisher, see module docstring).")
 
 
 if __name__ == "__main__":

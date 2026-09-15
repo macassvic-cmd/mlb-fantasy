@@ -38,17 +38,63 @@ time.
      rundate step), but silently defeated the "redundant fires are
      nearly free" premise the dense retry schedule depends on. Now
      shares the exact same date computation as everything else.
+
+  4. Found 2026-09-15: a pure 3h time gate has no idea whether a real
+     lineup update happened since the last fetch. The morning's dense
+     schedule ends ~11:40am PDT; confirmed live that day's last real
+     fetch landed ~10:40am PT, the two afternoon backup fires either
+     found data <3h old and skipped (12:49pm PT) or were silently
+     dropped by GitHub's own scheduler (2:41pm PT - the exact
+     reliability problem the CRON STRATEGY comment in pipeline.yml
+     already documents for the morning window), and the dashboard sat
+     stale through first pitch with lineups that had since posted or
+     changed. Fixed below: even a <3h-old fetch does NOT skip if any of
+     today's games hasn't started yet and still has an unconfirmed
+     lineup - the 3h ceiling stays as a backstop for the "nothing left
+     to check" case, but is no longer the only thing deciding "stale."
 """
 
 import json
 import os
 import sys
 import time
-from datetime import datetime
+from datetime import datetime, timezone
 
 from scrapers.mlb_api import mlb_today_str
 
 STALE_AFTER_SECONDS = 10800  # 3h
+
+
+def _any_unconfirmed_lineup_pending(today):
+    """True if data/{today}.json has at least one player whose game
+    hasn't started yet and whose lineup is still not confirmed - the
+    exact case a plain elapsed-time gate can't see (item 4 above). False
+    (never blocks a skip) on any missing/malformed data, since this is
+    an ADDITIONAL reason to run, not the only one - the elapsed-time
+    check above still catches a genuinely stale fetch either way."""
+    path = os.path.join("data", f"{today}.json")
+    if not os.path.exists(path):
+        return False
+    try:
+        with open(path, encoding="utf-8") as f:
+            players = json.load(f)
+    except Exception:
+        return False
+
+    now = datetime.now(timezone.utc)
+    for p in players:
+        game_time_raw = p.get("game_date_utc")
+        if not game_time_raw:
+            continue
+        try:
+            game_time = datetime.fromisoformat(game_time_raw.replace("Z", "+00:00"))
+        except ValueError:
+            continue
+        if game_time <= now:
+            continue  # already started - too late for a lineup refresh to matter
+        if not p.get("lineup_confirmed", False):
+            return True
+    return False
 
 
 def main():
@@ -67,8 +113,12 @@ def main():
             fetched_at = datetime.fromisoformat(marker["fetched_at_utc"])
             age = time.time() - fetched_at.timestamp()
             if age < STALE_AFTER_SECONDS:
-                skip = True
-                reason = f"Data for {today} was fetched {age:.0f}s ago (<3h) - skipping this fire."
+                if _any_unconfirmed_lineup_pending(today):
+                    reason = (f"Data for {today} was fetched {age:.0f}s ago (<3h) BUT at least one "
+                              f"game hasn't started with an unconfirmed lineup - running pipeline anyway.")
+                else:
+                    skip = True
+                    reason = f"Data for {today} was fetched {age:.0f}s ago (<3h) - skipping this fire."
             else:
                 reason = f"Data for {today} was fetched {age:.0f}s ago (>=3h) - running pipeline."
 

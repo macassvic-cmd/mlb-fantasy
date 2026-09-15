@@ -40,12 +40,41 @@ name: MLB Fantasy Pipeline
 # reachable from a phone, since the whole point of the redundant schedule
 # above is not needing a human at a laptop to notice and manually trigger a
 # run (which is what happened nearly every day this week otherwise).
+#
+# AFTERNOON/EVENING WINDOW (added 2026-09-15): the morning's dense schedule
+# above ends at 18:40 UTC (~11:40am PDT); the two single-shot afternoon
+# backups that used to be the only remaining coverage weren't enough -
+# confirmed live 2026-09-15 that the day's last real fetch landed ~10:40am
+# PT, the 12:41pm PT backup found data <3h old and correctly skipped (the
+# freshness gate had no way to know lineups had since changed - see item 4
+# in check_pipeline_freshness.py), and the 2:41pm PT backup never even
+# shows up in the run history - silently dropped by GitHub's own scheduler,
+# the exact documented reliability problem CRON STRATEGY above already
+# covers for in the morning. Applying the SAME "massively over-schedule,
+# let the freshness gate decide" strategy to the afternoon/evening:
+# lineups are typically posted/updated 1-3h before first pitch and keep
+# changing up to it, and MLB first pitches realistically run from ~10am PT
+# (rare early day games, already inside the morning window) through
+# ~7:15pm PT (latest West-coast night games) - 20-min fires from noon PT
+# through ~9pm PT (a safety margin past the latest realistic first pitch)
+# covers that with room either side. Two cron lines are needed since a
+# single UTC hour range can't wrap past midnight, and both PDT/PST offsets
+# are covered (their union, same reasoning as the soccer digest's dense-
+# cron pattern) since the season can run close to the PDT/PST boundary:
+#   PDT: noon-9pm PDT = 19:00-04:00 UTC (next day)
+#   PST: noon-9pm PST = 20:00-05:00 UTC (next day)
+#   union: 19:00-05:00 UTC -> the two lines below.
+# check_pipeline_freshness.py is what keeps this cheap: a fire outside
+# game hours, or one where every remaining game already has a confirmed
+# lineup, exits in the same few seconds the morning window's redundant
+# fires already do (see check_pipeline_freshness.py's own docstring) -
+# this is the "runtime gate" that keeps a dense schedule affordable.
 
 on:
   schedule:
     - cron: '*/20 12-18 * * *'  # Primary: 21 fires, 5am-11:40am PDT - see CRON STRATEGY above
-    - cron: '41 19 * * *'       # Afternoon backup #1 - 12:41pm PDT
-    - cron: '41 21 * * *'       # Afternoon backup #2 -  2:41pm PDT
+    - cron: '*/20 19-23 * * *'  # Afternoon/evening part 1: noon PDT/PST-ish - see AFTERNOON/EVENING WINDOW above
+    - cron: '*/20 0-4 * * *'    # Afternoon/evening part 2: wraps past midnight UTC - see AFTERNOON/EVENING WINDOW above
     - cron: '0 6 * * *'         # Nightly tracker  — 11:00 PM PDT (primary) - reliable all week
     - cron: '0 13 * * *'        # Backup tracker   —  6:00 AM PDT - reliable all week
     - cron: '0 17 * * *'        # Deadline-alert check only - see deadline_alert job below
