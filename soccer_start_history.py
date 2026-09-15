@@ -42,9 +42,40 @@ def _load(path, default):
 
 
 def _save(path, data):
+    """Atomic write (temp file + os.replace) - found live 2026-09-14
+    running a long backfill concurrently with a live scoring pass: a
+    plain open-and-write left a real window where a concurrent reader
+    (soccer_adapter.py's context build, which polls throughout the day)
+    could see a truncated/partial JSON file mid-save and fail to load
+    history entirely for that cycle. backfill() saves after every single
+    date specifically so a killed/crashed run doesn't lose progress -
+    that's exactly the pattern that needs this to be atomic, not a rare
+    edge case worth ignoring.
+
+    Retries os.replace on Windows's WinError 5 ("Access is denied") -
+    confirmed live the SAME backfill run this fix was written for then
+    crashed entirely on it: another process (a concurrent reader, or AV/
+    backup software transiently opening the file) can hold it just long
+    enough that a same-instant replace fails - a real, if rare, race,
+    not a fundamental problem with the target file. A few short retries
+    resolves it without giving up the atomicity guarantee (never a
+    partial-write fallback)."""
     os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
+    tmp_path = f"{path}.tmp"
+    with open(tmp_path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
+        f.flush()
+        os.fsync(f.fileno())
+
+    last_error = None
+    for attempt in range(5):
+        try:
+            os.replace(tmp_path, path)
+            return
+        except OSError as e:
+            last_error = e
+            time.sleep(0.2 * (attempt + 1))
+    raise last_error
 
 
 def record_date(league_code, date_str, history=None):
@@ -71,12 +102,21 @@ def record_date(league_code, date_str, history=None):
 
         for norm_name, info in squad.items():
             team_id = info.get("team_id")
-            opp_team_id = team_ids.get("away") if team_id == team_ids.get("home") else team_ids.get("home")
+            is_home = team_id == team_ids.get("home")
+            opp_team_id = team_ids.get("away") if is_home else team_ids.get("home")
             entry = history.setdefault(norm_name, {"name": norm_name, "matches": []})
             entry["matches"] = [m for m in entry["matches"] if m["event_id"] != event_id]
             entry["matches"].append({
                 "date": date_str, "league": league_code, "event_id": event_id,
                 "team_id": team_id, "opponent_team_id": opp_team_id,
+                # "competition" is a synonym for "league" here (ESPN's
+                # league_code IS the competition for this module's
+                # domestic-league-only coverage - no separate cup/UCL
+                # scraping exists yet) - kept as its own key anyway so a
+                # caller/report can read "competition" without knowing
+                # that's the same value as "league" today.
+                "competition": league_code,
+                "home_away": "home" if is_home else "away",
                 "started": info["starter"], "active": info["active"],
             })
             recorded += 1
@@ -115,8 +155,43 @@ def backfill(league_code, start_date, end_date):
 # Query helpers - used by soccer_dns_score.py
 # ---------------------------------------------------------------------------
 
+def _name_variant_candidates(normalized_name):
+    """Same fallback rotowire_soccer.py uses (2026-09-14 item 3) applied
+    here for the same underlying reason: Dabble's player_name is a full
+    LEGAL name ("Bryan Zaragoza Martinez") but ESPN's squad list - this
+    module's only data source - indexes the common name ("Bryan
+    Zaragoza"). Confirmed live: 101/140 LaLiga board players had zero
+    history purely from this mismatch, not an actual backfill gap.
+
+    A 4-word legal name ("Jose Luis Gaya Pena" = 2 given names + paternal
+    + maternal surname) needs a 3rd variant beyond the 3-word case's
+    first+last/first+second: ESPN's common name there is [given1]
+    [paternal] = words[0]+words[2] ("Jose Gaya"), confirmed live the same
+    way - not covered by either of the 3-word variants.
+
+    Exact-match only against history's real keys, never fuzzy - a
+    diminutive (Alejandro/Alex) or nickname (Jonathan Castro Otto/Jony)
+    is a real, separate gap this deliberately does not try to guess."""
+    words = normalized_name.split()
+    if len(words) < 3:
+        return []
+    candidates = [f"{words[0]} {words[-1]}", f"{words[0]} {words[1]}"]
+    if len(words) >= 4:
+        candidates.append(f"{words[0]} {words[2]}")
+    return candidates
+
+
+def _resolve_key(history, normalized_name):
+    if normalized_name in history:
+        return normalized_name
+    for variant in _name_variant_candidates(normalized_name):
+        if variant in history:
+            return variant
+    return normalized_name
+
+
 def _player_matches(history, normalized_name, before_date=None):
-    p = history.get(normalized_name)
+    p = history.get(_resolve_key(history, normalized_name))
     if not p:
         return []
     matches = p["matches"]
@@ -183,6 +258,20 @@ def days_rest(history, normalized_name, as_of_date, before_date=None):
         return None
     last_date = datetime.strptime(appeared[-1]["date"], "%Y-%m-%d")
     return (datetime.strptime(as_of_date, "%Y-%m-%d") - last_date).days
+
+
+def previous_start(history, normalized_name, before_date=None):
+    """True/False/None - did this player START his most recent recorded
+    match (None if there's no history at all). A simple, explicitly-
+    named field (2026-09-14 item 2) distinct from first_recent_start
+    (which asks a narrower "did he JUST break into the XI" question) -
+    this is just "what happened last time," the raw building block a
+    caller might want directly rather than only via the derived signals
+    above."""
+    matches = _player_matches(history, normalized_name, before_date)
+    if not matches:
+        return None
+    return matches[-1]["started"]
 
 
 def first_recent_start(history, normalized_name, n=5, before_date=None):

@@ -231,7 +231,8 @@ def _enrich_transfermarkt(player, context, league_code):
     cache_key = (league_code, player["team"])
     if cache_key not in context["transfermarkt_cache"]:
         try:
-            today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+            from soccer_dates import soccer_today_str
+            today = soccer_today_str()
             full_name = team_display_name(league_code, player["team"]) if league_code else player["team"]
             context["transfermarkt_cache"][cache_key] = get_team_injuries_cached(full_name, today)
         except Exception as e:
@@ -395,42 +396,60 @@ def _enrich_x(player, context):
 
 
 def _build_predicted_xi_sources(player, league_code, context, history, transfermarkt_hit, rotowire_hit, x_hit):
-    """[{source, predicted_start: bool, observed_at, source_updated_at}]
-    across every real signal available - see item 4. No fabricated
-    "predicted lineup" scraper exists yet (FotMob/WhoScored not built,
-    SofaScore previously found blocked - see soccer_dns.py history), so
-    this consensus is built from what's genuinely derivable: Transfermarkt
-    injury status, RotoWire news tier, X (if configured), and recent
-    start-pattern history. Documented gap, not a silent omission."""
+    """[{source, vote: "start"|"bench"|"unknown", predicted_start:
+    True|False|None, observed_at, source_updated_at}] across every real
+    signal available - see item 4. No fabricated "predicted lineup"
+    scraper exists yet (FotMob/WhoScored not built, SofaScore previously
+    found blocked - see soccer_dns.py history), so this consensus is
+    built from what's genuinely derivable: Transfermarkt injury status,
+    RotoWire news tier, X (if configured), and recent start-pattern
+    history. Documented gap, not a silent omission.
+
+    A source that was CHECKED and found something, but that something
+    doesn't clearly imply start-or-bench, is kept as vote="unknown"
+    (2026-09-14 coverage-depth fix) rather than silently dropped - e.g.
+    an X injury mention with no explicit start_signal, or a RotoWire hit
+    whose normalized tier isn't one of the ones this module currently
+    knows how to read as directional. This is what makes source_count
+    (all three vote buckets) a true "how many sources actually said
+    something" count, distinct from starter_votes+bench_votes."""
     now_iso = datetime.now(timezone.utc).isoformat()
     sources = []
 
     if transfermarkt_hit:
-        sources.append({"source": "transfermarkt_injury", "predicted_start": False,
+        sources.append({"source": "transfermarkt_injury", "vote": "bench", "predicted_start": False,
                          "observed_at": now_iso, "source_updated_at": transfermarkt_hit.get("since")})
 
     if rotowire_hit:
         norm_status = rotowire_hit.get("rotowire_status_normalized")
         if norm_status == "reversal":
-            predicted = True
+            vote, predicted = "start", True
         elif norm_status in ("hard_out", "soft", "news_mention"):
-            predicted = False
+            vote, predicted = "bench", False
         else:
-            predicted = None
-        if predicted is not None:
-            sources.append({"source": "rotowire_news", "predicted_start": predicted,
-                             "observed_at": now_iso, "source_updated_at": rotowire_hit.get("rotowire_news_at")})
+            vote, predicted = "unknown", None
+        sources.append({"source": "rotowire_news", "vote": vote, "predicted_start": predicted,
+                         "observed_at": now_iso, "source_updated_at": rotowire_hit.get("rotowire_news_at")})
 
-    if x_hit and x_hit.get("extracted_start_signal"):
-        predicted = x_hit["extracted_start_signal"] in ("confirmed_start", "returning")
-        sources.append({"source": f"x:{x_hit.get('author_username') or 'unknown'}", "predicted_start": predicted,
-                         "observed_at": now_iso, "source_updated_at": x_hit.get("created_at")})
+    if x_hit:
+        if x_hit.get("extracted_start_signal"):
+            predicted = x_hit["extracted_start_signal"] in ("confirmed_start", "returning")
+            vote = "start" if predicted else "bench"
+        else:
+            # Matched (e.g. an injury mention) but no explicit start/bench
+            # implication - a real signal, kept visible, not silently
+            # dropped just because it isn't directional.
+            vote, predicted = "unknown", None
+        sources.append({"source": f"x:{x_hit.get('author_username') or 'unknown'}", "vote": vote,
+                         "predicted_start": predicted, "observed_at": now_iso,
+                         "source_updated_at": x_hit.get("created_at")})
 
     if history:
         wins, losses, n = soccer_start_history.starts_last_n(history, player["normalized_name"], n=5)
         if n >= 3:
-            sources.append({"source": "recent_start_pattern", "predicted_start": (wins / n) >= 0.6,
-                             "observed_at": now_iso, "source_updated_at": None})
+            predicted = (wins / n) >= 0.6
+            sources.append({"source": "recent_start_pattern", "vote": "start" if predicted else "bench",
+                             "predicted_start": predicted, "observed_at": now_iso, "source_updated_at": None})
         # A player who just earned his first start after not starting is a
         # genuine "trending toward starting" signal even when the trailing
         # rate is still low - this is exactly the real Mama Balde case
@@ -438,7 +457,7 @@ def _build_predicted_xi_sources(player, league_code, context, history, transferm
         # 2026-09-14 audit. Kept as its OWN source (not folded into the
         # rate-based one above) so both can coexist/disagree honestly.
         if soccer_start_history.first_recent_start(history, player["normalized_name"]):
-            sources.append({"source": "first_recent_start", "predicted_start": True,
+            sources.append({"source": "first_recent_start", "vote": "start", "predicted_start": True,
                              "observed_at": now_iso, "source_updated_at": None})
 
     return sources
@@ -456,6 +475,7 @@ def enrich_and_score_player(player, context):
         player, league_code, context, history, transfermarkt_hit, rotowire_hit, x_hit)
     predicted_start_sources = [s["source"] for s in predicted_xi_sources if s["predicted_start"] is True]
     predicted_bench_sources = [s["source"] for s in predicted_xi_sources if s["predicted_start"] is False]
+    predicted_unknown_sources = [s["source"] for s in predicted_xi_sources if s["vote"] == "unknown"]
     if predicted_start_sources and predicted_bench_sources:
         prediction_consensus = "disagreement"
     elif predicted_start_sources:
@@ -466,12 +486,25 @@ def enrich_and_score_player(player, context):
         prediction_consensus = "unknown"
     prediction_disagreement = bool(predicted_start_sources) and bool(predicted_bench_sources)
 
+    # Explicit vote-count structure (2026-09-14 item 4) - same underlying
+    # data as predicted_start_sources/predicted_bench_sources/prediction_
+    # consensus above (kept for backward compat with soccer_dns_score.py
+    # and existing callers - scoring is UNCHANGED, this is display/
+    # coverage-only), but named the way a dashboard coverage matrix and
+    # "how many sources actually said something" question wants it.
+    starter_votes = len(predicted_start_sources)
+    bench_votes = len(predicted_bench_sources)
+    unknown_votes = len(predicted_unknown_sources)
+    predicted_xi_source_count = len(predicted_xi_sources)
+
     starts5 = soccer_start_history.starts_last_n(history, player["normalized_name"], n=5) if history else (0, 0, 0)
     starts10 = soccer_start_history.starts_last_n(history, player["normalized_name"], n=10) if history else (0, 0, 0)
     days_rest_val = soccer_start_history.days_rest(history, player["normalized_name"], player["event_date"][:10]) if history else None
     first_start = soccer_start_history.first_recent_start(history, player["normalized_name"]) if history else False
     freq_sub = soccer_start_history.frequent_substitute(history, player["normalized_name"]) if history else False
     rotation = soccer_start_history.rotation_player(history, player["normalized_name"]) if history else False
+    prev_start = soccer_start_history.previous_start(history, player["normalized_name"]) if history else None
+    starts3 = soccer_start_history.starts_last_3(history, player["normalized_name"]) if history else (0, 0, 0)
 
     dns_score, confidence_score, urgency_score, evidence_count, contributions, urgency_reasons = \
         soccer_dns_score.score_candidate(
@@ -554,11 +587,17 @@ def enrich_and_score_player(player, context):
         "x_signal": x_hit,
         "starts_last_5": starts5, "starts_last_10": starts10, "days_rest": days_rest_val,
         "first_recent_start": first_start, "frequent_substitute": freq_sub, "rotation_player": rotation,
+        "previous_start": prev_start, "starts_last_3": starts3,
         "predicted_start_sources": predicted_start_sources,
         "predicted_bench_sources": predicted_bench_sources,
+        "predicted_unknown_sources": predicted_unknown_sources,
         "prediction_consensus": prediction_consensus,
         "prediction_disagreement": prediction_disagreement,
         "predicted_xi_sources": predicted_xi_sources,
+        "starter_votes": starter_votes,
+        "bench_votes": bench_votes,
+        "unknown_votes": unknown_votes,
+        "predicted_xi_source_count": predicted_xi_source_count,
         "dns_score": dns_score, "confidence_score": confidence_score, "urgency_score": urgency_score,
         "combined_priority": soccer_dns_score.combined_priority(dns_score, urgency_score),
         "evidence_count": evidence_count,
@@ -584,7 +623,8 @@ def enrich_and_score_player(player, context):
 
 
 def score_dabble_soccer_board(source=DEFAULT_BOARD_PATH, persist=True, snapshot_date=None, notify=True):
-    snapshot_date = snapshot_date or datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    from soccer_dates import soccer_today_str
+    snapshot_date = snapshot_date or soccer_today_str()
     props = load_dabble_soccer_props(source)
     players = group_props_by_player(props)
     if not players:

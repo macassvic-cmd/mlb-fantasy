@@ -447,5 +447,64 @@ class TestSourceAttemptedVsMatchedVsSignalFound(unittest.TestCase):
         self.assertFalse(result["has_news"])
 
 
+class TestPredictedXiVoteStructure(unittest.TestCase):
+    """2026-09-14 item 4 - starter_votes/bench_votes/unknown_votes/
+    predicted_xi_source_count must never let one source overwrite
+    another, and a checked-but-non-directional source must show up as
+    an "unknown" vote rather than being silently dropped."""
+
+    def _player(self):
+        props = soccer_adapter.load_dabble_soccer_props({"sport": "soccer", "props": [
+            {"player_name": "Vote Test Player", "team": "NEW", "market": "Shots", "line": 0.5,
+             "event_date": "2026-09-14T19:00:00.000Z", "matchup": "NEW @ LEE",
+             "league": "England - Premier League", "position": "MF"},
+        ]})
+        return list(soccer_adapter.group_props_by_player(props).values())[0]
+
+    def test_ambiguous_rotowire_status_counted_as_unknown_not_dropped(self):
+        player = self._player()
+        context = _empty_context(rotowire={"vote test player": {
+            "rotowire_status_raw": "monitored", "rotowire_status_normalized": "monitored",
+            "rotowire_injury": "being monitored", "rotowire_news_at": None, "rotowire_predicted_start": None,
+        }})
+        with patch("soccer_adapter._enrich_espn_official_status", return_value=NOT_YET_POSTED), _no_transfermarkt():
+            result = soccer_adapter.enrich_and_score_player(player, context)
+        self.assertEqual(result["starter_votes"], 0)
+        self.assertEqual(result["bench_votes"], 0)
+        self.assertEqual(result["unknown_votes"], 1)
+        self.assertEqual(result["predicted_xi_source_count"], 1)
+        self.assertIn("rotowire_news", result["predicted_unknown_sources"])
+
+    def test_votes_never_overwrite_each_other_multiple_sources(self):
+        player = self._player()
+        history = {"vote test player": {"name": "vote test player", "matches": [
+            {"date": "2026-08-01", "league": "EPL", "event_id": "1", "team_id": "t1",
+             "opponent_team_id": "t2", "started": True, "active": True},
+            {"date": "2026-08-08", "league": "EPL", "event_id": "2", "team_id": "t1",
+             "opponent_team_id": "t3", "started": True, "active": True},
+            {"date": "2026-08-15", "league": "EPL", "event_id": "3", "team_id": "t1",
+             "opponent_team_id": "t4", "started": True, "active": True},
+        ]}}
+        context = _empty_context(history=history, rotowire={"vote test player": {
+            "rotowire_status_raw": "fitness-test", "rotowire_status_normalized": "soft",
+            "rotowire_injury": "doubt", "rotowire_news_at": None, "rotowire_predicted_start": None}})
+        with patch("soccer_adapter._enrich_espn_official_status", return_value=NOT_YET_POSTED), _no_transfermarkt():
+            result = soccer_adapter.enrich_and_score_player(player, context)
+        # history says start (3/3), rotowire says bench - BOTH must be
+        # counted, neither one clobbering the other.
+        self.assertEqual(result["starter_votes"], 1)
+        self.assertEqual(result["bench_votes"], 1)
+        self.assertEqual(result["predicted_xi_source_count"], 2)
+        self.assertEqual(result["prediction_consensus"], "disagreement")
+
+    def test_zero_sources_all_vote_counts_zero(self):
+        player = self._player()
+        context = _empty_context()
+        with patch("soccer_adapter._enrich_espn_official_status", return_value=NOT_YET_POSTED), _no_transfermarkt():
+            result = soccer_adapter.enrich_and_score_player(player, context)
+        self.assertEqual((result["starter_votes"], result["bench_votes"], result["unknown_votes"]), (0, 0, 0))
+        self.assertEqual(result["predicted_xi_source_count"], 0)
+
+
 if __name__ == "__main__":
     unittest.main()

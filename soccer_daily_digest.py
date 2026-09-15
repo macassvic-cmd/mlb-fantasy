@@ -50,17 +50,20 @@ import os
 import subprocess
 import sys
 from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 
 import requests
 
-# This repo has never had direct access to a live Dabble API - the board
-# is produced OUTSIDE this repo by a separate script and dropped as a
-# file (see soccer_adapter.py's module docstring / dns_watch.py). Best-
-# effort attempt to trigger a fresh fetch from it before checking
-# staleness - item 5's "the daily job must refresh the board itself."
-# Confirmed this path does NOT exist on this dev machine, so in THIS
-# environment this is a documented no-op and _board_freshness's own
-# staleness check below is what actually protects against a stale send.
+PACIFIC_TZ = ZoneInfo("America/Los_Angeles")
+
+# 2026-09-14 production-scheduling fix: the board used to be refreshable
+# ONLY via an external script at this Windows-only path, which made "do
+# not rely on my PC being awake" structurally impossible - a GitHub
+# Actions runner can't see C:\platform-tools\. scrapers.dabble_soccer_
+# producer is the same fetch logic checked INTO the repo, callable via a
+# plain import on any OS - see _attempt_board_refresh, which tries that
+# first and only falls back to this external path for a local machine
+# that happens to still have it (harmless, never required).
 EXTERNAL_PRODUCER_PATH = r"C:\platform-tools\dabble_board_producer.py"
 
 DIGEST_DIR = os.path.join("data", "soccer_daily_digest")
@@ -134,28 +137,34 @@ def _new_record(date_str):
 # ---------------------------------------------------------------------------
 
 def _attempt_board_refresh(output_path):
-    """Best-effort external producer invocation - see EXTERNAL_PRODUCER_
-    PATH's comment. Confirmed live 2026-09-14 that this producer IS
-    present on this machine and genuinely hits Dabble's real API
-    (api.dabble.com) directly, no auth required for the DFS props
-    endpoints - `--sport soccer --output <output_path>` writes straight
-    to the exact file soccer_adapter.py reads, skipping the incoming/
-    dns_watch.py hand-off for this automated flow. Returns True only if
-    it actually ran successfully; False (logged, never raised) covers
-    both "not installed here" and "ran but failed" - either way the
-    caller falls through to _board_freshness's own check rather than
-    trusting this call's success."""
+    """Fetches a genuinely fresh Dabble soccer board, preferring the
+    portable in-repo producer (scrapers.dabble_soccer_producer - works
+    identically on any OS, including a GitHub Actions runner) and
+    falling back to the external Windows-only script only if present
+    (a local dev convenience, never required). Returns True only on an
+    actual successful fetch+write; False (logged, never raised) covers
+    every failure mode - either way the caller falls through to
+    _board_freshness's own check rather than trusting this call's
+    success blindly."""
+    try:
+        from scrapers.dabble_soccer_producer import produce_soccer_board
+        payload = produce_soccer_board(output_path)
+        print(f"soccer_daily_digest: fresh Dabble fetch OK via in-repo producer - "
+              f"{len(payload.get('props', []))} props across {len(payload.get('competitions', []))} competitions.")
+        return True
+    except Exception as e:
+        print(f"soccer_daily_digest: in-repo producer fetch failed ({e}) - trying the external local script.")
+
     if not os.path.exists(EXTERNAL_PRODUCER_PATH):
         print(f"soccer_daily_digest: external board producer not found at {EXTERNAL_PRODUCER_PATH} - "
-              f"cannot force a fresh Dabble fetch from this machine; falling back to whatever board is "
-              f"already on disk (staleness is still checked next).")
+              f"falling back to whatever board is already on disk (staleness is still checked next).")
         return False
     try:
         subprocess.run([sys.executable, EXTERNAL_PRODUCER_PATH, "--sport", "soccer", "--output", output_path],
                         timeout=90, check=True, capture_output=True, text=True)
         return True
     except Exception as e:
-        print(f"soccer_daily_digest: board producer invocation failed (non-fatal): {e}")
+        print(f"soccer_daily_digest: external board producer invocation failed (non-fatal): {e}")
         return False
 
 
@@ -277,11 +286,16 @@ def _stale_warning_message(age_hours, generated_at, error=None):
 # Discord delivery
 # ---------------------------------------------------------------------------
 
-def _post_discord(content=None, embeds=None):
+def _post_discord(content=None, embeds=None, source="daily_digest"):
     """(attempted: bool, delivered: bool, http_status: int_or_None,
     error: str_or_None). attempted is False only when no webhook is
     configured at all - a documented no-op, never conflated with a
-    failed delivery attempt (see module docstring)."""
+    failed delivery attempt (see module docstring). Every attempt
+    (success or failure) is recorded in discord_health.py's shared
+    tracking regardless of source, so the dashboard's Discord-health
+    section reflects both the digest and real-time alerts."""
+    import discord_health
+
     webhook_url = _webhook_url()
     if not webhook_url:
         return False, False, None, "DISCORD_SOCCER_DNS_WEBHOOK_URL not set - digest not sent (documented no-op)."
@@ -293,9 +307,13 @@ def _post_discord(content=None, embeds=None):
     try:
         resp = requests.post(webhook_url, json=payload, timeout=15)
         delivered = 200 <= resp.status_code < 300
-        return True, delivered, resp.status_code, (None if delivered else resp.text[:300])
+        error = None if delivered else resp.text[:300]
+        discord_health.record_attempt(source, delivered, http_status=resp.status_code, error=error)
+        return True, delivered, resp.status_code, error
     except Exception as e:
-        return True, False, None, f"{type(e).__name__}: {e}"
+        error = f"{type(e).__name__}: {e}"
+        discord_health.record_attempt(source, False, http_status=None, error=error)
+        return True, False, None, error
 
 
 def send_test_message():
@@ -303,7 +321,7 @@ def send_test_message():
     separate from a real digest/alert, for confirming the webhook itself
     works end to end."""
     attempted, delivered, status, error = _post_discord(
-        content="✅ Soccer DNS Discord test message - webhook is reachable and delivering.")
+        content="✅ Soccer DNS Discord test message - webhook is reachable and delivering.", source="test")
     print(f"discord_attempted={attempted} discord_delivered={delivered} "
           f"http_status={status} error={error}")
     return {"discord_attempted": attempted, "discord_delivered": delivered,
@@ -314,6 +332,24 @@ def send_test_message():
 # Main entry point
 # ---------------------------------------------------------------------------
 
+def is_due_now(target_hour=7, window_hours=1, now=None):
+    """True iff the current America/Los_Angeles wall-clock hour is
+    within [target_hour, target_hour + window_hours) - the LA-anchored
+    gate a GitHub Actions cron (UTC-only, and DST-blind) needs to
+    actually mean "7am Pacific." The workflow schedules TWO UTC cron
+    times (14:00 and 15:00 UTC) to cover both PDT and PST without
+    drifting off Pacific wall-clock time across the DST transition; this
+    function is what makes the OTHER of those two fires a correct no-op
+    instead of a duplicate send (run_daily_digest's own once-per-day
+    dedup would also catch a duplicate, but skipping before any network
+    call is cheaper and makes the intent explicit in the workflow log)."""
+    now = now or datetime.now(timezone.utc)
+    if now.tzinfo is None:
+        now = now.replace(tzinfo=timezone.utc)
+    local_hour = now.astimezone(PACIFIC_TZ).hour
+    return target_hour <= local_hour < target_hour + window_hours
+
+
 def run_daily_digest(force=False, source=None, date_str=None, now=None):
     """The full flow: refresh -> enrich -> score -> persist -> digest ->
     Discord. Idempotent per calendar day unless force=True - a second
@@ -322,7 +358,13 @@ def run_daily_digest(force=False, source=None, date_str=None, now=None):
     import soccer_adapter
 
     now = now or datetime.now(timezone.utc)
-    date_str = date_str or now.strftime("%Y-%m-%d")
+    # Pacific-anchored, same lesson/bug class as scrapers.mlb_api.
+    # mlb_today_str - a bare UTC date here would silently roll "today"
+    # over up to 7-8 hours before Pacific evening does (confirmed live
+    # 2026-09-14 running this at 22:53 PT / 05:53 UTC the next day - the
+    # UTC-only version of this line stamped the digest "2026-09-15" while
+    # every human involved still called it "today, the 14th").
+    date_str = date_str or now.astimezone(PACIFIC_TZ).strftime("%Y-%m-%d")
     source = source or soccer_adapter.DEFAULT_BOARD_PATH
 
     existing = _load_digest_record(date_str)
@@ -350,7 +392,12 @@ def run_daily_digest(force=False, source=None, date_str=None, now=None):
         return record
 
     try:
-        candidates = soccer_adapter.score_dabble_soccer_board(source=source, persist=True, notify=False,
+        # notify=True: real-time threshold/news-signal alerts fire off
+        # this SAME scoring pass (soccer_alerts.notify_soccer_candidates),
+        # per the documented flow (fetch -> enrich -> score -> persist ->
+        # alerts -> digest -> dashboard) - one scoring pass feeds all of
+        # it rather than re-scoring separately for each step.
+        candidates = soccer_adapter.score_dabble_soccer_board(source=source, persist=True, notify=True,
                                                                 snapshot_date=date_str)
     except Exception as e:
         attempted, delivered, status, error = _post_discord(
@@ -361,6 +408,13 @@ def run_daily_digest(force=False, source=None, date_str=None, now=None):
         _save_digest_record(date_str, record)
         print(f"soccer_daily_digest: scoring pipeline raised ({e}) - sent warning instead of a digest.")
         return record
+
+    try:
+        import soccer_dashboard
+        soccer_dashboard.generate(candidates, date_str=date_str)
+        print("soccer_daily_digest: regenerated docs/soccer-dns.html from this run's candidates.")
+    except Exception as e:
+        print(f"soccer_daily_digest: dashboard regeneration failed (non-fatal, digest still sends): {e}")
 
     total_live = len(candidates)
     if total_live == 0:
@@ -388,7 +442,7 @@ def run_daily_digest(force=False, source=None, date_str=None, now=None):
 
 def digest_status(date_str=None):
     """python soccer_dns.py --digest-status"""
-    date_str = date_str or datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    date_str = date_str or datetime.now(timezone.utc).astimezone(PACIFIC_TZ).strftime("%Y-%m-%d")
     record = _load_digest_record(date_str)
     print(f"Date                       : {date_str}")
     print(f"Today's digest generated   : {'YES' if record else 'NO'}")
@@ -415,6 +469,11 @@ def main():
     parser.add_argument("--status", action="store_true", help="print today's digest delivery status")
     parser.add_argument("--test-discord", action="store_true", help="send a plain health-check message")
     parser.add_argument("--source", default=None)
+    parser.add_argument("--if-due", action="store_true",
+                         help="with --send, only actually run if the current America/Los_Angeles hour is "
+                              "within the target window - see is_due_now. Lets a dense multi-UTC-time cron "
+                              "(covering PDT/PST) fire safely without sending twice a day.")
+    parser.add_argument("--due-hour", type=int, default=7, help="target Pacific hour for --if-due (default 7 = 7am PT)")
     args = parser.parse_args()
 
     if args.test_discord:
@@ -422,6 +481,11 @@ def main():
     elif args.status:
         digest_status()
     elif args.send:
+        if args.if_due and not is_due_now(target_hour=args.due_hour):
+            now_pt = datetime.now(timezone.utc).astimezone(PACIFIC_TZ)
+            print(f"soccer_daily_digest: not due yet (current Pacific time {now_pt.strftime('%H:%M %Z')}, "
+                  f"target hour {args.due_hour}:00) - skipping this fire.")
+            return
         run_daily_digest(force=args.force, source=args.source)
     else:
         parser.error("specify --send, --status, or --test-discord")

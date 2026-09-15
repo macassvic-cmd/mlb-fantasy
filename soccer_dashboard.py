@@ -134,6 +134,44 @@ def _source_health(candidates):
     }
 
 
+def _coverage_matrix(candidates):
+    """[{name, team, history, injury, news, predictedXi, x, sourceCount,
+    consensus}] - one row per live player, one column per raw source -
+    item 5's "exactly which sources every player has" (2026-09-14).
+    Booleans straight off each candidate's own has_*/source_health -
+    no re-derivation, so this can never drift from the coverage_report
+    numbers computed the same way."""
+    rows = []
+    for c in candidates:
+        rows.append({
+            "name": c["player_name"], "team": c["team"],
+            "history": bool(c.get("has_history")),
+            "injury": bool(c.get("has_injury")),
+            "news": bool(c.get("has_news")),
+            "predictedXi": bool(c.get("has_predicted_xi")),
+            "x": bool(c.get("has_x_signal")),
+            "starterVotes": c.get("starter_votes", 0), "benchVotes": c.get("bench_votes", 0),
+            "unknownVotes": c.get("unknown_votes", 0),
+            "sourceCount": sum([bool(c.get("has_history")), bool(c.get("has_injury")),
+                                 bool(c.get("has_news")), bool(c.get("has_x_signal"))]),
+            "consensus": c.get("prediction_consensus", "unknown"),
+        })
+    rows.sort(key=lambda r: r["sourceCount"], reverse=True)
+    return rows
+
+
+def _coverage_tiers(candidates):
+    n = len(candidates)
+    board_only = sum(1 for c in candidates if c.get("board_only"))
+    two_plus = sum(1 for c in candidates if c.get("has_multiple_external_sources"))
+    one_source = sum(1 for c in candidates
+                      if c.get("has_any_external_enrichment") and not c.get("has_multiple_external_sources"))
+    fully_enriched = sum(1 for c in candidates if c.get("has_history") and c.get("has_injury")
+                          and c.get("has_news") and c.get("has_x_signal"))
+    return {"total": n, "boardOnly": board_only, "oneSource": one_source,
+            "twoPlusSource": two_plus, "fullyEnriched": fully_enriched}
+
+
 def _status_counts(candidates):
     live = len(candidates)
     watch = sum(1 for c in candidates if WATCH_THRESHOLD <= c["dns_score"] < ALERT_THRESHOLD)
@@ -159,7 +197,8 @@ def _candidate_row(c):
 
 
 def generate(candidates, date_str=None, out_path=os.path.join("docs", "soccer-dns.html")):
-    date_str = date_str or datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    from soccer_dates import soccer_today_str
+    date_str = date_str or soccer_today_str()
     now = datetime.now(timezone.utc)
 
     candidates = sorted(candidates, key=lambda c: c.get("combined_priority") or 0, reverse=True)
@@ -167,13 +206,24 @@ def generate(candidates, date_str=None, out_path=os.path.join("docs", "soccer-dn
     alert_records, alerts_by_player_fixture = _alert_history(date_str)
     removed = _removed_candidates(date_str, alerts_by_player_fixture)
     source_health = _source_health(candidates)
+    coverage_matrix = _coverage_matrix(candidates)
+    coverage_tiers = _coverage_tiers(candidates)
     digest_record = _load_json(os.path.join(DIGEST_DIR, f"{date_str}.json"))
+
+    try:
+        import discord_health
+        discord_health_state = discord_health.get_health()
+    except Exception:
+        discord_health_state = {}
 
     rows_js = json.dumps([_candidate_row(c) for c in candidates], ensure_ascii=False)
     removed_js = json.dumps(removed, ensure_ascii=False)
     alerts_js = json.dumps(alert_records, ensure_ascii=False)
     health_js = json.dumps(source_health, ensure_ascii=False)
     digest_js = json.dumps(digest_record, ensure_ascii=False)
+    matrix_js = json.dumps(coverage_matrix, ensure_ascii=False)
+    tiers_js = json.dumps(coverage_tiers, ensure_ascii=False)
+    discord_health_js = json.dumps(discord_health_state, ensure_ascii=False)
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -220,6 +270,10 @@ def generate(candidates, date_str=None, out_path=os.path.join("docs", "soccer-dn
   .health-card .state.off {{ color: #e74c3c; }}
   .empty-msg {{ color: #6b7a99; padding: 16px 0; }}
   .table-wrap {{ overflow-x: auto; }}
+  .yes {{ color: #2ecc71; font-weight: 800; }}
+  .no {{ color: #4a5876; }}
+  .tier-summary {{ display: flex; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }}
+  .tier-summary .status-chip {{ min-width: 140px; }}
 </style>
 </head>
 <body>
@@ -268,8 +322,29 @@ def generate(candidates, date_str=None, out_path=os.path.join("docs", "soccer-dn
   </table>
   </div>
 
+  <h2 class="section-title">Coverage Matrix</h2>
+  <div class="tier-summary">
+    <div class="status-chip"><div class="value" id="tierTotal">0</div><div class="label">Total</div></div>
+    <div class="status-chip"><div class="value" id="tierBoardOnly">0</div><div class="label">Board-Only</div></div>
+    <div class="status-chip"><div class="value" id="tierOneSource">0</div><div class="label">One-Source</div></div>
+    <div class="status-chip"><div class="value" id="tierTwoPlus">0</div><div class="label">Two-Plus-Source</div></div>
+    <div class="status-chip"><div class="value" id="tierFullyEnriched">0</div><div class="label">Fully Enriched</div></div>
+  </div>
+  <div class="table-wrap">
+  <table id="matrixTable">
+    <thead><tr>
+      <th>Player</th><th>Team</th><th>History</th><th>Injury (TM)</th><th>News (RotoWire)</th>
+      <th>Predicted XI</th><th>X</th><th># Sources</th><th>Start Votes</th><th>Bench Votes</th><th>Unknown Votes</th>
+    </tr></thead>
+    <tbody id="matrixBody"></tbody>
+  </table>
+  </div>
+
   <h2 class="section-title">Source Health</h2>
   <div class="health-grid" id="healthGrid"></div>
+
+  <h2 class="section-title">Discord Health</h2>
+  <div class="health-grid" id="discordHealthGrid"></div>
 
 </main>
 <script>
@@ -278,6 +353,9 @@ const REMOVED = {removed_js};
 const ALERTS = {alerts_js};
 const HEALTH = {health_js};
 const DIGEST = {digest_js};
+const MATRIX = {matrix_js};
+const TIERS = {tiers_js};
+const DISCORD_HEALTH = {discord_health_js};
 
 function tierClass(dns) {{
   if (dns >= 85) return 'tier-high';
@@ -349,6 +427,42 @@ if (DIGEST) {{
     <div class="state">${{DIGEST.candidate_count}} candidates &middot; ${{DIGEST.generated_at || ''}}</div>`;
   healthGrid.appendChild(card);
 }}
+
+// --- Coverage matrix (item 5) ---------------------------------------
+document.getElementById('tierTotal').textContent = TIERS.total || 0;
+document.getElementById('tierBoardOnly').textContent = TIERS.boardOnly || 0;
+document.getElementById('tierOneSource').textContent = TIERS.oneSource || 0;
+document.getElementById('tierTwoPlus').textContent = TIERS.twoPlusSource || 0;
+document.getElementById('tierFullyEnriched').textContent = TIERS.fullyEnriched || 0;
+
+const matrixBody = document.getElementById('matrixBody');
+function cell(v) {{ return v ? '<span class="yes">&#10003;</span>' : '<span class="no">&mdash;</span>'; }}
+if (MATRIX.length === 0) {{
+  matrixBody.innerHTML = '<tr><td colspan="11" class="empty-msg">No candidates to show coverage for.</td></tr>';
+}} else {{
+  for (const m of MATRIX) {{
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${{m.name}}</td><td>${{m.team}}</td>
+      <td>${{cell(m.history)}}</td><td>${{cell(m.injury)}}</td><td>${{cell(m.news)}}</td>
+      <td>${{cell(m.predictedXi)}}</td><td>${{cell(m.x)}}</td>
+      <td>${{m.sourceCount}}</td><td>${{m.starterVotes}}</td><td>${{m.benchVotes}}</td><td>${{m.unknownVotes}}</td>`;
+    matrixBody.appendChild(tr);
+  }}
+}}
+
+// --- Discord health (item 7) -----------------------------------------
+const discordHealthGrid = document.getElementById('discordHealthGrid');
+const dh = DISCORD_HEALTH || {{}};
+function dhCard(name, value, cls) {{
+  const card = document.createElement('div');
+  card.className = 'health-card';
+  card.innerHTML = `<div class="name">${{name}}</div><div class="state ${{cls || ''}}">${{value != null ? value : 'never'}}</div>`;
+  return card;
+}}
+discordHealthGrid.appendChild(dhCard('Last Attempt', dh.last_attempt_at ? `${{dh.last_attempt_at}} (${{dh.last_attempt_source || ''}})` : null));
+discordHealthGrid.appendChild(dhCard('Last Successful Delivery', dh.last_success_at ? `${{dh.last_success_at}} (${{dh.last_success_source || ''}})` : null, 'on'));
+discordHealthGrid.appendChild(dhCard('Last Failure', dh.last_failure_at ? `${{dh.last_failure_at}} (${{dh.last_failure_source || ''}})` : null, dh.last_failure_at ? 'off' : ''));
+discordHealthGrid.appendChild(dhCard('Last Error', dh.last_error || null, dh.last_error ? 'off' : ''));
 </script>
 </body>
 </html>

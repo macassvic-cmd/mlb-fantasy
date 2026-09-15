@@ -43,10 +43,15 @@ class _TempDigestDir(unittest.TestCase):
         # a real live API) - must never fire from a unit test.
         self._patch_refresh = patch.object(digest, "_attempt_board_refresh", return_value=False)
         self._patch_refresh.start()
+        # soccer_dashboard.generate would otherwise overwrite the REAL
+        # docs/soccer-dns.html on every test run - must never fire either.
+        self._patch_dashboard = patch("soccer_dashboard.generate")
+        self._patch_dashboard.start()
 
     def tearDown(self):
         self._patch_dir.stop()
         self._patch_refresh.stop()
+        self._patch_dashboard.stop()
         self._tmp.cleanup()
 
 
@@ -193,6 +198,31 @@ class TestRealTimeAlertsIndependentOfDigestDedupe(_TempDigestDir):
                     [_fake_candidate("Player A", dns=90)], date_str="2026-09-15")
             self.assertFalse(os.path.exists(digest._digest_path("2026-09-15")),
                               "a real-time alert must never create/alter a digest record")
+
+
+class TestIsDueNow(unittest.TestCase):
+    """LA-anchored gate for the dense-cron production schedule (item 1) -
+    a GitHub Actions cron is UTC-only and DST-blind, so the workflow
+    fires twice (covering both PDT/PST UTC offsets) and this decides
+    which of the two firings is actually "7am Pacific" right now."""
+
+    def test_due_during_pdt_target_hour(self):
+        # 14:30 UTC = 7:30 AM PDT (UTC-7) in September.
+        now = datetime(2026, 9, 14, 14, 30, tzinfo=timezone.utc)
+        self.assertTrue(digest.is_due_now(target_hour=7, now=now))
+
+    def test_not_due_one_hour_later(self):
+        now = datetime(2026, 9, 14, 15, 30, tzinfo=timezone.utc)
+        self.assertFalse(digest.is_due_now(target_hour=7, now=now))
+
+    def test_due_during_pst_target_hour(self):
+        # 15:30 UTC = 7:30 AM PST (UTC-8) in January.
+        now = datetime(2026, 1, 14, 15, 30, tzinfo=timezone.utc)
+        self.assertTrue(digest.is_due_now(target_hour=7, now=now))
+
+    def test_not_due_far_from_target(self):
+        now = datetime(2026, 9, 14, 2, 0, tzinfo=timezone.utc)
+        self.assertFalse(digest.is_due_now(target_hour=7, now=now))
 
 
 if __name__ == "__main__":

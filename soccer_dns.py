@@ -672,6 +672,10 @@ def main():
     parser.add_argument("--digest-status", action="store_true")
     parser.add_argument("--force", action="store_true", help="with --send-daily-digest, resend even if already delivered today")
     parser.add_argument("--test-discord", action="store_true", help="send a plain Soccer DNS Discord health-check message")
+    parser.add_argument("--if-due", action="store_true",
+                         help="with --send-daily-digest, only run if it's currently the target Pacific hour - "
+                              "see soccer_daily_digest.is_due_now")
+    parser.add_argument("--due-hour", type=int, default=7)
     args, _unknown = parser.parse_known_args()
 
     if args.coverage:
@@ -682,6 +686,9 @@ def main():
         return
     if args.send_daily_digest:
         import soccer_daily_digest
+        if args.if_due and not soccer_daily_digest.is_due_now(target_hour=args.due_hour):
+            print(f"soccer_dns: not due yet (target Pacific hour {args.due_hour}:00) - skipping this fire.")
+            return
         soccer_daily_digest.run_daily_digest(force=args.force)
         return
     if args.digest_status:

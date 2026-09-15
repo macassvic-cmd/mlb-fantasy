@@ -152,19 +152,46 @@ def build_player_index(force=False, path=PLAYER_INDEX_PATH):
     return index
 
 
+def _name_variant_candidates(player_name):
+    """Alternate short forms to try when the exact full name doesn't
+    match - found live 2026-09-14 auditing why RotoWire player-match
+    coverage sat at only 42%: Dabble's soccer player_name field is the
+    player's full LEGAL name ("Anthony Michael Gordon", "Cole Jermaine
+    Palmer", "Eduardo Celmi Camavinga"), while RotoWire (like every
+    other football source) indexes the common football name - almost
+    always first-given-name + final-surname-word ("Anthony Gordon",
+    "Cole Palmer", "Eduardo Camavinga" - confirmed live against all
+    three). Each candidate here is still required to be an EXACT match
+    against the real sitemap index elsewhere - this only generates
+    plausible short forms, it never fuzzy-matches or guesses a
+    "close enough" player."""
+    words = player_name.split()
+    if len(words) < 2:
+        return []
+    candidates = [f"{words[0]} {words[-1]}"]
+    if len(words) >= 3:
+        candidates.append(f"{words[0]} {words[1]}")  # Spanish paternal-surname convention
+    return candidates
+
+
 def resolve_player_page(player_name, index=None):
     """(url, player_id, ambiguous:bool) for player_name's RotoWire page,
-    or None if no sitemap entry matches at all. ambiguous=True means
-    MULTIPLE distinct players share this normalized name - url/player_id
-    are the first candidate only, surfaced for visibility, but callers
-    should not treat a signal_found off an ambiguous match as reliably
-    about THIS specific player."""
+    or None if no sitemap entry matches at all. Tries the exact full
+    name first, then each of _name_variant_candidates's short forms -
+    see that function's docstring for why a bare exact-match-only
+    lookup badly undercounts real coverage. ambiguous=True means
+    MULTIPLE distinct players share whichever name string actually
+    matched - url/player_id are the first candidate only, surfaced for
+    visibility, but callers should not treat a signal_found off an
+    ambiguous match as reliably about THIS specific player."""
     index = index if index is not None else build_player_index()
-    norm = normalize_name(player_name)
-    candidates = index.get(norm)
-    if not candidates:
-        return None
-    return candidates[0]["url"], candidates[0]["player_id"], len(candidates) > 1
+
+    for candidate_name in [player_name] + _name_variant_candidates(player_name):
+        norm = normalize_name(candidate_name)
+        candidates = index.get(norm)
+        if candidates:
+            return candidates[0]["url"], candidates[0]["player_id"], len(candidates) > 1
+    return None
 
 
 _INJURY_CARD_RE = re.compile(

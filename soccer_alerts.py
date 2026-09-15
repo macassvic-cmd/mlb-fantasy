@@ -178,15 +178,20 @@ def _build_embed(record, severity):
 
 
 def send_discord_alert(record, severity):
+    import discord_health
+
     webhook_url = _webhook_url()
     if not webhook_url:
         return False
     try:
         resp = requests.post(webhook_url, json={"embeds": [_build_embed(record, severity)]}, timeout=15)
         resp.raise_for_status()
+        discord_health.record_attempt("realtime_alert", True, http_status=resp.status_code)
         return True
     except Exception as e:
         print(f"soccer_alerts: Discord webhook POST failed for {record['player_name']}: {type(e).__name__}")
+        status = getattr(getattr(e, "response", None), "status_code", None)
+        discord_health.record_attempt("realtime_alert", False, http_status=status, error=f"{type(e).__name__}: {e}")
         return False
 
 
@@ -219,7 +224,8 @@ def notify_soccer_candidates(candidates, date_str=None):
     the send rules, fires CRITICAL immediately on confirmed_not_starting,
     and fires SOCCER NEWS SIGNAL on a material new signal even without a
     threshold crossing."""
-    date_str = date_str or datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    from soccer_dates import soccer_today_str
+    date_str = date_str or soccer_today_str()
     now_iso = datetime.now(timezone.utc).isoformat()
     data = _load_alerts(date_str)
 
