@@ -14,6 +14,8 @@ test run can never touch real production alert data.
 Run with: python -m unittest test_soccer_alerts -v
 """
 
+import json
+import os
 import tempfile
 import unittest
 from datetime import datetime, timedelta, timezone
@@ -194,6 +196,48 @@ class TestOneAlertPerThresholdCrossing(unittest.TestCase):
         # crosses 60/65/70 only - none in DISCORD_SEND_THRESHOLDS
         self._run(dns_score=72)
         self.assertEqual(self.mock_send.call_count, 0)
+
+
+class TestSendDiscordAlertRedactsErrors(unittest.TestCase):
+    """2026-09-15 security fix: send_discord_alert's own except block must
+    never persist str(e) - a requests exception commonly embeds the full
+    webhook URL. Exercises send_discord_alert directly (requests.post
+    mocked to raise), not the higher-level notify_soccer_candidates
+    wrapper other test classes mock send_discord_alert itself for."""
+
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self._patch_path = patch("discord_health.HEALTH_PATH", os.path.join(self._tmp.name, "health.json"))
+        self._patch_path.start()
+        self._patch_env = patch.dict("os.environ", {"DISCORD_SOCCER_DNS_WEBHOOK_URL":
+                                                      "https://discord.com/api/webhooks/1/faketoken"})
+        self._patch_env.start()
+
+    def tearDown(self):
+        self._patch_env.stop()
+        self._patch_path.stop()
+        self._tmp.cleanup()
+
+    def test_connection_error_never_leaks_the_webhook_url_into_health(self):
+        import discord_health
+        import requests
+
+        record = {
+            "player_name": "Test Player", "team": "TST", "opponent": "TST @ OPP",
+            "dns_score": 80, "confidence_score": 70, "urgency_score": 0,
+            "dabble_live": True, "official_status": "not_yet_posted",
+            "dabble_markets": [], "top_reasons": [], "game_start": None,
+        }
+        webhook_url = "https://discord.com/api/webhooks/1/faketoken"
+        with patch("requests.post", side_effect=requests.exceptions.ConnectionError(
+                f"Failed to establish a new connection: url: {webhook_url}")):
+            result = sa.send_discord_alert(record, "DNS ALERT")
+
+        self.assertFalse(result)
+        health = discord_health.get_health()
+        self.assertNotIn(webhook_url, json.dumps(health))
+        self.assertNotIn("faketoken", json.dumps(health))
+        self.assertIn("ConnectionError", health["last_error"])
 
 
 class TestGradeAlerts(unittest.TestCase):

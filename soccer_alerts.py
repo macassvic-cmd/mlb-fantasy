@@ -251,9 +251,16 @@ def send_discord_alert(record, severity):
         discord_health.record_attempt("realtime_alert", True, http_status=resp.status_code)
         return True
     except Exception as e:
-        print(f"soccer_alerts: Discord webhook POST failed for {record['player_name']}: {type(e).__name__}")
+        # Exception type + HTTP status ONLY - never str(e) (2026-09-15
+        # security fix): a requests exception commonly embeds the full
+        # request URL, which for a Discord webhook POST IS a bearer
+        # credential. discord_health.record_attempt also redacts as a
+        # backstop, but the message is built safe here in the first
+        # place rather than relying solely on that second layer.
         status = getattr(getattr(e, "response", None), "status_code", None)
-        discord_health.record_attempt("realtime_alert", False, http_status=status, error=f"{type(e).__name__}: {e}")
+        print(f"soccer_alerts: Discord webhook POST failed for {record['player_name']}: {type(e).__name__}")
+        discord_health.record_attempt("realtime_alert", False, http_status=status,
+                                       error=f"{type(e).__name__} (HTTP {status})")
         return False
 
 

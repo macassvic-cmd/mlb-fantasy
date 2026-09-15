@@ -321,11 +321,20 @@ def _post_discord(content=None, embeds=None, source="daily_digest"):
     try:
         resp = requests.post(webhook_url, json=payload, timeout=15)
         delivered = 200 <= resp.status_code < 300
-        error = None if delivered else resp.text[:300]
+        # Discord's own response body, not an exception - low risk (it
+        # never needs to echo the webhook URL back to the client that
+        # already has it) but still redacted before being persisted/
+        # returned, same blanket policy as the exception path below.
+        error = None if delivered else discord_health.redact(resp.text[:300])
         discord_health.record_attempt(source, delivered, http_status=resp.status_code, error=error)
         return True, delivered, resp.status_code, error
     except Exception as e:
-        error = f"{type(e).__name__}: {e}"
+        # Exception type + HTTP status ONLY - never str(e) (2026-09-15
+        # security fix): a requests exception commonly embeds the full
+        # request URL, which for a Discord webhook POST IS a bearer
+        # credential. record_attempt also redacts as a backstop, but the
+        # message is built safe here in the first place.
+        error = f"{type(e).__name__} (HTTP None - request never completed)"
         discord_health.record_attempt(source, False, http_status=None, error=error)
         return True, False, None, error
 
