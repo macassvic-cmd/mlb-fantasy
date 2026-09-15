@@ -2423,20 +2423,71 @@
           "grade": "loss"
         }
       ]
+    },
+    "2026-09-14": {
+      "wins": 2,
+      "losses": 2,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 672695,
+          "name": "Geraldo Perdomo",
+          "team": "Arizona Diamondbacks",
+          "projected_ud": 4.59,
+          "ud_line": 6.5,
+          "edge": -1.91,
+          "game_time_pt": "6:40 PM PT",
+          "actual_ud": 6,
+          "grade": "win"
+        },
+        {
+          "player_id": 543807,
+          "name": "George Springer",
+          "team": "Toronto Blue Jays",
+          "projected_ud": 3.72,
+          "ud_line": 5.5,
+          "edge": -1.78,
+          "game_time_pt": "4:07 PM PT",
+          "actual_ud": 16,
+          "grade": "loss"
+        },
+        {
+          "player_id": 666176,
+          "name": "Jo Adell",
+          "team": "Cleveland Guardians",
+          "projected_ud": 3.84,
+          "ud_line": 5.5,
+          "edge": -1.66,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 5,
+          "grade": "win"
+        },
+        {
+          "player_id": 672386,
+          "name": "Alejandro Kirk",
+          "team": "Toronto Blue Jays",
+          "projected_ud": 3.98,
+          "ud_line": 5.5,
+          "edge": -1.52,
+          "game_time_pt": "4:07 PM PT",
+          "actual_ud": 13,
+          "grade": "loss"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 112,
-    "losses": 88,
+    "wins": 114,
+    "losses": 90,
     "dnp": 7
   },
   "record_by_line": {
     "5.5": {
-      "wins": 52,
-      "losses": 46
+      "wins": 53,
+      "losses": 48
     },
     "6.5": {
-      "wins": 32,
+      "wins": 33,
       "losses": 29
     },
     "8.5+": {
@@ -2464,14 +2515,14 @@
     "672695": {
       "name": "Geraldo Perdomo",
       "team": "Arizona Diamondbacks",
-      "wins": 2,
+      "wins": 3,
       "losses": 1
     },
     "543807": {
       "name": "George Springer",
       "team": "Toronto Blue Jays",
       "wins": 2,
-      "losses": 0
+      "losses": 1
     },
     "677649": {
       "name": "Ezequiel Duran",
@@ -3220,6 +3271,18 @@
     "666160": {
       "name": "Mickey Moniak",
       "team": "Colorado Rockies",
+      "wins": 0,
+      "losses": 1
+    },
+    "666176": {
+      "name": "Jo Adell",
+      "team": "Cleveland Guardians",
+      "wins": 1,
+      "losses": 0
+    },
+    "672386": {
+      "name": "Alejandro Kirk",
+      "team": "Toronto Blue Jays",
       "wins": 0,
       "losses": 1
     }

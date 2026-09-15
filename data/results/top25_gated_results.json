@@ -138,11 +138,150 @@
           "grade": "win"
         }
       ]
+    },
+    "2026-09-14": {
+      "wins": 5,
+      "losses": 6,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 605141,
+          "name": "Mookie Betts",
+          "team": "Los Angeles Dodgers",
+          "projected_ud": 9.5,
+          "ud_line": 7.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 0,
+          "grade": "loss"
+        },
+        {
+          "player_id": 641355,
+          "name": "Cody Bellinger",
+          "team": "New York Yankees",
+          "projected_ud": 9.5,
+          "ud_line": 7.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 5,
+          "grade": "loss"
+        },
+        {
+          "player_id": 592518,
+          "name": "Manny Machado",
+          "team": "San Diego Padres",
+          "projected_ud": 9.5,
+          "ud_line": 8.5,
+          "edge": 1.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "5:40 PM PT",
+          "actual_ud": 14,
+          "grade": "win"
+        },
+        {
+          "player_id": 606192,
+          "name": "Teoscar Hern\u00e1ndez",
+          "team": "Los Angeles Dodgers",
+          "projected_ud": 9.39,
+          "ud_line": 7.5,
+          "edge": 1.89,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 25,
+          "grade": "win"
+        },
+        {
+          "player_id": 700250,
+          "name": "Ben Rice",
+          "team": "New York Yankees",
+          "projected_ud": 9.33,
+          "ud_line": 7.5,
+          "edge": 1.83,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 15,
+          "grade": "win"
+        },
+        {
+          "player_id": 571970,
+          "name": "Max Muncy",
+          "team": "Los Angeles Dodgers",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 0,
+          "grade": "loss"
+        },
+        {
+          "player_id": 608324,
+          "name": "Alex Bregman",
+          "team": "Chicago Cubs",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 0,
+          "grade": "loss"
+        },
+        {
+          "player_id": 682987,
+          "name": "Spencer Jones",
+          "team": "New York Yankees",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 0,
+          "grade": "loss"
+        },
+        {
+          "player_id": 681198,
+          "name": "TJ Rumfield",
+          "team": "Colorado Rockies",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "5:40 PM PT",
+          "actual_ud": 10,
+          "grade": "win"
+        },
+        {
+          "player_id": 668227,
+          "name": "Randy Arozarena",
+          "team": "Seattle Mariners",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "6:38 PM PT",
+          "actual_ud": 15,
+          "grade": "win"
+        },
+        {
+          "player_id": 671277,
+          "name": "Luis Garc\u00eda Jr.",
+          "team": "New York Yankees",
+          "projected_ud": 8.1,
+          "ud_line": 6.5,
+          "edge": 1.6,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 0,
+          "grade": "loss"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 9,
-    "losses": 2,
+    "wins": 14,
+    "losses": 8,
     "dnp": 0
   }
 }

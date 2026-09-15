@@ -2122,20 +2122,53 @@
           "rate_before": 75.0
         }
       ]
+    },
+    "2026-09-14": {
+      "fire": [
+        {
+          "player_id": 701538,
+          "name": "Jackson Merrill",
+          "team": "San Diego Padres",
+          "grade": "win",
+          "n_before": 23,
+          "wins_before": 17,
+          "rate_before": 73.9
+        },
+        {
+          "player_id": 691718,
+          "name": "Pete Crow-Armstrong",
+          "team": "Chicago Cubs",
+          "grade": "loss",
+          "n_before": 45,
+          "wins_before": 27,
+          "rate_before": 60.0
+        }
+      ],
+      "hot": [
+        {
+          "player_id": 681198,
+          "name": "TJ Rumfield",
+          "team": "Colorado Rockies",
+          "grade": "win",
+          "n_before": 11,
+          "wins_before": 9,
+          "rate_before": 81.8
+        }
+      ]
     }
   },
   "cohorts": {
     "fire": {
-      "wins": 51,
-      "losses": 47,
-      "n": 98,
+      "wins": 52,
+      "losses": 48,
+      "n": 100,
       "rate": 52.0
     },
     "hot": {
-      "wins": 50,
+      "wins": 51,
       "losses": 43,
-      "n": 93,
-      "rate": 53.8
+      "n": 94,
+      "rate": 54.3
     }
   }
 }
