@@ -69,8 +69,6 @@ EXTERNAL_PRODUCER_PATH = r"C:\platform-tools\dabble_board_producer.py"
 DIGEST_DIR = os.path.join("data", "soccer_daily_digest")
 WEBHOOK_ENV_VAR = "DISCORD_SOCCER_DNS_WEBHOOK_URL"  # same channel/env var as soccer_alerts.py's real-time alerts
 
-WATCH_THRESHOLD = 70   # matches soccer_alerts.py's WATCH tier floor
-HIGH_THRESHOLD = 85    # matches soccer_alerts.py's HIGH PRIORITY tier floor
 MIN_CANDIDATES_SHOWN = 15
 
 # Board data older than this is treated as a failed refresh (Discord gets
@@ -125,7 +123,7 @@ def _save_digest_record(date_str, record):
 def _new_record(date_str):
     return {
         "digest_date": date_str, "generated_at": None, "candidate_count": None,
-        "watch_count": None, "high_count": None, "discord_attempted": False,
+        "watch_count": None, "alert_count": None, "high_count": None, "discord_attempted": False,
         "discord_delivered": False, "discord_http_status": None, "discord_error": None,
     }
 
@@ -197,17 +195,28 @@ def _board_freshness(source):
 # ---------------------------------------------------------------------------
 
 def select_digest_candidates(candidates):
-    """(shown, watch_count, high_count) - sorted by combined_priority DESC,
-    at least MIN_CANDIDATES_SHOWN plus every DNS>=WATCH_THRESHOLD candidate
-    even if that makes the list longer (never truncates a real Watch+ risk
-    just to hit a round number)."""
-    ranked = sorted(candidates, key=lambda c: c.get("combined_priority") or 0, reverse=True)
-    watch_count = sum(1 for c in ranked if c["dns_score"] >= WATCH_THRESHOLD)
-    high_count = sum(1 for c in ranked if c["dns_score"] >= HIGH_THRESHOLD)
+    """(shown, watch_count, alert_count, high_count) - sorted by
+    combined_priority DESC, at least MIN_CANDIDATES_SHOWN plus every
+    Watch-or-higher candidate even if that makes the list longer
+    (never truncates a real Watch+ risk just to hit a round number).
 
-    cutoff = max(MIN_CANDIDATES_SHOWN, watch_count)
+    watch_count/alert_count/high_count come from soccer_dashboard.
+    tier_counts - the SAME function docs/soccer-dns.html's own chips use
+    - rather than this module's own separate cumulative dns_score>=70
+    count it kept before (2026-09-14 item 5: found live that the two
+    disagreed - the digest said "7 WATCH", the dashboard said "0 Watch",
+    both "correct" for their own different definition of the word).
+    watch/alert are mutually exclusive bands that partition with high;
+    the display cutoff sums all three, which is exactly the old
+    cumulative dns_score>=70 count (the partition covers the same
+    candidates, just broken into named bands now)."""
+    import soccer_dashboard
+    ranked = sorted(candidates, key=lambda c: c.get("combined_priority") or 0, reverse=True)
+    _live, watch_count, alert_count, high_count, _critical = soccer_dashboard.tier_counts(ranked)
+
+    cutoff = max(MIN_CANDIDATES_SHOWN, watch_count + alert_count + high_count)
     shown = ranked[:cutoff]
-    return shown, watch_count, high_count
+    return shown, watch_count, alert_count, high_count
 
 
 def _game_time_pt(event_date):
@@ -242,12 +251,17 @@ def _candidate_line(idx, c):
     )
 
 
-def build_digest_embeds(shown, watch_count, high_count, total_live, generated_at_local_label):
+def build_digest_embeds(shown, watch_count, alert_count, high_count, total_live, generated_at_local_label):
     """Discord embeds for the full digest - chunked to stay under the
     4096-char-per-embed-description limit (same discipline as soccer_
-    dns.py's build_digest_embeds for the MLB-style injury digest)."""
+    dns.py's build_digest_embeds for the MLB-style injury digest).
+
+    Labels match docs/soccer-dns.html's own chips exactly (Watch 70-74,
+    Alert 75-84, High 85+) - both now come from soccer_dashboard.
+    tier_counts, so they can no longer disagree (item 5, 2026-09-14)."""
     header = (f"🟢 {total_live} Dabble players live\n"
-              f"🎯 {watch_count} WATCH (70+)\n"
+              f"🎯 {watch_count} WATCH (70-74)\n"
+              f"⚠️ {alert_count} ALERT (75-84)\n"
               f"🚨 {high_count} HIGH (85+)")
     lines = [_candidate_line(i, c) for i, c in enumerate(shown, 1)]
 
@@ -386,7 +400,7 @@ def run_daily_digest(force=False, source=None, date_str=None, now=None):
             content=_stale_warning_message(age_hours, board_generated_at))
         record.update(discord_attempted=attempted, discord_delivered=delivered,
                        discord_http_status=status, discord_error=error, candidate_count=0,
-                       watch_count=0, high_count=0)
+                       watch_count=0, alert_count=0, high_count=0)
         _save_digest_record(date_str, record)
         print(f"soccer_daily_digest: board stale/missing ({source}) - sent warning instead of a digest.")
         return record
@@ -404,7 +418,7 @@ def run_daily_digest(force=False, source=None, date_str=None, now=None):
             content=_stale_warning_message(age_hours, board_generated_at, error=f"scoring failed: {e}"))
         record.update(discord_attempted=attempted, discord_delivered=delivered,
                        discord_http_status=status, discord_error=error, candidate_count=0,
-                       watch_count=0, high_count=0)
+                       watch_count=0, alert_count=0, high_count=0)
         _save_digest_record(date_str, record)
         print(f"soccer_daily_digest: scoring pipeline raised ({e}) - sent warning instead of a digest.")
         return record
@@ -435,22 +449,22 @@ def run_daily_digest(force=False, source=None, date_str=None, now=None):
         attempted, delivered, status, error = _post_discord(content=_zero_candidate_message())
         record.update(discord_attempted=attempted, discord_delivered=delivered,
                        discord_http_status=status, discord_error=error,
-                       candidate_count=0, watch_count=0, high_count=0)
+                       candidate_count=0, watch_count=0, alert_count=0, high_count=0)
         _save_digest_record(date_str, record)
         print("soccer_daily_digest: zero live Dabble soccer candidates - sent the alive-signal message.")
         return record
 
-    shown, watch_count, high_count = select_digest_candidates(candidates)
+    shown, watch_count, alert_count, high_count = select_digest_candidates(candidates)
     local_label = now.strftime("%I:%M %p UTC").lstrip("0")
-    embeds = build_digest_embeds(shown, watch_count, high_count, total_live, local_label)
+    embeds = build_digest_embeds(shown, watch_count, alert_count, high_count, total_live, local_label)
     attempted, delivered, status, error = _post_discord(embeds=embeds)
 
     record.update(discord_attempted=attempted, discord_delivered=delivered, discord_http_status=status,
                    discord_error=error, candidate_count=total_live, watch_count=watch_count,
-                   high_count=high_count)
+                   alert_count=alert_count, high_count=high_count)
     _save_digest_record(date_str, record)
-    print(f"soccer_daily_digest: {total_live} live candidates ({watch_count} WATCH, {high_count} HIGH) - "
-          f"discord_attempted={attempted} discord_delivered={delivered}")
+    print(f"soccer_daily_digest: {total_live} live candidates ({watch_count} WATCH, {alert_count} ALERT, "
+          f"{high_count} HIGH) - discord_attempted={attempted} discord_delivered={delivered}")
     return record
 
 
@@ -465,7 +479,8 @@ def digest_status(date_str=None):
     print(f"Discord delivered          : {'YES' if record.get('discord_delivered') else 'NO'}")
     print(f"Delivered at               : {record.get('generated_at')}")
     print(f"Candidate count            : {record.get('candidate_count')}")
-    print(f"Watch / High               : {record.get('watch_count')} / {record.get('high_count')}")
+    print(f"Watch / Alert / High       : {record.get('watch_count')} / {record.get('alert_count')} / "
+          f"{record.get('high_count')}")
     print(f"Discord attempted          : {record.get('discord_attempted')}")
     print(f"Last error                 : {record.get('discord_error')}")
     return record

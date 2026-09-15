@@ -172,7 +172,21 @@ def _coverage_tiers(candidates):
             "twoPlusSource": two_plus, "fullyEnriched": fully_enriched}
 
 
-def _status_counts(candidates):
+def tier_counts(candidates):
+    """(live, watch, alert, high, critical) - the SINGLE shared
+    definition of these tier counts (2026-09-14 item 5: found live that
+    soccer_daily_digest.py's Discord message and this dashboard disagreed
+    - the digest reported "7 WATCH" using a cumulative dns_score>=70
+    count while this module's own chip used an EXCLUSIVE [70,75) band,
+    so a board where every notable candidate actually scored 75+ showed
+    "7 WATCH" in one place and "0 Watch" in the other, both internally
+    "correct" for their own, different definition of the word). watch/
+    alert are mutually exclusive bands ([70,75)/[75,85)) that partition
+    with high (85+, cumulative since it's the top tier) - critical is a
+    separate, orthogonal classification (official_status, not
+    dns_score), so a candidate can be counted in both high and critical.
+    soccer_daily_digest.py imports this directly rather than keeping its
+    own parallel copy, so the two can no longer drift apart."""
     live = len(candidates)
     watch = sum(1 for c in candidates if WATCH_THRESHOLD <= c["dns_score"] < ALERT_THRESHOLD)
     alert = sum(1 for c in candidates if ALERT_THRESHOLD <= c["dns_score"] < HIGH_THRESHOLD)
@@ -202,7 +216,7 @@ def generate(candidates, date_str=None, out_path=os.path.join("docs", "soccer-dn
     now = datetime.now(timezone.utc)
 
     candidates = sorted(candidates, key=lambda c: c.get("combined_priority") or 0, reverse=True)
-    live, watch, alert, high, critical = _status_counts(candidates)
+    live, watch, alert, high, critical = tier_counts(candidates)
     alert_records, alerts_by_player_fixture = _alert_history(date_str)
     removed = _removed_candidates(date_str, alerts_by_player_fixture)
     source_health = _source_health(candidates)
@@ -285,8 +299,8 @@ def generate(candidates, date_str=None, out_path=os.path.join("docs", "soccer-dn
 
   <div class="status-bar">
     <div class="status-chip"><div class="value" id="chipLive">{live}</div><div class="label">Dabble Live</div></div>
-    <div class="status-chip watch"><div class="value" id="chipWatch">{watch}</div><div class="label">Watch (70+)</div></div>
-    <div class="status-chip alert"><div class="value" id="chipAlert">{alert}</div><div class="label">Alert (75+)</div></div>
+    <div class="status-chip watch"><div class="value" id="chipWatch">{watch}</div><div class="label">Watch (70-74)</div></div>
+    <div class="status-chip alert"><div class="value" id="chipAlert">{alert}</div><div class="label">Alert (75-84)</div></div>
     <div class="status-chip high"><div class="value" id="chipHigh">{high}</div><div class="label">High (85+)</div></div>
     <div class="status-chip critical"><div class="value" id="chipCritical">{critical}</div><div class="label">Critical</div></div>
     <div class="status-chip"><div class="value" id="chipRemoved">{len(removed)}</div><div class="label">Removed Today</div></div>

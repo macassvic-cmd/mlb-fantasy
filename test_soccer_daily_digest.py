@@ -167,19 +167,38 @@ class TestFailedDiscordRetryable(_TempDigestDir):
 class TestDigestSelection(unittest.TestCase):
     def test_shows_at_least_15_and_every_watch_tier_candidate(self):
         candidates = [_fake_candidate(f"Player {i}", dns=10) for i in range(20)]
+        # dns=75 is the ALERT band's floor ([75,85), see soccer_dashboard.
+        # tier_counts, item 5) - watch is [70,75).
         candidates += [_fake_candidate(f"Watch {i}", dns=75) for i in range(3)]
-        shown, watch_count, high_count = digest.select_digest_candidates(candidates)
-        self.assertEqual(watch_count, 3)
+        shown, watch_count, alert_count, high_count = digest.select_digest_candidates(candidates)
+        self.assertEqual(watch_count, 0)
+        self.assertEqual(alert_count, 3)
         self.assertGreaterEqual(len(shown), digest.MIN_CANDIDATES_SHOWN)
         self.assertTrue(all(c["dns_score"] == 75 for c in shown if c["player_name"].startswith("Watch")))
         self.assertEqual(sum(1 for c in shown if c["dns_score"] == 75), 3, "every Watch+ candidate must be shown")
 
     def test_watch_tier_overflow_beyond_15_still_all_shown(self):
         candidates = [_fake_candidate(f"Watch {i}", dns=90) for i in range(20)]
-        shown, watch_count, high_count = digest.select_digest_candidates(candidates)
-        self.assertEqual(watch_count, 20)
+        shown, watch_count, alert_count, high_count = digest.select_digest_candidates(candidates)
+        self.assertEqual(watch_count, 0)
+        self.assertEqual(alert_count, 0)
         self.assertEqual(high_count, 20)
         self.assertEqual(len(shown), 20, "all 20 Watch+ candidates must show even though that's > 15")
+
+    def test_tier_counts_agree_with_the_dashboard_exactly(self):
+        """item 5, 2026-09-14: found live that the digest reported "7
+        WATCH" (its own cumulative dns_score>=70 count) while docs/
+        soccer-dns.html's chip showed "0 Watch" (an exclusive [70,75)
+        band) for the SAME board - both "correct" for a different
+        definition of the word. Both must now come from the exact same
+        function, so they can never disagree again."""
+        import soccer_dashboard
+        candidates = ([_fake_candidate("A", dns=72)] + [_fake_candidate("B", dns=78)] +
+                      [_fake_candidate("C", dns=90)])
+        _shown, watch_count, alert_count, high_count = digest.select_digest_candidates(candidates)
+        _live, dash_watch, dash_alert, dash_high, _critical = soccer_dashboard.tier_counts(candidates)
+        self.assertEqual((watch_count, alert_count, high_count), (dash_watch, dash_alert, dash_high))
+        self.assertEqual((watch_count, alert_count, high_count), (1, 1, 1))
 
 
 class TestRealTimeAlertsIndependentOfDigestDedupe(_TempDigestDir):
