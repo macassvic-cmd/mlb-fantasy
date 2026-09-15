@@ -474,20 +474,31 @@ def in_ud_under_band(row):
 
 
 # ---------------------------------------------------------------------------
-# Actionable gate - added 2026-09-13. Two things our own out-of-sample data
-# has now shown: (1) a projected (unconfirmed) lineup is a real risk, not
-# cosmetic - batting order swings the OVER/UNDER call, and a lineup can
-# still change after we've shown a play; (2) Top-25 rank ALONE doesn't
-# separate winners from losers (49.3% out-of-sample) the way the UD UNDER
-# 1.5-2.0 band does (in_ud_under_band, above - the one thing that
-# replicated). is_actionable() is the single gate both of those funnel
-# through: nothing built on a projected lineup can ever be actionable
-# regardless of edge/tier, and a Top-25 OVER additionally needs a real
-# live-line edge (the same validated OVER bucket Value Plays already use -
-# TOP25_OVER_EDGE_MIN is a straight alias, not a new number) PLUS one
-# supporting signal. This does not change the Top 25 tab's membership/rank
-# (still purely ud_pts) - it only changes what's marked actionable and what
-# gets persisted into a results file for future grading.
+# Actionable gate - added 2026-09-13, lineup gate lifted 2026-09-15. The
+# finding it still rests on: Top-25 rank ALONE doesn't separate winners
+# from losers (49.3% out-of-sample) the way the UD UNDER 1.5-2.0 band does
+# (in_ud_under_band, above - the one thing that replicated). is_actionable()
+# is the single gate every tab funnels through: the validated UNDER band is
+# unconditionally actionable, and a Top-25 OVER needs a real live-line edge
+# (the same validated OVER bucket Value Plays already use - TOP25_OVER_EDGE_MIN
+# is a straight alias, not a new number) PLUS one supporting signal. This
+# does not change the Top 25 tab's membership/rank (still purely ud_pts) -
+# it only changes what's marked actionable and what gets persisted into a
+# results file for future grading.
+#
+# Lineup confirmation is NO LONGER part of this gate (removed 2026-09-15).
+# It used to be a hard veto - nothing built on a projected lineup could be
+# actionable regardless of edge/tier - which made actionability track how
+# early a slate's lineups happened to post as much as it tracked the
+# signal: every morning render suppressed plays that were perfectly fine
+# by first pitch, and the 2026-09-14 stale-lineup bug showed how badly a
+# data problem upstream reads when it is wired to a veto. Lineup risk is
+# still carried, just not as a veto - confidence_score discounts an
+# unconfirmed lineup, NO_LINE_PENALTY/GETAWAY_DAY_PENALTY compound on it,
+# and the card keeps its "Projected Lineup" badge. Consequence to know
+# about: the snapshots a future grading run reads (save_value_plays,
+# save_top25_gated_plays, save_ud_under_band_plays) can now include plays
+# whose lineup was still projected at snapshot time.
 # ---------------------------------------------------------------------------
 
 TOP25_OVER_EDGE_MIN = VALUE_PLAY_OVER_EDGE  # reuse the real validated OVER bucket (1.0pt, 54.3%), not a new threshold
@@ -514,14 +525,14 @@ def contact_percentile_cutoffs(rows, pct=75):
 def is_actionable(row, top25_players, top25_baseline, contact_cutoffs):
     """Whether this row is a play we'd actually surface as actionable, vs.
     informational only. Returns (bool, reason). See module comment above
-    for why: a projected lineup is a hard gate (no edge/tier overrides it),
-    the validated UNDER band is unconditionally actionable once lineup-
-    confirmed, and a Top-25 OVER needs a real edge plus a supporting signal
-    (platoon advantage, that day's top-quartile contact, or a shrunk Top-25
-    sample meaningfully above baseline) since rank alone isn't a filter."""
-    if not row.get("lineup_confirmed", True):
-        return False, "projected lineup - not confirmed"
+    for why: the validated UNDER band is unconditionally actionable, and a
+    Top-25 OVER needs a real edge plus a supporting signal (platoon
+    advantage, that day's top-quartile contact, or a shrunk Top-25 sample
+    meaningfully above baseline) since rank alone isn't a filter.
 
+    Lineup confirmation is deliberately NOT consulted here - the hard gate
+    on row["lineup_confirmed"] was removed 2026-09-15 (see module comment)
+    and must not come back into this function as a veto."""
     if in_ud_under_band(row):
         return True, "validated UNDER band"
 
@@ -1173,8 +1184,8 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
 
     # --- Actionable gate (report.is_actionable, see module comment above
     # in_ud_under_band) - computed once per row, for every row, before any
-    # card/tab is built, so the confirmed-lineup hard gate and the Top-25
-    # edge+signal gate apply identically everywhere a row can surface
+    # card/tab is built, so the UNDER-band and Top-25 edge+signal gates
+    # apply identically everywhere a row can surface
     # (Top 25/Value/Unanchored/Unders). Needs the UD-UNDER-band's own
     # per-player record (for the Unders tab's shrunk per-player badge) - so
     # that file is loaded here, once, rather than down in the Under Results
@@ -1240,10 +1251,11 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
     over_rows.sort(key=lambda r: r["edge"], reverse=True)
     under_rows.sort(key=lambda r: r["edge"])
     value_rows = over_rows[:4] + under_rows[:4]
-    # Confirmed-lineup hard gate: a play built on a projected lineup is
-    # still shown on the dashboard (build_card below flags it), but never
-    # persisted into the snapshot a future grading run reads from - see
-    # module comment on is_actionable.
+    # Only actionable plays are persisted into the snapshot a future
+    # grading run reads from. As of 2026-09-15 that no longer excludes a
+    # play whose lineup is still projected - lineup confirmation isn't part
+    # of the gate anymore (see module comment on is_actionable); the card
+    # still flags it via build_card.
     save_value_plays(date_str, [r for r in value_rows if r.get("actionable")])
     value_cards = [build_card(row) for row in _by_game_time(value_rows)]
     value_cards_js = json.dumps(value_cards)
@@ -1596,16 +1608,6 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
   .order-chip.order-top    {{ background: #4ade80; color: #0d1626; }}
   .order-chip.order-mid    {{ background: #60a5fa; color: #0d1626; }}
   .order-chip.order-bottom {{ background: #3a4866; color: #c4cee0; }}
-
-  /* Confirmed-lineup hard gate: a projected-lineup card is still shown, but
-     visibly not-yet-real - dimmed and hatched rather than just badged, so
-     it reads differently at a glance from a card that's simply low-signal.
-     Distinct from .card.used (a manual, one-off "I've seen this" dismiss). */
-  .card.pending-lineup {{
-    opacity: 0.55;
-    background-image: repeating-linear-gradient(135deg, rgba(251,191,36,0.06) 0 10px,
-                                                  transparent 10px 20px);
-  }}
 
   /* Full leaderboard table */
   .controls {{ display: flex; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }}
@@ -2097,18 +2099,15 @@ function orderChipHtml(c) {{
 // Value/Unanchored), and keyed by today's date so it resets on its own
 // tomorrow rather than needing an explicit expiry.
 //
-// NOT the same thing as .pending-lineup (the diagonal-striped dimming a
-// few lines down in renderCard) - that one is a DATA-DRIVEN indicator
-// for a genuinely-unconfirmed lineup, driven entirely by c.actionable/
-// c.lineupConfirmed off today's pipeline data, and toggles on its own as
-// real confirmations come in. It is NOT a manual mark, has nothing to do
-// with usedIds/localStorage, and "Clear all marks" does not touch it -
-// found live 2026-09-14 that a stale lineup-confirmation bug (fixed
-// separately in pipeline.py) made most of a slate's cards LOOK exactly
-// like they'd already been marked/clicked (dimmed + faded) when nobody
-// had touched them - that was .pending-lineup firing broadly because the
-// data said "not confirmed" when the real lineups already were, not a
-// bug in the click-to-mark system below.
+// Dimming a card is now this system and nothing else. Until 2026-09-15
+// there was also .pending-lineup, a DATA-DRIVEN diagonal-striped dimming
+// for a genuinely-unconfirmed lineup (!c.actionable && !c.lineupConfirmed)
+// that was far too easy to mistake for a manual mark: found live
+// 2026-09-14 that a stale lineup-confirmation bug (fixed separately in
+// pipeline.py) made most of a slate's cards LOOK exactly like they'd
+// already been marked/clicked (dimmed + faded) when nobody had touched
+// them. That treatment is gone along with the confirmed-lineup gate in
+// is_actionable, so a dimmed card means exactly one thing: you clicked it.
 //
 // mlb_marks_v2_ (bumped from the older mlbUsedCards_ scheme, 2026-09-14)
 // so a browser carrying any pre-existing marks (either scheme) starts
@@ -2159,11 +2158,12 @@ document.querySelectorAll('.clear-marks-btn').forEach(btn => {{
 function renderCard(c, treatmentFn) {{
   const card = document.createElement('div');
   const treatment = treatmentFn ? treatmentFn(c) : top25TreatmentClass(c);
-  // pending-lineup: a distinct dimmed treatment (not just a badge) for the
-  // confirmed-lineup hard gate specifically, so it reads as "not real yet"
-  // rather than merely "no supporting signal" - see is_actionable.
-  const pending = (!c.actionable && !c.lineupConfirmed) ? 'pending-lineup' : '';
-  card.className = ('card ' + c.tier + ' ' + treatment + ' ' + pending).trim();
+  // No .pending-lineup here: the whole-card dimmed/striped treatment for an
+  // unconfirmed lineup was removed 2026-09-15 with the confirmed-lineup gate
+  // in is_actionable. An unconfirmed lineup no longer disqualifies a play, so
+  // a whole-card treatment overstated it - the "Projected Lineup" badge below
+  // still carries that information, at badge weight.
+  card.className = ('card ' + c.tier + ' ' + treatment).trim();
   if (c.gameDateUtc) card.dataset.gameTimeUtc = c.gameDateUtc;
   if (c.playerId !== null && c.playerId !== undefined) {{
     card.dataset.playerId = c.playerId;
