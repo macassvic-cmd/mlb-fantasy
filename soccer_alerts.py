@@ -516,6 +516,85 @@ def grade_alerts(date_str, get_match_squad_fn=None, find_event_fn=None, match_es
     print(f"soccer_alerts: graded {graded} alert record(s) for {date_str}.")
 
 
+def backfill_grading_fields(date_str, snapshots_dir=None):
+    """Backfills league_code/normalized_name (and transfermarkt_injury_
+    since) onto alert records on date_str that predate item 4's schema -
+    2026-09-15 item 3, using ONLY data already stored elsewhere, never a
+    guess:
+
+      normalized_name - always exactly derivable from player_name via
+                         normalize_name(), the same function used
+                         everywhere else in this codebase - no ambiguity.
+      league_code / transfermarkt_injury_since - looked up from that
+                         day's live snapshot (data/soccer_dnp_live_
+                         snapshots/<date_str>.json), keyed exactly the
+                         way soccer_adapter.record_live_snapshot writes
+                         it (pid:<player_id>, falling back to name:
+                         <normalized_name>:<team> if player_id is
+                         missing) - the SAME index the live run that
+                         created these alerts also wrote that same day.
+
+    A record is left untouched (not backfilled, stays ungraded) if:
+      - it already has a league_code (new-schema record - nothing to do)
+      - no matching snapshot entry exists at all
+      - the snapshot entry's own fixture_id doesn't exactly match this
+        alert's fixture_id (a player who appeared in more than one
+        fixture that day - the snapshot's "latest" could be the WRONG
+        one, so refuse rather than risk a mismatched league_code)
+      - the snapshot entry has no league_code either
+
+    Returns the number of records actually backfilled."""
+    from scrapers.betr import normalize_name
+
+    data = _load_alerts(date_str)
+    if not data:
+        print(f"soccer_alerts: no alerts for {date_str} - nothing to backfill.")
+        return 0
+
+    snapshots_dir = snapshots_dir or os.path.join("data", "soccer_dnp_live_snapshots")
+    snapshot_path = os.path.join(snapshots_dir, f"{date_str}.json")
+    snapshot = {}
+    if os.path.exists(snapshot_path):
+        try:
+            with open(snapshot_path, encoding="utf-8") as f:
+                snapshot = json.load(f)
+        except Exception as e:
+            print(f"soccer_alerts: could not read {snapshot_path} (non-fatal): {e}")
+
+    backfilled = 0
+    for key, record in data.items():
+        if key.startswith("_last_state:") or key.startswith(STALE_KICKOFF_KEY_PREFIX):
+            continue
+        if record.get("league_code"):
+            continue  # already new-schema - nothing to backfill
+
+        normalized_name = normalize_name(record.get("player_name") or "")
+        if not normalized_name:
+            continue
+
+        entry = snapshot.get(f"pid:{record.get('player_id')}") if record.get("player_id") else None
+        if entry is None:
+            entry = snapshot.get(f"name:{normalized_name}:{record.get('team')}")
+        if entry is None or entry.get("fixture_id") != record.get("fixture_id"):
+            continue
+
+        latest = entry.get("latest") or {}
+        league_code = latest.get("league_code")
+        if not league_code:
+            continue
+
+        record["normalized_name"] = normalized_name
+        record["league_code"] = league_code
+        record.setdefault("transfermarkt_injury_since",
+                           (latest.get("transfermarkt_injury") or {}).get("since"))
+        backfilled += 1
+
+    if backfilled:
+        _save_alerts(date_str, data)
+    print(f"soccer_alerts: backfilled league_code/normalized_name for {backfilled} alert record(s) on {date_str}.")
+    return backfilled
+
+
 def _all_alert_records():
     records = []
     if not os.path.isdir(ALERTS_DIR):
@@ -569,13 +648,18 @@ def main():
     parser = argparse.ArgumentParser(description="Soccer DNS Discord alerts + source-speed report")
     parser.add_argument("--speed-report", action="store_true")
     parser.add_argument("--grade", default=None, help="date YYYY-MM-DD")
+    parser.add_argument("--backfill-grading-fields", default=None, metavar="DATE",
+                         help="date YYYY-MM-DD - backfill league_code/normalized_name onto "
+                              "pre-item-4-schema alert records, only where exactly derivable")
     args = parser.parse_args()
     if args.speed_report:
         print_speed_report()
     elif args.grade:
         grade_alerts(args.grade)
+    elif args.backfill_grading_fields:
+        backfill_grading_fields(args.backfill_grading_fields)
     else:
-        parser.error("specify --speed-report or --grade")
+        parser.error("specify --speed-report, --grade, or --backfill-grading-fields")
 
 
 if __name__ == "__main__":

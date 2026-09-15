@@ -240,6 +240,123 @@ class TestSendDiscordAlertRedactsErrors(unittest.TestCase):
         self.assertIn("ConnectionError", health["last_error"])
 
 
+class TestBackfillGradingFields(unittest.TestCase):
+    """item 3, 2026-09-15: backfill league_code/normalized_name onto
+    pre-item-4-schema alert records using ONLY data already stored
+    elsewhere (the live snapshot file), never a guess."""
+
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self._patch_dir = patch("soccer_alerts.ALERTS_DIR", self._tmp.name)
+        self._patch_dir.start()
+        self._snap_tmp = tempfile.TemporaryDirectory()
+
+    def tearDown(self):
+        self._patch_dir.stop()
+        self._tmp.cleanup()
+        self._snap_tmp.cleanup()
+
+    def _old_record(self, **overrides):
+        r = {
+            "player_id": "p1", "player_name": "Test Player", "team": "TST",
+            "fixture_id": "f1", "official_started": None, "graded_at": None,
+        }
+        r.update(overrides)
+        return r
+
+    def _seed_alerts(self, date_str, records):
+        data = dict(records)
+        sa._save_alerts(date_str, data)
+
+    def _seed_snapshot(self, date_str, snapshot):
+        path = os.path.join(self._snap_tmp.name, f"{date_str}.json")
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(snapshot, f)
+
+    def _backfill(self, date_str):
+        return sa.backfill_grading_fields(date_str, snapshots_dir=self._snap_tmp.name)
+
+    def test_backfills_league_code_and_normalized_name_from_snapshot(self):
+        date_str = "2026-09-14"
+        self._seed_alerts(date_str, {"rec1": self._old_record()})
+        self._seed_snapshot(date_str, {
+            "pid:p1": {"fixture_id": "f1", "latest": {"league_code": "EPL", "normalized_name": "test player"}},
+        })
+        n = self._backfill(date_str)
+        data = sa._load_alerts(date_str)
+        self.assertEqual(n, 1)
+        self.assertEqual(data["rec1"]["league_code"], "EPL")
+        self.assertEqual(data["rec1"]["normalized_name"], "test player")
+
+    def test_falls_back_to_name_team_key_when_no_player_id(self):
+        date_str = "2026-09-14"
+        self._seed_alerts(date_str, {"rec1": self._old_record(player_id=None)})
+        self._seed_snapshot(date_str, {
+            "name:test player:TST": {"fixture_id": "f1", "latest": {"league_code": "LLG"}},
+        })
+        n = self._backfill(date_str)
+        data = sa._load_alerts(date_str)
+        self.assertEqual(n, 1)
+        self.assertEqual(data["rec1"]["league_code"], "LLG")
+
+    def test_fixture_id_mismatch_is_left_ungraded(self):
+        date_str = "2026-09-14"
+        self._seed_alerts(date_str, {"rec1": self._old_record(fixture_id="f1")})
+        self._seed_snapshot(date_str, {
+            "pid:p1": {"fixture_id": "DIFFERENT_FIXTURE", "latest": {"league_code": "EPL"}},
+        })
+        n = self._backfill(date_str)
+        data = sa._load_alerts(date_str)
+        self.assertEqual(n, 0)
+        self.assertNotIn("league_code", data["rec1"])
+
+    def test_no_matching_snapshot_entry_is_left_ungraded(self):
+        date_str = "2026-09-14"
+        self._seed_alerts(date_str, {"rec1": self._old_record()})
+        self._seed_snapshot(date_str, {"pid:someone_else": {"fixture_id": "f1", "latest": {}}})
+        n = self._backfill(date_str)
+        data = sa._load_alerts(date_str)
+        self.assertEqual(n, 0)
+        self.assertNotIn("league_code", data["rec1"])
+
+    def test_snapshot_entry_missing_league_code_is_left_ungraded(self):
+        date_str = "2026-09-14"
+        self._seed_alerts(date_str, {"rec1": self._old_record()})
+        self._seed_snapshot(date_str, {"pid:p1": {"fixture_id": "f1", "latest": {}}})
+        n = self._backfill(date_str)
+        self.assertEqual(n, 0)
+
+    def test_no_snapshot_file_at_all_leaves_everything_ungraded(self):
+        date_str = "2026-09-14"
+        self._seed_alerts(date_str, {"rec1": self._old_record()})
+        n = self._backfill(date_str)
+        self.assertEqual(n, 0)
+
+    def test_already_new_schema_record_is_skipped_not_overwritten(self):
+        date_str = "2026-09-14"
+        self._seed_alerts(date_str, {"rec1": self._old_record(league_code="MLS", normalized_name="already set")})
+        self._seed_snapshot(date_str, {
+            "pid:p1": {"fixture_id": "f1", "latest": {"league_code": "EPL"}},
+        })
+        n = self._backfill(date_str)
+        data = sa._load_alerts(date_str)
+        self.assertEqual(n, 0)
+        self.assertEqual(data["rec1"]["league_code"], "MLS", "an existing league_code must never be overwritten")
+
+    def test_last_state_and_stale_kickoff_keys_are_never_touched(self):
+        date_str = "2026-09-14"
+        self._seed_alerts(date_str, {
+            "_last_state:p1:f1": {"dns_score": 80},
+            f"{sa.STALE_KICKOFF_KEY_PREFIX}p1:f1": {"reason": "x"},
+            "rec1": self._old_record(),
+        })
+        self._seed_snapshot(date_str, {"pid:p1": {"fixture_id": "f1", "latest": {"league_code": "EPL"}}})
+        self._backfill(date_str)
+        data = sa._load_alerts(date_str)
+        self.assertEqual(data["_last_state:p1:f1"], {"dns_score": 80})
+        self.assertEqual(data[f"{sa.STALE_KICKOFF_KEY_PREFIX}p1:f1"], {"reason": "x"})
+
+
 class TestGradeAlerts(unittest.TestCase):
     """item 4, 2026-09-14: grade_alerts was a stub that never actually
     determined an outcome and was never called anywhere in the pipeline.
