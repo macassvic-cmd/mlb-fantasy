@@ -18,7 +18,7 @@
       "projected_ud": 9.5,
       "ud_line": 7.5,
       "edge": 2.0,
-      "actionable_reason": "edge + platoon advantage",
+      "actionable_reason": "edge + strong contact",
       "game_time_pt": "3:45 PM PT"
     },
     {
@@ -32,22 +32,12 @@
       "game_time_pt": "3:40 PM PT"
     },
     {
-      "player_id": 660670,
-      "name": "Ronald Acu\u00f1a Jr.",
-      "team": "Atlanta Braves",
-      "projected_ud": 9.07,
-      "ud_line": 7.5,
-      "edge": 1.57,
-      "actionable_reason": "edge + platoon advantage",
-      "game_time_pt": "4:40 PM PT"
-    },
-    {
       "player_id": 571970,
       "name": "Max Muncy",
       "team": "Los Angeles Dodgers",
-      "projected_ud": 9.0,
+      "projected_ud": 9.03,
       "ud_line": 7.5,
-      "edge": 1.5,
+      "edge": 1.53,
       "actionable_reason": "edge + strong contact",
       "game_time_pt": "3:40 PM PT"
     },
@@ -55,25 +45,35 @@
       "player_id": 700250,
       "name": "Ben Rice",
       "team": "New York Yankees",
-      "projected_ud": 8.7,
+      "projected_ud": 8.77,
       "ud_line": 7.5,
-      "edge": 1.2,
-      "actionable_reason": "edge + platoon advantage",
+      "edge": 1.27,
+      "actionable_reason": "edge + strong contact",
       "game_time_pt": "4:40 PM PT"
     },
     {
       "player_id": 694192,
       "name": "Jackson Chourio",
       "team": "Milwaukee Brewers",
-      "projected_ud": 8.62,
+      "projected_ud": 8.7,
       "ud_line": 7.5,
-      "edge": 1.12,
-      "actionable_reason": "edge + platoon advantage",
+      "edge": 1.2,
+      "actionable_reason": "edge + strong contact",
       "game_time_pt": "3:40 PM PT"
     },
     {
-      "player_id": 606192,
-      "name": "Teoscar Hern\u00e1ndez",
+      "player_id": 668930,
+      "name": "Brice Turang",
+      "team": "Milwaukee Brewers",
+      "projected_ud": 8.55,
+      "ud_line": 7.5,
+      "edge": 1.05,
+      "actionable_reason": "edge + strong contact",
+      "game_time_pt": "3:40 PM PT"
+    },
+    {
+      "player_id": 800543,
+      "name": "Josue De Paula",
       "team": "Los Angeles Dodgers",
       "projected_ud": 8.5,
       "ud_line": 6.5,
@@ -82,8 +82,8 @@
       "game_time_pt": "3:40 PM PT"
     },
     {
-      "player_id": 800543,
-      "name": "Josue De Paula",
+      "player_id": 606192,
+      "name": "Teoscar Hern\u00e1ndez",
       "team": "Los Angeles Dodgers",
       "projected_ud": 8.5,
       "ud_line": 6.5,
@@ -118,18 +118,18 @@
       "projected_ud": 8.5,
       "ud_line": 6.5,
       "edge": 2.0,
-      "actionable_reason": "edge + platoon advantage",
+      "actionable_reason": "edge + strong contact",
       "game_time_pt": "3:40 PM PT"
     },
     {
-      "player_id": 607208,
-      "name": "Trea Turner",
-      "team": "Philadelphia Phillies",
+      "player_id": 661388,
+      "name": "William Contreras",
+      "team": "Milwaukee Brewers",
       "projected_ud": 8.5,
       "ud_line": 6.5,
       "edge": 2.0,
       "actionable_reason": "edge + strong contact",
-      "game_time_pt": "3:45 PM PT"
+      "game_time_pt": "3:40 PM PT"
     },
     {
       "player_id": 547180,
@@ -139,16 +139,6 @@
       "ud_line": 6.5,
       "edge": 2.0,
       "actionable_reason": "edge + shrunk sample above baseline",
-      "game_time_pt": "3:45 PM PT"
-    },
-    {
-      "player_id": 664761,
-      "name": "Alec Bohm",
-      "team": "Philadelphia Phillies",
-      "projected_ud": 8.5,
-      "ud_line": 6.5,
-      "edge": 2.0,
-      "actionable_reason": "edge + strong contact",
       "game_time_pt": "3:45 PM PT"
     }
   ]
