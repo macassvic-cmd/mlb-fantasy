@@ -30,8 +30,15 @@ drops variants in a fixed order (WR2->RB1 first, then WR1->TE1, WR2->WR3,
 WR2->TE1; Base is never dropped) and records what was trimmed so the card
 can say so.
 
-RANKING: stacks ranked by best decimal price; runner-up book and spread %
-= (best - runner_up) / runner_up. Results persist to
+RANKING (2026-09-16 rev 3, DraftKings primary): every variant is priced at
+DraftKings ONLY, on DraftKings' main lines, and ranked by LOWEST SGP price
+(highest implied probability), tie-broken by higher correlation. Correlation
+= naive price (product of the six leg prices) / SGP price, plus DraftKings'
+own correlation figure. A variant DraftKings can't price ("Price not found",
+missing leg) is shown with the reason and sorts last - never silently
+re-priced elsewhere. OPTIONAL COMPARE (off by default on the tab): the
+lowest-odds stack only, at other books carrying all six legs on the SAME
+lines as DraftKings; different-line books get no call. Results persist to
 data/oddsblaze/playcard/stacks/<league>_<event>.json (committed, small),
 which is also what the card renders from when no key is available.
 """
@@ -280,19 +287,91 @@ def price_stack_at_book(client, book, stack, bl):
     return out
 
 
-def rank_stacks(stacks_out):
-    """Adds best_book / runner_up / spread_pct per stack, returns stacks sorted best-first."""
+def decimal_from_american(price):
+    a = to_float(price)
+    if a is None or a == 0:
+        return None
+    return 1 + a / 100 if a > 0 else 1 + 100 / -a
+
+
+def naive_decimal(book_row):
+    """Product of the six legs' individual decimal prices at this book -
+    what the parlay would pay with zero correlation. None if any leg price
+    is missing."""
+    prod = 1.0
+    for leg in book_row.get("legs") or []:
+        d = decimal_from_american((leg or {}).get("price"))
+        if d is None:
+            return None
+        prod *= d
+    return round(prod, 3)
+
+
+def _lines(book_row):
+    return tuple((l or {}).get("line") for l in book_row.get("legs") or [])
+
+
+PRIMARY_BOOK = "draftkings"
+
+
+def dk_problem(row):
+    """Why the primary book could not price a stack - shown, never hidden."""
+    if row is None:
+        return "DraftKings: no odds for this game"
+    if row.get("missing"):
+        return "DraftKings is missing: " + "; ".join(m.split(" (")[0] for m in row["missing"])
+    if row.get("error"):
+        return f"DraftKings: {row['error']}"
+    return "DraftKings: not priced"
+
+
+def rank_stacks(stacks_out, primary=PRIMARY_BOOK):
+    """Ranks a game's variants at the PRIMARY book only (DraftKings main
+    lines): lowest SGP price first (highest implied probability), tie-broken
+    by higher correlation. No fallback to another book - a variant DraftKings
+    can't price carries `dk_problem` and sorts last. Adds per stack:
+      reference_book ("draftkings" or None) / dk_problem
+      ref_decimal / ref_american / implied / ref_link
+      naive_decimal (product of the six leg prices) / correlation_ratio
+        (naive / SGP price; >1 = the book charged for correlation)
+      dk_correlation = DraftKings' own figure when returned
+      compare_books: OTHER priced books on the SAME six lines as DraftKings,
+        highest payout first, with gap_pct vs DraftKings (the optional
+        compare); best_* refer to them
+      different_line_books: other priced books on other lines (kept in the
+        data, never ranked or shown by default)"""
     for s in stacks_out:
-        priced = sorted([b for b in s["books"] if b.get("priced")], key=lambda b: -b["decimal"])
-        s["best_book"] = priced[0]["book"] if priced else None
-        s["best_decimal"] = priced[0]["decimal"] if priced else None
-        s["best_american"] = priced[0]["american"] if priced else None
-        s["best_link"] = priced[0].get("link") if priced else None
-        s["runner_up_book"] = priced[1]["book"] if len(priced) > 1 else None
-        s["runner_up_decimal"] = priced[1]["decimal"] if len(priced) > 1 else None
-        s["spread_pct"] = round((priced[0]["decimal"] - priced[1]["decimal"]) / priced[1]["decimal"] * 100, 1) if len(priced) > 1 else None
-        s["books_priced"] = len(priced)
-    return sorted(stacks_out, key=lambda s: -(s["best_decimal"] or 0))
+        for b in s["books"]:
+            if b.get("priced"):
+                b["naive_decimal"] = naive_decimal(b)
+                b["correlation_ratio"] = round(b["naive_decimal"] / b["decimal"], 3) if b.get("naive_decimal") and b.get("decimal") else None
+        dk = next((b for b in s["books"] if b["book"] == primary), None)
+        ref = dk if dk and dk.get("priced") else None
+        s["reference_book"] = primary if ref else None
+        s["dk_problem"] = None if ref else dk_problem(dk)
+        s["ref_decimal"] = ref["decimal"] if ref else None
+        s["ref_american"] = ref["american"] if ref else None
+        s["implied"] = round(1 / ref["decimal"], 4) if ref else None
+        s["naive_decimal"] = ref.get("naive_decimal") if ref else None
+        s["correlation_ratio"] = ref.get("correlation_ratio") if ref else None
+        s["dk_correlation"] = ref.get("correlation") if ref else None
+        s["ref_link"] = ref.get("link") if ref else None
+        s["reference_lines"] = list(_lines(ref)) if ref else None
+        same, diff = [], []
+        for b in s["books"]:
+            if not b.get("priced") or b["book"] == primary:
+                continue
+            (same if ref and _lines(b) == _lines(ref) else diff).append(b)
+        same.sort(key=lambda b: -b["decimal"])
+        diff.sort(key=lambda b: -b["decimal"])
+        s["compare_books"] = [{"book": b["book"], "decimal": b["decimal"], "american": b["american"], "link": b.get("link"), "gap_pct": round((b["decimal"] - ref["decimal"]) / ref["decimal"] * 100, 1) if ref else None} for b in same]
+        s["different_line_books"] = [{"book": b["book"], "decimal": b["decimal"], "american": b["american"], "lines": list(_lines(b)), "link": b.get("link")} for b in diff]
+        s["best_book"] = same[0]["book"] if same else None
+        s["best_decimal"] = same[0]["decimal"] if same else None
+        s["best_american"] = same[0]["american"] if same else None
+        s["best_link"] = same[0].get("link") if same else None
+        s["books_priced"] = (1 if ref else 0) + len(same) + len(diff)
+    return sorted(stacks_out, key=lambda s: (s["ref_decimal"] is None, s["ref_decimal"] or 0, -(s["correlation_ratio"] or 0)))
 
 
 def pull_league_odds(client, league, books):
@@ -310,24 +389,30 @@ def pull_league_odds(client, league, books):
     return out
 
 
-def price_event(client, league, event_meta, league_odds, books=None, slot_markets=None, remaining_sgp=None):
+def price_event(client, league, event_meta, league_odds, books=None, slot_markets=None, remaining_sgp=None, primary=PRIMARY_BOOK, compare=True):
+    """Prices every variant at the PRIMARY book only (DraftKings main lines),
+    ranks them lowest-odds-first, then - when `compare` - prices just the
+    lowest-odds stack at the other books that carry all six legs on the
+    SAME lines as DraftKings (books on different lines get no call and are
+    recorded as such). Budget: ~9 primary calls + <=7 compare calls per game."""
     books = books or BOOKS
     event_id = event_meta["id"]
     away, home = event_meta["teams"]["away"]["abbreviation"], event_meta["teams"]["home"]["abbreviation"]
     result = {"league": league, "event": event_id, "away": away, "home": home, "kickoff": event_meta["date"], "slot_markets": dict(SLOT_DEFAULTS, **(slot_markets or {})),
-              "odds_pulled": {b: {k: v for k, v in league_odds[b].items() if k != "events"} | {"has_event": event_id in league_odds[b]["events"]} for b in books},
+              "primary": primary,
+              "odds_pulled": {b: {k: v for k, v in league_odds[b].items() if k != "events"} | {"has_event": event_id in league_odds[b]["events"]} for b in books if b in league_odds},
               "priced_at": datetime.now(timezone.utc).isoformat(), "stacks": [], "roster": {}, "notes": []}
-    dk_event = league_odds.get("draftkings", {}).get("events", {}).get(event_id)
+    dk_event = league_odds.get(primary, {}).get("events", {}).get(event_id)
     if not dk_event:
         result["notes"].append("DraftKings has no props for this game yet")
         return result
     roster = build_roster(dk_event)
     result["roster"] = roster
-    book_lines = {b: BookLines(league_odds[b]["events"].get(event_id)) for b in books}
-    stacks, note = build_stacks(roster, away, home, slot_markets, book_lines["draftkings"])
+    book_lines = {b: BookLines(league_odds[b]["events"].get(event_id)) for b in books if b in league_odds}
+    stacks, note = build_stacks(roster, away, home, slot_markets, book_lines[primary])
     if note:
         result["notes"].append(note)
-    plan = plan_calls(stacks, book_lines, books)
+    plan = plan_calls(stacks, book_lines, [primary])
     remaining = client.guard.remaining("sgp") if remaining_sgp is None else remaining_sgp
     stacks, trim_note = trim_to_budget(stacks, plan, remaining)
     if trim_note:
@@ -335,16 +420,34 @@ def price_event(client, league, event_meta, league_odds, books=None, slot_market
         result["budget_trimmed"] = True
     for stack in stacks:
         entry = {"name": stack["name"], "variant": list(stack["variant"]) if stack["variant"] else None, "legs": stack["legs"], "books": []}
-        for book in books:
-            b = price_stack_at_book(client, book, stack, book_lines[book])
-            entry["books"].append(b)
-            logger.info("%s@%s %-14s %-11s -> %s", away, home, stack["name"], book,
-                        f'{b["decimal"]:.2f} ({b["american"]:+d})' if b["priced"] else (("missing: " + "; ".join(b["missing"]))[:100] if b["missing"] else f'error: {b.get("error")}'))
+        b = price_stack_at_book(client, primary, stack, book_lines[primary])
+        entry["books"].append(b)
+        logger.info("%s@%s %-14s %-11s -> %s", away, home, stack["name"], primary,
+                    f'{b["decimal"]:.2f} ({b["american"]:+d})' if b["priced"] else (("missing: " + "; ".join(b["missing"]))[:100] if b["missing"] else f'error: {b.get("error")}'))
         result["stacks"].append(entry)
-    result["stacks"] = rank_stacks(result["stacks"])
-    best = next((s for s in result["stacks"] if s["best_book"]), None)
-    if best:
-        result["best_overall"] = {"stack": best["name"], "book": best["best_book"], "decimal": best["best_decimal"], "american": best["best_american"], "link": best.get("best_link")}
+    result["stacks"] = rank_stacks(result["stacks"], primary)
+    low = next((s for s in result["stacks"] if s["reference_book"]), None)
+    if low and compare:
+        dk_lines = tuple(low["reference_lines"])
+        for book in books:
+            if book == primary or book not in book_lines:
+                continue
+            bl = book_lines[book]
+            resolved = [bl.resolve(l["player_norm"], l["market"], l["side"], l["dk_line"])[0] for l in low["legs"]]
+            lines = tuple((o["selection"]["line"] if o else None) for o in resolved)
+            if any(o is None for o in resolved):
+                low["books"].append({"book": book, "legs": [None] * 6, "missing": [f'{l["player"]} (no prop at this book)' for l, o in zip(low["legs"], resolved) if o is None], "notes": [], "priced": False, "compare_skipped": "missing legs"})
+            elif lines != dk_lines:
+                low["books"].append({"book": book, "legs": [{"line": o["selection"]["line"], "price": o.get("price"), "note": None} for o in resolved], "missing": [], "notes": [], "priced": False, "compare_skipped": "different lines - not priced"})
+            else:
+                b = price_stack_at_book(client, book, low, bl)
+                low["books"].append(b)
+                logger.info("%s@%s compare %-11s -> %s", away, home, book, f'{b["decimal"]:.2f} ({b["american"]:+d})' if b["priced"] else f'error: {b.get("error")}')
+        result["stacks"] = rank_stacks(result["stacks"], primary)
+        low = next((s for s in result["stacks"] if s["reference_book"]), None)
+    if low:
+        result["lowest_odds"] = {"stack": low["name"], "reference_book": low["reference_book"], "ref_decimal": low["ref_decimal"], "ref_american": low["ref_american"],
+                                 "implied": low["implied"], "correlation_ratio": low["correlation_ratio"], "dk_correlation": low["dk_correlation"], "link": low.get("ref_link")}
     return result
 
 

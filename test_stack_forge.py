@@ -185,58 +185,56 @@ EVENT_META = {"id": "ev", "date": "2026-09-18T00:15:00.000Z", "teams": {"away": 
 
 
 class TestPricingAndRanking(unittest.TestCase):
-    def test_prices_every_stack_at_every_book_with_all_legs_and_ranks(self):
-        books = ["draftkings", "caesars", "betmgm"]
-        client = FakeClient({"draftkings": 19.0, "caesars": 18.5, "betmgm": 13.0})
-        r = sf.price_event(client, "nfl", EVENT_META, _league_odds(books, drop_leg_at={"betmgm": "Joshua Palmer"}), books)
+    def test_prices_every_variant_at_draftkings_only_then_compares_lowest_at_same_lines(self):
+        books = ["draftkings", "caesars", "betmgm", "hard-rock"]
+        lo = _league_odds(books, drop_leg_at={"betmgm": "Joshua Palmer"})
+        for o in lo["hard-rock"]["events"]["ev"]["odds"]:
+            if o["player"]["name"] == "Jared Goff":
+                o["selection"]["line"] = 274.5  # different line -> must be skipped without a call
+        client = FakeClient({"draftkings": 19.0, "caesars": 21.0, "betmgm": 13.0, "hard-rock": 30.0})
+        r = sf.price_event(client, "nfl", EVENT_META, lo, books)
         self.assertEqual(len(r["stacks"]), 9)
-        base = next(s for s in r["stacks"] if s["name"] == "Base")
-        self.assertEqual(base["best_book"], "draftkings")
-        self.assertEqual(base["best_american"], 1800)
-        self.assertEqual(base["runner_up_book"], "caesars")
-        self.assertAlmostEqual(base["spread_pct"], round((19.0 - 18.5) / 18.5 * 100, 1))
-        mgm = next(b for b in base["books"] if b["book"] == "betmgm")
-        self.assertFalse(mgm["priced"])
-        self.assertIn("Joshua Palmer rec yds", mgm["missing"][0])
-        # every priced book row carries its own line per leg
-        dk = next(b for b in base["books"] if b["book"] == "draftkings")
-        self.assertEqual([l["line"] for l in dk["legs"]], [270.5, 82.5, 59.5, 251.5, 45.5, 13.5])
-        self.assertEqual(base["best_link"], "https://draftkings.test/slip")
-        # ranked best-first
-        decs = [s["best_decimal"] or 0 for s in r["stacks"]]
-        self.assertEqual(decs, sorted(decs, reverse=True))
-        self.assertEqual(r["best_overall"]["book"], "draftkings")
-        # BUF: WR2->RB1 needs James Cook receiving yards, which no book has -> not priced anywhere, no SGP call for it
-        cook = next(s for s in r["stacks"] if s["name"] == "BUF: WR2→RB1")
-        self.assertIsNone(cook["best_book"])
-        self.assertTrue(all("James Cook III rec yds" in b["missing"][0] for b in cook["books"]))
-        # DK + CZR price the 8 stacks that don't need Cook's receiving yards; MGM (no Palmer)
-        # can only price the two BUF variants that swap Palmer out for TE1 / WR3 -> 8 + 8 + 2
-        self.assertEqual(len(client.calls), 18)
-        self.assertTrue(all(not any(t is None for t in toks) for _, toks in client.calls))
+        self.assertEqual(len([c for c in client.calls if c[0] == "draftkings"]), 8)  # BUF: WR2->RB1 has no Cook receiving line at DK -> no call
+        self.assertEqual([c[0] for c in client.calls if c[0] != "draftkings"], ["caesars"])  # compare: lowest stack only; betmgm lacks a leg, hard-rock differs on lines
+        low = r["stacks"][0]
+        self.assertEqual((low["reference_book"], low["ref_decimal"]), ("draftkings", 19.0))
+        self.assertEqual([b["book"] for b in low["books"]], ["draftkings", "caesars", "betmgm", "hard-rock"])
+        self.assertEqual(low["compare_books"][0]["book"], "caesars")
+        self.assertAlmostEqual(low["compare_books"][0]["gap_pct"], round((21.0 - 19.0) / 19.0 * 100, 1))
+        hr = next(b for b in low["books"] if b["book"] == "hard-rock")
+        self.assertEqual(hr["compare_skipped"], "different lines - not priced")
+        self.assertEqual(hr["legs"][0]["line"], 274.5)
+        self.assertEqual(next(b for b in low["books"] if b["book"] == "betmgm")["compare_skipped"], "missing legs")
+        self.assertTrue(all([b["book"] for b in s["books"]] == ["draftkings"] for s in r["stacks"][1:]))
+        cook = next(s for s in r["stacks"] if s["name"] == "BUF: WR2" + chr(0x2192) + "RB1")
+        self.assertIsNone(cook["reference_book"])
+        self.assertIn("DraftKings is missing: James Cook III rec yds", cook["dk_problem"])
+        self.assertEqual(r["stacks"][-1]["name"], cook["name"])
+        self.assertEqual(r["lowest_odds"]["reference_book"], "draftkings")
+        self.assertEqual(r["lowest_odds"]["link"], "https://draftkings.test/slip")
 
-    def test_price_not_found_is_an_error_not_a_price(self):
-        client = FakeClient({"draftkings": 19.0})  # caesars -> 400
+    def test_price_not_found_is_shown_as_a_dk_problem_not_a_fallback(self):
+        client = FakeClient({"caesars": 20.0})  # draftkings -> 400 Price not found
         r = sf.price_event(client, "nfl", EVENT_META, _league_odds(["draftkings", "caesars"]), ["draftkings", "caesars"])
-        czr = next(b for b in r["stacks"][0]["books"] if b["book"] == "caesars")
-        self.assertFalse(czr["priced"])
-        self.assertEqual(czr["error"], "Price not found")
+        self.assertTrue(all(s["reference_book"] is None for s in r["stacks"]))
+        self.assertIn("DraftKings: Price not found", [s["dk_problem"] for s in r["stacks"]])
+        self.assertNotIn("lowest_odds", r)
+        self.assertEqual([c[0] for c in client.calls].count("caesars"), 0)  # no compare pass, no fallback
 
     def test_budget_trims_variants_in_priority_order_and_notes_it(self):
         books = ["draftkings", "caesars"]
-        client = FakeClient({"draftkings": 19.0, "caesars": 18.5}, remaining=6)  # 9 stacks x 2 books = 18 needed
-        r = sf.price_event(client, "nfl", EVENT_META, _league_odds(books), books)
+        client = FakeClient({"draftkings": 19.0, "caesars": 18.5}, remaining=3)  # 8 primary calls needed
+        r = sf.price_event(client, "nfl", EVENT_META, _league_odds(books), books, compare=False)
         names = [s["name"] for s in r["stacks"]]
         self.assertIn("Base", names)
         self.assertTrue(r["budget_trimmed"])
         self.assertTrue(any("budget guard" in n for n in r["notes"]))
-        self.assertNotIn("DET: WR2→RB1", names)  # dropped first
-        self.assertLessEqual(len(client.calls), 6)
+        self.assertNotIn("DET: WR2" + chr(0x2192) + "RB1", names)
+        self.assertLessEqual(len(client.calls), 3)
 
     def test_trim_keeps_base_when_even_base_does_not_fit(self):
         stacks = [{"name": "Base", "variant": None}, {"name": "v", "variant": ("WR2", "TE1")}]
-        plan = {"Base": ["a", "b", "c"], "v": ["a", "b"]}
-        kept, note = sf.trim_to_budget(stacks, plan, remaining=2)
+        kept, note = sf.trim_to_budget(stacks, {"Base": ["a", "b", "c"], "v": ["a", "b"]}, remaining=2)
         self.assertEqual([s["name"] for s in kept], ["Base"])
         self.assertIn("only the Base stack", note)
 
@@ -245,6 +243,60 @@ class TestPricingAndRanking(unittest.TestCase):
         kept, note = sf.trim_to_budget(stacks, {"Base": ["a"], "v": ["a"]}, remaining=5)
         self.assertEqual(len(kept), 2)
         self.assertIsNone(note)
+
+
+def _row(book, dec, lines, prices=None, correlation=None, priced=True, error=None):
+    prices = prices or ["-110"] * 6
+    row = {"book": book, "legs": [{"line": lines[i], "price": prices[i], "note": None} for i in range(6)], "missing": [], "notes": [], "priced": priced}
+    if priced:
+        row.update({"decimal": dec, "american": sf.american_from_decimal(dec), "link": f"https://{book}.test/x", "correlation": correlation})
+    elif error:
+        row["error"] = error
+    else:
+        row.update({"missing": ["x rec yds (no prop)"], "legs": [None] * 6})
+    return row
+
+
+DK = [270.5, 82.5, 59.5, 251.5, 45.5, 13.5]
+LEGS6 = [{"player": f"p{i}", "team": "T", "slot": "S", "market": REC, "side": "Over", "dk_line": DK[i]} for i in range(6)]
+
+
+class TestRankingCorrelationAndLineParity(unittest.TestCase):
+    def test_correlation_ratio_is_naive_product_over_sgp_price(self):
+        prices = ["-110", "+100", "-120", "-105", "+110", "-111"]
+        row = _row("draftkings", 19.0, DK, prices=prices, correlation=41.0)
+        naive = 1
+        for p in prices:
+            naive *= sf.decimal_from_american(p)
+        self.assertAlmostEqual(sf.naive_decimal(row), round(naive, 3))
+        s = sf.rank_stacks([{"name": "Base", "variant": None, "legs": LEGS6, "books": [row]}])[0]
+        self.assertAlmostEqual(s["correlation_ratio"], round(round(naive, 3) / 19.0, 3))
+        self.assertEqual(s["implied"], round(1 / 19.0, 4))
+        self.assertEqual(s["dk_correlation"], 41.0)
+        self.assertEqual(s["ref_link"], "https://draftkings.test/x")
+
+    def test_sorted_by_lowest_dk_price_then_higher_correlation_unpriced_last(self):
+        a = {"name": "A", "variant": None, "legs": LEGS6, "books": [_row("draftkings", 19.0, DK)]}
+        b = {"name": "B", "variant": ("WR2", "TE1"), "legs": LEGS6, "books": [_row("draftkings", 14.0, DK, prices=["-110"] * 6)]}
+        c = {"name": "C", "variant": ("WR2", "WR3"), "legs": LEGS6, "books": [_row("draftkings", 14.0, DK, prices=["-150"] * 6)]}
+        d = {"name": "D", "variant": ("WR1", "TE1"), "legs": LEGS6, "books": [_row("draftkings", 0, DK, priced=False, error="Price not found"), _row("caesars", 12.0, DK)]}
+        ranked = sf.rank_stacks([a, b, c, d])
+        self.assertEqual([s["name"] for s in ranked], ["B", "C", "A", "D"])
+        self.assertIsNone(ranked[-1]["reference_book"])
+        self.assertEqual(ranked[-1]["dk_problem"], "DraftKings: Price not found")
+        self.assertEqual(ranked[-1]["compare_books"], [])
+
+    def test_compare_uses_only_other_books_on_the_same_lines(self):
+        stack = {"name": "Base", "variant": None, "legs": LEGS6, "books": [
+            _row("draftkings", 19.0, DK, correlation=41.0), _row("caesars", 18.5, DK), _row("betrivers", 20.0, DK),
+            _row("hard-rock", 32.0, [274.5, 79.5, 24.5, 249.5, 49.5, 24.5]), _row("betmgm", 0, DK, priced=False)]}
+        s = sf.rank_stacks([stack])[0]
+        self.assertEqual([c["book"] for c in s["compare_books"]], ["betrivers", "caesars"])
+        self.assertAlmostEqual(s["compare_books"][0]["gap_pct"], round((20.0 - 19.0) / 19.0 * 100, 1))
+        self.assertEqual((s["best_book"], s["best_decimal"]), ("betrivers", 20.0))
+        self.assertEqual(s["different_line_books"][0]["book"], "hard-rock")
+        self.assertEqual(s["books_priced"], 4)
+        self.assertEqual(s["reference_lines"], DK)
 
 
 class TestPersistence(unittest.TestCase):

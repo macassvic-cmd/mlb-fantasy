@@ -1,8 +1,8 @@
 """
 Discord slash commands for the Play Card (2026-09-16) - ONE bot process:
 
-    /playcard              build the card now (live pricing if a key is set) and post it
-    /stack <game>          price one game's stacks (e.g. "DET@BUF" or "det buf")
+    /playcard              build the SGP card now (live pricing if a key is set) and post it
+    /stack <game>          price one game's stacks at DraftKings (e.g. "DET@BUF" or "det buf")
     /dns                   top current Soccer DNS candidates (read-only, kickoff-gated)
 
 Patterns reused from dfs-demon-bot's discord_bot.py: a discord.Client with
@@ -53,15 +53,16 @@ def build_playcard_blocking(leagues=("nfl", "ncaaf")):
 
 def price_one_game_blocking(game_query):
     """Finds the upcoming game whose 'AWAY@HOME' matches the query (case-
-    insensitive, '@'/space/'-' tolerant), prices its stacks, returns the
-    ranked result or None."""
+    insensitive, '@'/space/'-' tolerant), prices its stacks at DraftKings,
+    returns the ranked result or None."""
     q = re.sub(r"[^a-z0-9]", "", game_query.lower())
     from oddsblaze_client import OddsBlazeClient
     client = OddsBlazeClient(offline=not _key_available())
     for league in ("nfl", "ncaaf"):
         for e in stack_forge.upcoming_events(client, league):
             key = (e["teams"]["away"]["abbreviation"] + e["teams"]["home"]["abbreviation"]).lower()
-            if q in (key, key[::-1]) or q == re.sub(r"[^a-z0-9]", "", e["teams"]["home"]["abbreviation"].lower() + e["teams"]["away"]["abbreviation"].lower()):
+            rev = (e["teams"]["home"]["abbreviation"] + e["teams"]["away"]["abbreviation"]).lower()
+            if q in (key, rev):
                 results = stack_forge.price_slate(client, league, event_ids=[e["id"]])
                 return results[0] if results else None
     return None
@@ -70,16 +71,23 @@ def price_one_game_blocking(game_query):
 def format_stack_result(r):
     if not r or not r.get("stacks"):
         return "No stacks could be built (DraftKings has no props for that game yet)."
-    lines = [f"**{r['away']} @ {r['home']}** ({r['league'].upper()}, kickoff {play_card.pacific(r['kickoff'])})"]
-    for s in r["stacks"][:5]:
-        if not s.get("best_book"):
-            continue
+    header = f"**{r['away']} @ {r['home']}** ({r['league'].upper()}, kickoff {play_card.pacific(r['kickoff'])}) - DraftKings main lines, lowest odds first"
+    lines = [header]
+    priced = [s for s in r["stacks"] if s.get("reference_book")]
+    for i, s in enumerate(priced[:5]):
         legs = " + ".join(f"{l['player']} {stack_forge.MARKET_SHORT.get(l['market'], l['market'])} O" for l in s["legs"])
-        ru = f", runner-up {stack_forge.BOOK_ABBR.get(s['runner_up_book'])} {s['runner_up_decimal']:.2f} (spread {s['spread_pct']:+.1f}%)" if s.get("runner_up_book") else ""
-        lines.append(f"**{s['name']}** {legs}\n  {stack_forge.BOOK_ABBR.get(s['best_book'])} **{s['best_american']:+d}** ({s['best_decimal']:.2f}){ru}" + (f" <{s['best_link']}>" if s.get("best_link") else ""))
+        corr = f", corr {s['correlation_ratio']:.2f}x" if s.get("correlation_ratio") else ""
+        dkc = f", DK corr {s['dk_correlation']:.1f}" if s.get("dk_correlation") is not None else ""
+        link = f" <{s['ref_link']}>" if s.get("ref_link") else ""
+        prefix = "**Lowest odds:** " if i == 0 else ""
+        lines.append(f"{prefix}**{s['name']}** {legs}")
+        lines.append(f"  DK **{s['ref_american']:+d}** ({s['ref_decimal']:.2f}), implied {s['implied'] * 100:.1f}%{corr}{dkc}{link}")
+    problems = [s for s in r["stacks"] if not s.get("reference_book")]
+    if problems:
+        lines.append("DraftKings could not price: " + "; ".join(f"{s['name']} ({s['dk_problem']})" for s in problems))
     for n in r.get("notes", []):
         lines.append(f"_{n}_")
-    return redact("\n".join(lines))[:1900]
+    return redact(chr(10).join(lines))[:1900]
 
 
 def format_dns(dns):
@@ -88,8 +96,8 @@ def format_dns(dns):
     lines = [f"DNS refresh {play_card.pacific(dns['last_refresh'])}"]
     for p in dns["plays"]:
         src = "; ".join(p["sources"]) if p["sources"] else "no corroborating source yet"
-        lines.append(f"**{p['player']}** ({p['team']}, {p.get('matchup') or '?'}) kickoff {p['kickoff_pt']} — DNS **{p['dns']}** / conf {p['confidence']} — {src}" + (f" <{p['rotowire_url']}>" if p.get("rotowire_url") else ""))
-    return redact("\n".join(lines))[:1900]
+        lines.append(f"**{p['player']}** ({p['team']}, {p.get('matchup') or '?'}) kickoff {p['kickoff_pt']} - DNS **{p['dns']}** / conf {p['confidence']} - {src}" + (f" <{p['rotowire_url']}>" if p.get("rotowire_url") else ""))
+    return redact(chr(10).join(lines))[:1900]
 
 
 class PlayCardBot(discord.Client):
@@ -105,20 +113,20 @@ class PlayCardBot(discord.Client):
 client = PlayCardBot()
 
 
-@client.tree.command(name="playcard", description="Build the Play Card now (DNS plays + SGP stacks) and post it")
+@client.tree.command(name="playcard", description="Build the SGP Play Card now (DraftKings stacks) and post it")
 async def playcard_cmd(interaction: discord.Interaction):
-    await interaction.response.send_message("working... building the Play Card (this can take several minutes while stacks price)", ephemeral=False)
+    await interaction.response.send_message("working... building the Play Card (this can take a few minutes while stacks price)", ephemeral=False)
     try:
         card = await asyncio.to_thread(build_playcard_blocking)
         embeds = [discord.Embed(title=e["title"], description=e["description"], color=e["color"]) for e in play_card.discord_embeds(card)]
-        for i in range(0, len(embeds), 10):
-            await interaction.followup.send(embeds=embeds[i:i + 10])
+        for batch in play_card.chunk_embeds([{"title": e.title, "description": e.description, "color": e.color.value} for e in embeds]):
+            await interaction.followup.send(embeds=[discord.Embed(title=b["title"], description=b["description"], color=b["color"]) for b in batch])
     except Exception as e:
         logger.exception("playcard failed")
         await interaction.followup.send(redact(f"Play Card failed: {type(e).__name__}"))
 
 
-@client.tree.command(name="stack", description="Price one game's 6-man SGP stacks, e.g. DET@BUF")
+@client.tree.command(name="stack", description="Price one game's 6-man SGP stacks at DraftKings, e.g. DET@BUF")
 @app_commands.describe(game="AWAY@HOME abbreviations, e.g. DET@BUF")
 async def stack_cmd(interaction: discord.Interaction, game: str):
     await interaction.response.send_message(f"working... pricing stacks for {redact(game)[:20]}")
