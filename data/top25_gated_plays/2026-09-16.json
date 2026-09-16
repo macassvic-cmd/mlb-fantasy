@@ -25,9 +25,9 @@
       "player_id": 691718,
       "name": "Pete Crow-Armstrong",
       "team": "Chicago Cubs",
-      "projected_ud": 9.44,
+      "projected_ud": 9.5,
       "ud_line": 7.5,
-      "edge": 1.94,
+      "edge": 2.0,
       "actionable_reason": "edge + strong contact",
       "game_time_pt": "4:40 PM PT"
     },
@@ -35,9 +35,9 @@
       "player_id": 677951,
       "name": "Bobby Witt Jr.",
       "team": "Kansas City Royals",
-      "projected_ud": 8.96,
+      "projected_ud": 9.07,
       "ud_line": 7.5,
-      "edge": 1.46,
+      "edge": 1.57,
       "actionable_reason": "edge + strong contact",
       "game_time_pt": "5:10 PM PT"
     },
@@ -50,16 +50,6 @@
       "edge": 2.0,
       "actionable_reason": "edge + platoon advantage",
       "game_time_pt": "10:10 AM PT"
-    },
-    {
-      "player_id": 676475,
-      "name": "Alec Burleson",
-      "team": "St. Louis Cardinals",
-      "projected_ud": 8.5,
-      "ud_line": 6.5,
-      "edge": 2.0,
-      "actionable_reason": "edge + platoon advantage",
-      "game_time_pt": "10:15 AM PT"
     },
     {
       "player_id": 805811,
@@ -112,6 +102,16 @@
       "game_time_pt": "12:07 PM PT"
     },
     {
+      "player_id": 606192,
+      "name": "Teoscar Hern\u00e1ndez",
+      "team": "Los Angeles Dodgers",
+      "projected_ud": 8.5,
+      "ud_line": 6.5,
+      "edge": 2.0,
+      "actionable_reason": "edge + strong contact",
+      "game_time_pt": "3:40 PM PT"
+    },
+    {
       "player_id": 663656,
       "name": "Kyle Tucker",
       "team": "Los Angeles Dodgers",
@@ -122,14 +122,14 @@
       "game_time_pt": "3:40 PM PT"
     },
     {
-      "player_id": 606192,
-      "name": "Teoscar Hern\u00e1ndez",
-      "team": "Los Angeles Dodgers",
+      "player_id": 664761,
+      "name": "Alec Bohm",
+      "team": "Philadelphia Phillies",
       "projected_ud": 8.5,
       "ud_line": 6.5,
       "edge": 2.0,
       "actionable_reason": "edge + strong contact",
-      "game_time_pt": "3:40 PM PT"
+      "game_time_pt": "3:45 PM PT"
     },
     {
       "player_id": 694192,
@@ -162,14 +162,24 @@
       "game_time_pt": "4:10 PM PT"
     },
     {
-      "player_id": 624413,
-      "name": "Pete Alonso",
-      "team": "Baltimore Orioles",
+      "player_id": 660670,
+      "name": "Ronald Acu\u00f1a Jr.",
+      "team": "Atlanta Braves",
       "projected_ud": 8.5,
       "ud_line": 6.5,
       "edge": 2.0,
       "actionable_reason": "edge + strong contact",
-      "game_time_pt": "4:10 PM PT"
+      "game_time_pt": "4:40 PM PT"
+    },
+    {
+      "player_id": 695600,
+      "name": "Carter Jensen",
+      "team": "Kansas City Royals",
+      "projected_ud": 8.5,
+      "ud_line": 6.5,
+      "edge": 2.0,
+      "actionable_reason": "edge + strong contact",
+      "game_time_pt": "5:10 PM PT"
     }
   ]
 }
