@@ -211,7 +211,11 @@ def select_digest_candidates(candidates):
     cumulative dns_score>=70 count (the partition covers the same
     candidates, just broken into named bands now)."""
     import soccer_dashboard
-    ranked = sorted(candidates, key=lambda c: c.get("combined_priority") or 0, reverse=True)
+    import soccer_dns_score
+    # LOCK-aware ordering (2026-09-17, item 1) - see soccer_dns_score.
+    # lock_aware_sort_key: a LOCK candidate ranks above every additive-
+    # score candidate in the digest too, not just the dashboard.
+    ranked = sorted(candidates, key=soccer_dns_score.lock_aware_sort_key)
     _live, watch_count, alert_count, high_count, _critical = soccer_dashboard.tier_counts(ranked)
 
     cutoff = max(MIN_CANDIDATES_SHOWN, watch_count + alert_count + high_count)

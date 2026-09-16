@@ -332,13 +332,37 @@ class TestRealWorldBookQuirks(unittest.TestCase):
         ])
         self.assertEqual(records[0].league, "EPL")
 
-    def test_unmapped_league_kept_as_uppercased_string(self):
+    def test_league_cup_alias_resolves_to_eng_lc(self):
+        """2026-09-17 item 2 - the Hinshelwood bug: this competition had
+        NO alias at all before this fix, so league_code came back None
+        and team/history resolution never ran for a League Cup fixture."""
+        records = load_prop_records([
+            {"player_name": "J", "team": "BHA", "opponent": "Everton",
+             "competition": "England - League Cup", "stat": "shots", "line": 1.5,
+             "start_time_utc": "2026-09-16", "sport": "Football"},
+        ])
+        self.assertEqual(records[0].league, "ENG_LC")
+
+    def test_champions_league_alias_resolves_to_ucl(self):
         records = load_prop_records([
             {"player_name": "B", "team": "BOU", "opponent": "Brentford",
              "competition": "UEFA - Champions League", "stat": "shots", "line": 1.5,
              "start_time_utc": "2026-09-12", "sport": "Football"},
         ])
-        self.assertEqual(records[0].league, "UEFA - CHAMPIONS LEAGUE")
+        self.assertEqual(records[0].league, "UCL")
+
+    def test_unmapped_league_kept_as_uppercased_string(self):
+        # "UEFA - Champions League" used to be the example here, but item
+        # 2's competition-agnostic fix (2026-09-17) added it (and every
+        # other domestic cup/European competition on the board) to
+        # LEAGUE_VALUE_ALIASES - Copa Libertadores (South America, not
+        # covered by this repo at all) is a genuinely still-unmapped one.
+        records = load_prop_records([
+            {"player_name": "B", "team": "BOU", "opponent": "Brentford",
+             "competition": "Copa Libertadores", "stat": "shots", "line": 1.5,
+             "start_time_utc": "2026-09-12", "sport": "Football"},
+        ])
+        self.assertEqual(records[0].league, "COPA LIBERTADORES")
 
     def test_matchup_resolves_short_code_to_full_team_and_opponent(self):
         records = load_prop_records([

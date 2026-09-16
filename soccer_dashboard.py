@@ -221,6 +221,7 @@ def _candidate_row(c):
         "kickoff": _game_time_pt(c.get("event_date")), "dabble": dabble, "rotowire": rw,
         "predictedXi": xi, "news": news, "reasons": reasons, "officialStatus": c.get("official_status"),
         "researchTooltip": research_tooltip,
+        "isLock": bool(c.get("is_lock")), "lockReason": c.get("lock_reason"),
     }
 
 
@@ -256,8 +257,13 @@ def generate(candidates, date_str=None, out_path=os.path.join("docs", "soccer-dn
     now = datetime.now(timezone.utc)
     any_upcoming, fixture_within_24h = _fixture_freshness_inputs(candidates, now)
 
-    candidates = sorted(candidates, key=lambda c: c.get("combined_priority") or 0, reverse=True)
+    # LOCK-aware ordering (2026-09-17, item 1) - a LOCK candidate ranks
+    # above every additive-score candidate regardless of combined_
+    # priority; see soccer_dns_score.lock_aware_sort_key.
+    import soccer_dns_score
+    candidates = sorted(candidates, key=soccer_dns_score.lock_aware_sort_key)
     live, watch, alert, high, critical = tier_counts(candidates)
+    lock_count = sum(1 for c in candidates if c.get("is_lock"))
     alert_records, alerts_by_player_fixture = _alert_history(date_str)
     removed = _removed_candidates(date_str, alerts_by_player_fixture)
     source_health = _source_health(candidates)
@@ -299,6 +305,8 @@ def generate(candidates, date_str=None, out_path=os.path.join("docs", "soccer-dn
   .status-chip {{ background: #16213a; border: 1px solid #2a3a5c; border-radius: 8px; padding: 10px 16px; min-width: 110px; }}
   .status-chip .value {{ font-size: 24px; font-weight: 900; }}
   .status-chip .label {{ font-size: 11px; color: #9fb0cc; text-transform: uppercase; letter-spacing: 0.5px; }}
+  .status-chip.lock {{ border-color: #f1c40f; }}
+  .status-chip.lock .value {{ color: #f1c40f; }}
   .status-chip.watch .value {{ color: #f1c40f; }}
   .status-chip.alert .value {{ color: #e67e22; }}
   .status-chip.high .value {{ color: #e74c3c; }}
@@ -319,6 +327,15 @@ def generate(candidates, date_str=None, out_path=os.path.join("docs", "soccer-dn
   .tier-high {{ color: #e74c3c; font-weight: 800; }}
   .tier-alert {{ color: #e67e22; font-weight: 800; }}
   .tier-watch {{ color: #f1c40f; font-weight: 800; }}
+  /* LOCK tier (2026-09-17, item 1) - a confirmed-not-starting or
+     uncontradicted hard_out candidate, ranked above every additive-
+     score candidate regardless of dns_score. */
+  tr.lock-row td {{ background: #241a05; }}
+  tr.lock-row:hover td {{ background: #2e2208; }}
+  .lock-badge {{
+    display: inline-block; background: #f1c40f; color: #241a05; font-weight: 900;
+    font-size: 10px; letter-spacing: 0.5px; border-radius: 4px; padding: 2px 6px; margin-right: 4px;
+  }}
 
   .health-grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }}
   .health-card {{ background: #16213a; border: 1px solid #2a3a5c; border-radius: 8px; padding: 12px 14px; }}
@@ -343,6 +360,7 @@ def generate(candidates, date_str=None, out_path=os.path.join("docs", "soccer-dn
 
   <div class="status-bar">
     <div class="status-chip"><div class="value" id="chipLive">{live}</div><div class="label">Dabble Live</div></div>
+    <div class="status-chip lock"><div class="value" id="chipLock">{lock_count}</div><div class="label">LOCK</div></div>
     <div class="status-chip watch"><div class="value" id="chipWatch">{watch}</div><div class="label">Watch (70-74)</div></div>
     <div class="status-chip alert"><div class="value" id="chipAlert">{alert}</div><div class="label">Alert (75-84)</div></div>
     <div class="status-chip high"><div class="value" id="chipHigh">{high}</div><div class="label">High (85+)</div></div>
@@ -474,9 +492,11 @@ if (LIVE.length === 0) {{
 }} else {{
   for (const c of LIVE) {{
     const tr = document.createElement('tr');
+    if (c.isLock) tr.className = 'lock-row';
+    const lockBadge = c.isLock ? '<span class="lock-badge" title="LOCK - ranked above every additive-score candidate">LOCK</span> ' : '';
     tr.innerHTML = `
       <td class="${{tierClass(c.dns)}}">${{c.dns}}</td><td>${{c.conf}}</td><td>${{c.urg}}</td><td>${{c.pri}}</td>
-      <td>${{c.name}}</td><td>${{c.matchup}}</td><td>${{c.league}}</td><td>${{c.kickoff}}</td>
+      <td>${{lockBadge}}${{c.name}}</td><td>${{c.matchup}}</td><td>${{c.league}}</td><td>${{c.kickoff}}</td>
       <td>${{c.dabble}}</td><td class="rotowire-cell">${{c.rotowire}}</td><td>${{c.predictedXi}}</td>
       <td class="news">${{c.news}}</td><td class="reasons">${{c.reasons}}</td>`;
     if (c.researchTooltip) {{
@@ -510,7 +530,9 @@ if (ALERTS.length === 0) {{
 }} else {{
   for (const a of ALERTS) {{
     const tr = document.createElement('tr');
-    tr.innerHTML = `<td>${{a.alerted_at || ''}}</td><td>${{a.alert_type}}</td><td>${{a.player_name}}</td>
+    if (a.is_lock) tr.className = 'lock-row';
+    const lockBadge = a.is_lock ? '<span class="lock-badge" title="LOCK">LOCK</span> ' : '';
+    tr.innerHTML = `<td>${{a.alerted_at || ''}}</td><td>${{lockBadge}}${{a.alert_type}}</td><td>${{a.player_name}}</td>
       <td>${{a.team}}</td><td>${{a.dns_score}}</td><td>${{a.confidence_score}}</td>
       <td>${{a.extra_reason || (a.top_reasons || []).slice(0,2).join('; ')}}</td>`;
     alertsBody.appendChild(tr);

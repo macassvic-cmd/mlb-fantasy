@@ -310,3 +310,28 @@ def tier_label(dns_score):
     if dns_score >= 60:
         return "Watch"
     return "Ignore"
+
+
+# LOCK ordering (2026-09-17, item 1) - within LOCK: confirmed-not-
+# starting first, then corroborated hard_out, then uncorroborated
+# hard_out, then soonest kickoff. A candidate's is_lock/lock_reason
+# fields are computed in soccer_adapter.enrich_and_score_player, not
+# here - this only decides ORDER, not membership.
+LOCK_RANK = {"confirmed_not_starting": 0, "hard_out_corroborated": 1, "hard_out_uncorroborated": 2}
+
+
+def lock_aware_sort_key(c):
+    """Ascending sort key (sorted(candidates, key=lock_aware_sort_key),
+    no reverse=True needed) that puts every LOCK candidate above every
+    additive-score candidate, regardless of dns_score/combined_priority -
+    the whole point of LOCK is that it doesn't need a score to be
+    trustworthy. Every consumer that ranks candidates (the dashboard's
+    live table, the daily digest's ranked list) uses this instead of a
+    bare combined_priority sort, so LOCK ranks #1 everywhere consistently."""
+    if c.get("is_lock"):
+        lock_rank = LOCK_RANK.get(c.get("lock_reason"), 3)
+        kickoff = _parse_iso(c.get("event_date")) if c.get("event_date") else None
+        kickoff_sort = kickoff or datetime.max.replace(tzinfo=timezone.utc)
+        return (0, lock_rank, kickoff_sort, 0.0)
+    epoch = datetime.min.replace(tzinfo=timezone.utc)
+    return (1, 0, epoch, -(c.get("combined_priority") or 0))

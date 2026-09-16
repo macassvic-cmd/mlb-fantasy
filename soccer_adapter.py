@@ -189,16 +189,53 @@ def _resolve_espn_team_id(player, context, league_code):
     history name-variant match (item 1). Cached in context, shared with
     _enrich_espn_official_status's own (independent) need for the same
     id - this is a second call into the same cache, not a second real
-    lookup."""
-    if not league_code or league_code not in LEAGUE_SLUGS:
-        return None
+    lookup.
+
+    Competition-agnostic fallback (2026-09-17, item 2) - found live that
+    Jack Hinshelwood's League Cup fixture had league_code=None (that
+    specific raw competition string had no mapping at all), which used
+    to mean team identity was NEVER resolved for him even though
+    Brighton is a perfectly normal, always-resolvable EPL club. A club's
+    numeric ESPN team id is the SAME across every competition it plays
+    in (confirmed live: Brighton is id 331 under both eng.1 and
+    eng.league_cup), so when this fixture's own competition is unmapped
+    or the direct lookup fails, this tries every OTHER mapped
+    competition before giving up - the club only needs to be findable
+    under ONE of them, not specifically the one today's fixture is filed
+    under. board_loader.LEAGUE_VALUE_ALIASES now also maps every cup/
+    European competition seen on the board (so most fixtures resolve
+    directly here anyway), and this fallback additionally covers any
+    STILL-unmapped competition for a club that also plays domestically."""
     team_cache_key = (league_code, player["team"])
-    if team_cache_key not in context["espn_team_cache"]:
+    if team_cache_key in context["espn_team_cache"]:
+        return context["espn_team_cache"][team_cache_key]
+
+    resolved = None
+    if league_code and league_code in LEAGUE_SLUGS:
         try:
-            context["espn_team_cache"][team_cache_key] = match_espn_team_id(league_code, player["team"])
+            resolved = match_espn_team_id(league_code, player["team"])
         except Exception:
-            context["espn_team_cache"][team_cache_key] = None
-    return context["espn_team_cache"][team_cache_key]
+            resolved = None
+
+    if resolved is None:
+        for other_code in LEAGUE_SLUGS:
+            if other_code == league_code:
+                continue
+            other_key = (other_code, player["team"])
+            if other_key in context["espn_team_cache"]:
+                candidate = context["espn_team_cache"][other_key]
+            else:
+                try:
+                    candidate = match_espn_team_id(other_code, player["team"])
+                except Exception:
+                    candidate = None
+                context["espn_team_cache"][other_key] = candidate
+            if candidate:
+                resolved = candidate
+                break
+
+    context["espn_team_cache"][team_cache_key] = resolved
+    return resolved
 
 
 def _build_enrichment_context(players):
@@ -669,6 +706,28 @@ def enrich_and_score_player(player, context):
             hard_out_conflict=hard_out_conflict,
         )
 
+    # LOCK tier (2026-09-17, item 1) - a candidate with a live Dabble
+    # prop (every scored candidate here, by construction - see the
+    # module docstring: the Dabble board IS the candidate universe) AND
+    # either an official confirmed-not-starting lineup OR an
+    # uncontradicted RotoWire hard_out ranks above every additive-score
+    # candidate, regardless of competition/league/history coverage - the
+    # whole point being that neither of those two facts needs a score to
+    # be trustworthy. A hard_out WITH a live conflict (started after the
+    # tag was first seen) is explicitly excluded - see hard_out_conflict
+    # above - since the tag itself is in doubt there, not confirmed
+    # evidence. Ranking/ordering within LOCK lives in soccer_dns_score.
+    # lock_aware_sort_key, not here - this only decides membership.
+    is_lock = False
+    lock_reason = None
+    if official_status == "confirmed_not_starting":
+        is_lock = True
+        lock_reason = "confirmed_not_starting"
+    elif (rotowire_hit and rotowire_hit.get("rotowire_status_raw") == "hard_out"
+          and not hard_out_conflict):
+        is_lock = True
+        lock_reason = "hard_out_corroborated" if hard_out_corroborated else "hard_out_uncorroborated"
+
     # Watchdog: never silently drop a candidate because enrichment failed -
     # see item 10. A player with zero usable enrichment signals is still
     # scored (on history/prior alone) and explicitly flagged. low_data is
@@ -741,6 +800,8 @@ def enrich_and_score_player(player, context):
         "hard_out_corroboration_sources": corroboration_sources,
         "hard_out_conflict": hard_out_conflict,
         "hard_out_research_block": research_block,
+        "is_lock": is_lock,
+        "lock_reason": lock_reason,
         "x_signal": x_hit,
         "starts_last_5": starts5, "starts_last_10": starts10, "days_rest": days_rest_val,
         "first_recent_start": first_start, "frequent_substitute": freq_sub, "rotation_player": rotation,
@@ -818,7 +879,14 @@ def score_dabble_soccer_board(source=DEFAULT_BOARD_PATH, persist=True, snapshot_
 
     context = _build_enrichment_context(players)
     candidates = [enrich_and_score_player(p, context) for p in players.values()]
-    candidates.sort(key=lambda c: c["dns_score"], reverse=True)
+    # LOCK-aware ordering (2026-09-17, item 1) - a LOCK candidate (an
+    # uncontradicted hard_out or an official confirmed-not-starting
+    # lineup) ranks above every additive-score candidate here, so every
+    # downstream consumer of this list (print_ranked, the alert loop,
+    # anything that doesn't re-sort) inherits LOCK-first order for free;
+    # soccer_dashboard.py and soccer_daily_digest.py each do their own
+    # re-sort and use the same key.
+    candidates.sort(key=soccer_dns_score.lock_aware_sort_key)
 
     if persist:
         record_live_snapshot(snapshot_date, candidates)

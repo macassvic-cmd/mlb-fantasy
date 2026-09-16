@@ -650,6 +650,7 @@ def trace_player(query, source=None):
         print(f"Top reasons             : {c['top_reasons']}")
         print(f"Coverage                : board_only={c['board_only']} "
               f"multi_source={c['has_multiple_external_sources']}")
+        print(f"LOCK                    : is_lock={c['is_lock']} reason={c['lock_reason']}")
     return matches
 
 

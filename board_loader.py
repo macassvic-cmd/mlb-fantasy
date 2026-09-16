@@ -147,11 +147,22 @@ _NFL_COMPETITION_ALIASES = {"nfl", "national football league"}
 
 # Same idea for a soccer record's "league"/"competition" value, mapped to
 # the exact codes soccer_dns.LEAGUES / scrapers.espn_soccer.LEAGUE_SLUGS
-# expect. A competition with no mapping here (e.g. "UEFA - Champions
-# League", which has no single domestic ESPN slug) is kept as its own
+# expect. A competition with no mapping here is kept as its own
 # uppercased string rather than dropped - digest/embed display it as-is,
 # it just won't resolve for grading (same graceful no-op as a missing
 # league entirely).
+#
+# Cups/European competitions added 2026-09-17 (item 2, the Hinshelwood
+# League Cup bug: his fixture's own competition, "England - League Cup",
+# had no mapping at all, so league_code was None and team/history
+# resolution never even ran) - confirmed live that ESPN's site API DOES
+# have a real slug for every one of these (the old comment above
+# claiming Champions League "has no single domestic ESPN slug" was
+# simply wrong), and that a club's numeric ESPN team id is the SAME
+# across every competition it plays in (Brighton is id 331 under both
+# eng.1 and eng.league_cup) - so mapping a cup/European competition here
+# lets team identity, history, Transfermarkt, and official-lineup
+# resolution all work for it exactly like a domestic league fixture.
 LEAGUE_VALUE_ALIASES = {
     "EPL": {"epl", "england - premier league", "english premier league", "premier league"},
     "LLG": {"llg", "spain - laliga", "spanish la liga", "la liga", "laliga"},
@@ -159,6 +170,17 @@ LEAGUE_VALUE_ALIASES = {
     "BUN": {"bun", "germany - bundesliga", "bundesliga"},
     "SEA": {"sea", "italy - serie a", "serie a"},
     "MLS": {"mls", "usa - major league soccer", "us - major league soccer", "major league soccer"},
+    "ENG_LC": {"eng_lc", "england - league cup", "efl cup", "carabao cup", "league cup"},
+    "ENG_FA": {"eng_fa", "england - fa cup", "fa cup"},
+    "ESP_CDR": {"esp_cdr", "spain - copa del rey", "copa del rey"},
+    "ITA_CI": {"ita_ci", "italy - coppa italia", "coppa italia"},
+    "GER_DFB": {"ger_dfb", "germany - dfb pokal", "dfb pokal", "dfb-pokal"},
+    "FRA_CDF": {"fra_cdf", "france - coupe de france", "coupe de france"},
+    "UCL": {"ucl", "uefa - champions league", "uefa champions league", "champions league"},
+    "UEL": {"uel", "uefa - europa league", "uefa europa league", "europa league"},
+    "UECL": {"uecl", "uefa - europa conference league", "uefa conference league",
+             "uefa europa conference league", "europa conference league", "conference league"},
+    "MLS_OPEN": {"mls_open", "usa - us open cup", "us open cup"},
 }
 _LEAGUE_VALUE_TO_CANONICAL = {alias: canon for canon, aliases in LEAGUE_VALUE_ALIASES.items() for alias in aliases}
 

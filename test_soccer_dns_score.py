@@ -70,5 +70,51 @@ class TestHardOutFloor(unittest.TestCase):
         self.assertEqual(dns_score, dns.HARD_OUT_BASE_FLOOR)
 
 
+class TestLockAwareSortKey(unittest.TestCase):
+    """2026-09-17 item 1 - LOCK candidates (confirmed_not_starting or an
+    uncontradicted RotoWire hard_out) rank above every additive-score
+    candidate, regardless of dns_score/combined_priority. Ordering
+    within LOCK: confirmed_not_starting, then corroborated hard_out,
+    then uncorroborated hard_out, then soonest kickoff."""
+
+    def _c(self, name, is_lock=False, lock_reason=None, combined_priority=0, event_date=None):
+        return {"player_name": name, "is_lock": is_lock, "lock_reason": lock_reason,
+                "combined_priority": combined_priority, "event_date": event_date}
+
+    def test_any_lock_outranks_every_non_lock_regardless_of_priority(self):
+        low_lock = self._c("Locked", is_lock=True, lock_reason="hard_out_uncorroborated", combined_priority=1)
+        high_score = self._c("HighScore", is_lock=False, combined_priority=99)
+        ranked = sorted([high_score, low_lock], key=dns.lock_aware_sort_key)
+        self.assertEqual([c["player_name"] for c in ranked], ["Locked", "HighScore"])
+
+    def test_lock_ordering_confirmed_then_corroborated_then_uncorroborated(self):
+        confirmed = self._c("Confirmed", is_lock=True, lock_reason="confirmed_not_starting")
+        corroborated = self._c("Corroborated", is_lock=True, lock_reason="hard_out_corroborated")
+        uncorroborated = self._c("Uncorroborated", is_lock=True, lock_reason="hard_out_uncorroborated")
+        ranked = sorted([uncorroborated, confirmed, corroborated], key=dns.lock_aware_sort_key)
+        self.assertEqual([c["player_name"] for c in ranked], ["Confirmed", "Corroborated", "Uncorroborated"])
+
+    def test_lock_tiebreak_is_soonest_kickoff(self):
+        later = self._c("Later", is_lock=True, lock_reason="hard_out_uncorroborated",
+                         event_date="2026-09-17T20:00:00.000Z")
+        sooner = self._c("Sooner", is_lock=True, lock_reason="hard_out_uncorroborated",
+                          event_date="2026-09-16T19:00:00.000Z")
+        ranked = sorted([later, sooner], key=dns.lock_aware_sort_key)
+        self.assertEqual([c["player_name"] for c in ranked], ["Sooner", "Later"])
+
+    def test_non_lock_candidates_still_sort_by_combined_priority_descending(self):
+        low = self._c("Low", combined_priority=10)
+        high = self._c("High", combined_priority=90)
+        ranked = sorted([low, high], key=dns.lock_aware_sort_key)
+        self.assertEqual([c["player_name"] for c in ranked], ["High", "Low"])
+
+    def test_lock_candidate_with_missing_kickoff_sorts_after_ones_with_a_real_kickoff(self):
+        no_kickoff = self._c("NoKickoff", is_lock=True, lock_reason="hard_out_uncorroborated", event_date=None)
+        with_kickoff = self._c("WithKickoff", is_lock=True, lock_reason="hard_out_uncorroborated",
+                                event_date="2026-09-16T19:00:00.000Z")
+        ranked = sorted([no_kickoff, with_kickoff], key=dns.lock_aware_sort_key)
+        self.assertEqual([c["player_name"] for c in ranked], ["WithKickoff", "NoKickoff"])
+
+
 if __name__ == "__main__":
     unittest.main()

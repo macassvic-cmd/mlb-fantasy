@@ -48,16 +48,24 @@ ALERT_THRESHOLDS = [60, 65, 70, 75, 80, 85, 90]
 DISCORD_SEND_THRESHOLDS = {75, 85}
 CRITICAL_KEY = "critical"
 NEWS_SIGNAL_KEY = "news_signal"
+# LOCK (2026-09-17, item 1) - fires once the first time a player becomes
+# LOCK via an uncontradicted RotoWire hard_out (confirmed_not_starting
+# LOCKs are already covered by CRITICAL_KEY above, which fires for the
+# exact same event - LOCK doesn't duplicate that with a second Discord
+# message, it only covers the genuinely new case).
+LOCK_KEY = "lock"
 
 ALERT_MIN_CONFIDENCE = {75: 50, 85: 60}
 
 SEVERITY_LABELS = {
     70: "WATCH", 75: "DNS ALERT", 85: "HIGH PRIORITY",
     CRITICAL_KEY: "CONFIRMED NON-STARTER", NEWS_SIGNAL_KEY: "SOCCER NEWS SIGNAL",
+    LOCK_KEY: "LOCK",
 }
 SEVERITY_COLORS = {
     "WATCH": 0x95A5A6, "DNS ALERT": 0xE67E22, "HIGH PRIORITY": 0xE74C3C,
     "CONFIRMED NON-STARTER": 0x8E44AD, "SOCCER NEWS SIGNAL": 0x3498DB,
+    "LOCK": 0xF1C40F,
 }
 
 # A trusted-source (tier<=2) injury/bench signal, or a predicted-XI flip
@@ -185,6 +193,8 @@ def _build_alert_record(candidate, alert_type, date_str, now_iso, extra_reason=N
         # every non-hard_out alert, a full evidence dict otherwise (see
         # soccer_adapter.enrich_and_score_player's research_block).
         "research_block": candidate.get("hard_out_research_block"),
+        "is_lock": candidate.get("is_lock", False),
+        "lock_reason": candidate.get("lock_reason"),
         "official_started": None,
         "outcome": None,
         "long_term_injury": False,
@@ -453,6 +463,21 @@ def notify_soccer_candidates(candidates, date_str=None):
                 record = _build_alert_record(c, CRITICAL_KEY, date_str, now_iso)
                 data[crit_key] = record
                 send_discord_alert(record, SEVERITY_LABELS[CRITICAL_KEY])
+
+        # LOCK (2026-09-17, item 1) - fires once the first time a player
+        # becomes LOCK via an uncontradicted hard_out. confirmed_not_
+        # starting LOCKs are deliberately excluded here - CRITICAL above
+        # already sends one Discord message for that exact event, and
+        # sending a second (differently-labeled) message for the same
+        # fact would just be alert spam. Kickoff gate already applies -
+        # this whole loop already skipped non-"upcoming" fixtures above.
+        if c.get("is_lock") and c.get("lock_reason") != "confirmed_not_starting":
+            lock_key = _dedup_key(date_str, pid, fixture_id, LOCK_KEY)
+            if lock_key not in data:
+                record = _build_alert_record(c, LOCK_KEY, date_str, now_iso,
+                                              extra_reason=f"LOCK: {c.get('lock_reason')}")
+                data[lock_key] = record
+                send_discord_alert(record, SEVERITY_LABELS[LOCK_KEY])
 
         news_reason = _detect_news_signal(c, prior_entry)
         if news_reason:

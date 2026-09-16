@@ -33,7 +33,14 @@ HEADERS = {"User-Agent": "Mozilla/5.0"}
 BASE = "https://site.api.espn.com/apis/site/v2/sports/soccer"
 
 # Betr League enum value -> ESPN league slug, for the 6 domestic leagues
-# soccer_dns.py covers. Confirmed live 2026-09-02.
+# soccer_dns.py covers, plus (2026-09-17, item 2) every domestic cup and
+# European competition those same clubs play in - added after finding
+# live that Jack Hinshelwood's League Cup fixture had NO slug at all, so
+# team/history resolution never ran for him. Every slug below was
+# confirmed live to return real ESPN team data, and a club's numeric
+# ESPN team id is confirmed the SAME across every competition (Brighton
+# is id 331 under both eng.1 and eng.league_cup) - see board_loader.
+# LEAGUE_VALUE_ALIASES's comment for the full reasoning.
 LEAGUE_SLUGS = {
     "EPL": "eng.1",
     "LLG": "esp.1",
@@ -41,6 +48,16 @@ LEAGUE_SLUGS = {
     "BUN": "ger.1",
     "SEA": "ita.1",
     "MLS": "usa.1",
+    "ENG_LC": "eng.league_cup",
+    "ENG_FA": "eng.fa",
+    "ESP_CDR": "esp.copa_del_rey",
+    "ITA_CI": "ita.coppa_italia",
+    "GER_DFB": "ger.dfb_pokal",
+    "FRA_CDF": "fra.coupe_de_france",
+    "UCL": "uefa.champions",
+    "UEL": "uefa.europa",
+    "UECL": "uefa.europa.conf",
+    "MLS_OPEN": "usa.open",
 }
 
 _team_cache = {}  # league_slug -> {espn_team_id: normalized_display_name}

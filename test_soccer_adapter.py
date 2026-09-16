@@ -613,5 +613,135 @@ class TestHardOutFloorIntegration(unittest.TestCase):
         self.assertLess(result["dns_score"], soccer_adapter.soccer_dns_score.HARD_OUT_BASE_FLOOR)
 
 
+class TestLockTier(TestHardOutFloorIntegration):
+    """2026-09-17 item 1 - is_lock/lock_reason on the full enrich_and_
+    score_player path. Reuses TestHardOutFloorIntegration's fixtures
+    (same player, same hard_out page, same absent-history helper)."""
+
+    def test_uncorroborated_hard_out_is_lock(self):
+        player = self._hinshelwood_player()
+        context = _empty_context(rotowire={}, espn_team_cache={("EPL", "NEW"): "t1"})
+        with patch("soccer_adapter._enrich_espn_official_status", return_value=NOT_YET_POSTED), \
+             _no_transfermarkt(), \
+             patch("rotowire_soccer.get_player_status", return_value=self._hard_out_page()):
+            result = soccer_adapter.enrich_and_score_player(player, context)
+        self.assertTrue(result["is_lock"])
+        self.assertEqual(result["lock_reason"], "hard_out_uncorroborated")
+
+    def test_corroborated_hard_out_is_lock_with_corroborated_reason(self):
+        player = self._hinshelwood_player()
+        context = _empty_context(rotowire={}, espn_team_cache={("EPL", "NEW"): "t1"},
+                                  history=self._absent_history())
+        with patch("soccer_adapter._enrich_espn_official_status", return_value=NOT_YET_POSTED), \
+             _no_transfermarkt(), \
+             patch("rotowire_soccer.get_player_status", return_value=self._hard_out_page()):
+            result = soccer_adapter.enrich_and_score_player(player, context)
+        self.assertTrue(result["is_lock"])
+        self.assertEqual(result["lock_reason"], "hard_out_corroborated")
+
+    def test_hard_out_conflict_is_excluded_from_lock(self):
+        """A hard_out tag contradicted by a later start must NOT be a
+        LOCK - the whole point of the conflict check (item 2) is that
+        the tag itself is in doubt there."""
+        history = self._absent_history()
+        history["jack hinshelwood"]["matches"].append(
+            {"date": "2026-09-13", "league": "EPL", "event_id": "e10", "team_id": "t1",
+             "opponent_team_id": "opp", "competition": "EPL", "home_away": "home",
+             "started": True, "active": True})
+        player = self._hinshelwood_player()
+        context = _empty_context(rotowire={}, espn_team_cache={("EPL", "NEW"): "t1"}, history=history)
+        with patch("soccer_adapter._enrich_espn_official_status", return_value=NOT_YET_POSTED), \
+             _no_transfermarkt(), \
+             patch("rotowire_soccer.get_player_status", return_value=self._hard_out_page()):
+            result = soccer_adapter.enrich_and_score_player(player, context)
+        self.assertIsNotNone(result["hard_out_conflict"])
+        self.assertFalse(result["is_lock"])
+        self.assertIsNone(result["lock_reason"])
+
+    def test_confirmed_not_starting_is_lock(self):
+        player = self._hinshelwood_player()
+        context = _empty_context(rotowire={}, espn_team_cache={("EPL", "NEW"): "t1"})
+        confirmed = ("confirmed_not_starting", None,
+                     {"source_attempted": True, "entity_matched": True, "signal_found": True})
+        with patch("soccer_adapter._enrich_espn_official_status", return_value=confirmed), \
+             _no_transfermarkt():
+            result = soccer_adapter.enrich_and_score_player(player, context)
+        self.assertTrue(result["is_lock"])
+        self.assertEqual(result["lock_reason"], "confirmed_not_starting")
+
+    def test_plain_candidate_with_no_hard_out_or_confirmation_is_not_lock(self):
+        player = self._hinshelwood_player()
+        context = _empty_context(rotowire={}, espn_team_cache={("EPL", "NEW"): "t1"})
+        with patch("soccer_adapter._enrich_espn_official_status", return_value=NOT_YET_POSTED), \
+             _no_transfermarkt():
+            result = soccer_adapter.enrich_and_score_player(player, context)
+        self.assertFalse(result["is_lock"])
+        self.assertIsNone(result["lock_reason"])
+
+
+class TestResolveEspnTeamIdCompetitionAgnostic(unittest.TestCase):
+    """2026-09-17 item 2 - found live that Jack Hinshelwood's League Cup
+    fixture had league_code=None (unmapped competition), which used to
+    mean team identity was NEVER resolved even though Brighton is a
+    perfectly normal, always-resolvable EPL club. _resolve_espn_team_id
+    must fall through every OTHER known competition before giving up -
+    a club's numeric ESPN id is confirmed the same across competitions."""
+
+    def _player(self, team="BHA"):
+        return {"team": team}
+
+    def test_unmapped_competition_falls_back_to_another_known_competition(self):
+        context = {"espn_team_cache": {}}
+        with patch.object(soccer_adapter, "LEAGUE_SLUGS", {"EPL": "eng.1", "ENG_LC": "eng.league_cup"}), \
+             patch("soccer_adapter.match_espn_team_id", side_effect=lambda code, team: {"EPL": "331"}.get(code)):
+            result = soccer_adapter._resolve_espn_team_id(self._player(), context, None)
+        self.assertEqual(result, "331")
+
+    def test_own_competition_failing_falls_back_to_another_one(self):
+        """The fixture's OWN competition IS mapped but the lookup itself
+        comes back empty (e.g. this specific club not found under that
+        slug for some reason) - still falls through to another known
+        competition rather than giving up."""
+        context = {"espn_team_cache": {}}
+        with patch.object(soccer_adapter, "LEAGUE_SLUGS", {"ENG_LC": "eng.league_cup", "EPL": "eng.1"}), \
+             patch("soccer_adapter.match_espn_team_id", side_effect=lambda code, team: {"EPL": "331"}.get(code)):
+            result = soccer_adapter._resolve_espn_team_id(self._player(), context, "ENG_LC")
+        self.assertEqual(result, "331")
+
+    def test_own_competition_succeeding_never_triggers_the_fallback_search(self):
+        context = {"espn_team_cache": {}}
+        calls = []
+
+        def fake_match(code, team):
+            calls.append(code)
+            return "331" if code == "EPL" else None
+
+        with patch.object(soccer_adapter, "LEAGUE_SLUGS", {"EPL": "eng.1", "ENG_LC": "eng.league_cup"}), \
+             patch("soccer_adapter.match_espn_team_id", side_effect=fake_match):
+            result = soccer_adapter._resolve_espn_team_id(self._player(), context, "EPL")
+        self.assertEqual(result, "331")
+        self.assertEqual(calls, ["EPL"], "must not search other competitions once the primary one succeeds")
+
+    def test_no_known_competition_resolves_returns_none_not_a_crash(self):
+        context = {"espn_team_cache": {}}
+        with patch.object(soccer_adapter, "LEAGUE_SLUGS", {"EPL": "eng.1", "ENG_LC": "eng.league_cup"}), \
+             patch("soccer_adapter.match_espn_team_id", return_value=None):
+            result = soccer_adapter._resolve_espn_team_id(self._player(team="ZZZ"), context, None)
+        self.assertIsNone(result)
+
+    def test_already_cached_entry_short_circuits_without_any_lookup(self):
+        context = {"espn_team_cache": {("EPL", "NEW"): "t1"}}
+        with patch("soccer_adapter.match_espn_team_id", side_effect=AssertionError("must not be called")):
+            result = soccer_adapter._resolve_espn_team_id({"team": "NEW"}, context, "EPL")
+        self.assertEqual(result, "t1")
+
+    def test_league_cup_alias_and_slug_resolve_directly_without_needing_the_fallback(self):
+        """The actual fix for the Hinshelwood bug: 'England - League Cup'
+        now has both an alias (-> ENG_LC) and a LEAGUE_SLUGS entry, so
+        this resolves on the FIRST try, no fallback search needed."""
+        self.assertEqual(soccer_adapter._league_code("England - League Cup"), "ENG_LC")
+        self.assertIn("ENG_LC", soccer_adapter.LEAGUE_SLUGS)
+
+
 if __name__ == "__main__":
     unittest.main()
