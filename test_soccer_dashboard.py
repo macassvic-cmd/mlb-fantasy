@@ -162,5 +162,26 @@ class TestFixtureFreshnessInputs(unittest.TestCase):
         self.assertFalse(within_24h)
 
 
+class TestCandidateRowResearchTooltip(unittest.TestCase):
+    """2026-09-16 Hinshelwood item 3 - the hard_out research block shown
+    on the dashboard, as a tooltip on the RotoWire cell."""
+
+    def test_hard_out_candidate_gets_a_research_tooltip(self):
+        c = _candidate("Jack Hinshelwood", hard_out_research_block={
+            "rotowire_status_tag": "Out", "rotowire_injury": "Hip", "rotowire_est_return": None,
+            "rotowire_status_since": None, "rotowire_url": None, "transfermarkt": None,
+            "last_appeared_date": "2026-08-23", "days_since_last_appearance": 24,
+            "team_last_3_fixtures": [], "corroborated_by": [], "conflict": None,
+        })
+        row = dash._candidate_row(c)
+        self.assertIsNotNone(row["researchTooltip"])
+        self.assertIn("2026-08-23", row["researchTooltip"])
+
+    def test_non_hard_out_candidate_has_no_tooltip(self):
+        c = _candidate("Regular Player")
+        row = dash._candidate_row(c)
+        self.assertIsNone(row["researchTooltip"])
+
+
 if __name__ == "__main__":
     unittest.main()

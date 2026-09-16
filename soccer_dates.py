@@ -27,3 +27,28 @@ def soccer_today_str(now=None):
     if now.tzinfo is None:
         now = now.replace(tzinfo=timezone.utc)
     return now.astimezone(PACIFIC_TZ).strftime("%Y-%m-%d")
+
+
+def format_kickoff_pacific(event_date_iso):
+    """'Tue 9/16, 12:00 PM PDT' from a raw event_date ISO string (e.g.
+    '2026-09-16T19:00:00.000Z') - added 2026-09-16 (Hinshelwood item 4):
+    alerts (Discord + dashboard) were showing that raw UTC string as-is,
+    which nobody reading an alert should have to mentally convert. Falls
+    back to the original string unchanged on anything unparseable -
+    never raises, never hides a real (if malformed) value."""
+    if not event_date_iso:
+        return event_date_iso
+    try:
+        dt = datetime.fromisoformat(event_date_iso.replace("Z", "+00:00"))
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        local = dt.astimezone(PACIFIC_TZ)
+        # %-m/%-d/%-I (no leading zero) are Linux-only strftime codes -
+        # this runs on both GitHub Actions (Linux) and the user's own
+        # Windows PC (see CLAUDE.md), where they raise ValueError - build
+        # the no-leading-zero pieces by hand instead.
+        hour12 = local.hour % 12 or 12
+        return (f"{local.strftime('%a')} {local.month}/{local.day}, "
+                f"{hour12}:{local.strftime('%M %p %Z')}")
+    except Exception:
+        return event_date_iso

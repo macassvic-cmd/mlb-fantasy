@@ -173,5 +173,173 @@ class TestTeamConfirmationForPartialMatches(unittest.TestCase):
         self.assertTrue(log[0]["accepted"])
 
 
+def _match(date, event_id, team_id, started, active=True):
+    return {"date": date, "league": "EPL", "event_id": event_id, "team_id": team_id,
+            "opponent_team_id": "opp", "competition": "EPL", "home_away": "home",
+            "started": started, "active": active}
+
+
+class TestTeamStartsLastN(unittest.TestCase):
+    """2026-09-16 bug fix: starts_last_n's player-appearance-only history
+    silently freezes at whatever it was before an injured/dropped player
+    stops appearing in squad announcements at all - a team fixture with
+    NO entry for that player is invisible to it, not counted as a non-
+    start. team_starts_last_n fixes this by deriving the team's real
+    fixture list from ANY player's recorded entries for that team_id,
+    so an absence (no entry at all) counts as a non-start."""
+
+    def test_the_hinshelwood_case_absences_count_as_non_starts(self):
+        # This player (e.g. an injured starter) has 2 real recorded
+        # starts, both BEFORE going missing - his own history alone
+        # would show 100% starts. Two OTHER players on the same team
+        # (team_id "331") have entries for 3 more recent fixtures he
+        # is absent from entirely.
+        history = {
+            "injured player": {"name": "injured player", "matches": [
+                _match("2026-05-24", "e1", "331", started=True),
+                _match("2026-08-23", "e2", "331", started=True),
+            ]},
+            "teammate a": {"name": "teammate a", "matches": [
+                _match("2026-05-24", "e1", "331", started=True),
+                _match("2026-08-23", "e2", "331", started=True),
+                _match("2026-08-30", "e3", "331", started=True),
+                _match("2026-09-05", "e4", "331", started=True),
+                _match("2026-09-13", "e5", "331", started=True),
+            ]},
+        }
+        started, non_started, total = sh.team_starts_last_n(history, "injured player", "331", n=5)
+        # Last 5 team fixtures: e1(started) e2(started) e3(absent)
+        # e4(absent) e5(absent) -> 2 started, 3 non-started.
+        self.assertEqual((started, non_started, total), (2, 3, 5))
+
+    def test_player_with_no_absences_matches_plain_starts_last_n(self):
+        history = {
+            "regular starter": {"name": "regular starter", "matches": [
+                _match("2026-09-01", "e1", "331", started=True),
+                _match("2026-09-08", "e2", "331", started=False),
+                _match("2026-09-13", "e3", "331", started=True),
+            ]},
+        }
+        started, non_started, total = sh.team_starts_last_n(history, "regular starter", "331", n=3)
+        self.assertEqual((started, non_started, total), (2, 1, 3))
+
+    def test_no_team_fixtures_at_all_returns_zero_total(self):
+        started, non_started, total = sh.team_starts_last_n({}, "nobody", "331", n=5)
+        self.assertEqual((started, non_started, total), (0, 0, 0))
+
+    def test_missing_team_id_returns_zero_total(self):
+        history = {"p": {"name": "p", "matches": [_match("2026-09-01", "e1", "331", started=True)]}}
+        started, non_started, total = sh.team_starts_last_n(history, "p", None, n=5)
+        self.assertEqual((started, non_started, total), (0, 0, 0))
+
+    def test_before_date_excludes_later_fixtures(self):
+        history = {
+            "p": {"name": "p", "matches": [
+                _match("2026-09-01", "e1", "331", started=True),
+                _match("2026-09-08", "e2", "331", started=True),
+            ]},
+        }
+        started, non_started, total = sh.team_starts_last_n(history, "p", "331", n=5, before_date="2026-09-05")
+        self.assertEqual((started, non_started, total), (1, 0, 1))
+
+    def test_team_confirmation_still_applies_via_expected_team_id(self):
+        """A variant-matched player must still pass team confirmation -
+        team_starts_last_n must not bypass that safety check."""
+        history = {
+            "j smith": {"name": "j smith", "matches": [
+                _match("2026-09-01", "e1", "999", started=True),  # wrong team
+            ]},
+            "teammate": {"name": "teammate", "matches": [
+                _match("2026-09-01", "e1", "331", started=True),
+                _match("2026-09-08", "e2", "331", started=True),
+            ]},
+        }
+        # "john smith" would variant-resolve to "j smith", but that
+        # entry's own team_id (999) doesn't match expected_team_id
+        # (331) - the variant must be rejected, leaving 0 recorded
+        # starts for this player even though the team itself has fixtures.
+        started, non_started, total = sh.team_starts_last_n(
+            history, "john smith", "331", n=5, expected_team_id="331")
+        self.assertEqual((started, non_started, total), (0, 2, 2))
+
+
+class TestTeamFixtureDetailAndHardOutHelpers(unittest.TestCase):
+    """2026-09-16 Hinshelwood follow-up (item 2, hard_out floor): the
+    corroboration/conflict checks need per-fixture detail and a real
+    "last start date," not just team_starts_last_n's aggregate tally."""
+
+    def _hinshelwood_history(self):
+        return {
+            "injured player": {"name": "injured player", "matches": [
+                _match("2026-05-24", "e1", "331", started=True),
+                _match("2026-08-23", "e2", "331", started=True),
+            ]},
+            "teammate a": {"name": "teammate a", "matches": [
+                _match("2026-05-24", "e1", "331", started=True),
+                _match("2026-08-23", "e2", "331", started=True),
+                _match("2026-08-30", "e3", "331", started=True),
+                _match("2026-09-05", "e4", "331", started=True),
+                _match("2026-09-13", "e5", "331", started=True),
+            ]},
+        }
+
+    def test_team_fixture_detail_marks_absences_distinct_from_bench(self):
+        history = self._hinshelwood_history()
+        history["injured player"]["matches"].append(_match("2026-08-30", "e3", "331", started=False))
+        detail = sh.team_fixture_detail(history, "injured player", "331", n=3)
+        self.assertEqual([d["event_id"] for d in detail], ["e3", "e4", "e5"])
+        self.assertEqual([d["status"] for d in detail], ["bench", "absent", "absent"])
+
+    def test_absent_from_most_recent_team_fixture_true_for_hinshelwood_case(self):
+        history = self._hinshelwood_history()
+        self.assertTrue(sh.absent_from_most_recent_team_fixture(history, "injured player", "331"))
+
+    def test_absent_from_most_recent_team_fixture_false_when_named(self):
+        history = self._hinshelwood_history()
+        history["injured player"]["matches"].append(_match("2026-09-13", "e5", "331", started=False))
+        self.assertFalse(sh.absent_from_most_recent_team_fixture(history, "injured player", "331"))
+
+    def test_absent_from_most_recent_team_fixture_false_with_no_team_fixtures(self):
+        self.assertFalse(sh.absent_from_most_recent_team_fixture({}, "nobody", "331"))
+
+    def test_most_recent_start_date_returns_latest_start_only(self):
+        history = {
+            "p": {"name": "p", "matches": [
+                _match("2026-08-01", "e1", "331", started=True),
+                _match("2026-08-15", "e2", "331", started=False),
+                _match("2026-08-23", "e3", "331", started=True),
+            ]},
+        }
+        self.assertEqual(sh.most_recent_start_date(history, "p"), "2026-08-23")
+
+    def test_most_recent_start_date_none_when_never_started(self):
+        history = {"p": {"name": "p", "matches": [_match("2026-08-01", "e1", "331", started=False)]}}
+        self.assertIsNone(sh.most_recent_start_date(history, "p"))
+
+    def test_most_recent_start_date_none_with_no_history(self):
+        self.assertIsNone(sh.most_recent_start_date({}, "nobody"))
+
+    def test_last_appearance_date_counts_bench_appearances_too(self):
+        history = {
+            "p": {"name": "p", "matches": [
+                _match("2026-08-01", "e1", "331", started=True),
+                _match("2026-08-23", "e2", "331", started=False, active=True),
+            ]},
+        }
+        self.assertEqual(sh.last_appearance_date(history, "p"), "2026-08-23")
+
+    def test_last_appearance_date_ignores_inactive_entries(self):
+        history = {
+            "p": {"name": "p", "matches": [
+                _match("2026-08-01", "e1", "331", started=True),
+                _match("2026-08-23", "e2", "331", started=False, active=False),
+            ]},
+        }
+        self.assertEqual(sh.last_appearance_date(history, "p"), "2026-08-01")
+
+    def test_last_appearance_date_none_with_no_history(self):
+        self.assertIsNone(sh.last_appearance_date({}, "nobody"))
+
+
 if __name__ == "__main__":
     unittest.main()

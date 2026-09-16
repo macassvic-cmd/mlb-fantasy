@@ -201,12 +201,26 @@ def _candidate_row(c):
     xi = c.get("prediction_consensus", "unknown")
     news = (c.get("transfermarkt_injury") or {}).get("reason") or (c.get("rotowire_injury") if c.get("has_news") else None) or "-"
     reasons = "; ".join(c.get("top_reasons", [])[:3])
+    # Hard_out research block (2026-09-16 item 3) - rendered as a native
+    # tooltip (title attribute) on the RotoWire cell rather than a new
+    # column, since this dashboard has no per-row expand mechanic yet;
+    # cheap and always readable, even though a real expand/detail panel
+    # would look nicer.
+    research_tooltip = None
+    rb = c.get("hard_out_research_block")
+    if rb:
+        try:
+            import soccer_alerts
+            research_tooltip = soccer_alerts._format_research_block(rb)
+        except Exception:
+            research_tooltip = None
     return {
         "dns": c["dns_score"], "conf": c["confidence_score"], "urg": c["urgency_score"],
         "pri": c.get("combined_priority"), "name": c["player_name"], "team": c["team"],
         "matchup": c.get("matchup") or c["team"], "league": c.get("league_code") or c.get("league_raw") or "?",
         "kickoff": _game_time_pt(c.get("event_date")), "dabble": dabble, "rotowire": rw,
         "predictedXi": xi, "news": news, "reasons": reasons, "officialStatus": c.get("official_status"),
+        "researchTooltip": research_tooltip,
     }
 
 
@@ -463,8 +477,16 @@ if (LIVE.length === 0) {{
     tr.innerHTML = `
       <td class="${{tierClass(c.dns)}}">${{c.dns}}</td><td>${{c.conf}}</td><td>${{c.urg}}</td><td>${{c.pri}}</td>
       <td>${{c.name}}</td><td>${{c.matchup}}</td><td>${{c.league}}</td><td>${{c.kickoff}}</td>
-      <td>${{c.dabble}}</td><td>${{c.rotowire}}</td><td>${{c.predictedXi}}</td>
+      <td>${{c.dabble}}</td><td class="rotowire-cell">${{c.rotowire}}</td><td>${{c.predictedXi}}</td>
       <td class="news">${{c.news}}</td><td class="reasons">${{c.reasons}}</td>`;
+    if (c.researchTooltip) {{
+      // Set as a DOM property (never innerHTML) so external RotoWire/
+      // Transfermarkt injury text can't inject markup (2026-09-16 item 3).
+      const rwCell = tr.querySelector('.rotowire-cell');
+      rwCell.title = c.researchTooltip;
+      rwCell.style.textDecoration = 'underline dotted';
+      rwCell.style.cursor = 'help';
+    }}
     liveBody.appendChild(tr);
   }}
 }}

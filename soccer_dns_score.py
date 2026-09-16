@@ -41,6 +41,23 @@ ROTOWIRE_STATUS_PRIOR = {
     "monitored": 15, "assessed": 12, "option": 18, "news_mention": 8, "reversal": -20,
 }
 
+# --- RotoWire hard_out score FLOOR (2026-09-16, Hinshelwood item 2) --------
+# Found live: Jack Hinshelwood (RotoWire hard_out) still only scored 55,
+# because ROTOWIRE_STATUS_PRIOR's +50 is just one additive contribution
+# among several and a stale/thin history signal can drag the total well
+# below what "a specialist site is confidently calling this player OUT"
+# should ever allow. hard_out is graded as a FLOOR (a minimum), not an
+# additional additive weight on top of everything else - the additive
+# +50 above still applies first (so the contributions list stays honest
+# about what actually added up), then the floor raises the final score
+# if the additive total undershoots it.
+HARD_OUT_BASE_FLOOR = 90
+HARD_OUT_CORROBORATED_FLOOR = 97  # a second independent source agrees
+# Official lineup confirming not starting is handled separately, above,
+# as an exact value (CONFIRMED_NOT_STARTING_SCORE) rather than a third
+# floor tier here - that path never reaches _score_dns at all (see
+# score_candidate's early return).
+
 # --- X (trust-tier-scaled) -------------------------------------------------
 X_INJURY_PRIOR = {"out": 50, "doubtful": 30, "questionable": 22, "late_fitness_test": 28, "missed_training": 20}
 X_START_SIGNAL_PRIOR = {"confirmed_start": -25, "returning": -15, "bench_risk": 30}
@@ -74,7 +91,8 @@ URGENCY_RESOLVED = 5
 
 def _score_dns(*, transfermarkt_hit, rotowire_hit, x_hit, starts_last_5, starts_last_10,
                 first_recent_start, frequent_substitute, rotation_player,
-                predicted_start_sources, predicted_bench_sources, event_date):
+                predicted_start_sources, predicted_bench_sources, event_date,
+                hard_out_corroborated=False, hard_out_conflict=None):
     contributions = []
     score = BASE_SCORE
 
@@ -150,7 +168,30 @@ def _score_dns(*, transfermarkt_hit, rotowire_hit, x_hit, starts_last_5, starts_
     if not contributions:
         contributions.append(("No enrichment signals available", 0))
 
-    return max(0, min(100, round(score))), contributions
+    score = max(0, min(100, round(score)))
+
+    # Hard_out FLOOR (2026-09-16, Hinshelwood item 2) - applied AFTER the
+    # additive total above, as a minimum rather than another weight, so
+    # the contributions list still shows the honest additive breakdown
+    # while the final number can never end up as low as 55 again for a
+    # specialist site's confident OUT call. Never applied when
+    # hard_out_conflict is set - that means the player actually started
+    # a match AFTER RotoWire's tag was first observed, so raising the
+    # floor would be trusting a tag that's itself in doubt; the conflict
+    # is surfaced via a contribution note instead.
+    key = rotowire_hit.get("rotowire_status_raw") if rotowire_hit else None
+    is_hard_out = key == "hard_out"
+    if is_hard_out and hard_out_conflict:
+        contributions.append((f"CONFLICT: RotoWire hard_out vs. {hard_out_conflict} - floor not applied", 0))
+    elif is_hard_out:
+        floor = HARD_OUT_CORROBORATED_FLOOR if hard_out_corroborated else HARD_OUT_BASE_FLOOR
+        if score < floor:
+            contributions.append((
+                f"RotoWire hard_out floor ({'corroborated by a second source' if hard_out_corroborated else 'base'})",
+                floor - score))
+            score = floor
+
+    return score, contributions
 
 
 def _score_confidence(*, official_status, starts_last_5, transfermarkt_hit, rotowire_hit, x_hit,
@@ -205,9 +246,16 @@ def _score_urgency(*, official_status, event_date, now=None):
 
 def score_candidate(*, official_status, transfermarkt_hit, rotowire_hit, x_hit, starts_last_5, starts_last_10,
                      first_recent_start, frequent_substitute, rotation_player,
-                     predicted_start_sources, predicted_bench_sources, event_date):
+                     predicted_start_sources, predicted_bench_sources, event_date,
+                     hard_out_corroborated=False, hard_out_conflict=None):
     """(dns_score, confidence_score, urgency_score, evidence_count,
-    contributions, urgency_reasons)."""
+    contributions, urgency_reasons).
+
+    hard_out_corroborated / hard_out_conflict (2026-09-16, Hinshelwood
+    item 2): caller-computed inputs to the RotoWire hard_out score floor
+    - see _score_dns. Computed in soccer_adapter.py (which has the
+    history/transfermarkt data these checks need), not here, so this
+    module stays a pure scorer."""
     if official_status == "confirmed_not_starting":
         contributions = [("Official squad/lineup data confirms NOT starting", CONFIRMED_NOT_STARTING_SCORE)]
         return (CONFIRMED_NOT_STARTING_SCORE, 90, URGENCY_RESOLVED, 1, contributions,
@@ -223,6 +271,7 @@ def score_candidate(*, official_status, transfermarkt_hit, rotowire_hit, x_hit, 
         first_recent_start=first_recent_start, frequent_substitute=frequent_substitute,
         rotation_player=rotation_player, predicted_start_sources=predicted_start_sources,
         predicted_bench_sources=predicted_bench_sources, event_date=event_date,
+        hard_out_corroborated=hard_out_corroborated, hard_out_conflict=hard_out_conflict,
     )
     confidence = _score_confidence(
         official_status=official_status, starts_last_5=starts_last_5,

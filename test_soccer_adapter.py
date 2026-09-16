@@ -294,7 +294,13 @@ class TestCoverageMetricsReconciliation(unittest.TestCase):
             {"date": "2026-08-15", "league": "EPL", "event_id": "3", "team_id": "t1",
              "opponent_team_id": "t4", "started": True, "active": True},
         ]}}
-        context = _empty_context(history=history)
+        # espn_team_cache pre-seeded with the SAME "t1" placeholder the
+        # history fixture above uses - team_starts_last_n (2026-09-16)
+        # needs a real, matching team id to find team fixtures at all, so
+        # a mismatch (e.g. the real ESPN id a live lookup would return)
+        # would silently find nothing - this keeps the test deterministic
+        # and network-free rather than depending on a live ESPN call.
+        context = _empty_context(history=history, espn_team_cache={("EPL", "NEW"): "t1"})
         with patch("soccer_adapter._enrich_espn_official_status", return_value=NOT_YET_POSTED), _no_transfermarkt():
             result = soccer_adapter.enrich_and_score_player(player, context)
         self.assertTrue(result["has_predicted_xi"])
@@ -312,7 +318,8 @@ class TestCoverageMetricsReconciliation(unittest.TestCase):
             {"date": "2026-08-15", "league": "EPL", "event_id": "3", "team_id": "t1",
              "opponent_team_id": "t4", "started": True, "active": True},
         ]}}
-        context = _empty_context(history=history, rotowire={"coverage test player": {
+        context = _empty_context(history=history, espn_team_cache={("EPL", "NEW"): "t1"},
+                                  rotowire={"coverage test player": {
             "rotowire_status_raw": "fitness-test", "rotowire_status_normalized": "soft",
             "rotowire_injury": "doubt", "rotowire_news_at": None, "rotowire_predicted_start": None,
         }})
@@ -342,7 +349,8 @@ class TestCoverageMetricsReconciliation(unittest.TestCase):
         hist = {"two src": {"name": "two src", "matches": [
             {"date": "2026-08-01", "league": "EPL", "event_id": "1", "team_id": "t1",
              "opponent_team_id": "t2", "started": True, "active": True}] * 1}}
-        contexts.append(_empty_context(history=hist, rotowire={"two src": {
+        contexts.append(_empty_context(history=hist, espn_team_cache={("EPL", "NEW"): "t1"},
+                                        rotowire={"two src": {
             "rotowire_status_raw": "fitness-test", "rotowire_status_normalized": "soft",
             "rotowire_injury": "doubt", "rotowire_news_at": None, "rotowire_predicted_start": None}}))
         players.append(p2)
@@ -485,7 +493,8 @@ class TestPredictedXiVoteStructure(unittest.TestCase):
             {"date": "2026-08-15", "league": "EPL", "event_id": "3", "team_id": "t1",
              "opponent_team_id": "t4", "started": True, "active": True},
         ]}}
-        context = _empty_context(history=history, rotowire={"vote test player": {
+        context = _empty_context(history=history, espn_team_cache={("EPL", "NEW"): "t1"},
+                                  rotowire={"vote test player": {
             "rotowire_status_raw": "fitness-test", "rotowire_status_normalized": "soft",
             "rotowire_injury": "doubt", "rotowire_news_at": None, "rotowire_predicted_start": None}})
         with patch("soccer_adapter._enrich_espn_official_status", return_value=NOT_YET_POSTED), _no_transfermarkt():
@@ -504,6 +513,104 @@ class TestPredictedXiVoteStructure(unittest.TestCase):
             result = soccer_adapter.enrich_and_score_player(player, context)
         self.assertEqual((result["starter_votes"], result["bench_votes"], result["unknown_votes"]), (0, 0, 0))
         self.assertEqual(result["predicted_xi_source_count"], 0)
+
+
+class TestHardOutFloorIntegration(unittest.TestCase):
+    """2026-09-16 Hinshelwood item 2 - the full enrich_and_score_player
+    path from a RotoWire hard_out tag through to the floored dns_score
+    and the corroboration/conflict flags surfaced on the candidate dict."""
+
+    def _hinshelwood_player(self):
+        props = soccer_adapter.load_dabble_soccer_props({"sport": "soccer", "props": [
+            {"player_name": "Jack Hinshelwood", "team": "NEW", "market": "Shots", "line": 0.5,
+             "event_date": "2026-09-16T19:00:00.000Z", "matchup": "Newcastle United @ Leeds United",
+             "league": "England - Premier League", "position": "MF", "player_id": "espn-hinshelwood-1"},
+        ]})
+        return list(soccer_adapter.group_props_by_player(props).values())[0]
+
+    def _hard_out_page(self, status_since="2026-09-10T00:00:00+00:00"):
+        return {
+            "attempted": True, "matched": True, "ambiguous": False,
+            "page_url": "https://www.rotowire.com/soccer/player/jack-hinshelwood-1", "player_id": "1",
+            "status_tag": "Out", "rotowire_status_normalized": "hard_out", "injury": "Hip",
+            "est_return": "TBD", "signal_found": True, "source": "player_page",
+            "checked_at": "2026-09-16T08:00:00+00:00", "status_since": status_since,
+        }
+
+    def _absent_history(self):
+        """The team's most recent fixture (e10) has no entry at all for
+        this player - a teammate's entry is what proves the fixture
+        happened. No entry anywhere shows a start after status_since."""
+        return {
+            "jack hinshelwood": {"name": "jack hinshelwood", "matches": [
+                {"date": "2026-08-23", "league": "EPL", "event_id": "e9", "team_id": "t1",
+                 "opponent_team_id": "opp", "competition": "EPL", "home_away": "home",
+                 "started": True, "active": True},
+            ]},
+            "teammate": {"name": "teammate", "matches": [
+                {"date": "2026-08-23", "league": "EPL", "event_id": "e9", "team_id": "t1",
+                 "opponent_team_id": "opp", "competition": "EPL", "home_away": "home",
+                 "started": True, "active": True},
+                {"date": "2026-09-13", "league": "EPL", "event_id": "e10", "team_id": "t1",
+                 "opponent_team_id": "opp", "competition": "EPL", "home_away": "home",
+                 "started": True, "active": True},
+            ]},
+        }
+
+    def test_hard_out_alone_floors_the_score_with_no_corroboration_flagged(self):
+        player = self._hinshelwood_player()
+        context = _empty_context(rotowire={}, espn_team_cache={("EPL", "NEW"): "t1"})
+        with patch("soccer_adapter._enrich_espn_official_status", return_value=NOT_YET_POSTED), \
+             _no_transfermarkt(), \
+             patch("rotowire_soccer.get_player_status", return_value=self._hard_out_page()):
+            result = soccer_adapter.enrich_and_score_player(player, context)
+        self.assertGreaterEqual(result["dns_score"], soccer_adapter.soccer_dns_score.HARD_OUT_BASE_FLOOR)
+        self.assertFalse(result["hard_out_corroborated"])
+        self.assertIsNone(result["hard_out_conflict"])
+
+    def test_hard_out_corroborated_by_transfermarkt_raises_the_floor(self):
+        player = self._hinshelwood_player()
+        context = _empty_context(rotowire={}, espn_team_cache={("EPL", "NEW"): "t1"})
+        tm_hit = [{"normalized_name": player["normalized_name"], "section": "Injuries",
+                   "reason": "Hip injury", "since": "Aug 26, 2026", "expected_return": None,
+                   "expected_return_date": None}]
+        with patch("soccer_adapter._enrich_espn_official_status", return_value=NOT_YET_POSTED), \
+             patch("soccer_adapter.get_team_injuries_cached", return_value=tm_hit), \
+             patch("rotowire_soccer.get_player_status", return_value=self._hard_out_page()):
+            result = soccer_adapter.enrich_and_score_player(player, context)
+        self.assertTrue(result["hard_out_corroborated"])
+        self.assertIn("Transfermarkt injury list", result["hard_out_corroboration_sources"])
+        self.assertGreaterEqual(result["dns_score"], soccer_adapter.soccer_dns_score.HARD_OUT_CORROBORATED_FLOOR)
+
+    def test_hard_out_corroborated_by_absence_from_most_recent_squad(self):
+        player = self._hinshelwood_player()
+        context = _empty_context(rotowire={}, espn_team_cache={("EPL", "NEW"): "t1"},
+                                  history=self._absent_history())
+        with patch("soccer_adapter._enrich_espn_official_status", return_value=NOT_YET_POSTED), \
+             _no_transfermarkt(), \
+             patch("rotowire_soccer.get_player_status", return_value=self._hard_out_page()):
+            result = soccer_adapter.enrich_and_score_player(player, context)
+        self.assertTrue(result["hard_out_corroborated"])
+        self.assertIn("absent from most recent squad", result["hard_out_corroboration_sources"])
+
+    def test_hard_out_conflict_when_player_started_after_the_tag_was_first_seen(self):
+        """The tag was first seen 2026-09-10, but history shows a start
+        on 2026-09-13 (AFTER that) - the floor must not be trusted, and
+        the conflict must be surfaced rather than silently ignored."""
+        history = self._absent_history()
+        history["jack hinshelwood"]["matches"].append(
+            {"date": "2026-09-13", "league": "EPL", "event_id": "e10", "team_id": "t1",
+             "opponent_team_id": "opp", "competition": "EPL", "home_away": "home",
+             "started": True, "active": True})
+        player = self._hinshelwood_player()
+        context = _empty_context(rotowire={}, espn_team_cache={("EPL", "NEW"): "t1"}, history=history)
+        with patch("soccer_adapter._enrich_espn_official_status", return_value=NOT_YET_POSTED), \
+             _no_transfermarkt(), \
+             patch("rotowire_soccer.get_player_status", return_value=self._hard_out_page()):
+            result = soccer_adapter.enrich_and_score_player(player, context)
+        self.assertIsNotNone(result["hard_out_conflict"])
+        self.assertIn("2026-09-13", result["hard_out_conflict"])
+        self.assertLess(result["dns_score"], soccer_adapter.soccer_dns_score.HARD_OUT_BASE_FLOOR)
 
 
 if __name__ == "__main__":

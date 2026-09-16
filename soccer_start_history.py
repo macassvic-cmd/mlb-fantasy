@@ -241,6 +241,147 @@ def starts_last_n(history, normalized_name, n=5, before_date=None, expected_team
     return started, len(matches) - started, len(matches)
 
 
+def _team_fixtures(history, team_id, before_date=None):
+    """Sorted [(event_id, date), ...] for every match ANY player with
+    this team_id has a recorded entry for - a derived proxy for "the
+    team's own fixture list," since the history schema is keyed by
+    player, not team (see module docstring). A team fixture where SOME
+    other player was recorded but a SPECIFIC player has no entry is
+    real evidence that player was absent (injured, dropped, not named
+    to the squad) for that match - not just a data gap, since the
+    fixture itself is confirmed to have happened via a teammate's own
+    entry."""
+    if not team_id:
+        return []
+    fixtures = {}
+    for p in history.values():
+        for m in p["matches"]:
+            if m.get("team_id") != team_id:
+                continue
+            if before_date is not None and m["date"] >= before_date:
+                continue
+            fixtures[m["event_id"]] = m["date"]
+    return sorted(fixtures.items(), key=lambda kv: kv[1])
+
+
+def team_starts_last_n(history, normalized_name, team_id, n=5, before_date=None,
+                        expected_team_id=None, reject_log=None):
+    """(started, non_started, total) over the TEAM's last n fixtures -
+    NOT just the ones this specific player has a recorded entry for.
+    A team fixture the player has NO entry for (injured, dropped, not
+    named to the squad) counts as a non-start, exactly like a bench
+    appearance - this is the fix for a real bug found live 2026-09-16
+    (Jack Hinshelwood, Brighton, injured since 2026-08-26): starts_
+    last_n's player-appearance-only history showed his last 5 RECORDED
+    matches all as starts (all from before the injury - an absent
+    player generates no new entries at all, so their recorded history
+    silently freezes at whatever it was before they stopped appearing),
+    reporting a stale 100% start rate / 0% non-start rate that had
+    nothing to do with his actual current availability. Brighton's real
+    last 5 fixtures (visible via OTHER Brighton players' own recorded
+    entries) showed him absent from 3 of them.
+
+    team_id should be the SAME resolved ESPN team id used for
+    expected_team_id (soccer_adapter.py already resolves this once per
+    candidate) - both the "which team's fixtures" question and the
+    "is this really our player" team-confirmation question use the
+    identical id space on purpose."""
+    fixtures = _team_fixtures(history, team_id, before_date=before_date)[-n:]
+    if not fixtures:
+        return 0, 0, 0
+    player_matches = {m["event_id"]: m for m in _player_matches(
+        history, normalized_name, expected_team_id=expected_team_id, reject_log=reject_log)}
+    started = 0
+    for event_id, _date in fixtures:
+        m = player_matches.get(event_id)
+        if m and m["started"]:
+            started += 1
+    total = len(fixtures)
+    return started, total - started, total
+
+
+def team_fixture_detail(history, normalized_name, team_id, n=3, before_date=None,
+                         expected_team_id=None, reject_log=None):
+    """Per-fixture [{"event_id", "date", "status"}, ...] for the TEAM's
+    last n fixtures, oldest first - status is "started"/"bench"/"absent"
+    ("absent" = no recorded entry for this player at all, the
+    Hinshelwood case). The per-fixture detail behind team_starts_last_n's
+    aggregate counts - built for the hard_out research block (item 3,
+    2026-09-16 Hinshelwood follow-up): "team's last 3 fixtures: started /
+    bench / absent" needs the individual fixtures, not just a tally."""
+    fixtures = _team_fixtures(history, team_id, before_date=before_date)[-n:]
+    player_matches = {m["event_id"]: m for m in _player_matches(
+        history, normalized_name, expected_team_id=expected_team_id, reject_log=reject_log)}
+    detail = []
+    for event_id, date in fixtures:
+        m = player_matches.get(event_id)
+        if m is None:
+            status = "absent"
+        elif m["started"]:
+            status = "started"
+        else:
+            status = "bench"
+        detail.append({"event_id": event_id, "date": date, "status": status})
+    return detail
+
+
+def absent_from_most_recent_team_fixture(history, normalized_name, team_id, before_date=None,
+                                          expected_team_id=None, reject_log=None):
+    """True if the team's single most recent fixture has NO recorded
+    entry for this player at all - a genuine "not even named to the
+    squad" signal, distinct from (and stronger than) a bench appearance,
+    which DOES have an entry. Used as corroborating evidence for a
+    RotoWire hard_out tag (item 2, 2026-09-16 Hinshelwood follow-up): a
+    hard_out tag agreeing with the player being missing from the team's
+    most recent matchday squad entirely is independent confirmation, not
+    the same signal counted twice."""
+    detail = team_fixture_detail(history, normalized_name, team_id, n=1, before_date=before_date,
+                                  expected_team_id=expected_team_id, reject_log=reject_log)
+    return bool(detail) and detail[-1]["status"] == "absent"
+
+
+def last_appearance_date(history, normalized_name, before_date=None, expected_team_id=None, reject_log=None):
+    """Date string of this player's most recent recorded APPEARANCE
+    (started OR came off the bench) - None if he never appeared at all.
+    Distinct from most_recent_start_date (started only, below) - used by
+    the hard_out research block (item 3, 2026-09-16 Hinshelwood
+    follow-up): "last team match he appeared in" needs any appearance,
+    not just a start. Same underlying logic as days_rest, exposed as its
+    own named date rather than only a day-count."""
+    matches = _player_matches(history, normalized_name, before_date,
+                               expected_team_id=expected_team_id, reject_log=reject_log)
+    appeared = [m["date"] for m in matches if m["active"]]
+    return appeared[-1] if appeared else None
+
+
+def most_recent_start_date(history, normalized_name, before_date=None, expected_team_id=None, reject_log=None):
+    """Date string (YYYY-MM-DD) of this player's most recent recorded
+    START (not just an appearance), or None. Used by the hard_out
+    floor's conflict check (item 2, 2026-09-16 Hinshelwood follow-up): a
+    RotoWire hard_out tag is a live CONFLICT, not corroborated evidence,
+    if the player actually started a match AFTER that tag was first
+    observed (rotowire_soccer.py's status_since)."""
+    matches = _player_matches(history, normalized_name, before_date,
+                               expected_team_id=expected_team_id, reject_log=reject_log)
+    starts = [m["date"] for m in matches if m["started"]]
+    return max(starts) if starts else None
+
+
+def team_starts_last_3(history, normalized_name, team_id, before_date=None, expected_team_id=None, reject_log=None):
+    return team_starts_last_n(history, normalized_name, team_id, n=3, before_date=before_date,
+                               expected_team_id=expected_team_id, reject_log=reject_log)
+
+
+def team_starts_last_5(history, normalized_name, team_id, before_date=None, expected_team_id=None, reject_log=None):
+    return team_starts_last_n(history, normalized_name, team_id, n=5, before_date=before_date,
+                               expected_team_id=expected_team_id, reject_log=reject_log)
+
+
+def team_starts_last_10(history, normalized_name, team_id, before_date=None, expected_team_id=None, reject_log=None):
+    return team_starts_last_n(history, normalized_name, team_id, n=10, before_date=before_date,
+                               expected_team_id=expected_team_id, reject_log=reject_log)
+
+
 # Named n=3/5/10 wrappers (coverage audit item 4) - same starts_last_n
 # underneath, just the exact call shape a caller/report can name directly
 # without repeating the n= kwarg everywhere.

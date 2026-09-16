@@ -663,5 +663,86 @@ class TestGradeAlertsRecent(unittest.TestCase):
         self.assertIsInstance(n, int)
 
 
+class TestBuildEmbedKickoffDisplay(unittest.TestCase):
+    """2026-09-16 Hinshelwood item 4 - the Discord alert body was showing
+    raw UTC ISO ('2026-09-16T19:00:00.000Z') instead of Pacific time."""
+
+    def _record(self, game_start):
+        return {
+            "player_name": "Jack Hinshelwood", "team": "BHA", "opponent": "BHA @ EVE",
+            "dns_score": 90, "confidence_score": 70, "urgency_score": 20,
+            "dabble_live": True, "official_status": "not_yet_posted",
+            "dabble_markets": [], "top_reasons": [], "game_start": game_start,
+        }
+
+    def test_embed_description_shows_pacific_time_not_raw_iso(self):
+        embed = sa._build_embed(self._record("2026-09-16T19:00:00.000Z"), "HIGH PRIORITY")
+        self.assertNotIn("T19:00:00.000Z", embed["description"])
+        self.assertIn("PDT", embed["description"])
+
+    def test_embed_description_falls_back_to_time_tbd_when_missing(self):
+        embed = sa._build_embed(self._record(None), "HIGH PRIORITY")
+        self.assertIn("time TBD", embed["description"])
+
+
+class TestHardOutResearchBlock(unittest.TestCase):
+    """2026-09-16 Hinshelwood item 3 - the research block behind a
+    hard_out alert (Discord field + candidate/alert record field)."""
+
+    def _rb(self, **overrides):
+        rb = {
+            "rotowire_url": "https://www.rotowire.com/soccer/player/jack-hinshelwood-1",
+            "rotowire_status_tag": "Out", "rotowire_injury": "Hip",
+            "rotowire_est_return": "TBD", "rotowire_status_since": "2026-09-10T00:00:00+00:00",
+            "transfermarkt": None, "last_appeared_date": "2026-08-23",
+            "days_since_last_appearance": 24, "team_last_3_fixtures": [
+                {"date": "2026-08-30", "status": "absent"}, {"date": "2026-09-05", "status": "absent"},
+                {"date": "2026-09-13", "status": "absent"},
+            ], "corroborated_by": ["absent from most recent squad"], "conflict": None,
+        }
+        rb.update(overrides)
+        return rb
+
+    def test_research_block_includes_the_asked_for_fields(self):
+        text = sa._format_research_block(self._rb())
+        self.assertIn("Out - Hip", text)
+        self.assertIn("rotowire.com", text)
+        self.assertIn("2026-08-23", text)
+        self.assertIn("24 days ago", text)
+        self.assertIn("absent, 2026-09-05 absent, 2026-09-13 absent", text)
+        self.assertIn("Corroborated by 1 source", text)
+
+    def test_research_block_shows_conflict_instead_of_corroboration_line(self):
+        text = sa._format_research_block(self._rb(conflict="started 2026-09-13 after hard_out first seen 2026-09-10"))
+        self.assertIn("CONFLICT", text)
+        self.assertNotIn("Corroborated by", text)
+
+    def test_research_block_shows_transfermarkt_when_present(self):
+        text = sa._format_research_block(self._rb(transfermarkt={
+            "reason": "Hip injury", "since": "Aug 26, 2026", "expected_return": "late Sept"}))
+        self.assertIn("Transfermarkt: Hip injury", text)
+        self.assertIn("late Sept", text)
+
+    def test_build_embed_includes_a_rotowire_field_for_hard_out_alerts(self):
+        record = self._record("2026-09-16T19:00:00.000Z")
+        record["research_block"] = self._rb()
+        embed = sa._build_embed(record, "HIGH PRIORITY")
+        rw_field = next((f for f in embed["fields"] if f["name"] == "RotoWire"), None)
+        self.assertIsNotNone(rw_field, "hard_out alerts must carry a RotoWire research field")
+        self.assertIn("Corroborated by", rw_field["value"])
+
+    def test_build_embed_has_no_rotowire_field_when_no_research_block(self):
+        embed = sa._build_embed(self._record("2026-09-16T19:00:00.000Z"), "HIGH PRIORITY")
+        self.assertIsNone(next((f for f in embed["fields"] if f["name"] == "RotoWire"), None))
+
+    def _record(self, game_start):
+        return {
+            "player_name": "Jack Hinshelwood", "team": "BHA", "opponent": "BHA @ EVE",
+            "dns_score": 90, "confidence_score": 70, "urgency_score": 20,
+            "dabble_live": True, "official_status": "not_yet_posted",
+            "dabble_markets": [], "top_reasons": [], "game_start": game_start,
+        }
+
+
 if __name__ == "__main__":
     unittest.main()

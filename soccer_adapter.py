@@ -351,6 +351,14 @@ def _enrich_rotowire(player, context, league_code):
             "rotowire_news_at": None,  # the player page carries no timestamp - see module docstring
             "rotowire_predicted_start": None,
             "rotowire_source": "player_page",
+            # Added 2026-09-16 (Hinshelwood hard_out-floor item 2/3): the
+            # page DOES expose page_url/est_return/status_since (when the
+            # tag was first observed, tracked in rotowire_soccer.py's disk
+            # cache) even though it has no per-story timestamp - needed
+            # for the floor's conflict check and the alert research block.
+            "rotowire_page_url": page_result["page_url"],
+            "rotowire_est_return": page_result["est_return"],
+            "rotowire_status_since": page_result.get("status_since"),
         }
         return hit, health
     return None, health
@@ -483,8 +491,17 @@ def _build_predicted_xi_sources(player, league_code, context, history, transferm
 
     if history:
         reject_log = context.get("history_reject_log")
-        wins, losses, n = soccer_start_history.starts_last_n(
-            history, player["normalized_name"], n=5, expected_team_id=expected_team_id, reject_log=reject_log)
+        # team_starts_last_n, not starts_last_n (2026-09-16 fix) - see
+        # enrich_and_score_player's own comment on the same switch: a
+        # player who has stopped appearing in squad announcements at all
+        # (injured, dropped) generates no new history entries, so plain
+        # starts_last_n's "last 5 RECORDED matches" can be entirely from
+        # before that happened - team_starts_last_n counts a team
+        # fixture the player has no entry for as a non-start instead of
+        # silently skipping it.
+        wins, losses, n = soccer_start_history.team_starts_last_n(
+            history, player["normalized_name"], expected_team_id, n=5,
+            expected_team_id=expected_team_id, reject_log=reject_log)
         if n >= 3:
             predicted = (wins / n) >= 0.6
             sources.append({"source": "recent_start_pattern", "vote": "start" if predicted else "bench",
@@ -546,14 +563,93 @@ def enrich_and_score_player(player, context):
     predicted_xi_source_count = len(predicted_xi_sources)
 
     _h_kwargs = {"expected_team_id": espn_team_id, "reject_log": history_reject_log}
-    starts5 = soccer_start_history.starts_last_n(history, player["normalized_name"], n=5, **_h_kwargs) if history else (0, 0, 0)
-    starts10 = soccer_start_history.starts_last_n(history, player["normalized_name"], n=10, **_h_kwargs) if history else (0, 0, 0)
+    # team_starts_last_n, not starts_last_n (2026-09-16 fix) - found live
+    # (Jack Hinshelwood, Brighton, injured since 2026-08-26): a player
+    # who stops appearing in squad announcements at all generates no new
+    # history entries, so plain starts_last_n's "last N RECORDED
+    # matches" can be entirely from before an injury - Hinshelwood's
+    # showed 100% starts / 0% non-start rate using 5 matches that all
+    # predated his injury, since ESPN's squad list simply never
+    # mentions an absent player at all (no entry recorded, not "started:
+    # False"). team_starts_last_n instead counts the TEAM's real last N
+    # fixtures - one this player has no entry for (injured, dropped, not
+    # named to the squad) counts as a non-start, using OTHER players on
+    # the same team_id to derive the team's actual fixture list.
+    starts5 = soccer_start_history.team_starts_last_n(
+        history, player["normalized_name"], espn_team_id, n=5, **_h_kwargs) if history else (0, 0, 0)
+    starts10 = soccer_start_history.team_starts_last_n(
+        history, player["normalized_name"], espn_team_id, n=10, **_h_kwargs) if history else (0, 0, 0)
     days_rest_val = soccer_start_history.days_rest(history, player["normalized_name"], player["event_date"][:10], **_h_kwargs) if history else None
     first_start = soccer_start_history.first_recent_start(history, player["normalized_name"], **_h_kwargs) if history else False
     freq_sub = soccer_start_history.frequent_substitute(history, player["normalized_name"], **_h_kwargs) if history else False
     rotation = soccer_start_history.rotation_player(history, player["normalized_name"], **_h_kwargs) if history else False
     prev_start = soccer_start_history.previous_start(history, player["normalized_name"], **_h_kwargs) if history else None
-    starts3 = soccer_start_history.starts_last_3(history, player["normalized_name"], **_h_kwargs) if history else (0, 0, 0)
+    starts3 = soccer_start_history.team_starts_last_3(
+        history, player["normalized_name"], espn_team_id, **_h_kwargs) if history else (0, 0, 0)
+
+    # RotoWire hard_out floor inputs (2026-09-16, Hinshelwood item 2) -
+    # computed here (soccer_adapter.py has the history/transfermarkt data
+    # this needs) and passed into the pure scorer as two simple facts:
+    # is a second source corroborating, and is there a live conflict.
+    hard_out_corroborated = False
+    hard_out_conflict = None
+    corroboration_sources = []
+    if rotowire_hit and rotowire_hit.get("rotowire_status_raw") == "hard_out":
+        if transfermarkt_hit is not None:
+            corroboration_sources.append("Transfermarkt injury list")
+        if history and soccer_start_history.absent_from_most_recent_team_fixture(
+                history, player["normalized_name"], espn_team_id, **_h_kwargs):
+            corroboration_sources.append("absent from most recent squad")
+        hard_out_corroborated = bool(corroboration_sources)
+
+        status_since = rotowire_hit.get("rotowire_status_since")
+        last_start_date = soccer_start_history.most_recent_start_date(
+            history, player["normalized_name"], **_h_kwargs) if history else None
+        if status_since and last_start_date:
+            try:
+                since_date = datetime.fromisoformat(status_since).date().isoformat()
+            except Exception:
+                since_date = None
+            if since_date and last_start_date > since_date:
+                hard_out_conflict = (
+                    f"started {last_start_date} after hard_out first seen {since_date}")
+
+    # Research block (2026-09-16 item 3) - the detail behind a hard_out
+    # alert, for the Discord embed and dashboard to show without either
+    # one re-deriving it: RotoWire's own page state, a Transfermarkt
+    # entry if one exists, when he was last actually on the pitch, and
+    # the team's last 3 fixtures broken down start/bench/absent. Only
+    # built for hard_out (item 3 is explicitly scoped to "hard_out
+    # players") - None for every other candidate, cheap either way.
+    research_block = None
+    if rotowire_hit and rotowire_hit.get("rotowire_status_raw") == "hard_out":
+        last_appeared = soccer_start_history.last_appearance_date(
+            history, player["normalized_name"], **_h_kwargs) if history else None
+        days_since_last_appearance = None
+        if last_appeared:
+            try:
+                days_since_last_appearance = (
+                    datetime.strptime(player["event_date"][:10], "%Y-%m-%d")
+                    - datetime.strptime(last_appeared, "%Y-%m-%d")).days
+            except Exception:
+                days_since_last_appearance = None
+        research_block = {
+            "rotowire_url": rotowire_hit.get("rotowire_page_url"),
+            "rotowire_status_tag": rotowire_hit.get("rotowire_page_tag"),
+            "rotowire_injury": rotowire_hit.get("rotowire_injury"),
+            "rotowire_est_return": rotowire_hit.get("rotowire_est_return"),
+            "rotowire_status_since": rotowire_hit.get("rotowire_status_since"),
+            "transfermarkt": ({
+                "reason": transfermarkt_hit["reason"], "since": transfermarkt_hit.get("since"),
+                "expected_return": transfermarkt_hit.get("expected_return"),
+            } if transfermarkt_hit else None),
+            "last_appeared_date": last_appeared,
+            "days_since_last_appearance": days_since_last_appearance,
+            "team_last_3_fixtures": soccer_start_history.team_fixture_detail(
+                history, player["normalized_name"], espn_team_id, n=3, **_h_kwargs) if history else [],
+            "corroborated_by": corroboration_sources,
+            "conflict": hard_out_conflict,
+        }
 
     dns_score, confidence_score, urgency_score, evidence_count, contributions, urgency_reasons = \
         soccer_dns_score.score_candidate(
@@ -569,6 +665,8 @@ def enrich_and_score_player(player, context):
             predicted_start_sources=predicted_start_sources,
             predicted_bench_sources=predicted_bench_sources,
             event_date=player["event_date"],
+            hard_out_corroborated=hard_out_corroborated,
+            hard_out_conflict=hard_out_conflict,
         )
 
     # Watchdog: never silently drop a candidate because enrichment failed -
@@ -633,6 +731,16 @@ def enrich_and_score_player(player, context):
         "rotowire_injury": (rotowire_hit or {}).get("rotowire_injury"),
         "rotowire_news_at": (rotowire_hit or {}).get("rotowire_news_at"),
         "rotowire_predicted_start": (rotowire_hit or {}).get("rotowire_predicted_start"),
+        # Added 2026-09-16 (Hinshelwood items 2/3): the research block and
+        # dashboard need the page link/est. return/first-seen timestamp,
+        # not just the scoring-oriented status fields above.
+        "rotowire_page_url": (rotowire_hit or {}).get("rotowire_page_url"),
+        "rotowire_est_return": (rotowire_hit or {}).get("rotowire_est_return"),
+        "rotowire_status_since": (rotowire_hit or {}).get("rotowire_status_since"),
+        "hard_out_corroborated": hard_out_corroborated,
+        "hard_out_corroboration_sources": corroboration_sources,
+        "hard_out_conflict": hard_out_conflict,
+        "hard_out_research_block": research_block,
         "x_signal": x_hit,
         "starts_last_5": starts5, "starts_last_10": starts10, "days_rest": days_rest_val,
         "first_recent_start": first_start, "frequent_substitute": freq_sub, "rotation_player": rotation,

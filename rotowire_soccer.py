@@ -406,6 +406,20 @@ def get_player_status(player_name, index=None, cache=None, use_disk_cache=True,
                 "via_variant": via_variant, "team_confirmed": team_confirmed, "page_team": page_team,
             }
 
+    # status_since (2026-09-16, Hinshelwood hard_out-floor item 2 conflict
+    # check): the cache above only ever tracked checked_at (when we last
+    # LOOKED), not when the status VALUE actually changed - with no way
+    # to tell "hard_out since before his last start" (stale/conflicting)
+    # apart from "hard_out since after it" (a real, current tag). Carry
+    # the previous status_since forward when the tag is unchanged; reset
+    # it to now only on an actual transition (including first-ever sight
+    # of this player).
+    prev_entry = cached_entry or disk_cache.get(norm)
+    if prev_entry and prev_entry.get("status_tag") == result["status_tag"]:
+        result["status_since"] = prev_entry.get("status_since", now_iso)
+    else:
+        result["status_since"] = now_iso
+
     if cache is not None:
         cache[norm] = result
     if use_disk_cache:

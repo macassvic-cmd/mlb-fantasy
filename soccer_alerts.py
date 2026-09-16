@@ -38,6 +38,8 @@ from datetime import datetime, timedelta, timezone
 
 import requests
 
+from soccer_dates import format_kickoff_pacific
+
 SPORT = "soccer"
 ALERTS_DIR = os.path.join("data", "soccer_dns_alerts")
 WEBHOOK_ENV_VAR = "DISCORD_SOCCER_DNS_WEBHOOK_URL"
@@ -179,6 +181,10 @@ def _build_alert_record(candidate, alert_type, date_str, now_iso, extra_reason=N
         # injured weeks ago" apart from "a real DNS prediction that came
         # true," so grading can report the two separately.
         "transfermarkt_injury_since": (candidate.get("transfermarkt_injury") or {}).get("since"),
+        # RotoWire hard_out research block (2026-09-16 item 3) - None for
+        # every non-hard_out alert, a full evidence dict otherwise (see
+        # soccer_adapter.enrich_and_score_player's research_block).
+        "research_block": candidate.get("hard_out_research_block"),
         "official_started": None,
         "outcome": None,
         "long_term_injury": False,
@@ -245,6 +251,55 @@ def _should_send_discord(candidate, alert_type):
     return candidate["confidence_score"] >= ALERT_MIN_CONFIDENCE[alert_type]
 
 
+def _format_research_block(rb):
+    """Discord field text for a hard_out alert's research block (item 3,
+    2026-09-16 Hinshelwood follow-up) - the evidence a person would
+    otherwise have to go dig up by hand: RotoWire's own page state,
+    Transfermarkt (if it independently agrees), when he was last
+    actually on the pitch, the team's last 3 fixtures, and how many
+    independent sources corroborate the hard_out call."""
+    lines = []
+    if rb.get("rotowire_status_tag"):
+        lines.append(f"Tag: {rb['rotowire_status_tag']}" + (f" - {rb['rotowire_injury']}" if rb.get("rotowire_injury") else ""))
+    if rb.get("rotowire_est_return"):
+        lines.append(f"Est. return: {rb['rotowire_est_return']}")
+    if rb.get("rotowire_status_since"):
+        since_display = format_kickoff_pacific(rb["rotowire_status_since"])
+        lines.append(f"First seen: {since_display}")
+    if rb.get("rotowire_url"):
+        lines.append(rb["rotowire_url"])
+
+    tm = rb.get("transfermarkt")
+    if tm:
+        tm_line = f"Transfermarkt: {tm['reason']}"
+        if tm.get("since"):
+            tm_line += f" (since {tm['since']})"
+        if tm.get("expected_return"):
+            tm_line += f", expected back {tm['expected_return']}"
+        lines.append(tm_line)
+
+    if rb.get("last_appeared_date"):
+        days = rb.get("days_since_last_appearance")
+        lines.append(f"Last appeared: {rb['last_appeared_date']}"
+                      + (f" ({days} days ago)" if days is not None else ""))
+    else:
+        lines.append("Last appeared: no recorded appearance on file")
+
+    fixtures = rb.get("team_last_3_fixtures") or []
+    if fixtures:
+        fx_display = ", ".join(f"{f['date']} {f['status']}" for f in fixtures)
+        lines.append(f"Team's last {len(fixtures)} fixtures: {fx_display}")
+
+    if rb.get("conflict"):
+        lines.append(f"CONFLICT: {rb['conflict']}")
+    else:
+        n = len(rb.get("corroborated_by") or [])
+        sources_display = f" ({', '.join(rb['corroborated_by'])})" if n else ""
+        lines.append(f"Corroborated by {n} source{'s' if n != 1 else ''}{sources_display}")
+
+    return "\n".join(lines)
+
+
 def _build_embed(record, severity):
     color = SEVERITY_COLORS.get(severity, 0x95A5A6)
     matchup = record.get("opponent") or record["team"]
@@ -259,9 +314,13 @@ def _build_embed(record, severity):
     ]
     if record.get("extra_reason"):
         fields.append({"name": "Signal", "value": record["extra_reason"], "inline": False})
+    rb = record.get("research_block")
+    if rb:
+        fields.append({"name": "RotoWire", "value": _format_research_block(rb), "inline": False})
+    kickoff_display = format_kickoff_pacific(record.get("game_start")) or "time TBD"
     return {
         "title": f"{severity} - {record['player_name']}",
-        "description": f"{record['team']} - {matchup} - {record.get('game_start') or 'time TBD'}",
+        "description": f"{record['team']} - {matchup} - {kickoff_display}",
         "color": color,
         "fields": fields,
         "footer": {"text": "DNS Score is a heuristic ranking, not a calibrated probability yet - see soccer_alerts.py --speed-report"},
