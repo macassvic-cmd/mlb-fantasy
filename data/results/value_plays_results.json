@@ -7462,6 +7462,59 @@
           "correct": false
         }
       ]
+    },
+    "2026-09-15": {
+      "summary": {
+        "total": 4,
+        "correct": 3,
+        "accuracy": 75.0,
+        "over_total": 4,
+        "over_correct": 3,
+        "under_total": 0,
+        "under_correct": 0
+      },
+      "plays": [
+        {
+          "player_id": 663656,
+          "name": "Kyle Tucker",
+          "team": "Los Angeles Dodgers",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 8,
+          "correct": true
+        },
+        {
+          "player_id": 656941,
+          "name": "Kyle Schwarber",
+          "team": "Philadelphia Phillies",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 19,
+          "correct": true
+        },
+        {
+          "player_id": 800543,
+          "name": "Josue De Paula",
+          "team": "Los Angeles Dodgers",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "correct": false
+        },
+        {
+          "player_id": 606192,
+          "name": "Teoscar Hern\u00e1ndez",
+          "team": "Los Angeles Dodgers",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 19,
+          "correct": true
+        }
+      ]
     }
   }
 }

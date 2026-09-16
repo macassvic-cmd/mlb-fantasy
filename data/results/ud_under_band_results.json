@@ -2474,10 +2474,28 @@
           "grade": "loss"
         }
       ]
+    },
+    "2026-09-15": {
+      "wins": 1,
+      "losses": 0,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 682998,
+          "name": "Corbin Carroll",
+          "team": "Arizona Diamondbacks",
+          "projected_ud": 6.72,
+          "ud_line": 8.5,
+          "edge": -1.78,
+          "game_time_pt": "6:40 PM PT",
+          "actual_ud": 6,
+          "grade": "win"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 114,
+    "wins": 115,
     "losses": 90,
     "dnp": 7
   },
@@ -2491,7 +2509,7 @@
       "losses": 29
     },
     "8.5+": {
-      "wins": 7,
+      "wins": 8,
       "losses": 4
     },
     "7.5": {
@@ -2893,7 +2911,7 @@
     "682998": {
       "name": "Corbin Carroll",
       "team": "Arizona Diamondbacks",
-      "wins": 1,
+      "wins": 2,
       "losses": 0
     },
     "660670": {
