@@ -1,0 +1,1389 @@
+{
+ "league": "nfl",
+ "event": "49389d02-d492-5a0c-8925-3d348ca1e3b5",
+ "away": "WAS",
+ "home": "DAL",
+ "kickoff": "2026-09-20T20:25:00.000Z",
+ "slot_markets": {
+  "QB1": "player-passing-yards",
+  "WR1": "player-receiving-yards",
+  "WR2": "player-receiving-yards",
+  "WR3": "player-receiving-yards",
+  "TE1": "player-receiving-yards",
+  "RB1": "player-receiving-yards"
+ },
+ "odds_pulled": {
+  "draftkings": {
+   "feed_updated": "2026-09-16T08:31:41.431Z",
+   "pulled_at": "2026-09-16T08:32:38.311101+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": true
+  },
+  "caesars": {
+   "feed_updated": "2026-09-16T08:32:35.088Z",
+   "pulled_at": "2026-09-16T08:32:38.906760+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": true
+  },
+  "betmgm": {
+   "feed_updated": "2026-09-16T08:32:37.015Z",
+   "pulled_at": "2026-09-16T08:32:40.118266+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": false
+  },
+  "fanatics": {
+   "feed_updated": "2026-09-16T08:27:33.734Z",
+   "pulled_at": "2026-09-16T08:32:41.304892+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": true
+  },
+  "hard-rock": {
+   "feed_updated": "2026-09-16T08:32:39.659Z",
+   "pulled_at": "2026-09-16T08:32:42.681747+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": true
+  },
+  "betrivers": {
+   "feed_updated": "2026-09-16T08:32:41.668Z",
+   "pulled_at": "2026-09-16T08:32:43.647955+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": true
+  },
+  "betparx": {
+   "feed_updated": "2026-09-16T03:29:20.632Z",
+   "pulled_at": "2026-09-16T08:32:44.579862+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": true
+  },
+  "bally-bet": {
+   "feed_updated": "2026-09-16T03:29:21.886Z",
+   "pulled_at": "2026-09-16T08:32:45.889468+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": true
+  }
+ },
+ "priced_at": "2026-09-16T08:42:58.852753+00:00",
+ "stacks": [
+  {
+   "name": "DAL: WR2→RB1",
+   "variant": [
+    "WR2",
+    "RB1"
+   ],
+   "legs": [
+    {
+     "team": "WAS",
+     "slot": "QB1",
+     "player": "Jayden Daniels",
+     "player_norm": "jaydendaniels",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 205.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "WAS",
+     "slot": "WR1",
+     "player": "Terry McLaurin",
+     "player_norm": "terrymclaurin",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 51.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "WAS",
+     "slot": "WR2",
+     "player": "Stefon Diggs",
+     "player_norm": "stefondiggs",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 46.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "DAL",
+     "slot": "QB1",
+     "player": "Dak Prescott",
+     "player_norm": "dakprescott",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 264.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "DAL",
+     "slot": "WR1",
+     "player": "CeeDee Lamb",
+     "player_norm": "ceedeelamb",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 74.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "DAL",
+     "slot": "RB1",
+     "player": "Javonte Williams",
+     "player_norm": "javontewilliams",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 11.5,
+     "position": "RB",
+     "position_flag": null
+    }
+   ],
+   "books": [
+    {
+     "book": "draftkings",
+     "legs": [
+      {
+       "line": 205.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 51.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-109",
+       "note": null
+      },
+      {
+       "line": 264.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 74.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 11.5,
+       "price": "-114",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": false,
+     "sgp_at": "2026-09-16T08:43:58.913840+00:00",
+     "http_status": 404,
+     "error": "Price not found"
+    },
+    {
+     "book": "caesars",
+     "legs": [
+      {
+       "line": 202.5,
+       "price": "-121",
+       "note": null
+      },
+      {
+       "line": 51.5,
+       "price": "-121",
+       "note": null
+      },
+      {
+       "line": 44.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 262.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 74.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 11.5,
+       "price": "-112",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:44:05.959753+00:00",
+     "http_status": 200,
+     "decimal": 13.5,
+     "american": 1250,
+     "implied": 0.0741,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "betmgm",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Jayden Daniels pass yds (no prop)",
+      "Terry McLaurin rec yds (no prop)",
+      "Stefon Diggs rec yds (no prop)",
+      "Dak Prescott pass yds (no prop)",
+      "CeeDee Lamb rec yds (no prop)",
+      "Javonte Williams rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "fanatics",
+     "legs": [
+      {
+       "line": 200.5,
+       "price": "-115",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 49.5,
+       "price": "-125",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "+120",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 260.5,
+       "price": "-110",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 69.5,
+       "price": "-140",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 9.5,
+       "price": "-150",
+       "note": "several main-flagged lines (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Jayden Daniels: several main-flagged lines - two-sided line used",
+      "Terry McLaurin: several main-flagged lines (nearest to DK)",
+      "Stefon Diggs: several main-flagged lines (nearest to DK)",
+      "Dak Prescott: several main-flagged lines - two-sided line used",
+      "CeeDee Lamb: several main-flagged lines (nearest to DK)",
+      "Javonte Williams: several main-flagged lines (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:44:11.190475+00:00",
+     "http_status": 200,
+     "decimal": 14.0,
+     "american": 1300,
+     "implied": 0.0714,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "hard-rock",
+     "legs": [
+      {
+       "line": 199.5,
+       "price": "-130",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "-125",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "+110",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 274.5,
+       "price": "+115",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 79.5,
+       "price": "+105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 24.5,
+       "price": "+230",
+       "note": "no main flag (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Jayden Daniels: no main flag (nearest to DK)",
+      "Terry McLaurin: no main flag (nearest to DK)",
+      "Stefon Diggs: no main flag (nearest to DK)",
+      "Dak Prescott: no main flag (nearest to DK)",
+      "CeeDee Lamb: no main flag (nearest to DK)",
+      "Javonte Williams: no main flag (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:44:18.068198+00:00",
+     "http_status": 200,
+     "decimal": 29.15,
+     "american": 2815,
+     "implied": 0.0343,
+     "link": "https://app.hardrock.bet/?deep_link_value=betslip/7006505240027595170,7303154233115804045,7465002344724431277,5494802484855701923,6385020070682296735,6868717689829982606",
+     "correlation": null
+    },
+    {
+     "book": "betrivers",
+     "legs": [
+      {
+       "line": 200.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 52.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 265.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 76.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 12.5,
+       "price": "-109",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:44:23.483126+00:00",
+     "http_status": 200,
+     "decimal": 18.0,
+     "american": 1700,
+     "implied": 0.0556,
+     "link": "https://mi.betrivers.com/?page=sportsbook#event/1028811644?coupon=P|4338319245,4338319418,4338331132,4338319247,4338339297,4338453968|",
+     "correlation": null
+    },
+    {
+     "book": "betparx",
+     "legs": [
+      {
+       "line": 200.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 52.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 265.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 76.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 12.5,
+       "price": "-108",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:44:29.881231+00:00",
+     "http_status": 200,
+     "decimal": 18.0,
+     "american": 1700,
+     "implied": 0.0556,
+     "link": "https://nj.betparx.com/kambi#event/1028811644?coupon=parlay|4338319245,4338319418,4338331132,4338319247,4338339297,4338453968|0|replace",
+     "correlation": null
+    },
+    {
+     "book": "bally-bet",
+     "legs": [
+      {
+       "line": 200.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 52.5,
+       "price": "-121",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-121",
+       "note": null
+      },
+      {
+       "line": 265.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 76.5,
+       "price": "-120",
+       "note": null
+      },
+      {
+       "line": 12.5,
+       "price": "-113",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:44:47.310016+00:00",
+     "http_status": 200,
+     "decimal": 18.0,
+     "american": 1700,
+     "implied": 0.0556,
+     "link": "https://play.ballybet.com/sports#event/1028811644?coupon=parlay|4338319245,4338319418,4338331132,4338319247,4338339297,4338453968|0|replace",
+     "correlation": null
+    }
+   ],
+   "best_book": "hard-rock",
+   "best_decimal": 29.15,
+   "best_american": 2815,
+   "best_link": "https://app.hardrock.bet/?deep_link_value=betslip/7006505240027595170,7303154233115804045,7465002344724431277,5494802484855701923,6385020070682296735,6868717689829982606",
+   "runner_up_book": "betrivers",
+   "runner_up_decimal": 18.0,
+   "spread_pct": 61.9,
+   "books_priced": 6
+  },
+  {
+   "name": "Base",
+   "variant": null,
+   "legs": [
+    {
+     "team": "WAS",
+     "slot": "QB1",
+     "player": "Jayden Daniels",
+     "player_norm": "jaydendaniels",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 205.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "WAS",
+     "slot": "WR1",
+     "player": "Terry McLaurin",
+     "player_norm": "terrymclaurin",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 51.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "WAS",
+     "slot": "WR2",
+     "player": "Stefon Diggs",
+     "player_norm": "stefondiggs",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 46.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "DAL",
+     "slot": "QB1",
+     "player": "Dak Prescott",
+     "player_norm": "dakprescott",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 264.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "DAL",
+     "slot": "WR1",
+     "player": "CeeDee Lamb",
+     "player_norm": "ceedeelamb",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 74.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "DAL",
+     "slot": "WR2",
+     "player": "George Pickens",
+     "player_norm": "georgepickens",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 62.5,
+     "position": "WR",
+     "position_flag": null
+    }
+   ],
+   "books": [
+    {
+     "book": "draftkings",
+     "legs": [
+      {
+       "line": 205.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 51.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-109",
+       "note": null
+      },
+      {
+       "line": 264.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 74.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 62.5,
+       "price": "-113",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": false,
+     "sgp_at": "2026-09-16T08:43:04.851261+00:00",
+     "http_status": 404,
+     "error": "Price not found"
+    },
+    {
+     "book": "caesars",
+     "legs": [
+      {
+       "line": 202.5,
+       "price": "-121",
+       "note": null
+      },
+      {
+       "line": 51.5,
+       "price": "-121",
+       "note": null
+      },
+      {
+       "line": 44.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 262.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 74.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 60.5,
+       "price": "-113",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:43:11.899404+00:00",
+     "http_status": 200,
+     "decimal": 12.5,
+     "american": 1150,
+     "implied": 0.08,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "betmgm",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Jayden Daniels pass yds (no prop)",
+      "Terry McLaurin rec yds (no prop)",
+      "Stefon Diggs rec yds (no prop)",
+      "Dak Prescott pass yds (no prop)",
+      "CeeDee Lamb rec yds (no prop)",
+      "George Pickens rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "fanatics",
+     "legs": [
+      {
+       "line": 200.5,
+       "price": "-115",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 49.5,
+       "price": "-125",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "+120",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 260.5,
+       "price": "-110",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 69.5,
+       "price": "-140",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 59.5,
+       "price": "-125",
+       "note": "several main-flagged lines (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Jayden Daniels: several main-flagged lines - two-sided line used",
+      "Terry McLaurin: several main-flagged lines (nearest to DK)",
+      "Stefon Diggs: several main-flagged lines (nearest to DK)",
+      "Dak Prescott: several main-flagged lines - two-sided line used",
+      "CeeDee Lamb: several main-flagged lines (nearest to DK)",
+      "George Pickens: several main-flagged lines (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:43:16.758830+00:00",
+     "http_status": 200,
+     "decimal": 14.0,
+     "american": 1300,
+     "implied": 0.0714,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "hard-rock",
+     "legs": [
+      {
+       "line": 199.5,
+       "price": "-130",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "-125",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "+110",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 274.5,
+       "price": "+115",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 79.5,
+       "price": "+105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 64.5,
+       "price": "+100",
+       "note": "no main flag (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Jayden Daniels: no main flag (nearest to DK)",
+      "Terry McLaurin: no main flag (nearest to DK)",
+      "Stefon Diggs: no main flag (nearest to DK)",
+      "Dak Prescott: no main flag (nearest to DK)",
+      "CeeDee Lamb: no main flag (nearest to DK)",
+      "George Pickens: no main flag (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:43:24.028979+00:00",
+     "http_status": 200,
+     "decimal": 16.76,
+     "american": 1576,
+     "implied": 0.0597,
+     "link": "https://app.hardrock.bet/?deep_link_value=betslip/7006505240027595170,7303154233115804045,7465002344724431277,5494802484855701923,6385020070682296735,4732568632322818450",
+     "correlation": null
+    },
+    {
+     "book": "betrivers",
+     "legs": [
+      {
+       "line": 200.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 52.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 265.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 76.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 62.5,
+       "price": "-115",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:43:29.570751+00:00",
+     "http_status": 200,
+     "decimal": 16.0,
+     "american": 1500,
+     "implied": 0.0625,
+     "link": "https://mi.betrivers.com/?page=sportsbook#event/1028811644?coupon=P|4338319245,4338319418,4338331132,4338319247,4338339297,4338319479|",
+     "correlation": null
+    },
+    {
+     "book": "betparx",
+     "legs": [
+      {
+       "line": 200.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 52.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 265.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 76.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 62.5,
+       "price": "-114",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:43:47.350444+00:00",
+     "http_status": 200,
+     "decimal": 16.0,
+     "american": 1500,
+     "implied": 0.0625,
+     "link": "https://nj.betparx.com/kambi#event/1028811644?coupon=parlay|4338319245,4338319418,4338331132,4338319247,4338339297,4338319479|0|replace",
+     "correlation": null
+    },
+    {
+     "book": "bally-bet",
+     "legs": [
+      {
+       "line": 200.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 52.5,
+       "price": "-121",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-121",
+       "note": null
+      },
+      {
+       "line": 265.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 76.5,
+       "price": "-120",
+       "note": null
+      },
+      {
+       "line": 62.5,
+       "price": "-120",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:43:53.341866+00:00",
+     "http_status": 200,
+     "decimal": 16.0,
+     "american": 1500,
+     "implied": 0.0625,
+     "link": "https://play.ballybet.com/sports#event/1028811644?coupon=parlay|4338319245,4338319418,4338331132,4338319247,4338339297,4338319479|0|replace",
+     "correlation": null
+    }
+   ],
+   "best_book": "hard-rock",
+   "best_decimal": 16.76,
+   "best_american": 1576,
+   "best_link": "https://app.hardrock.bet/?deep_link_value=betslip/7006505240027595170,7303154233115804045,7465002344724431277,5494802484855701923,6385020070682296735,4732568632322818450",
+   "runner_up_book": "betrivers",
+   "runner_up_decimal": 16.0,
+   "spread_pct": 4.8,
+   "books_priced": 6
+  },
+  {
+   "name": "WAS: WR2→RB1",
+   "variant": [
+    "WR2",
+    "RB1"
+   ],
+   "legs": [
+    {
+     "team": "WAS",
+     "slot": "QB1",
+     "player": "Jayden Daniels",
+     "player_norm": "jaydendaniels",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 205.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "WAS",
+     "slot": "WR1",
+     "player": "Terry McLaurin",
+     "player_norm": "terrymclaurin",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 51.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "WAS",
+     "slot": "RB1",
+     "player": "Jacory Croskey-Merritt",
+     "player_norm": "jacorycroskeymerritt",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": null,
+     "position": "RB",
+     "position_flag": null
+    },
+    {
+     "team": "DAL",
+     "slot": "QB1",
+     "player": "Dak Prescott",
+     "player_norm": "dakprescott",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 264.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "DAL",
+     "slot": "WR1",
+     "player": "CeeDee Lamb",
+     "player_norm": "ceedeelamb",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 74.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "DAL",
+     "slot": "WR2",
+     "player": "George Pickens",
+     "player_norm": "georgepickens",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 62.5,
+     "position": "WR",
+     "position_flag": null
+    }
+   ],
+   "books": [
+    {
+     "book": "draftkings",
+     "legs": [
+      {
+       "line": 205.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 51.5,
+       "price": "-112",
+       "note": null
+      },
+      null,
+      {
+       "line": 264.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 74.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 62.5,
+       "price": "-113",
+       "note": null
+      }
+     ],
+     "missing": [
+      "Jacory Croskey-Merritt rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "caesars",
+     "legs": [
+      {
+       "line": 202.5,
+       "price": "-121",
+       "note": null
+      },
+      {
+       "line": 51.5,
+       "price": "-121",
+       "note": null
+      },
+      null,
+      {
+       "line": 262.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 74.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 60.5,
+       "price": "-113",
+       "note": null
+      }
+     ],
+     "missing": [
+      "Jacory Croskey-Merritt rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "betmgm",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Jayden Daniels pass yds (no prop)",
+      "Terry McLaurin rec yds (no prop)",
+      "Jacory Croskey-Merritt rec yds (no prop)",
+      "Dak Prescott pass yds (no prop)",
+      "CeeDee Lamb rec yds (no prop)",
+      "George Pickens rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "fanatics",
+     "legs": [
+      {
+       "line": 200.5,
+       "price": "-115",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 49.5,
+       "price": "-125",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      null,
+      {
+       "line": 260.5,
+       "price": "-110",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 69.5,
+       "price": "-140",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 59.5,
+       "price": "-125",
+       "note": "several main-flagged lines (nearest to DK)"
+      }
+     ],
+     "missing": [
+      "Jacory Croskey-Merritt rec yds (no prop)"
+     ],
+     "notes": [
+      "Jayden Daniels: several main-flagged lines - two-sided line used",
+      "Terry McLaurin: several main-flagged lines (nearest to DK)",
+      "Dak Prescott: several main-flagged lines - two-sided line used",
+      "CeeDee Lamb: several main-flagged lines (nearest to DK)",
+      "George Pickens: several main-flagged lines (nearest to DK)"
+     ],
+     "priced": false
+    },
+    {
+     "book": "hard-rock",
+     "legs": [
+      {
+       "line": 199.5,
+       "price": "-130",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "-125",
+       "note": "no main flag (nearest to DK)"
+      },
+      null,
+      {
+       "line": 274.5,
+       "price": "+115",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 79.5,
+       "price": "+105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 64.5,
+       "price": "+100",
+       "note": "no main flag (nearest to DK)"
+      }
+     ],
+     "missing": [
+      "Jacory Croskey-Merritt rec yds (no prop)"
+     ],
+     "notes": [
+      "Jayden Daniels: no main flag (nearest to DK)",
+      "Terry McLaurin: no main flag (nearest to DK)",
+      "Dak Prescott: no main flag (nearest to DK)",
+      "CeeDee Lamb: no main flag (nearest to DK)",
+      "George Pickens: no main flag (nearest to DK)"
+     ],
+     "priced": false
+    },
+    {
+     "book": "betrivers",
+     "legs": [
+      {
+       "line": 200.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 52.5,
+       "price": "-117",
+       "note": null
+      },
+      null,
+      {
+       "line": 265.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 76.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 62.5,
+       "price": "-115",
+       "note": null
+      }
+     ],
+     "missing": [
+      "Jacory Croskey-Merritt rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "betparx",
+     "legs": [
+      {
+       "line": 200.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 52.5,
+       "price": "-115",
+       "note": null
+      },
+      null,
+      {
+       "line": 265.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 76.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 62.5,
+       "price": "-114",
+       "note": null
+      }
+     ],
+     "missing": [
+      "Jacory Croskey-Merritt rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "bally-bet",
+     "legs": [
+      {
+       "line": 200.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 52.5,
+       "price": "-121",
+       "note": null
+      },
+      null,
+      {
+       "line": 265.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 76.5,
+       "price": "-120",
+       "note": null
+      },
+      {
+       "line": 62.5,
+       "price": "-120",
+       "note": null
+      }
+     ],
+     "missing": [
+      "Jacory Croskey-Merritt rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    }
+   ],
+   "best_book": null,
+   "best_decimal": null,
+   "best_american": null,
+   "best_link": null,
+   "runner_up_book": null,
+   "runner_up_decimal": null,
+   "spread_pct": null,
+   "books_priced": 0
+  }
+ ],
+ "roster": {
+  "DAL": {
+   "QB1": {
+    "name": "Dak Prescott",
+    "norm": "dakprescott",
+    "position": "QB",
+    "team": "DAL",
+    "position_flag": null,
+    "dk_line": 264.5
+   },
+   "WR1": {
+    "name": "CeeDee Lamb",
+    "norm": "ceedeelamb",
+    "position": "WR",
+    "team": "DAL",
+    "position_flag": null,
+    "dk_line": 74.5
+   },
+   "WR2": {
+    "name": "George Pickens",
+    "norm": "georgepickens",
+    "position": "WR",
+    "team": "DAL",
+    "position_flag": null,
+    "dk_line": 62.5
+   },
+   "WR3": null,
+   "TE1": null,
+   "RB1": {
+    "name": "Javonte Williams",
+    "norm": "javontewilliams",
+    "position": "RB",
+    "team": "DAL",
+    "position_flag": null,
+    "dk_line": 74.5
+   }
+  },
+  "WAS": {
+   "QB1": {
+    "name": "Jayden Daniels",
+    "norm": "jaydendaniels",
+    "position": "QB",
+    "team": "WAS",
+    "position_flag": null,
+    "dk_line": 205.5
+   },
+   "WR1": {
+    "name": "Terry McLaurin",
+    "norm": "terrymclaurin",
+    "position": "WR",
+    "team": "WAS",
+    "position_flag": null,
+    "dk_line": 51.5
+   },
+   "WR2": {
+    "name": "Stefon Diggs",
+    "norm": "stefondiggs",
+    "position": "WR",
+    "team": "WAS",
+    "position_flag": null,
+    "dk_line": 46.5
+   },
+   "WR3": null,
+   "TE1": null,
+   "RB1": {
+    "name": "Jacory Croskey-Merritt",
+    "norm": "jacorycroskeymerritt",
+    "position": "RB",
+    "team": "WAS",
+    "position_flag": null,
+    "dk_line": 56.5
+   }
+  }
+ },
+ "notes": [
+  "WAS WR2→TE1: no TE1 at DraftKings; WAS WR2→WR3: no WR3 at DraftKings; WAS WR1→TE1: no TE1 at DraftKings; DAL WR2→TE1: no TE1 at DraftKings; DAL WR2→WR3: no WR3 at DraftKings; DAL WR1→TE1: no TE1 at DraftKings"
+ ],
+ "best_overall": {
+  "stack": "DAL: WR2→RB1",
+  "book": "hard-rock",
+  "decimal": 29.15,
+  "american": 2815,
+  "link": "https://app.hardrock.bet/?deep_link_value=betslip/7006505240027595170,7303154233115804045,7465002344724431277,5494802484855701923,6385020070682296735,6868717689829982606"
+ }
+}

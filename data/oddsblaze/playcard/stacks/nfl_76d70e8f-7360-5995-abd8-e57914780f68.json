@@ -1,0 +1,2612 @@
+{
+ "league": "nfl",
+ "event": "76d70e8f-7360-5995-abd8-e57914780f68",
+ "away": "CIN",
+ "home": "HOU",
+ "kickoff": "2026-09-20T17:00:00.000Z",
+ "slot_markets": {
+  "QB1": "player-passing-yards",
+  "WR1": "player-receiving-yards",
+  "WR2": "player-receiving-yards",
+  "WR3": "player-receiving-yards",
+  "TE1": "player-receiving-yards",
+  "RB1": "player-receiving-yards"
+ },
+ "odds_pulled": {
+  "draftkings": {
+   "feed_updated": "2026-09-16T08:31:41.431Z",
+   "pulled_at": "2026-09-16T08:32:38.311101+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": true
+  },
+  "caesars": {
+   "feed_updated": "2026-09-16T08:32:35.088Z",
+   "pulled_at": "2026-09-16T08:32:38.906760+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": true
+  },
+  "betmgm": {
+   "feed_updated": "2026-09-16T08:32:37.015Z",
+   "pulled_at": "2026-09-16T08:32:40.118266+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": true
+  },
+  "fanatics": {
+   "feed_updated": "2026-09-16T08:27:33.734Z",
+   "pulled_at": "2026-09-16T08:32:41.304892+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": true
+  },
+  "hard-rock": {
+   "feed_updated": "2026-09-16T08:32:39.659Z",
+   "pulled_at": "2026-09-16T08:32:42.681747+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": true
+  },
+  "betrivers": {
+   "feed_updated": "2026-09-16T08:32:41.668Z",
+   "pulled_at": "2026-09-16T08:32:43.647955+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": false
+  },
+  "betparx": {
+   "feed_updated": "2026-09-16T03:29:20.632Z",
+   "pulled_at": "2026-09-16T08:32:44.579862+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": false
+  },
+  "bally-bet": {
+   "feed_updated": "2026-09-16T03:29:21.886Z",
+   "pulled_at": "2026-09-16T08:32:45.889468+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": false
+  }
+ },
+ "priced_at": "2026-09-16T08:40:47.113095+00:00",
+ "stacks": [
+  {
+   "name": "HOU: WR1→TE1",
+   "variant": [
+    "WR1",
+    "TE1"
+   ],
+   "legs": [
+    {
+     "team": "CIN",
+     "slot": "QB1",
+     "player": "Joe Burrow",
+     "player_norm": "joeburrow",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 250.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "CIN",
+     "slot": "WR1",
+     "player": "Ja'Marr Chase",
+     "player_norm": "jamarrchase",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 74.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "CIN",
+     "slot": "WR2",
+     "player": "Tee Higgins",
+     "player_norm": "teehiggins",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 51.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "HOU",
+     "slot": "QB1",
+     "player": "C.J. Stroud",
+     "player_norm": "cjstroud",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 238.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "HOU",
+     "slot": "TE1",
+     "player": "Dalton Schultz",
+     "player_norm": "daltonschultz",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 37.5,
+     "position": "TE",
+     "position_flag": null
+    },
+    {
+     "team": "HOU",
+     "slot": "WR2",
+     "player": "Xavier Hutchinson",
+     "player_norm": "xavierhutchinson",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 27.5,
+     "position": "WR",
+     "position_flag": null
+    }
+   ],
+   "books": [
+    {
+     "book": "draftkings",
+     "legs": [
+      {
+       "line": 250.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 74.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 51.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 238.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-109",
+       "note": null
+      },
+      {
+       "line": 27.5,
+       "price": "-114",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:42:46.837133+00:00",
+     "http_status": 200,
+     "decimal": 19.0,
+     "american": 1800,
+     "implied": 0.0526,
+     "link": "https://sportsbook.draftkings.com/?outcomes=0QA369824732%232286825462_13L88808Q1-834381017Q20+0QA369824674%232287346769_13L88808Q1583717687Q20+0QA369824093%232287341476_13L88808Q1683278849Q20+0QA369824660%232287202260_13L88808Q1-372748955Q20+0QA369824429%232287361035_13L88808Q1-1547726350Q20+0QA369824453%232287361877_13L88808Q11687747842Q20",
+     "correlation": 58.7123
+    },
+    {
+     "book": "caesars",
+     "legs": [
+      {
+       "line": 250.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 72.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 53.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 237.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 27.5,
+       "price": "-117",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:42:56.982495+00:00",
+     "http_status": 200,
+     "decimal": 14.5,
+     "american": 1350,
+     "implied": 0.069,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "betmgm",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Joe Burrow pass yds (no prop)",
+      "Ja'Marr Chase rec yds (no prop)",
+      "Tee Higgins rec yds (no prop)",
+      "C.J. Stroud pass yds (no prop)",
+      "Dalton Schultz rec yds (no prop)",
+      "Xavier Hutchinson rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "fanatics",
+     "legs": [
+      {
+       "line": 250.5,
+       "price": "-110",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 69.5,
+       "price": "-125",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "-150",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 235.5,
+       "price": "-120",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 39.5,
+       "price": "+100",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 29.5,
+       "price": "+115",
+       "note": "several main-flagged lines (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Joe Burrow: several main-flagged lines - two-sided line used",
+      "Ja'Marr Chase: several main-flagged lines (nearest to DK)",
+      "Tee Higgins: several main-flagged lines (nearest to DK)",
+      "C.J. Stroud: several main-flagged lines - two-sided line used",
+      "Dalton Schultz: several main-flagged lines (nearest to DK)",
+      "Xavier Hutchinson: several main-flagged lines (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:42:58.845230+00:00",
+     "http_status": 200,
+     "decimal": 16.0,
+     "american": 1500,
+     "implied": 0.0625,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "hard-rock",
+     "legs": [
+      {
+       "line": 249.5,
+       "price": "-120",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 79.5,
+       "price": "+120",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "-145",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 249.5,
+       "price": "+110",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "-105",
+       "note": "no main flag (nearest to DK)"
+      },
+      null
+     ],
+     "missing": [
+      "Xavier Hutchinson rec yds (no prop)"
+     ],
+     "notes": [
+      "Joe Burrow: no main flag (nearest to DK)",
+      "Ja'Marr Chase: no main flag (nearest to DK)",
+      "Tee Higgins: no main flag (nearest to DK)",
+      "C.J. Stroud: no main flag (nearest to DK)",
+      "Dalton Schultz: no main flag (nearest to DK)"
+     ],
+     "priced": false
+    },
+    {
+     "book": "betrivers",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Joe Burrow pass yds (no prop)",
+      "Ja'Marr Chase rec yds (no prop)",
+      "Tee Higgins rec yds (no prop)",
+      "C.J. Stroud pass yds (no prop)",
+      "Dalton Schultz rec yds (no prop)",
+      "Xavier Hutchinson rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "betparx",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Joe Burrow pass yds (no prop)",
+      "Ja'Marr Chase rec yds (no prop)",
+      "Tee Higgins rec yds (no prop)",
+      "C.J. Stroud pass yds (no prop)",
+      "Dalton Schultz rec yds (no prop)",
+      "Xavier Hutchinson rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "bally-bet",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Joe Burrow pass yds (no prop)",
+      "Ja'Marr Chase rec yds (no prop)",
+      "Tee Higgins rec yds (no prop)",
+      "C.J. Stroud pass yds (no prop)",
+      "Dalton Schultz rec yds (no prop)",
+      "Xavier Hutchinson rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    }
+   ],
+   "best_book": "draftkings",
+   "best_decimal": 19.0,
+   "best_american": 1800,
+   "best_link": "https://sportsbook.draftkings.com/?outcomes=0QA369824732%232286825462_13L88808Q1-834381017Q20+0QA369824674%232287346769_13L88808Q1583717687Q20+0QA369824093%232287341476_13L88808Q1683278849Q20+0QA369824660%232287202260_13L88808Q1-372748955Q20+0QA369824429%232287361035_13L88808Q1-1547726350Q20+0QA369824453%232287361877_13L88808Q11687747842Q20",
+   "runner_up_book": "fanatics",
+   "runner_up_decimal": 16.0,
+   "spread_pct": 18.8,
+   "books_priced": 3
+  },
+  {
+   "name": "Base",
+   "variant": null,
+   "legs": [
+    {
+     "team": "CIN",
+     "slot": "QB1",
+     "player": "Joe Burrow",
+     "player_norm": "joeburrow",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 250.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "CIN",
+     "slot": "WR1",
+     "player": "Ja'Marr Chase",
+     "player_norm": "jamarrchase",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 74.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "CIN",
+     "slot": "WR2",
+     "player": "Tee Higgins",
+     "player_norm": "teehiggins",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 51.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "HOU",
+     "slot": "QB1",
+     "player": "C.J. Stroud",
+     "player_norm": "cjstroud",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 238.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "HOU",
+     "slot": "WR1",
+     "player": "Nico Collins",
+     "player_norm": "nicocollins",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 70.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "HOU",
+     "slot": "WR2",
+     "player": "Xavier Hutchinson",
+     "player_norm": "xavierhutchinson",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 27.5,
+     "position": "WR",
+     "position_flag": null
+    }
+   ],
+   "books": [
+    {
+     "book": "draftkings",
+     "legs": [
+      {
+       "line": 250.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 74.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 51.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 238.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 70.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 27.5,
+       "price": "-114",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:40:52.747709+00:00",
+     "http_status": 200,
+     "decimal": 18.0,
+     "american": 1700,
+     "implied": 0.0556,
+     "link": "https://sportsbook.draftkings.com/?outcomes=0QA369824732%232286825462_13L88808Q1-834381017Q20+0QA369824674%232287346769_13L88808Q1583717687Q20+0QA369824093%232287341476_13L88808Q1683278849Q20+0QA369824660%232287202260_13L88808Q1-372748955Q20+0QA369824114%232284745122_13L88808Q1-864616411Q20+0QA369824453%232287361877_13L88808Q11687747842Q20",
+     "correlation": 60.2114
+    },
+    {
+     "book": "caesars",
+     "legs": [
+      {
+       "line": 250.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 72.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 53.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 237.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 70.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 27.5,
+       "price": "-117",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:40:59.800879+00:00",
+     "http_status": 200,
+     "decimal": 14.0,
+     "american": 1300,
+     "implied": 0.0714,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "betmgm",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Joe Burrow pass yds (no prop)",
+      "Ja'Marr Chase rec yds (no prop)",
+      "Tee Higgins rec yds (no prop)",
+      "C.J. Stroud pass yds (no prop)",
+      "Nico Collins rec yds (no prop)",
+      "Xavier Hutchinson rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "fanatics",
+     "legs": [
+      {
+       "line": 250.5,
+       "price": "-110",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 69.5,
+       "price": "-125",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "-150",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 235.5,
+       "price": "-120",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 69.5,
+       "price": "-120",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 29.5,
+       "price": "+115",
+       "note": "several main-flagged lines (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Joe Burrow: several main-flagged lines - two-sided line used",
+      "Ja'Marr Chase: several main-flagged lines (nearest to DK)",
+      "Tee Higgins: several main-flagged lines (nearest to DK)",
+      "C.J. Stroud: several main-flagged lines - two-sided line used",
+      "Nico Collins: several main-flagged lines (nearest to DK)",
+      "Xavier Hutchinson: several main-flagged lines (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:41:04.703633+00:00",
+     "http_status": 200,
+     "decimal": 13.0,
+     "american": 1200,
+     "implied": 0.0769,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "hard-rock",
+     "legs": [
+      {
+       "line": 249.5,
+       "price": "-120",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 79.5,
+       "price": "+120",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "-145",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 249.5,
+       "price": "+110",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 64.5,
+       "price": "-150",
+       "note": "no main flag (nearest to DK)"
+      },
+      null
+     ],
+     "missing": [
+      "Xavier Hutchinson rec yds (no prop)"
+     ],
+     "notes": [
+      "Joe Burrow: no main flag (nearest to DK)",
+      "Ja'Marr Chase: no main flag (nearest to DK)",
+      "Tee Higgins: no main flag (nearest to DK)",
+      "C.J. Stroud: no main flag (nearest to DK)",
+      "Nico Collins: no main flag (nearest to DK)"
+     ],
+     "priced": false
+    },
+    {
+     "book": "betrivers",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Joe Burrow pass yds (no prop)",
+      "Ja'Marr Chase rec yds (no prop)",
+      "Tee Higgins rec yds (no prop)",
+      "C.J. Stroud pass yds (no prop)",
+      "Nico Collins rec yds (no prop)",
+      "Xavier Hutchinson rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "betparx",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Joe Burrow pass yds (no prop)",
+      "Ja'Marr Chase rec yds (no prop)",
+      "Tee Higgins rec yds (no prop)",
+      "C.J. Stroud pass yds (no prop)",
+      "Nico Collins rec yds (no prop)",
+      "Xavier Hutchinson rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "bally-bet",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Joe Burrow pass yds (no prop)",
+      "Ja'Marr Chase rec yds (no prop)",
+      "Tee Higgins rec yds (no prop)",
+      "C.J. Stroud pass yds (no prop)",
+      "Nico Collins rec yds (no prop)",
+      "Xavier Hutchinson rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    }
+   ],
+   "best_book": "draftkings",
+   "best_decimal": 18.0,
+   "best_american": 1700,
+   "best_link": "https://sportsbook.draftkings.com/?outcomes=0QA369824732%232286825462_13L88808Q1-834381017Q20+0QA369824674%232287346769_13L88808Q1583717687Q20+0QA369824093%232287341476_13L88808Q1683278849Q20+0QA369824660%232287202260_13L88808Q1-372748955Q20+0QA369824114%232284745122_13L88808Q1-864616411Q20+0QA369824453%232287361877_13L88808Q11687747842Q20",
+   "runner_up_book": "caesars",
+   "runner_up_decimal": 14.0,
+   "spread_pct": 28.6,
+   "books_priced": 3
+  },
+  {
+   "name": "CIN: WR2→TE1",
+   "variant": [
+    "WR2",
+    "TE1"
+   ],
+   "legs": [
+    {
+     "team": "CIN",
+     "slot": "QB1",
+     "player": "Joe Burrow",
+     "player_norm": "joeburrow",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 250.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "CIN",
+     "slot": "WR1",
+     "player": "Ja'Marr Chase",
+     "player_norm": "jamarrchase",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 74.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "CIN",
+     "slot": "TE1",
+     "player": "Mike Gesicki",
+     "player_norm": "mikegesicki",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 24.5,
+     "position": "TE",
+     "position_flag": null
+    },
+    {
+     "team": "HOU",
+     "slot": "QB1",
+     "player": "C.J. Stroud",
+     "player_norm": "cjstroud",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 238.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "HOU",
+     "slot": "WR1",
+     "player": "Nico Collins",
+     "player_norm": "nicocollins",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 70.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "HOU",
+     "slot": "WR2",
+     "player": "Xavier Hutchinson",
+     "player_norm": "xavierhutchinson",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 27.5,
+     "position": "WR",
+     "position_flag": null
+    }
+   ],
+   "books": [
+    {
+     "book": "draftkings",
+     "legs": [
+      {
+       "line": 250.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 74.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 24.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 238.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 70.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 27.5,
+       "price": "-114",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:41:10.754118+00:00",
+     "http_status": 200,
+     "decimal": 18.0,
+     "american": 1700,
+     "implied": 0.0556,
+     "link": "https://sportsbook.draftkings.com/?outcomes=0QA369824732%232286825462_13L88808Q1-834381017Q20+0QA369824674%232287346769_13L88808Q1583717687Q20+0QA369824662%232287348637_13L88808Q1549052833Q20+0QA369824660%232287202260_13L88808Q1-372748955Q20+0QA369824114%232284745122_13L88808Q1-864616411Q20+0QA369824453%232287361877_13L88808Q11687747842Q20",
+     "correlation": 60.7077
+    },
+    {
+     "book": "caesars",
+     "legs": [
+      {
+       "line": 250.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 72.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 24.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 237.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 70.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 27.5,
+       "price": "-117",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:41:17.823466+00:00",
+     "http_status": 200,
+     "decimal": 15.0,
+     "american": 1400,
+     "implied": 0.0667,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "betmgm",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Joe Burrow pass yds (no prop)",
+      "Ja'Marr Chase rec yds (no prop)",
+      "Mike Gesicki rec yds (no prop)",
+      "C.J. Stroud pass yds (no prop)",
+      "Nico Collins rec yds (no prop)",
+      "Xavier Hutchinson rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "fanatics",
+     "legs": [
+      {
+       "line": 250.5,
+       "price": "-110",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 69.5,
+       "price": "-125",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 19.5,
+       "price": "-155",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 235.5,
+       "price": "-120",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 69.5,
+       "price": "-120",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 29.5,
+       "price": "+115",
+       "note": "several main-flagged lines (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Joe Burrow: several main-flagged lines - two-sided line used",
+      "Ja'Marr Chase: several main-flagged lines (nearest to DK)",
+      "Mike Gesicki: several main-flagged lines (nearest to DK)",
+      "C.J. Stroud: several main-flagged lines - two-sided line used",
+      "Nico Collins: several main-flagged lines (nearest to DK)",
+      "Xavier Hutchinson: several main-flagged lines (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:41:22.712110+00:00",
+     "http_status": 200,
+     "decimal": 14.0,
+     "american": 1300,
+     "implied": 0.0714,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "hard-rock",
+     "legs": [
+      {
+       "line": 249.5,
+       "price": "-120",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 79.5,
+       "price": "+120",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 24.5,
+       "price": "-120",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 249.5,
+       "price": "+110",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 64.5,
+       "price": "-150",
+       "note": "no main flag (nearest to DK)"
+      },
+      null
+     ],
+     "missing": [
+      "Xavier Hutchinson rec yds (no prop)"
+     ],
+     "notes": [
+      "Joe Burrow: no main flag (nearest to DK)",
+      "Ja'Marr Chase: no main flag (nearest to DK)",
+      "Mike Gesicki: no main flag (nearest to DK)",
+      "C.J. Stroud: no main flag (nearest to DK)",
+      "Nico Collins: no main flag (nearest to DK)"
+     ],
+     "priced": false
+    },
+    {
+     "book": "betrivers",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Joe Burrow pass yds (no prop)",
+      "Ja'Marr Chase rec yds (no prop)",
+      "Mike Gesicki rec yds (no prop)",
+      "C.J. Stroud pass yds (no prop)",
+      "Nico Collins rec yds (no prop)",
+      "Xavier Hutchinson rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "betparx",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Joe Burrow pass yds (no prop)",
+      "Ja'Marr Chase rec yds (no prop)",
+      "Mike Gesicki rec yds (no prop)",
+      "C.J. Stroud pass yds (no prop)",
+      "Nico Collins rec yds (no prop)",
+      "Xavier Hutchinson rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "bally-bet",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Joe Burrow pass yds (no prop)",
+      "Ja'Marr Chase rec yds (no prop)",
+      "Mike Gesicki rec yds (no prop)",
+      "C.J. Stroud pass yds (no prop)",
+      "Nico Collins rec yds (no prop)",
+      "Xavier Hutchinson rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    }
+   ],
+   "best_book": "draftkings",
+   "best_decimal": 18.0,
+   "best_american": 1700,
+   "best_link": "https://sportsbook.draftkings.com/?outcomes=0QA369824732%232286825462_13L88808Q1-834381017Q20+0QA369824674%232287346769_13L88808Q1583717687Q20+0QA369824662%232287348637_13L88808Q1549052833Q20+0QA369824660%232287202260_13L88808Q1-372748955Q20+0QA369824114%232284745122_13L88808Q1-864616411Q20+0QA369824453%232287361877_13L88808Q11687747842Q20",
+   "runner_up_book": "caesars",
+   "runner_up_decimal": 15.0,
+   "spread_pct": 20.0,
+   "books_priced": 3
+  },
+  {
+   "name": "CIN: WR1→TE1",
+   "variant": [
+    "WR1",
+    "TE1"
+   ],
+   "legs": [
+    {
+     "team": "CIN",
+     "slot": "QB1",
+     "player": "Joe Burrow",
+     "player_norm": "joeburrow",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 250.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "CIN",
+     "slot": "TE1",
+     "player": "Mike Gesicki",
+     "player_norm": "mikegesicki",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 24.5,
+     "position": "TE",
+     "position_flag": null
+    },
+    {
+     "team": "CIN",
+     "slot": "WR2",
+     "player": "Tee Higgins",
+     "player_norm": "teehiggins",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 51.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "HOU",
+     "slot": "QB1",
+     "player": "C.J. Stroud",
+     "player_norm": "cjstroud",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 238.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "HOU",
+     "slot": "WR1",
+     "player": "Nico Collins",
+     "player_norm": "nicocollins",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 70.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "HOU",
+     "slot": "WR2",
+     "player": "Xavier Hutchinson",
+     "player_norm": "xavierhutchinson",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 27.5,
+     "position": "WR",
+     "position_flag": null
+    }
+   ],
+   "books": [
+    {
+     "book": "draftkings",
+     "legs": [
+      {
+       "line": 250.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 24.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 51.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 238.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 70.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 27.5,
+       "price": "-114",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:41:46.838572+00:00",
+     "http_status": 200,
+     "decimal": 18.0,
+     "american": 1700,
+     "implied": 0.0556,
+     "link": "https://sportsbook.draftkings.com/?outcomes=0QA369824732%232286825462_13L88808Q1-834381017Q20+0QA369824662%232287348637_13L88808Q1549052833Q20+0QA369824093%232287341476_13L88808Q1683278849Q20+0QA369824660%232287202260_13L88808Q1-372748955Q20+0QA369824114%232284745122_13L88808Q1-864616411Q20+0QA369824453%232287361877_13L88808Q11687747842Q20",
+     "correlation": 60.3798
+    },
+    {
+     "book": "caesars",
+     "legs": [
+      {
+       "line": 250.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 24.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 53.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 237.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 70.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 27.5,
+       "price": "-117",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:41:54.844273+00:00",
+     "http_status": 200,
+     "decimal": 15.0,
+     "american": 1400,
+     "implied": 0.0667,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "betmgm",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Joe Burrow pass yds (no prop)",
+      "Mike Gesicki rec yds (no prop)",
+      "Tee Higgins rec yds (no prop)",
+      "C.J. Stroud pass yds (no prop)",
+      "Nico Collins rec yds (no prop)",
+      "Xavier Hutchinson rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "fanatics",
+     "legs": [
+      {
+       "line": 250.5,
+       "price": "-110",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 19.5,
+       "price": "-155",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "-150",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 235.5,
+       "price": "-120",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 69.5,
+       "price": "-120",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 29.5,
+       "price": "+115",
+       "note": "several main-flagged lines (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Joe Burrow: several main-flagged lines - two-sided line used",
+      "Mike Gesicki: several main-flagged lines (nearest to DK)",
+      "Tee Higgins: several main-flagged lines (nearest to DK)",
+      "C.J. Stroud: several main-flagged lines - two-sided line used",
+      "Nico Collins: several main-flagged lines (nearest to DK)",
+      "Xavier Hutchinson: several main-flagged lines (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:41:58.756445+00:00",
+     "http_status": 200,
+     "decimal": 13.0,
+     "american": 1200,
+     "implied": 0.0769,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "hard-rock",
+     "legs": [
+      {
+       "line": 249.5,
+       "price": "-120",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 24.5,
+       "price": "-120",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "-145",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 249.5,
+       "price": "+110",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 64.5,
+       "price": "-150",
+       "note": "no main flag (nearest to DK)"
+      },
+      null
+     ],
+     "missing": [
+      "Xavier Hutchinson rec yds (no prop)"
+     ],
+     "notes": [
+      "Joe Burrow: no main flag (nearest to DK)",
+      "Mike Gesicki: no main flag (nearest to DK)",
+      "Tee Higgins: no main flag (nearest to DK)",
+      "C.J. Stroud: no main flag (nearest to DK)",
+      "Nico Collins: no main flag (nearest to DK)"
+     ],
+     "priced": false
+    },
+    {
+     "book": "betrivers",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Joe Burrow pass yds (no prop)",
+      "Mike Gesicki rec yds (no prop)",
+      "Tee Higgins rec yds (no prop)",
+      "C.J. Stroud pass yds (no prop)",
+      "Nico Collins rec yds (no prop)",
+      "Xavier Hutchinson rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "betparx",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Joe Burrow pass yds (no prop)",
+      "Mike Gesicki rec yds (no prop)",
+      "Tee Higgins rec yds (no prop)",
+      "C.J. Stroud pass yds (no prop)",
+      "Nico Collins rec yds (no prop)",
+      "Xavier Hutchinson rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "bally-bet",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Joe Burrow pass yds (no prop)",
+      "Mike Gesicki rec yds (no prop)",
+      "Tee Higgins rec yds (no prop)",
+      "C.J. Stroud pass yds (no prop)",
+      "Nico Collins rec yds (no prop)",
+      "Xavier Hutchinson rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    }
+   ],
+   "best_book": "draftkings",
+   "best_decimal": 18.0,
+   "best_american": 1700,
+   "best_link": "https://sportsbook.draftkings.com/?outcomes=0QA369824732%232286825462_13L88808Q1-834381017Q20+0QA369824662%232287348637_13L88808Q1549052833Q20+0QA369824093%232287341476_13L88808Q1683278849Q20+0QA369824660%232287202260_13L88808Q1-372748955Q20+0QA369824114%232284745122_13L88808Q1-864616411Q20+0QA369824453%232287361877_13L88808Q11687747842Q20",
+   "runner_up_book": "caesars",
+   "runner_up_decimal": 15.0,
+   "spread_pct": 20.0,
+   "books_priced": 3
+  },
+  {
+   "name": "HOU: WR2→TE1",
+   "variant": [
+    "WR2",
+    "TE1"
+   ],
+   "legs": [
+    {
+     "team": "CIN",
+     "slot": "QB1",
+     "player": "Joe Burrow",
+     "player_norm": "joeburrow",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 250.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "CIN",
+     "slot": "WR1",
+     "player": "Ja'Marr Chase",
+     "player_norm": "jamarrchase",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 74.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "CIN",
+     "slot": "WR2",
+     "player": "Tee Higgins",
+     "player_norm": "teehiggins",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 51.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "HOU",
+     "slot": "QB1",
+     "player": "C.J. Stroud",
+     "player_norm": "cjstroud",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 238.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "HOU",
+     "slot": "WR1",
+     "player": "Nico Collins",
+     "player_norm": "nicocollins",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 70.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "HOU",
+     "slot": "TE1",
+     "player": "Dalton Schultz",
+     "player_norm": "daltonschultz",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 37.5,
+     "position": "TE",
+     "position_flag": null
+    }
+   ],
+   "books": [
+    {
+     "book": "draftkings",
+     "legs": [
+      {
+       "line": 250.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 74.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 51.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 238.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 70.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-109",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:42:04.818054+00:00",
+     "http_status": 200,
+     "decimal": 17.0,
+     "american": 1600,
+     "implied": 0.0588,
+     "link": "https://sportsbook.draftkings.com/?outcomes=0QA369824732%232286825462_13L88808Q1-834381017Q20+0QA369824674%232287346769_13L88808Q1583717687Q20+0QA369824093%232287341476_13L88808Q1683278849Q20+0QA369824660%232287202260_13L88808Q1-372748955Q20+0QA369824114%232284745122_13L88808Q1-864616411Q20+0QA369824429%232287361035_13L88808Q1-1547726350Q20",
+     "correlation": 63.2105
+    },
+    {
+     "book": "caesars",
+     "legs": [
+      {
+       "line": 250.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 72.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 53.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 237.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 70.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-113",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:42:13.213090+00:00",
+     "http_status": 200,
+     "decimal": 14.5,
+     "american": 1350,
+     "implied": 0.069,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "betmgm",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Joe Burrow pass yds (no prop)",
+      "Ja'Marr Chase rec yds (no prop)",
+      "Tee Higgins rec yds (no prop)",
+      "C.J. Stroud pass yds (no prop)",
+      "Nico Collins rec yds (no prop)",
+      "Dalton Schultz rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "fanatics",
+     "legs": [
+      {
+       "line": 250.5,
+       "price": "-110",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 69.5,
+       "price": "-125",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "-150",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 235.5,
+       "price": "-120",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 69.5,
+       "price": "-120",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "+100",
+       "note": "several main-flagged lines (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Joe Burrow: several main-flagged lines - two-sided line used",
+      "Ja'Marr Chase: several main-flagged lines (nearest to DK)",
+      "Tee Higgins: several main-flagged lines (nearest to DK)",
+      "C.J. Stroud: several main-flagged lines - two-sided line used",
+      "Nico Collins: several main-flagged lines (nearest to DK)",
+      "Dalton Schultz: several main-flagged lines (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:42:16.792671+00:00",
+     "http_status": 200,
+     "decimal": 12.0,
+     "american": 1100,
+     "implied": 0.0833,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "hard-rock",
+     "legs": [
+      {
+       "line": 249.5,
+       "price": "-120",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 79.5,
+       "price": "+120",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "-145",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 249.5,
+       "price": "+110",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 64.5,
+       "price": "-150",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "-105",
+       "note": "no main flag (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Joe Burrow: no main flag (nearest to DK)",
+      "Ja'Marr Chase: no main flag (nearest to DK)",
+      "Tee Higgins: no main flag (nearest to DK)",
+      "C.J. Stroud: no main flag (nearest to DK)",
+      "Nico Collins: no main flag (nearest to DK)",
+      "Dalton Schultz: no main flag (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:42:23.313683+00:00",
+     "http_status": 200,
+     "decimal": 14.35,
+     "american": 1335,
+     "implied": 0.0697,
+     "link": "https://app.hardrock.bet/?deep_link_value=betslip/7418277507180396973,5380499295604703663,6843231703398482324,1421787199506088344,5329768103977025942,2850302719007261082",
+     "correlation": null
+    },
+    {
+     "book": "betrivers",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Joe Burrow pass yds (no prop)",
+      "Ja'Marr Chase rec yds (no prop)",
+      "Tee Higgins rec yds (no prop)",
+      "C.J. Stroud pass yds (no prop)",
+      "Nico Collins rec yds (no prop)",
+      "Dalton Schultz rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "betparx",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Joe Burrow pass yds (no prop)",
+      "Ja'Marr Chase rec yds (no prop)",
+      "Tee Higgins rec yds (no prop)",
+      "C.J. Stroud pass yds (no prop)",
+      "Nico Collins rec yds (no prop)",
+      "Dalton Schultz rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "bally-bet",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Joe Burrow pass yds (no prop)",
+      "Ja'Marr Chase rec yds (no prop)",
+      "Tee Higgins rec yds (no prop)",
+      "C.J. Stroud pass yds (no prop)",
+      "Nico Collins rec yds (no prop)",
+      "Dalton Schultz rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    }
+   ],
+   "best_book": "draftkings",
+   "best_decimal": 17.0,
+   "best_american": 1600,
+   "best_link": "https://sportsbook.draftkings.com/?outcomes=0QA369824732%232286825462_13L88808Q1-834381017Q20+0QA369824674%232287346769_13L88808Q1583717687Q20+0QA369824093%232287341476_13L88808Q1683278849Q20+0QA369824660%232287202260_13L88808Q1-372748955Q20+0QA369824114%232284745122_13L88808Q1-864616411Q20+0QA369824429%232287361035_13L88808Q1-1547726350Q20",
+   "runner_up_book": "caesars",
+   "runner_up_decimal": 14.5,
+   "spread_pct": 17.2,
+   "books_priced": 4
+  },
+  {
+   "name": "CIN: WR2→RB1",
+   "variant": [
+    "WR2",
+    "RB1"
+   ],
+   "legs": [
+    {
+     "team": "CIN",
+     "slot": "QB1",
+     "player": "Joe Burrow",
+     "player_norm": "joeburrow",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 250.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "CIN",
+     "slot": "WR1",
+     "player": "Ja'Marr Chase",
+     "player_norm": "jamarrchase",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 74.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "CIN",
+     "slot": "RB1",
+     "player": "Chase Brown",
+     "player_norm": "chasebrown",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": null,
+     "position": "RB",
+     "position_flag": null
+    },
+    {
+     "team": "HOU",
+     "slot": "QB1",
+     "player": "C.J. Stroud",
+     "player_norm": "cjstroud",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 238.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "HOU",
+     "slot": "WR1",
+     "player": "Nico Collins",
+     "player_norm": "nicocollins",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 70.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "HOU",
+     "slot": "WR2",
+     "player": "Xavier Hutchinson",
+     "player_norm": "xavierhutchinson",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 27.5,
+     "position": "WR",
+     "position_flag": null
+    }
+   ],
+   "books": [
+    {
+     "book": "draftkings",
+     "legs": [
+      {
+       "line": 250.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 74.5,
+       "price": "-112",
+       "note": null
+      },
+      null,
+      {
+       "line": 238.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 70.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 27.5,
+       "price": "-114",
+       "note": null
+      }
+     ],
+     "missing": [
+      "Chase Brown rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "caesars",
+     "legs": [
+      {
+       "line": 250.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 72.5,
+       "price": "-114",
+       "note": null
+      },
+      null,
+      {
+       "line": 237.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 70.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 27.5,
+       "price": "-117",
+       "note": null
+      }
+     ],
+     "missing": [
+      "Chase Brown rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "betmgm",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Joe Burrow pass yds (no prop)",
+      "Ja'Marr Chase rec yds (no prop)",
+      "Chase Brown rec yds (no prop)",
+      "C.J. Stroud pass yds (no prop)",
+      "Nico Collins rec yds (no prop)",
+      "Xavier Hutchinson rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "fanatics",
+     "legs": [
+      {
+       "line": 250.5,
+       "price": "-110",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 69.5,
+       "price": "-125",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 19.5,
+       "price": "+100",
+       "note": "several main-flagged lines (closest to even money)"
+      },
+      {
+       "line": 235.5,
+       "price": "-120",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 69.5,
+       "price": "-120",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 29.5,
+       "price": "+115",
+       "note": "several main-flagged lines (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Joe Burrow: several main-flagged lines - two-sided line used",
+      "Ja'Marr Chase: several main-flagged lines (nearest to DK)",
+      "Chase Brown: several main-flagged lines (closest to even money)",
+      "C.J. Stroud: several main-flagged lines - two-sided line used",
+      "Nico Collins: several main-flagged lines (nearest to DK)",
+      "Xavier Hutchinson: several main-flagged lines (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:41:28.681571+00:00",
+     "http_status": 200,
+     "decimal": 16.0,
+     "american": 1500,
+     "implied": 0.0625,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "hard-rock",
+     "legs": [
+      {
+       "line": 249.5,
+       "price": "-120",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 79.5,
+       "price": "+120",
+       "note": "no main flag (nearest to DK)"
+      },
+      null,
+      {
+       "line": 249.5,
+       "price": "+110",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 64.5,
+       "price": "-150",
+       "note": "no main flag (nearest to DK)"
+      },
+      null
+     ],
+     "missing": [
+      "Chase Brown rec yds (no prop)",
+      "Xavier Hutchinson rec yds (no prop)"
+     ],
+     "notes": [
+      "Joe Burrow: no main flag (nearest to DK)",
+      "Ja'Marr Chase: no main flag (nearest to DK)",
+      "C.J. Stroud: no main flag (nearest to DK)",
+      "Nico Collins: no main flag (nearest to DK)"
+     ],
+     "priced": false
+    },
+    {
+     "book": "betrivers",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Joe Burrow pass yds (no prop)",
+      "Ja'Marr Chase rec yds (no prop)",
+      "Chase Brown rec yds (no prop)",
+      "C.J. Stroud pass yds (no prop)",
+      "Nico Collins rec yds (no prop)",
+      "Xavier Hutchinson rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "betparx",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Joe Burrow pass yds (no prop)",
+      "Ja'Marr Chase rec yds (no prop)",
+      "Chase Brown rec yds (no prop)",
+      "C.J. Stroud pass yds (no prop)",
+      "Nico Collins rec yds (no prop)",
+      "Xavier Hutchinson rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "bally-bet",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Joe Burrow pass yds (no prop)",
+      "Ja'Marr Chase rec yds (no prop)",
+      "Chase Brown rec yds (no prop)",
+      "C.J. Stroud pass yds (no prop)",
+      "Nico Collins rec yds (no prop)",
+      "Xavier Hutchinson rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    }
+   ],
+   "best_book": "fanatics",
+   "best_decimal": 16.0,
+   "best_american": 1500,
+   "best_link": null,
+   "runner_up_book": null,
+   "runner_up_decimal": null,
+   "spread_pct": null,
+   "books_priced": 1
+  },
+  {
+   "name": "HOU: WR2→RB1",
+   "variant": [
+    "WR2",
+    "RB1"
+   ],
+   "legs": [
+    {
+     "team": "CIN",
+     "slot": "QB1",
+     "player": "Joe Burrow",
+     "player_norm": "joeburrow",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 250.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "CIN",
+     "slot": "WR1",
+     "player": "Ja'Marr Chase",
+     "player_norm": "jamarrchase",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 74.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "CIN",
+     "slot": "WR2",
+     "player": "Tee Higgins",
+     "player_norm": "teehiggins",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 51.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "HOU",
+     "slot": "QB1",
+     "player": "C.J. Stroud",
+     "player_norm": "cjstroud",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 238.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "HOU",
+     "slot": "WR1",
+     "player": "Nico Collins",
+     "player_norm": "nicocollins",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 70.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "HOU",
+     "slot": "RB1",
+     "player": "David Montgomery",
+     "player_norm": "davidmontgomery",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": null,
+     "position": "RB",
+     "position_flag": null
+    }
+   ],
+   "books": [
+    {
+     "book": "draftkings",
+     "legs": [
+      {
+       "line": 250.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 74.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 51.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 238.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 70.5,
+       "price": "-113",
+       "note": null
+      },
+      null
+     ],
+     "missing": [
+      "David Montgomery rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "caesars",
+     "legs": [
+      {
+       "line": 250.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 72.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 53.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 237.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 70.5,
+       "price": "-115",
+       "note": null
+      },
+      null
+     ],
+     "missing": [
+      "David Montgomery rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "betmgm",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Joe Burrow pass yds (no prop)",
+      "Ja'Marr Chase rec yds (no prop)",
+      "Tee Higgins rec yds (no prop)",
+      "C.J. Stroud pass yds (no prop)",
+      "Nico Collins rec yds (no prop)",
+      "David Montgomery rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "fanatics",
+     "legs": [
+      {
+       "line": 250.5,
+       "price": "-110",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 69.5,
+       "price": "-125",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "-150",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 235.5,
+       "price": "-120",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 69.5,
+       "price": "-120",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 19.5,
+       "price": "+155",
+       "note": "several main-flagged lines (closest to even money)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Joe Burrow: several main-flagged lines - two-sided line used",
+      "Ja'Marr Chase: several main-flagged lines (nearest to DK)",
+      "Tee Higgins: several main-flagged lines (nearest to DK)",
+      "C.J. Stroud: several main-flagged lines - two-sided line used",
+      "Nico Collins: several main-flagged lines (nearest to DK)",
+      "David Montgomery: several main-flagged lines (closest to even money)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:42:28.801877+00:00",
+     "http_status": 200,
+     "decimal": 16.0,
+     "american": 1500,
+     "implied": 0.0625,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "hard-rock",
+     "legs": [
+      {
+       "line": 249.5,
+       "price": "-120",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 79.5,
+       "price": "+120",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "-145",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 249.5,
+       "price": "+110",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 64.5,
+       "price": "-150",
+       "note": "no main flag (nearest to DK)"
+      },
+      null
+     ],
+     "missing": [
+      "David Montgomery rec yds (no prop)"
+     ],
+     "notes": [
+      "Joe Burrow: no main flag (nearest to DK)",
+      "Ja'Marr Chase: no main flag (nearest to DK)",
+      "Tee Higgins: no main flag (nearest to DK)",
+      "C.J. Stroud: no main flag (nearest to DK)",
+      "Nico Collins: no main flag (nearest to DK)"
+     ],
+     "priced": false
+    },
+    {
+     "book": "betrivers",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Joe Burrow pass yds (no prop)",
+      "Ja'Marr Chase rec yds (no prop)",
+      "Tee Higgins rec yds (no prop)",
+      "C.J. Stroud pass yds (no prop)",
+      "Nico Collins rec yds (no prop)",
+      "David Montgomery rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "betparx",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Joe Burrow pass yds (no prop)",
+      "Ja'Marr Chase rec yds (no prop)",
+      "Tee Higgins rec yds (no prop)",
+      "C.J. Stroud pass yds (no prop)",
+      "Nico Collins rec yds (no prop)",
+      "David Montgomery rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "bally-bet",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Joe Burrow pass yds (no prop)",
+      "Ja'Marr Chase rec yds (no prop)",
+      "Tee Higgins rec yds (no prop)",
+      "C.J. Stroud pass yds (no prop)",
+      "Nico Collins rec yds (no prop)",
+      "David Montgomery rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    }
+   ],
+   "best_book": "fanatics",
+   "best_decimal": 16.0,
+   "best_american": 1500,
+   "best_link": null,
+   "runner_up_book": null,
+   "runner_up_decimal": null,
+   "spread_pct": null,
+   "books_priced": 1
+  }
+ ],
+ "roster": {
+  "HOU": {
+   "QB1": {
+    "name": "C.J. Stroud",
+    "norm": "cjstroud",
+    "position": "QB",
+    "team": "HOU",
+    "position_flag": null,
+    "dk_line": 238.5
+   },
+   "WR1": {
+    "name": "Nico Collins",
+    "norm": "nicocollins",
+    "position": "WR",
+    "team": "HOU",
+    "position_flag": null,
+    "dk_line": 70.5
+   },
+   "WR2": {
+    "name": "Xavier Hutchinson",
+    "norm": "xavierhutchinson",
+    "position": "WR",
+    "team": "HOU",
+    "position_flag": null,
+    "dk_line": 27.5
+   },
+   "WR3": null,
+   "TE1": {
+    "name": "Dalton Schultz",
+    "norm": "daltonschultz",
+    "position": "TE",
+    "team": "HOU",
+    "position_flag": null,
+    "dk_line": 37.5
+   },
+   "RB1": {
+    "name": "David Montgomery",
+    "norm": "davidmontgomery",
+    "position": "RB",
+    "team": "HOU",
+    "position_flag": null,
+    "dk_line": 66.5
+   }
+  },
+  "CIN": {
+   "QB1": {
+    "name": "Joe Burrow",
+    "norm": "joeburrow",
+    "position": "QB",
+    "team": "CIN",
+    "position_flag": null,
+    "dk_line": 250.5
+   },
+   "WR1": {
+    "name": "Ja'Marr Chase",
+    "norm": "jamarrchase",
+    "position": "WR",
+    "team": "CIN",
+    "position_flag": null,
+    "dk_line": 74.5
+   },
+   "WR2": {
+    "name": "Tee Higgins",
+    "norm": "teehiggins",
+    "position": "WR",
+    "team": "CIN",
+    "position_flag": null,
+    "dk_line": 51.5
+   },
+   "WR3": null,
+   "TE1": {
+    "name": "Mike Gesicki",
+    "norm": "mikegesicki",
+    "position": "TE",
+    "team": "CIN",
+    "position_flag": null,
+    "dk_line": 24.5
+   },
+   "RB1": {
+    "name": "Chase Brown",
+    "norm": "chasebrown",
+    "position": "RB",
+    "team": "CIN",
+    "position_flag": null,
+    "dk_line": 58.5
+   }
+  }
+ },
+ "notes": [
+  "CIN WR2→WR3: no WR3 at DraftKings; HOU WR2→WR3: no WR3 at DraftKings"
+ ],
+ "best_overall": {
+  "stack": "HOU: WR1→TE1",
+  "book": "draftkings",
+  "decimal": 19.0,
+  "american": 1800,
+  "link": "https://sportsbook.draftkings.com/?outcomes=0QA369824732%232286825462_13L88808Q1-834381017Q20+0QA369824674%232287346769_13L88808Q1583717687Q20+0QA369824093%232287341476_13L88808Q1683278849Q20+0QA369824660%232287202260_13L88808Q1-372748955Q20+0QA369824429%232287361035_13L88808Q1-1547726350Q20+0QA369824453%232287361877_13L88808Q11687747842Q20"
+ }
+}

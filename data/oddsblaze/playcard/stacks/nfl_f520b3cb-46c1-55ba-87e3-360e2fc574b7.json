@@ -1,0 +1,4328 @@
+{
+ "league": "nfl",
+ "event": "f520b3cb-46c1-55ba-87e3-360e2fc574b7",
+ "away": "DET",
+ "home": "BUF",
+ "kickoff": "2026-09-18T00:15:00.000Z",
+ "slot_markets": {
+  "QB1": "player-passing-yards",
+  "WR1": "player-receiving-yards",
+  "WR2": "player-receiving-yards",
+  "WR3": "player-receiving-yards",
+  "TE1": "player-receiving-yards",
+  "RB1": "player-receiving-yards"
+ },
+ "odds_pulled": {
+  "draftkings": {
+   "feed_updated": "2026-09-16T08:31:41.431Z",
+   "pulled_at": "2026-09-16T08:32:38.311101+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": true
+  },
+  "caesars": {
+   "feed_updated": "2026-09-16T08:32:35.088Z",
+   "pulled_at": "2026-09-16T08:32:38.906760+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": true
+  },
+  "betmgm": {
+   "feed_updated": "2026-09-16T08:32:37.015Z",
+   "pulled_at": "2026-09-16T08:32:40.118266+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": true
+  },
+  "fanatics": {
+   "feed_updated": "2026-09-16T08:27:33.734Z",
+   "pulled_at": "2026-09-16T08:32:41.304892+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": true
+  },
+  "hard-rock": {
+   "feed_updated": "2026-09-16T08:32:39.659Z",
+   "pulled_at": "2026-09-16T08:32:42.681747+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": true
+  },
+  "betrivers": {
+   "feed_updated": "2026-09-16T08:32:41.668Z",
+   "pulled_at": "2026-09-16T08:32:43.647955+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": true
+  },
+  "betparx": {
+   "feed_updated": "2026-09-16T03:29:20.632Z",
+   "pulled_at": "2026-09-16T08:32:44.579862+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": true
+  },
+  "bally-bet": {
+   "feed_updated": "2026-09-16T03:29:21.886Z",
+   "pulled_at": "2026-09-16T08:32:45.889468+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": true
+  }
+ },
+ "priced_at": "2026-09-16T08:32:45.950756+00:00",
+ "stacks": [
+  {
+   "name": "DET: WR2→WR3",
+   "variant": [
+    "WR2",
+    "WR3"
+   ],
+   "legs": [
+    {
+     "team": "DET",
+     "slot": "QB1",
+     "player": "Jared Goff",
+     "player_norm": "jaredgoff",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 270.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "DET",
+     "slot": "WR1",
+     "player": "Amon-Ra St. Brown",
+     "player_norm": "amonrastbrown",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 82.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "DET",
+     "slot": "WR3",
+     "player": "Isaac TeSlaa",
+     "player_norm": "isaacteslaa",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 14.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "BUF",
+     "slot": "QB1",
+     "player": "Josh Allen",
+     "player_norm": "joshallen",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 251.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "BUF",
+     "slot": "WR1",
+     "player": "Khalil Shakir",
+     "player_norm": "khalilshakir",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 45.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "BUF",
+     "slot": "WR2",
+     "player": "Joshua Palmer",
+     "player_norm": "joshuapalmer",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 13.5,
+     "position": "WR",
+     "position_flag": null
+    }
+   ],
+   "books": [
+    {
+     "book": "draftkings",
+     "legs": [
+      {
+       "line": 270.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 82.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 14.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 251.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-110",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-111",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:34:46.667317+00:00",
+     "http_status": 200,
+     "decimal": 20.0,
+     "american": 1900,
+     "implied": 0.05,
+     "link": "https://sportsbook.draftkings.com/?outcomes=0QA369809454%232286990366_13L88808Q1-854869368Q20+0QA369809280%232285721859_13L88808Q1464291837Q20+0QA369809426%232284539720_13L88808Q1-347953252Q20+0QA369809247%232284763786_13L88808Q1-1873767725Q20+0QA369809807%232285722521_13L88808Q11888653544Q20+0QA369809797%232284579115_13L88808Q1-1997695700Q20",
+     "correlation": 56.5557
+    },
+    {
+     "book": "caesars",
+     "legs": [
+      {
+       "line": 269.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 80.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 15.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 250.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 44.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-117",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:34:53.528129+00:00",
+     "http_status": 200,
+     "decimal": 20.0,
+     "american": 1900,
+     "implied": 0.05,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "betmgm",
+     "legs": [
+      {
+       "line": 269.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 82.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 16.5,
+       "price": "-110",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 249.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 42.5,
+       "price": "-120",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 12.5,
+       "price": "-120",
+       "note": "no main flag - two-sided line used"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Jared Goff: no main flag - two-sided line used",
+      "Amon-Ra St. Brown: no main flag - two-sided line used",
+      "Isaac TeSlaa: no main flag - two-sided line used",
+      "Josh Allen: no main flag - two-sided line used",
+      "Khalil Shakir: no main flag - two-sided line used",
+      "Joshua Palmer: no main flag - two-sided line used"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:34:58.597605+00:00",
+     "http_status": 200,
+     "decimal": 15.0,
+     "american": 1400,
+     "implied": 0.0667,
+     "link": "https://sports.on.betmgm.ca/en/sports?options=6%3A43192-3611918-5722382,6%3A43192-3611921-5722388,6%3A43192-3611889-5722322,6%3A43192-3611894-5722334,6%3A43192-3611887-5722320,6%3A43192-3611879-5722306",
+     "correlation": null
+    },
+    {
+     "book": "fanatics",
+     "legs": [
+      {
+       "line": 265.5,
+       "price": "-120",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 79.5,
+       "price": "-115",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 9.5,
+       "price": "-205",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 250.5,
+       "price": "-110",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 49.5,
+       "price": "+115",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 9.5,
+       "price": "-170",
+       "note": "several main-flagged lines (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Jared Goff: several main-flagged lines - two-sided line used",
+      "Amon-Ra St. Brown: several main-flagged lines (nearest to DK)",
+      "Isaac TeSlaa: several main-flagged lines (nearest to DK)",
+      "Josh Allen: several main-flagged lines - two-sided line used",
+      "Khalil Shakir: several main-flagged lines (nearest to DK)",
+      "Joshua Palmer: several main-flagged lines (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:35:04.385478+00:00",
+     "http_status": 200,
+     "decimal": 14.0,
+     "american": 1300,
+     "implied": 0.0714,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "hard-rock",
+     "legs": [
+      {
+       "line": 274.5,
+       "price": "-105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 79.5,
+       "price": "-120",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 24.5,
+       "price": "+155",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 249.5,
+       "price": "-115",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "+105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 24.5,
+       "price": "+190",
+       "note": "no main flag (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Jared Goff: no main flag (nearest to DK)",
+      "Amon-Ra St. Brown: no main flag (nearest to DK)",
+      "Isaac TeSlaa: no main flag (nearest to DK)",
+      "Josh Allen: no main flag (nearest to DK)",
+      "Khalil Shakir: no main flag (nearest to DK)",
+      "Joshua Palmer: no main flag (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:35:10.578852+00:00",
+     "http_status": 200,
+     "decimal": 32.24,
+     "american": 3124,
+     "implied": 0.031,
+     "link": "https://app.hardrock.bet/?deep_link_value=betslip/1356498289914151342,3103466672669983109,6622301400506433947,422681934867595667,7313489239361061257,4362081801653584296",
+     "correlation": null
+    },
+    {
+     "book": "betrivers",
+     "legs": [
+      {
+       "line": 268.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 79.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 15.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 255.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-115",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:35:17.264402+00:00",
+     "http_status": 200,
+     "decimal": 20.0,
+     "american": 1900,
+     "implied": 0.05,
+     "link": "https://mi.betrivers.com/?page=sportsbook#event/1027638966?coupon=P|4338433859,4337072833,4337820091,4338427732,4337028393,4337820712|",
+     "correlation": null
+    },
+    {
+     "book": "betparx",
+     "legs": [
+      {
+       "line": 268.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 79.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 15.5,
+       "price": "-110",
+       "note": null
+      },
+      {
+       "line": 255.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-114",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:35:22.750795+00:00",
+     "http_status": 200,
+     "decimal": 20.0,
+     "american": 1900,
+     "implied": 0.05,
+     "link": "https://nj.betparx.com/kambi#event/1027638966?coupon=parlay|4338433859,4337072833,4337820091,4338427732,4337028393,4337820712|0|replace",
+     "correlation": null
+    },
+    {
+     "book": "bally-bet",
+     "legs": [
+      {
+       "line": 268.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 79.5,
+       "price": "-113",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 15.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 255.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-118",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-120",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Amon-Ra St. Brown: no main flag (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:35:29.459045+00:00",
+     "http_status": 200,
+     "decimal": 20.0,
+     "american": 1900,
+     "implied": 0.05,
+     "link": "https://play.ballybet.com/sports#event/1027638966?coupon=parlay|4338433859,4337072833,4337820091,4338427732,4337028393,4337820712|0|replace",
+     "correlation": null
+    }
+   ],
+   "best_book": "hard-rock",
+   "best_decimal": 32.24,
+   "best_american": 3124,
+   "best_link": "https://app.hardrock.bet/?deep_link_value=betslip/1356498289914151342,3103466672669983109,6622301400506433947,422681934867595667,7313489239361061257,4362081801653584296",
+   "runner_up_book": "draftkings",
+   "runner_up_decimal": 20.0,
+   "spread_pct": 61.2,
+   "books_priced": 8
+  },
+  {
+   "name": "DET: WR1→TE1",
+   "variant": [
+    "WR1",
+    "TE1"
+   ],
+   "legs": [
+    {
+     "team": "DET",
+     "slot": "QB1",
+     "player": "Jared Goff",
+     "player_norm": "jaredgoff",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 270.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "DET",
+     "slot": "TE1",
+     "player": "Sam LaPorta",
+     "player_norm": "samlaporta",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 45.5,
+     "position": "TE",
+     "position_flag": null
+    },
+    {
+     "team": "DET",
+     "slot": "WR2",
+     "player": "Jameson Williams",
+     "player_norm": "jamesonwilliams",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 59.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "BUF",
+     "slot": "QB1",
+     "player": "Josh Allen",
+     "player_norm": "joshallen",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 251.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "BUF",
+     "slot": "WR1",
+     "player": "Khalil Shakir",
+     "player_norm": "khalilshakir",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 45.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "BUF",
+     "slot": "WR2",
+     "player": "Joshua Palmer",
+     "player_norm": "joshuapalmer",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 13.5,
+     "position": "WR",
+     "position_flag": null
+    }
+   ],
+   "books": [
+    {
+     "book": "draftkings",
+     "legs": [
+      {
+       "line": 270.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 59.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 251.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-110",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-111",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:36:46.524560+00:00",
+     "http_status": 200,
+     "decimal": 19.0,
+     "american": 1800,
+     "implied": 0.0526,
+     "link": "https://sportsbook.draftkings.com/?outcomes=0QA369809454%232286990366_13L88808Q1-854869368Q20+0QA369809199%232285726365_13L88808Q11888653544Q20+0QA369809995%232284540174_13L88808Q1338230796Q20+0QA369809247%232284763786_13L88808Q1-1873767725Q20+0QA369809807%232285722521_13L88808Q11888653544Q20+0QA369809797%232284579115_13L88808Q1-1997695700Q20",
+     "correlation": 58.8774
+    },
+    {
+     "book": "caesars",
+     "legs": [
+      {
+       "line": 269.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 59.5,
+       "price": "-120",
+       "note": null
+      },
+      {
+       "line": 250.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 44.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-117",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:36:53.542302+00:00",
+     "http_status": 200,
+     "decimal": 18.0,
+     "american": 1700,
+     "implied": 0.0556,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "betmgm",
+     "legs": [
+      {
+       "line": 269.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 46.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 59.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 249.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 42.5,
+       "price": "-120",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 12.5,
+       "price": "-120",
+       "note": "no main flag - two-sided line used"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Jared Goff: no main flag - two-sided line used",
+      "Sam LaPorta: no main flag - two-sided line used",
+      "Jameson Williams: no main flag - two-sided line used",
+      "Josh Allen: no main flag - two-sided line used",
+      "Khalil Shakir: no main flag - two-sided line used",
+      "Joshua Palmer: no main flag - two-sided line used"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:36:58.617364+00:00",
+     "http_status": 200,
+     "decimal": 14.0,
+     "american": 1300,
+     "implied": 0.0714,
+     "link": "https://sports.on.betmgm.ca/en/sports?options=6%3A43192-3611918-5722382,6%3A43192-3611904-5722352,6%3A43192-3611882-5722308,6%3A43192-3611894-5722334,6%3A43192-3611887-5722320,6%3A43192-3611879-5722306",
+     "correlation": null
+    },
+    {
+     "book": "fanatics",
+     "legs": [
+      {
+       "line": 265.5,
+       "price": "-120",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 49.5,
+       "price": "+100",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 59.5,
+       "price": "-120",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 250.5,
+       "price": "-110",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 49.5,
+       "price": "+115",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 9.5,
+       "price": "-170",
+       "note": "several main-flagged lines (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Jared Goff: several main-flagged lines - two-sided line used",
+      "Sam LaPorta: several main-flagged lines (nearest to DK)",
+      "Jameson Williams: several main-flagged lines (nearest to DK)",
+      "Josh Allen: several main-flagged lines - two-sided line used",
+      "Khalil Shakir: several main-flagged lines (nearest to DK)",
+      "Joshua Palmer: several main-flagged lines (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:37:04.483671+00:00",
+     "http_status": 200,
+     "decimal": 16.0,
+     "american": 1500,
+     "implied": 0.0625,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "hard-rock",
+     "legs": [
+      {
+       "line": 274.5,
+       "price": "-105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "+100",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 64.5,
+       "price": "+105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 249.5,
+       "price": "-115",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "+105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 24.5,
+       "price": "+190",
+       "note": "no main flag (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Jared Goff: no main flag (nearest to DK)",
+      "Sam LaPorta: no main flag (nearest to DK)",
+      "Jameson Williams: no main flag (nearest to DK)",
+      "Josh Allen: no main flag (nearest to DK)",
+      "Khalil Shakir: no main flag (nearest to DK)",
+      "Joshua Palmer: no main flag (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:37:11.507954+00:00",
+     "http_status": 200,
+     "decimal": 25.53,
+     "american": 2453,
+     "implied": 0.0392,
+     "link": "https://app.hardrock.bet/?deep_link_value=betslip/1356498289914151342,850262795520967071,3221030853958304174,422681934867595667,7313489239361061257,4362081801653584296",
+     "correlation": null
+    },
+    {
+     "book": "betrivers",
+     "legs": [
+      {
+       "line": 268.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 58.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 255.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-115",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:37:17.039042+00:00",
+     "http_status": 200,
+     "decimal": 21.0,
+     "american": 2000,
+     "implied": 0.0476,
+     "link": "https://mi.betrivers.com/?page=sportsbook#event/1027638966?coupon=P|4338433859,4337028315,4338401874,4338427732,4337028393,4337820712|",
+     "correlation": null
+    },
+    {
+     "book": "betparx",
+     "legs": [
+      {
+       "line": 268.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 58.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 255.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-114",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:37:22.882574+00:00",
+     "http_status": 200,
+     "decimal": 21.0,
+     "american": 2000,
+     "implied": 0.0476,
+     "link": "https://nj.betparx.com/kambi#event/1027638966?coupon=parlay|4338433859,4337028315,4338401874,4338427732,4337028393,4337820712|0|replace",
+     "correlation": null
+    },
+    {
+     "book": "bally-bet",
+     "legs": [
+      {
+       "line": 268.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-120",
+       "note": null
+      },
+      {
+       "line": 58.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 255.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-118",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-120",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:37:29.117354+00:00",
+     "http_status": 200,
+     "decimal": 21.0,
+     "american": 2000,
+     "implied": 0.0476,
+     "link": "https://play.ballybet.com/sports#event/1027638966?coupon=parlay|4338433859,4337028315,4338401874,4338427732,4337028393,4337820712|0|replace",
+     "correlation": null
+    }
+   ],
+   "best_book": "hard-rock",
+   "best_decimal": 25.53,
+   "best_american": 2453,
+   "best_link": "https://app.hardrock.bet/?deep_link_value=betslip/1356498289914151342,850262795520967071,3221030853958304174,422681934867595667,7313489239361061257,4362081801653584296",
+   "runner_up_book": "betrivers",
+   "runner_up_decimal": 21.0,
+   "spread_pct": 21.6,
+   "books_priced": 8
+  },
+  {
+   "name": "DET: WR2→TE1",
+   "variant": [
+    "WR2",
+    "TE1"
+   ],
+   "legs": [
+    {
+     "team": "DET",
+     "slot": "QB1",
+     "player": "Jared Goff",
+     "player_norm": "jaredgoff",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 270.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "DET",
+     "slot": "WR1",
+     "player": "Amon-Ra St. Brown",
+     "player_norm": "amonrastbrown",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 82.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "DET",
+     "slot": "TE1",
+     "player": "Sam LaPorta",
+     "player_norm": "samlaporta",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 45.5,
+     "position": "TE",
+     "position_flag": null
+    },
+    {
+     "team": "BUF",
+     "slot": "QB1",
+     "player": "Josh Allen",
+     "player_norm": "joshallen",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 251.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "BUF",
+     "slot": "WR1",
+     "player": "Khalil Shakir",
+     "player_norm": "khalilshakir",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 45.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "BUF",
+     "slot": "WR2",
+     "player": "Joshua Palmer",
+     "player_norm": "joshuapalmer",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 13.5,
+     "position": "WR",
+     "position_flag": null
+    }
+   ],
+   "books": [
+    {
+     "book": "draftkings",
+     "legs": [
+      {
+       "line": 270.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 82.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 251.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-110",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-111",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:33:46.433616+00:00",
+     "http_status": 200,
+     "decimal": 20.0,
+     "american": 1900,
+     "implied": 0.05,
+     "link": "https://sportsbook.draftkings.com/?outcomes=0QA369809454%232286990366_13L88808Q1-854869368Q20+0QA369809280%232285721859_13L88808Q1464291837Q20+0QA369809199%232285726365_13L88808Q11888653544Q20+0QA369809247%232284763786_13L88808Q1-1873767725Q20+0QA369809807%232285722521_13L88808Q11888653544Q20+0QA369809797%232284579115_13L88808Q1-1997695700Q20",
+     "correlation": 57.0762
+    },
+    {
+     "book": "caesars",
+     "legs": [
+      {
+       "line": 269.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 80.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 250.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 44.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-117",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:33:53.531030+00:00",
+     "http_status": 200,
+     "decimal": 17.5,
+     "american": 1650,
+     "implied": 0.0571,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "betmgm",
+     "legs": [
+      {
+       "line": 269.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 82.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 46.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 249.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 42.5,
+       "price": "-120",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 12.5,
+       "price": "-120",
+       "note": "no main flag - two-sided line used"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Jared Goff: no main flag - two-sided line used",
+      "Amon-Ra St. Brown: no main flag - two-sided line used",
+      "Sam LaPorta: no main flag - two-sided line used",
+      "Josh Allen: no main flag - two-sided line used",
+      "Khalil Shakir: no main flag - two-sided line used",
+      "Joshua Palmer: no main flag - two-sided line used"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:33:58.520601+00:00",
+     "http_status": 200,
+     "decimal": 14.0,
+     "american": 1300,
+     "implied": 0.0714,
+     "link": "https://sports.on.betmgm.ca/en/sports?options=6%3A43192-3611918-5722382,6%3A43192-3611921-5722388,6%3A43192-3611904-5722352,6%3A43192-3611894-5722334,6%3A43192-3611887-5722320,6%3A43192-3611879-5722306",
+     "correlation": null
+    },
+    {
+     "book": "fanatics",
+     "legs": [
+      {
+       "line": 265.5,
+       "price": "-120",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 79.5,
+       "price": "-115",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "+100",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 250.5,
+       "price": "-110",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 49.5,
+       "price": "+115",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 9.5,
+       "price": "-170",
+       "note": "several main-flagged lines (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Jared Goff: several main-flagged lines - two-sided line used",
+      "Amon-Ra St. Brown: several main-flagged lines (nearest to DK)",
+      "Sam LaPorta: several main-flagged lines (nearest to DK)",
+      "Josh Allen: several main-flagged lines - two-sided line used",
+      "Khalil Shakir: several main-flagged lines (nearest to DK)",
+      "Joshua Palmer: several main-flagged lines (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:34:04.462763+00:00",
+     "http_status": 200,
+     "decimal": 16.0,
+     "american": 1500,
+     "implied": 0.0625,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "hard-rock",
+     "legs": [
+      {
+       "line": 274.5,
+       "price": "-105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 79.5,
+       "price": "-120",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "+100",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 249.5,
+       "price": "-115",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "+105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 24.5,
+       "price": "+190",
+       "note": "no main flag (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Jared Goff: no main flag (nearest to DK)",
+      "Amon-Ra St. Brown: no main flag (nearest to DK)",
+      "Sam LaPorta: no main flag (nearest to DK)",
+      "Josh Allen: no main flag (nearest to DK)",
+      "Khalil Shakir: no main flag (nearest to DK)",
+      "Joshua Palmer: no main flag (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:34:11.421867+00:00",
+     "http_status": 200,
+     "decimal": 24.76,
+     "american": 2376,
+     "implied": 0.0404,
+     "link": "https://app.hardrock.bet/?deep_link_value=betslip/1356498289914151342,3103466672669983109,850262795520967071,422681934867595667,7313489239361061257,4362081801653584296",
+     "correlation": null
+    },
+    {
+     "book": "betrivers",
+     "legs": [
+      {
+       "line": 268.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 79.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 255.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-115",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:34:17.011390+00:00",
+     "http_status": 200,
+     "decimal": 20.0,
+     "american": 1900,
+     "implied": 0.05,
+     "link": "https://mi.betrivers.com/?page=sportsbook#event/1027638966?coupon=P|4338433859,4337072833,4337028315,4338427732,4337028393,4337820712|",
+     "correlation": null
+    },
+    {
+     "book": "betparx",
+     "legs": [
+      {
+       "line": 268.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 79.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 255.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-114",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:34:22.747805+00:00",
+     "http_status": 200,
+     "decimal": 20.0,
+     "american": 1900,
+     "implied": 0.05,
+     "link": "https://nj.betparx.com/kambi#event/1027638966?coupon=parlay|4338433859,4337072833,4337028315,4338427732,4337028393,4337820712|0|replace",
+     "correlation": null
+    },
+    {
+     "book": "bally-bet",
+     "legs": [
+      {
+       "line": 268.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 79.5,
+       "price": "-113",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 46.5,
+       "price": "-120",
+       "note": null
+      },
+      {
+       "line": 255.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-118",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-120",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Amon-Ra St. Brown: no main flag (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:34:28.751746+00:00",
+     "http_status": 200,
+     "decimal": 20.0,
+     "american": 1900,
+     "implied": 0.05,
+     "link": "https://play.ballybet.com/sports#event/1027638966?coupon=parlay|4338433859,4337072833,4337028315,4338427732,4337028393,4337820712|0|replace",
+     "correlation": null
+    }
+   ],
+   "best_book": "hard-rock",
+   "best_decimal": 24.76,
+   "best_american": 2376,
+   "best_link": "https://app.hardrock.bet/?deep_link_value=betslip/1356498289914151342,3103466672669983109,850262795520967071,422681934867595667,7313489239361061257,4362081801653584296",
+   "runner_up_book": "draftkings",
+   "runner_up_decimal": 20.0,
+   "spread_pct": 23.8,
+   "books_priced": 8
+  },
+  {
+   "name": "BUF: WR2→WR3",
+   "variant": [
+    "WR2",
+    "WR3"
+   ],
+   "legs": [
+    {
+     "team": "DET",
+     "slot": "QB1",
+     "player": "Jared Goff",
+     "player_norm": "jaredgoff",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 270.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "DET",
+     "slot": "WR1",
+     "player": "Amon-Ra St. Brown",
+     "player_norm": "amonrastbrown",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 82.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "DET",
+     "slot": "WR2",
+     "player": "Jameson Williams",
+     "player_norm": "jamesonwilliams",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 59.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "BUF",
+     "slot": "QB1",
+     "player": "Josh Allen",
+     "player_norm": "joshallen",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 251.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "BUF",
+     "slot": "WR1",
+     "player": "Khalil Shakir",
+     "player_norm": "khalilshakir",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 45.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "BUF",
+     "slot": "WR3",
+     "player": "Keon Coleman",
+     "player_norm": "keoncoleman",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 12.5,
+     "position": "WR",
+     "position_flag": null
+    }
+   ],
+   "books": [
+    {
+     "book": "draftkings",
+     "legs": [
+      {
+       "line": 270.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 82.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 59.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 251.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-110",
+       "note": null
+      },
+      {
+       "line": 12.5,
+       "price": "-111",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:38:46.616564+00:00",
+     "http_status": 200,
+     "decimal": 19.0,
+     "american": 1800,
+     "implied": 0.0526,
+     "link": "https://sportsbook.draftkings.com/?outcomes=0QA369809454%232286990366_13L88808Q1-854869368Q20+0QA369809280%232285721859_13L88808Q1464291837Q20+0QA369809995%232284540174_13L88808Q1338230796Q20+0QA369809247%232284763786_13L88808Q1-1873767725Q20+0QA369809807%232285722521_13L88808Q11888653544Q20+0QA369809673%232284540434_13L88808Q1-385449853Q20",
+     "correlation": 59.3903
+    },
+    {
+     "book": "caesars",
+     "legs": [
+      {
+       "line": 269.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 80.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 59.5,
+       "price": "-120",
+       "note": null
+      },
+      {
+       "line": 250.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 44.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 11.5,
+       "price": "-117",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:38:53.667729+00:00",
+     "http_status": 200,
+     "decimal": 17.5,
+     "american": 1650,
+     "implied": 0.0571,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "betmgm",
+     "legs": [
+      {
+       "line": 269.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 82.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 59.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 249.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 42.5,
+       "price": "-120",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 12.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Jared Goff: no main flag - two-sided line used",
+      "Amon-Ra St. Brown: no main flag - two-sided line used",
+      "Jameson Williams: no main flag - two-sided line used",
+      "Josh Allen: no main flag - two-sided line used",
+      "Khalil Shakir: no main flag - two-sided line used",
+      "Keon Coleman: no main flag - two-sided line used"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:38:58.778919+00:00",
+     "http_status": 200,
+     "decimal": 13.5,
+     "american": 1250,
+     "implied": 0.0741,
+     "link": "https://sports.on.betmgm.ca/en/sports?options=6%3A43192-3611918-5722382,6%3A43192-3611921-5722388,6%3A43192-3611882-5722308,6%3A43192-3611894-5722334,6%3A43192-3611887-5722320,6%3A43192-3611890-5722326",
+     "correlation": null
+    },
+    {
+     "book": "fanatics",
+     "legs": [
+      {
+       "line": 265.5,
+       "price": "-120",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 79.5,
+       "price": "-115",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 59.5,
+       "price": "-120",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 250.5,
+       "price": "-110",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 49.5,
+       "price": "+115",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 9.5,
+       "price": "-135",
+       "note": "several main-flagged lines (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Jared Goff: several main-flagged lines - two-sided line used",
+      "Amon-Ra St. Brown: several main-flagged lines (nearest to DK)",
+      "Jameson Williams: several main-flagged lines (nearest to DK)",
+      "Josh Allen: several main-flagged lines - two-sided line used",
+      "Khalil Shakir: several main-flagged lines (nearest to DK)",
+      "Keon Coleman: several main-flagged lines (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:39:04.694883+00:00",
+     "http_status": 200,
+     "decimal": 16.0,
+     "american": 1500,
+     "implied": 0.0625,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "hard-rock",
+     "legs": [
+      {
+       "line": 274.5,
+       "price": "-105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 79.5,
+       "price": "-120",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 64.5,
+       "price": "+105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 249.5,
+       "price": "-115",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "+105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 24.5,
+       "price": "+220",
+       "note": "no main flag (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Jared Goff: no main flag (nearest to DK)",
+      "Amon-Ra St. Brown: no main flag (nearest to DK)",
+      "Jameson Williams: no main flag (nearest to DK)",
+      "Josh Allen: no main flag (nearest to DK)",
+      "Khalil Shakir: no main flag (nearest to DK)",
+      "Keon Coleman: no main flag (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:39:11.669336+00:00",
+     "http_status": 200,
+     "decimal": 24.2,
+     "american": 2320,
+     "implied": 0.0413,
+     "link": "https://app.hardrock.bet/?deep_link_value=betslip/1356498289914151342,3103466672669983109,3221030853958304174,422681934867595667,7313489239361061257,5600168728168890777",
+     "correlation": null
+    },
+    {
+     "book": "betrivers",
+     "legs": [
+      {
+       "line": 268.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 79.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 58.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 255.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 10.5,
+       "price": "-112",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:39:17.058928+00:00",
+     "http_status": 200,
+     "decimal": 19.0,
+     "american": 1800,
+     "implied": 0.0526,
+     "link": "https://mi.betrivers.com/?page=sportsbook#event/1027638966?coupon=P|4338433859,4337072833,4338401874,4338427732,4337028393,4337820415|",
+     "correlation": null
+    },
+    {
+     "book": "betparx",
+     "legs": [
+      {
+       "line": 268.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 79.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 58.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 255.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 10.5,
+       "price": "-110",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:39:23.188263+00:00",
+     "http_status": 200,
+     "decimal": 19.0,
+     "american": 1800,
+     "implied": 0.0526,
+     "link": "https://nj.betparx.com/kambi#event/1027638966?coupon=parlay|4338433859,4337072833,4338401874,4338427732,4337028393,4337820415|0|replace",
+     "correlation": null
+    },
+    {
+     "book": "bally-bet",
+     "legs": [
+      {
+       "line": 268.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 79.5,
+       "price": "-113",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 58.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 255.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-118",
+       "note": null
+      },
+      {
+       "line": 10.5,
+       "price": "-115",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Amon-Ra St. Brown: no main flag (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:39:29.104561+00:00",
+     "http_status": 200,
+     "decimal": 19.0,
+     "american": 1800,
+     "implied": 0.0526,
+     "link": "https://play.ballybet.com/sports#event/1027638966?coupon=parlay|4338433859,4337072833,4338401874,4338427732,4337028393,4337820415|0|replace",
+     "correlation": null
+    }
+   ],
+   "best_book": "hard-rock",
+   "best_decimal": 24.2,
+   "best_american": 2320,
+   "best_link": "https://app.hardrock.bet/?deep_link_value=betslip/1356498289914151342,3103466672669983109,3221030853958304174,422681934867595667,7313489239361061257,5600168728168890777",
+   "runner_up_book": "draftkings",
+   "runner_up_decimal": 19.0,
+   "spread_pct": 27.4,
+   "books_priced": 8
+  },
+  {
+   "name": "DET: WR2→RB1",
+   "variant": [
+    "WR2",
+    "RB1"
+   ],
+   "legs": [
+    {
+     "team": "DET",
+     "slot": "QB1",
+     "player": "Jared Goff",
+     "player_norm": "jaredgoff",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 270.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "DET",
+     "slot": "WR1",
+     "player": "Amon-Ra St. Brown",
+     "player_norm": "amonrastbrown",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 82.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "DET",
+     "slot": "RB1",
+     "player": "Jahmyr Gibbs",
+     "player_norm": "jahmyrgibbs",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 30.5,
+     "position": "RB",
+     "position_flag": null
+    },
+    {
+     "team": "BUF",
+     "slot": "QB1",
+     "player": "Josh Allen",
+     "player_norm": "joshallen",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 251.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "BUF",
+     "slot": "WR1",
+     "player": "Khalil Shakir",
+     "player_norm": "khalilshakir",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 45.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "BUF",
+     "slot": "WR2",
+     "player": "Joshua Palmer",
+     "player_norm": "joshuapalmer",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 13.5,
+     "position": "WR",
+     "position_flag": null
+    }
+   ],
+   "books": [
+    {
+     "book": "draftkings",
+     "legs": [
+      {
+       "line": 270.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 82.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 30.5,
+       "price": "-108",
+       "note": null
+      },
+      {
+       "line": 251.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-110",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-111",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:35:46.442986+00:00",
+     "http_status": 200,
+     "decimal": 23.0,
+     "american": 2200,
+     "implied": 0.0435,
+     "link": "https://sportsbook.draftkings.com/?outcomes=0QA369809454%232286990366_13L88808Q1-854869368Q20+0QA369809280%232285721859_13L88808Q1464291837Q20+0QA369809195%232284648494_13L88808Q11499463777Q20+0QA369809247%232284763786_13L88808Q1-1873767725Q20+0QA369809807%232285722521_13L88808Q11888653544Q20+0QA369809797%232284579115_13L88808Q1-1997695700Q20",
+     "correlation": 51.8867
+    },
+    {
+     "book": "caesars",
+     "legs": [
+      {
+       "line": 269.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 80.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 29.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 250.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 44.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-117",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:35:53.548555+00:00",
+     "http_status": 200,
+     "decimal": 17.0,
+     "american": 1600,
+     "implied": 0.0588,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "betmgm",
+     "legs": [
+      {
+       "line": 269.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 82.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 30.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 249.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 42.5,
+       "price": "-120",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 12.5,
+       "price": "-120",
+       "note": "no main flag - two-sided line used"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Jared Goff: no main flag - two-sided line used",
+      "Amon-Ra St. Brown: no main flag - two-sided line used",
+      "Jahmyr Gibbs: no main flag - two-sided line used",
+      "Josh Allen: no main flag - two-sided line used",
+      "Khalil Shakir: no main flag - two-sided line used",
+      "Joshua Palmer: no main flag - two-sided line used"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:35:58.581459+00:00",
+     "http_status": 200,
+     "decimal": 14.5,
+     "american": 1350,
+     "implied": 0.069,
+     "link": "https://sports.on.betmgm.ca/en/sports?options=6%3A43192-3611918-5722382,6%3A43192-3611921-5722388,6%3A43192-3611919-5722384,6%3A43192-3611894-5722334,6%3A43192-3611887-5722320,6%3A43192-3611879-5722306",
+     "correlation": null
+    },
+    {
+     "book": "fanatics",
+     "legs": [
+      {
+       "line": 265.5,
+       "price": "-120",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 79.5,
+       "price": "-115",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 29.5,
+       "price": "-120",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 250.5,
+       "price": "-110",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 49.5,
+       "price": "+115",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 9.5,
+       "price": "-170",
+       "note": "several main-flagged lines (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Jared Goff: several main-flagged lines - two-sided line used",
+      "Amon-Ra St. Brown: several main-flagged lines (nearest to DK)",
+      "Jahmyr Gibbs: several main-flagged lines (nearest to DK)",
+      "Josh Allen: several main-flagged lines - two-sided line used",
+      "Khalil Shakir: several main-flagged lines (nearest to DK)",
+      "Joshua Palmer: several main-flagged lines (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:36:04.459190+00:00",
+     "http_status": 200,
+     "decimal": 15.0,
+     "american": 1400,
+     "implied": 0.0667,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "hard-rock",
+     "legs": [
+      {
+       "line": 274.5,
+       "price": "-105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 79.5,
+       "price": "-120",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 24.5,
+       "price": "-180",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 249.5,
+       "price": "-115",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "+105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 24.5,
+       "price": "+190",
+       "note": "no main flag (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Jared Goff: no main flag (nearest to DK)",
+      "Amon-Ra St. Brown: no main flag (nearest to DK)",
+      "Jahmyr Gibbs: no main flag (nearest to DK)",
+      "Josh Allen: no main flag (nearest to DK)",
+      "Khalil Shakir: no main flag (nearest to DK)",
+      "Joshua Palmer: no main flag (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:36:11.840332+00:00",
+     "http_status": 200,
+     "decimal": 21.39,
+     "american": 2039,
+     "implied": 0.0468,
+     "link": "https://app.hardrock.bet/?deep_link_value=betslip/1356498289914151342,3103466672669983109,4281522154094330289,422681934867595667,7313489239361061257,4362081801653584296",
+     "correlation": null
+    },
+    {
+     "book": "betrivers",
+     "legs": [
+      {
+       "line": 268.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 79.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 29.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 255.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-115",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:36:17.285339+00:00",
+     "http_status": 200,
+     "decimal": 20.0,
+     "american": 1900,
+     "implied": 0.05,
+     "link": "https://mi.betrivers.com/?page=sportsbook#event/1027638966?coupon=P|4338433859,4337072833,4337041351,4338427732,4337028393,4337820712|",
+     "correlation": null
+    },
+    {
+     "book": "betparx",
+     "legs": [
+      {
+       "line": 268.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 79.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 29.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 255.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-114",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:36:22.940737+00:00",
+     "http_status": 200,
+     "decimal": 20.0,
+     "american": 1900,
+     "implied": 0.05,
+     "link": "https://nj.betparx.com/kambi#event/1027638966?coupon=parlay|4338433859,4337072833,4337028293,4338427732,4337028393,4337820712|0|replace",
+     "correlation": null
+    },
+    {
+     "book": "bally-bet",
+     "legs": [
+      {
+       "line": 268.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 79.5,
+       "price": "-113",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 29.5,
+       "price": "-120",
+       "note": null
+      },
+      {
+       "line": 255.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-118",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-120",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Amon-Ra St. Brown: no main flag (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:36:28.921130+00:00",
+     "http_status": 200,
+     "decimal": 20.0,
+     "american": 1900,
+     "implied": 0.05,
+     "link": "https://play.ballybet.com/sports#event/1027638966?coupon=parlay|4338433859,4337072833,4337028293,4338427732,4337028393,4337820712|0|replace",
+     "correlation": null
+    }
+   ],
+   "best_book": "draftkings",
+   "best_decimal": 23.0,
+   "best_american": 2200,
+   "best_link": "https://sportsbook.draftkings.com/?outcomes=0QA369809454%232286990366_13L88808Q1-854869368Q20+0QA369809280%232285721859_13L88808Q1464291837Q20+0QA369809195%232284648494_13L88808Q11499463777Q20+0QA369809247%232284763786_13L88808Q1-1873767725Q20+0QA369809807%232285722521_13L88808Q11888653544Q20+0QA369809797%232284579115_13L88808Q1-1997695700Q20",
+   "runner_up_book": "hard-rock",
+   "runner_up_decimal": 21.39,
+   "spread_pct": 7.5,
+   "books_priced": 8
+  },
+  {
+   "name": "Base",
+   "variant": null,
+   "legs": [
+    {
+     "team": "DET",
+     "slot": "QB1",
+     "player": "Jared Goff",
+     "player_norm": "jaredgoff",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 270.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "DET",
+     "slot": "WR1",
+     "player": "Amon-Ra St. Brown",
+     "player_norm": "amonrastbrown",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 82.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "DET",
+     "slot": "WR2",
+     "player": "Jameson Williams",
+     "player_norm": "jamesonwilliams",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 59.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "BUF",
+     "slot": "QB1",
+     "player": "Josh Allen",
+     "player_norm": "joshallen",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 251.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "BUF",
+     "slot": "WR1",
+     "player": "Khalil Shakir",
+     "player_norm": "khalilshakir",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 45.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "BUF",
+     "slot": "WR2",
+     "player": "Joshua Palmer",
+     "player_norm": "joshuapalmer",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 13.5,
+     "position": "WR",
+     "position_flag": null
+    }
+   ],
+   "books": [
+    {
+     "book": "draftkings",
+     "legs": [
+      {
+       "line": 270.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 82.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 59.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 251.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-110",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-111",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:32:47.142649+00:00",
+     "http_status": 200,
+     "decimal": 19.0,
+     "american": 1800,
+     "implied": 0.0526,
+     "link": "https://sportsbook.draftkings.com/?outcomes=0QA369809454%232286990366_13L88808Q1-854869368Q20+0QA369809280%232285721859_13L88808Q1464291837Q20+0QA369809995%232284540174_13L88808Q1338230796Q20+0QA369809247%232284763786_13L88808Q1-1873767725Q20+0QA369809807%232285722521_13L88808Q11888653544Q20+0QA369809797%232284579115_13L88808Q1-1997695700Q20",
+     "correlation": 59.3903
+    },
+    {
+     "book": "caesars",
+     "legs": [
+      {
+       "line": 269.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 80.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 59.5,
+       "price": "-120",
+       "note": null
+      },
+      {
+       "line": 250.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 44.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-117",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:32:54.598218+00:00",
+     "http_status": 200,
+     "decimal": 18.5,
+     "american": 1750,
+     "implied": 0.0541,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "betmgm",
+     "legs": [
+      {
+       "line": 269.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 82.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 59.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 249.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 42.5,
+       "price": "-120",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 12.5,
+       "price": "-120",
+       "note": "no main flag - two-sided line used"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Jared Goff: no main flag - two-sided line used",
+      "Amon-Ra St. Brown: no main flag - two-sided line used",
+      "Jameson Williams: no main flag - two-sided line used",
+      "Josh Allen: no main flag - two-sided line used",
+      "Khalil Shakir: no main flag - two-sided line used",
+      "Joshua Palmer: no main flag - two-sided line used"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:32:59.607177+00:00",
+     "http_status": 200,
+     "decimal": 13.0,
+     "american": 1200,
+     "implied": 0.0769,
+     "link": "https://sports.on.betmgm.ca/en/sports?options=6%3A43192-3611918-5722382,6%3A43192-3611921-5722388,6%3A43192-3611882-5722308,6%3A43192-3611894-5722334,6%3A43192-3611887-5722320,6%3A43192-3611879-5722306",
+     "correlation": null
+    },
+    {
+     "book": "fanatics",
+     "legs": [
+      {
+       "line": 265.5,
+       "price": "-120",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 79.5,
+       "price": "-115",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 59.5,
+       "price": "-120",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 250.5,
+       "price": "-110",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 49.5,
+       "price": "+115",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 9.5,
+       "price": "-170",
+       "note": "several main-flagged lines (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Jared Goff: several main-flagged lines - two-sided line used",
+      "Amon-Ra St. Brown: several main-flagged lines (nearest to DK)",
+      "Jameson Williams: several main-flagged lines (nearest to DK)",
+      "Josh Allen: several main-flagged lines - two-sided line used",
+      "Khalil Shakir: several main-flagged lines (nearest to DK)",
+      "Joshua Palmer: several main-flagged lines (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:33:07.399402+00:00",
+     "http_status": 200,
+     "decimal": 15.0,
+     "american": 1400,
+     "implied": 0.0667,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "hard-rock",
+     "legs": [
+      {
+       "line": 274.5,
+       "price": "-105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 79.5,
+       "price": "-120",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 64.5,
+       "price": "+105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 249.5,
+       "price": "-115",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "+105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 24.5,
+       "price": "+190",
+       "note": "no main flag (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Jared Goff: no main flag (nearest to DK)",
+      "Amon-Ra St. Brown: no main flag (nearest to DK)",
+      "Jameson Williams: no main flag (nearest to DK)",
+      "Josh Allen: no main flag (nearest to DK)",
+      "Khalil Shakir: no main flag (nearest to DK)",
+      "Joshua Palmer: no main flag (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:33:11.826123+00:00",
+     "http_status": 200,
+     "decimal": 20.93,
+     "american": 1993,
+     "implied": 0.0478,
+     "link": "https://app.hardrock.bet/?deep_link_value=betslip/1356498289914151342,3103466672669983109,3221030853958304174,422681934867595667,7313489239361061257,4362081801653584296",
+     "correlation": null
+    },
+    {
+     "book": "betrivers",
+     "legs": [
+      {
+       "line": 268.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 79.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 58.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 255.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-115",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:33:19.098263+00:00",
+     "http_status": 200,
+     "decimal": 19.0,
+     "american": 1800,
+     "implied": 0.0526,
+     "link": "https://mi.betrivers.com/?page=sportsbook#event/1027638966?coupon=P|4338433859,4337072833,4338401874,4338427732,4337028393,4337820712|",
+     "correlation": null
+    },
+    {
+     "book": "betparx",
+     "legs": [
+      {
+       "line": 268.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 79.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 58.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 255.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-114",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:33:25.514161+00:00",
+     "http_status": 200,
+     "decimal": 19.0,
+     "american": 1800,
+     "implied": 0.0526,
+     "link": "https://nj.betparx.com/kambi#event/1027638966?coupon=parlay|4338433859,4337072833,4338401874,4338427732,4337028393,4337820712|0|replace",
+     "correlation": null
+    },
+    {
+     "book": "bally-bet",
+     "legs": [
+      {
+       "line": 268.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 79.5,
+       "price": "-113",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 58.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 255.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-118",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-120",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Amon-Ra St. Brown: no main flag (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:33:29.851351+00:00",
+     "http_status": 200,
+     "decimal": 19.0,
+     "american": 1800,
+     "implied": 0.0526,
+     "link": "https://play.ballybet.com/sports#event/1027638966?coupon=parlay|4338433859,4337072833,4338401874,4338427732,4337028393,4337820712|0|replace",
+     "correlation": null
+    }
+   ],
+   "best_book": "hard-rock",
+   "best_decimal": 20.93,
+   "best_american": 1993,
+   "best_link": "https://app.hardrock.bet/?deep_link_value=betslip/1356498289914151342,3103466672669983109,3221030853958304174,422681934867595667,7313489239361061257,4362081801653584296",
+   "runner_up_book": "draftkings",
+   "runner_up_decimal": 19.0,
+   "spread_pct": 10.2,
+   "books_priced": 8
+  },
+  {
+   "name": "BUF: WR1→TE1",
+   "variant": [
+    "WR1",
+    "TE1"
+   ],
+   "legs": [
+    {
+     "team": "DET",
+     "slot": "QB1",
+     "player": "Jared Goff",
+     "player_norm": "jaredgoff",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 270.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "DET",
+     "slot": "WR1",
+     "player": "Amon-Ra St. Brown",
+     "player_norm": "amonrastbrown",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 82.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "DET",
+     "slot": "WR2",
+     "player": "Jameson Williams",
+     "player_norm": "jamesonwilliams",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 59.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "BUF",
+     "slot": "QB1",
+     "player": "Josh Allen",
+     "player_norm": "joshallen",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 251.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "BUF",
+     "slot": "TE1",
+     "player": "Dalton Kincaid",
+     "player_norm": "daltonkincaid",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 50.5,
+     "position": "TE",
+     "position_flag": null
+    },
+    {
+     "team": "BUF",
+     "slot": "WR2",
+     "player": "Joshua Palmer",
+     "player_norm": "joshuapalmer",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 13.5,
+     "position": "WR",
+     "position_flag": null
+    }
+   ],
+   "books": [
+    {
+     "book": "draftkings",
+     "legs": [
+      {
+       "line": 270.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 82.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 59.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 251.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 50.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-111",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:39:52.727400+00:00",
+     "http_status": 200,
+     "decimal": 19.0,
+     "american": 1800,
+     "implied": 0.0526,
+     "link": "https://sportsbook.draftkings.com/?outcomes=0QA369809454%232286990366_13L88808Q1-854869368Q20+0QA369809280%232285721859_13L88808Q1464291837Q20+0QA369809995%232284540174_13L88808Q1338230796Q20+0QA369809247%232284763786_13L88808Q1-1873767725Q20+0QA369809202%232285845259_13L88808Q1138777935Q20+0QA369809797%232284579115_13L88808Q1-1997695700Q20",
+     "correlation": 58.7003
+    },
+    {
+     "book": "caesars",
+     "legs": [
+      {
+       "line": 269.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 80.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 59.5,
+       "price": "-120",
+       "note": null
+      },
+      {
+       "line": 250.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 50.5,
+       "price": "-120",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-117",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:39:59.542219+00:00",
+     "http_status": 200,
+     "decimal": 18.0,
+     "american": 1700,
+     "implied": 0.0556,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "betmgm",
+     "legs": [
+      {
+       "line": 269.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 82.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 59.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 249.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 50.5,
+       "price": "-111",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 12.5,
+       "price": "-120",
+       "note": "no main flag - two-sided line used"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Jared Goff: no main flag - two-sided line used",
+      "Amon-Ra St. Brown: no main flag - two-sided line used",
+      "Jameson Williams: no main flag - two-sided line used",
+      "Josh Allen: no main flag - two-sided line used",
+      "Dalton Kincaid: no main flag - two-sided line used",
+      "Joshua Palmer: no main flag - two-sided line used"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:40:04.848521+00:00",
+     "http_status": 200,
+     "decimal": 13.0,
+     "american": 1200,
+     "implied": 0.0769,
+     "link": "https://sports.on.betmgm.ca/en/sports?options=6%3A43192-3611918-5722382,6%3A43192-3611921-5722388,6%3A43192-3611882-5722308,6%3A43192-3611894-5722334,6%3A43192-3611935-5722414,6%3A43192-3611879-5722306",
+     "correlation": null
+    },
+    {
+     "book": "fanatics",
+     "legs": [
+      {
+       "line": 265.5,
+       "price": "-120",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 79.5,
+       "price": "-115",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 59.5,
+       "price": "-120",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 250.5,
+       "price": "-110",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 49.5,
+       "price": "-140",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 9.5,
+       "price": "-170",
+       "note": "several main-flagged lines (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Jared Goff: several main-flagged lines - two-sided line used",
+      "Amon-Ra St. Brown: several main-flagged lines (nearest to DK)",
+      "Jameson Williams: several main-flagged lines (nearest to DK)",
+      "Josh Allen: several main-flagged lines - two-sided line used",
+      "Dalton Kincaid: several main-flagged lines (nearest to DK)",
+      "Joshua Palmer: several main-flagged lines (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:40:10.650965+00:00",
+     "http_status": 200,
+     "decimal": 13.0,
+     "american": 1200,
+     "implied": 0.0769,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "hard-rock",
+     "legs": [
+      {
+       "line": 274.5,
+       "price": "-105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 79.5,
+       "price": "-120",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 64.5,
+       "price": "+105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 249.5,
+       "price": "-115",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "-130",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 24.5,
+       "price": "+190",
+       "note": "no main flag (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Jared Goff: no main flag (nearest to DK)",
+      "Amon-Ra St. Brown: no main flag (nearest to DK)",
+      "Jameson Williams: no main flag (nearest to DK)",
+      "Josh Allen: no main flag (nearest to DK)",
+      "Dalton Kincaid: no main flag (nearest to DK)",
+      "Joshua Palmer: no main flag (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:40:17.123329+00:00",
+     "http_status": 200,
+     "decimal": 19.88,
+     "american": 1888,
+     "implied": 0.0503,
+     "link": "https://app.hardrock.bet/?deep_link_value=betslip/1356498289914151342,3103466672669983109,3221030853958304174,422681934867595667,7457213276175335828,4362081801653584296",
+     "correlation": null
+    },
+    {
+     "book": "betrivers",
+     "legs": [
+      {
+       "line": 268.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 79.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 58.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 255.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 52.5,
+       "price": "-118",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-115",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:40:24.179185+00:00",
+     "http_status": 200,
+     "decimal": 18.0,
+     "american": 1700,
+     "implied": 0.0556,
+     "link": "https://mi.betrivers.com/?page=sportsbook#event/1027638966?coupon=P|4338433859,4337072833,4338401874,4338427732,4337811424,4337820712|",
+     "correlation": null
+    },
+    {
+     "book": "betparx",
+     "legs": [
+      {
+       "line": 268.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 79.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 58.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 255.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 52.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-114",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:40:29.057921+00:00",
+     "http_status": 200,
+     "decimal": 18.0,
+     "american": 1700,
+     "implied": 0.0556,
+     "link": "https://nj.betparx.com/kambi#event/1027638966?coupon=parlay|4338433859,4337072833,4338401874,4338427732,4337811424,4337820712|0|replace",
+     "correlation": null
+    },
+    {
+     "book": "bally-bet",
+     "legs": [
+      {
+       "line": 268.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 79.5,
+       "price": "-113",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 58.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 255.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 52.5,
+       "price": "-122",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-120",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Amon-Ra St. Brown: no main flag (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:40:47.095430+00:00",
+     "http_status": 200,
+     "decimal": 18.0,
+     "american": 1700,
+     "implied": 0.0556,
+     "link": "https://play.ballybet.com/sports#event/1027638966?coupon=parlay|4338433859,4337072833,4338401874,4338427732,4337811424,4337820712|0|replace",
+     "correlation": null
+    }
+   ],
+   "best_book": "hard-rock",
+   "best_decimal": 19.88,
+   "best_american": 1888,
+   "best_link": "https://app.hardrock.bet/?deep_link_value=betslip/1356498289914151342,3103466672669983109,3221030853958304174,422681934867595667,7457213276175335828,4362081801653584296",
+   "runner_up_book": "draftkings",
+   "runner_up_decimal": 19.0,
+   "spread_pct": 4.6,
+   "books_priced": 8
+  },
+  {
+   "name": "BUF: WR2→TE1",
+   "variant": [
+    "WR2",
+    "TE1"
+   ],
+   "legs": [
+    {
+     "team": "DET",
+     "slot": "QB1",
+     "player": "Jared Goff",
+     "player_norm": "jaredgoff",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 270.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "DET",
+     "slot": "WR1",
+     "player": "Amon-Ra St. Brown",
+     "player_norm": "amonrastbrown",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 82.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "DET",
+     "slot": "WR2",
+     "player": "Jameson Williams",
+     "player_norm": "jamesonwilliams",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 59.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "BUF",
+     "slot": "QB1",
+     "player": "Josh Allen",
+     "player_norm": "joshallen",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 251.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "BUF",
+     "slot": "WR1",
+     "player": "Khalil Shakir",
+     "player_norm": "khalilshakir",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 45.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "BUF",
+     "slot": "TE1",
+     "player": "Dalton Kincaid",
+     "player_norm": "daltonkincaid",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 50.5,
+     "position": "TE",
+     "position_flag": null
+    }
+   ],
+   "books": [
+    {
+     "book": "draftkings",
+     "legs": [
+      {
+       "line": 270.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 82.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 59.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 251.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-110",
+       "note": null
+      },
+      {
+       "line": 50.5,
+       "price": "-114",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:37:46.588818+00:00",
+     "http_status": 200,
+     "decimal": 18.0,
+     "american": 1700,
+     "implied": 0.0556,
+     "link": "https://sportsbook.draftkings.com/?outcomes=0QA369809454%232286990366_13L88808Q1-854869368Q20+0QA369809280%232285721859_13L88808Q1464291837Q20+0QA369809995%232284540174_13L88808Q1338230796Q20+0QA369809247%232284763786_13L88808Q1-1873767725Q20+0QA369809807%232285722521_13L88808Q11888653544Q20+0QA369809202%232285845259_13L88808Q1138777935Q20",
+     "correlation": 61.0418
+    },
+    {
+     "book": "caesars",
+     "legs": [
+      {
+       "line": 269.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 80.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 59.5,
+       "price": "-120",
+       "note": null
+      },
+      {
+       "line": 250.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 44.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 50.5,
+       "price": "-120",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:37:55.792644+00:00",
+     "http_status": 200,
+     "decimal": 16.5,
+     "american": 1550,
+     "implied": 0.0606,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "betmgm",
+     "legs": [
+      {
+       "line": 269.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 82.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 59.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 249.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 42.5,
+       "price": "-120",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 50.5,
+       "price": "-111",
+       "note": "no main flag - two-sided line used"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Jared Goff: no main flag - two-sided line used",
+      "Amon-Ra St. Brown: no main flag - two-sided line used",
+      "Jameson Williams: no main flag - two-sided line used",
+      "Josh Allen: no main flag - two-sided line used",
+      "Khalil Shakir: no main flag - two-sided line used",
+      "Dalton Kincaid: no main flag - two-sided line used"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:37:58.698868+00:00",
+     "http_status": 200,
+     "decimal": 12.5,
+     "american": 1150,
+     "implied": 0.08,
+     "link": "https://sports.on.betmgm.ca/en/sports?options=6%3A43192-3611918-5722382,6%3A43192-3611921-5722388,6%3A43192-3611882-5722308,6%3A43192-3611894-5722334,6%3A43192-3611887-5722320,6%3A43192-3611935-5722414",
+     "correlation": null
+    },
+    {
+     "book": "fanatics",
+     "legs": [
+      {
+       "line": 265.5,
+       "price": "-120",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 79.5,
+       "price": "-115",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 59.5,
+       "price": "-120",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 250.5,
+       "price": "-110",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 49.5,
+       "price": "+115",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "-140",
+       "note": "several main-flagged lines (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Jared Goff: several main-flagged lines - two-sided line used",
+      "Amon-Ra St. Brown: several main-flagged lines (nearest to DK)",
+      "Jameson Williams: several main-flagged lines (nearest to DK)",
+      "Josh Allen: several main-flagged lines - two-sided line used",
+      "Khalil Shakir: several main-flagged lines (nearest to DK)",
+      "Dalton Kincaid: several main-flagged lines (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:38:04.559462+00:00",
+     "http_status": 200,
+     "decimal": 14.0,
+     "american": 1300,
+     "implied": 0.0714,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "hard-rock",
+     "legs": [
+      {
+       "line": 274.5,
+       "price": "-105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 79.5,
+       "price": "-120",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 64.5,
+       "price": "+105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 249.5,
+       "price": "-115",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "+105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "-130",
+       "note": "no main flag (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Jared Goff: no main flag (nearest to DK)",
+      "Amon-Ra St. Brown: no main flag (nearest to DK)",
+      "Jameson Williams: no main flag (nearest to DK)",
+      "Josh Allen: no main flag (nearest to DK)",
+      "Khalil Shakir: no main flag (nearest to DK)",
+      "Dalton Kincaid: no main flag (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:38:11.646783+00:00",
+     "http_status": 200,
+     "decimal": 14.87,
+     "american": 1387,
+     "implied": 0.0672,
+     "link": "https://app.hardrock.bet/?deep_link_value=betslip/1356498289914151342,3103466672669983109,3221030853958304174,422681934867595667,7313489239361061257,7457213276175335828",
+     "correlation": null
+    },
+    {
+     "book": "betrivers",
+     "legs": [
+      {
+       "line": 268.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 79.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 58.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 255.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 52.5,
+       "price": "-118",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:38:17.080378+00:00",
+     "http_status": 200,
+     "decimal": 17.0,
+     "american": 1600,
+     "implied": 0.0588,
+     "link": "https://mi.betrivers.com/?page=sportsbook#event/1027638966?coupon=P|4338433859,4337072833,4338401874,4338427732,4337028393,4337811424|",
+     "correlation": null
+    },
+    {
+     "book": "betparx",
+     "legs": [
+      {
+       "line": 268.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 79.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 58.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 255.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 52.5,
+       "price": "-117",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:38:23.081004+00:00",
+     "http_status": 200,
+     "decimal": 17.0,
+     "american": 1600,
+     "implied": 0.0588,
+     "link": "https://nj.betparx.com/kambi#event/1027638966?coupon=parlay|4338433859,4337072833,4338401874,4338427732,4337028393,4337811424|0|replace",
+     "correlation": null
+    },
+    {
+     "book": "bally-bet",
+     "legs": [
+      {
+       "line": 268.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 79.5,
+       "price": "-113",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 58.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 255.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-118",
+       "note": null
+      },
+      {
+       "line": 52.5,
+       "price": "-122",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Amon-Ra St. Brown: no main flag (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:38:28.859401+00:00",
+     "http_status": 200,
+     "decimal": 17.0,
+     "american": 1600,
+     "implied": 0.0588,
+     "link": "https://play.ballybet.com/sports#event/1027638966?coupon=parlay|4338433859,4337072833,4338401874,4338427732,4337028393,4337811424|0|replace",
+     "correlation": null
+    }
+   ],
+   "best_book": "draftkings",
+   "best_decimal": 18.0,
+   "best_american": 1700,
+   "best_link": "https://sportsbook.draftkings.com/?outcomes=0QA369809454%232286990366_13L88808Q1-854869368Q20+0QA369809280%232285721859_13L88808Q1464291837Q20+0QA369809995%232284540174_13L88808Q1338230796Q20+0QA369809247%232284763786_13L88808Q1-1873767725Q20+0QA369809807%232285722521_13L88808Q11888653544Q20+0QA369809202%232285845259_13L88808Q1138777935Q20",
+   "runner_up_book": "betrivers",
+   "runner_up_decimal": 17.0,
+   "spread_pct": 5.9,
+   "books_priced": 8
+  },
+  {
+   "name": "BUF: WR2→RB1",
+   "variant": [
+    "WR2",
+    "RB1"
+   ],
+   "legs": [
+    {
+     "team": "DET",
+     "slot": "QB1",
+     "player": "Jared Goff",
+     "player_norm": "jaredgoff",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 270.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "DET",
+     "slot": "WR1",
+     "player": "Amon-Ra St. Brown",
+     "player_norm": "amonrastbrown",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 82.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "DET",
+     "slot": "WR2",
+     "player": "Jameson Williams",
+     "player_norm": "jamesonwilliams",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 59.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "BUF",
+     "slot": "QB1",
+     "player": "Josh Allen",
+     "player_norm": "joshallen",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 251.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "BUF",
+     "slot": "WR1",
+     "player": "Khalil Shakir",
+     "player_norm": "khalilshakir",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 45.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "BUF",
+     "slot": "RB1",
+     "player": "James Cook III",
+     "player_norm": "jamescookiii",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": null,
+     "position": "RB",
+     "position_flag": null
+    }
+   ],
+   "books": [
+    {
+     "book": "draftkings",
+     "legs": [
+      {
+       "line": 270.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 82.5,
+       "price": "-111",
+       "note": null
+      },
+      {
+       "line": 59.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 251.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-110",
+       "note": null
+      },
+      null
+     ],
+     "missing": [
+      "James Cook III rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "caesars",
+     "legs": [
+      {
+       "line": 269.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 80.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 59.5,
+       "price": "-120",
+       "note": null
+      },
+      {
+       "line": 250.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 44.5,
+       "price": "-117",
+       "note": null
+      },
+      null
+     ],
+     "missing": [
+      "James Cook III rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "betmgm",
+     "legs": [
+      {
+       "line": 269.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 82.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 59.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 249.5,
+       "price": "-115",
+       "note": "no main flag - two-sided line used"
+      },
+      {
+       "line": 42.5,
+       "price": "-120",
+       "note": "no main flag - two-sided line used"
+      },
+      null
+     ],
+     "missing": [
+      "James Cook III rec yds (no prop)"
+     ],
+     "notes": [
+      "Jared Goff: no main flag - two-sided line used",
+      "Amon-Ra St. Brown: no main flag - two-sided line used",
+      "Jameson Williams: no main flag - two-sided line used",
+      "Josh Allen: no main flag - two-sided line used",
+      "Khalil Shakir: no main flag - two-sided line used"
+     ],
+     "priced": false
+    },
+    {
+     "book": "fanatics",
+     "legs": [
+      {
+       "line": 265.5,
+       "price": "-120",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 79.5,
+       "price": "-115",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 59.5,
+       "price": "-120",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 250.5,
+       "price": "-110",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 49.5,
+       "price": "+115",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 19.5,
+       "price": "+115",
+       "note": "several main-flagged lines (closest to even money)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Jared Goff: several main-flagged lines - two-sided line used",
+      "Amon-Ra St. Brown: several main-flagged lines (nearest to DK)",
+      "Jameson Williams: several main-flagged lines (nearest to DK)",
+      "Josh Allen: several main-flagged lines - two-sided line used",
+      "Khalil Shakir: several main-flagged lines (nearest to DK)",
+      "James Cook III: several main-flagged lines (closest to even money)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:39:46.633043+00:00",
+     "http_status": 200,
+     "decimal": 18.0,
+     "american": 1700,
+     "implied": 0.0556,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "hard-rock",
+     "legs": [
+      {
+       "line": 274.5,
+       "price": "-105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 79.5,
+       "price": "-120",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 64.5,
+       "price": "+105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 249.5,
+       "price": "-115",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "+105",
+       "note": "no main flag (nearest to DK)"
+      },
+      null
+     ],
+     "missing": [
+      "James Cook III rec yds (no prop)"
+     ],
+     "notes": [
+      "Jared Goff: no main flag (nearest to DK)",
+      "Amon-Ra St. Brown: no main flag (nearest to DK)",
+      "Jameson Williams: no main flag (nearest to DK)",
+      "Josh Allen: no main flag (nearest to DK)",
+      "Khalil Shakir: no main flag (nearest to DK)"
+     ],
+     "priced": false
+    },
+    {
+     "book": "betrivers",
+     "legs": [
+      {
+       "line": 268.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 79.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 58.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 255.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-114",
+       "note": null
+      },
+      null
+     ],
+     "missing": [
+      "James Cook III rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "betparx",
+     "legs": [
+      {
+       "line": 268.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 79.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 58.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 255.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-113",
+       "note": null
+      },
+      null
+     ],
+     "missing": [
+      "James Cook III rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "bally-bet",
+     "legs": [
+      {
+       "line": 268.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 79.5,
+       "price": "-113",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 58.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 255.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-118",
+       "note": null
+      },
+      null
+     ],
+     "missing": [
+      "James Cook III rec yds (no prop)"
+     ],
+     "notes": [
+      "Amon-Ra St. Brown: no main flag (nearest to DK)"
+     ],
+     "priced": false
+    }
+   ],
+   "best_book": "fanatics",
+   "best_decimal": 18.0,
+   "best_american": 1700,
+   "best_link": null,
+   "runner_up_book": null,
+   "runner_up_decimal": null,
+   "spread_pct": null,
+   "books_priced": 1
+  }
+ ],
+ "roster": {
+  "BUF": {
+   "QB1": {
+    "name": "Josh Allen",
+    "norm": "joshallen",
+    "position": "QB",
+    "team": "BUF",
+    "position_flag": null,
+    "dk_line": 251.5
+   },
+   "WR1": {
+    "name": "Khalil Shakir",
+    "norm": "khalilshakir",
+    "position": "WR",
+    "team": "BUF",
+    "position_flag": null,
+    "dk_line": 45.5
+   },
+   "WR2": {
+    "name": "Joshua Palmer",
+    "norm": "joshuapalmer",
+    "position": "WR",
+    "team": "BUF",
+    "position_flag": null,
+    "dk_line": 13.5
+   },
+   "WR3": {
+    "name": "Keon Coleman",
+    "norm": "keoncoleman",
+    "position": "WR",
+    "team": "BUF",
+    "position_flag": null,
+    "dk_line": 12.5
+   },
+   "TE1": {
+    "name": "Dalton Kincaid",
+    "norm": "daltonkincaid",
+    "position": "TE",
+    "team": "BUF",
+    "position_flag": null,
+    "dk_line": 50.5
+   },
+   "RB1": {
+    "name": "James Cook III",
+    "norm": "jamescookiii",
+    "position": "RB",
+    "team": "BUF",
+    "position_flag": null,
+    "dk_line": 78.5
+   }
+  },
+  "DET": {
+   "QB1": {
+    "name": "Jared Goff",
+    "norm": "jaredgoff",
+    "position": "QB",
+    "team": "DET",
+    "position_flag": null,
+    "dk_line": 270.5
+   },
+   "WR1": {
+    "name": "Amon-Ra St. Brown",
+    "norm": "amonrastbrown",
+    "position": "WR",
+    "team": "DET",
+    "position_flag": null,
+    "dk_line": 82.5
+   },
+   "WR2": {
+    "name": "Jameson Williams",
+    "norm": "jamesonwilliams",
+    "position": "WR",
+    "team": "DET",
+    "position_flag": null,
+    "dk_line": 59.5
+   },
+   "WR3": {
+    "name": "Isaac TeSlaa",
+    "norm": "isaacteslaa",
+    "position": "WR",
+    "team": "DET",
+    "position_flag": null,
+    "dk_line": 14.5
+   },
+   "TE1": {
+    "name": "Sam LaPorta",
+    "norm": "samlaporta",
+    "position": "TE",
+    "team": "DET",
+    "position_flag": null,
+    "dk_line": 45.5
+   },
+   "RB1": {
+    "name": "Jahmyr Gibbs",
+    "norm": "jahmyrgibbs",
+    "position": "RB",
+    "team": "DET",
+    "position_flag": null,
+    "dk_line": 90.5
+   }
+  }
+ },
+ "notes": [],
+ "best_overall": {
+  "stack": "DET: WR2→WR3",
+  "book": "hard-rock",
+  "decimal": 32.24,
+  "american": 3124,
+  "link": "https://app.hardrock.bet/?deep_link_value=betslip/1356498289914151342,3103466672669983109,6622301400506433947,422681934867595667,7313489239361061257,4362081801653584296"
+ }
+}

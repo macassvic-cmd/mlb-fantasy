@@ -162,6 +162,13 @@ class TestCard(unittest.TestCase):
         self.assertEqual(post.call_args[1]["json"]["embeds"][0]["title"], "The Play Card")
         self.assertEqual(calls[0][0], ("play_card", True))
 
+    def test_embeds_are_chunked_under_discord_char_budget(self):
+        big = [{"title": f"t{i}", "description": "x" * 2500, "color": 1} for i in range(6)]
+        batches = pc.chunk_embeds(big)
+        self.assertTrue(all(sum(len(e["title"]) + len(e["description"]) for e in b) <= pc.DISCORD_MSG_CHAR_BUDGET for b in batches))
+        self.assertEqual(sum(len(b) for b in batches), 6)
+        self.assertEqual(len(batches), 3)
+
     def test_save_card_writes_atomically(self):
         d = tempfile.mkdtemp()
         self.addCleanup(shutil.rmtree, d, True)

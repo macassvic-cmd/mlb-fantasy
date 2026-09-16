@@ -286,6 +286,31 @@ def discord_embeds(card):
     return [{"title": redact(e["title"]), "description": redact(e["description"]), "color": e["color"]} for e in embeds]
 
 
+DISCORD_MSG_CHAR_BUDGET = 5500  # Discord caps one message at 6000 chars across all embeds (HTTP 400 otherwise)
+
+
+def chunk_embeds(embeds):
+    """Split embeds into messages of <= DISCORD_EMBEDS_PER_MSG embeds and
+    <= DISCORD_MSG_CHAR_BUDGET total characters (title + description)."""
+    batches, cur, size = [], [], 0
+    for e in embeds:
+        n = len(e.get("title") or "") + len(e.get("description") or "")
+        if cur and (len(cur) >= DISCORD_EMBEDS_PER_MSG or size + n > DISCORD_MSG_CHAR_BUDGET):
+            batches.append(cur)
+            cur, size = [], 0
+        cur.append(e)
+        size += n
+    if cur:
+        batches.append(cur)
+    return batches
+
+
+def post_latest(card_path=CARD_PATH):
+    """Re-post the last built card without re-pricing anything."""
+    with open(card_path, encoding="utf-8") as f:
+        return post_discord(json.load(f))
+
+
 def post_discord(card, webhook_url=None):
     import discord_health
     url = webhook_url or os.environ.get(WEBHOOK_ENV) or os.environ.get(FALLBACK_WEBHOOK_ENV)
@@ -294,9 +319,9 @@ def post_discord(card, webhook_url=None):
         return False
     embeds = discord_embeds(card)
     ok = True
-    for i in range(0, len(embeds), DISCORD_EMBEDS_PER_MSG):
+    for batch in chunk_embeds(embeds):
         try:
-            resp = requests.post(url, json={"embeds": embeds[i:i + DISCORD_EMBEDS_PER_MSG]}, timeout=15)
+            resp = requests.post(url, json={"embeds": batch}, timeout=15)
             resp.raise_for_status()
             discord_health.record_attempt("play_card", True, http_status=resp.status_code)
         except Exception as e:
@@ -476,7 +501,11 @@ def main():
     ap.add_argument("--limit", type=int)
     ap.add_argument("--events", help="comma-separated event ids")
     ap.add_argument("--out", default=PAGE_PATH)
+    ap.add_argument("--post-latest", action="store_true", help="only re-post data/oddsblaze/playcard/latest.json to Discord")
     args = ap.parse_args()
+    if args.post_latest:
+        print("posted" if post_latest() else "post failed")
+        return
     leagues = [l for l in args.league.split(",") if l]
     card, page = run(leagues, price=args.price, from_saved=args.from_saved, post=args.post_discord, limit=args.limit, page_path=args.out, event_ids=args.events.split(",") if args.events else None)
     print(f"card: {CARD_PATH}\npage: {page}\ntier: {card['overall_tier']} | games: {len(card['games'])} | dns plays: {len(card['dns']['plays'])} | warnings: {card['warnings']}")

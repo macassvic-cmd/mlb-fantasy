@@ -1,0 +1,3809 @@
+{
+ "generated_at": "2026-09-16T08:52:30.768118+00:00",
+ "generated_at_pt": "Wed 9/16 1:52 AM PT",
+ "source": "live",
+ "dns": {
+  "plays": [
+   {
+    "player": "Raúl Moro Prescoli",
+    "team": "OSA",
+    "matchup": "OSA @ ATM",
+    "league": "LLG",
+    "kickoff": "2026-09-16T17:00:00.000Z",
+    "kickoff_pt": "Wed 9/16 10:00 AM PT",
+    "dns": 78,
+    "confidence": 50,
+    "sources": [
+     "predicted bench: recent_start_pattern"
+    ],
+    "rotowire_url": "https://www.rotowire.com/soccer/player/raul-moro-32582",
+    "scored_at": "2026-09-16T07:39:33.047135+00:00"
+   },
+   {
+    "player": "Tani Oluwaseyi",
+    "team": "VIL",
+    "matchup": "VIL @ MLA",
+    "league": "LLG",
+    "kickoff": "2026-09-17T19:30:00.000Z",
+    "kickoff_pt": "Thu 9/17 12:30 PM PT",
+    "dns": 78,
+    "confidence": 50,
+    "sources": [
+     "predicted bench: recent_start_pattern"
+    ],
+    "rotowire_url": "https://www.rotowire.com/soccer/player/tani-oluwaseyi-36541",
+    "scored_at": "2026-09-16T07:39:33.047135+00:00"
+   },
+   {
+    "player": "Asier Osambela Larraya",
+    "team": "OSA",
+    "matchup": "OSA @ ATM",
+    "league": "LLG",
+    "kickoff": "2026-09-16T17:00:00.000Z",
+    "kickoff_pt": "Wed 9/16 10:00 AM PT",
+    "dns": 68,
+    "confidence": 50,
+    "sources": [
+     "predicted bench: recent_start_pattern"
+    ],
+    "rotowire_url": "https://www.rotowire.com/soccer/player/asier-osambela-41382",
+    "scored_at": "2026-09-16T07:39:33.047135+00:00"
+   },
+   {
+    "player": "Jonathan Dubasin",
+    "team": "OSA",
+    "matchup": "OSA @ ATM",
+    "league": "LLG",
+    "kickoff": "2026-09-16T17:00:00.000Z",
+    "kickoff_pt": "Wed 9/16 10:00 AM PT",
+    "dns": 68,
+    "confidence": 50,
+    "sources": [
+     "predicted bench: recent_start_pattern"
+    ],
+    "rotowire_url": "https://www.rotowire.com/soccer/player/jonathan-dubasin-48889",
+    "scored_at": "2026-09-16T07:39:33.047135+00:00"
+   },
+   {
+    "player": "Chidera Ejuke",
+    "team": "SEV",
+    "matchup": "SEV @ COR",
+    "league": "LLG",
+    "kickoff": "2026-09-16T17:00:00.000Z",
+    "kickoff_pt": "Wed 9/16 10:00 AM PT",
+    "dns": 68,
+    "confidence": 50,
+    "sources": [
+     "predicted bench: recent_start_pattern"
+    ],
+    "rotowire_url": "https://www.rotowire.com/soccer/player/chidera-ejuke-33834",
+    "scored_at": "2026-09-16T07:39:33.047135+00:00"
+   }
+  ],
+  "last_refresh": "2026-09-16T07:39:33.047135+00:00",
+  "last_refresh_pt": "Wed 9/16 12:39 AM PT",
+  "age_minutes": 72.96201638333334,
+  "tier": "warn"
+ },
+ "sgp": {
+  "pulled_at": "2026-09-16T08:52:29.897636+00:00",
+  "pulled_at_pt": "Wed 9/16 1:52 AM PT",
+  "age_minutes": 0.014508033333333333,
+  "tier": "fresh",
+  "leagues": [
+   "nfl"
+  ]
+ },
+ "games": [
+  {
+   "league": "nfl",
+   "event": "f520b3cb-46c1-55ba-87e3-360e2fc574b7",
+   "away": "DET",
+   "home": "BUF",
+   "kickoff": "2026-09-18T00:15:00.000Z",
+   "kickoff_pt": "Thu 9/17 5:15 PM PT",
+   "stacks": [
+    {
+     "name": "DET: WR2→WR3",
+     "legs": [
+      {
+       "player": "Jared Goff",
+       "team": "DET",
+       "slot": "QB1",
+       "market": "pass yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 270.5,
+        "CZR": 269.5,
+        "MGM": 269.5,
+        "FAN": 265.5,
+        "HR": 274.5,
+        "BR": 268.5,
+        "PARX": 268.5,
+        "BALLY": 268.5
+       }
+      },
+      {
+       "player": "Amon-Ra St. Brown",
+       "team": "DET",
+       "slot": "WR1",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 82.5,
+        "CZR": 80.5,
+        "MGM": 82.5,
+        "FAN": 79.5,
+        "HR": 79.5,
+        "BR": 79.5,
+        "PARX": 79.5,
+        "BALLY": 79.5
+       }
+      },
+      {
+       "player": "Isaac TeSlaa",
+       "team": "DET",
+       "slot": "WR3",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 14.5,
+        "CZR": 15.5,
+        "MGM": 16.5,
+        "FAN": 9.5,
+        "HR": 24.5,
+        "BR": 15.5,
+        "PARX": 15.5,
+        "BALLY": 15.5
+       }
+      },
+      {
+       "player": "Josh Allen",
+       "team": "BUF",
+       "slot": "QB1",
+       "market": "pass yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 251.5,
+        "CZR": 250.5,
+        "MGM": 249.5,
+        "FAN": 250.5,
+        "HR": 249.5,
+        "BR": 255.5,
+        "PARX": 255.5,
+        "BALLY": 255.5
+       }
+      },
+      {
+       "player": "Khalil Shakir",
+       "team": "BUF",
+       "slot": "WR1",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 45.5,
+        "CZR": 44.5,
+        "MGM": 42.5,
+        "FAN": 49.5,
+        "HR": 49.5,
+        "BR": 46.5,
+        "PARX": 46.5,
+        "BALLY": 46.5
+       }
+      },
+      {
+       "player": "Joshua Palmer",
+       "team": "BUF",
+       "slot": "WR2",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 13.5,
+        "CZR": 13.5,
+        "MGM": 12.5,
+        "FAN": 9.5,
+        "HR": 24.5,
+        "BR": 13.5,
+        "PARX": 13.5,
+        "BALLY": 13.5
+       }
+      }
+     ],
+     "best_book": "hard-rock",
+     "best_book_abbr": "HR",
+     "best_american": 3124,
+     "best_decimal": 32.24,
+     "best_link": "https://app.hardrock.bet/?deep_link_value=betslip/1356498289914151342,3103466672669983109,6622301400506433947,422681934867595667,7313489239361061257,4362081801653584296",
+     "runner_up_book": "draftkings",
+     "runner_up_abbr": "DK",
+     "runner_up_decimal": 20.0,
+     "spread_pct": 61.2,
+     "books_priced": 8,
+     "books": [
+      {
+       "book": "draftkings",
+       "abbr": "DK",
+       "priced": true,
+       "american": 1900,
+       "decimal": 20.0,
+       "link": "https://sportsbook.draftkings.com/?outcomes=0QA369809454%232286990366_13L88808Q1-854869368Q20+0QA369809280%232285721859_13L88808Q1464291837Q20+0QA369809426%232284539720_13L88808Q1-347953252Q20+0QA369809247%232284763786_13L88808Q1-1873767725Q20+0QA369809807%232285722521_13L88808Q11888653544Q20+0QA369809797%232284579115_13L88808Q1-1997695700Q20",
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "caesars",
+       "abbr": "CZR",
+       "priced": true,
+       "american": 1900,
+       "decimal": 20.0,
+       "link": null,
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "betmgm",
+       "abbr": "MGM",
+       "priced": true,
+       "american": 1400,
+       "decimal": 15.0,
+       "link": "https://sports.on.betmgm.ca/en/sports?options=6%3A43192-3611918-5722382,6%3A43192-3611921-5722388,6%3A43192-3611889-5722322,6%3A43192-3611894-5722334,6%3A43192-3611887-5722320,6%3A43192-3611879-5722306",
+       "missing": [],
+       "error": null,
+       "notes": [
+        "Jared Goff: no main flag - two-sided line used",
+        "Amon-Ra St. Brown: no main flag - two-sided line used",
+        "Isaac TeSlaa: no main flag - two-sided line used",
+        "Josh Allen: no main flag - two-sided line used",
+        "Khalil Shakir: no main flag - two-sided line used",
+        "Joshua Palmer: no main flag - two-sided line used"
+       ]
+      },
+      {
+       "book": "fanatics",
+       "abbr": "FAN",
+       "priced": true,
+       "american": 1300,
+       "decimal": 14.0,
+       "link": null,
+       "missing": [],
+       "error": null,
+       "notes": [
+        "Jared Goff: several main-flagged lines - two-sided line used",
+        "Amon-Ra St. Brown: several main-flagged lines (nearest to DK)",
+        "Isaac TeSlaa: several main-flagged lines (nearest to DK)",
+        "Josh Allen: several main-flagged lines - two-sided line used",
+        "Khalil Shakir: several main-flagged lines (nearest to DK)",
+        "Joshua Palmer: several main-flagged lines (nearest to DK)"
+       ]
+      },
+      {
+       "book": "hard-rock",
+       "abbr": "HR",
+       "priced": true,
+       "american": 3124,
+       "decimal": 32.24,
+       "link": "https://app.hardrock.bet/?deep_link_value=betslip/1356498289914151342,3103466672669983109,6622301400506433947,422681934867595667,7313489239361061257,4362081801653584296",
+       "missing": [],
+       "error": null,
+       "notes": [
+        "Jared Goff: no main flag (nearest to DK)",
+        "Amon-Ra St. Brown: no main flag (nearest to DK)",
+        "Isaac TeSlaa: no main flag (nearest to DK)",
+        "Josh Allen: no main flag (nearest to DK)",
+        "Khalil Shakir: no main flag (nearest to DK)",
+        "Joshua Palmer: no main flag (nearest to DK)"
+       ]
+      },
+      {
+       "book": "betrivers",
+       "abbr": "BR",
+       "priced": true,
+       "american": 1900,
+       "decimal": 20.0,
+       "link": "https://mi.betrivers.com/?page=sportsbook#event/1027638966?coupon=P|4338433859,4337072833,4337820091,4338427732,4337028393,4337820712|",
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "betparx",
+       "abbr": "PARX",
+       "priced": true,
+       "american": 1900,
+       "decimal": 20.0,
+       "link": "https://nj.betparx.com/kambi#event/1027638966?coupon=parlay|4338433859,4337072833,4337820091,4338427732,4337028393,4337820712|0|replace",
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "bally-bet",
+       "abbr": "BALLY",
+       "priced": true,
+       "american": 1900,
+       "decimal": 20.0,
+       "link": "https://play.ballybet.com/sports#event/1027638966?coupon=parlay|4338433859,4337072833,4337820091,4338427732,4337028393,4337820712|0|replace",
+       "missing": [],
+       "error": null,
+       "notes": [
+        "Amon-Ra St. Brown: no main flag (nearest to DK)"
+       ]
+      }
+     ],
+     "stale": false
+    },
+    {
+     "name": "DET: WR1→TE1",
+     "legs": [
+      {
+       "player": "Jared Goff",
+       "team": "DET",
+       "slot": "QB1",
+       "market": "pass yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 270.5,
+        "CZR": 269.5,
+        "MGM": 269.5,
+        "FAN": 265.5,
+        "HR": 274.5,
+        "BR": 268.5,
+        "PARX": 268.5,
+        "BALLY": 268.5
+       }
+      },
+      {
+       "player": "Sam LaPorta",
+       "team": "DET",
+       "slot": "TE1",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 45.5,
+        "CZR": 46.5,
+        "MGM": 46.5,
+        "FAN": 49.5,
+        "HR": 49.5,
+        "BR": 46.5,
+        "PARX": 46.5,
+        "BALLY": 46.5
+       }
+      },
+      {
+       "player": "Jameson Williams",
+       "team": "DET",
+       "slot": "WR2",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 59.5,
+        "CZR": 59.5,
+        "MGM": 59.5,
+        "FAN": 59.5,
+        "HR": 64.5,
+        "BR": 58.5,
+        "PARX": 58.5,
+        "BALLY": 58.5
+       }
+      },
+      {
+       "player": "Josh Allen",
+       "team": "BUF",
+       "slot": "QB1",
+       "market": "pass yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 251.5,
+        "CZR": 250.5,
+        "MGM": 249.5,
+        "FAN": 250.5,
+        "HR": 249.5,
+        "BR": 255.5,
+        "PARX": 255.5,
+        "BALLY": 255.5
+       }
+      },
+      {
+       "player": "Khalil Shakir",
+       "team": "BUF",
+       "slot": "WR1",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 45.5,
+        "CZR": 44.5,
+        "MGM": 42.5,
+        "FAN": 49.5,
+        "HR": 49.5,
+        "BR": 46.5,
+        "PARX": 46.5,
+        "BALLY": 46.5
+       }
+      },
+      {
+       "player": "Joshua Palmer",
+       "team": "BUF",
+       "slot": "WR2",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 13.5,
+        "CZR": 13.5,
+        "MGM": 12.5,
+        "FAN": 9.5,
+        "HR": 24.5,
+        "BR": 13.5,
+        "PARX": 13.5,
+        "BALLY": 13.5
+       }
+      }
+     ],
+     "best_book": "hard-rock",
+     "best_book_abbr": "HR",
+     "best_american": 2453,
+     "best_decimal": 25.53,
+     "best_link": "https://app.hardrock.bet/?deep_link_value=betslip/1356498289914151342,850262795520967071,3221030853958304174,422681934867595667,7313489239361061257,4362081801653584296",
+     "runner_up_book": "betrivers",
+     "runner_up_abbr": "BR",
+     "runner_up_decimal": 21.0,
+     "spread_pct": 21.6,
+     "books_priced": 8,
+     "books": [
+      {
+       "book": "draftkings",
+       "abbr": "DK",
+       "priced": true,
+       "american": 1800,
+       "decimal": 19.0,
+       "link": "https://sportsbook.draftkings.com/?outcomes=0QA369809454%232286990366_13L88808Q1-854869368Q20+0QA369809199%232285726365_13L88808Q11888653544Q20+0QA369809995%232284540174_13L88808Q1338230796Q20+0QA369809247%232284763786_13L88808Q1-1873767725Q20+0QA369809807%232285722521_13L88808Q11888653544Q20+0QA369809797%232284579115_13L88808Q1-1997695700Q20",
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "caesars",
+       "abbr": "CZR",
+       "priced": true,
+       "american": 1700,
+       "decimal": 18.0,
+       "link": null,
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "betmgm",
+       "abbr": "MGM",
+       "priced": true,
+       "american": 1300,
+       "decimal": 14.0,
+       "link": "https://sports.on.betmgm.ca/en/sports?options=6%3A43192-3611918-5722382,6%3A43192-3611904-5722352,6%3A43192-3611882-5722308,6%3A43192-3611894-5722334,6%3A43192-3611887-5722320,6%3A43192-3611879-5722306",
+       "missing": [],
+       "error": null,
+       "notes": [
+        "Jared Goff: no main flag - two-sided line used",
+        "Sam LaPorta: no main flag - two-sided line used",
+        "Jameson Williams: no main flag - two-sided line used",
+        "Josh Allen: no main flag - two-sided line used",
+        "Khalil Shakir: no main flag - two-sided line used",
+        "Joshua Palmer: no main flag - two-sided line used"
+       ]
+      },
+      {
+       "book": "fanatics",
+       "abbr": "FAN",
+       "priced": true,
+       "american": 1500,
+       "decimal": 16.0,
+       "link": null,
+       "missing": [],
+       "error": null,
+       "notes": [
+        "Jared Goff: several main-flagged lines - two-sided line used",
+        "Sam LaPorta: several main-flagged lines (nearest to DK)",
+        "Jameson Williams: several main-flagged lines (nearest to DK)",
+        "Josh Allen: several main-flagged lines - two-sided line used",
+        "Khalil Shakir: several main-flagged lines (nearest to DK)",
+        "Joshua Palmer: several main-flagged lines (nearest to DK)"
+       ]
+      },
+      {
+       "book": "hard-rock",
+       "abbr": "HR",
+       "priced": true,
+       "american": 2453,
+       "decimal": 25.53,
+       "link": "https://app.hardrock.bet/?deep_link_value=betslip/1356498289914151342,850262795520967071,3221030853958304174,422681934867595667,7313489239361061257,4362081801653584296",
+       "missing": [],
+       "error": null,
+       "notes": [
+        "Jared Goff: no main flag (nearest to DK)",
+        "Sam LaPorta: no main flag (nearest to DK)",
+        "Jameson Williams: no main flag (nearest to DK)",
+        "Josh Allen: no main flag (nearest to DK)",
+        "Khalil Shakir: no main flag (nearest to DK)",
+        "Joshua Palmer: no main flag (nearest to DK)"
+       ]
+      },
+      {
+       "book": "betrivers",
+       "abbr": "BR",
+       "priced": true,
+       "american": 2000,
+       "decimal": 21.0,
+       "link": "https://mi.betrivers.com/?page=sportsbook#event/1027638966?coupon=P|4338433859,4337028315,4338401874,4338427732,4337028393,4337820712|",
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "betparx",
+       "abbr": "PARX",
+       "priced": true,
+       "american": 2000,
+       "decimal": 21.0,
+       "link": "https://nj.betparx.com/kambi#event/1027638966?coupon=parlay|4338433859,4337028315,4338401874,4338427732,4337028393,4337820712|0|replace",
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "bally-bet",
+       "abbr": "BALLY",
+       "priced": true,
+       "american": 2000,
+       "decimal": 21.0,
+       "link": "https://play.ballybet.com/sports#event/1027638966?coupon=parlay|4338433859,4337028315,4338401874,4338427732,4337028393,4337820712|0|replace",
+       "missing": [],
+       "error": null,
+       "notes": []
+      }
+     ],
+     "stale": false
+    },
+    {
+     "name": "DET: WR2→TE1",
+     "legs": [
+      {
+       "player": "Jared Goff",
+       "team": "DET",
+       "slot": "QB1",
+       "market": "pass yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 270.5,
+        "CZR": 269.5,
+        "MGM": 269.5,
+        "FAN": 265.5,
+        "HR": 274.5,
+        "BR": 268.5,
+        "PARX": 268.5,
+        "BALLY": 268.5
+       }
+      },
+      {
+       "player": "Amon-Ra St. Brown",
+       "team": "DET",
+       "slot": "WR1",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 82.5,
+        "CZR": 80.5,
+        "MGM": 82.5,
+        "FAN": 79.5,
+        "HR": 79.5,
+        "BR": 79.5,
+        "PARX": 79.5,
+        "BALLY": 79.5
+       }
+      },
+      {
+       "player": "Sam LaPorta",
+       "team": "DET",
+       "slot": "TE1",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 45.5,
+        "CZR": 46.5,
+        "MGM": 46.5,
+        "FAN": 49.5,
+        "HR": 49.5,
+        "BR": 46.5,
+        "PARX": 46.5,
+        "BALLY": 46.5
+       }
+      },
+      {
+       "player": "Josh Allen",
+       "team": "BUF",
+       "slot": "QB1",
+       "market": "pass yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 251.5,
+        "CZR": 250.5,
+        "MGM": 249.5,
+        "FAN": 250.5,
+        "HR": 249.5,
+        "BR": 255.5,
+        "PARX": 255.5,
+        "BALLY": 255.5
+       }
+      },
+      {
+       "player": "Khalil Shakir",
+       "team": "BUF",
+       "slot": "WR1",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 45.5,
+        "CZR": 44.5,
+        "MGM": 42.5,
+        "FAN": 49.5,
+        "HR": 49.5,
+        "BR": 46.5,
+        "PARX": 46.5,
+        "BALLY": 46.5
+       }
+      },
+      {
+       "player": "Joshua Palmer",
+       "team": "BUF",
+       "slot": "WR2",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 13.5,
+        "CZR": 13.5,
+        "MGM": 12.5,
+        "FAN": 9.5,
+        "HR": 24.5,
+        "BR": 13.5,
+        "PARX": 13.5,
+        "BALLY": 13.5
+       }
+      }
+     ],
+     "best_book": "hard-rock",
+     "best_book_abbr": "HR",
+     "best_american": 2376,
+     "best_decimal": 24.76,
+     "best_link": "https://app.hardrock.bet/?deep_link_value=betslip/1356498289914151342,3103466672669983109,850262795520967071,422681934867595667,7313489239361061257,4362081801653584296",
+     "runner_up_book": "draftkings",
+     "runner_up_abbr": "DK",
+     "runner_up_decimal": 20.0,
+     "spread_pct": 23.8,
+     "books_priced": 8,
+     "books": [
+      {
+       "book": "draftkings",
+       "abbr": "DK",
+       "priced": true,
+       "american": 1900,
+       "decimal": 20.0,
+       "link": "https://sportsbook.draftkings.com/?outcomes=0QA369809454%232286990366_13L88808Q1-854869368Q20+0QA369809280%232285721859_13L88808Q1464291837Q20+0QA369809199%232285726365_13L88808Q11888653544Q20+0QA369809247%232284763786_13L88808Q1-1873767725Q20+0QA369809807%232285722521_13L88808Q11888653544Q20+0QA369809797%232284579115_13L88808Q1-1997695700Q20",
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "caesars",
+       "abbr": "CZR",
+       "priced": true,
+       "american": 1650,
+       "decimal": 17.5,
+       "link": null,
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "betmgm",
+       "abbr": "MGM",
+       "priced": true,
+       "american": 1300,
+       "decimal": 14.0,
+       "link": "https://sports.on.betmgm.ca/en/sports?options=6%3A43192-3611918-5722382,6%3A43192-3611921-5722388,6%3A43192-3611904-5722352,6%3A43192-3611894-5722334,6%3A43192-3611887-5722320,6%3A43192-3611879-5722306",
+       "missing": [],
+       "error": null,
+       "notes": [
+        "Jared Goff: no main flag - two-sided line used",
+        "Amon-Ra St. Brown: no main flag - two-sided line used",
+        "Sam LaPorta: no main flag - two-sided line used",
+        "Josh Allen: no main flag - two-sided line used",
+        "Khalil Shakir: no main flag - two-sided line used",
+        "Joshua Palmer: no main flag - two-sided line used"
+       ]
+      },
+      {
+       "book": "fanatics",
+       "abbr": "FAN",
+       "priced": true,
+       "american": 1500,
+       "decimal": 16.0,
+       "link": null,
+       "missing": [],
+       "error": null,
+       "notes": [
+        "Jared Goff: several main-flagged lines - two-sided line used",
+        "Amon-Ra St. Brown: several main-flagged lines (nearest to DK)",
+        "Sam LaPorta: several main-flagged lines (nearest to DK)",
+        "Josh Allen: several main-flagged lines - two-sided line used",
+        "Khalil Shakir: several main-flagged lines (nearest to DK)",
+        "Joshua Palmer: several main-flagged lines (nearest to DK)"
+       ]
+      },
+      {
+       "book": "hard-rock",
+       "abbr": "HR",
+       "priced": true,
+       "american": 2376,
+       "decimal": 24.76,
+       "link": "https://app.hardrock.bet/?deep_link_value=betslip/1356498289914151342,3103466672669983109,850262795520967071,422681934867595667,7313489239361061257,4362081801653584296",
+       "missing": [],
+       "error": null,
+       "notes": [
+        "Jared Goff: no main flag (nearest to DK)",
+        "Amon-Ra St. Brown: no main flag (nearest to DK)",
+        "Sam LaPorta: no main flag (nearest to DK)",
+        "Josh Allen: no main flag (nearest to DK)",
+        "Khalil Shakir: no main flag (nearest to DK)",
+        "Joshua Palmer: no main flag (nearest to DK)"
+       ]
+      },
+      {
+       "book": "betrivers",
+       "abbr": "BR",
+       "priced": true,
+       "american": 1900,
+       "decimal": 20.0,
+       "link": "https://mi.betrivers.com/?page=sportsbook#event/1027638966?coupon=P|4338433859,4337072833,4337028315,4338427732,4337028393,4337820712|",
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "betparx",
+       "abbr": "PARX",
+       "priced": true,
+       "american": 1900,
+       "decimal": 20.0,
+       "link": "https://nj.betparx.com/kambi#event/1027638966?coupon=parlay|4338433859,4337072833,4337028315,4338427732,4337028393,4337820712|0|replace",
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "bally-bet",
+       "abbr": "BALLY",
+       "priced": true,
+       "american": 1900,
+       "decimal": 20.0,
+       "link": "https://play.ballybet.com/sports#event/1027638966?coupon=parlay|4338433859,4337072833,4337028315,4338427732,4337028393,4337820712|0|replace",
+       "missing": [],
+       "error": null,
+       "notes": [
+        "Amon-Ra St. Brown: no main flag (nearest to DK)"
+       ]
+      }
+     ],
+     "stale": false
+    }
+   ],
+   "notes": [],
+   "budget_trimmed": false,
+   "prices_pulled_at": "2026-09-16T08:40:47.095430+00:00",
+   "best_overall": {
+    "stack": "DET: WR2→WR3",
+    "book": "hard-rock",
+    "decimal": 32.24,
+    "american": 3124,
+    "link": "https://app.hardrock.bet/?deep_link_value=betslip/1356498289914151342,3103466672669983109,6622301400506433947,422681934867595667,7313489239361061257,4362081801653584296"
+   },
+   "roster": {
+    "BUF": {
+     "QB1": {
+      "name": "Josh Allen",
+      "line": 251.5,
+      "flag": null
+     },
+     "WR1": {
+      "name": "Khalil Shakir",
+      "line": 45.5,
+      "flag": null
+     },
+     "WR2": {
+      "name": "Joshua Palmer",
+      "line": 13.5,
+      "flag": null
+     },
+     "WR3": {
+      "name": "Keon Coleman",
+      "line": 12.5,
+      "flag": null
+     },
+     "TE1": {
+      "name": "Dalton Kincaid",
+      "line": 50.5,
+      "flag": null
+     },
+     "RB1": {
+      "name": "James Cook III",
+      "line": 78.5,
+      "flag": null
+     }
+    },
+    "DET": {
+     "QB1": {
+      "name": "Jared Goff",
+      "line": 270.5,
+      "flag": null
+     },
+     "WR1": {
+      "name": "Amon-Ra St. Brown",
+      "line": 82.5,
+      "flag": null
+     },
+     "WR2": {
+      "name": "Jameson Williams",
+      "line": 59.5,
+      "flag": null
+     },
+     "WR3": {
+      "name": "Isaac TeSlaa",
+      "line": 14.5,
+      "flag": null
+     },
+     "TE1": {
+      "name": "Sam LaPorta",
+      "line": 45.5,
+      "flag": null
+     },
+     "RB1": {
+      "name": "Jahmyr Gibbs",
+      "line": 90.5,
+      "flag": null
+     }
+    }
+   }
+  },
+  {
+   "league": "nfl",
+   "event": "76d70e8f-7360-5995-abd8-e57914780f68",
+   "away": "CIN",
+   "home": "HOU",
+   "kickoff": "2026-09-20T17:00:00.000Z",
+   "kickoff_pt": "Sun 9/20 10:00 AM PT",
+   "stacks": [
+    {
+     "name": "HOU: WR1→TE1",
+     "legs": [
+      {
+       "player": "Joe Burrow",
+       "team": "CIN",
+       "slot": "QB1",
+       "market": "pass yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 250.5,
+        "CZR": 250.5,
+        "MGM": null,
+        "FAN": 250.5,
+        "HR": 249.5,
+        "BR": null,
+        "PARX": null,
+        "BALLY": null
+       }
+      },
+      {
+       "player": "Ja'Marr Chase",
+       "team": "CIN",
+       "slot": "WR1",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 74.5,
+        "CZR": 72.5,
+        "MGM": null,
+        "FAN": 69.5,
+        "HR": 79.5,
+        "BR": null,
+        "PARX": null,
+        "BALLY": null
+       }
+      },
+      {
+       "player": "Tee Higgins",
+       "team": "CIN",
+       "slot": "WR2",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 51.5,
+        "CZR": 53.5,
+        "MGM": null,
+        "FAN": 49.5,
+        "HR": 49.5,
+        "BR": null,
+        "PARX": null,
+        "BALLY": null
+       }
+      },
+      {
+       "player": "C.J. Stroud",
+       "team": "HOU",
+       "slot": "QB1",
+       "market": "pass yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 238.5,
+        "CZR": 237.5,
+        "MGM": null,
+        "FAN": 235.5,
+        "HR": 249.5,
+        "BR": null,
+        "PARX": null,
+        "BALLY": null
+       }
+      },
+      {
+       "player": "Dalton Schultz",
+       "team": "HOU",
+       "slot": "TE1",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 37.5,
+        "CZR": 37.5,
+        "MGM": null,
+        "FAN": 39.5,
+        "HR": 39.5,
+        "BR": null,
+        "PARX": null,
+        "BALLY": null
+       }
+      },
+      {
+       "player": "Xavier Hutchinson",
+       "team": "HOU",
+       "slot": "WR2",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 27.5,
+        "CZR": 27.5,
+        "MGM": null,
+        "FAN": 29.5,
+        "HR": null,
+        "BR": null,
+        "PARX": null,
+        "BALLY": null
+       }
+      }
+     ],
+     "best_book": "draftkings",
+     "best_book_abbr": "DK",
+     "best_american": 1800,
+     "best_decimal": 19.0,
+     "best_link": "https://sportsbook.draftkings.com/?outcomes=0QA369824732%232286825462_13L88808Q1-834381017Q20+0QA369824674%232287346769_13L88808Q1583717687Q20+0QA369824093%232287341476_13L88808Q1683278849Q20+0QA369824660%232287202260_13L88808Q1-372748955Q20+0QA369824429%232287361035_13L88808Q1-1547726350Q20+0QA369824453%232287361877_13L88808Q11687747842Q20",
+     "runner_up_book": "fanatics",
+     "runner_up_abbr": "FAN",
+     "runner_up_decimal": 16.0,
+     "spread_pct": 18.8,
+     "books_priced": 3,
+     "books": [
+      {
+       "book": "draftkings",
+       "abbr": "DK",
+       "priced": true,
+       "american": 1800,
+       "decimal": 19.0,
+       "link": "https://sportsbook.draftkings.com/?outcomes=0QA369824732%232286825462_13L88808Q1-834381017Q20+0QA369824674%232287346769_13L88808Q1583717687Q20+0QA369824093%232287341476_13L88808Q1683278849Q20+0QA369824660%232287202260_13L88808Q1-372748955Q20+0QA369824429%232287361035_13L88808Q1-1547726350Q20+0QA369824453%232287361877_13L88808Q11687747842Q20",
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "caesars",
+       "abbr": "CZR",
+       "priced": true,
+       "american": 1350,
+       "decimal": 14.5,
+       "link": null,
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "betmgm",
+       "abbr": "MGM",
+       "priced": false,
+       "american": null,
+       "decimal": null,
+       "link": null,
+       "missing": [
+        "Joe Burrow pass yds (no prop)",
+        "Ja'Marr Chase rec yds (no prop)",
+        "Tee Higgins rec yds (no prop)",
+        "C.J. Stroud pass yds (no prop)",
+        "Dalton Schultz rec yds (no prop)",
+        "Xavier Hutchinson rec yds (no prop)"
+       ],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "fanatics",
+       "abbr": "FAN",
+       "priced": true,
+       "american": 1500,
+       "decimal": 16.0,
+       "link": null,
+       "missing": [],
+       "error": null,
+       "notes": [
+        "Joe Burrow: several main-flagged lines - two-sided line used",
+        "Ja'Marr Chase: several main-flagged lines (nearest to DK)",
+        "Tee Higgins: several main-flagged lines (nearest to DK)",
+        "C.J. Stroud: several main-flagged lines - two-sided line used",
+        "Dalton Schultz: several main-flagged lines (nearest to DK)",
+        "Xavier Hutchinson: several main-flagged lines (nearest to DK)"
+       ]
+      },
+      {
+       "book": "hard-rock",
+       "abbr": "HR",
+       "priced": false,
+       "american": null,
+       "decimal": null,
+       "link": null,
+       "missing": [
+        "Xavier Hutchinson rec yds (no prop)"
+       ],
+       "error": null,
+       "notes": [
+        "Joe Burrow: no main flag (nearest to DK)",
+        "Ja'Marr Chase: no main flag (nearest to DK)",
+        "Tee Higgins: no main flag (nearest to DK)",
+        "C.J. Stroud: no main flag (nearest to DK)",
+        "Dalton Schultz: no main flag (nearest to DK)"
+       ]
+      },
+      {
+       "book": "betrivers",
+       "abbr": "BR",
+       "priced": false,
+       "american": null,
+       "decimal": null,
+       "link": null,
+       "missing": [
+        "Joe Burrow pass yds (no prop)",
+        "Ja'Marr Chase rec yds (no prop)",
+        "Tee Higgins rec yds (no prop)",
+        "C.J. Stroud pass yds (no prop)",
+        "Dalton Schultz rec yds (no prop)",
+        "Xavier Hutchinson rec yds (no prop)"
+       ],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "betparx",
+       "abbr": "PARX",
+       "priced": false,
+       "american": null,
+       "decimal": null,
+       "link": null,
+       "missing": [
+        "Joe Burrow pass yds (no prop)",
+        "Ja'Marr Chase rec yds (no prop)",
+        "Tee Higgins rec yds (no prop)",
+        "C.J. Stroud pass yds (no prop)",
+        "Dalton Schultz rec yds (no prop)",
+        "Xavier Hutchinson rec yds (no prop)"
+       ],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "bally-bet",
+       "abbr": "BALLY",
+       "priced": false,
+       "american": null,
+       "decimal": null,
+       "link": null,
+       "missing": [
+        "Joe Burrow pass yds (no prop)",
+        "Ja'Marr Chase rec yds (no prop)",
+        "Tee Higgins rec yds (no prop)",
+        "C.J. Stroud pass yds (no prop)",
+        "Dalton Schultz rec yds (no prop)",
+        "Xavier Hutchinson rec yds (no prop)"
+       ],
+       "error": null,
+       "notes": []
+      }
+     ],
+     "stale": false
+    },
+    {
+     "name": "Base",
+     "legs": [
+      {
+       "player": "Joe Burrow",
+       "team": "CIN",
+       "slot": "QB1",
+       "market": "pass yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 250.5,
+        "CZR": 250.5,
+        "MGM": null,
+        "FAN": 250.5,
+        "HR": 249.5,
+        "BR": null,
+        "PARX": null,
+        "BALLY": null
+       }
+      },
+      {
+       "player": "Ja'Marr Chase",
+       "team": "CIN",
+       "slot": "WR1",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 74.5,
+        "CZR": 72.5,
+        "MGM": null,
+        "FAN": 69.5,
+        "HR": 79.5,
+        "BR": null,
+        "PARX": null,
+        "BALLY": null
+       }
+      },
+      {
+       "player": "Tee Higgins",
+       "team": "CIN",
+       "slot": "WR2",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 51.5,
+        "CZR": 53.5,
+        "MGM": null,
+        "FAN": 49.5,
+        "HR": 49.5,
+        "BR": null,
+        "PARX": null,
+        "BALLY": null
+       }
+      },
+      {
+       "player": "C.J. Stroud",
+       "team": "HOU",
+       "slot": "QB1",
+       "market": "pass yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 238.5,
+        "CZR": 237.5,
+        "MGM": null,
+        "FAN": 235.5,
+        "HR": 249.5,
+        "BR": null,
+        "PARX": null,
+        "BALLY": null
+       }
+      },
+      {
+       "player": "Nico Collins",
+       "team": "HOU",
+       "slot": "WR1",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 70.5,
+        "CZR": 70.5,
+        "MGM": null,
+        "FAN": 69.5,
+        "HR": 64.5,
+        "BR": null,
+        "PARX": null,
+        "BALLY": null
+       }
+      },
+      {
+       "player": "Xavier Hutchinson",
+       "team": "HOU",
+       "slot": "WR2",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 27.5,
+        "CZR": 27.5,
+        "MGM": null,
+        "FAN": 29.5,
+        "HR": null,
+        "BR": null,
+        "PARX": null,
+        "BALLY": null
+       }
+      }
+     ],
+     "best_book": "draftkings",
+     "best_book_abbr": "DK",
+     "best_american": 1700,
+     "best_decimal": 18.0,
+     "best_link": "https://sportsbook.draftkings.com/?outcomes=0QA369824732%232286825462_13L88808Q1-834381017Q20+0QA369824674%232287346769_13L88808Q1583717687Q20+0QA369824093%232287341476_13L88808Q1683278849Q20+0QA369824660%232287202260_13L88808Q1-372748955Q20+0QA369824114%232284745122_13L88808Q1-864616411Q20+0QA369824453%232287361877_13L88808Q11687747842Q20",
+     "runner_up_book": "caesars",
+     "runner_up_abbr": "CZR",
+     "runner_up_decimal": 14.0,
+     "spread_pct": 28.6,
+     "books_priced": 3,
+     "books": [
+      {
+       "book": "draftkings",
+       "abbr": "DK",
+       "priced": true,
+       "american": 1700,
+       "decimal": 18.0,
+       "link": "https://sportsbook.draftkings.com/?outcomes=0QA369824732%232286825462_13L88808Q1-834381017Q20+0QA369824674%232287346769_13L88808Q1583717687Q20+0QA369824093%232287341476_13L88808Q1683278849Q20+0QA369824660%232287202260_13L88808Q1-372748955Q20+0QA369824114%232284745122_13L88808Q1-864616411Q20+0QA369824453%232287361877_13L88808Q11687747842Q20",
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "caesars",
+       "abbr": "CZR",
+       "priced": true,
+       "american": 1300,
+       "decimal": 14.0,
+       "link": null,
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "betmgm",
+       "abbr": "MGM",
+       "priced": false,
+       "american": null,
+       "decimal": null,
+       "link": null,
+       "missing": [
+        "Joe Burrow pass yds (no prop)",
+        "Ja'Marr Chase rec yds (no prop)",
+        "Tee Higgins rec yds (no prop)",
+        "C.J. Stroud pass yds (no prop)",
+        "Nico Collins rec yds (no prop)",
+        "Xavier Hutchinson rec yds (no prop)"
+       ],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "fanatics",
+       "abbr": "FAN",
+       "priced": true,
+       "american": 1200,
+       "decimal": 13.0,
+       "link": null,
+       "missing": [],
+       "error": null,
+       "notes": [
+        "Joe Burrow: several main-flagged lines - two-sided line used",
+        "Ja'Marr Chase: several main-flagged lines (nearest to DK)",
+        "Tee Higgins: several main-flagged lines (nearest to DK)",
+        "C.J. Stroud: several main-flagged lines - two-sided line used",
+        "Nico Collins: several main-flagged lines (nearest to DK)",
+        "Xavier Hutchinson: several main-flagged lines (nearest to DK)"
+       ]
+      },
+      {
+       "book": "hard-rock",
+       "abbr": "HR",
+       "priced": false,
+       "american": null,
+       "decimal": null,
+       "link": null,
+       "missing": [
+        "Xavier Hutchinson rec yds (no prop)"
+       ],
+       "error": null,
+       "notes": [
+        "Joe Burrow: no main flag (nearest to DK)",
+        "Ja'Marr Chase: no main flag (nearest to DK)",
+        "Tee Higgins: no main flag (nearest to DK)",
+        "C.J. Stroud: no main flag (nearest to DK)",
+        "Nico Collins: no main flag (nearest to DK)"
+       ]
+      },
+      {
+       "book": "betrivers",
+       "abbr": "BR",
+       "priced": false,
+       "american": null,
+       "decimal": null,
+       "link": null,
+       "missing": [
+        "Joe Burrow pass yds (no prop)",
+        "Ja'Marr Chase rec yds (no prop)",
+        "Tee Higgins rec yds (no prop)",
+        "C.J. Stroud pass yds (no prop)",
+        "Nico Collins rec yds (no prop)",
+        "Xavier Hutchinson rec yds (no prop)"
+       ],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "betparx",
+       "abbr": "PARX",
+       "priced": false,
+       "american": null,
+       "decimal": null,
+       "link": null,
+       "missing": [
+        "Joe Burrow pass yds (no prop)",
+        "Ja'Marr Chase rec yds (no prop)",
+        "Tee Higgins rec yds (no prop)",
+        "C.J. Stroud pass yds (no prop)",
+        "Nico Collins rec yds (no prop)",
+        "Xavier Hutchinson rec yds (no prop)"
+       ],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "bally-bet",
+       "abbr": "BALLY",
+       "priced": false,
+       "american": null,
+       "decimal": null,
+       "link": null,
+       "missing": [
+        "Joe Burrow pass yds (no prop)",
+        "Ja'Marr Chase rec yds (no prop)",
+        "Tee Higgins rec yds (no prop)",
+        "C.J. Stroud pass yds (no prop)",
+        "Nico Collins rec yds (no prop)",
+        "Xavier Hutchinson rec yds (no prop)"
+       ],
+       "error": null,
+       "notes": []
+      }
+     ],
+     "stale": false
+    },
+    {
+     "name": "CIN: WR2→TE1",
+     "legs": [
+      {
+       "player": "Joe Burrow",
+       "team": "CIN",
+       "slot": "QB1",
+       "market": "pass yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 250.5,
+        "CZR": 250.5,
+        "MGM": null,
+        "FAN": 250.5,
+        "HR": 249.5,
+        "BR": null,
+        "PARX": null,
+        "BALLY": null
+       }
+      },
+      {
+       "player": "Ja'Marr Chase",
+       "team": "CIN",
+       "slot": "WR1",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 74.5,
+        "CZR": 72.5,
+        "MGM": null,
+        "FAN": 69.5,
+        "HR": 79.5,
+        "BR": null,
+        "PARX": null,
+        "BALLY": null
+       }
+      },
+      {
+       "player": "Mike Gesicki",
+       "team": "CIN",
+       "slot": "TE1",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 24.5,
+        "CZR": 24.5,
+        "MGM": null,
+        "FAN": 19.5,
+        "HR": 24.5,
+        "BR": null,
+        "PARX": null,
+        "BALLY": null
+       }
+      },
+      {
+       "player": "C.J. Stroud",
+       "team": "HOU",
+       "slot": "QB1",
+       "market": "pass yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 238.5,
+        "CZR": 237.5,
+        "MGM": null,
+        "FAN": 235.5,
+        "HR": 249.5,
+        "BR": null,
+        "PARX": null,
+        "BALLY": null
+       }
+      },
+      {
+       "player": "Nico Collins",
+       "team": "HOU",
+       "slot": "WR1",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 70.5,
+        "CZR": 70.5,
+        "MGM": null,
+        "FAN": 69.5,
+        "HR": 64.5,
+        "BR": null,
+        "PARX": null,
+        "BALLY": null
+       }
+      },
+      {
+       "player": "Xavier Hutchinson",
+       "team": "HOU",
+       "slot": "WR2",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 27.5,
+        "CZR": 27.5,
+        "MGM": null,
+        "FAN": 29.5,
+        "HR": null,
+        "BR": null,
+        "PARX": null,
+        "BALLY": null
+       }
+      }
+     ],
+     "best_book": "draftkings",
+     "best_book_abbr": "DK",
+     "best_american": 1700,
+     "best_decimal": 18.0,
+     "best_link": "https://sportsbook.draftkings.com/?outcomes=0QA369824732%232286825462_13L88808Q1-834381017Q20+0QA369824674%232287346769_13L88808Q1583717687Q20+0QA369824662%232287348637_13L88808Q1549052833Q20+0QA369824660%232287202260_13L88808Q1-372748955Q20+0QA369824114%232284745122_13L88808Q1-864616411Q20+0QA369824453%232287361877_13L88808Q11687747842Q20",
+     "runner_up_book": "caesars",
+     "runner_up_abbr": "CZR",
+     "runner_up_decimal": 15.0,
+     "spread_pct": 20.0,
+     "books_priced": 3,
+     "books": [
+      {
+       "book": "draftkings",
+       "abbr": "DK",
+       "priced": true,
+       "american": 1700,
+       "decimal": 18.0,
+       "link": "https://sportsbook.draftkings.com/?outcomes=0QA369824732%232286825462_13L88808Q1-834381017Q20+0QA369824674%232287346769_13L88808Q1583717687Q20+0QA369824662%232287348637_13L88808Q1549052833Q20+0QA369824660%232287202260_13L88808Q1-372748955Q20+0QA369824114%232284745122_13L88808Q1-864616411Q20+0QA369824453%232287361877_13L88808Q11687747842Q20",
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "caesars",
+       "abbr": "CZR",
+       "priced": true,
+       "american": 1400,
+       "decimal": 15.0,
+       "link": null,
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "betmgm",
+       "abbr": "MGM",
+       "priced": false,
+       "american": null,
+       "decimal": null,
+       "link": null,
+       "missing": [
+        "Joe Burrow pass yds (no prop)",
+        "Ja'Marr Chase rec yds (no prop)",
+        "Mike Gesicki rec yds (no prop)",
+        "C.J. Stroud pass yds (no prop)",
+        "Nico Collins rec yds (no prop)",
+        "Xavier Hutchinson rec yds (no prop)"
+       ],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "fanatics",
+       "abbr": "FAN",
+       "priced": true,
+       "american": 1300,
+       "decimal": 14.0,
+       "link": null,
+       "missing": [],
+       "error": null,
+       "notes": [
+        "Joe Burrow: several main-flagged lines - two-sided line used",
+        "Ja'Marr Chase: several main-flagged lines (nearest to DK)",
+        "Mike Gesicki: several main-flagged lines (nearest to DK)",
+        "C.J. Stroud: several main-flagged lines - two-sided line used",
+        "Nico Collins: several main-flagged lines (nearest to DK)",
+        "Xavier Hutchinson: several main-flagged lines (nearest to DK)"
+       ]
+      },
+      {
+       "book": "hard-rock",
+       "abbr": "HR",
+       "priced": false,
+       "american": null,
+       "decimal": null,
+       "link": null,
+       "missing": [
+        "Xavier Hutchinson rec yds (no prop)"
+       ],
+       "error": null,
+       "notes": [
+        "Joe Burrow: no main flag (nearest to DK)",
+        "Ja'Marr Chase: no main flag (nearest to DK)",
+        "Mike Gesicki: no main flag (nearest to DK)",
+        "C.J. Stroud: no main flag (nearest to DK)",
+        "Nico Collins: no main flag (nearest to DK)"
+       ]
+      },
+      {
+       "book": "betrivers",
+       "abbr": "BR",
+       "priced": false,
+       "american": null,
+       "decimal": null,
+       "link": null,
+       "missing": [
+        "Joe Burrow pass yds (no prop)",
+        "Ja'Marr Chase rec yds (no prop)",
+        "Mike Gesicki rec yds (no prop)",
+        "C.J. Stroud pass yds (no prop)",
+        "Nico Collins rec yds (no prop)",
+        "Xavier Hutchinson rec yds (no prop)"
+       ],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "betparx",
+       "abbr": "PARX",
+       "priced": false,
+       "american": null,
+       "decimal": null,
+       "link": null,
+       "missing": [
+        "Joe Burrow pass yds (no prop)",
+        "Ja'Marr Chase rec yds (no prop)",
+        "Mike Gesicki rec yds (no prop)",
+        "C.J. Stroud pass yds (no prop)",
+        "Nico Collins rec yds (no prop)",
+        "Xavier Hutchinson rec yds (no prop)"
+       ],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "bally-bet",
+       "abbr": "BALLY",
+       "priced": false,
+       "american": null,
+       "decimal": null,
+       "link": null,
+       "missing": [
+        "Joe Burrow pass yds (no prop)",
+        "Ja'Marr Chase rec yds (no prop)",
+        "Mike Gesicki rec yds (no prop)",
+        "C.J. Stroud pass yds (no prop)",
+        "Nico Collins rec yds (no prop)",
+        "Xavier Hutchinson rec yds (no prop)"
+       ],
+       "error": null,
+       "notes": []
+      }
+     ],
+     "stale": false
+    }
+   ],
+   "notes": [
+    "CIN WR2→WR3: no WR3 at DraftKings; HOU WR2→WR3: no WR3 at DraftKings"
+   ],
+   "budget_trimmed": false,
+   "prices_pulled_at": "2026-09-16T08:42:58.845230+00:00",
+   "best_overall": {
+    "stack": "HOU: WR1→TE1",
+    "book": "draftkings",
+    "decimal": 19.0,
+    "american": 1800,
+    "link": "https://sportsbook.draftkings.com/?outcomes=0QA369824732%232286825462_13L88808Q1-834381017Q20+0QA369824674%232287346769_13L88808Q1583717687Q20+0QA369824093%232287341476_13L88808Q1683278849Q20+0QA369824660%232287202260_13L88808Q1-372748955Q20+0QA369824429%232287361035_13L88808Q1-1547726350Q20+0QA369824453%232287361877_13L88808Q11687747842Q20"
+   },
+   "roster": {
+    "HOU": {
+     "QB1": {
+      "name": "C.J. Stroud",
+      "line": 238.5,
+      "flag": null
+     },
+     "WR1": {
+      "name": "Nico Collins",
+      "line": 70.5,
+      "flag": null
+     },
+     "WR2": {
+      "name": "Xavier Hutchinson",
+      "line": 27.5,
+      "flag": null
+     },
+     "WR3": null,
+     "TE1": {
+      "name": "Dalton Schultz",
+      "line": 37.5,
+      "flag": null
+     },
+     "RB1": {
+      "name": "David Montgomery",
+      "line": 66.5,
+      "flag": null
+     }
+    },
+    "CIN": {
+     "QB1": {
+      "name": "Joe Burrow",
+      "line": 250.5,
+      "flag": null
+     },
+     "WR1": {
+      "name": "Ja'Marr Chase",
+      "line": 74.5,
+      "flag": null
+     },
+     "WR2": {
+      "name": "Tee Higgins",
+      "line": 51.5,
+      "flag": null
+     },
+     "WR3": null,
+     "TE1": {
+      "name": "Mike Gesicki",
+      "line": 24.5,
+      "flag": null
+     },
+     "RB1": {
+      "name": "Chase Brown",
+      "line": 58.5,
+      "flag": null
+     }
+    }
+   }
+  },
+  {
+   "league": "nfl",
+   "event": "49389d02-d492-5a0c-8925-3d348ca1e3b5",
+   "away": "WAS",
+   "home": "DAL",
+   "kickoff": "2026-09-20T20:25:00.000Z",
+   "kickoff_pt": "Sun 9/20 1:25 PM PT",
+   "stacks": [
+    {
+     "name": "DAL: WR2→RB1",
+     "legs": [
+      {
+       "player": "Jayden Daniels",
+       "team": "WAS",
+       "slot": "QB1",
+       "market": "pass yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 205.5,
+        "CZR": 202.5,
+        "MGM": null,
+        "FAN": 200.5,
+        "HR": 199.5,
+        "BR": 200.5,
+        "PARX": 200.5,
+        "BALLY": 200.5
+       }
+      },
+      {
+       "player": "Terry McLaurin",
+       "team": "WAS",
+       "slot": "WR1",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 51.5,
+        "CZR": 51.5,
+        "MGM": null,
+        "FAN": 49.5,
+        "HR": 49.5,
+        "BR": 52.5,
+        "PARX": 52.5,
+        "BALLY": 52.5
+       }
+      },
+      {
+       "player": "Stefon Diggs",
+       "team": "WAS",
+       "slot": "WR2",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 46.5,
+        "CZR": 44.5,
+        "MGM": null,
+        "FAN": 49.5,
+        "HR": 49.5,
+        "BR": 45.5,
+        "PARX": 45.5,
+        "BALLY": 45.5
+       }
+      },
+      {
+       "player": "Dak Prescott",
+       "team": "DAL",
+       "slot": "QB1",
+       "market": "pass yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 264.5,
+        "CZR": 262.5,
+        "MGM": null,
+        "FAN": 260.5,
+        "HR": 274.5,
+        "BR": 265.5,
+        "PARX": 265.5,
+        "BALLY": 265.5
+       }
+      },
+      {
+       "player": "CeeDee Lamb",
+       "team": "DAL",
+       "slot": "WR1",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 74.5,
+        "CZR": 74.5,
+        "MGM": null,
+        "FAN": 69.5,
+        "HR": 79.5,
+        "BR": 76.5,
+        "PARX": 76.5,
+        "BALLY": 76.5
+       }
+      },
+      {
+       "player": "Javonte Williams",
+       "team": "DAL",
+       "slot": "RB1",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 11.5,
+        "CZR": 11.5,
+        "MGM": null,
+        "FAN": 9.5,
+        "HR": 24.5,
+        "BR": 12.5,
+        "PARX": 12.5,
+        "BALLY": 12.5
+       }
+      }
+     ],
+     "best_book": "hard-rock",
+     "best_book_abbr": "HR",
+     "best_american": 2815,
+     "best_decimal": 29.15,
+     "best_link": "https://app.hardrock.bet/?deep_link_value=betslip/7006505240027595170,7303154233115804045,7465002344724431277,5494802484855701923,6385020070682296735,6868717689829982606",
+     "runner_up_book": "betrivers",
+     "runner_up_abbr": "BR",
+     "runner_up_decimal": 18.0,
+     "spread_pct": 61.9,
+     "books_priced": 6,
+     "books": [
+      {
+       "book": "draftkings",
+       "abbr": "DK",
+       "priced": false,
+       "american": null,
+       "decimal": null,
+       "link": null,
+       "missing": [],
+       "error": "Price not found",
+       "notes": []
+      },
+      {
+       "book": "caesars",
+       "abbr": "CZR",
+       "priced": true,
+       "american": 1250,
+       "decimal": 13.5,
+       "link": null,
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "betmgm",
+       "abbr": "MGM",
+       "priced": false,
+       "american": null,
+       "decimal": null,
+       "link": null,
+       "missing": [
+        "Jayden Daniels pass yds (no prop)",
+        "Terry McLaurin rec yds (no prop)",
+        "Stefon Diggs rec yds (no prop)",
+        "Dak Prescott pass yds (no prop)",
+        "CeeDee Lamb rec yds (no prop)",
+        "Javonte Williams rec yds (no prop)"
+       ],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "fanatics",
+       "abbr": "FAN",
+       "priced": true,
+       "american": 1300,
+       "decimal": 14.0,
+       "link": null,
+       "missing": [],
+       "error": null,
+       "notes": [
+        "Jayden Daniels: several main-flagged lines - two-sided line used",
+        "Terry McLaurin: several main-flagged lines (nearest to DK)",
+        "Stefon Diggs: several main-flagged lines (nearest to DK)",
+        "Dak Prescott: several main-flagged lines - two-sided line used",
+        "CeeDee Lamb: several main-flagged lines (nearest to DK)",
+        "Javonte Williams: several main-flagged lines (nearest to DK)"
+       ]
+      },
+      {
+       "book": "hard-rock",
+       "abbr": "HR",
+       "priced": true,
+       "american": 2815,
+       "decimal": 29.15,
+       "link": "https://app.hardrock.bet/?deep_link_value=betslip/7006505240027595170,7303154233115804045,7465002344724431277,5494802484855701923,6385020070682296735,6868717689829982606",
+       "missing": [],
+       "error": null,
+       "notes": [
+        "Jayden Daniels: no main flag (nearest to DK)",
+        "Terry McLaurin: no main flag (nearest to DK)",
+        "Stefon Diggs: no main flag (nearest to DK)",
+        "Dak Prescott: no main flag (nearest to DK)",
+        "CeeDee Lamb: no main flag (nearest to DK)",
+        "Javonte Williams: no main flag (nearest to DK)"
+       ]
+      },
+      {
+       "book": "betrivers",
+       "abbr": "BR",
+       "priced": true,
+       "american": 1700,
+       "decimal": 18.0,
+       "link": "https://mi.betrivers.com/?page=sportsbook#event/1028811644?coupon=P|4338319245,4338319418,4338331132,4338319247,4338339297,4338453968|",
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "betparx",
+       "abbr": "PARX",
+       "priced": true,
+       "american": 1700,
+       "decimal": 18.0,
+       "link": "https://nj.betparx.com/kambi#event/1028811644?coupon=parlay|4338319245,4338319418,4338331132,4338319247,4338339297,4338453968|0|replace",
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "bally-bet",
+       "abbr": "BALLY",
+       "priced": true,
+       "american": 1700,
+       "decimal": 18.0,
+       "link": "https://play.ballybet.com/sports#event/1028811644?coupon=parlay|4338319245,4338319418,4338331132,4338319247,4338339297,4338453968|0|replace",
+       "missing": [],
+       "error": null,
+       "notes": []
+      }
+     ],
+     "stale": false
+    },
+    {
+     "name": "Base",
+     "legs": [
+      {
+       "player": "Jayden Daniels",
+       "team": "WAS",
+       "slot": "QB1",
+       "market": "pass yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 205.5,
+        "CZR": 202.5,
+        "MGM": null,
+        "FAN": 200.5,
+        "HR": 199.5,
+        "BR": 200.5,
+        "PARX": 200.5,
+        "BALLY": 200.5
+       }
+      },
+      {
+       "player": "Terry McLaurin",
+       "team": "WAS",
+       "slot": "WR1",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 51.5,
+        "CZR": 51.5,
+        "MGM": null,
+        "FAN": 49.5,
+        "HR": 49.5,
+        "BR": 52.5,
+        "PARX": 52.5,
+        "BALLY": 52.5
+       }
+      },
+      {
+       "player": "Stefon Diggs",
+       "team": "WAS",
+       "slot": "WR2",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 46.5,
+        "CZR": 44.5,
+        "MGM": null,
+        "FAN": 49.5,
+        "HR": 49.5,
+        "BR": 45.5,
+        "PARX": 45.5,
+        "BALLY": 45.5
+       }
+      },
+      {
+       "player": "Dak Prescott",
+       "team": "DAL",
+       "slot": "QB1",
+       "market": "pass yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 264.5,
+        "CZR": 262.5,
+        "MGM": null,
+        "FAN": 260.5,
+        "HR": 274.5,
+        "BR": 265.5,
+        "PARX": 265.5,
+        "BALLY": 265.5
+       }
+      },
+      {
+       "player": "CeeDee Lamb",
+       "team": "DAL",
+       "slot": "WR1",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 74.5,
+        "CZR": 74.5,
+        "MGM": null,
+        "FAN": 69.5,
+        "HR": 79.5,
+        "BR": 76.5,
+        "PARX": 76.5,
+        "BALLY": 76.5
+       }
+      },
+      {
+       "player": "George Pickens",
+       "team": "DAL",
+       "slot": "WR2",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 62.5,
+        "CZR": 60.5,
+        "MGM": null,
+        "FAN": 59.5,
+        "HR": 64.5,
+        "BR": 62.5,
+        "PARX": 62.5,
+        "BALLY": 62.5
+       }
+      }
+     ],
+     "best_book": "hard-rock",
+     "best_book_abbr": "HR",
+     "best_american": 1576,
+     "best_decimal": 16.76,
+     "best_link": "https://app.hardrock.bet/?deep_link_value=betslip/7006505240027595170,7303154233115804045,7465002344724431277,5494802484855701923,6385020070682296735,4732568632322818450",
+     "runner_up_book": "betrivers",
+     "runner_up_abbr": "BR",
+     "runner_up_decimal": 16.0,
+     "spread_pct": 4.8,
+     "books_priced": 6,
+     "books": [
+      {
+       "book": "draftkings",
+       "abbr": "DK",
+       "priced": false,
+       "american": null,
+       "decimal": null,
+       "link": null,
+       "missing": [],
+       "error": "Price not found",
+       "notes": []
+      },
+      {
+       "book": "caesars",
+       "abbr": "CZR",
+       "priced": true,
+       "american": 1150,
+       "decimal": 12.5,
+       "link": null,
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "betmgm",
+       "abbr": "MGM",
+       "priced": false,
+       "american": null,
+       "decimal": null,
+       "link": null,
+       "missing": [
+        "Jayden Daniels pass yds (no prop)",
+        "Terry McLaurin rec yds (no prop)",
+        "Stefon Diggs rec yds (no prop)",
+        "Dak Prescott pass yds (no prop)",
+        "CeeDee Lamb rec yds (no prop)",
+        "George Pickens rec yds (no prop)"
+       ],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "fanatics",
+       "abbr": "FAN",
+       "priced": true,
+       "american": 1300,
+       "decimal": 14.0,
+       "link": null,
+       "missing": [],
+       "error": null,
+       "notes": [
+        "Jayden Daniels: several main-flagged lines - two-sided line used",
+        "Terry McLaurin: several main-flagged lines (nearest to DK)",
+        "Stefon Diggs: several main-flagged lines (nearest to DK)",
+        "Dak Prescott: several main-flagged lines - two-sided line used",
+        "CeeDee Lamb: several main-flagged lines (nearest to DK)",
+        "George Pickens: several main-flagged lines (nearest to DK)"
+       ]
+      },
+      {
+       "book": "hard-rock",
+       "abbr": "HR",
+       "priced": true,
+       "american": 1576,
+       "decimal": 16.76,
+       "link": "https://app.hardrock.bet/?deep_link_value=betslip/7006505240027595170,7303154233115804045,7465002344724431277,5494802484855701923,6385020070682296735,4732568632322818450",
+       "missing": [],
+       "error": null,
+       "notes": [
+        "Jayden Daniels: no main flag (nearest to DK)",
+        "Terry McLaurin: no main flag (nearest to DK)",
+        "Stefon Diggs: no main flag (nearest to DK)",
+        "Dak Prescott: no main flag (nearest to DK)",
+        "CeeDee Lamb: no main flag (nearest to DK)",
+        "George Pickens: no main flag (nearest to DK)"
+       ]
+      },
+      {
+       "book": "betrivers",
+       "abbr": "BR",
+       "priced": true,
+       "american": 1500,
+       "decimal": 16.0,
+       "link": "https://mi.betrivers.com/?page=sportsbook#event/1028811644?coupon=P|4338319245,4338319418,4338331132,4338319247,4338339297,4338319479|",
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "betparx",
+       "abbr": "PARX",
+       "priced": true,
+       "american": 1500,
+       "decimal": 16.0,
+       "link": "https://nj.betparx.com/kambi#event/1028811644?coupon=parlay|4338319245,4338319418,4338331132,4338319247,4338339297,4338319479|0|replace",
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "bally-bet",
+       "abbr": "BALLY",
+       "priced": true,
+       "american": 1500,
+       "decimal": 16.0,
+       "link": "https://play.ballybet.com/sports#event/1028811644?coupon=parlay|4338319245,4338319418,4338331132,4338319247,4338339297,4338319479|0|replace",
+       "missing": [],
+       "error": null,
+       "notes": []
+      }
+     ],
+     "stale": false
+    }
+   ],
+   "notes": [
+    "WAS WR2→TE1: no TE1 at DraftKings; WAS WR2→WR3: no WR3 at DraftKings; WAS WR1→TE1: no TE1 at DraftKings; DAL WR2→TE1: no TE1 at DraftKings; DAL WR2→WR3: no WR3 at DraftKings; DAL WR1→TE1: no TE1 at DraftKings"
+   ],
+   "budget_trimmed": false,
+   "prices_pulled_at": "2026-09-16T08:44:47.310016+00:00",
+   "best_overall": {
+    "stack": "DAL: WR2→RB1",
+    "book": "hard-rock",
+    "decimal": 29.15,
+    "american": 2815,
+    "link": "https://app.hardrock.bet/?deep_link_value=betslip/7006505240027595170,7303154233115804045,7465002344724431277,5494802484855701923,6385020070682296735,6868717689829982606"
+   },
+   "roster": {
+    "DAL": {
+     "QB1": {
+      "name": "Dak Prescott",
+      "line": 264.5,
+      "flag": null
+     },
+     "WR1": {
+      "name": "CeeDee Lamb",
+      "line": 74.5,
+      "flag": null
+     },
+     "WR2": {
+      "name": "George Pickens",
+      "line": 62.5,
+      "flag": null
+     },
+     "WR3": null,
+     "TE1": null,
+     "RB1": {
+      "name": "Javonte Williams",
+      "line": 74.5,
+      "flag": null
+     }
+    },
+    "WAS": {
+     "QB1": {
+      "name": "Jayden Daniels",
+      "line": 205.5,
+      "flag": null
+     },
+     "WR1": {
+      "name": "Terry McLaurin",
+      "line": 51.5,
+      "flag": null
+     },
+     "WR2": {
+      "name": "Stefon Diggs",
+      "line": 46.5,
+      "flag": null
+     },
+     "WR3": null,
+     "TE1": null,
+     "RB1": {
+      "name": "Jacory Croskey-Merritt",
+      "line": 56.5,
+      "flag": null
+     }
+    }
+   }
+  },
+  {
+   "league": "nfl",
+   "event": "c2b560df-fe06-5613-83f1-265ceb0a81a5",
+   "away": "IND",
+   "home": "KC",
+   "kickoff": "2026-09-21T00:20:00.000Z",
+   "kickoff_pt": "Sun 9/20 5:20 PM PT",
+   "stacks": [
+    {
+     "name": "KC: WR2→WR3",
+     "legs": [
+      {
+       "player": "Daniel Jones",
+       "team": "IND",
+       "slot": "QB1",
+       "market": "pass yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 217.5,
+        "CZR": 217.5,
+        "MGM": null,
+        "FAN": 215.5,
+        "HR": 224.5,
+        "BR": 215.5,
+        "PARX": 215.5,
+        "BALLY": 215.5
+       }
+      },
+      {
+       "player": "Alec Pierce",
+       "team": "IND",
+       "slot": "WR1",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 43.5,
+        "CZR": 43.5,
+        "MGM": null,
+        "FAN": 39.5,
+        "HR": 39.5,
+        "BR": 45.5,
+        "PARX": 45.5,
+        "BALLY": 45.5
+       }
+      },
+      {
+       "player": "Josh Downs",
+       "team": "IND",
+       "slot": "WR2",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 36.5,
+        "CZR": 36.5,
+        "MGM": null,
+        "FAN": 39.5,
+        "HR": 39.5,
+        "BR": 37.5,
+        "PARX": 37.5,
+        "BALLY": 37.5
+       }
+      },
+      {
+       "player": "Patrick Mahomes",
+       "team": "KC",
+       "slot": "QB1",
+       "market": "pass yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 219.5,
+        "CZR": 219.5,
+        "MGM": null,
+        "FAN": 215.5,
+        "HR": 224.5,
+        "BR": 221.5,
+        "PARX": 221.5,
+        "BALLY": 221.5
+       }
+      },
+      {
+       "player": "Rashee Rice",
+       "team": "KC",
+       "slot": "WR1",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 53.5,
+        "CZR": 54.5,
+        "MGM": null,
+        "FAN": 49.5,
+        "HR": 49.5,
+        "BR": 56.5,
+        "PARX": 56.5,
+        "BALLY": 56.5
+       }
+      },
+      {
+       "player": "Tyquan Thornton",
+       "team": "KC",
+       "slot": "WR3",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 15.5,
+        "CZR": 14.5,
+        "MGM": null,
+        "FAN": 19.5,
+        "HR": 24.5,
+        "BR": 13.5,
+        "PARX": 13.5,
+        "BALLY": 13.5
+       }
+      }
+     ],
+     "best_book": "draftkings",
+     "best_book_abbr": "DK",
+     "best_american": 2000,
+     "best_decimal": 21.0,
+     "best_link": "https://sportsbook.draftkings.com/?outcomes=0QA369878000%232284868947_13L88808Q1-1590357052Q20+0QA369878158%232287006243_13L88808Q1-2013476730Q20+0QA369877973%232287005139_13L88808Q1473749250Q20+0QA369877573%232286990019_13L88808Q11673243013Q20+0QA369878107%232286994738_13L88808Q1865311989Q20+0QA369877967%232286993048_13L88808Q1-862874724Q20",
+     "runner_up_book": "hard-rock",
+     "runner_up_abbr": "HR",
+     "runner_up_decimal": 19.47,
+     "spread_pct": 7.9,
+     "books_priced": 7,
+     "books": [
+      {
+       "book": "draftkings",
+       "abbr": "DK",
+       "priced": true,
+       "american": 2000,
+       "decimal": 21.0,
+       "link": "https://sportsbook.draftkings.com/?outcomes=0QA369878000%232284868947_13L88808Q1-1590357052Q20+0QA369878158%232287006243_13L88808Q1-2013476730Q20+0QA369877973%232287005139_13L88808Q1473749250Q20+0QA369877573%232286990019_13L88808Q11673243013Q20+0QA369878107%232286994738_13L88808Q1865311989Q20+0QA369877967%232286993048_13L88808Q1-862874724Q20",
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "caesars",
+       "abbr": "CZR",
+       "priced": true,
+       "american": 1350,
+       "decimal": 14.5,
+       "link": null,
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "betmgm",
+       "abbr": "MGM",
+       "priced": false,
+       "american": null,
+       "decimal": null,
+       "link": null,
+       "missing": [
+        "Daniel Jones pass yds (no prop)",
+        "Alec Pierce rec yds (no prop)",
+        "Josh Downs rec yds (no prop)",
+        "Patrick Mahomes pass yds (no prop)",
+        "Rashee Rice rec yds (no prop)",
+        "Tyquan Thornton rec yds (no prop)"
+       ],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "fanatics",
+       "abbr": "FAN",
+       "priced": true,
+       "american": 1600,
+       "decimal": 17.0,
+       "link": null,
+       "missing": [],
+       "error": null,
+       "notes": [
+        "Daniel Jones: several main-flagged lines - two-sided line used",
+        "Alec Pierce: several main-flagged lines (nearest to DK)",
+        "Josh Downs: several main-flagged lines (nearest to DK)",
+        "Patrick Mahomes: several main-flagged lines - two-sided line used",
+        "Rashee Rice: several main-flagged lines (nearest to DK)",
+        "Tyquan Thornton: several main-flagged lines (nearest to DK)"
+       ]
+      },
+      {
+       "book": "hard-rock",
+       "abbr": "HR",
+       "priced": true,
+       "american": 1847,
+       "decimal": 19.47,
+       "link": "https://app.hardrock.bet/?deep_link_value=betslip/846883778721874342,468014783577325958,4713836108838994308,6755095665749131669,1522614385015652761,1404763506070389144",
+       "missing": [],
+       "error": null,
+       "notes": [
+        "Daniel Jones: no main flag (nearest to DK)",
+        "Alec Pierce: no main flag (nearest to DK)",
+        "Josh Downs: no main flag (nearest to DK)",
+        "Patrick Mahomes: no main flag (nearest to DK)",
+        "Rashee Rice: no main flag (nearest to DK)",
+        "Tyquan Thornton: no main flag (nearest to DK)"
+       ]
+      },
+      {
+       "book": "betrivers",
+       "abbr": "BR",
+       "priced": true,
+       "american": 1600,
+       "decimal": 17.0,
+       "link": "https://mi.betrivers.com/?page=sportsbook#event/1028811657?coupon=P|4338102287,4338240947,4338320246,4338156295,4338241947,4338196074|",
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "betparx",
+       "abbr": "PARX",
+       "priced": true,
+       "american": 1600,
+       "decimal": 17.0,
+       "link": "https://nj.betparx.com/kambi#event/1028811657?coupon=parlay|4338102287,4338240947,4338320246,4338156295,4338241947,4338196074|0|replace",
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "bally-bet",
+       "abbr": "BALLY",
+       "priced": true,
+       "american": 1600,
+       "decimal": 17.0,
+       "link": "https://play.ballybet.com/sports#event/1028811657?coupon=parlay|4338102287,4338240947,4338320246,4338156295,4338241947,4338196074|0|replace",
+       "missing": [],
+       "error": null,
+       "notes": []
+      }
+     ],
+     "stale": false
+    },
+    {
+     "name": "KC: WR2→RB1",
+     "legs": [
+      {
+       "player": "Daniel Jones",
+       "team": "IND",
+       "slot": "QB1",
+       "market": "pass yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 217.5,
+        "CZR": 217.5,
+        "MGM": null,
+        "FAN": 215.5,
+        "HR": 224.5,
+        "BR": 215.5,
+        "PARX": 215.5,
+        "BALLY": 215.5
+       }
+      },
+      {
+       "player": "Alec Pierce",
+       "team": "IND",
+       "slot": "WR1",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 43.5,
+        "CZR": 43.5,
+        "MGM": null,
+        "FAN": 39.5,
+        "HR": 39.5,
+        "BR": 45.5,
+        "PARX": 45.5,
+        "BALLY": 45.5
+       }
+      },
+      {
+       "player": "Josh Downs",
+       "team": "IND",
+       "slot": "WR2",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 36.5,
+        "CZR": 36.5,
+        "MGM": null,
+        "FAN": 39.5,
+        "HR": 39.5,
+        "BR": 37.5,
+        "PARX": 37.5,
+        "BALLY": 37.5
+       }
+      },
+      {
+       "player": "Patrick Mahomes",
+       "team": "KC",
+       "slot": "QB1",
+       "market": "pass yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 219.5,
+        "CZR": 219.5,
+        "MGM": null,
+        "FAN": 215.5,
+        "HR": 224.5,
+        "BR": 221.5,
+        "PARX": 221.5,
+        "BALLY": 221.5
+       }
+      },
+      {
+       "player": "Rashee Rice",
+       "team": "KC",
+       "slot": "WR1",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 53.5,
+        "CZR": 54.5,
+        "MGM": null,
+        "FAN": 49.5,
+        "HR": 49.5,
+        "BR": 56.5,
+        "PARX": 56.5,
+        "BALLY": 56.5
+       }
+      },
+      {
+       "player": "Kenneth Walker III",
+       "team": "KC",
+       "slot": "RB1",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 19.5,
+        "CZR": 19.5,
+        "MGM": null,
+        "FAN": 19.5,
+        "HR": 24.5,
+        "BR": 18.5,
+        "PARX": 18.5,
+        "BALLY": 18.5
+       }
+      }
+     ],
+     "best_book": "draftkings",
+     "best_book_abbr": "DK",
+     "best_american": 2000,
+     "best_decimal": 21.0,
+     "best_link": "https://sportsbook.draftkings.com/?outcomes=0QA369878000%232284868947_13L88808Q1-1590357052Q20+0QA369878158%232287006243_13L88808Q1-2013476730Q20+0QA369877973%232287005139_13L88808Q1473749250Q20+0QA369877573%232286990019_13L88808Q11673243013Q20+0QA369878107%232286994738_13L88808Q1865311989Q20+0QA369877290%232284859267_13L88808Q1-521601247Q20",
+     "runner_up_book": "hard-rock",
+     "runner_up_abbr": "HR",
+     "runner_up_decimal": 18.1,
+     "spread_pct": 16.0,
+     "books_priced": 7,
+     "books": [
+      {
+       "book": "draftkings",
+       "abbr": "DK",
+       "priced": true,
+       "american": 2000,
+       "decimal": 21.0,
+       "link": "https://sportsbook.draftkings.com/?outcomes=0QA369878000%232284868947_13L88808Q1-1590357052Q20+0QA369878158%232287006243_13L88808Q1-2013476730Q20+0QA369877973%232287005139_13L88808Q1473749250Q20+0QA369877573%232286990019_13L88808Q11673243013Q20+0QA369878107%232286994738_13L88808Q1865311989Q20+0QA369877290%232284859267_13L88808Q1-521601247Q20",
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "caesars",
+       "abbr": "CZR",
+       "priced": true,
+       "american": 1300,
+       "decimal": 14.0,
+       "link": null,
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "betmgm",
+       "abbr": "MGM",
+       "priced": false,
+       "american": null,
+       "decimal": null,
+       "link": null,
+       "missing": [
+        "Daniel Jones pass yds (no prop)",
+        "Alec Pierce rec yds (no prop)",
+        "Josh Downs rec yds (no prop)",
+        "Patrick Mahomes pass yds (no prop)",
+        "Rashee Rice rec yds (no prop)",
+        "Kenneth Walker III rec yds (no prop)"
+       ],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "fanatics",
+       "abbr": "FAN",
+       "priced": true,
+       "american": 1400,
+       "decimal": 15.0,
+       "link": null,
+       "missing": [],
+       "error": null,
+       "notes": [
+        "Daniel Jones: several main-flagged lines - two-sided line used",
+        "Alec Pierce: several main-flagged lines (nearest to DK)",
+        "Josh Downs: several main-flagged lines (nearest to DK)",
+        "Patrick Mahomes: several main-flagged lines - two-sided line used",
+        "Rashee Rice: several main-flagged lines (nearest to DK)",
+        "Kenneth Walker III: several main-flagged lines (nearest to DK)"
+       ]
+      },
+      {
+       "book": "hard-rock",
+       "abbr": "HR",
+       "priced": true,
+       "american": 1710,
+       "decimal": 18.1,
+       "link": "https://app.hardrock.bet/?deep_link_value=betslip/846883778721874342,468014783577325958,4713836108838994308,6755095665749131669,1522614385015652761,1794729494116958602",
+       "missing": [],
+       "error": null,
+       "notes": [
+        "Daniel Jones: no main flag (nearest to DK)",
+        "Alec Pierce: no main flag (nearest to DK)",
+        "Josh Downs: no main flag (nearest to DK)",
+        "Patrick Mahomes: no main flag (nearest to DK)",
+        "Rashee Rice: no main flag (nearest to DK)",
+        "Kenneth Walker III: no main flag (nearest to DK)"
+       ]
+      },
+      {
+       "book": "betrivers",
+       "abbr": "BR",
+       "priced": true,
+       "american": 1600,
+       "decimal": 17.0,
+       "link": "https://mi.betrivers.com/?page=sportsbook#event/1028811657?coupon=P|4338102287,4338240947,4338320246,4338156295,4338241947,4338240386|",
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "betparx",
+       "abbr": "PARX",
+       "priced": true,
+       "american": 1600,
+       "decimal": 17.0,
+       "link": "https://nj.betparx.com/kambi#event/1028811657?coupon=parlay|4338102287,4338240947,4338320246,4338156295,4338241947,4338240386|0|replace",
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "bally-bet",
+       "abbr": "BALLY",
+       "priced": true,
+       "american": 1600,
+       "decimal": 17.0,
+       "link": "https://play.ballybet.com/sports#event/1028811657?coupon=parlay|4338102287,4338240947,4338320246,4338156295,4338241947,4338240386|0|replace",
+       "missing": [],
+       "error": null,
+       "notes": []
+      }
+     ],
+     "stale": false
+    },
+    {
+     "name": "Base",
+     "legs": [
+      {
+       "player": "Daniel Jones",
+       "team": "IND",
+       "slot": "QB1",
+       "market": "pass yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 217.5,
+        "CZR": 217.5,
+        "MGM": null,
+        "FAN": 215.5,
+        "HR": 224.5,
+        "BR": 215.5,
+        "PARX": 215.5,
+        "BALLY": 215.5
+       }
+      },
+      {
+       "player": "Alec Pierce",
+       "team": "IND",
+       "slot": "WR1",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 43.5,
+        "CZR": 43.5,
+        "MGM": null,
+        "FAN": 39.5,
+        "HR": 39.5,
+        "BR": 45.5,
+        "PARX": 45.5,
+        "BALLY": 45.5
+       }
+      },
+      {
+       "player": "Josh Downs",
+       "team": "IND",
+       "slot": "WR2",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 36.5,
+        "CZR": 36.5,
+        "MGM": null,
+        "FAN": 39.5,
+        "HR": 39.5,
+        "BR": 37.5,
+        "PARX": 37.5,
+        "BALLY": 37.5
+       }
+      },
+      {
+       "player": "Patrick Mahomes",
+       "team": "KC",
+       "slot": "QB1",
+       "market": "pass yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 219.5,
+        "CZR": 219.5,
+        "MGM": null,
+        "FAN": 215.5,
+        "HR": 224.5,
+        "BR": 221.5,
+        "PARX": 221.5,
+        "BALLY": 221.5
+       }
+      },
+      {
+       "player": "Rashee Rice",
+       "team": "KC",
+       "slot": "WR1",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 53.5,
+        "CZR": 54.5,
+        "MGM": null,
+        "FAN": 49.5,
+        "HR": 49.5,
+        "BR": 56.5,
+        "PARX": 56.5,
+        "BALLY": 56.5
+       }
+      },
+      {
+       "player": "Xavier Worthy",
+       "team": "KC",
+       "slot": "WR2",
+       "market": "rec yds",
+       "side": "Over",
+       "position_flag": null,
+       "lines": {
+        "DK": 37.5,
+        "CZR": 37.5,
+        "MGM": null,
+        "FAN": 39.5,
+        "HR": 39.5,
+        "BR": 37.5,
+        "PARX": 37.5,
+        "BALLY": 37.5
+       }
+      }
+     ],
+     "best_book": "draftkings",
+     "best_book_abbr": "DK",
+     "best_american": 1900,
+     "best_decimal": 20.0,
+     "best_link": "https://sportsbook.draftkings.com/?outcomes=0QA369878000%232284868947_13L88808Q1-1590357052Q20+0QA369878158%232287006243_13L88808Q1-2013476730Q20+0QA369877973%232287005139_13L88808Q1473749250Q20+0QA369877573%232286990019_13L88808Q11673243013Q20+0QA369878107%232286994738_13L88808Q1865311989Q20+0QA369877740%232284859284_13L88808Q1-1547726350Q20",
+     "runner_up_book": "betrivers",
+     "runner_up_abbr": "BR",
+     "runner_up_decimal": 17.0,
+     "spread_pct": 17.6,
+     "books_priced": 7,
+     "books": [
+      {
+       "book": "draftkings",
+       "abbr": "DK",
+       "priced": true,
+       "american": 1900,
+       "decimal": 20.0,
+       "link": "https://sportsbook.draftkings.com/?outcomes=0QA369878000%232284868947_13L88808Q1-1590357052Q20+0QA369878158%232287006243_13L88808Q1-2013476730Q20+0QA369877973%232287005139_13L88808Q1473749250Q20+0QA369877573%232286990019_13L88808Q11673243013Q20+0QA369878107%232286994738_13L88808Q1865311989Q20+0QA369877740%232284859284_13L88808Q1-1547726350Q20",
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "caesars",
+       "abbr": "CZR",
+       "priced": true,
+       "american": 1200,
+       "decimal": 13.0,
+       "link": null,
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "betmgm",
+       "abbr": "MGM",
+       "priced": false,
+       "american": null,
+       "decimal": null,
+       "link": null,
+       "missing": [
+        "Daniel Jones pass yds (no prop)",
+        "Alec Pierce rec yds (no prop)",
+        "Josh Downs rec yds (no prop)",
+        "Patrick Mahomes pass yds (no prop)",
+        "Rashee Rice rec yds (no prop)",
+        "Xavier Worthy rec yds (no prop)"
+       ],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "fanatics",
+       "abbr": "FAN",
+       "priced": true,
+       "american": 1400,
+       "decimal": 15.0,
+       "link": null,
+       "missing": [],
+       "error": null,
+       "notes": [
+        "Daniel Jones: several main-flagged lines - two-sided line used",
+        "Alec Pierce: several main-flagged lines (nearest to DK)",
+        "Josh Downs: several main-flagged lines (nearest to DK)",
+        "Patrick Mahomes: several main-flagged lines - two-sided line used",
+        "Rashee Rice: several main-flagged lines (nearest to DK)",
+        "Xavier Worthy: several main-flagged lines (nearest to DK)"
+       ]
+      },
+      {
+       "book": "hard-rock",
+       "abbr": "HR",
+       "priced": true,
+       "american": 1401,
+       "decimal": 15.01,
+       "link": "https://app.hardrock.bet/?deep_link_value=betslip/846883778721874342,468014783577325958,4713836108838994308,6755095665749131669,1522614385015652761,396801614469530015",
+       "missing": [],
+       "error": null,
+       "notes": [
+        "Daniel Jones: no main flag (nearest to DK)",
+        "Alec Pierce: no main flag (nearest to DK)",
+        "Josh Downs: no main flag (nearest to DK)",
+        "Patrick Mahomes: no main flag (nearest to DK)",
+        "Rashee Rice: no main flag (nearest to DK)",
+        "Xavier Worthy: no main flag (nearest to DK)"
+       ]
+      },
+      {
+       "book": "betrivers",
+       "abbr": "BR",
+       "priced": true,
+       "american": 1600,
+       "decimal": 17.0,
+       "link": "https://mi.betrivers.com/?page=sportsbook#event/1028811657?coupon=P|4338102287,4338240947,4338320246,4338156295,4338241947,4338228940|",
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "betparx",
+       "abbr": "PARX",
+       "priced": true,
+       "american": 1600,
+       "decimal": 17.0,
+       "link": "https://nj.betparx.com/kambi#event/1028811657?coupon=parlay|4338102287,4338240947,4338320246,4338156295,4338241947,4338228940|0|replace",
+       "missing": [],
+       "error": null,
+       "notes": []
+      },
+      {
+       "book": "bally-bet",
+       "abbr": "BALLY",
+       "priced": true,
+       "american": 1600,
+       "decimal": 17.0,
+       "link": "https://play.ballybet.com/sports#event/1028811657?coupon=parlay|4338102287,4338240947,4338320246,4338156295,4338241947,4338228940|0|replace",
+       "missing": [],
+       "error": null,
+       "notes": []
+      }
+     ],
+     "stale": false
+    }
+   ],
+   "notes": [],
+   "budget_trimmed": false,
+   "prices_pulled_at": "2026-09-16T08:52:29.897636+00:00",
+   "best_overall": {
+    "stack": "KC: WR2→WR3",
+    "book": "draftkings",
+    "decimal": 21.0,
+    "american": 2000,
+    "link": "https://sportsbook.draftkings.com/?outcomes=0QA369878000%232284868947_13L88808Q1-1590357052Q20+0QA369878158%232287006243_13L88808Q1-2013476730Q20+0QA369877973%232287005139_13L88808Q1473749250Q20+0QA369877573%232286990019_13L88808Q11673243013Q20+0QA369878107%232286994738_13L88808Q1865311989Q20+0QA369877967%232286993048_13L88808Q1-862874724Q20"
+   },
+   "roster": {
+    "IND": {
+     "QB1": {
+      "name": "Daniel Jones",
+      "line": 217.5,
+      "flag": null
+     },
+     "WR1": {
+      "name": "Alec Pierce",
+      "line": 43.5,
+      "flag": null
+     },
+     "WR2": {
+      "name": "Josh Downs",
+      "line": 36.5,
+      "flag": null
+     },
+     "WR3": {
+      "name": "Keenan Allen",
+      "line": 30.5,
+      "flag": null
+     },
+     "TE1": {
+      "name": "Tyler Warren",
+      "line": 46.5,
+      "flag": null
+     },
+     "RB1": {
+      "name": "Jonathan Taylor",
+      "line": 87.5,
+      "flag": null
+     }
+    },
+    "KC": {
+     "QB1": {
+      "name": "Patrick Mahomes",
+      "line": 219.5,
+      "flag": null
+     },
+     "WR1": {
+      "name": "Rashee Rice",
+      "line": 53.5,
+      "flag": null
+     },
+     "WR2": {
+      "name": "Xavier Worthy",
+      "line": 37.5,
+      "flag": null
+     },
+     "WR3": {
+      "name": "Tyquan Thornton",
+      "line": 15.5,
+      "flag": null
+     },
+     "TE1": {
+      "name": "Travis Kelce",
+      "line": 42.5,
+      "flag": null
+     },
+     "RB1": {
+      "name": "Kenneth Walker III",
+      "line": 78.5,
+      "flag": null
+     }
+    }
+   }
+  }
+ ],
+ "top_stacks": [
+  {
+   "name": "DET: WR2→WR3",
+   "legs": [
+    {
+     "player": "Jared Goff",
+     "team": "DET",
+     "slot": "QB1",
+     "market": "pass yds",
+     "side": "Over",
+     "position_flag": null,
+     "lines": {
+      "DK": 270.5,
+      "CZR": 269.5,
+      "MGM": 269.5,
+      "FAN": 265.5,
+      "HR": 274.5,
+      "BR": 268.5,
+      "PARX": 268.5,
+      "BALLY": 268.5
+     }
+    },
+    {
+     "player": "Amon-Ra St. Brown",
+     "team": "DET",
+     "slot": "WR1",
+     "market": "rec yds",
+     "side": "Over",
+     "position_flag": null,
+     "lines": {
+      "DK": 82.5,
+      "CZR": 80.5,
+      "MGM": 82.5,
+      "FAN": 79.5,
+      "HR": 79.5,
+      "BR": 79.5,
+      "PARX": 79.5,
+      "BALLY": 79.5
+     }
+    },
+    {
+     "player": "Isaac TeSlaa",
+     "team": "DET",
+     "slot": "WR3",
+     "market": "rec yds",
+     "side": "Over",
+     "position_flag": null,
+     "lines": {
+      "DK": 14.5,
+      "CZR": 15.5,
+      "MGM": 16.5,
+      "FAN": 9.5,
+      "HR": 24.5,
+      "BR": 15.5,
+      "PARX": 15.5,
+      "BALLY": 15.5
+     }
+    },
+    {
+     "player": "Josh Allen",
+     "team": "BUF",
+     "slot": "QB1",
+     "market": "pass yds",
+     "side": "Over",
+     "position_flag": null,
+     "lines": {
+      "DK": 251.5,
+      "CZR": 250.5,
+      "MGM": 249.5,
+      "FAN": 250.5,
+      "HR": 249.5,
+      "BR": 255.5,
+      "PARX": 255.5,
+      "BALLY": 255.5
+     }
+    },
+    {
+     "player": "Khalil Shakir",
+     "team": "BUF",
+     "slot": "WR1",
+     "market": "rec yds",
+     "side": "Over",
+     "position_flag": null,
+     "lines": {
+      "DK": 45.5,
+      "CZR": 44.5,
+      "MGM": 42.5,
+      "FAN": 49.5,
+      "HR": 49.5,
+      "BR": 46.5,
+      "PARX": 46.5,
+      "BALLY": 46.5
+     }
+    },
+    {
+     "player": "Joshua Palmer",
+     "team": "BUF",
+     "slot": "WR2",
+     "market": "rec yds",
+     "side": "Over",
+     "position_flag": null,
+     "lines": {
+      "DK": 13.5,
+      "CZR": 13.5,
+      "MGM": 12.5,
+      "FAN": 9.5,
+      "HR": 24.5,
+      "BR": 13.5,
+      "PARX": 13.5,
+      "BALLY": 13.5
+     }
+    }
+   ],
+   "best_book": "hard-rock",
+   "best_book_abbr": "HR",
+   "best_american": 3124,
+   "best_decimal": 32.24,
+   "best_link": "https://app.hardrock.bet/?deep_link_value=betslip/1356498289914151342,3103466672669983109,6622301400506433947,422681934867595667,7313489239361061257,4362081801653584296",
+   "runner_up_book": "draftkings",
+   "runner_up_abbr": "DK",
+   "runner_up_decimal": 20.0,
+   "spread_pct": 61.2,
+   "books_priced": 8,
+   "books": [
+    {
+     "book": "draftkings",
+     "abbr": "DK",
+     "priced": true,
+     "american": 1900,
+     "decimal": 20.0,
+     "link": "https://sportsbook.draftkings.com/?outcomes=0QA369809454%232286990366_13L88808Q1-854869368Q20+0QA369809280%232285721859_13L88808Q1464291837Q20+0QA369809426%232284539720_13L88808Q1-347953252Q20+0QA369809247%232284763786_13L88808Q1-1873767725Q20+0QA369809807%232285722521_13L88808Q11888653544Q20+0QA369809797%232284579115_13L88808Q1-1997695700Q20",
+     "missing": [],
+     "error": null,
+     "notes": []
+    },
+    {
+     "book": "caesars",
+     "abbr": "CZR",
+     "priced": true,
+     "american": 1900,
+     "decimal": 20.0,
+     "link": null,
+     "missing": [],
+     "error": null,
+     "notes": []
+    },
+    {
+     "book": "betmgm",
+     "abbr": "MGM",
+     "priced": true,
+     "american": 1400,
+     "decimal": 15.0,
+     "link": "https://sports.on.betmgm.ca/en/sports?options=6%3A43192-3611918-5722382,6%3A43192-3611921-5722388,6%3A43192-3611889-5722322,6%3A43192-3611894-5722334,6%3A43192-3611887-5722320,6%3A43192-3611879-5722306",
+     "missing": [],
+     "error": null,
+     "notes": [
+      "Jared Goff: no main flag - two-sided line used",
+      "Amon-Ra St. Brown: no main flag - two-sided line used",
+      "Isaac TeSlaa: no main flag - two-sided line used",
+      "Josh Allen: no main flag - two-sided line used",
+      "Khalil Shakir: no main flag - two-sided line used",
+      "Joshua Palmer: no main flag - two-sided line used"
+     ]
+    },
+    {
+     "book": "fanatics",
+     "abbr": "FAN",
+     "priced": true,
+     "american": 1300,
+     "decimal": 14.0,
+     "link": null,
+     "missing": [],
+     "error": null,
+     "notes": [
+      "Jared Goff: several main-flagged lines - two-sided line used",
+      "Amon-Ra St. Brown: several main-flagged lines (nearest to DK)",
+      "Isaac TeSlaa: several main-flagged lines (nearest to DK)",
+      "Josh Allen: several main-flagged lines - two-sided line used",
+      "Khalil Shakir: several main-flagged lines (nearest to DK)",
+      "Joshua Palmer: several main-flagged lines (nearest to DK)"
+     ]
+    },
+    {
+     "book": "hard-rock",
+     "abbr": "HR",
+     "priced": true,
+     "american": 3124,
+     "decimal": 32.24,
+     "link": "https://app.hardrock.bet/?deep_link_value=betslip/1356498289914151342,3103466672669983109,6622301400506433947,422681934867595667,7313489239361061257,4362081801653584296",
+     "missing": [],
+     "error": null,
+     "notes": [
+      "Jared Goff: no main flag (nearest to DK)",
+      "Amon-Ra St. Brown: no main flag (nearest to DK)",
+      "Isaac TeSlaa: no main flag (nearest to DK)",
+      "Josh Allen: no main flag (nearest to DK)",
+      "Khalil Shakir: no main flag (nearest to DK)",
+      "Joshua Palmer: no main flag (nearest to DK)"
+     ]
+    },
+    {
+     "book": "betrivers",
+     "abbr": "BR",
+     "priced": true,
+     "american": 1900,
+     "decimal": 20.0,
+     "link": "https://mi.betrivers.com/?page=sportsbook#event/1027638966?coupon=P|4338433859,4337072833,4337820091,4338427732,4337028393,4337820712|",
+     "missing": [],
+     "error": null,
+     "notes": []
+    },
+    {
+     "book": "betparx",
+     "abbr": "PARX",
+     "priced": true,
+     "american": 1900,
+     "decimal": 20.0,
+     "link": "https://nj.betparx.com/kambi#event/1027638966?coupon=parlay|4338433859,4337072833,4337820091,4338427732,4337028393,4337820712|0|replace",
+     "missing": [],
+     "error": null,
+     "notes": []
+    },
+    {
+     "book": "bally-bet",
+     "abbr": "BALLY",
+     "priced": true,
+     "american": 1900,
+     "decimal": 20.0,
+     "link": "https://play.ballybet.com/sports#event/1027638966?coupon=parlay|4338433859,4337072833,4337820091,4338427732,4337028393,4337820712|0|replace",
+     "missing": [],
+     "error": null,
+     "notes": [
+      "Amon-Ra St. Brown: no main flag (nearest to DK)"
+     ]
+    }
+   ],
+   "stale": false,
+   "game": "DET@BUF",
+   "kickoff_pt": "Thu 9/17 5:15 PM PT"
+  },
+  {
+   "name": "DAL: WR2→RB1",
+   "legs": [
+    {
+     "player": "Jayden Daniels",
+     "team": "WAS",
+     "slot": "QB1",
+     "market": "pass yds",
+     "side": "Over",
+     "position_flag": null,
+     "lines": {
+      "DK": 205.5,
+      "CZR": 202.5,
+      "MGM": null,
+      "FAN": 200.5,
+      "HR": 199.5,
+      "BR": 200.5,
+      "PARX": 200.5,
+      "BALLY": 200.5
+     }
+    },
+    {
+     "player": "Terry McLaurin",
+     "team": "WAS",
+     "slot": "WR1",
+     "market": "rec yds",
+     "side": "Over",
+     "position_flag": null,
+     "lines": {
+      "DK": 51.5,
+      "CZR": 51.5,
+      "MGM": null,
+      "FAN": 49.5,
+      "HR": 49.5,
+      "BR": 52.5,
+      "PARX": 52.5,
+      "BALLY": 52.5
+     }
+    },
+    {
+     "player": "Stefon Diggs",
+     "team": "WAS",
+     "slot": "WR2",
+     "market": "rec yds",
+     "side": "Over",
+     "position_flag": null,
+     "lines": {
+      "DK": 46.5,
+      "CZR": 44.5,
+      "MGM": null,
+      "FAN": 49.5,
+      "HR": 49.5,
+      "BR": 45.5,
+      "PARX": 45.5,
+      "BALLY": 45.5
+     }
+    },
+    {
+     "player": "Dak Prescott",
+     "team": "DAL",
+     "slot": "QB1",
+     "market": "pass yds",
+     "side": "Over",
+     "position_flag": null,
+     "lines": {
+      "DK": 264.5,
+      "CZR": 262.5,
+      "MGM": null,
+      "FAN": 260.5,
+      "HR": 274.5,
+      "BR": 265.5,
+      "PARX": 265.5,
+      "BALLY": 265.5
+     }
+    },
+    {
+     "player": "CeeDee Lamb",
+     "team": "DAL",
+     "slot": "WR1",
+     "market": "rec yds",
+     "side": "Over",
+     "position_flag": null,
+     "lines": {
+      "DK": 74.5,
+      "CZR": 74.5,
+      "MGM": null,
+      "FAN": 69.5,
+      "HR": 79.5,
+      "BR": 76.5,
+      "PARX": 76.5,
+      "BALLY": 76.5
+     }
+    },
+    {
+     "player": "Javonte Williams",
+     "team": "DAL",
+     "slot": "RB1",
+     "market": "rec yds",
+     "side": "Over",
+     "position_flag": null,
+     "lines": {
+      "DK": 11.5,
+      "CZR": 11.5,
+      "MGM": null,
+      "FAN": 9.5,
+      "HR": 24.5,
+      "BR": 12.5,
+      "PARX": 12.5,
+      "BALLY": 12.5
+     }
+    }
+   ],
+   "best_book": "hard-rock",
+   "best_book_abbr": "HR",
+   "best_american": 2815,
+   "best_decimal": 29.15,
+   "best_link": "https://app.hardrock.bet/?deep_link_value=betslip/7006505240027595170,7303154233115804045,7465002344724431277,5494802484855701923,6385020070682296735,6868717689829982606",
+   "runner_up_book": "betrivers",
+   "runner_up_abbr": "BR",
+   "runner_up_decimal": 18.0,
+   "spread_pct": 61.9,
+   "books_priced": 6,
+   "books": [
+    {
+     "book": "draftkings",
+     "abbr": "DK",
+     "priced": false,
+     "american": null,
+     "decimal": null,
+     "link": null,
+     "missing": [],
+     "error": "Price not found",
+     "notes": []
+    },
+    {
+     "book": "caesars",
+     "abbr": "CZR",
+     "priced": true,
+     "american": 1250,
+     "decimal": 13.5,
+     "link": null,
+     "missing": [],
+     "error": null,
+     "notes": []
+    },
+    {
+     "book": "betmgm",
+     "abbr": "MGM",
+     "priced": false,
+     "american": null,
+     "decimal": null,
+     "link": null,
+     "missing": [
+      "Jayden Daniels pass yds (no prop)",
+      "Terry McLaurin rec yds (no prop)",
+      "Stefon Diggs rec yds (no prop)",
+      "Dak Prescott pass yds (no prop)",
+      "CeeDee Lamb rec yds (no prop)",
+      "Javonte Williams rec yds (no prop)"
+     ],
+     "error": null,
+     "notes": []
+    },
+    {
+     "book": "fanatics",
+     "abbr": "FAN",
+     "priced": true,
+     "american": 1300,
+     "decimal": 14.0,
+     "link": null,
+     "missing": [],
+     "error": null,
+     "notes": [
+      "Jayden Daniels: several main-flagged lines - two-sided line used",
+      "Terry McLaurin: several main-flagged lines (nearest to DK)",
+      "Stefon Diggs: several main-flagged lines (nearest to DK)",
+      "Dak Prescott: several main-flagged lines - two-sided line used",
+      "CeeDee Lamb: several main-flagged lines (nearest to DK)",
+      "Javonte Williams: several main-flagged lines (nearest to DK)"
+     ]
+    },
+    {
+     "book": "hard-rock",
+     "abbr": "HR",
+     "priced": true,
+     "american": 2815,
+     "decimal": 29.15,
+     "link": "https://app.hardrock.bet/?deep_link_value=betslip/7006505240027595170,7303154233115804045,7465002344724431277,5494802484855701923,6385020070682296735,6868717689829982606",
+     "missing": [],
+     "error": null,
+     "notes": [
+      "Jayden Daniels: no main flag (nearest to DK)",
+      "Terry McLaurin: no main flag (nearest to DK)",
+      "Stefon Diggs: no main flag (nearest to DK)",
+      "Dak Prescott: no main flag (nearest to DK)",
+      "CeeDee Lamb: no main flag (nearest to DK)",
+      "Javonte Williams: no main flag (nearest to DK)"
+     ]
+    },
+    {
+     "book": "betrivers",
+     "abbr": "BR",
+     "priced": true,
+     "american": 1700,
+     "decimal": 18.0,
+     "link": "https://mi.betrivers.com/?page=sportsbook#event/1028811644?coupon=P|4338319245,4338319418,4338331132,4338319247,4338339297,4338453968|",
+     "missing": [],
+     "error": null,
+     "notes": []
+    },
+    {
+     "book": "betparx",
+     "abbr": "PARX",
+     "priced": true,
+     "american": 1700,
+     "decimal": 18.0,
+     "link": "https://nj.betparx.com/kambi#event/1028811644?coupon=parlay|4338319245,4338319418,4338331132,4338319247,4338339297,4338453968|0|replace",
+     "missing": [],
+     "error": null,
+     "notes": []
+    },
+    {
+     "book": "bally-bet",
+     "abbr": "BALLY",
+     "priced": true,
+     "american": 1700,
+     "decimal": 18.0,
+     "link": "https://play.ballybet.com/sports#event/1028811644?coupon=parlay|4338319245,4338319418,4338331132,4338319247,4338339297,4338453968|0|replace",
+     "missing": [],
+     "error": null,
+     "notes": []
+    }
+   ],
+   "stale": false,
+   "game": "WAS@DAL",
+   "kickoff_pt": "Sun 9/20 1:25 PM PT"
+  },
+  {
+   "name": "DET: WR1→TE1",
+   "legs": [
+    {
+     "player": "Jared Goff",
+     "team": "DET",
+     "slot": "QB1",
+     "market": "pass yds",
+     "side": "Over",
+     "position_flag": null,
+     "lines": {
+      "DK": 270.5,
+      "CZR": 269.5,
+      "MGM": 269.5,
+      "FAN": 265.5,
+      "HR": 274.5,
+      "BR": 268.5,
+      "PARX": 268.5,
+      "BALLY": 268.5
+     }
+    },
+    {
+     "player": "Sam LaPorta",
+     "team": "DET",
+     "slot": "TE1",
+     "market": "rec yds",
+     "side": "Over",
+     "position_flag": null,
+     "lines": {
+      "DK": 45.5,
+      "CZR": 46.5,
+      "MGM": 46.5,
+      "FAN": 49.5,
+      "HR": 49.5,
+      "BR": 46.5,
+      "PARX": 46.5,
+      "BALLY": 46.5
+     }
+    },
+    {
+     "player": "Jameson Williams",
+     "team": "DET",
+     "slot": "WR2",
+     "market": "rec yds",
+     "side": "Over",
+     "position_flag": null,
+     "lines": {
+      "DK": 59.5,
+      "CZR": 59.5,
+      "MGM": 59.5,
+      "FAN": 59.5,
+      "HR": 64.5,
+      "BR": 58.5,
+      "PARX": 58.5,
+      "BALLY": 58.5
+     }
+    },
+    {
+     "player": "Josh Allen",
+     "team": "BUF",
+     "slot": "QB1",
+     "market": "pass yds",
+     "side": "Over",
+     "position_flag": null,
+     "lines": {
+      "DK": 251.5,
+      "CZR": 250.5,
+      "MGM": 249.5,
+      "FAN": 250.5,
+      "HR": 249.5,
+      "BR": 255.5,
+      "PARX": 255.5,
+      "BALLY": 255.5
+     }
+    },
+    {
+     "player": "Khalil Shakir",
+     "team": "BUF",
+     "slot": "WR1",
+     "market": "rec yds",
+     "side": "Over",
+     "position_flag": null,
+     "lines": {
+      "DK": 45.5,
+      "CZR": 44.5,
+      "MGM": 42.5,
+      "FAN": 49.5,
+      "HR": 49.5,
+      "BR": 46.5,
+      "PARX": 46.5,
+      "BALLY": 46.5
+     }
+    },
+    {
+     "player": "Joshua Palmer",
+     "team": "BUF",
+     "slot": "WR2",
+     "market": "rec yds",
+     "side": "Over",
+     "position_flag": null,
+     "lines": {
+      "DK": 13.5,
+      "CZR": 13.5,
+      "MGM": 12.5,
+      "FAN": 9.5,
+      "HR": 24.5,
+      "BR": 13.5,
+      "PARX": 13.5,
+      "BALLY": 13.5
+     }
+    }
+   ],
+   "best_book": "hard-rock",
+   "best_book_abbr": "HR",
+   "best_american": 2453,
+   "best_decimal": 25.53,
+   "best_link": "https://app.hardrock.bet/?deep_link_value=betslip/1356498289914151342,850262795520967071,3221030853958304174,422681934867595667,7313489239361061257,4362081801653584296",
+   "runner_up_book": "betrivers",
+   "runner_up_abbr": "BR",
+   "runner_up_decimal": 21.0,
+   "spread_pct": 21.6,
+   "books_priced": 8,
+   "books": [
+    {
+     "book": "draftkings",
+     "abbr": "DK",
+     "priced": true,
+     "american": 1800,
+     "decimal": 19.0,
+     "link": "https://sportsbook.draftkings.com/?outcomes=0QA369809454%232286990366_13L88808Q1-854869368Q20+0QA369809199%232285726365_13L88808Q11888653544Q20+0QA369809995%232284540174_13L88808Q1338230796Q20+0QA369809247%232284763786_13L88808Q1-1873767725Q20+0QA369809807%232285722521_13L88808Q11888653544Q20+0QA369809797%232284579115_13L88808Q1-1997695700Q20",
+     "missing": [],
+     "error": null,
+     "notes": []
+    },
+    {
+     "book": "caesars",
+     "abbr": "CZR",
+     "priced": true,
+     "american": 1700,
+     "decimal": 18.0,
+     "link": null,
+     "missing": [],
+     "error": null,
+     "notes": []
+    },
+    {
+     "book": "betmgm",
+     "abbr": "MGM",
+     "priced": true,
+     "american": 1300,
+     "decimal": 14.0,
+     "link": "https://sports.on.betmgm.ca/en/sports?options=6%3A43192-3611918-5722382,6%3A43192-3611904-5722352,6%3A43192-3611882-5722308,6%3A43192-3611894-5722334,6%3A43192-3611887-5722320,6%3A43192-3611879-5722306",
+     "missing": [],
+     "error": null,
+     "notes": [
+      "Jared Goff: no main flag - two-sided line used",
+      "Sam LaPorta: no main flag - two-sided line used",
+      "Jameson Williams: no main flag - two-sided line used",
+      "Josh Allen: no main flag - two-sided line used",
+      "Khalil Shakir: no main flag - two-sided line used",
+      "Joshua Palmer: no main flag - two-sided line used"
+     ]
+    },
+    {
+     "book": "fanatics",
+     "abbr": "FAN",
+     "priced": true,
+     "american": 1500,
+     "decimal": 16.0,
+     "link": null,
+     "missing": [],
+     "error": null,
+     "notes": [
+      "Jared Goff: several main-flagged lines - two-sided line used",
+      "Sam LaPorta: several main-flagged lines (nearest to DK)",
+      "Jameson Williams: several main-flagged lines (nearest to DK)",
+      "Josh Allen: several main-flagged lines - two-sided line used",
+      "Khalil Shakir: several main-flagged lines (nearest to DK)",
+      "Joshua Palmer: several main-flagged lines (nearest to DK)"
+     ]
+    },
+    {
+     "book": "hard-rock",
+     "abbr": "HR",
+     "priced": true,
+     "american": 2453,
+     "decimal": 25.53,
+     "link": "https://app.hardrock.bet/?deep_link_value=betslip/1356498289914151342,850262795520967071,3221030853958304174,422681934867595667,7313489239361061257,4362081801653584296",
+     "missing": [],
+     "error": null,
+     "notes": [
+      "Jared Goff: no main flag (nearest to DK)",
+      "Sam LaPorta: no main flag (nearest to DK)",
+      "Jameson Williams: no main flag (nearest to DK)",
+      "Josh Allen: no main flag (nearest to DK)",
+      "Khalil Shakir: no main flag (nearest to DK)",
+      "Joshua Palmer: no main flag (nearest to DK)"
+     ]
+    },
+    {
+     "book": "betrivers",
+     "abbr": "BR",
+     "priced": true,
+     "american": 2000,
+     "decimal": 21.0,
+     "link": "https://mi.betrivers.com/?page=sportsbook#event/1027638966?coupon=P|4338433859,4337028315,4338401874,4338427732,4337028393,4337820712|",
+     "missing": [],
+     "error": null,
+     "notes": []
+    },
+    {
+     "book": "betparx",
+     "abbr": "PARX",
+     "priced": true,
+     "american": 2000,
+     "decimal": 21.0,
+     "link": "https://nj.betparx.com/kambi#event/1027638966?coupon=parlay|4338433859,4337028315,4338401874,4338427732,4337028393,4337820712|0|replace",
+     "missing": [],
+     "error": null,
+     "notes": []
+    },
+    {
+     "book": "bally-bet",
+     "abbr": "BALLY",
+     "priced": true,
+     "american": 2000,
+     "decimal": 21.0,
+     "link": "https://play.ballybet.com/sports#event/1027638966?coupon=parlay|4338433859,4337028315,4338401874,4338427732,4337028393,4337820712|0|replace",
+     "missing": [],
+     "error": null,
+     "notes": []
+    }
+   ],
+   "stale": false,
+   "game": "DET@BUF",
+   "kickoff_pt": "Thu 9/17 5:15 PM PT"
+  }
+ ],
+ "warnings": [
+  "DNS data is WARN (last refresh Wed 9/16 12:39 AM PT)"
+ ],
+ "budget": {
+  "odds": {
+   "used_today": 9,
+   "daily_cap": 3000,
+   "per_minute": 25
+  },
+  "sgp": {
+   "used_today": 160,
+   "daily_cap": 1500,
+   "per_minute": 8
+  }
+ },
+ "overall_tier": "warn"
+}

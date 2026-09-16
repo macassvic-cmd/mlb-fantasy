@@ -36,3 +36,5 @@ data/backtest/backtest_*.json
 # data/oddsblaze/playcard/ (small priced results + the card) and budget.json ARE committed.
 data/oddsblaze/raw/
 data/oddsblaze/**/*.tmp
+data/oddsblaze/run_playcard.cmd
+data/oddsblaze/playcard_run.log

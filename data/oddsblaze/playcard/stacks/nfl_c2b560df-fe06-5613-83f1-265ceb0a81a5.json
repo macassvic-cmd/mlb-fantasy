@@ -1,0 +1,4098 @@
+{
+ "league": "nfl",
+ "event": "c2b560df-fe06-5613-83f1-265ceb0a81a5",
+ "away": "IND",
+ "home": "KC",
+ "kickoff": "2026-09-21T00:20:00.000Z",
+ "slot_markets": {
+  "QB1": "player-passing-yards",
+  "WR1": "player-receiving-yards",
+  "WR2": "player-receiving-yards",
+  "WR3": "player-receiving-yards",
+  "TE1": "player-receiving-yards",
+  "RB1": "player-receiving-yards"
+ },
+ "odds_pulled": {
+  "draftkings": {
+   "feed_updated": "2026-09-16T08:31:41.431Z",
+   "pulled_at": "2026-09-16T08:32:38.311101+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": true
+  },
+  "caesars": {
+   "feed_updated": "2026-09-16T08:32:35.088Z",
+   "pulled_at": "2026-09-16T08:32:38.906760+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": true
+  },
+  "betmgm": {
+   "feed_updated": "2026-09-16T08:32:37.015Z",
+   "pulled_at": "2026-09-16T08:32:40.118266+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": true
+  },
+  "fanatics": {
+   "feed_updated": "2026-09-16T08:27:33.734Z",
+   "pulled_at": "2026-09-16T08:32:41.304892+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": true
+  },
+  "hard-rock": {
+   "feed_updated": "2026-09-16T08:32:39.659Z",
+   "pulled_at": "2026-09-16T08:32:42.681747+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": true
+  },
+  "betrivers": {
+   "feed_updated": "2026-09-16T08:32:41.668Z",
+   "pulled_at": "2026-09-16T08:32:43.647955+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": true
+  },
+  "betparx": {
+   "feed_updated": "2026-09-16T03:29:20.632Z",
+   "pulled_at": "2026-09-16T08:32:44.579862+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": true
+  },
+  "bally-bet": {
+   "feed_updated": "2026-09-16T03:29:21.886Z",
+   "pulled_at": "2026-09-16T08:32:45.889468+00:00",
+   "status": 200,
+   "replayed_from": null,
+   "has_event": true
+  }
+ },
+ "priced_at": "2026-09-16T08:44:47.322583+00:00",
+ "stacks": [
+  {
+   "name": "KC: WR2→WR3",
+   "variant": [
+    "WR2",
+    "WR3"
+   ],
+   "legs": [
+    {
+     "team": "IND",
+     "slot": "QB1",
+     "player": "Daniel Jones",
+     "player_norm": "danieljones",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 217.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "IND",
+     "slot": "WR1",
+     "player": "Alec Pierce",
+     "player_norm": "alecpierce",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 43.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "IND",
+     "slot": "WR2",
+     "player": "Josh Downs",
+     "player_norm": "joshdowns",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 36.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "KC",
+     "slot": "QB1",
+     "player": "Patrick Mahomes",
+     "player_norm": "patrickmahomes",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 219.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "KC",
+     "slot": "WR1",
+     "player": "Rashee Rice",
+     "player_norm": "rasheerice",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 53.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "KC",
+     "slot": "WR3",
+     "player": "Tyquan Thornton",
+     "player_norm": "tyquanthornton",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 15.5,
+     "position": "WR",
+     "position_flag": null
+    }
+   ],
+   "books": [
+    {
+     "book": "draftkings",
+     "legs": [
+      {
+       "line": 217.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 43.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 36.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 219.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 53.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 15.5,
+       "price": "-108",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:50:05.576442+00:00",
+     "http_status": 200,
+     "decimal": 21.0,
+     "american": 2000,
+     "implied": 0.0476,
+     "link": "https://sportsbook.draftkings.com/?outcomes=0QA369878000%232284868947_13L88808Q1-1590357052Q20+0QA369878158%232287006243_13L88808Q1-2013476730Q20+0QA369877973%232287005139_13L88808Q1473749250Q20+0QA369877573%232286990019_13L88808Q11673243013Q20+0QA369878107%232286994738_13L88808Q1865311989Q20+0QA369877967%232286993048_13L88808Q1-862874724Q20",
+     "correlation": 54.3744
+    },
+    {
+     "book": "caesars",
+     "legs": [
+      {
+       "line": 217.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 43.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 36.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 219.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 54.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 14.5,
+       "price": "-112",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:50:12.204586+00:00",
+     "http_status": 200,
+     "decimal": 14.5,
+     "american": 1350,
+     "implied": 0.069,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "betmgm",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Daniel Jones pass yds (no prop)",
+      "Alec Pierce rec yds (no prop)",
+      "Josh Downs rec yds (no prop)",
+      "Patrick Mahomes pass yds (no prop)",
+      "Rashee Rice rec yds (no prop)",
+      "Tyquan Thornton rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "fanatics",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-115",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 39.5,
+       "price": "-140",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "+105",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 215.5,
+       "price": "-120",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 49.5,
+       "price": "-150",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 19.5,
+       "price": "+130",
+       "note": "several main-flagged lines (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Daniel Jones: several main-flagged lines - two-sided line used",
+      "Alec Pierce: several main-flagged lines (nearest to DK)",
+      "Josh Downs: several main-flagged lines (nearest to DK)",
+      "Patrick Mahomes: several main-flagged lines - two-sided line used",
+      "Rashee Rice: several main-flagged lines (nearest to DK)",
+      "Tyquan Thornton: several main-flagged lines (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:50:17.463290+00:00",
+     "http_status": 200,
+     "decimal": 17.0,
+     "american": 1600,
+     "implied": 0.0588,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "hard-rock",
+     "legs": [
+      {
+       "line": 224.5,
+       "price": "+100",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "-150",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "+100",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 224.5,
+       "price": "-105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "-150",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 24.5,
+       "price": "+190",
+       "note": "no main flag (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Daniel Jones: no main flag (nearest to DK)",
+      "Alec Pierce: no main flag (nearest to DK)",
+      "Josh Downs: no main flag (nearest to DK)",
+      "Patrick Mahomes: no main flag (nearest to DK)",
+      "Rashee Rice: no main flag (nearest to DK)",
+      "Tyquan Thornton: no main flag (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:50:23.605239+00:00",
+     "http_status": 200,
+     "decimal": 19.47,
+     "american": 1847,
+     "implied": 0.0514,
+     "link": "https://app.hardrock.bet/?deep_link_value=betslip/846883778721874342,468014783577325958,4713836108838994308,6755095665749131669,1522614385015652761,1404763506070389144",
+     "correlation": null
+    },
+    {
+     "book": "betrivers",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 221.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 56.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-118",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:50:30.046484+00:00",
+     "http_status": 200,
+     "decimal": 17.0,
+     "american": 1600,
+     "implied": 0.0588,
+     "link": "https://mi.betrivers.com/?page=sportsbook#event/1028811657?coupon=P|4338102287,4338240947,4338320246,4338156295,4338241947,4338196074|",
+     "correlation": null
+    },
+    {
+     "book": "betparx",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 221.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 56.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-117",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:50:48.162380+00:00",
+     "http_status": 200,
+     "decimal": 17.0,
+     "american": 1600,
+     "implied": 0.0588,
+     "link": "https://nj.betparx.com/kambi#event/1028811657?coupon=parlay|4338102287,4338240947,4338320246,4338156295,4338241947,4338196074|0|replace",
+     "correlation": null
+    },
+    {
+     "book": "bally-bet",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-120",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-120",
+       "note": null
+      },
+      {
+       "line": 221.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 56.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 13.5,
+       "price": "-122",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:50:53.783297+00:00",
+     "http_status": 200,
+     "decimal": 17.0,
+     "american": 1600,
+     "implied": 0.0588,
+     "link": "https://play.ballybet.com/sports#event/1028811657?coupon=parlay|4338102287,4338240947,4338320246,4338156295,4338241947,4338196074|0|replace",
+     "correlation": null
+    }
+   ],
+   "best_book": "draftkings",
+   "best_decimal": 21.0,
+   "best_american": 2000,
+   "best_link": "https://sportsbook.draftkings.com/?outcomes=0QA369878000%232284868947_13L88808Q1-1590357052Q20+0QA369878158%232287006243_13L88808Q1-2013476730Q20+0QA369877973%232287005139_13L88808Q1473749250Q20+0QA369877573%232286990019_13L88808Q11673243013Q20+0QA369878107%232286994738_13L88808Q1865311989Q20+0QA369877967%232286993048_13L88808Q1-862874724Q20",
+   "runner_up_book": "hard-rock",
+   "runner_up_decimal": 19.47,
+   "spread_pct": 7.9,
+   "books_priced": 7
+  },
+  {
+   "name": "KC: WR2→RB1",
+   "variant": [
+    "WR2",
+    "RB1"
+   ],
+   "legs": [
+    {
+     "team": "IND",
+     "slot": "QB1",
+     "player": "Daniel Jones",
+     "player_norm": "danieljones",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 217.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "IND",
+     "slot": "WR1",
+     "player": "Alec Pierce",
+     "player_norm": "alecpierce",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 43.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "IND",
+     "slot": "WR2",
+     "player": "Josh Downs",
+     "player_norm": "joshdowns",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 36.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "KC",
+     "slot": "QB1",
+     "player": "Patrick Mahomes",
+     "player_norm": "patrickmahomes",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 219.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "KC",
+     "slot": "WR1",
+     "player": "Rashee Rice",
+     "player_norm": "rasheerice",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 53.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "KC",
+     "slot": "RB1",
+     "player": "Kenneth Walker III",
+     "player_norm": "kennethwalkeriii",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 19.5,
+     "position": "RB",
+     "position_flag": null
+    }
+   ],
+   "books": [
+    {
+     "book": "draftkings",
+     "legs": [
+      {
+       "line": 217.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 43.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 36.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 219.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 53.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 19.5,
+       "price": "-114",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:50:59.431513+00:00",
+     "http_status": 200,
+     "decimal": 21.0,
+     "american": 2000,
+     "implied": 0.0476,
+     "link": "https://sportsbook.draftkings.com/?outcomes=0QA369878000%232284868947_13L88808Q1-1590357052Q20+0QA369878158%232287006243_13L88808Q1-2013476730Q20+0QA369877973%232287005139_13L88808Q1473749250Q20+0QA369877573%232286990019_13L88808Q11673243013Q20+0QA369878107%232286994738_13L88808Q1865311989Q20+0QA369877290%232284859267_13L88808Q1-521601247Q20",
+     "correlation": 53.19
+    },
+    {
+     "book": "caesars",
+     "legs": [
+      {
+       "line": 217.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 43.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 36.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 219.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 54.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 19.5,
+       "price": "-112",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:51:07.581024+00:00",
+     "http_status": 200,
+     "decimal": 14.0,
+     "american": 1300,
+     "implied": 0.0714,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "betmgm",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Daniel Jones pass yds (no prop)",
+      "Alec Pierce rec yds (no prop)",
+      "Josh Downs rec yds (no prop)",
+      "Patrick Mahomes pass yds (no prop)",
+      "Rashee Rice rec yds (no prop)",
+      "Kenneth Walker III rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "fanatics",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-115",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 39.5,
+       "price": "-140",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "+105",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 215.5,
+       "price": "-120",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 49.5,
+       "price": "-150",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 19.5,
+       "price": "-110",
+       "note": "several main-flagged lines (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Daniel Jones: several main-flagged lines - two-sided line used",
+      "Alec Pierce: several main-flagged lines (nearest to DK)",
+      "Josh Downs: several main-flagged lines (nearest to DK)",
+      "Patrick Mahomes: several main-flagged lines - two-sided line used",
+      "Rashee Rice: several main-flagged lines (nearest to DK)",
+      "Kenneth Walker III: several main-flagged lines (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:51:11.492341+00:00",
+     "http_status": 200,
+     "decimal": 15.0,
+     "american": 1400,
+     "implied": 0.0667,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "hard-rock",
+     "legs": [
+      {
+       "line": 224.5,
+       "price": "+100",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "-150",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "+100",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 224.5,
+       "price": "-105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "-150",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 24.5,
+       "price": "+125",
+       "note": "no main flag (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Daniel Jones: no main flag (nearest to DK)",
+      "Alec Pierce: no main flag (nearest to DK)",
+      "Josh Downs: no main flag (nearest to DK)",
+      "Patrick Mahomes: no main flag (nearest to DK)",
+      "Rashee Rice: no main flag (nearest to DK)",
+      "Kenneth Walker III: no main flag (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:51:17.622149+00:00",
+     "http_status": 200,
+     "decimal": 18.1,
+     "american": 1710,
+     "implied": 0.0552,
+     "link": "https://app.hardrock.bet/?deep_link_value=betslip/846883778721874342,468014783577325958,4713836108838994308,6755095665749131669,1522614385015652761,1794729494116958602",
+     "correlation": null
+    },
+    {
+     "book": "betrivers",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 221.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 56.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 18.5,
+       "price": "-118",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:51:23.908729+00:00",
+     "http_status": 200,
+     "decimal": 17.0,
+     "american": 1600,
+     "implied": 0.0588,
+     "link": "https://mi.betrivers.com/?page=sportsbook#event/1028811657?coupon=P|4338102287,4338240947,4338320246,4338156295,4338241947,4338240386|",
+     "correlation": null
+    },
+    {
+     "book": "betparx",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 221.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 56.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 18.5,
+       "price": "-117",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:51:31.056732+00:00",
+     "http_status": 200,
+     "decimal": 17.0,
+     "american": 1600,
+     "implied": 0.0588,
+     "link": "https://nj.betparx.com/kambi#event/1028811657?coupon=parlay|4338102287,4338240947,4338320246,4338156295,4338241947,4338240386|0|replace",
+     "correlation": null
+    },
+    {
+     "book": "bally-bet",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-120",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-120",
+       "note": null
+      },
+      {
+       "line": 221.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 56.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 18.5,
+       "price": "-122",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:51:47.811059+00:00",
+     "http_status": 200,
+     "decimal": 17.0,
+     "american": 1600,
+     "implied": 0.0588,
+     "link": "https://play.ballybet.com/sports#event/1028811657?coupon=parlay|4338102287,4338240947,4338320246,4338156295,4338241947,4338240386|0|replace",
+     "correlation": null
+    }
+   ],
+   "best_book": "draftkings",
+   "best_decimal": 21.0,
+   "best_american": 2000,
+   "best_link": "https://sportsbook.draftkings.com/?outcomes=0QA369878000%232284868947_13L88808Q1-1590357052Q20+0QA369878158%232287006243_13L88808Q1-2013476730Q20+0QA369877973%232287005139_13L88808Q1473749250Q20+0QA369877573%232286990019_13L88808Q11673243013Q20+0QA369878107%232286994738_13L88808Q1865311989Q20+0QA369877290%232284859267_13L88808Q1-521601247Q20",
+   "runner_up_book": "hard-rock",
+   "runner_up_decimal": 18.1,
+   "spread_pct": 16.0,
+   "books_priced": 7
+  },
+  {
+   "name": "Base",
+   "variant": null,
+   "legs": [
+    {
+     "team": "IND",
+     "slot": "QB1",
+     "player": "Daniel Jones",
+     "player_norm": "danieljones",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 217.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "IND",
+     "slot": "WR1",
+     "player": "Alec Pierce",
+     "player_norm": "alecpierce",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 43.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "IND",
+     "slot": "WR2",
+     "player": "Josh Downs",
+     "player_norm": "joshdowns",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 36.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "KC",
+     "slot": "QB1",
+     "player": "Patrick Mahomes",
+     "player_norm": "patrickmahomes",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 219.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "KC",
+     "slot": "WR1",
+     "player": "Rashee Rice",
+     "player_norm": "rasheerice",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 53.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "KC",
+     "slot": "WR2",
+     "player": "Xavier Worthy",
+     "player_norm": "xavierworthy",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 37.5,
+     "position": "WR",
+     "position_flag": null
+    }
+   ],
+   "books": [
+    {
+     "book": "draftkings",
+     "legs": [
+      {
+       "line": 217.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 43.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 36.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 219.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 53.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-113",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:44:52.926226+00:00",
+     "http_status": 200,
+     "decimal": 20.0,
+     "american": 1900,
+     "implied": 0.05,
+     "link": "https://sportsbook.draftkings.com/?outcomes=0QA369878000%232284868947_13L88808Q1-1590357052Q20+0QA369878158%232287006243_13L88808Q1-2013476730Q20+0QA369877973%232287005139_13L88808Q1473749250Q20+0QA369877573%232286990019_13L88808Q11673243013Q20+0QA369878107%232286994738_13L88808Q1865311989Q20+0QA369877740%232284859284_13L88808Q1-1547726350Q20",
+     "correlation": 55.6026
+    },
+    {
+     "book": "caesars",
+     "legs": [
+      {
+       "line": 217.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 43.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 36.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 219.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 54.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-117",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:45:00.077256+00:00",
+     "http_status": 200,
+     "decimal": 13.0,
+     "american": 1200,
+     "implied": 0.0769,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "betmgm",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Daniel Jones pass yds (no prop)",
+      "Alec Pierce rec yds (no prop)",
+      "Josh Downs rec yds (no prop)",
+      "Patrick Mahomes pass yds (no prop)",
+      "Rashee Rice rec yds (no prop)",
+      "Xavier Worthy rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "fanatics",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-115",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 39.5,
+       "price": "-140",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "+105",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 215.5,
+       "price": "-120",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 49.5,
+       "price": "-150",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "+100",
+       "note": "several main-flagged lines (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Daniel Jones: several main-flagged lines - two-sided line used",
+      "Alec Pierce: several main-flagged lines (nearest to DK)",
+      "Josh Downs: several main-flagged lines (nearest to DK)",
+      "Patrick Mahomes: several main-flagged lines - two-sided line used",
+      "Rashee Rice: several main-flagged lines (nearest to DK)",
+      "Xavier Worthy: several main-flagged lines (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:45:04.947656+00:00",
+     "http_status": 200,
+     "decimal": 15.0,
+     "american": 1400,
+     "implied": 0.0667,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "hard-rock",
+     "legs": [
+      {
+       "line": 224.5,
+       "price": "+100",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "-150",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "+100",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 224.5,
+       "price": "-105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "-150",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "-105",
+       "note": "no main flag (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Daniel Jones: no main flag (nearest to DK)",
+      "Alec Pierce: no main flag (nearest to DK)",
+      "Josh Downs: no main flag (nearest to DK)",
+      "Patrick Mahomes: no main flag (nearest to DK)",
+      "Rashee Rice: no main flag (nearest to DK)",
+      "Xavier Worthy: no main flag (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:45:11.068182+00:00",
+     "http_status": 200,
+     "decimal": 15.01,
+     "american": 1401,
+     "implied": 0.0666,
+     "link": "https://app.hardrock.bet/?deep_link_value=betslip/846883778721874342,468014783577325958,4713836108838994308,6755095665749131669,1522614385015652761,396801614469530015",
+     "correlation": null
+    },
+    {
+     "book": "betrivers",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 221.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 56.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-118",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:45:17.373455+00:00",
+     "http_status": 200,
+     "decimal": 17.0,
+     "american": 1600,
+     "implied": 0.0588,
+     "link": "https://mi.betrivers.com/?page=sportsbook#event/1028811657?coupon=P|4338102287,4338240947,4338320246,4338156295,4338241947,4338228940|",
+     "correlation": null
+    },
+    {
+     "book": "betparx",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 221.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 56.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-117",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:45:23.347363+00:00",
+     "http_status": 200,
+     "decimal": 17.0,
+     "american": 1600,
+     "implied": 0.0588,
+     "link": "https://nj.betparx.com/kambi#event/1028811657?coupon=parlay|4338102287,4338240947,4338320246,4338156295,4338241947,4338228940|0|replace",
+     "correlation": null
+    },
+    {
+     "book": "bally-bet",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-120",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-120",
+       "note": null
+      },
+      {
+       "line": 221.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 56.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-122",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:45:29.303482+00:00",
+     "http_status": 200,
+     "decimal": 17.0,
+     "american": 1600,
+     "implied": 0.0588,
+     "link": "https://play.ballybet.com/sports#event/1028811657?coupon=parlay|4338102287,4338240947,4338320246,4338156295,4338241947,4338228940|0|replace",
+     "correlation": null
+    }
+   ],
+   "best_book": "draftkings",
+   "best_decimal": 20.0,
+   "best_american": 1900,
+   "best_link": "https://sportsbook.draftkings.com/?outcomes=0QA369878000%232284868947_13L88808Q1-1590357052Q20+0QA369878158%232287006243_13L88808Q1-2013476730Q20+0QA369877973%232287005139_13L88808Q1473749250Q20+0QA369877573%232286990019_13L88808Q11673243013Q20+0QA369878107%232286994738_13L88808Q1865311989Q20+0QA369877740%232284859284_13L88808Q1-1547726350Q20",
+   "runner_up_book": "betrivers",
+   "runner_up_decimal": 17.0,
+   "spread_pct": 17.6,
+   "books_priced": 7
+  },
+  {
+   "name": "IND: WR1→TE1",
+   "variant": [
+    "WR1",
+    "TE1"
+   ],
+   "legs": [
+    {
+     "team": "IND",
+     "slot": "QB1",
+     "player": "Daniel Jones",
+     "player_norm": "danieljones",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 217.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "IND",
+     "slot": "TE1",
+     "player": "Tyler Warren",
+     "player_norm": "tylerwarren",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 46.5,
+     "position": "TE",
+     "position_flag": null
+    },
+    {
+     "team": "IND",
+     "slot": "WR2",
+     "player": "Josh Downs",
+     "player_norm": "joshdowns",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 36.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "KC",
+     "slot": "QB1",
+     "player": "Patrick Mahomes",
+     "player_norm": "patrickmahomes",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 219.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "KC",
+     "slot": "WR1",
+     "player": "Rashee Rice",
+     "player_norm": "rasheerice",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 53.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "KC",
+     "slot": "WR2",
+     "player": "Xavier Worthy",
+     "player_norm": "xavierworthy",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 37.5,
+     "position": "WR",
+     "position_flag": null
+    }
+   ],
+   "books": [
+    {
+     "book": "draftkings",
+     "legs": [
+      {
+       "line": 217.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-110",
+       "note": null
+      },
+      {
+       "line": 36.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 219.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 53.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-113",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:48:17.486240+00:00",
+     "http_status": 200,
+     "decimal": 20.0,
+     "american": 1900,
+     "implied": 0.05,
+     "link": "https://sportsbook.draftkings.com/?outcomes=0QA369878000%232284868947_13L88808Q1-1590357052Q20+0QA369877504%232286822962_13L88808Q1-1296091928Q20+0QA369877973%232287005139_13L88808Q1473749250Q20+0QA369877573%232286990019_13L88808Q11673243013Q20+0QA369878107%232286994738_13L88808Q1865311989Q20+0QA369877740%232284859284_13L88808Q1-1547726350Q20",
+     "correlation": 55.9801
+    },
+    {
+     "book": "caesars",
+     "legs": [
+      {
+       "line": 217.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 44.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 36.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 219.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 54.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-117",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:48:24.324702+00:00",
+     "http_status": 200,
+     "decimal": 12.5,
+     "american": 1150,
+     "implied": 0.08,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "betmgm",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Daniel Jones pass yds (no prop)",
+      "Tyler Warren rec yds (no prop)",
+      "Josh Downs rec yds (no prop)",
+      "Patrick Mahomes pass yds (no prop)",
+      "Rashee Rice rec yds (no prop)",
+      "Xavier Worthy rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "fanatics",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-115",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 49.5,
+       "price": "+120",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "+105",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 215.5,
+       "price": "-120",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 49.5,
+       "price": "-150",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "+100",
+       "note": "several main-flagged lines (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Daniel Jones: several main-flagged lines - two-sided line used",
+      "Tyler Warren: several main-flagged lines (nearest to DK)",
+      "Josh Downs: several main-flagged lines (nearest to DK)",
+      "Patrick Mahomes: several main-flagged lines - two-sided line used",
+      "Rashee Rice: several main-flagged lines (nearest to DK)",
+      "Xavier Worthy: several main-flagged lines (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:48:29.623574+00:00",
+     "http_status": 200,
+     "decimal": 18.0,
+     "american": 1700,
+     "implied": 0.0556,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "hard-rock",
+     "legs": [
+      {
+       "line": 224.5,
+       "price": "+100",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "+120",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "+100",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 224.5,
+       "price": "-105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "-150",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "-105",
+       "note": "no main flag (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Daniel Jones: no main flag (nearest to DK)",
+      "Tyler Warren: no main flag (nearest to DK)",
+      "Josh Downs: no main flag (nearest to DK)",
+      "Patrick Mahomes: no main flag (nearest to DK)",
+      "Rashee Rice: no main flag (nearest to DK)",
+      "Xavier Worthy: no main flag (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:48:47.393842+00:00",
+     "http_status": 200,
+     "decimal": 18.76,
+     "american": 1776,
+     "implied": 0.0533,
+     "link": "https://app.hardrock.bet/?deep_link_value=betslip/846883778721874342,2846954324385464714,4713836108838994308,6755095665749131669,1522614385015652761,396801614469530015",
+     "correlation": null
+    },
+    {
+     "book": "betrivers",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 42.5,
+       "price": "-118",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 221.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 56.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-118",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:48:54.646923+00:00",
+     "http_status": 200,
+     "decimal": 19.0,
+     "american": 1800,
+     "implied": 0.0526,
+     "link": "https://mi.betrivers.com/?page=sportsbook#event/1028811657?coupon=P|4338102287,4338241863,4338320246,4338156295,4338241947,4338228940|",
+     "correlation": null
+    },
+    {
+     "book": "betparx",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 42.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 221.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 56.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-117",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:48:59.631286+00:00",
+     "http_status": 200,
+     "decimal": 19.0,
+     "american": 1800,
+     "implied": 0.0526,
+     "link": "https://nj.betparx.com/kambi#event/1028811657?coupon=parlay|4338102287,4338241863,4338320246,4338156295,4338241947,4338228940|0|replace",
+     "correlation": null
+    },
+    {
+     "book": "bally-bet",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 42.5,
+       "price": "-122",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-120",
+       "note": null
+      },
+      {
+       "line": 221.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 56.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-122",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:49:05.749445+00:00",
+     "http_status": 200,
+     "decimal": 19.0,
+     "american": 1800,
+     "implied": 0.0526,
+     "link": "https://play.ballybet.com/sports#event/1028811657?coupon=parlay|4338102287,4338241863,4338320246,4338156295,4338241947,4338228940|0|replace",
+     "correlation": null
+    }
+   ],
+   "best_book": "draftkings",
+   "best_decimal": 20.0,
+   "best_american": 1900,
+   "best_link": "https://sportsbook.draftkings.com/?outcomes=0QA369878000%232284868947_13L88808Q1-1590357052Q20+0QA369877504%232286822962_13L88808Q1-1296091928Q20+0QA369877973%232287005139_13L88808Q1473749250Q20+0QA369877573%232286990019_13L88808Q11673243013Q20+0QA369878107%232286994738_13L88808Q1865311989Q20+0QA369877740%232284859284_13L88808Q1-1547726350Q20",
+   "runner_up_book": "betrivers",
+   "runner_up_decimal": 19.0,
+   "spread_pct": 5.3,
+   "books_priced": 7
+  },
+  {
+   "name": "IND: WR2→RB1",
+   "variant": [
+    "WR2",
+    "RB1"
+   ],
+   "legs": [
+    {
+     "team": "IND",
+     "slot": "QB1",
+     "player": "Daniel Jones",
+     "player_norm": "danieljones",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 217.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "IND",
+     "slot": "WR1",
+     "player": "Alec Pierce",
+     "player_norm": "alecpierce",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 43.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "IND",
+     "slot": "RB1",
+     "player": "Jonathan Taylor",
+     "player_norm": "jonathantaylor",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 16.5,
+     "position": "RB",
+     "position_flag": null
+    },
+    {
+     "team": "KC",
+     "slot": "QB1",
+     "player": "Patrick Mahomes",
+     "player_norm": "patrickmahomes",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 219.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "KC",
+     "slot": "WR1",
+     "player": "Rashee Rice",
+     "player_norm": "rasheerice",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 53.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "KC",
+     "slot": "WR2",
+     "player": "Xavier Worthy",
+     "player_norm": "xavierworthy",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 37.5,
+     "position": "WR",
+     "position_flag": null
+    }
+   ],
+   "books": [
+    {
+     "book": "draftkings",
+     "legs": [
+      {
+       "line": 217.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 43.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 16.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 219.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 53.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-113",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:47:23.132623+00:00",
+     "http_status": 200,
+     "decimal": 19.0,
+     "american": 1800,
+     "implied": 0.0526,
+     "link": "https://sportsbook.draftkings.com/?outcomes=0QA369878000%232284868947_13L88808Q1-1590357052Q20+0QA369878158%232287006243_13L88808Q1-2013476730Q20+0QA369877279%232284873201_13L88808Q1-1766943055Q20+0QA369877573%232286990019_13L88808Q11673243013Q20+0QA369878107%232286994738_13L88808Q1865311989Q20+0QA369877740%232284859284_13L88808Q1-1547726350Q20",
+     "correlation": 57.6504
+    },
+    {
+     "book": "caesars",
+     "legs": [
+      {
+       "line": 217.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 43.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 16.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 219.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 54.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-117",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:47:29.938356+00:00",
+     "http_status": 200,
+     "decimal": 14.5,
+     "american": 1350,
+     "implied": 0.069,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "betmgm",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Daniel Jones pass yds (no prop)",
+      "Alec Pierce rec yds (no prop)",
+      "Jonathan Taylor rec yds (no prop)",
+      "Patrick Mahomes pass yds (no prop)",
+      "Rashee Rice rec yds (no prop)",
+      "Xavier Worthy rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "fanatics",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-115",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 39.5,
+       "price": "-140",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 19.5,
+       "price": "+110",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 215.5,
+       "price": "-120",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 49.5,
+       "price": "-150",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "+100",
+       "note": "several main-flagged lines (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Daniel Jones: several main-flagged lines - two-sided line used",
+      "Alec Pierce: several main-flagged lines (nearest to DK)",
+      "Jonathan Taylor: several main-flagged lines (nearest to DK)",
+      "Patrick Mahomes: several main-flagged lines - two-sided line used",
+      "Rashee Rice: several main-flagged lines (nearest to DK)",
+      "Xavier Worthy: several main-flagged lines (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:47:47.184813+00:00",
+     "http_status": 200,
+     "decimal": 17.0,
+     "american": 1600,
+     "implied": 0.0588,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "hard-rock",
+     "legs": [
+      {
+       "line": 224.5,
+       "price": "+100",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "-150",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 24.5,
+       "price": "+160",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 224.5,
+       "price": "-105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "-150",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "-105",
+       "note": "no main flag (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Daniel Jones: no main flag (nearest to DK)",
+      "Alec Pierce: no main flag (nearest to DK)",
+      "Jonathan Taylor: no main flag (nearest to DK)",
+      "Patrick Mahomes: no main flag (nearest to DK)",
+      "Rashee Rice: no main flag (nearest to DK)",
+      "Xavier Worthy: no main flag (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:47:53.196994+00:00",
+     "http_status": 200,
+     "decimal": 19.2,
+     "american": 1820,
+     "implied": 0.0521,
+     "link": "https://app.hardrock.bet/?deep_link_value=betslip/846883778721874342,468014783577325958,8101365188441276814,6755095665749131669,1522614385015652761,396801614469530015",
+     "correlation": null
+    },
+    {
+     "book": "betrivers",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 16.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 221.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 56.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-118",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:47:59.640188+00:00",
+     "http_status": 200,
+     "decimal": 18.0,
+     "american": 1700,
+     "implied": 0.0556,
+     "link": "https://mi.betrivers.com/?page=sportsbook#event/1028811657?coupon=P|4338102287,4338240947,4338229095,4338156295,4338241947,4338228940|",
+     "correlation": null
+    },
+    {
+     "book": "betparx",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 16.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 221.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 56.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-117",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:48:05.711975+00:00",
+     "http_status": 200,
+     "decimal": 18.0,
+     "american": 1700,
+     "implied": 0.0556,
+     "link": "https://nj.betparx.com/kambi#event/1028811657?coupon=parlay|4338102287,4338240947,4338229095,4338156295,4338241947,4338228940|0|replace",
+     "correlation": null
+    },
+    {
+     "book": "bally-bet",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-120",
+       "note": null
+      },
+      {
+       "line": 16.5,
+       "price": "-118",
+       "note": null
+      },
+      {
+       "line": 221.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 56.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-122",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:48:11.518947+00:00",
+     "http_status": 200,
+     "decimal": 18.0,
+     "american": 1700,
+     "implied": 0.0556,
+     "link": "https://play.ballybet.com/sports#event/1028811657?coupon=parlay|4338102287,4338240947,4338229095,4338156295,4338241947,4338228940|0|replace",
+     "correlation": null
+    }
+   ],
+   "best_book": "hard-rock",
+   "best_decimal": 19.2,
+   "best_american": 1820,
+   "best_link": "https://app.hardrock.bet/?deep_link_value=betslip/846883778721874342,468014783577325958,8101365188441276814,6755095665749131669,1522614385015652761,396801614469530015",
+   "runner_up_book": "draftkings",
+   "runner_up_decimal": 19.0,
+   "spread_pct": 1.1,
+   "books_priced": 7
+  },
+  {
+   "name": "IND: WR2→TE1",
+   "variant": [
+    "WR2",
+    "TE1"
+   ],
+   "legs": [
+    {
+     "team": "IND",
+     "slot": "QB1",
+     "player": "Daniel Jones",
+     "player_norm": "danieljones",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 217.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "IND",
+     "slot": "WR1",
+     "player": "Alec Pierce",
+     "player_norm": "alecpierce",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 43.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "IND",
+     "slot": "TE1",
+     "player": "Tyler Warren",
+     "player_norm": "tylerwarren",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 46.5,
+     "position": "TE",
+     "position_flag": null
+    },
+    {
+     "team": "KC",
+     "slot": "QB1",
+     "player": "Patrick Mahomes",
+     "player_norm": "patrickmahomes",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 219.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "KC",
+     "slot": "WR1",
+     "player": "Rashee Rice",
+     "player_norm": "rasheerice",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 53.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "KC",
+     "slot": "WR2",
+     "player": "Xavier Worthy",
+     "player_norm": "xavierworthy",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 37.5,
+     "position": "WR",
+     "position_flag": null
+    }
+   ],
+   "books": [
+    {
+     "book": "draftkings",
+     "legs": [
+      {
+       "line": 217.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 43.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 46.5,
+       "price": "-110",
+       "note": null
+      },
+      {
+       "line": 219.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 53.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-113",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:45:47.023762+00:00",
+     "http_status": 200,
+     "decimal": 19.0,
+     "american": 1800,
+     "implied": 0.0526,
+     "link": "https://sportsbook.draftkings.com/?outcomes=0QA369878000%232284868947_13L88808Q1-1590357052Q20+0QA369878158%232287006243_13L88808Q1-2013476730Q20+0QA369877504%232286822962_13L88808Q1-1296091928Q20+0QA369877573%232286990019_13L88808Q11673243013Q20+0QA369878107%232286994738_13L88808Q1865311989Q20+0QA369877740%232284859284_13L88808Q1-1547726350Q20",
+     "correlation": 58.5272
+    },
+    {
+     "book": "caesars",
+     "legs": [
+      {
+       "line": 217.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 43.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 44.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 219.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 54.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-117",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:45:54.054501+00:00",
+     "http_status": 200,
+     "decimal": 13.0,
+     "american": 1200,
+     "implied": 0.0769,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "betmgm",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Daniel Jones pass yds (no prop)",
+      "Alec Pierce rec yds (no prop)",
+      "Tyler Warren rec yds (no prop)",
+      "Patrick Mahomes pass yds (no prop)",
+      "Rashee Rice rec yds (no prop)",
+      "Xavier Worthy rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "fanatics",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-115",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 39.5,
+       "price": "-140",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "+120",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 215.5,
+       "price": "-120",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 49.5,
+       "price": "-150",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "+100",
+       "note": "several main-flagged lines (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Daniel Jones: several main-flagged lines - two-sided line used",
+      "Alec Pierce: several main-flagged lines (nearest to DK)",
+      "Tyler Warren: several main-flagged lines (nearest to DK)",
+      "Patrick Mahomes: several main-flagged lines - two-sided line used",
+      "Rashee Rice: several main-flagged lines (nearest to DK)",
+      "Xavier Worthy: several main-flagged lines (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:45:58.948577+00:00",
+     "http_status": 200,
+     "decimal": 15.0,
+     "american": 1400,
+     "implied": 0.0667,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "hard-rock",
+     "legs": [
+      {
+       "line": 224.5,
+       "price": "+100",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "-150",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "+120",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 224.5,
+       "price": "-105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "-150",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "-105",
+       "note": "no main flag (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Daniel Jones: no main flag (nearest to DK)",
+      "Alec Pierce: no main flag (nearest to DK)",
+      "Tyler Warren: no main flag (nearest to DK)",
+      "Patrick Mahomes: no main flag (nearest to DK)",
+      "Rashee Rice: no main flag (nearest to DK)",
+      "Xavier Worthy: no main flag (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:46:06.033618+00:00",
+     "http_status": 200,
+     "decimal": 16.25,
+     "american": 1525,
+     "implied": 0.0615,
+     "link": "https://app.hardrock.bet/?deep_link_value=betslip/846883778721874342,468014783577325958,2846954324385464714,6755095665749131669,1522614385015652761,396801614469530015",
+     "correlation": null
+    },
+    {
+     "book": "betrivers",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 42.5,
+       "price": "-118",
+       "note": null
+      },
+      {
+       "line": 221.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 56.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-118",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:46:11.498958+00:00",
+     "http_status": 200,
+     "decimal": 18.0,
+     "american": 1700,
+     "implied": 0.0556,
+     "link": "https://mi.betrivers.com/?page=sportsbook#event/1028811657?coupon=P|4338102287,4338240947,4338241863,4338156295,4338241947,4338228940|",
+     "correlation": null
+    },
+    {
+     "book": "betparx",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 42.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 221.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 56.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-117",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:46:17.336723+00:00",
+     "http_status": 200,
+     "decimal": 18.0,
+     "american": 1700,
+     "implied": 0.0556,
+     "link": "https://nj.betparx.com/kambi#event/1028811657?coupon=parlay|4338102287,4338240947,4338241863,4338156295,4338241947,4338228940|0|replace",
+     "correlation": null
+    },
+    {
+     "book": "bally-bet",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-120",
+       "note": null
+      },
+      {
+       "line": 42.5,
+       "price": "-122",
+       "note": null
+      },
+      {
+       "line": 221.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 56.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-122",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:46:23.418303+00:00",
+     "http_status": 200,
+     "decimal": 18.0,
+     "american": 1700,
+     "implied": 0.0556,
+     "link": "https://play.ballybet.com/sports#event/1028811657?coupon=parlay|4338102287,4338240947,4338241863,4338156295,4338241947,4338228940|0|replace",
+     "correlation": null
+    }
+   ],
+   "best_book": "draftkings",
+   "best_decimal": 19.0,
+   "best_american": 1800,
+   "best_link": "https://sportsbook.draftkings.com/?outcomes=0QA369878000%232284868947_13L88808Q1-1590357052Q20+0QA369878158%232287006243_13L88808Q1-2013476730Q20+0QA369877504%232286822962_13L88808Q1-1296091928Q20+0QA369877573%232286990019_13L88808Q11673243013Q20+0QA369878107%232286994738_13L88808Q1865311989Q20+0QA369877740%232284859284_13L88808Q1-1547726350Q20",
+   "runner_up_book": "betrivers",
+   "runner_up_decimal": 18.0,
+   "spread_pct": 5.6,
+   "books_priced": 7
+  },
+  {
+   "name": "IND: WR2→WR3",
+   "variant": [
+    "WR2",
+    "WR3"
+   ],
+   "legs": [
+    {
+     "team": "IND",
+     "slot": "QB1",
+     "player": "Daniel Jones",
+     "player_norm": "danieljones",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 217.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "IND",
+     "slot": "WR1",
+     "player": "Alec Pierce",
+     "player_norm": "alecpierce",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 43.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "IND",
+     "slot": "WR3",
+     "player": "Keenan Allen",
+     "player_norm": "keenanallen",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 30.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "KC",
+     "slot": "QB1",
+     "player": "Patrick Mahomes",
+     "player_norm": "patrickmahomes",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 219.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "KC",
+     "slot": "WR1",
+     "player": "Rashee Rice",
+     "player_norm": "rasheerice",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 53.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "KC",
+     "slot": "WR2",
+     "player": "Xavier Worthy",
+     "player_norm": "xavierworthy",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 37.5,
+     "position": "WR",
+     "position_flag": null
+    }
+   ],
+   "books": [
+    {
+     "book": "draftkings",
+     "legs": [
+      {
+       "line": 217.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 43.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 30.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 219.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 53.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-113",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:46:29.103923+00:00",
+     "http_status": 200,
+     "decimal": 19.0,
+     "american": 1800,
+     "implied": 0.0526,
+     "link": "https://sportsbook.draftkings.com/?outcomes=0QA369878000%232284868947_13L88808Q1-1590357052Q20+0QA369878158%232287006243_13L88808Q1-2013476730Q20+0QA369877920%232286931584_13L88808Q1-1282184665Q20+0QA369877573%232286990019_13L88808Q11673243013Q20+0QA369878107%232286994738_13L88808Q1865311989Q20+0QA369877740%232284859284_13L88808Q1-1547726350Q20",
+     "correlation": 57.9962
+    },
+    {
+     "book": "caesars",
+     "legs": [
+      {
+       "line": 217.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 43.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 30.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 219.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 54.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-117",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:46:48.018519+00:00",
+     "http_status": 200,
+     "decimal": 13.5,
+     "american": 1250,
+     "implied": 0.0741,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "betmgm",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Daniel Jones pass yds (no prop)",
+      "Alec Pierce rec yds (no prop)",
+      "Keenan Allen rec yds (no prop)",
+      "Patrick Mahomes pass yds (no prop)",
+      "Rashee Rice rec yds (no prop)",
+      "Xavier Worthy rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "fanatics",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-115",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 39.5,
+       "price": "-140",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 29.5,
+       "price": "-125",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 215.5,
+       "price": "-120",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 49.5,
+       "price": "-150",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "+100",
+       "note": "several main-flagged lines (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Daniel Jones: several main-flagged lines - two-sided line used",
+      "Alec Pierce: several main-flagged lines (nearest to DK)",
+      "Keenan Allen: several main-flagged lines (nearest to DK)",
+      "Patrick Mahomes: several main-flagged lines - two-sided line used",
+      "Rashee Rice: several main-flagged lines (nearest to DK)",
+      "Xavier Worthy: several main-flagged lines (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:46:53.017540+00:00",
+     "http_status": 200,
+     "decimal": 13.0,
+     "american": 1200,
+     "implied": 0.0769,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "hard-rock",
+     "legs": [
+      {
+       "line": 224.5,
+       "price": "+100",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "-150",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 24.5,
+       "price": "-175",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 224.5,
+       "price": "-105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "-150",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "-105",
+       "note": "no main flag (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Daniel Jones: no main flag (nearest to DK)",
+      "Alec Pierce: no main flag (nearest to DK)",
+      "Keenan Allen: no main flag (nearest to DK)",
+      "Patrick Mahomes: no main flag (nearest to DK)",
+      "Rashee Rice: no main flag (nearest to DK)",
+      "Xavier Worthy: no main flag (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:46:59.201453+00:00",
+     "http_status": 200,
+     "decimal": 13.35,
+     "american": 1235,
+     "implied": 0.0749,
+     "link": "https://app.hardrock.bet/?deep_link_value=betslip/846883778721874342,468014783577325958,9060150013740581258,6755095665749131669,1522614385015652761,396801614469530015",
+     "correlation": null
+    },
+    {
+     "book": "betrivers",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 31.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 221.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 56.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-118",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:47:05.531488+00:00",
+     "http_status": 200,
+     "decimal": 18.0,
+     "american": 1700,
+     "implied": 0.0556,
+     "link": "https://mi.betrivers.com/?page=sportsbook#event/1028811657?coupon=P|4338102287,4338240947,4338196961,4338156295,4338241947,4338228940|",
+     "correlation": null
+    },
+    {
+     "book": "betparx",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 31.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 221.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 56.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-117",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:47:11.422278+00:00",
+     "http_status": 200,
+     "decimal": 18.0,
+     "american": 1700,
+     "implied": 0.0556,
+     "link": "https://nj.betparx.com/kambi#event/1028811657?coupon=parlay|4338102287,4338240947,4338196961,4338156295,4338241947,4338228940|0|replace",
+     "correlation": null
+    },
+    {
+     "book": "bally-bet",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-120",
+       "note": null
+      },
+      {
+       "line": 31.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 221.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 56.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-122",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:47:17.902422+00:00",
+     "http_status": 200,
+     "decimal": 18.0,
+     "american": 1700,
+     "implied": 0.0556,
+     "link": "https://play.ballybet.com/sports#event/1028811657?coupon=parlay|4338102287,4338240947,4338196961,4338156295,4338241947,4338228940|0|replace",
+     "correlation": null
+    }
+   ],
+   "best_book": "draftkings",
+   "best_decimal": 19.0,
+   "best_american": 1800,
+   "best_link": "https://sportsbook.draftkings.com/?outcomes=0QA369878000%232284868947_13L88808Q1-1590357052Q20+0QA369878158%232287006243_13L88808Q1-2013476730Q20+0QA369877920%232286931584_13L88808Q1-1282184665Q20+0QA369877573%232286990019_13L88808Q11673243013Q20+0QA369878107%232286994738_13L88808Q1865311989Q20+0QA369877740%232284859284_13L88808Q1-1547726350Q20",
+   "runner_up_book": "betrivers",
+   "runner_up_decimal": 18.0,
+   "spread_pct": 5.6,
+   "books_priced": 7
+  },
+  {
+   "name": "KC: WR2→TE1",
+   "variant": [
+    "WR2",
+    "TE1"
+   ],
+   "legs": [
+    {
+     "team": "IND",
+     "slot": "QB1",
+     "player": "Daniel Jones",
+     "player_norm": "danieljones",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 217.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "IND",
+     "slot": "WR1",
+     "player": "Alec Pierce",
+     "player_norm": "alecpierce",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 43.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "IND",
+     "slot": "WR2",
+     "player": "Josh Downs",
+     "player_norm": "joshdowns",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 36.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "KC",
+     "slot": "QB1",
+     "player": "Patrick Mahomes",
+     "player_norm": "patrickmahomes",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 219.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "KC",
+     "slot": "WR1",
+     "player": "Rashee Rice",
+     "player_norm": "rasheerice",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 53.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "KC",
+     "slot": "TE1",
+     "player": "Travis Kelce",
+     "player_norm": "traviskelce",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 42.5,
+     "position": "TE",
+     "position_flag": null
+    }
+   ],
+   "books": [
+    {
+     "book": "draftkings",
+     "legs": [
+      {
+       "line": 217.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 43.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 36.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 219.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 53.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 42.5,
+       "price": "-114",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:49:11.548868+00:00",
+     "http_status": 200,
+     "decimal": 19.0,
+     "american": 1800,
+     "implied": 0.0526,
+     "link": "https://sportsbook.draftkings.com/?outcomes=0QA369878000%232284868947_13L88808Q1-1590357052Q20+0QA369878158%232287006243_13L88808Q1-2013476730Q20+0QA369877973%232287005139_13L88808Q1473749250Q20+0QA369877573%232286990019_13L88808Q11673243013Q20+0QA369878107%232286994738_13L88808Q1865311989Q20+0QA369877819%232286440700_13L88808Q1-1693004023Q20",
+     "correlation": 57.6481
+    },
+    {
+     "book": "caesars",
+     "legs": [
+      {
+       "line": 217.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 43.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 36.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 219.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 54.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 42.5,
+       "price": "-114",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:49:18.317396+00:00",
+     "http_status": 200,
+     "decimal": 13.0,
+     "american": 1200,
+     "implied": 0.0769,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "betmgm",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Daniel Jones pass yds (no prop)",
+      "Alec Pierce rec yds (no prop)",
+      "Josh Downs rec yds (no prop)",
+      "Patrick Mahomes pass yds (no prop)",
+      "Rashee Rice rec yds (no prop)",
+      "Travis Kelce rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "fanatics",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-115",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 39.5,
+       "price": "-140",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "+105",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 215.5,
+       "price": "-120",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 49.5,
+       "price": "-150",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "-135",
+       "note": "several main-flagged lines (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Daniel Jones: several main-flagged lines - two-sided line used",
+      "Alec Pierce: several main-flagged lines (nearest to DK)",
+      "Josh Downs: several main-flagged lines (nearest to DK)",
+      "Patrick Mahomes: several main-flagged lines - two-sided line used",
+      "Rashee Rice: several main-flagged lines (nearest to DK)",
+      "Travis Kelce: several main-flagged lines (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:49:23.320801+00:00",
+     "http_status": 200,
+     "decimal": 14.0,
+     "american": 1300,
+     "implied": 0.0714,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "hard-rock",
+     "legs": [
+      {
+       "line": 224.5,
+       "price": "+100",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "-150",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "+100",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 224.5,
+       "price": "-105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 49.5,
+       "price": "-150",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "-140",
+       "note": "no main flag (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Daniel Jones: no main flag (nearest to DK)",
+      "Alec Pierce: no main flag (nearest to DK)",
+      "Josh Downs: no main flag (nearest to DK)",
+      "Patrick Mahomes: no main flag (nearest to DK)",
+      "Rashee Rice: no main flag (nearest to DK)",
+      "Travis Kelce: no main flag (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:49:30.382613+00:00",
+     "http_status": 200,
+     "decimal": 14.12,
+     "american": 1312,
+     "implied": 0.0708,
+     "link": "https://app.hardrock.bet/?deep_link_value=betslip/846883778721874342,468014783577325958,4713836108838994308,6755095665749131669,1522614385015652761,3346202864765763978",
+     "correlation": null
+    },
+    {
+     "book": "betrivers",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 221.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 56.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 44.5,
+       "price": "-114",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:49:47.833074+00:00",
+     "http_status": 200,
+     "decimal": 17.0,
+     "american": 1600,
+     "implied": 0.0588,
+     "link": "https://mi.betrivers.com/?page=sportsbook#event/1028811657?coupon=P|4338102287,4338240947,4338320246,4338156295,4338241947,4338228401|",
+     "correlation": null
+    },
+    {
+     "book": "betparx",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 221.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 56.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 44.5,
+       "price": "-113",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:49:53.716566+00:00",
+     "http_status": 200,
+     "decimal": 17.0,
+     "american": 1600,
+     "implied": 0.0588,
+     "link": "https://nj.betparx.com/kambi#event/1028811657?coupon=parlay|4338102287,4338240947,4338320246,4338156295,4338241947,4338228401|0|replace",
+     "correlation": null
+    },
+    {
+     "book": "bally-bet",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-120",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-120",
+       "note": null
+      },
+      {
+       "line": 221.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 56.5,
+       "price": "-117",
+       "note": null
+      },
+      {
+       "line": 44.5,
+       "price": "-118",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:49:59.969758+00:00",
+     "http_status": 200,
+     "decimal": 17.0,
+     "american": 1600,
+     "implied": 0.0588,
+     "link": "https://play.ballybet.com/sports#event/1028811657?coupon=parlay|4338102287,4338240947,4338320246,4338156295,4338241947,4338228401|0|replace",
+     "correlation": null
+    }
+   ],
+   "best_book": "draftkings",
+   "best_decimal": 19.0,
+   "best_american": 1800,
+   "best_link": "https://sportsbook.draftkings.com/?outcomes=0QA369878000%232284868947_13L88808Q1-1590357052Q20+0QA369878158%232287006243_13L88808Q1-2013476730Q20+0QA369877973%232287005139_13L88808Q1473749250Q20+0QA369877573%232286990019_13L88808Q11673243013Q20+0QA369878107%232286994738_13L88808Q1865311989Q20+0QA369877819%232286440700_13L88808Q1-1693004023Q20",
+   "runner_up_book": "betrivers",
+   "runner_up_decimal": 17.0,
+   "spread_pct": 11.8,
+   "books_priced": 7
+  },
+  {
+   "name": "KC: WR1→TE1",
+   "variant": [
+    "WR1",
+    "TE1"
+   ],
+   "legs": [
+    {
+     "team": "IND",
+     "slot": "QB1",
+     "player": "Daniel Jones",
+     "player_norm": "danieljones",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 217.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "IND",
+     "slot": "WR1",
+     "player": "Alec Pierce",
+     "player_norm": "alecpierce",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 43.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "IND",
+     "slot": "WR2",
+     "player": "Josh Downs",
+     "player_norm": "joshdowns",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 36.5,
+     "position": "WR",
+     "position_flag": null
+    },
+    {
+     "team": "KC",
+     "slot": "QB1",
+     "player": "Patrick Mahomes",
+     "player_norm": "patrickmahomes",
+     "market": "Player Passing Yards",
+     "side": "Over",
+     "dk_line": 219.5,
+     "position": "QB",
+     "position_flag": null
+    },
+    {
+     "team": "KC",
+     "slot": "TE1",
+     "player": "Travis Kelce",
+     "player_norm": "traviskelce",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 42.5,
+     "position": "TE",
+     "position_flag": null
+    },
+    {
+     "team": "KC",
+     "slot": "WR2",
+     "player": "Xavier Worthy",
+     "player_norm": "xavierworthy",
+     "market": "Player Receiving Yards",
+     "side": "Over",
+     "dk_line": 37.5,
+     "position": "WR",
+     "position_flag": null
+    }
+   ],
+   "books": [
+    {
+     "book": "draftkings",
+     "legs": [
+      {
+       "line": 217.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 43.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 36.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 219.5,
+       "price": "-112",
+       "note": null
+      },
+      {
+       "line": 42.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-113",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:51:53.471253+00:00",
+     "http_status": 200,
+     "decimal": 19.0,
+     "american": 1800,
+     "implied": 0.0526,
+     "link": "https://sportsbook.draftkings.com/?outcomes=0QA369878000%232284868947_13L88808Q1-1590357052Q20+0QA369878158%232287006243_13L88808Q1-2013476730Q20+0QA369877973%232287005139_13L88808Q1473749250Q20+0QA369877573%232286990019_13L88808Q11673243013Q20+0QA369877819%232286440700_13L88808Q1-1693004023Q20+0QA369877740%232284859284_13L88808Q1-1547726350Q20",
+     "correlation": 57.8225
+    },
+    {
+     "book": "caesars",
+     "legs": [
+      {
+       "line": 217.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 43.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 36.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 219.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 42.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-117",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:52:00.214335+00:00",
+     "http_status": 200,
+     "decimal": 13.0,
+     "american": 1200,
+     "implied": 0.0769,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "betmgm",
+     "legs": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "missing": [
+      "Daniel Jones pass yds (no prop)",
+      "Alec Pierce rec yds (no prop)",
+      "Josh Downs rec yds (no prop)",
+      "Patrick Mahomes pass yds (no prop)",
+      "Travis Kelce rec yds (no prop)",
+      "Xavier Worthy rec yds (no prop)"
+     ],
+     "notes": [],
+     "priced": false
+    },
+    {
+     "book": "fanatics",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-115",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 39.5,
+       "price": "-140",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "+105",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 215.5,
+       "price": "-120",
+       "note": "several main-flagged lines - two-sided line used"
+      },
+      {
+       "line": 39.5,
+       "price": "-135",
+       "note": "several main-flagged lines (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "+100",
+       "note": "several main-flagged lines (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Daniel Jones: several main-flagged lines - two-sided line used",
+      "Alec Pierce: several main-flagged lines (nearest to DK)",
+      "Josh Downs: several main-flagged lines (nearest to DK)",
+      "Patrick Mahomes: several main-flagged lines - two-sided line used",
+      "Travis Kelce: several main-flagged lines (nearest to DK)",
+      "Xavier Worthy: several main-flagged lines (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:52:05.442779+00:00",
+     "http_status": 200,
+     "decimal": 16.0,
+     "american": 1500,
+     "implied": 0.0625,
+     "link": null,
+     "correlation": null
+    },
+    {
+     "book": "hard-rock",
+     "legs": [
+      {
+       "line": 224.5,
+       "price": "+100",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "-150",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "+100",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 224.5,
+       "price": "-105",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "-140",
+       "note": "no main flag (nearest to DK)"
+      },
+      {
+       "line": 39.5,
+       "price": "-105",
+       "note": "no main flag (nearest to DK)"
+      }
+     ],
+     "missing": [],
+     "notes": [
+      "Daniel Jones: no main flag (nearest to DK)",
+      "Alec Pierce: no main flag (nearest to DK)",
+      "Josh Downs: no main flag (nearest to DK)",
+      "Patrick Mahomes: no main flag (nearest to DK)",
+      "Travis Kelce: no main flag (nearest to DK)",
+      "Xavier Worthy: no main flag (nearest to DK)"
+     ],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:52:12.546963+00:00",
+     "http_status": 200,
+     "decimal": 15.9,
+     "american": 1490,
+     "implied": 0.0629,
+     "link": "https://app.hardrock.bet/?deep_link_value=betslip/846883778721874342,468014783577325958,4713836108838994308,6755095665749131669,3346202864765763978,396801614469530015",
+     "correlation": null
+    },
+    {
+     "book": "betrivers",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-115",
+       "note": null
+      },
+      {
+       "line": 221.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 44.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-118",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:52:18.009586+00:00",
+     "http_status": 200,
+     "decimal": 18.0,
+     "american": 1700,
+     "implied": 0.0556,
+     "link": "https://mi.betrivers.com/?page=sportsbook#event/1028811657?coupon=P|4338102287,4338240947,4338320246,4338156295,4338228401,4338228940|",
+     "correlation": null
+    },
+    {
+     "book": "betparx",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-114",
+       "note": null
+      },
+      {
+       "line": 221.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 44.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-117",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:52:24.991956+00:00",
+     "http_status": 200,
+     "decimal": 18.0,
+     "american": 1700,
+     "implied": 0.0556,
+     "link": "https://nj.betparx.com/kambi#event/1028811657?coupon=parlay|4338102287,4338240947,4338320246,4338156295,4338228401,4338228940|0|replace",
+     "correlation": null
+    },
+    {
+     "book": "bally-bet",
+     "legs": [
+      {
+       "line": 215.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 45.5,
+       "price": "-120",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-120",
+       "note": null
+      },
+      {
+       "line": 221.5,
+       "price": "-113",
+       "note": null
+      },
+      {
+       "line": 44.5,
+       "price": "-118",
+       "note": null
+      },
+      {
+       "line": 37.5,
+       "price": "-122",
+       "note": null
+      }
+     ],
+     "missing": [],
+     "notes": [],
+     "priced": true,
+     "sgp_at": "2026-09-16T08:52:29.897636+00:00",
+     "http_status": 200,
+     "decimal": 18.0,
+     "american": 1700,
+     "implied": 0.0556,
+     "link": "https://play.ballybet.com/sports#event/1028811657?coupon=parlay|4338102287,4338240947,4338320246,4338156295,4338228401,4338228940|0|replace",
+     "correlation": null
+    }
+   ],
+   "best_book": "draftkings",
+   "best_decimal": 19.0,
+   "best_american": 1800,
+   "best_link": "https://sportsbook.draftkings.com/?outcomes=0QA369878000%232284868947_13L88808Q1-1590357052Q20+0QA369878158%232287006243_13L88808Q1-2013476730Q20+0QA369877973%232287005139_13L88808Q1473749250Q20+0QA369877573%232286990019_13L88808Q11673243013Q20+0QA369877819%232286440700_13L88808Q1-1693004023Q20+0QA369877740%232284859284_13L88808Q1-1547726350Q20",
+   "runner_up_book": "betrivers",
+   "runner_up_decimal": 18.0,
+   "spread_pct": 5.6,
+   "books_priced": 7
+  }
+ ],
+ "roster": {
+  "IND": {
+   "QB1": {
+    "name": "Daniel Jones",
+    "norm": "danieljones",
+    "position": "QB",
+    "team": "IND",
+    "position_flag": null,
+    "dk_line": 217.5
+   },
+   "WR1": {
+    "name": "Alec Pierce",
+    "norm": "alecpierce",
+    "position": "WR",
+    "team": "IND",
+    "position_flag": null,
+    "dk_line": 43.5
+   },
+   "WR2": {
+    "name": "Josh Downs",
+    "norm": "joshdowns",
+    "position": "WR",
+    "team": "IND",
+    "position_flag": null,
+    "dk_line": 36.5
+   },
+   "WR3": {
+    "name": "Keenan Allen",
+    "norm": "keenanallen",
+    "position": "WR",
+    "team": "IND",
+    "position_flag": null,
+    "dk_line": 30.5
+   },
+   "TE1": {
+    "name": "Tyler Warren",
+    "norm": "tylerwarren",
+    "position": "TE",
+    "team": "IND",
+    "position_flag": null,
+    "dk_line": 46.5
+   },
+   "RB1": {
+    "name": "Jonathan Taylor",
+    "norm": "jonathantaylor",
+    "position": "RB",
+    "team": "IND",
+    "position_flag": null,
+    "dk_line": 87.5
+   }
+  },
+  "KC": {
+   "QB1": {
+    "name": "Patrick Mahomes",
+    "norm": "patrickmahomes",
+    "position": "QB",
+    "team": "KC",
+    "position_flag": null,
+    "dk_line": 219.5
+   },
+   "WR1": {
+    "name": "Rashee Rice",
+    "norm": "rasheerice",
+    "position": "WR",
+    "team": "KC",
+    "position_flag": null,
+    "dk_line": 53.5
+   },
+   "WR2": {
+    "name": "Xavier Worthy",
+    "norm": "xavierworthy",
+    "position": "WR",
+    "team": "KC",
+    "position_flag": null,
+    "dk_line": 37.5
+   },
+   "WR3": {
+    "name": "Tyquan Thornton",
+    "norm": "tyquanthornton",
+    "position": "WR",
+    "team": "KC",
+    "position_flag": null,
+    "dk_line": 15.5
+   },
+   "TE1": {
+    "name": "Travis Kelce",
+    "norm": "traviskelce",
+    "position": "TE",
+    "team": "KC",
+    "position_flag": null,
+    "dk_line": 42.5
+   },
+   "RB1": {
+    "name": "Kenneth Walker III",
+    "norm": "kennethwalkeriii",
+    "position": "RB",
+    "team": "KC",
+    "position_flag": null,
+    "dk_line": 78.5
+   }
+  }
+ },
+ "notes": [],
+ "best_overall": {
+  "stack": "KC: WR2→WR3",
+  "book": "draftkings",
+  "decimal": 21.0,
+  "american": 2000,
+  "link": "https://sportsbook.draftkings.com/?outcomes=0QA369878000%232284868947_13L88808Q1-1590357052Q20+0QA369878158%232287006243_13L88808Q1-2013476730Q20+0QA369877973%232287005139_13L88808Q1473749250Q20+0QA369877573%232286990019_13L88808Q11673243013Q20+0QA369878107%232286994738_13L88808Q1865311989Q20+0QA369877967%232286993048_13L88808Q1-862874724Q20"
+ }
+}
