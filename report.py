@@ -1782,7 +1782,8 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
 </header>
 <div class="subnav" style="padding: 8px 24px; background: #0a1120; border-bottom: 1px solid #1c2944;">
   <a href="index.html" style="color: #fff; font-weight: 700; text-decoration: none; margin-right: 16px; font-size: 14px;">MLB Dashboard</a>
-  <a href="soccer-dns.html" style="color: #9fb0cc; text-decoration: none; font-size: 14px;">Soccer DNS</a>
+  <a href="soccer-dns.html" style="color: #9fb0cc; text-decoration: none; font-size: 14px; margin-right: 16px;">Soccer DNS</a>
+  <a href="sgp.html" style="color: #9fb0cc; text-decoration: none; font-size: 14px;">SGP</a>
 </div>
 
 <div id="freshnessBanner" class="freshness-banner"></div>

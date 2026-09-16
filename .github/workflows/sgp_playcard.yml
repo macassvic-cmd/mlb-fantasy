@@ -1,0 +1,130 @@
+name: SGP Play Card
+
+# Builds The Play Card (Soccer DNS top plays + football 6-man SGP stacks),
+# writes docs/sgp.html + data/oddsblaze/playcard/, posts it to Discord.
+#
+# Schedule (cron is UTC; PT is UTC-7 in September / UTC-8 after Nov 1 -
+# the fires below are chosen for PDT and drift one hour later in winter):
+#   CFB Saturday: 07:00 PT slate card (14:00 UTC) + refreshes ~90 min
+#     before the noon-ET (16:00 UTC), 3:30-ET (19:30 UTC) and 7:30-ET
+#     (23:30 UTC) windows -> 14:30, 18:00, 22:00 UTC.
+#   NFL Sunday:   07:00 PT slate card (14:00 UTC) + refreshes ~90 min
+#     before 1pm ET (17:00 UTC), 4:05/4:25pm ET (20:05 UTC) and SNF 8:20pm
+#     ET (00:20 UTC Mon) -> 15:30, 18:30, 22:50 UTC.
+#   Manual: workflow_dispatch (inputs: leagues, post to Discord).
+# GitHub's documented scheduling delay can push these 10-60 min late.
+#
+# SECRETS: ODDSBLAZE_API_KEY (repo Settings -> Secrets and variables ->
+# Actions -> New repository secret). The key only ever reaches the
+# process environment; oddsblaze_client redacts it from saved URLs,
+# nothing logs params with the key, and docs/ never sees it. If the
+# secret is missing or the key is rejected (expired trial), play_card.py
+# falls back to the last saved prices and marks every price STALE - the
+# workflow still succeeds and publishes the page.
+
+on:
+  schedule:
+    - cron: '0 14 * * 6'
+    - cron: '30 14 * * 6'
+    - cron: '0 18 * * 6'
+    - cron: '0 22 * * 6'
+    - cron: '0 14 * * 0'
+    - cron: '30 15 * * 0'
+    - cron: '30 18 * * 0'
+    - cron: '50 22 * * 0'
+  workflow_dispatch:
+    inputs:
+      leagues:
+        description: 'Comma-separated leagues to price (nfl,ncaaf)'
+        default: 'nfl,ncaaf'
+        required: false
+      post_discord:
+        description: 'Post the card to Discord'
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sgp-playcard
+  cancel-in-progress: false
+
+jobs:
+  playcard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests python-dotenv
+
+      - name: Pick leagues for this fire
+        id: leagues
+        run: |
+          if [ -n "${{ github.event.inputs.leagues }}" ]; then
+            echo "leagues=${{ github.event.inputs.leagues }}" >> "$GITHUB_OUTPUT"
+          elif [ "$(date -u +%u)" = "6" ]; then
+            echo "leagues=ncaaf" >> "$GITHUB_OUTPUT"
+          elif [ "$(date -u +%u)" = "7" ]; then
+            echo "leagues=nfl" >> "$GITHUB_OUTPUT"
+          else
+            echo "leagues=nfl,ncaaf" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build the Play Card (live prices if the key works, else saved prices marked STALE)
+        env:
+          PYTHONUNBUFFERED: '1'
+          ODDSBLAZE_API_KEY: ${{ secrets.ODDSBLAZE_API_KEY }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DISCORD_SGP_WEBHOOK_URL: ${{ secrets.DISCORD_SGP_WEBHOOK_URL }}
+        run: |
+          POST=""
+          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ github.event.inputs.post_discord }}" = "true" ]; then POST="--post-discord"; fi
+          if [ -z "$ODDSBLAZE_API_KEY" ]; then
+            echo "::warning::ODDSBLAZE_API_KEY secret is not set - building from last saved prices, marked STALE."
+            python play_card.py --league "${{ steps.leagues.outputs.leagues }}" --from-saved $POST
+          else
+            python play_card.py --league "${{ steps.leagues.outputs.leagues }}" --price $POST
+          fi
+
+      - name: Commit and push if changed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/oddsblaze/playcard/ data/oddsblaze/budget.json data/soccer_discord_health.json docs/sgp.html
+          if git diff --cached --quiet; then
+            echo "No changes this fire."
+          else
+            git commit -m "SGP Play Card $(date -u +'%Y-%m-%d %H:%M UTC')"
+            PUSHED=false
+            for attempt in 1 2 3 4 5; do
+              if ! git pull --rebase origin main; then
+                conflicts=$(git diff --name-only --diff-filter=U)
+                for f in $conflicts; do
+                  git checkout --theirs -- "$f" 2>/dev/null && git add -- "$f" || git rm -f -- "$f"
+                done
+                git rebase --continue
+              fi
+              if git push; then PUSHED=true; break; fi
+              echo "Push rejected (attempt ${attempt}/5) - retrying."
+              sleep $(( attempt * 3 ))
+            done
+            if [ "$PUSHED" != "true" ]; then
+              echo "::error::Failed to push after 5 attempts."
+              exit 1
+            fi
+          fi
