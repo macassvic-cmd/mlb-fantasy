@@ -1,0 +1,104 @@
+name: Soccer DNS Intraday Scheduler
+
+# Opened 2026-09-16 after confirming live that soccer_dns_daily_digest.yml's
+# once-daily cron (two fires, gated by a narrow 1-hour "is it 7am Pacific"
+# window) is not enough on its own: `gh run list` showed BOTH of a day's
+# fires landing 3-4h late - GitHub's documented scheduling delay, already
+# known from the MLB pipeline - missing that window entirely and producing
+# a full day with zero real digest runs.
+#
+# Soccer fixtures kick off across many leagues/timezones (European
+# afternoons, MLS evenings, all in Pacific-clock terms) - there is no
+# single "off hours" window the way MLB's pipeline has, so this runs
+# every 15 minutes, 24 hours a day, and relies ENTIRELY on soccer_
+# scheduler.py's runtime gate (kickoff-band-aware per fixture, plus a
+# separate looser cadence for the Dabble board itself) to keep almost
+# every fire a fast, cheap no-op - the same "dense cron + a runtime gate
+# decides" philosophy already proven for the MLB morning window and this
+# repo's own daily digest, just applied across the whole day instead of
+# one narrow slot.
+#
+# Real-time Discord alerts fire exactly the way they already do on any
+# scoring pass (soccer_alerts.notify_soccer_candidates via score_dabble_
+# soccer_board(notify=True)) - the kickoff gate and one-alert-per-pass
+# fixes are unchanged and unaffected by how often this workflow runs.
+# The once-daily summary digest (soccer_dns_daily_digest.yml) is separate
+# and untouched.
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: soccer-dns-intraday
+  cancel-in-progress: false
+
+jobs:
+  intraday:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4 python-dotenv
+
+      - name: Run intraday check (fetch -> enrich -> score -> alerts -> dashboard, only if due)
+        env:
+          PYTHONUNBUFFERED: '1'
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DISCORD_SOCCER_DNS_WEBHOOK_URL: ${{ secrets.DISCORD_SOCCER_DNS_WEBHOOK_URL }}
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+        run: python soccer_dns.py --intraday-check
+
+      - name: Commit and push if changed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/dns_watch/processed/soccer/ data/soccer_dnp_live_snapshots/ \
+                  data/soccer_dns_alerts/ data/soccer_scheduler_state.json \
+                  data/rotowire_soccer_player_index.json data/rotowire_soccer_player_status_cache.json \
+                  data/transfermarkt/ data/soccer_discord_health.json data/soccer_name_match_audit.json \
+                  docs/soccer-dns.html
+          if git diff --cached --quiet; then
+            echo "No changes this fire (likely a no-op - nothing was due)."
+          else
+            git commit -m "Soccer DNS intraday check $(date -u +'%Y-%m-%d %H:%M UTC')"
+            PUSHED=false
+            for attempt in 1 2 3 4 5; do
+              if ! git pull --rebase origin main; then
+                echo "Rebase conflict - resolving by taking this run's version of every conflicting file."
+                conflicts=$(git diff --name-only --diff-filter=U)
+                for f in $conflicts; do
+                  git checkout --theirs -- "$f" 2>/dev/null && git add -- "$f" || git rm -f -- "$f"
+                done
+                git rebase --continue
+              fi
+              if git push; then
+                PUSHED=true
+                break
+              fi
+              echo "Push rejected (attempt ${attempt}/5) - another run landed first, retrying after a short backoff."
+              sleep $(( attempt * 3 ))
+            done
+            if [ "$PUSHED" != "true" ]; then
+              echo "::error::Failed to push after 5 attempts - persistent contention, not a one-off collision."
+              exit 1
+            fi
+          fi

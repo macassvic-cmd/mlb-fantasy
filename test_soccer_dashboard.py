@@ -122,5 +122,45 @@ class TestGeneratedHtmlContainsNewSections(unittest.TestCase):
         self.assertIn("discordHealthGrid", html)
 
 
+class TestFixtureFreshnessInputs(unittest.TestCase):
+    """item 3, 2026-09-16: the merged Last Refresh status needs to know
+    whether staleness actually matters right now (nothing upcoming =
+    harmless; a fixture inside 24h = urgent)."""
+
+    def _now(self):
+        from datetime import datetime, timezone
+        return datetime(2026, 9, 16, 12, 0, 0, tzinfo=timezone.utc)
+
+    def test_no_candidates_nothing_upcoming(self):
+        any_upcoming, within_24h = dash._fixture_freshness_inputs([], self._now())
+        self.assertFalse(any_upcoming)
+        self.assertFalse(within_24h)
+
+    def test_all_kickoffs_in_the_past_nothing_upcoming(self):
+        c = _candidate("A", event_date="2026-09-16T10:00:00.000Z")
+        any_upcoming, within_24h = dash._fixture_freshness_inputs([c], self._now())
+        self.assertFalse(any_upcoming)
+        self.assertFalse(within_24h)
+
+    def test_upcoming_fixture_beyond_24h_is_upcoming_but_not_within_24h(self):
+        c = _candidate("A", event_date="2026-09-18T12:00:00.000Z")
+        any_upcoming, within_24h = dash._fixture_freshness_inputs([c], self._now())
+        self.assertTrue(any_upcoming)
+        self.assertFalse(within_24h)
+
+    def test_upcoming_fixture_within_24h(self):
+        c = _candidate("A", event_date="2026-09-17T06:00:00.000Z")
+        any_upcoming, within_24h = dash._fixture_freshness_inputs([c], self._now())
+        self.assertTrue(any_upcoming)
+        self.assertTrue(within_24h)
+
+    def test_missing_or_malformed_event_date_is_skipped_not_a_crash(self):
+        c1 = _candidate("A", event_date=None)
+        c2 = _candidate("B", event_date="not-a-date")
+        any_upcoming, within_24h = dash._fixture_freshness_inputs([c1, c2], self._now())
+        self.assertFalse(any_upcoming)
+        self.assertFalse(within_24h)
+
+
 if __name__ == "__main__":
     unittest.main()

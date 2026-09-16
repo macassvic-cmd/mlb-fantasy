@@ -676,6 +676,10 @@ def main():
                          help="with --send-daily-digest, only run if it's currently the target Pacific hour - "
                               "see soccer_daily_digest.is_due_now")
     parser.add_argument("--due-hour", type=int, default=7)
+    parser.add_argument("--intraday-check", action="store_true",
+                         help="kickoff-aware intraday scheduler's actual work - see "
+                              "soccer_scheduler.py and soccer_daily_digest.run_intraday_check. "
+                              "Intended for a dense cron; exits fast when nothing is due.")
     args, _unknown = parser.parse_known_args()
 
     if args.coverage:
@@ -683,6 +687,10 @@ def main():
         return
     if args.trace:
         trace_player(args.trace)
+        return
+    if args.intraday_check:
+        import soccer_daily_digest
+        soccer_daily_digest.run_intraday_check()
         return
     if args.send_daily_digest:
         import soccer_daily_digest

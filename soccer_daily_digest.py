@@ -339,6 +339,67 @@ def _post_discord(content=None, embeds=None, source="daily_digest"):
         return True, False, None, error
 
 
+HEARTBEAT_SILENCE_HOURS = 6
+
+
+def _last_real_time_alert_at(date_str):
+    """Most recent alerted_at across today's real-time alert records
+    (threshold crossings, critical, news_signal) - None if none exist
+    yet today. Reads soccer_alerts' own store directly rather than
+    discord_health's shared last_success_at, which mixes in daily-
+    digest and test sends too and would misreport "recently alerted"
+    right after an unrelated digest send."""
+    import soccer_alerts
+    data = soccer_alerts._load_alerts(date_str)
+    times = [v.get("alerted_at") for k, v in data.items()
+             if not k.startswith("_last_state:") and not k.startswith(soccer_alerts.STALE_KICKOFF_KEY_PREFIX)
+             and v.get("alerted_at")]
+    return max(times) if times else None
+
+
+def maybe_send_heartbeat(candidates, date_str, now=None):
+    """Posts a short "DNS running" Discord message if no real-time alert
+    has fired in HEARTBEAT_SILENCE_HOURS while fixtures remain upcoming
+    (item 4, 2026-09-16) - silence should mean "nothing has crossed a
+    threshold," not "is this even running." Non-fatal: any failure here
+    must never block the caller's own scoring/alerting work.
+
+    Returns True if a heartbeat was actually sent (for tests/logging),
+    False if one wasn't needed or nothing is upcoming to warrant it."""
+    now = now or datetime.now(timezone.utc)
+    try:
+        last_alert = _last_real_time_alert_at(date_str)
+        if last_alert:
+            last_dt = datetime.fromisoformat(last_alert.replace("Z", "+00:00"))
+            if (now - last_dt).total_seconds() / 3600 < HEARTBEAT_SILENCE_HOURS:
+                return False  # a real alert fired recently enough - no heartbeat needed
+
+        upcoming = []
+        for c in candidates:
+            raw = c.get("event_date")
+            if not raw:
+                continue
+            try:
+                kickoff = datetime.fromisoformat(raw.replace("Z", "+00:00"))
+            except ValueError:
+                continue
+            if kickoff > now:
+                upcoming.append((kickoff, c))
+        if not upcoming:
+            return False  # nothing left to be silent about
+
+        top = max(candidates, key=lambda c: c.get("dns_score", 0), default=None)
+        next_kickoff = min(kickoff for kickoff, _ in upcoming)
+        message = (f"🟢 DNS running - {len(candidates)} live, top candidate score "
+                   f"{top['dns_score'] if top else 'n/a'}, next kickoff "
+                   f"{next_kickoff.strftime('%b %d, %I:%M %p UTC').replace(' 0', ' ')}")
+        _attempted, delivered, _status, _error = _post_discord(content=message, source="heartbeat")
+        return delivered
+    except Exception as e:
+        print(f"soccer_daily_digest: heartbeat check failed (non-fatal): {e}")
+        return False
+
+
 def send_test_message():
     """python soccer_dns.py --test-discord - manual health-check send,
     separate from a real digest/alert, for confirming the webhook itself
@@ -355,7 +416,7 @@ def send_test_message():
 # Main entry point
 # ---------------------------------------------------------------------------
 
-def is_due_now(target_hour=7, window_hours=1, now=None):
+def is_due_now(target_hour=7, window_hours=6, now=None):
     """True iff the current America/Los_Angeles wall-clock hour is
     within [target_hour, target_hour + window_hours) - the LA-anchored
     gate a GitHub Actions cron (UTC-only, and DST-blind) needs to
@@ -365,7 +426,15 @@ def is_due_now(target_hour=7, window_hours=1, now=None):
     function is what makes the OTHER of those two fires a correct no-op
     instead of a duplicate send (run_daily_digest's own once-per-day
     dedup would also catch a duplicate, but skipping before any network
-    call is cheaper and makes the intent explicit in the workflow log)."""
+    call is cheaper and makes the intent explicit in the workflow log).
+
+    window_hours widened 1h -> 6h (2026-09-16): confirmed live via `gh
+    run list` that BOTH of a day's two scheduled fires landed 3-4h late
+    (GitHub's documented scheduling delay), missing the old 1-hour
+    window entirely and producing a full day with zero real digest
+    runs. A wider window costs nothing extra on a normal day (the once-
+    per-day dedup in run_daily_digest still prevents a duplicate send
+    once one fire succeeds) but tolerates the delay actually observed."""
     now = now or datetime.now(timezone.utc)
     if now.tzinfo is None:
         now = now.replace(tzinfo=timezone.utc)
@@ -477,6 +546,81 @@ def run_daily_digest(force=False, source=None, date_str=None, now=None):
     print(f"soccer_daily_digest: {total_live} live candidates ({watch_count} WATCH, {alert_count} ALERT, "
           f"{high_count} HIGH) - discord_attempted={attempted} discord_delivered={delivered}")
     return record
+
+
+def run_intraday_check(source=None, now=None):
+    """The kickoff-aware intraday scheduler's actual work (item 2,
+    2026-09-16) - intended to be called on a dense (10-15 min) cron by
+    .github/workflows/soccer_dns_intraday.yml, exiting fast on most
+    fires (see soccer_scheduler.py's docstring for why a once-daily
+    digest cron alone wasn't enough: a scheduling delay past its narrow
+    due-window meant a full day with zero real runs).
+
+    Two independent decisions, each backed by soccer_scheduler.py:
+      1. Does the Dabble board itself need refetching (its own, looser
+         cadence - at most every 30-60 min, plus once within 90 min of
+         any fixture's kickoff)?
+      2. Does ANY fixture need a fresh enrichment+scoring+alert pass,
+         per its own time-to-kickoff band?
+    Both use the SAME persisted state (data/soccer_scheduler_state.json)
+    so a fire that finds nothing due for either does no real work at
+    all beyond a couple of fast local file reads.
+
+    Real-time alerts fire exactly the way they already do on every
+    scoring pass (soccer_alerts.notify_soccer_candidates, called via
+    score_dabble_soccer_board(notify=True)) - kickoff gate and one-
+    alert-per-pass (2026-09-14/15 fixes) are unchanged and unaffected by
+    how often this function itself runs. The once-daily summary digest
+    (run_daily_digest) is untouched and separate."""
+    import soccer_adapter
+    import soccer_scheduler
+
+    now = now or datetime.now(timezone.utc)
+    source = source or soccer_adapter.DEFAULT_BOARD_PATH
+    state = soccer_scheduler.load_state()
+
+    fixtures = soccer_scheduler.current_fixtures(source)
+    board_due, board_reason = soccer_scheduler.board_fetch_due(
+        state.get("last_board_fetch_at"), fixtures, set(state.get("kickoff_proximity_done", [])), now=now)
+
+    if board_due:
+        print(f"soccer_daily_digest: intraday board refresh due ({board_reason}).")
+        if _attempt_board_refresh(source):
+            state["last_board_fetch_at"] = now.isoformat()
+            if board_reason.startswith("kickoff_proximity:"):
+                fid = board_reason.split(":", 1)[1]
+                done = set(state.get("kickoff_proximity_done", []))
+                done.add(fid)
+                state["kickoff_proximity_done"] = list(done)
+            fixtures = soccer_scheduler.current_fixtures(source)  # re-read post-refresh
+        else:
+            print("soccer_daily_digest: intraday board refresh attempt failed (non-fatal) - scoring whatever's on disk.")
+
+    fixture_due = soccer_scheduler.any_fixture_due(fixtures, state.get("last_checked_at"), now=now)
+    if not fixture_due:
+        soccer_scheduler.save_state(state)
+        print("soccer_daily_digest: intraday check - nothing due, no scoring pass this fire.")
+        return {"board_refreshed": board_due, "scored": False}
+
+    from soccer_dates import soccer_today_str
+    date_str = soccer_today_str(now)
+    candidates = soccer_adapter.score_dabble_soccer_board(source=source, persist=True, notify=True,
+                                                            snapshot_date=date_str)
+    state["last_checked_at"] = now.isoformat()
+    soccer_scheduler.save_state(state)
+
+    try:
+        import soccer_dashboard
+        soccer_dashboard.generate(candidates, date_str=date_str)
+    except Exception as e:
+        print(f"soccer_daily_digest: intraday dashboard regeneration failed (non-fatal): {e}")
+
+    heartbeat_sent = maybe_send_heartbeat(candidates, date_str, now=now)
+
+    print(f"soccer_daily_digest: intraday check scored {len(candidates)} candidates "
+          f"(board_refreshed={board_due}, heartbeat_sent={heartbeat_sent}).")
+    return {"board_refreshed": board_due, "scored": True, "candidate_count": len(candidates),
+            "heartbeat_sent": heartbeat_sent}
 
 
 def digest_status(date_str=None):

@@ -238,9 +238,12 @@ class TestIsDueNow(unittest.TestCase):
         now = datetime(2026, 9, 14, 14, 30, tzinfo=timezone.utc)
         self.assertTrue(digest.is_due_now(target_hour=7, now=now))
 
-    def test_not_due_one_hour_later(self):
+    def test_not_due_one_hour_later_under_the_old_narrow_window(self):
+        # 15:30 UTC = 8:30 AM PDT - outside a 1h window, still explicitly
+        # supported via window_hours for anything that wants the old
+        # narrow behavior.
         now = datetime(2026, 9, 14, 15, 30, tzinfo=timezone.utc)
-        self.assertFalse(digest.is_due_now(target_hour=7, now=now))
+        self.assertFalse(digest.is_due_now(target_hour=7, window_hours=1, now=now))
 
     def test_due_during_pst_target_hour(self):
         # 15:30 UTC = 7:30 AM PST (UTC-8) in January.
@@ -250,6 +253,152 @@ class TestIsDueNow(unittest.TestCase):
     def test_not_due_far_from_target(self):
         now = datetime(2026, 9, 14, 2, 0, tzinfo=timezone.utc)
         self.assertFalse(digest.is_due_now(target_hour=7, now=now))
+
+    def test_widened_default_window_tolerates_a_multi_hour_scheduling_delay(self):
+        """2026-09-16: confirmed live via `gh run list` that both of a
+        day's scheduled fires landed 3-4h late, missing the old 1-hour
+        window entirely. The new 6h default must still see a fire that
+        lands hours late as due."""
+        # 17:51 UTC = 10:51 AM PDT - the exact real delayed-fire time observed live.
+        now = datetime(2026, 9, 15, 17, 51, tzinfo=timezone.utc)
+        self.assertTrue(digest.is_due_now(target_hour=7, now=now))
+
+    def test_still_not_due_well_outside_the_widened_window(self):
+        # 22:00 UTC = 3:00 PM PDT - past even the widened 6h window (7am-1pm).
+        now = datetime(2026, 9, 15, 22, 0, tzinfo=timezone.utc)
+        self.assertFalse(digest.is_due_now(target_hour=7, now=now))
+
+
+class TestHeartbeat(unittest.TestCase):
+    """item 4, 2026-09-16: silence should mean "nothing crossed a
+    threshold," not "is this even running." No real network - _post_
+    discord is always mocked."""
+
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self._patch_alerts_dir = patch("soccer_alerts.ALERTS_DIR", self._tmp.name)
+        self._patch_alerts_dir.start()
+        self._patch_post = patch("soccer_daily_digest._post_discord", return_value=(True, True, 204, None))
+        self.mock_post = self._patch_post.start()
+
+    def tearDown(self):
+        self._patch_post.stop()
+        self._patch_alerts_dir.stop()
+        self._tmp.cleanup()
+
+    def _candidate_with_kickoff(self, hours_from_now, now, dns=80):
+        c = _fake_candidate("Player A", dns=dns)
+        c["event_date"] = (now + timedelta(hours=hours_from_now)).strftime("%Y-%m-%dT%H:%M:%SZ")
+        return c
+
+    def test_no_upcoming_fixtures_sends_nothing(self):
+        now = datetime(2026, 9, 16, 12, 0, tzinfo=timezone.utc)
+        candidates = [self._candidate_with_kickoff(-1, now)]
+        sent = digest.maybe_send_heartbeat(candidates, "2026-09-16", now=now)
+        self.assertFalse(sent)
+        self.mock_post.assert_not_called()
+
+    def test_recent_real_alert_suppresses_the_heartbeat(self):
+        now = datetime(2026, 9, 16, 12, 0, tzinfo=timezone.utc)
+        import soccer_alerts
+        soccer_alerts._save_alerts("2026-09-16", {
+            "rec1": {"alerted_at": (now - timedelta(hours=2)).strftime("%Y-%m-%dT%H:%M:%SZ")},
+        })
+        candidates = [self._candidate_with_kickoff(3, now)]
+        sent = digest.maybe_send_heartbeat(candidates, "2026-09-16", now=now)
+        self.assertFalse(sent)
+        self.mock_post.assert_not_called()
+
+    def test_stale_alert_and_upcoming_fixture_sends_a_heartbeat(self):
+        now = datetime(2026, 9, 16, 12, 0, tzinfo=timezone.utc)
+        import soccer_alerts
+        soccer_alerts._save_alerts("2026-09-16", {
+            "rec1": {"alerted_at": (now - timedelta(hours=7)).strftime("%Y-%m-%dT%H:%M:%SZ")},
+        })
+        candidates = [self._candidate_with_kickoff(3, now)]
+        sent = digest.maybe_send_heartbeat(candidates, "2026-09-16", now=now)
+        self.assertTrue(sent)
+        self.mock_post.assert_called_once()
+        message = self.mock_post.call_args.kwargs.get("content") or self.mock_post.call_args[0][0]
+        self.assertIn("DNS running", message)
+
+    def test_never_alerted_today_and_upcoming_fixture_sends_a_heartbeat(self):
+        now = datetime(2026, 9, 16, 12, 0, tzinfo=timezone.utc)
+        candidates = [self._candidate_with_kickoff(3, now)]
+        sent = digest.maybe_send_heartbeat(candidates, "2026-09-16", now=now)
+        self.assertTrue(sent)
+
+    def test_heartbeat_source_is_tagged_for_discord_health(self):
+        now = datetime(2026, 9, 16, 12, 0, tzinfo=timezone.utc)
+        candidates = [self._candidate_with_kickoff(3, now)]
+        digest.maybe_send_heartbeat(candidates, "2026-09-16", now=now)
+        self.assertEqual(self.mock_post.call_args.kwargs.get("source"), "heartbeat")
+
+
+class TestRunIntradayCheck(unittest.TestCase):
+    """item 2, 2026-09-16: the intraday scheduler's orchestration - most
+    fires must do nothing beyond a couple of fast local checks, and a
+    real scoring pass must only happen when soccer_scheduler says
+    something is actually due."""
+
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self._patch_state = patch("soccer_scheduler.STATE_PATH", os.path.join(self._tmp.name, "state.json"))
+        self._patch_state.start()
+        self._patch_heartbeat = patch("soccer_daily_digest.maybe_send_heartbeat", return_value=False)
+        self._patch_heartbeat.start()
+        self._patch_dashboard = patch("soccer_dashboard.generate")
+        self._patch_dashboard.start()
+
+    def tearDown(self):
+        self._patch_dashboard.stop()
+        self._patch_heartbeat.stop()
+        self._patch_state.stop()
+        self._tmp.cleanup()
+
+    def test_nothing_due_does_not_score_or_refresh(self):
+        with patch("soccer_scheduler.current_fixtures", return_value=[]), \
+             patch("soccer_scheduler.board_fetch_due", return_value=(False, "not_due")), \
+             patch("soccer_scheduler.any_fixture_due", return_value=False) as mock_any_due, \
+             patch("soccer_adapter.score_dabble_soccer_board") as mock_score, \
+             patch("soccer_daily_digest._attempt_board_refresh") as mock_refresh:
+            result = digest.run_intraday_check()
+        mock_score.assert_not_called()
+        mock_refresh.assert_not_called()
+        self.assertFalse(result["scored"])
+
+    def test_fixture_due_triggers_a_real_scoring_pass_with_notify_true(self):
+        with patch("soccer_scheduler.current_fixtures", return_value=[{"fixture_id": "f1", "kickoff": None}]), \
+             patch("soccer_scheduler.board_fetch_due", return_value=(False, "not_due")), \
+             patch("soccer_scheduler.any_fixture_due", return_value=True), \
+             patch("soccer_adapter.score_dabble_soccer_board", return_value=[_fake_candidate("A")]) as mock_score, \
+             patch("soccer_daily_digest._attempt_board_refresh") as mock_refresh:
+            result = digest.run_intraday_check()
+        mock_score.assert_called_once()
+        self.assertTrue(mock_score.call_args.kwargs.get("notify"))
+        mock_refresh.assert_not_called()
+        self.assertTrue(result["scored"])
+        self.assertEqual(result["candidate_count"], 1)
+
+    def test_board_due_triggers_a_refresh_before_the_due_check(self):
+        with patch("soccer_scheduler.current_fixtures", return_value=[]), \
+             patch("soccer_scheduler.board_fetch_due", return_value=(True, "interval_elapsed")), \
+             patch("soccer_scheduler.any_fixture_due", return_value=False), \
+             patch("soccer_daily_digest._attempt_board_refresh", return_value=True) as mock_refresh, \
+             patch("soccer_adapter.score_dabble_soccer_board") as mock_score:
+            result = digest.run_intraday_check()
+        mock_refresh.assert_called_once()
+        self.assertTrue(result["board_refreshed"])
+
+    def test_state_is_updated_after_a_real_scoring_pass(self):
+        with patch("soccer_scheduler.current_fixtures", return_value=[]), \
+             patch("soccer_scheduler.board_fetch_due", return_value=(False, "not_due")), \
+             patch("soccer_scheduler.any_fixture_due", return_value=True), \
+             patch("soccer_adapter.score_dabble_soccer_board", return_value=[]), \
+             patch("soccer_daily_digest._attempt_board_refresh"):
+            digest.run_intraday_check()
+        state = __import__("soccer_scheduler").load_state()
+        self.assertIsNotNone(state["last_checked_at"])
 
 
 if __name__ == "__main__":

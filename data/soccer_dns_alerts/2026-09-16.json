@@ -3182,5 +3182,163 @@
     "rotowire_status_raw": null,
     "prediction_consensus": "start",
     "x_post_id": null
+  },
+  "_last_state:01a00d04-ce66-71a1-9cb8-4bd189e38b56:01a09810-7996-710a-85ff-0fa70f62c3fc": {
+    "dns_score": 61,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "bench",
+    "x_post_id": null
+  },
+  "2026-09-16:soccer:01a00d04-ce66-71a1-9cb8-4bd189e38b56:01a09810-7996-710a-85ff-0fa70f62c3fc:60": {
+    "player_id": "01a00d04-ce66-71a1-9cb8-4bd189e38b56",
+    "player_name": "Jacob Kai Murphy",
+    "normalized_name": "jacob kai murphy",
+    "team": "NEW",
+    "league_code": "EPL",
+    "opponent": "HUL @ NEW",
+    "fixture_id": "01a09810-7996-710a-85ff-0fa70f62c3fc",
+    "dns_score": 61,
+    "confidence_score": 50,
+    "urgency_score": 0,
+    "alert_type": 60,
+    "alerted_at": "2026-09-16T07:39:33.194284+00:00",
+    "game_start": "2026-09-19T14:00:00.000Z",
+    "minutes_to_game": 4700.446761933333,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Assists",
+      "First Half Goals",
+      "Goals",
+      "Second Half Goals"
+    ],
+    "dabble_prop_ids": [
+      "a23b3fae3a243c23",
+      "6ccb00cf60147ab2",
+      "f1a7d57211023804",
+      "a9d81cb913bed3d5"
+    ],
+    "top_reasons": [
+      "80% non-start rate last 5 matches",
+      "Rotation-risk usage pattern (inconsistent starts)",
+      "Predicted bench 1/1 sources (recent_start_pattern)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "_last_state:019eb3fb-d947-7342-b7d8-36bb073e0574:01a09810-7996-710a-85ff-0fa70f62c3fc": {
+    "dns_score": 30,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "start",
+    "x_post_id": null
+  },
+  "_last_state:01a00d04-ce55-756f-a3fa-7f5d4b620a17:01a09810-7996-710a-85ff-0fa70f62c3fc": {
+    "dns_score": 13,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "start",
+    "x_post_id": null
+  },
+  "_last_state:01a007de-8c12-772d-af51-93971ff39ffe:01a09810-7996-710a-85ff-0fa70f62c3fc": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:01a007de-8c12-772d-af51-7ad4fb468ba2:01a09810-7996-710a-85ff-0fa70f62c3fc": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:019eac0f-e46e-7402-bd4f-f72d2af73eb7:01a09810-7996-710a-85ff-0fa70f62c3fc": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:01a00d04-db85-727c-83ed-82d2c2c73217:01a09810-7996-710a-85ff-0fa70f62c3fc": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:019eac0f-dbdd-719d-95e5-2dc4132a2ee4:01a0889d-af87-73bb-afa7-db683cee5411": {
+    "dns_score": 0,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "start",
+    "x_post_id": null
+  },
+  "_last_state:019ec86b-4df2-70a9-a0bc-6167ba914ad6:01a09810-7996-710a-85ff-0fa70f62c3fc": {
+    "dns_score": 0,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "start",
+    "x_post_id": null
+  },
+  "_last_state:01a007de-8c12-772d-af51-8fd8ec31ba3a:01a09810-7996-710a-85ff-0fa70f62c3fc": {
+    "dns_score": 0,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "start",
+    "x_post_id": null
+  },
+  "_last_state:01a007de-8960-7059-b275-b7628a7a81d8:01a09810-7996-710a-85ff-0fa70f62c3fc": {
+    "dns_score": 0,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "start",
+    "x_post_id": null
+  },
+  "_last_state:01a007de-8bc3-73ce-8946-596cf01b5a7d:01a09810-7996-710a-85ff-0fa70f62c3fc": {
+    "dns_score": 0,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "start",
+    "x_post_id": null
+  },
+  "_last_state:01a007de-8c12-772d-af51-94f12eec2ddf:01a09810-7996-710a-85ff-0fa70f62c3fc": {
+    "dns_score": 0,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "start",
+    "x_post_id": null
+  },
+  "_last_state:01a007de-85b2-717d-8b02-91fb3f88013b:01a09810-7996-710a-85ff-0fa70f62c3fc": {
+    "dns_score": 0,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "start",
+    "x_post_id": null
+  },
+  "_last_state:019eac0f-e66c-73ec-b505-df35d89ac487:01a09810-7996-710a-85ff-0fa70f62c3fc": {
+    "dns_score": 0,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "start",
+    "x_post_id": null
+  },
+  "_last_state:01a00d04-ce66-71a1-9cb8-6572a85b3474:01a09810-7996-710a-85ff-0fa70f62c3fc": {
+    "dns_score": 0,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "start",
+    "x_post_id": null
+  },
+  "_last_state:01a00d04-ce66-71a1-9cb8-8bd08589041f:01a09810-7996-710a-85ff-0fa70f62c3fc": {
+    "dns_score": 0,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "start",
+    "x_post_id": null
+  },
+  "_last_state:019eac0f-e6bb-76c8-9c90-1b941aa2c63a:01a09810-7996-710a-85ff-0fa70f62c3fc": {
+    "dns_score": 0,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "start",
+    "x_post_id": null
+  },
+  "_last_state:01a00d04-ce66-71a1-9cb8-5b19ebb89ed6:01a09810-7996-710a-85ff-0fa70f62c3fc": {
+    "dns_score": 0,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "start",
+    "x_post_id": null
   }
 }

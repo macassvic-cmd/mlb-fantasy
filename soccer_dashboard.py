@@ -210,10 +210,37 @@ def _candidate_row(c):
     }
 
 
+def _fixture_freshness_inputs(candidates, now):
+    """(any_upcoming, fixture_within_24h) - item 3, 2026-09-16: the
+    merged Last Refresh status needs to know not just how old this
+    render is, but whether that age actually matters right now (nothing
+    upcoming = stale is harmless; a fixture inside 24h = stale is
+    urgent). Same "skip rows with an unparseable/missing kickoff rather
+    than guess" discipline as soccer_scheduler.py."""
+    any_upcoming = False
+    fixture_within_24h = False
+    for c in candidates:
+        raw = c.get("event_date")
+        if not raw:
+            continue
+        try:
+            kickoff = datetime.fromisoformat(raw.replace("Z", "+00:00"))
+        except ValueError:
+            continue
+        if kickoff <= now:
+            continue
+        any_upcoming = True
+        if (kickoff - now).total_seconds() <= 24 * 3600:
+            fixture_within_24h = True
+            break
+    return any_upcoming, fixture_within_24h
+
+
 def generate(candidates, date_str=None, out_path=os.path.join("docs", "soccer-dns.html")):
     from soccer_dates import soccer_today_str
     date_str = date_str or soccer_today_str()
     now = datetime.now(timezone.utc)
+    any_upcoming, fixture_within_24h = _fixture_freshness_inputs(candidates, now)
 
     candidates = sorted(candidates, key=lambda c: c.get("combined_priority") or 0, reverse=True)
     live, watch, alert, high, critical = tier_counts(candidates)
@@ -264,6 +291,9 @@ def generate(candidates, date_str=None, out_path=os.path.join("docs", "soccer-dn
   .status-chip.critical .value {{ color: #8e44ad; }}
   .status-chip.ok .value {{ color: #2ecc71; }}
   .status-chip.bad .value {{ color: #e74c3c; }}
+  .status-chip.fresh .value {{ color: #2ecc71; }}
+  .status-chip.warn .value {{ color: #f1c40f; }}
+  .status-chip.stale .value {{ color: #e74c3c; }}
 
   h2.section-title {{ font-size: 16px; margin: 32px 0 12px; border-bottom: 1px solid #1c2944; padding-bottom: 6px; }}
 
@@ -306,7 +336,7 @@ def generate(candidates, date_str=None, out_path=os.path.join("docs", "soccer-dn
     <div class="status-chip"><div class="value" id="chipRemoved">{len(removed)}</div><div class="label">Removed Today</div></div>
     <div class="status-chip {'ok' if source_health['discord']['enabled'] else 'bad'}"><div class="value">{'ON' if source_health['discord']['enabled'] else 'OFF'}</div><div class="label">Discord</div></div>
     <div class="status-chip {'ok' if source_health['x']['enabled'] else 'bad'}"><div class="value">{'ON' if source_health['x']['enabled'] else 'OFF'}</div><div class="label">X Realtime</div></div>
-    <div class="status-chip"><div class="value" style="font-size:14px">{now.strftime('%I:%M %p UTC')}</div><div class="label">Last Refresh</div></div>
+    <div class="status-chip" id="lastRefreshChip"><div class="value" id="lastRefreshValue" style="font-size:13px">{now.strftime('%I:%M %p UTC')}</div><div class="label">Last Refresh</div></div>
   </div>
 
   <h2 class="section-title">Live Candidates</h2>
@@ -370,6 +400,52 @@ const DIGEST = {digest_js};
 const MATRIX = {matrix_js};
 const TIERS = {tiers_js};
 const DISCORD_HEALTH = {discord_health_js};
+const GENERATED_AT = {json.dumps(now.isoformat())};
+const ANY_UPCOMING_FIXTURE = {json.dumps(any_upcoming)};
+const FIXTURE_WITHIN_24H = {json.dumps(fixture_within_24h)};
+
+// --- Last Refresh: merged three-tier status (2026-09-16 item 3) - same
+// approach as report.py's MLB freshness banner, mirrored here after
+// finding live that this chip showed clock-time-only with no date (so
+// a 24h-old Friday-evening render could look identical to a fresh one)
+// and no color/urgency signal at all. Tiers:
+//   green - <=45 min old, or nothing upcoming to go stale on
+//   red   - >2h old AND a fixture kicks off within 24h (urgent)
+//   amber - stale-ish (>45min) with something still upcoming, but not
+//           yet the 2h/24h red case
+function formatAge(ageMinutes) {{
+  const h = Math.floor(ageMinutes / 60);
+  const m = Math.round(ageMinutes % 60);
+  if (h <= 0) return `${{m}}m ago`;
+  return `${{h}}h ${{m}}m ago`;
+}}
+
+function updateLastRefresh() {{
+  const generated = new Date(GENERATED_AT);
+  const now = new Date();
+  const ageMinutes = (now - generated) / 60000;
+  const ageStr = formatAge(ageMinutes);
+  const dateTimeStr = generated.toLocaleString('en-US', {{
+    timeZone: 'America/Los_Angeles', month: 'short', day: 'numeric',
+    hour: 'numeric', minute: '2-digit', hour12: true,
+  }}) + ' PT';
+
+  let tier;
+  if (ageMinutes <= 45 || !ANY_UPCOMING_FIXTURE) {{
+    tier = 'fresh';
+  }} else if (ageMinutes > 120 && FIXTURE_WITHIN_24H) {{
+    tier = 'stale';
+  }} else {{
+    tier = 'warn';
+  }}
+
+  const chip = document.getElementById('lastRefreshChip');
+  const value = document.getElementById('lastRefreshValue');
+  if (chip) chip.className = 'status-chip ' + tier;
+  if (value) value.textContent = `${{dateTimeStr}} (${{ageStr}})`;
+}}
+updateLastRefresh();
+setInterval(updateLastRefresh, 60000);
 
 function tierClass(dns) {{
   if (dns >= 85) return 'tier-high';
