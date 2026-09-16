@@ -2,12 +2,21 @@
   "date": "2026-09-16",
   "plays": [
     {
+      "player_id": 650490,
+      "name": "Yandy D\u00edaz",
+      "team": "Tampa Bay Rays",
+      "projected_ud": 5.52,
+      "ud_line": 7.5,
+      "edge": -1.98,
+      "game_time_pt": "3:40 PM PT"
+    },
+    {
       "player_id": 807712,
       "name": "Luke Keaschall",
       "team": "Minnesota Twins",
-      "projected_ud": 4.52,
+      "projected_ud": 4.54,
       "ud_line": 6.5,
-      "edge": -1.98,
+      "edge": -1.96,
       "game_time_pt": "10:40 AM PT"
     },
     {
@@ -59,9 +68,9 @@
       "player_id": 545341,
       "name": "Randal Grichuk",
       "team": "Chicago White Sox",
-      "projected_ud": 3.71,
+      "projected_ud": 3.7,
       "ud_line": 5.5,
-      "edge": -1.79,
+      "edge": -1.8,
       "game_time_pt": "10:10 AM PT"
     },
     {
@@ -110,15 +119,6 @@
       "game_time_pt": "10:40 AM PT"
     },
     {
-      "player_id": 592518,
-      "name": "Manny Machado",
-      "team": "San Diego Padres",
-      "projected_ud": 6.95,
-      "ud_line": 8.5,
-      "edge": -1.55,
-      "game_time_pt": "5:40 PM PT"
-    },
-    {
       "player_id": 656775,
       "name": "Cedric Mullins",
       "team": "Tampa Bay Rays",
@@ -126,6 +126,15 @@
       "ud_line": 5.5,
       "edge": -1.54,
       "game_time_pt": "3:40 PM PT"
+    },
+    {
+      "player_id": 592518,
+      "name": "Manny Machado",
+      "team": "San Diego Padres",
+      "projected_ud": 6.97,
+      "ud_line": 8.5,
+      "edge": -1.53,
+      "game_time_pt": "5:40 PM PT"
     },
     {
       "player_id": 592450,
@@ -144,15 +153,6 @@
       "ud_line": 6.5,
       "edge": -1.53,
       "game_time_pt": "6:40 PM PT"
-    },
-    {
-      "player_id": 665833,
-      "name": "Oneil Cruz",
-      "team": "Pittsburgh Pirates",
-      "projected_ud": 3.99,
-      "ud_line": 5.5,
-      "edge": -1.51,
-      "game_time_pt": "3:40 PM PT"
     }
   ]
 }
