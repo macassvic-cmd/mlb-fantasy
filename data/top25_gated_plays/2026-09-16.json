@@ -2,16 +2,6 @@
   "date": "2026-09-16",
   "plays": [
     {
-      "player_id": 605141,
-      "name": "Mookie Betts",
-      "team": "Los Angeles Dodgers",
-      "projected_ud": 9.5,
-      "ud_line": 7.5,
-      "edge": 2.0,
-      "actionable_reason": "edge + strong contact",
-      "game_time_pt": "3:40 PM PT"
-    },
-    {
       "player_id": 656941,
       "name": "Kyle Schwarber",
       "team": "Philadelphia Phillies",
@@ -22,12 +12,22 @@
       "game_time_pt": "3:45 PM PT"
     },
     {
+      "player_id": 605141,
+      "name": "Mookie Betts",
+      "team": "Los Angeles Dodgers",
+      "projected_ud": 9.44,
+      "ud_line": 7.5,
+      "edge": 1.94,
+      "actionable_reason": "edge + strong contact",
+      "game_time_pt": "3:40 PM PT"
+    },
+    {
       "player_id": 691718,
       "name": "Pete Crow-Armstrong",
       "team": "Chicago Cubs",
-      "projected_ud": 9.5,
+      "projected_ud": 9.41,
       "ud_line": 7.5,
-      "edge": 2.0,
+      "edge": 1.91,
       "actionable_reason": "edge + strong contact",
       "game_time_pt": "4:40 PM PT"
     },
@@ -35,9 +35,9 @@
       "player_id": 677951,
       "name": "Bobby Witt Jr.",
       "team": "Kansas City Royals",
-      "projected_ud": 9.07,
+      "projected_ud": 8.88,
       "ud_line": 7.5,
-      "edge": 1.57,
+      "edge": 1.38,
       "actionable_reason": "edge + strong contact",
       "game_time_pt": "5:10 PM PT"
     },
@@ -58,7 +58,7 @@
       "projected_ud": 8.5,
       "ud_line": 6.5,
       "edge": 2.0,
-      "actionable_reason": "edge + strong contact",
+      "actionable_reason": "edge + platoon advantage",
       "game_time_pt": "10:15 AM PT"
     },
     {
@@ -142,6 +142,26 @@
       "game_time_pt": "3:40 PM PT"
     },
     {
+      "player_id": 547180,
+      "name": "Bryce Harper",
+      "team": "Philadelphia Phillies",
+      "projected_ud": 8.5,
+      "ud_line": 6.5,
+      "edge": 2.0,
+      "actionable_reason": "edge + shrunk sample above baseline",
+      "game_time_pt": "3:45 PM PT"
+    },
+    {
+      "player_id": 650333,
+      "name": "Luis Arraez",
+      "team": "Philadelphia Phillies",
+      "projected_ud": 8.5,
+      "ud_line": 6.5,
+      "edge": 2.0,
+      "actionable_reason": "edge + shrunk sample above baseline",
+      "game_time_pt": "3:45 PM PT"
+    },
+    {
       "player_id": 664761,
       "name": "Alec Bohm",
       "team": "Philadelphia Phillies",
@@ -152,34 +172,14 @@
       "game_time_pt": "3:45 PM PT"
     },
     {
-      "player_id": 805999,
-      "name": "A.J. Ewing",
-      "team": "New York Mets",
+      "player_id": 681082,
+      "name": "Bryson Stott",
+      "team": "Philadelphia Phillies",
       "projected_ud": 8.5,
       "ud_line": 6.5,
       "edge": 2.0,
-      "actionable_reason": "edge + strong contact",
-      "game_time_pt": "4:10 PM PT"
-    },
-    {
-      "player_id": 660670,
-      "name": "Ronald Acu\u00f1a Jr.",
-      "team": "Atlanta Braves",
-      "projected_ud": 8.5,
-      "ud_line": 6.5,
-      "edge": 2.0,
-      "actionable_reason": "edge + strong contact",
-      "game_time_pt": "4:40 PM PT"
-    },
-    {
-      "player_id": 695600,
-      "name": "Carter Jensen",
-      "team": "Kansas City Royals",
-      "projected_ud": 8.5,
-      "ud_line": 6.5,
-      "edge": 2.0,
-      "actionable_reason": "edge + strong contact",
-      "game_time_pt": "5:10 PM PT"
+      "actionable_reason": "edge + shrunk sample above baseline",
+      "game_time_pt": "3:45 PM PT"
     }
   ]
 }
