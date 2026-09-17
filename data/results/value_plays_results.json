@@ -7515,6 +7515,59 @@
           "correct": true
         }
       ]
+    },
+    "2026-09-16": {
+      "summary": {
+        "total": 4,
+        "correct": 1,
+        "accuracy": 25.0,
+        "over_total": 4,
+        "over_correct": 1,
+        "under_total": 0,
+        "under_correct": 0
+      },
+      "plays": [
+        {
+          "player_id": 656941,
+          "name": "Kyle Schwarber",
+          "team": "Philadelphia Phillies",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 3,
+          "correct": false
+        },
+        {
+          "player_id": 691718,
+          "name": "Pete Crow-Armstrong",
+          "team": "Chicago Cubs",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 43,
+          "correct": true
+        },
+        {
+          "player_id": 683953,
+          "name": "Travis Bazzana",
+          "team": "Cleveland Guardians",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "correct": false
+        },
+        {
+          "player_id": 805811,
+          "name": "Bryce Eldridge",
+          "team": "San Francisco Giants",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 6,
+          "correct": false
+        }
+      ]
     }
   }
 }

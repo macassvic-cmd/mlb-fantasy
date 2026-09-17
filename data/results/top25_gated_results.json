@@ -464,11 +464,234 @@
           "grade": "win"
         }
       ]
+    },
+    "2026-09-16": {
+      "wins": 10,
+      "losses": 8,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 656941,
+          "name": "Kyle Schwarber",
+          "team": "Philadelphia Phillies",
+          "projected_ud": 9.5,
+          "ud_line": 7.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "3:45 PM PT",
+          "actual_ud": 3,
+          "grade": "loss"
+        },
+        {
+          "player_id": 691718,
+          "name": "Pete Crow-Armstrong",
+          "team": "Chicago Cubs",
+          "projected_ud": 9.5,
+          "ud_line": 7.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 43,
+          "grade": "win"
+        },
+        {
+          "player_id": 665487,
+          "name": "Fernando Tatis Jr.",
+          "team": "San Diego Padres",
+          "projected_ud": 9.5,
+          "ud_line": 8.5,
+          "edge": 1.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "5:40 PM PT",
+          "actual_ud": 5,
+          "grade": "loss"
+        },
+        {
+          "player_id": 605141,
+          "name": "Mookie Betts",
+          "team": "Los Angeles Dodgers",
+          "projected_ud": 9.29,
+          "ud_line": 7.5,
+          "edge": 1.79,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 14,
+          "grade": "win"
+        },
+        {
+          "player_id": 677951,
+          "name": "Bobby Witt Jr.",
+          "team": "Kansas City Royals",
+          "projected_ud": 8.7,
+          "ud_line": 7.5,
+          "edge": 1.2,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "5:10 PM PT",
+          "actual_ud": 10,
+          "grade": "win"
+        },
+        {
+          "player_id": 664034,
+          "name": "Ty France",
+          "team": "San Diego Padres",
+          "projected_ud": 8.62,
+          "ud_line": 7.5,
+          "edge": 1.12,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "5:40 PM PT",
+          "actual_ud": 10,
+          "grade": "win"
+        },
+        {
+          "player_id": 683953,
+          "name": "Travis Bazzana",
+          "team": "Cleveland Guardians",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "10:10 AM PT",
+          "actual_ud": 0,
+          "grade": "loss"
+        },
+        {
+          "player_id": 805811,
+          "name": "Bryce Eldridge",
+          "team": "San Francisco Giants",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "10:15 AM PT",
+          "actual_ud": 6,
+          "grade": "loss"
+        },
+        {
+          "player_id": 700250,
+          "name": "Ben Rice",
+          "team": "New York Yankees",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "10:40 AM PT",
+          "actual_ud": 12,
+          "grade": "win"
+        },
+        {
+          "player_id": 641355,
+          "name": "Cody Bellinger",
+          "team": "New York Yankees",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "10:40 AM PT",
+          "actual_ud": 18,
+          "grade": "win"
+        },
+        {
+          "player_id": 805808,
+          "name": "Kevin McGonigle",
+          "team": "Detroit Tigers",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "12:07 PM PT",
+          "actual_ud": 6,
+          "grade": "loss"
+        },
+        {
+          "player_id": 682985,
+          "name": "Riley Greene",
+          "team": "Detroit Tigers",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "12:07 PM PT",
+          "actual_ud": 5,
+          "grade": "loss"
+        },
+        {
+          "player_id": 606192,
+          "name": "Teoscar Hern\u00e1ndez",
+          "team": "Los Angeles Dodgers",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 3,
+          "grade": "loss"
+        },
+        {
+          "player_id": 668930,
+          "name": "Brice Turang",
+          "team": "Milwaukee Brewers",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 15,
+          "grade": "win"
+        },
+        {
+          "player_id": 694192,
+          "name": "Jackson Chourio",
+          "team": "Milwaukee Brewers",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 5,
+          "grade": "loss"
+        },
+        {
+          "player_id": 547180,
+          "name": "Bryce Harper",
+          "team": "Philadelphia Phillies",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + shrunk sample above baseline",
+          "game_time_pt": "3:45 PM PT",
+          "actual_ud": 10,
+          "grade": "win"
+        },
+        {
+          "player_id": 650333,
+          "name": "Luis Arraez",
+          "team": "Philadelphia Phillies",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + shrunk sample above baseline",
+          "game_time_pt": "3:45 PM PT",
+          "actual_ud": 17,
+          "grade": "win"
+        },
+        {
+          "player_id": 664761,
+          "name": "Alec Bohm",
+          "team": "Philadelphia Phillies",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "3:45 PM PT",
+          "actual_ud": 17,
+          "grade": "win"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 21,
-    "losses": 16,
+    "wins": 31,
+    "losses": 24,
     "dnp": 0
   }
 }

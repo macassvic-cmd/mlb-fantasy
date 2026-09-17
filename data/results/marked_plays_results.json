@@ -2187,20 +2187,71 @@
         }
       ],
       "hot": []
+    },
+    "2026-09-16": {
+      "fire": [
+        {
+          "player_id": 691718,
+          "name": "Pete Crow-Armstrong",
+          "team": "Chicago Cubs",
+          "grade": "win",
+          "n_before": 46,
+          "wins_before": 27,
+          "rate_before": 58.7
+        },
+        {
+          "player_id": 701538,
+          "name": "Jackson Merrill",
+          "team": "San Diego Padres",
+          "grade": "win",
+          "n_before": 25,
+          "wins_before": 18,
+          "rate_before": 72.0
+        },
+        {
+          "player_id": 668930,
+          "name": "Brice Turang",
+          "team": "Milwaukee Brewers",
+          "grade": "win",
+          "n_before": 17,
+          "wins_before": 12,
+          "rate_before": 70.6
+        },
+        {
+          "player_id": 547180,
+          "name": "Bryce Harper",
+          "team": "Philadelphia Phillies",
+          "grade": "win",
+          "n_before": 24,
+          "wins_before": 15,
+          "rate_before": 62.5
+        }
+      ],
+      "hot": [
+        {
+          "player_id": 650333,
+          "name": "Luis Arraez",
+          "team": "Philadelphia Phillies",
+          "grade": "win",
+          "n_before": 13,
+          "wins_before": 10,
+          "rate_before": 76.9
+        }
+      ]
     }
   },
   "cohorts": {
     "fire": {
-      "wins": 53,
+      "wins": 57,
       "losses": 50,
-      "n": 103,
-      "rate": 51.5
+      "n": 107,
+      "rate": 53.3
     },
     "hot": {
-      "wins": 51,
+      "wins": 52,
       "losses": 43,
-      "n": 94,
-      "rate": 54.3
+      "n": 95,
+      "rate": 54.7
     }
   }
 }
