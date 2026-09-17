@@ -12,34 +12,54 @@
       "game_time_pt": "3:45 PM PT"
     },
     {
-      "player_id": 605141,
-      "name": "Mookie Betts",
-      "team": "Los Angeles Dodgers",
-      "projected_ud": 9.44,
-      "ud_line": 7.5,
-      "edge": 1.94,
-      "actionable_reason": "edge + strong contact",
-      "game_time_pt": "3:40 PM PT"
-    },
-    {
       "player_id": 691718,
       "name": "Pete Crow-Armstrong",
       "team": "Chicago Cubs",
-      "projected_ud": 9.41,
+      "projected_ud": 9.5,
       "ud_line": 7.5,
-      "edge": 1.91,
+      "edge": 2.0,
       "actionable_reason": "edge + strong contact",
       "game_time_pt": "4:40 PM PT"
+    },
+    {
+      "player_id": 665487,
+      "name": "Fernando Tatis Jr.",
+      "team": "San Diego Padres",
+      "projected_ud": 9.5,
+      "ud_line": 8.5,
+      "edge": 1.0,
+      "actionable_reason": "edge + strong contact",
+      "game_time_pt": "5:40 PM PT"
+    },
+    {
+      "player_id": 605141,
+      "name": "Mookie Betts",
+      "team": "Los Angeles Dodgers",
+      "projected_ud": 9.29,
+      "ud_line": 7.5,
+      "edge": 1.79,
+      "actionable_reason": "edge + strong contact",
+      "game_time_pt": "3:40 PM PT"
     },
     {
       "player_id": 677951,
       "name": "Bobby Witt Jr.",
       "team": "Kansas City Royals",
-      "projected_ud": 8.88,
+      "projected_ud": 8.7,
       "ud_line": 7.5,
-      "edge": 1.38,
+      "edge": 1.2,
       "actionable_reason": "edge + strong contact",
       "game_time_pt": "5:10 PM PT"
+    },
+    {
+      "player_id": 664034,
+      "name": "Ty France",
+      "team": "San Diego Padres",
+      "projected_ud": 8.62,
+      "ud_line": 7.5,
+      "edge": 1.12,
+      "actionable_reason": "edge + strong contact",
+      "game_time_pt": "5:40 PM PT"
     },
     {
       "player_id": 683953,
@@ -112,16 +132,6 @@
       "game_time_pt": "3:40 PM PT"
     },
     {
-      "player_id": 663656,
-      "name": "Kyle Tucker",
-      "team": "Los Angeles Dodgers",
-      "projected_ud": 8.5,
-      "ud_line": 6.5,
-      "edge": 2.0,
-      "actionable_reason": "edge + strong contact",
-      "game_time_pt": "3:40 PM PT"
-    },
-    {
       "player_id": 668930,
       "name": "Brice Turang",
       "team": "Milwaukee Brewers",
@@ -169,16 +179,6 @@
       "ud_line": 6.5,
       "edge": 2.0,
       "actionable_reason": "edge + strong contact",
-      "game_time_pt": "3:45 PM PT"
-    },
-    {
-      "player_id": 681082,
-      "name": "Bryson Stott",
-      "team": "Philadelphia Phillies",
-      "projected_ud": 8.5,
-      "ud_line": 6.5,
-      "edge": 2.0,
-      "actionable_reason": "edge + shrunk sample above baseline",
       "game_time_pt": "3:45 PM PT"
     }
   ]
