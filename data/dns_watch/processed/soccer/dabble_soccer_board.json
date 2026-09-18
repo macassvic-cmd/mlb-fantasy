@@ -1,7 +1,7 @@
 {
   "sport": "soccer",
   "source": "dabble",
-  "generated_at": "2026-09-18T20:20:46.405679Z",
+  "generated_at": "2026-09-18T22:44:09.103871Z",
   "competitions": [
     "MLS",
     "France - Ligue 1",
@@ -37,21 +37,6 @@
       "league": "MLS",
       "matchup": "NYR @ NYC",
       "position": "F",
-      "fixture_id": "01a0b272-96ef-719b-92ce-dc943ad3af5b",
-      "dabble_status_raw": null,
-      "dabble_status_normalized": null
-    },
-    {
-      "player_name": "Bénie Traoré",
-      "player_id": "019ffded-93db-719e-a476-d09831437630",
-      "team": "NYC",
-      "market": "Shots on Target",
-      "line": 0.5,
-      "event_date": "2026-09-18T23:30:00.000Z",
-      "sport": "soccer",
-      "league": "MLS",
-      "matchup": "NYR @ NYC",
-      "position": "M",
       "fixture_id": "01a0b272-96ef-719b-92ce-dc943ad3af5b",
       "dabble_status_raw": null,
       "dabble_status_normalized": null
@@ -232,36 +217,6 @@
       "league": "MLS",
       "matchup": "NYR @ NYC",
       "position": "GK",
-      "fixture_id": "01a0b272-96ef-719b-92ce-dc943ad3af5b",
-      "dabble_status_raw": null,
-      "dabble_status_normalized": null
-    },
-    {
-      "player_name": "Jorge Ruvalcaba",
-      "player_id": "a1b45723-5456-4caa-a701-8ce22fc1cfcd",
-      "team": "NYR",
-      "market": "Shots on Target",
-      "line": 0.5,
-      "event_date": "2026-09-18T23:30:00.000Z",
-      "sport": "soccer",
-      "league": "MLS",
-      "matchup": "NYR @ NYC",
-      "position": "F",
-      "fixture_id": "01a0b272-96ef-719b-92ce-dc943ad3af5b",
-      "dabble_status_raw": null,
-      "dabble_status_normalized": null
-    },
-    {
-      "player_name": "Justin Che",
-      "player_id": "d753c4fa-281c-470f-82d0-dad47a5c68b8",
-      "team": "NYR",
-      "market": "Passes Attempted",
-      "line": 64.5,
-      "event_date": "2026-09-18T23:30:00.000Z",
-      "sport": "soccer",
-      "league": "MLS",
-      "matchup": "NYR @ NYC",
-      "position": "D",
       "fixture_id": "01a0b272-96ef-719b-92ce-dc943ad3af5b",
       "dabble_status_raw": null,
       "dabble_status_normalized": null
