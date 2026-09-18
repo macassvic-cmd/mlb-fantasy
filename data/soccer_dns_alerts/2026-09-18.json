@@ -1691,7 +1691,7 @@
     "outcome": null,
     "long_term_injury": false,
     "graded_at": null,
-    "dabble_removed_at": null
+    "dabble_removed_at": "2026-09-18T20:33:59.461772+00:00"
   },
   "_last_state:01a007de-8a61-72cc-8e74-a559c612ab24:01a09810-782e-76d8-a04e-2b314c6787c4": {
     "dns_score": 33,
@@ -6625,7 +6625,7 @@
     "outcome": null,
     "long_term_injury": false,
     "graded_at": null,
-    "dabble_removed_at": null
+    "dabble_removed_at": "2026-09-18T20:33:59.461772+00:00"
   },
   "_last_state:019eac0f-de91-7512-ba69-3443d75d2654:01a092ea-64e9-75d7-8aff-be2da15b5596": {
     "dns_score": 11,
@@ -7120,6 +7120,126 @@
     "dns_score": 0,
     "rotowire_status_raw": null,
     "prediction_consensus": "start",
+    "x_post_id": null
+  },
+  "_last_state:019eb3fb-d947-7342-b7d7-fc6bd58c77f3:01a09810-7860-72ff-8fd2-2911918ada5b": {
+    "dns_score": 18,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:019eac0f-dbdd-719d-95e5-7fa560025eb3:01a09810-7860-72ff-8fd2-2911918ada5b": {
+    "dns_score": 11,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:019eac0f-dbdd-719d-95e4-d2bf20972788:01a09810-7860-72ff-8fd2-2911918ada5b": {
+    "dns_score": 11,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:01a00d04-cfbe-76e4-9b12-5a478f8ff779:01a09810-7860-72ff-8fd2-2911918ada5b": {
+    "dns_score": 11,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:019eac0f-dbdd-719d-95e5-124ada2416e9:01a09810-7860-72ff-8fd2-2911918ada5b": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:01a00d04-daed-746d-8664-e60d92d278ac:01a09810-7860-72ff-8fd2-2911918ada5b": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:01a00d04-daed-746d-8664-f91f515d2b6f:01a09810-7860-72ff-8fd2-2911918ada5b": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:01a00d04-daed-746d-8664-f27793dc60e0:01a09810-7860-72ff-8fd2-2911918ada5b": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:019eac0f-dbdd-719d-95e4-d435529940fc:01a09810-7860-72ff-8fd2-2911918ada5b": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:019eac0f-d9d6-71f8-a1c8-241ab9baadc3:01a09810-7860-72ff-8fd2-2911918ada5b": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:019eac0f-dbdd-719d-95e4-ecc1baaf31b4:01a09810-7860-72ff-8fd2-2911918ada5b": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:019ffe33-9e6d-71ec-b57b-df4b3758ef59:01a09810-7860-72ff-8fd2-2911918ada5b": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:019ffe33-9dd0-747f-8897-6f73b88cf29b:01a09810-7860-72ff-8fd2-2911918ada5b": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:01a00d04-d1fc-71ab-8355-b824cf5af00c:01a09810-7860-72ff-8fd2-2911918ada5b": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:019ffe33-a1b6-77d0-855d-beeddb5571c6:01a09810-7860-72ff-8fd2-2911918ada5b": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:019ffe33-9fe7-7145-9129-a29930639101:01a09810-7860-72ff-8fd2-2911918ada5b": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:019ffe33-a418-75cf-8ad9-332e83be8250:01a09810-7860-72ff-8fd2-2911918ada5b": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:01a077d5-7c28-743d-9bdc-e80e1078c994:01a09810-7860-72ff-8fd2-2911918ada5b": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:019ffe33-9d71-759b-8ecb-dc974826b0ca:01a09810-7860-72ff-8fd2-2911918ada5b": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:019ffe33-9ce5-72f6-ae82-cab21d198af3:01a09810-7860-72ff-8fd2-2911918ada5b": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
     "x_post_id": null
   }
 }
