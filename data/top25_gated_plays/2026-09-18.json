@@ -15,9 +15,9 @@
       "player_id": 663728,
       "name": "Cal Raleigh",
       "team": "Seattle Mariners",
-      "projected_ud": 8.89,
+      "projected_ud": 9.12,
       "ud_line": 7.5,
-      "edge": 1.39,
+      "edge": 1.62,
       "actionable_reason": "edge + strong contact",
       "game_time_pt": "5:10 PM PT"
     },
@@ -30,16 +30,6 @@
       "edge": 1.16,
       "actionable_reason": "edge + strong contact",
       "game_time_pt": "5:10 PM PT"
-    },
-    {
-      "player_id": 668930,
-      "name": "Brice Turang",
-      "team": "Milwaukee Brewers",
-      "projected_ud": 8.5,
-      "ud_line": 6.5,
-      "edge": 2.0,
-      "actionable_reason": "edge + strong contact",
-      "game_time_pt": "4:05 PM PT"
     },
     {
       "player_id": 680757,
@@ -60,6 +50,16 @@
       "edge": 2.0,
       "actionable_reason": "edge + strong contact",
       "game_time_pt": "4:10 PM PT"
+    },
+    {
+      "player_id": 668930,
+      "name": "Brice Turang",
+      "team": "Milwaukee Brewers",
+      "projected_ud": 8.5,
+      "ud_line": 6.5,
+      "edge": 2.0,
+      "actionable_reason": "edge + strong contact",
+      "game_time_pt": "4:05 PM PT"
     },
     {
       "player_id": 805808,
@@ -100,36 +100,6 @@
       "edge": 2.0,
       "actionable_reason": "edge + strong contact",
       "game_time_pt": "5:10 PM PT"
-    },
-    {
-      "player_id": 545361,
-      "name": "Mike Trout",
-      "team": "Los Angeles Angels",
-      "projected_ud": 8.5,
-      "ud_line": 6.5,
-      "edge": 2.0,
-      "actionable_reason": "edge + strong contact",
-      "game_time_pt": "6:38 PM PT"
-    },
-    {
-      "player_id": 605137,
-      "name": "Josh Bell",
-      "team": "Minnesota Twins",
-      "projected_ud": 8.5,
-      "ud_line": 6.5,
-      "edge": 2.0,
-      "actionable_reason": "edge + strong contact",
-      "game_time_pt": "6:38 PM PT"
-    },
-    {
-      "player_id": 663656,
-      "name": "Kyle Tucker",
-      "team": "Los Angeles Dodgers",
-      "projected_ud": 8.5,
-      "ud_line": 6.5,
-      "edge": 2.0,
-      "actionable_reason": "edge + strong contact",
-      "game_time_pt": "7:15 PM PT"
     }
   ]
 }
