@@ -687,11 +687,114 @@
           "grade": "win"
         }
       ]
+    },
+    "2026-09-17": {
+      "wins": 4,
+      "losses": 4,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 668930,
+          "name": "Brice Turang",
+          "team": "Milwaukee Brewers",
+          "projected_ud": 9.5,
+          "ud_line": 7.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "9:35 AM PT",
+          "actual_ud": 6,
+          "grade": "loss"
+        },
+        {
+          "player_id": 691406,
+          "name": "Junior Caminero",
+          "team": "Tampa Bay Rays",
+          "projected_ud": 9.5,
+          "ud_line": 7.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "10:10 AM PT",
+          "actual_ud": 8,
+          "grade": "win"
+        },
+        {
+          "player_id": 592518,
+          "name": "Manny Machado",
+          "team": "San Diego Padres",
+          "projected_ud": 9.5,
+          "ud_line": 8.5,
+          "edge": 1.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "12:10 PM PT",
+          "actual_ud": 2,
+          "grade": "loss"
+        },
+        {
+          "player_id": 701538,
+          "name": "Jackson Merrill",
+          "team": "San Diego Padres",
+          "projected_ud": 9.5,
+          "ud_line": 8.5,
+          "edge": 1.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "12:10 PM PT",
+          "actual_ud": 14,
+          "grade": "win"
+        },
+        {
+          "player_id": 682829,
+          "name": "Elly De La Cruz",
+          "team": "Cincinnati Reds",
+          "projected_ud": 9.19,
+          "ud_line": 7.5,
+          "edge": 1.69,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "9:40 AM PT",
+          "actual_ud": 0,
+          "grade": "loss"
+        },
+        {
+          "player_id": 695600,
+          "name": "Carter Jensen",
+          "team": "Kansas City Royals",
+          "projected_ud": 8.7,
+          "ud_line": 7.5,
+          "edge": 1.2,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "4:15 PM PT",
+          "actual_ud": 13,
+          "grade": "win"
+        },
+        {
+          "player_id": 606192,
+          "name": "Teoscar Hern\u00e1ndez",
+          "team": "Los Angeles Dodgers",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "9:40 AM PT",
+          "actual_ud": 8,
+          "grade": "win"
+        },
+        {
+          "player_id": 682985,
+          "name": "Riley Greene",
+          "team": "Detroit Tigers",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 3,
+          "grade": "loss"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 31,
-    "losses": 24,
+    "wins": 35,
+    "losses": 28,
     "dnp": 0
   }
 }

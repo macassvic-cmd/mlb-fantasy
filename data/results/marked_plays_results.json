@@ -2238,14 +2238,37 @@
           "rate_before": 76.9
         }
       ]
+    },
+    "2026-09-17": {
+      "fire": [
+        {
+          "player_id": 668930,
+          "name": "Brice Turang",
+          "team": "Milwaukee Brewers",
+          "grade": "loss",
+          "n_before": 18,
+          "wins_before": 13,
+          "rate_before": 72.2
+        },
+        {
+          "player_id": 701538,
+          "name": "Jackson Merrill",
+          "team": "San Diego Padres",
+          "grade": "win",
+          "n_before": 26,
+          "wins_before": 19,
+          "rate_before": 73.1
+        }
+      ],
+      "hot": []
     }
   },
   "cohorts": {
     "fire": {
-      "wins": 57,
-      "losses": 50,
-      "n": 107,
-      "rate": 53.3
+      "wins": 58,
+      "losses": 51,
+      "n": 109,
+      "rate": 53.2
     },
     "hot": {
       "wins": 52,

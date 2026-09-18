@@ -7568,6 +7568,39 @@
           "correct": false
         }
       ]
+    },
+    "2026-09-17": {
+      "summary": {
+        "total": 2,
+        "correct": 1,
+        "accuracy": 50.0,
+        "over_total": 2,
+        "over_correct": 1,
+        "under_total": 0,
+        "under_correct": 0
+      },
+      "plays": [
+        {
+          "player_id": 668930,
+          "name": "Brice Turang",
+          "team": "Milwaukee Brewers",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 6,
+          "correct": false
+        },
+        {
+          "player_id": 691406,
+          "name": "Junior Caminero",
+          "team": "Tampa Bay Rays",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 8,
+          "correct": true
+        }
+      ]
     }
   }
 }

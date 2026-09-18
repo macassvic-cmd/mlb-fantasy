@@ -2653,20 +2653,104 @@
           "grade": "win"
         }
       ]
+    },
+    "2026-09-17": {
+      "wins": 5,
+      "losses": 2,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 668670,
+          "name": "Jake Rogers",
+          "team": "Chicago White Sox",
+          "projected_ud": 3.65,
+          "ud_line": 5.5,
+          "edge": -1.85,
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 668904,
+          "name": "Royce Lewis",
+          "team": "Minnesota Twins",
+          "projected_ud": 3.68,
+          "ud_line": 5.5,
+          "edge": -1.82,
+          "game_time_pt": "6:38 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 701350,
+          "name": "Roman Anthony",
+          "team": "Boston Red Sox",
+          "projected_ud": 4.75,
+          "ud_line": 6.5,
+          "edge": -1.75,
+          "game_time_pt": "5:05 PM PT",
+          "actual_ud": 5,
+          "grade": "win"
+        },
+        {
+          "player_id": 681082,
+          "name": "Bryson Stott",
+          "team": "Philadelphia Phillies",
+          "projected_ud": 3.78,
+          "ud_line": 5.5,
+          "edge": -1.72,
+          "game_time_pt": "4:15 PM PT",
+          "actual_ud": 11,
+          "grade": "loss"
+        },
+        {
+          "player_id": 686797,
+          "name": "Brooks Lee",
+          "team": "Minnesota Twins",
+          "projected_ud": 3.81,
+          "ud_line": 5.5,
+          "edge": -1.69,
+          "game_time_pt": "6:38 PM PT",
+          "actual_ud": 10,
+          "grade": "loss"
+        },
+        {
+          "player_id": 663886,
+          "name": "Tyler Stephenson",
+          "team": "Cincinnati Reds",
+          "projected_ud": 4.9,
+          "ud_line": 6.5,
+          "edge": -1.6,
+          "game_time_pt": "9:40 AM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 691720,
+          "name": "Kyle Karros",
+          "team": "Colorado Rockies",
+          "projected_ud": 4.98,
+          "ud_line": 6.5,
+          "edge": -1.52,
+          "game_time_pt": "12:10 PM PT",
+          "actual_ud": 5,
+          "grade": "win"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 120,
-    "losses": 99,
+    "wins": 125,
+    "losses": 101,
     "dnp": 7
   },
   "record_by_line": {
     "5.5": {
-      "wins": 56,
-      "losses": 53
+      "wins": 58,
+      "losses": 55
     },
     "6.5": {
-      "wins": 34,
+      "wins": 37,
       "losses": 33
     },
     "8.5+": {
@@ -2958,7 +3042,7 @@
     "668904": {
       "name": "Royce Lewis",
       "team": "Minnesota Twins",
-      "wins": 4,
+      "wins": 5,
       "losses": 2
     },
     "664034": {
@@ -3061,7 +3145,7 @@
       "name": "Brooks Lee",
       "team": "Minnesota Twins",
       "wins": 1,
-      "losses": 0
+      "losses": 1
     },
     "663968": {
       "name": "Jake Mangum",
@@ -3120,7 +3204,7 @@
     "701350": {
       "name": "Roman Anthony",
       "team": "Boston Red Sox",
-      "wins": 0,
+      "wins": 1,
       "losses": 1
     },
     "803011": {
@@ -3289,7 +3373,7 @@
       "name": "Bryson Stott",
       "team": "Philadelphia Phillies",
       "wins": 0,
-      "losses": 1
+      "losses": 2
     },
     "572233": {
       "name": "Christian Walker",
@@ -3504,12 +3588,24 @@
     "691720": {
       "name": "Kyle Karros",
       "team": "Colorado Rockies",
-      "wins": 0,
+      "wins": 1,
       "losses": 1
     },
     "668723": {
       "name": "Ryan Vilade",
       "team": "Tampa Bay Rays",
+      "wins": 1,
+      "losses": 0
+    },
+    "668670": {
+      "name": "Jake Rogers",
+      "team": "Chicago White Sox",
+      "wins": 1,
+      "losses": 0
+    },
+    "663886": {
+      "name": "Tyler Stephenson",
+      "team": "Cincinnati Reds",
       "wins": 1,
       "losses": 0
     }
