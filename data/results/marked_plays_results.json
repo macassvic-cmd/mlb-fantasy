@@ -2261,20 +2261,53 @@
         }
       ],
       "hot": []
+    },
+    "2026-09-18": {
+      "fire": [
+        {
+          "player_id": 668227,
+          "name": "Randy Arozarena",
+          "team": "Seattle Mariners",
+          "grade": "win",
+          "n_before": 16,
+          "wins_before": 10,
+          "rate_before": 62.5
+        },
+        {
+          "player_id": 668930,
+          "name": "Brice Turang",
+          "team": "Milwaukee Brewers",
+          "grade": "win",
+          "n_before": 19,
+          "wins_before": 13,
+          "rate_before": 68.4
+        }
+      ],
+      "hot": [
+        {
+          "player_id": 680757,
+          "name": "Steven Kwan",
+          "team": "Cleveland Guardians",
+          "grade": "loss",
+          "n_before": 13,
+          "wins_before": 10,
+          "rate_before": 76.9
+        }
+      ]
     }
   },
   "cohorts": {
     "fire": {
-      "wins": 58,
+      "wins": 60,
       "losses": 51,
-      "n": 109,
-      "rate": 53.2
+      "n": 111,
+      "rate": 54.1
     },
     "hot": {
       "wins": 52,
-      "losses": 43,
-      "n": 95,
-      "rate": 54.7
+      "losses": 44,
+      "n": 96,
+      "rate": 54.2
     }
   }
 }

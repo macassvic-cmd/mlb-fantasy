@@ -2737,24 +2737,152 @@
           "grade": "win"
         }
       ]
+    },
+    "2026-09-18": {
+      "wins": 5,
+      "losses": 6,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 691023,
+          "name": "Jordan Walker",
+          "team": "St. Louis Cardinals",
+          "projected_ud": 3.58,
+          "ud_line": 5.5,
+          "edge": -1.92,
+          "game_time_pt": "5:15 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 547180,
+          "name": "Bryce Harper",
+          "team": "Philadelphia Phillies",
+          "projected_ud": 4.62,
+          "ud_line": 6.5,
+          "edge": -1.88,
+          "game_time_pt": "4:15 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 691718,
+          "name": "Pete Crow-Armstrong",
+          "team": "Chicago Cubs",
+          "projected_ud": 7.67,
+          "ud_line": 9.5,
+          "edge": -1.83,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 804606,
+          "name": "Konnor Griffin",
+          "team": "Pittsburgh Pirates",
+          "projected_ud": 4.71,
+          "ud_line": 6.5,
+          "edge": -1.79,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 18,
+          "grade": "loss"
+        },
+        {
+          "player_id": 693304,
+          "name": "Nick Gonzales",
+          "team": "Pittsburgh Pirates",
+          "projected_ud": 3.82,
+          "ud_line": 5.5,
+          "edge": -1.68,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 8,
+          "grade": "loss"
+        },
+        {
+          "player_id": 808982,
+          "name": "Jung Hoo Lee",
+          "team": "San Francisco Giants",
+          "projected_ud": 3.86,
+          "ud_line": 5.5,
+          "edge": -1.64,
+          "game_time_pt": "7:15 PM PT",
+          "actual_ud": 14,
+          "grade": "loss"
+        },
+        {
+          "player_id": 621566,
+          "name": "Matt Olson",
+          "team": "Atlanta Braves",
+          "projected_ud": 4.89,
+          "ud_line": 6.5,
+          "edge": -1.61,
+          "game_time_pt": "5:10 PM PT",
+          "actual_ud": 24,
+          "grade": "loss"
+        },
+        {
+          "player_id": 592663,
+          "name": "J.T. Realmuto",
+          "team": "Philadelphia Phillies",
+          "projected_ud": 3.93,
+          "ud_line": 5.5,
+          "edge": -1.57,
+          "game_time_pt": "4:15 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 663886,
+          "name": "Tyler Stephenson",
+          "team": "Cincinnati Reds",
+          "projected_ud": 3.99,
+          "ud_line": 5.5,
+          "edge": -1.51,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 8,
+          "grade": "loss"
+        },
+        {
+          "player_id": 518692,
+          "name": "Freddie Freeman",
+          "team": "Los Angeles Dodgers",
+          "projected_ud": 5.0,
+          "ud_line": 6.5,
+          "edge": -1.5,
+          "game_time_pt": "7:15 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 671218,
+          "name": "Heliot Ramos",
+          "team": "New York Yankees",
+          "projected_ud": 4.0,
+          "ud_line": 5.5,
+          "edge": -1.5,
+          "game_time_pt": "6:40 PM PT",
+          "actual_ud": 10,
+          "grade": "loss"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 125,
-    "losses": 101,
+    "wins": 130,
+    "losses": 107,
     "dnp": 7
   },
   "record_by_line": {
     "5.5": {
-      "wins": 58,
-      "losses": 55
+      "wins": 60,
+      "losses": 59
     },
     "6.5": {
-      "wins": 37,
-      "losses": 33
+      "wins": 39,
+      "losses": 35
     },
     "8.5+": {
-      "wins": 8,
+      "wins": 9,
       "losses": 4
     },
     "7.5": {
@@ -2826,7 +2954,7 @@
     "691718": {
       "name": "Pete Crow-Armstrong",
       "team": "Chicago Cubs",
-      "wins": 2,
+      "wins": 3,
       "losses": 0
     },
     "805811": {
@@ -2869,7 +2997,7 @@
       "name": "Jung Hoo Lee",
       "team": "San Francisco Giants",
       "wins": 2,
-      "losses": 1
+      "losses": 2
     },
     "663757": {
       "name": "Trent Grisham",
@@ -2910,7 +3038,7 @@
     "547180": {
       "name": "Bryce Harper",
       "team": "Philadelphia Phillies",
-      "wins": 1,
+      "wins": 2,
       "losses": 1
     },
     "606192": {
@@ -2977,7 +3105,7 @@
       "name": "Matt Olson",
       "team": "Atlanta Braves",
       "wins": 1,
-      "losses": 2
+      "losses": 3
     },
     "672515": {
       "name": "Gabriel Moreno",
@@ -3318,20 +3446,20 @@
     "691023": {
       "name": "Jordan Walker",
       "team": "St. Louis Cardinals",
-      "wins": 1,
+      "wins": 2,
       "losses": 1
     },
     "693304": {
       "name": "Nick Gonzales",
       "team": "Pittsburgh Pirates",
       "wins": 1,
-      "losses": 1
+      "losses": 2
     },
     "804606": {
       "name": "Konnor Griffin",
       "team": "Pittsburgh Pirates",
       "wins": 1,
-      "losses": 1
+      "losses": 2
     },
     "665926": {
       "name": "Andr\u00e9s Gim\u00e9nez",
@@ -3607,7 +3735,25 @@
       "name": "Tyler Stephenson",
       "team": "Cincinnati Reds",
       "wins": 1,
+      "losses": 1
+    },
+    "592663": {
+      "name": "J.T. Realmuto",
+      "team": "Philadelphia Phillies",
+      "wins": 1,
       "losses": 0
+    },
+    "518692": {
+      "name": "Freddie Freeman",
+      "team": "Los Angeles Dodgers",
+      "wins": 1,
+      "losses": 0
+    },
+    "671218": {
+      "name": "Heliot Ramos",
+      "team": "New York Yankees",
+      "wins": 0,
+      "losses": 1
     }
   }
 }

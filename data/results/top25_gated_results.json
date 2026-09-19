@@ -790,11 +790,150 @@
           "grade": "loss"
         }
       ]
+    },
+    "2026-09-18": {
+      "wins": 7,
+      "losses": 4,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 668227,
+          "name": "Randy Arozarena",
+          "team": "Seattle Mariners",
+          "projected_ud": 9.12,
+          "ud_line": 7.5,
+          "edge": 1.62,
+          "actionable_reason": "edge + shrunk sample above baseline",
+          "game_time_pt": "5:10 PM PT",
+          "actual_ud": 17,
+          "grade": "win"
+        },
+        {
+          "player_id": 663728,
+          "name": "Cal Raleigh",
+          "team": "Seattle Mariners",
+          "projected_ud": 9.12,
+          "ud_line": 7.5,
+          "edge": 1.62,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "5:10 PM PT",
+          "actual_ud": 0,
+          "grade": "loss"
+        },
+        {
+          "player_id": 682829,
+          "name": "Elly De La Cruz",
+          "team": "Cincinnati Reds",
+          "projected_ud": 8.67,
+          "ud_line": 7.5,
+          "edge": 1.17,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 20,
+          "grade": "win"
+        },
+        {
+          "player_id": 668930,
+          "name": "Brice Turang",
+          "team": "Milwaukee Brewers",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "4:05 PM PT",
+          "actual_ud": 8,
+          "grade": "win"
+        },
+        {
+          "player_id": 661388,
+          "name": "William Contreras",
+          "team": "Milwaukee Brewers",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "4:05 PM PT",
+          "actual_ud": 13,
+          "grade": "win"
+        },
+        {
+          "player_id": 680757,
+          "name": "Steven Kwan",
+          "team": "Cleveland Guardians",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + shrunk sample above baseline",
+          "game_time_pt": "4:10 PM PT",
+          "actual_ud": 6,
+          "grade": "loss"
+        },
+        {
+          "player_id": 683953,
+          "name": "Travis Bazzana",
+          "team": "Cleveland Guardians",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "4:10 PM PT",
+          "actual_ud": 17,
+          "grade": "win"
+        },
+        {
+          "player_id": 805808,
+          "name": "Kevin McGonigle",
+          "team": "Detroit Tigers",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 24,
+          "grade": "win"
+        },
+        {
+          "player_id": 682985,
+          "name": "Riley Greene",
+          "team": "Detroit Tigers",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 19,
+          "grade": "win"
+        },
+        {
+          "player_id": 703520,
+          "name": "Brett Bateman",
+          "team": "Toronto Blue Jays",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "5:05 PM PT",
+          "actual_ud": 0,
+          "grade": "loss"
+        },
+        {
+          "player_id": 605137,
+          "name": "Josh Bell",
+          "team": "Minnesota Twins",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "6:38 PM PT",
+          "actual_ud": 5,
+          "grade": "loss"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 35,
-    "losses": 28,
+    "wins": 42,
+    "losses": 32,
     "dnp": 0
   }
 }
