@@ -1629,9 +1629,9 @@
     "dabble_removed_at": "2026-09-19T13:25:28.378541+00:00"
   },
   "_last_state:01a007de-8f46-7751-8361-e29ab3793084:01a09d37-1385-7689-82f8-c6fcd1aaee7f": {
-    "dns_score": 41,
-    "rotowire_status_raw": "fifty-fifty",
-    "prediction_consensus": "unknown",
+    "dns_score": 90,
+    "rotowire_status_raw": "hard_out",
+    "prediction_consensus": "bench",
     "x_post_id": null
   },
   "2026-09-19:soccer:01a007de-8f46-7751-8361-e29ab3793084:01a09d37-1385-7689-82f8-c6fcd1aaee7f:news_signal:25453": {
@@ -1780,7 +1780,7 @@
     "outcome": null,
     "long_term_injury": false,
     "graded_at": null,
-    "dabble_removed_at": null
+    "dabble_removed_at": "2026-09-19T16:49:00.972625+00:00"
   },
   "_last_state:01a00115-0c24-73c9-9141-3c5857a48156:01a0b7a0-fe1b-7238-87c4-e165df06f413": {
     "dns_score": 33,
@@ -6976,6 +6976,741 @@
     "x_post_id": null
   },
   "_last_state:019eac0f-e46e-7402-bd4f-c03c6d82fe39:01a09d37-14f4-72d5-b0f7-22a905d8e90e": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "2026-09-19:soccer:01a007de-8f46-7751-8361-e29ab3793084:01a09d37-1385-7689-82f8-c6fcd1aaee7f:60": {
+    "player_id": "01a007de-8f46-7751-8361-e29ab3793084",
+    "player_name": "Leonardo Spinazzola",
+    "normalized_name": "leonardo spinazzola",
+    "team": "NAP",
+    "league_code": "SEA",
+    "opponent": "NAP @ FIO",
+    "fixture_id": "01a09d37-1385-7689-82f8-c6fcd1aaee7f",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 60,
+    "alerted_at": "2026-09-19T16:49:00.972625+00:00",
+    "game_start": "2026-09-20T10:30:00.000Z",
+    "minutes_to_game": 1060.9837895833332,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Assists",
+      "Goals + Assists",
+      "Shots",
+      "Shots on Target"
+    ],
+    "dabble_prop_ids": [
+      "00ec14b1be8c3d3c",
+      "cdfa21fe8970d5f8",
+      "45fd857ea4616b38",
+      "e4d795f04f3f41fb"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Rotation-risk usage pattern (inconsistent starts)",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/leonardo-spinazzola-21955",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Thigh",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-19T16:42:14.850436+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-13",
+      "days_since_last_appearance": 7,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-19:soccer:01a007de-8f46-7751-8361-e29ab3793084:01a09d37-1385-7689-82f8-c6fcd1aaee7f:65": {
+    "player_id": "01a007de-8f46-7751-8361-e29ab3793084",
+    "player_name": "Leonardo Spinazzola",
+    "normalized_name": "leonardo spinazzola",
+    "team": "NAP",
+    "league_code": "SEA",
+    "opponent": "NAP @ FIO",
+    "fixture_id": "01a09d37-1385-7689-82f8-c6fcd1aaee7f",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 65,
+    "alerted_at": "2026-09-19T16:49:00.972625+00:00",
+    "game_start": "2026-09-20T10:30:00.000Z",
+    "minutes_to_game": 1060.9837895833332,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Assists",
+      "Goals + Assists",
+      "Shots",
+      "Shots on Target"
+    ],
+    "dabble_prop_ids": [
+      "00ec14b1be8c3d3c",
+      "cdfa21fe8970d5f8",
+      "45fd857ea4616b38",
+      "e4d795f04f3f41fb"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Rotation-risk usage pattern (inconsistent starts)",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/leonardo-spinazzola-21955",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Thigh",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-19T16:42:14.850436+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-13",
+      "days_since_last_appearance": 7,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-19:soccer:01a007de-8f46-7751-8361-e29ab3793084:01a09d37-1385-7689-82f8-c6fcd1aaee7f:70": {
+    "player_id": "01a007de-8f46-7751-8361-e29ab3793084",
+    "player_name": "Leonardo Spinazzola",
+    "normalized_name": "leonardo spinazzola",
+    "team": "NAP",
+    "league_code": "SEA",
+    "opponent": "NAP @ FIO",
+    "fixture_id": "01a09d37-1385-7689-82f8-c6fcd1aaee7f",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 70,
+    "alerted_at": "2026-09-19T16:49:00.972625+00:00",
+    "game_start": "2026-09-20T10:30:00.000Z",
+    "minutes_to_game": 1060.9837895833332,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Assists",
+      "Goals + Assists",
+      "Shots",
+      "Shots on Target"
+    ],
+    "dabble_prop_ids": [
+      "00ec14b1be8c3d3c",
+      "cdfa21fe8970d5f8",
+      "45fd857ea4616b38",
+      "e4d795f04f3f41fb"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Rotation-risk usage pattern (inconsistent starts)",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/leonardo-spinazzola-21955",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Thigh",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-19T16:42:14.850436+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-13",
+      "days_since_last_appearance": 7,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-19:soccer:01a007de-8f46-7751-8361-e29ab3793084:01a09d37-1385-7689-82f8-c6fcd1aaee7f:75": {
+    "player_id": "01a007de-8f46-7751-8361-e29ab3793084",
+    "player_name": "Leonardo Spinazzola",
+    "normalized_name": "leonardo spinazzola",
+    "team": "NAP",
+    "league_code": "SEA",
+    "opponent": "NAP @ FIO",
+    "fixture_id": "01a09d37-1385-7689-82f8-c6fcd1aaee7f",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 75,
+    "alerted_at": "2026-09-19T16:49:00.972625+00:00",
+    "game_start": "2026-09-20T10:30:00.000Z",
+    "minutes_to_game": 1060.9837895833332,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Assists",
+      "Goals + Assists",
+      "Shots",
+      "Shots on Target"
+    ],
+    "dabble_prop_ids": [
+      "00ec14b1be8c3d3c",
+      "cdfa21fe8970d5f8",
+      "45fd857ea4616b38",
+      "e4d795f04f3f41fb"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Rotation-risk usage pattern (inconsistent starts)",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/leonardo-spinazzola-21955",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Thigh",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-19T16:42:14.850436+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-13",
+      "days_since_last_appearance": 7,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-19:soccer:01a007de-8f46-7751-8361-e29ab3793084:01a09d37-1385-7689-82f8-c6fcd1aaee7f:80": {
+    "player_id": "01a007de-8f46-7751-8361-e29ab3793084",
+    "player_name": "Leonardo Spinazzola",
+    "normalized_name": "leonardo spinazzola",
+    "team": "NAP",
+    "league_code": "SEA",
+    "opponent": "NAP @ FIO",
+    "fixture_id": "01a09d37-1385-7689-82f8-c6fcd1aaee7f",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 80,
+    "alerted_at": "2026-09-19T16:49:00.972625+00:00",
+    "game_start": "2026-09-20T10:30:00.000Z",
+    "minutes_to_game": 1060.9837895833332,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Assists",
+      "Goals + Assists",
+      "Shots",
+      "Shots on Target"
+    ],
+    "dabble_prop_ids": [
+      "00ec14b1be8c3d3c",
+      "cdfa21fe8970d5f8",
+      "45fd857ea4616b38",
+      "e4d795f04f3f41fb"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Rotation-risk usage pattern (inconsistent starts)",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/leonardo-spinazzola-21955",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Thigh",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-19T16:42:14.850436+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-13",
+      "days_since_last_appearance": 7,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-19:soccer:01a007de-8f46-7751-8361-e29ab3793084:01a09d37-1385-7689-82f8-c6fcd1aaee7f:85": {
+    "player_id": "01a007de-8f46-7751-8361-e29ab3793084",
+    "player_name": "Leonardo Spinazzola",
+    "normalized_name": "leonardo spinazzola",
+    "team": "NAP",
+    "league_code": "SEA",
+    "opponent": "NAP @ FIO",
+    "fixture_id": "01a09d37-1385-7689-82f8-c6fcd1aaee7f",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 85,
+    "alerted_at": "2026-09-19T16:49:00.972625+00:00",
+    "game_start": "2026-09-20T10:30:00.000Z",
+    "minutes_to_game": 1060.9837895833332,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Assists",
+      "Goals + Assists",
+      "Shots",
+      "Shots on Target"
+    ],
+    "dabble_prop_ids": [
+      "00ec14b1be8c3d3c",
+      "cdfa21fe8970d5f8",
+      "45fd857ea4616b38",
+      "e4d795f04f3f41fb"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Rotation-risk usage pattern (inconsistent starts)",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/leonardo-spinazzola-21955",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Thigh",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-19T16:42:14.850436+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-13",
+      "days_since_last_appearance": 7,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-19:soccer:01a007de-8f46-7751-8361-e29ab3793084:01a09d37-1385-7689-82f8-c6fcd1aaee7f:90": {
+    "player_id": "01a007de-8f46-7751-8361-e29ab3793084",
+    "player_name": "Leonardo Spinazzola",
+    "normalized_name": "leonardo spinazzola",
+    "team": "NAP",
+    "league_code": "SEA",
+    "opponent": "NAP @ FIO",
+    "fixture_id": "01a09d37-1385-7689-82f8-c6fcd1aaee7f",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 90,
+    "alerted_at": "2026-09-19T16:49:00.972625+00:00",
+    "game_start": "2026-09-20T10:30:00.000Z",
+    "minutes_to_game": 1060.9837895833332,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Assists",
+      "Goals + Assists",
+      "Shots",
+      "Shots on Target"
+    ],
+    "dabble_prop_ids": [
+      "00ec14b1be8c3d3c",
+      "cdfa21fe8970d5f8",
+      "45fd857ea4616b38",
+      "e4d795f04f3f41fb"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Rotation-risk usage pattern (inconsistent starts)",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/leonardo-spinazzola-21955",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Thigh",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-19T16:42:14.850436+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-13",
+      "days_since_last_appearance": 7,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-19:soccer:01a007de-8f46-7751-8361-e29ab3793084:01a09d37-1385-7689-82f8-c6fcd1aaee7f:lock": {
+    "player_id": "01a007de-8f46-7751-8361-e29ab3793084",
+    "player_name": "Leonardo Spinazzola",
+    "normalized_name": "leonardo spinazzola",
+    "team": "NAP",
+    "league_code": "SEA",
+    "opponent": "NAP @ FIO",
+    "fixture_id": "01a09d37-1385-7689-82f8-c6fcd1aaee7f",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": "lock",
+    "alerted_at": "2026-09-19T16:49:00.972625+00:00",
+    "game_start": "2026-09-20T10:30:00.000Z",
+    "minutes_to_game": 1060.9837895833332,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Assists",
+      "Goals + Assists",
+      "Shots",
+      "Shots on Target"
+    ],
+    "dabble_prop_ids": [
+      "00ec14b1be8c3d3c",
+      "cdfa21fe8970d5f8",
+      "45fd857ea4616b38",
+      "e4d795f04f3f41fb"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Rotation-risk usage pattern (inconsistent starts)",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": "LOCK: hard_out_uncorroborated",
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/leonardo-spinazzola-21955",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Thigh",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-19T16:42:14.850436+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-13",
+      "days_since_last_appearance": 7,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-19:soccer:01a007de-8f46-7751-8361-e29ab3793084:01a09d37-1385-7689-82f8-c6fcd1aaee7f:news_signal:18085": {
+    "player_id": "01a007de-8f46-7751-8361-e29ab3793084",
+    "player_name": "Leonardo Spinazzola",
+    "normalized_name": "leonardo spinazzola",
+    "team": "NAP",
+    "league_code": "SEA",
+    "opponent": "NAP @ FIO",
+    "fixture_id": "01a09d37-1385-7689-82f8-c6fcd1aaee7f",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": "news_signal",
+    "alerted_at": "2026-09-19T16:49:00.972625+00:00",
+    "game_start": "2026-09-20T10:30:00.000Z",
+    "minutes_to_game": 1060.9837895833332,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Assists",
+      "Goals + Assists",
+      "Shots",
+      "Shots on Target"
+    ],
+    "dabble_prop_ids": [
+      "00ec14b1be8c3d3c",
+      "cdfa21fe8970d5f8",
+      "45fd857ea4616b38",
+      "e4d795f04f3f41fb"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Rotation-risk usage pattern (inconsistent starts)",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": "RotoWire status worsened to: hard_out",
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/leonardo-spinazzola-21955",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Thigh",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-19T16:42:14.850436+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-13",
+      "days_since_last_appearance": 7,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "_last_state:09445ed8-b29e-4fb6-b22e-60c1fa104555:01a0b7a2-d49a-73ff-8d06-b3e7539d40d6": {
+    "dns_score": 33,
+    "rotowire_status_raw": "fifty-fifty",
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "2026-09-19:soccer:09445ed8-b29e-4fb6-b22e-60c1fa104555:01a0b7a2-d49a-73ff-8d06-b3e7539d40d6:news_signal:33086": {
+    "player_id": "09445ed8-b29e-4fb6-b22e-60c1fa104555",
+    "player_name": "Agustín Resch",
+    "normalized_name": "agustin resch",
+    "team": "HOU",
+    "league_code": "MLS",
+    "opponent": "CIN @ HOU",
+    "fixture_id": "01a0b7a2-d49a-73ff-8d06-b3e7539d40d6",
+    "dns_score": 33,
+    "confidence_score": 30,
+    "urgency_score": 0,
+    "alert_type": "news_signal",
+    "alerted_at": "2026-09-19T16:49:00.972625+00:00",
+    "game_start": "2026-09-20T00:30:00.000Z",
+    "minutes_to_game": 460.98378958333336,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Passes Attempted"
+    ],
+    "dabble_prop_ids": [
+      "2158123e356ee187"
+    ],
+    "top_reasons": [
+      "RotoWire: fifty-fifty"
+    ],
+    "extra_reason": "RotoWire status worsened to: fifty-fifty",
+    "transfermarkt_injury_since": null,
+    "research_block": null,
+    "is_lock": false,
+    "lock_reason": null,
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "_last_state:c071bd2b-be67-4651-ab51-0196db1749e8:01a0b7c2-7052-709e-928f-59d09e67d5f8": {
+    "dns_score": 11,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:18d9eea4-22d9-468a-8a44-d3a41edcdfe9:01a0b7c0-e869-753a-85fd-24a796274b27": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:62ae2644-ddd7-4782-9c2e-09f368d553e9:01a0b7c0-e869-753a-85fd-24a796274b27": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:e0cbec3e-d69f-45d8-8e02-23ae12a8540f:01a0b7c0-e869-753a-85fd-24a796274b27": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:a73fbf18-4f0d-45dd-8d72-3ebc725b4d94:01a0b7a0-fe1b-7238-87c4-e165df06f413": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:c415e24e-9d1c-4941-aff3-3a8eef2bc65f:01a0b7a0-fe1b-7238-87c4-e165df06f413": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:4f2a632a-9c45-4eb6-a8ca-ab672ac56b07:01a0b7a0-fe1b-7238-87c4-e165df06f413": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:5e06029b-c8da-4825-bd40-fbc4e7cacafa:01a0b7a0-fe1b-7238-87c4-e165df06f413": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:2fc5b0f3-9054-4883-ae75-73be240f1620:01a0b7a2-d49a-73ff-8d06-b3e7539d40d6": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:f5199efd-d235-46d7-bb31-7934ff4fc91f:01a0b7a2-d49a-73ff-8d06-b3e7539d40d6": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:538f7fbd-8768-4087-9aff-e67ce950f679:01a0b7a2-d49a-73ff-8d06-b3e7539d40d6": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:ebf06fde-2158-4b4a-af10-cf6f6dd3fd70:01a0b7a2-d49a-73ff-8d06-b3e7539d40d6": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:54beb9e3-fe34-48e1-a8fb-941e4bb5cd16:01a0b7c2-7052-709e-928f-59d09e67d5f8": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:92740c0b-dbe9-4449-b4d6-e4fc1e541f44:01a0b7c2-7052-709e-928f-59d09e67d5f8": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:a20e187c-15d9-4cb3-b992-2607093a828f:01a0b7c2-7052-709e-928f-59d09e67d5f8": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:12978cc3-39dc-4d55-92d3-ebfa4ea863df:01a0b7a4-f5de-703d-980f-8b4c2a01fb4b": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:9beb21e7-22ed-4589-a1f2-a8956cc6bf89:01a0b7a4-f5de-703d-980f-8b4c2a01fb4b": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:b6636ca2-8543-4433-b083-81d9f3cd1465:01a0b7a4-f5de-703d-980f-8b4c2a01fb4b": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:1990b20d-b24d-4cbe-b89a-265a3e7b5b14:01a0b7a4-f5de-703d-980f-8b4c2a01fb4b": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:b4570283-0192-49b7-b02c-99db9f5c107b:01a0b7a4-f5de-703d-980f-8b4c2a01fb4b": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:019ffded-7fbc-745d-88bb-28d47254453f:01a0b7a4-f5de-703d-980f-8b4c2a01fb4b": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:84f5079b-3971-4b65-bc23-21c2785ee8c3:01a0b7a4-f5de-703d-980f-8b4c2a01fb4b": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:49c752dd-d4c8-43e9-8ba4-98a259f185ec:01a0b7ab-3a40-74bc-977a-920e44df9a8c": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:a37fafcd-3d9b-4cdf-a242-d0ee891d1d3c:01a0b7ab-3a40-74bc-977a-920e44df9a8c": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:2062327e-62bc-41c0-874c-4ab0c68ee45b:01a0b7ab-3a40-74bc-977a-920e44df9a8c": {
     "dns_score": 3,
     "rotowire_status_raw": null,
     "prediction_consensus": "unknown",
