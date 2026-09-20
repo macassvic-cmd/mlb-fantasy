@@ -2865,28 +2865,134 @@
           "grade": "loss"
         }
       ]
+    },
+    "2026-09-19": {
+      "wins": 4,
+      "losses": 5,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 668904,
+          "name": "Royce Lewis",
+          "team": "Minnesota Twins",
+          "projected_ud": 3.55,
+          "ud_line": 5.5,
+          "edge": -1.95,
+          "game_time_pt": "6:38 PM PT",
+          "actual_ud": 9,
+          "grade": "loss"
+        },
+        {
+          "player_id": 671056,
+          "name": "Iv\u00e1n Herrera",
+          "team": "St. Louis Cardinals",
+          "projected_ud": 4.63,
+          "ud_line": 6.5,
+          "edge": -1.87,
+          "game_time_pt": "4:15 PM PT",
+          "actual_ud": 15,
+          "grade": "loss"
+        },
+        {
+          "player_id": 691026,
+          "name": "Masyn Winn",
+          "team": "St. Louis Cardinals",
+          "projected_ud": 3.64,
+          "ud_line": 5.5,
+          "edge": -1.86,
+          "game_time_pt": "4:15 PM PT",
+          "actual_ud": 7,
+          "grade": "loss"
+        },
+        {
+          "player_id": 606466,
+          "name": "Ketel Marte",
+          "team": "Arizona Diamondbacks",
+          "projected_ud": 3.64,
+          "ud_line": 5.5,
+          "edge": -1.86,
+          "game_time_pt": "5:10 PM PT",
+          "actual_ud": 5,
+          "grade": "win"
+        },
+        {
+          "player_id": 641857,
+          "name": "Ryan McMahon",
+          "team": "New York Yankees",
+          "projected_ud": 3.71,
+          "ud_line": 5.5,
+          "edge": -1.79,
+          "game_time_pt": "5:10 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 672515,
+          "name": "Gabriel Moreno",
+          "team": "Arizona Diamondbacks",
+          "projected_ud": 3.8,
+          "ud_line": 5.5,
+          "edge": -1.7,
+          "game_time_pt": "5:10 PM PT",
+          "actual_ud": 6,
+          "grade": "loss"
+        },
+        {
+          "player_id": 669242,
+          "name": "Tommy Edman",
+          "team": "Los Angeles Dodgers",
+          "projected_ud": 5.83,
+          "ud_line": 7.5,
+          "edge": -1.67,
+          "game_time_pt": "6:10 PM PT",
+          "actual_ud": 7,
+          "grade": "win"
+        },
+        {
+          "player_id": 607043,
+          "name": "Brandon Nimmo",
+          "team": "Texas Rangers",
+          "projected_ud": 4.83,
+          "ud_line": 6.5,
+          "edge": -1.67,
+          "game_time_pt": "4:05 PM PT",
+          "actual_ud": 5,
+          "grade": "win"
+        },
+        {
+          "player_id": 677956,
+          "name": "Rece Hinds",
+          "team": "Baltimore Orioles",
+          "projected_ud": 3.97,
+          "ud_line": 5.5,
+          "edge": -1.53,
+          "game_time_pt": "1:05 PM PT",
+          "actual_ud": 9,
+          "grade": "loss"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 130,
-    "losses": 107,
+    "wins": 134,
+    "losses": 112,
     "dnp": 7
   },
   "record_by_line": {
     "5.5": {
-      "wins": 60,
-      "losses": 59
+      "wins": 62,
+      "losses": 63
     },
     "6.5": {
-      "wins": 39,
-      "losses": 35
+      "wins": 40,
+      "losses": 36
     },
     "8.5+": {
       "wins": 9,
       "losses": 4
     },
     "7.5": {
-      "wins": 13,
+      "wins": 14,
       "losses": 6
     }
   },
@@ -3111,7 +3217,7 @@
       "name": "Gabriel Moreno",
       "team": "Arizona Diamondbacks",
       "wins": 0,
-      "losses": 2
+      "losses": 3
     },
     "671739": {
       "name": "Michael Harris II",
@@ -3171,7 +3277,7 @@
       "name": "Royce Lewis",
       "team": "Minnesota Twins",
       "wins": 5,
-      "losses": 2
+      "losses": 3
     },
     "664034": {
       "name": "Ty France",
@@ -3380,7 +3486,7 @@
     "607043": {
       "name": "Brandon Nimmo",
       "team": "Texas Rangers",
-      "wins": 1,
+      "wins": 2,
       "losses": 0
     },
     "681198": {
@@ -3752,6 +3858,42 @@
     "671218": {
       "name": "Heliot Ramos",
       "team": "New York Yankees",
+      "wins": 0,
+      "losses": 1
+    },
+    "671056": {
+      "name": "Iv\u00e1n Herrera",
+      "team": "St. Louis Cardinals",
+      "wins": 0,
+      "losses": 1
+    },
+    "691026": {
+      "name": "Masyn Winn",
+      "team": "St. Louis Cardinals",
+      "wins": 0,
+      "losses": 1
+    },
+    "606466": {
+      "name": "Ketel Marte",
+      "team": "Arizona Diamondbacks",
+      "wins": 1,
+      "losses": 0
+    },
+    "641857": {
+      "name": "Ryan McMahon",
+      "team": "New York Yankees",
+      "wins": 1,
+      "losses": 0
+    },
+    "669242": {
+      "name": "Tommy Edman",
+      "team": "Los Angeles Dodgers",
+      "wins": 1,
+      "losses": 0
+    },
+    "677956": {
+      "name": "Rece Hinds",
+      "team": "Baltimore Orioles",
       "wins": 0,
       "losses": 1
     }

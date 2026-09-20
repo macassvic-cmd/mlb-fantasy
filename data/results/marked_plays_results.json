@@ -2294,20 +2294,80 @@
           "rate_before": 76.9
         }
       ]
+    },
+    "2026-09-19": {
+      "fire": [
+        {
+          "player_id": 691718,
+          "name": "Pete Crow-Armstrong",
+          "team": "Chicago Cubs",
+          "grade": "loss",
+          "n_before": 47,
+          "wins_before": 28,
+          "rate_before": 59.6
+        },
+        {
+          "player_id": 668227,
+          "name": "Randy Arozarena",
+          "team": "Seattle Mariners",
+          "grade": "win",
+          "n_before": 17,
+          "wins_before": 11,
+          "rate_before": 64.7
+        },
+        {
+          "player_id": 701538,
+          "name": "Jackson Merrill",
+          "team": "San Diego Padres",
+          "grade": "loss",
+          "n_before": 27,
+          "wins_before": 20,
+          "rate_before": 74.1
+        }
+      ],
+      "hot": [
+        {
+          "player_id": 596019,
+          "name": "Francisco Lindor",
+          "team": "New York Mets",
+          "grade": "win",
+          "n_before": 8,
+          "wins_before": 6,
+          "rate_before": 75.0
+        },
+        {
+          "player_id": 680757,
+          "name": "Steven Kwan",
+          "team": "Cleveland Guardians",
+          "grade": "win",
+          "n_before": 14,
+          "wins_before": 10,
+          "rate_before": 71.4
+        },
+        {
+          "player_id": 641355,
+          "name": "Cody Bellinger",
+          "team": "New York Yankees",
+          "grade": "loss",
+          "n_before": 8,
+          "wins_before": 6,
+          "rate_before": 75.0
+        }
+      ]
     }
   },
   "cohorts": {
     "fire": {
-      "wins": 60,
-      "losses": 51,
-      "n": 111,
-      "rate": 54.1
+      "wins": 61,
+      "losses": 53,
+      "n": 114,
+      "rate": 53.5
     },
     "hot": {
-      "wins": 52,
-      "losses": 44,
-      "n": 96,
-      "rate": 54.2
+      "wins": 54,
+      "losses": 45,
+      "n": 99,
+      "rate": 54.5
     }
   }
 }
