@@ -12,42 +12,12 @@
       "game_time_pt": "10:40 AM PT"
     },
     {
-      "player_id": 605141,
-      "name": "Mookie Betts",
-      "team": "Los Angeles Dodgers",
-      "projected_ud": 9.5,
-      "ud_line": 8.5,
-      "edge": 1.0,
-      "actionable_reason": "edge + strong contact",
-      "game_time_pt": "1:10 PM PT"
-    },
-    {
-      "player_id": 664983,
-      "name": "Jake McCarthy",
-      "team": "Colorado Rockies",
-      "projected_ud": 9.34,
-      "ud_line": 7.5,
-      "edge": 1.84,
-      "actionable_reason": "edge + strong contact",
-      "game_time_pt": "12:10 PM PT"
-    },
-    {
-      "player_id": 681393,
-      "name": "Connor Norby",
-      "team": "Colorado Rockies",
-      "projected_ud": 9.23,
-      "ud_line": 7.5,
-      "edge": 1.73,
-      "actionable_reason": "edge + strong contact",
-      "game_time_pt": "12:10 PM PT"
-    },
-    {
       "player_id": 676475,
       "name": "Alec Burleson",
       "team": "St. Louis Cardinals",
-      "projected_ud": 9.11,
+      "projected_ud": 9.15,
       "ud_line": 7.5,
-      "edge": 1.61,
+      "edge": 1.65,
       "actionable_reason": "edge + strong contact",
       "game_time_pt": "11:15 AM PT"
     },
@@ -55,9 +25,9 @@
       "player_id": 665487,
       "name": "Fernando Tatis Jr.",
       "team": "San Diego Padres",
-      "projected_ud": 8.82,
+      "projected_ud": 9.11,
       "ud_line": 7.5,
-      "edge": 1.32,
+      "edge": 1.61,
       "actionable_reason": "edge + strong contact",
       "game_time_pt": "1:10 PM PT"
     },
@@ -65,11 +35,21 @@
       "player_id": 673548,
       "name": "Seiya Suzuki",
       "team": "Chicago Cubs",
+      "projected_ud": 8.63,
+      "ud_line": 7.5,
+      "edge": 1.13,
+      "actionable_reason": "edge + shrunk sample above baseline",
+      "game_time_pt": "10:40 AM PT"
+    },
+    {
+      "player_id": 668930,
+      "name": "Brice Turang",
+      "team": "Milwaukee Brewers",
       "projected_ud": 8.56,
       "ud_line": 7.5,
       "edge": 1.06,
-      "actionable_reason": "edge + shrunk sample above baseline",
-      "game_time_pt": "10:40 AM PT"
+      "actionable_reason": "edge + strong contact",
+      "game_time_pt": "4:20 PM PT"
     },
     {
       "player_id": 683737,
@@ -112,14 +92,34 @@
       "game_time_pt": "10:40 AM PT"
     },
     {
-      "player_id": 691406,
-      "name": "Junior Caminero",
-      "team": "Tampa Bay Rays",
+      "player_id": 682985,
+      "name": "Riley Greene",
+      "team": "Detroit Tigers",
       "projected_ud": 8.5,
       "ud_line": 6.5,
       "edge": 2.0,
       "actionable_reason": "edge + strong contact",
-      "game_time_pt": "10:40 AM PT"
+      "game_time_pt": "11:10 AM PT"
+    },
+    {
+      "player_id": 687263,
+      "name": "Zach Neto",
+      "team": "Los Angeles Angels",
+      "projected_ud": 8.5,
+      "ud_line": 6.5,
+      "edge": 2.0,
+      "actionable_reason": "edge + strong contact",
+      "game_time_pt": "1:07 PM PT"
+    },
+    {
+      "player_id": 701538,
+      "name": "Jackson Merrill",
+      "team": "San Diego Padres",
+      "projected_ud": 8.5,
+      "ud_line": 6.5,
+      "edge": 2.0,
+      "actionable_reason": "edge + strong contact",
+      "game_time_pt": "1:10 PM PT"
     }
   ]
 }
