@@ -7564,7 +7564,7 @@
     "outcome": null,
     "long_term_injury": false,
     "graded_at": null,
-    "dabble_removed_at": null
+    "dabble_removed_at": "2026-09-20T01:13:06.835004+00:00"
   },
   "_last_state:c071bd2b-be67-4651-ab51-0196db1749e8:01a0b7c2-7052-709e-928f-59d09e67d5f8": {
     "dns_score": 11,
@@ -8910,6 +8910,537 @@
     "x_post_id": null
   },
   "_last_state:fa98f63d-2f8a-4a8b-8561-370ef2e7f0ad:01a0baa0-3866-7488-a966-20aad6262c2d": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:01a007de-8c01-776a-bfc9-9224153dfa78:01a09d37-1606-7122-a7ee-237e3d565010": {
+    "dns_score": 90,
+    "rotowire_status_raw": "hard_out",
+    "prediction_consensus": "bench",
+    "x_post_id": null
+  },
+  "2026-09-19:soccer:01a007de-8c01-776a-bfc9-9224153dfa78:01a09d37-1606-7122-a7ee-237e3d565010:60": {
+    "player_id": "01a007de-8c01-776a-bfc9-9224153dfa78",
+    "player_name": "Mamadou Diop",
+    "normalized_name": "mamadou diop",
+    "team": "AUX",
+    "league_code": "L1F",
+    "opponent": "B29 @ AUX",
+    "fixture_id": "01a09d37-1606-7122-a7ee-237e3d565010",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 60,
+    "alerted_at": "2026-09-20T01:13:06.835004+00:00",
+    "game_start": "2026-09-20T13:00:00.000Z",
+    "minutes_to_game": 706.8860832666667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Saves"
+    ],
+    "dabble_prop_ids": [
+      "9773fa3576f68be0"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/mamadou-diop-47926",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Knee",
+      "rotowire_est_return": "9/26/2026",
+      "rotowire_status_since": "2026-09-20T01:10:29.156553+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": null,
+      "days_since_last_appearance": null,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-19:soccer:01a007de-8c01-776a-bfc9-9224153dfa78:01a09d37-1606-7122-a7ee-237e3d565010:65": {
+    "player_id": "01a007de-8c01-776a-bfc9-9224153dfa78",
+    "player_name": "Mamadou Diop",
+    "normalized_name": "mamadou diop",
+    "team": "AUX",
+    "league_code": "L1F",
+    "opponent": "B29 @ AUX",
+    "fixture_id": "01a09d37-1606-7122-a7ee-237e3d565010",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 65,
+    "alerted_at": "2026-09-20T01:13:06.835004+00:00",
+    "game_start": "2026-09-20T13:00:00.000Z",
+    "minutes_to_game": 706.8860832666667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Saves"
+    ],
+    "dabble_prop_ids": [
+      "9773fa3576f68be0"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/mamadou-diop-47926",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Knee",
+      "rotowire_est_return": "9/26/2026",
+      "rotowire_status_since": "2026-09-20T01:10:29.156553+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": null,
+      "days_since_last_appearance": null,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-19:soccer:01a007de-8c01-776a-bfc9-9224153dfa78:01a09d37-1606-7122-a7ee-237e3d565010:70": {
+    "player_id": "01a007de-8c01-776a-bfc9-9224153dfa78",
+    "player_name": "Mamadou Diop",
+    "normalized_name": "mamadou diop",
+    "team": "AUX",
+    "league_code": "L1F",
+    "opponent": "B29 @ AUX",
+    "fixture_id": "01a09d37-1606-7122-a7ee-237e3d565010",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 70,
+    "alerted_at": "2026-09-20T01:13:06.835004+00:00",
+    "game_start": "2026-09-20T13:00:00.000Z",
+    "minutes_to_game": 706.8860832666667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Saves"
+    ],
+    "dabble_prop_ids": [
+      "9773fa3576f68be0"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/mamadou-diop-47926",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Knee",
+      "rotowire_est_return": "9/26/2026",
+      "rotowire_status_since": "2026-09-20T01:10:29.156553+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": null,
+      "days_since_last_appearance": null,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-19:soccer:01a007de-8c01-776a-bfc9-9224153dfa78:01a09d37-1606-7122-a7ee-237e3d565010:75": {
+    "player_id": "01a007de-8c01-776a-bfc9-9224153dfa78",
+    "player_name": "Mamadou Diop",
+    "normalized_name": "mamadou diop",
+    "team": "AUX",
+    "league_code": "L1F",
+    "opponent": "B29 @ AUX",
+    "fixture_id": "01a09d37-1606-7122-a7ee-237e3d565010",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 75,
+    "alerted_at": "2026-09-20T01:13:06.835004+00:00",
+    "game_start": "2026-09-20T13:00:00.000Z",
+    "minutes_to_game": 706.8860832666667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Saves"
+    ],
+    "dabble_prop_ids": [
+      "9773fa3576f68be0"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/mamadou-diop-47926",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Knee",
+      "rotowire_est_return": "9/26/2026",
+      "rotowire_status_since": "2026-09-20T01:10:29.156553+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": null,
+      "days_since_last_appearance": null,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-19:soccer:01a007de-8c01-776a-bfc9-9224153dfa78:01a09d37-1606-7122-a7ee-237e3d565010:80": {
+    "player_id": "01a007de-8c01-776a-bfc9-9224153dfa78",
+    "player_name": "Mamadou Diop",
+    "normalized_name": "mamadou diop",
+    "team": "AUX",
+    "league_code": "L1F",
+    "opponent": "B29 @ AUX",
+    "fixture_id": "01a09d37-1606-7122-a7ee-237e3d565010",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 80,
+    "alerted_at": "2026-09-20T01:13:06.835004+00:00",
+    "game_start": "2026-09-20T13:00:00.000Z",
+    "minutes_to_game": 706.8860832666667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Saves"
+    ],
+    "dabble_prop_ids": [
+      "9773fa3576f68be0"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/mamadou-diop-47926",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Knee",
+      "rotowire_est_return": "9/26/2026",
+      "rotowire_status_since": "2026-09-20T01:10:29.156553+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": null,
+      "days_since_last_appearance": null,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-19:soccer:01a007de-8c01-776a-bfc9-9224153dfa78:01a09d37-1606-7122-a7ee-237e3d565010:85": {
+    "player_id": "01a007de-8c01-776a-bfc9-9224153dfa78",
+    "player_name": "Mamadou Diop",
+    "normalized_name": "mamadou diop",
+    "team": "AUX",
+    "league_code": "L1F",
+    "opponent": "B29 @ AUX",
+    "fixture_id": "01a09d37-1606-7122-a7ee-237e3d565010",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 85,
+    "alerted_at": "2026-09-20T01:13:06.835004+00:00",
+    "game_start": "2026-09-20T13:00:00.000Z",
+    "minutes_to_game": 706.8860832666667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Saves"
+    ],
+    "dabble_prop_ids": [
+      "9773fa3576f68be0"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/mamadou-diop-47926",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Knee",
+      "rotowire_est_return": "9/26/2026",
+      "rotowire_status_since": "2026-09-20T01:10:29.156553+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": null,
+      "days_since_last_appearance": null,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-19:soccer:01a007de-8c01-776a-bfc9-9224153dfa78:01a09d37-1606-7122-a7ee-237e3d565010:90": {
+    "player_id": "01a007de-8c01-776a-bfc9-9224153dfa78",
+    "player_name": "Mamadou Diop",
+    "normalized_name": "mamadou diop",
+    "team": "AUX",
+    "league_code": "L1F",
+    "opponent": "B29 @ AUX",
+    "fixture_id": "01a09d37-1606-7122-a7ee-237e3d565010",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 90,
+    "alerted_at": "2026-09-20T01:13:06.835004+00:00",
+    "game_start": "2026-09-20T13:00:00.000Z",
+    "minutes_to_game": 706.8860832666667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Saves"
+    ],
+    "dabble_prop_ids": [
+      "9773fa3576f68be0"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/mamadou-diop-47926",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Knee",
+      "rotowire_est_return": "9/26/2026",
+      "rotowire_status_since": "2026-09-20T01:10:29.156553+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": null,
+      "days_since_last_appearance": null,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-19:soccer:01a007de-8c01-776a-bfc9-9224153dfa78:01a09d37-1606-7122-a7ee-237e3d565010:lock": {
+    "player_id": "01a007de-8c01-776a-bfc9-9224153dfa78",
+    "player_name": "Mamadou Diop",
+    "normalized_name": "mamadou diop",
+    "team": "AUX",
+    "league_code": "L1F",
+    "opponent": "B29 @ AUX",
+    "fixture_id": "01a09d37-1606-7122-a7ee-237e3d565010",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": "lock",
+    "alerted_at": "2026-09-20T01:13:06.835004+00:00",
+    "game_start": "2026-09-20T13:00:00.000Z",
+    "minutes_to_game": 706.8860832666667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Saves"
+    ],
+    "dabble_prop_ids": [
+      "9773fa3576f68be0"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": "LOCK: hard_out_uncorroborated",
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/mamadou-diop-47926",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Knee",
+      "rotowire_est_return": "9/26/2026",
+      "rotowire_status_since": "2026-09-20T01:10:29.156553+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": null,
+      "days_since_last_appearance": null,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-19:soccer:01a007de-8c01-776a-bfc9-9224153dfa78:01a09d37-1606-7122-a7ee-237e3d565010:news_signal:22699": {
+    "player_id": "01a007de-8c01-776a-bfc9-9224153dfa78",
+    "player_name": "Mamadou Diop",
+    "normalized_name": "mamadou diop",
+    "team": "AUX",
+    "league_code": "L1F",
+    "opponent": "B29 @ AUX",
+    "fixture_id": "01a09d37-1606-7122-a7ee-237e3d565010",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": "news_signal",
+    "alerted_at": "2026-09-20T01:13:06.835004+00:00",
+    "game_start": "2026-09-20T13:00:00.000Z",
+    "minutes_to_game": 706.8860832666667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Saves"
+    ],
+    "dabble_prop_ids": [
+      "9773fa3576f68be0"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": "RotoWire status worsened to: hard_out",
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/mamadou-diop-47926",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Knee",
+      "rotowire_est_return": "9/26/2026",
+      "rotowire_status_since": "2026-09-20T01:10:29.156553+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": null,
+      "days_since_last_appearance": null,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "_last_state:01a007de-9245-71ce-8bee-1f51c3cf70ac:01a09d37-146f-7358-9167-67992d8da0ad": {
+    "dns_score": 11,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:019eb3fd-2031-73ce-8794-c7aa2b0bbed1:01a09d37-1606-7122-a7ee-237e3d565010": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:01a00d04-e562-71bf-ac08-c99f79c41e12:01a09d37-1477-7414-b6ac-050b201a7b28": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:01a05a4c-9266-711a-b162-9f68ff68153f:01a09d37-14f6-7401-a821-f721b3a15655": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:01a00f17-a38e-74db-9ac6-720336291d1e:01a09d37-146f-7358-9167-67992d8da0ad": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:019eb3fb-4cb1-7128-896f-4d62dbb59064:01a09d37-14f6-7401-a821-f721b3a15655": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:019eac0f-d9d6-71f8-a1c8-59dca565e784:01a09d37-1477-7414-b6ac-050b201a7b28": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:01a00d04-dbe0-73d0-bd02-45a39dfe86ae:01a09d37-13cd-7329-b330-3140d943cbc3": {
     "dns_score": 3,
     "rotowire_status_raw": null,
     "prediction_consensus": "unknown",
