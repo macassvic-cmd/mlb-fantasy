@@ -2,6 +2,15 @@
   "date": "2026-09-20",
   "plays": [
     {
+      "player_id": 572233,
+      "name": "Christian Walker",
+      "team": "Houston Astros",
+      "projected_ud": 3.51,
+      "ud_line": 5.5,
+      "edge": -1.99,
+      "game_time_pt": "11:10 AM PT"
+    },
+    {
       "player_id": 694497,
       "name": "Evan Carter",
       "team": "Texas Rangers",
@@ -11,30 +20,30 @@
       "game_time_pt": "11:35 AM PT"
     },
     {
-      "player_id": 514888,
-      "name": "Jose Altuve",
-      "team": "Houston Astros",
-      "projected_ud": 4.68,
-      "ud_line": 6.5,
-      "edge": -1.82,
-      "game_time_pt": "11:10 AM PT"
-    },
-    {
       "player_id": 668804,
       "name": "Bryan Reynolds",
       "team": "Pittsburgh Pirates",
-      "projected_ud": 4.7,
+      "projected_ud": 4.73,
       "ud_line": 6.5,
-      "edge": -1.8,
+      "edge": -1.77,
       "game_time_pt": "10:35 AM PT"
+    },
+    {
+      "player_id": 514888,
+      "name": "Jose Altuve",
+      "team": "Houston Astros",
+      "projected_ud": 4.75,
+      "ud_line": 6.5,
+      "edge": -1.75,
+      "game_time_pt": "11:10 AM PT"
     },
     {
       "player_id": 677649,
       "name": "Ezequiel Duran",
       "team": "Texas Rangers",
-      "projected_ud": 3.86,
+      "projected_ud": 3.8,
       "ud_line": 5.5,
-      "edge": -1.64,
+      "edge": -1.7,
       "game_time_pt": "11:35 AM PT"
     }
   ]
