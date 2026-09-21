@@ -2354,14 +2354,64 @@
           "rate_before": 75.0
         }
       ]
+    },
+    "2026-09-20": {
+      "fire": [
+        {
+          "player_id": 691718,
+          "name": "Pete Crow-Armstrong",
+          "team": "Chicago Cubs",
+          "grade": "loss",
+          "n_before": 48,
+          "wins_before": 28,
+          "rate_before": 58.3
+        },
+        {
+          "player_id": 668227,
+          "name": "Randy Arozarena",
+          "team": "Seattle Mariners",
+          "grade": "loss",
+          "n_before": 18,
+          "wins_before": 12,
+          "rate_before": 66.7
+        },
+        {
+          "player_id": 673548,
+          "name": "Seiya Suzuki",
+          "team": "Chicago Cubs",
+          "grade": "win",
+          "n_before": 32,
+          "wins_before": 24,
+          "rate_before": 75.0
+        },
+        {
+          "player_id": 680757,
+          "name": "Steven Kwan",
+          "team": "Cleveland Guardians",
+          "grade": "win",
+          "n_before": 15,
+          "wins_before": 11,
+          "rate_before": 73.3
+        },
+        {
+          "player_id": 701538,
+          "name": "Jackson Merrill",
+          "team": "San Diego Padres",
+          "grade": "loss",
+          "n_before": 28,
+          "wins_before": 20,
+          "rate_before": 71.4
+        }
+      ],
+      "hot": []
     }
   },
   "cohorts": {
     "fire": {
-      "wins": 61,
-      "losses": 53,
-      "n": 114,
-      "rate": 53.5
+      "wins": 63,
+      "losses": 56,
+      "n": 119,
+      "rate": 52.9
     },
     "hot": {
       "wins": 54,

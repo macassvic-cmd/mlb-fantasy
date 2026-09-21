@@ -1092,11 +1092,150 @@
           "grade": "win"
         }
       ]
+    },
+    "2026-09-20": {
+      "wins": 5,
+      "losses": 6,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 682829,
+          "name": "Elly De La Cruz",
+          "team": "Cincinnati Reds",
+          "projected_ud": 9.5,
+          "ud_line": 7.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "10:40 AM PT",
+          "actual_ud": 7,
+          "grade": "loss"
+        },
+        {
+          "player_id": 676475,
+          "name": "Alec Burleson",
+          "team": "St. Louis Cardinals",
+          "projected_ud": 9.15,
+          "ud_line": 7.5,
+          "edge": 1.65,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "11:15 AM PT",
+          "actual_ud": 0,
+          "grade": "loss"
+        },
+        {
+          "player_id": 665487,
+          "name": "Fernando Tatis Jr.",
+          "team": "San Diego Padres",
+          "projected_ud": 9.11,
+          "ud_line": 7.5,
+          "edge": 1.61,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 14,
+          "grade": "win"
+        },
+        {
+          "player_id": 673548,
+          "name": "Seiya Suzuki",
+          "team": "Chicago Cubs",
+          "projected_ud": 8.63,
+          "ud_line": 7.5,
+          "edge": 1.13,
+          "actionable_reason": "edge + shrunk sample above baseline",
+          "game_time_pt": "10:40 AM PT",
+          "actual_ud": 14,
+          "grade": "win"
+        },
+        {
+          "player_id": 683737,
+          "name": "Michael Busch",
+          "team": "Chicago Cubs",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "10:40 AM PT",
+          "actual_ud": 8,
+          "grade": "win"
+        },
+        {
+          "player_id": 608324,
+          "name": "Alex Bregman",
+          "team": "Chicago Cubs",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "10:40 AM PT",
+          "actual_ud": 10,
+          "grade": "win"
+        },
+        {
+          "player_id": 680757,
+          "name": "Steven Kwan",
+          "team": "Cleveland Guardians",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + shrunk sample above baseline",
+          "game_time_pt": "10:40 AM PT",
+          "actual_ud": 9,
+          "grade": "win"
+        },
+        {
+          "player_id": 800050,
+          "name": "Chase DeLauter",
+          "team": "Cleveland Guardians",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "10:40 AM PT",
+          "actual_ud": 6,
+          "grade": "loss"
+        },
+        {
+          "player_id": 691406,
+          "name": "Junior Caminero",
+          "team": "Tampa Bay Rays",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "10:40 AM PT",
+          "actual_ud": 5,
+          "grade": "loss"
+        },
+        {
+          "player_id": 687263,
+          "name": "Zach Neto",
+          "team": "Los Angeles Angels",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "1:07 PM PT",
+          "actual_ud": 0,
+          "grade": "loss"
+        },
+        {
+          "player_id": 701538,
+          "name": "Jackson Merrill",
+          "team": "San Diego Padres",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 5,
+          "grade": "loss"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 49,
-    "losses": 38,
+    "wins": 54,
+    "losses": 44,
     "dnp": 0
   }
 }

@@ -7697,6 +7697,49 @@
           "correct": true
         }
       ]
+    },
+    "2026-09-20": {
+      "summary": {
+        "total": 3,
+        "correct": 2,
+        "accuracy": 66.7,
+        "over_total": 3,
+        "over_correct": 2,
+        "under_total": 0,
+        "under_correct": 0
+      },
+      "plays": [
+        {
+          "player_id": 682829,
+          "name": "Elly De La Cruz",
+          "team": "Cincinnati Reds",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 7,
+          "correct": false
+        },
+        {
+          "player_id": 683737,
+          "name": "Michael Busch",
+          "team": "Chicago Cubs",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "correct": true
+        },
+        {
+          "player_id": 608324,
+          "name": "Alex Bregman",
+          "team": "Chicago Cubs",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 10,
+          "correct": true
+        }
+      ]
     }
   }
 }

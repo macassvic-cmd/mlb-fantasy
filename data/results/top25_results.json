@@ -63475,6 +63475,735 @@
           "stack": false
         }
       ]
+    },
+    "2026-09-20": {
+      "top25": [
+        {
+          "player_id": 682829,
+          "date": "2026-09-20",
+          "name": "Elly De La Cruz",
+          "team": "Cincinnati Reds",
+          "order": 2,
+          "ud": 9.5,
+          "pp": 8.4,
+          "xwoba": 0.508,
+          "barrel": 23.4,
+          "era": 4.96,
+          "wxIcon": "\u26c5",
+          "wxText": "77\u00b0F 5mph NNW",
+          "park": 1.12,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "gameTimePt": "10:40 AM PT",
+          "projected_ud": 9.5,
+          "ud_line": 7.5,
+          "actual_ud": 7,
+          "grade": "loss",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": true,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 691718,
+          "date": "2026-09-20",
+          "name": "Pete Crow-Armstrong",
+          "team": "Chicago Cubs",
+          "order": 1,
+          "ud": 9.5,
+          "pp": 9.4,
+          "xwoba": 0.433,
+          "barrel": 6.7,
+          "era": 6.01,
+          "wxIcon": "\u26c5",
+          "wxText": "77\u00b0F 5mph NNW",
+          "park": 1.12,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "gameTimePt": "10:40 AM PT",
+          "projected_ud": 9.5,
+          "ud_line": 10.5,
+          "actual_ud": 33,
+          "grade": "loss",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 605141,
+          "date": "2026-09-20",
+          "name": "Mookie Betts",
+          "team": "Los Angeles Dodgers",
+          "order": 1,
+          "ud": 9.2,
+          "pp": 8.8,
+          "xwoba": 0.453,
+          "barrel": 10.6,
+          "era": 3.65,
+          "wxIcon": "\u26c5",
+          "wxText": "72\u00b0F 3mph SW",
+          "park": 0.97,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "gameTimePt": "1:10 PM PT",
+          "projected_ud": 9.23,
+          "ud_line": 8.5,
+          "actual_ud": 0,
+          "grade": "loss",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 676475,
+          "date": "2026-09-20",
+          "name": "Alec Burleson",
+          "team": "St. Louis Cardinals",
+          "order": 3,
+          "ud": 9.2,
+          "pp": 8.4,
+          "xwoba": 0.44,
+          "barrel": 8.5,
+          "era": 5.4,
+          "wxIcon": "\ud83c\udf27\ufe0f",
+          "wxText": "80\u00b0F 6mph NE",
+          "park": 0.93,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "gameTimePt": "11:15 AM PT",
+          "projected_ud": 9.15,
+          "ud_line": 7.5,
+          "actual_ud": 0,
+          "grade": "loss",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false,
+          "premiumTier": "strong",
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 682657,
+          "date": "2026-09-20",
+          "name": "Angel Mart\u00ednez",
+          "team": "Cleveland Guardians",
+          "order": 7,
+          "ud": 9.1,
+          "pp": 8.8,
+          "xwoba": 0.332,
+          "barrel": 6.1,
+          "era": 5.9,
+          "wxIcon": "\u26c5",
+          "wxText": "64\u00b0F 12mph ENE",
+          "park": 1.0,
+          "platoon": false,
+          "adjusted": true,
+          "tier": "green",
+          "gameTimePt": "10:40 AM PT",
+          "projected_ud": 9.12,
+          "ud_line": null,
+          "actual_ud": 0,
+          "grade": "loss",
+          "graded_vs_proj": true,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 683748,
+          "date": "2026-09-20",
+          "name": "Victor Mesa Jr.",
+          "team": "Tampa Bay Rays",
+          "order": 8,
+          "ud": 9.1,
+          "pp": 8.8,
+          "xwoba": 0.412,
+          "barrel": 7.0,
+          "era": 5.15,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 0.92,
+          "platoon": false,
+          "adjusted": true,
+          "tier": "green",
+          "gameTimePt": "10:40 AM PT",
+          "projected_ud": 9.12,
+          "ud_line": null,
+          "actual_ud": 17,
+          "grade": "win",
+          "graded_vs_proj": true,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 668227,
+          "date": "2026-09-20",
+          "name": "Randy Arozarena",
+          "team": "Seattle Mariners",
+          "order": 2,
+          "ud": 9.1,
+          "pp": 8.8,
+          "xwoba": 0.343,
+          "barrel": 3.8,
+          "era": 5.36,
+          "wxIcon": "\ud83c\udf27\ufe0f",
+          "wxText": "67\u00b0F 4mph NW",
+          "park": 1.2,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "gameTimePt": "12:10 PM PT",
+          "projected_ud": 9.12,
+          "ud_line": 8.5,
+          "actual_ud": 5,
+          "grade": "loss",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 665487,
+          "date": "2026-09-20",
+          "name": "Fernando Tatis Jr.",
+          "team": "San Diego Padres",
+          "order": 1,
+          "ud": 9.1,
+          "pp": 8.4,
+          "xwoba": 0.421,
+          "barrel": 7.5,
+          "era": 3.91,
+          "wxIcon": "\u26c5",
+          "wxText": "72\u00b0F 2mph WNW",
+          "park": 0.88,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "gameTimePt": "1:10 PM PT",
+          "projected_ud": 9.11,
+          "ud_line": 7.5,
+          "actual_ud": 14,
+          "grade": "win",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 663728,
+          "date": "2026-09-20",
+          "name": "Cal Raleigh",
+          "team": "Seattle Mariners",
+          "order": 4,
+          "ud": 9.0,
+          "pp": 8.4,
+          "xwoba": 0.293,
+          "barrel": 5.5,
+          "era": 5.36,
+          "wxIcon": "\ud83c\udf27\ufe0f",
+          "wxText": "67\u00b0F 4mph NW",
+          "park": 1.2,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "gameTimePt": "12:10 PM PT",
+          "projected_ud": 8.97,
+          "ud_line": 8.5,
+          "actual_ud": 3,
+          "grade": "loss",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 676609,
+          "date": "2026-09-20",
+          "name": "Jos\u00e9 Caballero",
+          "team": "New York Yankees",
+          "order": 9,
+          "ud": 8.9,
+          "pp": 8.7,
+          "xwoba": 0.341,
+          "barrel": 3.7,
+          "era": 7.84,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 1.05,
+          "platoon": false,
+          "adjusted": true,
+          "tier": "green",
+          "gameTimePt": "1:10 PM PT",
+          "projected_ud": 8.94,
+          "ud_line": null,
+          "actual_ud": 0,
+          "grade": "loss",
+          "graded_vs_proj": true,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 686527,
+          "date": "2026-09-20",
+          "name": "Dominic Canzone",
+          "team": "Seattle Mariners",
+          "order": 3,
+          "ud": 8.9,
+          "pp": 8.4,
+          "xwoba": 0.361,
+          "barrel": 7.6,
+          "era": 5.36,
+          "wxIcon": "\ud83c\udf27\ufe0f",
+          "wxText": "67\u00b0F 4mph NW",
+          "park": 1.2,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "gameTimePt": "12:10 PM PT",
+          "projected_ud": 8.89,
+          "ud_line": 8.5,
+          "actual_ud": 13,
+          "grade": "win",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 806146,
+          "date": "2026-09-20",
+          "name": "George Lombard Jr.",
+          "team": "New York Yankees",
+          "order": 5,
+          "ud": 8.8,
+          "pp": 8.5,
+          "xwoba": 0.303,
+          "barrel": 3.6,
+          "era": 7.84,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 1.05,
+          "platoon": false,
+          "adjusted": true,
+          "tier": "green",
+          "gameTimePt": "1:10 PM PT",
+          "projected_ud": 8.78,
+          "ud_line": null,
+          "actual_ud": 19,
+          "grade": "win",
+          "graded_vs_proj": true,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 673548,
+          "date": "2026-09-20",
+          "name": "Seiya Suzuki",
+          "team": "Chicago Cubs",
+          "order": 2,
+          "ud": 8.6,
+          "pp": 8.0,
+          "xwoba": 0.331,
+          "barrel": 6.5,
+          "era": 6.01,
+          "wxIcon": "\u26c5",
+          "wxText": "77\u00b0F 5mph NNW",
+          "park": 1.12,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "gameTimePt": "10:40 AM PT",
+          "projected_ud": 8.63,
+          "ud_line": 7.5,
+          "actual_ud": 14,
+          "grade": "win",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 683737,
+          "date": "2026-09-20",
+          "name": "Michael Busch",
+          "team": "Chicago Cubs",
+          "order": 3,
+          "ud": 8.5,
+          "pp": 7.6,
+          "xwoba": 0.391,
+          "barrel": 5.6,
+          "era": 6.01,
+          "wxIcon": "\u26c5",
+          "wxText": "77\u00b0F 5mph NNW",
+          "park": 1.12,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "gameTimePt": "10:40 AM PT",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "grade": "win",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": true,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 608324,
+          "date": "2026-09-20",
+          "name": "Alex Bregman",
+          "team": "Chicago Cubs",
+          "order": 4,
+          "ud": 8.5,
+          "pp": 7.6,
+          "xwoba": 0.371,
+          "barrel": 5.9,
+          "era": 6.01,
+          "wxIcon": "\u26c5",
+          "wxText": "77\u00b0F 5mph NNW",
+          "park": 1.12,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "gameTimePt": "10:40 AM PT",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 10,
+          "grade": "win",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": true,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 663538,
+          "date": "2026-09-20",
+          "name": "Nico Hoerner",
+          "team": "Chicago Cubs",
+          "order": 6,
+          "ud": 8.5,
+          "pp": 7.6,
+          "xwoba": 0.298,
+          "barrel": 1.4,
+          "era": 6.01,
+          "wxIcon": "\u26c5",
+          "wxText": "77\u00b0F 5mph NNW",
+          "park": 1.12,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "gameTimePt": "10:40 AM PT",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 8,
+          "grade": "win",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 680757,
+          "date": "2026-09-20",
+          "name": "Steven Kwan",
+          "team": "Cleveland Guardians",
+          "order": 1,
+          "ud": 8.5,
+          "pp": 7.6,
+          "xwoba": 0.358,
+          "barrel": 0.0,
+          "era": 5.9,
+          "wxIcon": "\u26c5",
+          "wxText": "64\u00b0F 12mph ENE",
+          "park": 1.0,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "gameTimePt": "10:40 AM PT",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 9,
+          "grade": "win",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 608070,
+          "date": "2026-09-20",
+          "name": "Jos\u00e9 Ram\u00edrez",
+          "team": "Cleveland Guardians",
+          "order": 2,
+          "ud": 8.5,
+          "pp": 7.6,
+          "xwoba": 0.264,
+          "barrel": 3.2,
+          "era": 5.9,
+          "wxIcon": "\u26c5",
+          "wxText": "64\u00b0F 12mph ENE",
+          "park": 1.0,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "gameTimePt": "10:40 AM PT",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 15,
+          "grade": "win",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 800050,
+          "date": "2026-09-20",
+          "name": "Chase DeLauter",
+          "team": "Cleveland Guardians",
+          "order": 3,
+          "ud": 8.5,
+          "pp": 7.6,
+          "xwoba": 0.385,
+          "barrel": 5.1,
+          "era": 5.9,
+          "wxIcon": "\u26c5",
+          "wxText": "64\u00b0F 12mph ENE",
+          "park": 1.0,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "gameTimePt": "10:40 AM PT",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 6,
+          "grade": "loss",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 683953,
+          "date": "2026-09-20",
+          "name": "Travis Bazzana",
+          "team": "Cleveland Guardians",
+          "order": 5,
+          "ud": 8.5,
+          "pp": 7.6,
+          "xwoba": 0.352,
+          "barrel": 4.6,
+          "era": 5.9,
+          "wxIcon": "\u26c5",
+          "wxText": "64\u00b0F 12mph ENE",
+          "park": 1.0,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "gameTimePt": "10:40 AM PT",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "grade": "loss",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 691406,
+          "date": "2026-09-20",
+          "name": "Junior Caminero",
+          "team": "Tampa Bay Rays",
+          "order": 3,
+          "ud": 8.5,
+          "pp": 7.6,
+          "xwoba": 0.367,
+          "barrel": 7.1,
+          "era": 5.15,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 0.92,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "gameTimePt": "10:40 AM PT",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 5,
+          "grade": "loss",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false,
+          "premiumTier": "strong",
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 802415,
+          "date": "2026-09-20",
+          "name": "Chandler Simpson",
+          "team": "Tampa Bay Rays",
+          "order": 5,
+          "ud": 8.5,
+          "pp": 7.6,
+          "xwoba": 0.315,
+          "barrel": 0.0,
+          "era": 5.15,
+          "wxIcon": "\ud83c\udfdf\ufe0f",
+          "wxText": "Indoor",
+          "park": 0.92,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "gameTimePt": "10:40 AM PT",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 11,
+          "grade": "win",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 699024,
+          "date": "2026-09-20",
+          "name": "Leo Bernal",
+          "team": "St. Louis Cardinals",
+          "order": 5,
+          "ud": 8.5,
+          "pp": 7.6,
+          "xwoba": 0.351,
+          "barrel": 6.2,
+          "era": 5.4,
+          "wxIcon": "\ud83c\udf27\ufe0f",
+          "wxText": "80\u00b0F 6mph NE",
+          "park": 0.93,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "gameTimePt": "11:15 AM PT",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 19,
+          "grade": "win",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 687263,
+          "date": "2026-09-20",
+          "name": "Zach Neto",
+          "team": "Los Angeles Angels",
+          "order": 1,
+          "ud": 8.5,
+          "pp": 7.6,
+          "xwoba": 0.386,
+          "barrel": 3.9,
+          "era": 4.97,
+          "wxIcon": "\u26c5",
+          "wxText": "74\u00b0F 2mph SSW",
+          "park": 1.02,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "gameTimePt": "1:07 PM PT",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 0,
+          "grade": "loss",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        },
+        {
+          "player_id": 701538,
+          "date": "2026-09-20",
+          "name": "Jackson Merrill",
+          "team": "San Diego Padres",
+          "order": 5,
+          "ud": 8.5,
+          "pp": 7.6,
+          "xwoba": 0.492,
+          "barrel": 12.0,
+          "era": 3.91,
+          "wxIcon": "\u26c5",
+          "wxText": "72\u00b0F 2mph WNW",
+          "park": 0.88,
+          "platoon": false,
+          "adjusted": false,
+          "tier": "green",
+          "gameTimePt": "1:10 PM PT",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "actual_ud": 5,
+          "grade": "loss",
+          "graded_vs_proj": false,
+          "getaway_day_risk": false,
+          "premiumTier": null,
+          "valuePlay": false,
+          "slip": false,
+          "stack": false
+        }
+      ]
     }
   },
   "players": {
@@ -65813,7 +66542,8 @@
         "2026-09-08",
         "2026-09-10",
         "2026-09-15",
-        "2026-09-17"
+        "2026-09-17",
+        "2026-09-20"
       ],
       "history": [
         {
@@ -66003,6 +66733,12 @@
           "projected_ud": 9.5,
           "actual_ud": 8,
           "grade": "win"
+        },
+        {
+          "date": "2026-09-20",
+          "projected_ud": 8.5,
+          "actual_ud": 5,
+          "grade": "loss"
         }
       ]
     },
@@ -66271,7 +67007,8 @@
         "2026-09-13",
         "2026-09-14",
         "2026-09-16",
-        "2026-09-19"
+        "2026-09-19",
+        "2026-09-20"
       ],
       "history": [
         {
@@ -66565,6 +67302,12 @@
           "projected_ud": 9.5,
           "actual_ud": 0,
           "grade": "loss"
+        },
+        {
+          "date": "2026-09-20",
+          "projected_ud": 9.5,
+          "actual_ud": 33,
+          "grade": "loss"
         }
       ]
     },
@@ -66807,7 +67550,8 @@
         "2026-07-20",
         "2026-08-24",
         "2026-08-28",
-        "2026-08-29"
+        "2026-08-29",
+        "2026-09-20"
       ],
       "history": [
         {
@@ -66852,6 +67596,12 @@
           "projected_ud": 8.5,
           "actual_ud": 0,
           "grade": "loss"
+        },
+        {
+          "date": "2026-09-20",
+          "projected_ud": 8.5,
+          "actual_ud": 8,
+          "grade": "win"
         }
       ]
     },
@@ -67359,7 +68109,8 @@
         "2026-09-01",
         "2026-09-05",
         "2026-09-07",
-        "2026-09-11"
+        "2026-09-11",
+        "2026-09-20"
       ],
       "history": [
         {
@@ -67556,6 +68307,12 @@
           "projected_ud": 8.5,
           "actual_ud": 22,
           "grade": "win"
+        },
+        {
+          "date": "2026-09-20",
+          "projected_ud": 8.63,
+          "actual_ud": 14,
+          "grade": "win"
         }
       ]
     },
@@ -67581,7 +68338,8 @@
         "2026-09-14",
         "2026-09-16",
         "2026-09-18",
-        "2026-09-19"
+        "2026-09-19",
+        "2026-09-20"
       ],
       "history": [
         {
@@ -67693,6 +68451,12 @@
           "projected_ud": 9.12,
           "actual_ud": 14,
           "grade": "win"
+        },
+        {
+          "date": "2026-09-20",
+          "projected_ud": 9.12,
+          "actual_ud": 5,
+          "grade": "loss"
         }
       ]
     },
@@ -69406,7 +70170,8 @@
         "2026-08-25",
         "2026-08-27",
         "2026-08-29",
-        "2026-09-13"
+        "2026-09-13",
+        "2026-09-20"
       ],
       "history": [
         {
@@ -69531,6 +70296,12 @@
           "projected_ud": 8.5,
           "actual_ud": 12,
           "grade": "win"
+        },
+        {
+          "date": "2026-09-20",
+          "projected_ud": 9.15,
+          "actual_ud": 0,
+          "grade": "loss"
         }
       ]
     },
@@ -69912,7 +70683,8 @@
         "2026-09-15",
         "2026-09-16",
         "2026-09-17",
-        "2026-09-19"
+        "2026-09-19",
+        "2026-09-20"
       ],
       "history": [
         {
@@ -70185,6 +70957,12 @@
           "date": "2026-09-19",
           "projected_ud": 9.33,
           "actual_ud": 21,
+          "grade": "win"
+        },
+        {
+          "date": "2026-09-20",
+          "projected_ud": 9.11,
+          "actual_ud": 14,
           "grade": "win"
         }
       ]
@@ -70885,7 +71663,8 @@
         "2026-09-15",
         "2026-09-16",
         "2026-09-17",
-        "2026-09-19"
+        "2026-09-19",
+        "2026-09-20"
       ],
       "history": [
         {
@@ -71054,6 +71833,12 @@
           "date": "2026-09-19",
           "projected_ud": 8.5,
           "actual_ud": 6,
+          "grade": "loss"
+        },
+        {
+          "date": "2026-09-20",
+          "projected_ud": 8.5,
+          "actual_ud": 5,
           "grade": "loss"
         }
       ]
@@ -71505,7 +72290,8 @@
         "2026-09-06",
         "2026-09-07",
         "2026-09-14",
-        "2026-09-19"
+        "2026-09-19",
+        "2026-09-20"
       ],
       "history": [
         {
@@ -71628,6 +72414,12 @@
           "projected_ud": 8.77,
           "actual_ud": 3,
           "grade": "loss"
+        },
+        {
+          "date": "2026-09-20",
+          "projected_ud": 8.5,
+          "actual_ud": 10,
+          "grade": "win"
         }
       ]
     },
@@ -71701,7 +72493,8 @@
         "2026-09-07",
         "2026-09-13",
         "2026-09-14",
-        "2026-09-18"
+        "2026-09-18",
+        "2026-09-20"
       ],
       "history": [
         {
@@ -71750,6 +72543,12 @@
           "date": "2026-09-18",
           "projected_ud": 8.5,
           "actual_ud": 6,
+          "grade": "loss"
+        },
+        {
+          "date": "2026-09-20",
+          "projected_ud": 8.5,
+          "actual_ud": 0,
           "grade": "loss"
         }
       ]
@@ -74233,7 +75032,8 @@
         "2026-07-29",
         "2026-09-16",
         "2026-09-18",
-        "2026-09-19"
+        "2026-09-19",
+        "2026-09-20"
       ],
       "history": [
         {
@@ -74298,6 +75098,12 @@
         },
         {
           "date": "2026-09-19",
+          "projected_ud": 8.5,
+          "actual_ud": 0,
+          "grade": "loss"
+        },
+        {
+          "date": "2026-09-20",
           "projected_ud": 8.5,
           "actual_ud": 0,
           "grade": "loss"
@@ -74683,7 +75489,8 @@
         "2026-06-20",
         "2026-07-10",
         "2026-07-17",
-        "2026-08-14"
+        "2026-08-14",
+        "2026-09-20"
       ],
       "history": [
         {
@@ -74703,6 +75510,13 @@
           "projected_ud": 8.5,
           "actual_ud": 0,
           "grade": "loss"
+        },
+        {
+          "date": "2026-09-20",
+          "projected_ud": 8.94,
+          "actual_ud": 0,
+          "grade": "loss",
+          "graded_vs_proj": true
         }
       ]
     },
@@ -75454,7 +76268,8 @@
         "2026-09-13",
         "2026-09-17",
         "2026-09-18",
-        "2026-09-19"
+        "2026-09-19",
+        "2026-09-20"
       ],
       "history": [
         {
@@ -75636,6 +76451,12 @@
           "date": "2026-09-19",
           "projected_ud": 8.5,
           "actual_ud": 6,
+          "grade": "loss"
+        },
+        {
+          "date": "2026-09-20",
+          "projected_ud": 9.5,
+          "actual_ud": 7,
           "grade": "loss"
         }
       ]
@@ -76757,7 +77578,8 @@
         "2026-09-14",
         "2026-09-15",
         "2026-09-16",
-        "2026-09-19"
+        "2026-09-19",
+        "2026-09-20"
       ],
       "history": [
         {
@@ -76861,6 +77683,12 @@
           "projected_ud": 8.5,
           "actual_ud": 32,
           "grade": "win"
+        },
+        {
+          "date": "2026-09-20",
+          "projected_ud": 9.23,
+          "actual_ud": 0,
+          "grade": "loss"
         }
       ]
     },
@@ -77066,7 +77894,8 @@
         "2026-09-12",
         "2026-09-13",
         "2026-09-18",
-        "2026-09-19"
+        "2026-09-19",
+        "2026-09-20"
       ],
       "history": [
         {
@@ -77123,6 +77952,12 @@
           "projected_ud": 9.1,
           "actual_ud": 22,
           "grade": "win"
+        },
+        {
+          "date": "2026-09-20",
+          "projected_ud": 8.97,
+          "actual_ud": 3,
+          "grade": "loss"
         }
       ]
     },
@@ -77655,7 +78490,8 @@
         "2026-06-29",
         "2026-08-11",
         "2026-08-13",
-        "2026-08-24"
+        "2026-08-24",
+        "2026-09-20"
       ],
       "history": [
         {
@@ -77675,6 +78511,12 @@
           "projected_ud": 8.49,
           "actual_ud": 2,
           "grade": "loss"
+        },
+        {
+          "date": "2026-09-20",
+          "projected_ud": 8.5,
+          "actual_ud": 8,
+          "grade": "win"
         }
       ]
     },
@@ -78122,7 +78964,8 @@
         "2026-08-24",
         "2026-09-04",
         "2026-09-12",
-        "2026-09-18"
+        "2026-09-18",
+        "2026-09-20"
       ],
       "history": [
         {
@@ -78223,6 +79066,12 @@
           "actual_ud": 6,
           "grade": "loss",
           "graded_vs_proj": true
+        },
+        {
+          "date": "2026-09-20",
+          "projected_ud": 8.5,
+          "actual_ud": 6,
+          "grade": "loss"
         }
       ]
     },
@@ -79774,7 +80623,8 @@
         "2026-08-20",
         "2026-08-31",
         "2026-09-08",
-        "2026-09-17"
+        "2026-09-17",
+        "2026-09-20"
       ],
       "history": [
         {
@@ -79836,6 +80686,12 @@
           "projected_ud": 8.5,
           "actual_ud": 22,
           "grade": "win"
+        },
+        {
+          "date": "2026-09-20",
+          "projected_ud": 8.5,
+          "actual_ud": 11,
+          "grade": "win"
         }
       ]
     },
@@ -79857,7 +80713,8 @@
         "2026-09-04",
         "2026-09-12",
         "2026-09-18",
-        "2026-09-19"
+        "2026-09-19",
+        "2026-09-20"
       ],
       "history": [
         {
@@ -79950,6 +80807,12 @@
           "projected_ud": 8.5,
           "actual_ud": 10,
           "grade": "win"
+        },
+        {
+          "date": "2026-09-20",
+          "projected_ud": 8.5,
+          "actual_ud": 9,
+          "grade": "win"
         }
       ]
     },
@@ -79992,7 +80855,8 @@
         "2026-07-30",
         "2026-08-12",
         "2026-08-19",
-        "2026-09-15"
+        "2026-09-15",
+        "2026-09-20"
       ],
       "history": [
         {
@@ -80020,6 +80884,13 @@
           "projected_ud": 8.5,
           "actual_ud": 0,
           "grade": "loss"
+        },
+        {
+          "date": "2026-09-20",
+          "projected_ud": 9.12,
+          "actual_ud": 17,
+          "grade": "win",
+          "graded_vs_proj": true
         }
       ]
     },
@@ -80037,7 +80908,8 @@
         "2026-08-23",
         "2026-08-26",
         "2026-09-01",
-        "2026-09-04"
+        "2026-09-04",
+        "2026-09-20"
       ],
       "history": [
         {
@@ -80100,6 +80972,12 @@
           "projected_ud": 8.5,
           "actual_ud": 3,
           "grade": "loss"
+        },
+        {
+          "date": "2026-09-20",
+          "projected_ud": 8.5,
+          "actual_ud": 15,
+          "grade": "win"
         }
       ]
     },
@@ -81366,7 +82244,8 @@
       "dates_seen": [
         "2026-08-20",
         "2026-08-21",
-        "2026-09-04"
+        "2026-09-04",
+        "2026-09-20"
       ],
       "history": [
         {
@@ -81384,6 +82263,13 @@
         {
           "date": "2026-09-04",
           "projected_ud": 9.06,
+          "actual_ud": 0,
+          "grade": "loss",
+          "graded_vs_proj": true
+        },
+        {
+          "date": "2026-09-20",
+          "projected_ud": 9.12,
           "actual_ud": 0,
           "grade": "loss",
           "graded_vs_proj": true
@@ -81638,7 +82524,8 @@
         "2026-09-03",
         "2026-09-11",
         "2026-09-18",
-        "2026-09-19"
+        "2026-09-19",
+        "2026-09-20"
       ],
       "history": [
         {
@@ -81669,6 +82556,12 @@
           "date": "2026-09-19",
           "projected_ud": 9.06,
           "actual_ud": 11,
+          "grade": "win"
+        },
+        {
+          "date": "2026-09-20",
+          "projected_ud": 8.89,
+          "actual_ud": 13,
           "grade": "win"
         }
       ]
@@ -81848,7 +82741,8 @@
       "team": "St. Louis Cardinals",
       "dates_seen": [
         "2026-09-04",
-        "2026-09-13"
+        "2026-09-13",
+        "2026-09-20"
       ],
       "history": [
         {
@@ -81863,6 +82757,12 @@
           "actual_ud": 0,
           "grade": "loss",
           "graded_vs_proj": true
+        },
+        {
+          "date": "2026-09-20",
+          "projected_ud": 8.5,
+          "actual_ud": 19,
+          "grade": "win"
         }
       ]
     },
@@ -82122,7 +83022,8 @@
       "name": "George Lombard Jr.",
       "team": "New York Yankees",
       "dates_seen": [
-        "2026-09-10"
+        "2026-09-10",
+        "2026-09-20"
       ],
       "history": [
         {
@@ -82130,6 +83031,13 @@
           "projected_ud": 7.89,
           "actual_ud": 0,
           "grade": "loss",
+          "graded_vs_proj": true
+        },
+        {
+          "date": "2026-09-20",
+          "projected_ud": 8.78,
+          "actual_ud": 19,
+          "grade": "win",
           "graded_vs_proj": true
         }
       ]

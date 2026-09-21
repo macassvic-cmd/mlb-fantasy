@@ -2971,21 +2971,72 @@
           "grade": "loss"
         }
       ]
+    },
+    "2026-09-20": {
+      "wins": 2,
+      "losses": 2,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 694497,
+          "name": "Evan Carter",
+          "team": "Texas Rangers",
+          "projected_ud": 3.55,
+          "ud_line": 5.5,
+          "edge": -1.95,
+          "game_time_pt": "11:35 AM PT",
+          "actual_ud": 9,
+          "grade": "loss"
+        },
+        {
+          "player_id": 677649,
+          "name": "Ezequiel Duran",
+          "team": "Texas Rangers",
+          "projected_ud": 3.73,
+          "ud_line": 5.5,
+          "edge": -1.77,
+          "game_time_pt": "11:35 AM PT",
+          "actual_ud": 5,
+          "grade": "win"
+        },
+        {
+          "player_id": 514888,
+          "name": "Jose Altuve",
+          "team": "Houston Astros",
+          "projected_ud": 4.77,
+          "ud_line": 6.5,
+          "edge": -1.73,
+          "game_time_pt": "11:10 AM PT",
+          "actual_ud": 17,
+          "grade": "loss"
+        },
+        {
+          "player_id": 668804,
+          "name": "Bryan Reynolds",
+          "team": "Pittsburgh Pirates",
+          "projected_ud": 4.86,
+          "ud_line": 6.5,
+          "edge": -1.64,
+          "game_time_pt": "10:35 AM PT",
+          "actual_ud": 6,
+          "grade": "win"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 134,
-    "losses": 112,
+    "wins": 136,
+    "losses": 114,
     "dnp": 7
   },
   "record_by_line": {
     "5.5": {
-      "wins": 62,
-      "losses": 63
+      "wins": 63,
+      "losses": 64
     },
     "6.5": {
-      "wins": 40,
-      "losses": 36
+      "wins": 41,
+      "losses": 37
     },
     "8.5+": {
       "wins": 9,
@@ -3024,7 +3075,7 @@
     "677649": {
       "name": "Ezequiel Duran",
       "team": "Texas Rangers",
-      "wins": 1,
+      "wins": 2,
       "losses": 1
     },
     "663616": {
@@ -3174,7 +3225,7 @@
     "668804": {
       "name": "Bryan Reynolds",
       "team": "Pittsburgh Pirates",
-      "wins": 0,
+      "wins": 1,
       "losses": 2
     },
     "687093": {
@@ -3787,7 +3838,7 @@
       "name": "Jose Altuve",
       "team": "Houston Astros",
       "wins": 1,
-      "losses": 0
+      "losses": 1
     },
     "676356": {
       "name": "Jonny DeLuca",
@@ -3894,6 +3945,12 @@
     "677956": {
       "name": "Rece Hinds",
       "team": "Baltimore Orioles",
+      "wins": 0,
+      "losses": 1
+    },
+    "694497": {
+      "name": "Evan Carter",
+      "team": "Texas Rangers",
       "wins": 0,
       "losses": 1
     }
