@@ -12,22 +12,12 @@
       "game_time_pt": "3:35 PM PT"
     },
     {
-      "player_id": 805808,
-      "name": "Kevin McGonigle",
-      "team": "Detroit Tigers",
-      "projected_ud": 8.5,
-      "ud_line": 6.5,
-      "edge": 2.0,
-      "actionable_reason": "edge + strong contact",
-      "game_time_pt": "3:40 PM PT"
-    },
-    {
       "player_id": 682928,
       "name": "CJ Abrams",
       "team": "Washington Nationals",
-      "projected_ud": 8.49,
+      "projected_ud": 8.5,
       "ud_line": 6.5,
-      "edge": 1.99,
+      "edge": 2.0,
       "actionable_reason": "edge + shrunk sample above baseline",
       "game_time_pt": "3:40 PM PT"
     },
@@ -35,9 +25,9 @@
       "player_id": 624413,
       "name": "Pete Alonso",
       "team": "Baltimore Orioles",
-      "projected_ud": 7.92,
+      "projected_ud": 8.11,
       "ud_line": 6.5,
-      "edge": 1.42,
+      "edge": 1.61,
       "actionable_reason": "edge + platoon advantage",
       "game_time_pt": "3:35 PM PT"
     },
@@ -49,6 +39,16 @@
       "ud_line": 5.5,
       "edge": 2.0,
       "actionable_reason": "edge + strong contact",
+      "game_time_pt": "3:35 PM PT"
+    },
+    {
+      "player_id": 672386,
+      "name": "Alejandro Kirk",
+      "team": "Toronto Blue Jays",
+      "projected_ud": 7.5,
+      "ud_line": 5.5,
+      "edge": 2.0,
+      "actionable_reason": "edge + platoon advantage",
       "game_time_pt": "3:35 PM PT"
     },
     {
@@ -82,16 +82,6 @@
       "game_time_pt": "3:40 PM PT"
     },
     {
-      "player_id": 703601,
-      "name": "Max Clark",
-      "team": "Detroit Tigers",
-      "projected_ud": 7.5,
-      "ud_line": 5.5,
-      "edge": 2.0,
-      "actionable_reason": "edge + platoon advantage",
-      "game_time_pt": "3:40 PM PT"
-    },
-    {
       "player_id": 679529,
       "name": "Spencer Torkelson",
       "team": "Detroit Tigers",
@@ -105,9 +95,9 @@
       "player_id": 686611,
       "name": "Dylan Crews",
       "team": "Washington Nationals",
-      "projected_ud": 6.85,
+      "projected_ud": 7.08,
       "ud_line": 5.5,
-      "edge": 1.35,
+      "edge": 1.58,
       "actionable_reason": "edge + strong contact",
       "game_time_pt": "3:40 PM PT"
     }
