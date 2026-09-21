@@ -22,23 +22,13 @@
       "game_time_pt": "3:40 PM PT"
     },
     {
-      "player_id": 813841,
-      "name": "Jonah Cox",
-      "team": "San Francisco Giants",
-      "projected_ud": 8.5,
-      "ud_line": 6.5,
-      "edge": 2.0,
-      "actionable_reason": "edge + platoon advantage",
-      "game_time_pt": "6:45 PM PT"
-    },
-    {
       "player_id": 682928,
       "name": "CJ Abrams",
       "team": "Washington Nationals",
       "projected_ud": 8.49,
       "ud_line": 6.5,
       "edge": 1.99,
-      "actionable_reason": "edge + platoon advantage",
+      "actionable_reason": "edge + shrunk sample above baseline",
       "game_time_pt": "3:40 PM PT"
     },
     {
@@ -110,16 +100,6 @@
       "edge": 2.0,
       "actionable_reason": "edge + platoon advantage",
       "game_time_pt": "3:40 PM PT"
-    },
-    {
-      "player_id": 686797,
-      "name": "Brooks Lee",
-      "team": "Minnesota Twins",
-      "projected_ud": 7.25,
-      "ud_line": 5.5,
-      "edge": 1.75,
-      "actionable_reason": "edge + platoon advantage",
-      "game_time_pt": "6:45 PM PT"
     },
     {
       "player_id": 686611,
