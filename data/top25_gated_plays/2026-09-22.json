@@ -22,16 +22,6 @@
       "game_time_pt": "4:15 PM PT"
     },
     {
-      "player_id": 691718,
-      "name": "Pete Crow-Armstrong",
-      "team": "Chicago Cubs",
-      "projected_ud": 9.5,
-      "ud_line": 8.5,
-      "edge": 1.0,
-      "actionable_reason": "edge + strong contact",
-      "game_time_pt": "4:40 PM PT"
-    },
-    {
       "player_id": 672515,
       "name": "Gabriel Moreno",
       "team": "Arizona Diamondbacks",
@@ -40,6 +30,16 @@
       "edge": 1.0,
       "actionable_reason": "edge + shrunk sample above baseline",
       "game_time_pt": "5:40 PM PT"
+    },
+    {
+      "player_id": 691718,
+      "name": "Pete Crow-Armstrong",
+      "team": "Chicago Cubs",
+      "projected_ud": 9.5,
+      "ud_line": 8.5,
+      "edge": 1.0,
+      "actionable_reason": "edge + strong contact",
+      "game_time_pt": "4:40 PM PT"
     },
     {
       "player_id": 665487,
@@ -52,16 +52,6 @@
       "game_time_pt": "7:10 PM PT"
     },
     {
-      "player_id": 683002,
-      "name": "Gunnar Henderson",
-      "team": "Baltimore Orioles",
-      "projected_ud": 8.5,
-      "ud_line": 6.5,
-      "edge": 2.0,
-      "actionable_reason": "edge + strong contact",
-      "game_time_pt": "3:35 PM PT"
-    },
-    {
       "player_id": 686948,
       "name": "Drake Baldwin",
       "team": "Atlanta Braves",
@@ -70,6 +60,26 @@
       "edge": 2.0,
       "actionable_reason": "edge + strong contact",
       "game_time_pt": "4:15 PM PT"
+    },
+    {
+      "player_id": 571448,
+      "name": "Nolan Arenado",
+      "team": "Arizona Diamondbacks",
+      "projected_ud": 8.5,
+      "ud_line": 6.5,
+      "edge": 2.0,
+      "actionable_reason": "edge + strong contact",
+      "game_time_pt": "5:40 PM PT"
+    },
+    {
+      "player_id": 691783,
+      "name": "Jordan Lawlar",
+      "team": "Arizona Diamondbacks",
+      "projected_ud": 8.5,
+      "ud_line": 6.5,
+      "edge": 2.0,
+      "actionable_reason": "edge + strong contact",
+      "game_time_pt": "5:40 PM PT"
     },
     {
       "player_id": 694671,
@@ -112,16 +122,6 @@
       "game_time_pt": "5:05 PM PT"
     },
     {
-      "player_id": 571448,
-      "name": "Nolan Arenado",
-      "team": "Arizona Diamondbacks",
-      "projected_ud": 8.5,
-      "ud_line": 6.5,
-      "edge": 2.0,
-      "actionable_reason": "edge + strong contact",
-      "game_time_pt": "5:40 PM PT"
-    },
-    {
       "player_id": 668227,
       "name": "Randy Arozarena",
       "team": "Seattle Mariners",
@@ -130,6 +130,16 @@
       "edge": 2.0,
       "actionable_reason": "edge + shrunk sample above baseline",
       "game_time_pt": "6:40 PM PT"
+    },
+    {
+      "player_id": 683002,
+      "name": "Gunnar Henderson",
+      "team": "Baltimore Orioles",
+      "projected_ud": 8.5,
+      "ud_line": 6.5,
+      "edge": 2.0,
+      "actionable_reason": "edge + strong contact",
+      "game_time_pt": "3:35 PM PT"
     }
   ]
 }
