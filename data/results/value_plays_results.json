@@ -7740,6 +7740,69 @@
           "correct": true
         }
       ]
+    },
+    "2026-09-21": {
+      "summary": {
+        "total": 5,
+        "correct": 2,
+        "accuracy": 40.0,
+        "over_total": 4,
+        "over_correct": 1,
+        "under_total": 1,
+        "under_correct": 1
+      },
+      "plays": [
+        {
+          "player_id": 650402,
+          "name": "Gleyber Torres",
+          "team": "Detroit Tigers",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 5,
+          "correct": false
+        },
+        {
+          "player_id": 682985,
+          "name": "Riley Greene",
+          "team": "Detroit Tigers",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 5,
+          "correct": false
+        },
+        {
+          "player_id": 691723,
+          "name": "Coby Mayo",
+          "team": "Baltimore Orioles",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 5.5,
+          "actual_ud": 0,
+          "correct": false
+        },
+        {
+          "player_id": 672386,
+          "name": "Alejandro Kirk",
+          "team": "Toronto Blue Jays",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 5.5,
+          "actual_ud": 8,
+          "correct": true
+        },
+        {
+          "player_id": 695578,
+          "name": "James Wood",
+          "team": "Washington Nationals",
+          "call": "under",
+          "edge": -1.56,
+          "ud_line": 7.5,
+          "actual_ud": 5,
+          "correct": true
+        }
+      ]
     }
   }
 }

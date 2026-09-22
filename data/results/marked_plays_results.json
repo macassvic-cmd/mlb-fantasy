@@ -2404,14 +2404,28 @@
         }
       ],
       "hot": []
+    },
+    "2026-09-21": {
+      "fire": [
+        {
+          "player_id": 682928,
+          "name": "CJ Abrams",
+          "team": "Washington Nationals",
+          "grade": "win",
+          "n_before": 27,
+          "wins_before": 16,
+          "rate_before": 59.3
+        }
+      ],
+      "hot": []
     }
   },
   "cohorts": {
     "fire": {
-      "wins": 63,
+      "wins": 64,
       "losses": 56,
-      "n": 119,
-      "rate": 52.9
+      "n": 120,
+      "rate": 53.3
     },
     "hot": {
       "wins": 54,

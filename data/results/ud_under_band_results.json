@@ -3022,16 +3022,45 @@
           "grade": "win"
         }
       ]
+    },
+    "2026-09-21": {
+      "wins": 2,
+      "losses": 0,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 680777,
+          "name": "Ryan Jeffers",
+          "team": "Minnesota Twins",
+          "projected_ud": 3.84,
+          "ud_line": 5.5,
+          "edge": -1.66,
+          "game_time_pt": "6:45 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 695578,
+          "name": "James Wood",
+          "team": "Washington Nationals",
+          "projected_ud": 5.94,
+          "ud_line": 7.5,
+          "edge": -1.56,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 5,
+          "grade": "win"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 136,
+    "wins": 138,
     "losses": 114,
     "dnp": 7
   },
   "record_by_line": {
     "5.5": {
-      "wins": 63,
+      "wins": 64,
       "losses": 64
     },
     "6.5": {
@@ -3043,7 +3072,7 @@
       "losses": 4
     },
     "7.5": {
-      "wins": 14,
+      "wins": 15,
       "losses": 6
     }
   },
@@ -3315,7 +3344,7 @@
     "680777": {
       "name": "Ryan Jeffers",
       "team": "Minnesota Twins",
-      "wins": 1,
+      "wins": 2,
       "losses": 0
     },
     "694249": {
@@ -3513,7 +3542,7 @@
     "695578": {
       "name": "James Wood",
       "team": "Washington Nationals",
-      "wins": 1,
+      "wins": 2,
       "losses": 1
     },
     "592626": {

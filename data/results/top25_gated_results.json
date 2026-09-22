@@ -1231,11 +1231,114 @@
           "grade": "loss"
         }
       ]
+    },
+    "2026-09-21": {
+      "wins": 4,
+      "losses": 4,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 650402,
+          "name": "Gleyber Torres",
+          "team": "Detroit Tigers",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 5,
+          "grade": "loss"
+        },
+        {
+          "player_id": 682985,
+          "name": "Riley Greene",
+          "team": "Detroit Tigers",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 5,
+          "grade": "loss"
+        },
+        {
+          "player_id": 691723,
+          "name": "Coby Mayo",
+          "team": "Baltimore Orioles",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "3:35 PM PT",
+          "actual_ud": 0,
+          "grade": "loss"
+        },
+        {
+          "player_id": 672386,
+          "name": "Alejandro Kirk",
+          "team": "Toronto Blue Jays",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "3:35 PM PT",
+          "actual_ud": 8,
+          "grade": "win"
+        },
+        {
+          "player_id": 672960,
+          "name": "Kazuma Okamoto",
+          "team": "Toronto Blue Jays",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "3:35 PM PT",
+          "actual_ud": 3,
+          "grade": "loss"
+        },
+        {
+          "player_id": 701678,
+          "name": "Hao-Yu Lee",
+          "team": "Detroit Tigers",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 19,
+          "grade": "win"
+        },
+        {
+          "player_id": 679529,
+          "name": "Spencer Torkelson",
+          "team": "Detroit Tigers",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 16,
+          "grade": "win"
+        },
+        {
+          "player_id": 686611,
+          "name": "Dylan Crews",
+          "team": "Washington Nationals",
+          "projected_ud": 6.51,
+          "ud_line": 5.5,
+          "edge": 1.01,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 6,
+          "grade": "win"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 54,
-    "losses": 44,
+    "wins": 58,
+    "losses": 48,
     "dnp": 0
   }
 }
