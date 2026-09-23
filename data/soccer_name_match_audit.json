@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T16:59:46.231634+00:00",
+  "generated_at": "2026-09-23T20:08:34.832915+00:00",
   "date": "2026-09-23",
   "history": {
     "total_attempts": 0,
@@ -9,66 +9,26 @@
     "entries": []
   },
   "rotowire": {
-    "total_attempts": 6,
-    "accepted": 5,
-    "rejected": 1,
-    "precision": 83.3,
+    "total_attempts": 2,
+    "accepted": 2,
+    "rejected": 0,
+    "precision": 100.0,
     "entries": [
       {
-        "player_name": "Juan Manuel Sanabria",
-        "normalized_name": "juan manuel sanabria",
-        "via_variant": true,
-        "page_url": "https://www.rotowire.com/soccer/player/juan-sanabria-34072",
-        "page_team": "Real Salt Lake",
-        "expected_team": null,
-        "accepted": false,
-        "reason": "no_expected_team_to_confirm"
-      },
-      {
-        "player_name": "Morgan Guilavogui",
-        "normalized_name": "morgan guilavogui",
+        "player_name": "Jackson Ragen",
+        "normalized_name": "jackson ragen",
         "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/morgan-guilavogui-39691",
-        "page_team": "Real Salt Lake",
-        "expected_team": null,
-        "accepted": true,
-        "reason": null
-      },
-      {
-        "player_name": "Sergi Solans",
-        "normalized_name": "sergi solans",
-        "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/sergi-solans-47856",
-        "page_team": "Real Salt Lake",
-        "expected_team": null,
-        "accepted": true,
-        "reason": null
-      },
-      {
-        "player_name": "Albert Rusnák",
-        "normalized_name": "albert rusnak",
-        "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/albert-rusnak-23311",
+        "page_url": "https://www.rotowire.com/soccer/player/jackson-ragen-36538",
         "page_team": "Seattle Sounders FC",
         "expected_team": null,
         "accepted": true,
         "reason": null
       },
       {
-        "player_name": "Andrew Thomas",
-        "normalized_name": "andrew thomas",
+        "player_name": "Dejan Joveljic",
+        "normalized_name": "dejan joveljic",
         "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/andrew-thomas-34716",
-        "page_team": "Seattle Sounders FC",
-        "expected_team": null,
-        "accepted": true,
-        "reason": null
-      },
-      {
-        "player_name": "Nouhou Tolo",
-        "normalized_name": "nouhou tolo",
-        "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/nouhou-tolo-23430",
+        "page_url": "https://www.rotowire.com/soccer/player/dejan-joveljic-29368",
         "page_team": "Seattle Sounders FC",
         "expected_team": null,
         "accepted": true,
