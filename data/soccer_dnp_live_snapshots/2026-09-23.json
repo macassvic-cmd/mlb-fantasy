@@ -1,0 +1,1259 @@
+{
+  "_latest_batch_ts": "2026-09-23T12:12:10.934739+00:00",
+  "pid:5dd45eee-2d6c-4b4d-8961-b892dd6b6c8b": {
+    "name": "Dejan Joveljic",
+    "team": "SEA",
+    "dabble_player_id": "5dd45eee-2d6c-4b4d-8961-b892dd6b6c8b",
+    "fixture_id": "de7a2ea4-9e36-4f62-9e02-aa9a6776f141",
+    "score_history": [
+      {
+        "ts": "2026-09-23T12:12:10.934739+00:00",
+        "dns_score": 90,
+        "confidence_score": 45,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": "2026-09-23T12:12:10.934739+00:00",
+      "70": "2026-09-23T12:12:10.934739+00:00",
+      "80": "2026-09-23T12:12:10.934739+00:00",
+      "90": "2026-09-23T12:12:10.934739+00:00"
+    },
+    "latest": {
+      "player_name": "Dejan Joveljic",
+      "normalized_name": "dejan joveljic",
+      "dabble_player_id": "5dd45eee-2d6c-4b4d-8961-b892dd6b6c8b",
+      "team": "SEA",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "RSL @ SEA",
+      "event_date": "2026-09-24T01:30:00.000Z",
+      "fixture_id": "de7a2ea4-9e36-4f62-9e02-aa9a6776f141",
+      "position": "F",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": "hard_out",
+      "rotowire_status_normalized": "hard_out",
+      "rotowire_page_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": "https://www.rotowire.com/soccer/player/dejan-joveljic-29368",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-23T12:12:00.424795+00:00",
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": {
+        "rotowire_url": "https://www.rotowire.com/soccer/player/dejan-joveljic-29368",
+        "rotowire_status_tag": "OUT",
+        "rotowire_injury": "Not Injury Related",
+        "rotowire_est_return": "10/10/2026",
+        "rotowire_status_since": "2026-09-23T12:12:00.424795+00:00",
+        "transfermarkt": null,
+        "last_appeared_date": "2026-09-12",
+        "days_since_last_appearance": 12,
+        "team_last_3_fixtures": [],
+        "corroborated_by": [],
+        "conflict": null
+      },
+      "is_lock": true,
+      "lock_reason": "hard_out_uncorroborated",
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 12,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [
+        "rotowire_news"
+      ],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "bench",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [
+        {
+          "source": "rotowire_news",
+          "vote": "bench",
+          "predicted_start": false,
+          "observed_at": "2026-09-23T12:12:10.567747+00:00",
+          "source_updated_at": null
+        }
+      ],
+      "starter_votes": 0,
+      "bench_votes": 1,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 1,
+      "dns_score": 90,
+      "confidence_score": 45,
+      "urgency_score": 0,
+      "combined_priority": 63.0,
+      "evidence_count": 2,
+      "tier": "DNS SNIPER",
+      "top_reasons": [
+        "RotoWire: hard_out",
+        "Predicted bench 1/1 sources (rotowire_news)",
+        "RotoWire hard_out floor (base)"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "RotoWire: hard_out",
+          50
+        ],
+        [
+          "Predicted bench 1/1 sources (rotowire_news)",
+          10
+        ],
+        [
+          "RotoWire hard_out floor (base)",
+          27
+        ]
+      ],
+      "low_data": false,
+      "watchdog_note": null,
+      "rotowire_source": "player_page",
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/dejan-joveljic-29368",
+      "has_history": false,
+      "has_predicted_xi": true,
+      "has_injury": false,
+      "has_news": true,
+      "has_x_signal": false,
+      "has_any_external_enrichment": true,
+      "has_multiple_external_sources": false,
+      "board_only": false,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": true,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/dejan-joveljic-29368",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-23T12:12:10.934739+00:00",
+      "props": [
+        {
+          "market": "Shots",
+          "line": 3.0,
+          "prop_id": "b0cdb31254267ef2"
+        }
+      ]
+    }
+  },
+  "pid:4d309a83-8c16-4434-b8aa-fab8bd73598c": {
+    "name": "Juan Manuel Sanabria",
+    "team": "RSL",
+    "dabble_player_id": "4d309a83-8c16-4434-b8aa-fab8bd73598c",
+    "fixture_id": "de7a2ea4-9e36-4f62-9e02-aa9a6776f141",
+    "score_history": [
+      {
+        "ts": "2026-09-23T12:12:10.934739+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Juan Manuel Sanabria",
+      "normalized_name": "juan manuel sanabria",
+      "dabble_player_id": "4d309a83-8c16-4434-b8aa-fab8bd73598c",
+      "team": "RSL",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "RSL @ SEA",
+      "event_date": "2026-09-24T01:30:00.000Z",
+      "fixture_id": "de7a2ea4-9e36-4f62-9e02-aa9a6776f141",
+      "position": "M",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 12,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": false,
+      "rotowire_player_page_url": null,
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false,
+          "player_page_matched": false,
+          "player_page_url": null,
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-23T12:12:10.934739+00:00",
+      "props": [
+        {
+          "market": "Tackles",
+          "line": 1.5,
+          "prop_id": "8fc21fac84f08241"
+        }
+      ]
+    }
+  },
+  "pid:49c752dd-d4c8-43e9-8ba4-98a259f185ec": {
+    "name": "Morgan Guilavogui",
+    "team": "RSL",
+    "dabble_player_id": "49c752dd-d4c8-43e9-8ba4-98a259f185ec",
+    "fixture_id": "de7a2ea4-9e36-4f62-9e02-aa9a6776f141",
+    "score_history": [
+      {
+        "ts": "2026-09-23T12:12:10.934739+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Morgan Guilavogui",
+      "normalized_name": "morgan guilavogui",
+      "dabble_player_id": "49c752dd-d4c8-43e9-8ba4-98a259f185ec",
+      "team": "RSL",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "RSL @ SEA",
+      "event_date": "2026-09-24T01:30:00.000Z",
+      "fixture_id": "de7a2ea4-9e36-4f62-9e02-aa9a6776f141",
+      "position": "F",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 12,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/morgan-guilavogui-39691",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/morgan-guilavogui-39691",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-23T12:12:10.934739+00:00",
+      "props": [
+        {
+          "market": "Shots",
+          "line": 2.0,
+          "prop_id": "52b139330071612d"
+        }
+      ]
+    }
+  },
+  "pid:a5e965ce-badd-4b69-843c-4fa488019bd8": {
+    "name": "Rafael Cabral Barbosa",
+    "team": "RSL",
+    "dabble_player_id": "a5e965ce-badd-4b69-843c-4fa488019bd8",
+    "fixture_id": "de7a2ea4-9e36-4f62-9e02-aa9a6776f141",
+    "score_history": [
+      {
+        "ts": "2026-09-23T12:12:10.934739+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Rafael Cabral Barbosa",
+      "normalized_name": "rafael cabral barbosa",
+      "dabble_player_id": "a5e965ce-badd-4b69-843c-4fa488019bd8",
+      "team": "RSL",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "RSL @ SEA",
+      "event_date": "2026-09-24T01:30:00.000Z",
+      "fixture_id": "de7a2ea4-9e36-4f62-9e02-aa9a6776f141",
+      "position": "GK",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": null,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": null,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": false,
+      "rotowire_player_page_url": null,
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false,
+          "player_page_matched": false,
+          "player_page_url": null,
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-23T12:12:10.934739+00:00",
+      "props": [
+        {
+          "market": "Saves",
+          "line": 3.0,
+          "prop_id": "732eebd6c6a1e9b4"
+        }
+      ]
+    }
+  },
+  "pid:a37fafcd-3d9b-4cdf-a242-d0ee891d1d3c": {
+    "name": "Sergi Solans",
+    "team": "RSL",
+    "dabble_player_id": "a37fafcd-3d9b-4cdf-a242-d0ee891d1d3c",
+    "fixture_id": "de7a2ea4-9e36-4f62-9e02-aa9a6776f141",
+    "score_history": [
+      {
+        "ts": "2026-09-23T12:12:10.934739+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Sergi Solans",
+      "normalized_name": "sergi solans",
+      "dabble_player_id": "a37fafcd-3d9b-4cdf-a242-d0ee891d1d3c",
+      "team": "RSL",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "RSL @ SEA",
+      "event_date": "2026-09-24T01:30:00.000Z",
+      "fixture_id": "de7a2ea4-9e36-4f62-9e02-aa9a6776f141",
+      "position": "F",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 12,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/sergi-solans-47856",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/sergi-solans-47856",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-23T12:12:10.934739+00:00",
+      "props": [
+        {
+          "market": "Shots",
+          "line": 2.5,
+          "prop_id": "0c23341b90ba81e7"
+        }
+      ]
+    }
+  },
+  "pid:4f1e5211-eae1-4edf-a811-36b54072c134": {
+    "name": "Albert Rusnák",
+    "team": "SEA",
+    "dabble_player_id": "4f1e5211-eae1-4edf-a811-36b54072c134",
+    "fixture_id": "de7a2ea4-9e36-4f62-9e02-aa9a6776f141",
+    "score_history": [
+      {
+        "ts": "2026-09-23T12:12:10.934739+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Albert Rusnák",
+      "normalized_name": "albert rusnak",
+      "dabble_player_id": "4f1e5211-eae1-4edf-a811-36b54072c134",
+      "team": "SEA",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "RSL @ SEA",
+      "event_date": "2026-09-24T01:30:00.000Z",
+      "fixture_id": "de7a2ea4-9e36-4f62-9e02-aa9a6776f141",
+      "position": "M",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 12,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/albert-rusnak-23311",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/albert-rusnak-23311",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-23T12:12:10.934739+00:00",
+      "props": [
+        {
+          "market": "Shots",
+          "line": 2.5,
+          "prop_id": "357b8b5ddc7d3288"
+        }
+      ]
+    }
+  },
+  "pid:4c5fd949-f72c-4ee4-b1ca-fc5ddd2bc319": {
+    "name": "Andrew Thomas",
+    "team": "SEA",
+    "dabble_player_id": "4c5fd949-f72c-4ee4-b1ca-fc5ddd2bc319",
+    "fixture_id": "de7a2ea4-9e36-4f62-9e02-aa9a6776f141",
+    "score_history": [
+      {
+        "ts": "2026-09-23T12:12:10.934739+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Andrew Thomas",
+      "normalized_name": "andrew thomas",
+      "dabble_player_id": "4c5fd949-f72c-4ee4-b1ca-fc5ddd2bc319",
+      "team": "SEA",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "RSL @ SEA",
+      "event_date": "2026-09-24T01:30:00.000Z",
+      "fixture_id": "de7a2ea4-9e36-4f62-9e02-aa9a6776f141",
+      "position": "GK",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": null,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": null,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/andrew-thomas-34716",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/andrew-thomas-34716",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-23T12:12:10.934739+00:00",
+      "props": [
+        {
+          "market": "Saves",
+          "line": 3.0,
+          "prop_id": "9dd422d54ab2853c"
+        }
+      ]
+    }
+  },
+  "pid:d8e8d30a-6261-48ad-9b2a-89a357762d41": {
+    "name": "Nouhou Tolo",
+    "team": "SEA",
+    "dabble_player_id": "d8e8d30a-6261-48ad-9b2a-89a357762d41",
+    "fixture_id": "de7a2ea4-9e36-4f62-9e02-aa9a6776f141",
+    "score_history": [
+      {
+        "ts": "2026-09-23T12:12:10.934739+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Nouhou Tolo",
+      "normalized_name": "nouhou tolo",
+      "dabble_player_id": "d8e8d30a-6261-48ad-9b2a-89a357762d41",
+      "team": "SEA",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "RSL @ SEA",
+      "event_date": "2026-09-24T01:30:00.000Z",
+      "fixture_id": "de7a2ea4-9e36-4f62-9e02-aa9a6776f141",
+      "position": "D",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 12,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/nouhou-tolo-23430",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/nouhou-tolo-23430",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-23T12:12:10.934739+00:00",
+      "props": [
+        {
+          "market": "Tackles",
+          "line": 1.5,
+          "prop_id": "cb1d88cd7f5a4bdc"
+        }
+      ]
+    }
+  }
+}

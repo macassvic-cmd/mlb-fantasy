@@ -1,0 +1,527 @@
+{
+  "_last_state:5dd45eee-2d6c-4b4d-8961-b892dd6b6c8b:de7a2ea4-9e36-4f62-9e02-aa9a6776f141": {
+    "dns_score": 90,
+    "rotowire_status_raw": "hard_out",
+    "prediction_consensus": "bench",
+    "x_post_id": null
+  },
+  "2026-09-23:soccer:5dd45eee-2d6c-4b4d-8961-b892dd6b6c8b:de7a2ea4-9e36-4f62-9e02-aa9a6776f141:60": {
+    "player_id": "5dd45eee-2d6c-4b4d-8961-b892dd6b6c8b",
+    "player_name": "Dejan Joveljic",
+    "normalized_name": "dejan joveljic",
+    "team": "SEA",
+    "league_code": "MLS",
+    "opponent": "RSL @ SEA",
+    "fixture_id": "de7a2ea4-9e36-4f62-9e02-aa9a6776f141",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 60,
+    "alerted_at": "2026-09-23T12:12:10.952032+00:00",
+    "game_start": "2026-09-24T01:30:00.000Z",
+    "minutes_to_game": 797.8174661333334,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Shots"
+    ],
+    "dabble_prop_ids": [
+      "b0cdb31254267ef2"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/dejan-joveljic-29368",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-23T12:12:00.424795+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-12",
+      "days_since_last_appearance": 12,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-23:soccer:5dd45eee-2d6c-4b4d-8961-b892dd6b6c8b:de7a2ea4-9e36-4f62-9e02-aa9a6776f141:65": {
+    "player_id": "5dd45eee-2d6c-4b4d-8961-b892dd6b6c8b",
+    "player_name": "Dejan Joveljic",
+    "normalized_name": "dejan joveljic",
+    "team": "SEA",
+    "league_code": "MLS",
+    "opponent": "RSL @ SEA",
+    "fixture_id": "de7a2ea4-9e36-4f62-9e02-aa9a6776f141",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 65,
+    "alerted_at": "2026-09-23T12:12:10.952032+00:00",
+    "game_start": "2026-09-24T01:30:00.000Z",
+    "minutes_to_game": 797.8174661333334,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Shots"
+    ],
+    "dabble_prop_ids": [
+      "b0cdb31254267ef2"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/dejan-joveljic-29368",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-23T12:12:00.424795+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-12",
+      "days_since_last_appearance": 12,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-23:soccer:5dd45eee-2d6c-4b4d-8961-b892dd6b6c8b:de7a2ea4-9e36-4f62-9e02-aa9a6776f141:70": {
+    "player_id": "5dd45eee-2d6c-4b4d-8961-b892dd6b6c8b",
+    "player_name": "Dejan Joveljic",
+    "normalized_name": "dejan joveljic",
+    "team": "SEA",
+    "league_code": "MLS",
+    "opponent": "RSL @ SEA",
+    "fixture_id": "de7a2ea4-9e36-4f62-9e02-aa9a6776f141",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 70,
+    "alerted_at": "2026-09-23T12:12:10.952032+00:00",
+    "game_start": "2026-09-24T01:30:00.000Z",
+    "minutes_to_game": 797.8174661333334,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Shots"
+    ],
+    "dabble_prop_ids": [
+      "b0cdb31254267ef2"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/dejan-joveljic-29368",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-23T12:12:00.424795+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-12",
+      "days_since_last_appearance": 12,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-23:soccer:5dd45eee-2d6c-4b4d-8961-b892dd6b6c8b:de7a2ea4-9e36-4f62-9e02-aa9a6776f141:75": {
+    "player_id": "5dd45eee-2d6c-4b4d-8961-b892dd6b6c8b",
+    "player_name": "Dejan Joveljic",
+    "normalized_name": "dejan joveljic",
+    "team": "SEA",
+    "league_code": "MLS",
+    "opponent": "RSL @ SEA",
+    "fixture_id": "de7a2ea4-9e36-4f62-9e02-aa9a6776f141",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 75,
+    "alerted_at": "2026-09-23T12:12:10.952032+00:00",
+    "game_start": "2026-09-24T01:30:00.000Z",
+    "minutes_to_game": 797.8174661333334,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Shots"
+    ],
+    "dabble_prop_ids": [
+      "b0cdb31254267ef2"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/dejan-joveljic-29368",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-23T12:12:00.424795+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-12",
+      "days_since_last_appearance": 12,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-23:soccer:5dd45eee-2d6c-4b4d-8961-b892dd6b6c8b:de7a2ea4-9e36-4f62-9e02-aa9a6776f141:80": {
+    "player_id": "5dd45eee-2d6c-4b4d-8961-b892dd6b6c8b",
+    "player_name": "Dejan Joveljic",
+    "normalized_name": "dejan joveljic",
+    "team": "SEA",
+    "league_code": "MLS",
+    "opponent": "RSL @ SEA",
+    "fixture_id": "de7a2ea4-9e36-4f62-9e02-aa9a6776f141",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 80,
+    "alerted_at": "2026-09-23T12:12:10.952032+00:00",
+    "game_start": "2026-09-24T01:30:00.000Z",
+    "minutes_to_game": 797.8174661333334,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Shots"
+    ],
+    "dabble_prop_ids": [
+      "b0cdb31254267ef2"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/dejan-joveljic-29368",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-23T12:12:00.424795+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-12",
+      "days_since_last_appearance": 12,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-23:soccer:5dd45eee-2d6c-4b4d-8961-b892dd6b6c8b:de7a2ea4-9e36-4f62-9e02-aa9a6776f141:85": {
+    "player_id": "5dd45eee-2d6c-4b4d-8961-b892dd6b6c8b",
+    "player_name": "Dejan Joveljic",
+    "normalized_name": "dejan joveljic",
+    "team": "SEA",
+    "league_code": "MLS",
+    "opponent": "RSL @ SEA",
+    "fixture_id": "de7a2ea4-9e36-4f62-9e02-aa9a6776f141",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 85,
+    "alerted_at": "2026-09-23T12:12:10.952032+00:00",
+    "game_start": "2026-09-24T01:30:00.000Z",
+    "minutes_to_game": 797.8174661333334,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Shots"
+    ],
+    "dabble_prop_ids": [
+      "b0cdb31254267ef2"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/dejan-joveljic-29368",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-23T12:12:00.424795+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-12",
+      "days_since_last_appearance": 12,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-23:soccer:5dd45eee-2d6c-4b4d-8961-b892dd6b6c8b:de7a2ea4-9e36-4f62-9e02-aa9a6776f141:90": {
+    "player_id": "5dd45eee-2d6c-4b4d-8961-b892dd6b6c8b",
+    "player_name": "Dejan Joveljic",
+    "normalized_name": "dejan joveljic",
+    "team": "SEA",
+    "league_code": "MLS",
+    "opponent": "RSL @ SEA",
+    "fixture_id": "de7a2ea4-9e36-4f62-9e02-aa9a6776f141",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 90,
+    "alerted_at": "2026-09-23T12:12:10.952032+00:00",
+    "game_start": "2026-09-24T01:30:00.000Z",
+    "minutes_to_game": 797.8174661333334,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Shots"
+    ],
+    "dabble_prop_ids": [
+      "b0cdb31254267ef2"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/dejan-joveljic-29368",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-23T12:12:00.424795+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-12",
+      "days_since_last_appearance": 12,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-23:soccer:5dd45eee-2d6c-4b4d-8961-b892dd6b6c8b:de7a2ea4-9e36-4f62-9e02-aa9a6776f141:lock": {
+    "player_id": "5dd45eee-2d6c-4b4d-8961-b892dd6b6c8b",
+    "player_name": "Dejan Joveljic",
+    "normalized_name": "dejan joveljic",
+    "team": "SEA",
+    "league_code": "MLS",
+    "opponent": "RSL @ SEA",
+    "fixture_id": "de7a2ea4-9e36-4f62-9e02-aa9a6776f141",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": "lock",
+    "alerted_at": "2026-09-23T12:12:10.952032+00:00",
+    "game_start": "2026-09-24T01:30:00.000Z",
+    "minutes_to_game": 797.8174661333334,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Shots"
+    ],
+    "dabble_prop_ids": [
+      "b0cdb31254267ef2"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": "LOCK: hard_out_uncorroborated",
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/dejan-joveljic-29368",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-23T12:12:00.424795+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-12",
+      "days_since_last_appearance": 12,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-23:soccer:5dd45eee-2d6c-4b4d-8961-b892dd6b6c8b:de7a2ea4-9e36-4f62-9e02-aa9a6776f141:news_signal:14171": {
+    "player_id": "5dd45eee-2d6c-4b4d-8961-b892dd6b6c8b",
+    "player_name": "Dejan Joveljic",
+    "normalized_name": "dejan joveljic",
+    "team": "SEA",
+    "league_code": "MLS",
+    "opponent": "RSL @ SEA",
+    "fixture_id": "de7a2ea4-9e36-4f62-9e02-aa9a6776f141",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": "news_signal",
+    "alerted_at": "2026-09-23T12:12:10.952032+00:00",
+    "game_start": "2026-09-24T01:30:00.000Z",
+    "minutes_to_game": 797.8174661333334,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Shots"
+    ],
+    "dabble_prop_ids": [
+      "b0cdb31254267ef2"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": "RotoWire status worsened to: hard_out",
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/dejan-joveljic-29368",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-23T12:12:00.424795+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-12",
+      "days_since_last_appearance": 12,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "_last_state:4d309a83-8c16-4434-b8aa-fab8bd73598c:de7a2ea4-9e36-4f62-9e02-aa9a6776f141": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:49c752dd-d4c8-43e9-8ba4-98a259f185ec:de7a2ea4-9e36-4f62-9e02-aa9a6776f141": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:a5e965ce-badd-4b69-843c-4fa488019bd8:de7a2ea4-9e36-4f62-9e02-aa9a6776f141": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:a37fafcd-3d9b-4cdf-a242-d0ee891d1d3c:de7a2ea4-9e36-4f62-9e02-aa9a6776f141": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:4f1e5211-eae1-4edf-a811-36b54072c134:de7a2ea4-9e36-4f62-9e02-aa9a6776f141": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:4c5fd949-f72c-4ee4-b1ca-fc5ddd2bc319:de7a2ea4-9e36-4f62-9e02-aa9a6776f141": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:d8e8d30a-6261-48ad-9b2a-89a357762d41:de7a2ea4-9e36-4f62-9e02-aa9a6776f141": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  }
+}

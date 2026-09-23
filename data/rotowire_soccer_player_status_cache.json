@@ -18874,11 +18874,11 @@
     "est_return": null,
     "signal_found": false,
     "source": "player_page",
-    "checked_at": "2026-09-19T23:12:31.696824+00:00",
+    "checked_at": "2026-09-23T12:12:00.422330+00:00",
     "via_variant": false,
     "team_confirmed": null,
     "page_team": null,
-    "status_since": "2026-09-19T23:12:31.696824+00:00"
+    "status_since": "2026-09-23T12:12:00.422330+00:00"
   },
   "andrew thomas": {
     "attempted": true,
@@ -18892,11 +18892,11 @@
     "est_return": null,
     "signal_found": false,
     "source": "player_page",
-    "checked_at": "2026-09-19T23:12:32.301331+00:00",
+    "checked_at": "2026-09-23T12:12:00.423070+00:00",
     "via_variant": false,
     "team_confirmed": null,
     "page_team": "Seattle Sounders FC",
-    "status_since": "2026-09-19T23:12:32.301331+00:00"
+    "status_since": "2026-09-23T12:12:00.423070+00:00"
   },
   "yohei takaoka": {
     "attempted": true,
@@ -20054,11 +20054,11 @@
     "est_return": null,
     "signal_found": false,
     "source": "player_page",
-    "checked_at": "2026-09-23T06:40:19.721943+00:00",
+    "checked_at": "2026-09-23T12:12:00.421889+00:00",
     "via_variant": false,
     "team_confirmed": null,
     "page_team": "Real Salt Lake",
-    "status_since": "2026-09-23T06:40:19.721943+00:00"
+    "status_since": "2026-09-23T12:12:00.421889+00:00"
   },
   "sergi solans": {
     "attempted": true,
@@ -20072,11 +20072,11 @@
     "est_return": null,
     "signal_found": false,
     "source": "player_page",
-    "checked_at": "2026-09-23T06:40:19.722290+00:00",
+    "checked_at": "2026-09-23T12:12:00.422680+00:00",
     "via_variant": false,
     "team_confirmed": null,
     "page_team": "Real Salt Lake",
-    "status_since": "2026-09-23T06:40:19.722290+00:00"
+    "status_since": "2026-09-23T12:12:00.422680+00:00"
   },
   "brian white": {
     "attempted": true,
@@ -20531,11 +20531,11 @@
     "est_return": null,
     "signal_found": false,
     "source": "player_page",
-    "checked_at": "2026-09-23T06:40:19.722641+00:00",
+    "checked_at": "2026-09-23T12:12:00.422807+00:00",
     "via_variant": false,
     "team_confirmed": null,
     "page_team": "Seattle Sounders FC",
-    "status_since": "2026-09-23T06:40:19.722641+00:00"
+    "status_since": "2026-09-23T12:12:00.422807+00:00"
   },
   "dejan joveljic": {
     "attempted": true,
@@ -20549,11 +20549,11 @@
     "est_return": "10/10/2026",
     "signal_found": true,
     "source": "player_page",
-    "checked_at": "2026-09-23T06:40:19.722847+00:00",
+    "checked_at": "2026-09-23T12:12:00.424795+00:00",
     "via_variant": false,
     "team_confirmed": null,
     "page_team": "Seattle Sounders FC",
-    "status_since": "2026-09-23T06:40:19.722847+00:00"
+    "status_since": "2026-09-23T12:12:00.424795+00:00"
   },
   "tate johnson": {
     "attempted": true,
@@ -21850,5 +21850,40 @@
     "team_confirmed": null,
     "page_team": "San Diego FC",
     "status_since": "2026-09-20T22:35:43.611027+00:00"
+  },
+  "juan manuel sanabria": {
+    "attempted": true,
+    "matched": false,
+    "ambiguous": false,
+    "page_url": null,
+    "status_tag": null,
+    "rotowire_status_normalized": null,
+    "injury": null,
+    "est_return": null,
+    "signal_found": false,
+    "source": "player_page",
+    "checked_at": "2026-09-23T12:12:00.421515+00:00",
+    "via_variant": true,
+    "team_confirmed": false,
+    "page_team": "Real Salt Lake",
+    "status_since": "2026-09-23T12:12:00.421515+00:00"
+  },
+  "nouhou tolo": {
+    "attempted": true,
+    "matched": true,
+    "ambiguous": false,
+    "page_url": "https://www.rotowire.com/soccer/player/nouhou-tolo-23430",
+    "player_id": "23430",
+    "status_tag": null,
+    "rotowire_status_normalized": null,
+    "injury": null,
+    "est_return": null,
+    "signal_found": false,
+    "source": "player_page",
+    "checked_at": "2026-09-23T12:12:00.427910+00:00",
+    "via_variant": false,
+    "team_confirmed": null,
+    "page_team": "Seattle Sounders FC",
+    "status_since": "2026-09-23T12:12:00.427910+00:00"
   }
 }

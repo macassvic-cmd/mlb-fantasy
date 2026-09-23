@@ -1,11 +1,26 @@
 {
   "sport": "soccer",
   "source": "dabble",
-  "generated_at": "2026-09-23T06:40:17.274650Z",
+  "generated_at": "2026-09-23T12:11:56.977475Z",
   "competitions": [
     "MLS"
   ],
   "props": [
+    {
+      "player_name": "Juan Manuel Sanabria",
+      "player_id": "4d309a83-8c16-4434-b8aa-fab8bd73598c",
+      "team": "RSL",
+      "market": "Tackles",
+      "line": 1.5,
+      "event_date": "2026-09-24T01:30:00.000Z",
+      "sport": "soccer",
+      "league": "MLS",
+      "matchup": "RSL @ SEA",
+      "position": "M",
+      "fixture_id": "de7a2ea4-9e36-4f62-9e02-aa9a6776f141",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null
+    },
     {
       "player_name": "Morgan Guilavogui",
       "player_id": "49c752dd-d4c8-43e9-8ba4-98a259f185ec",
@@ -17,6 +32,21 @@
       "league": "MLS",
       "matchup": "RSL @ SEA",
       "position": "F",
+      "fixture_id": "de7a2ea4-9e36-4f62-9e02-aa9a6776f141",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null
+    },
+    {
+      "player_name": "Rafael Cabral Barbosa",
+      "player_id": "a5e965ce-badd-4b69-843c-4fa488019bd8",
+      "team": "RSL",
+      "market": "Saves",
+      "line": 3,
+      "event_date": "2026-09-24T01:30:00.000Z",
+      "sport": "soccer",
+      "league": "MLS",
+      "matchup": "RSL @ SEA",
+      "position": "GK",
       "fixture_id": "de7a2ea4-9e36-4f62-9e02-aa9a6776f141",
       "dabble_status_raw": null,
       "dabble_status_normalized": null
@@ -52,6 +82,21 @@
       "dabble_status_normalized": null
     },
     {
+      "player_name": "Andrew Thomas",
+      "player_id": "4c5fd949-f72c-4ee4-b1ca-fc5ddd2bc319",
+      "team": "SEA",
+      "market": "Saves",
+      "line": 3,
+      "event_date": "2026-09-24T01:30:00.000Z",
+      "sport": "soccer",
+      "league": "MLS",
+      "matchup": "RSL @ SEA",
+      "position": "GK",
+      "fixture_id": "de7a2ea4-9e36-4f62-9e02-aa9a6776f141",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null
+    },
+    {
       "player_name": "Dejan Joveljic",
       "player_id": "5dd45eee-2d6c-4b4d-8961-b892dd6b6c8b",
       "team": "SEA",
@@ -62,6 +107,21 @@
       "league": "MLS",
       "matchup": "RSL @ SEA",
       "position": "F",
+      "fixture_id": "de7a2ea4-9e36-4f62-9e02-aa9a6776f141",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null
+    },
+    {
+      "player_name": "Nouhou Tolo",
+      "player_id": "d8e8d30a-6261-48ad-9b2a-89a357762d41",
+      "team": "SEA",
+      "market": "Tackles",
+      "line": 1.5,
+      "event_date": "2026-09-24T01:30:00.000Z",
+      "sport": "soccer",
+      "league": "MLS",
+      "matchup": "RSL @ SEA",
+      "position": "D",
       "fixture_id": "de7a2ea4-9e36-4f62-9e02-aa9a6776f141",
       "dabble_status_raw": null,
       "dabble_status_normalized": null
