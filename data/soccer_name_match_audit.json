@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T12:12:10.936178+00:00",
+  "generated_at": "2026-09-23T16:59:46.231634+00:00",
   "date": "2026-09-23",
   "history": {
     "total_attempts": 0,
@@ -9,10 +9,10 @@
     "entries": []
   },
   "rotowire": {
-    "total_attempts": 7,
-    "accepted": 6,
+    "total_attempts": 6,
+    "accepted": 5,
     "rejected": 1,
-    "precision": 85.7,
+    "precision": 83.3,
     "entries": [
       {
         "player_name": "Juan Manuel Sanabria",
@@ -25,16 +25,6 @@
         "reason": "no_expected_team_to_confirm"
       },
       {
-        "player_name": "Sergi Solans",
-        "normalized_name": "sergi solans",
-        "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/sergi-solans-47856",
-        "page_team": "Real Salt Lake",
-        "expected_team": null,
-        "accepted": true,
-        "reason": null
-      },
-      {
         "player_name": "Morgan Guilavogui",
         "normalized_name": "morgan guilavogui",
         "via_variant": false,
@@ -45,11 +35,11 @@
         "reason": null
       },
       {
-        "player_name": "Andrew Thomas",
-        "normalized_name": "andrew thomas",
+        "player_name": "Sergi Solans",
+        "normalized_name": "sergi solans",
         "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/andrew-thomas-34716",
-        "page_team": "Seattle Sounders FC",
+        "page_url": "https://www.rotowire.com/soccer/player/sergi-solans-47856",
+        "page_team": "Real Salt Lake",
         "expected_team": null,
         "accepted": true,
         "reason": null
@@ -65,10 +55,10 @@
         "reason": null
       },
       {
-        "player_name": "Dejan Joveljic",
-        "normalized_name": "dejan joveljic",
+        "player_name": "Andrew Thomas",
+        "normalized_name": "andrew thomas",
         "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/dejan-joveljic-29368",
+        "page_url": "https://www.rotowire.com/soccer/player/andrew-thomas-34716",
         "page_team": "Seattle Sounders FC",
         "expected_team": null,
         "accepted": true,
