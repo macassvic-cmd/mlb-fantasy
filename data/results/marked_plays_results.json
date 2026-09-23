@@ -2418,19 +2418,61 @@
         }
       ],
       "hot": []
+    },
+    "2026-09-22": {
+      "fire": [
+        {
+          "player_id": 672515,
+          "name": "Gabriel Moreno",
+          "team": "Arizona Diamondbacks",
+          "grade": "win",
+          "n_before": 17,
+          "wins_before": 11,
+          "rate_before": 64.7
+        },
+        {
+          "player_id": 668227,
+          "name": "Randy Arozarena",
+          "team": "Seattle Mariners",
+          "grade": "win",
+          "n_before": 19,
+          "wins_before": 12,
+          "rate_before": 63.2
+        }
+      ],
+      "hot": [
+        {
+          "player_id": 703607,
+          "name": "Henry Bolte",
+          "team": "Athletics",
+          "grade": "win",
+          "n_before": 9,
+          "wins_before": 7,
+          "rate_before": 77.8
+        },
+        {
+          "player_id": 596019,
+          "name": "Francisco Lindor",
+          "team": "New York Mets",
+          "grade": "loss",
+          "n_before": 9,
+          "wins_before": 7,
+          "rate_before": 77.8
+        }
+      ]
     }
   },
   "cohorts": {
     "fire": {
-      "wins": 64,
+      "wins": 66,
       "losses": 56,
-      "n": 120,
-      "rate": 53.3
+      "n": 122,
+      "rate": 54.1
     },
     "hot": {
-      "wins": 54,
-      "losses": 45,
-      "n": 99,
+      "wins": 55,
+      "losses": 46,
+      "n": 101,
       "rate": 54.5
     }
   }

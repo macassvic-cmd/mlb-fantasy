@@ -1334,11 +1334,174 @@
           "grade": "win"
         }
       ]
+    },
+    "2026-09-22": {
+      "wins": 10,
+      "losses": 3,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 660670,
+          "name": "Ronald Acu\u00f1a Jr.",
+          "team": "Atlanta Braves",
+          "projected_ud": 9.5,
+          "ud_line": 8.5,
+          "edge": 1.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "4:15 PM PT",
+          "actual_ud": 0,
+          "grade": "loss"
+        },
+        {
+          "player_id": 682829,
+          "name": "Elly De La Cruz",
+          "team": "Cincinnati Reds",
+          "projected_ud": 9.5,
+          "ud_line": 8.5,
+          "edge": 1.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "4:15 PM PT",
+          "actual_ud": 29,
+          "grade": "win"
+        },
+        {
+          "player_id": 691718,
+          "name": "Pete Crow-Armstrong",
+          "team": "Chicago Cubs",
+          "projected_ud": 9.5,
+          "ud_line": 8.5,
+          "edge": 1.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 21,
+          "grade": "win"
+        },
+        {
+          "player_id": 672515,
+          "name": "Gabriel Moreno",
+          "team": "Arizona Diamondbacks",
+          "projected_ud": 9.5,
+          "ud_line": 8.5,
+          "edge": 1.0,
+          "actionable_reason": "edge + shrunk sample above baseline",
+          "game_time_pt": "5:40 PM PT",
+          "actual_ud": 12,
+          "grade": "win"
+        },
+        {
+          "player_id": 687263,
+          "name": "Zach Neto",
+          "team": "Los Angeles Angels",
+          "projected_ud": 9.5,
+          "ud_line": 8.5,
+          "edge": 1.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "6:40 PM PT",
+          "actual_ud": 18,
+          "grade": "win"
+        },
+        {
+          "player_id": 686948,
+          "name": "Drake Baldwin",
+          "team": "Atlanta Braves",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "4:15 PM PT",
+          "actual_ud": 9,
+          "grade": "win"
+        },
+        {
+          "player_id": 694671,
+          "name": "Wyatt Langford",
+          "team": "Texas Rangers",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "5:05 PM PT",
+          "actual_ud": 2,
+          "grade": "loss"
+        },
+        {
+          "player_id": 673962,
+          "name": "Josh Jung",
+          "team": "Texas Rangers",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "5:05 PM PT",
+          "actual_ud": 8,
+          "grade": "win"
+        },
+        {
+          "player_id": 596019,
+          "name": "Francisco Lindor",
+          "team": "New York Mets",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + shrunk sample above baseline",
+          "game_time_pt": "5:05 PM PT",
+          "actual_ud": 6,
+          "grade": "loss"
+        },
+        {
+          "player_id": 665742,
+          "name": "Juan Soto",
+          "team": "New York Mets",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "5:05 PM PT",
+          "actual_ud": 8,
+          "grade": "win"
+        },
+        {
+          "player_id": 571448,
+          "name": "Nolan Arenado",
+          "team": "Arizona Diamondbacks",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "5:40 PM PT",
+          "actual_ud": 25,
+          "grade": "win"
+        },
+        {
+          "player_id": 691783,
+          "name": "Jordan Lawlar",
+          "team": "Arizona Diamondbacks",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "5:40 PM PT",
+          "actual_ud": 8,
+          "grade": "win"
+        },
+        {
+          "player_id": 668227,
+          "name": "Randy Arozarena",
+          "team": "Seattle Mariners",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + shrunk sample above baseline",
+          "game_time_pt": "6:40 PM PT",
+          "actual_ud": 13,
+          "grade": "win"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 58,
-    "losses": 48,
+    "wins": 68,
+    "losses": 51,
     "dnp": 0
   }
 }

@@ -3051,28 +3051,167 @@
           "grade": "win"
         }
       ]
+    },
+    "2026-09-22": {
+      "wins": 7,
+      "losses": 5,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 608070,
+          "name": "Jos\u00e9 Ram\u00edrez",
+          "team": "Cleveland Guardians",
+          "projected_ud": 5.51,
+          "ud_line": 7.5,
+          "edge": -1.99,
+          "game_time_pt": "3:45 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 666160,
+          "name": "Mickey Moniak",
+          "team": "Colorado Rockies",
+          "projected_ud": 3.52,
+          "ud_line": 5.5,
+          "edge": -1.98,
+          "game_time_pt": "5:40 PM PT",
+          "actual_ud": 14,
+          "grade": "loss"
+        },
+        {
+          "player_id": 691728,
+          "name": "Zac Veen",
+          "team": "Colorado Rockies",
+          "projected_ud": 3.59,
+          "ud_line": 5.5,
+          "edge": -1.91,
+          "game_time_pt": "5:40 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 650402,
+          "name": "Gleyber Torres",
+          "team": "Detroit Tigers",
+          "projected_ud": 4.62,
+          "ud_line": 6.5,
+          "edge": -1.88,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 6,
+          "grade": "win"
+        },
+        {
+          "player_id": 677800,
+          "name": "Wilyer Abreu",
+          "team": "Boston Red Sox",
+          "projected_ud": 3.63,
+          "ud_line": 5.5,
+          "edge": -1.87,
+          "game_time_pt": "3:45 PM PT",
+          "actual_ud": 6,
+          "grade": "loss"
+        },
+        {
+          "player_id": 683083,
+          "name": "Nasim Nu\u00f1ez",
+          "team": "Washington Nationals",
+          "projected_ud": 3.74,
+          "ud_line": 5.5,
+          "edge": -1.76,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 4,
+          "grade": "win"
+        },
+        {
+          "player_id": 592518,
+          "name": "Manny Machado",
+          "team": "San Diego Padres",
+          "projected_ud": 3.76,
+          "ud_line": 5.5,
+          "edge": -1.74,
+          "game_time_pt": "7:10 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 665019,
+          "name": "Kody Clemens",
+          "team": "Minnesota Twins",
+          "projected_ud": 4.79,
+          "ud_line": 6.5,
+          "edge": -1.71,
+          "game_time_pt": "6:45 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 668939,
+          "name": "Adley Rutschman",
+          "team": "Boston Red Sox",
+          "projected_ud": 3.83,
+          "ud_line": 5.5,
+          "edge": -1.67,
+          "game_time_pt": "3:45 PM PT",
+          "actual_ud": 17,
+          "grade": "loss"
+        },
+        {
+          "player_id": 805805,
+          "name": "Walker Jenkins",
+          "team": "Minnesota Twins",
+          "projected_ud": 4.86,
+          "ud_line": 6.5,
+          "edge": -1.64,
+          "game_time_pt": "6:45 PM PT",
+          "actual_ud": 14,
+          "grade": "loss"
+        },
+        {
+          "player_id": 668804,
+          "name": "Bryan Reynolds",
+          "team": "Pittsburgh Pirates",
+          "projected_ud": 4.88,
+          "ud_line": 6.5,
+          "edge": -1.62,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 6,
+          "grade": "win"
+        },
+        {
+          "player_id": 502054,
+          "name": "Tommy Pham",
+          "team": "Chicago White Sox",
+          "projected_ud": 3.9,
+          "ud_line": 5.5,
+          "edge": -1.6,
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 10,
+          "grade": "loss"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 138,
-    "losses": 114,
+    "wins": 145,
+    "losses": 119,
     "dnp": 7
   },
   "record_by_line": {
     "5.5": {
-      "wins": 64,
-      "losses": 64
+      "wins": 67,
+      "losses": 68
     },
     "6.5": {
-      "wins": 41,
-      "losses": 37
+      "wins": 44,
+      "losses": 38
     },
     "8.5+": {
       "wins": 9,
       "losses": 4
     },
     "7.5": {
-      "wins": 15,
+      "wins": 16,
       "losses": 6
     }
   },
@@ -3254,7 +3393,7 @@
     "668804": {
       "name": "Bryan Reynolds",
       "team": "Pittsburgh Pirates",
-      "wins": 1,
+      "wins": 2,
       "losses": 2
     },
     "687093": {
@@ -3578,7 +3717,7 @@
     "691728": {
       "name": "Zac Veen",
       "team": "Colorado Rockies",
-      "wins": 1,
+      "wins": 2,
       "losses": 0
     },
     "701807": {
@@ -3681,7 +3820,7 @@
       "name": "Wilyer Abreu",
       "team": "Boston Red Sox",
       "wins": 1,
-      "losses": 1
+      "losses": 2
     },
     "681082": {
       "name": "Bryson Stott",
@@ -3752,7 +3891,7 @@
     "608070": {
       "name": "Jos\u00e9 Ram\u00edrez",
       "team": "Cleveland Guardians",
-      "wins": 1,
+      "wins": 2,
       "losses": 0
     },
     "642350": {
@@ -3849,7 +3988,7 @@
       "name": "Mickey Moniak",
       "team": "Colorado Rockies",
       "wins": 0,
-      "losses": 1
+      "losses": 2
     },
     "666176": {
       "name": "Jo Adell",
@@ -3980,6 +4119,48 @@
     "694497": {
       "name": "Evan Carter",
       "team": "Texas Rangers",
+      "wins": 0,
+      "losses": 1
+    },
+    "650402": {
+      "name": "Gleyber Torres",
+      "team": "Detroit Tigers",
+      "wins": 1,
+      "losses": 0
+    },
+    "683083": {
+      "name": "Nasim Nu\u00f1ez",
+      "team": "Washington Nationals",
+      "wins": 1,
+      "losses": 0
+    },
+    "592518": {
+      "name": "Manny Machado",
+      "team": "San Diego Padres",
+      "wins": 1,
+      "losses": 0
+    },
+    "665019": {
+      "name": "Kody Clemens",
+      "team": "Minnesota Twins",
+      "wins": 1,
+      "losses": 0
+    },
+    "668939": {
+      "name": "Adley Rutschman",
+      "team": "Boston Red Sox",
+      "wins": 0,
+      "losses": 1
+    },
+    "805805": {
+      "name": "Walker Jenkins",
+      "team": "Minnesota Twins",
+      "wins": 0,
+      "losses": 1
+    },
+    "502054": {
+      "name": "Tommy Pham",
+      "team": "Chicago White Sox",
       "wins": 0,
       "losses": 1
     }
