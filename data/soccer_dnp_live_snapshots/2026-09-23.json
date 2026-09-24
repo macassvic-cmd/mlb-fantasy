@@ -1,5 +1,5 @@
 {
-  "_latest_batch_ts": "2026-09-23T22:56:56.634166+00:00",
+  "_latest_batch_ts": "2026-09-24T01:07:56.645449+00:00",
   "pid:5dd45eee-2d6c-4b4d-8961-b892dd6b6c8b": {
     "name": "Dejan Joveljic",
     "team": "SEA",
@@ -27,6 +27,14 @@
         "dns_score": 90,
         "confidence_score": 45,
         "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-24T01:07:56.645449+00:00",
+        "dns_score": 90,
+        "confidence_score": 45,
+        "urgency_score": 70,
         "official_status": "not_yet_posted",
         "dabble_status_raw": null
       }
@@ -60,7 +68,7 @@
       "rotowire_predicted_start": null,
       "rotowire_page_url": "https://www.rotowire.com/soccer/player/dejan-joveljic-29368",
       "rotowire_est_return": "10/10/2026",
-      "rotowire_status_since": "2026-09-23T20:08:21.485398+00:00",
+      "rotowire_status_since": "2026-09-24T01:07:51.039013+00:00",
       "hard_out_corroborated": false,
       "hard_out_corroboration_sources": [],
       "hard_out_conflict": null,
@@ -69,7 +77,7 @@
         "rotowire_status_tag": "OUT",
         "rotowire_injury": "Not Injury Related",
         "rotowire_est_return": "10/10/2026",
-        "rotowire_status_since": "2026-09-23T20:08:21.485398+00:00",
+        "rotowire_status_since": "2026-09-24T01:07:51.039013+00:00",
         "transfermarkt": null,
         "last_appeared_date": "2026-09-12",
         "days_since_last_appearance": 12,
@@ -112,7 +120,7 @@
           "source": "rotowire_news",
           "vote": "bench",
           "predicted_start": false,
-          "observed_at": "2026-09-23T22:56:55.865821+00:00",
+          "observed_at": "2026-09-24T01:07:56.319598+00:00",
           "source_updated_at": null
         }
       ],
@@ -122,8 +130,8 @@
       "predicted_xi_source_count": 1,
       "dns_score": 90,
       "confidence_score": 45,
-      "urgency_score": 0,
-      "combined_priority": 63.0,
+      "urgency_score": 70,
+      "combined_priority": 84.0,
       "evidence_count": 2,
       "tier": "DNS SNIPER",
       "top_reasons": [
@@ -132,6 +140,8 @@
         "RotoWire hard_out floor (base)"
       ],
       "urgency_reasons": [
+        "Past the assumed lineup-release window (38 min overdue) and still unposted",
+        "Kickoff under 30 minutes away",
         "Cross-book prop-removal timing not tracked for soccer yet"
       ],
       "contributions": [
@@ -191,7 +201,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-23T22:56:56.634166+00:00",
+      "ts": "2026-09-24T01:07:56.645449+00:00",
       "props": [
         {
           "market": "Passes Attempted",
@@ -236,6 +246,14 @@
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-24T01:07:56.645449+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 70,
         "official_status": "not_yet_posted",
         "dabble_status_raw": null
       }
@@ -309,14 +327,16 @@
       "predicted_xi_source_count": 0,
       "dns_score": 3,
       "confidence_score": 10,
-      "urgency_score": 0,
-      "combined_priority": 2.1,
+      "urgency_score": 70,
+      "combined_priority": 23.1,
       "evidence_count": 0,
       "tier": "Ignore",
       "top_reasons": [
         "No enrichment signals available"
       ],
       "urgency_reasons": [
+        "Past the assumed lineup-release window (38 min overdue) and still unposted",
+        "Kickoff under 30 minutes away",
         "Cross-book prop-removal timing not tracked for soccer yet"
       ],
       "contributions": [
@@ -368,7 +388,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-23T22:56:56.634166+00:00",
+      "ts": "2026-09-24T01:07:56.645449+00:00",
       "props": [
         {
           "market": "Tackles",
@@ -413,6 +433,14 @@
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-24T01:07:56.645449+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 70,
         "official_status": "not_yet_posted",
         "dabble_status_raw": null
       }
@@ -486,14 +514,16 @@
       "predicted_xi_source_count": 0,
       "dns_score": 3,
       "confidence_score": 10,
-      "urgency_score": 0,
-      "combined_priority": 2.1,
+      "urgency_score": 70,
+      "combined_priority": 23.1,
       "evidence_count": 0,
       "tier": "Ignore",
       "top_reasons": [
         "No enrichment signals available"
       ],
       "urgency_reasons": [
+        "Past the assumed lineup-release window (38 min overdue) and still unposted",
+        "Kickoff under 30 minutes away",
         "Cross-book prop-removal timing not tracked for soccer yet"
       ],
       "contributions": [
@@ -545,7 +575,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-23T22:56:56.634166+00:00",
+      "ts": "2026-09-24T01:07:56.645449+00:00",
       "props": [
         {
           "market": "Shots",
@@ -590,6 +620,14 @@
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-24T01:07:56.645449+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 70,
         "official_status": "not_yet_posted",
         "dabble_status_raw": null
       }
@@ -663,14 +701,16 @@
       "predicted_xi_source_count": 0,
       "dns_score": 3,
       "confidence_score": 10,
-      "urgency_score": 0,
-      "combined_priority": 2.1,
+      "urgency_score": 70,
+      "combined_priority": 23.1,
       "evidence_count": 0,
       "tier": "Ignore",
       "top_reasons": [
         "No enrichment signals available"
       ],
       "urgency_reasons": [
+        "Past the assumed lineup-release window (38 min overdue) and still unposted",
+        "Kickoff under 30 minutes away",
         "Cross-book prop-removal timing not tracked for soccer yet"
       ],
       "contributions": [
@@ -722,7 +762,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-23T22:56:56.634166+00:00",
+      "ts": "2026-09-24T01:07:56.645449+00:00",
       "props": [
         {
           "market": "Passes Attempted",
@@ -772,6 +812,14 @@
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-24T01:07:56.645449+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 70,
         "official_status": "not_yet_posted",
         "dabble_status_raw": null
       }
@@ -845,14 +893,16 @@
       "predicted_xi_source_count": 0,
       "dns_score": 3,
       "confidence_score": 10,
-      "urgency_score": 0,
-      "combined_priority": 2.1,
+      "urgency_score": 70,
+      "combined_priority": 23.1,
       "evidence_count": 0,
       "tier": "Ignore",
       "top_reasons": [
         "No enrichment signals available"
       ],
       "urgency_reasons": [
+        "Past the assumed lineup-release window (38 min overdue) and still unposted",
+        "Kickoff under 30 minutes away",
         "Cross-book prop-removal timing not tracked for soccer yet"
       ],
       "contributions": [
@@ -904,7 +954,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-23T22:56:56.634166+00:00",
+      "ts": "2026-09-24T01:07:56.645449+00:00",
       "props": [
         {
           "market": "Passes Attempted",
@@ -954,6 +1004,14 @@
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-24T01:07:56.645449+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 70,
         "official_status": "not_yet_posted",
         "dabble_status_raw": null
       }
@@ -1027,14 +1085,16 @@
       "predicted_xi_source_count": 0,
       "dns_score": 3,
       "confidence_score": 10,
-      "urgency_score": 0,
-      "combined_priority": 2.1,
+      "urgency_score": 70,
+      "combined_priority": 23.1,
       "evidence_count": 0,
       "tier": "Ignore",
       "top_reasons": [
         "No enrichment signals available"
       ],
       "urgency_reasons": [
+        "Past the assumed lineup-release window (38 min overdue) and still unposted",
+        "Kickoff under 30 minutes away",
         "Cross-book prop-removal timing not tracked for soccer yet"
       ],
       "contributions": [
@@ -1086,7 +1146,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-23T22:56:56.634166+00:00",
+      "ts": "2026-09-24T01:07:56.645449+00:00",
       "props": [
         {
           "market": "Passes Attempted",
@@ -1136,6 +1196,14 @@
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-24T01:07:56.645449+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 70,
         "official_status": "not_yet_posted",
         "dabble_status_raw": null
       }
@@ -1209,14 +1277,16 @@
       "predicted_xi_source_count": 0,
       "dns_score": 3,
       "confidence_score": 10,
-      "urgency_score": 0,
-      "combined_priority": 2.1,
+      "urgency_score": 70,
+      "combined_priority": 23.1,
       "evidence_count": 0,
       "tier": "Ignore",
       "top_reasons": [
         "No enrichment signals available"
       ],
       "urgency_reasons": [
+        "Past the assumed lineup-release window (38 min overdue) and still unposted",
+        "Kickoff under 30 minutes away",
         "Cross-book prop-removal timing not tracked for soccer yet"
       ],
       "contributions": [
@@ -1268,7 +1338,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-23T22:56:56.634166+00:00",
+      "ts": "2026-09-24T01:07:56.645449+00:00",
       "props": [
         {
           "market": "Passes Attempted",
@@ -1277,8 +1347,8 @@
         },
         {
           "market": "Saves",
-          "line": 3.0,
-          "prop_id": "9dd422d54ab2853c"
+          "line": 3.5,
+          "prop_id": "7e9673f2e573e565"
         }
       ]
     }
@@ -1318,6 +1388,14 @@
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-24T01:07:56.645449+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 70,
         "official_status": "not_yet_posted",
         "dabble_status_raw": null
       }
@@ -1391,14 +1469,16 @@
       "predicted_xi_source_count": 0,
       "dns_score": 3,
       "confidence_score": 10,
-      "urgency_score": 0,
-      "combined_priority": 2.1,
+      "urgency_score": 70,
+      "combined_priority": 23.1,
       "evidence_count": 0,
       "tier": "Ignore",
       "top_reasons": [
         "No enrichment signals available"
       ],
       "urgency_reasons": [
+        "Past the assumed lineup-release window (38 min overdue) and still unposted",
+        "Kickoff under 30 minutes away",
         "Cross-book prop-removal timing not tracked for soccer yet"
       ],
       "contributions": [
@@ -1450,7 +1530,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-23T22:56:56.634166+00:00",
+      "ts": "2026-09-24T01:07:56.645449+00:00",
       "props": [
         {
           "market": "Tackles",
@@ -1479,6 +1559,14 @@
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-24T01:07:56.645449+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 70,
         "official_status": "not_yet_posted",
         "dabble_status_raw": null
       }
@@ -1552,14 +1640,16 @@
       "predicted_xi_source_count": 0,
       "dns_score": 3,
       "confidence_score": 10,
-      "urgency_score": 0,
-      "combined_priority": 2.1,
+      "urgency_score": 70,
+      "combined_priority": 23.1,
       "evidence_count": 0,
       "tier": "Ignore",
       "top_reasons": [
         "No enrichment signals available"
       ],
       "urgency_reasons": [
+        "Past the assumed lineup-release window (38 min overdue) and still unposted",
+        "Kickoff under 30 minutes away",
         "Cross-book prop-removal timing not tracked for soccer yet"
       ],
       "contributions": [
@@ -1611,7 +1701,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-23T22:56:56.634166+00:00",
+      "ts": "2026-09-24T01:07:56.645449+00:00",
       "props": [
         {
           "market": "Passes Attempted",
