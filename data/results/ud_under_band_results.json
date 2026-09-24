@@ -3190,21 +3190,204 @@
           "grade": "loss"
         }
       ]
+    },
+    "2026-09-23": {
+      "wins": 9,
+      "losses": 7,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 680869,
+          "name": "Zack Gelof",
+          "team": "Athletics",
+          "projected_ud": 4.54,
+          "ud_line": 6.5,
+          "edge": -1.96,
+          "game_time_pt": "6:40 PM PT",
+          "actual_ud": 22,
+          "grade": "loss"
+        },
+        {
+          "player_id": 669242,
+          "name": "Tommy Edman",
+          "team": "Los Angeles Dodgers",
+          "projected_ud": 4.61,
+          "ud_line": 6.5,
+          "edge": -1.89,
+          "game_time_pt": "7:10 PM PT",
+          "actual_ud": 2,
+          "grade": "win"
+        },
+        {
+          "player_id": 592518,
+          "name": "Manny Machado",
+          "team": "San Diego Padres",
+          "projected_ud": 3.61,
+          "ud_line": 5.5,
+          "edge": -1.89,
+          "game_time_pt": "7:10 PM PT",
+          "actual_ud": 18,
+          "grade": "loss"
+        },
+        {
+          "player_id": 701398,
+          "name": "Sal Stewart",
+          "team": "Cincinnati Reds",
+          "projected_ud": 3.65,
+          "ud_line": 5.5,
+          "edge": -1.85,
+          "game_time_pt": "4:15 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 521692,
+          "name": "Salvador Perez",
+          "team": "Kansas City Royals",
+          "projected_ud": 3.68,
+          "ud_line": 5.5,
+          "edge": -1.82,
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 643446,
+          "name": "Jeff McNeil",
+          "team": "Athletics",
+          "projected_ud": 3.7,
+          "ud_line": 5.5,
+          "edge": -1.8,
+          "game_time_pt": "6:40 PM PT",
+          "actual_ud": 8,
+          "grade": "loss"
+        },
+        {
+          "player_id": 677649,
+          "name": "Ezequiel Duran",
+          "team": "Texas Rangers",
+          "projected_ud": 3.76,
+          "ud_line": 5.5,
+          "edge": -1.74,
+          "game_time_pt": "5:05 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 691023,
+          "name": "Jordan Walker",
+          "team": "St. Louis Cardinals",
+          "projected_ud": 3.78,
+          "ud_line": 5.5,
+          "edge": -1.72,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 7,
+          "grade": "loss"
+        },
+        {
+          "player_id": 608070,
+          "name": "Jos\u00e9 Ram\u00edrez",
+          "team": "Cleveland Guardians",
+          "projected_ud": 4.8,
+          "ud_line": 6.5,
+          "edge": -1.7,
+          "game_time_pt": "4:10 PM PT",
+          "actual_ud": 7,
+          "grade": "loss"
+        },
+        {
+          "player_id": 695506,
+          "name": "Jac Caglianone",
+          "team": "Kansas City Royals",
+          "projected_ud": 4.83,
+          "ud_line": 6.5,
+          "edge": -1.67,
+          "game_time_pt": "4:40 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        },
+        {
+          "player_id": 800050,
+          "name": "Chase DeLauter",
+          "team": "Cleveland Guardians",
+          "projected_ud": 4.87,
+          "ud_line": 6.5,
+          "edge": -1.63,
+          "game_time_pt": "4:10 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 682829,
+          "name": "Elly De La Cruz",
+          "team": "Cincinnati Reds",
+          "projected_ud": 4.89,
+          "ud_line": 6.5,
+          "edge": -1.61,
+          "game_time_pt": "4:15 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 683083,
+          "name": "Nasim Nu\u00f1ez",
+          "team": "Washington Nationals",
+          "projected_ud": 3.94,
+          "ud_line": 5.5,
+          "edge": -1.56,
+          "game_time_pt": "10:10 AM PT",
+          "actual_ud": 16,
+          "grade": "loss"
+        },
+        {
+          "player_id": 677800,
+          "name": "Wilyer Abreu",
+          "team": "Boston Red Sox",
+          "projected_ud": 4.96,
+          "ud_line": 6.5,
+          "edge": -1.54,
+          "game_time_pt": "4:10 PM PT",
+          "actual_ud": 6,
+          "grade": "win"
+        },
+        {
+          "player_id": 656941,
+          "name": "Kyle Schwarber",
+          "team": "Philadelphia Phillies",
+          "projected_ud": 3.96,
+          "ud_line": 5.5,
+          "edge": -1.54,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 6,
+          "grade": "loss"
+        },
+        {
+          "player_id": 547180,
+          "name": "Bryce Harper",
+          "team": "Philadelphia Phillies",
+          "projected_ud": 3.97,
+          "ud_line": 5.5,
+          "edge": -1.53,
+          "game_time_pt": "3:40 PM PT",
+          "actual_ud": 3,
+          "grade": "win"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 145,
-    "losses": 119,
+    "wins": 154,
+    "losses": 126,
     "dnp": 7
   },
   "record_by_line": {
     "5.5": {
-      "wins": 67,
-      "losses": 68
+      "wins": 71,
+      "losses": 73
     },
     "6.5": {
-      "wins": 44,
-      "losses": 38
+      "wins": 49,
+      "losses": 40
     },
     "8.5+": {
       "wins": 9,
@@ -3243,7 +3426,7 @@
     "677649": {
       "name": "Ezequiel Duran",
       "team": "Texas Rangers",
-      "wins": 2,
+      "wins": 3,
       "losses": 1
     },
     "663616": {
@@ -3315,7 +3498,7 @@
     "701398": {
       "name": "Sal Stewart",
       "team": "Cincinnati Reds",
-      "wins": 1,
+      "wins": 2,
       "losses": 0
     },
     "808982": {
@@ -3345,7 +3528,7 @@
     "682829": {
       "name": "Elly De La Cruz",
       "team": "Cincinnati Reds",
-      "wins": 1,
+      "wins": 2,
       "losses": 1
     },
     "664983": {
@@ -3363,7 +3546,7 @@
     "547180": {
       "name": "Bryce Harper",
       "team": "Philadelphia Phillies",
-      "wins": 2,
+      "wins": 3,
       "losses": 1
     },
     "606192": {
@@ -3634,7 +3817,7 @@
       "name": "Zack Gelof",
       "team": "Athletics",
       "wins": 0,
-      "losses": 1
+      "losses": 2
     },
     "677951": {
       "name": "Bobby Witt Jr.",
@@ -3694,7 +3877,7 @@
       "name": "Kyle Schwarber",
       "team": "Philadelphia Phillies",
       "wins": 2,
-      "losses": 0
+      "losses": 1
     },
     "664761": {
       "name": "Alec Bohm",
@@ -3772,7 +3955,7 @@
       "name": "Jordan Walker",
       "team": "St. Louis Cardinals",
       "wins": 2,
-      "losses": 1
+      "losses": 2
     },
     "693304": {
       "name": "Nick Gonzales",
@@ -3819,7 +4002,7 @@
     "677800": {
       "name": "Wilyer Abreu",
       "team": "Boston Red Sox",
-      "wins": 1,
+      "wins": 2,
       "losses": 2
     },
     "681082": {
@@ -3892,7 +4075,7 @@
       "name": "Jos\u00e9 Ram\u00edrez",
       "team": "Cleveland Guardians",
       "wins": 2,
-      "losses": 0
+      "losses": 1
     },
     "642350": {
       "name": "Jose Siri",
@@ -4107,7 +4290,7 @@
     "669242": {
       "name": "Tommy Edman",
       "team": "Los Angeles Dodgers",
-      "wins": 1,
+      "wins": 2,
       "losses": 0
     },
     "677956": {
@@ -4132,13 +4315,13 @@
       "name": "Nasim Nu\u00f1ez",
       "team": "Washington Nationals",
       "wins": 1,
-      "losses": 0
+      "losses": 1
     },
     "592518": {
       "name": "Manny Machado",
       "team": "San Diego Padres",
       "wins": 1,
-      "losses": 0
+      "losses": 1
     },
     "665019": {
       "name": "Kody Clemens",
@@ -4163,6 +4346,30 @@
       "team": "Chicago White Sox",
       "wins": 0,
       "losses": 1
+    },
+    "521692": {
+      "name": "Salvador Perez",
+      "team": "Kansas City Royals",
+      "wins": 1,
+      "losses": 0
+    },
+    "643446": {
+      "name": "Jeff McNeil",
+      "team": "Athletics",
+      "wins": 0,
+      "losses": 1
+    },
+    "695506": {
+      "name": "Jac Caglianone",
+      "team": "Kansas City Royals",
+      "wins": 1,
+      "losses": 0
+    },
+    "800050": {
+      "name": "Chase DeLauter",
+      "team": "Cleveland Guardians",
+      "wins": 1,
+      "losses": 0
     }
   }
 }

@@ -2460,14 +2460,55 @@
           "rate_before": 77.8
         }
       ]
+    },
+    "2026-09-23": {
+      "fire": [
+        {
+          "player_id": 672515,
+          "name": "Gabriel Moreno",
+          "team": "Arizona Diamondbacks",
+          "grade": "win",
+          "n_before": 18,
+          "wins_before": 12,
+          "rate_before": 66.7
+        },
+        {
+          "player_id": 691718,
+          "name": "Pete Crow-Armstrong",
+          "team": "Chicago Cubs",
+          "grade": "loss",
+          "n_before": 50,
+          "wins_before": 29,
+          "rate_before": 58.0
+        },
+        {
+          "player_id": 668930,
+          "name": "Brice Turang",
+          "team": "Milwaukee Brewers",
+          "grade": "win",
+          "n_before": 20,
+          "wins_before": 14,
+          "rate_before": 70.0
+        },
+        {
+          "player_id": 672640,
+          "name": "Otto Lopez",
+          "team": "Miami Marlins",
+          "grade": "win",
+          "n_before": 17,
+          "wins_before": 11,
+          "rate_before": 64.7
+        }
+      ],
+      "hot": []
     }
   },
   "cohorts": {
     "fire": {
-      "wins": 66,
-      "losses": 56,
-      "n": 122,
-      "rate": 54.1
+      "wins": 69,
+      "losses": 57,
+      "n": 126,
+      "rate": 54.8
     },
     "hot": {
       "wins": 55,
