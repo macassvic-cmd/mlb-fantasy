@@ -25,21 +25,11 @@
       "player_id": 665487,
       "name": "Fernando Tatis Jr.",
       "team": "San Diego Padres",
-      "projected_ud": 9.46,
+      "projected_ud": 9.43,
       "ud_line": 7.5,
-      "edge": 1.96,
+      "edge": 1.93,
       "actionable_reason": "edge + strong contact",
       "game_time_pt": "6:40 PM PT"
-    },
-    {
-      "player_id": 673548,
-      "name": "Seiya Suzuki",
-      "team": "Chicago Cubs",
-      "projected_ud": 8.5,
-      "ud_line": 6.5,
-      "edge": 2.0,
-      "actionable_reason": "edge + platoon advantage",
-      "game_time_pt": "2:35 PM PT"
     },
     {
       "player_id": 624413,
@@ -165,11 +155,21 @@
       "player_id": 805808,
       "name": "Kevin McGonigle",
       "team": "Detroit Tigers",
+      "projected_ud": 8.49,
+      "ud_line": 6.5,
+      "edge": 1.99,
+      "actionable_reason": "edge + strong contact",
+      "game_time_pt": "3:40 PM PT"
+    },
+    {
+      "player_id": 686948,
+      "name": "Drake Baldwin",
+      "team": "Atlanta Braves",
       "projected_ud": 8.42,
       "ud_line": 6.5,
       "edge": 1.92,
       "actionable_reason": "edge + strong contact",
-      "game_time_pt": "3:40 PM PT"
+      "game_time_pt": "4:10 PM PT"
     }
   ]
 }
