@@ -2,6 +2,14 @@
   "date": "2026-09-25",
   "plays": [
     {
+      "player_id": 673548,
+      "name": "Seiya Suzuki",
+      "team": "Chicago Cubs",
+      "call": "over",
+      "edge": 2.0,
+      "ud_line": 6.5
+    },
+    {
       "player_id": 624413,
       "name": "Pete Alonso",
       "team": "Baltimore Orioles",
@@ -15,22 +23,6 @@
       "team": "Washington Nationals",
       "call": "over",
       "edge": 2.0,
-      "ud_line": 6.5
-    },
-    {
-      "player_id": 682829,
-      "name": "Elly De La Cruz",
-      "team": "Cincinnati Reds",
-      "call": "over",
-      "edge": 2.0,
-      "ud_line": 6.5
-    },
-    {
-      "player_id": 596019,
-      "name": "Francisco Lindor",
-      "team": "New York Mets",
-      "call": "under",
-      "edge": -1.89,
       "ud_line": 6.5
     }
   ]
