@@ -1612,11 +1612,126 @@
           "grade": "loss"
         }
       ]
+    },
+    "2026-09-24": {
+      "wins": 3,
+      "losses": 6,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 672515,
+          "name": "Gabriel Moreno",
+          "team": "Arizona Diamondbacks",
+          "projected_ud": 9.5,
+          "ud_line": 7.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + shrunk sample above baseline",
+          "game_time_pt": "12:10 PM PT",
+          "actual_ud": 18,
+          "grade": "win"
+        },
+        {
+          "player_id": 682998,
+          "name": "Corbin Carroll",
+          "team": "Arizona Diamondbacks",
+          "projected_ud": 9.5,
+          "ud_line": 8.5,
+          "edge": 1.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "12:10 PM PT",
+          "actual_ud": 6,
+          "grade": "loss"
+        },
+        {
+          "player_id": 621566,
+          "name": "Matt Olson",
+          "team": "Atlanta Braves",
+          "projected_ud": 9.17,
+          "ud_line": 7.5,
+          "edge": 1.67,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "4:15 PM PT",
+          "actual_ud": 2,
+          "grade": "loss"
+        },
+        {
+          "player_id": 669003,
+          "name": "Garrett Mitchell",
+          "team": "Milwaukee Brewers",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "3:05 PM PT",
+          "actual_ud": 3,
+          "grade": "loss"
+        },
+        {
+          "player_id": 668930,
+          "name": "Brice Turang",
+          "team": "Milwaukee Brewers",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "3:05 PM PT",
+          "actual_ud": 3,
+          "grade": "loss"
+        },
+        {
+          "player_id": 660670,
+          "name": "Ronald Acu\u00f1a Jr.",
+          "team": "Atlanta Braves",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "4:15 PM PT",
+          "actual_ud": 12,
+          "grade": "win"
+        },
+        {
+          "player_id": 673237,
+          "name": "Yainer Diaz",
+          "team": "Houston Astros",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "6:40 PM PT",
+          "actual_ud": 0,
+          "grade": "loss"
+        },
+        {
+          "player_id": 701807,
+          "name": "Carson Benge",
+          "team": "New York Mets",
+          "projected_ud": 8.29,
+          "ud_line": 6.5,
+          "edge": 1.79,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "11:35 AM PT",
+          "actual_ud": 5,
+          "grade": "loss"
+        },
+        {
+          "player_id": 682829,
+          "name": "Elly De La Cruz",
+          "team": "Cincinnati Reds",
+          "projected_ud": 8.1,
+          "ud_line": 6.5,
+          "edge": 1.6,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "4:15 PM PT",
+          "actual_ud": 14,
+          "grade": "win"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 71,
-    "losses": 57,
+    "wins": 74,
+    "losses": 63,
     "dnp": 0
   }
 }

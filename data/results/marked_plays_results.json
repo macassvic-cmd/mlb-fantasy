@@ -2501,14 +2501,37 @@
         }
       ],
       "hot": []
+    },
+    "2026-09-24": {
+      "fire": [
+        {
+          "player_id": 672515,
+          "name": "Gabriel Moreno",
+          "team": "Arizona Diamondbacks",
+          "grade": "win",
+          "n_before": 19,
+          "wins_before": 13,
+          "rate_before": 68.4
+        },
+        {
+          "player_id": 668930,
+          "name": "Brice Turang",
+          "team": "Milwaukee Brewers",
+          "grade": "loss",
+          "n_before": 21,
+          "wins_before": 15,
+          "rate_before": 71.4
+        }
+      ],
+      "hot": []
     }
   },
   "cohorts": {
     "fire": {
-      "wins": 69,
-      "losses": 57,
-      "n": 126,
-      "rate": 54.8
+      "wins": 70,
+      "losses": 58,
+      "n": 128,
+      "rate": 54.7
     },
     "hot": {
       "wins": 55,

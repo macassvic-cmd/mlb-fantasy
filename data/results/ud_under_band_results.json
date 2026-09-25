@@ -3373,29 +3373,135 @@
           "grade": "win"
         }
       ]
+    },
+    "2026-09-24": {
+      "wins": 1,
+      "losses": 8,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 695731,
+          "name": "Braden Montgomery",
+          "team": "Chicago White Sox",
+          "projected_ud": 3.76,
+          "ud_line": 5.5,
+          "edge": -1.74,
+          "game_time_pt": "11:10 AM PT",
+          "actual_ud": 11,
+          "grade": "loss"
+        },
+        {
+          "player_id": 608070,
+          "name": "Jos\u00e9 Ram\u00edrez",
+          "team": "Cleveland Guardians",
+          "projected_ud": 5.78,
+          "ud_line": 7.5,
+          "edge": -1.72,
+          "game_time_pt": "3:45 PM PT",
+          "actual_ud": 10,
+          "grade": "loss"
+        },
+        {
+          "player_id": 643446,
+          "name": "Jeff McNeil",
+          "team": "Athletics",
+          "projected_ud": 4.78,
+          "ud_line": 6.5,
+          "edge": -1.72,
+          "game_time_pt": "6:40 PM PT",
+          "actual_ud": 24,
+          "grade": "loss"
+        },
+        {
+          "player_id": 671976,
+          "name": "Tristan Peters",
+          "team": "Chicago White Sox",
+          "projected_ud": 3.81,
+          "ud_line": 5.5,
+          "edge": -1.69,
+          "game_time_pt": "11:10 AM PT",
+          "actual_ud": 7,
+          "grade": "loss"
+        },
+        {
+          "player_id": 691718,
+          "name": "Pete Crow-Armstrong",
+          "team": "Chicago Cubs",
+          "projected_ud": 7.87,
+          "ud_line": 9.5,
+          "edge": -1.63,
+          "game_time_pt": "11:20 AM PT",
+          "actual_ud": 10,
+          "grade": "loss"
+        },
+        {
+          "player_id": 518692,
+          "name": "Freddie Freeman",
+          "team": "Los Angeles Dodgers",
+          "projected_ud": 3.88,
+          "ud_line": 5.5,
+          "edge": -1.62,
+          "game_time_pt": "7:10 PM PT",
+          "actual_ud": 6,
+          "grade": "loss"
+        },
+        {
+          "player_id": 608369,
+          "name": "Corey Seager",
+          "team": "Texas Rangers",
+          "projected_ud": 4.92,
+          "ud_line": 6.5,
+          "edge": -1.58,
+          "game_time_pt": "11:35 AM PT",
+          "actual_ud": 14,
+          "grade": "loss"
+        },
+        {
+          "player_id": 677649,
+          "name": "Ezequiel Duran",
+          "team": "Texas Rangers",
+          "projected_ud": 3.94,
+          "ud_line": 5.5,
+          "edge": -1.56,
+          "game_time_pt": "11:35 AM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 803011,
+          "name": "Sam Antonacci",
+          "team": "Chicago White Sox",
+          "projected_ud": 5.0,
+          "ud_line": 6.5,
+          "edge": -1.5,
+          "game_time_pt": "11:10 AM PT",
+          "actual_ud": 15,
+          "grade": "loss"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 154,
-    "losses": 126,
+    "wins": 155,
+    "losses": 134,
     "dnp": 7
   },
   "record_by_line": {
     "5.5": {
-      "wins": 71,
-      "losses": 73
+      "wins": 72,
+      "losses": 76
     },
     "6.5": {
       "wins": 49,
-      "losses": 40
+      "losses": 43
     },
     "8.5+": {
       "wins": 9,
-      "losses": 4
+      "losses": 5
     },
     "7.5": {
       "wins": 16,
-      "losses": 6
+      "losses": 7
     }
   },
   "record_by_player": {
@@ -3426,7 +3532,7 @@
     "677649": {
       "name": "Ezequiel Duran",
       "team": "Texas Rangers",
-      "wins": 3,
+      "wins": 4,
       "losses": 1
     },
     "663616": {
@@ -3463,7 +3569,7 @@
       "name": "Pete Crow-Armstrong",
       "team": "Chicago Cubs",
       "wins": 3,
-      "losses": 0
+      "losses": 1
     },
     "805811": {
       "name": "Bryce Eldridge",
@@ -3847,7 +3953,7 @@
       "name": "Sam Antonacci",
       "team": "Chicago White Sox",
       "wins": 1,
-      "losses": 0
+      "losses": 1
     },
     "676475": {
       "name": "Alec Burleson",
@@ -4075,7 +4181,7 @@
       "name": "Jos\u00e9 Ram\u00edrez",
       "team": "Cleveland Guardians",
       "wins": 2,
-      "losses": 1
+      "losses": 2
     },
     "642350": {
       "name": "Jose Siri",
@@ -4111,7 +4217,7 @@
       "name": "Braden Montgomery",
       "team": "Chicago White Sox",
       "wins": 1,
-      "losses": 0
+      "losses": 1
     },
     "701785": {
       "name": "Kaelen Culpepper",
@@ -4165,7 +4271,7 @@
       "name": "Corey Seager",
       "team": "Texas Rangers",
       "wins": 0,
-      "losses": 1
+      "losses": 2
     },
     "666160": {
       "name": "Mickey Moniak",
@@ -4255,7 +4361,7 @@
       "name": "Freddie Freeman",
       "team": "Los Angeles Dodgers",
       "wins": 1,
-      "losses": 0
+      "losses": 1
     },
     "671218": {
       "name": "Heliot Ramos",
@@ -4357,7 +4463,7 @@
       "name": "Jeff McNeil",
       "team": "Athletics",
       "wins": 0,
-      "losses": 1
+      "losses": 2
     },
     "695506": {
       "name": "Jac Caglianone",
@@ -4370,6 +4476,12 @@
       "team": "Cleveland Guardians",
       "wins": 1,
       "losses": 0
+    },
+    "671976": {
+      "name": "Tristan Peters",
+      "team": "Chicago White Sox",
+      "wins": 0,
+      "losses": 1
     }
   }
 }

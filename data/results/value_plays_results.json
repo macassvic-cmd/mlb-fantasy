@@ -7899,6 +7899,29 @@
           "correct": true
         }
       ]
+    },
+    "2026-09-24": {
+      "summary": {
+        "total": 1,
+        "correct": 1,
+        "accuracy": 100.0,
+        "over_total": 1,
+        "over_correct": 1,
+        "under_total": 0,
+        "under_correct": 0
+      },
+      "plays": [
+        {
+          "player_id": 672515,
+          "name": "Gabriel Moreno",
+          "team": "Arizona Diamondbacks",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 18,
+          "correct": true
+        }
+      ]
     }
   }
 }
