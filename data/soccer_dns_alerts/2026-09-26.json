@@ -2071,5 +2071,208 @@
     "rotowire_status_raw": null,
     "prediction_consensus": "unknown",
     "x_post_id": null
+  },
+  "_last_state:aeeade9a-60db-40f1-af9a-8bff5adbb1d1:01a0c9f0-c824-7665-9c30-f356b37ede8d": {
+    "dns_score": 33,
+    "rotowire_status_raw": "fifty-fifty",
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "2026-09-26:soccer:aeeade9a-60db-40f1-af9a-8bff5adbb1d1:01a0c9f0-c824-7665-9c30-f356b37ede8d:news_signal:46502": {
+    "player_id": "aeeade9a-60db-40f1-af9a-8bff5adbb1d1",
+    "player_name": "Charalampos Kostoulas",
+    "normalized_name": "charalampos kostoulas",
+    "team": "GRE",
+    "league_code": null,
+    "opponent": "@ Greece",
+    "fixture_id": "01a0c9f0-c824-7665-9c30-f356b37ede8d",
+    "dns_score": 33,
+    "confidence_score": 30,
+    "urgency_score": 0,
+    "alert_type": "news_signal",
+    "alerted_at": "2026-09-26T16:27:52.801772+00:00",
+    "game_start": "2026-09-27T18:45:00.000Z",
+    "minutes_to_game": 1577.1199704666665,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Assists",
+      "Goals"
+    ],
+    "dabble_prop_ids": [
+      "76b83d315afca1f3",
+      "d01285813fdb70e0"
+    ],
+    "top_reasons": [
+      "RotoWire: fifty-fifty"
+    ],
+    "extra_reason": "RotoWire status worsened to: fifty-fifty",
+    "transfermarkt_injury_since": null,
+    "research_block": null,
+    "is_lock": false,
+    "lock_reason": null,
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "_last_state:96a973e8-047b-41f5-9c98-d06733eb59d0:01a0d0de-4a83-750c-8f71-875ee7c36b8c": {
+    "dns_score": 18,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:d235b205-1fbc-49a2-8d70-a256013baa01:01a0c9f0-c824-7665-9c30-f356b37ede8d": {
+    "dns_score": 18,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:2f11cf08-a0cd-4f66-9f4a-6c0540b74fac:01a0d0d7-e166-7282-a86a-f8505945ebf7": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:e0cbec3e-d69f-45d8-8e02-23ae12a8540f:01a0daf7-78c2-768b-b53c-c03a7561ef73": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:dad0ae02-f0fc-4fd4-b783-0ceac99da6d4:01a0daf7-78c2-768b-b53c-c03a7561ef73": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:a21fcc8b-64f3-4b86-8c2b-7daebaa1b6e9:01a0d0d7-e166-7282-a86a-f8505945ebf7": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:0a740bd3-9cf3-4bf9-970e-6e7f5f91e79f:01a0d0d7-e166-7282-a86a-f8505945ebf7": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:8f330b96-378b-4ebb-81bb-849c45bdb029:01a0d0d7-e166-7282-a86a-f8505945ebf7": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:4f2a632a-9c45-4eb6-a8ca-ab672ac56b07:01a0d0de-4a83-750c-8f71-875ee7c36b8c": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:1517ac47-aaa1-4034-91f3-df0813fcda4c:01a0d0de-4a83-750c-8f71-875ee7c36b8c": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:5e06029b-c8da-4825-bd40-fbc4e7cacafa:01a0d0de-4a83-750c-8f71-875ee7c36b8c": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:512a8aa2-d79d-4707-afb6-05ec9b85f46c:01a0d0de-4a83-750c-8f71-875ee7c36b8c": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:6d1c4ade-d9c2-40cd-8ec9-4a601a44016f:01a0d0de-4a83-750c-8f71-875ee7c36b8c": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:b541389f-542f-4830-994f-adb416695234:01a0d0de-4a83-750c-8f71-875ee7c36b8c": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:2e66dc7c-b071-4df4-b220-fa4fa495f9d5:01a0dbcf-d9d2-7556-8f5f-275f8aad35d3": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:9beb21e7-22ed-4589-a1f2-a8956cc6bf89:01a0dbcf-d9d2-7556-8f5f-275f8aad35d3": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:97025967-ba7e-4324-b489-e5b6b3ca7f1d:01a0c9f0-c824-7665-9c30-f356b37ede8d": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:541162c4-1312-444d-b1b1-3037cb497613:01a0c9f0-c824-7665-9c30-f356b37ede8d": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:d947e15c-dc22-4e10-bc6b-7f2966359fb0:01a0c9f0-c824-7665-9c30-f356b37ede8d": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:467010ef-d484-4b41-bde1-6d3ef527c26b:01a0c9f0-c824-7665-9c30-f356b37ede8d": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:4732cb4e-ea3e-4e97-8795-3eb23c47d3b1:01a0c9f0-c824-7665-9c30-f356b37ede8d": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:10e578e3-3c5a-496f-8381-2596ba3d7e90:01a0c9f0-c824-7665-9c30-f356b37ede8d": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:e5cf5fdd-fd18-4101-b151-34bd80e0e9f6:01a0c9f0-c824-7665-9c30-f356b37ede8d": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:de0a0365-df11-436a-8fe3-a0eb16436678:01a0c9f0-c824-7665-9c30-f356b37ede8d": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:30c38bbd-92d6-4d22-8e69-2af2e6073422:01a0c9f0-c824-7665-9c30-f356b37ede8d": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:5c6f2e57-6457-48b5-8458-50c0a79f82c0:01a0d0d7-e166-7282-a86a-f8505945ebf7": {
+    "dns_score": 0,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "start",
+    "x_post_id": null
   }
 }

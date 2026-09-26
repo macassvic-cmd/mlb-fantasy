@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-26T12:15:00.426311+00:00",
+  "generated_at": "2026-09-26T16:27:52.785533+00:00",
   "date": "2026-09-26",
   "history": {
-    "total_attempts": 18,
+    "total_attempts": 30,
     "accepted": 0,
-    "rejected": 18,
+    "rejected": 30,
     "precision": 0.0,
     "entries": [
       {
@@ -134,6 +134,126 @@
         "reason": "no_expected_team_id_to_confirm"
       },
       {
+        "normalized_name": "nicolas fernandez mercau",
+        "variant": "nicolas fernandez",
+        "expected_team_id": null,
+        "entry_team_ids": [
+          "17606"
+        ],
+        "accepted": false,
+        "reason": "no_expected_team_id_to_confirm"
+      },
+      {
+        "normalized_name": "nicolas fernandez mercau",
+        "variant": "nicolas fernandez",
+        "expected_team_id": null,
+        "entry_team_ids": [
+          "17606"
+        ],
+        "accepted": false,
+        "reason": "no_expected_team_id_to_confirm"
+      },
+      {
+        "normalized_name": "nicolas fernandez mercau",
+        "variant": "nicolas fernandez",
+        "expected_team_id": null,
+        "entry_team_ids": [
+          "17606"
+        ],
+        "accepted": false,
+        "reason": "no_expected_team_id_to_confirm"
+      },
+      {
+        "normalized_name": "nicolas fernandez mercau",
+        "variant": "nicolas fernandez",
+        "expected_team_id": null,
+        "entry_team_ids": [
+          "17606"
+        ],
+        "accepted": false,
+        "reason": "no_expected_team_id_to_confirm"
+      },
+      {
+        "normalized_name": "nicolas fernandez mercau",
+        "variant": "nicolas fernandez",
+        "expected_team_id": null,
+        "entry_team_ids": [
+          "17606"
+        ],
+        "accepted": false,
+        "reason": "no_expected_team_id_to_confirm"
+      },
+      {
+        "normalized_name": "nicolas fernandez mercau",
+        "variant": "nicolas fernandez",
+        "expected_team_id": null,
+        "entry_team_ids": [
+          "17606"
+        ],
+        "accepted": false,
+        "reason": "no_expected_team_id_to_confirm"
+      },
+      {
+        "normalized_name": "thiago martins bueno",
+        "variant": "thiago martins",
+        "expected_team_id": null,
+        "entry_team_ids": [
+          "17606"
+        ],
+        "accepted": false,
+        "reason": "no_expected_team_id_to_confirm"
+      },
+      {
+        "normalized_name": "thiago martins bueno",
+        "variant": "thiago martins",
+        "expected_team_id": null,
+        "entry_team_ids": [
+          "17606"
+        ],
+        "accepted": false,
+        "reason": "no_expected_team_id_to_confirm"
+      },
+      {
+        "normalized_name": "thiago martins bueno",
+        "variant": "thiago martins",
+        "expected_team_id": null,
+        "entry_team_ids": [
+          "17606"
+        ],
+        "accepted": false,
+        "reason": "no_expected_team_id_to_confirm"
+      },
+      {
+        "normalized_name": "thiago martins bueno",
+        "variant": "thiago martins",
+        "expected_team_id": null,
+        "entry_team_ids": [
+          "17606"
+        ],
+        "accepted": false,
+        "reason": "no_expected_team_id_to_confirm"
+      },
+      {
+        "normalized_name": "thiago martins bueno",
+        "variant": "thiago martins",
+        "expected_team_id": null,
+        "entry_team_ids": [
+          "17606"
+        ],
+        "accepted": false,
+        "reason": "no_expected_team_id_to_confirm"
+      },
+      {
+        "normalized_name": "thiago martins bueno",
+        "variant": "thiago martins",
+        "expected_team_id": null,
+        "entry_team_ids": [
+          "17606"
+        ],
+        "accepted": false,
+        "reason": "no_expected_team_id_to_confirm"
+      },
+      {
         "normalized_name": "rafael navarro leal",
         "variant": "rafael navarro",
         "expected_team_id": null,
@@ -202,111 +322,11 @@
     ]
   },
   "rotowire": {
-    "total_attempts": 95,
-    "accepted": 92,
-    "rejected": 3,
-    "precision": 96.8,
+    "total_attempts": 111,
+    "accepted": 107,
+    "rejected": 4,
+    "precision": 96.4,
     "entries": [
-      {
-        "player_name": "Billy Gilmour",
-        "normalized_name": "billy gilmour",
-        "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/billy-gilmour-29657",
-        "page_team": "Napoli",
-        "expected_team": null,
-        "accepted": true,
-        "reason": null
-      },
-      {
-        "player_name": "Andraz Sporar",
-        "normalized_name": "andraz sporar",
-        "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/andraz-sporar-22900",
-        "page_team": null,
-        "expected_team": null,
-        "accepted": true,
-        "reason": null
-      },
-      {
-        "player_name": "Danijel Sturm",
-        "normalized_name": "danijel sturm",
-        "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/danijel-sturm-50211",
-        "page_team": null,
-        "expected_team": null,
-        "accepted": true,
-        "reason": null
-      },
-      {
-        "player_name": "Adam Gnezda Cerin",
-        "normalized_name": "adam gnezda cerin",
-        "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/adam-gnezda-cerin-33993",
-        "page_team": null,
-        "expected_team": null,
-        "accepted": true,
-        "reason": null
-      },
-      {
-        "player_name": "Jaka Bijol",
-        "normalized_name": "jaka bijol",
-        "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/jaka-bijol-26763",
-        "page_team": "Leeds United",
-        "expected_team": null,
-        "accepted": true,
-        "reason": null
-      },
-      {
-        "player_name": "Aaron Hickey",
-        "normalized_name": "aaron hickey",
-        "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/aaron-hickey-33364",
-        "page_team": "Brentford",
-        "expected_team": null,
-        "accepted": true,
-        "reason": null
-      },
-      {
-        "player_name": "John McGinn",
-        "normalized_name": "john mcginn",
-        "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/john-mcginn-28588",
-        "page_team": "Aston Villa",
-        "expected_team": null,
-        "accepted": true,
-        "reason": null
-      },
-      {
-        "player_name": "Lewis Ferguson",
-        "normalized_name": "lewis ferguson",
-        "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/lewis-ferguson-37171",
-        "page_team": "Bologna",
-        "expected_team": null,
-        "accepted": true,
-        "reason": null
-      },
-      {
-        "player_name": "Timi Max Elsnik",
-        "normalized_name": "timi max elsnik",
-        "via_variant": true,
-        "page_url": "https://www.rotowire.com/soccer/player/timi-elsnik-43375",
-        "page_team": null,
-        "expected_team": null,
-        "accepted": false,
-        "reason": "no_expected_team_to_confirm"
-      },
-      {
-        "player_name": "Eberechi Eze",
-        "normalized_name": "eberechi eze",
-        "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/eberechi-eze-31141",
-        "page_team": "Arsenal",
-        "expected_team": null,
-        "accepted": true,
-        "reason": null
-      },
       {
         "player_name": "Anthony Gordon",
         "normalized_name": "anthony gordon",
@@ -318,10 +338,20 @@
         "reason": null
       },
       {
-        "player_name": "Bukayo Saka",
-        "normalized_name": "bukayo saka",
+        "player_name": "Ezri Konsa",
+        "normalized_name": "ezri konsa",
         "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/bukayo-saka-29889",
+        "page_url": "https://www.rotowire.com/soccer/player/ezri-konsa-29290",
+        "page_team": "Arsenal",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Eberechi Eze",
+        "normalized_name": "eberechi eze",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/eberechi-eze-31141",
         "page_team": "Arsenal",
         "expected_team": null,
         "accepted": true,
@@ -338,31 +368,11 @@
         "reason": null
       },
       {
-        "player_name": "Harry Kane",
-        "normalized_name": "harry kane",
+        "player_name": "Bukayo Saka",
+        "normalized_name": "bukayo saka",
         "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/harry-kane-17352",
-        "page_team": "Bayern Munich",
-        "expected_team": null,
-        "accepted": true,
-        "reason": null
-      },
-      {
-        "player_name": "Ezri Konsa",
-        "normalized_name": "ezri konsa",
-        "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/ezri-konsa-29290",
+        "page_url": "https://www.rotowire.com/soccer/player/bukayo-saka-29889",
         "page_team": "Arsenal",
-        "expected_team": null,
-        "accepted": true,
-        "reason": null
-      },
-      {
-        "player_name": "Jude Bellingham",
-        "normalized_name": "jude bellingham",
-        "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/jude-bellingham-31357",
-        "page_team": "Real Madrid",
         "expected_team": null,
         "accepted": true,
         "reason": null
@@ -378,11 +388,21 @@
         "reason": null
       },
       {
-        "player_name": "Ferran Torres",
-        "normalized_name": "ferran torres",
+        "player_name": "Harry Kane",
+        "normalized_name": "harry kane",
         "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/ferran-torres-25560",
-        "page_team": "Paris Saint-Germain",
+        "page_url": "https://www.rotowire.com/soccer/player/harry-kane-17352",
+        "page_team": "Bayern Munich",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Jude Bellingham",
+        "normalized_name": "jude bellingham",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/jude-bellingham-31357",
+        "page_team": "Real Madrid",
         "expected_team": null,
         "accepted": true,
         "reason": null
@@ -408,26 +428,6 @@
         "reason": null
       },
       {
-        "player_name": "Lamine Yamal",
-        "normalized_name": "lamine yamal",
-        "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/lamine-yamal-39017",
-        "page_team": "Barcelona",
-        "expected_team": null,
-        "accepted": true,
-        "reason": null
-      },
-      {
-        "player_name": "Fabian Ruiz",
-        "normalized_name": "fabian ruiz",
-        "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/fabian-ruiz-10837",
-        "page_team": "Paris Saint-Germain",
-        "expected_team": null,
-        "accepted": true,
-        "reason": null
-      },
-      {
         "player_name": "Dani Olmo",
         "normalized_name": "dani olmo",
         "via_variant": false,
@@ -438,11 +438,11 @@
         "reason": null
       },
       {
-        "player_name": "Aymeric Laporte",
-        "normalized_name": "aymeric laporte",
+        "player_name": "Lamine Yamal",
+        "normalized_name": "lamine yamal",
         "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/aymeric-laporte-18126",
-        "page_team": "Athletic",
+        "page_url": "https://www.rotowire.com/soccer/player/lamine-yamal-39017",
+        "page_team": "Barcelona",
         "expected_team": null,
         "accepted": true,
         "reason": null
@@ -458,31 +458,41 @@
         "reason": null
       },
       {
+        "player_name": "Ferran Torres",
+        "normalized_name": "ferran torres",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/ferran-torres-25560",
+        "page_team": "Paris Saint-Germain",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Aymeric Laporte",
+        "normalized_name": "aymeric laporte",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/aymeric-laporte-18126",
+        "page_team": "Athletic",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Fabian Ruiz",
+        "normalized_name": "fabian ruiz",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/fabian-ruiz-10837",
+        "page_team": "Paris Saint-Germain",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
         "player_name": "Mikel Oyarzabal",
         "normalized_name": "mikel oyarzabal",
         "via_variant": false,
         "page_url": "https://www.rotowire.com/soccer/player/mikel-oyarzabal-20773",
         "page_team": "Real Sociedad",
-        "expected_team": null,
-        "accepted": true,
-        "reason": null
-      },
-      {
-        "player_name": "Rodri",
-        "normalized_name": "rodri",
-        "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/rodri-17207",
-        "page_team": null,
-        "expected_team": null,
-        "accepted": true,
-        "reason": null
-      },
-      {
-        "player_name": "Jayden Hibbert",
-        "normalized_name": "jayden hibbert",
-        "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/jayden-hibbert-45951",
-        "page_team": "Atlanta United",
         "expected_team": null,
         "accepted": true,
         "reason": null
@@ -508,10 +518,40 @@
         "reason": null
       },
       {
-        "player_name": "Lucas Hoyos",
-        "normalized_name": "lucas hoyos",
+        "player_name": "Rodri",
+        "normalized_name": "rodri",
         "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/lucas-hoyos-47561",
+        "page_url": "https://www.rotowire.com/soccer/player/rodri-17207",
+        "page_team": null,
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Elías Báez",
+        "normalized_name": "elias baez",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/elias-baez-47777",
+        "page_team": "Atlanta United",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Jayden Hibbert",
+        "normalized_name": "jayden hibbert",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/jayden-hibbert-45951",
+        "page_team": "Atlanta United",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Enea Mihaj",
+        "normalized_name": "enea mihaj",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/enea-mihaj-33457",
         "page_team": "Atlanta United",
         "expected_team": null,
         "accepted": true,
@@ -528,11 +568,11 @@
         "reason": null
       },
       {
-        "player_name": "Philip Zinckernagel",
-        "normalized_name": "philip zinckernagel",
+        "player_name": "Lucas Hoyos",
+        "normalized_name": "lucas hoyos",
         "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/philip-zinckernagel-34349",
-        "page_team": "Chicago Fire",
+        "page_url": "https://www.rotowire.com/soccer/player/lucas-hoyos-47561",
+        "page_team": "Atlanta United",
         "expected_team": null,
         "accepted": true,
         "reason": null
@@ -548,6 +588,16 @@
         "reason": null
       },
       {
+        "player_name": "Philip Zinckernagel",
+        "normalized_name": "philip zinckernagel",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/philip-zinckernagel-34349",
+        "page_team": "Chicago Fire",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
         "player_name": "Pep Biel Mas Jaume",
         "normalized_name": "pep biel mas jaume",
         "via_variant": true,
@@ -556,6 +606,26 @@
         "expected_team": null,
         "accepted": false,
         "reason": "no_expected_team_to_confirm"
+      },
+      {
+        "player_name": "Roman Celentano",
+        "normalized_name": "roman celentano",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/roman-celentano-36502",
+        "page_team": "FC Cincinnati",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Luca Petrasso",
+        "normalized_name": "luca petrasso",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/luca-petrasso-36225",
+        "page_team": "CF Montreal",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
       },
       {
         "player_name": "Kristijan Kahlina",
@@ -598,24 +668,34 @@
         "reason": null
       },
       {
-        "player_name": "Roman Celentano",
-        "normalized_name": "roman celentano",
+        "player_name": "Agustín Ojeda",
+        "normalized_name": "agustin ojeda",
         "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/roman-celentano-36502",
-        "page_team": "FC Cincinnati",
+        "page_url": "https://www.rotowire.com/soccer/player/agustin-ojeda-41210",
+        "page_team": "New York City FC",
         "expected_team": null,
         "accepted": true,
         "reason": null
       },
       {
-        "player_name": "Ethan Horvath",
-        "normalized_name": "ethan horvath",
-        "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/ethan-horvath-21151",
-        "page_team": "New York Red Bulls",
+        "player_name": "Nicolás Fernández Mercau",
+        "normalized_name": "nicolas fernandez mercau",
+        "via_variant": true,
+        "page_url": "https://www.rotowire.com/soccer/player/nicolas-fernandez-38097",
+        "page_team": "New York City FC",
         "expected_team": null,
-        "accepted": true,
-        "reason": null
+        "accepted": false,
+        "reason": "no_expected_team_to_confirm"
+      },
+      {
+        "player_name": "Thiago Martins Bueno",
+        "normalized_name": "thiago martins bueno",
+        "via_variant": true,
+        "page_url": "https://www.rotowire.com/soccer/player/thiago-martins-24061",
+        "page_team": "New York City FC",
+        "expected_team": null,
+        "accepted": false,
+        "reason": "no_expected_team_to_confirm"
       },
       {
         "player_name": "Tomás Romero",
@@ -632,6 +712,16 @@
         "normalized_name": "emil forsberg",
         "via_variant": false,
         "page_url": "https://www.rotowire.com/soccer/player/emil-forsberg-18051",
+        "page_team": "New York Red Bulls",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Ethan Horvath",
+        "normalized_name": "ethan horvath",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/ethan-horvath-21151",
         "page_team": "New York Red Bulls",
         "expected_team": null,
         "accepted": true,
@@ -658,6 +748,16 @@
         "reason": null
       },
       {
+        "player_name": "Iván Angulo",
+        "normalized_name": "ivan angulo",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/ivan-angulo-29607",
+        "page_team": "Orlando City SC",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
         "player_name": "Javier Otero",
         "normalized_name": "javier otero",
         "via_variant": false,
@@ -678,11 +778,21 @@
         "reason": null
       },
       {
-        "player_name": "Andre Blake",
-        "normalized_name": "andre blake",
+        "player_name": "Martín Ojeda",
+        "normalized_name": "martin ojeda",
         "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/andre-blake-18756",
-        "page_team": "Philadelphia Union",
+        "page_url": "https://www.rotowire.com/soccer/player/martin-ojeda-38639",
+        "page_team": "Orlando City SC",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Robin Jansson",
+        "normalized_name": "robin jansson",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/robin-jansson-27664",
+        "page_team": "Orlando City SC",
         "expected_team": null,
         "accepted": true,
         "reason": null
@@ -693,6 +803,86 @@
         "via_variant": false,
         "page_url": "https://www.rotowire.com/soccer/player/george-marks-36346",
         "page_team": "Philadelphia Union",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Andre Blake",
+        "normalized_name": "andre blake",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/andre-blake-18756",
+        "page_team": "Philadelphia Union",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Jesús Bueno",
+        "normalized_name": "jesus bueno",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/jesus-bueno-35459",
+        "page_team": "Philadelphia Union",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Kai Wagner",
+        "normalized_name": "kai wagner",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/kai-wagner-27188",
+        "page_team": "Philadelphia Union",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Milan Iloski",
+        "normalized_name": "milan iloski",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/milan-iloski-30969",
+        "page_team": "Philadelphia Union",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Nathan Harriel",
+        "normalized_name": "nathan harriel",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/nathan-harriel-34291",
+        "page_team": "Philadelphia Union",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Chris Durkin",
+        "normalized_name": "chris durkin",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/chris-durkin-23272",
+        "page_team": "St. Louis City SC",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Dante Polvara",
+        "normalized_name": "dante polvara",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/dante-polvara-47737",
+        "page_team": "St. Louis City SC",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Roman Bürki",
+        "normalized_name": "roman burki",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/roman-burki-17698",
+        "page_team": "St. Louis City SC",
         "expected_team": null,
         "accepted": true,
         "reason": null
@@ -713,16 +903,6 @@
         "via_variant": false,
         "page_url": "https://www.rotowire.com/soccer/player/jonathan-bond-19111",
         "page_team": "Houston Dynamo",
-        "expected_team": null,
-        "accepted": true,
-        "reason": null
-      },
-      {
-        "player_name": "Roman Bürki",
-        "normalized_name": "roman burki",
-        "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/roman-burki-17698",
-        "page_team": "St. Louis City SC",
         "expected_team": null,
         "accepted": true,
         "reason": null
@@ -768,11 +948,11 @@
         "reason": null
       },
       {
-        "player_name": "Andrew Thomas",
-        "normalized_name": "andrew thomas",
+        "player_name": "Sam Surridge",
+        "normalized_name": "sam surridge",
         "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/andrew-thomas-34716",
-        "page_team": "Seattle Sounders FC",
+        "page_url": "https://www.rotowire.com/soccer/player/sam-surridge-23865",
+        "page_team": "Nashville SC",
         "expected_team": null,
         "accepted": true,
         "reason": null
@@ -788,11 +968,11 @@
         "reason": null
       },
       {
-        "player_name": "Sam Surridge",
-        "normalized_name": "sam surridge",
+        "player_name": "Stefan Frei",
+        "normalized_name": "stefan frei",
         "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/sam-surridge-23865",
-        "page_team": "Nashville SC",
+        "page_url": "https://www.rotowire.com/soccer/player/stefan-frei-18658",
+        "page_team": "Seattle Sounders FC",
         "expected_team": null,
         "accepted": true,
         "reason": null
@@ -803,16 +983,6 @@
         "via_variant": false,
         "page_url": "https://www.rotowire.com/soccer/player/stefan-cleveland-23509",
         "page_team": "Sporting Kansas City",
-        "expected_team": null,
-        "accepted": true,
-        "reason": null
-      },
-      {
-        "player_name": "Stefan Frei",
-        "normalized_name": "stefan frei",
-        "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/stefan-frei-18658",
-        "page_team": "Seattle Sounders FC",
         "expected_team": null,
         "accepted": true,
         "reason": null
@@ -838,6 +1008,16 @@
         "reason": null
       },
       {
+        "player_name": "Andrew Thomas",
+        "normalized_name": "andrew thomas",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/andrew-thomas-34716",
+        "page_team": "Seattle Sounders FC",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
         "player_name": "Nico Hansen",
         "normalized_name": "nico hansen",
         "via_variant": false,
@@ -858,11 +1038,11 @@
         "reason": null
       },
       {
-        "player_name": "Mikkel Damsgaard",
-        "normalized_name": "mikkel damsgaard",
+        "player_name": "Yohei Takaoka",
+        "normalized_name": "yohei takaoka",
         "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/mikkel-damsgaard-32949",
-        "page_team": "Brentford",
+        "page_url": "https://www.rotowire.com/soccer/player/yohei-takaoka-38818",
+        "page_team": "Vancouver Whitecaps FC",
         "expected_team": null,
         "accepted": true,
         "reason": null
@@ -873,6 +1053,16 @@
         "via_variant": false,
         "page_url": "https://www.rotowire.com/soccer/player/jt-marcinkowski-25482",
         "page_team": "Los Angeles Galaxy",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Mikkel Damsgaard",
+        "normalized_name": "mikkel damsgaard",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/mikkel-damsgaard-32949",
+        "page_team": "Brentford",
         "expected_team": null,
         "accepted": true,
         "reason": null
@@ -898,11 +1088,11 @@
         "reason": null
       },
       {
-        "player_name": "Yohei Takaoka",
-        "normalized_name": "yohei takaoka",
+        "player_name": "Denzel Dumfries",
+        "normalized_name": "denzel dumfries",
         "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/yohei-takaoka-38818",
-        "page_team": "Vancouver Whitecaps FC",
+        "page_url": "https://www.rotowire.com/soccer/player/denzel-dumfries-26703",
+        "page_team": "Real Madrid",
         "expected_team": null,
         "accepted": true,
         "reason": null
@@ -918,21 +1108,21 @@
         "reason": null
       },
       {
-        "player_name": "Denzel Dumfries",
-        "normalized_name": "denzel dumfries",
-        "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/denzel-dumfries-26703",
-        "page_team": "Real Madrid",
-        "expected_team": null,
-        "accepted": true,
-        "reason": null
-      },
-      {
         "player_name": "Mexx Meerdink",
         "normalized_name": "mexx meerdink",
         "via_variant": false,
         "page_url": "https://www.rotowire.com/soccer/player/mexx-meerdink-44456",
         "page_team": "AZ Alkmaar",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Dusan Tadic",
+        "normalized_name": "dusan tadic",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/dusan-tadic-17829",
+        "page_team": "NEC Nijmegen",
         "expected_team": null,
         "accepted": true,
         "reason": null
@@ -958,16 +1148,6 @@
         "reason": null
       },
       {
-        "player_name": "Dusan Tadic",
-        "normalized_name": "dusan tadic",
-        "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/dusan-tadic-17829",
-        "page_team": "NEC Nijmegen",
-        "expected_team": null,
-        "accepted": true,
-        "reason": null
-      },
-      {
         "player_name": "Luka Jovic",
         "normalized_name": "luka jovic",
         "via_variant": false,
@@ -978,21 +1158,21 @@
         "reason": null
       },
       {
-        "player_name": "Sasa Lukic",
-        "normalized_name": "sasa lukic",
-        "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/sasa-lukic-22120",
-        "page_team": "Ipswich Town",
-        "expected_team": null,
-        "accepted": true,
-        "reason": null
-      },
-      {
         "player_name": "Strahinja Erakovic",
         "normalized_name": "strahinja erakovic",
         "via_variant": false,
         "page_url": "https://www.rotowire.com/soccer/player/strahinja-erakovic-26771",
         "page_team": "Zenit St. Petersburg",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Sasa Lukic",
+        "normalized_name": "sasa lukic",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/sasa-lukic-22120",
+        "page_team": "Ipswich Town",
         "expected_team": null,
         "accepted": true,
         "reason": null
@@ -1028,16 +1208,6 @@
         "reason": null
       },
       {
-        "player_name": "Sorba Thomas",
-        "normalized_name": "sorba thomas",
-        "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/sorba-thomas-34402",
-        "page_team": "Hull City",
-        "expected_team": null,
-        "accepted": true,
-        "reason": null
-      },
-      {
         "player_name": "David Brooks",
         "normalized_name": "david brooks",
         "via_variant": false,
@@ -1048,11 +1218,121 @@
         "reason": null
       },
       {
+        "player_name": "Anton Stach",
+        "normalized_name": "anton stach",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/anton-stach-35015",
+        "page_team": "Leeds United",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Joshua Kimmich",
+        "normalized_name": "joshua kimmich",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/joshua-kimmich-19296",
+        "page_team": "Bayern Munich",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Karim Adeyemi",
+        "normalized_name": "karim adeyemi",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/karim-adeyemi-30863",
+        "page_team": "Barcelona",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Kevin Schade",
+        "normalized_name": "kevin schade",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/kevin-schade-34216",
+        "page_team": "Brentford",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Nadiem Amiri",
+        "normalized_name": "nadiem amiri",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/nadiem-amiri-19623",
+        "page_team": "FSV Mainz 05",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Sorba Thomas",
+        "normalized_name": "sorba thomas",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/sorba-thomas-34402",
+        "page_team": "Hull City",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Christos Tzolis",
+        "normalized_name": "christos tzolis",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/christos-tzolis-33736",
+        "page_team": "Arsenal",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Charalampos Kostoulas",
+        "normalized_name": "charalampos kostoulas",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/charalampos-kostoulas-44562",
+        "page_team": "Brighton & Hove Albion",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Christos Zafeiris",
+        "normalized_name": "christos zafeiris",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/christos-zafeiris-40621",
+        "page_team": null,
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Georgios Vagiannidis",
+        "normalized_name": "georgios vagiannidis",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/georgios-vagiannidis-32942",
+        "page_team": null,
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
         "player_name": "Antonio Nusa",
         "normalized_name": "antonio nusa",
         "via_variant": false,
         "page_url": "https://www.rotowire.com/soccer/player/antonio-nusa-35612",
         "page_team": "RB Leipzig",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Vangelis Pavlidis",
+        "normalized_name": "vangelis pavlidis",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/vangelis-pavlidis-44181",
+        "page_team": null,
         "expected_team": null,
         "accepted": true,
         "reason": null
@@ -1078,6 +1358,16 @@
         "reason": null
       },
       {
+        "player_name": "Martin Odegaard",
+        "normalized_name": "martin odegaard",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/martin-odegaard-18746",
+        "page_team": "Arsenal",
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
         "player_name": "Kristoffer Ajer",
         "normalized_name": "kristoffer ajer",
         "via_variant": false,
@@ -1098,11 +1388,11 @@
         "reason": null
       },
       {
-        "player_name": "Martin Odegaard",
-        "normalized_name": "martin odegaard",
+        "player_name": "Cristiano Ronaldo",
+        "normalized_name": "cristiano ronaldo",
         "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/martin-odegaard-18746",
-        "page_team": "Arsenal",
+        "page_url": "https://www.rotowire.com/soccer/player/cristiano-ronaldo-1279",
+        "page_team": null,
         "expected_team": null,
         "accepted": true,
         "reason": null
@@ -1118,16 +1408,6 @@
         "reason": null
       },
       {
-        "player_name": "Cristiano Ronaldo",
-        "normalized_name": "cristiano ronaldo",
-        "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/cristiano-ronaldo-1279",
-        "page_team": null,
-        "expected_team": null,
-        "accepted": true,
-        "reason": null
-      },
-      {
         "player_name": "Joao Cancelo",
         "normalized_name": "joao cancelo",
         "via_variant": false,
@@ -1138,21 +1418,21 @@
         "reason": null
       },
       {
-        "player_name": "Renato Veiga",
-        "normalized_name": "renato veiga",
-        "via_variant": false,
-        "page_url": "https://www.rotowire.com/soccer/player/renato-veiga-36576",
-        "page_team": "Villarreal",
-        "expected_team": null,
-        "accepted": true,
-        "reason": null
-      },
-      {
         "player_name": "Joao Felix",
         "normalized_name": "joao felix",
         "via_variant": false,
         "page_url": "https://www.rotowire.com/soccer/player/joao-felix-26965",
         "page_team": null,
+        "expected_team": null,
+        "accepted": true,
+        "reason": null
+      },
+      {
+        "player_name": "Renato Veiga",
+        "normalized_name": "renato veiga",
+        "via_variant": false,
+        "page_url": "https://www.rotowire.com/soccer/player/renato-veiga-36576",
+        "page_team": "Villarreal",
         "expected_team": null,
         "accepted": true,
         "reason": null

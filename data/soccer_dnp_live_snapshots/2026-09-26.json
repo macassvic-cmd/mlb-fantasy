@@ -1,5 +1,5 @@
 {
-  "_latest_batch_ts": "2026-09-26T12:15:00.410600+00:00",
+  "_latest_batch_ts": "2026-09-26T16:27:52.765393+00:00",
   "pid:fa10a05f-a3a2-45a3-af97-d32a5575ce6f": {
     "name": "Pedro Porro",
     "team": "ESP",
@@ -16,6 +16,14 @@
       },
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 90,
+        "confidence_score": 45,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 90,
         "confidence_score": 45,
         "urgency_score": 0,
@@ -52,7 +60,7 @@
       "rotowire_predicted_start": null,
       "rotowire_page_url": "https://www.rotowire.com/soccer/player/pedro-porro-26581",
       "rotowire_est_return": "10/19/2026",
-      "rotowire_status_since": "2026-09-26T12:14:07.226232+00:00",
+      "rotowire_status_since": "2026-09-26T16:26:58.103846+00:00",
       "hard_out_corroborated": false,
       "hard_out_corroboration_sources": [],
       "hard_out_conflict": null,
@@ -61,7 +69,7 @@
         "rotowire_status_tag": "OUT",
         "rotowire_injury": "Hamstring",
         "rotowire_est_return": "10/19/2026",
-        "rotowire_status_since": "2026-09-26T12:14:07.226232+00:00",
+        "rotowire_status_since": "2026-09-26T16:26:58.103846+00:00",
         "transfermarkt": null,
         "last_appeared_date": "2026-09-05",
         "days_since_last_appearance": 21,
@@ -104,7 +112,7 @@
           "source": "rotowire_news",
           "vote": "bench",
           "predicted_start": false,
-          "observed_at": "2026-09-26T12:14:18.605702+00:00",
+          "observed_at": "2026-09-26T16:27:08.760155+00:00",
           "source_updated_at": null
         }
       ],
@@ -183,7 +191,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Fouls Committed",
@@ -214,6 +222,14 @@
       },
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 90,
+        "confidence_score": 45,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 90,
         "confidence_score": 45,
         "urgency_score": 0,
@@ -250,7 +266,7 @@
       "rotowire_predicted_start": null,
       "rotowire_page_url": "https://www.rotowire.com/soccer/player/justin-ellis-46478",
       "rotowire_est_return": "10/10/2026",
-      "rotowire_status_since": "2026-09-26T12:14:08.539769+00:00",
+      "rotowire_status_since": "2026-09-26T16:26:59.948665+00:00",
       "hard_out_corroborated": false,
       "hard_out_corroboration_sources": [],
       "hard_out_conflict": null,
@@ -259,7 +275,7 @@
         "rotowire_status_tag": "OUT",
         "rotowire_injury": "Not Injury Related",
         "rotowire_est_return": "10/10/2026",
-        "rotowire_status_since": "2026-09-26T12:14:08.539769+00:00",
+        "rotowire_status_since": "2026-09-26T16:26:59.948665+00:00",
         "transfermarkt": null,
         "last_appeared_date": "2026-09-12",
         "days_since_last_appearance": 14,
@@ -302,7 +318,7 @@
           "source": "rotowire_news",
           "vote": "bench",
           "predicted_start": false,
-          "observed_at": "2026-09-26T12:14:32.296406+00:00",
+          "observed_at": "2026-09-26T16:27:22.823242+00:00",
           "source_updated_at": null
         }
       ],
@@ -381,7 +397,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Shots on Target",
@@ -570,6 +586,14 @@
         "urgency_score": 0,
         "official_status": "not_yet_posted",
         "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
       }
     ],
     "first_crossed": {
@@ -700,7 +724,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Shots on Target",
@@ -899,6 +923,14 @@
         "urgency_score": 0,
         "official_status": "not_yet_posted",
         "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
       }
     ],
     "first_crossed": {
@@ -1029,12 +1061,17 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Assists",
           "line": 0.5,
           "prop_id": "b00d4e9465673039"
+        },
+        {
+          "market": "Fouls Won",
+          "line": 1.5,
+          "prop_id": "4e1c8b3bbfdba84c"
         },
         {
           "market": "Goals",
@@ -1070,6 +1107,14 @@
       },
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -1205,12 +1250,17 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Assists",
           "line": 0.5,
           "prop_id": "28cbc21bdf0969c0"
+        },
+        {
+          "market": "Fouls Won",
+          "line": 1.5,
+          "prop_id": "2488d8d5a87ec2db"
         },
         {
           "market": "Shots on Target",
@@ -1236,6 +1286,14 @@
       },
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -1371,7 +1429,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Cards",
@@ -1402,6 +1460,14 @@
       },
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -1537,8 +1603,13 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
+        {
+          "market": "Fouls Won",
+          "line": 1.5,
+          "prop_id": "f593214fc740e116"
+        },
         {
           "market": "Goals",
           "line": 0.5,
@@ -1573,6 +1644,14 @@
       },
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -1708,7 +1787,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Assists",
@@ -1744,6 +1823,14 @@
       },
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -1879,8 +1966,13 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
+        {
+          "market": "Fouls Won",
+          "line": 1.5,
+          "prop_id": "fcba7f50a05d19dd"
+        },
         {
           "market": "Goals",
           "line": 0.5,
@@ -1910,6 +2002,14 @@
       },
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -2045,12 +2145,17 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Cards",
           "line": 0.5,
           "prop_id": "efee14505c7e264f"
+        },
+        {
+          "market": "Fouls Won",
+          "line": 1.5,
+          "prop_id": "a0278295eae95b3d"
         },
         {
           "market": "Tackles",
@@ -2076,6 +2181,14 @@
       },
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -2211,7 +2324,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Goals",
@@ -2247,6 +2360,14 @@
       },
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -2382,7 +2503,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Cards",
@@ -2413,6 +2534,14 @@
       },
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -2548,8 +2677,13 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 20.5,
+          "prop_id": "121a366e3ee21967"
+        },
         {
           "market": "Shots",
           "line": 2.5,
@@ -4141,6 +4275,14 @@
         "urgency_score": 0,
         "official_status": "not_yet_posted",
         "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
       }
     ],
     "first_crossed": {
@@ -4271,12 +4413,17 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Assists",
           "line": 0.5,
           "prop_id": "747b314d79966dff"
+        },
+        {
+          "market": "Fouls Won",
+          "line": 2.5,
+          "prop_id": "5f0a8e1699f1053d"
         },
         {
           "market": "Goals",
@@ -4312,6 +4459,14 @@
       },
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -4447,7 +4602,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Cards",
@@ -4478,6 +4633,14 @@
       },
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -4613,7 +4776,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Fouls Committed",
@@ -4649,6 +4812,14 @@
       },
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -4784,7 +4955,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Cards",
@@ -4820,6 +4991,14 @@
       },
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -4955,7 +5134,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Assists",
@@ -4991,6 +5170,14 @@
       },
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -5126,7 +5313,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Cards",
@@ -5167,6 +5354,14 @@
       },
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -5302,7 +5497,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Cards",
@@ -5333,6 +5528,14 @@
       },
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -5468,7 +5671,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Assists",
@@ -5499,6 +5702,14 @@
       },
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -5634,12 +5845,17 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Assists",
           "line": 0.5,
           "prop_id": "82577c677c826f8a"
+        },
+        {
+          "market": "Fouls Won",
+          "line": 1.5,
+          "prop_id": "b35ba8594e01d54b"
         },
         {
           "market": "Goals",
@@ -5675,6 +5891,14 @@
       },
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -5810,8 +6034,13 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
+        {
+          "market": "Fouls Won",
+          "line": 1.5,
+          "prop_id": "6b835ee3b5a0c9fc"
+        },
         {
           "market": "Goals",
           "line": 0.5,
@@ -5846,6 +6075,14 @@
       },
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -5981,7 +6218,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Cards",
@@ -6012,6 +6249,14 @@
       },
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -6147,7 +6392,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Shots",
@@ -6173,6 +6418,14 @@
       },
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -6308,8 +6561,13 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 40.5,
+          "prop_id": "0d756a41bcaf82f7"
+        },
         {
           "market": "Shots",
           "line": 3.5,
@@ -6334,6 +6592,14 @@
       },
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -6469,7 +6735,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Shots",
@@ -6495,6 +6761,14 @@
       },
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -6630,8 +6904,13 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 17.5,
+          "prop_id": "c6ca6fc232fede0d"
+        },
         {
           "market": "Shots",
           "line": 3.0,
@@ -6656,6 +6935,14 @@
       },
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -6791,7 +7078,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Shots",
@@ -6817,6 +7104,14 @@
       },
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -6952,8 +7247,13 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 23.5,
+          "prop_id": "78a45e5c38848384"
+        },
         {
           "market": "Shots",
           "line": 3.5,
@@ -6978,6 +7278,14 @@
       },
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -7113,7 +7421,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Shots on Target",
@@ -7139,6 +7447,14 @@
       },
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -7274,7 +7590,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Shots",
@@ -7300,6 +7616,14 @@
       },
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -7435,7 +7759,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Shots",
@@ -7466,6 +7790,14 @@
       },
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -7601,7 +7933,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Shots",
@@ -7995,6 +8327,14 @@
         "urgency_score": 0,
         "official_status": "not_yet_posted",
         "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 90,
+        "confidence_score": 45,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
       }
     ],
     "first_crossed": {
@@ -8026,7 +8366,7 @@
       "rotowire_predicted_start": null,
       "rotowire_page_url": "https://www.rotowire.com/soccer/player/andre-blake-18756",
       "rotowire_est_return": "10/10/2026",
-      "rotowire_status_since": "2026-09-26T12:14:08.613080+00:00",
+      "rotowire_status_since": "2026-09-26T16:27:00.336876+00:00",
       "hard_out_corroborated": false,
       "hard_out_corroboration_sources": [],
       "hard_out_conflict": null,
@@ -8035,7 +8375,7 @@
         "rotowire_status_tag": "OUT",
         "rotowire_injury": "Not Injury Related",
         "rotowire_est_return": "10/10/2026",
-        "rotowire_status_since": "2026-09-26T12:14:08.613080+00:00",
+        "rotowire_status_since": "2026-09-26T16:27:00.336876+00:00",
         "transfermarkt": null,
         "last_appeared_date": "2026-09-13",
         "days_since_last_appearance": 13,
@@ -8078,7 +8418,7 @@
           "source": "rotowire_news",
           "vote": "bench",
           "predicted_start": false,
-          "observed_at": "2026-09-26T12:14:33.990355+00:00",
+          "observed_at": "2026-09-26T16:27:24.731525+00:00",
           "source_updated_at": null
         }
       ],
@@ -8157,7 +8497,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Saves",
@@ -8175,6 +8515,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 18,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -8310,7 +8658,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Saves",
@@ -8328,6 +8676,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 18,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -8463,7 +8819,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Saves",
@@ -8481,6 +8837,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 18,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -8616,7 +8980,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Saves",
@@ -8634,6 +8998,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 18,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -8769,7 +9141,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Saves",
@@ -8787,6 +9159,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 18,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -8922,8 +9302,13 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 24.5,
+          "prop_id": "c4abfaf2d2475d0b"
+        },
         {
           "market": "Saves",
           "line": 2.0,
@@ -8940,6 +9325,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 18,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -9075,7 +9468,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Saves",
@@ -9093,6 +9486,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 18,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -9228,7 +9629,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Saves",
@@ -9246,6 +9647,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 18,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -9381,7 +9790,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Assists",
@@ -9392,6 +9801,16 @@
           "market": "Goals",
           "line": 0.5,
           "prop_id": "4fcb6a2171ee7100"
+        },
+        {
+          "market": "Shots",
+          "line": 3.5,
+          "prop_id": "bcb79fc793720cdf"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 1.5,
+          "prop_id": "3f6d4f2eec2ceeca"
         }
       ]
     }
@@ -9404,6 +9823,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 18,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -9539,12 +9966,22 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Goals",
           "line": 0.5,
           "prop_id": "bdd51ab4a229c644"
+        },
+        {
+          "market": "Shots",
+          "line": 2.5,
+          "prop_id": "35eda13a5ad6dd55"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 1.5,
+          "prop_id": "258ac1bb44223956"
         }
       ]
     }
@@ -9557,6 +9994,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 18,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -9692,7 +10137,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Assists",
@@ -9703,6 +10148,16 @@
           "market": "Goals",
           "line": 0.5,
           "prop_id": "3c81e7334e027cd7"
+        },
+        {
+          "market": "Shots",
+          "line": 1.5,
+          "prop_id": "5b4a307fff94efcc"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 0.5,
+          "prop_id": "a3ea0ddf95e55fde"
         }
       ]
     }
@@ -9715,6 +10170,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 18,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -9850,12 +10313,17 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Goals",
           "line": 0.5,
           "prop_id": "f9d8a6e1826e8a18"
+        },
+        {
+          "market": "Shots",
+          "line": 1.5,
+          "prop_id": "9c365c7a97456e16"
         }
       ]
     }
@@ -9868,6 +10336,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 18,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -10003,7 +10479,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Cards",
@@ -10021,6 +10497,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -10156,7 +10640,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Saves",
@@ -10174,6 +10658,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -10309,7 +10801,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Assists",
@@ -10320,6 +10812,16 @@
           "market": "Goals",
           "line": 0.5,
           "prop_id": "7aef6de5f8ca5dd5"
+        },
+        {
+          "market": "Shots",
+          "line": 2.5,
+          "prop_id": "466c740047a11e4d"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 0.5,
+          "prop_id": "0b2ffd67684e03a0"
         }
       ]
     }
@@ -10332,6 +10834,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -10467,7 +10977,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Cards",
@@ -10485,6 +10995,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -10620,7 +11138,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Cards",
@@ -10638,6 +11156,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -10773,7 +11299,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Assists",
@@ -10784,6 +11310,16 @@
           "market": "Goals",
           "line": 0.5,
           "prop_id": "6d44abec916022e5"
+        },
+        {
+          "market": "Shots",
+          "line": 1.5,
+          "prop_id": "689c72c37b051ab3"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 0.5,
+          "prop_id": "2632fdc39969689d"
         }
       ]
     }
@@ -10796,6 +11332,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -10931,7 +11475,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Cards",
@@ -10949,6 +11493,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -11084,7 +11636,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Cards",
@@ -11102,6 +11654,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -11237,8 +11797,13 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 32.5,
+          "prop_id": "c328cea5a51b401f"
+        },
         {
           "market": "Saves",
           "line": 2.5,
@@ -11255,6 +11820,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -11390,7 +11963,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Saves",
@@ -11408,6 +11981,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -11543,8 +12124,13 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 28.5,
+          "prop_id": "e2d18a08a5b0f157"
+        },
         {
           "market": "Saves",
           "line": 3.5,
@@ -11561,6 +12147,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -11696,7 +12290,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Saves",
@@ -11714,6 +12308,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -11849,8 +12451,13 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 25.5,
+          "prop_id": "5cd171ff46436b15"
+        },
         {
           "market": "Saves",
           "line": 3.5,
@@ -11867,6 +12474,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -12002,8 +12617,13 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 28.5,
+          "prop_id": "f9cde30cd86f5597"
+        },
         {
           "market": "Saves",
           "line": 4.0,
@@ -12020,6 +12640,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -12155,7 +12783,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Saves",
@@ -12173,6 +12801,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -12308,8 +12944,13 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 30.5,
+          "prop_id": "ef55522dc190c1ab"
+        },
         {
           "market": "Saves",
           "line": 2.5,
@@ -12326,6 +12967,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -12461,7 +13110,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Saves",
@@ -12479,6 +13128,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -12614,7 +13271,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Saves",
@@ -12632,6 +13289,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -12767,7 +13432,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Saves",
@@ -12785,6 +13450,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -12920,7 +13593,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Saves",
@@ -12938,6 +13611,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -13073,7 +13754,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Saves",
@@ -13091,6 +13772,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -13226,7 +13915,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Saves",
@@ -13244,6 +13933,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -13379,7 +14076,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Saves",
@@ -13397,6 +14094,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -13532,7 +14237,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Saves",
@@ -13550,6 +14255,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -13685,7 +14398,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Saves",
@@ -13703,6 +14416,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -13838,7 +14559,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Assists",
@@ -13849,6 +14570,16 @@
           "market": "Goals",
           "line": 0.5,
           "prop_id": "16e99137b4547584"
+        },
+        {
+          "market": "Shots",
+          "line": 3.5,
+          "prop_id": "57283b7abcf59c41"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 1.5,
+          "prop_id": "b72e9c45b956532a"
         }
       ]
     }
@@ -13861,6 +14592,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -13996,7 +14735,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Assists",
@@ -14007,6 +14746,16 @@
           "market": "Goals",
           "line": 0.5,
           "prop_id": "50912c0a9bb94b36"
+        },
+        {
+          "market": "Shots",
+          "line": 3.5,
+          "prop_id": "2bcb9686edf2252b"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 1.5,
+          "prop_id": "093e3c78a2e4ac36"
         }
       ]
     }
@@ -14019,6 +14768,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -14154,7 +14911,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Assists",
@@ -14165,6 +14922,16 @@
           "market": "Goals",
           "line": 0.5,
           "prop_id": "985c53ba380e71ad"
+        },
+        {
+          "market": "Shots",
+          "line": 2.5,
+          "prop_id": "114c077d035ead1d"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 1.5,
+          "prop_id": "e328ec22cd9bc716"
         }
       ]
     }
@@ -14177,6 +14944,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -14312,7 +15087,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Cards",
@@ -14330,6 +15105,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -14465,7 +15248,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Assists",
@@ -14483,6 +15266,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -14618,7 +15409,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Assists",
@@ -14629,6 +15420,16 @@
           "market": "Goals",
           "line": 0.5,
           "prop_id": "94bff1715afab138"
+        },
+        {
+          "market": "Shots",
+          "line": 1.5,
+          "prop_id": "4ecaba32f59c1912"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 0.5,
+          "prop_id": "58c1c8076e9f9c0b"
         }
       ]
     }
@@ -14641,6 +15442,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -14776,7 +15585,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Assists",
@@ -14787,6 +15596,16 @@
           "market": "Goals",
           "line": 0.5,
           "prop_id": "ab22fdcf95d8c4c4"
+        },
+        {
+          "market": "Shots",
+          "line": 1.5,
+          "prop_id": "c3f07f9343f88a28"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 0.5,
+          "prop_id": "5cc6e6f0beafcd70"
         }
       ]
     }
@@ -14799,6 +15618,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -14934,7 +15761,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Cards",
@@ -14952,6 +15779,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -15087,7 +15922,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Assists",
@@ -15098,6 +15933,16 @@
           "market": "Goals",
           "line": 0.5,
           "prop_id": "22b9d21f23604246"
+        },
+        {
+          "market": "Shots",
+          "line": 1.5,
+          "prop_id": "b93448d07b396a0d"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 0.5,
+          "prop_id": "e9a7abde77960dae"
         }
       ]
     }
@@ -15110,6 +15955,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -15245,7 +16098,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Cards",
@@ -15263,6 +16116,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -15398,7 +16259,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Cards",
@@ -15416,6 +16277,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -15551,7 +16420,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Assists",
@@ -15569,6 +16438,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -15704,7 +16581,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Assists",
@@ -15727,6 +16604,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -15862,7 +16747,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Assists",
@@ -15885,6 +16770,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -16020,7 +16913,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Cards",
@@ -16038,6 +16931,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -16173,7 +17074,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Assists",
@@ -16196,6 +17097,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -16331,7 +17240,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Assists",
@@ -16359,6 +17268,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -16494,7 +17411,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Assists",
@@ -16517,6 +17434,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -16652,7 +17577,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Assists",
@@ -16675,6 +17600,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T12:15:00.410600+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -16810,12 +17743,4208 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T12:15:00.410600+00:00",
+      "ts": "2026-09-26T16:27:52.765393+00:00",
       "props": [
         {
           "market": "Cards",
           "line": 0.5,
           "prop_id": "99426cb6f1e07c72"
+        }
+      ]
+    }
+  },
+  "pid:aeeade9a-60db-40f1-af9a-8bff5adbb1d1": {
+    "name": "Charalampos Kostoulas",
+    "team": "GRE",
+    "dabble_player_id": "aeeade9a-60db-40f1-af9a-8bff5adbb1d1",
+    "fixture_id": "01a0c9f0-c824-7665-9c30-f356b37ede8d",
+    "score_history": [
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 33,
+        "confidence_score": 30,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Charalampos Kostoulas",
+      "normalized_name": "charalampos kostoulas",
+      "dabble_player_id": "aeeade9a-60db-40f1-af9a-8bff5adbb1d1",
+      "team": "GRE",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Greece",
+      "event_date": "2026-09-27T18:45:00.000Z",
+      "fixture_id": "01a0c9f0-c824-7665-9c30-f356b37ede8d",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": "fifty-fifty",
+      "rotowire_status_normalized": "fifty-fifty",
+      "rotowire_page_tag": "GTD",
+      "rotowire_injury": "Leg",
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": "https://www.rotowire.com/soccer/player/charalampos-kostoulas-44562",
+      "rotowire_est_return": "9/27/2026",
+      "rotowire_status_since": "2026-09-26T16:27:04.509013+00:00",
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": null,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": null,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [
+        "rotowire_news"
+      ],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [
+        {
+          "source": "rotowire_news",
+          "vote": "unknown",
+          "predicted_start": null,
+          "observed_at": "2026-09-26T16:27:50.401645+00:00",
+          "source_updated_at": null
+        }
+      ],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 1,
+      "predicted_xi_source_count": 1,
+      "dns_score": 33,
+      "confidence_score": 30,
+      "urgency_score": 0,
+      "combined_priority": 23.1,
+      "evidence_count": 1,
+      "tier": "Ignore",
+      "top_reasons": [
+        "RotoWire: fifty-fifty"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "RotoWire: fifty-fifty",
+          30
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": "player_page",
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/charalampos-kostoulas-44562",
+      "has_history": false,
+      "has_predicted_xi": true,
+      "has_injury": false,
+      "has_news": true,
+      "has_x_signal": false,
+      "has_any_external_enrichment": true,
+      "has_multiple_external_sources": false,
+      "board_only": false,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": true,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/charalampos-kostoulas-44562",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "props": [
+        {
+          "market": "Assists",
+          "line": 0.5,
+          "prop_id": "76b83d315afca1f3"
+        },
+        {
+          "market": "Goals",
+          "line": 0.5,
+          "prop_id": "d01285813fdb70e0"
+        }
+      ]
+    }
+  },
+  "pid:96a973e8-047b-41f5-9c98-d06733eb59d0": {
+    "name": "Jesús Bueno",
+    "team": "PHI",
+    "dabble_player_id": "96a973e8-047b-41f5-9c98-d06733eb59d0",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "score_history": [
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Jesús Bueno",
+      "normalized_name": "jesus bueno",
+      "dabble_player_id": "96a973e8-047b-41f5-9c98-d06733eb59d0",
+      "team": "PHI",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "ORL @ PHI",
+      "event_date": "2026-09-26T23:30:00.000Z",
+      "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+      "position": "M",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 13,
+      "first_recent_start": false,
+      "frequent_substitute": true,
+      "rotation_player": false,
+      "previous_start": false,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 18,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 12.6,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "Frequent-substitute usage pattern"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "Frequent-substitute usage pattern",
+          15
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/jesus-bueno-35459",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/jesus-bueno-35459",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 33.5,
+          "prop_id": "3bccd83dbcbe0d95"
+        }
+      ]
+    }
+  },
+  "pid:d235b205-1fbc-49a2-8d70-a256013baa01": {
+    "name": "Karim Adeyemi",
+    "team": "GER",
+    "dabble_player_id": "d235b205-1fbc-49a2-8d70-a256013baa01",
+    "fixture_id": "01a0c9f0-c824-7665-9c30-f356b37ede8d",
+    "score_history": [
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Karim Adeyemi",
+      "normalized_name": "karim adeyemi",
+      "dabble_player_id": "d235b205-1fbc-49a2-8d70-a256013baa01",
+      "team": "GER",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Greece",
+      "event_date": "2026-09-27T18:45:00.000Z",
+      "fixture_id": "01a0c9f0-c824-7665-9c30-f356b37ede8d",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 14,
+      "first_recent_start": false,
+      "frequent_substitute": true,
+      "rotation_player": true,
+      "previous_start": false,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 18,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 12.6,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "Frequent-substitute usage pattern"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "Frequent-substitute usage pattern",
+          15
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/karim-adeyemi-30863",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/karim-adeyemi-30863",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "props": [
+        {
+          "market": "Assists",
+          "line": 0.5,
+          "prop_id": "f0b62a6d07fc68ec"
+        },
+        {
+          "market": "Cards",
+          "line": 0.5,
+          "prop_id": "d37678c20d29a38c"
+        },
+        {
+          "market": "Goals",
+          "line": 0.5,
+          "prop_id": "417e292c0918cba4"
+        }
+      ]
+    }
+  },
+  "pid:2f11cf08-a0cd-4f66-9f4a-6c0540b74fac": {
+    "name": "Elías Báez",
+    "team": "ATL",
+    "dabble_player_id": "2f11cf08-a0cd-4f66-9f4a-6c0540b74fac",
+    "fixture_id": "01a0d0d7-e166-7282-a86a-f8505945ebf7",
+    "score_history": [
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Elías Báez",
+      "normalized_name": "elias baez",
+      "dabble_player_id": "2f11cf08-a0cd-4f66-9f4a-6c0540b74fac",
+      "team": "ATL",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "NYC @ ATL",
+      "event_date": "2026-09-26T23:30:00.000Z",
+      "fixture_id": "01a0d0d7-e166-7282-a86a-f8505945ebf7",
+      "position": "D",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 14,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/elias-baez-47777",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/elias-baez-47777",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 48.5,
+          "prop_id": "2ec03dfba935a27e"
+        }
+      ]
+    }
+  },
+  "pid:e0cbec3e-d69f-45d8-8e02-23ae12a8540f": {
+    "name": "Luca Petrasso",
+    "team": "MTL",
+    "dabble_player_id": "e0cbec3e-d69f-45d8-8e02-23ae12a8540f",
+    "fixture_id": "01a0daf7-78c2-768b-b53c-c03a7561ef73",
+    "score_history": [
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Luca Petrasso",
+      "normalized_name": "luca petrasso",
+      "dabble_player_id": "e0cbec3e-d69f-45d8-8e02-23ae12a8540f",
+      "team": "MTL",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "FC Cincinnati @ Club de Foot Montréal",
+      "event_date": "2026-09-26T23:30:00.000Z",
+      "fixture_id": "01a0daf7-78c2-768b-b53c-c03a7561ef73",
+      "position": "D",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 14,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": false,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/luca-petrasso-36225",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/luca-petrasso-36225",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 43.5,
+          "prop_id": "ab9fcea0215eeffc"
+        }
+      ]
+    }
+  },
+  "pid:dad0ae02-f0fc-4fd4-b783-0ceac99da6d4": {
+    "name": "Matty Longstaff",
+    "team": "MTL",
+    "dabble_player_id": "dad0ae02-f0fc-4fd4-b783-0ceac99da6d4",
+    "fixture_id": "01a0daf7-78c2-768b-b53c-c03a7561ef73",
+    "score_history": [
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Matty Longstaff",
+      "normalized_name": "matty longstaff",
+      "dabble_player_id": "dad0ae02-f0fc-4fd4-b783-0ceac99da6d4",
+      "team": "MTL",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "FC Cincinnati @ Club de Foot Montréal",
+      "event_date": "2026-09-26T23:30:00.000Z",
+      "fixture_id": "01a0daf7-78c2-768b-b53c-c03a7561ef73",
+      "position": "M",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": null,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": null,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": false,
+      "rotowire_player_page_url": null,
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false,
+          "player_page_matched": false,
+          "player_page_url": null,
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 53.5,
+          "prop_id": "961b5b8e62f2c5e4"
+        }
+      ]
+    }
+  },
+  "pid:a21fcc8b-64f3-4b86-8c2b-7daebaa1b6e9": {
+    "name": "Agustín Ojeda",
+    "team": "NYC",
+    "dabble_player_id": "a21fcc8b-64f3-4b86-8c2b-7daebaa1b6e9",
+    "fixture_id": "01a0d0d7-e166-7282-a86a-f8505945ebf7",
+    "score_history": [
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Agustín Ojeda",
+      "normalized_name": "agustin ojeda",
+      "dabble_player_id": "a21fcc8b-64f3-4b86-8c2b-7daebaa1b6e9",
+      "team": "NYC",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "NYC @ ATL",
+      "event_date": "2026-09-26T23:30:00.000Z",
+      "fixture_id": "01a0d0d7-e166-7282-a86a-f8505945ebf7",
+      "position": "F",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 14,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/agustin-ojeda-41210",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/agustin-ojeda-41210",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 27.5,
+          "prop_id": "ddcb898660403c2d"
+        }
+      ]
+    }
+  },
+  "pid:0a740bd3-9cf3-4bf9-970e-6e7f5f91e79f": {
+    "name": "Nicolás Fernández Mercau",
+    "team": "NYC",
+    "dabble_player_id": "0a740bd3-9cf3-4bf9-970e-6e7f5f91e79f",
+    "fixture_id": "01a0d0d7-e166-7282-a86a-f8505945ebf7",
+    "score_history": [
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Nicolás Fernández Mercau",
+      "normalized_name": "nicolas fernandez mercau",
+      "dabble_player_id": "0a740bd3-9cf3-4bf9-970e-6e7f5f91e79f",
+      "team": "NYC",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "NYC @ ATL",
+      "event_date": "2026-09-26T23:30:00.000Z",
+      "fixture_id": "01a0d0d7-e166-7282-a86a-f8505945ebf7",
+      "position": "M",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": null,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": null,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": false,
+      "rotowire_player_page_url": null,
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false,
+          "player_page_matched": false,
+          "player_page_url": null,
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 48.5,
+          "prop_id": "fc34d49cf862de67"
+        }
+      ]
+    }
+  },
+  "pid:8f330b96-378b-4ebb-81bb-849c45bdb029": {
+    "name": "Thiago Martins Bueno",
+    "team": "NYC",
+    "dabble_player_id": "8f330b96-378b-4ebb-81bb-849c45bdb029",
+    "fixture_id": "01a0d0d7-e166-7282-a86a-f8505945ebf7",
+    "score_history": [
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Thiago Martins Bueno",
+      "normalized_name": "thiago martins bueno",
+      "dabble_player_id": "8f330b96-378b-4ebb-81bb-849c45bdb029",
+      "team": "NYC",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "NYC @ ATL",
+      "event_date": "2026-09-26T23:30:00.000Z",
+      "fixture_id": "01a0d0d7-e166-7282-a86a-f8505945ebf7",
+      "position": "D",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": null,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": null,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": false,
+      "rotowire_player_page_url": null,
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false,
+          "player_page_matched": false,
+          "player_page_url": null,
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 80.5,
+          "prop_id": "2595f86b08e55cdc"
+        }
+      ]
+    }
+  },
+  "pid:4f2a632a-9c45-4eb6-a8ca-ab672ac56b07": {
+    "name": "Iván Angulo",
+    "team": "ORL",
+    "dabble_player_id": "4f2a632a-9c45-4eb6-a8ca-ab672ac56b07",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "score_history": [
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Iván Angulo",
+      "normalized_name": "ivan angulo",
+      "dabble_player_id": "4f2a632a-9c45-4eb6-a8ca-ab672ac56b07",
+      "team": "ORL",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "ORL @ PHI",
+      "event_date": "2026-09-26T23:30:00.000Z",
+      "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+      "position": "M",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 14,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/ivan-angulo-29607",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/ivan-angulo-29607",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 41.5,
+          "prop_id": "526fcbb67ba4e92a"
+        }
+      ]
+    }
+  },
+  "pid:1517ac47-aaa1-4034-91f3-df0813fcda4c": {
+    "name": "Martín Ojeda",
+    "team": "ORL",
+    "dabble_player_id": "1517ac47-aaa1-4034-91f3-df0813fcda4c",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "score_history": [
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Martín Ojeda",
+      "normalized_name": "martin ojeda",
+      "dabble_player_id": "1517ac47-aaa1-4034-91f3-df0813fcda4c",
+      "team": "ORL",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "ORL @ PHI",
+      "event_date": "2026-09-26T23:30:00.000Z",
+      "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+      "position": "M",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 14,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/martin-ojeda-38639",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/martin-ojeda-38639",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 33.5,
+          "prop_id": "9e5f79be141ccdb1"
+        }
+      ]
+    }
+  },
+  "pid:5e06029b-c8da-4825-bd40-fbc4e7cacafa": {
+    "name": "Robin Jansson",
+    "team": "ORL",
+    "dabble_player_id": "5e06029b-c8da-4825-bd40-fbc4e7cacafa",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "score_history": [
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Robin Jansson",
+      "normalized_name": "robin jansson",
+      "dabble_player_id": "5e06029b-c8da-4825-bd40-fbc4e7cacafa",
+      "team": "ORL",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "ORL @ PHI",
+      "event_date": "2026-09-26T23:30:00.000Z",
+      "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+      "position": "D",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 14,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": false,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/robin-jansson-27664",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/robin-jansson-27664",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 60.5,
+          "prop_id": "373396ada1da404e"
+        }
+      ]
+    }
+  },
+  "pid:512a8aa2-d79d-4707-afb6-05ec9b85f46c": {
+    "name": "Kai Wagner",
+    "team": "PHI",
+    "dabble_player_id": "512a8aa2-d79d-4707-afb6-05ec9b85f46c",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "score_history": [
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Kai Wagner",
+      "normalized_name": "kai wagner",
+      "dabble_player_id": "512a8aa2-d79d-4707-afb6-05ec9b85f46c",
+      "team": "PHI",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "ORL @ PHI",
+      "event_date": "2026-09-26T23:30:00.000Z",
+      "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+      "position": "D",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 13,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/kai-wagner-27188",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/kai-wagner-27188",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 43.5,
+          "prop_id": "58480050b1590294"
+        }
+      ]
+    }
+  },
+  "pid:6d1c4ade-d9c2-40cd-8ec9-4a601a44016f": {
+    "name": "Milan Iloski",
+    "team": "PHI",
+    "dabble_player_id": "6d1c4ade-d9c2-40cd-8ec9-4a601a44016f",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "score_history": [
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Milan Iloski",
+      "normalized_name": "milan iloski",
+      "dabble_player_id": "6d1c4ade-d9c2-40cd-8ec9-4a601a44016f",
+      "team": "PHI",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "ORL @ PHI",
+      "event_date": "2026-09-26T23:30:00.000Z",
+      "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+      "position": "F",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 13,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/milan-iloski-30969",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/milan-iloski-30969",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 21.5,
+          "prop_id": "4ce9f0cec634a132"
+        }
+      ]
+    }
+  },
+  "pid:b541389f-542f-4830-994f-adb416695234": {
+    "name": "Nathan Harriel",
+    "team": "PHI",
+    "dabble_player_id": "b541389f-542f-4830-994f-adb416695234",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "score_history": [
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Nathan Harriel",
+      "normalized_name": "nathan harriel",
+      "dabble_player_id": "b541389f-542f-4830-994f-adb416695234",
+      "team": "PHI",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "ORL @ PHI",
+      "event_date": "2026-09-26T23:30:00.000Z",
+      "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+      "position": "D",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 13,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/nathan-harriel-34291",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/nathan-harriel-34291",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 38.5,
+          "prop_id": "33addda0571799a4"
+        }
+      ]
+    }
+  },
+  "pid:2e66dc7c-b071-4df4-b220-fa4fa495f9d5": {
+    "name": "Chris Durkin",
+    "team": "STL",
+    "dabble_player_id": "2e66dc7c-b071-4df4-b220-fa4fa495f9d5",
+    "fixture_id": "01a0dbcf-d9d2-7556-8f5f-275f8aad35d3",
+    "score_history": [
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Chris Durkin",
+      "normalized_name": "chris durkin",
+      "dabble_player_id": "2e66dc7c-b071-4df4-b220-fa4fa495f9d5",
+      "team": "STL",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "STL @ NYR",
+      "event_date": "2026-09-26T23:30:00.000Z",
+      "fixture_id": "01a0dbcf-d9d2-7556-8f5f-275f8aad35d3",
+      "position": "M",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": null,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": null,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/chris-durkin-23272",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/chris-durkin-23272",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 50.5,
+          "prop_id": "69c42a69c85fce47"
+        }
+      ]
+    }
+  },
+  "pid:9beb21e7-22ed-4589-a1f2-a8956cc6bf89": {
+    "name": "Dante Polvara",
+    "team": "STL",
+    "dabble_player_id": "9beb21e7-22ed-4589-a1f2-a8956cc6bf89",
+    "fixture_id": "01a0dbcf-d9d2-7556-8f5f-275f8aad35d3",
+    "score_history": [
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Dante Polvara",
+      "normalized_name": "dante polvara",
+      "dabble_player_id": "9beb21e7-22ed-4589-a1f2-a8956cc6bf89",
+      "team": "STL",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "STL @ NYR",
+      "event_date": "2026-09-26T23:30:00.000Z",
+      "fixture_id": "01a0dbcf-d9d2-7556-8f5f-275f8aad35d3",
+      "position": "M",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 14,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/dante-polvara-47737",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/dante-polvara-47737",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 54.5,
+          "prop_id": "293631597b2075b5"
+        }
+      ]
+    }
+  },
+  "pid:97025967-ba7e-4324-b489-e5b6b3ca7f1d": {
+    "name": "Anton Stach",
+    "team": "GER",
+    "dabble_player_id": "97025967-ba7e-4324-b489-e5b6b3ca7f1d",
+    "fixture_id": "01a0c9f0-c824-7665-9c30-f356b37ede8d",
+    "score_history": [
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Anton Stach",
+      "normalized_name": "anton stach",
+      "dabble_player_id": "97025967-ba7e-4324-b489-e5b6b3ca7f1d",
+      "team": "GER",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Greece",
+      "event_date": "2026-09-27T18:45:00.000Z",
+      "fixture_id": "01a0c9f0-c824-7665-9c30-f356b37ede8d",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 22,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/anton-stach-35015",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/anton-stach-35015",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "props": [
+        {
+          "market": "Cards",
+          "line": 0.5,
+          "prop_id": "009d028ef9560669"
+        }
+      ]
+    }
+  },
+  "pid:541162c4-1312-444d-b1b1-3037cb497613": {
+    "name": "Joshua Kimmich",
+    "team": "GER",
+    "dabble_player_id": "541162c4-1312-444d-b1b1-3037cb497613",
+    "fixture_id": "01a0c9f0-c824-7665-9c30-f356b37ede8d",
+    "score_history": [
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Joshua Kimmich",
+      "normalized_name": "joshua kimmich",
+      "dabble_player_id": "541162c4-1312-444d-b1b1-3037cb497613",
+      "team": "GER",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Greece",
+      "event_date": "2026-09-27T18:45:00.000Z",
+      "fixture_id": "01a0c9f0-c824-7665-9c30-f356b37ede8d",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 14,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": false,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/joshua-kimmich-19296",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/joshua-kimmich-19296",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "props": [
+        {
+          "market": "Cards",
+          "line": 0.5,
+          "prop_id": "3f1718dc20b867f2"
+        }
+      ]
+    }
+  },
+  "pid:d947e15c-dc22-4e10-bc6b-7f2966359fb0": {
+    "name": "Kevin Schade",
+    "team": "GER",
+    "dabble_player_id": "d947e15c-dc22-4e10-bc6b-7f2966359fb0",
+    "fixture_id": "01a0c9f0-c824-7665-9c30-f356b37ede8d",
+    "score_history": [
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Kevin Schade",
+      "normalized_name": "kevin schade",
+      "dabble_player_id": "d947e15c-dc22-4e10-bc6b-7f2966359fb0",
+      "team": "GER",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Greece",
+      "event_date": "2026-09-27T18:45:00.000Z",
+      "fixture_id": "01a0c9f0-c824-7665-9c30-f356b37ede8d",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 15,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/kevin-schade-34216",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/kevin-schade-34216",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "props": [
+        {
+          "market": "Assists",
+          "line": 0.5,
+          "prop_id": "9e44a6313d1c8fb2"
+        },
+        {
+          "market": "Goals",
+          "line": 0.5,
+          "prop_id": "0566434721ec1d13"
+        }
+      ]
+    }
+  },
+  "pid:467010ef-d484-4b41-bde1-6d3ef527c26b": {
+    "name": "Nadiem Amiri",
+    "team": "GER",
+    "dabble_player_id": "467010ef-d484-4b41-bde1-6d3ef527c26b",
+    "fixture_id": "01a0c9f0-c824-7665-9c30-f356b37ede8d",
+    "score_history": [
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Nadiem Amiri",
+      "normalized_name": "nadiem amiri",
+      "dabble_player_id": "467010ef-d484-4b41-bde1-6d3ef527c26b",
+      "team": "GER",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Greece",
+      "event_date": "2026-09-27T18:45:00.000Z",
+      "fixture_id": "01a0c9f0-c824-7665-9c30-f356b37ede8d",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 15,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/nadiem-amiri-19623",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/nadiem-amiri-19623",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "props": [
+        {
+          "market": "Assists",
+          "line": 0.5,
+          "prop_id": "01fcf432aaf59d70"
+        },
+        {
+          "market": "Goals",
+          "line": 0.5,
+          "prop_id": "72088f50f54e7fda"
+        }
+      ]
+    }
+  },
+  "pid:4732cb4e-ea3e-4e97-8795-3eb23c47d3b1": {
+    "name": "Christos Tzolis",
+    "team": "GRE",
+    "dabble_player_id": "4732cb4e-ea3e-4e97-8795-3eb23c47d3b1",
+    "fixture_id": "01a0c9f0-c824-7665-9c30-f356b37ede8d",
+    "score_history": [
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Christos Tzolis",
+      "normalized_name": "christos tzolis",
+      "dabble_player_id": "4732cb4e-ea3e-4e97-8795-3eb23c47d3b1",
+      "team": "GRE",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Greece",
+      "event_date": "2026-09-27T18:45:00.000Z",
+      "fixture_id": "01a0c9f0-c824-7665-9c30-f356b37ede8d",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 15,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/christos-tzolis-33736",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/christos-tzolis-33736",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "props": [
+        {
+          "market": "Assists",
+          "line": 0.5,
+          "prop_id": "ea1feece67e83319"
+        },
+        {
+          "market": "Goals",
+          "line": 0.5,
+          "prop_id": "ddd9433a8662ea1b"
+        }
+      ]
+    }
+  },
+  "pid:10e578e3-3c5a-496f-8381-2596ba3d7e90": {
+    "name": "Christos Zafeiris",
+    "team": "GRE",
+    "dabble_player_id": "10e578e3-3c5a-496f-8381-2596ba3d7e90",
+    "fixture_id": "01a0c9f0-c824-7665-9c30-f356b37ede8d",
+    "score_history": [
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Christos Zafeiris",
+      "normalized_name": "christos zafeiris",
+      "dabble_player_id": "10e578e3-3c5a-496f-8381-2596ba3d7e90",
+      "team": "GRE",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Greece",
+      "event_date": "2026-09-27T18:45:00.000Z",
+      "fixture_id": "01a0c9f0-c824-7665-9c30-f356b37ede8d",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": null,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": null,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/christos-zafeiris-40621",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/christos-zafeiris-40621",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "props": [
+        {
+          "market": "Cards",
+          "line": 0.5,
+          "prop_id": "80c9a11c1fe60e14"
+        }
+      ]
+    }
+  },
+  "pid:e5cf5fdd-fd18-4101-b151-34bd80e0e9f6": {
+    "name": "Dimitrios Kourbelis",
+    "team": "GRE",
+    "dabble_player_id": "e5cf5fdd-fd18-4101-b151-34bd80e0e9f6",
+    "fixture_id": "01a0c9f0-c824-7665-9c30-f356b37ede8d",
+    "score_history": [
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Dimitrios Kourbelis",
+      "normalized_name": "dimitrios kourbelis",
+      "dabble_player_id": "e5cf5fdd-fd18-4101-b151-34bd80e0e9f6",
+      "team": "GRE",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Greece",
+      "event_date": "2026-09-27T18:45:00.000Z",
+      "fixture_id": "01a0c9f0-c824-7665-9c30-f356b37ede8d",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": null,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": null,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": false,
+      "rotowire_player_page_url": null,
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false,
+          "player_page_matched": false,
+          "player_page_url": null,
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "props": [
+        {
+          "market": "Cards",
+          "line": 0.5,
+          "prop_id": "86b96cc3af4aea9e"
+        }
+      ]
+    }
+  },
+  "pid:de0a0365-df11-436a-8fe3-a0eb16436678": {
+    "name": "Georgios Vagiannidis",
+    "team": "GRE",
+    "dabble_player_id": "de0a0365-df11-436a-8fe3-a0eb16436678",
+    "fixture_id": "01a0c9f0-c824-7665-9c30-f356b37ede8d",
+    "score_history": [
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Georgios Vagiannidis",
+      "normalized_name": "georgios vagiannidis",
+      "dabble_player_id": "de0a0365-df11-436a-8fe3-a0eb16436678",
+      "team": "GRE",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Greece",
+      "event_date": "2026-09-27T18:45:00.000Z",
+      "fixture_id": "01a0c9f0-c824-7665-9c30-f356b37ede8d",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": null,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": null,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/georgios-vagiannidis-32942",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/georgios-vagiannidis-32942",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "props": [
+        {
+          "market": "Cards",
+          "line": 0.5,
+          "prop_id": "d318869792da2803"
+        }
+      ]
+    }
+  },
+  "pid:30c38bbd-92d6-4d22-8e69-2af2e6073422": {
+    "name": "Vangelis Pavlidis",
+    "team": "GRE",
+    "dabble_player_id": "30c38bbd-92d6-4d22-8e69-2af2e6073422",
+    "fixture_id": "01a0c9f0-c824-7665-9c30-f356b37ede8d",
+    "score_history": [
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Vangelis Pavlidis",
+      "normalized_name": "vangelis pavlidis",
+      "dabble_player_id": "30c38bbd-92d6-4d22-8e69-2af2e6073422",
+      "team": "GRE",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Greece",
+      "event_date": "2026-09-27T18:45:00.000Z",
+      "fixture_id": "01a0c9f0-c824-7665-9c30-f356b37ede8d",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": null,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": null,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/vangelis-pavlidis-44181",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/vangelis-pavlidis-44181",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "props": [
+        {
+          "market": "Assists",
+          "line": 0.5,
+          "prop_id": "bc78edcdd9f99f09"
+        },
+        {
+          "market": "Goals",
+          "line": 0.5,
+          "prop_id": "8d6af8ccf60bb7de"
+        }
+      ]
+    }
+  },
+  "pid:5c6f2e57-6457-48b5-8458-50c0a79f82c0": {
+    "name": "Enea Mihaj",
+    "team": "ATL",
+    "dabble_player_id": "5c6f2e57-6457-48b5-8458-50c0a79f82c0",
+    "fixture_id": "01a0d0d7-e166-7282-a86a-f8505945ebf7",
+    "score_history": [
+      {
+        "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 0,
+        "confidence_score": 25,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Enea Mihaj",
+      "normalized_name": "enea mihaj",
+      "dabble_player_id": "5c6f2e57-6457-48b5-8458-50c0a79f82c0",
+      "team": "ATL",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "NYC @ ATL",
+      "event_date": "2026-09-26T23:30:00.000Z",
+      "fixture_id": "01a0d0d7-e166-7282-a86a-f8505945ebf7",
+      "position": "D",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 14,
+      "first_recent_start": true,
+      "frequent_substitute": false,
+      "rotation_player": true,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [
+        "first_recent_start"
+      ],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "start",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [
+        {
+          "source": "first_recent_start",
+          "vote": "start",
+          "predicted_start": true,
+          "observed_at": "2026-09-26T16:27:10.333099+00:00",
+          "source_updated_at": null
+        }
+      ],
+      "starter_votes": 1,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 1,
+      "dns_score": 0,
+      "confidence_score": 25,
+      "urgency_score": 0,
+      "combined_priority": 0.0,
+      "evidence_count": 1,
+      "tier": "Ignore",
+      "top_reasons": [
+        "First start of recent stretch - rotation risk still real but trending up",
+        "Rotation-risk usage pattern (inconsistent starts)",
+        "Predicted starter 1/1 sources (first_recent_start)"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "First start of recent stretch - rotation risk still real but trending up",
+          -10
+        ],
+        [
+          "Rotation-risk usage pattern (inconsistent starts)",
+          8
+        ],
+        [
+          "Predicted starter 1/1 sources (first_recent_start)",
+          -8
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/enea-mihaj-33457",
+      "has_history": false,
+      "has_predicted_xi": true,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/enea-mihaj-33457",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 68.5,
+          "prop_id": "2081426914d7589c"
         }
       ]
     }
