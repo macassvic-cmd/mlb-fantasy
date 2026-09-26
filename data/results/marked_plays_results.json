@@ -2524,14 +2524,37 @@
         }
       ],
       "hot": []
+    },
+    "2026-09-25": {
+      "fire": [
+        {
+          "player_id": 682928,
+          "name": "CJ Abrams",
+          "team": "Washington Nationals",
+          "grade": "win",
+          "n_before": 28,
+          "wins_before": 17,
+          "rate_before": 60.7
+        },
+        {
+          "player_id": 668930,
+          "name": "Brice Turang",
+          "team": "Milwaukee Brewers",
+          "grade": "win",
+          "n_before": 22,
+          "wins_before": 15,
+          "rate_before": 68.2
+        }
+      ],
+      "hot": []
     }
   },
   "cohorts": {
     "fire": {
-      "wins": 70,
+      "wins": 72,
       "losses": 58,
-      "n": 128,
-      "rate": 54.7
+      "n": 130,
+      "rate": 55.4
     },
     "hot": {
       "wins": 55,

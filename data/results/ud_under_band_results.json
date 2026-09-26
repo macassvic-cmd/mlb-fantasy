@@ -3479,17 +3479,57 @@
           "grade": "loss"
         }
       ]
+    },
+    "2026-09-25": {
+      "wins": 1,
+      "losses": 2,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 805300,
+          "name": "Jakob Marsee",
+          "team": "Miami Marlins",
+          "projected_ud": 3.51,
+          "ud_line": 5.5,
+          "edge": -1.99,
+          "game_time_pt": "4:10 PM PT",
+          "actual_ud": 13,
+          "grade": "loss"
+        },
+        {
+          "player_id": 691594,
+          "name": "Javier Sanoja",
+          "team": "Miami Marlins",
+          "projected_ud": 3.62,
+          "ud_line": 5.5,
+          "edge": -1.88,
+          "game_time_pt": "4:10 PM PT",
+          "actual_ud": 6,
+          "grade": "loss"
+        },
+        {
+          "player_id": 681508,
+          "name": "Mickey Gasper",
+          "team": "Boston Red Sox",
+          "projected_ud": 3.65,
+          "ud_line": 5.5,
+          "edge": -1.85,
+          "game_time_pt": "10:05 AM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 155,
-    "losses": 134,
+    "wins": 156,
+    "losses": 136,
     "dnp": 7
   },
   "record_by_line": {
     "5.5": {
-      "wins": 72,
-      "losses": 76
+      "wins": 73,
+      "losses": 78
     },
     "6.5": {
       "wins": 49,
@@ -3881,7 +3921,7 @@
       "name": "Javier Sanoja",
       "team": "Miami Marlins",
       "wins": 0,
-      "losses": 2
+      "losses": 3
     },
     "686797": {
       "name": "Brooks Lee",
@@ -4228,7 +4268,7 @@
     "681508": {
       "name": "Mickey Gasper",
       "team": "Boston Red Sox",
-      "wins": 1,
+      "wins": 2,
       "losses": 0
     },
     "702332": {
@@ -4480,6 +4520,12 @@
     "671976": {
       "name": "Tristan Peters",
       "team": "Chicago White Sox",
+      "wins": 0,
+      "losses": 1
+    },
+    "805300": {
+      "name": "Jakob Marsee",
+      "team": "Miami Marlins",
       "wins": 0,
       "losses": 1
     }

@@ -7922,6 +7922,39 @@
           "correct": true
         }
       ]
+    },
+    "2026-09-25": {
+      "summary": {
+        "total": 2,
+        "correct": 1,
+        "accuracy": 50.0,
+        "over_total": 2,
+        "over_correct": 1,
+        "under_total": 0,
+        "under_correct": 0
+      },
+      "plays": [
+        {
+          "player_id": 805808,
+          "name": "Kevin McGonigle",
+          "team": "Detroit Tigers",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 5,
+          "correct": false
+        },
+        {
+          "player_id": 682928,
+          "name": "CJ Abrams",
+          "team": "Washington Nationals",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 16,
+          "correct": true
+        }
+      ]
     }
   }
 }
