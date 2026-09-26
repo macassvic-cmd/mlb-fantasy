@@ -1,5 +1,5 @@
 {
-  "_latest_batch_ts": "2026-09-26T16:27:52.765393+00:00",
+  "_latest_batch_ts": "2026-09-26T19:19:37.804707+00:00",
   "pid:fa10a05f-a3a2-45a3-af97-d32a5575ce6f": {
     "name": "Pedro Porro",
     "team": "ESP",
@@ -235,6 +235,14 @@
         "urgency_score": 0,
         "official_status": "not_yet_posted",
         "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
+        "dns_score": 90,
+        "confidence_score": 45,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
       }
     ],
     "first_crossed": {
@@ -318,7 +326,7 @@
           "source": "rotowire_news",
           "vote": "bench",
           "predicted_start": false,
-          "observed_at": "2026-09-26T16:27:22.823242+00:00",
+          "observed_at": "2026-09-26T19:19:03.635898+00:00",
           "source_updated_at": null
         }
       ],
@@ -397,7 +405,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Shots on Target",
@@ -594,6 +602,14 @@
         "urgency_score": 0,
         "official_status": "not_yet_posted",
         "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
       }
     ],
     "first_crossed": {
@@ -724,7 +740,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Shots on Target",
@@ -2547,6 +2563,14 @@
         "urgency_score": 0,
         "official_status": "not_yet_posted",
         "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
       }
     ],
     "first_crossed": {
@@ -2677,7 +2701,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Passes Attempted",
@@ -6262,6 +6286,14 @@
         "urgency_score": 0,
         "official_status": "not_yet_posted",
         "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
       }
     ],
     "first_crossed": {
@@ -6392,8 +6424,13 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 31.5,
+          "prop_id": "5b2c58210f430d9d"
+        },
         {
           "market": "Shots",
           "line": 3.0,
@@ -6426,6 +6463,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -6561,7 +6606,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Passes Attempted",
@@ -6600,6 +6645,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -6735,8 +6788,13 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 26.5,
+          "prop_id": "74fb86b563d8a27d"
+        },
         {
           "market": "Shots",
           "line": 2.0,
@@ -6769,6 +6827,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -6904,7 +6970,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Passes Attempted",
@@ -6943,6 +7009,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -7078,7 +7152,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Shots",
@@ -7112,6 +7186,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -7247,7 +7329,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Passes Attempted",
@@ -7286,6 +7368,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -7421,7 +7511,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Shots on Target",
@@ -7455,6 +7545,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -7590,8 +7688,13 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 34.5,
+          "prop_id": "45762997fdd03320"
+        },
         {
           "market": "Shots",
           "line": 4.0,
@@ -7624,6 +7727,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -7759,8 +7870,13 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 16.5,
+          "prop_id": "35fa165c0a2407cb"
+        },
         {
           "market": "Shots",
           "line": 3.5,
@@ -7798,6 +7914,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -7933,8 +8057,13 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 13.5,
+          "prop_id": "5f7e167ede088a22"
+        },
         {
           "market": "Shots",
           "line": 2.0,
@@ -8335,6 +8464,14 @@
         "urgency_score": 0,
         "official_status": "not_yet_posted",
         "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
+        "dns_score": 90,
+        "confidence_score": 45,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
       }
     ],
     "first_crossed": {
@@ -8418,7 +8555,7 @@
           "source": "rotowire_news",
           "vote": "bench",
           "predicted_start": false,
-          "observed_at": "2026-09-26T16:27:24.731525+00:00",
+          "observed_at": "2026-09-26T19:19:05.624887+00:00",
           "source_updated_at": null
         }
       ],
@@ -8497,7 +8634,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Saves",
@@ -8523,6 +8660,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 18,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -8658,7 +8803,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Saves",
@@ -8684,6 +8829,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 18,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -8819,7 +8972,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Saves",
@@ -8845,6 +8998,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 18,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -8980,7 +9141,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Saves",
@@ -9006,6 +9167,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 18,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -9141,7 +9310,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Saves",
@@ -9167,6 +9336,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 18,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -9302,7 +9479,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Passes Attempted",
@@ -9333,6 +9510,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 18,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -9468,7 +9653,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Saves",
@@ -9494,6 +9679,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 18,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -9629,7 +9822,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Saves",
@@ -9655,6 +9848,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 18,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -9790,7 +9991,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Assists",
@@ -9831,6 +10032,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 18,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -9966,7 +10175,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Goals",
@@ -10002,6 +10211,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 18,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -10137,7 +10354,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Assists",
@@ -10178,6 +10395,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 18,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -10313,7 +10538,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Goals",
@@ -10344,6 +10569,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 18,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -10479,7 +10712,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Cards",
@@ -10505,6 +10738,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -10640,7 +10881,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Saves",
@@ -10666,6 +10907,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -10801,7 +11050,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Assists",
@@ -10842,6 +11091,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -10977,7 +11234,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Cards",
@@ -11003,6 +11260,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -11138,7 +11403,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Cards",
@@ -11164,6 +11429,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -11299,7 +11572,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Assists",
@@ -11340,6 +11613,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -11475,7 +11756,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Cards",
@@ -11501,6 +11782,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -11636,7 +11925,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Cards",
@@ -11662,6 +11951,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -11797,7 +12094,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Passes Attempted",
@@ -11828,6 +12125,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -11963,7 +12268,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Saves",
@@ -11989,6 +12294,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -12124,7 +12437,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Passes Attempted",
@@ -12155,6 +12468,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -12290,7 +12611,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Saves",
@@ -12316,6 +12637,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -12451,7 +12780,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Passes Attempted",
@@ -12482,6 +12811,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -12617,7 +12954,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Passes Attempted",
@@ -12648,6 +12985,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -12783,7 +13128,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Saves",
@@ -12809,6 +13154,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -12944,7 +13297,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Passes Attempted",
@@ -12975,6 +13328,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -13110,8 +13471,13 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 31.5,
+          "prop_id": "f7bec8b7c48fc4cb"
+        },
         {
           "market": "Saves",
           "line": 2.0,
@@ -13136,6 +13502,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -13271,8 +13645,13 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 26.5,
+          "prop_id": "e2011bb7ff4aba16"
+        },
         {
           "market": "Saves",
           "line": 3.0,
@@ -13297,6 +13676,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -13432,8 +13819,13 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 27.5,
+          "prop_id": "e440a4bbb4152e6e"
+        },
         {
           "market": "Saves",
           "line": 3.0,
@@ -13458,6 +13850,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -13593,8 +13993,13 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 25.5,
+          "prop_id": "aca3b2892f2cd611"
+        },
         {
           "market": "Saves",
           "line": 4.0,
@@ -13619,6 +14024,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -13754,8 +14167,13 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 30.5,
+          "prop_id": "d8260198fc7220ce"
+        },
         {
           "market": "Saves",
           "line": 3.5,
@@ -13780,6 +14198,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -13915,12 +14341,17 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
+          "market": "Passes Attempted",
+          "line": 35.5,
+          "prop_id": "8b6330b1d3797720"
+        },
+        {
           "market": "Saves",
-          "line": 2.5,
-          "prop_id": "ddafa9d9befc6937"
+          "line": 3.0,
+          "prop_id": "97f928bfbb6460ba"
         }
       ]
     }
@@ -13941,6 +14372,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -14076,8 +14515,13 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 29.5,
+          "prop_id": "448ee49263cc9d4a"
+        },
         {
           "market": "Saves",
           "line": 4.5,
@@ -14102,6 +14546,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -14237,8 +14689,13 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 29.5,
+          "prop_id": "837a78a837bb2719"
+        },
         {
           "market": "Saves",
           "line": 3.0,
@@ -14263,6 +14720,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -14398,8 +14863,13 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 32.5,
+          "prop_id": "f4ae485e1f03ce1c"
+        },
         {
           "market": "Saves",
           "line": 2.0,
@@ -14424,6 +14894,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -14559,7 +15037,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Assists",
@@ -14600,6 +15078,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -14735,7 +15221,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Assists",
@@ -14776,6 +15262,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -14911,7 +15405,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Assists",
@@ -14952,6 +15446,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -15087,7 +15589,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Cards",
@@ -15113,6 +15615,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -15248,7 +15758,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Assists",
@@ -15274,6 +15784,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -15409,7 +15927,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Assists",
@@ -15450,6 +15968,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -15585,7 +16111,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Assists",
@@ -15626,6 +16152,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -15761,7 +16295,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Cards",
@@ -15787,6 +16321,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -15922,7 +16464,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Assists",
@@ -15963,6 +16505,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -16098,7 +16648,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Cards",
@@ -16124,6 +16674,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -16259,7 +16817,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Cards",
@@ -16285,6 +16843,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -16420,7 +16986,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Assists",
@@ -16446,6 +17012,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -16581,7 +17155,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Assists",
@@ -16592,6 +17166,16 @@
           "market": "Goals",
           "line": 0.5,
           "prop_id": "cb9262af2a4e8cfc"
+        },
+        {
+          "market": "Shots",
+          "line": 2.5,
+          "prop_id": "ed666e63124dacf8"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 1.5,
+          "prop_id": "6020fa6d532b341c"
         }
       ]
     }
@@ -16612,6 +17196,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -16747,7 +17339,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Assists",
@@ -16758,6 +17350,16 @@
           "market": "Goals",
           "line": 1.5,
           "prop_id": "3552b7428714c80c"
+        },
+        {
+          "market": "Shots",
+          "line": 4.5,
+          "prop_id": "3496a344d4350f52"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 2.5,
+          "prop_id": "8ea1ad9fb9d4b021"
         }
       ]
     }
@@ -16778,6 +17380,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -16913,7 +17523,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Cards",
@@ -16939,6 +17549,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -17074,7 +17692,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Assists",
@@ -17105,6 +17723,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -17240,7 +17866,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Assists",
@@ -17256,6 +17882,16 @@
           "market": "Goals",
           "line": 0.5,
           "prop_id": "92dfe00c19ee7658"
+        },
+        {
+          "market": "Shots",
+          "line": 2.5,
+          "prop_id": "87434a0c3aaa8809"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 1.5,
+          "prop_id": "1e1a1e5058016bdf"
         }
       ]
     }
@@ -17276,6 +17912,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -17411,7 +18055,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Assists",
@@ -17422,6 +18066,16 @@
           "market": "Goals",
           "line": 0.5,
           "prop_id": "5e2c454a4f98be50"
+        },
+        {
+          "market": "Shots",
+          "line": 3.5,
+          "prop_id": "2c844465172925be"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 1.5,
+          "prop_id": "197832b5a494f091"
         }
       ]
     }
@@ -17442,6 +18096,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -17577,7 +18239,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Assists",
@@ -17588,6 +18250,16 @@
           "market": "Goals",
           "line": 0.5,
           "prop_id": "5c608a8df2bc05f8"
+        },
+        {
+          "market": "Shots",
+          "line": 2.5,
+          "prop_id": "13530fc4a096a84a"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 0.5,
+          "prop_id": "5da61cf190777ddf"
         }
       ]
     }
@@ -17608,6 +18280,14 @@
       },
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -17743,7 +18423,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Cards",
@@ -17761,6 +18441,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 33,
+        "confidence_score": 30,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 33,
         "confidence_score": 30,
         "urgency_score": 0,
@@ -17837,7 +18525,7 @@
           "source": "rotowire_news",
           "vote": "unknown",
           "predicted_start": null,
-          "observed_at": "2026-09-26T16:27:50.401645+00:00",
+          "observed_at": "2026-09-26T19:19:35.229532+00:00",
           "source_updated_at": null
         }
       ],
@@ -17906,7 +18594,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Assists",
@@ -17917,6 +18605,16 @@
           "market": "Goals",
           "line": 0.5,
           "prop_id": "d01285813fdb70e0"
+        },
+        {
+          "market": "Shots",
+          "line": 2.5,
+          "prop_id": "6cd2458b79a55dce"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 0.5,
+          "prop_id": "0f427768c2420f66"
         }
       ]
     }
@@ -17929,6 +18627,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 18,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -18064,7 +18770,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Passes Attempted",
@@ -18082,6 +18788,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 18,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -18217,7 +18931,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Assists",
@@ -18233,6 +18947,16 @@
           "market": "Goals",
           "line": 0.5,
           "prop_id": "417e292c0918cba4"
+        },
+        {
+          "market": "Shots",
+          "line": 3.5,
+          "prop_id": "b951b690d10044a5"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 1.5,
+          "prop_id": "5f12a421eb319247"
         }
       ]
     }
@@ -18245,6 +18969,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -18380,7 +19112,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Passes Attempted",
@@ -18398,6 +19130,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -18533,7 +19273,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Passes Attempted",
@@ -18551,6 +19291,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -18686,7 +19434,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Passes Attempted",
@@ -18704,6 +19452,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -18839,7 +19595,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Passes Attempted",
@@ -18857,6 +19613,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -18992,7 +19756,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Passes Attempted",
@@ -19010,6 +19774,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -19145,7 +19917,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Passes Attempted",
@@ -19163,6 +19935,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -19298,7 +20078,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Passes Attempted",
@@ -19316,6 +20096,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -19451,7 +20239,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Passes Attempted",
@@ -19469,6 +20257,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -19604,7 +20400,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Passes Attempted",
@@ -19622,6 +20418,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -19757,7 +20561,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Passes Attempted",
@@ -19775,6 +20579,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -19910,7 +20722,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Passes Attempted",
@@ -19928,6 +20740,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -20063,7 +20883,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Passes Attempted",
@@ -20081,6 +20901,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -20216,7 +21044,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Passes Attempted",
@@ -20234,6 +21062,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -20369,7 +21205,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Passes Attempted",
@@ -20387,6 +21223,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -20522,7 +21366,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Cards",
@@ -20540,6 +21384,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -20675,7 +21527,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Cards",
@@ -20693,6 +21545,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -20828,7 +21688,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Assists",
@@ -20839,6 +21699,16 @@
           "market": "Goals",
           "line": 0.5,
           "prop_id": "0566434721ec1d13"
+        },
+        {
+          "market": "Shots",
+          "line": 3.5,
+          "prop_id": "d77d9369b9bae9bf"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 1.5,
+          "prop_id": "8299043adc8de734"
         }
       ]
     }
@@ -20851,6 +21721,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -20986,7 +21864,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Assists",
@@ -20997,6 +21875,16 @@
           "market": "Goals",
           "line": 0.5,
           "prop_id": "72088f50f54e7fda"
+        },
+        {
+          "market": "Shots",
+          "line": 2.5,
+          "prop_id": "0ef2b98523c38cf6"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 0.5,
+          "prop_id": "6081d99f19f65850"
         }
       ]
     }
@@ -21009,6 +21897,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -21144,7 +22040,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Assists",
@@ -21155,6 +22051,16 @@
           "market": "Goals",
           "line": 0.5,
           "prop_id": "ddd9433a8662ea1b"
+        },
+        {
+          "market": "Shots",
+          "line": 2.5,
+          "prop_id": "eab708860879ce76"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 0.5,
+          "prop_id": "14e2d49233761970"
         }
       ]
     }
@@ -21167,6 +22073,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -21302,7 +22216,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Cards",
@@ -21320,6 +22234,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -21455,7 +22377,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Cards",
@@ -21473,6 +22395,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -21608,7 +22538,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Cards",
@@ -21626,6 +22556,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -21761,7 +22699,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Assists",
@@ -21772,6 +22710,16 @@
           "market": "Goals",
           "line": 0.5,
           "prop_id": "8d6af8ccf60bb7de"
+        },
+        {
+          "market": "Shots",
+          "line": 2.5,
+          "prop_id": "062f890872794533"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 1.5,
+          "prop_id": "907465dc6e926144"
         }
       ]
     }
@@ -21784,6 +22732,14 @@
     "score_history": [
       {
         "ts": "2026-09-26T16:27:52.765393+00:00",
+        "dns_score": 0,
+        "confidence_score": 25,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
         "dns_score": 0,
         "confidence_score": 25,
         "urgency_score": 0,
@@ -21860,7 +22816,7 @@
           "source": "first_recent_start",
           "vote": "start",
           "predicted_start": true,
-          "observed_at": "2026-09-26T16:27:10.333099+00:00",
+          "observed_at": "2026-09-26T19:18:49.541336+00:00",
           "source_updated_at": null
         }
       ],
@@ -21939,12 +22895,3600 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-26T16:27:52.765393+00:00",
+      "ts": "2026-09-26T19:19:37.804707+00:00",
       "props": [
         {
           "market": "Passes Attempted",
           "line": 68.5,
           "prop_id": "2081426914d7589c"
+        }
+      ]
+    }
+  },
+  "pid:a20e187c-15d9-4cb3-b992-2607093a828f": {
+    "name": "Joaquín Pereyra",
+    "team": "MIN",
+    "dabble_player_id": "a20e187c-15d9-4cb3-b992-2607093a828f",
+    "fixture_id": "01a0d398-e1d8-7518-99c0-2fec9b37b53a",
+    "score_history": [
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
+        "dns_score": 90,
+        "confidence_score": 45,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": "2026-09-26T19:19:37.804707+00:00",
+      "70": "2026-09-26T19:19:37.804707+00:00",
+      "80": "2026-09-26T19:19:37.804707+00:00",
+      "90": "2026-09-26T19:19:37.804707+00:00"
+    },
+    "latest": {
+      "player_name": "Joaquín Pereyra",
+      "normalized_name": "joaquin pereyra",
+      "dabble_player_id": "a20e187c-15d9-4cb3-b992-2607093a828f",
+      "team": "MIN",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "MIN @ SEA",
+      "event_date": "2026-09-27T00:30:00.000Z",
+      "fixture_id": "01a0d398-e1d8-7518-99c0-2fec9b37b53a",
+      "position": "M",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": "hard_out",
+      "rotowire_status_normalized": "hard_out",
+      "rotowire_page_tag": "OUT",
+      "rotowire_injury": "Strain",
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": "https://www.rotowire.com/soccer/player/joaquin-pereyra-44036",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-26T19:18:45.656531+00:00",
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": {
+        "rotowire_url": "https://www.rotowire.com/soccer/player/joaquin-pereyra-44036",
+        "rotowire_status_tag": "OUT",
+        "rotowire_injury": "Strain",
+        "rotowire_est_return": "10/10/2026",
+        "rotowire_status_since": "2026-09-26T19:18:45.656531+00:00",
+        "transfermarkt": null,
+        "last_appeared_date": "2026-09-12",
+        "days_since_last_appearance": 15,
+        "team_last_3_fixtures": [],
+        "corroborated_by": [],
+        "conflict": null
+      },
+      "is_lock": true,
+      "lock_reason": "hard_out_uncorroborated",
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 15,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [
+        "rotowire_news"
+      ],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "bench",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [
+        {
+          "source": "rotowire_news",
+          "vote": "bench",
+          "predicted_start": false,
+          "observed_at": "2026-09-26T19:19:11.935762+00:00",
+          "source_updated_at": null
+        }
+      ],
+      "starter_votes": 0,
+      "bench_votes": 1,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 1,
+      "dns_score": 90,
+      "confidence_score": 45,
+      "urgency_score": 0,
+      "combined_priority": 63.0,
+      "evidence_count": 2,
+      "tier": "DNS SNIPER",
+      "top_reasons": [
+        "RotoWire: hard_out",
+        "Predicted bench 1/1 sources (rotowire_news)",
+        "RotoWire hard_out floor (base)"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "RotoWire: hard_out",
+          50
+        ],
+        [
+          "Predicted bench 1/1 sources (rotowire_news)",
+          10
+        ],
+        [
+          "RotoWire hard_out floor (base)",
+          27
+        ]
+      ],
+      "low_data": false,
+      "watchdog_note": null,
+      "rotowire_source": "player_page",
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/joaquin-pereyra-44036",
+      "has_history": false,
+      "has_predicted_xi": true,
+      "has_injury": false,
+      "has_news": true,
+      "has_x_signal": false,
+      "has_any_external_enrichment": true,
+      "has_multiple_external_sources": false,
+      "board_only": false,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": true,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/joaquin-pereyra-44036",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T19:19:37.804707+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 45.5,
+          "prop_id": "99cb26059da4bfde"
+        }
+      ]
+    }
+  },
+  "pid:e14aa48f-5747-408f-b0e4-a4838f488a34": {
+    "name": "Hirving Lozano",
+    "team": "LA",
+    "dabble_player_id": "e14aa48f-5747-408f-b0e4-a4838f488a34",
+    "fixture_id": "01a0cfda-3fe8-731e-9f46-875794f93ae5",
+    "score_history": [
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
+        "dns_score": 90,
+        "confidence_score": 45,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": "2026-09-26T19:19:37.804707+00:00",
+      "70": "2026-09-26T19:19:37.804707+00:00",
+      "80": "2026-09-26T19:19:37.804707+00:00",
+      "90": "2026-09-26T19:19:37.804707+00:00"
+    },
+    "latest": {
+      "player_name": "Hirving Lozano",
+      "normalized_name": "hirving lozano",
+      "dabble_player_id": "e14aa48f-5747-408f-b0e4-a4838f488a34",
+      "team": "LA",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "COL @ LA",
+      "event_date": "2026-09-27T02:30:00.000Z",
+      "fixture_id": "01a0cfda-3fe8-731e-9f46-875794f93ae5",
+      "position": "F",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": "hard_out",
+      "rotowire_status_normalized": "hard_out",
+      "rotowire_page_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": "https://www.rotowire.com/soccer/player/hirving-lozano-21185",
+      "rotowire_est_return": "10/11/2026",
+      "rotowire_status_since": "2026-09-26T19:18:47.056909+00:00",
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": {
+        "rotowire_url": "https://www.rotowire.com/soccer/player/hirving-lozano-21185",
+        "rotowire_status_tag": "OUT",
+        "rotowire_injury": "Not Injury Related",
+        "rotowire_est_return": "10/11/2026",
+        "rotowire_status_since": "2026-09-26T19:18:47.056909+00:00",
+        "transfermarkt": null,
+        "last_appeared_date": "2026-09-12",
+        "days_since_last_appearance": 15,
+        "team_last_3_fixtures": [],
+        "corroborated_by": [],
+        "conflict": null
+      },
+      "is_lock": true,
+      "lock_reason": "hard_out_uncorroborated",
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 15,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [
+        "rotowire_news"
+      ],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "bench",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [
+        {
+          "source": "rotowire_news",
+          "vote": "bench",
+          "predicted_start": false,
+          "observed_at": "2026-09-26T19:19:25.632389+00:00",
+          "source_updated_at": null
+        }
+      ],
+      "starter_votes": 0,
+      "bench_votes": 1,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 1,
+      "dns_score": 90,
+      "confidence_score": 45,
+      "urgency_score": 0,
+      "combined_priority": 63.0,
+      "evidence_count": 2,
+      "tier": "DNS SNIPER",
+      "top_reasons": [
+        "RotoWire: hard_out",
+        "Predicted bench 1/1 sources (rotowire_news)",
+        "RotoWire hard_out floor (base)"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "RotoWire: hard_out",
+          50
+        ],
+        [
+          "Predicted bench 1/1 sources (rotowire_news)",
+          10
+        ],
+        [
+          "RotoWire hard_out floor (base)",
+          27
+        ]
+      ],
+      "low_data": false,
+      "watchdog_note": null,
+      "rotowire_source": "player_page",
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/hirving-lozano-21185",
+      "has_history": false,
+      "has_predicted_xi": true,
+      "has_injury": false,
+      "has_news": true,
+      "has_x_signal": false,
+      "has_any_external_enrichment": true,
+      "has_multiple_external_sources": false,
+      "board_only": false,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": true,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/hirving-lozano-21185",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T19:19:37.804707+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 30.5,
+          "prop_id": "7ecd2beca42276cd"
+        }
+      ]
+    }
+  },
+  "pid:1ed9624f-6515-4551-a1cb-b6ef0159ee93": {
+    "name": "Maren Haile-Selassie",
+    "team": "CHI",
+    "dabble_player_id": "1ed9624f-6515-4551-a1cb-b6ef0159ee93",
+    "fixture_id": "01a0cfda-3f4a-775a-85c6-3dfa6b0f9b0a",
+    "score_history": [
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Maren Haile-Selassie",
+      "normalized_name": "maren haileselassie",
+      "dabble_player_id": "1ed9624f-6515-4551-a1cb-b6ef0159ee93",
+      "team": "CHI",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "CHI @ CLT",
+      "event_date": "2026-09-26T23:30:00.000Z",
+      "fixture_id": "01a0cfda-3f4a-775a-85c6-3dfa6b0f9b0a",
+      "position": "M",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 13,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": true,
+      "previous_start": false,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 11,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 7.7,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "Rotation-risk usage pattern (inconsistent starts)"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "Rotation-risk usage pattern (inconsistent starts)",
+          8
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": false,
+      "rotowire_player_page_url": null,
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false,
+          "player_page_matched": false,
+          "player_page_url": null,
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T19:19:37.804707+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 26.5,
+          "prop_id": "c9c15033618e727c"
+        }
+      ]
+    }
+  },
+  "pid:c071bd2b-be67-4651-ab51-0196db1749e8": {
+    "name": "Kelvin Yeboah",
+    "team": "MIN",
+    "dabble_player_id": "c071bd2b-be67-4651-ab51-0196db1749e8",
+    "fixture_id": "01a0d398-e1d8-7518-99c0-2fec9b37b53a",
+    "score_history": [
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Kelvin Yeboah",
+      "normalized_name": "kelvin yeboah",
+      "dabble_player_id": "c071bd2b-be67-4651-ab51-0196db1749e8",
+      "team": "MIN",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "MIN @ SEA",
+      "event_date": "2026-09-27T00:30:00.000Z",
+      "fixture_id": "01a0d398-e1d8-7518-99c0-2fec9b37b53a",
+      "position": "F",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 15,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": true,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 11,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 7.7,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "Rotation-risk usage pattern (inconsistent starts)"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "Rotation-risk usage pattern (inconsistent starts)",
+          8
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/kelvin-yeboah-36179",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/kelvin-yeboah-36179",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T19:19:37.804707+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 15.5,
+          "prop_id": "66cb480cccacb5ee"
+        }
+      ]
+    }
+  },
+  "pid:cab77d89-1f20-49b3-8379-6a80c4dca429": {
+    "name": "Oscar Bobb",
+    "team": "NOR",
+    "dabble_player_id": "cab77d89-1f20-49b3-8379-6a80c4dca429",
+    "fixture_id": "01a0c9f1-136f-747a-a500-adf49a8ac72b",
+    "score_history": [
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Oscar Bobb",
+      "normalized_name": "oscar bobb",
+      "dabble_player_id": "cab77d89-1f20-49b3-8379-6a80c4dca429",
+      "team": "NOR",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Portugal",
+      "event_date": "2026-09-27T18:45:00.000Z",
+      "fixture_id": "01a0c9f1-136f-747a-a500-adf49a8ac72b",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 15,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": true,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 11,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 7.7,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "Rotation-risk usage pattern (inconsistent starts)"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "Rotation-risk usage pattern (inconsistent starts)",
+          8
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/oscar-bobb-37935",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/oscar-bobb-37935",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T19:19:37.804707+00:00",
+      "props": [
+        {
+          "market": "Shots",
+          "line": 1.5,
+          "prop_id": "905290d00c274bd9"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 0.5,
+          "prop_id": "8f0b596c5e49dcb3"
+        }
+      ]
+    }
+  },
+  "pid:8ef73a0d-df1c-40ef-add4-f602e642b06f": {
+    "name": "Jack Elliott",
+    "team": "CHI",
+    "dabble_player_id": "8ef73a0d-df1c-40ef-add4-f602e642b06f",
+    "fixture_id": "01a0cfda-3f4a-775a-85c6-3dfa6b0f9b0a",
+    "score_history": [
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Jack Elliott",
+      "normalized_name": "jack elliott",
+      "dabble_player_id": "8ef73a0d-df1c-40ef-add4-f602e642b06f",
+      "team": "CHI",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "CHI @ CLT",
+      "event_date": "2026-09-26T23:30:00.000Z",
+      "fixture_id": "01a0cfda-3f4a-775a-85c6-3dfa6b0f9b0a",
+      "position": "D",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 13,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/jack-elliott-23628",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/jack-elliott-23628",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T19:19:37.804707+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 70.5,
+          "prop_id": "483aa65dfa8b313b"
+        }
+      ]
+    }
+  },
+  "pid:019ffded-cf35-71ec-8d66-7b39c846d706": {
+    "name": "Allan Saint-Maximin",
+    "team": "CLT",
+    "dabble_player_id": "019ffded-cf35-71ec-8d66-7b39c846d706",
+    "fixture_id": "01a0cfda-3f4a-775a-85c6-3dfa6b0f9b0a",
+    "score_history": [
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Allan Saint-Maximin",
+      "normalized_name": "allan saintmaximin",
+      "dabble_player_id": "019ffded-cf35-71ec-8d66-7b39c846d706",
+      "team": "CLT",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "CHI @ CLT",
+      "event_date": "2026-09-26T23:30:00.000Z",
+      "fixture_id": "01a0cfda-3f4a-775a-85c6-3dfa6b0f9b0a",
+      "position": "F",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 14,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": false,
+      "rotowire_player_page_url": null,
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false,
+          "player_page_matched": false,
+          "player_page_url": null,
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T19:19:37.804707+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 26.5,
+          "prop_id": "663856d8602168bd"
+        }
+      ]
+    }
+  },
+  "pid:6fefa68e-4a26-49fe-9c93-eb5c7b8d74c7": {
+    "name": "Ashley Westwood",
+    "team": "CLT",
+    "dabble_player_id": "6fefa68e-4a26-49fe-9c93-eb5c7b8d74c7",
+    "fixture_id": "01a0cfda-3f4a-775a-85c6-3dfa6b0f9b0a",
+    "score_history": [
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Ashley Westwood",
+      "normalized_name": "ashley westwood",
+      "dabble_player_id": "6fefa68e-4a26-49fe-9c93-eb5c7b8d74c7",
+      "team": "CLT",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "CHI @ CLT",
+      "event_date": "2026-09-26T23:30:00.000Z",
+      "fixture_id": "01a0cfda-3f4a-775a-85c6-3dfa6b0f9b0a",
+      "position": "M",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 21,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/ashley-westwood-61",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/ashley-westwood-61",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T19:19:37.804707+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 50.5,
+          "prop_id": "a5916462000a076a"
+        }
+      ]
+    }
+  },
+  "pid:881ad333-67cc-4e1f-96f5-4f91d688594b": {
+    "name": "Tim Ream",
+    "team": "CLT",
+    "dabble_player_id": "881ad333-67cc-4e1f-96f5-4f91d688594b",
+    "fixture_id": "01a0cfda-3f4a-775a-85c6-3dfa6b0f9b0a",
+    "score_history": [
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Tim Ream",
+      "normalized_name": "tim ream",
+      "dabble_player_id": "881ad333-67cc-4e1f-96f5-4f91d688594b",
+      "team": "CLT",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "CHI @ CLT",
+      "event_date": "2026-09-26T23:30:00.000Z",
+      "fixture_id": "01a0cfda-3f4a-775a-85c6-3dfa6b0f9b0a",
+      "position": "D",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 14,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/tim-ream-16495",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/tim-ream-16495",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T19:19:37.804707+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 50.5,
+          "prop_id": "bbee4e2f7df56f89"
+        }
+      ]
+    }
+  },
+  "pid:81fc16e3-443a-46d3-a84c-315044a8f634": {
+    "name": "José Artur de Lima Júnior",
+    "team": "HOU",
+    "dabble_player_id": "81fc16e3-443a-46d3-a84c-315044a8f634",
+    "fixture_id": "01a0daf6-b153-7699-b5ac-9fb58150e50c",
+    "score_history": [
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "José Artur de Lima Júnior",
+      "normalized_name": "jose artur de lima junior",
+      "dabble_player_id": "81fc16e3-443a-46d3-a84c-315044a8f634",
+      "team": "HOU",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "SKC @ HOU",
+      "event_date": "2026-09-27T00:30:00.000Z",
+      "fixture_id": "01a0daf6-b153-7699-b5ac-9fb58150e50c",
+      "position": "M",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": null,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": null,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": false,
+      "rotowire_player_page_url": null,
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false,
+          "player_page_matched": false,
+          "player_page_url": null,
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T19:19:37.804707+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 72.5,
+          "prop_id": "e277071f722d3370"
+        }
+      ]
+    }
+  },
+  "pid:b288fee1-3f06-4e77-bbef-6ce1e3bebc25": {
+    "name": "Michael Boxall",
+    "team": "MIN",
+    "dabble_player_id": "b288fee1-3f06-4e77-bbef-6ce1e3bebc25",
+    "fixture_id": "01a0d398-e1d8-7518-99c0-2fec9b37b53a",
+    "score_history": [
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Michael Boxall",
+      "normalized_name": "michael boxall",
+      "dabble_player_id": "b288fee1-3f06-4e77-bbef-6ce1e3bebc25",
+      "team": "MIN",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "MIN @ SEA",
+      "event_date": "2026-09-27T00:30:00.000Z",
+      "fixture_id": "01a0d398-e1d8-7518-99c0-2fec9b37b53a",
+      "position": "D",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 15,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/michael-boxall-24694",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/michael-boxall-24694",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T19:19:37.804707+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 36.5,
+          "prop_id": "8ee86803ac839ded"
+        }
+      ]
+    }
+  },
+  "pid:14256908-b81c-422c-8993-1de2f75a2301": {
+    "name": "Wil Trapp",
+    "team": "MIN",
+    "dabble_player_id": "14256908-b81c-422c-8993-1de2f75a2301",
+    "fixture_id": "01a0d398-e1d8-7518-99c0-2fec9b37b53a",
+    "score_history": [
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Wil Trapp",
+      "normalized_name": "wil trapp",
+      "dabble_player_id": "14256908-b81c-422c-8993-1de2f75a2301",
+      "team": "MIN",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "MIN @ SEA",
+      "event_date": "2026-09-27T00:30:00.000Z",
+      "fixture_id": "01a0d398-e1d8-7518-99c0-2fec9b37b53a",
+      "position": "M",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 15,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/wil-trapp-17086",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/wil-trapp-17086",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T19:19:37.804707+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 42.5,
+          "prop_id": "5160be1906d2510f"
+        }
+      ]
+    }
+  },
+  "pid:0949df12-e1f0-4bc1-b477-a7a6992dee79": {
+    "name": "Maxwell Woledzi",
+    "team": "NSH",
+    "dabble_player_id": "0949df12-e1f0-4bc1-b477-a7a6992dee79",
+    "fixture_id": "01a0d997-7acb-724f-873f-a3282fac5d1f",
+    "score_history": [
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Maxwell Woledzi",
+      "normalized_name": "maxwell woledzi",
+      "dabble_player_id": "0949df12-e1f0-4bc1-b477-a7a6992dee79",
+      "team": "NSH",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "TOR @ NSH",
+      "event_date": "2026-09-27T00:30:00.000Z",
+      "fixture_id": "01a0d997-7acb-724f-873f-a3282fac5d1f",
+      "position": "D",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 15,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/maxwell-woledzi-47822",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/maxwell-woledzi-47822",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T19:19:37.804707+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 69.5,
+          "prop_id": "028890c9e2ec3210"
+        }
+      ]
+    }
+  },
+  "pid:4f1e5211-eae1-4edf-a811-36b54072c134": {
+    "name": "Albert Rusnák",
+    "team": "SEA",
+    "dabble_player_id": "4f1e5211-eae1-4edf-a811-36b54072c134",
+    "fixture_id": "01a0d398-e1d8-7518-99c0-2fec9b37b53a",
+    "score_history": [
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Albert Rusnák",
+      "normalized_name": "albert rusnak",
+      "dabble_player_id": "4f1e5211-eae1-4edf-a811-36b54072c134",
+      "team": "SEA",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "MIN @ SEA",
+      "event_date": "2026-09-27T00:30:00.000Z",
+      "fixture_id": "01a0d398-e1d8-7518-99c0-2fec9b37b53a",
+      "position": "M",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 15,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/albert-rusnak-23311",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/albert-rusnak-23311",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T19:19:37.804707+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 45.5,
+          "prop_id": "91ac8bca237e05c8"
+        }
+      ]
+    }
+  },
+  "pid:1da82609-8dc0-4218-8c28-efc921af23d0": {
+    "name": "Cristian Roldan",
+    "team": "SEA",
+    "dabble_player_id": "1da82609-8dc0-4218-8c28-efc921af23d0",
+    "fixture_id": "01a0d398-e1d8-7518-99c0-2fec9b37b53a",
+    "score_history": [
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Cristian Roldan",
+      "normalized_name": "cristian roldan",
+      "dabble_player_id": "1da82609-8dc0-4218-8c28-efc921af23d0",
+      "team": "SEA",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "MIN @ SEA",
+      "event_date": "2026-09-27T00:30:00.000Z",
+      "fixture_id": "01a0d398-e1d8-7518-99c0-2fec9b37b53a",
+      "position": "M",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 15,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/cristian-roldan-18668",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/cristian-roldan-18668",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T19:19:37.804707+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 63.5,
+          "prop_id": "74279a2c939115b0"
+        }
+      ]
+    }
+  },
+  "pid:134bd827-3032-48fa-b143-c96cfbcd5ab1": {
+    "name": "Danny Musovski",
+    "team": "SEA",
+    "dabble_player_id": "134bd827-3032-48fa-b143-c96cfbcd5ab1",
+    "fixture_id": "01a0d398-e1d8-7518-99c0-2fec9b37b53a",
+    "score_history": [
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Danny Musovski",
+      "normalized_name": "danny musovski",
+      "dabble_player_id": "134bd827-3032-48fa-b143-c96cfbcd5ab1",
+      "team": "SEA",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "MIN @ SEA",
+      "event_date": "2026-09-27T00:30:00.000Z",
+      "fixture_id": "01a0d398-e1d8-7518-99c0-2fec9b37b53a",
+      "position": "F",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": null,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": null,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/danny-musovski-30911",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/danny-musovski-30911",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T19:19:37.804707+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 11.5,
+          "prop_id": "a5c56d3793820ca7"
+        }
+      ]
+    }
+  },
+  "pid:e588773c-f7fa-4d02-a766-00b4ddf72540": {
+    "name": "Jackson Ragen",
+    "team": "SEA",
+    "dabble_player_id": "e588773c-f7fa-4d02-a766-00b4ddf72540",
+    "fixture_id": "01a0d398-e1d8-7518-99c0-2fec9b37b53a",
+    "score_history": [
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Jackson Ragen",
+      "normalized_name": "jackson ragen",
+      "dabble_player_id": "e588773c-f7fa-4d02-a766-00b4ddf72540",
+      "team": "SEA",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "MIN @ SEA",
+      "event_date": "2026-09-27T00:30:00.000Z",
+      "fixture_id": "01a0d398-e1d8-7518-99c0-2fec9b37b53a",
+      "position": "D",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 39,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/jackson-ragen-36538",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/jackson-ragen-36538",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T19:19:37.804707+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 76.5,
+          "prop_id": "b3e4969d09345e85"
+        }
+      ]
+    }
+  },
+  "pid:e3dca971-aaf7-41be-870e-4617f88931c3": {
+    "name": "Jordan Morris",
+    "team": "SEA",
+    "dabble_player_id": "e3dca971-aaf7-41be-870e-4617f88931c3",
+    "fixture_id": "01a0d398-e1d8-7518-99c0-2fec9b37b53a",
+    "score_history": [
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Jordan Morris",
+      "normalized_name": "jordan morris",
+      "dabble_player_id": "e3dca971-aaf7-41be-870e-4617f88931c3",
+      "team": "SEA",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "MIN @ SEA",
+      "event_date": "2026-09-27T00:30:00.000Z",
+      "fixture_id": "01a0d398-e1d8-7518-99c0-2fec9b37b53a",
+      "position": "F",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 15,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/jordan-morris-19064",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/jordan-morris-19064",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T19:19:37.804707+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 16.5,
+          "prop_id": "07f9610a998276d2"
+        }
+      ]
+    }
+  },
+  "pid:5332ccbf-3357-453d-9b8a-cfe2a54530dc": {
+    "name": "Calvin Harris",
+    "team": "SKC",
+    "dabble_player_id": "5332ccbf-3357-453d-9b8a-cfe2a54530dc",
+    "fixture_id": "01a0daf6-b153-7699-b5ac-9fb58150e50c",
+    "score_history": [
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Calvin Harris",
+      "normalized_name": "calvin harris",
+      "dabble_player_id": "5332ccbf-3357-453d-9b8a-cfe2a54530dc",
+      "team": "SKC",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "SKC @ HOU",
+      "event_date": "2026-09-27T00:30:00.000Z",
+      "fixture_id": "01a0daf6-b153-7699-b5ac-9fb58150e50c",
+      "position": "F",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 15,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/calvin-harris-34632",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/calvin-harris-34632",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T19:19:37.804707+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 20.5,
+          "prop_id": "6c489ce755b2e49a"
+        }
+      ]
+    }
+  },
+  "pid:42fdcaff-6bb3-401e-8394-8125a0db48c1": {
+    "name": "Jonathan Osorio",
+    "team": "TOR",
+    "dabble_player_id": "42fdcaff-6bb3-401e-8394-8125a0db48c1",
+    "fixture_id": "01a0d997-7acb-724f-873f-a3282fac5d1f",
+    "score_history": [
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Jonathan Osorio",
+      "normalized_name": "jonathan osorio",
+      "dabble_player_id": "42fdcaff-6bb3-401e-8394-8125a0db48c1",
+      "team": "TOR",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "TOR @ NSH",
+      "event_date": "2026-09-27T00:30:00.000Z",
+      "fixture_id": "01a0d997-7acb-724f-873f-a3282fac5d1f",
+      "position": "M",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 58,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/jonathan-osorio-18696",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/jonathan-osorio-18696",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T19:19:37.804707+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 45.5,
+          "prop_id": "e5fd2ad0739f5bc6"
+        }
+      ]
+    }
+  },
+  "pid:01a00868-b93c-7528-ba3e-b24e8c5768a8": {
+    "name": "Loïc Williams",
+    "team": "COL",
+    "dabble_player_id": "01a00868-b93c-7528-ba3e-b24e8c5768a8",
+    "fixture_id": "01a0cfda-3fe8-731e-9f46-875794f93ae5",
+    "score_history": [
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Loïc Williams",
+      "normalized_name": "loic williams",
+      "dabble_player_id": "01a00868-b93c-7528-ba3e-b24e8c5768a8",
+      "team": "COL",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "COL @ LA",
+      "event_date": "2026-09-27T02:30:00.000Z",
+      "fixture_id": "01a0cfda-3fe8-731e-9f46-875794f93ae5",
+      "position": "D",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 15,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/loic-williams-37482",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/loic-williams-37482",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T19:19:37.804707+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 68.5,
+          "prop_id": "43b3bdaf01d2bcf6"
+        }
+      ]
+    }
+  },
+  "pid:7270db8e-1e92-4c5b-a6e8-f74b43242ac0": {
+    "name": "Paxten Aaronson",
+    "team": "COL",
+    "dabble_player_id": "7270db8e-1e92-4c5b-a6e8-f74b43242ac0",
+    "fixture_id": "01a0cfda-3fe8-731e-9f46-875794f93ae5",
+    "score_history": [
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Paxten Aaronson",
+      "normalized_name": "paxten aaronson",
+      "dabble_player_id": "7270db8e-1e92-4c5b-a6e8-f74b43242ac0",
+      "team": "COL",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "COL @ LA",
+      "event_date": "2026-09-27T02:30:00.000Z",
+      "fixture_id": "01a0cfda-3fe8-731e-9f46-875794f93ae5",
+      "position": "M",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 15,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/paxten-aaronson-34289",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/paxten-aaronson-34289",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T19:19:37.804707+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 35.5,
+          "prop_id": "47c13d0ac78a021d"
+        }
+      ]
+    }
+  },
+  "pid:54beb9e3-fe34-48e1-a8fb-941e4bb5cd16": {
+    "name": "Jakob Glesnes",
+    "team": "LA",
+    "dabble_player_id": "54beb9e3-fe34-48e1-a8fb-941e4bb5cd16",
+    "fixture_id": "01a0cfda-3fe8-731e-9f46-875794f93ae5",
+    "score_history": [
+      {
+        "ts": "2026-09-26T19:19:37.804707+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Jakob Glesnes",
+      "normalized_name": "jakob glesnes",
+      "dabble_player_id": "54beb9e3-fe34-48e1-a8fb-941e4bb5cd16",
+      "team": "LA",
+      "league_raw": "MLS",
+      "league_code": "MLS",
+      "matchup": "COL @ LA",
+      "event_date": "2026-09-27T02:30:00.000Z",
+      "fixture_id": "01a0cfda-3fe8-731e-9f46-875794f93ae5",
+      "position": "D",
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 15,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/jakob-glesnes-30953",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/jakob-glesnes-30953",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-26T19:19:37.804707+00:00",
+      "props": [
+        {
+          "market": "Passes Attempted",
+          "line": 54.5,
+          "prop_id": "36e0b5e915d9406b"
         }
       ]
     }
