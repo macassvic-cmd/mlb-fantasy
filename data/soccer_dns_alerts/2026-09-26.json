@@ -1,0 +1,1256 @@
+{
+  "_last_state:fa10a05f-a3a2-45a3-af97-d32a5575ce6f:01a0c9ed-f41b-7290-8524-141d0f1dc5ee": {
+    "dns_score": 90,
+    "rotowire_status_raw": "hard_out",
+    "prediction_consensus": "bench",
+    "x_post_id": null
+  },
+  "2026-09-26:soccer:fa10a05f-a3a2-45a3-af97-d32a5575ce6f:01a0c9ed-f41b-7290-8524-141d0f1dc5ee:60": {
+    "player_id": "fa10a05f-a3a2-45a3-af97-d32a5575ce6f",
+    "player_name": "Pedro Porro",
+    "normalized_name": "pedro porro",
+    "team": "ESP",
+    "league_code": null,
+    "opponent": "@ Spain",
+    "fixture_id": "01a0c9ed-f41b-7290-8524-141d0f1dc5ee",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 60,
+    "alerted_at": "2026-09-26T07:02:14.390579+00:00",
+    "game_start": "2026-09-26T18:45:00.000Z",
+    "minutes_to_game": 702.7601570166667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Fouls Committed",
+      "Shots"
+    ],
+    "dabble_prop_ids": [
+      "372168696e434adf",
+      "9dd5a2bd62d23209"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/pedro-porro-26581",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Hamstring",
+      "rotowire_est_return": "10/19/2026",
+      "rotowire_status_since": "2026-09-26T07:01:30.696472+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-05",
+      "days_since_last_appearance": 21,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-26:soccer:fa10a05f-a3a2-45a3-af97-d32a5575ce6f:01a0c9ed-f41b-7290-8524-141d0f1dc5ee:65": {
+    "player_id": "fa10a05f-a3a2-45a3-af97-d32a5575ce6f",
+    "player_name": "Pedro Porro",
+    "normalized_name": "pedro porro",
+    "team": "ESP",
+    "league_code": null,
+    "opponent": "@ Spain",
+    "fixture_id": "01a0c9ed-f41b-7290-8524-141d0f1dc5ee",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 65,
+    "alerted_at": "2026-09-26T07:02:14.390579+00:00",
+    "game_start": "2026-09-26T18:45:00.000Z",
+    "minutes_to_game": 702.7601570166667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Fouls Committed",
+      "Shots"
+    ],
+    "dabble_prop_ids": [
+      "372168696e434adf",
+      "9dd5a2bd62d23209"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/pedro-porro-26581",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Hamstring",
+      "rotowire_est_return": "10/19/2026",
+      "rotowire_status_since": "2026-09-26T07:01:30.696472+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-05",
+      "days_since_last_appearance": 21,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-26:soccer:fa10a05f-a3a2-45a3-af97-d32a5575ce6f:01a0c9ed-f41b-7290-8524-141d0f1dc5ee:70": {
+    "player_id": "fa10a05f-a3a2-45a3-af97-d32a5575ce6f",
+    "player_name": "Pedro Porro",
+    "normalized_name": "pedro porro",
+    "team": "ESP",
+    "league_code": null,
+    "opponent": "@ Spain",
+    "fixture_id": "01a0c9ed-f41b-7290-8524-141d0f1dc5ee",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 70,
+    "alerted_at": "2026-09-26T07:02:14.390579+00:00",
+    "game_start": "2026-09-26T18:45:00.000Z",
+    "minutes_to_game": 702.7601570166667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Fouls Committed",
+      "Shots"
+    ],
+    "dabble_prop_ids": [
+      "372168696e434adf",
+      "9dd5a2bd62d23209"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/pedro-porro-26581",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Hamstring",
+      "rotowire_est_return": "10/19/2026",
+      "rotowire_status_since": "2026-09-26T07:01:30.696472+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-05",
+      "days_since_last_appearance": 21,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-26:soccer:fa10a05f-a3a2-45a3-af97-d32a5575ce6f:01a0c9ed-f41b-7290-8524-141d0f1dc5ee:75": {
+    "player_id": "fa10a05f-a3a2-45a3-af97-d32a5575ce6f",
+    "player_name": "Pedro Porro",
+    "normalized_name": "pedro porro",
+    "team": "ESP",
+    "league_code": null,
+    "opponent": "@ Spain",
+    "fixture_id": "01a0c9ed-f41b-7290-8524-141d0f1dc5ee",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 75,
+    "alerted_at": "2026-09-26T07:02:14.390579+00:00",
+    "game_start": "2026-09-26T18:45:00.000Z",
+    "minutes_to_game": 702.7601570166667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Fouls Committed",
+      "Shots"
+    ],
+    "dabble_prop_ids": [
+      "372168696e434adf",
+      "9dd5a2bd62d23209"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/pedro-porro-26581",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Hamstring",
+      "rotowire_est_return": "10/19/2026",
+      "rotowire_status_since": "2026-09-26T07:01:30.696472+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-05",
+      "days_since_last_appearance": 21,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-26:soccer:fa10a05f-a3a2-45a3-af97-d32a5575ce6f:01a0c9ed-f41b-7290-8524-141d0f1dc5ee:80": {
+    "player_id": "fa10a05f-a3a2-45a3-af97-d32a5575ce6f",
+    "player_name": "Pedro Porro",
+    "normalized_name": "pedro porro",
+    "team": "ESP",
+    "league_code": null,
+    "opponent": "@ Spain",
+    "fixture_id": "01a0c9ed-f41b-7290-8524-141d0f1dc5ee",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 80,
+    "alerted_at": "2026-09-26T07:02:14.390579+00:00",
+    "game_start": "2026-09-26T18:45:00.000Z",
+    "minutes_to_game": 702.7601570166667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Fouls Committed",
+      "Shots"
+    ],
+    "dabble_prop_ids": [
+      "372168696e434adf",
+      "9dd5a2bd62d23209"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/pedro-porro-26581",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Hamstring",
+      "rotowire_est_return": "10/19/2026",
+      "rotowire_status_since": "2026-09-26T07:01:30.696472+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-05",
+      "days_since_last_appearance": 21,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-26:soccer:fa10a05f-a3a2-45a3-af97-d32a5575ce6f:01a0c9ed-f41b-7290-8524-141d0f1dc5ee:85": {
+    "player_id": "fa10a05f-a3a2-45a3-af97-d32a5575ce6f",
+    "player_name": "Pedro Porro",
+    "normalized_name": "pedro porro",
+    "team": "ESP",
+    "league_code": null,
+    "opponent": "@ Spain",
+    "fixture_id": "01a0c9ed-f41b-7290-8524-141d0f1dc5ee",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 85,
+    "alerted_at": "2026-09-26T07:02:14.390579+00:00",
+    "game_start": "2026-09-26T18:45:00.000Z",
+    "minutes_to_game": 702.7601570166667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Fouls Committed",
+      "Shots"
+    ],
+    "dabble_prop_ids": [
+      "372168696e434adf",
+      "9dd5a2bd62d23209"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/pedro-porro-26581",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Hamstring",
+      "rotowire_est_return": "10/19/2026",
+      "rotowire_status_since": "2026-09-26T07:01:30.696472+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-05",
+      "days_since_last_appearance": 21,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-26:soccer:fa10a05f-a3a2-45a3-af97-d32a5575ce6f:01a0c9ed-f41b-7290-8524-141d0f1dc5ee:90": {
+    "player_id": "fa10a05f-a3a2-45a3-af97-d32a5575ce6f",
+    "player_name": "Pedro Porro",
+    "normalized_name": "pedro porro",
+    "team": "ESP",
+    "league_code": null,
+    "opponent": "@ Spain",
+    "fixture_id": "01a0c9ed-f41b-7290-8524-141d0f1dc5ee",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 90,
+    "alerted_at": "2026-09-26T07:02:14.390579+00:00",
+    "game_start": "2026-09-26T18:45:00.000Z",
+    "minutes_to_game": 702.7601570166667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Fouls Committed",
+      "Shots"
+    ],
+    "dabble_prop_ids": [
+      "372168696e434adf",
+      "9dd5a2bd62d23209"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/pedro-porro-26581",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Hamstring",
+      "rotowire_est_return": "10/19/2026",
+      "rotowire_status_since": "2026-09-26T07:01:30.696472+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-05",
+      "days_since_last_appearance": 21,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-26:soccer:fa10a05f-a3a2-45a3-af97-d32a5575ce6f:01a0c9ed-f41b-7290-8524-141d0f1dc5ee:lock": {
+    "player_id": "fa10a05f-a3a2-45a3-af97-d32a5575ce6f",
+    "player_name": "Pedro Porro",
+    "normalized_name": "pedro porro",
+    "team": "ESP",
+    "league_code": null,
+    "opponent": "@ Spain",
+    "fixture_id": "01a0c9ed-f41b-7290-8524-141d0f1dc5ee",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": "lock",
+    "alerted_at": "2026-09-26T07:02:14.390579+00:00",
+    "game_start": "2026-09-26T18:45:00.000Z",
+    "minutes_to_game": 702.7601570166667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Fouls Committed",
+      "Shots"
+    ],
+    "dabble_prop_ids": [
+      "372168696e434adf",
+      "9dd5a2bd62d23209"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": "LOCK: hard_out_uncorroborated",
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/pedro-porro-26581",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Hamstring",
+      "rotowire_est_return": "10/19/2026",
+      "rotowire_status_since": "2026-09-26T07:01:30.696472+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-05",
+      "days_since_last_appearance": 21,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-26:soccer:fa10a05f-a3a2-45a3-af97-d32a5575ce6f:01a0c9ed-f41b-7290-8524-141d0f1dc5ee:news_signal:30751": {
+    "player_id": "fa10a05f-a3a2-45a3-af97-d32a5575ce6f",
+    "player_name": "Pedro Porro",
+    "normalized_name": "pedro porro",
+    "team": "ESP",
+    "league_code": null,
+    "opponent": "@ Spain",
+    "fixture_id": "01a0c9ed-f41b-7290-8524-141d0f1dc5ee",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": "news_signal",
+    "alerted_at": "2026-09-26T07:02:14.390579+00:00",
+    "game_start": "2026-09-26T18:45:00.000Z",
+    "minutes_to_game": 702.7601570166667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Fouls Committed",
+      "Shots"
+    ],
+    "dabble_prop_ids": [
+      "372168696e434adf",
+      "9dd5a2bd62d23209"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": "RotoWire status worsened to: hard_out",
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/pedro-porro-26581",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Hamstring",
+      "rotowire_est_return": "10/19/2026",
+      "rotowire_status_since": "2026-09-26T07:01:30.696472+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-05",
+      "days_since_last_appearance": 21,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "_last_state:e8a60807-de7d-4303-a765-72dbb8957f00:01a0d0de-4a83-750c-8f71-875ee7c36b8c": {
+    "dns_score": 90,
+    "rotowire_status_raw": "hard_out",
+    "prediction_consensus": "bench",
+    "x_post_id": null
+  },
+  "2026-09-26:soccer:e8a60807-de7d-4303-a765-72dbb8957f00:01a0d0de-4a83-750c-8f71-875ee7c36b8c:60": {
+    "player_id": "e8a60807-de7d-4303-a765-72dbb8957f00",
+    "player_name": "Justin Ellis",
+    "normalized_name": "justin ellis",
+    "team": "ORL",
+    "league_code": "MLS",
+    "opponent": "ORL @ PHI",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 60,
+    "alerted_at": "2026-09-26T07:02:14.390579+00:00",
+    "game_start": "2026-09-26T23:30:00.000Z",
+    "minutes_to_game": 987.7601570166667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Shots on Target"
+    ],
+    "dabble_prop_ids": [
+      "c5395bd27070036c"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/justin-ellis-46478",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-26T07:01:31.266175+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-12",
+      "days_since_last_appearance": 14,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-26:soccer:e8a60807-de7d-4303-a765-72dbb8957f00:01a0d0de-4a83-750c-8f71-875ee7c36b8c:65": {
+    "player_id": "e8a60807-de7d-4303-a765-72dbb8957f00",
+    "player_name": "Justin Ellis",
+    "normalized_name": "justin ellis",
+    "team": "ORL",
+    "league_code": "MLS",
+    "opponent": "ORL @ PHI",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 65,
+    "alerted_at": "2026-09-26T07:02:14.390579+00:00",
+    "game_start": "2026-09-26T23:30:00.000Z",
+    "minutes_to_game": 987.7601570166667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Shots on Target"
+    ],
+    "dabble_prop_ids": [
+      "c5395bd27070036c"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/justin-ellis-46478",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-26T07:01:31.266175+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-12",
+      "days_since_last_appearance": 14,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-26:soccer:e8a60807-de7d-4303-a765-72dbb8957f00:01a0d0de-4a83-750c-8f71-875ee7c36b8c:70": {
+    "player_id": "e8a60807-de7d-4303-a765-72dbb8957f00",
+    "player_name": "Justin Ellis",
+    "normalized_name": "justin ellis",
+    "team": "ORL",
+    "league_code": "MLS",
+    "opponent": "ORL @ PHI",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 70,
+    "alerted_at": "2026-09-26T07:02:14.390579+00:00",
+    "game_start": "2026-09-26T23:30:00.000Z",
+    "minutes_to_game": 987.7601570166667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Shots on Target"
+    ],
+    "dabble_prop_ids": [
+      "c5395bd27070036c"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/justin-ellis-46478",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-26T07:01:31.266175+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-12",
+      "days_since_last_appearance": 14,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-26:soccer:e8a60807-de7d-4303-a765-72dbb8957f00:01a0d0de-4a83-750c-8f71-875ee7c36b8c:75": {
+    "player_id": "e8a60807-de7d-4303-a765-72dbb8957f00",
+    "player_name": "Justin Ellis",
+    "normalized_name": "justin ellis",
+    "team": "ORL",
+    "league_code": "MLS",
+    "opponent": "ORL @ PHI",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 75,
+    "alerted_at": "2026-09-26T07:02:14.390579+00:00",
+    "game_start": "2026-09-26T23:30:00.000Z",
+    "minutes_to_game": 987.7601570166667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Shots on Target"
+    ],
+    "dabble_prop_ids": [
+      "c5395bd27070036c"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/justin-ellis-46478",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-26T07:01:31.266175+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-12",
+      "days_since_last_appearance": 14,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-26:soccer:e8a60807-de7d-4303-a765-72dbb8957f00:01a0d0de-4a83-750c-8f71-875ee7c36b8c:80": {
+    "player_id": "e8a60807-de7d-4303-a765-72dbb8957f00",
+    "player_name": "Justin Ellis",
+    "normalized_name": "justin ellis",
+    "team": "ORL",
+    "league_code": "MLS",
+    "opponent": "ORL @ PHI",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 80,
+    "alerted_at": "2026-09-26T07:02:14.390579+00:00",
+    "game_start": "2026-09-26T23:30:00.000Z",
+    "minutes_to_game": 987.7601570166667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Shots on Target"
+    ],
+    "dabble_prop_ids": [
+      "c5395bd27070036c"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/justin-ellis-46478",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-26T07:01:31.266175+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-12",
+      "days_since_last_appearance": 14,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-26:soccer:e8a60807-de7d-4303-a765-72dbb8957f00:01a0d0de-4a83-750c-8f71-875ee7c36b8c:85": {
+    "player_id": "e8a60807-de7d-4303-a765-72dbb8957f00",
+    "player_name": "Justin Ellis",
+    "normalized_name": "justin ellis",
+    "team": "ORL",
+    "league_code": "MLS",
+    "opponent": "ORL @ PHI",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 85,
+    "alerted_at": "2026-09-26T07:02:14.390579+00:00",
+    "game_start": "2026-09-26T23:30:00.000Z",
+    "minutes_to_game": 987.7601570166667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Shots on Target"
+    ],
+    "dabble_prop_ids": [
+      "c5395bd27070036c"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/justin-ellis-46478",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-26T07:01:31.266175+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-12",
+      "days_since_last_appearance": 14,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-26:soccer:e8a60807-de7d-4303-a765-72dbb8957f00:01a0d0de-4a83-750c-8f71-875ee7c36b8c:90": {
+    "player_id": "e8a60807-de7d-4303-a765-72dbb8957f00",
+    "player_name": "Justin Ellis",
+    "normalized_name": "justin ellis",
+    "team": "ORL",
+    "league_code": "MLS",
+    "opponent": "ORL @ PHI",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 90,
+    "alerted_at": "2026-09-26T07:02:14.390579+00:00",
+    "game_start": "2026-09-26T23:30:00.000Z",
+    "minutes_to_game": 987.7601570166667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Shots on Target"
+    ],
+    "dabble_prop_ids": [
+      "c5395bd27070036c"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/justin-ellis-46478",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-26T07:01:31.266175+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-12",
+      "days_since_last_appearance": 14,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-26:soccer:e8a60807-de7d-4303-a765-72dbb8957f00:01a0d0de-4a83-750c-8f71-875ee7c36b8c:lock": {
+    "player_id": "e8a60807-de7d-4303-a765-72dbb8957f00",
+    "player_name": "Justin Ellis",
+    "normalized_name": "justin ellis",
+    "team": "ORL",
+    "league_code": "MLS",
+    "opponent": "ORL @ PHI",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": "lock",
+    "alerted_at": "2026-09-26T07:02:14.390579+00:00",
+    "game_start": "2026-09-26T23:30:00.000Z",
+    "minutes_to_game": 987.7601570166667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Shots on Target"
+    ],
+    "dabble_prop_ids": [
+      "c5395bd27070036c"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": "LOCK: hard_out_uncorroborated",
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/justin-ellis-46478",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-26T07:01:31.266175+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-12",
+      "days_since_last_appearance": 14,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-26:soccer:e8a60807-de7d-4303-a765-72dbb8957f00:01a0d0de-4a83-750c-8f71-875ee7c36b8c:news_signal:30751": {
+    "player_id": "e8a60807-de7d-4303-a765-72dbb8957f00",
+    "player_name": "Justin Ellis",
+    "normalized_name": "justin ellis",
+    "team": "ORL",
+    "league_code": "MLS",
+    "opponent": "ORL @ PHI",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": "news_signal",
+    "alerted_at": "2026-09-26T07:02:14.390579+00:00",
+    "game_start": "2026-09-26T23:30:00.000Z",
+    "minutes_to_game": 987.7601570166667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Shots on Target"
+    ],
+    "dabble_prop_ids": [
+      "c5395bd27070036c"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": "RotoWire status worsened to: hard_out",
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/justin-ellis-46478",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-26T07:01:31.266175+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-12",
+      "days_since_last_appearance": 14,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "_last_state:019e5885-4614-70bd-931b-e42617ac1fd6:01a0c9ee-634f-76cf-af76-20521c99b1e5": {
+    "dns_score": 18,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:3430567e-4713-4e17-8997-a57ada0b7b4a:01a0d398-e1d8-7518-99c0-2fec9b37b53a": {
+    "dns_score": 18,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:d758577f-dbdc-49db-ac9d-f0cf06f8e100:01a0c9ee-634f-76cf-af76-20521c99b1e5": {
+    "dns_score": 11,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:b2cabbb2-2831-46f0-8307-24b7858a02b4:01a0c9ed-f41b-7290-8524-141d0f1dc5ee": {
+    "dns_score": 11,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:4bdd0555-cd8a-41b1-a703-ca3e90e1641c:01a0c9ed-f41b-7290-8524-141d0f1dc5ee": {
+    "dns_score": 11,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:b6b828a9-487e-4f0e-8cec-4f22c9e3ce7b:01a0c9ed-f41b-7290-8524-141d0f1dc5ee": {
+    "dns_score": 11,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:02855dc8-cff5-43ed-8c30-d9df9e9541dd:01a0c9ed-f41b-7290-8524-141d0f1dc5ee": {
+    "dns_score": 11,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:3d963652-d867-4664-a2fd-8dc72f9e5541:01a0c9ed-f41b-7290-8524-141d0f1dc5ee": {
+    "dns_score": 11,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:b4e02c65-9996-4a83-b5c9-f3669e275f20:01a0c9ed-f41b-7290-8524-141d0f1dc5ee": {
+    "dns_score": 11,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:0fdc79f6-1d8b-4806-aa4c-c675c5371ae1:01a0c9ed-f41b-7290-8524-141d0f1dc5ee": {
+    "dns_score": 11,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:a43d34e3-5bce-4060-8bd1-734df487a746:01a0c9ed-f41b-7290-8524-141d0f1dc5ee": {
+    "dns_score": 11,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:01a083fb-60f9-75aa-9910-e12eae37c303:01a0c9ed-f41b-7290-8524-141d0f1dc5ee": {
+    "dns_score": 11,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:a1b45723-5456-4caa-a701-8ce22fc1cfcd:01a0dbcf-d9d2-7556-8f5f-275f8aad35d3": {
+    "dns_score": 11,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:9e4853b7-3926-4b2d-8be7-4f31d05c01bd:01a0c9ee-634f-76cf-af76-20521c99b1e5": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:c9d2e875-9c82-429c-8be0-7a98a2772c90:01a0c9ee-634f-76cf-af76-20521c99b1e5": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:019f9a5d-61d3-706d-a892-a787a817cc53:01a0c9ee-634f-76cf-af76-20521c99b1e5": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:983dbf84-f60b-4fee-b5ff-f80f21095896:01a0c9ee-634f-76cf-af76-20521c99b1e5": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:66de3400-935e-4de4-b983-1c1cdb9add1e:01a0c9ee-634f-76cf-af76-20521c99b1e5": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:01a0d918-2273-7222-bd6e-c03eb15aefc6:01a0c9ee-634f-76cf-af76-20521c99b1e5": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:cfbc41b6-5c0c-47f7-901d-d8dedf7039a2:01a0c9ee-634f-76cf-af76-20521c99b1e5": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:b215d990-d462-4bd7-ba65-4277ee9fe5da:01a0c9ee-634f-76cf-af76-20521c99b1e5": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:708ccf78-6842-40b7-99fa-03ebb9f1c418:01a0c9ee-634f-76cf-af76-20521c99b1e5": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:e9181254-07e0-4769-8f1b-8d197a56b842:01a0c9ed-f41b-7290-8524-141d0f1dc5ee": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:ce351cb5-d216-4197-a911-07e86374dfe9:01a0c9ed-f41b-7290-8524-141d0f1dc5ee": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:5050171a-5a1e-4e60-acd4-8e951bcdd1ec:01a0c9ed-f41b-7290-8524-141d0f1dc5ee": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:019e2ef0-8995-712b-9fb8-2215fa442c33:01a0c9ed-f41b-7290-8524-141d0f1dc5ee": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:443ff366-cd53-441a-88e5-1d626a88e54b:01a0c9ed-f41b-7290-8524-141d0f1dc5ee": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:3d9d8fb3-d17e-45fc-92cc-3eef0ce33b20:01a0c9ed-f41b-7290-8524-141d0f1dc5ee": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:326bf4b7-1563-4f62-a97b-684317f1b8ac:01a0c9ed-f41b-7290-8524-141d0f1dc5ee": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:717e89c9-850b-4b6b-ba60-7180383d1eb1:01a0c9ed-f41b-7290-8524-141d0f1dc5ee": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:a39e7c9e-78f4-4a1c-83b3-4590c48b0d67:01a0c9ed-f41b-7290-8524-141d0f1dc5ee": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:f6cc8324-72f4-4ab1-8b53-59b1ccf6d750:01a0c9ed-f41b-7290-8524-141d0f1dc5ee": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:86874b04-2ed8-428e-ad6e-181b29da2466:01a0c9ed-f41b-7290-8524-141d0f1dc5ee": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:2cdeb4b3-b894-4323-b696-b963e21d466b:01a0cfda-3f4a-775a-85c6-3dfa6b0f9b0a": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:2fc5b0f3-9054-4883-ae75-73be240f1620:01a0daf7-78c2-768b-b53c-c03a7561ef73": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:241cd231-7814-40f9-872b-271b93cd8b5b:01a0cfda-3f4a-775a-85c6-3dfa6b0f9b0a": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:fb52751b-2018-41e6-9b80-ba9dca4fe09b:01a0daf7-78c2-768b-b53c-c03a7561ef73": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:f17c3870-b403-4457-bf7b-3a00ed8917cd:01a0dbcf-d9d2-7556-8f5f-275f8aad35d3": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:b6636ca2-8543-4433-b083-81d9f3cd1465:01a0dbcf-d9d2-7556-8f5f-275f8aad35d3": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:7828594b-5ad1-4163-baa3-dfc339b8700d:01a0d997-7acb-724f-873f-a3282fac5d1f": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:1fe9f721-9c86-4975-9cfb-46a54e0f14f8:01a0d997-7acb-724f-873f-a3282fac5d1f": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:2609b6c8-460f-4122-bfa7-c21b177be333:01a0d997-7acb-724f-873f-a3282fac5d1f": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:b4570283-0192-49b7-b02c-99db9f5c107b:01a0d997-7acb-724f-873f-a3282fac5d1f": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:5c8c31df-aa22-44de-81ad-121778a25222:01a0c9ee-634f-76cf-af76-20521c99b1e5": {
+    "dns_score": 0,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "start",
+    "x_post_id": null
+  },
+  "_last_state:1f5826e5-57c5-44cb-b18b-98a0ca294b7b:01a0c9ee-634f-76cf-af76-20521c99b1e5": {
+    "dns_score": 0,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "start",
+    "x_post_id": null
+  }
+}
