@@ -1252,5 +1252,824 @@
     "rotowire_status_raw": null,
     "prediction_consensus": "start",
     "x_post_id": null
+  },
+  "_last_state:81ef308f-48b8-445b-968a-1d837673c6da:01a0d0de-4a83-750c-8f71-875ee7c36b8c": {
+    "dns_score": 90,
+    "rotowire_status_raw": "hard_out",
+    "prediction_consensus": "bench",
+    "x_post_id": null
+  },
+  "2026-09-26:soccer:81ef308f-48b8-445b-968a-1d837673c6da:01a0d0de-4a83-750c-8f71-875ee7c36b8c:60": {
+    "player_id": "81ef308f-48b8-445b-968a-1d837673c6da",
+    "player_name": "Andre Blake",
+    "normalized_name": "andre blake",
+    "team": "PHI",
+    "league_code": "MLS",
+    "opponent": "ORL @ PHI",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 60,
+    "alerted_at": "2026-09-26T12:15:00.462767+00:00",
+    "game_start": "2026-09-26T23:30:00.000Z",
+    "minutes_to_game": 674.9922872166667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Saves"
+    ],
+    "dabble_prop_ids": [
+      "4bbbb21f97ac2912"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/andre-blake-18756",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-26T12:14:08.613080+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-13",
+      "days_since_last_appearance": 13,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-26:soccer:81ef308f-48b8-445b-968a-1d837673c6da:01a0d0de-4a83-750c-8f71-875ee7c36b8c:65": {
+    "player_id": "81ef308f-48b8-445b-968a-1d837673c6da",
+    "player_name": "Andre Blake",
+    "normalized_name": "andre blake",
+    "team": "PHI",
+    "league_code": "MLS",
+    "opponent": "ORL @ PHI",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 65,
+    "alerted_at": "2026-09-26T12:15:00.462767+00:00",
+    "game_start": "2026-09-26T23:30:00.000Z",
+    "minutes_to_game": 674.9922872166667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Saves"
+    ],
+    "dabble_prop_ids": [
+      "4bbbb21f97ac2912"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/andre-blake-18756",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-26T12:14:08.613080+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-13",
+      "days_since_last_appearance": 13,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-26:soccer:81ef308f-48b8-445b-968a-1d837673c6da:01a0d0de-4a83-750c-8f71-875ee7c36b8c:70": {
+    "player_id": "81ef308f-48b8-445b-968a-1d837673c6da",
+    "player_name": "Andre Blake",
+    "normalized_name": "andre blake",
+    "team": "PHI",
+    "league_code": "MLS",
+    "opponent": "ORL @ PHI",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 70,
+    "alerted_at": "2026-09-26T12:15:00.462767+00:00",
+    "game_start": "2026-09-26T23:30:00.000Z",
+    "minutes_to_game": 674.9922872166667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Saves"
+    ],
+    "dabble_prop_ids": [
+      "4bbbb21f97ac2912"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/andre-blake-18756",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-26T12:14:08.613080+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-13",
+      "days_since_last_appearance": 13,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-26:soccer:81ef308f-48b8-445b-968a-1d837673c6da:01a0d0de-4a83-750c-8f71-875ee7c36b8c:75": {
+    "player_id": "81ef308f-48b8-445b-968a-1d837673c6da",
+    "player_name": "Andre Blake",
+    "normalized_name": "andre blake",
+    "team": "PHI",
+    "league_code": "MLS",
+    "opponent": "ORL @ PHI",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 75,
+    "alerted_at": "2026-09-26T12:15:00.462767+00:00",
+    "game_start": "2026-09-26T23:30:00.000Z",
+    "minutes_to_game": 674.9922872166667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Saves"
+    ],
+    "dabble_prop_ids": [
+      "4bbbb21f97ac2912"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/andre-blake-18756",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-26T12:14:08.613080+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-13",
+      "days_since_last_appearance": 13,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-26:soccer:81ef308f-48b8-445b-968a-1d837673c6da:01a0d0de-4a83-750c-8f71-875ee7c36b8c:80": {
+    "player_id": "81ef308f-48b8-445b-968a-1d837673c6da",
+    "player_name": "Andre Blake",
+    "normalized_name": "andre blake",
+    "team": "PHI",
+    "league_code": "MLS",
+    "opponent": "ORL @ PHI",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 80,
+    "alerted_at": "2026-09-26T12:15:00.462767+00:00",
+    "game_start": "2026-09-26T23:30:00.000Z",
+    "minutes_to_game": 674.9922872166667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Saves"
+    ],
+    "dabble_prop_ids": [
+      "4bbbb21f97ac2912"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/andre-blake-18756",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-26T12:14:08.613080+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-13",
+      "days_since_last_appearance": 13,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-26:soccer:81ef308f-48b8-445b-968a-1d837673c6da:01a0d0de-4a83-750c-8f71-875ee7c36b8c:85": {
+    "player_id": "81ef308f-48b8-445b-968a-1d837673c6da",
+    "player_name": "Andre Blake",
+    "normalized_name": "andre blake",
+    "team": "PHI",
+    "league_code": "MLS",
+    "opponent": "ORL @ PHI",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 85,
+    "alerted_at": "2026-09-26T12:15:00.462767+00:00",
+    "game_start": "2026-09-26T23:30:00.000Z",
+    "minutes_to_game": 674.9922872166667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Saves"
+    ],
+    "dabble_prop_ids": [
+      "4bbbb21f97ac2912"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/andre-blake-18756",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-26T12:14:08.613080+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-13",
+      "days_since_last_appearance": 13,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-26:soccer:81ef308f-48b8-445b-968a-1d837673c6da:01a0d0de-4a83-750c-8f71-875ee7c36b8c:90": {
+    "player_id": "81ef308f-48b8-445b-968a-1d837673c6da",
+    "player_name": "Andre Blake",
+    "normalized_name": "andre blake",
+    "team": "PHI",
+    "league_code": "MLS",
+    "opponent": "ORL @ PHI",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 90,
+    "alerted_at": "2026-09-26T12:15:00.462767+00:00",
+    "game_start": "2026-09-26T23:30:00.000Z",
+    "minutes_to_game": 674.9922872166667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Saves"
+    ],
+    "dabble_prop_ids": [
+      "4bbbb21f97ac2912"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/andre-blake-18756",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-26T12:14:08.613080+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-13",
+      "days_since_last_appearance": 13,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-26:soccer:81ef308f-48b8-445b-968a-1d837673c6da:01a0d0de-4a83-750c-8f71-875ee7c36b8c:lock": {
+    "player_id": "81ef308f-48b8-445b-968a-1d837673c6da",
+    "player_name": "Andre Blake",
+    "normalized_name": "andre blake",
+    "team": "PHI",
+    "league_code": "MLS",
+    "opponent": "ORL @ PHI",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": "lock",
+    "alerted_at": "2026-09-26T12:15:00.462767+00:00",
+    "game_start": "2026-09-26T23:30:00.000Z",
+    "minutes_to_game": 674.9922872166667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Saves"
+    ],
+    "dabble_prop_ids": [
+      "4bbbb21f97ac2912"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": "LOCK: hard_out_uncorroborated",
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/andre-blake-18756",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-26T12:14:08.613080+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-13",
+      "days_since_last_appearance": 13,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-26:soccer:81ef308f-48b8-445b-968a-1d837673c6da:01a0d0de-4a83-750c-8f71-875ee7c36b8c:news_signal:43157": {
+    "player_id": "81ef308f-48b8-445b-968a-1d837673c6da",
+    "player_name": "Andre Blake",
+    "normalized_name": "andre blake",
+    "team": "PHI",
+    "league_code": "MLS",
+    "opponent": "ORL @ PHI",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": "news_signal",
+    "alerted_at": "2026-09-26T12:15:00.462767+00:00",
+    "game_start": "2026-09-26T23:30:00.000Z",
+    "minutes_to_game": 674.9922872166667,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Saves"
+    ],
+    "dabble_prop_ids": [
+      "4bbbb21f97ac2912"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": "RotoWire status worsened to: hard_out",
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/andre-blake-18756",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-26T12:14:08.613080+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-13",
+      "days_since_last_appearance": 13,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "_last_state:c9b4dc27-2b0e-420e-a37d-cfadc36bb285:01a0d0d7-e166-7282-a86a-f8505945ebf7": {
+    "dns_score": 18,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:6f16fa7b-2826-43a5-8db0-bae05da853fa:01a0cfda-3f4a-775a-85c6-3dfa6b0f9b0a": {
+    "dns_score": 18,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:61492d3f-8b65-44a1-a038-0b8757fd1e73:01a0d0d7-e166-7282-a86a-f8505945ebf7": {
+    "dns_score": 18,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:8cbdd06c-8196-4c28-aeb3-a7c8eb862295:01a0d0de-4a83-750c-8f71-875ee7c36b8c": {
+    "dns_score": 18,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:430d4e42-3a72-458b-9373-2ff29ff0a1a8:01a0d0de-4a83-750c-8f71-875ee7c36b8c": {
+    "dns_score": 18,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:fe9adfa1-15e5-4a37-a4ba-e287bb86eb57:01a0d997-7acb-724f-873f-a3282fac5d1f": {
+    "dns_score": 18,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:a035337d-9164-427d-bf6f-c26213dbc0da:01a0d398-e1d8-7518-99c0-2fec9b37b53a": {
+    "dns_score": 18,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:3295669e-277e-4e53-a334-0711323bb224:01a0c9f0-1671-73eb-9aa9-2b8422a387c6": {
+    "dns_score": 18,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:265341ec-0e99-4a7c-abd4-1e64a5f521a5:01a0c9f0-6f2b-758d-8a31-2f4cff868c2e": {
+    "dns_score": 18,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:e2cd2a24-735f-4728-abd4-a2b57b9e92d8:01a0c9f0-1671-73eb-9aa9-2b8422a387c6": {
+    "dns_score": 18,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:97d90143-c7f0-4dc1-be4a-e298f1759a6f:01a0c9f0-1671-73eb-9aa9-2b8422a387c6": {
+    "dns_score": 18,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:01a083fb-63ee-76fa-a73a-6e78915187e8:01a0c9f1-136f-747a-a500-adf49a8ac72b": {
+    "dns_score": 18,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:ab094871-09c7-4b56-b9d2-ee4bcdaa33fe:01a0daf7-78c2-768b-b53c-c03a7561ef73": {
+    "dns_score": 11,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:25b9a213-5e01-4c7b-87a3-399ce158d537:01a0c9f0-1671-73eb-9aa9-2b8422a387c6": {
+    "dns_score": 11,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:7c2b4114-90f7-4c33-b979-41d909c18555:01a0c9f0-6f2b-758d-8a31-2f4cff868c2e": {
+    "dns_score": 11,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:f9434e19-3616-4366-8220-7f96c632d59a:01a0c9f0-6f2b-758d-8a31-2f4cff868c2e": {
+    "dns_score": 11,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:bb5f1ad7-33a0-4c08-b1ad-8f18ef64fc37:01a0c9f0-1671-73eb-9aa9-2b8422a387c6": {
+    "dns_score": 11,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:a2624eaa-5db5-495e-9e2d-c6dcc2859751:01a0c9f1-136f-747a-a500-adf49a8ac72b": {
+    "dns_score": 11,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:c09b9174-3984-4704-b157-a16064701d0f:01a0c9f1-136f-747a-a500-adf49a8ac72b": {
+    "dns_score": 11,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:01526ef5-07ec-4085-8026-29b05181e759:01a0d0d7-e166-7282-a86a-f8505945ebf7": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:85413686-e585-4a2f-b4f3-77bd41456e76:01a0daf7-78c2-768b-b53c-c03a7561ef73": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:147f9f6f-abbd-43aa-ba9e-1e30e6c8c4f9:01a0cfda-3f4a-775a-85c6-3dfa6b0f9b0a": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:994fbfe9-bfdd-4db3-99cb-726694d2975f:01a0d0d7-e166-7282-a86a-f8505945ebf7": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:8be588ff-d487-4608-a74b-0b4c42a4b59a:01a0dbcf-d9d2-7556-8f5f-275f8aad35d3": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:2cef4503-7ab8-40df-ae54-d08f99102b58:01a0d0de-4a83-750c-8f71-875ee7c36b8c": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:8ebd8fe4-0e1a-4cef-834c-eec765a5c68e:01a0d0de-4a83-750c-8f71-875ee7c36b8c": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:68a6a68a-307f-4d2f-a1df-02810b82ebe8:01a0dbcf-d9d2-7556-8f5f-275f8aad35d3": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:1b445012-e372-4167-86a8-be5321dd6426:01a0daf6-b153-7699-b5ac-9fb58150e50c": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:4916f0d3-e4d1-4bde-94d0-6debeefa42ff:01a0d398-e1d8-7518-99c0-2fec9b37b53a": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:4c5fd949-f72c-4ee4-b1ca-fc5ddd2bc319:01a0d398-e1d8-7518-99c0-2fec9b37b53a": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:89997df3-0e77-40f1-a004-1fe4024c7322:01a0daf6-b153-7699-b5ac-9fb58150e50c": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:929d79c7-cfaa-4963-bf99-100dd6ce7444:01a0d997-7acb-724f-873f-a3282fac5d1f": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:a823f69d-7888-4f0f-a3a4-5fb9e1265ab7:01a0cfda-3fe8-731e-9f46-875794f93ae5": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:c32f6345-c4bd-4b95-b6ce-2fc18dd86904:01a0dbde-b78b-7429-97ab-1f56e59432f5": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:f22b3c41-0970-4b3c-ae4d-b7f805052060:01a0cfda-3fe8-731e-9f46-875794f93ae5": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:6729808b-87a6-4ddb-814b-f9fb0fbfa51b:01a0dbde-b78b-7429-97ab-1f56e59432f5": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:0a7a8487-9dde-42d0-af98-6039fea5fc37:01a0c9f0-1671-73eb-9aa9-2b8422a387c6": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:1c8e47c9-ea89-4f3b-89db-5cd11f7dc194:01a0c9f0-6f2b-758d-8a31-2f4cff868c2e": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:180a5bdd-3727-4dc3-948c-6c394fc0c66b:01a0c9f0-6f2b-758d-8a31-2f4cff868c2e": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:0b7708ec-ef49-47c5-a48e-efe1141aef62:01a0c9f0-6f2b-758d-8a31-2f4cff868c2e": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:558af542-2d26-4f53-9e5a-c92fe97e484a:01a0c9f0-6f2b-758d-8a31-2f4cff868c2e": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:58079989-1fe2-4674-9189-8e466df59f57:01a0c9f0-6f2b-758d-8a31-2f4cff868c2e": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:4f533ffd-c615-4962-884f-09cdd1a5b7fd:01a0c9f0-6f2b-758d-8a31-2f4cff868c2e": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:76a3a578-ae65-4bfd-99a6-1d8a5f0021ea:01a0c9f0-6f2b-758d-8a31-2f4cff868c2e": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:326ef65a-fb77-4543-a6b1-62889f11e0aa:01a0c9f0-6f2b-758d-8a31-2f4cff868c2e": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:9459402e-e0fa-40ee-ba2b-ff686a8f1fa5:01a0c9f0-6f2b-758d-8a31-2f4cff868c2e": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:92f2c5df-fe44-4db3-ba16-dffa14d50395:01a0c9f0-6f2b-758d-8a31-2f4cff868c2e": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:1731e5ab-a84f-4d4e-bae7-0d5c1c2ca456:01a0c9f0-1671-73eb-9aa9-2b8422a387c6": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:cdffad13-3ecd-4d1f-8bb7-e353047fd883:01a0c9f1-136f-747a-a500-adf49a8ac72b": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:7df7820b-4abd-4698-bda3-a04b6faf355b:01a0c9f1-136f-747a-a500-adf49a8ac72b": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:7e8580f0-ea21-4ff6-8fc7-c3352cbf0e97:01a0c9f1-136f-747a-a500-adf49a8ac72b": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:019e3aa8-929e-7369-b442-87911c90875a:01a0c9f1-136f-747a-a500-adf49a8ac72b": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:5319c053-d88b-4afe-aa78-47983b1ef018:01a0c9f1-136f-747a-a500-adf49a8ac72b": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:61b034cc-269e-4e46-a8b5-3076bda25899:01a0c9f1-136f-747a-a500-adf49a8ac72b": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:01a0ce48-1a37-7728-a100-6d7d7992816a:01a0c9f1-136f-747a-a500-adf49a8ac72b": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:38cd2a3d-e715-4951-92b2-a8a4e1877253:01a0c9f1-136f-747a-a500-adf49a8ac72b": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
   }
 }
