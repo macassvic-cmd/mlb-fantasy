@@ -895,5 +895,542 @@
     "long_term_injury": false,
     "graded_at": null,
     "dabble_removed_at": null
+  },
+  "_last_state:e8a60807-de7d-4303-a765-72dbb8957f00:01a0d0de-4a83-750c-8f71-875ee7c36b8c": {
+    "dns_score": 90,
+    "rotowire_status_raw": "hard_out",
+    "prediction_consensus": "bench",
+    "x_post_id": null
+  },
+  "2026-09-25:soccer:e8a60807-de7d-4303-a765-72dbb8957f00:01a0d0de-4a83-750c-8f71-875ee7c36b8c:60": {
+    "player_id": "e8a60807-de7d-4303-a765-72dbb8957f00",
+    "player_name": "Justin Ellis",
+    "normalized_name": "justin ellis",
+    "team": "ORL",
+    "league_code": "MLS",
+    "opponent": "ORL @ PHI",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 60,
+    "alerted_at": "2026-09-26T01:50:51.728469+00:00",
+    "game_start": "2026-09-26T23:30:00.000Z",
+    "minutes_to_game": 1299.1378588500002,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Shots on Target"
+    ],
+    "dabble_prop_ids": [
+      "c5395bd27070036c"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/justin-ellis-46478",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-26T01:50:32.064305+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-12",
+      "days_since_last_appearance": 14,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-25:soccer:e8a60807-de7d-4303-a765-72dbb8957f00:01a0d0de-4a83-750c-8f71-875ee7c36b8c:65": {
+    "player_id": "e8a60807-de7d-4303-a765-72dbb8957f00",
+    "player_name": "Justin Ellis",
+    "normalized_name": "justin ellis",
+    "team": "ORL",
+    "league_code": "MLS",
+    "opponent": "ORL @ PHI",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 65,
+    "alerted_at": "2026-09-26T01:50:51.728469+00:00",
+    "game_start": "2026-09-26T23:30:00.000Z",
+    "minutes_to_game": 1299.1378588500002,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Shots on Target"
+    ],
+    "dabble_prop_ids": [
+      "c5395bd27070036c"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/justin-ellis-46478",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-26T01:50:32.064305+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-12",
+      "days_since_last_appearance": 14,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-25:soccer:e8a60807-de7d-4303-a765-72dbb8957f00:01a0d0de-4a83-750c-8f71-875ee7c36b8c:70": {
+    "player_id": "e8a60807-de7d-4303-a765-72dbb8957f00",
+    "player_name": "Justin Ellis",
+    "normalized_name": "justin ellis",
+    "team": "ORL",
+    "league_code": "MLS",
+    "opponent": "ORL @ PHI",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 70,
+    "alerted_at": "2026-09-26T01:50:51.728469+00:00",
+    "game_start": "2026-09-26T23:30:00.000Z",
+    "minutes_to_game": 1299.1378588500002,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Shots on Target"
+    ],
+    "dabble_prop_ids": [
+      "c5395bd27070036c"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/justin-ellis-46478",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-26T01:50:32.064305+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-12",
+      "days_since_last_appearance": 14,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-25:soccer:e8a60807-de7d-4303-a765-72dbb8957f00:01a0d0de-4a83-750c-8f71-875ee7c36b8c:75": {
+    "player_id": "e8a60807-de7d-4303-a765-72dbb8957f00",
+    "player_name": "Justin Ellis",
+    "normalized_name": "justin ellis",
+    "team": "ORL",
+    "league_code": "MLS",
+    "opponent": "ORL @ PHI",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 75,
+    "alerted_at": "2026-09-26T01:50:51.728469+00:00",
+    "game_start": "2026-09-26T23:30:00.000Z",
+    "minutes_to_game": 1299.1378588500002,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Shots on Target"
+    ],
+    "dabble_prop_ids": [
+      "c5395bd27070036c"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/justin-ellis-46478",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-26T01:50:32.064305+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-12",
+      "days_since_last_appearance": 14,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-25:soccer:e8a60807-de7d-4303-a765-72dbb8957f00:01a0d0de-4a83-750c-8f71-875ee7c36b8c:80": {
+    "player_id": "e8a60807-de7d-4303-a765-72dbb8957f00",
+    "player_name": "Justin Ellis",
+    "normalized_name": "justin ellis",
+    "team": "ORL",
+    "league_code": "MLS",
+    "opponent": "ORL @ PHI",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 80,
+    "alerted_at": "2026-09-26T01:50:51.728469+00:00",
+    "game_start": "2026-09-26T23:30:00.000Z",
+    "minutes_to_game": 1299.1378588500002,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Shots on Target"
+    ],
+    "dabble_prop_ids": [
+      "c5395bd27070036c"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/justin-ellis-46478",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-26T01:50:32.064305+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-12",
+      "days_since_last_appearance": 14,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-25:soccer:e8a60807-de7d-4303-a765-72dbb8957f00:01a0d0de-4a83-750c-8f71-875ee7c36b8c:85": {
+    "player_id": "e8a60807-de7d-4303-a765-72dbb8957f00",
+    "player_name": "Justin Ellis",
+    "normalized_name": "justin ellis",
+    "team": "ORL",
+    "league_code": "MLS",
+    "opponent": "ORL @ PHI",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 85,
+    "alerted_at": "2026-09-26T01:50:51.728469+00:00",
+    "game_start": "2026-09-26T23:30:00.000Z",
+    "minutes_to_game": 1299.1378588500002,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Shots on Target"
+    ],
+    "dabble_prop_ids": [
+      "c5395bd27070036c"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/justin-ellis-46478",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-26T01:50:32.064305+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-12",
+      "days_since_last_appearance": 14,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-25:soccer:e8a60807-de7d-4303-a765-72dbb8957f00:01a0d0de-4a83-750c-8f71-875ee7c36b8c:90": {
+    "player_id": "e8a60807-de7d-4303-a765-72dbb8957f00",
+    "player_name": "Justin Ellis",
+    "normalized_name": "justin ellis",
+    "team": "ORL",
+    "league_code": "MLS",
+    "opponent": "ORL @ PHI",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": 90,
+    "alerted_at": "2026-09-26T01:50:51.728469+00:00",
+    "game_start": "2026-09-26T23:30:00.000Z",
+    "minutes_to_game": 1299.1378588500002,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Shots on Target"
+    ],
+    "dabble_prop_ids": [
+      "c5395bd27070036c"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": null,
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/justin-ellis-46478",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-26T01:50:32.064305+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-12",
+      "days_since_last_appearance": 14,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-25:soccer:e8a60807-de7d-4303-a765-72dbb8957f00:01a0d0de-4a83-750c-8f71-875ee7c36b8c:lock": {
+    "player_id": "e8a60807-de7d-4303-a765-72dbb8957f00",
+    "player_name": "Justin Ellis",
+    "normalized_name": "justin ellis",
+    "team": "ORL",
+    "league_code": "MLS",
+    "opponent": "ORL @ PHI",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": "lock",
+    "alerted_at": "2026-09-26T01:50:51.728469+00:00",
+    "game_start": "2026-09-26T23:30:00.000Z",
+    "minutes_to_game": 1299.1378588500002,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Shots on Target"
+    ],
+    "dabble_prop_ids": [
+      "c5395bd27070036c"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": "LOCK: hard_out_uncorroborated",
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/justin-ellis-46478",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-26T01:50:32.064305+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-12",
+      "days_since_last_appearance": 14,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "2026-09-25:soccer:e8a60807-de7d-4303-a765-72dbb8957f00:01a0d0de-4a83-750c-8f71-875ee7c36b8c:news_signal:18952": {
+    "player_id": "e8a60807-de7d-4303-a765-72dbb8957f00",
+    "player_name": "Justin Ellis",
+    "normalized_name": "justin ellis",
+    "team": "ORL",
+    "league_code": "MLS",
+    "opponent": "ORL @ PHI",
+    "fixture_id": "01a0d0de-4a83-750c-8f71-875ee7c36b8c",
+    "dns_score": 90,
+    "confidence_score": 45,
+    "urgency_score": 0,
+    "alert_type": "news_signal",
+    "alerted_at": "2026-09-26T01:50:51.728469+00:00",
+    "game_start": "2026-09-26T23:30:00.000Z",
+    "minutes_to_game": 1299.1378588500002,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Shots on Target"
+    ],
+    "dabble_prop_ids": [
+      "c5395bd27070036c"
+    ],
+    "top_reasons": [
+      "RotoWire: hard_out",
+      "Predicted bench 1/1 sources (rotowire_news)",
+      "RotoWire hard_out floor (base)"
+    ],
+    "extra_reason": "RotoWire status worsened to: hard_out",
+    "transfermarkt_injury_since": null,
+    "research_block": {
+      "rotowire_url": "https://www.rotowire.com/soccer/player/justin-ellis-46478",
+      "rotowire_status_tag": "OUT",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-26T01:50:32.064305+00:00",
+      "transfermarkt": null,
+      "last_appeared_date": "2026-09-12",
+      "days_since_last_appearance": 14,
+      "team_last_3_fixtures": [],
+      "corroborated_by": [],
+      "conflict": null
+    },
+    "is_lock": true,
+    "lock_reason": "hard_out_uncorroborated",
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
+  },
+  "_last_state:3430567e-4713-4e17-8997-a57ada0b7b4a:01a0d398-e1d8-7518-99c0-2fec9b37b53a": {
+    "dns_score": 18,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:c9d2e875-9c82-429c-8be0-7a98a2772c90:01a0c9ee-634f-76cf-af76-20521c99b1e5": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:983dbf84-f60b-4fee-b5ff-f80f21095896:01a0c9ee-634f-76cf-af76-20521c99b1e5": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:b215d990-d462-4bd7-ba65-4277ee9fe5da:01a0c9ee-634f-76cf-af76-20521c99b1e5": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:2cdeb4b3-b894-4323-b696-b963e21d466b:01a0cfda-3f4a-775a-85c6-3dfa6b0f9b0a": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:2fc5b0f3-9054-4883-ae75-73be240f1620:01a0daf7-78c2-768b-b53c-c03a7561ef73": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:241cd231-7814-40f9-872b-271b93cd8b5b:01a0cfda-3f4a-775a-85c6-3dfa6b0f9b0a": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:fb52751b-2018-41e6-9b80-ba9dca4fe09b:01a0daf7-78c2-768b-b53c-c03a7561ef73": {
+    "dns_score": 3,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "unknown",
+    "x_post_id": null
+  },
+  "_last_state:1f5826e5-57c5-44cb-b18b-98a0ca294b7b:01a0c9ee-634f-76cf-af76-20521c99b1e5": {
+    "dns_score": 0,
+    "rotowire_status_raw": null,
+    "prediction_consensus": "start",
+    "x_post_id": null
   }
 }
