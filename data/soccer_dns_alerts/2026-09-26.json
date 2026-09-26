@@ -2049,8 +2049,8 @@
     "x_post_id": null
   },
   "_last_state:5319c053-d88b-4afe-aa78-47983b1ef018:01a0c9f1-136f-747a-a500-adf49a8ac72b": {
-    "dns_score": 3,
-    "rotowire_status_raw": null,
+    "dns_score": 33,
+    "rotowire_status_raw": "fifty-fifty",
     "prediction_consensus": "unknown",
     "x_post_id": null
   },
@@ -3366,5 +3366,52 @@
     "rotowire_status_raw": null,
     "prediction_consensus": "unknown",
     "x_post_id": null
+  },
+  "2026-09-26:soccer:5319c053-d88b-4afe-aa78-47983b1ef018:01a0c9f1-136f-747a-a500-adf49a8ac72b:news_signal:9318": {
+    "player_id": "5319c053-d88b-4afe-aa78-47983b1ef018",
+    "player_name": "Bruno Fernandes",
+    "normalized_name": "bruno fernandes",
+    "team": "POR",
+    "league_code": null,
+    "opponent": "@ Portugal",
+    "fixture_id": "01a0c9f1-136f-747a-a500-adf49a8ac72b",
+    "dns_score": 33,
+    "confidence_score": 30,
+    "urgency_score": 0,
+    "alert_type": "news_signal",
+    "alerted_at": "2026-09-26T22:05:27.273131+00:00",
+    "game_start": "2026-09-27T18:45:00.000Z",
+    "minutes_to_game": 1239.5454478166669,
+    "alert_classification": "prediction",
+    "official_status": "not_yet_posted",
+    "dabble_status_raw": null,
+    "dabble_live": true,
+    "dabble_markets": [
+      "Assists",
+      "Cards",
+      "Goals",
+      "Shots",
+      "Shots on Target"
+    ],
+    "dabble_prop_ids": [
+      "a21575d8935fcdfb",
+      "86e4b682932df593",
+      "92dfe00c19ee7658",
+      "87434a0c3aaa8809",
+      "1e1a1e5058016bdf"
+    ],
+    "top_reasons": [
+      "RotoWire: fifty-fifty"
+    ],
+    "extra_reason": "RotoWire status worsened to: fifty-fifty",
+    "transfermarkt_injury_since": null,
+    "research_block": null,
+    "is_lock": false,
+    "lock_reason": null,
+    "official_started": null,
+    "outcome": null,
+    "long_term_injury": false,
+    "graded_at": null,
+    "dabble_removed_at": null
   }
 }
