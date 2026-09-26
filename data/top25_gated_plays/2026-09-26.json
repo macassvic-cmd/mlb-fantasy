@@ -5,9 +5,9 @@
       "player_id": 665487,
       "name": "Fernando Tatis Jr.",
       "team": "San Diego Padres",
-      "projected_ud": 9.23,
+      "projected_ud": 9.27,
       "ud_line": 7.5,
-      "edge": 1.73,
+      "edge": 1.77,
       "actionable_reason": "edge + strong contact",
       "game_time_pt": "5:40 PM PT"
     },
@@ -15,9 +15,9 @@
       "player_id": 660670,
       "name": "Ronald Acu\u00f1a Jr.",
       "team": "Atlanta Braves",
-      "projected_ud": 8.97,
+      "projected_ud": 9.01,
       "ud_line": 7.5,
-      "edge": 1.47,
+      "edge": 1.51,
       "actionable_reason": "edge + strong contact",
       "game_time_pt": "1:10 PM PT"
     },
@@ -25,10 +25,20 @@
       "player_id": 682829,
       "name": "Elly De La Cruz",
       "team": "Cincinnati Reds",
-      "projected_ud": 8.54,
+      "projected_ud": 8.58,
       "ud_line": 7.5,
-      "edge": 1.04,
-      "actionable_reason": "edge + strong contact",
+      "edge": 1.08,
+      "actionable_reason": "edge + platoon advantage",
+      "game_time_pt": "12:07 PM PT"
+    },
+    {
+      "player_id": 703520,
+      "name": "Brett Bateman",
+      "team": "Toronto Blue Jays",
+      "projected_ud": 8.5,
+      "ud_line": 6.5,
+      "edge": 2.0,
+      "actionable_reason": "edge + platoon advantage",
       "game_time_pt": "12:07 PM PT"
     },
     {
@@ -58,7 +68,7 @@
       "projected_ud": 8.5,
       "ud_line": 6.5,
       "edge": 2.0,
-      "actionable_reason": "edge + strong contact",
+      "actionable_reason": "edge + platoon advantage",
       "game_time_pt": "4:10 PM PT"
     },
     {
@@ -72,6 +82,16 @@
       "game_time_pt": "4:10 PM PT"
     },
     {
+      "player_id": 665161,
+      "name": "Jeremy Pe\u00f1a",
+      "team": "Houston Astros",
+      "projected_ud": 8.5,
+      "ud_line": 6.5,
+      "edge": 2.0,
+      "actionable_reason": "edge + platoon advantage",
+      "game_time_pt": "6:40 PM PT"
+    },
+    {
       "player_id": 673237,
       "name": "Yainer Diaz",
       "team": "Houston Astros",
@@ -80,36 +100,6 @@
       "edge": 2.0,
       "actionable_reason": "edge + strong contact",
       "game_time_pt": "6:40 PM PT"
-    },
-    {
-      "player_id": 686948,
-      "name": "Drake Baldwin",
-      "team": "Atlanta Braves",
-      "projected_ud": 8.07,
-      "ud_line": 6.5,
-      "edge": 1.57,
-      "actionable_reason": "edge + strong contact",
-      "game_time_pt": "1:10 PM PT"
-    },
-    {
-      "player_id": 687263,
-      "name": "Zach Neto",
-      "team": "Los Angeles Angels",
-      "projected_ud": 7.99,
-      "ud_line": 6.5,
-      "edge": 1.49,
-      "actionable_reason": "edge + strong contact",
-      "game_time_pt": "6:40 PM PT"
-    },
-    {
-      "player_id": 668930,
-      "name": "Brice Turang",
-      "team": "Milwaukee Brewers",
-      "projected_ud": 7.73,
-      "ud_line": 6.5,
-      "edge": 1.23,
-      "actionable_reason": "edge + shrunk sample above baseline",
-      "game_time_pt": "4:10 PM PT"
     }
   ]
 }
