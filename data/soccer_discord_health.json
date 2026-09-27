@@ -1,11 +1,11 @@
 {
-  "last_attempt_at": "2026-09-26T22:05:27.417666+00:00",
-  "last_attempt_source": "realtime_alert",
+  "last_attempt_at": "2026-09-27T05:47:39.901853+00:00",
+  "last_attempt_source": "heartbeat",
   "last_attempt_delivered": false,
   "last_attempt_http_status": 404,
   "last_success_at": "2026-09-26T07:02:15.522558+00:00",
   "last_success_source": "realtime_alert",
-  "last_failure_at": "2026-09-26T22:05:27.417666+00:00",
-  "last_failure_source": "realtime_alert",
-  "last_error": "HTTPError (HTTP 404)"
+  "last_failure_at": "2026-09-27T05:47:39.901853+00:00",
+  "last_failure_source": "heartbeat",
+  "last_error": "{\"message\": \"Unknown Webhook\", \"code\": 10015}"
 }
