@@ -2,16 +2,6 @@
   "date": "2026-09-27",
   "plays": [
     {
-      "player_id": 682829,
-      "name": "Elly De La Cruz",
-      "team": "Cincinnati Reds",
-      "projected_ud": 9.5,
-      "ud_line": 7.5,
-      "edge": 2.0,
-      "actionable_reason": "edge + strong contact",
-      "game_time_pt": "12:07 PM PT"
-    },
-    {
       "player_id": 665161,
       "name": "Jeremy Pe\u00f1a",
       "team": "Houston Astros",
@@ -20,6 +10,16 @@
       "edge": 2.0,
       "actionable_reason": "edge + strong contact",
       "game_time_pt": "12:05 PM PT"
+    },
+    {
+      "player_id": 682829,
+      "name": "Elly De La Cruz",
+      "team": "Cincinnati Reds",
+      "projected_ud": 9.5,
+      "ud_line": 7.5,
+      "edge": 2.0,
+      "actionable_reason": "edge + strong contact",
+      "game_time_pt": "12:07 PM PT"
     },
     {
       "player_id": 596019,
@@ -42,36 +42,6 @@
       "game_time_pt": "10:05 AM PT"
     },
     {
-      "player_id": 701807,
-      "name": "Carson Benge",
-      "team": "New York Mets",
-      "projected_ud": 8.5,
-      "ud_line": 6.5,
-      "edge": 2.0,
-      "actionable_reason": "edge + strong contact",
-      "game_time_pt": "10:05 AM PT"
-    },
-    {
-      "player_id": 624413,
-      "name": "Pete Alonso",
-      "team": "Baltimore Orioles",
-      "projected_ud": 8.5,
-      "ud_line": 6.5,
-      "edge": 2.0,
-      "actionable_reason": "edge + platoon advantage",
-      "game_time_pt": "10:05 AM PT"
-    },
-    {
-      "player_id": 683002,
-      "name": "Gunnar Henderson",
-      "team": "Baltimore Orioles",
-      "projected_ud": 8.5,
-      "ud_line": 6.5,
-      "edge": 2.0,
-      "actionable_reason": "edge + strong contact",
-      "game_time_pt": "10:05 AM PT"
-    },
-    {
       "player_id": 691718,
       "name": "Pete Crow-Armstrong",
       "team": "Chicago Cubs",
@@ -82,19 +52,9 @@
       "game_time_pt": "12:05 PM PT"
     },
     {
-      "player_id": 680869,
-      "name": "Zack Gelof",
-      "team": "Athletics",
-      "projected_ud": 8.5,
-      "ud_line": 6.5,
-      "edge": 2.0,
-      "actionable_reason": "edge + strong contact",
-      "game_time_pt": "12:05 PM PT"
-    },
-    {
-      "player_id": 605141,
-      "name": "Mookie Betts",
-      "team": "Los Angeles Dodgers",
+      "player_id": 673237,
+      "name": "Yainer Diaz",
+      "team": "Houston Astros",
       "projected_ud": 8.5,
       "ud_line": 6.5,
       "edge": 2.0,
@@ -108,7 +68,7 @@
       "projected_ud": 8.5,
       "ud_line": 6.5,
       "edge": 2.0,
-      "actionable_reason": "edge + strong contact",
+      "actionable_reason": "edge + platoon advantage",
       "game_time_pt": "12:10 PM PT"
     },
     {
@@ -132,22 +92,22 @@
       "game_time_pt": "12:10 PM PT"
     },
     {
-      "player_id": 700250,
-      "name": "Ben Rice",
-      "team": "New York Yankees",
+      "player_id": 624413,
+      "name": "Pete Alonso",
+      "team": "Baltimore Orioles",
       "projected_ud": 8.5,
       "ud_line": 6.5,
       "edge": 2.0,
-      "actionable_reason": "edge + strong contact",
+      "actionable_reason": "edge + platoon advantage",
       "game_time_pt": "10:05 AM PT"
     },
     {
-      "player_id": 673237,
-      "name": "Yainer Diaz",
-      "team": "Houston Astros",
-      "projected_ud": 8.5,
+      "player_id": 680869,
+      "name": "Zack Gelof",
+      "team": "Athletics",
+      "projected_ud": 8.45,
       "ud_line": 6.5,
-      "edge": 2.0,
+      "edge": 1.95,
       "actionable_reason": "edge + strong contact",
       "game_time_pt": "12:05 PM PT"
     }
