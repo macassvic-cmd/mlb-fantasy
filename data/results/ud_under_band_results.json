@@ -3519,21 +3519,83 @@
           "grade": "win"
         }
       ]
+    },
+    "2026-09-26": {
+      "wins": 1,
+      "losses": 4,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 669127,
+          "name": "Shea Langeliers",
+          "team": "Athletics",
+          "projected_ud": 4.62,
+          "ud_line": 6.5,
+          "edge": -1.88,
+          "game_time_pt": "6:40 PM PT",
+          "actual_ud": 0,
+          "grade": "win"
+        },
+        {
+          "player_id": 701538,
+          "name": "Jackson Merrill",
+          "team": "San Diego Padres",
+          "projected_ud": 4.65,
+          "ud_line": 6.5,
+          "edge": -1.85,
+          "game_time_pt": "5:40 PM PT",
+          "actual_ud": 19,
+          "grade": "loss"
+        },
+        {
+          "player_id": 677595,
+          "name": "Ronny Mauricio",
+          "team": "New York Mets",
+          "projected_ud": 3.77,
+          "ud_line": 5.5,
+          "edge": -1.73,
+          "game_time_pt": "9:35 AM PT",
+          "actual_ud": 30,
+          "grade": "loss"
+        },
+        {
+          "player_id": 592518,
+          "name": "Manny Machado",
+          "team": "San Diego Padres",
+          "projected_ud": 3.92,
+          "ud_line": 5.5,
+          "edge": -1.58,
+          "game_time_pt": "5:40 PM PT",
+          "actual_ud": 21,
+          "grade": "loss"
+        },
+        {
+          "player_id": 699115,
+          "name": "Carlos Jorge",
+          "team": "Cincinnati Reds",
+          "projected_ud": 4.0,
+          "ud_line": 5.5,
+          "edge": -1.5,
+          "game_time_pt": "12:07 PM PT",
+          "actual_ud": 15,
+          "grade": "loss"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 156,
-    "losses": 136,
+    "wins": 157,
+    "losses": 140,
     "dnp": 7
   },
   "record_by_line": {
     "5.5": {
       "wins": 73,
-      "losses": 78
+      "losses": 81
     },
     "6.5": {
-      "wins": 49,
-      "losses": 43
+      "wins": 50,
+      "losses": 44
     },
     "8.5+": {
       "wins": 9,
@@ -4467,7 +4529,7 @@
       "name": "Manny Machado",
       "team": "San Diego Padres",
       "wins": 1,
-      "losses": 1
+      "losses": 2
     },
     "665019": {
       "name": "Kody Clemens",
@@ -4526,6 +4588,30 @@
     "805300": {
       "name": "Jakob Marsee",
       "team": "Miami Marlins",
+      "wins": 0,
+      "losses": 1
+    },
+    "669127": {
+      "name": "Shea Langeliers",
+      "team": "Athletics",
+      "wins": 1,
+      "losses": 0
+    },
+    "701538": {
+      "name": "Jackson Merrill",
+      "team": "San Diego Padres",
+      "wins": 0,
+      "losses": 1
+    },
+    "677595": {
+      "name": "Ronny Mauricio",
+      "team": "New York Mets",
+      "wins": 0,
+      "losses": 1
+    },
+    "699115": {
+      "name": "Carlos Jorge",
+      "team": "Cincinnati Reds",
       "wins": 0,
       "losses": 1
     }

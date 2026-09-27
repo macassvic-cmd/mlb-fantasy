@@ -1902,11 +1902,102 @@
           "grade": "loss"
         }
       ]
+    },
+    "2026-09-26": {
+      "wins": 3,
+      "losses": 4,
+      "dnp": 0,
+      "plays": [
+        {
+          "player_id": 660670,
+          "name": "Ronald Acu\u00f1a Jr.",
+          "team": "Atlanta Braves",
+          "projected_ud": 9.5,
+          "ud_line": 7.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 0,
+          "grade": "loss"
+        },
+        {
+          "player_id": 682829,
+          "name": "Elly De La Cruz",
+          "team": "Cincinnati Reds",
+          "projected_ud": 8.63,
+          "ud_line": 7.5,
+          "edge": 1.13,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "12:07 PM PT",
+          "actual_ud": 3,
+          "grade": "loss"
+        },
+        {
+          "player_id": 671739,
+          "name": "Michael Harris II",
+          "team": "Atlanta Braves",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 26,
+          "grade": "win"
+        },
+        {
+          "player_id": 686948,
+          "name": "Drake Baldwin",
+          "team": "Atlanta Braves",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "1:10 PM PT",
+          "actual_ud": 22,
+          "grade": "win"
+        },
+        {
+          "player_id": 686469,
+          "name": "Vinnie Pasquantino",
+          "team": "Kansas City Royals",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "4:10 PM PT",
+          "actual_ud": 8,
+          "grade": "win"
+        },
+        {
+          "player_id": 808959,
+          "name": "Munetaka Murakami",
+          "team": "Chicago White Sox",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "4:10 PM PT",
+          "actual_ud": 0,
+          "grade": "loss"
+        },
+        {
+          "player_id": 673237,
+          "name": "Yainer Diaz",
+          "team": "Houston Astros",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "6:40 PM PT",
+          "actual_ud": 6,
+          "grade": "loss"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 83,
-    "losses": 68,
+    "wins": 86,
+    "losses": 72,
     "dnp": 0
   }
 }

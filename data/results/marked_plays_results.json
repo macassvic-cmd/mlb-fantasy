@@ -2547,6 +2547,20 @@
         }
       ],
       "hot": []
+    },
+    "2026-09-26": {
+      "fire": [],
+      "hot": [
+        {
+          "player_id": 803011,
+          "name": "Sam Antonacci",
+          "team": "Chicago White Sox",
+          "grade": "loss",
+          "n_before": 8,
+          "wins_before": 6,
+          "rate_before": 75.0
+        }
+      ]
     }
   },
   "cohorts": {
@@ -2558,9 +2572,9 @@
     },
     "hot": {
       "wins": 55,
-      "losses": 46,
-      "n": 101,
-      "rate": 54.5
+      "losses": 47,
+      "n": 102,
+      "rate": 53.9
     }
   }
 }
