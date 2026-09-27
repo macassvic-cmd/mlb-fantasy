@@ -1,5 +1,5 @@
 {
-  "_latest_batch_ts": "2026-09-27T15:45:04.199238+00:00",
+  "_latest_batch_ts": "2026-09-27T19:19:21.825873+00:00",
   "pid:aeeade9a-60db-40f1-af9a-8bff5adbb1d1": {
     "name": "Charalampos Kostoulas",
     "team": "GRE",
@@ -11407,6 +11407,14 @@
         "urgency_score": 0,
         "official_status": "not_yet_posted",
         "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
       }
     ],
     "first_crossed": {
@@ -11537,7 +11545,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Assists",
@@ -11560,6 +11568,14 @@
     "score_history": [
       {
         "ts": "2026-09-27T15:45:04.199238+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
         "dns_score": 18,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -11695,7 +11711,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Cards",
@@ -11713,6 +11729,14 @@
     "score_history": [
       {
         "ts": "2026-09-27T15:45:04.199238+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -11848,7 +11872,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Cards",
@@ -11866,6 +11890,14 @@
     "score_history": [
       {
         "ts": "2026-09-27T15:45:04.199238+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -12001,7 +12033,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Cards",
@@ -12019,6 +12051,14 @@
     "score_history": [
       {
         "ts": "2026-09-27T15:45:04.199238+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -12154,7 +12194,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Assists",
@@ -12165,6 +12205,16 @@
           "market": "Goals",
           "line": 0.5,
           "prop_id": "17b57be86067989b"
+        },
+        {
+          "market": "Shots",
+          "line": 2.5,
+          "prop_id": "0dc196ea7c3353c7"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 1.5,
+          "prop_id": "50e1da770d7ae7c4"
         }
       ]
     }
@@ -12177,6 +12227,14 @@
     "score_history": [
       {
         "ts": "2026-09-27T15:45:04.199238+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -12312,7 +12370,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Assists",
@@ -12323,6 +12381,16 @@
           "market": "Goals",
           "line": 0.5,
           "prop_id": "7a5618b738049999"
+        },
+        {
+          "market": "Shots",
+          "line": 2.5,
+          "prop_id": "132062ac83ecb032"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 0.5,
+          "prop_id": "5e2ed75a0a15adc3"
         }
       ]
     }
@@ -12335,6 +12403,14 @@
     "score_history": [
       {
         "ts": "2026-09-27T15:45:04.199238+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -12470,7 +12546,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Cards",
@@ -12488,6 +12564,14 @@
     "score_history": [
       {
         "ts": "2026-09-27T15:45:04.199238+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -12623,7 +12707,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Assists",
@@ -12634,6 +12718,16 @@
           "market": "Goals",
           "line": 0.5,
           "prop_id": "650bcddd58c7a624"
+        },
+        {
+          "market": "Shots",
+          "line": 2.5,
+          "prop_id": "70b9c7ffd1199eff"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 1.5,
+          "prop_id": "1190d137c3f071e9"
         }
       ]
     }
@@ -12646,6 +12740,14 @@
     "score_history": [
       {
         "ts": "2026-09-27T15:45:04.199238+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -12781,7 +12883,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Assists",
@@ -12792,6 +12894,16 @@
           "market": "Goals",
           "line": 0.5,
           "prop_id": "9dd798192e8faab3"
+        },
+        {
+          "market": "Shots",
+          "line": 2.5,
+          "prop_id": "708e771933959bf2"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 1.5,
+          "prop_id": "02db94627742a300"
         }
       ]
     }
@@ -12804,6 +12916,14 @@
     "score_history": [
       {
         "ts": "2026-09-27T15:45:04.199238+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -12939,12 +13059,22 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Goals",
           "line": 0.5,
           "prop_id": "8222730303b258db"
+        },
+        {
+          "market": "Shots",
+          "line": 2.5,
+          "prop_id": "a5be9942d54f86e7"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 1.5,
+          "prop_id": "0ff922dc6911cb39"
         }
       ]
     }
@@ -12957,6 +13087,14 @@
     "score_history": [
       {
         "ts": "2026-09-27T15:45:04.199238+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
         "dns_score": 11,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -13092,7 +13230,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Assists",
@@ -13103,6 +13241,16 @@
           "market": "Goals",
           "line": 0.5,
           "prop_id": "eb3c5c4e4b529f9d"
+        },
+        {
+          "market": "Shots",
+          "line": 2.5,
+          "prop_id": "97a2e74fa29781f0"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 1.5,
+          "prop_id": "fcf82684338e89a9"
         }
       ]
     }
@@ -13732,6 +13880,14 @@
         "urgency_score": 0,
         "official_status": "not_yet_posted",
         "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
       }
     ],
     "first_crossed": {
@@ -13862,7 +14018,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Assists",
@@ -13873,6 +14029,16 @@
           "market": "Goals",
           "line": 0.5,
           "prop_id": "79ac322efb26254d"
+        },
+        {
+          "market": "Shots",
+          "line": 2.5,
+          "prop_id": "4895643eacc380ea"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 1.5,
+          "prop_id": "1411e214c4b8f490"
         }
       ]
     }
@@ -13885,6 +14051,14 @@
     "score_history": [
       {
         "ts": "2026-09-27T15:45:04.199238+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -14020,7 +14194,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Assists",
@@ -14031,6 +14205,16 @@
           "market": "Cards",
           "line": 0.5,
           "prop_id": "4ee4445e9b4ee3c7"
+        },
+        {
+          "market": "Shots",
+          "line": 1.5,
+          "prop_id": "1cd8ec3aa0af5508"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 0.5,
+          "prop_id": "c3b073bf6ee19163"
         }
       ]
     }
@@ -14043,6 +14227,14 @@
     "score_history": [
       {
         "ts": "2026-09-27T15:45:04.199238+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -14178,7 +14370,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Assists",
@@ -14189,6 +14381,16 @@
           "market": "Goals",
           "line": 0.5,
           "prop_id": "b8bb48acf70c7743"
+        },
+        {
+          "market": "Shots",
+          "line": 1.5,
+          "prop_id": "7f08e86cbe26155c"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 0.5,
+          "prop_id": "8304459b7607b936"
         }
       ]
     }
@@ -14201,6 +14403,14 @@
     "score_history": [
       {
         "ts": "2026-09-27T15:45:04.199238+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -14336,7 +14546,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Cards",
@@ -14354,6 +14564,14 @@
     "score_history": [
       {
         "ts": "2026-09-27T15:45:04.199238+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -14489,7 +14707,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Cards",
@@ -14507,6 +14725,14 @@
     "score_history": [
       {
         "ts": "2026-09-27T15:45:04.199238+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -14642,7 +14868,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Cards",
@@ -14660,6 +14886,14 @@
     "score_history": [
       {
         "ts": "2026-09-27T15:45:04.199238+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -14795,7 +15029,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Goals",
@@ -14813,6 +15047,14 @@
     "score_history": [
       {
         "ts": "2026-09-27T15:45:04.199238+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -14948,7 +15190,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Cards",
@@ -14966,6 +15208,14 @@
     "score_history": [
       {
         "ts": "2026-09-27T15:45:04.199238+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -15101,7 +15351,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Assists",
@@ -15112,6 +15362,16 @@
           "market": "Goals",
           "line": 0.5,
           "prop_id": "ca17e9de1369c3c8"
+        },
+        {
+          "market": "Shots",
+          "line": 2.5,
+          "prop_id": "6f4a32bec1b05bbe"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 1.5,
+          "prop_id": "be5df4c2e8b8b40a"
         }
       ]
     }
@@ -15124,6 +15384,14 @@
     "score_history": [
       {
         "ts": "2026-09-27T15:45:04.199238+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -15259,7 +15527,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Cards",
@@ -15277,6 +15545,14 @@
     "score_history": [
       {
         "ts": "2026-09-27T15:45:04.199238+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -15412,7 +15688,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Assists",
@@ -15423,6 +15699,16 @@
           "market": "Goals",
           "line": 0.5,
           "prop_id": "f16545ff6b6e1548"
+        },
+        {
+          "market": "Shots",
+          "line": 3.5,
+          "prop_id": "832f00cd3708f081"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 1.5,
+          "prop_id": "fa393fdcf06c8158"
         }
       ]
     }
@@ -15435,6 +15721,14 @@
     "score_history": [
       {
         "ts": "2026-09-27T15:45:04.199238+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -15570,7 +15864,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Cards",
@@ -15588,6 +15882,14 @@
     "score_history": [
       {
         "ts": "2026-09-27T15:45:04.199238+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -15723,7 +16025,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Cards",
@@ -15741,6 +16043,14 @@
     "score_history": [
       {
         "ts": "2026-09-27T15:45:04.199238+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -15876,12 +16186,17 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Assists",
           "line": 0.5,
           "prop_id": "210a0c9e0988631f"
+        },
+        {
+          "market": "Shots",
+          "line": 1.5,
+          "prop_id": "9061f01e80d730f4"
         }
       ]
     }
@@ -15894,6 +16209,14 @@
     "score_history": [
       {
         "ts": "2026-09-27T15:45:04.199238+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -16029,7 +16352,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Cards",
@@ -16047,6 +16370,14 @@
     "score_history": [
       {
         "ts": "2026-09-27T15:45:04.199238+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -16182,7 +16513,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Cards",
@@ -16200,6 +16531,14 @@
     "score_history": [
       {
         "ts": "2026-09-27T15:45:04.199238+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -16335,12 +16674,22 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Goals",
           "line": 0.5,
           "prop_id": "ff5fc20e5c36f288"
+        },
+        {
+          "market": "Shots",
+          "line": 2.5,
+          "prop_id": "1343b0ebf1e28122"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 1.5,
+          "prop_id": "9c54e20c7be43432"
         }
       ]
     }
@@ -16353,6 +16702,14 @@
     "score_history": [
       {
         "ts": "2026-09-27T15:45:04.199238+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -16488,7 +16845,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Assists",
@@ -16506,6 +16863,14 @@
     "score_history": [
       {
         "ts": "2026-09-27T15:45:04.199238+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -16641,7 +17006,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Assists",
@@ -16657,6 +17022,11 @@
           "market": "Goals",
           "line": 0.5,
           "prop_id": "7a525171d4f6fff4"
+        },
+        {
+          "market": "Shots",
+          "line": 1.5,
+          "prop_id": "3f3dac658fc99cb7"
         }
       ]
     }
@@ -16669,6 +17039,14 @@
     "score_history": [
       {
         "ts": "2026-09-27T15:45:04.199238+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -16804,7 +17182,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Assists",
@@ -16815,6 +17193,16 @@
           "market": "Goals",
           "line": 0.5,
           "prop_id": "4f01135bf22bf251"
+        },
+        {
+          "market": "Shots",
+          "line": 2.5,
+          "prop_id": "356c923141cfaef2"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 1.5,
+          "prop_id": "c41284e9330397af"
         }
       ]
     }
@@ -16827,6 +17215,14 @@
     "score_history": [
       {
         "ts": "2026-09-27T15:45:04.199238+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
         "dns_score": 3,
         "confidence_score": 10,
         "urgency_score": 0,
@@ -16962,7 +17358,7 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Cards",
@@ -16980,6 +17376,14 @@
     "score_history": [
       {
         "ts": "2026-09-27T15:45:04.199238+00:00",
+        "dns_score": 0,
+        "confidence_score": 25,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      },
+      {
+        "ts": "2026-09-27T19:19:21.825873+00:00",
         "dns_score": 0,
         "confidence_score": 25,
         "urgency_score": 0,
@@ -17056,7 +17460,7 @@
           "source": "first_recent_start",
           "vote": "start",
           "predicted_start": true,
-          "observed_at": "2026-09-27T15:45:00.285356+00:00",
+          "observed_at": "2026-09-27T19:19:11.847339+00:00",
           "source_updated_at": null
         }
       ],
@@ -17135,12 +17539,22 @@
           "signal_found": null
         }
       },
-      "ts": "2026-09-27T15:45:04.199238+00:00",
+      "ts": "2026-09-27T19:19:21.825873+00:00",
       "props": [
         {
           "market": "Goals",
           "line": 0.5,
           "prop_id": "3980b357dc88a2fd"
+        },
+        {
+          "market": "Shots",
+          "line": 1.5,
+          "prop_id": "68f6dc91617cc21a"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 0.5,
+          "prop_id": "38a11284b6f68810"
         }
       ]
     }
