@@ -1,0 +1,5590 @@
+{
+  "_latest_batch_ts": "2026-09-29T13:22:09.453761+00:00",
+  "pid:682bd1d5-feda-437e-99c5-d088c17854c6": {
+    "name": "Marco Pasalic",
+    "team": "CRO",
+    "dabble_player_id": "682bd1d5-feda-437e-99c5-d088c17854c6",
+    "fixture_id": "01a0e7a8-d8cd-7546-afc5-4098a0abf810",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 48,
+        "confidence_score": 30,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Marco Pasalic",
+      "normalized_name": "marco pasalic",
+      "dabble_player_id": "682bd1d5-feda-437e-99c5-d088c17854c6",
+      "team": "CRO",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Croatia",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e7a8-d8cd-7546-afc5-4098a0abf810",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": "fifty-fifty",
+      "rotowire_status_normalized": "fifty-fifty",
+      "rotowire_page_tag": "GTD",
+      "rotowire_injury": "Not Injury Related",
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": "https://www.rotowire.com/soccer/player/marco-pasalic-35668",
+      "rotowire_est_return": "10/10/2026",
+      "rotowire_status_since": "2026-09-29T13:21:58.462443+00:00",
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 17,
+      "first_recent_start": false,
+      "frequent_substitute": true,
+      "rotation_player": true,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [
+        "rotowire_news"
+      ],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [
+        {
+          "source": "rotowire_news",
+          "vote": "unknown",
+          "predicted_start": null,
+          "observed_at": "2026-09-29T13:22:03.214739+00:00",
+          "source_updated_at": null
+        }
+      ],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 1,
+      "predicted_xi_source_count": 1,
+      "dns_score": 48,
+      "confidence_score": 30,
+      "urgency_score": 0,
+      "combined_priority": 33.6,
+      "evidence_count": 1,
+      "tier": "Ignore",
+      "top_reasons": [
+        "RotoWire: fifty-fifty",
+        "Frequent-substitute usage pattern"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "RotoWire: fifty-fifty",
+          30
+        ],
+        [
+          "Frequent-substitute usage pattern",
+          15
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": "player_page",
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/marco-pasalic-35668",
+      "has_history": false,
+      "has_predicted_xi": true,
+      "has_injury": false,
+      "has_news": true,
+      "has_x_signal": false,
+      "has_any_external_enrichment": true,
+      "has_multiple_external_sources": false,
+      "board_only": false,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": true,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/marco-pasalic-35668",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Assists",
+          "line": 0.5,
+          "prop_id": "285668ac9d6adf3c"
+        },
+        {
+          "market": "Fouls Won",
+          "line": 1.5,
+          "prop_id": "454e237d57d8e319"
+        },
+        {
+          "market": "Goals",
+          "line": 0.5,
+          "prop_id": "148e02d10901cdbc"
+        },
+        {
+          "market": "Shots",
+          "line": 0.5,
+          "prop_id": "257c040a7c4304d3"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 0.5,
+          "prop_id": "685184cebdb13815"
+        }
+      ]
+    }
+  },
+  "pid:de59ac3e-5a14-4ac9-a21b-47d1157ebaa3": {
+    "name": "Mateo Kovacic",
+    "team": "CRO",
+    "dabble_player_id": "de59ac3e-5a14-4ac9-a21b-47d1157ebaa3",
+    "fixture_id": "01a0e7a8-d8cd-7546-afc5-4098a0abf810",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Mateo Kovacic",
+      "normalized_name": "mateo kovacic",
+      "dabble_player_id": "de59ac3e-5a14-4ac9-a21b-47d1157ebaa3",
+      "team": "CRO",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Croatia",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e7a8-d8cd-7546-afc5-4098a0abf810",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 16,
+      "first_recent_start": false,
+      "frequent_substitute": true,
+      "rotation_player": false,
+      "previous_start": false,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 18,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 12.6,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "Frequent-substitute usage pattern"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "Frequent-substitute usage pattern",
+          15
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/mateo-kovacic-17032",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/mateo-kovacic-17032",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Fouls Committed",
+          "line": 2.5,
+          "prop_id": "0c2a8e206c437311"
+        },
+        {
+          "market": "Tackles",
+          "line": 3.5,
+          "prop_id": "29dc085ac37fb8fa"
+        }
+      ]
+    }
+  },
+  "pid:019e5885-4614-70bd-931b-e42617ac1fd6": {
+    "name": "Ben Gannon-Doak",
+    "team": "SCO",
+    "dabble_player_id": "019e5885-4614-70bd-931b-e42617ac1fd6",
+    "fixture_id": "01a0e863-b9f6-75cd-bb8b-83797d4cab9d",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 18,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Ben Gannon-Doak",
+      "normalized_name": "ben gannondoak",
+      "dabble_player_id": "019e5885-4614-70bd-931b-e42617ac1fd6",
+      "team": "SCO",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Switzerland",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e863-b9f6-75cd-bb8b-83797d4cab9d",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 17,
+      "first_recent_start": false,
+      "frequent_substitute": true,
+      "rotation_player": false,
+      "previous_start": false,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 18,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 12.6,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "Frequent-substitute usage pattern"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "Frequent-substitute usage pattern",
+          15
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": false,
+      "rotowire_player_page_url": null,
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false,
+          "player_page_matched": false,
+          "player_page_url": null,
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Assists",
+          "line": 0.5,
+          "prop_id": "bbf605bac613df98"
+        },
+        {
+          "market": "Goals",
+          "line": 0.5,
+          "prop_id": "0e144bedca20ab2e"
+        },
+        {
+          "market": "Shots",
+          "line": 1.5,
+          "prop_id": "0597ca31bf5205b9"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 0.5,
+          "prop_id": "649fc4b6d1e8145c"
+        }
+      ]
+    }
+  },
+  "pid:f6b8e05f-5bec-4c3b-87e5-356069650c77": {
+    "name": "Josko Gvardiol",
+    "team": "CRO",
+    "dabble_player_id": "f6b8e05f-5bec-4c3b-87e5-356069650c77",
+    "fixture_id": "01a0e7a8-d8cd-7546-afc5-4098a0abf810",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Josko Gvardiol",
+      "normalized_name": "josko gvardiol",
+      "dabble_player_id": "f6b8e05f-5bec-4c3b-87e5-356069650c77",
+      "team": "CRO",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Croatia",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e7a8-d8cd-7546-afc5-4098a0abf810",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 16,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": true,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 11,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 7.7,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "Rotation-risk usage pattern (inconsistent starts)"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "Rotation-risk usage pattern (inconsistent starts)",
+          8
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/josko-gvardiol-29769",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/josko-gvardiol-29769",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Tackles",
+          "line": 2.5,
+          "prop_id": "8d6328b76f9af4e7"
+        }
+      ]
+    }
+  },
+  "pid:729b030a-bfbf-46a7-9678-5424d875b477": {
+    "name": "Luka Sucic",
+    "team": "CRO",
+    "dabble_player_id": "729b030a-bfbf-46a7-9678-5424d875b477",
+    "fixture_id": "01a0e7a8-d8cd-7546-afc5-4098a0abf810",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Luka Sucic",
+      "normalized_name": "luka sucic",
+      "dabble_player_id": "729b030a-bfbf-46a7-9678-5424d875b477",
+      "team": "CRO",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Croatia",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e7a8-d8cd-7546-afc5-4098a0abf810",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 16,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": true,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 11,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 7.7,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "Rotation-risk usage pattern (inconsistent starts)"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "Rotation-risk usage pattern (inconsistent starts)",
+          8
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/luka-sucic-33611",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/luka-sucic-33611",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Assists",
+          "line": 0.5,
+          "prop_id": "e88ba5970e7df63e"
+        }
+      ]
+    }
+  },
+  "pid:c9701d69-c30c-4ca8-8820-1cedd2db742b": {
+    "name": "Petar Sucic",
+    "team": "CRO",
+    "dabble_player_id": "c9701d69-c30c-4ca8-8820-1cedd2db742b",
+    "fixture_id": "01a0e7a8-d8cd-7546-afc5-4098a0abf810",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Petar Sucic",
+      "normalized_name": "petar sucic",
+      "dabble_player_id": "c9701d69-c30c-4ca8-8820-1cedd2db742b",
+      "team": "CRO",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Croatia",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e7a8-d8cd-7546-afc5-4098a0abf810",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 24,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": true,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 11,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 7.7,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "Rotation-risk usage pattern (inconsistent starts)"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "Rotation-risk usage pattern (inconsistent starts)",
+          8
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/petar-sucic-44170",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/petar-sucic-44170",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Assists",
+          "line": 0.5,
+          "prop_id": "f11fa64fa3bca82f"
+        },
+        {
+          "market": "Fouls Won",
+          "line": 1.5,
+          "prop_id": "e055d27697baa86c"
+        }
+      ]
+    }
+  },
+  "pid:f830f19f-a80e-4ae3-8c8a-2af180bf6d95": {
+    "name": "Adam Hlozek",
+    "team": "CZE",
+    "dabble_player_id": "f830f19f-a80e-4ae3-8c8a-2af180bf6d95",
+    "fixture_id": "01a0e7ea-cc96-707f-9037-13f19e5ac5ea",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Adam Hlozek",
+      "normalized_name": "adam hlozek",
+      "dabble_player_id": "f830f19f-a80e-4ae3-8c8a-2af180bf6d95",
+      "team": "CZE",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ England",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e7ea-cc96-707f-9037-13f19e5ac5ea",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 17,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": true,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 11,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 7.7,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "Rotation-risk usage pattern (inconsistent starts)"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "Rotation-risk usage pattern (inconsistent starts)",
+          8
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/adam-hlozek-33675",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/adam-hlozek-33675",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Assists",
+          "line": 0.5,
+          "prop_id": "ad362a03f78cd6d4"
+        },
+        {
+          "market": "Fouls Won",
+          "line": 1.5,
+          "prop_id": "8f4b4cd85acbef83"
+        },
+        {
+          "market": "Goals",
+          "line": 0.5,
+          "prop_id": "93335248b92e4c6c"
+        },
+        {
+          "market": "Shots",
+          "line": 1.5,
+          "prop_id": "0cb788a136a66516"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 0.5,
+          "prop_id": "66126598aaa80afc"
+        }
+      ]
+    }
+  },
+  "pid:02855dc8-cff5-43ed-8c30-d9df9e9541dd": {
+    "name": "Harry Kane",
+    "team": "ENG",
+    "dabble_player_id": "02855dc8-cff5-43ed-8c30-d9df9e9541dd",
+    "fixture_id": "01a0e7ea-cc96-707f-9037-13f19e5ac5ea",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Harry Kane",
+      "normalized_name": "harry kane",
+      "dabble_player_id": "02855dc8-cff5-43ed-8c30-d9df9e9541dd",
+      "team": "ENG",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ England",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e7ea-cc96-707f-9037-13f19e5ac5ea",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 16,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": true,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 11,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 7.7,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "Rotation-risk usage pattern (inconsistent starts)"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "Rotation-risk usage pattern (inconsistent starts)",
+          8
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/harry-kane-17352",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/harry-kane-17352",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Assists",
+          "line": 0.5,
+          "prop_id": "f622bf7cacdc8d56"
+        },
+        {
+          "market": "Goals",
+          "line": 1.5,
+          "prop_id": "d79e8e13bad11959"
+        },
+        {
+          "market": "Shots",
+          "line": 4.5,
+          "prop_id": "ed229dd0f5a8aa85"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 2.5,
+          "prop_id": "a93c40b709fc9c53"
+        }
+      ]
+    }
+  },
+  "pid:01a0e7ac-9f3b-72fc-bac3-158010013efb": {
+    "name": "Alex Baena",
+    "team": "ESP",
+    "dabble_player_id": "01a0e7ac-9f3b-72fc-bac3-158010013efb",
+    "fixture_id": "01a0e7a8-d8cd-7546-afc5-4098a0abf810",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Alex Baena",
+      "normalized_name": "alex baena",
+      "dabble_player_id": "01a0e7ac-9f3b-72fc-bac3-158010013efb",
+      "team": "ESP",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Croatia",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e7a8-d8cd-7546-afc5-4098a0abf810",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 16,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": true,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 11,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 7.7,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "Rotation-risk usage pattern (inconsistent starts)"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "Rotation-risk usage pattern (inconsistent starts)",
+          8
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/alex-baena-32429",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/alex-baena-32429",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Fouls Committed",
+          "line": 1.5,
+          "prop_id": "65a1d2482e21465e"
+        }
+      ]
+    }
+  },
+  "pid:3d963652-d867-4664-a2fd-8dc72f9e5541": {
+    "name": "Dani Olmo",
+    "team": "ESP",
+    "dabble_player_id": "3d963652-d867-4664-a2fd-8dc72f9e5541",
+    "fixture_id": "01a0e7a8-d8cd-7546-afc5-4098a0abf810",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Dani Olmo",
+      "normalized_name": "dani olmo",
+      "dabble_player_id": "3d963652-d867-4664-a2fd-8dc72f9e5541",
+      "team": "ESP",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Croatia",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e7a8-d8cd-7546-afc5-4098a0abf810",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 16,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": true,
+      "previous_start": false,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 11,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 7.7,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "Rotation-risk usage pattern (inconsistent starts)"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "Rotation-risk usage pattern (inconsistent starts)",
+          8
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/dani-olmo-22880",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/dani-olmo-22880",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Goals",
+          "line": 0.5,
+          "prop_id": "c4bd09b8b57122f4"
+        },
+        {
+          "market": "Shots",
+          "line": 2.5,
+          "prop_id": "eaf26709e65ce1dd"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 1.5,
+          "prop_id": "5fc2b3e606564f03"
+        }
+      ]
+    }
+  },
+  "pid:0fdc79f6-1d8b-4806-aa4c-c675c5371ae1": {
+    "name": "Marc Cucurella",
+    "team": "ESP",
+    "dabble_player_id": "0fdc79f6-1d8b-4806-aa4c-c675c5371ae1",
+    "fixture_id": "01a0e7a8-d8cd-7546-afc5-4098a0abf810",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Marc Cucurella",
+      "normalized_name": "marc cucurella",
+      "dabble_player_id": "0fdc79f6-1d8b-4806-aa4c-c675c5371ae1",
+      "team": "ESP",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Croatia",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e7a8-d8cd-7546-afc5-4098a0abf810",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 17,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": true,
+      "previous_start": false,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 11,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 7.7,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "Rotation-risk usage pattern (inconsistent starts)"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "Rotation-risk usage pattern (inconsistent starts)",
+          8
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/marc-cucurella-26875",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/marc-cucurella-26875",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Fouls Committed",
+          "line": 1.5,
+          "prop_id": "1e84106986b7e669"
+        }
+      ]
+    }
+  },
+  "pid:a43d34e3-5bce-4060-8bd1-734df487a746": {
+    "name": "Mikel Oyarzabal",
+    "team": "ESP",
+    "dabble_player_id": "a43d34e3-5bce-4060-8bd1-734df487a746",
+    "fixture_id": "01a0e7a8-d8cd-7546-afc5-4098a0abf810",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Mikel Oyarzabal",
+      "normalized_name": "mikel oyarzabal",
+      "dabble_player_id": "a43d34e3-5bce-4060-8bd1-734df487a746",
+      "team": "ESP",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Croatia",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e7a8-d8cd-7546-afc5-4098a0abf810",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 16,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": true,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 11,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 7.7,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "Rotation-risk usage pattern (inconsistent starts)"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "Rotation-risk usage pattern (inconsistent starts)",
+          8
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/mikel-oyarzabal-20773",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/mikel-oyarzabal-20773",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Assists",
+          "line": 0.5,
+          "prop_id": "d835c8ba8fa3a8db"
+        },
+        {
+          "market": "Fouls Won",
+          "line": 1.5,
+          "prop_id": "dd1cacc3c9e431a3"
+        },
+        {
+          "market": "Goals",
+          "line": 0.5,
+          "prop_id": "3875a762c227c8fc"
+        },
+        {
+          "market": "Shots",
+          "line": 3.5,
+          "prop_id": "a6d0e2847e06dca8"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 1.5,
+          "prop_id": "f3499c6ca3d4efbc"
+        }
+      ]
+    }
+  },
+  "pid:52d00978-5c2c-4e49-b036-a28e286f8680": {
+    "name": "Dan Ndoye",
+    "team": "SUI",
+    "dabble_player_id": "52d00978-5c2c-4e49-b036-a28e286f8680",
+    "fixture_id": "01a0e863-b9f6-75cd-bb8b-83797d4cab9d",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 11,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Dan Ndoye",
+      "normalized_name": "dan ndoye",
+      "dabble_player_id": "52d00978-5c2c-4e49-b036-a28e286f8680",
+      "team": "SUI",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Switzerland",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e863-b9f6-75cd-bb8b-83797d4cab9d",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 17,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": true,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 11,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 7.7,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "Rotation-risk usage pattern (inconsistent starts)"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "Rotation-risk usage pattern (inconsistent starts)",
+          8
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/dan-ndoye-32713",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/dan-ndoye-32713",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Assists",
+          "line": 0.5,
+          "prop_id": "dbaac0f80e48ac9f"
+        },
+        {
+          "market": "Goals",
+          "line": 0.5,
+          "prop_id": "efe826b8f1534e04"
+        },
+        {
+          "market": "Shots",
+          "line": 2.5,
+          "prop_id": "1eaf81fd2a046592"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 1.5,
+          "prop_id": "b5be123a6d7a5881"
+        }
+      ]
+    }
+  },
+  "pid:f75fefae-1535-48f8-bd26-f68dbc96ce04": {
+    "name": "Ante Budimir",
+    "team": "CRO",
+    "dabble_player_id": "f75fefae-1535-48f8-bd26-f68dbc96ce04",
+    "fixture_id": "01a0e7a8-d8cd-7546-afc5-4098a0abf810",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Ante Budimir",
+      "normalized_name": "ante budimir",
+      "dabble_player_id": "f75fefae-1535-48f8-bd26-f68dbc96ce04",
+      "team": "CRO",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Croatia",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e7a8-d8cd-7546-afc5-4098a0abf810",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 17,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/ante-budimir-22101",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/ante-budimir-22101",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Fouls Committed",
+          "line": 2.5,
+          "prop_id": "394b146499ae62dd"
+        },
+        {
+          "market": "Fouls Won",
+          "line": 1.5,
+          "prop_id": "e03d628a4e368ed2"
+        },
+        {
+          "market": "Goals",
+          "line": 0.5,
+          "prop_id": "6803ae4bd2c36729"
+        },
+        {
+          "market": "Shots",
+          "line": 1.5,
+          "prop_id": "a91c64dd2de33371"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 0.5,
+          "prop_id": "2c780270a1eaaa48"
+        }
+      ]
+    }
+  },
+  "pid:998d59ca-c032-4778-89cb-112237b8f336": {
+    "name": "Ivan Perisic",
+    "team": "CRO",
+    "dabble_player_id": "998d59ca-c032-4778-89cb-112237b8f336",
+    "fixture_id": "01a0e7a8-d8cd-7546-afc5-4098a0abf810",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Ivan Perisic",
+      "normalized_name": "ivan perisic",
+      "dabble_player_id": "998d59ca-c032-4778-89cb-112237b8f336",
+      "team": "CRO",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Croatia",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e7a8-d8cd-7546-afc5-4098a0abf810",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": null,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": null,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/ivan-perisic-17686",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/ivan-perisic-17686",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Fouls Committed",
+          "line": 2.5,
+          "prop_id": "9645bcdd83dfa82a"
+        },
+        {
+          "market": "Goals",
+          "line": 0.5,
+          "prop_id": "145498fb246234df"
+        },
+        {
+          "market": "Shots",
+          "line": 0.5,
+          "prop_id": "209f64de52738915"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 0.5,
+          "prop_id": "8e1f00d610b70c6e"
+        },
+        {
+          "market": "Tackles",
+          "line": 2.5,
+          "prop_id": "69ca01d758fc2e9a"
+        }
+      ]
+    }
+  },
+  "pid:f2a28206-9bfd-4ddb-9c7a-cbbf0648424a": {
+    "name": "Jirí Sláma",
+    "team": "CZE",
+    "dabble_player_id": "f2a28206-9bfd-4ddb-9c7a-cbbf0648424a",
+    "fixture_id": "01a0e7ea-cc96-707f-9037-13f19e5ac5ea",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Jirí Sláma",
+      "normalized_name": "jiri slama",
+      "dabble_player_id": "f2a28206-9bfd-4ddb-9c7a-cbbf0648424a",
+      "team": "CZE",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ England",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e7ea-cc96-707f-9037-13f19e5ac5ea",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": null,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": null,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": false,
+      "rotowire_player_page_url": null,
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false,
+          "player_page_matched": false,
+          "player_page_url": null,
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Tackles",
+          "line": 1.5,
+          "prop_id": "47df4eee9ce48511"
+        }
+      ]
+    }
+  },
+  "pid:019eac0f-d709-75f4-852c-74b3bec4a8fe": {
+    "name": "Lukas Cerv",
+    "team": "CZE",
+    "dabble_player_id": "019eac0f-d709-75f4-852c-74b3bec4a8fe",
+    "fixture_id": "01a0e7ea-cc96-707f-9037-13f19e5ac5ea",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Lukas Cerv",
+      "normalized_name": "lukas cerv",
+      "dabble_player_id": "019eac0f-d709-75f4-852c-74b3bec4a8fe",
+      "team": "CZE",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ England",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e7ea-cc96-707f-9037-13f19e5ac5ea",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": null,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": null,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/lukas-cerv-43398",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/lukas-cerv-43398",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Fouls Committed",
+          "line": 1.5,
+          "prop_id": "a402f1ace2cda87f"
+        },
+        {
+          "market": "Tackles",
+          "line": 1.5,
+          "prop_id": "45b63c97d6b2a93f"
+        }
+      ]
+    }
+  },
+  "pid:01a0e7ec-f1b4-77b7-9581-7635a8e69156": {
+    "name": "Martin Subert",
+    "team": "CZE",
+    "dabble_player_id": "01a0e7ec-f1b4-77b7-9581-7635a8e69156",
+    "fixture_id": "01a0e7ea-cc96-707f-9037-13f19e5ac5ea",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Martin Subert",
+      "normalized_name": "martin subert",
+      "dabble_player_id": "01a0e7ec-f1b4-77b7-9581-7635a8e69156",
+      "team": "CZE",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ England",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e7ea-cc96-707f-9037-13f19e5ac5ea",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": null,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": null,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": false,
+      "rotowire_player_page_url": null,
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false,
+          "player_page_matched": false,
+          "player_page_url": null,
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Assists",
+          "line": 0.5,
+          "prop_id": "3f6481bba06aa426"
+        },
+        {
+          "market": "Fouls Won",
+          "line": 1.5,
+          "prop_id": "e1c15ea9b0131ea3"
+        },
+        {
+          "market": "Goals",
+          "line": 0.5,
+          "prop_id": "d603685692c684f4"
+        },
+        {
+          "market": "Shots",
+          "line": 1.5,
+          "prop_id": "a76d1a2293a3186b"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 0.5,
+          "prop_id": "64a5b1be4c10f683"
+        }
+      ]
+    }
+  },
+  "pid:01a0e7ec-f270-7424-bef7-e1db9613a550": {
+    "name": "Michal Sadilek",
+    "team": "CZE",
+    "dabble_player_id": "01a0e7ec-f270-7424-bef7-e1db9613a550",
+    "fixture_id": "01a0e7ea-cc96-707f-9037-13f19e5ac5ea",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Michal Sadilek",
+      "normalized_name": "michal sadilek",
+      "dabble_player_id": "01a0e7ec-f270-7424-bef7-e1db9613a550",
+      "team": "CZE",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ England",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e7ea-cc96-707f-9037-13f19e5ac5ea",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": null,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": null,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/michal-sadilek-26710",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/michal-sadilek-26710",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Fouls Committed",
+          "line": 1.5,
+          "prop_id": "24b20e5f3b50c5ef"
+        },
+        {
+          "market": "Tackles",
+          "line": 1.5,
+          "prop_id": "ef96807dbbd40086"
+        }
+      ]
+    }
+  },
+  "pid:d4c79a97-c7e5-4e19-8a09-c89472c58712": {
+    "name": "Pavel Sulc",
+    "team": "CZE",
+    "dabble_player_id": "d4c79a97-c7e5-4e19-8a09-c89472c58712",
+    "fixture_id": "01a0e7ea-cc96-707f-9037-13f19e5ac5ea",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Pavel Sulc",
+      "normalized_name": "pavel sulc",
+      "dabble_player_id": "d4c79a97-c7e5-4e19-8a09-c89472c58712",
+      "team": "CZE",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ England",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e7ea-cc96-707f-9037-13f19e5ac5ea",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": null,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": null,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/pavel-sulc-43421",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/pavel-sulc-43421",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Assists",
+          "line": 0.5,
+          "prop_id": "6dc88a26153e9e9e"
+        },
+        {
+          "market": "Fouls Committed",
+          "line": 2.5,
+          "prop_id": "23b99055591e72f7"
+        },
+        {
+          "market": "Fouls Won",
+          "line": 1.5,
+          "prop_id": "cde51999c519ae0a"
+        },
+        {
+          "market": "Goals",
+          "line": 0.5,
+          "prop_id": "119f945ecd17506f"
+        },
+        {
+          "market": "Shots",
+          "line": 1.5,
+          "prop_id": "9c8159b995deb008"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 0.5,
+          "prop_id": "57439e9ecc501591"
+        }
+      ]
+    }
+  },
+  "pid:8bf150fa-e8cc-4334-8eb3-fd54667fd158": {
+    "name": "Alex Scott",
+    "team": "ENG",
+    "dabble_player_id": "8bf150fa-e8cc-4334-8eb3-fd54667fd158",
+    "fixture_id": "01a0e7ea-cc96-707f-9037-13f19e5ac5ea",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Alex Scott",
+      "normalized_name": "alex scott",
+      "dabble_player_id": "8bf150fa-e8cc-4334-8eb3-fd54667fd158",
+      "team": "ENG",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ England",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e7ea-cc96-707f-9037-13f19e5ac5ea",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 17,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/alex-scott-35937",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/alex-scott-35937",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Fouls Committed",
+          "line": 1.5,
+          "prop_id": "e558d30f5bbdbc09"
+        },
+        {
+          "market": "Tackles",
+          "line": 1.5,
+          "prop_id": "dcbad5296fb5ac25"
+        }
+      ]
+    }
+  },
+  "pid:e9181254-07e0-4769-8f1b-8d197a56b842": {
+    "name": "Bukayo Saka",
+    "team": "ENG",
+    "dabble_player_id": "e9181254-07e0-4769-8f1b-8d197a56b842",
+    "fixture_id": "01a0e7ea-cc96-707f-9037-13f19e5ac5ea",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Bukayo Saka",
+      "normalized_name": "bukayo saka",
+      "dabble_player_id": "e9181254-07e0-4769-8f1b-8d197a56b842",
+      "team": "ENG",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ England",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e7ea-cc96-707f-9037-13f19e5ac5ea",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 17,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/bukayo-saka-29889",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/bukayo-saka-29889",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Assists",
+          "line": 0.5,
+          "prop_id": "747b314d79966dff"
+        },
+        {
+          "market": "Fouls Won",
+          "line": 2.5,
+          "prop_id": "5f0a8e1699f1053d"
+        },
+        {
+          "market": "Goals",
+          "line": 0.5,
+          "prop_id": "d5789858af02e3fe"
+        },
+        {
+          "market": "Shots",
+          "line": 2.5,
+          "prop_id": "10ee204c29174623"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 0.5,
+          "prop_id": "34cea16868765823"
+        }
+      ]
+    }
+  },
+  "pid:39a24284-d558-4312-a901-8619b27745f6": {
+    "name": "James Garner",
+    "team": "ENG",
+    "dabble_player_id": "39a24284-d558-4312-a901-8619b27745f6",
+    "fixture_id": "01a0e7ea-cc96-707f-9037-13f19e5ac5ea",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "James Garner",
+      "normalized_name": "james garner",
+      "dabble_player_id": "39a24284-d558-4312-a901-8619b27745f6",
+      "team": "ENG",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ England",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e7ea-cc96-707f-9037-13f19e5ac5ea",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 17,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/james-garner-27639",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/james-garner-27639",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Fouls Committed",
+          "line": 1.5,
+          "prop_id": "66a5fe5fd224a6c0"
+        },
+        {
+          "market": "Tackles",
+          "line": 2.5,
+          "prop_id": "b5d3932254d17215"
+        }
+      ]
+    }
+  },
+  "pid:5050171a-5a1e-4e60-acd4-8e951bcdd1ec": {
+    "name": "Jude Bellingham",
+    "team": "ENG",
+    "dabble_player_id": "5050171a-5a1e-4e60-acd4-8e951bcdd1ec",
+    "fixture_id": "01a0e7ea-cc96-707f-9037-13f19e5ac5ea",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Jude Bellingham",
+      "normalized_name": "jude bellingham",
+      "dabble_player_id": "5050171a-5a1e-4e60-acd4-8e951bcdd1ec",
+      "team": "ENG",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ England",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e7ea-cc96-707f-9037-13f19e5ac5ea",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 17,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/jude-bellingham-31357",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/jude-bellingham-31357",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Assists",
+          "line": 0.5,
+          "prop_id": "904c6cd6f72c5332"
+        },
+        {
+          "market": "Fouls Committed",
+          "line": 1.5,
+          "prop_id": "7adcf013fa501bea"
+        },
+        {
+          "market": "Fouls Won",
+          "line": 2.5,
+          "prop_id": "7e3b110d129a0f8e"
+        },
+        {
+          "market": "Goals",
+          "line": 0.5,
+          "prop_id": "2fe17a6725161863"
+        },
+        {
+          "market": "Shots",
+          "line": 2.5,
+          "prop_id": "e5a640b053c51b85"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 1.5,
+          "prop_id": "82c27d8c669b0d44"
+        },
+        {
+          "market": "Tackles",
+          "line": 1.5,
+          "prop_id": "52cc9124003f585c"
+        }
+      ]
+    }
+  },
+  "pid:443ff366-cd53-441a-88e5-1d626a88e54b": {
+    "name": "Morgan Rogers",
+    "team": "ENG",
+    "dabble_player_id": "443ff366-cd53-441a-88e5-1d626a88e54b",
+    "fixture_id": "01a0e7ea-cc96-707f-9037-13f19e5ac5ea",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Morgan Rogers",
+      "normalized_name": "morgan rogers",
+      "dabble_player_id": "443ff366-cd53-441a-88e5-1d626a88e54b",
+      "team": "ENG",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ England",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e7ea-cc96-707f-9037-13f19e5ac5ea",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 17,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/morgan-rogers-35779",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/morgan-rogers-35779",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Fouls Won",
+          "line": 1.5,
+          "prop_id": "c124b27985d5f31d"
+        }
+      ]
+    }
+  },
+  "pid:717e89c9-850b-4b6b-ba60-7180383d1eb1": {
+    "name": "Fabian Ruiz",
+    "team": "ESP",
+    "dabble_player_id": "717e89c9-850b-4b6b-ba60-7180383d1eb1",
+    "fixture_id": "01a0e7a8-d8cd-7546-afc5-4098a0abf810",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Fabian Ruiz",
+      "normalized_name": "fabian ruiz",
+      "dabble_player_id": "717e89c9-850b-4b6b-ba60-7180383d1eb1",
+      "team": "ESP",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Croatia",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e7a8-d8cd-7546-afc5-4098a0abf810",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": null,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": null,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/fabian-ruiz-10837",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/fabian-ruiz-10837",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Assists",
+          "line": 0.5,
+          "prop_id": "e3db84f92355c84a"
+        },
+        {
+          "market": "Tackles",
+          "line": 1.5,
+          "prop_id": "5966b4df16b76039"
+        }
+      ]
+    }
+  },
+  "pid:a39e7c9e-78f4-4a1c-83b3-4590c48b0d67": {
+    "name": "Lamine Yamal",
+    "team": "ESP",
+    "dabble_player_id": "a39e7c9e-78f4-4a1c-83b3-4590c48b0d67",
+    "fixture_id": "01a0e7a8-d8cd-7546-afc5-4098a0abf810",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Lamine Yamal",
+      "normalized_name": "lamine yamal",
+      "dabble_player_id": "a39e7c9e-78f4-4a1c-83b3-4590c48b0d67",
+      "team": "ESP",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Croatia",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e7a8-d8cd-7546-afc5-4098a0abf810",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 16,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/lamine-yamal-39017",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/lamine-yamal-39017",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Assists",
+          "line": 0.5,
+          "prop_id": "82577c677c826f8a"
+        },
+        {
+          "market": "Fouls Won",
+          "line": 2.5,
+          "prop_id": "4f4a9980e8d02a5d"
+        },
+        {
+          "market": "Goals",
+          "line": 0.5,
+          "prop_id": "3cf0ec420a9f3d63"
+        },
+        {
+          "market": "Shots",
+          "line": 4.5,
+          "prop_id": "f681e0f09fc26260"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 2.5,
+          "prop_id": "16831ab5a303207f"
+        }
+      ]
+    }
+  },
+  "pid:a94d0282-fefc-4ca1-8d2a-bee44731b28c": {
+    "name": "Marc Pubill",
+    "team": "ESP",
+    "dabble_player_id": "a94d0282-fefc-4ca1-8d2a-bee44731b28c",
+    "fixture_id": "01a0e7a8-d8cd-7546-afc5-4098a0abf810",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Marc Pubill",
+      "normalized_name": "marc pubill",
+      "dabble_player_id": "a94d0282-fefc-4ca1-8d2a-bee44731b28c",
+      "team": "ESP",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Croatia",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e7a8-d8cd-7546-afc5-4098a0abf810",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 16,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/marc-pubill-36118",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/marc-pubill-36118",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Tackles",
+          "line": 2.5,
+          "prop_id": "b78fc1ca70cac83b"
+        }
+      ]
+    }
+  },
+  "pid:86874b04-2ed8-428e-ad6e-181b29da2466": {
+    "name": "Rodri",
+    "team": "ESP",
+    "dabble_player_id": "86874b04-2ed8-428e-ad6e-181b29da2466",
+    "fixture_id": "01a0e7a8-d8cd-7546-afc5-4098a0abf810",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Rodri",
+      "normalized_name": "rodri",
+      "dabble_player_id": "86874b04-2ed8-428e-ad6e-181b29da2466",
+      "team": "ESP",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Croatia",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e7a8-d8cd-7546-afc5-4098a0abf810",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 16,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/rodri-17207",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/rodri-17207",
+          "player_page_ambiguous": true
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Fouls Committed",
+          "line": 1.5,
+          "prop_id": "456aa7d764fa5692"
+        },
+        {
+          "market": "Fouls Won",
+          "line": 2.5,
+          "prop_id": "8a85266732f1edf6"
+        },
+        {
+          "market": "Tackles",
+          "line": 2.5,
+          "prop_id": "570d468636ec99d0"
+        }
+      ]
+    }
+  },
+  "pid:9e4853b7-3926-4b2d-8be7-4f31d05c01bd": {
+    "name": "John McGinn",
+    "team": "SCO",
+    "dabble_player_id": "9e4853b7-3926-4b2d-8be7-4f31d05c01bd",
+    "fixture_id": "01a0e863-b9f6-75cd-bb8b-83797d4cab9d",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "John McGinn",
+      "normalized_name": "john mcginn",
+      "dabble_player_id": "9e4853b7-3926-4b2d-8be7-4f31d05c01bd",
+      "team": "SCO",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Switzerland",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e863-b9f6-75cd-bb8b-83797d4cab9d",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 17,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/john-mcginn-28588",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/john-mcginn-28588",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Assists",
+          "line": 0.5,
+          "prop_id": "c6f469c7fb6b48a4"
+        },
+        {
+          "market": "Goals",
+          "line": 0.5,
+          "prop_id": "0c6db7e97237ab84"
+        },
+        {
+          "market": "Shots",
+          "line": 1.5,
+          "prop_id": "6b4ad142995b7456"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 0.5,
+          "prop_id": "80ef70c83bc6ac9a"
+        }
+      ]
+    }
+  },
+  "pid:019f9a5d-61d3-706d-a892-a787a817cc53": {
+    "name": "Oli McBurnie",
+    "team": "SCO",
+    "dabble_player_id": "019f9a5d-61d3-706d-a892-a787a817cc53",
+    "fixture_id": "01a0e863-b9f6-75cd-bb8b-83797d4cab9d",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Oli McBurnie",
+      "normalized_name": "oli mcburnie",
+      "dabble_player_id": "019f9a5d-61d3-706d-a892-a787a817cc53",
+      "team": "SCO",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Switzerland",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e863-b9f6-75cd-bb8b-83797d4cab9d",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": null,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": null,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": false,
+      "rotowire_player_page_url": null,
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false,
+          "player_page_matched": false,
+          "player_page_url": null,
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Assists",
+          "line": 0.5,
+          "prop_id": "4a8a31ed13729c49"
+        },
+        {
+          "market": "Goals",
+          "line": 0.5,
+          "prop_id": "3f01c3a43be0018c"
+        },
+        {
+          "market": "Shots",
+          "line": 2.5,
+          "prop_id": "2b95c94bbfbfa5e2"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 0.5,
+          "prop_id": "44eac5be82af7c77"
+        }
+      ]
+    }
+  },
+  "pid:86ba63c1-f763-4e09-8731-641f0faa98a9": {
+    "name": "Fabian Rieder",
+    "team": "SUI",
+    "dabble_player_id": "86ba63c1-f763-4e09-8731-641f0faa98a9",
+    "fixture_id": "01a0e863-b9f6-75cd-bb8b-83797d4cab9d",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Fabian Rieder",
+      "normalized_name": "fabian rieder",
+      "dabble_player_id": "86ba63c1-f763-4e09-8731-641f0faa98a9",
+      "team": "SUI",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Switzerland",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e863-b9f6-75cd-bb8b-83797d4cab9d",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 17,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": true,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/fabian-rieder-35671",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/fabian-rieder-35671",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Assists",
+          "line": 0.5,
+          "prop_id": "27a460de2ec5bcdd"
+        }
+      ]
+    }
+  },
+  "pid:b80af368-9933-4308-b1e4-1bea9d6a1a1c": {
+    "name": "Johan Manzambi",
+    "team": "SUI",
+    "dabble_player_id": "b80af368-9933-4308-b1e4-1bea9d6a1a1c",
+    "fixture_id": "01a0e863-b9f6-75cd-bb8b-83797d4cab9d",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Johan Manzambi",
+      "normalized_name": "johan manzambi",
+      "dabble_player_id": "b80af368-9933-4308-b1e4-1bea9d6a1a1c",
+      "team": "SUI",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Switzerland",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e863-b9f6-75cd-bb8b-83797d4cab9d",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 17,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": false,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/johan-manzambi-44680",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/johan-manzambi-44680",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Assists",
+          "line": 0.5,
+          "prop_id": "f7458100e11057f0"
+        },
+        {
+          "market": "Goals",
+          "line": 0.5,
+          "prop_id": "744b7f6446160f2a"
+        },
+        {
+          "market": "Shots",
+          "line": 2.5,
+          "prop_id": "51ef21e7ed12b4f8"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 0.5,
+          "prop_id": "c4ea534be04f7dc9"
+        }
+      ]
+    }
+  },
+  "pid:6a26ad70-0b83-47ac-a047-17d3c933e282": {
+    "name": "Zeki Amdouni",
+    "team": "SUI",
+    "dabble_player_id": "6a26ad70-0b83-47ac-a047-17d3c933e282",
+    "fixture_id": "01a0e863-b9f6-75cd-bb8b-83797d4cab9d",
+    "score_history": [
+      {
+        "ts": "2026-09-29T13:22:09.453761+00:00",
+        "dns_score": 3,
+        "confidence_score": 10,
+        "urgency_score": 0,
+        "official_status": "not_yet_posted",
+        "dabble_status_raw": null
+      }
+    ],
+    "first_crossed": {
+      "60": null,
+      "70": null,
+      "80": null,
+      "90": null
+    },
+    "latest": {
+      "player_name": "Zeki Amdouni",
+      "normalized_name": "zeki amdouni",
+      "dabble_player_id": "6a26ad70-0b83-47ac-a047-17d3c933e282",
+      "team": "SUI",
+      "league_raw": "UEFA - Nations League",
+      "league_code": null,
+      "matchup": "@ Switzerland",
+      "event_date": "2026-09-29T18:45:00.000Z",
+      "fixture_id": "01a0e863-b9f6-75cd-bb8b-83797d4cab9d",
+      "position": null,
+      "dabble_status_raw": null,
+      "dabble_status_normalized": null,
+      "official_status": "not_yet_posted",
+      "transfermarkt_injury": null,
+      "rotowire_status_raw": null,
+      "rotowire_status_normalized": null,
+      "rotowire_page_tag": null,
+      "rotowire_injury": null,
+      "rotowire_news_at": null,
+      "rotowire_predicted_start": null,
+      "rotowire_page_url": null,
+      "rotowire_est_return": null,
+      "rotowire_status_since": null,
+      "hard_out_corroborated": false,
+      "hard_out_corroboration_sources": [],
+      "hard_out_conflict": null,
+      "hard_out_research_block": null,
+      "is_lock": false,
+      "lock_reason": null,
+      "x_signal": null,
+      "starts_last_5": [
+        0,
+        0,
+        0
+      ],
+      "starts_last_10": [
+        0,
+        0,
+        0
+      ],
+      "days_rest": 128,
+      "first_recent_start": false,
+      "frequent_substitute": false,
+      "rotation_player": false,
+      "previous_start": false,
+      "starts_last_3": [
+        0,
+        0,
+        0
+      ],
+      "predicted_start_sources": [],
+      "predicted_bench_sources": [],
+      "predicted_unknown_sources": [],
+      "prediction_consensus": "unknown",
+      "prediction_disagreement": false,
+      "predicted_xi_sources": [],
+      "starter_votes": 0,
+      "bench_votes": 0,
+      "unknown_votes": 0,
+      "predicted_xi_source_count": 0,
+      "dns_score": 3,
+      "confidence_score": 10,
+      "urgency_score": 0,
+      "combined_priority": 2.1,
+      "evidence_count": 0,
+      "tier": "Ignore",
+      "top_reasons": [
+        "No enrichment signals available"
+      ],
+      "urgency_reasons": [
+        "Cross-book prop-removal timing not tracked for soccer yet"
+      ],
+      "contributions": [
+        [
+          "No enrichment signals available",
+          0
+        ]
+      ],
+      "low_data": true,
+      "watchdog_note": "LOW DATA / ENRICHMENT MISSING",
+      "rotowire_source": null,
+      "rotowire_player_page_matched": true,
+      "rotowire_player_page_url": "https://www.rotowire.com/soccer/player/zeki-amdouni-38160",
+      "has_history": false,
+      "has_predicted_xi": false,
+      "has_injury": false,
+      "has_news": false,
+      "has_x_signal": false,
+      "has_any_external_enrichment": false,
+      "has_multiple_external_sources": false,
+      "board_only": true,
+      "source_health": {
+        "official_lineup": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "transfermarkt": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "rotowire": {
+          "source_attempted": true,
+          "entity_matched": true,
+          "signal_found": false,
+          "player_page_matched": true,
+          "player_page_url": "https://www.rotowire.com/soccer/player/zeki-amdouni-38160",
+          "player_page_ambiguous": false
+        },
+        "x": {
+          "source_attempted": false,
+          "entity_matched": false,
+          "signal_found": false
+        },
+        "history": {
+          "source_attempted": true,
+          "entity_matched": false,
+          "signal_found": null
+        }
+      },
+      "ts": "2026-09-29T13:22:09.453761+00:00",
+      "props": [
+        {
+          "market": "Goals",
+          "line": 0.5,
+          "prop_id": "70c7d0250e479188"
+        },
+        {
+          "market": "Shots",
+          "line": 3.5,
+          "prop_id": "067e512a7e96fac0"
+        },
+        {
+          "market": "Shots on Target",
+          "line": 1.5,
+          "prop_id": "7730f548db0221c4"
+        }
+      ]
+    }
+  }
+}
