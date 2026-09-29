@@ -2561,20 +2561,53 @@
           "rate_before": 75.0
         }
       ]
+    },
+    "2026-09-27": {
+      "fire": [
+        {
+          "player_id": 668227,
+          "name": "Randy Arozarena",
+          "team": "Seattle Mariners",
+          "grade": "win",
+          "n_before": 20,
+          "wins_before": 13,
+          "rate_before": 65.0
+        }
+      ],
+      "hot": [
+        {
+          "player_id": 596019,
+          "name": "Francisco Lindor",
+          "team": "New York Mets",
+          "grade": "win",
+          "n_before": 10,
+          "wins_before": 7,
+          "rate_before": 70.0
+        },
+        {
+          "player_id": 666182,
+          "name": "Bo Bichette",
+          "team": "New York Mets",
+          "grade": "loss",
+          "n_before": 8,
+          "wins_before": 6,
+          "rate_before": 75.0
+        }
+      ]
     }
   },
   "cohorts": {
     "fire": {
-      "wins": 72,
+      "wins": 73,
       "losses": 58,
-      "n": 130,
-      "rate": 55.4
+      "n": 131,
+      "rate": 55.7
     },
     "hot": {
-      "wins": 55,
-      "losses": 47,
-      "n": 102,
-      "rate": 53.9
+      "wins": 56,
+      "losses": 48,
+      "n": 104,
+      "rate": 53.8
     }
   }
 }

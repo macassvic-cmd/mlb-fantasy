@@ -1993,11 +1993,162 @@
           "grade": "loss"
         }
       ]
+    },
+    "2026-09-27": {
+      "wins": 6,
+      "losses": 5,
+      "dnp": 1,
+      "plays": [
+        {
+          "player_id": 665161,
+          "name": "Jeremy Pe\u00f1a",
+          "team": "Houston Astros",
+          "projected_ud": 9.5,
+          "ud_line": 7.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "12:05 PM PT",
+          "actual_ud": 10,
+          "grade": "win"
+        },
+        {
+          "player_id": 682829,
+          "name": "Elly De La Cruz",
+          "team": "Cincinnati Reds",
+          "projected_ud": 9.5,
+          "ud_line": 7.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "12:07 PM PT",
+          "actual_ud": 3,
+          "grade": "loss"
+        },
+        {
+          "player_id": 596019,
+          "name": "Francisco Lindor",
+          "team": "New York Mets",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + shrunk sample above baseline",
+          "game_time_pt": "10:05 AM PT",
+          "actual_ud": 22,
+          "grade": "win"
+        },
+        {
+          "player_id": 666182,
+          "name": "Bo Bichette",
+          "team": "New York Mets",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + shrunk sample above baseline",
+          "game_time_pt": "10:05 AM PT",
+          "actual_ud": 3,
+          "grade": "loss"
+        },
+        {
+          "player_id": 701807,
+          "name": "Carson Benge",
+          "team": "New York Mets",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "10:05 AM PT",
+          "actual_ud": 11,
+          "grade": "win"
+        },
+        {
+          "player_id": 691718,
+          "name": "Pete Crow-Armstrong",
+          "team": "Chicago Cubs",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "12:05 PM PT",
+          "actual_ud": 3,
+          "grade": "loss"
+        },
+        {
+          "player_id": 673237,
+          "name": "Yainer Diaz",
+          "team": "Houston Astros",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "12:05 PM PT",
+          "actual_ud": 13,
+          "grade": "win"
+        },
+        {
+          "player_id": 807712,
+          "name": "Luke Keaschall",
+          "team": "Minnesota Twins",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "12:10 PM PT",
+          "actual_ud": 15,
+          "grade": "win"
+        },
+        {
+          "player_id": 502054,
+          "name": "Tommy Pham",
+          "team": "Chicago White Sox",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "12:10 PM PT",
+          "actual_ud": 0,
+          "grade": "loss"
+        },
+        {
+          "player_id": 808959,
+          "name": "Munetaka Murakami",
+          "team": "Chicago White Sox",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "12:10 PM PT",
+          "actual_ud": 8,
+          "grade": "win"
+        },
+        {
+          "player_id": 624413,
+          "name": "Pete Alonso",
+          "team": "Baltimore Orioles",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "10:05 AM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 680869,
+          "name": "Zack Gelof",
+          "team": "Athletics",
+          "projected_ud": 8.45,
+          "ud_line": 6.5,
+          "edge": 1.95,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "12:05 PM PT",
+          "actual_ud": 0,
+          "grade": "loss"
+        }
+      ]
     }
   },
   "record": {
-    "wins": 86,
-    "losses": 72,
-    "dnp": 0
+    "wins": 92,
+    "losses": 77,
+    "dnp": 1
   }
 }

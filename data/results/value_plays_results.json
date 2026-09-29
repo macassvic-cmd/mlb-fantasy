@@ -7978,6 +7978,69 @@
           "correct": false
         }
       ]
+    },
+    "2026-09-27": {
+      "summary": {
+        "total": 5,
+        "correct": 2,
+        "accuracy": 40.0,
+        "over_total": 4,
+        "over_correct": 2,
+        "under_total": 1,
+        "under_correct": 0
+      },
+      "plays": [
+        {
+          "player_id": 665161,
+          "name": "Jeremy Pe\u00f1a",
+          "team": "Houston Astros",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 10,
+          "correct": true
+        },
+        {
+          "player_id": 682829,
+          "name": "Elly De La Cruz",
+          "team": "Cincinnati Reds",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 7.5,
+          "actual_ud": 3,
+          "correct": false
+        },
+        {
+          "player_id": 596019,
+          "name": "Francisco Lindor",
+          "team": "New York Mets",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 22,
+          "correct": true
+        },
+        {
+          "player_id": 666182,
+          "name": "Bo Bichette",
+          "team": "New York Mets",
+          "call": "over",
+          "edge": 2.0,
+          "ud_line": 6.5,
+          "actual_ud": 3,
+          "correct": false
+        },
+        {
+          "player_id": 547180,
+          "name": "Bryce Harper",
+          "team": "Philadelphia Phillies",
+          "call": "under",
+          "edge": -1.86,
+          "ud_line": 6.5,
+          "actual_ud": 14,
+          "correct": false
+        }
+      ]
     }
   }
 }
