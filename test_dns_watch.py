@@ -29,14 +29,13 @@ class TestProcessMixedFile(unittest.TestCase):
         os.close(fd)
         try:
             _write_json(path, data)
-            with patch("stale_lines.run_poll", return_value="mlb-ok") as mock_mlb, \
-                 patch("soccer_dns.run_scan", return_value="soccer-ok") as mock_soccer:
+            with patch("stale_lines.run_poll", return_value="mlb-ok") as mock_mlb:
                 summary = process_mixed_file(path)
             self.assertEqual(summary["mlb"], "mlb-ok")
-            self.assertEqual(summary["soccer"], "soccer-ok")
-            self.assertEqual(summary["skipped_unsupported_sports"], {"cricket": 1})
+            # soccer retired 2026-09-29 (archive/soccer/) - skipped like any unsupported sport
+            self.assertNotIn("soccer", summary)
+            self.assertEqual(summary["skipped_unsupported_sports"], {"soccer": 1, "cricket": 1})
             mock_mlb.assert_called_once()
-            mock_soccer.assert_called_once()
         finally:
             os.remove(path)
 
@@ -66,12 +65,11 @@ class TestProcessMixedFile(unittest.TestCase):
         os.close(fd)
         try:
             _write_json(path, data)
-            with patch("stale_lines.run_poll", return_value="mlb-ok") as mock_mlb, \
-                 patch("soccer_dns.run_scan", return_value="soccer-ok") as mock_soccer:
+            with patch("stale_lines.run_poll", return_value="mlb-ok") as mock_mlb:
                 summary = process_mixed_file(path)
             self.assertEqual(summary["mlb"], "mlb-ok")
             self.assertNotIn("soccer", summary)
-            mock_soccer.assert_not_called()
+            mock_mlb.assert_called_once()
         finally:
             os.remove(path)
 
