@@ -166,6 +166,21 @@ jobs:
       # practice until this was fixed, since every fire past 3h re-ran the
       # full ~15min fetch forever).
 
+      # ── Forward CLV: live line observation (every fire, never skipped) ──
+      # One cheap request to the UD board, appended to
+      # data/clv_snapshots/{today}.json as a timestamped sample whenever a
+      # player's line differs from the last sample (see clv.py). Runs on
+      # EVERY trigger - before and independent of the freshness gate below -
+      # because that gate is exactly what starved 2026's CLV of data: the
+      # pipeline fetched the board once a day and every later render reused
+      # it, so open always equalled close (607 pushes in 608 plays). The
+      # dense 20-minute schedule now doubles as the CLV poller: the first
+      # fire of the day is "open", the last pre-lock fire is "close".
+      # continue-on-error so a UD outage can never fail the pipeline job.
+      - name: CLV — observe live UD lines
+        continue-on-error: true
+        run: python clv_snapshot.py --date "${{ steps.rundate.outputs.today }}"
+
       - name: Check for fresh pipeline data
         id: freshness
         run: python3 check_pipeline_freshness.py

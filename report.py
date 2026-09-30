@@ -1232,12 +1232,15 @@ def write_dashboard(rows, date_str, out_path, results_data=None, top25_data=None
         r["actionable"], r["actionable_reason"] = is_actionable(r, top25_players, top25_baseline, contact_cutoffs)
         r["top25_tier"] = top25_tier(r.get("player_id"), top25_players, top25_baseline)
 
-    # Forward CLV capture (clv.record_line_snapshot) - runs on every
-    # dashboard render, i.e. every pipeline cycle already happening today,
-    # so the first render of the day captures the "open" line and whichever
-    # render is last before lock naturally becomes "close". Must run AFTER
-    # actionable is set above (only actionable-at-close rows get graded -
-    # see clv.grade_clv), but doesn't depend on which tab a row ends up in.
+    # Forward CLV annotation (clv.record_line_snapshot) - records WHICH rows
+    # are plays (call / edge / actionable) for the day's CLV snapshot. It no
+    # longer records a line: rows carry the once-a-day cached UD board (see
+    # scrapers.market_lines.get_market_lines), which is why the 2026 record
+    # was 607 pushes in 608 plays. Line observations now come only from live
+    # polls via clv_snapshot.py (a workflow step on every cron fire). Must
+    # run AFTER actionable is set above (only actionable-at-close rows get
+    # graded - see clv.grade_clv), but doesn't depend on which tab a row
+    # ends up in.
     clv.record_line_snapshot(date_str, rows)
 
     # --- Top 25 cards -------------------------------------------------
