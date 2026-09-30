@@ -1,3 +1,6 @@
+# RETIRED 2026-09-29 - workflow disabled on GitHub (gh workflow disable), kept as
+# the record of what ran. The script it invokes now lives at archive/sgp/play_card.py;
+# re-enabling requires moving it back (or updating the path below) first.
 name: SGP Play Card
 
 # Builds The Play Card (Soccer DNS top plays + football 6-man SGP stacks),

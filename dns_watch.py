@@ -78,7 +78,10 @@ FAILED_DIR = os.path.join(BASE_DIR, "failed")
 # rugby league/tennis/esports were checked and are NOT included here -
 # either no reliable data source was found (CFB) or none has been
 # researched yet (the others) - see this session's own findings.
-SPORTS = ["mlb", "soccer", "nfl", "nba", "nhl"]
+# "soccer" removed 2026-09-29: Soccer DNS retired, its detector lives in
+# archive/soccer/. A soccer record now lands in skipped_unsupported_sports
+# (mixed file) or fails the file with "Unknown sport" (incoming/soccer/).
+SPORTS = ["mlb", "nfl", "nba", "nhl"]
 PRO_LEAGUES = ["nfl", "nba", "nhl"]
 MIXED = "mixed"  # bucket name for processed/failed sub-folders of root-level (multi-sport) files
 DEFAULT_WATCH_INTERVAL_SECONDS = 60
@@ -99,7 +102,7 @@ def _run_sport_detector(sport, records):
     process_file() (single-sport folder) and process_mixed_file()
     (bundled export) so the two never drift apart on how a sport gets
     dispatched."""
-    from board_loader import to_mlb_betr_entries, to_pro_league_entries, to_soccer_board
+    from board_loader import to_mlb_betr_entries, to_pro_league_entries
 
     if sport == "mlb":
         import stale_lines as sl
@@ -109,9 +112,8 @@ def _run_sport_detector(sport, records):
             summary = {"skipped_pitchers": {"count": len(skipped_pitchers), "names": [p["name"] for p in skipped_pitchers]}, **summary}
         return summary
 
-    if sport == "soccer":
-        import soccer_dns as sd
-        return sd.run_scan(board=to_soccer_board(records))
+    # soccer: retired 2026-09-29 (archive/soccer/soccer_dns.py) - falls through
+    # to the ValueError below, same as any other unsupported sport.
 
     if sport in PRO_LEAGUES:
         import pro_league_dns as pld

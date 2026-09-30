@@ -1,3 +1,6 @@
+# RETIRED 2026-09-29 - workflow disabled on GitHub (gh workflow disable), kept as
+# the record of what ran. The script it invokes now lives at archive/soccer/soccer_dns.py;
+# re-enabling requires moving it back (or updating the path below) first.
 name: Soccer DNS Daily Digest
 
 # Full Dabble-driven Soccer DNS daily cycle (2026-09-14 production-
