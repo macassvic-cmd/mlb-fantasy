@@ -1,0 +1,248 @@
+{
+  "version": 2,
+  "date": "2026-10-01",
+  "players": {
+    "kyle schwarber": {
+      "name": "kyle schwarber",
+      "player_id": 656941,
+      "team": "Philadelphia Phillies",
+      "lock_at": "2026-10-02T00:00:00Z",
+      "samples": [
+        {
+          "at": "2026-10-01T20:58:50.263568+00:00",
+          "line": 5.5
+        }
+      ],
+      "last_seen_at": "2026-10-01T20:58:50.263568+00:00",
+      "last_seen_line": 5.5
+    },
+    "bryce harper": {
+      "name": "bryce harper",
+      "player_id": 547180,
+      "team": "Philadelphia Phillies",
+      "lock_at": "2026-10-02T00:00:00Z",
+      "samples": [
+        {
+          "at": "2026-10-01T20:58:50.263568+00:00",
+          "line": 6.5
+        }
+      ],
+      "last_seen_at": "2026-10-01T20:58:50.263568+00:00",
+      "last_seen_line": 6.5
+    },
+    "ronald acuna": {
+      "name": "ronald acuna",
+      "player_id": 660670,
+      "team": "Atlanta Braves",
+      "lock_at": "2026-10-02T00:00:00Z",
+      "samples": [
+        {
+          "at": "2026-10-01T20:58:50.263568+00:00",
+          "line": 6.5
+        }
+      ],
+      "last_seen_at": "2026-10-01T20:58:50.263568+00:00",
+      "last_seen_line": 6.5
+    },
+    "matt olson": {
+      "name": "matt olson",
+      "player_id": 621566,
+      "team": "Atlanta Braves",
+      "lock_at": "2026-10-02T00:00:00Z",
+      "samples": [
+        {
+          "at": "2026-10-01T20:58:50.263568+00:00",
+          "line": 5.5
+        }
+      ],
+      "last_seen_at": "2026-10-01T20:58:50.263568+00:00",
+      "last_seen_line": 5.5
+    },
+    "trea turner": {
+      "name": "trea turner",
+      "player_id": 607208,
+      "team": "Philadelphia Phillies",
+      "lock_at": "2026-10-02T00:00:00Z",
+      "samples": [
+        {
+          "at": "2026-10-01T20:58:50.263568+00:00",
+          "line": 6.5
+        }
+      ],
+      "last_seen_at": "2026-10-01T20:58:50.263568+00:00",
+      "last_seen_line": 6.5
+    },
+    "alec bohm": {
+      "name": "alec bohm",
+      "player_id": 664761,
+      "team": "Philadelphia Phillies",
+      "lock_at": "2026-10-02T00:00:00Z",
+      "samples": [
+        {
+          "at": "2026-10-01T20:58:50.263568+00:00",
+          "line": 5.5
+        }
+      ],
+      "last_seen_at": "2026-10-01T20:58:50.263568+00:00",
+      "last_seen_line": 5.5
+    },
+    "bryson stott": {
+      "name": "bryson stott",
+      "player_id": 681082,
+      "team": "Philadelphia Phillies",
+      "lock_at": "2026-10-02T00:00:00Z",
+      "samples": [
+        {
+          "at": "2026-10-01T20:58:50.263568+00:00",
+          "line": 5.5
+        }
+      ],
+      "last_seen_at": "2026-10-01T20:58:50.263568+00:00",
+      "last_seen_line": 5.5
+    },
+    "drake baldwin": {
+      "name": "drake baldwin",
+      "player_id": 686948,
+      "team": "Atlanta Braves",
+      "lock_at": "2026-10-02T00:00:00Z",
+      "samples": [
+        {
+          "at": "2026-10-01T20:58:50.263568+00:00",
+          "line": 5.5
+        }
+      ],
+      "last_seen_at": "2026-10-01T20:58:50.263568+00:00",
+      "last_seen_line": 5.5
+    },
+    "jt realmuto": {
+      "name": "jt realmuto",
+      "player_id": 592663,
+      "team": "Philadelphia Phillies",
+      "lock_at": "2026-10-02T00:00:00Z",
+      "samples": [
+        {
+          "at": "2026-10-01T20:58:50.263568+00:00",
+          "line": 5.5
+        }
+      ],
+      "last_seen_at": "2026-10-01T20:58:50.263568+00:00",
+      "last_seen_line": 5.5
+    },
+    "michael harris": {
+      "name": "michael harris",
+      "player_id": 671739,
+      "team": "Atlanta Braves",
+      "lock_at": "2026-10-02T00:00:00Z",
+      "samples": [
+        {
+          "at": "2026-10-01T20:58:50.263568+00:00",
+          "line": 5.5
+        }
+      ],
+      "last_seen_at": "2026-10-01T20:58:50.263568+00:00",
+      "last_seen_line": 5.5
+    }
+  },
+  "annotations": {
+    "ronald acuna": {
+      "player_id": 660670,
+      "name": "Ronald Acu\u00f1a Jr.",
+      "team": "Atlanta Braves",
+      "call": "over",
+      "edge": 2.0,
+      "actionable": true,
+      "lock_at": "2026-10-02T00:00:00Z",
+      "annotated_at": "2026-10-01T21:00:29.812554+00:00"
+    },
+    "drake baldwin": {
+      "player_id": 686948,
+      "name": "Drake Baldwin",
+      "team": "Atlanta Braves",
+      "call": "over",
+      "edge": 2.0,
+      "actionable": true,
+      "lock_at": "2026-10-02T00:00:00Z",
+      "annotated_at": "2026-10-01T21:00:29.812554+00:00"
+    },
+    "matt olson": {
+      "player_id": 621566,
+      "name": "Matt Olson",
+      "team": "Atlanta Braves",
+      "call": "over",
+      "edge": 2.0,
+      "actionable": false,
+      "lock_at": "2026-10-02T00:00:00Z",
+      "annotated_at": "2026-10-01T21:00:29.812554+00:00"
+    },
+    "michael harris": {
+      "player_id": 671739,
+      "name": "Michael Harris II",
+      "team": "Atlanta Braves",
+      "call": "over",
+      "edge": 2.0,
+      "actionable": true,
+      "lock_at": "2026-10-02T00:00:00Z",
+      "annotated_at": "2026-10-01T21:00:29.812554+00:00"
+    },
+    "bryson stott": {
+      "player_id": 681082,
+      "name": "Bryson Stott",
+      "team": "Philadelphia Phillies",
+      "call": null,
+      "edge": -0.03,
+      "actionable": false,
+      "lock_at": "2026-10-02T00:00:00Z",
+      "annotated_at": "2026-10-01T21:00:29.812554+00:00"
+    },
+    "kyle schwarber": {
+      "player_id": 656941,
+      "name": "Kyle Schwarber",
+      "team": "Philadelphia Phillies",
+      "call": null,
+      "edge": -0.38,
+      "actionable": false,
+      "lock_at": "2026-10-02T00:00:00Z",
+      "annotated_at": "2026-10-01T21:00:29.812554+00:00"
+    },
+    "trea turner": {
+      "player_id": 607208,
+      "name": "Trea Turner",
+      "team": "Philadelphia Phillies",
+      "call": "under",
+      "edge": -2.0,
+      "actionable": false,
+      "lock_at": "2026-10-02T00:00:00Z",
+      "annotated_at": "2026-10-01T21:00:29.812554+00:00"
+    },
+    "bryce harper": {
+      "player_id": 547180,
+      "name": "Bryce Harper",
+      "team": "Philadelphia Phillies",
+      "call": "under",
+      "edge": -2.0,
+      "actionable": false,
+      "lock_at": "2026-10-02T00:00:00Z",
+      "annotated_at": "2026-10-01T21:00:29.812554+00:00"
+    },
+    "jt realmuto": {
+      "player_id": 592663,
+      "name": "J.T. Realmuto",
+      "team": "Philadelphia Phillies",
+      "call": "under",
+      "edge": -1.07,
+      "actionable": false,
+      "lock_at": "2026-10-02T00:00:00Z",
+      "annotated_at": "2026-10-01T21:00:29.812554+00:00"
+    },
+    "alec bohm": {
+      "player_id": 664761,
+      "name": "Alec Bohm",
+      "team": "Philadelphia Phillies",
+      "call": "under",
+      "edge": -1.66,
+      "actionable": true,
+      "lock_at": "2026-10-02T00:00:00Z",
+      "annotated_at": "2026-10-01T21:00:29.812554+00:00"
+    }
+  }
+}
