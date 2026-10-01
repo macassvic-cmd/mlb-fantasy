@@ -49,6 +49,23 @@ def is_stale(today):
     return (time.time() - fetched_at.timestamp()) >= STALE_AFTER_SECONDS
 
 
+def no_games_today(today):
+    # An off day (the postseason has one every few days) has nothing to
+    # fetch, so a missing marker isn't a missed deadline - same rule as
+    # check_pipeline_freshness.py's item 5. urllib, not scrapers.mlb_api:
+    # this job runs on a bare runner with no pip install. Any failure
+    # returns False so an MLB API outage can't suppress a real alert.
+    url = f"https://statsapi.mlb.com/api/v1/schedule?sportId=1&date={today}"
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            data = json.load(resp)
+        return sum(len(d.get("games", [])) for d in data.get("dates", [])) == 0
+    except Exception as e:
+        print(f"Schedule check failed ({type(e).__name__}: {e}) - not treating as a no-game day.", file=sys.stderr)
+        return False
+
+
 def send_alert(webhook_url, today):
     body = {"embeds": [{
         "title": "\U0001F534 Pipeline deadline missed",
@@ -84,6 +101,10 @@ def main():
 
     if not is_stale(today):
         print(f"OK: data for {today} is fresh.")
+        return
+
+    if no_games_today(today):
+        print(f"OK: no MLB games scheduled for {today} - nothing was due.")
         return
 
     webhook_url = os.environ.get("DISCORD_WEBHOOK_URL")

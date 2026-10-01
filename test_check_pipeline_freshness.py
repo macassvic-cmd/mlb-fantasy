@@ -94,5 +94,29 @@ class TestAnyUnconfirmedLineupPending(unittest.TestCase):
         self.assertTrue(cpf._any_unconfirmed_lineup_pending(TEST_DATE))
 
 
+class TestNoGamesToday(unittest.TestCase):
+    """Item 5 (2026-10-01): an off day must skip, an API failure must not."""
+
+    def setUp(self):
+        self._real_get_games = cpf.get_games
+
+    def tearDown(self):
+        cpf.get_games = self._real_get_games
+
+    def test_empty_schedule_is_a_no_game_day(self):
+        cpf.get_games = lambda date_str: []
+        self.assertTrue(cpf._no_games_today(TEST_DATE))
+
+    def test_any_game_is_not_a_no_game_day(self):
+        cpf.get_games = lambda date_str: [{"gamePk": 1}]
+        self.assertFalse(cpf._no_games_today(TEST_DATE))
+
+    def test_api_failure_is_not_a_no_game_day(self):
+        def boom(date_str):
+            raise RuntimeError("MLB API request timed out or failed: /schedule")
+        cpf.get_games = boom
+        self.assertFalse(cpf._no_games_today(TEST_DATE))
+
+
 if __name__ == "__main__":
     unittest.main()

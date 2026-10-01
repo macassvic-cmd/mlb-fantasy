@@ -52,6 +52,18 @@ time.
      today's games hasn't started yet and still has an unconfirmed
      lineup - the 3h ceiling stays as a backstop for the "nothing left
      to check" case, but is no longer the only thing deciding "stale."
+
+  5. Found 2026-10-01 (postseason revival): on a day with NO games the
+     gate always said "run", pipeline.py logged "No games found" and
+     exited 0 without writing data/{date}.json, and the workflow's fetch
+     step then failed the job - on every single fire (all six runs on
+     2026-09-28, the off day after the regular season, failed this way).
+     The regular season has almost no empty days so this never showed;
+     the postseason has one every few days (travel days, series that end
+     early). Fixed below: if MLB's schedule positively reports zero games
+     for today, skip. An API failure is NOT treated as "no games" - it
+     falls through to the normal checks, so an outage can't silently
+     suppress a real slate's fetch.
 """
 
 import json
@@ -60,9 +72,21 @@ import sys
 import time
 from datetime import datetime, timezone
 
-from scrapers.mlb_api import mlb_today_str
+from scrapers.mlb_api import get_games, mlb_today_str
 
 STALE_AFTER_SECONDS = 10800  # 3h
+
+
+def _no_games_today(today):
+    """True only if MLB's schedule answered and listed zero games for
+    `today` (item 5 above). False on any API failure - not knowing is
+    not the same as an empty slate, and the fetch step's own "did not
+    produce data/{date}.json" failure is the right outcome then."""
+    try:
+        return len(get_games(today)) == 0
+    except Exception as e:
+        print(f"Schedule check failed ({type(e).__name__}: {e}) - not treating as a no-game day.", file=sys.stderr)
+        return False
 
 
 def _any_unconfirmed_lineup_pending(today):
@@ -104,7 +128,10 @@ def main():
     skip = False
     reason = f"No fetch marker found - running pipeline for {today}."
 
-    if os.path.exists(marker_path):
+    if _no_games_today(today):
+        skip = True
+        reason = f"No MLB games scheduled for {today} - nothing to fetch, skipping this fire."
+    elif os.path.exists(marker_path):
         with open(marker_path, encoding="utf-8") as f:
             marker = json.load(f)
         if marker.get("date") != today:
