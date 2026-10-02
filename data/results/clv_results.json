@@ -6747,14 +6747,79 @@
           "clv_points": -0.0
         }
       ]
+    },
+    "2026-10-01": {
+      "plays": [
+        {
+          "player_id": 660670,
+          "name": "Ronald Acu\u00f1a Jr.",
+          "team": "Atlanta Braves",
+          "call": "over",
+          "open_line": 6.5,
+          "open_at": "2026-10-01T20:58:50.263568+00:00",
+          "close_line": 6.5,
+          "close_at": "2026-10-01T20:58:50.263568+00:00",
+          "last_seen_at": "2026-10-01T20:58:50.263568+00:00",
+          "lock_at": "2026-10-02T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 686948,
+          "name": "Drake Baldwin",
+          "team": "Atlanta Braves",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-01T20:58:50.263568+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-01T20:58:50.263568+00:00",
+          "last_seen_at": "2026-10-01T20:58:50.263568+00:00",
+          "lock_at": "2026-10-02T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 671739,
+          "name": "Michael Harris II",
+          "team": "Atlanta Braves",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-01T20:58:50.263568+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-01T20:58:50.263568+00:00",
+          "last_seen_at": "2026-10-01T20:58:50.263568+00:00",
+          "lock_at": "2026-10-02T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 664761,
+          "name": "Alec Bohm",
+          "team": "Philadelphia Phillies",
+          "call": "under",
+          "open_line": 5.5,
+          "open_at": "2026-10-01T20:58:50.263568+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-01T20:58:50.263568+00:00",
+          "last_seen_at": "2026-10-01T20:58:50.263568+00:00",
+          "lock_at": "2026-10-02T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": -0.0
+        }
+      ],
+      "skipped_no_samples": 0
     }
   },
   "record": {
     "positive": 1,
     "negative": 0,
-    "push": 607,
-    "n": 608,
+    "push": 611,
+    "n": 612,
     "win_rate": 100.0,
-    "avg_clv_points": 0.002
+    "avg_clv_points": 0.002,
+    "plays_multi_sample": 0,
+    "plays_single_sample": 612,
+    "avg_clv_points_multi_sample": null,
+    "skipped_no_samples": 0
   }
 }
