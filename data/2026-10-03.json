@@ -137,14 +137,7 @@
     },
     "platoon": {
       "platoon_same_hand": true,
-      "batter_woba": 0.283,
-      "batter_split_pa": 205,
-      "batter_split_label": "vs LHP",
-      "pitcher_woba_against": 0.237,
-      "pitcher_split_pa": 39,
-      "pitcher_split_label": "vs LHB",
-      "edge_woba": 0.046,
-      "advantage": "batter"
+      "advantage": null
     },
     "park_factor": {
       "hr": 1.0,
@@ -152,11 +145,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 65.3,
-      "wind_speed_mph": 17.8,
-      "wind_direction": "NE",
+      "temp_f": 60.4,
+      "wind_speed_mph": 14.5,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 58,
+      "humidity": 60,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -176,8 +169,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 608070,
@@ -317,14 +310,7 @@
     },
     "platoon": {
       "platoon_same_hand": false,
-      "batter_woba": 0.343,
-      "batter_split_pa": 164,
-      "batter_split_label": "vs LHP",
-      "pitcher_woba_against": 0.19,
-      "pitcher_split_pa": 71,
-      "pitcher_split_label": "vs RHB",
-      "edge_woba": 0.153,
-      "advantage": "batter"
+      "advantage": null
     },
     "park_factor": {
       "hr": 1.0,
@@ -332,11 +318,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 65.3,
-      "wind_speed_mph": 17.8,
-      "wind_direction": "NE",
+      "temp_f": 60.4,
+      "wind_speed_mph": 14.5,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 58,
+      "humidity": 60,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -356,8 +342,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 800050,
@@ -497,14 +483,7 @@
     },
     "platoon": {
       "platoon_same_hand": true,
-      "batter_woba": 0.358,
-      "batter_split_pa": 179,
-      "batter_split_label": "vs LHP",
-      "pitcher_woba_against": 0.237,
-      "pitcher_split_pa": 39,
-      "pitcher_split_label": "vs LHB",
-      "edge_woba": 0.121,
-      "advantage": "batter"
+      "advantage": null
     },
     "park_factor": {
       "hr": 1.0,
@@ -512,11 +491,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 65.3,
-      "wind_speed_mph": 17.8,
-      "wind_direction": "NE",
+      "temp_f": 60.4,
+      "wind_speed_mph": 14.5,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 58,
+      "humidity": 60,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -536,8 +515,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 666176,
@@ -677,14 +656,7 @@
     },
     "platoon": {
       "platoon_same_hand": false,
-      "batter_woba": 0.397,
-      "batter_split_pa": 191,
-      "batter_split_label": "vs LHP",
-      "pitcher_woba_against": 0.19,
-      "pitcher_split_pa": 71,
-      "pitcher_split_label": "vs RHB",
-      "edge_woba": 0.207,
-      "advantage": "batter"
+      "advantage": null
     },
     "park_factor": {
       "hr": 1.0,
@@ -692,11 +664,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 65.3,
-      "wind_speed_mph": 17.8,
-      "wind_direction": "NE",
+      "temp_f": 60.4,
+      "wind_speed_mph": 14.5,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 58,
+      "humidity": 60,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -716,8 +688,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 682657,
@@ -857,14 +829,7 @@
     },
     "platoon": {
       "platoon_same_hand": false,
-      "batter_woba": 0.343,
-      "batter_split_pa": 152,
-      "batter_split_label": "vs LHP",
-      "pitcher_woba_against": 0.19,
-      "pitcher_split_pa": 71,
-      "pitcher_split_label": "vs RHB",
-      "edge_woba": 0.153,
-      "advantage": "batter"
+      "advantage": null
     },
     "park_factor": {
       "hr": 1.0,
@@ -872,11 +837,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 65.3,
-      "wind_speed_mph": 17.8,
-      "wind_direction": "NE",
+      "temp_f": 60.4,
+      "wind_speed_mph": 14.5,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 58,
+      "humidity": 60,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -896,8 +861,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 681807,
@@ -1037,14 +1002,7 @@
     },
     "platoon": {
       "platoon_same_hand": false,
-      "batter_woba": 0.289,
-      "batter_split_pa": 148,
-      "batter_split_label": "vs LHP",
-      "pitcher_woba_against": 0.19,
-      "pitcher_split_pa": 71,
-      "pitcher_split_label": "vs RHB",
-      "edge_woba": 0.099,
-      "advantage": "batter"
+      "advantage": null
     },
     "park_factor": {
       "hr": 1.0,
@@ -1052,11 +1010,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 65.3,
-      "wind_speed_mph": 17.8,
-      "wind_direction": "NE",
+      "temp_f": 60.4,
+      "wind_speed_mph": 14.5,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 58,
+      "humidity": 60,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -1076,8 +1034,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 683953,
@@ -1217,14 +1175,7 @@
     },
     "platoon": {
       "platoon_same_hand": true,
-      "batter_woba": 0.241,
-      "batter_split_pa": 165,
-      "batter_split_label": "vs LHP",
-      "pitcher_woba_against": 0.237,
-      "pitcher_split_pa": 39,
-      "pitcher_split_label": "vs LHB",
-      "edge_woba": 0.004,
-      "advantage": "neutral"
+      "advantage": null
     },
     "park_factor": {
       "hr": 1.0,
@@ -1232,11 +1183,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 65.3,
-      "wind_speed_mph": 17.8,
-      "wind_direction": "NE",
+      "temp_f": 60.4,
+      "wind_speed_mph": 14.5,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 58,
+      "humidity": 60,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -1256,8 +1207,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 595978,
@@ -1397,14 +1348,7 @@
     },
     "platoon": {
       "platoon_same_hand": false,
-      "batter_woba": 0.324,
-      "batter_split_pa": 130,
-      "batter_split_label": "vs LHP",
-      "pitcher_woba_against": 0.19,
-      "pitcher_split_pa": 71,
-      "pitcher_split_label": "vs RHB",
-      "edge_woba": 0.134,
-      "advantage": "batter"
+      "advantage": null
     },
     "park_factor": {
       "hr": 1.0,
@@ -1412,11 +1356,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 65.3,
-      "wind_speed_mph": 17.8,
-      "wind_direction": "NE",
+      "temp_f": 60.4,
+      "wind_speed_mph": 14.5,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 58,
+      "humidity": 60,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -1436,8 +1380,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 677587,
@@ -1577,14 +1521,7 @@
     },
     "platoon": {
       "platoon_same_hand": false,
-      "batter_woba": 0.264,
-      "batter_split_pa": 199,
-      "batter_split_label": "vs LHP",
-      "pitcher_woba_against": 0.19,
-      "pitcher_split_pa": 71,
-      "pitcher_split_label": "vs RHB",
-      "edge_woba": 0.074,
-      "advantage": "batter"
+      "advantage": null
     },
     "park_factor": {
       "hr": 1.0,
@@ -1592,11 +1529,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 65.3,
-      "wind_speed_mph": 17.8,
-      "wind_direction": "NE",
+      "temp_f": 60.4,
+      "wind_speed_mph": 14.5,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 58,
+      "humidity": 60,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -1616,8 +1553,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 805367,
@@ -1757,14 +1694,7 @@
     },
     "platoon": {
       "platoon_same_hand": false,
-      "batter_woba": 0.426,
-      "batter_split_pa": 183,
-      "batter_split_label": "vs LHP",
-      "pitcher_woba_against": 0.255,
-      "pitcher_split_pa": 542,
-      "pitcher_split_label": "vs RHB",
-      "edge_woba": 0.171,
-      "advantage": "batter"
+      "advantage": null
     },
     "park_factor": {
       "hr": 1.0,
@@ -1772,11 +1702,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 65.3,
-      "wind_speed_mph": 17.8,
-      "wind_direction": "NE",
+      "temp_f": 60.4,
+      "wind_speed_mph": 14.5,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 58,
+      "humidity": 60,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -1796,8 +1726,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 545341,
@@ -1937,14 +1867,7 @@
     },
     "platoon": {
       "platoon_same_hand": false,
-      "batter_woba": 0.414,
-      "batter_split_pa": 178,
-      "batter_split_label": "vs LHP",
-      "pitcher_woba_against": 0.255,
-      "pitcher_split_pa": 542,
-      "pitcher_split_label": "vs RHB",
-      "edge_woba": 0.159,
-      "advantage": "batter"
+      "advantage": null
     },
     "park_factor": {
       "hr": 1.0,
@@ -1952,11 +1875,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 65.3,
-      "wind_speed_mph": 17.8,
-      "wind_direction": "NE",
+      "temp_f": 60.4,
+      "wind_speed_mph": 14.5,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 58,
+      "humidity": 60,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -1976,8 +1899,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 678246,
@@ -2117,14 +2040,7 @@
     },
     "platoon": {
       "platoon_same_hand": false,
-      "batter_woba": 0.381,
-      "batter_split_pa": 208,
-      "batter_split_label": "vs LHP",
-      "pitcher_woba_against": 0.255,
-      "pitcher_split_pa": 542,
-      "pitcher_split_label": "vs RHB",
-      "edge_woba": 0.126,
-      "advantage": "batter"
+      "advantage": null
     },
     "park_factor": {
       "hr": 1.0,
@@ -2132,11 +2048,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 65.3,
-      "wind_speed_mph": 17.8,
-      "wind_direction": "NE",
+      "temp_f": 60.4,
+      "wind_speed_mph": 14.5,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 58,
+      "humidity": 60,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -2156,8 +2072,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 808959,
@@ -2297,14 +2213,7 @@
     },
     "platoon": {
       "platoon_same_hand": true,
-      "batter_woba": 0.319,
-      "batter_split_pa": 169,
-      "batter_split_label": "vs LHP",
-      "pitcher_woba_against": 0.295,
-      "pitcher_split_pa": 205,
-      "pitcher_split_label": "vs LHB",
-      "edge_woba": 0.024,
-      "advantage": "batter"
+      "advantage": null
     },
     "park_factor": {
       "hr": 1.0,
@@ -2312,11 +2221,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 65.3,
-      "wind_speed_mph": 17.8,
-      "wind_direction": "NE",
+      "temp_f": 60.4,
+      "wind_speed_mph": 14.5,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 58,
+      "humidity": 60,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -2336,8 +2245,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 502054,
@@ -2477,14 +2386,7 @@
     },
     "platoon": {
       "platoon_same_hand": false,
-      "batter_woba": 0.216,
-      "batter_split_pa": 29,
-      "batter_split_label": "vs LHP",
-      "pitcher_woba_against": 0.255,
-      "pitcher_split_pa": 542,
-      "pitcher_split_label": "vs RHB",
-      "edge_woba": -0.039,
-      "advantage": "pitcher"
+      "advantage": null
     },
     "park_factor": {
       "hr": 1.0,
@@ -2492,11 +2394,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 65.3,
-      "wind_speed_mph": 17.8,
-      "wind_direction": "NE",
+      "temp_f": 60.4,
+      "wind_speed_mph": 14.5,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 58,
+      "humidity": 60,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -2516,8 +2418,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 686668,
@@ -2657,14 +2559,7 @@
     },
     "platoon": {
       "platoon_same_hand": false,
-      "batter_woba": 0.329,
-      "batter_split_pa": 97,
-      "batter_split_label": "vs LHP",
-      "pitcher_woba_against": 0.255,
-      "pitcher_split_pa": 542,
-      "pitcher_split_label": "vs RHB",
-      "edge_woba": 0.074,
-      "advantage": "batter"
+      "advantage": null
     },
     "park_factor": {
       "hr": 1.0,
@@ -2672,11 +2567,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 65.3,
-      "wind_speed_mph": 17.8,
-      "wind_direction": "NE",
+      "temp_f": 60.4,
+      "wind_speed_mph": 14.5,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 58,
+      "humidity": 60,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -2696,8 +2591,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 691019,
@@ -2837,14 +2732,7 @@
     },
     "platoon": {
       "platoon_same_hand": true,
-      "batter_woba": 0.272,
-      "batter_split_pa": 39,
-      "batter_split_label": "vs LHP",
-      "pitcher_woba_against": 0.295,
-      "pitcher_split_pa": 205,
-      "pitcher_split_label": "vs LHB",
-      "edge_woba": -0.023,
-      "advantage": "pitcher"
+      "advantage": null
     },
     "park_factor": {
       "hr": 1.0,
@@ -2852,11 +2740,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 65.3,
-      "wind_speed_mph": 17.8,
-      "wind_direction": "NE",
+      "temp_f": 60.4,
+      "wind_speed_mph": 14.5,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 58,
+      "humidity": 60,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -2876,8 +2764,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 695731,
@@ -3017,14 +2905,7 @@
     },
     "platoon": {
       "platoon_same_hand": false,
-      "batter_woba": 0.192,
-      "batter_split_pa": 103,
-      "batter_split_label": "vs LHP",
-      "pitcher_woba_against": 0.255,
-      "pitcher_split_pa": 542,
-      "pitcher_split_label": "vs RHB",
-      "edge_woba": -0.063,
-      "advantage": "pitcher"
+      "advantage": null
     },
     "park_factor": {
       "hr": 1.0,
@@ -3032,11 +2913,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 65.3,
-      "wind_speed_mph": 17.8,
-      "wind_direction": "NE",
+      "temp_f": 60.4,
+      "wind_speed_mph": 14.5,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 58,
+      "humidity": 60,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -3056,8 +2937,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 695657,
@@ -3197,14 +3078,7 @@
     },
     "platoon": {
       "platoon_same_hand": true,
-      "batter_woba": 0.328,
-      "batter_split_pa": 197,
-      "batter_split_label": "vs LHP",
-      "pitcher_woba_against": 0.295,
-      "pitcher_split_pa": 205,
-      "pitcher_split_label": "vs LHB",
-      "edge_woba": 0.033,
-      "advantage": "batter"
+      "advantage": null
     },
     "park_factor": {
       "hr": 1.0,
@@ -3212,11 +3086,11 @@
       "hits": 1.0
     },
     "weather": {
-      "temp_f": 65.3,
-      "wind_speed_mph": 17.8,
-      "wind_direction": "NE",
+      "temp_f": 60.4,
+      "wind_speed_mph": 14.5,
+      "wind_direction": "ENE",
       "precip_probability": 0,
-      "humidity": 58,
+      "humidity": 60,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -3236,8 +3110,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 605141,
@@ -3377,14 +3251,7 @@
     },
     "platoon": {
       "platoon_same_hand": false,
-      "batter_woba": 0.32,
-      "batter_split_pa": 170,
-      "batter_split_label": "vs LHP",
-      "pitcher_woba_against": 0.242,
-      "pitcher_split_pa": 108,
-      "pitcher_split_label": "vs RHB",
-      "edge_woba": 0.078,
-      "advantage": "batter"
+      "advantage": null
     },
     "park_factor": {
       "hr": 0.97,
@@ -3392,11 +3259,11 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 100,
-      "wind_speed_mph": 4.1,
-      "wind_direction": "SSW",
+      "temp_f": 100.3,
+      "wind_speed_mph": 4.7,
+      "wind_direction": "W",
       "precip_probability": 0,
-      "humidity": 24,
+      "humidity": 22,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -3416,8 +3283,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 660271,
@@ -3557,14 +3424,7 @@
     },
     "platoon": {
       "platoon_same_hand": true,
-      "batter_woba": 0.361,
-      "batter_split_pa": 204,
-      "batter_split_label": "vs LHP",
-      "pitcher_woba_against": 0.265,
-      "pitcher_split_pa": 86,
-      "pitcher_split_label": "vs LHB",
-      "edge_woba": 0.096,
-      "advantage": "batter"
+      "advantage": null
     },
     "park_factor": {
       "hr": 0.97,
@@ -3572,11 +3432,11 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 100,
-      "wind_speed_mph": 4.1,
-      "wind_direction": "SSW",
+      "temp_f": 100.3,
+      "wind_speed_mph": 4.7,
+      "wind_direction": "W",
       "precip_probability": 0,
-      "humidity": 24,
+      "humidity": 22,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -3596,8 +3456,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 669257,
@@ -3737,14 +3597,7 @@
     },
     "platoon": {
       "platoon_same_hand": false,
-      "batter_woba": 0.281,
-      "batter_split_pa": 83,
-      "batter_split_label": "vs LHP",
-      "pitcher_woba_against": 0.242,
-      "pitcher_split_pa": 108,
-      "pitcher_split_label": "vs RHB",
-      "edge_woba": 0.039,
-      "advantage": "batter"
+      "advantage": null
     },
     "park_factor": {
       "hr": 0.97,
@@ -3752,11 +3605,11 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 100,
-      "wind_speed_mph": 4.1,
-      "wind_direction": "SSW",
+      "temp_f": 100.3,
+      "wind_speed_mph": 4.7,
+      "wind_direction": "W",
       "precip_probability": 0,
-      "humidity": 24,
+      "humidity": 22,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -3776,8 +3629,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 518692,
@@ -3917,14 +3770,7 @@
     },
     "platoon": {
       "platoon_same_hand": true,
-      "batter_woba": 0.296,
-      "batter_split_pa": 218,
-      "batter_split_label": "vs LHP",
-      "pitcher_woba_against": 0.265,
-      "pitcher_split_pa": 86,
-      "pitcher_split_label": "vs LHB",
-      "edge_woba": 0.031,
-      "advantage": "batter"
+      "advantage": null
     },
     "park_factor": {
       "hr": 0.97,
@@ -3932,11 +3778,11 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 100,
-      "wind_speed_mph": 4.1,
-      "wind_direction": "SSW",
+      "temp_f": 100.3,
+      "wind_speed_mph": 4.7,
+      "wind_direction": "W",
       "precip_probability": 0,
-      "humidity": 24,
+      "humidity": 22,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -3956,8 +3802,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 606192,
@@ -4097,14 +3943,7 @@
     },
     "platoon": {
       "platoon_same_hand": false,
-      "batter_woba": 0.378,
-      "batter_split_pa": 153,
-      "batter_split_label": "vs LHP",
-      "pitcher_woba_against": 0.242,
-      "pitcher_split_pa": 108,
-      "pitcher_split_label": "vs RHB",
-      "edge_woba": 0.136,
-      "advantage": "batter"
+      "advantage": null
     },
     "park_factor": {
       "hr": 0.97,
@@ -4112,11 +3951,11 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 100,
-      "wind_speed_mph": 4.1,
-      "wind_direction": "SSW",
+      "temp_f": 100.3,
+      "wind_speed_mph": 4.7,
+      "wind_direction": "W",
       "precip_probability": 0,
-      "humidity": 24,
+      "humidity": 22,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -4136,8 +3975,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 663656,
@@ -4277,14 +4116,7 @@
     },
     "platoon": {
       "platoon_same_hand": true,
-      "batter_woba": 0.325,
-      "batter_split_pa": 191,
-      "batter_split_label": "vs LHP",
-      "pitcher_woba_against": 0.265,
-      "pitcher_split_pa": 86,
-      "pitcher_split_label": "vs LHB",
-      "edge_woba": 0.06,
-      "advantage": "batter"
+      "advantage": null
     },
     "park_factor": {
       "hr": 0.97,
@@ -4292,11 +4124,11 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 100,
-      "wind_speed_mph": 4.1,
-      "wind_direction": "SSW",
+      "temp_f": 100.3,
+      "wind_speed_mph": 4.7,
+      "wind_direction": "W",
       "precip_probability": 0,
-      "humidity": 24,
+      "humidity": 22,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -4316,8 +4148,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 681624,
@@ -4457,14 +4289,7 @@
     },
     "platoon": {
       "platoon_same_hand": false,
-      "batter_woba": 0.375,
-      "batter_split_pa": 167,
-      "batter_split_label": "vs LHP",
-      "pitcher_woba_against": 0.242,
-      "pitcher_split_pa": 108,
-      "pitcher_split_label": "vs RHB",
-      "edge_woba": 0.133,
-      "advantage": "batter"
+      "advantage": null
     },
     "park_factor": {
       "hr": 0.97,
@@ -4472,11 +4297,11 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 100,
-      "wind_speed_mph": 4.1,
-      "wind_direction": "SSW",
+      "temp_f": 100.3,
+      "wind_speed_mph": 4.7,
+      "wind_direction": "W",
       "precip_probability": 0,
-      "humidity": 24,
+      "humidity": 22,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -4496,8 +4321,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 571970,
@@ -4637,14 +4462,7 @@
     },
     "platoon": {
       "platoon_same_hand": true,
-      "batter_woba": 0.356,
-      "batter_split_pa": 134,
-      "batter_split_label": "vs LHP",
-      "pitcher_woba_against": 0.265,
-      "pitcher_split_pa": 86,
-      "pitcher_split_label": "vs LHB",
-      "edge_woba": 0.091,
-      "advantage": "batter"
+      "advantage": null
     },
     "park_factor": {
       "hr": 0.97,
@@ -4652,11 +4470,11 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 100,
-      "wind_speed_mph": 4.1,
-      "wind_direction": "SSW",
+      "temp_f": 100.3,
+      "wind_speed_mph": 4.7,
+      "wind_direction": "W",
       "precip_probability": 0,
-      "humidity": 24,
+      "humidity": 22,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -4676,8 +4494,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 669242,
@@ -4817,14 +4635,7 @@
     },
     "platoon": {
       "platoon_same_hand": false,
-      "batter_woba": 0.328,
-      "batter_split_pa": 110,
-      "batter_split_label": "vs LHP",
-      "pitcher_woba_against": 0.242,
-      "pitcher_split_pa": 108,
-      "pitcher_split_label": "vs RHB",
-      "edge_woba": 0.086,
-      "advantage": "batter"
+      "advantage": null
     },
     "park_factor": {
       "hr": 0.97,
@@ -4832,11 +4643,11 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 100,
-      "wind_speed_mph": 4.1,
-      "wind_direction": "SSW",
+      "temp_f": 100.3,
+      "wind_speed_mph": 4.7,
+      "wind_direction": "W",
       "precip_probability": 0,
-      "humidity": 24,
+      "humidity": 22,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -4856,8 +4667,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 686948,
@@ -5005,11 +4816,11 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 100,
-      "wind_speed_mph": 4.1,
-      "wind_direction": "SSW",
+      "temp_f": 100.3,
+      "wind_speed_mph": 4.7,
+      "wind_direction": "W",
       "precip_probability": 0,
-      "humidity": 24,
+      "humidity": 22,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -5029,8 +4840,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 660670,
@@ -5178,11 +4989,11 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 100,
-      "wind_speed_mph": 4.1,
-      "wind_direction": "SSW",
+      "temp_f": 100.3,
+      "wind_speed_mph": 4.7,
+      "wind_direction": "W",
       "precip_probability": 0,
-      "humidity": 24,
+      "humidity": 22,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -5202,8 +5013,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 645277,
@@ -5351,11 +5162,11 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 100,
-      "wind_speed_mph": 4.1,
-      "wind_direction": "SSW",
+      "temp_f": 100.3,
+      "wind_speed_mph": 4.7,
+      "wind_direction": "W",
       "precip_probability": 0,
-      "humidity": 24,
+      "humidity": 22,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -5375,8 +5186,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 621566,
@@ -5524,11 +5335,11 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 100,
-      "wind_speed_mph": 4.1,
-      "wind_direction": "SSW",
+      "temp_f": 100.3,
+      "wind_speed_mph": 4.7,
+      "wind_direction": "W",
       "precip_probability": 0,
-      "humidity": 24,
+      "humidity": 22,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -5548,8 +5359,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 671739,
@@ -5697,11 +5508,11 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 100,
-      "wind_speed_mph": 4.1,
-      "wind_direction": "SSW",
+      "temp_f": 100.3,
+      "wind_speed_mph": 4.7,
+      "wind_direction": "W",
       "precip_probability": 0,
-      "humidity": 24,
+      "humidity": 22,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -5721,8 +5532,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 643289,
@@ -5870,11 +5681,11 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 100,
-      "wind_speed_mph": 4.1,
-      "wind_direction": "SSW",
+      "temp_f": 100.3,
+      "wind_speed_mph": 4.7,
+      "wind_direction": "W",
       "precip_probability": 0,
-      "humidity": 24,
+      "humidity": 22,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -5894,8 +5705,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 663586,
@@ -6043,11 +5854,11 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 100,
-      "wind_speed_mph": 4.1,
-      "wind_direction": "SSW",
+      "temp_f": 100.3,
+      "wind_speed_mph": 4.7,
+      "wind_direction": "W",
       "precip_probability": 0,
-      "humidity": 24,
+      "humidity": 22,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -6067,8 +5878,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 669221,
@@ -6216,11 +6027,11 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 100,
-      "wind_speed_mph": 4.1,
-      "wind_direction": "SSW",
+      "temp_f": 100.3,
+      "wind_speed_mph": 4.7,
+      "wind_direction": "W",
       "precip_probability": 0,
-      "humidity": 24,
+      "humidity": 22,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -6240,8 +6051,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 673490,
@@ -6389,11 +6200,11 @@
       "hits": 0.98
     },
     "weather": {
-      "temp_f": 100,
-      "wind_speed_mph": 4.1,
-      "wind_direction": "SSW",
+      "temp_f": 100.3,
+      "wind_speed_mph": 4.7,
+      "wind_direction": "W",
       "precip_probability": 0,
-      "humidity": 24,
+      "humidity": 22,
       "condition": "clear sky",
       "is_indoor": false,
       "weather_available": true
@@ -6413,8 +6224,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 650490,
@@ -6562,12 +6373,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 89.2,
-      "wind_speed_mph": 6.0,
-      "wind_direction": "E",
-      "precip_probability": 97,
-      "humidity": 71,
-      "condition": "light rain",
+      "temp_f": 85.7,
+      "wind_speed_mph": 4.4,
+      "wind_direction": "ESE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "moderate rain",
       "is_indoor": true,
       "weather_available": true
     },
@@ -6586,8 +6397,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 666018,
@@ -6735,12 +6546,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 89.2,
-      "wind_speed_mph": 6.0,
-      "wind_direction": "E",
-      "precip_probability": 97,
-      "humidity": 71,
-      "condition": "light rain",
+      "temp_f": 85.7,
+      "wind_speed_mph": 4.4,
+      "wind_direction": "ESE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "moderate rain",
       "is_indoor": true,
       "weather_available": true
     },
@@ -6759,8 +6570,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 691406,
@@ -6908,12 +6719,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 89.2,
-      "wind_speed_mph": 6.0,
-      "wind_direction": "E",
-      "precip_probability": 97,
-      "humidity": 71,
-      "condition": "light rain",
+      "temp_f": 85.7,
+      "wind_speed_mph": 4.4,
+      "wind_direction": "ESE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "moderate rain",
       "is_indoor": true,
       "weather_available": true
     },
@@ -6932,8 +6743,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 689414,
@@ -7081,12 +6892,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 89.2,
-      "wind_speed_mph": 6.0,
-      "wind_direction": "E",
-      "precip_probability": 97,
-      "humidity": 71,
-      "condition": "light rain",
+      "temp_f": 85.7,
+      "wind_speed_mph": 4.4,
+      "wind_direction": "ESE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "moderate rain",
       "is_indoor": true,
       "weather_available": true
     },
@@ -7105,8 +6916,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 802415,
@@ -7226,12 +7037,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 89.2,
-      "wind_speed_mph": 6.0,
-      "wind_direction": "E",
-      "precip_probability": 97,
-      "humidity": 71,
-      "condition": "light rain",
+      "temp_f": 85.7,
+      "wind_speed_mph": 4.4,
+      "wind_direction": "ESE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "moderate rain",
       "is_indoor": true,
       "weather_available": true
     },
@@ -7250,8 +7061,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 683748,
@@ -7399,12 +7210,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 89.2,
-      "wind_speed_mph": 6.0,
-      "wind_direction": "E",
-      "precip_probability": 97,
-      "humidity": 71,
-      "condition": "light rain",
+      "temp_f": 85.7,
+      "wind_speed_mph": 4.4,
+      "wind_direction": "ESE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "moderate rain",
       "is_indoor": true,
       "weather_available": true
     },
@@ -7423,8 +7234,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 676356,
@@ -7572,12 +7383,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 89.2,
-      "wind_speed_mph": 6.0,
-      "wind_direction": "E",
-      "precip_probability": 97,
-      "humidity": 71,
-      "condition": "light rain",
+      "temp_f": 85.7,
+      "wind_speed_mph": 4.4,
+      "wind_direction": "ESE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "moderate rain",
       "is_indoor": true,
       "weather_available": true
     },
@@ -7596,8 +7407,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 680700,
@@ -7745,12 +7556,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 89.2,
-      "wind_speed_mph": 6.0,
-      "wind_direction": "E",
-      "precip_probability": 97,
-      "humidity": 71,
-      "condition": "light rain",
+      "temp_f": 85.7,
+      "wind_speed_mph": 4.4,
+      "wind_direction": "ESE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "moderate rain",
       "is_indoor": true,
       "weather_available": true
     },
@@ -7769,8 +7580,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 670764,
@@ -7918,12 +7729,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 89.2,
-      "wind_speed_mph": 6.0,
-      "wind_direction": "E",
-      "precip_probability": 97,
-      "humidity": 71,
-      "condition": "light rain",
+      "temp_f": 85.7,
+      "wind_speed_mph": 4.4,
+      "wind_direction": "ESE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "moderate rain",
       "is_indoor": true,
       "weather_available": true
     },
@@ -7942,8 +7753,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 700250,
@@ -8072,12 +7883,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 89.2,
-      "wind_speed_mph": 6.0,
-      "wind_direction": "E",
-      "precip_probability": 97,
-      "humidity": 71,
-      "condition": "light rain",
+      "temp_f": 85.7,
+      "wind_speed_mph": 4.4,
+      "wind_direction": "ESE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "moderate rain",
       "is_indoor": true,
       "weather_available": true
     },
@@ -8096,8 +7907,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 641355,
@@ -8226,12 +8037,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 89.2,
-      "wind_speed_mph": 6.0,
-      "wind_direction": "E",
-      "precip_probability": 97,
-      "humidity": 71,
-      "condition": "light rain",
+      "temp_f": 85.7,
+      "wind_speed_mph": 4.4,
+      "wind_direction": "ESE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "moderate rain",
       "is_indoor": true,
       "weather_available": true
     },
@@ -8250,8 +8061,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 671277,
@@ -8380,12 +8191,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 89.2,
-      "wind_speed_mph": 6.0,
-      "wind_direction": "E",
-      "precip_probability": 97,
-      "humidity": 71,
-      "condition": "light rain",
+      "temp_f": 85.7,
+      "wind_speed_mph": 4.4,
+      "wind_direction": "ESE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "moderate rain",
       "is_indoor": true,
       "weather_available": true
     },
@@ -8404,8 +8215,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 682987,
@@ -8534,12 +8345,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 89.2,
-      "wind_speed_mph": 6.0,
-      "wind_direction": "E",
-      "precip_probability": 97,
-      "humidity": 71,
-      "condition": "light rain",
+      "temp_f": 85.7,
+      "wind_speed_mph": 4.4,
+      "wind_direction": "ESE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "moderate rain",
       "is_indoor": true,
       "weather_available": true
     },
@@ -8558,8 +8369,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 806146,
@@ -8688,12 +8499,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 89.2,
-      "wind_speed_mph": 6.0,
-      "wind_direction": "E",
-      "precip_probability": 97,
-      "humidity": 71,
-      "condition": "light rain",
+      "temp_f": 85.7,
+      "wind_speed_mph": 4.4,
+      "wind_direction": "ESE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "moderate rain",
       "is_indoor": true,
       "weather_available": true
     },
@@ -8712,8 +8523,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 665862,
@@ -8842,12 +8653,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 89.2,
-      "wind_speed_mph": 6.0,
-      "wind_direction": "E",
-      "precip_probability": 97,
-      "humidity": 71,
-      "condition": "light rain",
+      "temp_f": 85.7,
+      "wind_speed_mph": 4.4,
+      "wind_direction": "ESE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "moderate rain",
       "is_indoor": true,
       "weather_available": true
     },
@@ -8866,8 +8677,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 663757,
@@ -8977,12 +8788,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 89.2,
-      "wind_speed_mph": 6.0,
-      "wind_direction": "E",
-      "precip_probability": 97,
-      "humidity": 71,
-      "condition": "light rain",
+      "temp_f": 85.7,
+      "wind_speed_mph": 4.4,
+      "wind_direction": "ESE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "moderate rain",
       "is_indoor": true,
       "weather_available": true
     },
@@ -9001,8 +8812,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 669224,
@@ -9131,12 +8942,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 89.2,
-      "wind_speed_mph": 6.0,
-      "wind_direction": "E",
-      "precip_probability": 97,
-      "humidity": 71,
-      "condition": "light rain",
+      "temp_f": 85.7,
+      "wind_speed_mph": 4.4,
+      "wind_direction": "ESE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "moderate rain",
       "is_indoor": true,
       "weather_available": true
     },
@@ -9155,8 +8966,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 641857,
@@ -9285,12 +9096,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 89.2,
-      "wind_speed_mph": 6.0,
-      "wind_direction": "E",
-      "precip_probability": 97,
-      "humidity": 71,
-      "condition": "light rain",
+      "temp_f": 85.7,
+      "wind_speed_mph": 4.4,
+      "wind_direction": "ESE",
+      "precip_probability": 100,
+      "humidity": 79,
+      "condition": "moderate rain",
       "is_indoor": true,
       "weather_available": true
     },
@@ -9309,354 +9120,8 @@
     "lineup_status": "confirmed",
     "lineup_confirmed": true,
     "lineup_source": "mlb_official",
-    "lineup_source_updated_at": "2026-10-03T19:39:17.625438+00:00",
-    "lineup_fetched_at": "2026-10-03T19:39:17.625438+00:00"
-  },
-  {
-    "player_id": 669003,
-    "name": "Garrett Mitchell",
-    "position": "CF",
-    "bat_side": "L",
-    "team_id": 158,
-    "team_name": "Milwaukee Brewers",
-    "opp_team_name": "San Diego Padres",
-    "batting_order": 1,
-    "home_away": "home",
-    "venue_id": 32,
-    "venue_name": "American Family Field",
-    "game_pk": 849830,
-    "game_date_utc": "2026-10-04T00:30:00Z",
-    "date": "2026-10-03",
-    "opp_pitcher_name": "Robbie Ray",
-    "season_stats": {
-      "avg": 0.262,
-      "obp": 0.354,
-      "slg": 0.416,
-      "hits": 121,
-      "singles": 76,
-      "doubles": 30,
-      "triples": 4,
-      "hr": 11,
-      "rbi": 65,
-      "runs": 74,
-      "sb": 14,
-      "bb": 60,
-      "k": 167,
-      "hbp": 6,
-      "ab": 461,
-      "games": 145,
-      "ud_fpts_per_game": 7.46,
-      "pp_fpts_per_game": 6.9
-    },
-    "rolling_7d": {
-      "avg": 0.25,
-      "obp": 0.5,
-      "slg": 0.25,
-      "hits": 1,
-      "singles": 1,
-      "doubles": 0,
-      "triples": 0,
-      "hr": 0,
-      "rbi": 0,
-      "runs": 1,
-      "sb": 0,
-      "bb": 2,
-      "k": 1,
-      "hbp": 0,
-      "ab": 4,
-      "games": 2,
-      "ud_fpts_per_game": 5.5,
-      "pp_fpts_per_game": 4.5
-    },
-    "rolling_14d": {
-      "avg": 0.185,
-      "obp": 0.29,
-      "slg": 0.185,
-      "hits": 5,
-      "singles": 5,
-      "doubles": 0,
-      "triples": 0,
-      "hr": 0,
-      "rbi": 0,
-      "runs": 5,
-      "sb": 0,
-      "bb": 4,
-      "k": 11,
-      "hbp": 0,
-      "ab": 27,
-      "games": 8,
-      "ud_fpts_per_game": 4.62,
-      "pp_fpts_per_game": 4.12
-    },
-    "rolling_30d": {
-      "avg": 0.275,
-      "obp": 0.351,
-      "slg": 0.449,
-      "hits": 19,
-      "singles": 12,
-      "doubles": 4,
-      "triples": 1,
-      "hr": 2,
-      "rbi": 10,
-      "runs": 16,
-      "sb": 2,
-      "bb": 7,
-      "k": 25,
-      "hbp": 1,
-      "ab": 69,
-      "games": 21,
-      "ud_fpts_per_game": 8.19,
-      "pp_fpts_per_game": 7.71
-    },
-    "statcast": {
-      "avg_ev_7d": 81.2,
-      "ev_stdev_7d": 15.0,
-      "ev_floor_7d": 67.8,
-      "ev_ceiling_7d": 101.5,
-      "hard_hit_pct_7d": 25.0,
-      "barrel_pct_7d": 12.5,
-      "xwoba_7d": 0.49,
-      "doc_avg_ev_7d": 87.5,
-      "doc_pitches_7d": 9,
-      "avg_ev_14d": 80.2,
-      "ev_stdev_14d": 18.2,
-      "ev_floor_14d": 59.6,
-      "ev_ceiling_14d": 104.9,
-      "hard_hit_pct_14d": 28.1,
-      "barrel_pct_14d": 3.1,
-      "xwoba_14d": 0.323,
-      "doc_avg_ev_14d": 84.2,
-      "doc_pitches_14d": 29,
-      "avg_ev_30d": 83.7,
-      "ev_stdev_30d": 17.8,
-      "ev_floor_30d": 61.7,
-      "ev_ceiling_30d": 105.7,
-      "hard_hit_pct_30d": 32.9,
-      "barrel_pct_30d": 5.9,
-      "xwoba_30d": 0.382,
-      "doc_avg_ev_30d": 85.7,
-      "doc_pitches_30d": 82
-    },
-    "fg_stats": {},
-    "matchup": {
-      "era": 3.59,
-      "whip": 1.35,
-      "k_pct": 0.199,
-      "fip": 4.66,
-      "ip": 165.2,
-      "k9": 7.61,
-      "pitcher_hand": "L",
-      "pitcher_name": "Robbie Ray"
-    },
-    "platoon": {
-      "platoon_same_hand": true,
-      "advantage": null
-    },
-    "park_factor": {
-      "hr": 1.06,
-      "runs": 1.03,
-      "hits": 1.02
-    },
-    "weather": {
-      "temp_f": 66.5,
-      "wind_speed_mph": 7.9,
-      "wind_direction": "SSE",
-      "precip_probability": 0,
-      "humidity": 60,
-      "condition": "clear sky",
-      "is_indoor": true,
-      "weather_available": true
-    },
-    "days_rest": 6,
-    "projected": {
-      "singles": 0.2419,
-      "doubles": 0.03,
-      "triples": 0.0,
-      "hr": 0.03,
-      "bb": 0.1197,
-      "hbp": 0.01,
-      "rbi": 0.1,
-      "runs": 0.2489,
-      "sb": 0.02
-    },
-    "lineup_status": "projected",
-    "lineup_confirmed": false,
-    "lineup_source": "mlb_recent_game_projection",
-    "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-03T19:39:17.625513+00:00"
-  },
-  {
-    "player_id": 641343,
-    "name": "Jake Bauers",
-    "position": "1B",
-    "bat_side": "L",
-    "team_id": 158,
-    "team_name": "Milwaukee Brewers",
-    "opp_team_name": "San Diego Padres",
-    "batting_order": 2,
-    "home_away": "home",
-    "venue_id": 32,
-    "venue_name": "American Family Field",
-    "game_pk": 849830,
-    "game_date_utc": "2026-10-04T00:30:00Z",
-    "date": "2026-10-03",
-    "opp_pitcher_name": "Robbie Ray",
-    "season_stats": {
-      "avg": 0.266,
-      "obp": 0.389,
-      "slg": 0.484,
-      "hits": 127,
-      "singles": 77,
-      "doubles": 22,
-      "triples": 2,
-      "hr": 26,
-      "rbi": 86,
-      "runs": 93,
-      "sb": 11,
-      "bb": 94,
-      "k": 156,
-      "hbp": 4,
-      "ab": 477,
-      "games": 144,
-      "ud_fpts_per_game": 9.27,
-      "pp_fpts_per_game": 8.51
-    },
-    "rolling_7d": {
-      "avg": 0.143,
-      "obp": 0.25,
-      "slg": 0.143,
-      "hits": 1,
-      "singles": 1,
-      "doubles": 0,
-      "triples": 0,
-      "hr": 0,
-      "rbi": 0,
-      "runs": 1,
-      "sb": 0,
-      "bb": 1,
-      "k": 3,
-      "hbp": 0,
-      "ab": 7,
-      "games": 2,
-      "ud_fpts_per_game": 4.0,
-      "pp_fpts_per_game": 3.5
-    },
-    "rolling_14d": {
-      "avg": 0.231,
-      "obp": 0.3,
-      "slg": 0.308,
-      "hits": 6,
-      "singles": 4,
-      "doubles": 2,
-      "triples": 0,
-      "hr": 0,
-      "rbi": 3,
-      "runs": 5,
-      "sb": 0,
-      "bb": 3,
-      "k": 13,
-      "hbp": 0,
-      "ab": 26,
-      "games": 7,
-      "ud_fpts_per_game": 7.0,
-      "pp_fpts_per_game": 6.29
-    },
-    "rolling_30d": {
-      "avg": 0.237,
-      "obp": 0.387,
-      "slg": 0.441,
-      "hits": 14,
-      "singles": 8,
-      "doubles": 3,
-      "triples": 0,
-      "hr": 3,
-      "rbi": 10,
-      "runs": 15,
-      "sb": 1,
-      "bb": 15,
-      "k": 26,
-      "hbp": 0,
-      "ab": 59,
-      "games": 19,
-      "ud_fpts_per_game": 9.0,
-      "pp_fpts_per_game": 8.11
-    },
-    "statcast": {
-      "avg_ev_7d": 89.2,
-      "ev_stdev_7d": 14.8,
-      "ev_floor_7d": 75.6,
-      "ev_ceiling_7d": 105.4,
-      "hard_hit_pct_7d": 44.4,
-      "barrel_pct_7d": 11.1,
-      "xwoba_7d": 0.355,
-      "doc_avg_ev_7d": 91.1,
-      "doc_pitches_7d": 10,
-      "avg_ev_14d": 81.1,
-      "ev_stdev_14d": 19.4,
-      "ev_floor_14d": 62.8,
-      "ev_ceiling_14d": 105.1,
-      "hard_hit_pct_14d": 25.8,
-      "barrel_pct_14d": 6.5,
-      "xwoba_14d": 0.222,
-      "doc_avg_ev_14d": 90.1,
-      "doc_pitches_14d": 32,
-      "avg_ev_30d": 81.7,
-      "ev_stdev_30d": 17.3,
-      "ev_floor_30d": 63.5,
-      "ev_ceiling_30d": 105.0,
-      "hard_hit_pct_30d": 25.7,
-      "barrel_pct_30d": 8.1,
-      "xwoba_30d": 0.361,
-      "doc_avg_ev_30d": 87.4,
-      "doc_pitches_30d": 70
-    },
-    "fg_stats": {},
-    "matchup": {
-      "era": 3.59,
-      "whip": 1.35,
-      "k_pct": 0.199,
-      "fip": 4.66,
-      "ip": 165.2,
-      "k9": 7.61,
-      "pitcher_hand": "L",
-      "pitcher_name": "Robbie Ray"
-    },
-    "platoon": {
-      "platoon_same_hand": true,
-      "advantage": null
-    },
-    "park_factor": {
-      "hr": 1.06,
-      "runs": 1.03,
-      "hits": 1.02
-    },
-    "weather": {
-      "temp_f": 66.5,
-      "wind_speed_mph": 7.9,
-      "wind_direction": "SSE",
-      "precip_probability": 0,
-      "humidity": 60,
-      "condition": "clear sky",
-      "is_indoor": true,
-      "weather_available": true
-    },
-    "days_rest": 6,
-    "projected": {
-      "singles": 0.2279,
-      "doubles": 0.0878,
-      "triples": 0.0,
-      "hr": 0.03,
-      "bb": 0.1075,
-      "hbp": 0.01,
-      "rbi": 0.1587,
-      "runs": 0.2833,
-      "sb": 0.02
-    },
-    "lineup_status": "projected",
-    "lineup_confirmed": false,
-    "lineup_source": "mlb_recent_game_projection",
-    "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-03T19:39:17.625513+00:00"
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 694192,
@@ -9666,7 +9131,7 @@
     "team_id": 158,
     "team_name": "Milwaukee Brewers",
     "opp_team_name": "San Diego Padres",
-    "batting_order": 3,
+    "batting_order": 1,
     "home_away": "home",
     "venue_id": 32,
     "venue_name": "American Family Field",
@@ -9804,11 +9269,11 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 66.5,
-      "wind_speed_mph": 7.9,
+      "temp_f": 63.4,
+      "wind_speed_mph": 6.4,
       "wind_direction": "SSE",
       "precip_probability": 0,
-      "humidity": 60,
+      "humidity": 68,
       "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
@@ -9825,11 +9290,11 @@
       "runs": 0.3451,
       "sb": 0.1282
     },
-    "lineup_status": "projected",
-    "lineup_confirmed": false,
-    "lineup_source": "mlb_recent_game_projection",
-    "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-03T19:39:17.625513+00:00"
+    "lineup_status": "confirmed",
+    "lineup_confirmed": true,
+    "lineup_source": "mlb_official",
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 668930,
@@ -9839,7 +9304,7 @@
     "team_id": 158,
     "team_name": "Milwaukee Brewers",
     "opp_team_name": "San Diego Padres",
-    "batting_order": 4,
+    "batting_order": 2,
     "home_away": "home",
     "venue_id": 32,
     "venue_name": "American Family Field",
@@ -9977,11 +9442,11 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 66.5,
-      "wind_speed_mph": 7.9,
+      "temp_f": 63.4,
+      "wind_speed_mph": 6.4,
       "wind_direction": "SSE",
       "precip_probability": 0,
-      "humidity": 60,
+      "humidity": 68,
       "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
@@ -9998,21 +9463,21 @@
       "runs": 0.2489,
       "sb": 0.02
     },
-    "lineup_status": "projected",
-    "lineup_confirmed": false,
-    "lineup_source": "mlb_recent_game_projection",
-    "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-03T19:39:17.625513+00:00"
+    "lineup_status": "confirmed",
+    "lineup_confirmed": true,
+    "lineup_source": "mlb_official",
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
-    "player_id": 596142,
-    "name": "Gary S\u00e1nchez",
+    "player_id": 661388,
+    "name": "William Contreras",
     "position": "C",
     "bat_side": "R",
     "team_id": 158,
     "team_name": "Milwaukee Brewers",
     "opp_team_name": "San Diego Padres",
-    "batting_order": 5,
+    "batting_order": 3,
     "home_away": "home",
     "venue_id": 32,
     "venue_name": "American Family Field",
@@ -10021,113 +9486,113 @@
     "date": "2026-10-03",
     "opp_pitcher_name": "Robbie Ray",
     "season_stats": {
-      "avg": 0.209,
-      "obp": 0.349,
-      "slg": 0.422,
-      "hits": 47,
-      "singles": 24,
-      "doubles": 10,
+      "avg": 0.27,
+      "obp": 0.341,
+      "slg": 0.417,
+      "hits": 153,
+      "singles": 107,
+      "doubles": 27,
       "triples": 1,
-      "hr": 12,
-      "rbi": 38,
-      "runs": 37,
-      "sb": 0,
-      "bb": 46,
-      "k": 59,
-      "hbp": 3,
-      "ab": 225,
-      "games": 87,
-      "ud_fpts_per_game": 6.4,
-      "pp_fpts_per_game": 5.72
+      "hr": 18,
+      "rbi": 94,
+      "runs": 82,
+      "sb": 1,
+      "bb": 61,
+      "k": 94,
+      "hbp": 4,
+      "ab": 566,
+      "games": 147,
+      "ud_fpts_per_game": 8.31,
+      "pp_fpts_per_game": 7.69
     },
     "rolling_7d": {
-      "avg": 0.167,
-      "obp": 0.167,
-      "slg": 0.667,
+      "avg": 0.333,
+      "obp": 0.5,
+      "slg": 0.333,
       "hits": 1,
-      "singles": 0,
+      "singles": 1,
       "doubles": 0,
       "triples": 0,
-      "hr": 1,
-      "rbi": 2,
-      "runs": 1,
-      "sb": 0,
-      "bb": 0,
-      "k": 2,
-      "hbp": 0,
-      "ab": 6,
-      "games": 2,
-      "ud_fpts_per_game": 8.0,
-      "pp_fpts_per_game": 8.0
-    },
-    "rolling_14d": {
-      "avg": 0.231,
-      "obp": 0.286,
-      "slg": 0.462,
-      "hits": 3,
-      "singles": 2,
-      "doubles": 0,
-      "triples": 0,
-      "hr": 1,
-      "rbi": 3,
-      "runs": 3,
+      "hr": 0,
+      "rbi": 0,
+      "runs": 0,
       "sb": 0,
       "bb": 1,
-      "k": 4,
+      "k": 1,
       "hbp": 0,
-      "ab": 13,
-      "games": 4,
-      "ud_fpts_per_game": 7.75,
-      "pp_fpts_per_game": 7.5
+      "ab": 3,
+      "games": 1,
+      "ud_fpts_per_game": 6.0,
+      "pp_fpts_per_game": 5.0
     },
-    "rolling_30d": {
-      "avg": 0.24,
-      "obp": 0.367,
-      "slg": 0.4,
+    "rolling_14d": {
+      "avg": 0.25,
+      "obp": 0.321,
+      "slg": 0.375,
       "hits": 6,
-      "singles": 4,
-      "doubles": 1,
+      "singles": 5,
+      "doubles": 0,
       "triples": 0,
       "hr": 1,
-      "rbi": 3,
-      "runs": 3,
+      "rbi": 7,
+      "runs": 1,
       "sb": 0,
-      "bb": 5,
-      "k": 8,
+      "bb": 3,
+      "k": 5,
       "hbp": 0,
-      "ab": 25,
-      "games": 9,
-      "ud_fpts_per_game": 6.11,
-      "pp_fpts_per_game": 5.44
+      "ab": 24,
+      "games": 7,
+      "ud_fpts_per_game": 7.14,
+      "pp_fpts_per_game": 6.71
+    },
+    "rolling_30d": {
+      "avg": 0.243,
+      "obp": 0.321,
+      "slg": 0.5,
+      "hits": 17,
+      "singles": 9,
+      "doubles": 3,
+      "triples": 0,
+      "hr": 5,
+      "rbi": 22,
+      "runs": 12,
+      "sb": 0,
+      "bb": 9,
+      "k": 17,
+      "hbp": 0,
+      "ab": 70,
+      "games": 18,
+      "ud_fpts_per_game": 10.56,
+      "pp_fpts_per_game": 9.89
     },
     "statcast": {
-      "avg_ev_7d": 84.1,
-      "ev_stdev_7d": 15.6,
-      "ev_floor_7d": 69.4,
-      "ev_ceiling_7d": 95.8,
-      "hard_hit_pct_7d": 20.0,
-      "barrel_pct_7d": 20.0,
-      "xwoba_7d": 0.27,
+      "avg_ev_7d": 83.2,
+      "ev_stdev_7d": 15.1,
+      "ev_floor_7d": 66.8,
+      "ev_ceiling_7d": 96.9,
+      "hard_hit_pct_7d": 40.0,
+      "barrel_pct_7d": 0.0,
+      "xwoba_7d": 0.403,
       "doc_avg_ev_7d": null,
       "doc_pitches_7d": 4,
-      "avg_ev_14d": 85.0,
-      "ev_stdev_14d": 14.1,
-      "ev_floor_14d": 64.2,
-      "ev_ceiling_14d": 100.5,
-      "hard_hit_pct_14d": 33.3,
-      "barrel_pct_14d": 8.3,
-      "xwoba_14d": 0.241,
-      "doc_avg_ev_14d": 80.4,
-      "doc_pitches_14d": 14,
-      "avg_ev_30d": 84.2,
-      "ev_stdev_30d": 13.2,
-      "ev_floor_30d": 68.0,
-      "ev_ceiling_30d": 100.6,
-      "hard_hit_pct_30d": 27.3,
-      "barrel_pct_30d": 4.5,
-      "xwoba_30d": 0.29,
-      "doc_avg_ev_30d": 81.7,
-      "doc_pitches_30d": 28
+      "avg_ev_14d": 83.3,
+      "ev_stdev_14d": 14.8,
+      "ev_floor_14d": 66.0,
+      "ev_ceiling_14d": 102.7,
+      "hard_hit_pct_14d": 23.5,
+      "barrel_pct_14d": 5.9,
+      "xwoba_14d": 0.31,
+      "doc_avg_ev_14d": 86.5,
+      "doc_pitches_14d": 21,
+      "avg_ev_30d": 85.6,
+      "ev_stdev_30d": 15.6,
+      "ev_floor_30d": 67.4,
+      "ev_ceiling_30d": 104.5,
+      "hard_hit_pct_30d": 31.5,
+      "barrel_pct_30d": 7.6,
+      "xwoba_30d": 0.32,
+      "doc_avg_ev_30d": 89.4,
+      "doc_pitches_30d": 64
     },
     "fg_stats": {},
     "matchup": {
@@ -10150,32 +9615,205 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 66.5,
-      "wind_speed_mph": 7.9,
+      "temp_f": 63.4,
+      "wind_speed_mph": 6.4,
       "wind_direction": "SSE",
       "precip_probability": 0,
-      "humidity": 60,
+      "humidity": 68,
+      "condition": "clear sky",
+      "is_indoor": true,
+      "weather_available": true
+    },
+    "days_rest": 7,
+    "projected": {
+      "singles": 0.2653,
+      "doubles": 0.03,
+      "triples": 0.0,
+      "hr": 0.0505,
+      "bb": 0.1075,
+      "hbp": 0.01,
+      "rbi": 0.3419,
+      "runs": 0.1,
+      "sb": 0.02
+    },
+    "lineup_status": "confirmed",
+    "lineup_confirmed": true,
+    "lineup_source": "mlb_official",
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
+  },
+  {
+    "player_id": 641343,
+    "name": "Jake Bauers",
+    "position": "1B",
+    "bat_side": "L",
+    "team_id": 158,
+    "team_name": "Milwaukee Brewers",
+    "opp_team_name": "San Diego Padres",
+    "batting_order": 4,
+    "home_away": "home",
+    "venue_id": 32,
+    "venue_name": "American Family Field",
+    "game_pk": 849830,
+    "game_date_utc": "2026-10-04T00:30:00Z",
+    "date": "2026-10-03",
+    "opp_pitcher_name": "Robbie Ray",
+    "season_stats": {
+      "avg": 0.266,
+      "obp": 0.389,
+      "slg": 0.484,
+      "hits": 127,
+      "singles": 77,
+      "doubles": 22,
+      "triples": 2,
+      "hr": 26,
+      "rbi": 86,
+      "runs": 93,
+      "sb": 11,
+      "bb": 94,
+      "k": 156,
+      "hbp": 4,
+      "ab": 477,
+      "games": 144,
+      "ud_fpts_per_game": 9.27,
+      "pp_fpts_per_game": 8.51
+    },
+    "rolling_7d": {
+      "avg": 0.143,
+      "obp": 0.25,
+      "slg": 0.143,
+      "hits": 1,
+      "singles": 1,
+      "doubles": 0,
+      "triples": 0,
+      "hr": 0,
+      "rbi": 0,
+      "runs": 1,
+      "sb": 0,
+      "bb": 1,
+      "k": 3,
+      "hbp": 0,
+      "ab": 7,
+      "games": 2,
+      "ud_fpts_per_game": 4.0,
+      "pp_fpts_per_game": 3.5
+    },
+    "rolling_14d": {
+      "avg": 0.231,
+      "obp": 0.3,
+      "slg": 0.308,
+      "hits": 6,
+      "singles": 4,
+      "doubles": 2,
+      "triples": 0,
+      "hr": 0,
+      "rbi": 3,
+      "runs": 5,
+      "sb": 0,
+      "bb": 3,
+      "k": 13,
+      "hbp": 0,
+      "ab": 26,
+      "games": 7,
+      "ud_fpts_per_game": 7.0,
+      "pp_fpts_per_game": 6.29
+    },
+    "rolling_30d": {
+      "avg": 0.237,
+      "obp": 0.387,
+      "slg": 0.441,
+      "hits": 14,
+      "singles": 8,
+      "doubles": 3,
+      "triples": 0,
+      "hr": 3,
+      "rbi": 10,
+      "runs": 15,
+      "sb": 1,
+      "bb": 15,
+      "k": 26,
+      "hbp": 0,
+      "ab": 59,
+      "games": 19,
+      "ud_fpts_per_game": 9.0,
+      "pp_fpts_per_game": 8.11
+    },
+    "statcast": {
+      "avg_ev_7d": 89.2,
+      "ev_stdev_7d": 14.8,
+      "ev_floor_7d": 75.6,
+      "ev_ceiling_7d": 105.4,
+      "hard_hit_pct_7d": 44.4,
+      "barrel_pct_7d": 11.1,
+      "xwoba_7d": 0.355,
+      "doc_avg_ev_7d": 91.1,
+      "doc_pitches_7d": 10,
+      "avg_ev_14d": 81.1,
+      "ev_stdev_14d": 19.4,
+      "ev_floor_14d": 62.8,
+      "ev_ceiling_14d": 105.1,
+      "hard_hit_pct_14d": 25.8,
+      "barrel_pct_14d": 6.5,
+      "xwoba_14d": 0.222,
+      "doc_avg_ev_14d": 90.1,
+      "doc_pitches_14d": 32,
+      "avg_ev_30d": 81.7,
+      "ev_stdev_30d": 17.3,
+      "ev_floor_30d": 63.5,
+      "ev_ceiling_30d": 105.0,
+      "hard_hit_pct_30d": 25.7,
+      "barrel_pct_30d": 8.1,
+      "xwoba_30d": 0.361,
+      "doc_avg_ev_30d": 87.4,
+      "doc_pitches_30d": 70
+    },
+    "fg_stats": {},
+    "matchup": {
+      "era": 3.59,
+      "whip": 1.35,
+      "k_pct": 0.199,
+      "fip": 4.66,
+      "ip": 165.2,
+      "k9": 7.61,
+      "pitcher_hand": "L",
+      "pitcher_name": "Robbie Ray"
+    },
+    "platoon": {
+      "platoon_same_hand": true,
+      "advantage": null
+    },
+    "park_factor": {
+      "hr": 1.06,
+      "runs": 1.03,
+      "hits": 1.02
+    },
+    "weather": {
+      "temp_f": 63.4,
+      "wind_speed_mph": 6.4,
+      "wind_direction": "SSE",
+      "precip_probability": 0,
+      "humidity": 68,
       "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
     },
     "days_rest": 6,
     "projected": {
-      "singles": 0.1506,
-      "doubles": 0.0431,
-      "triples": 0.0019,
-      "hr": 0.0497,
-      "bb": 0.1246,
-      "hbp": 0.0159,
-      "rbi": 0.1614,
-      "runs": 0.1721,
+      "singles": 0.2279,
+      "doubles": 0.0878,
+      "triples": 0.0,
+      "hr": 0.03,
+      "bb": 0.1075,
+      "hbp": 0.01,
+      "rbi": 0.1587,
+      "runs": 0.2833,
       "sb": 0.02
     },
-    "lineup_status": "projected",
-    "lineup_confirmed": false,
-    "lineup_source": "mlb_recent_game_projection",
-    "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-03T19:39:17.625513+00:00"
+    "lineup_status": "confirmed",
+    "lineup_confirmed": true,
+    "lineup_source": "mlb_official",
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 592885,
@@ -10185,7 +9823,7 @@
     "team_id": 158,
     "team_name": "Milwaukee Brewers",
     "opp_team_name": "San Diego Padres",
-    "batting_order": 6,
+    "batting_order": 5,
     "home_away": "home",
     "venue_id": 32,
     "venue_name": "American Family Field",
@@ -10323,11 +9961,11 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 66.5,
-      "wind_speed_mph": 7.9,
+      "temp_f": 63.4,
+      "wind_speed_mph": 6.4,
       "wind_direction": "SSE",
       "precip_probability": 0,
-      "humidity": 60,
+      "humidity": 68,
       "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
@@ -10344,11 +9982,11 @@
       "runs": 0.2009,
       "sb": 0.02
     },
-    "lineup_status": "projected",
-    "lineup_confirmed": false,
-    "lineup_source": "mlb_recent_game_projection",
-    "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-03T19:39:17.625513+00:00"
+    "lineup_status": "confirmed",
+    "lineup_confirmed": true,
+    "lineup_source": "mlb_official",
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 806198,
@@ -10358,7 +9996,7 @@
     "team_id": 158,
     "team_name": "Milwaukee Brewers",
     "opp_team_name": "San Diego Padres",
-    "batting_order": 7,
+    "batting_order": 6,
     "home_away": "home",
     "venue_id": 32,
     "venue_name": "American Family Field",
@@ -10496,11 +10134,11 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 66.5,
-      "wind_speed_mph": 7.9,
+      "temp_f": 63.4,
+      "wind_speed_mph": 6.4,
       "wind_direction": "SSE",
       "precip_probability": 0,
-      "humidity": 60,
+      "humidity": 68,
       "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
@@ -10517,16 +10155,189 @@
       "runs": 0.1,
       "sb": 0.1282
     },
-    "lineup_status": "projected",
-    "lineup_confirmed": false,
-    "lineup_source": "mlb_recent_game_projection",
-    "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-03T19:39:17.625513+00:00"
+    "lineup_status": "confirmed",
+    "lineup_confirmed": true,
+    "lineup_source": "mlb_official",
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
-    "player_id": 686217,
-    "name": "Sal Frelick",
+    "player_id": 800325,
+    "name": "Luis Lara",
     "position": "RF",
+    "bat_side": "S",
+    "team_id": 158,
+    "team_name": "Milwaukee Brewers",
+    "opp_team_name": "San Diego Padres",
+    "batting_order": 7,
+    "home_away": "home",
+    "venue_id": 32,
+    "venue_name": "American Family Field",
+    "game_pk": 849830,
+    "game_date_utc": "2026-10-04T00:30:00Z",
+    "date": "2026-10-03",
+    "opp_pitcher_name": "Robbie Ray",
+    "season_stats": {
+      "avg": 0.246,
+      "obp": 0.311,
+      "slg": 0.325,
+      "hits": 47,
+      "singles": 36,
+      "doubles": 8,
+      "triples": 2,
+      "hr": 1,
+      "rbi": 26,
+      "runs": 25,
+      "sb": 3,
+      "bb": 18,
+      "k": 46,
+      "hbp": 1,
+      "ab": 191,
+      "games": 61,
+      "ud_fpts_per_game": 5.79,
+      "pp_fpts_per_game": 5.39
+    },
+    "rolling_7d": {
+      "avg": 0.25,
+      "obp": 0.25,
+      "slg": 0.25,
+      "hits": 1,
+      "singles": 1,
+      "doubles": 0,
+      "triples": 0,
+      "hr": 0,
+      "rbi": 0,
+      "runs": 0,
+      "sb": 0,
+      "bb": 0,
+      "k": 1,
+      "hbp": 0,
+      "ab": 4,
+      "games": 1,
+      "ud_fpts_per_game": 3.0,
+      "pp_fpts_per_game": 3.0
+    },
+    "rolling_14d": {
+      "avg": 0.158,
+      "obp": 0.2,
+      "slg": 0.158,
+      "hits": 3,
+      "singles": 3,
+      "doubles": 0,
+      "triples": 0,
+      "hr": 0,
+      "rbi": 2,
+      "runs": 0,
+      "sb": 0,
+      "bb": 1,
+      "k": 5,
+      "hbp": 0,
+      "ab": 19,
+      "games": 5,
+      "ud_fpts_per_game": 3.2,
+      "pp_fpts_per_game": 3.0
+    },
+    "rolling_30d": {
+      "avg": 0.175,
+      "obp": 0.213,
+      "slg": 0.193,
+      "hits": 10,
+      "singles": 9,
+      "doubles": 1,
+      "triples": 0,
+      "hr": 0,
+      "rbi": 6,
+      "runs": 5,
+      "sb": 0,
+      "bb": 3,
+      "k": 16,
+      "hbp": 0,
+      "ab": 57,
+      "games": 15,
+      "ud_fpts_per_game": 4.27,
+      "pp_fpts_per_game": 4.0
+    },
+    "statcast": {
+      "avg_ev_7d": 87.9,
+      "ev_stdev_7d": 8.7,
+      "ev_floor_7d": 80.5,
+      "ev_ceiling_7d": 97.6,
+      "hard_hit_pct_7d": 20.0,
+      "barrel_pct_7d": 0.0,
+      "xwoba_7d": 0.206,
+      "doc_avg_ev_7d": 91.3,
+      "doc_pitches_7d": 4,
+      "avg_ev_14d": 82.7,
+      "ev_stdev_14d": 11.8,
+      "ev_floor_14d": 65.3,
+      "ev_ceiling_14d": 99.1,
+      "hard_hit_pct_14d": 19.4,
+      "barrel_pct_14d": 0.0,
+      "xwoba_14d": 0.258,
+      "doc_avg_ev_14d": 84.2,
+      "doc_pitches_14d": 25,
+      "avg_ev_30d": 80.0,
+      "ev_stdev_30d": 15.1,
+      "ev_floor_30d": 60.5,
+      "ev_ceiling_30d": 100.0,
+      "hard_hit_pct_30d": 19.0,
+      "barrel_pct_30d": 0.0,
+      "xwoba_30d": 0.222,
+      "doc_avg_ev_30d": 81.7,
+      "doc_pitches_30d": 59
+    },
+    "fg_stats": {},
+    "matchup": {
+      "era": 3.59,
+      "whip": 1.35,
+      "k_pct": 0.199,
+      "fip": 4.66,
+      "ip": 165.2,
+      "k9": 7.61,
+      "pitcher_hand": "L",
+      "pitcher_name": "Robbie Ray"
+    },
+    "platoon": {
+      "platoon_same_hand": false,
+      "advantage": null
+    },
+    "park_factor": {
+      "hr": 1.06,
+      "runs": 1.03,
+      "hits": 1.02
+    },
+    "weather": {
+      "temp_f": 63.4,
+      "wind_speed_mph": 6.4,
+      "wind_direction": "SSE",
+      "precip_probability": 0,
+      "humidity": 68,
+      "condition": "clear sky",
+      "is_indoor": true,
+      "weather_available": true
+    },
+    "days_rest": 7,
+    "projected": {
+      "singles": 0.2354,
+      "doubles": 0.03,
+      "triples": 0.0,
+      "hr": 0.03,
+      "bb": 0.0684,
+      "hbp": 0.01,
+      "rbi": 0.1496,
+      "runs": 0.1,
+      "sb": 0.02
+    },
+    "lineup_status": "confirmed",
+    "lineup_confirmed": true,
+    "lineup_source": "mlb_official",
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
+  },
+  {
+    "player_id": 669003,
+    "name": "Garrett Mitchell",
+    "position": "CF",
     "bat_side": "L",
     "team_id": 158,
     "team_name": "Milwaukee Brewers",
@@ -10540,113 +10351,113 @@
     "date": "2026-10-03",
     "opp_pitcher_name": "Robbie Ray",
     "season_stats": {
-      "avg": 0.23,
-      "obp": 0.295,
-      "slg": 0.319,
-      "hits": 78,
-      "singles": 56,
-      "doubles": 18,
-      "triples": 0,
-      "hr": 4,
-      "rbi": 40,
-      "runs": 36,
-      "sb": 7,
-      "bb": 31,
-      "k": 38,
-      "hbp": 2,
-      "ab": 339,
-      "games": 111,
-      "ud_fpts_per_game": 5.36,
-      "pp_fpts_per_game": 4.96
+      "avg": 0.262,
+      "obp": 0.354,
+      "slg": 0.416,
+      "hits": 121,
+      "singles": 76,
+      "doubles": 30,
+      "triples": 4,
+      "hr": 11,
+      "rbi": 65,
+      "runs": 74,
+      "sb": 14,
+      "bb": 60,
+      "k": 167,
+      "hbp": 6,
+      "ab": 461,
+      "games": 145,
+      "ud_fpts_per_game": 7.46,
+      "pp_fpts_per_game": 6.9
     },
     "rolling_7d": {
-      "avg": 0.0,
-      "obp": 0.0,
-      "slg": 0.0,
-      "hits": 0,
-      "singles": 0,
+      "avg": 0.25,
+      "obp": 0.5,
+      "slg": 0.25,
+      "hits": 1,
+      "singles": 1,
       "doubles": 0,
       "triples": 0,
       "hr": 0,
       "rbi": 0,
-      "runs": 0,
-      "sb": 0,
-      "bb": 0,
-      "k": 0,
-      "hbp": 0,
-      "ab": 3,
-      "games": 1,
-      "ud_fpts_per_game": 0.0,
-      "pp_fpts_per_game": 0.0
-    },
-    "rolling_14d": {
-      "avg": 0.077,
-      "obp": 0.2,
-      "slg": 0.154,
-      "hits": 1,
-      "singles": 0,
-      "doubles": 1,
-      "triples": 0,
-      "hr": 0,
-      "rbi": 1,
-      "runs": 0,
+      "runs": 1,
       "sb": 0,
       "bb": 2,
-      "k": 0,
+      "k": 1,
       "hbp": 0,
-      "ab": 13,
-      "games": 5,
-      "ud_fpts_per_game": 2.8,
-      "pp_fpts_per_game": 2.2
+      "ab": 4,
+      "games": 2,
+      "ud_fpts_per_game": 5.5,
+      "pp_fpts_per_game": 4.5
     },
-    "rolling_30d": {
-      "avg": 0.171,
-      "obp": 0.222,
-      "slg": 0.22,
-      "hits": 7,
+    "rolling_14d": {
+      "avg": 0.185,
+      "obp": 0.29,
+      "slg": 0.185,
+      "hits": 5,
       "singles": 5,
-      "doubles": 2,
+      "doubles": 0,
       "triples": 0,
       "hr": 0,
-      "rbi": 3,
-      "runs": 0,
-      "sb": 1,
-      "bb": 3,
-      "k": 2,
+      "rbi": 0,
+      "runs": 5,
+      "sb": 0,
+      "bb": 4,
+      "k": 11,
       "hbp": 0,
-      "ab": 41,
-      "games": 14,
-      "ud_fpts_per_game": 3.29,
-      "pp_fpts_per_game": 3.0
+      "ab": 27,
+      "games": 8,
+      "ud_fpts_per_game": 4.62,
+      "pp_fpts_per_game": 4.12
+    },
+    "rolling_30d": {
+      "avg": 0.275,
+      "obp": 0.351,
+      "slg": 0.449,
+      "hits": 19,
+      "singles": 12,
+      "doubles": 4,
+      "triples": 1,
+      "hr": 2,
+      "rbi": 10,
+      "runs": 16,
+      "sb": 2,
+      "bb": 7,
+      "k": 25,
+      "hbp": 1,
+      "ab": 69,
+      "games": 21,
+      "ud_fpts_per_game": 8.19,
+      "pp_fpts_per_game": 7.71
     },
     "statcast": {
-      "avg_ev_7d": 92.6,
-      "ev_stdev_7d": 5.3,
-      "ev_floor_7d": 88.0,
-      "ev_ceiling_7d": 97.8,
+      "avg_ev_7d": 81.2,
+      "ev_stdev_7d": 15.0,
+      "ev_floor_7d": 67.8,
+      "ev_ceiling_7d": 101.5,
       "hard_hit_pct_7d": 25.0,
-      "barrel_pct_7d": 0.0,
-      "xwoba_7d": 0.415,
-      "doc_avg_ev_7d": 90.6,
-      "doc_pitches_7d": 5,
-      "avg_ev_14d": 79.6,
-      "ev_stdev_14d": 11.0,
-      "ev_floor_14d": 67.7,
-      "ev_ceiling_14d": 94.7,
-      "hard_hit_pct_14d": 12.5,
-      "barrel_pct_14d": 0.0,
-      "xwoba_14d": 0.291,
-      "doc_avg_ev_14d": 82.6,
-      "doc_pitches_14d": 15,
-      "avg_ev_30d": 80.8,
-      "ev_stdev_30d": 13.6,
-      "ev_floor_30d": 67.2,
-      "ev_ceiling_30d": 98.2,
-      "hard_hit_pct_30d": 16.7,
-      "barrel_pct_30d": 1.5,
-      "xwoba_30d": 0.257,
-      "doc_avg_ev_30d": 80.0,
-      "doc_pitches_30d": 43
+      "barrel_pct_7d": 12.5,
+      "xwoba_7d": 0.49,
+      "doc_avg_ev_7d": 87.5,
+      "doc_pitches_7d": 9,
+      "avg_ev_14d": 80.2,
+      "ev_stdev_14d": 18.2,
+      "ev_floor_14d": 59.6,
+      "ev_ceiling_14d": 104.9,
+      "hard_hit_pct_14d": 28.1,
+      "barrel_pct_14d": 3.1,
+      "xwoba_14d": 0.323,
+      "doc_avg_ev_14d": 84.2,
+      "doc_pitches_14d": 29,
+      "avg_ev_30d": 83.7,
+      "ev_stdev_30d": 17.8,
+      "ev_floor_30d": 61.7,
+      "ev_ceiling_30d": 105.7,
+      "hard_hit_pct_30d": 32.9,
+      "barrel_pct_30d": 5.9,
+      "xwoba_30d": 0.382,
+      "doc_avg_ev_30d": 85.7,
+      "doc_pitches_30d": 82
     },
     "fg_stats": {},
     "matchup": {
@@ -10669,38 +10480,38 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 66.5,
-      "wind_speed_mph": 7.9,
+      "temp_f": 63.4,
+      "wind_speed_mph": 6.4,
       "wind_direction": "SSE",
       "precip_probability": 0,
-      "humidity": 60,
+      "humidity": 68,
       "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
     },
     "days_rest": 6,
     "projected": {
-      "singles": 0.15,
-      "doubles": 0.0654,
+      "singles": 0.2419,
+      "doubles": 0.03,
       "triples": 0.0,
       "hr": 0.03,
-      "bb": 0.1026,
+      "bb": 0.1197,
       "hbp": 0.01,
       "rbi": 0.1,
-      "runs": 0.1,
+      "runs": 0.2489,
       "sb": 0.02
     },
-    "lineup_status": "projected",
-    "lineup_confirmed": false,
-    "lineup_source": "mlb_recent_game_projection",
-    "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-03T19:39:17.625513+00:00"
+    "lineup_status": "confirmed",
+    "lineup_confirmed": true,
+    "lineup_source": "mlb_official",
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
-    "player_id": 666152,
-    "name": "David Hamilton",
-    "position": "3B",
-    "bat_side": "L",
+    "player_id": 687401,
+    "name": "Joey Ortiz",
+    "position": "SS",
+    "bat_side": "R",
     "team_id": 158,
     "team_name": "Milwaukee Brewers",
     "opp_team_name": "San Diego Padres",
@@ -10713,113 +10524,85 @@
     "date": "2026-10-03",
     "opp_pitcher_name": "Robbie Ray",
     "season_stats": {
-      "avg": 0.245,
-      "obp": 0.314,
-      "slg": 0.336,
-      "hits": 83,
-      "singles": 63,
-      "doubles": 13,
-      "triples": 3,
-      "hr": 4,
-      "rbi": 26,
+      "avg": 0.27,
+      "obp": 0.328,
+      "slg": 0.402,
+      "hits": 100,
+      "singles": 73,
+      "doubles": 14,
+      "triples": 4,
+      "hr": 9,
+      "rbi": 47,
       "runs": 49,
-      "sb": 30,
-      "bb": 32,
-      "k": 86,
-      "hbp": 2,
-      "ab": 339,
-      "games": 121,
-      "ud_fpts_per_game": 5.81,
-      "pp_fpts_per_game": 5.67
-    },
-    "rolling_7d": {
-      "avg": 0.333,
-      "obp": 0.333,
-      "slg": 0.5,
-      "hits": 2,
-      "singles": 1,
-      "doubles": 1,
-      "triples": 0,
-      "hr": 0,
-      "rbi": 0,
-      "runs": 1,
-      "sb": 0,
-      "bb": 0,
-      "k": 1,
+      "sb": 9,
+      "bb": 35,
+      "k": 82,
       "hbp": 0,
-      "ab": 6,
-      "games": 2,
-      "ud_fpts_per_game": 5.5,
-      "pp_fpts_per_game": 5.0
+      "ab": 371,
+      "games": 134,
+      "ud_fpts_per_game": 5.66,
+      "pp_fpts_per_game": 5.36
     },
+    "rolling_7d": {},
     "rolling_14d": {
-      "avg": 0.294,
-      "obp": 0.368,
-      "slg": 0.412,
+      "avg": 0.278,
+      "obp": 0.316,
+      "slg": 0.389,
       "hits": 5,
-      "singles": 3,
-      "doubles": 2,
-      "triples": 0,
-      "hr": 0,
-      "rbi": 0,
-      "runs": 3,
-      "sb": 2,
-      "bb": 1,
-      "k": 5,
-      "hbp": 1,
-      "ab": 17,
-      "games": 6,
-      "ud_fpts_per_game": 6.83,
-      "pp_fpts_per_game": 6.5
-    },
-    "rolling_30d": {
-      "avg": 0.273,
-      "obp": 0.319,
-      "slg": 0.364,
-      "hits": 12,
-      "singles": 9,
-      "doubles": 2,
+      "singles": 4,
+      "doubles": 0,
       "triples": 1,
       "hr": 0,
-      "rbi": 2,
-      "runs": 6,
-      "sb": 6,
-      "bb": 2,
-      "k": 14,
-      "hbp": 1,
-      "ab": 44,
-      "games": 17,
-      "ud_fpts_per_game": 5.65,
-      "pp_fpts_per_game": 5.71
+      "rbi": 1,
+      "runs": 1,
+      "sb": 0,
+      "bb": 1,
+      "k": 9,
+      "hbp": 0,
+      "ab": 18,
+      "games": 5,
+      "ud_fpts_per_game": 5.4,
+      "pp_fpts_per_game": 5.2
+    },
+    "rolling_30d": {
+      "avg": 0.345,
+      "obp": 0.377,
+      "slg": 0.466,
+      "hits": 20,
+      "singles": 16,
+      "doubles": 2,
+      "triples": 1,
+      "hr": 1,
+      "rbi": 5,
+      "runs": 9,
+      "sb": 0,
+      "bb": 3,
+      "k": 18,
+      "hbp": 0,
+      "ab": 58,
+      "games": 18,
+      "ud_fpts_per_game": 6.39,
+      "pp_fpts_per_game": 6.11
     },
     "statcast": {
-      "avg_ev_7d": 77.3,
-      "ev_stdev_7d": 22.9,
-      "ev_floor_7d": 51.4,
-      "ev_ceiling_7d": 102.3,
-      "hard_hit_pct_7d": 22.2,
-      "barrel_pct_7d": 11.1,
-      "xwoba_7d": 0.388,
-      "doc_avg_ev_7d": 92.0,
-      "doc_pitches_7d": 6,
-      "avg_ev_14d": 79.3,
-      "ev_stdev_14d": 16.6,
-      "ev_floor_14d": 61.5,
-      "ev_ceiling_14d": 99.6,
-      "hard_hit_pct_14d": 16.7,
-      "barrel_pct_14d": 4.2,
-      "xwoba_14d": 0.373,
-      "doc_avg_ev_14d": 86.1,
+      "avg_ev_14d": 84.8,
+      "ev_stdev_14d": 11.8,
+      "ev_floor_14d": 70.7,
+      "ev_ceiling_14d": 100.4,
+      "hard_hit_pct_14d": 23.8,
+      "barrel_pct_14d": 0.0,
+      "xwoba_14d": 0.224,
+      "doc_avg_ev_14d": 89.4,
       "doc_pitches_14d": 21,
-      "avg_ev_30d": 77.9,
-      "ev_stdev_30d": 16.9,
-      "ev_floor_30d": 60.6,
-      "ev_ceiling_30d": 97.5,
-      "hard_hit_pct_30d": 16.4,
-      "barrel_pct_30d": 1.8,
-      "xwoba_30d": 0.285,
-      "doc_avg_ev_30d": 82.1,
-      "doc_pitches_30d": 54
+      "avg_ev_30d": 85.0,
+      "ev_stdev_30d": 14.0,
+      "ev_floor_30d": 68.6,
+      "ev_ceiling_30d": 103.3,
+      "hard_hit_pct_30d": 26.7,
+      "barrel_pct_30d": 1.3,
+      "xwoba_30d": 0.304,
+      "doc_avg_ev_30d": 88.9,
+      "doc_pitches_30d": 63
     },
     "fg_stats": {},
     "matchup": {
@@ -10833,7 +10616,7 @@
       "pitcher_name": "Robbie Ray"
     },
     "platoon": {
-      "platoon_same_hand": true,
+      "platoon_same_hand": false,
       "advantage": null
     },
     "park_factor": {
@@ -10842,32 +10625,32 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 66.5,
-      "wind_speed_mph": 7.9,
+      "temp_f": 63.4,
+      "wind_speed_mph": 6.4,
       "wind_direction": "SSE",
       "precip_probability": 0,
-      "humidity": 60,
+      "humidity": 68,
       "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
     },
-    "days_rest": 6,
+    "days_rest": 8,
     "projected": {
-      "singles": 0.2092,
-      "doubles": 0.1003,
-      "triples": 0.0,
+      "singles": 0.2877,
+      "doubles": 0.03,
+      "triples": 0.0131,
       "hr": 0.03,
-      "bb": 0.0627,
-      "hbp": 0.0342,
+      "bb": 0.0684,
+      "hbp": 0.01,
       "rbi": 0.1,
-      "runs": 0.2009,
-      "sb": 0.1097
+      "runs": 0.1,
+      "sb": 0.02
     },
-    "lineup_status": "projected",
-    "lineup_confirmed": false,
-    "lineup_source": "mlb_recent_game_projection",
-    "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-03T19:39:17.625513+00:00"
+    "lineup_status": "confirmed",
+    "lineup_confirmed": true,
+    "lineup_source": "mlb_official",
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 665487,
@@ -11015,11 +10798,11 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 66.5,
-      "wind_speed_mph": 7.9,
+      "temp_f": 63.4,
+      "wind_speed_mph": 6.4,
       "wind_direction": "SSE",
       "precip_probability": 0,
-      "humidity": 60,
+      "humidity": 68,
       "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
@@ -11036,11 +10819,11 @@
       "runs": 0.1145,
       "sb": 0.0643
     },
-    "lineup_status": "projected",
-    "lineup_confirmed": false,
-    "lineup_source": "mlb_recent_game_projection",
-    "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-03T19:39:17.625513+00:00"
+    "lineup_status": "confirmed",
+    "lineup_confirmed": true,
+    "lineup_source": "mlb_official",
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 687957,
@@ -11188,11 +10971,11 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 66.5,
-      "wind_speed_mph": 7.9,
+      "temp_f": 63.4,
+      "wind_speed_mph": 6.4,
       "wind_direction": "SSE",
       "precip_probability": 0,
-      "humidity": 60,
+      "humidity": 68,
       "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
@@ -11209,11 +10992,11 @@
       "runs": 0.173,
       "sb": 0.026
     },
-    "lineup_status": "projected",
-    "lineup_confirmed": false,
-    "lineup_source": "mlb_recent_game_projection",
-    "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-03T19:39:17.625513+00:00"
+    "lineup_status": "confirmed",
+    "lineup_confirmed": true,
+    "lineup_source": "mlb_official",
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 592518,
@@ -11361,11 +11144,11 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 66.5,
-      "wind_speed_mph": 7.9,
+      "temp_f": 63.4,
+      "wind_speed_mph": 6.4,
       "wind_direction": "SSE",
       "precip_probability": 0,
-      "humidity": 60,
+      "humidity": 68,
       "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
@@ -11382,11 +11165,11 @@
       "runs": 0.1,
       "sb": 0.02
     },
-    "lineup_status": "projected",
-    "lineup_confirmed": false,
-    "lineup_source": "mlb_recent_game_projection",
-    "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-03T19:39:17.625513+00:00"
+    "lineup_status": "confirmed",
+    "lineup_confirmed": true,
+    "lineup_source": "mlb_official",
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 664034,
@@ -11534,11 +11317,11 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 66.5,
-      "wind_speed_mph": 7.9,
+      "temp_f": 63.4,
+      "wind_speed_mph": 6.4,
       "wind_direction": "SSE",
       "precip_probability": 0,
-      "humidity": 60,
+      "humidity": 68,
       "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
@@ -11555,11 +11338,11 @@
       "runs": 0.1007,
       "sb": 0.02
     },
-    "lineup_status": "projected",
-    "lineup_confirmed": false,
-    "lineup_source": "mlb_recent_game_projection",
-    "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-03T19:39:17.625513+00:00"
+    "lineup_status": "confirmed",
+    "lineup_confirmed": true,
+    "lineup_source": "mlb_official",
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 701538,
@@ -11707,11 +11490,11 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 66.5,
-      "wind_speed_mph": 7.9,
+      "temp_f": 63.4,
+      "wind_speed_mph": 6.4,
       "wind_direction": "SSE",
       "precip_probability": 0,
-      "humidity": 60,
+      "humidity": 68,
       "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
@@ -11728,11 +11511,11 @@
       "runs": 0.142,
       "sb": 0.0285
     },
-    "lineup_status": "projected",
-    "lineup_confirmed": false,
-    "lineup_source": "mlb_recent_game_projection",
-    "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-03T19:39:17.625513+00:00"
+    "lineup_status": "confirmed",
+    "lineup_confirmed": true,
+    "lineup_source": "mlb_official",
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 593428,
@@ -11880,11 +11663,11 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 66.5,
-      "wind_speed_mph": 7.9,
+      "temp_f": 63.4,
+      "wind_speed_mph": 6.4,
       "wind_direction": "SSE",
       "precip_probability": 0,
-      "humidity": 60,
+      "humidity": 68,
       "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
@@ -11901,11 +11684,11 @@
       "runs": 0.165,
       "sb": 0.0318
     },
-    "lineup_status": "projected",
-    "lineup_confirmed": false,
-    "lineup_source": "mlb_recent_game_projection",
-    "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-03T19:39:17.625513+00:00"
+    "lineup_status": "confirmed",
+    "lineup_confirmed": true,
+    "lineup_source": "mlb_official",
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 806956,
@@ -12053,11 +11836,11 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 66.5,
-      "wind_speed_mph": 7.9,
+      "temp_f": 63.4,
+      "wind_speed_mph": 6.4,
       "wind_direction": "SSE",
       "precip_probability": 0,
-      "humidity": 60,
+      "humidity": 68,
       "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
@@ -12074,16 +11857,16 @@
       "runs": 0.1007,
       "sb": 0.02
     },
-    "lineup_status": "projected",
-    "lineup_confirmed": false,
-    "lineup_source": "mlb_recent_game_projection",
-    "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-03T19:39:17.625513+00:00"
+    "lineup_status": "confirmed",
+    "lineup_confirmed": true,
+    "lineup_source": "mlb_official",
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
-    "player_id": 669720,
-    "name": "Austin Hays",
-    "position": "DH",
+    "player_id": 669134,
+    "name": "Luis Campusano",
+    "position": "C",
     "bat_side": "R",
     "team_id": 135,
     "team_name": "San Diego Padres",
@@ -12097,113 +11880,113 @@
     "date": "2026-10-03",
     "opp_pitcher_name": "Jacob Misiorowski",
     "season_stats": {
-      "avg": 0.28,
-      "obp": 0.305,
-      "slg": 0.4,
-      "hits": 28,
-      "singles": 22,
-      "doubles": 3,
+      "avg": 0.265,
+      "obp": 0.363,
+      "slg": 0.433,
+      "hits": 57,
+      "singles": 37,
+      "doubles": 12,
       "triples": 0,
-      "hr": 3,
-      "rbi": 15,
-      "runs": 16,
+      "hr": 8,
+      "rbi": 30,
+      "runs": 24,
       "sb": 0,
-      "bb": 4,
-      "k": 27,
-      "hbp": 0,
-      "ab": 100,
-      "games": 38,
-      "ud_fpts_per_game": 4.95,
-      "pp_fpts_per_game": 4.76
+      "bb": 30,
+      "k": 53,
+      "hbp": 3,
+      "ab": 215,
+      "games": 71,
+      "ud_fpts_per_game": 6.62,
+      "pp_fpts_per_game": 5.99
     },
     "rolling_7d": {
-      "avg": 0.5,
-      "obp": 0.6,
-      "slg": 0.5,
-      "hits": 2,
-      "singles": 2,
+      "avg": 0.0,
+      "obp": 0.333,
+      "slg": 0.0,
+      "hits": 0,
+      "singles": 0,
       "doubles": 0,
       "triples": 0,
       "hr": 0,
-      "rbi": 2,
-      "runs": 2,
+      "rbi": 0,
+      "runs": 1,
       "sb": 0,
       "bb": 1,
       "k": 1,
       "hbp": 0,
-      "ab": 4,
+      "ab": 2,
       "games": 1,
-      "ud_fpts_per_game": 17.0,
-      "pp_fpts_per_game": 16.0
+      "ud_fpts_per_game": 5.0,
+      "pp_fpts_per_game": 4.0
     },
     "rolling_14d": {
-      "avg": 0.4,
-      "obp": 0.455,
-      "slg": 0.4,
-      "hits": 4,
-      "singles": 4,
+      "avg": 0.231,
+      "obp": 0.375,
+      "slg": 0.231,
+      "hits": 3,
+      "singles": 3,
       "doubles": 0,
       "triples": 0,
       "hr": 0,
-      "rbi": 3,
+      "rbi": 1,
       "runs": 2,
       "sb": 0,
-      "bb": 1,
+      "bb": 3,
       "k": 2,
       "hbp": 0,
-      "ab": 10,
-      "games": 5,
-      "ud_fpts_per_game": 5.0,
-      "pp_fpts_per_game": 4.8
+      "ab": 13,
+      "games": 4,
+      "ud_fpts_per_game": 6.0,
+      "pp_fpts_per_game": 5.25
     },
     "rolling_30d": {
-      "avg": 0.44,
-      "obp": 0.444,
-      "slg": 0.6,
-      "hits": 11,
-      "singles": 9,
+      "avg": 0.233,
+      "obp": 0.313,
+      "slg": 0.4,
+      "hits": 14,
+      "singles": 10,
       "doubles": 1,
       "triples": 0,
-      "hr": 1,
-      "rbi": 5,
+      "hr": 3,
+      "rbi": 7,
       "runs": 6,
       "sb": 0,
-      "bb": 1,
-      "k": 4,
-      "hbp": 0,
-      "ab": 25,
-      "games": 13,
-      "ud_fpts_per_game": 5.23,
-      "pp_fpts_per_game": 5.08
+      "bb": 6,
+      "k": 11,
+      "hbp": 1,
+      "ab": 60,
+      "games": 16,
+      "ud_fpts_per_game": 7.06,
+      "pp_fpts_per_game": 6.56
     },
     "statcast": {
-      "avg_ev_7d": 84.9,
-      "ev_stdev_7d": 8.6,
-      "ev_floor_7d": 78.5,
-      "ev_ceiling_7d": 94.2,
-      "hard_hit_pct_7d": 10.0,
+      "avg_ev_7d": 83.8,
+      "ev_stdev_7d": 11.3,
+      "ev_floor_7d": 70.7,
+      "ev_ceiling_7d": 95.4,
+      "hard_hit_pct_7d": 12.5,
       "barrel_pct_7d": 0.0,
-      "xwoba_7d": 0.208,
-      "doc_avg_ev_7d": 82.6,
-      "doc_pitches_7d": 9,
-      "avg_ev_14d": 84.5,
-      "ev_stdev_14d": 10.2,
-      "ev_floor_14d": 75.1,
-      "ev_ceiling_14d": 96.8,
-      "hard_hit_pct_14d": 18.8,
+      "xwoba_7d": 0.274,
+      "doc_avg_ev_7d": 85.8,
+      "doc_pitches_7d": 5,
+      "avg_ev_14d": 80.8,
+      "ev_stdev_14d": 13.3,
+      "ev_floor_14d": 66.0,
+      "ev_ceiling_14d": 95.8,
+      "hard_hit_pct_14d": 12.5,
       "barrel_pct_14d": 0.0,
-      "xwoba_14d": 0.233,
-      "doc_avg_ev_14d": 81.2,
-      "doc_pitches_14d": 12,
-      "avg_ev_30d": 84.9,
-      "ev_stdev_30d": 12.9,
-      "ev_floor_30d": 69.9,
-      "ev_ceiling_30d": 103.1,
-      "hard_hit_pct_30d": 29.3,
-      "barrel_pct_30d": 2.4,
-      "xwoba_30d": 0.334,
-      "doc_avg_ev_30d": 84.0,
-      "doc_pitches_30d": 27
+      "xwoba_14d": 0.295,
+      "doc_avg_ev_14d": 82.6,
+      "doc_pitches_14d": 21,
+      "avg_ev_30d": 82.2,
+      "ev_stdev_30d": 15.1,
+      "ev_floor_30d": 63.1,
+      "ev_ceiling_30d": 100.2,
+      "hard_hit_pct_30d": 20.8,
+      "barrel_pct_30d": 3.0,
+      "xwoba_30d": 0.327,
+      "doc_avg_ev_30d": 85.2,
+      "doc_pitches_30d": 72
     },
     "fg_stats": {},
     "matchup": {
@@ -12226,11 +12009,11 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 66.5,
-      "wind_speed_mph": 7.9,
+      "temp_f": 63.4,
+      "wind_speed_mph": 6.4,
       "wind_direction": "SSE",
       "precip_probability": 0,
-      "humidity": 60,
+      "humidity": 68,
       "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
@@ -12242,16 +12025,16 @@
       "triples": 0.0,
       "hr": 0.03,
       "bb": 0.06,
-      "hbp": 0.01,
-      "rbi": 0.1071,
+      "hbp": 0.011,
+      "rbi": 0.1,
       "runs": 0.1,
       "sb": 0.02
     },
-    "lineup_status": "projected",
-    "lineup_confirmed": false,
-    "lineup_source": "mlb_recent_game_projection",
-    "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-03T19:39:17.625513+00:00"
+    "lineup_status": "confirmed",
+    "lineup_confirmed": true,
+    "lineup_source": "mlb_official",
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   },
   {
     "player_id": 630105,
@@ -12399,11 +12182,11 @@
       "hits": 1.02
     },
     "weather": {
-      "temp_f": 66.5,
-      "wind_speed_mph": 7.9,
+      "temp_f": 63.4,
+      "wind_speed_mph": 6.4,
       "wind_direction": "SSE",
       "precip_probability": 0,
-      "humidity": 60,
+      "humidity": 68,
       "condition": "clear sky",
       "is_indoor": true,
       "weather_available": true
@@ -12420,10 +12203,10 @@
       "runs": 0.1248,
       "sb": 0.0434
     },
-    "lineup_status": "projected",
-    "lineup_confirmed": false,
-    "lineup_source": "mlb_recent_game_projection",
-    "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-03T19:39:17.625513+00:00"
+    "lineup_status": "confirmed",
+    "lineup_confirmed": true,
+    "lineup_source": "mlb_official",
+    "lineup_source_updated_at": "2026-10-03T22:01:15.227957+00:00",
+    "lineup_fetched_at": "2026-10-03T22:01:15.227957+00:00"
   }
 ]
