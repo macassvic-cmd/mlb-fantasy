@@ -2187,11 +2187,78 @@
           "grade": "dnp"
         }
       ]
+    },
+    "2026-10-03": {
+      "wins": 0,
+      "losses": 0,
+      "dnp": 5,
+      "plays": [
+        {
+          "player_id": 694192,
+          "name": "Jackson Chourio",
+          "team": "Milwaukee Brewers",
+          "projected_ud": 9.5,
+          "ud_line": 8.5,
+          "edge": 1.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "5:30 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 668930,
+          "name": "Brice Turang",
+          "team": "Milwaukee Brewers",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + shrunk sample above baseline",
+          "game_time_pt": "5:30 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 661388,
+          "name": "William Contreras",
+          "team": "Milwaukee Brewers",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "5:30 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 691406,
+          "name": "Junior Caminero",
+          "team": "Tampa Bay Rays",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "3:30 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 669003,
+          "name": "Garrett Mitchell",
+          "team": "Milwaukee Brewers",
+          "projected_ud": 7.06,
+          "ud_line": 5.5,
+          "edge": 1.56,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "5:30 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        }
+      ]
     }
   },
   "record": {
     "wins": 92,
     "losses": 77,
-    "dnp": 4
+    "dnp": 9
   }
 }
