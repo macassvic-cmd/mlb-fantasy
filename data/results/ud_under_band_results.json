@@ -3645,12 +3645,52 @@
       "losses": 0,
       "dnp": 0,
       "plays": []
+    },
+    "2026-10-04": {
+      "wins": 0,
+      "losses": 0,
+      "dnp": 3,
+      "plays": [
+        {
+          "player_id": 518692,
+          "name": "Freddie Freeman",
+          "team": "Los Angeles Dodgers",
+          "projected_ud": 3.53,
+          "ud_line": 5.5,
+          "edge": -1.97,
+          "game_time_pt": "5:00 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 605141,
+          "name": "Mookie Betts",
+          "team": "Los Angeles Dodgers",
+          "projected_ud": 4.67,
+          "ud_line": 6.5,
+          "edge": -1.83,
+          "game_time_pt": "5:00 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 660670,
+          "name": "Ronald Acu\u00f1a Jr.",
+          "team": "Atlanta Braves",
+          "projected_ud": 4.83,
+          "ud_line": 6.5,
+          "edge": -1.67,
+          "game_time_pt": "5:00 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        }
+      ]
     }
   },
   "record": {
     "wins": 158,
     "losses": 142,
-    "dnp": 8
+    "dnp": 11
   },
   "record_by_line": {
     "5.5": {
