@@ -28,17 +28,17 @@
       "projected_ud": 8.5,
       "ud_line": 6.5,
       "edge": 2.0,
-      "actionable_reason": "edge + strong contact",
+      "actionable_reason": "edge + platoon advantage",
       "game_time_pt": "6:30 PM PT"
     },
     {
       "player_id": 668930,
       "name": "Brice Turang",
       "team": "Milwaukee Brewers",
-      "projected_ud": 8.29,
+      "projected_ud": 8.33,
       "ud_line": 6.5,
-      "edge": 1.79,
-      "actionable_reason": "edge + shrunk sample above baseline",
+      "edge": 1.83,
+      "actionable_reason": "edge + platoon advantage",
       "game_time_pt": "6:30 PM PT"
     },
     {
@@ -70,6 +70,26 @@
       "edge": 2.0,
       "actionable_reason": "edge + platoon advantage",
       "game_time_pt": "6:30 PM PT"
+    },
+    {
+      "player_id": 661388,
+      "name": "William Contreras",
+      "team": "Milwaukee Brewers",
+      "projected_ud": 6.67,
+      "ud_line": 5.5,
+      "edge": 1.17,
+      "actionable_reason": "edge + platoon advantage",
+      "game_time_pt": "6:30 PM PT"
+    },
+    {
+      "player_id": 660670,
+      "name": "Ronald Acu\u00f1a Jr.",
+      "team": "Atlanta Braves",
+      "projected_ud": 6.5,
+      "ud_line": 5.5,
+      "edge": 1.0,
+      "actionable_reason": "edge + platoon advantage",
+      "game_time_pt": "3:00 PM PT"
     }
   ]
 }
