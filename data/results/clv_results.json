@@ -7140,17 +7140,92 @@
         }
       ],
       "skipped_no_samples": 0
+    },
+    "2026-10-05": {
+      "plays": [
+        {
+          "player_id": 700250,
+          "name": "Ben Rice",
+          "team": "New York Yankees",
+          "call": "over",
+          "open_line": 6.5,
+          "open_at": "2026-10-05T10:30:59.984164+00:00",
+          "close_line": 6.5,
+          "close_at": "2026-10-05T10:30:59.984164+00:00",
+          "last_seen_at": "2026-10-05T23:02:33.293197+00:00",
+          "lock_at": "2026-10-06T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 800050,
+          "name": "Chase DeLauter",
+          "team": "Cleveland Guardians",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-05T10:30:59.984164+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-05T10:30:59.984164+00:00",
+          "last_seen_at": "2026-10-05T20:59:13.495871+00:00",
+          "lock_at": "2026-10-05T21:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 678246,
+          "name": "Miguel Vargas",
+          "team": "Chicago White Sox",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-05T10:30:59.984164+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-05T10:30:59.984164+00:00",
+          "last_seen_at": "2026-10-05T20:59:13.495871+00:00",
+          "lock_at": "2026-10-05T21:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 666176,
+          "name": "Jo Adell",
+          "team": "Cleveland Guardians",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-05T10:30:59.984164+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-05T10:30:59.984164+00:00",
+          "last_seen_at": "2026-10-05T20:59:13.495871+00:00",
+          "lock_at": "2026-10-05T21:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 803011,
+          "name": "Sam Antonacci",
+          "team": "Chicago White Sox",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-05T10:30:59.984164+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-05T10:30:59.984164+00:00",
+          "last_seen_at": "2026-10-05T20:59:13.495871+00:00",
+          "lock_at": "2026-10-05T21:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        }
+      ],
+      "skipped_no_samples": 0
     }
   },
   "record": {
     "positive": 1,
     "negative": 0,
-    "push": 634,
-    "n": 635,
+    "push": 639,
+    "n": 640,
     "win_rate": 100.0,
     "avg_clv_points": 0.002,
     "plays_multi_sample": 0,
-    "plays_single_sample": 635,
+    "plays_single_sample": 640,
     "avg_clv_points_multi_sample": null,
     "skipped_no_samples": 0
   }

@@ -2260,11 +2260,90 @@
       "losses": 0,
       "dnp": 0,
       "plays": []
+    },
+    "2026-10-05": {
+      "wins": 0,
+      "losses": 0,
+      "dnp": 6,
+      "plays": [
+        {
+          "player_id": 700250,
+          "name": "Ben Rice",
+          "team": "New York Yankees",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "5:00 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 800050,
+          "name": "Chase DeLauter",
+          "team": "Cleveland Guardians",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "2:00 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 803011,
+          "name": "Sam Antonacci",
+          "team": "Chicago White Sox",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "2:00 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 678246,
+          "name": "Miguel Vargas",
+          "team": "Chicago White Sox",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "2:00 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 641355,
+          "name": "Cody Bellinger",
+          "team": "New York Yankees",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "5:00 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 666176,
+          "name": "Jo Adell",
+          "team": "Cleveland Guardians",
+          "projected_ud": 7.46,
+          "ud_line": 5.5,
+          "edge": 1.96,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "2:00 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        }
+      ]
     }
   },
   "record": {
     "wins": 92,
     "losses": 77,
-    "dnp": 9
+    "dnp": 15
   }
 }
