@@ -18,7 +18,7 @@
       "projected_ud": 8.5,
       "ud_line": 6.5,
       "edge": 2.0,
-      "actionable_reason": "edge + platoon advantage",
+      "actionable_reason": "edge + strong contact",
       "game_time_pt": "7:00 PM PT"
     },
     {
@@ -28,7 +28,7 @@
       "projected_ud": 8.5,
       "ud_line": 6.5,
       "edge": 2.0,
-      "actionable_reason": "edge + platoon advantage",
+      "actionable_reason": "edge + shrunk sample above baseline",
       "game_time_pt": "7:00 PM PT"
     },
     {
@@ -52,16 +52,6 @@
       "game_time_pt": "1:00 PM PT"
     },
     {
-      "player_id": 669257,
-      "name": "Will Smith",
-      "team": "Los Angeles Dodgers",
-      "projected_ud": 7.5,
-      "ud_line": 5.5,
-      "edge": 2.0,
-      "actionable_reason": "edge + platoon advantage",
-      "game_time_pt": "3:00 PM PT"
-    },
-    {
       "player_id": 701538,
       "name": "Jackson Merrill",
       "team": "San Diego Padres",
@@ -82,26 +72,6 @@
       "game_time_pt": "7:00 PM PT"
     },
     {
-      "player_id": 661388,
-      "name": "William Contreras",
-      "team": "Milwaukee Brewers",
-      "projected_ud": 7.5,
-      "ud_line": 5.5,
-      "edge": 2.0,
-      "actionable_reason": "edge + platoon advantage",
-      "game_time_pt": "7:00 PM PT"
-    },
-    {
-      "player_id": 691019,
-      "name": "Kyle Teel",
-      "team": "Chicago White Sox",
-      "projected_ud": 7.39,
-      "ud_line": 5.5,
-      "edge": 1.89,
-      "actionable_reason": "edge + platoon advantage",
-      "game_time_pt": "1:00 PM PT"
-    },
-    {
       "player_id": 592885,
       "name": "Christian Yelich",
       "team": "Milwaukee Brewers",
@@ -112,12 +82,22 @@
       "game_time_pt": "7:00 PM PT"
     },
     {
+      "player_id": 691019,
+      "name": "Kyle Teel",
+      "team": "Chicago White Sox",
+      "projected_ud": 7.23,
+      "ud_line": 5.5,
+      "edge": 1.73,
+      "actionable_reason": "edge + platoon advantage",
+      "game_time_pt": "1:00 PM PT"
+    },
+    {
       "player_id": 686948,
       "name": "Drake Baldwin",
       "team": "Atlanta Braves",
-      "projected_ud": 7.14,
+      "projected_ud": 7.06,
       "ud_line": 5.5,
-      "edge": 1.64,
+      "edge": 1.56,
       "actionable_reason": "edge + platoon advantage",
       "game_time_pt": "3:00 PM PT"
     },
@@ -125,21 +105,11 @@
       "player_id": 671739,
       "name": "Michael Harris II",
       "team": "Atlanta Braves",
-      "projected_ud": 6.97,
+      "projected_ud": 6.89,
       "ud_line": 5.5,
-      "edge": 1.47,
+      "edge": 1.39,
       "actionable_reason": "edge + platoon advantage",
       "game_time_pt": "3:00 PM PT"
-    },
-    {
-      "player_id": 669003,
-      "name": "Garrett Mitchell",
-      "team": "Milwaukee Brewers",
-      "projected_ud": 6.72,
-      "ud_line": 5.5,
-      "edge": 1.22,
-      "actionable_reason": "edge + platoon advantage",
-      "game_time_pt": "7:00 PM PT"
     }
   ]
 }
