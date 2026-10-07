@@ -8,7 +8,7 @@
       "projected_ud": 9.5,
       "ud_line": 7.5,
       "edge": 2.0,
-      "actionable_reason": "edge + strong contact",
+      "actionable_reason": "edge + platoon advantage",
       "game_time_pt": "7:00 PM PT"
     },
     {
@@ -18,7 +18,7 @@
       "projected_ud": 8.5,
       "ud_line": 6.5,
       "edge": 2.0,
-      "actionable_reason": "edge + strong contact",
+      "actionable_reason": "edge + platoon advantage",
       "game_time_pt": "7:00 PM PT"
     },
     {
@@ -28,7 +28,7 @@
       "projected_ud": 8.5,
       "ud_line": 6.5,
       "edge": 2.0,
-      "actionable_reason": "edge + shrunk sample above baseline",
+      "actionable_reason": "edge + platoon advantage",
       "game_time_pt": "7:00 PM PT"
     },
     {
@@ -78,7 +78,17 @@
       "projected_ud": 7.5,
       "ud_line": 5.5,
       "edge": 2.0,
-      "actionable_reason": "edge + shrunk sample above baseline",
+      "actionable_reason": "edge + platoon advantage",
+      "game_time_pt": "7:00 PM PT"
+    },
+    {
+      "player_id": 661388,
+      "name": "William Contreras",
+      "team": "Milwaukee Brewers",
+      "projected_ud": 7.5,
+      "ud_line": 5.5,
+      "edge": 2.0,
+      "actionable_reason": "edge + platoon advantage",
       "game_time_pt": "7:00 PM PT"
     },
     {
@@ -118,16 +128,6 @@
       "projected_ud": 7.06,
       "ud_line": 5.5,
       "edge": 1.56,
-      "actionable_reason": "edge + platoon advantage",
-      "game_time_pt": "3:00 PM PT"
-    },
-    {
-      "player_id": 671739,
-      "name": "Michael Harris II",
-      "team": "Atlanta Braves",
-      "projected_ud": 6.89,
-      "ud_line": 5.5,
-      "edge": 1.39,
       "actionable_reason": "edge + platoon advantage",
       "game_time_pt": "3:00 PM PT"
     }
