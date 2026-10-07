@@ -7215,18 +7215,135 @@
         }
       ],
       "skipped_no_samples": 0
+    },
+    "2026-10-06": {
+      "plays": [
+        {
+          "player_id": 665487,
+          "name": "Fernando Tatis Jr.",
+          "team": "San Diego Padres",
+          "call": "over",
+          "open_line": 7.5,
+          "open_at": "2026-10-06T11:04:28.344718+00:00",
+          "close_line": 7.5,
+          "close_at": "2026-10-06T11:04:28.344718+00:00",
+          "last_seen_at": "2026-10-06T22:56:06.818806+00:00",
+          "lock_at": "2026-10-07T01:30:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 701538,
+          "name": "Jackson Merrill",
+          "team": "San Diego Padres",
+          "call": "over",
+          "open_line": 6.5,
+          "open_at": "2026-10-06T11:04:28.344718+00:00",
+          "close_line": 6.5,
+          "close_at": "2026-10-06T11:04:28.344718+00:00",
+          "last_seen_at": "2026-10-06T22:56:06.818806+00:00",
+          "lock_at": "2026-10-07T01:30:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 694192,
+          "name": "Jackson Chourio",
+          "team": "Milwaukee Brewers",
+          "call": "over",
+          "open_line": 6.5,
+          "open_at": "2026-10-06T11:04:28.344718+00:00",
+          "close_line": 6.5,
+          "close_at": "2026-10-06T11:04:28.344718+00:00",
+          "last_seen_at": "2026-10-06T22:56:06.818806+00:00",
+          "lock_at": "2026-10-07T01:30:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 668930,
+          "name": "Brice Turang",
+          "team": "Milwaukee Brewers",
+          "call": "over",
+          "open_line": 6.5,
+          "open_at": "2026-10-06T11:04:28.344718+00:00",
+          "close_line": 6.5,
+          "close_at": "2026-10-06T11:04:28.344718+00:00",
+          "last_seen_at": "2026-10-06T22:56:06.818806+00:00",
+          "lock_at": "2026-10-07T01:30:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 592518,
+          "name": "Manny Machado",
+          "team": "San Diego Padres",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-06T11:04:28.344718+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-06T11:04:28.344718+00:00",
+          "last_seen_at": "2026-10-06T22:56:06.818806+00:00",
+          "lock_at": "2026-10-07T01:30:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 664034,
+          "name": "Ty France",
+          "team": "San Diego Padres",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-06T11:04:28.344718+00:00",
+          "close_line": 6.5,
+          "close_at": "2026-10-06T21:25:19.518995+00:00",
+          "last_seen_at": "2026-10-06T22:56:06.818806+00:00",
+          "lock_at": "2026-10-07T01:30:00Z",
+          "n_samples": 2,
+          "clv_points": 1.0
+        },
+        {
+          "player_id": 593428,
+          "name": "Xander Bogaerts",
+          "team": "San Diego Padres",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-06T11:04:28.344718+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-06T11:04:28.344718+00:00",
+          "last_seen_at": "2026-10-06T22:56:06.818806+00:00",
+          "lock_at": "2026-10-07T01:30:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 660670,
+          "name": "Ronald Acu\u00f1a Jr.",
+          "team": "Atlanta Braves",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-06T11:04:28.344718+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-06T11:04:28.344718+00:00",
+          "last_seen_at": "2026-10-06T21:25:19.518995+00:00",
+          "lock_at": "2026-10-06T22:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        }
+      ],
+      "skipped_no_samples": 0
     }
   },
   "record": {
-    "positive": 1,
+    "positive": 2,
     "negative": 0,
-    "push": 639,
-    "n": 640,
+    "push": 646,
+    "n": 648,
     "win_rate": 100.0,
-    "avg_clv_points": 0.002,
-    "plays_multi_sample": 0,
-    "plays_single_sample": 640,
-    "avg_clv_points_multi_sample": null,
+    "avg_clv_points": 0.003,
+    "plays_multi_sample": 1,
+    "plays_single_sample": 647,
+    "avg_clv_points_multi_sample": 1.0,
     "skipped_no_samples": 0
   }
 }

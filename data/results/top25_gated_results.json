@@ -2339,11 +2339,114 @@
           "grade": "dnp"
         }
       ]
+    },
+    "2026-10-06": {
+      "wins": 0,
+      "losses": 0,
+      "dnp": 8,
+      "plays": [
+        {
+          "player_id": 665487,
+          "name": "Fernando Tatis Jr.",
+          "team": "San Diego Padres",
+          "projected_ud": 9.5,
+          "ud_line": 7.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "6:30 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 701538,
+          "name": "Jackson Merrill",
+          "team": "San Diego Padres",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + shrunk sample above baseline",
+          "game_time_pt": "6:30 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 694192,
+          "name": "Jackson Chourio",
+          "team": "Milwaukee Brewers",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "6:30 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 668930,
+          "name": "Brice Turang",
+          "team": "Milwaukee Brewers",
+          "projected_ud": 8.38,
+          "ud_line": 6.5,
+          "edge": 1.88,
+          "actionable_reason": "edge + shrunk sample above baseline",
+          "game_time_pt": "6:30 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 592518,
+          "name": "Manny Machado",
+          "team": "San Diego Padres",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "6:30 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 664034,
+          "name": "Ty France",
+          "team": "San Diego Padres",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "6:30 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 593428,
+          "name": "Xander Bogaerts",
+          "team": "San Diego Padres",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "6:30 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 660670,
+          "name": "Ronald Acu\u00f1a Jr.",
+          "team": "Atlanta Braves",
+          "projected_ud": 6.57,
+          "ud_line": 5.5,
+          "edge": 1.07,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "3:00 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        }
+      ]
     }
   },
   "record": {
     "wins": 92,
     "losses": 77,
-    "dnp": 15
+    "dnp": 23
   }
 }

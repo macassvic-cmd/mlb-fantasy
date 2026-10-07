@@ -1,4 +1,37 @@
 {
   "date": "2026-10-07",
-  "plays": []
+  "plays": [
+    {
+      "player_id": 665487,
+      "name": "Fernando Tatis Jr.",
+      "team": "San Diego Padres",
+      "call": "over",
+      "edge": 2.0,
+      "ud_line": 7.5
+    },
+    {
+      "player_id": 694192,
+      "name": "Jackson Chourio",
+      "team": "Milwaukee Brewers",
+      "call": "over",
+      "edge": 2.0,
+      "ud_line": 6.5
+    },
+    {
+      "player_id": 668930,
+      "name": "Brice Turang",
+      "team": "Milwaukee Brewers",
+      "call": "over",
+      "edge": 2.0,
+      "ud_line": 6.5
+    },
+    {
+      "player_id": 650490,
+      "name": "Yandy D\u00edaz",
+      "team": "Tampa Bay Rays",
+      "call": "under",
+      "edge": -1.69,
+      "ud_line": 5.5
+    }
+  ]
 }
