@@ -3697,12 +3697,30 @@
       "losses": 0,
       "dnp": 0,
       "plays": []
+    },
+    "2026-10-07": {
+      "wins": 0,
+      "losses": 0,
+      "dnp": 1,
+      "plays": [
+        {
+          "player_id": 650490,
+          "name": "Yandy D\u00edaz",
+          "team": "Tampa Bay Rays",
+          "projected_ud": 3.95,
+          "ud_line": 5.5,
+          "edge": -1.55,
+          "game_time_pt": "5:00 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        }
+      ]
     }
   },
   "record": {
     "wins": 158,
     "losses": 142,
-    "dnp": 11
+    "dnp": 12
   },
   "record_by_line": {
     "5.5": {

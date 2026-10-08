@@ -2442,11 +2442,150 @@
           "grade": "dnp"
         }
       ]
+    },
+    "2026-10-07": {
+      "wins": 0,
+      "losses": 0,
+      "dnp": 11,
+      "plays": [
+        {
+          "player_id": 665487,
+          "name": "Fernando Tatis Jr.",
+          "team": "San Diego Padres",
+          "projected_ud": 9.5,
+          "ud_line": 7.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "7:00 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 694192,
+          "name": "Jackson Chourio",
+          "team": "Milwaukee Brewers",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "7:00 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 668930,
+          "name": "Brice Turang",
+          "team": "Milwaukee Brewers",
+          "projected_ud": 8.5,
+          "ud_line": 6.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + shrunk sample above baseline",
+          "game_time_pt": "7:00 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 803011,
+          "name": "Sam Antonacci",
+          "team": "Chicago White Sox",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "1:00 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 808959,
+          "name": "Munetaka Murakami",
+          "team": "Chicago White Sox",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "1:00 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 571970,
+          "name": "Max Muncy",
+          "team": "Los Angeles Dodgers",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "3:00 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 701538,
+          "name": "Jackson Merrill",
+          "team": "San Diego Padres",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + shrunk sample above baseline",
+          "game_time_pt": "7:00 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 691019,
+          "name": "Kyle Teel",
+          "team": "Chicago White Sox",
+          "projected_ud": 7.39,
+          "ud_line": 5.5,
+          "edge": 1.89,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "1:00 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 592518,
+          "name": "Manny Machado",
+          "team": "San Diego Padres",
+          "projected_ud": 7.31,
+          "ud_line": 5.5,
+          "edge": 1.81,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "7:00 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 592885,
+          "name": "Christian Yelich",
+          "team": "Milwaukee Brewers",
+          "projected_ud": 7.23,
+          "ud_line": 5.5,
+          "edge": 1.73,
+          "actionable_reason": "edge + strong contact",
+          "game_time_pt": "7:00 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 686948,
+          "name": "Drake Baldwin",
+          "team": "Atlanta Braves",
+          "projected_ud": 7.06,
+          "ud_line": 5.5,
+          "edge": 1.56,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "3:00 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        }
+      ]
     }
   },
   "record": {
     "wins": 92,
     "losses": 77,
-    "dnp": 23
+    "dnp": 34
   }
 }
