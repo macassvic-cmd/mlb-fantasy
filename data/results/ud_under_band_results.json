@@ -3715,12 +3715,30 @@
           "grade": "dnp"
         }
       ]
+    },
+    "2026-10-08": {
+      "wins": 0,
+      "losses": 0,
+      "dnp": 1,
+      "plays": [
+        {
+          "player_id": 666176,
+          "name": "Jo Adell",
+          "team": "Cleveland Guardians",
+          "projected_ud": 3.84,
+          "ud_line": 5.5,
+          "edge": -1.66,
+          "game_time_pt": "5:00 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        }
+      ]
     }
   },
   "record": {
     "wins": 158,
     "losses": 142,
-    "dnp": 12
+    "dnp": 13
   },
   "record_by_line": {
     "5.5": {
