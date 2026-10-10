@@ -13,7 +13,7 @@
           "line": 6.5
         }
       ],
-      "last_seen_at": "2026-10-10T17:40:09.896649+00:00",
+      "last_seen_at": "2026-10-10T20:26:34.537512+00:00",
       "last_seen_line": 6.5
     },
     "chase delauter": {
@@ -27,7 +27,7 @@
           "line": 6.5
         }
       ],
-      "last_seen_at": "2026-10-10T17:40:09.896649+00:00",
+      "last_seen_at": "2026-10-10T20:26:34.537512+00:00",
       "last_seen_line": 6.5
     },
     "steven kwan": {
@@ -41,7 +41,7 @@
           "line": 5.5
         }
       ],
-      "last_seen_at": "2026-10-10T17:40:09.896649+00:00",
+      "last_seen_at": "2026-10-10T20:26:34.537512+00:00",
       "last_seen_line": 5.5
     },
     "gavin williams": {
@@ -53,10 +53,14 @@
         {
           "at": "2026-10-10T10:06:43.605510+00:00",
           "line": 30.5
+        },
+        {
+          "at": "2026-10-10T20:26:34.537512+00:00",
+          "line": 31.5
         }
       ],
-      "last_seen_at": "2026-10-10T17:40:09.896649+00:00",
-      "last_seen_line": 30.5
+      "last_seen_at": "2026-10-10T20:26:34.537512+00:00",
+      "last_seen_line": 31.5
     },
     "jo adell": {
       "name": "Jo Adell",
@@ -69,7 +73,7 @@
           "line": 5.5
         }
       ],
-      "last_seen_at": "2026-10-10T17:40:09.896649+00:00",
+      "last_seen_at": "2026-10-10T20:26:34.537512+00:00",
       "last_seen_line": 5.5
     },
     "miguel vargas": {
@@ -83,21 +87,21 @@
           "line": 6.5
         }
       ],
-      "last_seen_at": "2026-10-10T17:40:09.896649+00:00",
+      "last_seen_at": "2026-10-10T20:26:34.537512+00:00",
       "last_seen_line": 6.5
     },
     "sam antonacci": {
       "name": "sam antonacci",
-      "player_id": null,
-      "team": null,
-      "lock_at": null,
+      "player_id": 803011,
+      "team": "Chicago White Sox",
+      "lock_at": "2026-10-11T00:00:00Z",
       "samples": [
         {
           "at": "2026-10-10T10:06:43.605510+00:00",
           "line": 5.5
         }
       ],
-      "last_seen_at": "2026-10-10T17:40:09.896649+00:00",
+      "last_seen_at": "2026-10-10T20:26:34.537512+00:00",
       "last_seen_line": 5.5
     },
     "munetaka murakami": {
@@ -111,7 +115,7 @@
           "line": 5.5
         }
       ],
-      "last_seen_at": "2026-10-10T17:40:09.896649+00:00",
+      "last_seen_at": "2026-10-10T20:26:34.537512+00:00",
       "last_seen_line": 5.5
     }
   },
@@ -124,7 +128,7 @@
       "edge": 2.0,
       "actionable": true,
       "lock_at": "2026-10-11T00:00:00Z",
-      "annotated_at": "2026-10-10T17:41:47.999181+00:00"
+      "annotated_at": "2026-10-10T20:28:05.987326+00:00"
     },
     "munetaka murakami": {
       "player_id": 808959,
@@ -134,47 +138,57 @@
       "edge": 2.0,
       "actionable": true,
       "lock_at": "2026-10-11T00:00:00Z",
-      "annotated_at": "2026-10-10T17:41:47.999181+00:00"
+      "annotated_at": "2026-10-10T20:28:05.987326+00:00"
     },
     "jose ramirez": {
       "player_id": 608070,
       "name": "Jos\u00e9 Ram\u00edrez",
       "team": "Cleveland Guardians",
       "call": null,
-      "edge": 0.03,
+      "edge": 0.38,
       "actionable": false,
       "lock_at": "2026-10-11T00:00:00Z",
-      "annotated_at": "2026-10-10T17:41:47.999181+00:00"
+      "annotated_at": "2026-10-10T20:28:05.987326+00:00"
     },
     "steven kwan": {
       "player_id": 680757,
       "name": "Steven Kwan",
       "team": "Cleveland Guardians",
       "call": "over",
-      "edge": 0.68,
-      "actionable": false,
+      "edge": 1.03,
+      "actionable": true,
       "lock_at": "2026-10-11T00:00:00Z",
-      "annotated_at": "2026-10-10T17:41:47.999181+00:00"
+      "annotated_at": "2026-10-10T20:28:05.987326+00:00"
     },
     "jo adell": {
       "player_id": 666176,
       "name": "Jo Adell",
       "team": "Cleveland Guardians",
       "call": null,
-      "edge": -0.03,
+      "edge": 0.32,
       "actionable": false,
       "lock_at": "2026-10-11T00:00:00Z",
-      "annotated_at": "2026-10-10T17:41:47.999181+00:00"
+      "annotated_at": "2026-10-10T20:28:05.987326+00:00"
     },
     "chase delauter": {
       "player_id": 800050,
       "name": "Chase DeLauter",
       "team": "Cleveland Guardians",
       "call": "under",
-      "edge": -1.74,
+      "edge": -1.38,
+      "actionable": false,
+      "lock_at": "2026-10-11T00:00:00Z",
+      "annotated_at": "2026-10-10T20:28:05.987326+00:00"
+    },
+    "sam antonacci": {
+      "player_id": 803011,
+      "name": "Sam Antonacci",
+      "team": "Chicago White Sox",
+      "call": "over",
+      "edge": 2.0,
       "actionable": true,
       "lock_at": "2026-10-11T00:00:00Z",
-      "annotated_at": "2026-10-10T17:41:47.999181+00:00"
+      "annotated_at": "2026-10-10T20:28:05.987326+00:00"
     }
   }
 }
