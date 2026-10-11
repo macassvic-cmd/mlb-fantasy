@@ -1,0 +1,156 @@
+{
+  "version": 2,
+  "date": "2026-10-11",
+  "players": {
+    "tarik skubal": {
+      "name": "tarik skubal",
+      "player_id": null,
+      "team": null,
+      "lock_at": null,
+      "samples": [
+        {
+          "at": "2026-10-11T10:03:38.981709+00:00",
+          "line": 38.5
+        }
+      ],
+      "last_seen_at": "2026-10-11T10:03:38.981709+00:00",
+      "last_seen_line": 38.5
+    },
+    "mookie betts": {
+      "name": "mookie betts",
+      "player_id": 605141,
+      "team": "Los Angeles Dodgers",
+      "lock_at": "2026-10-12T00:00:00Z",
+      "samples": [
+        {
+          "at": "2026-10-11T10:03:38.981709+00:00",
+          "line": 5.5
+        }
+      ],
+      "last_seen_at": "2026-10-11T10:03:38.981709+00:00",
+      "last_seen_line": 5.5
+    },
+    "jackson chourio": {
+      "name": "jackson chourio",
+      "player_id": 694192,
+      "team": "Milwaukee Brewers",
+      "lock_at": "2026-10-12T00:00:00Z",
+      "samples": [
+        {
+          "at": "2026-10-11T10:03:38.981709+00:00",
+          "line": 5.5
+        }
+      ],
+      "last_seen_at": "2026-10-11T10:03:38.981709+00:00",
+      "last_seen_line": 5.5
+    },
+    "will smith": {
+      "name": "will smith",
+      "player_id": 669257,
+      "team": "Los Angeles Dodgers",
+      "lock_at": "2026-10-12T00:00:00Z",
+      "samples": [
+        {
+          "at": "2026-10-11T10:03:38.981709+00:00",
+          "line": 5.5
+        }
+      ],
+      "last_seen_at": "2026-10-11T10:03:38.981709+00:00",
+      "last_seen_line": 5.5
+    },
+    "william contreras": {
+      "name": "william contreras",
+      "player_id": 661388,
+      "team": "Milwaukee Brewers",
+      "lock_at": "2026-10-12T00:00:00Z",
+      "samples": [
+        {
+          "at": "2026-10-11T10:03:38.981709+00:00",
+          "line": 5.5
+        }
+      ],
+      "last_seen_at": "2026-10-11T10:03:38.981709+00:00",
+      "last_seen_line": 5.5
+    },
+    "jacob misiorowski": {
+      "name": "jacob misiorowski",
+      "player_id": null,
+      "team": null,
+      "lock_at": null,
+      "samples": [
+        {
+          "at": "2026-10-11T10:03:38.981709+00:00",
+          "line": 36.5
+        }
+      ],
+      "last_seen_at": "2026-10-11T10:03:38.981709+00:00",
+      "last_seen_line": 36.5
+    },
+    "brice turang": {
+      "name": "brice turang",
+      "player_id": 668930,
+      "team": "Milwaukee Brewers",
+      "lock_at": "2026-10-12T00:00:00Z",
+      "samples": [
+        {
+          "at": "2026-10-11T10:03:38.981709+00:00",
+          "line": 5.5
+        }
+      ],
+      "last_seen_at": "2026-10-11T10:03:38.981709+00:00",
+      "last_seen_line": 5.5
+    }
+  },
+  "annotations": {
+    "jackson chourio": {
+      "player_id": 694192,
+      "name": "Jackson Chourio",
+      "team": "Milwaukee Brewers",
+      "call": "over",
+      "edge": 2.0,
+      "actionable": true,
+      "lock_at": "2026-10-12T00:00:00Z",
+      "annotated_at": "2026-10-11T10:05:16.582921+00:00"
+    },
+    "william contreras": {
+      "player_id": 661388,
+      "name": "William Contreras",
+      "team": "Milwaukee Brewers",
+      "call": "over",
+      "edge": 2.0,
+      "actionable": true,
+      "lock_at": "2026-10-12T00:00:00Z",
+      "annotated_at": "2026-10-11T10:05:16.582921+00:00"
+    },
+    "brice turang": {
+      "player_id": 668930,
+      "name": "Brice Turang",
+      "team": "Milwaukee Brewers",
+      "call": "over",
+      "edge": 2.0,
+      "actionable": true,
+      "lock_at": "2026-10-12T00:00:00Z",
+      "annotated_at": "2026-10-11T10:05:16.582921+00:00"
+    },
+    "mookie betts": {
+      "player_id": 605141,
+      "name": "Mookie Betts",
+      "team": "Los Angeles Dodgers",
+      "call": "over",
+      "edge": 0.68,
+      "actionable": false,
+      "lock_at": "2026-10-12T00:00:00Z",
+      "annotated_at": "2026-10-11T10:05:16.582921+00:00"
+    },
+    "will smith": {
+      "player_id": 669257,
+      "name": "Will Smith",
+      "team": "Los Angeles Dodgers",
+      "call": "under",
+      "edge": -1.37,
+      "actionable": false,
+      "lock_at": "2026-10-12T00:00:00Z",
+      "annotated_at": "2026-10-11T10:05:16.582921+00:00"
+    }
+  }
+}
