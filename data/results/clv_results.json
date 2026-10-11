@@ -7636,18 +7636,79 @@
         }
       ],
       "skipped_no_samples": 0
+    },
+    "2026-10-10": {
+      "plays": [
+        {
+          "player_id": 678246,
+          "name": "Miguel Vargas",
+          "team": "Chicago White Sox",
+          "call": "over",
+          "open_line": 6.5,
+          "open_at": "2026-10-10T10:06:43.605510+00:00",
+          "close_line": 6.5,
+          "close_at": "2026-10-10T10:06:43.605510+00:00",
+          "last_seen_at": "2026-10-10T22:16:48.017931+00:00",
+          "lock_at": "2026-10-11T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 808959,
+          "name": "Munetaka Murakami",
+          "team": "Chicago White Sox",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-10T10:06:43.605510+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-10T10:06:43.605510+00:00",
+          "last_seen_at": "2026-10-10T22:16:48.017931+00:00",
+          "lock_at": "2026-10-11T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 680757,
+          "name": "Steven Kwan",
+          "team": "Cleveland Guardians",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-10T10:06:43.605510+00:00",
+          "close_line": 6.5,
+          "close_at": "2026-10-10T22:16:48.017931+00:00",
+          "last_seen_at": "2026-10-10T22:16:48.017931+00:00",
+          "lock_at": "2026-10-11T00:00:00Z",
+          "n_samples": 2,
+          "clv_points": 1.0
+        },
+        {
+          "player_id": 803011,
+          "name": "Sam Antonacci",
+          "team": "Chicago White Sox",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-10T10:06:43.605510+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-10T10:06:43.605510+00:00",
+          "last_seen_at": "2026-10-10T22:16:48.017931+00:00",
+          "lock_at": "2026-10-11T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        }
+      ],
+      "skipped_no_samples": 0
     }
   },
   "record": {
-    "positive": 5,
+    "positive": 6,
     "negative": 1,
-    "push": 663,
-    "n": 669,
-    "win_rate": 83.3,
-    "avg_clv_points": 0.006,
-    "plays_multi_sample": 5,
-    "plays_single_sample": 664,
-    "avg_clv_points_multi_sample": 0.6,
+    "push": 666,
+    "n": 673,
+    "win_rate": 85.7,
+    "avg_clv_points": 0.007,
+    "plays_multi_sample": 6,
+    "plays_single_sample": 667,
+    "avg_clv_points_multi_sample": 0.667,
     "skipped_no_samples": 0
   }
 }
