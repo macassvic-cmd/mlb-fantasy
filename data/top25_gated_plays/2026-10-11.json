@@ -12,6 +12,16 @@
       "game_time_pt": "5:00 PM PT"
     },
     {
+      "player_id": 668930,
+      "name": "Brice Turang",
+      "team": "Milwaukee Brewers",
+      "projected_ud": 7.5,
+      "ud_line": 5.5,
+      "edge": 2.0,
+      "actionable_reason": "edge + shrunk sample above baseline",
+      "game_time_pt": "5:00 PM PT"
+    },
+    {
       "player_id": 661388,
       "name": "William Contreras",
       "team": "Milwaukee Brewers",
@@ -22,13 +32,13 @@
       "game_time_pt": "5:00 PM PT"
     },
     {
-      "player_id": 668930,
-      "name": "Brice Turang",
-      "team": "Milwaukee Brewers",
-      "projected_ud": 7.5,
+      "player_id": 605141,
+      "name": "Mookie Betts",
+      "team": "Los Angeles Dodgers",
+      "projected_ud": 6.53,
       "ud_line": 5.5,
-      "edge": 2.0,
-      "actionable_reason": "edge + shrunk sample above baseline",
+      "edge": 1.03,
+      "actionable_reason": "edge + platoon advantage",
       "game_time_pt": "5:00 PM PT"
     }
   ]
