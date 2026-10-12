@@ -7697,17 +7697,78 @@
         }
       ],
       "skipped_no_samples": 0
+    },
+    "2026-10-11": {
+      "plays": [
+        {
+          "player_id": 694192,
+          "name": "Jackson Chourio",
+          "team": "Milwaukee Brewers",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-11T10:03:38.981709+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-11T10:03:38.981709+00:00",
+          "last_seen_at": "2026-10-11T22:43:12.909308+00:00",
+          "lock_at": "2026-10-12T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 661388,
+          "name": "William Contreras",
+          "team": "Milwaukee Brewers",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-11T10:03:38.981709+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-11T10:03:38.981709+00:00",
+          "last_seen_at": "2026-10-11T22:43:12.909308+00:00",
+          "lock_at": "2026-10-12T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 668930,
+          "name": "Brice Turang",
+          "team": "Milwaukee Brewers",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-11T10:03:38.981709+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-11T10:03:38.981709+00:00",
+          "last_seen_at": "2026-10-11T22:43:12.909308+00:00",
+          "lock_at": "2026-10-12T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 605141,
+          "name": "Mookie Betts",
+          "team": "Los Angeles Dodgers",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-11T10:03:38.981709+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-11T10:03:38.981709+00:00",
+          "last_seen_at": "2026-10-11T22:43:12.909308+00:00",
+          "lock_at": "2026-10-12T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        }
+      ],
+      "skipped_no_samples": 0
     }
   },
   "record": {
     "positive": 6,
     "negative": 1,
-    "push": 666,
-    "n": 673,
+    "push": 670,
+    "n": 677,
     "win_rate": 85.7,
     "avg_clv_points": 0.007,
     "plays_multi_sample": 6,
-    "plays_single_sample": 667,
+    "plays_single_sample": 671,
     "avg_clv_points_multi_sample": 0.667,
     "skipped_no_samples": 0
   }

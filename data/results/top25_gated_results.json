@@ -2679,11 +2679,66 @@
           "grade": "dnp"
         }
       ]
+    },
+    "2026-10-11": {
+      "wins": 0,
+      "losses": 0,
+      "dnp": 4,
+      "plays": [
+        {
+          "player_id": 694192,
+          "name": "Jackson Chourio",
+          "team": "Milwaukee Brewers",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "5:00 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 668930,
+          "name": "Brice Turang",
+          "team": "Milwaukee Brewers",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + shrunk sample above baseline",
+          "game_time_pt": "5:00 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 661388,
+          "name": "William Contreras",
+          "team": "Milwaukee Brewers",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "5:00 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 605141,
+          "name": "Mookie Betts",
+          "team": "Los Angeles Dodgers",
+          "projected_ud": 6.53,
+          "ud_line": 5.5,
+          "edge": 1.03,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "5:00 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        }
+      ]
     }
   },
   "record": {
     "wins": 92,
     "losses": 77,
-    "dnp": 41
+    "dnp": 45
   }
 }
