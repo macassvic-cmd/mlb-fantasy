@@ -7889,18 +7889,65 @@
         }
       ],
       "skipped_no_samples": 0
+    },
+    "2026-10-13": {
+      "plays": [
+        {
+          "player_id": 800050,
+          "name": "Chase DeLauter",
+          "team": "Cleveland Guardians",
+          "call": "over",
+          "open_line": 6.5,
+          "open_at": "2026-10-13T13:21:42.252537+00:00",
+          "close_line": 6.5,
+          "close_at": "2026-10-13T13:21:42.252537+00:00",
+          "last_seen_at": "2026-10-13T23:12:14.564509+00:00",
+          "lock_at": "2026-10-14T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 680757,
+          "name": "Steven Kwan",
+          "team": "Cleveland Guardians",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-13T13:21:42.252537+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-13T13:21:42.252537+00:00",
+          "last_seen_at": "2026-10-13T23:12:14.564509+00:00",
+          "lock_at": "2026-10-14T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 691406,
+          "name": "Junior Caminero",
+          "team": "Tampa Bay Rays",
+          "call": "under",
+          "open_line": 5.5,
+          "open_at": "2026-10-13T13:21:42.252537+00:00",
+          "close_line": 6.5,
+          "close_at": "2026-10-13T18:46:17.992174+00:00",
+          "last_seen_at": "2026-10-13T23:12:14.564509+00:00",
+          "lock_at": "2026-10-14T00:00:00Z",
+          "n_samples": 2,
+          "clv_points": -1.0
+        }
+      ],
+      "skipped_no_samples": 0
     }
   },
   "record": {
     "positive": 6,
-    "negative": 1,
-    "push": 679,
-    "n": 686,
-    "win_rate": 85.7,
-    "avg_clv_points": 0.007,
-    "plays_multi_sample": 6,
-    "plays_single_sample": 680,
-    "avg_clv_points_multi_sample": 0.667,
+    "negative": 2,
+    "push": 681,
+    "n": 689,
+    "win_rate": 75.0,
+    "avg_clv_points": 0.006,
+    "plays_multi_sample": 7,
+    "plays_single_sample": 682,
+    "avg_clv_points_multi_sample": 0.429,
     "skipped_no_samples": 0
   }
 }

@@ -2837,11 +2837,42 @@
           "grade": "dnp"
         }
       ]
+    },
+    "2026-10-13": {
+      "wins": 0,
+      "losses": 0,
+      "dnp": 2,
+      "plays": [
+        {
+          "player_id": 800050,
+          "name": "Chase DeLauter",
+          "team": "Cleveland Guardians",
+          "projected_ud": 8.24,
+          "ud_line": 6.5,
+          "edge": 1.74,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "5:00 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        },
+        {
+          "player_id": 680757,
+          "name": "Steven Kwan",
+          "team": "Cleveland Guardians",
+          "projected_ud": 7.5,
+          "ud_line": 5.5,
+          "edge": 2.0,
+          "actionable_reason": "edge + platoon advantage",
+          "game_time_pt": "5:00 PM PT",
+          "actual_ud": null,
+          "grade": "dnp"
+        }
+      ]
     }
   },
   "record": {
     "wins": 92,
     "losses": 77,
-    "dnp": 53
+    "dnp": 55
   }
 }
