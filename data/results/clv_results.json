@@ -7936,17 +7936,92 @@
         }
       ],
       "skipped_no_samples": 0
+    },
+    "2026-10-14": {
+      "plays": [
+        {
+          "player_id": 660271,
+          "name": "Shohei Ohtani",
+          "team": "Los Angeles Dodgers",
+          "call": "over",
+          "open_line": 6.5,
+          "open_at": "2026-10-14T08:14:38.311223+00:00",
+          "close_line": 6.5,
+          "close_at": "2026-10-14T08:14:38.311223+00:00",
+          "last_seen_at": "2026-10-14T22:07:05.237814+00:00",
+          "lock_at": "2026-10-15T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 606192,
+          "name": "Teoscar Hern\u00e1ndez",
+          "team": "Los Angeles Dodgers",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-14T08:14:38.311223+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-14T08:14:38.311223+00:00",
+          "last_seen_at": "2026-10-14T22:07:05.237814+00:00",
+          "lock_at": "2026-10-15T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 681624,
+          "name": "Andy Pages",
+          "team": "Los Angeles Dodgers",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-14T08:14:38.311223+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-14T08:14:38.311223+00:00",
+          "last_seen_at": "2026-10-14T22:07:05.237814+00:00",
+          "lock_at": "2026-10-15T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 663656,
+          "name": "Kyle Tucker",
+          "team": "Los Angeles Dodgers",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-14T08:14:38.311223+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-14T08:14:38.311223+00:00",
+          "last_seen_at": "2026-10-14T22:07:05.237814+00:00",
+          "lock_at": "2026-10-15T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 518692,
+          "name": "Freddie Freeman",
+          "team": "Los Angeles Dodgers",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-14T08:14:38.311223+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-14T08:14:38.311223+00:00",
+          "last_seen_at": "2026-10-14T22:07:05.237814+00:00",
+          "lock_at": "2026-10-15T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        }
+      ],
+      "skipped_no_samples": 0
     }
   },
   "record": {
     "positive": 6,
     "negative": 2,
-    "push": 681,
-    "n": 689,
+    "push": 686,
+    "n": 694,
     "win_rate": 75.0,
     "avg_clv_points": 0.006,
     "plays_multi_sample": 7,
-    "plays_single_sample": 682,
+    "plays_single_sample": 687,
     "avg_clv_points_multi_sample": 0.429,
     "skipped_no_samples": 0
   }
