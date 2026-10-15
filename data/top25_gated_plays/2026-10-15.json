@@ -32,8 +32,8 @@
       "game_time_pt": "10:00 AM PT"
     },
     {
-      "player_id": 606192,
-      "name": "Teoscar Hern\u00e1ndez",
+      "player_id": 663656,
+      "name": "Kyle Tucker",
       "team": "Los Angeles Dodgers",
       "projected_ud": 7.5,
       "ud_line": 5.5,
@@ -42,8 +42,8 @@
       "game_time_pt": "5:00 PM PT"
     },
     {
-      "player_id": 663656,
-      "name": "Kyle Tucker",
+      "player_id": 606192,
+      "name": "Teoscar Hern\u00e1ndez",
       "team": "Los Angeles Dodgers",
       "projected_ud": 7.5,
       "ud_line": 5.5,
@@ -65,9 +65,9 @@
       "player_id": 691406,
       "name": "Junior Caminero",
       "team": "Tampa Bay Rays",
-      "projected_ud": 6.94,
+      "projected_ud": 7.11,
       "ud_line": 5.5,
-      "edge": 1.44,
+      "edge": 1.61,
       "actionable_reason": "edge + platoon advantage",
       "game_time_pt": "10:00 AM PT"
     },
@@ -75,11 +75,21 @@
       "player_id": 666176,
       "name": "Jo Adell",
       "team": "Cleveland Guardians",
-      "projected_ud": 6.77,
+      "projected_ud": 6.94,
       "ud_line": 5.5,
-      "edge": 1.27,
+      "edge": 1.44,
       "actionable_reason": "edge + strong contact",
       "game_time_pt": "10:00 AM PT"
+    },
+    {
+      "player_id": 641343,
+      "name": "Jake Bauers",
+      "team": "Milwaukee Brewers",
+      "projected_ud": 6.6,
+      "ud_line": 5.5,
+      "edge": 1.1,
+      "actionable_reason": "edge + platoon advantage",
+      "game_time_pt": "5:00 PM PT"
     }
   ]
 }
