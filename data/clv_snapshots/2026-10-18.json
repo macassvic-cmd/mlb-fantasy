@@ -1,0 +1,224 @@
+{
+  "version": 2,
+  "date": "2026-10-18",
+  "players": {
+    "jose ramirez": {
+      "name": "jose ramirez",
+      "player_id": 608070,
+      "team": "Cleveland Guardians",
+      "lock_at": "2026-10-18T21:08:00Z",
+      "samples": [
+        {
+          "at": "2026-10-18T07:15:47.209847+00:00",
+          "line": 6.5
+        }
+      ],
+      "last_seen_at": "2026-10-18T07:15:47.209847+00:00",
+      "last_seen_line": 6.5
+    },
+    "chase delauter": {
+      "name": "chase delauter",
+      "player_id": 800050,
+      "team": "Cleveland Guardians",
+      "lock_at": "2026-10-18T21:08:00Z",
+      "samples": [
+        {
+          "at": "2026-10-18T07:15:47.209847+00:00",
+          "line": 5.5
+        }
+      ],
+      "last_seen_at": "2026-10-18T07:15:47.209847+00:00",
+      "last_seen_line": 5.5
+    },
+    "steven kwan": {
+      "name": "steven kwan",
+      "player_id": 680757,
+      "team": "Cleveland Guardians",
+      "lock_at": "2026-10-18T21:08:00Z",
+      "samples": [
+        {
+          "at": "2026-10-18T07:15:47.209847+00:00",
+          "line": 5.5
+        }
+      ],
+      "last_seen_at": "2026-10-18T07:15:47.209847+00:00",
+      "last_seen_line": 5.5
+    },
+    "junior caminero": {
+      "name": "junior caminero",
+      "player_id": 691406,
+      "team": "Tampa Bay Rays",
+      "lock_at": "2026-10-18T21:08:00Z",
+      "samples": [
+        {
+          "at": "2026-10-18T07:15:47.209847+00:00",
+          "line": 5.5
+        }
+      ],
+      "last_seen_at": "2026-10-18T07:15:47.209847+00:00",
+      "last_seen_line": 5.5
+    },
+    "yandy diaz": {
+      "name": "yandy diaz",
+      "player_id": 650490,
+      "team": "Tampa Bay Rays",
+      "lock_at": "2026-10-18T21:08:00Z",
+      "samples": [
+        {
+          "at": "2026-10-18T07:15:47.209847+00:00",
+          "line": 6.5
+        }
+      ],
+      "last_seen_at": "2026-10-18T07:15:47.209847+00:00",
+      "last_seen_line": 6.5
+    },
+    "jonathan aranda": {
+      "name": "jonathan aranda",
+      "player_id": 666018,
+      "team": "Tampa Bay Rays",
+      "lock_at": "2026-10-18T21:08:00Z",
+      "samples": [
+        {
+          "at": "2026-10-18T07:15:47.209847+00:00",
+          "line": 5.5
+        }
+      ],
+      "last_seen_at": "2026-10-18T07:15:47.209847+00:00",
+      "last_seen_line": 5.5
+    },
+    "chandler simpson": {
+      "name": "chandler simpson",
+      "player_id": 802415,
+      "team": "Tampa Bay Rays",
+      "lock_at": "2026-10-18T21:08:00Z",
+      "samples": [
+        {
+          "at": "2026-10-18T07:15:47.209847+00:00",
+          "line": 6.5
+        }
+      ],
+      "last_seen_at": "2026-10-18T07:15:47.209847+00:00",
+      "last_seen_line": 6.5
+    },
+    "jonny deluca": {
+      "name": "jonny deluca",
+      "player_id": 676356,
+      "team": "Tampa Bay Rays",
+      "lock_at": "2026-10-18T21:08:00Z",
+      "samples": [
+        {
+          "at": "2026-10-18T07:15:47.209847+00:00",
+          "line": 5.5
+        }
+      ],
+      "last_seen_at": "2026-10-18T07:15:47.209847+00:00",
+      "last_seen_line": 5.5
+    },
+    "victor mesa": {
+      "name": "victor mesa",
+      "player_id": 683748,
+      "team": "Tampa Bay Rays",
+      "lock_at": "2026-10-18T21:08:00Z",
+      "samples": [
+        {
+          "at": "2026-10-18T07:15:47.209847+00:00",
+          "line": 5.5
+        }
+      ],
+      "last_seen_at": "2026-10-18T07:15:47.209847+00:00",
+      "last_seen_line": 5.5
+    }
+  },
+  "annotations": {
+    "jose ramirez": {
+      "player_id": 608070,
+      "name": "Jos\u00e9 Ram\u00edrez",
+      "team": "Cleveland Guardians",
+      "call": "over",
+      "edge": 2.0,
+      "actionable": true,
+      "lock_at": "2026-10-18T21:08:00Z",
+      "annotated_at": "2026-10-18T07:17:19.278965+00:00"
+    },
+    "chandler simpson": {
+      "player_id": 802415,
+      "name": "Chandler Simpson",
+      "team": "Tampa Bay Rays",
+      "call": "over",
+      "edge": 2.0,
+      "actionable": false,
+      "lock_at": "2026-10-18T21:08:00Z",
+      "annotated_at": "2026-10-18T07:17:19.278965+00:00"
+    },
+    "yandy diaz": {
+      "player_id": 650490,
+      "name": "Yandy D\u00edaz",
+      "team": "Tampa Bay Rays",
+      "call": "over",
+      "edge": 1.15,
+      "actionable": true,
+      "lock_at": "2026-10-18T21:08:00Z",
+      "annotated_at": "2026-10-18T07:17:19.278965+00:00"
+    },
+    "chase delauter": {
+      "player_id": 800050,
+      "name": "Chase DeLauter",
+      "team": "Cleveland Guardians",
+      "call": "over",
+      "edge": 2.0,
+      "actionable": true,
+      "lock_at": "2026-10-18T21:08:00Z",
+      "annotated_at": "2026-10-18T07:17:19.278965+00:00"
+    },
+    "jonny deluca": {
+      "player_id": 676356,
+      "name": "Jonny DeLuca",
+      "team": "Tampa Bay Rays",
+      "call": "over",
+      "edge": 2.0,
+      "actionable": true,
+      "lock_at": "2026-10-18T21:08:00Z",
+      "annotated_at": "2026-10-18T07:17:19.278965+00:00"
+    },
+    "steven kwan": {
+      "player_id": 680757,
+      "name": "Steven Kwan",
+      "team": "Cleveland Guardians",
+      "call": "over",
+      "edge": 1.74,
+      "actionable": true,
+      "lock_at": "2026-10-18T21:08:00Z",
+      "annotated_at": "2026-10-18T07:17:19.278965+00:00"
+    },
+    "jonathan aranda": {
+      "player_id": 666018,
+      "name": "Jonathan Aranda",
+      "team": "Tampa Bay Rays",
+      "call": "over",
+      "edge": 1.03,
+      "actionable": true,
+      "lock_at": "2026-10-18T21:08:00Z",
+      "annotated_at": "2026-10-18T07:17:19.278965+00:00"
+    },
+    "junior caminero": {
+      "player_id": 691406,
+      "name": "Junior Caminero",
+      "team": "Tampa Bay Rays",
+      "call": null,
+      "edge": -0.38,
+      "actionable": false,
+      "lock_at": "2026-10-18T21:08:00Z",
+      "annotated_at": "2026-10-18T07:17:19.278965+00:00"
+    },
+    "victor mesa": {
+      "player_id": 683748,
+      "name": "Victor Mesa Jr.",
+      "team": "Tampa Bay Rays",
+      "call": "under",
+      "edge": -0.74,
+      "actionable": false,
+      "lock_at": "2026-10-18T21:08:00Z",
+      "annotated_at": "2026-10-18T07:17:19.278965+00:00"
+    }
+  }
+}
