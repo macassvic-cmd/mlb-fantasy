@@ -2,6 +2,16 @@
   "date": "2026-10-19",
   "plays": [
     {
+      "player_id": 650490,
+      "name": "Yandy D\u00edaz",
+      "team": "Tampa Bay Rays",
+      "projected_ud": 8.5,
+      "ud_line": 6.5,
+      "edge": 2.0,
+      "actionable_reason": "edge + platoon advantage",
+      "game_time_pt": "5:08 PM PT"
+    },
+    {
       "player_id": 608070,
       "name": "Jos\u00e9 Ram\u00edrez",
       "team": "Cleveland Guardians",
@@ -12,13 +22,23 @@
       "game_time_pt": "5:08 PM PT"
     },
     {
+      "player_id": 666018,
+      "name": "Jonathan Aranda",
+      "team": "Tampa Bay Rays",
+      "projected_ud": 7.5,
+      "ud_line": 5.5,
+      "edge": 2.0,
+      "actionable_reason": "edge + platoon advantage",
+      "game_time_pt": "5:08 PM PT"
+    },
+    {
       "player_id": 691406,
       "name": "Junior Caminero",
       "team": "Tampa Bay Rays",
       "projected_ud": 7.5,
       "ud_line": 5.5,
       "edge": 2.0,
-      "actionable_reason": "edge + strong contact",
+      "actionable_reason": "edge + platoon advantage",
       "game_time_pt": "5:08 PM PT"
     },
     {
@@ -29,26 +49,6 @@
       "ud_line": 5.5,
       "edge": 2.0,
       "actionable_reason": "edge + platoon advantage",
-      "game_time_pt": "5:08 PM PT"
-    },
-    {
-      "player_id": 666018,
-      "name": "Jonathan Aranda",
-      "team": "Tampa Bay Rays",
-      "projected_ud": 7.24,
-      "ud_line": 5.5,
-      "edge": 1.74,
-      "actionable_reason": "edge + strong contact",
-      "game_time_pt": "5:08 PM PT"
-    },
-    {
-      "player_id": 666176,
-      "name": "Jo Adell",
-      "team": "Cleveland Guardians",
-      "projected_ud": 6.88,
-      "ud_line": 5.5,
-      "edge": 1.38,
-      "actionable_reason": "edge + strong contact",
       "game_time_pt": "5:08 PM PT"
     }
   ]

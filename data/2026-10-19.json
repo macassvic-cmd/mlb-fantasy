@@ -14,7 +14,7 @@
     "game_pk": 849815,
     "game_date_utc": "2026-10-20T00:08:00Z",
     "date": "2026-10-19",
-    "opp_pitcher_name": "",
+    "opp_pitcher_name": "Shawn Armstrong",
     "season_stats": {
       "avg": 0.293,
       "obp": 0.359,
@@ -88,11 +88,25 @@
     },
     "fg_stats": {},
     "matchup": {
-      "pitcher_name": ""
+      "era": 4.58,
+      "whip": 1.39,
+      "k_pct": 0.221,
+      "fip": 4.27,
+      "ip": 35.1,
+      "k9": 8.66,
+      "pitcher_hand": "R",
+      "pitcher_name": "Shawn Armstrong"
     },
     "platoon": {
       "platoon_same_hand": true,
-      "advantage": null
+      "batter_woba": 0.347,
+      "batter_split_pa": 484,
+      "batter_split_label": "vs RHP",
+      "pitcher_woba_against": 0.334,
+      "pitcher_split_pa": 73,
+      "pitcher_split_label": "vs RHB",
+      "edge_woba": 0.013,
+      "advantage": "batter"
     },
     "park_factor": {
       "hr": 0.92,
@@ -100,32 +114,32 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 65.5,
-      "wind_speed_mph": 11.3,
+      "temp_f": 78.6,
+      "wind_speed_mph": 13.2,
       "wind_direction": "NE",
       "precip_probability": 0,
-      "humidity": 86,
-      "condition": "clear sky",
+      "humidity": 69,
+      "condition": "broken clouds",
       "is_indoor": true,
       "weather_available": true
     },
     "days_rest": null,
     "projected": {
-      "singles": 0.3314,
-      "doubles": 0.063,
-      "triples": 0.0012,
-      "hr": 0.0513,
-      "bb": 0.1127,
-      "hbp": 0.0262,
-      "rbi": 0.232,
-      "runs": 0.2818,
-      "sb": 0.0263
+      "singles": 0.3614,
+      "doubles": 0.0687,
+      "triples": 0.0013,
+      "hr": 0.0559,
+      "bb": 0.1229,
+      "hbp": 0.0286,
+      "rbi": 0.253,
+      "runs": 0.3072,
+      "sb": 0.0287
     },
     "lineup_status": "projected",
     "lineup_confirmed": false,
     "lineup_source": "mlb_recent_game_projection",
     "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-19T11:50:58.872586+00:00"
+    "lineup_fetched_at": "2026-10-19T18:10:58.152787+00:00"
   },
   {
     "player_id": 666018,
@@ -142,7 +156,7 @@
     "game_pk": 849815,
     "game_date_utc": "2026-10-20T00:08:00Z",
     "date": "2026-10-19",
-    "opp_pitcher_name": "",
+    "opp_pitcher_name": "Shawn Armstrong",
     "season_stats": {
       "avg": 0.274,
       "obp": 0.358,
@@ -216,11 +230,25 @@
     },
     "fg_stats": {},
     "matchup": {
-      "pitcher_name": ""
+      "era": 4.58,
+      "whip": 1.39,
+      "k_pct": 0.221,
+      "fip": 4.27,
+      "ip": 35.1,
+      "k9": 8.66,
+      "pitcher_hand": "R",
+      "pitcher_name": "Shawn Armstrong"
     },
     "platoon": {
       "platoon_same_hand": false,
-      "advantage": null
+      "batter_woba": 0.353,
+      "batter_split_pa": 478,
+      "batter_split_label": "vs RHP",
+      "pitcher_woba_against": 0.268,
+      "pitcher_split_pa": 81,
+      "pitcher_split_label": "vs LHB",
+      "edge_woba": 0.085,
+      "advantage": "batter"
     },
     "park_factor": {
       "hr": 0.92,
@@ -228,32 +256,32 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 65.5,
-      "wind_speed_mph": 11.3,
+      "temp_f": 78.6,
+      "wind_speed_mph": 13.2,
       "wind_direction": "NE",
       "precip_probability": 0,
-      "humidity": 86,
-      "condition": "clear sky",
+      "humidity": 69,
+      "condition": "broken clouds",
       "is_indoor": true,
       "weather_available": true
     },
     "days_rest": null,
     "projected": {
-      "singles": 0.2908,
-      "doubles": 0.0646,
+      "singles": 0.3171,
+      "doubles": 0.0704,
       "triples": 0.0,
-      "hr": 0.0511,
-      "bb": 0.129,
-      "hbp": 0.0277,
-      "rbi": 0.2476,
-      "runs": 0.2219,
-      "sb": 0.02
+      "hr": 0.0557,
+      "bb": 0.1407,
+      "hbp": 0.0303,
+      "rbi": 0.27,
+      "runs": 0.242,
+      "sb": 0.0218
     },
     "lineup_status": "projected",
     "lineup_confirmed": false,
     "lineup_source": "mlb_recent_game_projection",
     "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-19T11:50:58.872586+00:00"
+    "lineup_fetched_at": "2026-10-19T18:10:58.152787+00:00"
   },
   {
     "player_id": 668723,
@@ -270,7 +298,7 @@
     "game_pk": 849815,
     "game_date_utc": "2026-10-20T00:08:00Z",
     "date": "2026-10-19",
-    "opp_pitcher_name": "",
+    "opp_pitcher_name": "Shawn Armstrong",
     "season_stats": {
       "avg": 0.245,
       "obp": 0.321,
@@ -344,11 +372,25 @@
     },
     "fg_stats": {},
     "matchup": {
-      "pitcher_name": ""
+      "era": 4.58,
+      "whip": 1.39,
+      "k_pct": 0.221,
+      "fip": 4.27,
+      "ip": 35.1,
+      "k9": 8.66,
+      "pitcher_hand": "R",
+      "pitcher_name": "Shawn Armstrong"
     },
     "platoon": {
       "platoon_same_hand": true,
-      "advantage": null
+      "batter_woba": 0.279,
+      "batter_split_pa": 108,
+      "batter_split_label": "vs RHP",
+      "pitcher_woba_against": 0.334,
+      "pitcher_split_pa": 73,
+      "pitcher_split_label": "vs RHB",
+      "edge_woba": -0.055,
+      "advantage": "pitcher"
     },
     "park_factor": {
       "hr": 0.92,
@@ -356,32 +398,32 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 65.5,
-      "wind_speed_mph": 11.3,
+      "temp_f": 78.6,
+      "wind_speed_mph": 13.2,
       "wind_direction": "NE",
       "precip_probability": 0,
-      "humidity": 86,
-      "condition": "clear sky",
+      "humidity": 69,
+      "condition": "broken clouds",
       "is_indoor": true,
       "weather_available": true
     },
     "days_rest": null,
     "projected": {
-      "singles": 0.2034,
-      "doubles": 0.0384,
-      "triples": 0.0037,
-      "hr": 0.0466,
-      "bb": 0.0942,
-      "hbp": 0.0178,
-      "rbi": 0.193,
-      "runs": 0.1413,
-      "sb": 0.0302
+      "singles": 0.2218,
+      "doubles": 0.0419,
+      "triples": 0.0041,
+      "hr": 0.0508,
+      "bb": 0.1027,
+      "hbp": 0.0194,
+      "rbi": 0.2104,
+      "runs": 0.154,
+      "sb": 0.0329
     },
     "lineup_status": "projected",
     "lineup_confirmed": false,
     "lineup_source": "mlb_recent_game_projection",
     "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-19T11:50:58.872586+00:00"
+    "lineup_fetched_at": "2026-10-19T18:10:58.152787+00:00"
   },
   {
     "player_id": 691406,
@@ -398,7 +440,7 @@
     "game_pk": 849815,
     "game_date_utc": "2026-10-20T00:08:00Z",
     "date": "2026-10-19",
-    "opp_pitcher_name": "",
+    "opp_pitcher_name": "Shawn Armstrong",
     "season_stats": {
       "avg": 0.276,
       "obp": 0.36,
@@ -472,11 +514,25 @@
     },
     "fg_stats": {},
     "matchup": {
-      "pitcher_name": ""
+      "era": 4.58,
+      "whip": 1.39,
+      "k_pct": 0.221,
+      "fip": 4.27,
+      "ip": 35.1,
+      "k9": 8.66,
+      "pitcher_hand": "R",
+      "pitcher_name": "Shawn Armstrong"
     },
     "platoon": {
       "platoon_same_hand": true,
-      "advantage": null
+      "batter_woba": 0.357,
+      "batter_split_pa": 507,
+      "batter_split_label": "vs RHP",
+      "pitcher_woba_against": 0.334,
+      "pitcher_split_pa": 73,
+      "pitcher_split_label": "vs RHB",
+      "edge_woba": 0.023,
+      "advantage": "batter"
     },
     "park_factor": {
       "hr": 0.92,
@@ -484,32 +540,32 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 65.5,
-      "wind_speed_mph": 11.3,
+      "temp_f": 78.6,
+      "wind_speed_mph": 13.2,
       "wind_direction": "NE",
       "precip_probability": 0,
-      "humidity": 86,
-      "condition": "clear sky",
+      "humidity": 69,
+      "condition": "broken clouds",
       "is_indoor": true,
       "weather_available": true
     },
     "days_rest": null,
     "projected": {
-      "singles": 0.2677,
-      "doubles": 0.0588,
-      "triples": 0.0011,
-      "hr": 0.0705,
-      "bb": 0.1375,
-      "hbp": 0.0162,
-      "rbi": 0.2588,
-      "runs": 0.2878,
-      "sb": 0.026
+      "singles": 0.292,
+      "doubles": 0.0642,
+      "triples": 0.0012,
+      "hr": 0.0769,
+      "bb": 0.15,
+      "hbp": 0.0176,
+      "rbi": 0.2822,
+      "runs": 0.3138,
+      "sb": 0.0284
     },
     "lineup_status": "projected",
     "lineup_confirmed": false,
     "lineup_source": "mlb_recent_game_projection",
     "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-19T11:50:58.872586+00:00"
+    "lineup_fetched_at": "2026-10-19T18:10:58.152787+00:00"
   },
   {
     "player_id": 802415,
@@ -526,7 +582,7 @@
     "game_pk": 849815,
     "game_date_utc": "2026-10-20T00:08:00Z",
     "date": "2026-10-19",
-    "opp_pitcher_name": "",
+    "opp_pitcher_name": "Shawn Armstrong",
     "season_stats": {
       "avg": 0.306,
       "obp": 0.333,
@@ -600,11 +656,25 @@
     },
     "fg_stats": {},
     "matchup": {
-      "pitcher_name": ""
+      "era": 4.58,
+      "whip": 1.39,
+      "k_pct": 0.221,
+      "fip": 4.27,
+      "ip": 35.1,
+      "k9": 8.66,
+      "pitcher_hand": "R",
+      "pitcher_name": "Shawn Armstrong"
     },
     "platoon": {
       "platoon_same_hand": false,
-      "advantage": null
+      "batter_woba": 0.311,
+      "batter_split_pa": 401,
+      "batter_split_label": "vs RHP",
+      "pitcher_woba_against": 0.268,
+      "pitcher_split_pa": 81,
+      "pitcher_split_label": "vs LHB",
+      "edge_woba": 0.043,
+      "advantage": "batter"
     },
     "park_factor": {
       "hr": 0.92,
@@ -612,32 +682,32 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 65.5,
-      "wind_speed_mph": 11.3,
+      "temp_f": 78.6,
+      "wind_speed_mph": 13.2,
       "wind_direction": "NE",
       "precip_probability": 0,
-      "humidity": 86,
-      "condition": "clear sky",
+      "humidity": 69,
+      "condition": "broken clouds",
       "is_indoor": true,
       "weather_available": true
     },
     "days_rest": null,
     "projected": {
-      "singles": 0.3782,
-      "doubles": 0.0449,
-      "triples": 0.0072,
-      "hr": 0.03,
-      "bb": 0.0744,
-      "hbp": 0.01,
-      "rbi": 0.1194,
-      "runs": 0.2067,
-      "sb": 0.119
+      "singles": 0.4124,
+      "doubles": 0.049,
+      "triples": 0.0078,
+      "hr": 0.0301,
+      "bb": 0.0812,
+      "hbp": 0.0109,
+      "rbi": 0.1302,
+      "runs": 0.2254,
+      "sb": 0.1298
     },
     "lineup_status": "projected",
     "lineup_confirmed": false,
     "lineup_source": "mlb_recent_game_projection",
     "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-19T11:50:58.872586+00:00"
+    "lineup_fetched_at": "2026-10-19T18:10:58.152787+00:00"
   },
   {
     "player_id": 676356,
@@ -654,7 +724,7 @@
     "game_pk": 849815,
     "game_date_utc": "2026-10-20T00:08:00Z",
     "date": "2026-10-19",
-    "opp_pitcher_name": "",
+    "opp_pitcher_name": "Shawn Armstrong",
     "season_stats": {
       "avg": 0.266,
       "obp": 0.3,
@@ -728,11 +798,25 @@
     },
     "fg_stats": {},
     "matchup": {
-      "pitcher_name": ""
+      "era": 4.58,
+      "whip": 1.39,
+      "k_pct": 0.221,
+      "fip": 4.27,
+      "ip": 35.1,
+      "k9": 8.66,
+      "pitcher_hand": "R",
+      "pitcher_name": "Shawn Armstrong"
     },
     "platoon": {
       "platoon_same_hand": true,
-      "advantage": null
+      "batter_woba": 0.324,
+      "batter_split_pa": 215,
+      "batter_split_label": "vs RHP",
+      "pitcher_woba_against": 0.334,
+      "pitcher_split_pa": 73,
+      "pitcher_split_label": "vs RHB",
+      "edge_woba": -0.01,
+      "advantage": "neutral"
     },
     "park_factor": {
       "hr": 0.92,
@@ -740,32 +824,32 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 65.5,
-      "wind_speed_mph": 11.3,
+      "temp_f": 78.6,
+      "wind_speed_mph": 13.2,
       "wind_direction": "NE",
       "precip_probability": 0,
-      "humidity": 86,
-      "condition": "clear sky",
+      "humidity": 69,
+      "condition": "broken clouds",
       "is_indoor": true,
       "weather_available": true
     },
     "days_rest": null,
     "projected": {
-      "singles": 0.2355,
-      "doubles": 0.0761,
+      "singles": 0.2569,
+      "doubles": 0.083,
       "triples": 0.0,
-      "hr": 0.0439,
-      "bb": 0.0704,
-      "hbp": 0.01,
-      "rbi": 0.1924,
-      "runs": 0.1868,
-      "sb": 0.0693
+      "hr": 0.0478,
+      "bb": 0.0767,
+      "hbp": 0.0109,
+      "rbi": 0.2098,
+      "runs": 0.2037,
+      "sb": 0.0756
     },
     "lineup_status": "projected",
     "lineup_confirmed": false,
     "lineup_source": "mlb_recent_game_projection",
     "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-19T11:50:58.872586+00:00"
+    "lineup_fetched_at": "2026-10-19T18:10:58.152787+00:00"
   },
   {
     "player_id": 689414,
@@ -782,7 +866,7 @@
     "game_pk": 849815,
     "game_date_utc": "2026-10-20T00:08:00Z",
     "date": "2026-10-19",
-    "opp_pitcher_name": "",
+    "opp_pitcher_name": "Shawn Armstrong",
     "season_stats": {
       "avg": 0.284,
       "obp": 0.367,
@@ -856,11 +940,25 @@
     },
     "fg_stats": {},
     "matchup": {
-      "pitcher_name": ""
+      "era": 4.58,
+      "whip": 1.39,
+      "k_pct": 0.221,
+      "fip": 4.27,
+      "ip": 35.1,
+      "k9": 8.66,
+      "pitcher_hand": "R",
+      "pitcher_name": "Shawn Armstrong"
     },
     "platoon": {
       "platoon_same_hand": false,
-      "advantage": null
+      "batter_woba": 0.372,
+      "batter_split_pa": 436,
+      "batter_split_label": "vs RHP",
+      "pitcher_woba_against": 0.268,
+      "pitcher_split_pa": 81,
+      "pitcher_split_label": "vs LHB",
+      "edge_woba": 0.104,
+      "advantage": "batter"
     },
     "park_factor": {
       "hr": 0.92,
@@ -868,32 +966,32 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 65.5,
-      "wind_speed_mph": 11.3,
+      "temp_f": 78.6,
+      "wind_speed_mph": 13.2,
       "wind_direction": "NE",
       "precip_probability": 0,
-      "humidity": 86,
-      "condition": "clear sky",
+      "humidity": 69,
+      "condition": "broken clouds",
       "is_indoor": true,
       "weather_available": true
     },
     "days_rest": null,
     "projected": {
-      "singles": 0.2912,
-      "doubles": 0.0469,
-      "triples": 0.0013,
-      "hr": 0.0486,
-      "bb": 0.1189,
-      "hbp": 0.0294,
-      "rbi": 0.2415,
-      "runs": 0.2192,
-      "sb": 0.0269
+      "singles": 0.3176,
+      "doubles": 0.0511,
+      "triples": 0.0014,
+      "hr": 0.053,
+      "bb": 0.1296,
+      "hbp": 0.032,
+      "rbi": 0.2634,
+      "runs": 0.239,
+      "sb": 0.0293
     },
     "lineup_status": "projected",
     "lineup_confirmed": false,
     "lineup_source": "mlb_recent_game_projection",
     "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-19T11:50:58.872586+00:00"
+    "lineup_fetched_at": "2026-10-19T18:10:58.152787+00:00"
   },
   {
     "player_id": 810938,
@@ -910,7 +1008,7 @@
     "game_pk": 849815,
     "game_date_utc": "2026-10-20T00:08:00Z",
     "date": "2026-10-19",
-    "opp_pitcher_name": "",
+    "opp_pitcher_name": "Shawn Armstrong",
     "season_stats": {
       "avg": 0.238,
       "obp": 0.302,
@@ -984,11 +1082,25 @@
     },
     "fg_stats": {},
     "matchup": {
-      "pitcher_name": ""
+      "era": 4.58,
+      "whip": 1.39,
+      "k_pct": 0.221,
+      "fip": 4.27,
+      "ip": 35.1,
+      "k9": 8.66,
+      "pitcher_hand": "R",
+      "pitcher_name": "Shawn Armstrong"
     },
     "platoon": {
       "platoon_same_hand": true,
-      "advantage": null
+      "batter_woba": 0.291,
+      "batter_split_pa": 153,
+      "batter_split_label": "vs RHP",
+      "pitcher_woba_against": 0.334,
+      "pitcher_split_pa": 73,
+      "pitcher_split_label": "vs RHB",
+      "edge_woba": -0.043,
+      "advantage": "pitcher"
     },
     "park_factor": {
       "hr": 0.92,
@@ -996,32 +1108,32 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 65.5,
-      "wind_speed_mph": 11.3,
+      "temp_f": 78.6,
+      "wind_speed_mph": 13.2,
       "wind_direction": "NE",
       "precip_probability": 0,
-      "humidity": 86,
-      "condition": "clear sky",
+      "humidity": 69,
+      "condition": "broken clouds",
       "is_indoor": true,
       "weather_available": true
     },
     "days_rest": null,
     "projected": {
-      "singles": 0.2417,
-      "doubles": 0.0468,
-      "triples": 0.002,
-      "hr": 0.0332,
-      "bb": 0.0894,
-      "hbp": 0.0156,
-      "rbi": 0.1346,
-      "runs": 0.1718,
-      "sb": 0.0492
+      "singles": 0.2636,
+      "doubles": 0.051,
+      "triples": 0.0022,
+      "hr": 0.0362,
+      "bb": 0.0975,
+      "hbp": 0.017,
+      "rbi": 0.1467,
+      "runs": 0.1873,
+      "sb": 0.0537
     },
     "lineup_status": "projected",
     "lineup_confirmed": false,
     "lineup_source": "mlb_recent_game_projection",
     "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-19T11:50:58.872586+00:00"
+    "lineup_fetched_at": "2026-10-19T18:10:58.152787+00:00"
   },
   {
     "player_id": 670764,
@@ -1038,7 +1150,7 @@
     "game_pk": 849815,
     "game_date_utc": "2026-10-20T00:08:00Z",
     "date": "2026-10-19",
-    "opp_pitcher_name": "",
+    "opp_pitcher_name": "Shawn Armstrong",
     "season_stats": {
       "avg": 0.222,
       "obp": 0.309,
@@ -1112,11 +1224,25 @@
     },
     "fg_stats": {},
     "matchup": {
-      "pitcher_name": ""
+      "era": 4.58,
+      "whip": 1.39,
+      "k_pct": 0.221,
+      "fip": 4.27,
+      "ip": 35.1,
+      "k9": 8.66,
+      "pitcher_hand": "R",
+      "pitcher_name": "Shawn Armstrong"
     },
     "platoon": {
       "platoon_same_hand": false,
-      "advantage": null
+      "batter_woba": 0.288,
+      "batter_split_pa": 278,
+      "batter_split_label": "vs RHP",
+      "pitcher_woba_against": 0.334,
+      "pitcher_split_pa": 73,
+      "pitcher_split_label": "vs RHB",
+      "edge_woba": -0.046,
+      "advantage": "pitcher"
     },
     "park_factor": {
       "hr": 0.92,
@@ -1124,32 +1250,32 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 65.5,
-      "wind_speed_mph": 11.3,
+      "temp_f": 78.6,
+      "wind_speed_mph": 13.2,
       "wind_direction": "NE",
       "precip_probability": 0,
-      "humidity": 86,
-      "condition": "clear sky",
+      "humidity": 69,
+      "condition": "broken clouds",
       "is_indoor": true,
       "weather_available": true
     },
     "days_rest": null,
     "projected": {
-      "singles": 0.2258,
-      "doubles": 0.0562,
-      "triples": 0.0029,
-      "hr": 0.0303,
-      "bb": 0.1126,
-      "hbp": 0.016,
-      "rbi": 0.1339,
-      "runs": 0.2277,
-      "sb": 0.075
+      "singles": 0.2462,
+      "doubles": 0.0613,
+      "triples": 0.0032,
+      "hr": 0.033,
+      "bb": 0.1228,
+      "hbp": 0.0175,
+      "rbi": 0.146,
+      "runs": 0.2483,
+      "sb": 0.0818
     },
     "lineup_status": "projected",
     "lineup_confirmed": false,
     "lineup_source": "mlb_recent_game_projection",
     "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-19T11:50:58.872586+00:00"
+    "lineup_fetched_at": "2026-10-19T18:10:58.152787+00:00"
   },
   {
     "player_id": 680757,
@@ -1266,12 +1392,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 65.5,
-      "wind_speed_mph": 11.3,
+      "temp_f": 78.6,
+      "wind_speed_mph": 13.2,
       "wind_direction": "NE",
       "precip_probability": 0,
-      "humidity": 86,
-      "condition": "clear sky",
+      "humidity": 69,
+      "condition": "broken clouds",
       "is_indoor": true,
       "weather_available": true
     },
@@ -1291,7 +1417,7 @@
     "lineup_confirmed": false,
     "lineup_source": "mlb_recent_game_projection",
     "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-19T11:50:58.872586+00:00"
+    "lineup_fetched_at": "2026-10-19T18:10:58.152787+00:00"
   },
   {
     "player_id": 608070,
@@ -1408,12 +1534,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 65.5,
-      "wind_speed_mph": 11.3,
+      "temp_f": 78.6,
+      "wind_speed_mph": 13.2,
       "wind_direction": "NE",
       "precip_probability": 0,
-      "humidity": 86,
-      "condition": "clear sky",
+      "humidity": 69,
+      "condition": "broken clouds",
       "is_indoor": true,
       "weather_available": true
     },
@@ -1433,7 +1559,7 @@
     "lineup_confirmed": false,
     "lineup_source": "mlb_recent_game_projection",
     "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-19T11:50:58.872586+00:00"
+    "lineup_fetched_at": "2026-10-19T18:10:58.152787+00:00"
   },
   {
     "player_id": 800050,
@@ -1550,12 +1676,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 65.5,
-      "wind_speed_mph": 11.3,
+      "temp_f": 78.6,
+      "wind_speed_mph": 13.2,
       "wind_direction": "NE",
       "precip_probability": 0,
-      "humidity": 86,
-      "condition": "clear sky",
+      "humidity": 69,
+      "condition": "broken clouds",
       "is_indoor": true,
       "weather_available": true
     },
@@ -1575,7 +1701,7 @@
     "lineup_confirmed": false,
     "lineup_source": "mlb_recent_game_projection",
     "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-19T11:50:58.872586+00:00"
+    "lineup_fetched_at": "2026-10-19T18:10:58.152787+00:00"
   },
   {
     "player_id": 666176,
@@ -1692,12 +1818,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 65.5,
-      "wind_speed_mph": 11.3,
+      "temp_f": 78.6,
+      "wind_speed_mph": 13.2,
       "wind_direction": "NE",
       "precip_probability": 0,
-      "humidity": 86,
-      "condition": "clear sky",
+      "humidity": 69,
+      "condition": "broken clouds",
       "is_indoor": true,
       "weather_available": true
     },
@@ -1717,7 +1843,7 @@
     "lineup_confirmed": false,
     "lineup_source": "mlb_recent_game_projection",
     "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-19T11:50:58.872586+00:00"
+    "lineup_fetched_at": "2026-10-19T18:10:58.152787+00:00"
   },
   {
     "player_id": 663993,
@@ -1834,12 +1960,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 65.5,
-      "wind_speed_mph": 11.3,
+      "temp_f": 78.6,
+      "wind_speed_mph": 13.2,
       "wind_direction": "NE",
       "precip_probability": 0,
-      "humidity": 86,
-      "condition": "clear sky",
+      "humidity": 69,
+      "condition": "broken clouds",
       "is_indoor": true,
       "weather_available": true
     },
@@ -1859,7 +1985,7 @@
     "lineup_confirmed": false,
     "lineup_source": "mlb_recent_game_projection",
     "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-19T11:50:58.872586+00:00"
+    "lineup_fetched_at": "2026-10-19T18:10:58.152787+00:00"
   },
   {
     "player_id": 683953,
@@ -1976,12 +2102,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 65.5,
-      "wind_speed_mph": 11.3,
+      "temp_f": 78.6,
+      "wind_speed_mph": 13.2,
       "wind_direction": "NE",
       "precip_probability": 0,
-      "humidity": 86,
-      "condition": "clear sky",
+      "humidity": 69,
+      "condition": "broken clouds",
       "is_indoor": true,
       "weather_available": true
     },
@@ -2001,7 +2127,7 @@
     "lineup_confirmed": false,
     "lineup_source": "mlb_recent_game_projection",
     "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-19T11:50:58.872586+00:00"
+    "lineup_fetched_at": "2026-10-19T18:10:58.152787+00:00"
   },
   {
     "player_id": 672275,
@@ -2118,12 +2244,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 65.5,
-      "wind_speed_mph": 11.3,
+      "temp_f": 78.6,
+      "wind_speed_mph": 13.2,
       "wind_direction": "NE",
       "precip_probability": 0,
-      "humidity": 86,
-      "condition": "clear sky",
+      "humidity": 69,
+      "condition": "broken clouds",
       "is_indoor": true,
       "weather_available": true
     },
@@ -2143,7 +2269,7 @@
     "lineup_confirmed": false,
     "lineup_source": "mlb_recent_game_projection",
     "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-19T11:50:58.872586+00:00"
+    "lineup_fetched_at": "2026-10-19T18:10:58.152787+00:00"
   },
   {
     "player_id": 690984,
@@ -2260,12 +2386,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 65.5,
-      "wind_speed_mph": 11.3,
+      "temp_f": 78.6,
+      "wind_speed_mph": 13.2,
       "wind_direction": "NE",
       "precip_probability": 0,
-      "humidity": 86,
-      "condition": "clear sky",
+      "humidity": 69,
+      "condition": "broken clouds",
       "is_indoor": true,
       "weather_available": true
     },
@@ -2285,7 +2411,7 @@
     "lineup_confirmed": false,
     "lineup_source": "mlb_recent_game_projection",
     "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-19T11:50:58.872586+00:00"
+    "lineup_fetched_at": "2026-10-19T18:10:58.152787+00:00"
   },
   {
     "player_id": 677587,
@@ -2402,12 +2528,12 @@
       "hits": 0.96
     },
     "weather": {
-      "temp_f": 65.5,
-      "wind_speed_mph": 11.3,
+      "temp_f": 78.6,
+      "wind_speed_mph": 13.2,
       "wind_direction": "NE",
       "precip_probability": 0,
-      "humidity": 86,
-      "condition": "clear sky",
+      "humidity": 69,
+      "condition": "broken clouds",
       "is_indoor": true,
       "weather_available": true
     },
@@ -2427,6 +2553,6 @@
     "lineup_confirmed": false,
     "lineup_source": "mlb_recent_game_projection",
     "lineup_source_updated_at": null,
-    "lineup_fetched_at": "2026-10-19T11:50:58.872586+00:00"
+    "lineup_fetched_at": "2026-10-19T18:10:58.152787+00:00"
   }
 ]

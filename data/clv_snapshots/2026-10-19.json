@@ -13,7 +13,7 @@
           "line": 6.5
         }
       ],
-      "last_seen_at": "2026-10-19T11:50:56.418408+00:00",
+      "last_seen_at": "2026-10-19T18:10:56.598846+00:00",
       "last_seen_line": 6.5
     },
     "chase delauter": {
@@ -27,7 +27,7 @@
           "line": 5.5
         }
       ],
-      "last_seen_at": "2026-10-19T11:50:56.418408+00:00",
+      "last_seen_at": "2026-10-19T18:10:56.598846+00:00",
       "last_seen_line": 5.5
     },
     "steven kwan": {
@@ -41,7 +41,7 @@
           "line": 5.5
         }
       ],
-      "last_seen_at": "2026-10-19T11:50:56.418408+00:00",
+      "last_seen_at": "2026-10-19T18:10:56.598846+00:00",
       "last_seen_line": 5.5
     },
     "junior caminero": {
@@ -55,7 +55,7 @@
           "line": 5.5
         }
       ],
-      "last_seen_at": "2026-10-19T11:50:56.418408+00:00",
+      "last_seen_at": "2026-10-19T18:10:56.598846+00:00",
       "last_seen_line": 5.5
     },
     "yandy diaz": {
@@ -69,7 +69,7 @@
           "line": 6.5
         }
       ],
-      "last_seen_at": "2026-10-19T11:50:56.418408+00:00",
+      "last_seen_at": "2026-10-19T18:10:56.598846+00:00",
       "last_seen_line": 6.5
     },
     "jo adell": {
@@ -83,7 +83,7 @@
           "line": 5.5
         }
       ],
-      "last_seen_at": "2026-10-19T11:50:56.418408+00:00",
+      "last_seen_at": "2026-10-19T18:10:56.598846+00:00",
       "last_seen_line": 5.5
     },
     "jonathan aranda": {
@@ -97,7 +97,7 @@
           "line": 5.5
         }
       ],
-      "last_seen_at": "2026-10-19T11:50:56.418408+00:00",
+      "last_seen_at": "2026-10-19T18:10:56.598846+00:00",
       "last_seen_line": 5.5
     },
     "chandler simpson": {
@@ -111,7 +111,7 @@
           "line": 6.5
         }
       ],
-      "last_seen_at": "2026-10-19T11:50:56.418408+00:00",
+      "last_seen_at": "2026-10-19T18:10:56.598846+00:00",
       "last_seen_line": 6.5
     },
     "victor mesa": {
@@ -125,7 +125,7 @@
           "line": 5.5
         }
       ],
-      "last_seen_at": "2026-10-19T11:50:56.418408+00:00",
+      "last_seen_at": "2026-10-19T18:10:56.598846+00:00",
       "last_seen_line": 5.5
     }
   },
@@ -138,17 +138,17 @@
       "edge": 2.0,
       "actionable": true,
       "lock_at": "2026-10-20T00:08:00Z",
-      "annotated_at": "2026-10-19T11:52:02.550126+00:00"
+      "annotated_at": "2026-10-19T18:12:27.960979+00:00"
     },
     "yandy diaz": {
       "player_id": 650490,
       "name": "Yandy D\u00edaz",
       "team": "Tampa Bay Rays",
       "call": "over",
-      "edge": 1.74,
-      "actionable": false,
+      "edge": 2.0,
+      "actionable": true,
       "lock_at": "2026-10-20T00:08:00Z",
-      "annotated_at": "2026-10-19T11:52:02.550126+00:00"
+      "annotated_at": "2026-10-19T18:12:27.960979+00:00"
     },
     "junior caminero": {
       "player_id": 691406,
@@ -158,7 +158,7 @@
       "edge": 2.0,
       "actionable": true,
       "lock_at": "2026-10-20T00:08:00Z",
-      "annotated_at": "2026-10-19T11:52:02.550126+00:00"
+      "annotated_at": "2026-10-19T18:12:27.960979+00:00"
     },
     "chase delauter": {
       "player_id": 800050,
@@ -168,47 +168,47 @@
       "edge": 2.0,
       "actionable": true,
       "lock_at": "2026-10-20T00:08:00Z",
-      "annotated_at": "2026-10-19T11:52:02.550126+00:00"
+      "annotated_at": "2026-10-19T18:12:27.960979+00:00"
     },
     "jonathan aranda": {
       "player_id": 666018,
       "name": "Jonathan Aranda",
       "team": "Tampa Bay Rays",
       "call": "over",
-      "edge": 1.74,
+      "edge": 2.0,
       "actionable": true,
       "lock_at": "2026-10-20T00:08:00Z",
-      "annotated_at": "2026-10-19T11:52:02.550126+00:00"
+      "annotated_at": "2026-10-19T18:12:27.960979+00:00"
     },
     "jo adell": {
       "player_id": 666176,
       "name": "Jo Adell",
       "team": "Cleveland Guardians",
       "call": "over",
-      "edge": 1.38,
-      "actionable": true,
+      "edge": 0.68,
+      "actionable": false,
       "lock_at": "2026-10-20T00:08:00Z",
-      "annotated_at": "2026-10-19T11:52:02.550126+00:00"
+      "annotated_at": "2026-10-19T18:12:27.960979+00:00"
     },
     "steven kwan": {
       "player_id": 680757,
       "name": "Steven Kwan",
       "team": "Cleveland Guardians",
-      "call": "over",
-      "edge": 0.68,
+      "call": null,
+      "edge": -0.03,
       "actionable": false,
       "lock_at": "2026-10-20T00:08:00Z",
-      "annotated_at": "2026-10-19T11:52:02.550126+00:00"
+      "annotated_at": "2026-10-19T18:12:27.960979+00:00"
     },
     "chandler simpson": {
       "player_id": 802415,
       "name": "Chandler Simpson",
       "team": "Tampa Bay Rays",
-      "call": "under",
-      "edge": -0.68,
+      "call": null,
+      "edge": 0.38,
       "actionable": false,
       "lock_at": "2026-10-20T00:08:00Z",
-      "annotated_at": "2026-10-19T11:52:02.550126+00:00"
+      "annotated_at": "2026-10-19T18:12:27.960979+00:00"
     }
   }
 }
