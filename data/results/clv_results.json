@@ -8381,18 +8381,93 @@
         }
       ],
       "skipped_no_samples": 0
+    },
+    "2026-10-19": {
+      "plays": [
+        {
+          "player_id": 608070,
+          "name": "Jos\u00e9 Ram\u00edrez",
+          "team": "Cleveland Guardians",
+          "call": "over",
+          "open_line": 6.5,
+          "open_at": "2026-10-19T08:04:15.084711+00:00",
+          "close_line": 6.5,
+          "close_at": "2026-10-19T08:04:15.084711+00:00",
+          "last_seen_at": "2026-10-19T22:49:47.937948+00:00",
+          "lock_at": "2026-10-20T00:08:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 650490,
+          "name": "Yandy D\u00edaz",
+          "team": "Tampa Bay Rays",
+          "call": "over",
+          "open_line": 6.5,
+          "open_at": "2026-10-19T08:04:15.084711+00:00",
+          "close_line": 6.5,
+          "close_at": "2026-10-19T08:04:15.084711+00:00",
+          "last_seen_at": "2026-10-19T22:49:47.937948+00:00",
+          "lock_at": "2026-10-20T00:08:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 691406,
+          "name": "Junior Caminero",
+          "team": "Tampa Bay Rays",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-19T08:04:15.084711+00:00",
+          "close_line": 6.5,
+          "close_at": "2026-10-19T21:19:42.042800+00:00",
+          "last_seen_at": "2026-10-19T22:49:47.937948+00:00",
+          "lock_at": "2026-10-20T00:08:00Z",
+          "n_samples": 2,
+          "clv_points": 1.0
+        },
+        {
+          "player_id": 800050,
+          "name": "Chase DeLauter",
+          "team": "Cleveland Guardians",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-19T08:04:15.084711+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-19T08:04:15.084711+00:00",
+          "last_seen_at": "2026-10-19T22:49:47.937948+00:00",
+          "lock_at": "2026-10-20T00:08:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 666018,
+          "name": "Jonathan Aranda",
+          "team": "Tampa Bay Rays",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-19T08:04:15.084711+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-19T08:04:15.084711+00:00",
+          "last_seen_at": "2026-10-19T22:49:47.937948+00:00",
+          "lock_at": "2026-10-20T00:08:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        }
+      ],
+      "skipped_no_samples": 0
     }
   },
   "record": {
-    "positive": 6,
+    "positive": 7,
     "negative": 2,
-    "push": 711,
-    "n": 719,
-    "win_rate": 75.0,
-    "avg_clv_points": 0.006,
-    "plays_multi_sample": 7,
-    "plays_single_sample": 712,
-    "avg_clv_points_multi_sample": 0.429,
+    "push": 715,
+    "n": 724,
+    "win_rate": 77.8,
+    "avg_clv_points": 0.007,
+    "plays_multi_sample": 8,
+    "plays_single_sample": 716,
+    "avg_clv_points_multi_sample": 0.5,
     "skipped_no_samples": 0
   }
 }
