@@ -1,0 +1,200 @@
+{
+  "version": 2,
+  "date": "2026-10-23",
+  "players": {
+    "christian yelich": {
+      "name": "christian yelich",
+      "player_id": 592885,
+      "team": "Milwaukee Brewers",
+      "lock_at": "2026-10-24T00:00:00Z",
+      "samples": [
+        {
+          "at": "2026-10-23T07:56:06.186801+00:00",
+          "line": 5.5
+        }
+      ],
+      "last_seen_at": "2026-10-23T07:56:06.186801+00:00",
+      "last_seen_line": 5.5
+    },
+    "jackson chourio": {
+      "name": "jackson chourio",
+      "player_id": 694192,
+      "team": "Milwaukee Brewers",
+      "lock_at": "2026-10-24T00:00:00Z",
+      "samples": [
+        {
+          "at": "2026-10-23T07:56:06.186801+00:00",
+          "line": 6.5
+        }
+      ],
+      "last_seen_at": "2026-10-23T07:56:06.186801+00:00",
+      "last_seen_line": 6.5
+    },
+    "yandy diaz": {
+      "name": "yandy diaz",
+      "player_id": 650490,
+      "team": "Tampa Bay Rays",
+      "lock_at": "2026-10-24T00:00:00Z",
+      "samples": [
+        {
+          "at": "2026-10-23T07:56:06.186801+00:00",
+          "line": 5.5
+        }
+      ],
+      "last_seen_at": "2026-10-23T07:56:06.186801+00:00",
+      "last_seen_line": 5.5
+    },
+    "william contreras": {
+      "name": "william contreras",
+      "player_id": 661388,
+      "team": "Milwaukee Brewers",
+      "lock_at": "2026-10-24T00:00:00Z",
+      "samples": [
+        {
+          "at": "2026-10-23T07:56:06.186801+00:00",
+          "line": 5.5
+        }
+      ],
+      "last_seen_at": "2026-10-23T07:56:06.186801+00:00",
+      "last_seen_line": 5.5
+    },
+    "brice turang": {
+      "name": "brice turang",
+      "player_id": 668930,
+      "team": "Milwaukee Brewers",
+      "lock_at": "2026-10-24T00:00:00Z",
+      "samples": [
+        {
+          "at": "2026-10-23T07:56:06.186801+00:00",
+          "line": 6.5
+        }
+      ],
+      "last_seen_at": "2026-10-23T07:56:06.186801+00:00",
+      "last_seen_line": 6.5
+    },
+    "jake bauers": {
+      "name": "jake bauers",
+      "player_id": 641343,
+      "team": "Milwaukee Brewers",
+      "lock_at": "2026-10-24T00:00:00Z",
+      "samples": [
+        {
+          "at": "2026-10-23T07:56:06.186801+00:00",
+          "line": 5.5
+        }
+      ],
+      "last_seen_at": "2026-10-23T07:56:06.186801+00:00",
+      "last_seen_line": 5.5
+    },
+    "garrett mitchell": {
+      "name": "garrett mitchell",
+      "player_id": 669003,
+      "team": "Milwaukee Brewers",
+      "lock_at": "2026-10-24T00:00:00Z",
+      "samples": [
+        {
+          "at": "2026-10-23T07:56:06.186801+00:00",
+          "line": 5.5
+        }
+      ],
+      "last_seen_at": "2026-10-23T07:56:06.186801+00:00",
+      "last_seen_line": 5.5
+    },
+    "cooper pratt": {
+      "name": "cooper pratt",
+      "player_id": 806198,
+      "team": "Milwaukee Brewers",
+      "lock_at": "2026-10-24T00:00:00Z",
+      "samples": [
+        {
+          "at": "2026-10-23T07:56:06.186801+00:00",
+          "line": 5.5
+        }
+      ],
+      "last_seen_at": "2026-10-23T07:56:06.186801+00:00",
+      "last_seen_line": 5.5
+    }
+  },
+  "annotations": {
+    "jackson chourio": {
+      "player_id": 694192,
+      "name": "Jackson Chourio",
+      "team": "Milwaukee Brewers",
+      "call": "over",
+      "edge": 2.0,
+      "actionable": true,
+      "lock_at": "2026-10-24T00:00:00Z",
+      "annotated_at": "2026-10-23T07:57:46.154790+00:00"
+    },
+    "brice turang": {
+      "player_id": 668930,
+      "name": "Brice Turang",
+      "team": "Milwaukee Brewers",
+      "call": "over",
+      "edge": 2.0,
+      "actionable": true,
+      "lock_at": "2026-10-24T00:00:00Z",
+      "annotated_at": "2026-10-23T07:57:46.154790+00:00"
+    },
+    "william contreras": {
+      "player_id": 661388,
+      "name": "William Contreras",
+      "team": "Milwaukee Brewers",
+      "call": "over",
+      "edge": 2.0,
+      "actionable": true,
+      "lock_at": "2026-10-24T00:00:00Z",
+      "annotated_at": "2026-10-23T07:57:46.154790+00:00"
+    },
+    "jake bauers": {
+      "player_id": 641343,
+      "name": "Jake Bauers",
+      "team": "Milwaukee Brewers",
+      "call": "over",
+      "edge": 2.0,
+      "actionable": true,
+      "lock_at": "2026-10-24T00:00:00Z",
+      "annotated_at": "2026-10-23T07:57:46.154790+00:00"
+    },
+    "christian yelich": {
+      "player_id": 592885,
+      "name": "Christian Yelich",
+      "team": "Milwaukee Brewers",
+      "call": "over",
+      "edge": 2.0,
+      "actionable": true,
+      "lock_at": "2026-10-24T00:00:00Z",
+      "annotated_at": "2026-10-23T07:57:46.154790+00:00"
+    },
+    "cooper pratt": {
+      "player_id": 806198,
+      "name": "Cooper Pratt",
+      "team": "Milwaukee Brewers",
+      "call": "over",
+      "edge": 1.74,
+      "actionable": true,
+      "lock_at": "2026-10-24T00:00:00Z",
+      "annotated_at": "2026-10-23T07:57:46.154790+00:00"
+    },
+    "garrett mitchell": {
+      "player_id": 669003,
+      "name": "Garrett Mitchell",
+      "team": "Milwaukee Brewers",
+      "call": "over",
+      "edge": 1.38,
+      "actionable": true,
+      "lock_at": "2026-10-24T00:00:00Z",
+      "annotated_at": "2026-10-23T07:57:46.154790+00:00"
+    },
+    "yandy diaz": {
+      "player_id": 650490,
+      "name": "Yandy D\u00edaz",
+      "team": "Tampa Bay Rays",
+      "call": "under",
+      "edge": -1.07,
+      "actionable": false,
+      "lock_at": "2026-10-24T00:00:00Z",
+      "annotated_at": "2026-10-23T07:57:46.154790+00:00"
+    }
+  }
+}
