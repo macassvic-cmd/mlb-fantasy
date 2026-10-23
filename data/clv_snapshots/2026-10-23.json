@@ -3,7 +3,7 @@
   "date": "2026-10-23",
   "players": {
     "christian yelich": {
-      "name": "christian yelich",
+      "name": "Christian Yelich",
       "player_id": 592885,
       "team": "Milwaukee Brewers",
       "lock_at": "2026-10-24T00:00:00Z",
@@ -13,11 +13,11 @@
           "line": 5.5
         }
       ],
-      "last_seen_at": "2026-10-23T07:56:06.186801+00:00",
+      "last_seen_at": "2026-10-23T10:52:52.361086+00:00",
       "last_seen_line": 5.5
     },
     "jackson chourio": {
-      "name": "jackson chourio",
+      "name": "Jackson Chourio",
       "player_id": 694192,
       "team": "Milwaukee Brewers",
       "lock_at": "2026-10-24T00:00:00Z",
@@ -27,11 +27,11 @@
           "line": 6.5
         }
       ],
-      "last_seen_at": "2026-10-23T07:56:06.186801+00:00",
+      "last_seen_at": "2026-10-23T10:52:52.361086+00:00",
       "last_seen_line": 6.5
     },
     "yandy diaz": {
-      "name": "yandy diaz",
+      "name": "Yandy D\u00edaz",
       "player_id": 650490,
       "team": "Tampa Bay Rays",
       "lock_at": "2026-10-24T00:00:00Z",
@@ -41,11 +41,11 @@
           "line": 5.5
         }
       ],
-      "last_seen_at": "2026-10-23T07:56:06.186801+00:00",
+      "last_seen_at": "2026-10-23T10:52:52.361086+00:00",
       "last_seen_line": 5.5
     },
     "william contreras": {
-      "name": "william contreras",
+      "name": "William Contreras",
       "player_id": 661388,
       "team": "Milwaukee Brewers",
       "lock_at": "2026-10-24T00:00:00Z",
@@ -55,11 +55,11 @@
           "line": 5.5
         }
       ],
-      "last_seen_at": "2026-10-23T07:56:06.186801+00:00",
+      "last_seen_at": "2026-10-23T10:52:52.361086+00:00",
       "last_seen_line": 5.5
     },
     "brice turang": {
-      "name": "brice turang",
+      "name": "Brice Turang",
       "player_id": 668930,
       "team": "Milwaukee Brewers",
       "lock_at": "2026-10-24T00:00:00Z",
@@ -69,11 +69,11 @@
           "line": 6.5
         }
       ],
-      "last_seen_at": "2026-10-23T07:56:06.186801+00:00",
+      "last_seen_at": "2026-10-23T10:52:52.361086+00:00",
       "last_seen_line": 6.5
     },
     "jake bauers": {
-      "name": "jake bauers",
+      "name": "Jake Bauers",
       "player_id": 641343,
       "team": "Milwaukee Brewers",
       "lock_at": "2026-10-24T00:00:00Z",
@@ -83,11 +83,11 @@
           "line": 5.5
         }
       ],
-      "last_seen_at": "2026-10-23T07:56:06.186801+00:00",
+      "last_seen_at": "2026-10-23T10:52:52.361086+00:00",
       "last_seen_line": 5.5
     },
     "garrett mitchell": {
-      "name": "garrett mitchell",
+      "name": "Garrett Mitchell",
       "player_id": 669003,
       "team": "Milwaukee Brewers",
       "lock_at": "2026-10-24T00:00:00Z",
@@ -97,11 +97,11 @@
           "line": 5.5
         }
       ],
-      "last_seen_at": "2026-10-23T07:56:06.186801+00:00",
+      "last_seen_at": "2026-10-23T10:52:52.361086+00:00",
       "last_seen_line": 5.5
     },
     "cooper pratt": {
-      "name": "cooper pratt",
+      "name": "Cooper Pratt",
       "player_id": 806198,
       "team": "Milwaukee Brewers",
       "lock_at": "2026-10-24T00:00:00Z",
@@ -111,8 +111,22 @@
           "line": 5.5
         }
       ],
-      "last_seen_at": "2026-10-23T07:56:06.186801+00:00",
+      "last_seen_at": "2026-10-23T10:52:52.361086+00:00",
       "last_seen_line": 5.5
+    },
+    "jacob misiorowski": {
+      "name": "jacob misiorowski",
+      "player_id": null,
+      "team": null,
+      "lock_at": null,
+      "samples": [
+        {
+          "at": "2026-10-23T10:52:52.361086+00:00",
+          "line": 35.5
+        }
+      ],
+      "last_seen_at": "2026-10-23T10:52:52.361086+00:00",
+      "last_seen_line": 35.5
     }
   },
   "annotations": {
@@ -124,7 +138,7 @@
       "edge": 2.0,
       "actionable": true,
       "lock_at": "2026-10-24T00:00:00Z",
-      "annotated_at": "2026-10-23T07:57:46.154790+00:00"
+      "annotated_at": "2026-10-23T10:54:27.273556+00:00"
     },
     "brice turang": {
       "player_id": 668930,
@@ -134,7 +148,7 @@
       "edge": 2.0,
       "actionable": true,
       "lock_at": "2026-10-24T00:00:00Z",
-      "annotated_at": "2026-10-23T07:57:46.154790+00:00"
+      "annotated_at": "2026-10-23T10:54:27.273556+00:00"
     },
     "william contreras": {
       "player_id": 661388,
@@ -144,7 +158,7 @@
       "edge": 2.0,
       "actionable": true,
       "lock_at": "2026-10-24T00:00:00Z",
-      "annotated_at": "2026-10-23T07:57:46.154790+00:00"
+      "annotated_at": "2026-10-23T10:54:27.273556+00:00"
     },
     "jake bauers": {
       "player_id": 641343,
@@ -154,7 +168,7 @@
       "edge": 2.0,
       "actionable": true,
       "lock_at": "2026-10-24T00:00:00Z",
-      "annotated_at": "2026-10-23T07:57:46.154790+00:00"
+      "annotated_at": "2026-10-23T10:54:27.273556+00:00"
     },
     "christian yelich": {
       "player_id": 592885,
@@ -164,7 +178,7 @@
       "edge": 2.0,
       "actionable": true,
       "lock_at": "2026-10-24T00:00:00Z",
-      "annotated_at": "2026-10-23T07:57:46.154790+00:00"
+      "annotated_at": "2026-10-23T10:54:27.273556+00:00"
     },
     "cooper pratt": {
       "player_id": 806198,
@@ -174,7 +188,7 @@
       "edge": 1.74,
       "actionable": true,
       "lock_at": "2026-10-24T00:00:00Z",
-      "annotated_at": "2026-10-23T07:57:46.154790+00:00"
+      "annotated_at": "2026-10-23T10:54:27.273556+00:00"
     },
     "garrett mitchell": {
       "player_id": 669003,
@@ -184,7 +198,7 @@
       "edge": 1.38,
       "actionable": true,
       "lock_at": "2026-10-24T00:00:00Z",
-      "annotated_at": "2026-10-23T07:57:46.154790+00:00"
+      "annotated_at": "2026-10-23T10:54:27.273556+00:00"
     },
     "yandy diaz": {
       "player_id": 650490,
@@ -194,7 +208,7 @@
       "edge": -1.07,
       "actionable": false,
       "lock_at": "2026-10-24T00:00:00Z",
-      "annotated_at": "2026-10-23T07:57:46.154790+00:00"
+      "annotated_at": "2026-10-23T10:54:27.273556+00:00"
     }
   }
 }
