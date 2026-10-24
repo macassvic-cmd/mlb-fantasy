@@ -8456,17 +8456,120 @@
         }
       ],
       "skipped_no_samples": 0
+    },
+    "2026-10-23": {
+      "plays": [
+        {
+          "player_id": 694192,
+          "name": "Jackson Chourio",
+          "team": "Milwaukee Brewers",
+          "call": "over",
+          "open_line": 6.5,
+          "open_at": "2026-10-23T07:56:06.186801+00:00",
+          "close_line": 6.5,
+          "close_at": "2026-10-23T07:56:06.186801+00:00",
+          "last_seen_at": "2026-10-23T21:54:09.666047+00:00",
+          "lock_at": "2026-10-24T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 668930,
+          "name": "Brice Turang",
+          "team": "Milwaukee Brewers",
+          "call": "over",
+          "open_line": 6.5,
+          "open_at": "2026-10-23T07:56:06.186801+00:00",
+          "close_line": 6.5,
+          "close_at": "2026-10-23T07:56:06.186801+00:00",
+          "last_seen_at": "2026-10-23T21:54:09.666047+00:00",
+          "lock_at": "2026-10-24T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 661388,
+          "name": "William Contreras",
+          "team": "Milwaukee Brewers",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-23T07:56:06.186801+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-23T07:56:06.186801+00:00",
+          "last_seen_at": "2026-10-23T21:54:09.666047+00:00",
+          "lock_at": "2026-10-24T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 641343,
+          "name": "Jake Bauers",
+          "team": "Milwaukee Brewers",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-23T07:56:06.186801+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-23T07:56:06.186801+00:00",
+          "last_seen_at": "2026-10-23T21:54:09.666047+00:00",
+          "lock_at": "2026-10-24T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 592885,
+          "name": "Christian Yelich",
+          "team": "Milwaukee Brewers",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-23T07:56:06.186801+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-23T07:56:06.186801+00:00",
+          "last_seen_at": "2026-10-23T21:54:09.666047+00:00",
+          "lock_at": "2026-10-24T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 806198,
+          "name": "Cooper Pratt",
+          "team": "Milwaukee Brewers",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-23T07:56:06.186801+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-23T07:56:06.186801+00:00",
+          "last_seen_at": "2026-10-23T21:54:09.666047+00:00",
+          "lock_at": "2026-10-24T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 669003,
+          "name": "Garrett Mitchell",
+          "team": "Milwaukee Brewers",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-23T07:56:06.186801+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-23T07:56:06.186801+00:00",
+          "last_seen_at": "2026-10-23T21:54:09.666047+00:00",
+          "lock_at": "2026-10-24T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        }
+      ],
+      "skipped_no_samples": 0
     }
   },
   "record": {
     "positive": 7,
     "negative": 2,
-    "push": 715,
-    "n": 724,
+    "push": 722,
+    "n": 731,
     "win_rate": 77.8,
     "avg_clv_points": 0.007,
     "plays_multi_sample": 8,
-    "plays_single_sample": 716,
+    "plays_single_sample": 723,
     "avg_clv_points_multi_sample": 0.5,
     "skipped_no_samples": 0
   }
