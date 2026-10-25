@@ -8559,17 +8559,120 @@
         }
       ],
       "skipped_no_samples": 0
+    },
+    "2026-10-24": {
+      "plays": [
+        {
+          "player_id": 694192,
+          "name": "Jackson Chourio",
+          "team": "Milwaukee Brewers",
+          "call": "over",
+          "open_line": 6.5,
+          "open_at": "2026-10-24T07:35:29.744170+00:00",
+          "close_line": 6.5,
+          "close_at": "2026-10-24T07:35:29.744170+00:00",
+          "last_seen_at": "2026-10-24T23:41:36.068951+00:00",
+          "lock_at": "2026-10-25T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 641343,
+          "name": "Jake Bauers",
+          "team": "Milwaukee Brewers",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-24T07:35:29.744170+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-24T07:35:29.744170+00:00",
+          "last_seen_at": "2026-10-24T23:41:36.068951+00:00",
+          "lock_at": "2026-10-25T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 661388,
+          "name": "William Contreras",
+          "team": "Milwaukee Brewers",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-24T07:35:29.744170+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-24T07:35:29.744170+00:00",
+          "last_seen_at": "2026-10-24T23:41:36.068951+00:00",
+          "lock_at": "2026-10-25T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 668930,
+          "name": "Brice Turang",
+          "team": "Milwaukee Brewers",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-24T07:35:29.744170+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-24T07:35:29.744170+00:00",
+          "last_seen_at": "2026-10-24T23:41:36.068951+00:00",
+          "lock_at": "2026-10-25T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 802415,
+          "name": "Chandler Simpson",
+          "team": "Tampa Bay Rays",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-24T07:35:29.744170+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-24T07:35:29.744170+00:00",
+          "last_seen_at": "2026-10-24T23:41:36.068951+00:00",
+          "lock_at": "2026-10-25T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 592885,
+          "name": "Christian Yelich",
+          "team": "Milwaukee Brewers",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-24T07:35:29.744170+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-24T07:35:29.744170+00:00",
+          "last_seen_at": "2026-10-24T23:41:36.068951+00:00",
+          "lock_at": "2026-10-25T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 650490,
+          "name": "Yandy D\u00edaz",
+          "team": "Tampa Bay Rays",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-24T07:35:29.744170+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-24T07:35:29.744170+00:00",
+          "last_seen_at": "2026-10-24T23:41:36.068951+00:00",
+          "lock_at": "2026-10-25T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        }
+      ],
+      "skipped_no_samples": 0
     }
   },
   "record": {
     "positive": 7,
     "negative": 2,
-    "push": 722,
-    "n": 731,
+    "push": 729,
+    "n": 738,
     "win_rate": 77.8,
     "avg_clv_points": 0.007,
     "plays_multi_sample": 8,
-    "plays_single_sample": 723,
+    "plays_single_sample": 730,
     "avg_clv_points_multi_sample": 0.5,
     "skipped_no_samples": 0
   }
