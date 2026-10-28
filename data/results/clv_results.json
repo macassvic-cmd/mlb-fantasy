@@ -8751,17 +8751,92 @@
         }
       ],
       "skipped_no_samples": 0
+    },
+    "2026-10-27": {
+      "plays": [
+        {
+          "player_id": 650490,
+          "name": "Yandy D\u00edaz",
+          "team": "Tampa Bay Rays",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-27T09:03:46.554961+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-27T09:03:46.554961+00:00",
+          "last_seen_at": "2026-10-27T22:53:02.574345+00:00",
+          "lock_at": "2026-10-28T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 691406,
+          "name": "Junior Caminero",
+          "team": "Tampa Bay Rays",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-27T09:03:46.554961+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-27T09:03:46.554961+00:00",
+          "last_seen_at": "2026-10-27T22:53:02.574345+00:00",
+          "lock_at": "2026-10-28T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 668930,
+          "name": "Brice Turang",
+          "team": "Milwaukee Brewers",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-27T09:03:46.554961+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-27T09:03:46.554961+00:00",
+          "last_seen_at": "2026-10-27T22:53:02.574345+00:00",
+          "lock_at": "2026-10-28T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        },
+        {
+          "player_id": 669003,
+          "name": "Garrett Mitchell",
+          "team": "Milwaukee Brewers",
+          "call": "under",
+          "open_line": 5.5,
+          "open_at": "2026-10-27T09:03:46.554961+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-27T09:03:46.554961+00:00",
+          "last_seen_at": "2026-10-27T22:53:02.574345+00:00",
+          "lock_at": "2026-10-28T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": -0.0
+        },
+        {
+          "player_id": 666018,
+          "name": "Jonathan Aranda",
+          "team": "Tampa Bay Rays",
+          "call": "over",
+          "open_line": 5.5,
+          "open_at": "2026-10-27T09:03:46.554961+00:00",
+          "close_line": 5.5,
+          "close_at": "2026-10-27T09:03:46.554961+00:00",
+          "last_seen_at": "2026-10-27T22:53:02.574345+00:00",
+          "lock_at": "2026-10-28T00:00:00Z",
+          "n_samples": 1,
+          "clv_points": 0.0
+        }
+      ],
+      "skipped_no_samples": 0
     }
   },
   "record": {
     "positive": 7,
     "negative": 2,
-    "push": 735,
-    "n": 744,
+    "push": 740,
+    "n": 749,
     "win_rate": 77.8,
     "avg_clv_points": 0.007,
     "plays_multi_sample": 8,
-    "plays_single_sample": 736,
+    "plays_single_sample": 741,
     "avg_clv_points_multi_sample": 0.5,
     "skipped_no_samples": 0
   }
